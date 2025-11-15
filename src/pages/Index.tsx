@@ -1,30 +1,12 @@
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { 
-  Zap, 
-  Thermometer, 
-  Waves, 
-  Radio,
-  Heart,
-  Shield,
-  Truck,
-  Check,
-  Star,
-  Clock
-} from "lucide-react";
+import { Clock } from "lucide-react";
 import { useEffect, useState } from "react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 const Index = () => {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
