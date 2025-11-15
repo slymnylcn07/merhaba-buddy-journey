@@ -198,64 +198,48 @@ const ProductDetail = () => {
             </div>
 
             {/* Bundle & Save */}
-            <div className="space-y-3">
-              <h3 className="font-bold text-lg">BUNDLE & SAVE</h3>
-              <div className="space-y-3">
+            <div className="space-y-2">
+              <h3 className="font-bold text-base">BUNDLE & SAVE</h3>
+              <div className="space-y-2">
                 {bundles.map((bundle) => (
                   <button
                     key={bundle.qty}
                     onClick={() => setSelectedBundle(bundle.qty)}
-                    className={`w-full text-left p-4 rounded-lg border-2 transition-all relative ${
+                    className={`w-full text-left p-3 rounded-lg border-2 transition-all relative ${
                       selectedBundle === bundle.qty
-                        ? 'border-primary bg-blue-50 dark:bg-blue-950/30'
-                        : 'border-border bg-blue-50/50 dark:bg-blue-950/10 hover:border-primary/50'
+                        ? 'border-primary bg-sky-50 dark:bg-sky-950/20'
+                        : 'border-border bg-sky-50/50 dark:bg-sky-950/10 hover:border-primary/50'
                     }`}
                   >
-                    <div className="flex items-start gap-3">
-                      <div className={`w-5 h-5 rounded-full border-2 flex-shrink-0 mt-0.5 flex items-center justify-center ${
-                        selectedBundle === bundle.qty
-                          ? 'border-primary bg-primary'
-                          : 'border-border'
-                      }`}>
-                        {selectedBundle === bundle.qty && (
-                          <div className="w-2 h-2 rounded-full bg-white" />
-                        )}
+                    {bundle.tag && (
+                      <div className="absolute -top-2 right-3">
+                        <Badge className="bg-destructive text-destructive-foreground text-xs px-2 py-0.5">
+                          {bundle.tag}
+                        </Badge>
                       </div>
-                      
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <span className="font-bold text-base">
-                            {bundle.qty}x Knee Massager{bundle.qty > 1 ? 's' : ''}
-                          </span>
-                          {bundle.tag && (
-                            <Badge className={`text-xs ${
-                              bundle.tag === "MOST POPULAR" 
-                                ? "bg-orange-500 hover:bg-orange-600" 
-                                : "bg-green-500 hover:bg-green-600"
-                            }`}>
-                              {bundle.tag}
-                            </Badge>
+                    )}
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                          selectedBundle === bundle.qty ? 'border-primary' : 'border-muted-foreground'
+                        }`}>
+                          {selectedBundle === bundle.qty && (
+                            <div className="w-2 h-2 rounded-full bg-primary" />
                           )}
                         </div>
-                        
-                        {bundle.qty > 1 && (
-                          <Badge variant="outline" className="mb-2 bg-background">
-                            ${bundle.priceEach} each
-                          </Badge>
-                        )}
-                        
-                        <p className="text-sm font-semibold text-primary mb-2">
-                          You Saved {bundle.discount}% + Ebook
-                        </p>
-                        
-                        <div className="flex items-baseline gap-2">
-                          <span className="text-2xl font-bold text-primary">
-                            ${(bundle.priceEach * bundle.qty).toFixed(2)}
-                          </span>
-                          <span className="text-lg text-muted-foreground line-through">
-                            ${bundle.original}
-                          </span>
+                        <div>
+                          <div className="font-semibold text-sm">
+                            {bundle.qty}x Knee Massager{bundle.qty > 1 ? 's' : ''}
+                          </div>
+                          {bundle.qty > 1 && (
+                            <div className="text-xs text-muted-foreground">${bundle.priceEach} each</div>
+                          )}
+                          <div className="text-xs text-primary font-medium">You Saved {bundle.discount}% + Ebook</div>
                         </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="font-bold text-lg">${bundle.priceEach * bundle.qty}</div>
+                        <div className="text-xs text-muted-foreground line-through">${bundle.original}</div>
                       </div>
                     </div>
                   </button>
