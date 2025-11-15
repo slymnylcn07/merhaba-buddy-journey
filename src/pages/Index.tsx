@@ -7,13 +7,11 @@ import { useCartStore } from "@/stores/cartStore";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { Check, Flame, Zap, Activity, Battery, Shield, Truck, Star } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import heroBanner from "@/assets/hero-banner.jpg";
-import heatSlide from "@/assets/heat-therapy-slide.jpg";
-import vibrationSlide from "@/assets/vibration-slide.jpg";
-import redlightSlide from "@/assets/redlight-slide.jpg";
-import wirelessSlide from "@/assets/wireless-slide.jpg";
 import productBenefits from "@/assets/product-benefits.jpg";
 import productUsage from "@/assets/product-usage.jpg";
+import productMain from "@/assets/product-main.jpg";
+import productInner from "@/assets/product-inner.jpg";
+import { Link } from "react-router-dom";
 
 export default function Index() {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
@@ -53,15 +51,10 @@ export default function Index() {
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
-      <section className="relative h-[600px] md:h-[700px] overflow-hidden">
-        <img 
-          src={heroBanner} 
-          alt="FlexiKnee Hero" 
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 to-transparent" />
-        <div className="relative container h-full flex items-center px-4">
-          <div className="max-w-2xl text-white">
+      <section className="relative h-[600px] md:h-[700px] overflow-hidden bg-gradient-to-r from-charcoal to-charcoal/90">
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/60 to-transparent" />
+        <div className="relative container h-full grid lg:grid-cols-2 gap-8 items-center px-4">
+          <div className="max-w-2xl text-white z-10">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               End Knee Pain — Anytime, Anywhere
             </h1>
@@ -69,11 +62,20 @@ export default function Index() {
               Advanced heat, vibration & red-light therapy for instant relief and mobility support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button size="lg" className="text-lg px-8" onClick={handleAddToCart}>
-                Shop Now
+              <Button 
+                size="lg" 
+                className="text-lg px-8" 
+                asChild
+              >
+                <Link to="/products/wireless-heated-knee-massager">Shop Now</Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 bg-white hover:bg-white/90">
-                Learn More
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="text-lg px-8 bg-white/95 hover:bg-white text-charcoal border-2 border-white shadow-lg hover:shadow-xl transition-all" 
+                asChild
+              >
+                <Link to="/products/wireless-heated-knee-massager">Learn More</Link>
               </Button>
             </div>
             <div className="flex flex-wrap gap-6 text-sm">
@@ -90,6 +92,13 @@ export default function Index() {
                 <span>30-Day Money-Back Guarantee</span>
               </div>
             </div>
+          </div>
+          <div className="hidden lg:flex items-center justify-center">
+            <img 
+              src={productMain} 
+              alt="FlexiKnee Wireless Heated Knee Massager" 
+              className="w-full max-w-md drop-shadow-2xl"
+            />
           </div>
         </div>
       </section>
@@ -167,7 +176,7 @@ export default function Index() {
             <CarouselContent>
               <CarouselItem>
                 <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <img src={heatSlide} alt="Heat Therapy" className="rounded-2xl shadow-lg" />
+                  <img src={productUsage} alt="Heat Therapy in Action" className="rounded-2xl shadow-lg" />
                   <div>
                     <Badge className="mb-4">Step 1</Badge>
                     <h3 className="text-2xl font-bold mb-4">Heat Therapy</h3>
@@ -180,7 +189,7 @@ export default function Index() {
 
               <CarouselItem>
                 <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <img src={vibrationSlide} alt="Vibration Massage" className="rounded-2xl shadow-lg" />
+                  <img src={productMain} alt="Vibration Massage Technology" className="rounded-2xl shadow-lg" />
                   <div>
                     <Badge className="mb-4">Step 2</Badge>
                     <h3 className="text-2xl font-bold mb-4">Vibration Massage</h3>
@@ -193,7 +202,7 @@ export default function Index() {
 
               <CarouselItem>
                 <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <img src={redlightSlide} alt="Red-Light Therapy" className="rounded-2xl shadow-lg" />
+                  <img src={productInner} alt="Red Light Therapy LEDs" className="rounded-2xl shadow-lg" />
                   <div>
                     <Badge className="mb-4">Step 3</Badge>
                     <h3 className="text-2xl font-bold mb-4">Red-Light Therapy</h3>
@@ -206,7 +215,7 @@ export default function Index() {
 
               <CarouselItem>
                 <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <img src={wirelessSlide} alt="Wireless Battery" className="rounded-2xl shadow-lg" />
+                  <img src={productMain} alt="Wireless Battery Freedom" className="rounded-2xl shadow-lg" />
                   <div>
                     <Badge className="mb-4">Step 4</Badge>
                     <h3 className="text-2xl font-bold mb-4">Wireless Freedom</h3>
@@ -317,6 +326,42 @@ export default function Index() {
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* As Seen In Section */}
+      <section className="py-12 bg-muted/20 overflow-hidden">
+        <div className="container px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">Trusted by Wellness Communities</h2>
+            <p className="text-muted-foreground">Recommended by athletes, trainers and mobility experts.</p>
+          </div>
+          <div className="relative">
+            <div className="flex gap-12 animate-scroll">
+              {[...Array(2)].map((_, setIndex) => (
+                <div key={setIndex} className="flex gap-12 items-center">
+                  <div className="flex items-center justify-center h-16 w-32 bg-background rounded-lg border px-6">
+                    <span className="font-semibold text-muted-foreground text-sm">Health UK</span>
+                  </div>
+                  <div className="flex items-center justify-center h-16 w-32 bg-background rounded-lg border px-6">
+                    <span className="font-semibold text-muted-foreground text-sm">Wellness+</span>
+                  </div>
+                  <div className="flex items-center justify-center h-16 w-32 bg-background rounded-lg border px-6">
+                    <span className="font-semibold text-muted-foreground text-sm">FitLife Pro</span>
+                  </div>
+                  <div className="flex items-center justify-center h-16 w-32 bg-background rounded-lg border px-6">
+                    <span className="font-semibold text-muted-foreground text-sm">Active Care</span>
+                  </div>
+                  <div className="flex items-center justify-center h-16 w-32 bg-background rounded-lg border px-6">
+                    <span className="font-semibold text-muted-foreground text-sm">Joint Plus</span>
+                  </div>
+                  <div className="flex items-center justify-center h-16 w-32 bg-background rounded-lg border px-6">
+                    <span className="font-semibold text-muted-foreground text-sm">Therapy Direct</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
