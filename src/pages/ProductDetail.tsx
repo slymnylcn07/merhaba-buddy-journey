@@ -30,6 +30,7 @@ const ProductDetail = () => {
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
+  const [selectedBundle, setSelectedBundle] = useState(1);
   const addItem = useCartStore(state => state.addItem);
 
   useEffect(() => {
@@ -58,13 +59,13 @@ const ProductDetail = () => {
       variantId: variant.id,
       variantTitle: variant.title,
       price: variant.price,
-      quantity,
+      quantity: selectedBundle,
       selectedOptions: variant.selectedOptions
     };
     
     addItem(cartItem);
     toast.success("Added to cart!", {
-      description: `${quantity}x ${product.node.title}`,
+      description: `${selectedBundle}x ${product.node.title}`,
       position: "top-center",
     });
   };
@@ -95,9 +96,18 @@ const ProductDetail = () => {
   }
 
   const images = product.node.images.edges;
-  const price = parseFloat(product.node.priceRange.minVariantPrice.amount);
-  const originalPrice = price * 1.54;
-  const discount = Math.round((1 - price / originalPrice) * 100);
+  const basePrice = parseFloat(product.node.priceRange.minVariantPrice.amount);
+  
+  const bundles = [
+    { qty: 1, priceEach: 149, original: 298, discount: 50, tag: null },
+    { qty: 2, priceEach: 134.1, original: 596, discount: 55, tag: "MOST POPULAR" },
+    { qty: 3, priceEach: 128.14, original: 894, discount: 57, tag: null },
+    { qty: 4, priceEach: 119.2, original: 1192, discount: 60, tag: "BEST OFFER" },
+  ];
+  
+  const currentBundle = bundles.find(b => b.qty === selectedBundle) || bundles[0];
+  const totalPrice = currentBundle.priceEach * currentBundle.qty;
+  const discount = currentBundle.discount;
 
   return (
     <div className="min-h-screen bg-background">
@@ -187,22 +197,70 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Price Block */}
-            <div className="bg-muted/50 rounded-xl p-6 space-y-4">
-              <div className="flex items-baseline gap-3 flex-wrap">
-                <span className="text-4xl md:text-5xl font-bold text-primary">
-                  ${price.toFixed(2)}
-                </span>
-                <span className="text-2xl text-muted-foreground line-through">
-                  ${originalPrice.toFixed(2)}
-                </span>
-                <Badge className="bg-green-500 hover:bg-green-600 text-lg px-3 py-1">
-                  SAVE {discount}%
-                </Badge>
+            {/* Bundle & Save */}
+            <div className="space-y-3">
+              <h3 className="font-bold text-lg">BUNDLE & SAVE</h3>
+              <div className="space-y-3">
+                {bundles.map((bundle) => (
+                  <button
+                    key={bundle.qty}
+                    onClick={() => setSelectedBundle(bundle.qty)}
+                    className={`w-full text-left p-4 rounded-lg border-2 transition-all relative ${
+                      selectedBundle === bundle.qty
+                        ? 'border-primary bg-blue-50 dark:bg-blue-950/30'
+                        : 'border-border bg-blue-50/50 dark:bg-blue-950/10 hover:border-primary/50'
+                    }`}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className={`w-5 h-5 rounded-full border-2 flex-shrink-0 mt-0.5 flex items-center justify-center ${
+                        selectedBundle === bundle.qty
+                          ? 'border-primary bg-primary'
+                          : 'border-border'
+                      }`}>
+                        {selectedBundle === bundle.qty && (
+                          <div className="w-2 h-2 rounded-full bg-white" />
+                        )}
+                      </div>
+                      
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="font-bold text-base">
+                            {bundle.qty}x Knee Massager{bundle.qty > 1 ? 's' : ''}
+                          </span>
+                          {bundle.tag && (
+                            <Badge className={`text-xs ${
+                              bundle.tag === "MOST POPULAR" 
+                                ? "bg-orange-500 hover:bg-orange-600" 
+                                : "bg-green-500 hover:bg-green-600"
+                            }`}>
+                              {bundle.tag}
+                            </Badge>
+                          )}
+                        </div>
+                        
+                        {bundle.qty > 1 && (
+                          <Badge variant="outline" className="mb-2 bg-background">
+                            ${bundle.priceEach} each
+                          </Badge>
+                        )}
+                        
+                        <p className="text-sm font-semibold text-primary mb-2">
+                          You Saved {bundle.discount}% + Ebook
+                        </p>
+                        
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-2xl font-bold text-primary">
+                            ${(bundle.priceEach * bundle.qty).toFixed(2)}
+                          </span>
+                          <span className="text-lg text-muted-foreground line-through">
+                            ${bundle.original}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                ))}
               </div>
-              <p className="text-sm text-destructive font-semibold">
-                ⚡ Extra 10% Off When You Buy 2+
-              </p>
             </div>
 
             {/* Key Benefits */}
@@ -241,29 +299,6 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Quantity Selector */}
-            <div className="space-y-3">
-              <label className="font-semibold text-sm">Quantity:</label>
-              <div className="flex items-center gap-3">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="h-12 w-12"
-                >
-                  -
-                </Button>
-                <span className="text-xl font-semibold w-12 text-center">{quantity}</span>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => setQuantity(quantity + 1)}
-                  className="h-12 w-12"
-                >
-                  +
-                </Button>
-              </div>
-            </div>
 
             {/* CTA */}
             <Button 
@@ -272,7 +307,7 @@ const ProductDetail = () => {
               className="w-full text-lg h-14 font-bold"
             >
               <Package className="w-5 h-5 mr-2" />
-              ADD TO CART - ${(price * quantity).toFixed(2)}
+              ADD TO CART - ${totalPrice.toFixed(2)}
             </Button>
 
             {/* Trust Badges */}
@@ -509,7 +544,7 @@ const ProductDetail = () => {
                 className="text-lg px-8 h-14"
               >
                 <Package className="w-5 h-5 mr-2" />
-                Add to Cart - ${price.toFixed(2)}
+                Add to Cart - ${totalPrice.toFixed(2)}
               </Button>
             </div>
             <div className="flex flex-wrap justify-center gap-6 pt-4">
