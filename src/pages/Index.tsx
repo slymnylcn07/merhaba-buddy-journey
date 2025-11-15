@@ -1,312 +1,604 @@
-import { Header } from "@/components/Header";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { 
-  Zap, 
-  Thermometer, 
-  Waves, 
-  Radio,
-  Heart,
-  Shield,
-  Truck,
-  Check,
-  Star,
-  Clock,
-  Users,
-  Award,
-  Target,
-  TrendingUp,
-  Package
-} from "lucide-react";
 import { useEffect, useState } from "react";
-import { getProducts, ShopifyProduct } from "@/lib/shopify";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useCartStore } from "@/stores/cartStore";
-import { toast } from "sonner";
-import { Link } from "react-router-dom";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { getProducts, ShopifyProduct } from "@/lib/shopify";
+import { Check, Flame, Zap, Activity, Battery, Shield, Truck, Star } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import heroBanner from "@/assets/hero-banner.jpg";
+import heatSlide from "@/assets/heat-therapy-slide.jpg";
+import vibrationSlide from "@/assets/vibration-slide.jpg";
+import redlightSlide from "@/assets/redlight-slide.jpg";
+import wirelessSlide from "@/assets/wireless-slide.jpg";
+import productBenefits from "@/assets/product-benefits.jpg";
+import productUsage from "@/assets/product-usage.jpg";
 
-const Index = () => {
+export default function Index() {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
-  const addItem = useCartStore(state => state.addItem);
+  const addItem = useCartStore((state) => state.addItem);
 
   useEffect(() => {
-    const loadProducts = async () => {
+    const fetchProducts = async () => {
       try {
         const fetchedProducts = await getProducts(10);
         setProducts(fetchedProducts);
       } catch (error) {
-        console.error('Error loading products:', error);
+        console.error("Error fetching products:", error);
       } finally {
         setLoading(false);
       }
     };
-    loadProducts();
+    fetchProducts();
   }, []);
 
-  const handleAddToCart = (product: ShopifyProduct) => {
-    const variant = product.node.variants.edges[0].node;
-    const cartItem = {
-      product,
+  const mainProduct = products[0];
+
+  const handleAddToCart = () => {
+    if (!mainProduct) return;
+    const variant = mainProduct.node.variants.edges[0].node;
+    
+    addItem({
+      product: mainProduct,
       variantId: variant.id,
       variantTitle: variant.title,
       price: variant.price,
       quantity: 1,
-      selectedOptions: variant.selectedOptions
-    };
-    
-    addItem(cartItem);
-    toast.success("Added to cart!", {
-      description: product.node.title,
-      position: "top-center",
+      selectedOptions: variant.selectedOptions,
     });
   };
 
-  const mainProduct = products[0];
-  const price = mainProduct ? parseFloat(mainProduct.node.priceRange.minVariantPrice.amount) : 89.99;
-  const originalPrice = price * 1.54;
-
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5">
-        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25"></div>
-        <div className="container relative px-4 py-20 md:py-32">
+    <div className="min-h-screen">
+      {/* Hero Banner */}
+      <section className="relative h-[600px] md:h-[700px] overflow-hidden">
+        <img 
+          src={heroBanner} 
+          alt="FlexiKnee Hero" 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 to-transparent" />
+        <div className="relative container h-full flex items-center px-4">
+          <div className="max-w-2xl text-white">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              End Knee Pain — Anytime, Anywhere
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-white/90">
+              Advanced heat, vibration & red-light therapy for instant relief and mobility support.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <Button size="lg" className="text-lg px-8" onClick={handleAddToCart}>
+                Shop Now
+              </Button>
+              <Button size="lg" variant="outline" className="text-lg px-8 bg-white hover:bg-white/90">
+                Learn More
+              </Button>
+            </div>
+            <div className="flex flex-wrap gap-6 text-sm">
+              <div className="flex items-center gap-2">
+                <Truck className="w-5 h-5" />
+                <span>Free Shipping</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="w-5 h-5" />
+                <span>Secure Checkout</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Check className="w-5 h-5" />
+                <span>30-Day Money-Back Guarantee</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Text Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container px-4 text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Say Goodbye to Knee Pain</h2>
+          <p className="text-lg text-muted-foreground">
+            FlexiKnee™ targets inflammation, stiffness and mobility issues using heat, vibration and red-light technology — all in one smart device.
+          </p>
+        </div>
+      </section>
+
+      {/* Icon List Section */}
+      <section id="benefits" className="py-16">
+        <div className="container px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="border-2 hover:border-primary transition-all">
+              <CardContent className="pt-6 text-center">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Flame className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Heat Therapy</h3>
+                <p className="text-sm text-muted-foreground">
+                  Relieves stiffness & improves circulation
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:border-primary transition-all">
+              <CardContent className="pt-6 text-center">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Zap className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Smart Vibration</h3>
+                <p className="text-sm text-muted-foreground">
+                  Loosens tight muscles
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:border-primary transition-all">
+              <CardContent className="pt-6 text-center">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Activity className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Red-Light Technology</h3>
+                <p className="text-sm text-muted-foreground">
+                  Supports joint mobility
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:border-primary transition-all">
+              <CardContent className="pt-6 text-center">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Battery className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Wireless & Portable</h3>
+                <p className="text-sm text-muted-foreground">
+                  3000mAh battery for freedom
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Collection Focus Carousel */}
+      <section className="py-16 bg-muted/30">
+        <div className="container px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">How It Works</h2>
+          <Carousel className="max-w-5xl mx-auto">
+            <CarouselContent>
+              <CarouselItem>
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <img src={heatSlide} alt="Heat Therapy" className="rounded-2xl shadow-lg" />
+                  <div>
+                    <Badge className="mb-4">Step 1</Badge>
+                    <h3 className="text-2xl font-bold mb-4">Heat Therapy</h3>
+                    <p className="text-muted-foreground">
+                      Targeted heat therapy penetrates deep into the knee joint, relieving stiffness and improving blood circulation for faster recovery.
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+
+              <CarouselItem>
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <img src={vibrationSlide} alt="Vibration Massage" className="rounded-2xl shadow-lg" />
+                  <div>
+                    <Badge className="mb-4">Step 2</Badge>
+                    <h3 className="text-2xl font-bold mb-4">Vibration Massage</h3>
+                    <p className="text-muted-foreground">
+                      Advanced vibration technology loosens tight muscles and reduces tension around the knee area for immediate comfort.
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+
+              <CarouselItem>
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <img src={redlightSlide} alt="Red-Light Therapy" className="rounded-2xl shadow-lg" />
+                  <div>
+                    <Badge className="mb-4">Step 3</Badge>
+                    <h3 className="text-2xl font-bold mb-4">Red-Light Therapy</h3>
+                    <p className="text-muted-foreground">
+                      18 infrared LED lights support joint mobility and cellular recovery, promoting long-term knee health.
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+
+              <CarouselItem>
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <img src={wirelessSlide} alt="Wireless Battery" className="rounded-2xl shadow-lg" />
+                  <div>
+                    <Badge className="mb-4">Step 4</Badge>
+                    <h3 className="text-2xl font-bold mb-4">Wireless Freedom</h3>
+                    <p className="text-muted-foreground">
+                      3000mAh rechargeable battery lets you enjoy therapy anywhere - at home, at work, or on the go.
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16">
+        <div className="container px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Trusted by 50,000+ Customers</h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12">
+            <Card className="border-2">
+              <CardContent className="pt-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  "I felt relief in the first 10 minutes. Amazing product."
+                </p>
+                <p className="font-semibold">— John M.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2">
+              <CardContent className="pt-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  "Perfect for stiffness and mobility. I use it every evening."
+                </p>
+                <p className="font-semibold">— Sara P.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2">
+              <CardContent className="pt-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  "Love the heat + vibration combo. Worth every dollar."
+                </p>
+                <p className="font-semibold">— Brian K.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Table */}
+      <section className="py-16 bg-muted/30">
+        <div className="container px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            FlexiKnee™ vs. Other Knee Devices
+          </h2>
+          <div className="max-w-4xl mx-auto bg-card rounded-2xl shadow-lg overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-primary text-primary-foreground">
+                    <th className="p-4 text-left font-bold">Feature</th>
+                    <th className="p-4 text-center font-bold">FlexiKnee™</th>
+                    <th className="p-4 text-center font-bold">Others</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y">
+                  <tr>
+                    <td className="p-4 font-medium">Heat Levels</td>
+                    <td className="p-4 text-center text-primary font-semibold">✓ 3 Levels</td>
+                    <td className="p-4 text-center text-destructive">✗ weak heating</td>
+                  </tr>
+                  <tr className="bg-muted/20">
+                    <td className="p-4 font-medium">Vibration</td>
+                    <td className="p-4 text-center text-primary font-semibold">✓ 3 Modes</td>
+                    <td className="p-4 text-center text-destructive">✗ none</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-medium">Red-Light</td>
+                    <td className="p-4 text-center text-primary font-semibold">✓ 18 LEDs</td>
+                    <td className="p-4 text-center text-destructive">✗ none</td>
+                  </tr>
+                  <tr className="bg-muted/20">
+                    <td className="p-4 font-medium">Battery</td>
+                    <td className="p-4 text-center text-primary font-semibold">✓ 3000mAh</td>
+                    <td className="p-4 text-center text-destructive">✗ low capacity</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-medium">Comfort</td>
+                    <td className="p-4 text-center text-primary font-semibold">✓ ergonomic</td>
+                    <td className="p-4 text-center text-destructive">✗ bulky</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Product Section */}
+      <section id="features" className="py-16">
+        <div className="container px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Wireless Heated Knee Massager</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Advanced 3-in-1 therapy engineered for pain-free mobility.
+            </p>
+          </div>
+          
           {loading ? (
-            <div className="flex justify-center items-center min-h-[400px]">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">Loading products...</p>
+            </div>
+          ) : products.length === 0 ? (
+            <div className="text-center py-12 bg-muted/30 rounded-2xl">
+              <p className="text-lg font-medium mb-2">No products found</p>
+              <p className="text-muted-foreground">
+                Create a product by telling me what you want to sell and the price.
+              </p>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-              <div className="space-y-6">
-                <div className="flex flex-wrap items-center gap-2">
-                  <Badge className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
-                    <Clock className="w-3 h-3 mr-1" />
-                    LIMITED TIME: SAVE UP TO 35%
-                  </Badge>
-                  <Badge variant="secondary" className="border-primary/20">
-                    <Star className="w-3 h-3 mr-1 fill-primary text-primary" />
-                    Trusted by Thousands
-                  </Badge>
-                </div>
-                
-                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                  Say Goodbye to
-                  <span className="text-primary"> Knee Pain</span>
-                </h1>
-                
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Professional-grade wireless knee massager with red light therapy, heat treatment, and vibration massage.
-                </p>
-
-                <div className="grid grid-cols-2 gap-3 py-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Check className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-sm font-medium">Wireless</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Check className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-sm font-medium">3000mAh</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Check className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-sm font-medium">Red Light</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Check className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-sm font-medium">3 Heat Levels</span>
-                  </div>
-                </div>
-
-                {mainProduct && (
-                  <div className="space-y-4">
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-4xl font-bold text-primary">
-                        ${price.toFixed(2)}
-                      </span>
-                      <span className="text-2xl text-muted-foreground line-through">
-                        ${originalPrice.toFixed(2)}
-                      </span>
-                      <Badge className="bg-green-500 hover:bg-green-600">SAVE 35%</Badge>
-                    </div>
-                    
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <Button 
-                        size="lg" 
-                        className="text-lg px-8"
-                        onClick={() => handleAddToCart(mainProduct)}
-                      >
-                        Add to Cart - ${price.toFixed(2)}
-                      </Button>
-                      <Button 
-                        size="lg" 
-                        variant="outline"
-                        asChild
-                      >
-                        <Link to={`/product/${mainProduct.node.handle}`}>
-                          View Details
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              <div className="relative">
-                {mainProduct?.node.images.edges[0] && (
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                    <img
-                      src={mainProduct.node.images.edges[0].node.url}
-                      alt={mainProduct.node.title}
-                      className="w-full h-auto"
-                    />
-                    <div className="absolute top-4 right-4">
-                      <Badge className="bg-destructive text-lg px-4 py-2">
-                        35% OFF
-                      </Badge>
-                    </div>
-                  </div>
-                )}
-              </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {products.map((product) => {
+                const variant = product.node.variants.edges[0]?.node;
+                return (
+                  <Card 
+                    key={product.node.id} 
+                    className="group hover:shadow-xl transition-all cursor-pointer border-2 hover:border-primary"
+                    onClick={() => window.location.href = `/product/${product.node.handle}`}
+                  >
+                    <CardContent className="p-0">
+                      {product.node.images.edges[0] && (
+                        <div className="aspect-square overflow-hidden rounded-t-lg">
+                          <img
+                            src={product.node.images.edges[0].node.url}
+                            alt={product.node.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      )}
+                      <div className="p-6">
+                        <h3 className="font-bold text-lg mb-2">{product.node.title}</h3>
+                        <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                          {product.node.description}
+                        </p>
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="text-2xl font-bold text-primary">
+                            {variant?.price.currencyCode} {parseFloat(variant?.price.amount || "0").toFixed(2)}
+                          </span>
+                        </div>
+                        <Button className="w-full" size="lg">Shop Now</Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           )}
         </div>
       </section>
 
-      {/* Benefits Strip */}
-      <section className="border-y bg-muted/30 py-8">
+      {/* Image with Text - 3-in-1 Technology */}
+      <section className="py-16 bg-muted/30">
         <div className="container px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <div className="flex flex-col items-center text-center gap-2">
-              <Truck className="w-8 h-8 text-primary" />
-              <div>
-                <p className="font-semibold text-sm">Free Shipping</p>
-                <p className="text-xs text-muted-foreground">On all orders</p>
-              </div>
-            </div>
-            <div className="flex flex-col items-center text-center gap-2">
-              <Shield className="w-8 h-8 text-primary" />
-              <div>
-                <p className="font-semibold text-sm">30-Day Guarantee</p>
-                <p className="text-xs text-muted-foreground">Money back</p>
-              </div>
-            </div>
-            <div className="flex flex-col items-center text-center gap-2">
-              <Heart className="w-8 h-8 text-primary" />
-              <div>
-                <p className="font-semibold text-sm">Pain Relief</p>
-                <p className="text-xs text-muted-foreground">Proven results</p>
-              </div>
-            </div>
-            <div className="flex flex-col items-center text-center gap-2">
-              <Award className="w-8 h-8 text-primary" />
-              <div>
-                <p className="font-semibold text-sm">Premium Quality</p>
-                <p className="text-xs text-muted-foreground">Certified</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section id="features" className="py-20">
-        <div className="container px-4">
-          <div className="text-center mb-16">
-            <Badge className="mb-4">TECHNOLOGY</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              4 Therapies in <span className="text-primary">One Device</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <Card className="p-6 hover:shadow-xl transition-all">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <Thermometer className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="font-bold text-xl mb-2">Heat Therapy</h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                3 heat levels for deep tissue warming
-              </p>
-            </Card>
-
-            <Card className="p-6 hover:shadow-xl transition-all">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <Waves className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="font-bold text-xl mb-2">Vibration</h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                3 modes for muscle relaxation
-              </p>
-            </Card>
-
-            <Card className="p-6 hover:shadow-xl transition-all">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <Radio className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="font-bold text-xl mb-2">Red Light</h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                18 LED points for healing
-              </p>
-            </Card>
-
-            <Card className="p-6 hover:shadow-xl transition-all">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <Zap className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="font-bold text-xl mb-2">Wireless</h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                3000mAh portable battery
-              </p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section id="faq" className="py-20 bg-muted/30">
-        <div className="container px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <Badge className="mb-4">QUESTIONS?</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                FAQ
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                3-in-1 Pain Relief Technology
               </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Heat + Vibration + Red-Light work together to relax muscles, reduce stiffness and improve mobility.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
+                    <Check className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Targeted Heat Therapy</h4>
+                    <p className="text-sm text-muted-foreground">Penetrates deep to relieve stiffness</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
+                    <Check className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Smart Vibration</h4>
+                    <p className="text-sm text-muted-foreground">Loosens tight muscles instantly</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
+                    <Check className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Red-Light Recovery</h4>
+                    <p className="text-sm text-muted-foreground">Supports long-term joint health</p>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <img src={productBenefits} alt="Product Benefits" className="w-full h-auto" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>How long does the battery last?</AccordionTrigger>
-                <AccordionContent>
-                  2-3 hours of use. Charging takes 2-3 hours via USB-C.
+      {/* Image with Highlights */}
+      <section className="py-16">
+        <div className="container px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Smart Features</h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <img src={productUsage} alt="Product Usage" className="w-full h-auto" />
+            </div>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4 p-6 bg-muted/50 rounded-xl">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Zap className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-2">Touch Screen Panel</h4>
+                  <p className="text-muted-foreground">Easy control at your fingertips</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-6 bg-muted/50 rounded-xl">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Activity className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-2">Infrared LED Ring</h4>
+                  <p className="text-muted-foreground">18 therapeutic LEDs</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-6 bg-muted/50 rounded-xl">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-2">Adjustable Velcro Straps</h4>
+                  <p className="text-muted-foreground">Perfect fit for all knee sizes</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-6 bg-muted/50 rounded-xl">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Battery className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-2">USB-C Charging</h4>
+                  <p className="text-muted-foreground">Fast and convenient power</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Posts Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Better Knee Health Starts Here</h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <Flame className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-bold text-lg mb-3">Why Heat Therapy Works for Knee Pain</h3>
+                <p className="text-muted-foreground text-sm">
+                  Discover how targeted heat therapy can improve circulation and reduce stiffness.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <Activity className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-bold text-lg mb-3">Benefits of Red-Light Therapy</h3>
+                <p className="text-muted-foreground text-sm">
+                  Learn about the science behind infrared LEDs and joint recovery.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <Zap className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-bold text-lg mb-3">Mobility Tips for Joint Recovery</h3>
+                <p className="text-muted-foreground text-sm">
+                  Simple exercises and habits to support long-term knee health.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Sign-Up */}
+      <section className="py-16">
+        <div className="container px-4">
+          <div className="max-w-3xl mx-auto text-center bg-primary/5 rounded-2xl p-12 border-2 border-primary/20">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Join 50,000+ People Improving Their Knee Health
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Get exclusive tips, discounts and early access.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-lg border-2 border-border focus:border-primary focus:outline-none"
+              />
+              <Button size="lg" className="px-8">Subscribe</Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-16 bg-muted/30">
+        <div className="container px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="bg-card px-6 rounded-lg border-2">
+                <AccordionTrigger className="text-left font-semibold">
+                  How does FlexiKnee™ help with knee pain?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  FlexiKnee™ combines three therapeutic technologies: heat therapy improves circulation and reduces stiffness, vibration massage loosens tight muscles, and red-light therapy supports cellular recovery and joint health.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>Is it safe for daily use?</AccordionTrigger>
-                <AccordionContent>
-                  Yes, 15-30 minute sessions, 1-3 times daily.
+
+              <AccordionItem value="item-2" className="bg-card px-6 rounded-lg border-2">
+                <AccordionTrigger className="text-left font-semibold">
+                  Is it safe to use every day?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Yes, FlexiKnee™ is designed for daily use. We recommend 15-30 minute sessions, 1-2 times per day for optimal results.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>Will it fit all leg sizes?</AccordionTrigger>
-                <AccordionContent>
-                  Yes, adjustable straps fit all sizes.
+
+              <AccordionItem value="item-3" className="bg-card px-6 rounded-lg border-2">
+                <AccordionTrigger className="text-left font-semibold">
+                  How long does the battery last?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  The 3000mAh rechargeable battery provides approximately 3-5 hours of continuous use, depending on heat and vibration settings.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="bg-card px-6 rounded-lg border-2">
+                <AccordionTrigger className="text-left font-semibold">
+                  What's your return policy?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  We offer a 30-day money-back guarantee. If you're not completely satisfied, return it for a full refund, no questions asked.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="bg-card px-6 rounded-lg border-2">
+                <AccordionTrigger className="text-left font-semibold">
+                  Will it fit my knee size?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Yes! FlexiKnee™ features adjustable Velcro straps that comfortably fit all knee sizes, from petite to extra-large.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -314,48 +606,25 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t py-12">
-        <div className="container px-4">
-          <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto mb-8">
-            <div>
-              <h3 className="font-bold mb-4">KneeRelief</h3>
-              <p className="text-sm text-muted-foreground">
-                Professional knee pain relief
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Links</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>About</li>
-                <li>Contact</li>
-                <li>Shipping</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>FAQ</li>
-                <li>Returns</li>
-                <li>Warranty</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Privacy</li>
-                <li>Terms</li>
-                <li>Refunds</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 KneeRelief. All rights reserved.</p>
+      {/* Final CTA */}
+      <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
+        <div className="container px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Start Your Pain-Free Journey Today
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+            Join thousands who have found relief with FlexiKnee™
+          </p>
+          <Button size="lg" variant="secondary" className="text-lg px-12" onClick={handleAddToCart}>
+            Shop FlexiKnee™ Now
+          </Button>
+          <div className="flex justify-center gap-8 mt-8 text-sm opacity-90">
+            <span>✓ Free Shipping</span>
+            <span>✓ 30-Day Guarantee</span>
+            <span>✓ Secure Checkout</span>
           </div>
         </div>
-      </footer>
+      </section>
     </div>
   );
-};
-
-export default Index;
+}

@@ -1,6 +1,7 @@
 import { CartDrawer } from "./CartDrawer";
 import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
+import logo from "@/assets/flexiknee-logo.png";
 
 export const Header = () => {
   return (
@@ -10,7 +11,9 @@ export const Header = () => {
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu className="h-5 w-5" />
           </Button>
-          <a href="/" className="font-bold text-xl">KneeRelief</a>
+          <a href="/" className="flex items-center gap-2">
+            <img src={logo} alt="FlexiKnee™" className="h-8" />
+          </a>
         </div>
         
         <nav className="hidden md:flex items-center gap-6">
