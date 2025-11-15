@@ -205,21 +205,21 @@ const ProductDetail = () => {
                   <button
                     key={bundle.qty}
                     onClick={() => setSelectedBundle(bundle.qty)}
-                    className={`w-full text-left p-3 rounded-lg border-2 transition-all relative ${
+                    className={`w-full text-left p-2.5 rounded-lg border-2 transition-all relative ${
                       selectedBundle === bundle.qty
                         ? 'border-primary bg-sky-50 dark:bg-sky-950/20'
                         : 'border-border bg-sky-50/50 dark:bg-sky-950/10 hover:border-primary/50'
                     }`}
                   >
                     {bundle.tag && (
-                      <div className="absolute -top-2 right-3">
-                        <Badge className="bg-destructive text-destructive-foreground text-xs px-2 py-0.5">
+                      <div className="absolute -top-1.5 right-3">
+                        <Badge className="bg-destructive text-destructive-foreground text-[10px] px-1.5 py-0">
                           {bundle.tag}
                         </Badge>
                       </div>
                     )}
                     <div className="flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2.5">
                         <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
                           selectedBundle === bundle.qty ? 'border-primary' : 'border-muted-foreground'
                         }`}>
@@ -232,14 +232,14 @@ const ProductDetail = () => {
                             {bundle.qty}x Knee Massager{bundle.qty > 1 ? 's' : ''}
                           </div>
                           {bundle.qty > 1 && (
-                            <div className="text-xs text-muted-foreground">${bundle.priceEach} each</div>
+                            <div className="text-[11px] text-muted-foreground">${bundle.priceEach.toFixed(2)} each</div>
                           )}
-                          <div className="text-xs text-primary font-medium">You Saved {bundle.discount}% + Ebook</div>
+                          <div className="text-[11px] text-primary font-medium">You Saved {bundle.discount}% + Ebook</div>
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="font-bold text-lg">${bundle.priceEach * bundle.qty}</div>
-                        <div className="text-xs text-muted-foreground line-through">${bundle.original}</div>
+                        <div className="font-bold text-base">${(bundle.priceEach * bundle.qty).toFixed(2)}</div>
+                        <div className="text-[11px] text-muted-foreground line-through">${bundle.original.toFixed(2)}</div>
                       </div>
                     </div>
                   </button>
@@ -331,6 +331,50 @@ const ProductDetail = () => {
                 alt="Knee pain relief targets"
                 className="w-full h-auto"
               />
+            </div>
+          </div>
+        </section>
+
+        {/* Trusted by Wellness Communities */}
+        <section className="py-12 bg-muted/40 -mx-4 px-4 mb-12">
+          <div className="container px-8">
+            <h3 className="text-2xl font-bold text-center mb-3">Trusted by Wellness Communities</h3>
+            <p className="text-center text-muted-foreground mb-8">
+              Recommended by athletes, trainers and mobility experts.
+            </p>
+            <div className="overflow-hidden">
+              <div className="flex gap-12 items-center justify-center animate-scroll">
+                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
+                  <span className="text-lg font-semibold text-foreground/60">W</span>
+                </div>
+                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
+                  <span className="text-lg font-semibold text-foreground/60">F</span>
+                </div>
+                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
+                  <span className="text-lg font-semibold text-foreground/60">H</span>
+                </div>
+                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
+                  <span className="text-lg font-semibold text-foreground/60">M</span>
+                </div>
+                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
+                  <span className="text-lg font-semibold text-foreground/60">T</span>
+                </div>
+                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
+                  <span className="text-lg font-semibold text-foreground/60">A</span>
+                </div>
+                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
+                  <span className="text-lg font-semibold text-foreground/60">P</span>
+                </div>
+                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
+                  <span className="text-lg font-semibold text-foreground/60">R</span>
+                </div>
+                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
+                  <span className="text-lg font-semibold text-foreground/60">K</span>
+                </div>
+                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
+                  <span className="text-lg font-semibold text-foreground/60">N</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
