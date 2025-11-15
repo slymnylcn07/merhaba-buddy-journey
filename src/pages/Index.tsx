@@ -11,6 +11,8 @@ import productBenefits from "@/assets/product-benefits.jpg";
 import productUsage from "@/assets/product-usage.jpg";
 import productMain from "@/assets/product-main.jpg";
 import productInner from "@/assets/product-inner.jpg";
+import productFeatures from "@/assets/product-features.jpg";
+import heroBanner from "@/assets/hero-banner.jpg";
 import { Link } from "react-router-dom";
 
 export default function Index() {
@@ -51,7 +53,12 @@ export default function Index() {
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
-      <section className="relative h-[600px] md:h-[700px] overflow-hidden bg-gradient-to-r from-charcoal to-charcoal/90">
+      <section className="relative h-[600px] md:h-[700px] overflow-hidden">
+        <img 
+          src={heroBanner} 
+          alt="FlexiKnee Massager in use" 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/60 to-transparent" />
         <div className="relative container h-full grid lg:grid-cols-2 gap-8 items-center px-4">
           <div className="max-w-2xl text-white z-10">
@@ -92,13 +99,6 @@ export default function Index() {
                 <span>30-Day Money-Back Guarantee</span>
               </div>
             </div>
-          </div>
-          <div className="hidden lg:flex items-center justify-center">
-            <img 
-              src={productMain} 
-              alt="FlexiKnee Wireless Heated Knee Massager" 
-              className="w-full max-w-md drop-shadow-2xl"
-            />
           </div>
         </div>
       </section>
@@ -168,62 +168,91 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Collection Focus Carousel */}
+      {/* How It Works - Collection Focus Carousel */}
       <section className="py-16 bg-muted/30">
         <div className="container px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">How It Works</h2>
           <Carousel className="max-w-5xl mx-auto">
             <CarouselContent>
               <CarouselItem>
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <img src={productUsage} alt="Heat Therapy in Action" className="rounded-2xl shadow-lg" />
-                  <div>
-                    <Badge className="mb-4">Step 1</Badge>
-                    <h3 className="text-2xl font-bold mb-4">Heat Therapy</h3>
-                    <p className="text-muted-foreground">
-                      Targeted heat therapy penetrates deep into the knee joint, relieving stiffness and improving blood circulation for faster recovery.
-                    </p>
-                  </div>
-                </div>
+                <Card className="border-0 shadow-lg">
+                  <CardContent className="p-8">
+                    <div className="grid md:grid-cols-2 gap-8 items-center">
+                      <img 
+                        src={productUsage} 
+                        alt="Step 1: Strap the Device" 
+                        className="rounded-lg w-full h-auto object-cover"
+                      />
+                      <div>
+                        <h3 className="text-2xl font-bold mb-4 text-primary">Step 1: Strap the Device</h3>
+                        <p className="text-muted-foreground">
+                          Secure the FlexiKnee™ massager around your knee using the adjustable 
+                          Velcro straps for a comfortable, customized fit.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </CarouselItem>
-
               <CarouselItem>
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <img src={productMain} alt="Vibration Massage Technology" className="rounded-2xl shadow-lg" />
-                  <div>
-                    <Badge className="mb-4">Step 2</Badge>
-                    <h3 className="text-2xl font-bold mb-4">Vibration Massage</h3>
-                    <p className="text-muted-foreground">
-                      Advanced vibration technology loosens tight muscles and reduces tension around the knee area for immediate comfort.
-                    </p>
-                  </div>
-                </div>
+                <Card className="border-0 shadow-lg">
+                  <CardContent className="p-8">
+                    <div className="grid md:grid-cols-2 gap-8 items-center">
+                      <img 
+                        src={productInner} 
+                        alt="Step 2: Activate Red-Light Therapy" 
+                        className="rounded-lg w-full h-auto object-cover"
+                      />
+                      <div>
+                        <h3 className="text-2xl font-bold mb-4 text-primary">Step 2: Activate Red-Light Therapy</h3>
+                        <p className="text-muted-foreground">
+                          18 infrared LEDs penetrate deep to support joint mobility and 
+                          reduce inflammation at the cellular level.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </CarouselItem>
-
               <CarouselItem>
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <img src={productInner} alt="Red Light Therapy LEDs" className="rounded-2xl shadow-lg" />
-                  <div>
-                    <Badge className="mb-4">Step 3</Badge>
-                    <h3 className="text-2xl font-bold mb-4">Red-Light Therapy</h3>
-                    <p className="text-muted-foreground">
-                      18 infrared LED lights support joint mobility and cellular recovery, promoting long-term knee health.
-                    </p>
-                  </div>
-                </div>
+                <Card className="border-0 shadow-lg">
+                  <CardContent className="p-8">
+                    <div className="grid md:grid-cols-2 gap-8 items-center">
+                      <img 
+                        src={productFeatures} 
+                        alt="Step 3: Heat Activation" 
+                        className="rounded-lg w-full h-auto object-cover"
+                      />
+                      <div>
+                        <h3 className="text-2xl font-bold mb-4 text-primary">Step 3: Heat Activation</h3>
+                        <p className="text-muted-foreground">
+                          Choose from three heat levels to improve circulation and 
+                          relieve stiffness deep in the knee joint.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </CarouselItem>
-
               <CarouselItem>
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <img src={productMain} alt="Wireless Battery Freedom" className="rounded-2xl shadow-lg" />
-                  <div>
-                    <Badge className="mb-4">Step 4</Badge>
-                    <h3 className="text-2xl font-bold mb-4">Wireless Freedom</h3>
-                    <p className="text-muted-foreground">
-                      3000mAh rechargeable battery lets you enjoy therapy anywhere - at home, at work, or on the go.
-                    </p>
-                  </div>
-                </div>
+                <Card className="border-0 shadow-lg">
+                  <CardContent className="p-8">
+                    <div className="grid md:grid-cols-2 gap-8 items-center">
+                      <img 
+                        src={productMain} 
+                        alt="Step 4: Vibration Modes" 
+                        className="rounded-lg w-full h-auto object-cover"
+                      />
+                      <div>
+                        <h3 className="text-2xl font-bold mb-4 text-primary">Step 4: Vibration Modes</h3>
+                        <p className="text-muted-foreground">
+                          Select from three vibration modes to loosen tight muscles 
+                          and reduce tension around the knee for enhanced mobility.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </CarouselItem>
             </CarouselContent>
             <CarouselPrevious />
