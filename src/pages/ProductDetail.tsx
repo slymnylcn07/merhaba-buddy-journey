@@ -335,50 +335,6 @@ const ProductDetail = () => {
           </div>
         </section>
 
-        {/* Trusted by Wellness Communities */}
-        <section className="py-12 bg-muted/40 -mx-4 px-4 mb-12">
-          <div className="container px-8">
-            <h3 className="text-2xl font-bold text-center mb-3">Trusted by Wellness Communities</h3>
-            <p className="text-center text-muted-foreground mb-8">
-              Recommended by athletes, trainers and mobility experts.
-            </p>
-            <div className="overflow-hidden">
-              <div className="flex gap-12 items-center justify-center animate-scroll">
-                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-semibold text-foreground/60">W</span>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-semibold text-foreground/60">F</span>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-semibold text-foreground/60">H</span>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-semibold text-foreground/60">M</span>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-semibold text-foreground/60">T</span>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-semibold text-foreground/60">A</span>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-semibold text-foreground/60">P</span>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-semibold text-foreground/60">R</span>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-semibold text-foreground/60">K</span>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-semibold text-foreground/60">N</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Product in Use */}
         <section className="py-12 mb-12">
           <div className="max-w-6xl mx-auto">

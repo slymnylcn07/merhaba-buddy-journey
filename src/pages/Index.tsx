@@ -53,52 +53,29 @@ export default function Index() {
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
-      <section className="relative h-[600px] md:h-[700px] overflow-hidden">
-        <img 
-          src={heroBanner} 
-          alt="FlexiKnee Massager in use" 
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/60 to-transparent" />
-        <div className="relative container h-full grid lg:grid-cols-2 gap-8 items-center px-4">
-          <div className="max-w-2xl text-white z-10">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              End Knee Pain — Anytime, Anywhere
+      <section className="relative h-[600px] md:h-[700px] overflow-hidden bg-gradient-to-br from-background to-muted">
+        <div className="absolute inset-0">
+          <img 
+            src={heroBanner} 
+            alt="Knee pain relief concept" 
+            className="w-full h-full object-cover opacity-90"
+          />
+        </div>
+        <div className="relative container h-full flex items-center justify-end px-4">
+          <div className="max-w-xl text-right z-10 bg-background/80 backdrop-blur-sm p-8 rounded-lg">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-foreground">
+              Relieve Knee Pain Naturally
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/90">
-              Advanced heat, vibration & red-light therapy for instant relief and mobility support.
+            <p className="text-xl md:text-2xl mb-8 text-muted-foreground">
+              Heat, vibration, and red-light support for daily comfort.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button 
-                size="lg" 
-                className="text-lg px-8" 
-                asChild
-              >
-                <Link to="/products/wireless-heated-knee-massager">Shop Now</Link>
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="text-lg px-8 bg-white/95 hover:bg-white text-charcoal border-2 border-white shadow-lg hover:shadow-xl transition-all" 
-                asChild
-              >
-                <Link to="/products/wireless-heated-knee-massager">Learn More</Link>
-              </Button>
-            </div>
-            <div className="flex flex-wrap gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <Truck className="w-5 h-5" />
-                <span>Free Shipping</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5" />
-                <span>Secure Checkout</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-5 h-5" />
-                <span>30-Day Money-Back Guarantee</span>
-              </div>
-            </div>
+            <Button 
+              size="lg" 
+              className="text-lg px-8" 
+              asChild
+            >
+              <Link to="/products/wireless-heated-knee-massager">Shop Now</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -355,42 +332,6 @@ export default function Index() {
                   </tr>
                 </tbody>
               </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* As Seen In Section */}
-      <section className="py-12 bg-muted/20 overflow-hidden">
-        <div className="container px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">Trusted by Wellness Communities</h2>
-            <p className="text-muted-foreground">Recommended by athletes, trainers and mobility experts.</p>
-          </div>
-          <div className="relative">
-            <div className="flex gap-12 animate-scroll">
-              {[...Array(2)].map((_, setIndex) => (
-                <div key={setIndex} className="flex gap-12 items-center">
-                  <div className="flex items-center justify-center h-16 w-32 bg-background rounded-lg border px-6">
-                    <span className="font-semibold text-muted-foreground text-sm">Health UK</span>
-                  </div>
-                  <div className="flex items-center justify-center h-16 w-32 bg-background rounded-lg border px-6">
-                    <span className="font-semibold text-muted-foreground text-sm">Wellness+</span>
-                  </div>
-                  <div className="flex items-center justify-center h-16 w-32 bg-background rounded-lg border px-6">
-                    <span className="font-semibold text-muted-foreground text-sm">FitLife Pro</span>
-                  </div>
-                  <div className="flex items-center justify-center h-16 w-32 bg-background rounded-lg border px-6">
-                    <span className="font-semibold text-muted-foreground text-sm">Active Care</span>
-                  </div>
-                  <div className="flex items-center justify-center h-16 w-32 bg-background rounded-lg border px-6">
-                    <span className="font-semibold text-muted-foreground text-sm">Joint Plus</span>
-                  </div>
-                  <div className="flex items-center justify-center h-16 w-32 bg-background rounded-lg border px-6">
-                    <span className="font-semibold text-muted-foreground text-sm">Therapy Direct</span>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
