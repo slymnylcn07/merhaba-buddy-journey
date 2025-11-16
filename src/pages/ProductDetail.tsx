@@ -37,6 +37,9 @@ const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedBundle, setSelectedBundle] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [showAllReviews, setShowAllReviews] = useState(false);
+  const reviewsPerPage = 10;
   const addItem = useCartStore(state => state.addItem);
 
   useEffect(() => {
@@ -112,6 +115,65 @@ const ProductDetail = () => {
   ];
   
   const currentBundle = bundles.find(b => b.qty === selectedBundle) || bundles[0];
+
+  // All reviews with dates (most recent first)
+  const allReviews = [
+    { name: "Emma W.", rating: 5, text: "This is the best investment I've made for my knee health. The heat therapy combined with vibration is incredibly soothing.", date: "2025-10-15" },
+    { name: "James P.", rating: 5, text: "After just one week, I noticed a significant reduction in my chronic knee pain. The wireless design is perfect!", date: "2025-10-14" },
+    { name: "Lisa M.", rating: 4, text: "Great product overall. The heat levels are perfect and it's very comfortable to wear. Battery could last a bit longer though.", date: "2025-10-13" },
+    { name: "Robert K.", rating: 5, text: "My arthritis pain has improved dramatically. I use it twice daily and the results are amazing.", date: "2025-10-12" },
+    { name: "Amanda S.", rating: 5, text: "So easy to use and the relief is instant! Love that it's wireless so I can move around.", date: "2025-10-11" },
+    { name: "Chris D.", rating: 4, text: "Works well for post-workout recovery. The red light feature is a nice bonus. Would recommend!", date: "2025-10-10" },
+    { name: "Michelle T.", rating: 5, text: "I've tried many knee massagers and this is by far the best. The quality is exceptional.", date: "2025-10-09" },
+    { name: "David H.", rating: 5, text: "Perfect for my elderly mother. Easy controls and she says it helps her knee pain tremendously.", date: "2025-10-08" },
+    { name: "Jennifer B.", rating: 5, text: "The adjustable heat settings are great. I can customize it based on how I'm feeling each day.", date: "2025-10-07" },
+    { name: "Thomas R.", rating: 5, text: "After knee surgery, this has been essential for my recovery. Highly recommend to anyone post-op.", date: "2025-10-06" },
+    { name: "Sarah M.", rating: 5, text: "After years of knee pain from running, this massager has been a game-changer. The heat and vibration combination provides instant relief.", date: "2025-10-05" },
+    { name: "Michael R.", rating: 5, text: "I was skeptical at first, but FlexiKnee™ has exceeded my expectations. The red light therapy feature is incredible.", date: "2025-10-04" },
+    { name: "Jennifer L.", rating: 5, text: "Love how portable this is! I can use it while watching TV or even at work. The wireless design and long battery life make it so convenient.", date: "2025-10-03" },
+    { name: "David K.", rating: 5, text: "As a construction worker, my knees take a beating daily. This massager helps me recover faster and keeps me pain-free.", date: "2025-10-02" },
+    { name: "Patricia H.", rating: 5, text: "I bought one for myself and loved it so much I ordered two more for my parents. The adjustable straps fit comfortably.", date: "2025-10-01" },
+    { name: "Robert T.", rating: 5, text: "After knee surgery, my physical therapist recommended heat therapy. FlexiKnee™ has been perfect for my recovery.", date: "2025-09-30" },
+    { name: "Karen G.", rating: 5, text: "The vibration massage is so relaxing. I use it every evening and sleep so much better now.", date: "2025-09-29" },
+    { name: "Daniel F.", rating: 5, text: "Great value for the price. Works better than my expensive physical therapy sessions!", date: "2025-09-28" },
+    { name: "Nancy L.", rating: 5, text: "My doctor was impressed with my progress. This device really helps with inflammation and stiffness.", date: "2025-09-27" },
+    { name: "Brian C.", rating: 5, text: "I use it before and after my gym sessions. It helps prevent soreness and keeps my knees healthy.", date: "2025-09-26" },
+    { name: "Rachel A.", rating: 5, text: "The red light therapy is amazing! I can feel the warmth penetrating deep into my knee joint.", date: "2025-09-25" },
+    { name: "Steven W.", rating: 5, text: "Finally found something that actually works for my knee pain. Worth every penny!", date: "2025-09-24" },
+    { name: "Linda P.", rating: 5, text: "Very comfortable to wear and the controls are intuitive. My husband wants one now too!", date: "2025-09-23" },
+    { name: "George M.", rating: 5, text: "Excellent for arthritis pain. The heat settings are perfect and it's so easy to use.", date: "2025-09-22" },
+    { name: "Carol S.", rating: 5, text: "I'm a nurse on my feet all day. This massager is a lifesaver for my tired, aching knees.", date: "2025-09-21" },
+    { name: "Mark J.", rating: 5, text: "The build quality is impressive. Feels premium and durable. Great investment!", date: "2025-09-20" },
+    { name: "Susan E.", rating: 5, text: "Helps so much with my osteoarthritis. I wish I had found this product sooner!", date: "2025-09-19" },
+    { name: "Kevin B.", rating: 5, text: "Perfect for post-marathon recovery. My knees feel rejuvenated after each session.", date: "2025-09-18" },
+    { name: "Diane R.", rating: 5, text: "My physical therapist recommended this and I'm so glad she did. It's been wonderful for my recovery.", date: "2025-09-17" },
+    { name: "Paul N.", rating: 5, text: "The battery life is impressive. I can use it for several sessions before needing to recharge.", date: "2025-09-16" },
+    { name: "Helen K.", rating: 5, text: "So much better than ice packs or heating pads. This actually targets the pain effectively.", date: "2025-09-15" },
+    { name: "Richard L.", rating: 5, text: "Great for chronic pain management. I've reduced my pain medication since using this.", date: "2025-09-14" },
+    { name: "Maria G.", rating: 5, text: "The combination of heat, vibration, and red light is perfect. I feel relief within minutes.", date: "2025-09-13" },
+    { name: "Joseph D.", rating: 5, text: "Very well made product. The straps are comfortable and it stays in place during use.", date: "2025-09-12" },
+    { name: "Barbara H.", rating: 5, text: "I use it while reading or watching TV. It's so convenient and really works!", date: "2025-09-11" },
+    { name: "Frank W.", rating: 5, text: "Best knee massager I've ever used. The wireless feature makes it so much more practical.", date: "2025-09-10" },
+    { name: "Dorothy M.", rating: 5, text: "Helps with my knee stiffness every morning. I can move around so much easier now.", date: "2025-09-09" },
+    { name: "Anthony S.", rating: 5, text: "The heat penetrates deeply and the vibration is just right. Not too strong, not too weak.", date: "2025-09-08" },
+    { name: "Betty T.", rating: 5, text: "I'm very satisfied with this purchase. It's exactly what I needed for my knee problems.", date: "2025-09-07" },
+    { name: "Charles R.", rating: 5, text: "The red light therapy feature sets this apart from other massagers. Really effective!", date: "2025-09-06" },
+    { name: "Margaret F.", rating: 5, text: "Easy to clean and maintain. The quality is outstanding for the price.", date: "2025-09-05" },
+    { name: "William C.", rating: 5, text: "I've recommended this to all my friends with knee pain. It's that good!", date: "2025-09-04" },
+    { name: "Elizabeth B.", rating: 5, text: "The adjustable settings let me customize the therapy exactly how I need it.", date: "2025-09-03" },
+    { name: "Jason V.", rating: 5, text: "Perfect for athletes. Helps with recovery and prevents injury. Love it!", date: "2025-09-02" },
+    { name: "Ruth L.", rating: 5, text: "My knee feels so much better after using this daily. The pain has decreased significantly.", date: "2025-09-01" },
+    { name: "Gary P.", rating: 5, text: "Great product! The heat therapy is so soothing and helps me relax after a long day.", date: "2025-08-31" },
+    { name: "Sharon K.", rating: 5, text: "I love how portable it is. I take it with me when traveling and it's perfect!", date: "2025-08-30" },
+    { name: "Raymond H.", rating: 5, text: "The vibration massage combined with heat is incredibly therapeutic. Highly recommend!", date: "2025-08-29" },
+    { name: "Cynthia D.", rating: 5, text: "This has made such a difference in my daily life. I can walk without pain now!", date: "2025-08-28" },
+    { name: "Gregory M.", rating: 5, text: "Excellent customer service and an even better product. Very happy with my purchase!", date: "2025-08-27" },
+  ];
+
+  const totalPages = Math.ceil(allReviews.length / reviewsPerPage);
+  const displayedReviews = showAllReviews 
+    ? allReviews.slice((currentPage - 1) * reviewsPerPage, currentPage * reviewsPerPage)
+    : allReviews.slice(0, 6);
   const totalPrice = currentBundle.priceEach * currentBundle.qty;
   const discount = currentBundle.discount;
 
@@ -183,11 +245,12 @@ const ProductDetail = () => {
               className="flex flex-wrap items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"
             >
               <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
+                {[...Array(4)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                 ))}
+                <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" style={{ clipPath: 'inset(0 30% 0 0)' }} />
               </div>
-              <span className="text-sm font-semibold">4.9 (2,137 Reviews)</span>
+              <span className="text-sm font-semibold">4.7 (1,128 Reviews)</span>
               <Badge variant="secondary" className="bg-green-500/10 text-green-700 dark:text-green-400 border-green-500/20">
                 Happy Customers
               </Badge>
@@ -551,142 +614,81 @@ const ProductDetail = () => {
               </h2>
               <div className="flex items-center justify-center gap-2 mb-2">
                 <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
+                  {[...Array(4)].map((_, i) => (
                     <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
                   ))}
+                  <Star className="w-6 h-6 fill-yellow-400 text-yellow-400" style={{ clipPath: 'inset(0 30% 0 0)' }} />
                 </div>
-                <span className="text-xl font-bold">4.9 out of 5</span>
+                <span className="text-xl font-bold">4.7 out of 5</span>
               </div>
-              <p className="text-muted-foreground">Based on 2,137 reviews</p>
+              <p className="text-muted-foreground">Based on 1,128 reviews</p>
             </div>
+
 
             <div className="space-y-6">
-              {/* Review 1 */}
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                          ))}
+              {displayedReviews.map((review, idx) => (
+                <Card key={idx}>
+                  <CardContent className="pt-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="flex gap-1">
+                            {[...Array(review.rating)].map((_, i) => (
+                              <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                            ))}
+                          </div>
+                          <span className="font-semibold">{review.name}</span>
+                          <span className="text-sm text-muted-foreground">
+                            {new Date(review.date).toLocaleDateString('en-US', { 
+                              year: 'numeric', 
+                              month: 'long', 
+                              day: 'numeric' 
+                            })}
+                          </span>
                         </div>
-                        <span className="font-semibold">Sarah M.</span>
+                        <p className="text-muted-foreground">"{review.text}"</p>
                       </div>
-                      <p className="text-muted-foreground">
-                        "After years of knee pain from running, this massager has been a game-changer. The heat and vibration combination provides instant relief. I use it every evening and my mornings are so much better now!"
-                      </p>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Review 2 */}
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                          ))}
-                        </div>
-                        <span className="font-semibold">Michael R.</span>
-                      </div>
-                      <p className="text-muted-foreground">
-                        "I was skeptical at first, but FlexiKnee™ has exceeded my expectations. The red light therapy feature is incredible. My arthritis pain has significantly decreased after just 2 weeks of daily use."
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Review 3 */}
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                          ))}
-                        </div>
-                        <span className="font-semibold">Jennifer L.</span>
-                      </div>
-                      <p className="text-muted-foreground">
-                        "Love how portable this is! I can use it while watching TV or even at work. The wireless design and long battery life make it so convenient. Worth every penny!"
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Review 4 */}
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                          ))}
-                        </div>
-                        <span className="font-semibold">David K.</span>
-                      </div>
-                      <p className="text-muted-foreground">
-                        "As a construction worker, my knees take a beating daily. This massager helps me recover faster and keeps me pain-free. The three heat levels are perfect for customizing the therapy."
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Review 5 */}
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                          ))}
-                        </div>
-                        <span className="font-semibold">Patricia H.</span>
-                      </div>
-                      <p className="text-muted-foreground">
-                        "I bought one for myself and loved it so much I ordered two more for my parents. The adjustable straps fit comfortably and the controls are easy to use. Highly recommend!"
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Review 6 */}
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                          ))}
-                        </div>
-                        <span className="font-semibold">Robert T.</span>
-                      </div>
-                      <p className="text-muted-foreground">
-                        "After knee surgery, my physical therapist recommended heat therapy. FlexiKnee™ has been perfect for my recovery. The combination of heat, vibration, and red light has really helped with stiffness and mobility."
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
+
+            {!showAllReviews && allReviews.length > 6 && (
+              <div className="mt-8 text-center">
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  onClick={() => setShowAllReviews(true)}
+                >
+                  Show All {allReviews.length} Reviews
+                </Button>
+              </div>
+            )}
+
+            {showAllReviews && (
+              <div className="mt-8 flex justify-center gap-2">
+                <Button
+                  variant="outline"
+                  onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                  disabled={currentPage === 1}
+                >
+                  Previous
+                </Button>
+                <div className="flex items-center gap-2 px-4">
+                  <span className="text-sm text-muted-foreground">
+                    Page {currentPage} of {totalPages}
+                  </span>
+                </div>
+                <Button
+                  variant="outline"
+                  onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                  disabled={currentPage === totalPages}
+                >
+                  Next
+                </Button>
+              </div>
+            )}
           </div>
         </section>
 
