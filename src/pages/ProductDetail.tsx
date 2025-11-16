@@ -377,7 +377,7 @@ const ProductDetail = () => {
             
             <div className="rounded-2xl overflow-hidden bg-background">
               <img
-                src={productMain}
+                src={productControl}
                 alt="Product features"
                 className="w-full h-auto"
               />
@@ -439,7 +439,7 @@ const ProductDetail = () => {
             
             <div className="rounded-2xl overflow-hidden bg-background">
               <img
-                src={productControl}
+                src={productMain}
                 alt="Product specifications"
                 className="w-full h-auto"
               />
