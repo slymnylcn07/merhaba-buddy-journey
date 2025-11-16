@@ -53,32 +53,15 @@ export default function Index() {
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
-      <section className="relative h-[600px] md:h-[700px] overflow-hidden bg-gradient-to-br from-background to-muted">
-        <div className="absolute inset-0">
+      <Link to="/product/wireless-heated-knee-massager" className="block">
+        <section className="relative h-[600px] md:h-[700px] overflow-hidden bg-gradient-to-br from-background to-muted cursor-pointer hover:opacity-95 transition-opacity">
           <img 
             src={heroBanner} 
-            alt="Knee pain relief concept" 
-            className="w-full h-full object-cover opacity-90"
+            alt="Advanced Knee Therapy" 
+            className="w-full h-full object-contain"
           />
-        </div>
-        <div className="relative container h-full flex items-center justify-end px-4">
-          <div className="max-w-xl text-right z-10 bg-background/80 backdrop-blur-sm p-8 rounded-lg">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-foreground">
-              Relieve Knee Pain Naturally
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-muted-foreground">
-              Heat, vibration, and red-light support for daily comfort.
-            </p>
-            <Button 
-              size="lg" 
-              className="text-lg px-8" 
-              asChild
-            >
-              <Link to="/products/wireless-heated-knee-massager">Shop Now</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+        </section>
+      </Link>
 
       {/* Feature Text Section */}
       <section className="py-16 bg-muted/30">
