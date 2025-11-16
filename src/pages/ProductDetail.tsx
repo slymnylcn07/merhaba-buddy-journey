@@ -23,6 +23,7 @@ import productTemperature from "@/assets/product-temperature.jpg";
 import productPainRelief from "@/assets/product-pain-relief.jpg";
 import productControl from "@/assets/product-control.jpg";
 import productVibration from "@/assets/product-vibration.jpg";
+import productSpecs from "@/assets/product-specs.jpg";
 
 const ProductDetail = () => {
   const { handle } = useParams();
@@ -439,7 +440,7 @@ const ProductDetail = () => {
             
             <div className="rounded-2xl overflow-hidden bg-background">
               <img
-                src={productMain}
+                src={productSpecs}
                 alt="Product specifications"
                 className="w-full h-auto"
               />
