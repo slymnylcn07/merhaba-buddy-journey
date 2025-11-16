@@ -54,11 +54,11 @@ export default function Index() {
     <div className="min-h-screen">
       {/* Hero Banner */}
       <Link to="/product/wireless-heated-knee-massager" className="block">
-        <section className="relative h-[600px] md:h-[700px] overflow-hidden bg-gradient-to-br from-background to-muted cursor-pointer hover:opacity-95 transition-opacity">
+        <section className="relative w-full overflow-hidden cursor-pointer hover:opacity-95 transition-opacity">
           <img 
             src={heroBanner} 
-            alt="Advanced Knee Therapy" 
-            className="w-full h-full object-contain"
+            alt="FlexiKnee Smart Heated Knee Massager" 
+            className="w-full h-auto object-cover"
           />
         </section>
       </Link>
@@ -139,7 +139,7 @@ export default function Index() {
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                       <img 
-                        src={productUsage} 
+                        src={productFeatures} 
                         alt="Step 1: Strap the Device" 
                         className="rounded-lg w-full h-auto object-cover"
                       />
@@ -179,7 +179,7 @@ export default function Index() {
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                       <img 
-                        src={productFeatures} 
+                        src={productUsage} 
                         alt="Step 3: Heat Activation" 
                         className="rounded-lg w-full h-auto object-cover"
                       />
