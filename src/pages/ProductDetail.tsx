@@ -26,6 +26,8 @@ import productPainRelief from "@/assets/product-pain-relief.jpg";
 import productControl from "@/assets/product-control.jpg";
 import productVibration from "@/assets/product-vibration.jpg";
 import productSpecs from "@/assets/product-specs.jpg";
+import giftEbookIcon from "@/assets/gift-ebook-icon.png";
+import giftShippingIcon from "@/assets/gift-shipping-icon.png";
 
 const ProductDetail = () => {
   const { handle } = useParams();
@@ -285,32 +287,32 @@ const ProductDetail = () => {
               <h3 className="font-bold text-center text-sm tracking-wide">
                 FREE GIFTS WITH YOUR FIRST ORDER
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Gift 1 - eBook */}
-                <div className="relative p-4 border-2 border-dashed border-primary/40 rounded-lg bg-background/50 hover:bg-primary/5 transition-colors cursor-pointer">
+                <div className="relative p-5 border-2 border-dashed border-primary/40 rounded-[12px] bg-[#FFF7E6] hover:bg-[#FFF3D6] transition-all cursor-pointer shadow-sm hover:shadow-md">
                   <div className="absolute -top-2.5 left-1/2 -translate-x-1/2">
                     <Badge className="bg-primary text-primary-foreground text-xs px-2 py-0.5 font-bold">
                       FREE $10
                     </Badge>
                   </div>
-                  <div className="flex flex-col items-center text-center gap-2 pt-2">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <BookOpen className="w-6 h-6 text-primary" />
+                  <div className="flex flex-col items-center text-center gap-3 pt-2">
+                    <div className="w-20 h-20 flex items-center justify-center">
+                      <img src={giftEbookIcon} alt="eBook Guide" className="w-full h-full object-contain" />
                     </div>
                     <p className="text-sm font-medium">E-Guide: Knee Care & Mobility Tips</p>
                   </div>
                 </div>
 
                 {/* Gift 2 - Shipping */}
-                <div className="relative p-4 border-2 border-dashed border-primary/40 rounded-lg bg-background/50 hover:bg-primary/5 transition-colors cursor-pointer">
+                <div className="relative p-5 border-2 border-dashed border-primary/40 rounded-[12px] bg-[#FFF7E6] hover:bg-[#FFF3D6] transition-all cursor-pointer shadow-sm hover:shadow-md">
                   <div className="absolute -top-2.5 left-1/2 -translate-x-1/2">
                     <Badge className="bg-primary text-primary-foreground text-xs px-2 py-0.5 font-bold">
                       FREE $6
                     </Badge>
                   </div>
-                  <div className="flex flex-col items-center text-center gap-2 pt-2">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Box className="w-6 h-6 text-primary" />
+                  <div className="flex flex-col items-center text-center gap-3 pt-2">
+                    <div className="w-20 h-20 flex items-center justify-center">
+                      <img src={giftShippingIcon} alt="Free Shipping" className="w-full h-full object-contain" />
                     </div>
                     <p className="text-sm font-medium">Free Priority Shipping Upgrade</p>
                   </div>
