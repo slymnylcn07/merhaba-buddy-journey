@@ -13,6 +13,7 @@ import productMain from "@/assets/product-main.jpg";
 import productVibration from "@/assets/product-vibration.jpg";
 import productHowItWorks from "@/assets/product-how-it-works.jpg";
 import laserTherapy from "@/assets/laser-therapy.png";
+import heatActivation from "@/assets/heat-activation.jpg";
 import heroBanner from "@/assets/hero-banner.jpg";
 import { Link } from "react-router-dom";
 
@@ -180,7 +181,7 @@ export default function Index() {
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                       <img 
-                        src={productMain} 
+                        src={heatActivation} 
                         alt="Step 3: Heat Activation"
                         className="rounded-lg w-full h-auto object-cover"
                       />
