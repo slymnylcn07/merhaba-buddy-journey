@@ -12,6 +12,7 @@ import productTemperature from "@/assets/product-temperature.jpg";
 import productMain from "@/assets/product-main.jpg";
 import productVibration from "@/assets/product-vibration.jpg";
 import productHowItWorks from "@/assets/product-how-it-works.jpg";
+import laserTherapy from "@/assets/laser-therapy.png";
 import heroBanner from "@/assets/hero-banner.jpg";
 import { Link } from "react-router-dom";
 
@@ -424,7 +425,7 @@ export default function Index() {
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src={productPainRelief} alt="Product Benefits" className="w-full h-auto" />
+              <img src={laserTherapy} alt="Laser Irradiation Technology" className="w-full h-auto" />
             </div>
           </div>
         </div>
