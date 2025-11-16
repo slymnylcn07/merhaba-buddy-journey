@@ -116,7 +116,7 @@ const ProductDetail = () => {
       {/* Scarcity Banner */}
       <div className="bg-destructive text-destructive-foreground py-3 sticky top-0 z-40">
         <div className="container px-4 text-center">
-          <p className="font-semibold text-sm md:text-base">🔥 LIMITED TIME OFFER - SAVE {discount}% TODAY ONLY!</p>
+          <p className="font-semibold text-sm md:text-base">🔥 LIMITED TIME OFFER — 50% OFF TODAY ONLY</p>
         </div>
       </div>
 
@@ -185,7 +185,7 @@ const ProductDetail = () => {
             </div>
 
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-3">{product.node.title}</h1>
+              <h1 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#D70000' }}>FlexiKnee™ Smart Heated Knee Massager</h1>
               <div className="flex flex-wrap items-center gap-2 mb-4">
                 <Badge className="bg-primary/10 text-primary border-primary/20">
                   #1 Best-Selling
@@ -194,6 +194,22 @@ const ProductDetail = () => {
                   <Clock className="w-3 h-3 mr-1" />
                   2,500+ sold this week
                 </Badge>
+              </div>
+            </div>
+
+            {/* Key Benefits - Above Bundle */}
+            <div className="space-y-3 mb-4">
+              <div className="flex items-start gap-2">
+                <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-sm">Relieves knee pain with heat + red light + vibration</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-sm">Easy 3-level control for personalized comfort</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-sm">Wireless, portable design for use anywhere</p>
               </div>
             </div>
 
@@ -244,42 +260,6 @@ const ProductDetail = () => {
                     </div>
                   </button>
                 ))}
-              </div>
-            </div>
-
-            {/* Key Benefits */}
-            <div className="grid grid-cols-2 gap-3">
-              <div className="flex items-start gap-2">
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Check className="w-4 h-4 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold text-sm">Instant Pain Relief</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Check className="w-4 h-4 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold text-sm">Heat + Vibration + Red Light</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Check className="w-4 h-4 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold text-sm">3000mAh Wireless Battery</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Check className="w-4 h-4 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold text-sm">Helps Circulation</p>
-                </div>
               </div>
             </div>
 
