@@ -7,11 +7,11 @@ import { useCartStore } from "@/stores/cartStore";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { Check, Flame, Zap, Activity, Battery, Shield, Truck, Star } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import productBenefits from "@/assets/product-benefits.jpg";
-import productUsage from "@/assets/product-usage.jpg";
+import productPainRelief from "@/assets/product-pain-relief.jpg";
+import productTemperature from "@/assets/product-temperature.jpg";
 import productMain from "@/assets/product-main.jpg";
-import productInner from "@/assets/product-inner.jpg";
-import productFeatures from "@/assets/product-features.jpg";
+import productVibration from "@/assets/product-vibration.jpg";
+import productHowItWorks from "@/assets/product-how-it-works.jpg";
 import heroBanner from "@/assets/hero-banner.jpg";
 import { Link } from "react-router-dom";
 
@@ -139,8 +139,8 @@ export default function Index() {
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                       <img 
-                        src={productFeatures} 
-                        alt="Step 1: Strap the Device" 
+                        src={productHowItWorks} 
+                        alt="Step 1: Strap the Device"
                         className="rounded-lg w-full h-auto object-cover"
                       />
                       <div>
@@ -159,8 +159,8 @@ export default function Index() {
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                       <img 
-                        src={productInner} 
-                        alt="Step 2: Activate Red-Light Therapy" 
+                        src={productTemperature} 
+                        alt="Step 2: Activate Red-Light Therapy"
                         className="rounded-lg w-full h-auto object-cover"
                       />
                       <div>
@@ -179,8 +179,8 @@ export default function Index() {
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                       <img 
-                        src={productUsage} 
-                        alt="Step 3: Heat Activation" 
+                        src={productMain} 
+                        alt="Step 3: Heat Activation"
                         className="rounded-lg w-full h-auto object-cover"
                       />
                       <div>
@@ -424,7 +424,7 @@ export default function Index() {
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src={productBenefits} alt="Product Benefits" className="w-full h-auto" />
+              <img src={productPainRelief} alt="Product Benefits" className="w-full h-auto" />
             </div>
           </div>
         </div>
@@ -436,7 +436,7 @@ export default function Index() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Smart Features</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src={productUsage} alt="Product Usage" className="w-full h-auto" />
+              <img src={productVibration} alt="Product Usage" className="w-full h-auto" />
             </div>
             <div className="space-y-6">
               <div className="flex items-start gap-4 p-6 bg-muted/50 rounded-xl">
