@@ -28,6 +28,7 @@ import productVibration from "@/assets/product-vibration.jpg";
 import productSpecs from "@/assets/product-specs.jpg";
 import giftEbookIcon from "@/assets/gift-ebook-icon.png";
 import giftShippingIcon from "@/assets/gift-shipping-icon.png";
+import { VideoReviews } from "@/components/VideoReviews";
 
 const ProductDetail = () => {
   const { handle } = useParams();
@@ -337,6 +338,9 @@ const ProductDetail = () => {
             </div>
           </div>
         </div>
+
+        {/* Customer Video Reviews */}
+        <VideoReviews />
 
         {/* Pain Points Section */}
         <section className="py-12 bg-muted/30 -mx-4 px-4 mb-12">
