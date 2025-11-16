@@ -18,11 +18,11 @@ import {
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import productMain from "@/assets/product-main.jpg";
-import productBenefits from "@/assets/product-benefits.jpg";
-import productSpecs from "@/assets/product-specs.jpg";
-import productInner from "@/assets/product-inner.jpg";
-import productFeatures from "@/assets/product-features.jpg";
-import productUsage from "@/assets/product-usage.jpg";
+import productHowItWorks from "@/assets/product-how-it-works.jpg";
+import productTemperature from "@/assets/product-temperature.jpg";
+import productPainRelief from "@/assets/product-pain-relief.jpg";
+import productControl from "@/assets/product-control.jpg";
+import productVibration from "@/assets/product-vibration.jpg";
 
 const ProductDetail = () => {
   const { handle } = useParams();
@@ -310,7 +310,7 @@ const ProductDetail = () => {
             
             <div className="rounded-2xl overflow-hidden">
               <img
-                src={productBenefits}
+                src={productPainRelief}
                 alt="Knee pain relief targets"
                 className="w-full h-auto"
               />
@@ -324,7 +324,7 @@ const ProductDetail = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src={productFeatures}
+                  src={productHowItWorks}
                   alt="Product in use"
                   className="w-full h-auto"
                 />
@@ -377,7 +377,7 @@ const ProductDetail = () => {
             
             <div className="rounded-2xl overflow-hidden bg-background">
               <img
-                src={productUsage}
+                src={productMain}
                 alt="Product features"
                 className="w-full h-auto"
               />
@@ -418,7 +418,7 @@ const ProductDetail = () => {
               </div>
               <div className="rounded-2xl overflow-hidden order-1 md:order-2">
                 <img
-                  src={productInner}
+                  src={productVibration}
                   alt="Red light technology"
                   className="w-full h-auto"
                 />
@@ -439,7 +439,7 @@ const ProductDetail = () => {
             
             <div className="rounded-2xl overflow-hidden bg-background">
               <img
-                src={productSpecs}
+                src={productControl}
                 alt="Product specifications"
                 className="w-full h-auto"
               />
