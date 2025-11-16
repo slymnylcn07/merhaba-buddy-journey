@@ -4,7 +4,7 @@ import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 import { 
@@ -172,20 +172,23 @@ const ProductDetail = () => {
           {/* Product Info */}
           <div className="space-y-6">
             {/* Rating & Social Proof */}
-            <div className="flex flex-wrap items-center gap-3">
+            <button 
+              onClick={() => document.getElementById('reviews-section')?.scrollIntoView({ behavior: 'smooth' })}
+              className="flex flex-wrap items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"
+            >
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
               <span className="text-sm font-semibold">4.9 (2,137 Reviews)</span>
               <Badge variant="secondary" className="bg-green-500/10 text-green-700 dark:text-green-400 border-green-500/20">
                 Happy Customers
               </Badge>
-            </div>
+            </button>
 
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#D70000' }}>FlexiKnee™ Smart Heated Knee Massager</h1>
+              <h1 className="text-3xl md:text-4xl font-bold mb-3 text-[#111111] dark:text-white">FlexiKnee™ Smart Heated Knee Massager</h1>
               <div className="flex flex-wrap items-center gap-2 mb-4">
                 <Badge className="bg-primary/10 text-primary border-primary/20">
                   #1 Best-Selling
@@ -321,7 +324,7 @@ const ProductDetail = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src={productUsage}
+                  src={productFeatures}
                   alt="Product in use"
                   className="w-full h-auto"
                 />
@@ -374,7 +377,7 @@ const ProductDetail = () => {
             
             <div className="rounded-2xl overflow-hidden bg-background">
               <img
-                src={productFeatures}
+                src={productUsage}
                 alt="Product features"
                 className="w-full h-auto"
               />
@@ -488,6 +491,155 @@ const ProductDetail = () => {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
+          </div>
+        </section>
+
+        {/* Customer Reviews Section */}
+        <section id="reviews-section" className="py-12 mb-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge className="mb-4">CUSTOMER REVIEWS</Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                What Our <span className="text-primary">Customers Say</span>
+              </h2>
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <span className="text-xl font-bold">4.9 out of 5</span>
+              </div>
+              <p className="text-muted-foreground">Based on 2,137 reviews</p>
+            </div>
+
+            <div className="space-y-6">
+              {/* Review 1 */}
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                        <span className="font-semibold">Sarah M.</span>
+                      </div>
+                      <p className="text-muted-foreground">
+                        "After years of knee pain from running, this massager has been a game-changer. The heat and vibration combination provides instant relief. I use it every evening and my mornings are so much better now!"
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Review 2 */}
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                        <span className="font-semibold">Michael R.</span>
+                      </div>
+                      <p className="text-muted-foreground">
+                        "I was skeptical at first, but FlexiKnee™ has exceeded my expectations. The red light therapy feature is incredible. My arthritis pain has significantly decreased after just 2 weeks of daily use."
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Review 3 */}
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                        <span className="font-semibold">Jennifer L.</span>
+                      </div>
+                      <p className="text-muted-foreground">
+                        "Love how portable this is! I can use it while watching TV or even at work. The wireless design and long battery life make it so convenient. Worth every penny!"
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Review 4 */}
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                        <span className="font-semibold">David K.</span>
+                      </div>
+                      <p className="text-muted-foreground">
+                        "As a construction worker, my knees take a beating daily. This massager helps me recover faster and keeps me pain-free. The three heat levels are perfect for customizing the therapy."
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Review 5 */}
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                        <span className="font-semibold">Patricia H.</span>
+                      </div>
+                      <p className="text-muted-foreground">
+                        "I bought one for myself and loved it so much I ordered two more for my parents. The adjustable straps fit comfortably and the controls are easy to use. Highly recommend!"
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Review 6 */}
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                        <span className="font-semibold">Robert T.</span>
+                      </div>
+                      <p className="text-muted-foreground">
+                        "After knee surgery, my physical therapist recommended heat therapy. FlexiKnee™ has been perfect for my recovery. The combination of heat, vibration, and red light has really helped with stiffness and mobility."
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </section>
 
