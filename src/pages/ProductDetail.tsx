@@ -26,7 +26,7 @@ import productPainRelief from "@/assets/product-pain-relief.jpg";
 import productControl from "@/assets/product-control.jpg";
 import productVibration from "@/assets/product-vibration.jpg";
 import productSpecs from "@/assets/product-specs.jpg";
-import giftEbookIcon from "@/assets/gift-ebook-icon.png";
+import giftEguideIcon from "@/assets/gift-eguide-icon.png";
 import giftShippingIcon from "@/assets/gift-shipping-icon.png";
 import { VideoReviews } from "@/components/VideoReviews";
 
@@ -352,31 +352,31 @@ const ProductDetail = () => {
                 FREE GIFTS WITH YOUR FIRST ORDER
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* Gift 1 - eBook */}
-                <div className="relative p-5 border-2 border-dashed border-[#D6C4AA] rounded-[12px] bg-[#FFE9C7] hover:bg-[#FFE0B3] transition-all cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.05)]">
+                {/* Gift 1 - eGuide */}
+                <div className="relative p-5 border-[3px] border-dashed border-black rounded-[12px] bg-[#FFFACD] hover:bg-[#FFF8C1] transition-all cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.05)]">
                   <div className="absolute -top-2.5 left-1/2 -translate-x-1/2">
                     <Badge className="bg-primary text-primary-foreground text-xs px-2 py-0.5 font-bold">
                       FREE <span className="line-through">$10</span>
                     </Badge>
                   </div>
                   <div className="flex flex-col items-center text-center gap-3 pt-2">
-                    <div className="w-24 h-24 flex items-center justify-center">
-                      <img src={giftEbookIcon} alt="eBook" className="w-full h-full object-contain drop-shadow-sm" />
+                    <div className="w-32 h-32 flex items-center justify-center">
+                      <img src={giftEguideIcon} alt="eGuide" className="w-full h-full object-contain" />
                     </div>
-                    <p className="text-sm font-bold uppercase tracking-wide">EBOOK</p>
+                    <p className="text-sm font-bold uppercase tracking-wide">E-GUIDE</p>
                   </div>
                 </div>
 
                 {/* Gift 2 - Shipping */}
-                <div className="relative p-5 border-2 border-dashed border-[#D6C4AA] rounded-[12px] bg-[#FFE9C7] hover:bg-[#FFE0B3] transition-all cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.05)]">
+                <div className="relative p-5 border-[3px] border-dashed border-black rounded-[12px] bg-[#FFFACD] hover:bg-[#FFF8C1] transition-all cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.05)]">
                   <div className="absolute -top-2.5 left-1/2 -translate-x-1/2">
                     <Badge className="bg-primary text-primary-foreground text-xs px-2 py-0.5 font-bold">
                       FREE <span className="line-through">$6</span>
                     </Badge>
                   </div>
                   <div className="flex flex-col items-center text-center gap-3 pt-2">
-                    <div className="w-24 h-24 flex items-center justify-center">
-                      <img src={giftShippingIcon} alt="Free Shipping" className="w-full h-full object-contain drop-shadow-sm" />
+                    <div className="w-32 h-32 flex items-center justify-center">
+                      <img src={giftShippingIcon} alt="Free Shipping" className="w-full h-full object-contain" />
                     </div>
                     <p className="text-sm font-bold uppercase tracking-wide">FREE SHIPPING</p>
                   </div>
