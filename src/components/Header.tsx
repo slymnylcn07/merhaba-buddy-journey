@@ -1,17 +1,57 @@
 import { CartDrawer } from "./CartDrawer";
 import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { useState } from "react";
 import logo from "@/assets/flexiknee-logo-new.png";
 
 export const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4">
-        {/* Left - Hamburger Menu */}
+        {/* Left - Mobile Menu */}
         <div className="flex items-center">
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="h-5 w-5" />
-          </Button>
+          <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="md:hidden">
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-64">
+              <nav className="flex flex-col gap-6 mt-8">
+                <a 
+                  href="/" 
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Home
+                </a>
+                <a 
+                  href="#benefits" 
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Benefits
+                </a>
+                <a 
+                  href="#features" 
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Features
+                </a>
+                <a 
+                  href="#faq" 
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  FAQ
+                </a>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
         
         {/* Center - Logo */}
