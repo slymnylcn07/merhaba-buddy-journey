@@ -57,7 +57,11 @@ export const Header = () => {
         {/* Center - Logo */}
         <div className="absolute left-1/2 -translate-x-1/2">
           <a href="/" className="flex items-center gap-2">
-            <img src={logo} alt="FlexiKnee™" className="h-10 md:h-12" />
+            <img 
+              src={logo} 
+              alt="FlexiKnee™" 
+              className="w-[200px] max-h-[60px] md:w-[240px] md:max-h-[75px] object-contain"
+            />
           </a>
         </div>
         
