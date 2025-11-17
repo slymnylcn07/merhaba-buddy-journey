@@ -60,7 +60,7 @@ export const Header = () => {
             <img 
               src={logo} 
               alt="FlexiKnee™" 
-              className="w-[200px] max-h-[60px] md:w-[240px] md:max-h-[75px] object-contain"
+              className="w-[280px] max-h-[90px] md:w-[360px] md:max-h-[120px] object-contain"
             />
           </a>
         </div>
