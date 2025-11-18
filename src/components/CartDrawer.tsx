@@ -182,10 +182,9 @@ export const CartDrawer = () => {
                       Creating Checkout...
                     </>
                   ) : (
-                    <>
-                      <Lock className="w-5 h-5 mr-2" />
+                    <span className="flex items-center text-[105%]">
                       🔒 Secure Checkout
-                    </>
+                    </span>
                   )}
                 </Button>
                 
