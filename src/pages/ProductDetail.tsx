@@ -209,7 +209,7 @@ const ProductDetail = () => {
                   className="w-full h-full object-cover"
                 />
               )}
-              <div className="absolute top-2 right-3">
+              <div className="absolute top-2 right-2">
                 <Badge className="bg-destructive text-destructive-foreground text-xs px-2 py-1 shadow-lg scale-105">
                   {discount}% OFF
                 </Badge>
