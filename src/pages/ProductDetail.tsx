@@ -189,7 +189,7 @@ const ProductDetail = () => {
         </div>
       </div>
 
-      <div className="container px-4 py-6 md:py-8">
+      <div className="container px-3 sm:px-4 py-6 md:py-8 max-w-[100vw] overflow-x-hidden">
         <Button variant="ghost" asChild className="mb-6">
           <Link to="/">
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -198,9 +198,9 @@ const ProductDetail = () => {
         </Button>
 
         {/* Top Section - Premium Layout */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-7xl mx-auto mb-12">
           {/* Product Images */}
-          <div className="space-y-4">
+          <div className="space-y-4 min-w-0">
             <div className="relative rounded-2xl overflow-hidden bg-muted aspect-square">
               {images[selectedImage] && (
                 <img
@@ -241,7 +241,7 @@ const ProductDetail = () => {
           </div>
 
           {/* Product Info */}
-          <div className="space-y-6">
+          <div className="space-y-6 min-w-0 w-full">
             {/* Rating & Social Proof */}
             <button 
               onClick={() => document.getElementById('reviews-section')?.scrollIntoView({ behavior: 'smooth' })}
@@ -313,28 +313,28 @@ const ProductDetail = () => {
                         </Badge>
                       </div>
                     )}
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-2.5">
-                        <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                    <div className="flex items-center justify-between gap-2 min-w-0">
+                      <div className="flex items-center gap-2 min-w-0 flex-1">
+                        <div className={`w-4 h-4 flex-shrink-0 rounded-full border-2 flex items-center justify-center ${
                           selectedBundle === bundle.qty ? 'border-primary' : 'border-muted-foreground'
                         }`}>
                           {selectedBundle === bundle.qty && (
                             <div className="w-2 h-2 rounded-full bg-primary" />
                           )}
                         </div>
-                        <div>
-                          <div className="font-semibold text-sm">
+                        <div className="min-w-0 flex-1">
+                          <div className="font-semibold text-sm truncate">
                             {bundle.qty}x Knee Massager{bundle.qty > 1 ? 's' : ''}
                           </div>
                           {bundle.qty > 1 && (
                             <div className="text-[11px] text-muted-foreground">${bundle.priceEach.toFixed(2)} each</div>
                           )}
-                          <div className="text-[11px] text-primary font-medium">You Saved {bundle.discount}% + Ebook</div>
+                          <div className="text-[11px] text-primary font-medium truncate">You Saved {bundle.discount}% + Ebook</div>
                         </div>
                       </div>
-                      <div className="text-right">
-                        <div className="font-bold text-base">${(bundle.priceEach * bundle.qty).toFixed(2)}</div>
-                        <div className="text-[11px] text-muted-foreground line-through">${bundle.original.toFixed(2)}</div>
+                      <div className="text-right flex-shrink-0">
+                        <div className="font-bold text-base whitespace-nowrap">${(bundle.priceEach * bundle.qty).toFixed(2)}</div>
+                        <div className="text-[11px] text-muted-foreground line-through whitespace-nowrap">${bundle.original.toFixed(2)}</div>
                       </div>
                     </div>
                   </button>
@@ -358,7 +358,7 @@ const ProductDetail = () => {
               <h3 className="font-bold text-center text-sm tracking-wide">
                 FREE GIFTS WITH YOUR FIRST ORDER
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {/* Gift 1 - eBook */}
                 <div className="relative p-5 border-[3px] border-dashed border-black rounded-[12px] bg-[#FFFFE0] hover:bg-[#FFFACD] transition-all cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.05)]">
                   <div className="absolute -top-2.5 left-1/2 -translate-x-1/2">
