@@ -272,22 +272,26 @@ const ProductDetail = () => {
             {/* Key Benefits - Above Bundle */}
             <div className="space-y-3 mb-4">
               <div className="flex items-start gap-2">
-                <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <p className="text-sm">Relieves knee pain with heat + red light + vibration</p>
+                <span className="text-xl flex-shrink-0">🩺</span>
+                <p className="text-sm">Melt Knee Pain Away in Minutes</p>
               </div>
               <div className="flex items-start gap-2">
-                <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <p className="text-sm">Easy 3-level control for personalized comfort</p>
+                <span className="text-xl flex-shrink-0">💆</span>
+                <p className="text-sm">Deep Heat + Red Light Therapy for Stiff Joints</p>
               </div>
               <div className="flex items-start gap-2">
-                <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <p className="text-sm">Wireless, portable design for use anywhere</p>
+                <span className="text-xl flex-shrink-0">🚶</span>
+                <p className="text-sm">Move Comfortably Again - Anytime, Anywhere</p>
               </div>
             </div>
 
             {/* Bundle & Save */}
             <div className="space-y-2">
-              <h3 className="font-bold text-base">BUNDLE & SAVE</h3>
+              <div className="flex items-center gap-4 mb-2">
+                <div className="flex-1 h-px bg-border"></div>
+                <h3 className="font-bold text-base whitespace-nowrap">BUNDLE & SAVE</h3>
+                <div className="flex-1 h-px bg-border"></div>
+              </div>
               <div className="space-y-2">
                 {bundles.map((bundle) => (
                   <button
