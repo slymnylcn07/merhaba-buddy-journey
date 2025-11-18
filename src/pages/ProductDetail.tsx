@@ -28,6 +28,7 @@ import productVibration from "@/assets/product-vibration.jpg";
 import productSpecs from "@/assets/product-specs.jpg";
 import giftEguideIcon from "@/assets/gift-eguide-new.png";
 import giftBoxIcon from "@/assets/gift-box-icon.png";
+import laserTherapyNew from "@/assets/laser-therapy-new.png";
 import { VideoReviews } from "@/components/VideoReviews";
 
 const ProductDetail = () => {
@@ -532,7 +533,7 @@ const ProductDetail = () => {
               </div>
               <div className="rounded-2xl overflow-hidden order-1 md:order-2">
                 <img
-                  src={productVibration}
+                  src={laserTherapyNew}
                   alt="Red light technology"
                   className="w-full h-auto"
                 />
