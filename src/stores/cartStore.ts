@@ -59,14 +59,17 @@ export const useCartStore = create<CartStore>()(
       },
 
       updateQuantity: (variantId, quantity) => {
-        if (quantity <= 0) {
+        // Validate and sanitize quantity input
+        const validQuantity = Math.max(0, Math.min(99, Math.floor(Number(quantity))));
+        
+        if (isNaN(validQuantity) || validQuantity <= 0) {
           get().removeItem(variantId);
           return;
         }
         
         set({
           items: get().items.map(item =>
-            item.variantId === variantId ? { ...item, quantity } : item
+            item.variantId === variantId ? { ...item, quantity: validQuantity } : item
           )
         });
       },
