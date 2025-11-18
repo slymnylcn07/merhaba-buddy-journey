@@ -27,7 +27,7 @@ import productControl from "@/assets/product-control.jpg";
 import productVibration from "@/assets/product-vibration.jpg";
 import productSpecs from "@/assets/product-specs.jpg";
 import giftEguideIcon from "@/assets/gift-eguide-new.png";
-import giftShippingIcon from "@/assets/gift-free-shipping.png";
+import giftBoxIcon from "@/assets/gift-box-icon.png";
 import { VideoReviews } from "@/components/VideoReviews";
 
 const ProductDetail = () => {
@@ -380,7 +380,7 @@ const ProductDetail = () => {
                   </div>
                   <div className="flex flex-col items-center text-center gap-3 pt-2">
                     <div className="w-32 h-32 flex items-center justify-center">
-                      <img src={giftShippingIcon} alt="Free Shipping" className="w-full h-full object-contain" style={{ mixBlendMode: 'multiply' }} />
+                      <img src={giftBoxIcon} alt="Free Shipping" className="w-full h-full object-contain" style={{ mixBlendMode: 'multiply' }} />
                     </div>
                     <p className="text-sm font-bold uppercase tracking-wide">FREE SHIPPING</p>
                   </div>
