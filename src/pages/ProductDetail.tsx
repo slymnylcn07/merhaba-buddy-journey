@@ -209,31 +209,33 @@ const ProductDetail = () => {
                   className="w-full h-full object-cover"
                 />
               )}
-              <div className="absolute top-4 right-4">
-                <Badge className="bg-destructive text-destructive-foreground text-base px-4 py-2">
+              <div className="absolute top-3 right-3">
+                <Badge className="bg-destructive text-destructive-foreground text-xs px-2 py-1 transform rotate-12 shadow-lg">
                   {discount}% OFF
                 </Badge>
               </div>
             </div>
 
-            {/* Thumbnail Gallery */}
+            {/* Thumbnail Gallery - Scrollable */}
             {images.length > 1 && (
-              <div className="grid grid-cols-4 gap-3">
-                {images.slice(0, 4).map((image, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setSelectedImage(idx)}
-                    className={`rounded-lg overflow-hidden border-2 transition-all ${
-                      selectedImage === idx ? 'border-primary shadow-lg' : 'border-border hover:border-primary/50'
-                    }`}
-                  >
-                    <img
-                      src={image.node.url}
-                      alt={`View ${idx + 1}`}
-                      className="w-full aspect-square object-cover"
-                    />
-                  </button>
-                ))}
+              <div className="relative">
+                <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent hover:scrollbar-thumb-primary/40">
+                  {images.map((image, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setSelectedImage(idx)}
+                      className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                        selectedImage === idx ? 'border-primary shadow-lg' : 'border-border hover:border-primary/50'
+                      }`}
+                    >
+                      <img
+                        src={image.node.url}
+                        alt={`View ${idx + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
           </div>
