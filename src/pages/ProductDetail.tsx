@@ -48,7 +48,14 @@ const ProductDetail = () => {
     const loadProduct = async () => {
       try {
         const products = await getProducts(10);
-        const found = products.find(p => p.node.handle === handle);
+        // Try to find product by handle first
+        let found = products.find(p => p.node.handle === handle);
+        
+        // If not found by handle, use the first product as default
+        if (!found && products.length > 0) {
+          found = products[0];
+        }
+        
         if (found) {
           setProduct(found);
         }
