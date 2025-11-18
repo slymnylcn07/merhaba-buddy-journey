@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -765,6 +766,55 @@ const ProductDetail = () => {
           </div>
         </section>
 
+        {/* Comparison Table */}
+        <section className="py-16 bg-muted/30">
+          <div className="container px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              FlexiKnee™ vs. Other Knee Devices
+            </h2>
+            <div className="max-w-4xl mx-auto bg-card rounded-2xl shadow-lg overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="bg-primary text-primary-foreground">
+                      <th className="p-4 text-left font-bold">Feature</th>
+                      <th className="p-4 text-center font-bold">FlexiKnee™</th>
+                      <th className="p-4 text-center font-bold">Others</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y">
+                    <tr>
+                      <td className="p-4 font-medium">Heat Levels</td>
+                      <td className="p-4 text-center text-primary font-semibold">✓ 3 Levels</td>
+                      <td className="p-4 text-center text-destructive">✗ weak heating</td>
+                    </tr>
+                    <tr className="bg-muted/20">
+                      <td className="p-4 font-medium">Vibration</td>
+                      <td className="p-4 text-center text-primary font-semibold">✓ 3 Modes</td>
+                      <td className="p-4 text-center text-destructive">✗ none</td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 font-medium">Red-Light</td>
+                      <td className="p-4 text-center text-primary font-semibold">✓ 18 LEDs</td>
+                      <td className="p-4 text-center text-destructive">✗ none</td>
+                    </tr>
+                    <tr className="bg-muted/20">
+                      <td className="p-4 font-medium">Battery</td>
+                      <td className="p-4 text-center text-primary font-semibold">✓ 3000mAh</td>
+                      <td className="p-4 text-center text-destructive">✗ low capacity</td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 font-medium">Comfort</td>
+                      <td className="p-4 text-center text-primary font-semibold">✓ ergonomic</td>
+                      <td className="p-4 text-center text-destructive">✗ bulky</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA Section */}
         <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-accent/5 -mx-4 px-4 rounded-2xl">
           <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -802,6 +852,8 @@ const ProductDetail = () => {
           </div>
         </section>
       </div>
+      
+      <Footer />
     </div>
   );
 };

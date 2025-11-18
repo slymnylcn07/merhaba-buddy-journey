@@ -16,6 +16,8 @@ import laserTherapy from "@/assets/laser-therapy.png";
 import heatActivation from "@/assets/heat-activation.jpg";
 import heroBanner from "@/assets/hero-banner.jpg";
 import { Link } from "react-router-dom";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 export default function Index() {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
@@ -54,6 +56,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen">
+      <Header />
       {/* Hero Banner */}
       <Link to="/product/wireless-heated-knee-massager" className="block">
         <section className="relative w-full overflow-hidden cursor-pointer hover:opacity-95 transition-opacity">
@@ -273,114 +276,83 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Comparison Table */}
-      <section className="py-16 bg-muted/30">
-        <div className="container px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            FlexiKnee™ vs. Other Knee Devices
-          </h2>
-          <div className="max-w-4xl mx-auto bg-card rounded-2xl shadow-lg overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-primary text-primary-foreground">
-                    <th className="p-4 text-left font-bold">Feature</th>
-                    <th className="p-4 text-center font-bold">FlexiKnee™</th>
-                    <th className="p-4 text-center font-bold">Others</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y">
-                  <tr>
-                    <td className="p-4 font-medium">Heat Levels</td>
-                    <td className="p-4 text-center text-primary font-semibold">✓ 3 Levels</td>
-                    <td className="p-4 text-center text-destructive">✗ weak heating</td>
-                  </tr>
-                  <tr className="bg-muted/20">
-                    <td className="p-4 font-medium">Vibration</td>
-                    <td className="p-4 text-center text-primary font-semibold">✓ 3 Modes</td>
-                    <td className="p-4 text-center text-destructive">✗ none</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-medium">Red-Light</td>
-                    <td className="p-4 text-center text-primary font-semibold">✓ 18 LEDs</td>
-                    <td className="p-4 text-center text-destructive">✗ none</td>
-                  </tr>
-                  <tr className="bg-muted/20">
-                    <td className="p-4 font-medium">Battery</td>
-                    <td className="p-4 text-center text-primary font-semibold">✓ 3000mAh</td>
-                    <td className="p-4 text-center text-destructive">✗ low capacity</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-medium">Comfort</td>
-                    <td className="p-4 text-center text-primary font-semibold">✓ ergonomic</td>
-                    <td className="p-4 text-center text-destructive">✗ bulky</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Featured Product Section */}
       <section id="features" className="py-16">
         <div className="container px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Wireless Heated Knee Massager</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Advanced 3-in-1 therapy engineered for pain-free mobility.
-            </p>
-          </div>
-          
-          {loading ? (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground">Loading products...</p>
-            </div>
-          ) : products.length === 0 ? (
-            <div className="text-center py-12 bg-muted/30 rounded-2xl">
-              <p className="text-lg font-medium mb-2">No products found</p>
-              <p className="text-muted-foreground">
-                Create a product by telling me what you want to sell and the price.
+          <Link to="/product/wireless-heated-knee-massager" className="block cursor-pointer group">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 group-hover:text-primary transition-colors">Wireless Heated Knee Massager</h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Advanced 3-in-1 therapy engineered for pain-free mobility.
               </p>
             </div>
-          ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {products.map((product) => {
-                const variant = product.node.variants.edges[0]?.node;
-                return (
-                  <Card 
-                    key={product.node.id} 
-                    className="group hover:shadow-xl transition-all cursor-pointer border-2 hover:border-primary"
-                    onClick={() => window.location.href = `/product/${product.node.handle}`}
-                  >
-                    <CardContent className="p-0">
-                      {product.node.images.edges[0] && (
-                        <div className="aspect-square overflow-hidden rounded-t-lg">
-                          <img
-                            src={product.node.images.edges[0].node.url}
-                            alt={product.node.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
+          
+            {loading ? (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">Loading products...</p>
+              </div>
+            ) : mainProduct ? (
+              <div className="max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                  {/* Left - Product Images */}
+                  <div>
+                    <Carousel className="mb-8">
+                      <CarouselContent>
+                        <CarouselItem>
+                          <div className="rounded-2xl overflow-hidden shadow-2xl">
+                            <img src={productMain} alt="FlexiKnee Main" className="w-full h-auto" />
+                          </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                          <div className="rounded-2xl overflow-hidden shadow-2xl">
+                            <img src={productPainRelief} alt="FlexiKnee Pain Relief" className="w-full h-auto" />
+                          </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                          <div className="rounded-2xl overflow-hidden shadow-2xl">
+                            <img src={productTemperature} alt="FlexiKnee Temperature Control" className="w-full h-auto" />
+                          </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                          <div className="rounded-2xl overflow-hidden shadow-2xl">
+                            <img src={productVibration} alt="FlexiKnee Vibration" className="w-full h-auto" />
+                          </div>
+                        </CarouselItem>
+                      </CarouselContent>
+                      <CarouselPrevious />
+                      <CarouselNext />
+                    </Carousel>
+                  </div>
+
+                  {/* Right - Product Info */}
+                  <div>
+                    <div className="mb-8">
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                          ))}
                         </div>
-                      )}
-                      <div className="p-6">
-                        <h3 className="font-bold text-lg mb-2">{product.node.title}</h3>
-                        <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                          {product.node.description}
-                        </p>
-                        <div className="flex items-center justify-between mb-4">
-                          <span className="text-2xl font-bold text-primary">
-                            {variant?.price.currencyCode} {parseFloat(variant?.price.amount || "0").toFixed(2)}
-                          </span>
-                        </div>
-                        <Button className="w-full" size="lg">Shop Now</Button>
+                        <span className="text-sm font-medium">(4,800+ Reviews)</span>
                       </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-          )}
+                      <h3 className="text-3xl font-bold mb-4">{mainProduct.node.title}</h3>
+                      <p className="text-lg text-muted-foreground mb-6">
+                        {mainProduct.node.description}
+                      </p>
+                    </div>
+
+                    <div className="flex flex-col gap-4">
+                      <Button size="lg" className="text-lg px-8 w-full">
+                        <Truck className="mr-2 h-5 w-5" />
+                        Shop Now
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : null}
+          </Link>
         </div>
       </section>
 
@@ -625,6 +597,8 @@ export default function Index() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 }
