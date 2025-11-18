@@ -619,24 +619,24 @@ const ProductDetail = () => {
               <div className="grid md:grid-cols-[1fr_2fr_auto] gap-8 items-center">
                 {/* Average Rating */}
                 <div className="text-center">
-                  <div className="text-5xl font-bold mb-2">4.5</div>
+                  <div className="text-5xl font-bold mb-2">4.7</div>
                   <div className="flex gap-1 justify-center mb-2">
                     {[...Array(4)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                     ))}
                     <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" style={{ clipPath: 'inset(0 30% 0 0)' }} />
                   </div>
-                  <p className="text-sm text-muted-foreground">17 reviews</p>
+                  <p className="text-sm text-muted-foreground">1,128 reviews</p>
                 </div>
 
                 {/* Rating Distribution */}
                 <div className="space-y-2">
                   {[
-                    { stars: 5, percentage: 71 },
+                    { stars: 5, percentage: 76 },
                     { stars: 4, percentage: 18 },
-                    { stars: 3, percentage: 6 },
-                    { stars: 2, percentage: 6 },
-                    { stars: 1, percentage: 0 },
+                    { stars: 3, percentage: 4 },
+                    { stars: 2, percentage: 1 },
+                    { stars: 1, percentage: 1 },
                   ].map(({ stars, percentage }) => (
                     <div key={stars} className="flex items-center gap-3">
                       <div className="flex gap-0.5 w-20">
