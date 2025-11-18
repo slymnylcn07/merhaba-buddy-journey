@@ -9,7 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2 } from "lucide-react";
+import { ShoppingCart, Minus, Plus, Trash2, Lock, Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 
 export const CartDrawer = () => {
@@ -51,11 +51,11 @@ export const CartDrawer = () => {
         </Button>
       </SheetTrigger>
       
-      <SheetContent className="w-full sm:max-w-lg flex flex-col h-full">
+      <SheetContent className="w-full sm:max-w-lg flex flex-col h-full bg-[#F8F7FF]">
         <SheetHeader className="flex-shrink-0">
-          <SheetTitle>Shopping Cart</SheetTitle>
-          <SheetDescription>
-            {totalItems === 0 ? "Your cart is empty" : `${totalItems} item${totalItems !== 1 ? 's' : ''} in your cart`}
+          <SheetTitle className="text-2xl font-bold">Your Cart 🛒</SheetTitle>
+          <SheetDescription className="text-base font-medium">
+            ⭐ 4.7 · 2,000+ Happy Customers
           </SheetDescription>
         </SheetHeader>
         
@@ -71,89 +71,136 @@ export const CartDrawer = () => {
             <>
               <div className="flex-1 overflow-y-auto pr-2 min-h-0">
                 <div className="space-y-4">
-                  {items.map((item) => (
-                    <div key={item.variantId} className="flex gap-4 p-2">
-                      <div className="w-16 h-16 bg-secondary/20 rounded-md overflow-hidden flex-shrink-0">
-                        {item.product.node.images?.edges?.[0]?.node && (
-                          <img
-                            src={item.product.node.images.edges[0].node.url}
-                            alt={item.product.node.title}
-                            className="w-full h-full object-cover"
-                          />
-                        )}
-                      </div>
+                  {items.map((item) => {
+                    const originalPrice = parseFloat(item.price.amount) * 2; // Calculate original price (50% off)
+                    const currentPrice = parseFloat(item.price.amount);
+                    
+                    return (
+                      <div key={item.variantId} className="bg-white rounded-lg p-4 shadow-sm">
+                        <div className="flex gap-4">
+                          <div className="w-20 h-20 bg-secondary/20 rounded-md overflow-hidden flex-shrink-0">
+                            {item.product.node.images?.edges?.[0]?.node && (
+                              <img
+                                src={item.product.node.images.edges[0].node.url}
+                                alt={item.product.node.title}
+                                className="w-full h-full object-cover"
+                              />
+                            )}
+                          </div>
+                          
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-start gap-2 mb-1">
+                              <h4 className="font-semibold text-sm flex-1">{item.product.node.title}</h4>
+                              <Badge className="bg-green-500 hover:bg-green-600 text-white text-xs whitespace-nowrap">
+                                SAVE 50% TODAY
+                              </Badge>
+                            </div>
+                            <p className="text-xs text-muted-foreground mb-2">
+                              {item.selectedOptions.map(option => option.value).join(' • ')}
+                            </p>
+                            <div className="flex items-center gap-2">
+                              <span className="text-gray-400 line-through text-sm">
+                                ${originalPrice.toFixed(2)}
+                              </span>
+                              <span className="text-lg font-bold text-green-600">
+                                ${currentPrice.toFixed(2)}
+                              </span>
+                              <span className="text-xs font-semibold text-green-600">
+                                (SAVE 50%)
+                              </span>
+                            </div>
+                          </div>
                       
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-medium truncate">{item.product.node.title}</h4>
-                        <p className="text-sm text-muted-foreground">
-                          {item.selectedOptions.map(option => option.value).join(' • ')}
-                        </p>
-                        <p className="font-semibold">
-                          {item.price.currencyCode} ${parseFloat(item.price.amount).toFixed(2)}
-                        </p>
-                      </div>
-                      
-                      <div className="flex flex-col items-end gap-2 flex-shrink-0">
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          className="h-6 w-6"
-                          onClick={() => removeItem(item.variantId)}
-                        >
-                          <Trash2 className="h-3 w-3" />
-                        </Button>
+                        </div>
                         
-                        <div className="flex items-center gap-1">
+                        <div className="flex items-center justify-between mt-3 pt-3 border-t">
+                          <div className="flex items-center gap-2">
+                            <Button
+                              variant="outline"
+                              size="icon"
+                              className="h-7 w-7"
+                              onClick={() => updateQuantity(item.variantId, item.quantity - 1)}
+                            >
+                              <Minus className="h-3 w-3" />
+                            </Button>
+                            <span className="w-8 text-center text-sm font-medium">{item.quantity}</span>
+                            <Button
+                              variant="outline"
+                              size="icon"
+                              className="h-7 w-7"
+                              onClick={() => updateQuantity(item.variantId, item.quantity + 1)}
+                            >
+                              <Plus className="h-3 w-3" />
+                            </Button>
+                          </div>
+                          
                           <Button
-                            variant="outline"
-                            size="icon"
-                            className="h-6 w-6"
-                            onClick={() => updateQuantity(item.variantId, item.quantity - 1)}
+                            variant="ghost"
+                            size="sm"
+                            className="text-red-500 hover:text-red-700 hover:bg-red-50"
+                            onClick={() => removeItem(item.variantId)}
                           >
-                            <Minus className="h-3 w-3" />
-                          </Button>
-                          <span className="w-8 text-center text-sm">{item.quantity}</span>
-                          <Button
-                            variant="outline"
-                            size="icon"
-                            className="h-6 w-6"
-                            onClick={() => updateQuantity(item.variantId, item.quantity + 1)}
-                          >
-                            <Plus className="h-3 w-3" />
+                            <Trash2 className="h-4 w-4 mr-1" />
+                            Remove
                           </Button>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
+                </div>
+                
+                {/* Most Popular Choice Bar */}
+                <div className="mt-4 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-3 text-center">
+                  <p className="text-sm font-medium text-gray-700">
+                    💬 85% of customers made the same choice.
+                  </p>
                 </div>
               </div>
               
-              <div className="flex-shrink-0 space-y-4 pt-4 border-t bg-background">
-                <div className="flex justify-between items-center">
+              <div className="flex-shrink-0 space-y-4 pt-4 border-t bg-[#F8F7FF]">
+                <div className="flex justify-between items-center px-2">
                   <span className="text-lg font-semibold">Total</span>
-                  <span className="text-xl font-bold">
-                    {items[0]?.price.currencyCode || 'USD'} ${totalPrice.toFixed(2)}
-                  </span>
+                  <div className="text-right">
+                    <div className="text-sm text-gray-400 line-through">
+                      ${(totalPrice * 2).toFixed(2)}
+                    </div>
+                    <div className="text-2xl font-bold text-green-600">
+                      ${totalPrice.toFixed(2)}
+                    </div>
+                  </div>
                 </div>
                 
                 <Button 
                   onClick={handleCheckout}
-                  className="w-full" 
+                  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold" 
                   size="lg"
                   disabled={items.length === 0 || isLoading}
                 >
                   {isLoading ? (
                     <>
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
                       Creating Checkout...
                     </>
                   ) : (
                     <>
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Checkout
+                      <Lock className="w-5 h-5 mr-2" />
+                      🔒 Secure Checkout
                     </>
                   )}
                 </Button>
+                
+                {/* Payment Icons */}
+                <div className="flex items-center justify-center gap-3 pt-2">
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span className="font-semibold">Secure Payment:</span>
+                    <div className="flex gap-2">
+                      <div className="bg-white px-2 py-1 rounded border text-[10px] font-bold">VISA</div>
+                      <div className="bg-white px-2 py-1 rounded border text-[10px] font-bold">MC</div>
+                      <div className="bg-white px-2 py-1 rounded border text-[10px] font-bold">AMEX</div>
+                      <div className="bg-white px-2 py-1 rounded border text-[10px] font-bold">PayPal</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </>
           )}
