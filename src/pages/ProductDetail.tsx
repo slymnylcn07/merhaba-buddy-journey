@@ -612,16 +612,67 @@ const ProductDetail = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 What Our <span className="text-primary">Customers Say</span>
               </h2>
-              <div className="flex items-center justify-center gap-2 mb-2">
-                <div className="flex gap-1">
-                  {[...Array(4)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
-                  ))}
-                  <Star className="w-6 h-6 fill-yellow-400 text-yellow-400" style={{ clipPath: 'inset(0 30% 0 0)' }} />
+            </div>
+
+            {/* Rating Overview */}
+            <div className="bg-secondary/30 rounded-lg p-8 mb-12">
+              <div className="grid md:grid-cols-[1fr_2fr_auto] gap-8 items-center">
+                {/* Average Rating */}
+                <div className="text-center">
+                  <div className="text-5xl font-bold mb-2">4.5</div>
+                  <div className="flex gap-1 justify-center mb-2">
+                    {[...Array(4)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" style={{ clipPath: 'inset(0 30% 0 0)' }} />
+                  </div>
+                  <p className="text-sm text-muted-foreground">17 reviews</p>
                 </div>
-                <span className="text-xl font-bold">4.7 out of 5</span>
+
+                {/* Rating Distribution */}
+                <div className="space-y-2">
+                  {[
+                    { stars: 5, percentage: 71 },
+                    { stars: 4, percentage: 18 },
+                    { stars: 3, percentage: 6 },
+                    { stars: 2, percentage: 6 },
+                    { stars: 1, percentage: 0 },
+                  ].map(({ stars, percentage }) => (
+                    <div key={stars} className="flex items-center gap-3">
+                      <div className="flex gap-0.5 w-20">
+                        {[...Array(stars)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                        ))}
+                        {[...Array(5 - stars)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 text-gray-300" />
+                        ))}
+                      </div>
+                      <div className="flex-1 h-2 bg-background rounded-full overflow-hidden">
+                        <div 
+                          className="h-full bg-yellow-400 rounded-full transition-all duration-300"
+                          style={{ width: `${percentage}%` }}
+                        />
+                      </div>
+                      <span className="text-sm text-muted-foreground w-10 text-right">{percentage}%</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Write Review Button */}
+                <div>
+                  <Button
+                    onClick={() => {
+                      toast.info("Purchase Required", {
+                        description: "You need to purchase the product first to write a review.",
+                        position: "top-center",
+                      });
+                    }}
+                    className="whitespace-nowrap"
+                  >
+                    WRITE A REVIEW
+                  </Button>
+                </div>
               </div>
-              <p className="text-muted-foreground">Based on 1,128 reviews</p>
             </div>
 
 
