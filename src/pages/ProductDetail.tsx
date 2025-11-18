@@ -353,6 +353,11 @@ const ProductDetail = () => {
               ADD TO CART - ${totalPrice.toFixed(2)}
             </Button>
 
+            {/* Delivery Information */}
+            <p className="text-center text-[0.9em] mt-3" style={{ color: '#333333' }}>
+              📦 5-9 Day Delivery — Satisfaction Guaranteed
+            </p>
+
             {/* Free Gifts Section */}
             <div className="space-y-3 py-4">
               <h3 className="font-bold text-center text-sm tracking-wide">
