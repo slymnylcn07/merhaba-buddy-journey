@@ -32,7 +32,7 @@ import giftBoxIcon from "@/assets/gift-box-icon.png";
 import laserTherapyNew from "@/assets/laser-therapy-new.png";
 import { VideoReviews } from "@/components/VideoReviews";
 import ScrollingBanner from "@/components/ScrollingBanner";
-import paymentMethods from "@/assets/payment-methods.png";
+import paymentMethods from "@/assets/payment-methods-new.png";
 
 const ProductDetail = () => {
   const { handle } = useParams();
