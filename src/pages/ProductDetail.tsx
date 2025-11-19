@@ -30,9 +30,14 @@ import productSpecs from "@/assets/product-specs.jpg";
 import giftEguideIcon from "@/assets/gift-eguide-new.png";
 import giftBoxIcon from "@/assets/gift-box-icon.png";
 import laserTherapyNew from "@/assets/laser-therapy-new.png";
+import paymentVisa from "@/assets/payment-visa.svg";
+import paymentMastercard from "@/assets/payment-mastercard.svg";
+import paymentAmex from "@/assets/payment-amex.svg";
+import paymentPaypal from "@/assets/payment-paypal.svg";
+import paymentApplePay from "@/assets/payment-apple-pay.svg";
+import paymentGooglePay from "@/assets/payment-google-pay.svg";
 import { VideoReviews } from "@/components/VideoReviews";
 import ScrollingBanner from "@/components/ScrollingBanner";
-import paymentMethods from "@/assets/payment-methods-new.png";
 
 const ProductDetail = () => {
   const { handle } = useParams();
@@ -420,8 +425,13 @@ const ProductDetail = () => {
             </div>
 
             {/* Payment Methods */}
-            <div className="flex items-center justify-center -mt-2">
-              <img src={paymentMethods} alt="Payment Methods" className="w-full max-w-xs h-auto" />
+            <div className="flex items-center justify-center gap-2 flex-wrap px-4">
+              <img src={paymentVisa} alt="Visa" className="h-8 w-auto" />
+              <img src={paymentMastercard} alt="Mastercard" className="h-8 w-auto" />
+              <img src={paymentAmex} alt="American Express" className="h-8 w-auto" />
+              <img src={paymentPaypal} alt="PayPal" className="h-8 w-auto" />
+              <img src={paymentApplePay} alt="Apple Pay" className="h-8 w-auto" />
+              <img src={paymentGooglePay} alt="Google Pay" className="h-8 w-auto" />
             </div>
           </div>
         </div>
