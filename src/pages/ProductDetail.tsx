@@ -632,7 +632,7 @@ const ProductDetail = () => {
                 />{" "}
                 {/* PNG olarak, çünkü SVG'si biraz zor bulunabiliyor */}
                 {/* PayPal (Global ikon setinden) */}
-                <img src="https://cdn.jsdelivr.net/npm/payment-icons@0.0.1/svg/flat/paypal.svg" alt="PayPal" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" />
               </div>
             </div>
 
