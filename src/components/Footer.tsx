@@ -10,22 +10,29 @@ export const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Customer Service</h3>
             <ul className="space-y-2">
               <li>
-                <Link
-                  to="/returns-refund-policy"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                <a
+                  href="https://flexi-knee.com/pages/returns-refund-policy"
+                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Returns and Refund Policy
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/shipping-policy" className="text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="https://flexi-knee.com/pages/shipping-policy"
+                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Shipping Policy
-                </Link>
+                </a>
               </li>
               <li>
                 <a
                   href="https://flexi-knee.com/apps/parcelpanel"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -40,9 +47,14 @@ export const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="https://flexi-knee.com/pages/privacy-policy"
+                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Privacy Policy
-                </Link>
+                </a>
               </li>
               <li>
                 <a
@@ -62,9 +74,14 @@ export const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Contact</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="https://flexi-knee.com/pages/contact"
+                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Contact Information
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
