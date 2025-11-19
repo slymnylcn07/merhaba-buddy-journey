@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   return (
     <footer className="bg-muted/30 border-t">
@@ -8,36 +10,36 @@ export const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="/terms-of-service"
+                <Link
+                  to="/terms-of-service"
                   className="text-muted-foreground hover:text-primary hover:underline transition-colors"
                 >
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/privacy-policy"
+                <Link
+                  to="/privacy-policy"
                   className="text-muted-foreground hover:text-primary hover:underline transition-colors"
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/shipping-policy"
+                <Link
+                  to="/shipping-policy"
                   className="text-muted-foreground hover:text-primary hover:underline transition-colors"
                 >
                   Shipping Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/refund-policy"
+                <Link
+                  to="/refund-policy"
                   className="text-muted-foreground hover:text-primary hover:underline transition-colors"
                 >
                   Refund Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -57,12 +59,12 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="/track-order"
+                <Link
+                  to="/track-order"
                   className="text-muted-foreground hover:text-primary hover:underline transition-colors"
                 >
                   Track Order
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -72,12 +74,12 @@ export const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Shop</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="text-muted-foreground hover:text-primary hover:underline transition-colors"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
                 <a
