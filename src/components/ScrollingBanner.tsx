@@ -1,33 +1,34 @@
 const ScrollingBanner = () => {
-  // Boşlukları daha az ekleyerek word-spacing ile kontrol edeceğiz
+  // Her "•" işaretinden sonra ve öncesine Unicode boşluk karakteri (\u00a0) eklenerek boşluk artırıldı.
+  // Daha fazla boşluk için \u00a0 sayısını artırabilirsiniz.
   const text =
-    "🔥 Heat Therapy • 💡 Infrared Light • 💆 Vibration Massage • 🌀 360° Squeeze Support • 🔋 Wireless and Rechargeable • ";
+    "🔥 Heat Therapy \u00a0\u00a0•\u00a0\u00a0 💡 Infrared Light \u00a0\u00a0•\u00a0\u00a0 💆 Vibration Massage \u00a0\u00a0•\u00a0\u00a0 🌀 360° Squeeze Support \u00a0\u00a0•\u00a0\u00a0 🔋 Wireless and Rechargeable \u00a0\u00a0•\u00a0\u00a0 ";
 
   return (
     <div className="w-full bg-secondary overflow-hidden" style={{ height: "60px" }}>
       <div className="flex items-center h-full animate-scroll-left whitespace-nowrap">
+        {/* px-40 ile her span'in sol ve sağına 160px boşluk eklendi */}
         <span
-          className="inline-block text-primary-foreground font-bold px-40"
-          // word-spacing özelliği ekleyerek kelimeler arası boşluğu artırıyoruz
-          style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700, wordSpacing: "0.5em" }} // '0.5em' istediğiniz değere göre artırabilir/azaltabilirsiniz
+          className="inline-block text-primary-foreground font-bold px-40" // px-40 (160px padding) korunmuş
+          style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700 }}
         >
           {text}
         </span>
         <span
           className="inline-block text-primary-foreground font-bold px-40"
-          style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700, wordSpacing: "0.5em" }}
+          style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700 }}
         >
           {text}
         </span>
         <span
           className="inline-block text-primary-foreground font-bold px-40"
-          style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700, wordSpacing: "0.5em" }}
+          style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700 }}
         >
           {text}
         </span>
         <span
           className="inline-block text-primary-foreground font-bold px-40"
-          style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700, wordSpacing: "0.5em" }}
+          style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700 }}
         >
           {text}
         </span>
