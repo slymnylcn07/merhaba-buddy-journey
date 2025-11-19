@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -26,20 +27,37 @@ export const CartDrawer = () => {
   const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
 
   const handleCheckout = async () => {
+    if (items.length === 0) {
+      toast.error("Cart is empty", {
+        description: "Add some products to your cart first",
+        position: "top-center",
+      });
+      return;
+    }
+
     try {
       console.log('Creating checkout...');
       await createCheckout();
       const checkoutUrl = useCartStore.getState().checkoutUrl;
       console.log('Checkout URL:', checkoutUrl);
-      if (checkoutUrl) {
-        console.log('Opening checkout in new tab');
-        window.open(checkoutUrl, '_blank');
-        setIsOpen(false);
-      } else {
-        console.error('No checkout URL generated');
+      
+      if (!checkoutUrl) {
+        toast.error("Checkout failed", {
+          description: "Unable to create checkout. Please try again.",
+          position: "top-center",
+        });
+        return;
       }
+      
+      console.log('Opening checkout in new tab');
+      window.open(checkoutUrl, '_blank');
+      setIsOpen(false);
     } catch (error) {
       console.error('Checkout failed:', error);
+      toast.error("Checkout error", {
+        description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
+        position: "top-center",
+      });
     }
   };
 
