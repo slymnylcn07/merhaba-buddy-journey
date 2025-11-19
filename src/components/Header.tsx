@@ -50,7 +50,7 @@ export const Header = () => {
                   FAQ
                 </a>
                 <a
-                  href="https://lovable-project-y7ubq.myshopify.com/apps/parcelpanel"
+                  href="https://flexi-knee.com/apps/parcelpanel"
                   className="text-lg font-medium hover:text-primary transition-colors"
                   onClick={() => setMenuOpen(false)}
                   target="_blank"
@@ -89,7 +89,7 @@ export const Header = () => {
             FAQ
           </a>
           <a
-            href="https://lovable-project-y7ubq.myshopify.com/apps/parcelpanel"
+            href="https://flexi-knee.com/apps/parcelpanel"
             className="text-sm font-medium hover:text-primary transition-colors"
             target="_blank"
             rel="noopener noreferrer"
