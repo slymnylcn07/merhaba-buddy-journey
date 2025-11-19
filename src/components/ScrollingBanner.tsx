@@ -9,25 +9,25 @@ const ScrollingBanner = () => {
       <div className="flex items-center h-full animate-scroll-left whitespace-nowrap">
         {/* px-32 zaten sağ ve sol boşluk veriyor. İstersen bu değeri artırabilirsin (pl-32 pr-32 yerine pl-40 pr-40 gibi) */}
         <span
-          className="inline-block text-primary-foreground font-bold px-32"
+          className="inline-block text-primary-foreground font-bold px-40"
           style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700 }}
         >
           {text}
         </span>
         <span
-          className="inline-block text-primary-foreground font-bold px-32"
+          className="inline-block text-primary-foreground font-bold px-40"
           style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700 }}
         >
           {text}
         </span>
         <span
-          className="inline-block text-primary-foreground font-bold px-32"
+          className="inline-block text-primary-foreground font-bold px-40"
           style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700 }}
         >
           {text}
         </span>
         <span
-          className="inline-block text-primary-foreground font-bold px-32"
+          className="inline-block text-primary-foreground font-bold px-40"
           style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700 }}
         >
           {text}
