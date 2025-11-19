@@ -37,9 +37,13 @@ export const CartDrawer = () => {
 
     try {
       console.log('Creating checkout...');
+      console.log('Cart items for checkout:', items);
+      
+      console.log('Calling createStorefrontCheckout...');
       await createCheckout();
+      
       const checkoutUrl = useCartStore.getState().checkoutUrl;
-      console.log('Checkout URL:', checkoutUrl);
+      console.log('Received checkout URL:', checkoutUrl);
       
       if (!checkoutUrl) {
         toast.error("Checkout failed", {
@@ -49,25 +53,10 @@ export const CartDrawer = () => {
         return;
       }
       
-      console.log('Opening checkout in new tab');
-      const newWindow = window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+      // Open checkout immediately in current tab
+      console.log('Redirecting to checkout...');
+      window.location.href = checkoutUrl;
       
-      if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-        // Popup blocked - show message and provide direct link
-        toast.error("Popup blocked", {
-          description: "Please allow popups or click the link below",
-          position: "top-center",
-          action: {
-            label: "Open Checkout",
-            onClick: () => {
-              window.location.href = checkoutUrl;
-            }
-          }
-        });
-        return;
-      }
-      
-      setIsOpen(false);
     } catch (error) {
       console.error('Checkout failed:', error);
       toast.error("Checkout error", {
