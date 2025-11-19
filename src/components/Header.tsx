@@ -49,6 +49,15 @@ export const Header = () => {
                 >
                   FAQ
                 </a>
+                <a 
+                  href="https://flexi-knee.com/apps/17TRACK" 
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Track Your Order
+                </a>
               </nav>
             </SheetContent>
           </Sheet>
@@ -71,6 +80,7 @@ export const Header = () => {
           <a href="#benefits" className="text-sm font-medium hover:text-primary transition-colors">Benefits</a>
           <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">Features</a>
           <a href="#faq" className="text-sm font-medium hover:text-primary transition-colors">FAQ</a>
+          <a href="https://flexi-knee.com/apps/17TRACK" className="text-sm font-medium hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">Track Your Order</a>
         </nav>
         
         {/* Right - Cart */}
