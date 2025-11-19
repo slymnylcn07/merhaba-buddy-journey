@@ -28,6 +28,7 @@ import productSpecs from "@/assets/product-specs.jpg";
 import giftEguideIcon from "@/assets/gift-eguide-new.png";
 import giftBoxIcon from "@/assets/gift-box-icon.png";
 import laserTherapyNew from "@/assets/laser-therapy-new.png";
+import paymentMethodsTransparent from "@/assets/payment-methods-transparent.png";
 import { VideoReviews } from "@/components/VideoReviews";
 import ScrollingBanner from "@/components/ScrollingBanner";
 
@@ -364,6 +365,15 @@ const ProductDetail = () => {
             <p className="text-center text-[0.945em] mt-3 mb-0 font-bold" style={{ color: '#333333' }}>
               📦 5-9 Day Delivery — Satisfaction Guaranteed
             </p>
+
+            {/* Payment Methods */}
+            <div className="flex items-center justify-center py-2">
+              <img 
+                src={paymentMethodsTransparent} 
+                alt="Payment Methods" 
+                className="h-10 w-auto object-contain"
+              />
+            </div>
 
             {/* Free Gifts Section */}
             <div className="space-y-3 mt-1">
