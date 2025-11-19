@@ -364,14 +364,9 @@ const ProductDetail = () => {
             </Button>
 
             {/* Delivery Information */}
-            <p className="text-center text-[0.945em] mt-3 mb-1 font-bold" style={{ color: '#333333' }}>
+            <p className="text-center text-[0.945em] mt-3 mb-0 font-bold" style={{ color: '#333333' }}>
               📦 5-9 Day Delivery — Satisfaction Guaranteed
             </p>
-
-            {/* Payment Methods */}
-            <div className="flex items-center justify-center my-0">
-              <img src={paymentMethods} alt="Payment Methods" className="w-full max-w-md h-auto" />
-            </div>
 
             {/* Free Gifts Section */}
             <div className="space-y-3 mt-1">
@@ -415,16 +410,18 @@ const ProductDetail = () => {
             <div className="grid grid-cols-3 gap-3 pt-4 border-t">
               <div className="flex flex-col items-center text-center gap-2">
                 <Truck className="w-8 h-8 text-primary" />
-                <p className="text-xs font-medium">Free Shipping</p>
               </div>
               <div className="flex flex-col items-center text-center gap-2">
                 <Shield className="w-8 h-8 text-primary" />
-                <p className="text-xs font-medium">30-Day Guarantee</p>
               </div>
               <div className="flex flex-col items-center text-center gap-2">
                 <Check className="w-8 h-8 text-primary" />
-                <p className="text-xs font-medium">Secure Checkout</p>
               </div>
+            </div>
+
+            {/* Payment Methods */}
+            <div className="flex items-center justify-center mt-4">
+              <img src={paymentMethods} alt="Payment Methods" className="w-full max-w-md h-auto" />
             </div>
           </div>
         </div>
