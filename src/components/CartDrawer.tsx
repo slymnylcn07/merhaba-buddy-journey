@@ -27,11 +27,16 @@ export const CartDrawer = () => {
 
   const handleCheckout = async () => {
     try {
+      console.log('Creating checkout...');
       await createCheckout();
       const checkoutUrl = useCartStore.getState().checkoutUrl;
+      console.log('Checkout URL:', checkoutUrl);
       if (checkoutUrl) {
+        console.log('Opening checkout in new tab');
         window.open(checkoutUrl, '_blank');
         setIsOpen(false);
+      } else {
+        console.error('No checkout URL generated');
       }
     } catch (error) {
       console.error('Checkout failed:', error);
