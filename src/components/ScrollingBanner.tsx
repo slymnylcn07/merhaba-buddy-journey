@@ -1,15 +1,15 @@
 const ScrollingBanner = () => {
-  // Cümleler arasına daha fazla boşluk eklendi
+  // Her "•" işaretinden sonra ve öncesine &nbsp; eklenerek boşluk artırıldı.
+  // Daha fazla boşluk için &nbsp; sayısını artırabilirsiniz.
   const text =
-    "🔥 Heat Therapy   •    💡 Infrared Light    •  💆 Vibration Massage     •    🌀 360° Squeeze Support    •   🔋 Wireless and Rechargeable    • "; // Her cümlenin sonuna 1 boşluk eklendi.
-  // Eğer daha fazla boşluk istersen, buraya daha fazla boşluk karakteri ekleyebilirsin: " •    "
+    "🔥 Heat Therapy &nbsp;&nbsp;•&nbsp;&nbsp; 💡 Infrared Light &nbsp;&nbsp;•&nbsp;&nbsp; 💆 Vibration Massage &nbsp;&nbsp;•&nbsp;&nbsp; 🌀 360° Squeeze Support &nbsp;&nbsp;•&nbsp;&nbsp; 🔋 Wireless and Rechargeable &nbsp;&nbsp;•&nbsp;&nbsp; ";
 
   return (
     <div className="w-full bg-secondary overflow-hidden" style={{ height: "60px" }}>
       <div className="flex items-center h-full animate-scroll-left whitespace-nowrap">
-        {/* px-32 zaten sağ ve sol boşluk veriyor. İstersen bu değeri artırabilirsin (pl-32 pr-32 yerine pl-40 pr-40 gibi) */}
+        {/* px-40 ile her span'in sol ve sağına 160px boşluk eklendi */}
         <span
-          className="inline-block text-primary-foreground font-bold px-40"
+          className="inline-block text-primary-foreground font-bold px-40" // px-40 (160px padding) korunmuş
           style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", fontWeight: 700 }}
         >
           {text}
