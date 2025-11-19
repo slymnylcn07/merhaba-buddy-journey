@@ -31,6 +31,7 @@ import giftEguideIcon from "@/assets/gift-eguide-new.png";
 import giftBoxIcon from "@/assets/gift-box-icon.png";
 import laserTherapyNew from "@/assets/laser-therapy-new.png";
 import { VideoReviews } from "@/components/VideoReviews";
+import ScrollingBanner from "@/components/ScrollingBanner";
 import paymentShopPay from "@/assets/payment-shop-pay.svg";
 import paymentVisa from "@/assets/payment-visa.svg";
 import paymentMastercard from "@/assets/payment-mastercard.svg";
@@ -443,6 +444,9 @@ const ProductDetail = () => {
             </div>
           </div>
         </div>
+
+        {/* Scrolling Banner */}
+        <ScrollingBanner />
 
         {/* Customer Video Reviews */}
         <VideoReviews />
