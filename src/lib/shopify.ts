@@ -204,16 +204,15 @@ export async function createStorefrontCheckout(items: any[]): Promise<string> {
       throw new Error('No checkout URL returned from Shopify');
     }
 
-    let url = new URL(cart.checkoutUrl);
+    // CRITICAL FIX: Force myshopify.com domain for checkout
+    // Custom domains (flexi-knee.com) don't work until properly configured in Shopify
+    const checkoutUrl = cart.checkoutUrl
+      .replace('flexi-knee.com', SHOPIFY_STORE_PERMANENT_DOMAIN)
+      .replace(/(\?|&)channel=[^&]*/, '') // Remove existing channel param
+      + (cart.checkoutUrl.includes('?') ? '&' : '?') + 'channel=online_store';
     
-    // Replace flexi-knee.com with myshopify.com domain to avoid 404 errors
-    if (url.hostname === 'flexi-knee.com') {
-      url = new URL(cart.checkoutUrl.replace('flexi-knee.com', SHOPIFY_STORE_PERMANENT_DOMAIN));
-    }
-    
-    url.searchParams.set('channel', 'online_store');
-    const checkoutUrl = url.toString();
-    console.log('Final checkout URL:', checkoutUrl);
+    console.log('Original checkout URL:', cart.checkoutUrl);
+    console.log('Fixed checkout URL:', checkoutUrl);
     return checkoutUrl;
   } catch (error) {
     console.error('Error creating storefront checkout:', error);
