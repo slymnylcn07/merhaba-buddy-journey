@@ -19,6 +19,16 @@ export const Footer = () => {
                   Shipping Policy
                 </Link>
               </li>
+              <li>
+                <a 
+                  href="https://flexi-knee.com/apps/17TRACK" 
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Track Your Order
+                </a>
+              </li>
             </ul>
           </div>
 
