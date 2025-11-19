@@ -50,7 +50,23 @@ export const CartDrawer = () => {
       }
       
       console.log('Opening checkout in new tab');
-      window.open(checkoutUrl, '_blank');
+      const newWindow = window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+      
+      if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+        // Popup blocked - show message and provide direct link
+        toast.error("Popup blocked", {
+          description: "Please allow popups or click the link below",
+          position: "top-center",
+          action: {
+            label: "Open Checkout",
+            onClick: () => {
+              window.location.href = checkoutUrl;
+            }
+          }
+        });
+        return;
+      }
+      
       setIsOpen(false);
     } catch (error) {
       console.error('Checkout failed:', error);
