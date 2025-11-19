@@ -407,7 +407,7 @@ const ProductDetail = () => {
             </div>
 
             {/* Trust Badges */}
-            <div className="grid grid-cols-3 gap-3 pt-4 border-t">
+            <div className="grid grid-cols-3 gap-3 pt-4 border-t pb-2">
               <div className="flex flex-col items-center text-center gap-2">
                 <Truck className="w-8 h-8 text-primary" />
               </div>
@@ -420,8 +420,8 @@ const ProductDetail = () => {
             </div>
 
             {/* Payment Methods */}
-            <div className="flex items-center justify-center mt-1">
-              <img src={paymentMethods} alt="Payment Methods" className="w-full max-w-md h-auto" />
+            <div className="flex items-center justify-center">
+              <img src={paymentMethods} alt="Payment Methods" className="w-full max-w-sm h-auto" />
             </div>
           </div>
         </div>
