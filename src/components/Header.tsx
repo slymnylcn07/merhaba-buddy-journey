@@ -50,11 +50,9 @@ export const Header = () => {
                   FAQ
                 </a>
                 <a
-                  href="https://flexi-knee.com/apps/parcelpanel"
+                  href="/track-order"
                   className="text-lg font-medium hover:text-primary transition-colors"
                   onClick={() => setMenuOpen(false)}
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   Track Your Order
                 </a>
@@ -89,10 +87,8 @@ export const Header = () => {
             FAQ
           </a>
           <a
-            href="https://flexi-knee.com/apps/parcelpanel"
+            href="/track-order"
             className="text-sm font-medium hover:text-primary transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             Track Your Order
           </a>
