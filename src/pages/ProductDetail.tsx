@@ -369,12 +369,12 @@ const ProductDetail = () => {
             </p>
 
             {/* Payment Methods */}
-            <div className="flex items-center justify-center mt-4">
+            <div className="flex items-center justify-center mt-2 mb-2">
               <img src={paymentMethods} alt="Payment Methods" className="w-full max-w-md h-auto" />
             </div>
 
             {/* Free Gifts Section */}
-            <div className="space-y-3 py-4">
+            <div className="space-y-3 pt-2">
               <h3 className="font-bold text-center text-sm tracking-wide">
                 FREE GIFTS WITH YOUR FIRST ORDER
               </h3>
