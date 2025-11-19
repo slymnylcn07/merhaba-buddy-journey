@@ -45,9 +45,14 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="https://flexi-knee.com/pages/terms-of-service"
+                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Terms of Service
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
