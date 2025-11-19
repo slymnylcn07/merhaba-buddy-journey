@@ -10,7 +10,10 @@ export const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Customer Service</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/returns-refund-policy" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  to="/returns-refund-policy"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Returns and Refund Policy
                 </Link>
               </li>
@@ -20,8 +23,8 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a 
-                  href="https://flexi-knee.com/apps/17TRACK" 
+                <a
+                  href="https://flexi-knee.com/apps/parcelpanel"
                   className="text-muted-foreground hover:text-primary transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"

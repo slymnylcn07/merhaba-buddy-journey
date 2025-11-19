@@ -21,36 +21,36 @@ export const Header = () => {
             </SheetTrigger>
             <SheetContent side="left" className="w-64">
               <nav className="flex flex-col gap-6 mt-8">
-                <a 
-                  href="/" 
+                <a
+                  href="/"
                   className="text-lg font-medium hover:text-primary transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
                   Home
                 </a>
-                <a 
-                  href="#benefits" 
+                <a
+                  href="#benefits"
                   className="text-lg font-medium hover:text-primary transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
                   Benefits
                 </a>
-                <a 
-                  href="#features" 
+                <a
+                  href="#features"
                   className="text-lg font-medium hover:text-primary transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
                   Features
                 </a>
-                <a 
-                  href="#faq" 
+                <a
+                  href="#faq"
                   className="text-lg font-medium hover:text-primary transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
                   FAQ
                 </a>
-                <a 
-                  href="https://flexi-knee.com/apps/17TRACK" 
+                <a
+                  href="https://flexi-knee.com/apps/parcelpanel"
                   className="text-lg font-medium hover:text-primary transition-colors"
                   onClick={() => setMenuOpen(false)}
                   target="_blank"
@@ -62,27 +62,42 @@ export const Header = () => {
             </SheetContent>
           </Sheet>
         </div>
-        
+
         {/* Center - Logo */}
         <div className="absolute left-1/2 -translate-x-1/2">
           <a href="/" className="flex items-center gap-2">
-            <img 
-              src={logo} 
-              alt="FlexiKnee™" 
+            <img
+              src={logo}
+              alt="FlexiKnee™"
               className="w-[280px] max-h-[90px] md:w-[360px] md:max-h-[120px] object-contain"
             />
           </a>
         </div>
-        
+
         {/* Desktop Navigation - Hidden on mobile */}
         <nav className="hidden md:flex items-center gap-6 absolute left-4">
-          <a href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</a>
-          <a href="#benefits" className="text-sm font-medium hover:text-primary transition-colors">Benefits</a>
-          <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">Features</a>
-          <a href="#faq" className="text-sm font-medium hover:text-primary transition-colors">FAQ</a>
-          <a href="https://flexi-knee.com/apps/17TRACK" className="text-sm font-medium hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">Track Your Order</a>
+          <a href="/" className="text-sm font-medium hover:text-primary transition-colors">
+            Home
+          </a>
+          <a href="#benefits" className="text-sm font-medium hover:text-primary transition-colors">
+            Benefits
+          </a>
+          <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">
+            Features
+          </a>
+          <a href="#faq" className="text-sm font-medium hover:text-primary transition-colors">
+            FAQ
+          </a>
+          <a
+            href="https://flexi-knee.com/apps/parcelpanel"
+            className="text-sm font-medium hover:text-primary transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Track Your Order
+          </a>
         </nav>
-        
+
         {/* Right - Cart */}
         <div className="flex items-center ml-auto">
           <CartDrawer />
