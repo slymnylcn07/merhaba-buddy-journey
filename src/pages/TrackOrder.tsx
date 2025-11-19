@@ -1,18 +1,32 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const TrackOrder = () => {
+  const [widgetLoaded, setWidgetLoaded] = useState(false);
+
   useEffect(() => {
     // Load ParcelPanel tracking script
     const script = document.createElement('script');
-    script.src = '//pp-proxy.parcelpanel.com/assets/tracking/track-page.js';
+    script.src = 'https://pp-proxy.parcelpanel.com/assets/tracking/track-page.js';
     script.type = 'text/javascript';
     script.async = true;
+    
+    script.onload = () => {
+      console.log('ParcelPanel widget loaded');
+      setWidgetLoaded(true);
+    };
+    
+    script.onerror = () => {
+      console.error('ParcelPanel widget failed to load');
+      setWidgetLoaded(false);
+    };
+    
     document.body.appendChild(script);
 
     return () => {
-      // Cleanup script on unmount
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
@@ -33,11 +47,29 @@ const TrackOrder = () => {
           </div>
 
           {/* ParcelPanel Widget Container */}
-          <div id="pp-tracking-page-app"></div>
+          <div id="pp-tracking-page-app" className="min-h-[400px]"></div>
           
           {/* Store Domain for External Pages */}
           <div id="pp-tracking-shop" style={{ display: 'none' }}>
             lovable-project-y7ubq.myshopify.com
+          </div>
+
+          {/* Fallback link if widget doesn't load */}
+          <div className="mt-8 text-center">
+            <p className="text-sm text-muted-foreground mb-4">
+              Widget not loading? Access tracking directly:
+            </p>
+            <Button asChild variant="outline">
+              <a 
+                href="https://lovable-project-y7ubq.myshopify.com/apps/parcelpanel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
+              >
+                Open Tracking Page
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </Button>
           </div>
         </div>
       </main>
