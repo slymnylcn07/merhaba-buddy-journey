@@ -612,27 +612,47 @@ const ProductDetail = () => {
             {/* Payment Methods */}
             <div className="flex items-center justify-center py-2">
               <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 lg:gap-4 p-0 m-0 leading-none w-full">
-                {/* Shop Pay (Güncel bir kaynaktan) */}
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Shop_Pay_logo.svg" alt="Shop Pay" />
-                {/* Visa (Global ikon setinden) */}
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" />{" "}
-                {/* Bu aslında genel bir kredi kartı ikonu, düz Visa logosu bulmak daha zor olabilir */}
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Visa" />
-                {/* Mastercard (Global ikon setinden) */}
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" />
-                {/* American Express (Global ikon setinden) */}
+                {/* Shop Pay */}
                 <img
+                  className="h-6 md:h-7 lg:h-8 w-auto block"
+                  src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Shop_Pay_logo.svg"
+                  alt="Shop Pay"
+                />
+
+                {/* Visa */}
+                <img
+                  className="h-6 md:h-7 lg:h-8 w-auto block"
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
+                  alt="Visa"
+                />
+
+                {/* Mastercard */}
+                <img
+                  className="h-6 md:h-7 lg:h-8 w-auto block"
+                  src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                  alt="Mastercard"
+                />
+
+                {/* American Express */}
+                <img
+                  className="h-6 md:h-7 lg:h-8 w-auto block"
                   src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg"
                   alt="American Express"
                 />
-                {/* Google Pay (Resmi Google logosu) */}
+
+                {/* Google Pay */}
                 <img
+                  className="h-6 md:h-7 lg:h-8 w-auto block"
                   src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg"
                   alt="Google Pay"
-                />{" "}
-                {/* PNG olarak, çünkü SVG'si biraz zor bulunabiliyor */}
-                {/* PayPal (Global ikon setinden) */}
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" />
+                />
+
+                {/* PayPal */}
+                <img
+                  className="h-6 md:h-7 lg:h-8 w-auto block"
+                  src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+                  alt="PayPal"
+                />
               </div>
             </div>
 
