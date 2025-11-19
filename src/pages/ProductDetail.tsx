@@ -612,44 +612,27 @@ const ProductDetail = () => {
             {/* Payment Methods */}
             <div className="flex items-center justify-center py-2">
               <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 lg:gap-4 p-0 m-0 leading-none w-full">
-                {/* Shop Pay */}
                 <img
-                  className="h-6 md:h-7 lg:h-8 w-auto block"
                   src="https://cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/shop_pay-19a530813f0dddf354a50d74ea0a7079e433b414f05d834746f28145857b885d.svg"
                   alt="Shop Pay"
                 />
-
-                {/* Visa */}
                 <img
-                  className="h-6 md:h-7 lg:h-8 w-auto block"
                   src="https://cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/visa-319d545c6fd255c9aad5eeaad21fd6f7f7b4fdbdb1a35ce83b89cca12a187f00.svg"
                   alt="Visa"
                 />
-
-                {/* Mastercard */}
                 <img
-                  className="h-6 md:h-7 lg:h-8 w-auto block"
                   src="https://cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/master-1730554d800599d604cf363acd918498223754e5a9c66562c6f57eff17c20344.svg"
                   alt="Mastercard"
                 />
-
-                {/* American Express */}
                 <img
-                  className="h-6 md:h-7 lg:h-8 w-auto block"
                   src="https://cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/american_express-2269c9bcf168b09963b836bd6a655302e57b3db6672e9d35c18e66bf7484cf01.svg"
                   alt="American Express"
                 />
-
-                {/* Google Pay */}
                 <img
-                  className="h-6 md:h-7 lg:h-8 w-auto block"
                   src="https://cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/google_pay-c66a29c63facf2053bf69352982c958e9675cabea4f2f7cbb522c0233cbba8b2.svg"
                   alt="Google Pay"
                 />
-
-                {/* PayPal */}
                 <img
-                  className="h-6 md:h-7 lg:h-8 w-auto block"
                   src="https://cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/paypal-49e4c1e03244b6d2eb0d558274a08a16276181594ed830cebd6b7f1122051e06.svg"
                   alt="PayPal"
                 />
