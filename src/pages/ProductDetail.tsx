@@ -370,7 +370,7 @@ const ProductDetail = () => {
 
             {/* Payment Methods */}
             <div className="flex items-center justify-center mt-4">
-              <img src={paymentMethods} alt="Payment Methods" className="h-10 w-auto" />
+              <img src={paymentMethods} alt="Payment Methods" className="w-full max-w-md h-auto" />
             </div>
 
             {/* Free Gifts Section */}
