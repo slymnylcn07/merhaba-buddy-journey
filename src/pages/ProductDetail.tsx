@@ -32,15 +32,7 @@ import giftBoxIcon from "@/assets/gift-box-icon.png";
 import laserTherapyNew from "@/assets/laser-therapy-new.png";
 import { VideoReviews } from "@/components/VideoReviews";
 import ScrollingBanner from "@/components/ScrollingBanner";
-import paymentShopPay from "@/assets/payment-shop-pay.svg";
-import paymentVisa from "@/assets/payment-visa.svg";
-import paymentMastercard from "@/assets/payment-mastercard.svg";
-import paymentAmex from "@/assets/payment-amex.svg";
-import paymentDiscover from "@/assets/payment-discover.svg";
-import paymentApplePay from "@/assets/payment-apple-pay.svg";
-import paymentGooglePay from "@/assets/payment-google-pay.svg";
-import paymentAmazonPay from "@/assets/payment-amazon-pay.svg";
-import paymentPaypal from "@/assets/payment-paypal.svg";
+import paymentMethods from "@/assets/payment-methods.png";
 
 const ProductDetail = () => {
   const { handle } = useParams();
@@ -377,16 +369,8 @@ const ProductDetail = () => {
             </p>
 
             {/* Payment Methods */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mt-4 px-4">
-              <img src={paymentShopPay} alt="Shop Pay" className="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={paymentVisa} alt="Visa" className="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={paymentMastercard} alt="Mastercard" className="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={paymentAmex} alt="American Express" className="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={paymentDiscover} alt="Discover" className="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={paymentApplePay} alt="Apple Pay" className="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={paymentGooglePay} alt="Google Pay" className="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={paymentAmazonPay} alt="Amazon Pay" className="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-              <img src={paymentPaypal} alt="PayPal" className="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+            <div className="flex items-center justify-center mt-4">
+              <img src={paymentMethods} alt="Payment Methods" className="h-10 w-auto" />
             </div>
 
             {/* Free Gifts Section */}
