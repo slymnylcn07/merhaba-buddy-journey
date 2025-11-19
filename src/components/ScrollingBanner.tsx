@@ -2,7 +2,7 @@ const ScrollingBanner = () => {
   // Her "•" işaretinden sonra ve öncesine Unicode boşluk karakteri (\u00a0) eklenerek boşluk artırıldı.
   // Daha fazla boşluk için \u00a0 sayısını artırabilirsiniz.
   const text =
-    "🔥 Heat Therapy \u00a0\u00a0•\u00a0\u00a0 💡 Infrared Light \u00a0\u00a0•\u00a0\u00a0 💆 Vibration Massage \u00a0\u00a0•\u00a0\u00a0 🌀 360° Squeeze Support \u00a0\u00a0•\u00a0\u00a0 🔋 Wireless and Rechargeable \u00a0\u00a0•\u00a0\u00a0 ";
+    "🔥 Heat Therapy \u00a0\u00a0•\u00a0\u00a0\u00a0 💡 Infrared Light \u00a0\u00a0•\u00a0\u00a0\u00a0 💆 Vibration Massage \u00a0\u00a0•\u00a0\u00a0\u00a0 🌀 360° Squeeze Support \u00a0\u00a0•\u00a0\u00a0\u00a0 🔋 Wireless and Rechargeable \u00a0\u00a0•\u00a0\u00a0\u00a0 ";
 
   return (
     <div className="w-full bg-secondary overflow-hidden" style={{ height: "60px" }}>
