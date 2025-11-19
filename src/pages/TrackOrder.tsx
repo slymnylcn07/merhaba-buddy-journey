@@ -5,6 +5,57 @@ import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const TrackOrder = () => {
+  useEffect(() => {
+    // Add custom styles for ParcelPanel widget
+    const style = document.createElement('style');
+    style.textContent = `
+      #pp-tracking-page-app input[type="text"],
+      #pp-tracking-page-app input[type="email"] {
+        border: 2px solid hsl(var(--input)) !important;
+        border-radius: 0.5rem !important;
+        padding: 0.75rem !important;
+        background: hsl(var(--background)) !important;
+        color: hsl(var(--foreground)) !important;
+        font-size: 1rem !important;
+        transition: all 0.2s !important;
+      }
+      
+      #pp-tracking-page-app input[type="text"]:focus,
+      #pp-tracking-page-app input[type="email"]:focus {
+        border-color: hsl(var(--primary)) !important;
+        outline: none !important;
+        box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1) !important;
+      }
+      
+      #pp-tracking-page-app button {
+        background: hsl(var(--primary)) !important;
+        color: hsl(var(--primary-foreground)) !important;
+        border-radius: 0.5rem !important;
+        padding: 0.75rem 1.5rem !important;
+        font-weight: 600 !important;
+        transition: all 0.2s !important;
+      }
+      
+      #pp-tracking-page-app button:hover {
+        opacity: 0.9 !important;
+      }
+      
+      #pp-tracking-page-app label {
+        color: hsl(var(--foreground)) !important;
+        font-weight: 500 !important;
+        margin-bottom: 0.5rem !important;
+        display: block !important;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      if (document.head.contains(style)) {
+        document.head.removeChild(style);
+      }
+    };
+  }, []);
+
   const [widgetLoaded, setWidgetLoaded] = useState(false);
 
   useEffect(() => {
