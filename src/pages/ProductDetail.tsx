@@ -420,7 +420,7 @@ const ProductDetail = () => {
             </div>
 
             {/* Payment Methods */}
-            <div className="flex items-center justify-center mt-4">
+            <div className="flex items-center justify-center mt-1">
               <img src={paymentMethods} alt="Payment Methods" className="w-full max-w-md h-auto" />
             </div>
           </div>
