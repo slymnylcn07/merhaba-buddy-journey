@@ -19,6 +19,7 @@ import heroBannerMobile from "@/assets/hero-banner-mobile.png";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import ScrollingBanner from "@/components/ScrollingBanner";
 
 export default function Index() {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
@@ -75,6 +76,9 @@ export default function Index() {
           />
         </section>
       </Link>
+
+      {/* Scrolling Banner */}
+      <ScrollingBanner />
 
       {/* Feature Text Section */}
       <section className="py-16 bg-muted/30">
