@@ -627,7 +627,10 @@ const ProductDetail = () => {
                 {/* Mastercard (Global ikon setinden) */}
                 <img src="https://cdn.jsdelivr.net/npm/payment-icons@0.0.1/svg/flat/mastercard.svg" alt="Mastercard" />
                 {/* American Express (Global ikon setinden) */}
-                <img src="https://cdn.jsdelivr.net/npm/payment-icons@0.0.1/svg/flat/amex.svg" alt="American Express" />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg"
+                  alt="American Express"
+                />
                 {/* Google Pay (Resmi Google logosu) */}
                 <img
                   src="https://www.gstatic.com/images/branding/product/2x/gpay_2020q4_48dp.png"
