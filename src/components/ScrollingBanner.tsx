@@ -1,7 +1,7 @@
 const ScrollingBanner = () => {
   // Cümleler arasına daha fazla boşluk eklendi
   const text =
-    "🔥 Heat Therapy • 💡 Infrared Light • 💆 Vibration Massage • 🌀 360° Squeeze Support • 🔋 Wireless and Rechargeable • "; // Her cümlenin sonuna 1 boşluk eklendi.
+    "🔥 Heat Therapy   •    💡 Infrared Light    •  💆 Vibration Massage     •    🌀 360° Squeeze Support    •   🔋 Wireless and Rechargeable    • "; // Her cümlenin sonuna 1 boşluk eklendi.
   // Eğer daha fazla boşluk istersen, buraya daha fazla boşluk karakteri ekleyebilirsin: " •    "
 
   return (
