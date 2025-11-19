@@ -362,7 +362,7 @@ const ProductDetail = () => {
             </Button>
 
             {/* Delivery Information */}
-            <p className="text-center text-[0.9em] mt-3" style={{ color: '#333333' }}>
+            <p className="text-center text-[0.945em] mt-3 font-bold" style={{ color: '#333333' }}>
               📦 5-9 Day Delivery — Satisfaction Guaranteed
             </p>
 
