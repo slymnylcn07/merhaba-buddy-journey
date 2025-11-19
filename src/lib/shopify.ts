@@ -204,7 +204,13 @@ export async function createStorefrontCheckout(items: any[]): Promise<string> {
       throw new Error('No checkout URL returned from Shopify');
     }
 
-    const url = new URL(cart.checkoutUrl);
+    let url = new URL(cart.checkoutUrl);
+    
+    // Replace flexi-knee.com with myshopify.com domain to avoid 404 errors
+    if (url.hostname === 'flexi-knee.com') {
+      url = new URL(cart.checkoutUrl.replace('flexi-knee.com', SHOPIFY_STORE_PERMANENT_DOMAIN));
+    }
+    
     url.searchParams.set('channel', 'online_store');
     const checkoutUrl = url.toString();
     console.log('Final checkout URL:', checkoutUrl);
