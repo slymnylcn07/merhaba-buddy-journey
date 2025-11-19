@@ -612,30 +612,30 @@ const ProductDetail = () => {
             {/* Payment Methods */}
             <div className="flex items-center justify-center py-2">
               <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 lg:gap-4 p-0 m-0 leading-none w-full">
+                {/* Shop Pay (Güncel bir kaynaktan) */}
                 <img
-                  src="https://cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/shop_pay-19a530813f0dddf354a50d74ea0a7079e433b414f05d834746f28145857b885d.svg"
+                  src="https://assets.shopify.com/customers/money-assets/brand_assets/shop-pay/ShopPay_Stacked_Wordmark_Black.svg"
                   alt="Shop Pay"
                 />
+                {/* Visa (Global ikon setinden) */}
                 <img
-                  src="https://cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/visa-319d545c6fd255c9aad5eeaad21fd6f7f7b4fdbdb1a35ce83b89cca12a187f00.svg"
+                  src="https://cdn.jsdelivr.net/npm/@primer/octicons@17.7.0/icons/credit-card-16.svg"
                   alt="Visa"
-                />
+                />{" "}
+                {/* Bu aslında genel bir kredi kartı ikonu, düz Visa logosu bulmak daha zor olabilir */}
+                <img src="https://cdn.jsdelivr.net/npm/payment-icons@0.0.1/svg/flat/visa.svg" alt="Visa" />
+                {/* Mastercard (Global ikon setinden) */}
+                <img src="https://cdn.jsdelivr.net/npm/payment-icons@0.0.1/svg/flat/mastercard.svg" alt="Mastercard" />
+                {/* American Express (Global ikon setinden) */}
+                <img src="https://cdn.jsdelivr.net/npm/payment-icons@0.0.1/svg/flat/amex.svg" alt="American Express" />
+                {/* Google Pay (Resmi Google logosu) */}
                 <img
-                  src="https://cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/master-1730554d800599d604cf363acd918498223754e5a9c66562c6f57eff17c20344.svg"
-                  alt="Mastercard"
-                />
-                <img
-                  src="https://cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/american_express-2269c9bcf168b09963b836bd6a655302e57b3db6672e9d35c18e66bf7484cf01.svg"
-                  alt="American Express"
-                />
-                <img
-                  src="https://cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/google_pay-c66a29c63facf2053bf69352982c958e9675cabea4f2f7cbb522c0233cbba8b2.svg"
+                  src="https://www.gstatic.com/images/branding/product/2x/gpay_2020q4_48dp.png"
                   alt="Google Pay"
-                />
-                <img
-                  src="https://cdn.shopify.com/shopifycloud/shopify/assets/payment_icons/paypal-49e4c1e03244b6d2eb0d558274a08a16276181594ed830cebd6b7f1122051e06.svg"
-                  alt="PayPal"
-                />
+                />{" "}
+                {/* PNG olarak, çünkü SVG'si biraz zor bulunabiliyor */}
+                {/* PayPal (Global ikon setinden) */}
+                <img src="https://cdn.jsdelivr.net/npm/payment-icons@0.0.1/svg/flat/paypal.svg" alt="PayPal" />
               </div>
             </div>
 
