@@ -613,19 +613,13 @@ const ProductDetail = () => {
             <div className="flex items-center justify-center py-2">
               <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 lg:gap-4 p-0 m-0 leading-none w-full">
                 {/* Shop Pay (Güncel bir kaynaktan) */}
-                <img
-                  src="https://assets.shopify.com/customers/money-assets/brand_assets/shop-pay/ShopPay_Stacked_Wordmark_Black.svg"
-                  alt="Shop Pay"
-                />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Shop_Pay_logo.svg" alt="Shop Pay" />
                 {/* Visa (Global ikon setinden) */}
-                <img
-                  src="https://cdn.jsdelivr.net/npm/@primer/octicons@17.7.0/icons/credit-card-16.svg"
-                  alt="Visa"
-                />{" "}
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" />{" "}
                 {/* Bu aslında genel bir kredi kartı ikonu, düz Visa logosu bulmak daha zor olabilir */}
-                <img src="https://cdn.jsdelivr.net/npm/payment-icons@0.0.1/svg/flat/visa.svg" alt="Visa" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Visa" />
                 {/* Mastercard (Global ikon setinden) */}
-                <img src="https://cdn.jsdelivr.net/npm/payment-icons@0.0.1/svg/flat/mastercard.svg" alt="Mastercard" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" />
                 {/* American Express (Global ikon setinden) */}
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg"
@@ -633,7 +627,7 @@ const ProductDetail = () => {
                 />
                 {/* Google Pay (Resmi Google logosu) */}
                 <img
-                  src="https://www.gstatic.com/images/branding/product/2x/gpay_2020q4_48dp.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg"
                   alt="Google Pay"
                 />{" "}
                 {/* PNG olarak, çünkü SVG'si biraz zor bulunabiliyor */}
