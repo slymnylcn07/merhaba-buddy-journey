@@ -9,15 +9,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 import { 
-  Check, 
-  Truck, 
-  Shield, 
   ArrowLeft,
   Star,
   Package,
   Clock,
   BookOpen,
-  Box
+  Box,
+  Check
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import productMain from "@/assets/product-main.jpg";
@@ -30,12 +28,6 @@ import productSpecs from "@/assets/product-specs.jpg";
 import giftEguideIcon from "@/assets/gift-eguide-new.png";
 import giftBoxIcon from "@/assets/gift-box-icon.png";
 import laserTherapyNew from "@/assets/laser-therapy-new.png";
-import paymentVisa from "@/assets/payment-visa.svg";
-import paymentMastercard from "@/assets/payment-mastercard.svg";
-import paymentAmex from "@/assets/payment-amex.svg";
-import paymentPaypal from "@/assets/payment-paypal.svg";
-import paymentApplePay from "@/assets/payment-apple-pay.svg";
-import paymentGooglePay from "@/assets/payment-google-pay.svg";
 import { VideoReviews } from "@/components/VideoReviews";
 import ScrollingBanner from "@/components/ScrollingBanner";
 
@@ -411,28 +403,6 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Trust Badges */}
-            <div className="grid grid-cols-3 gap-3 pt-4 border-t">
-              <div className="flex flex-col items-center text-center gap-2">
-                <Truck className="w-8 h-8 text-primary" />
-              </div>
-              <div className="flex flex-col items-center text-center gap-2">
-                <Shield className="w-8 h-8 text-primary" />
-              </div>
-              <div className="flex flex-col items-center text-center gap-2">
-                <Check className="w-8 h-8 text-primary" />
-              </div>
-            </div>
-
-            {/* Payment Methods */}
-            <div className="flex items-center justify-center gap-2 flex-wrap px-4">
-              <img src={paymentVisa} alt="Visa" className="h-8 w-auto" />
-              <img src={paymentMastercard} alt="Mastercard" className="h-8 w-auto" />
-              <img src={paymentAmex} alt="American Express" className="h-8 w-auto" />
-              <img src={paymentPaypal} alt="PayPal" className="h-8 w-auto" />
-              <img src={paymentApplePay} alt="Apple Pay" className="h-8 w-auto" />
-              <img src={paymentGooglePay} alt="Google Pay" className="h-8 w-auto" />
-            </div>
           </div>
         </div>
 
@@ -858,20 +828,6 @@ const ProductDetail = () => {
                 <Package className="w-5 h-5 mr-2" />
                 Add to Cart - ${totalPrice.toFixed(2)}
               </Button>
-            </div>
-            <div className="flex flex-wrap justify-center gap-6 pt-4">
-              <div className="flex items-center gap-2">
-                <Truck className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium">Free Shipping</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium">30-Day Money-Back Guarantee</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium">Secure Checkout</span>
-              </div>
             </div>
           </div>
         </section>
