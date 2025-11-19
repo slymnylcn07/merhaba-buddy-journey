@@ -14,7 +14,8 @@ import productVibration from "@/assets/product-vibration.jpg";
 import productHowItWorks from "@/assets/product-how-it-works.jpg";
 import laserTherapy from "@/assets/laser-therapy.png";
 import heatActivation from "@/assets/heat-activation.jpg";
-import heroBanner from "@/assets/hero-banner.jpg";
+import heroBannerDesktop from "@/assets/hero-banner-desktop.png";
+import heroBannerMobile from "@/assets/hero-banner-mobile.png";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -60,10 +61,17 @@ export default function Index() {
       {/* Hero Banner */}
       <Link to="/product/wireless-heated-knee-massager" className="block">
         <section className="relative w-full overflow-hidden cursor-pointer hover:opacity-95 transition-opacity">
+          {/* Desktop Hero Banner */}
           <img 
-            src={heroBanner} 
+            src={heroBannerDesktop} 
             alt="FlexiKnee Smart Heated Knee Massager" 
-            className="w-full h-auto object-cover"
+            className="hidden md:block w-full h-auto object-cover"
+          />
+          {/* Mobile Hero Banner */}
+          <img 
+            src={heroBannerMobile} 
+            alt="FlexiKnee Smart Heated Knee Massager" 
+            className="block md:hidden w-full h-auto object-cover"
           />
         </section>
       </Link>
