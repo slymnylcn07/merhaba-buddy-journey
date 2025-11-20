@@ -15,19 +15,6 @@ import { useCartStore } from "@/stores/cartStore";
 
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
-  // Add/remove class to body when cart opens/closes
-  useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add('cart-open');
-    } else {
-      document.body.classList.remove('cart-open');
-    }
-    
-    return () => {
-      document.body.classList.remove('cart-open');
-    };
-  }, [isOpen]);
   const { 
     items, 
     isLoading, 
