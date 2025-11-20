@@ -155,12 +155,14 @@ export async function storefrontApiRequest(query: string, variables: any = {}) {
   });
 
   if (!response.ok) {
+    console.error('Shopify API Error:', response.status, response.statusText);
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
   const data = await response.json();
   
   if (data.errors) {
+    console.error('Shopify GraphQL Errors:', data.errors);
     throw new Error(`Error calling Shopify: ${data.errors.map((e: any) => e.message).join(', ')}`);
   }
 
