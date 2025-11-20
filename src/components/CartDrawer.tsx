@@ -16,81 +16,16 @@ import { useCartStore } from "@/stores/cartStore";
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
   
-  // Move Tidio chat widget when cart is open
+  // Add/remove class to body when cart opens/closes
   useEffect(() => {
-    const moveTidioWidget = () => {
-      // Find all Tidio-related elements
-      const selectors = [
-        '#tidio-chat',
-        '#tidio-chat-code',
-        'div[id^="tidio"]',
-        'iframe[title*="Tidio"]',
-        'iframe[src*="tidio"]',
-        '.tidio-chat',
-        '[class*="tidio"]'
-      ];
-      
-      let tidioElements: HTMLElement[] = [];
-      
-      selectors.forEach(selector => {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach(el => {
-          if (el instanceof HTMLElement && !tidioElements.includes(el)) {
-            tidioElements.push(el);
-          }
-        });
-      });
-      
-      // Also check for parent containers
-      tidioElements.forEach(el => {
-        let parent = el.parentElement;
-        while (parent && parent !== document.body) {
-          if (parent.id.includes('tidio') || parent.className.includes('tidio')) {
-            if (!tidioElements.includes(parent)) {
-              tidioElements.push(parent);
-            }
-          }
-          parent = parent.parentElement;
-        }
-      });
-      
-      console.log('Found Tidio elements:', tidioElements);
-      
-      tidioElements.forEach(el => {
-        el.style.transition = 'all 0.3s ease-in-out';
-        
-        if (isOpen) {
-          el.style.right = 'auto !important';
-          el.style.left = '20px !important';
-          el.style.bottom = '20px !important';
-        } else {
-          el.style.right = '20px !important';
-          el.style.left = 'auto !important';
-          el.style.bottom = '20px !important';
-        }
-      });
-    };
-
-    // Try multiple times with delays to catch lazy-loaded widgets
-    moveTidioWidget();
-    const timer1 = setTimeout(moveTidioWidget, 100);
-    const timer2 = setTimeout(moveTidioWidget, 500);
-    const timer3 = setTimeout(moveTidioWidget, 1000);
-    
-    // Also observe DOM changes for Tidio widget
-    const observer = new MutationObserver(moveTidioWidget);
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ['style', 'class', 'id']
-    });
+    if (isOpen) {
+      document.body.classList.add('cart-open');
+    } else {
+      document.body.classList.remove('cart-open');
+    }
     
     return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-      clearTimeout(timer3);
-      observer.disconnect();
+      document.body.classList.remove('cart-open');
     };
   }, [isOpen]);
   const { 

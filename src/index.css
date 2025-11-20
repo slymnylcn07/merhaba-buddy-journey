@@ -134,3 +134,17 @@ All colors MUST be HSL.
 .animate-scroll:hover {
   animation-play-state: paused;
 }
+
+/* Tidio chat widget positioning - move to left when cart is open */
+body.cart-open #tidio-chat,
+body.cart-open #tidio-chat-code,
+body.cart-open div[id^="tidio"],
+body.cart-open iframe[title*="Tidio"],
+body.cart-open iframe[src*="tidio"],
+body.cart-open iframe[id*="tidio"],
+body.cart-open .tidio-chat,
+body.cart-open [class*="tidio"] {
+  right: auto !important;
+  left: 20px !important;
+  transition: all 0.3s ease-in-out !important;
+}
