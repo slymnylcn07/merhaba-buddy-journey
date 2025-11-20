@@ -8,23 +8,15 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
-import { ArrowLeft, Star, Package, Clock, BookOpen, Box, Check, Globe } from "lucide-react";
+import { ArrowLeft, Star, Package, Clock, BookOpen, Box, Check } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { 
   detectUserCountry, 
   getCurrencyForCountry, 
   convertPrice, 
   formatPrice,
-  CurrencyCode,
-  CURRENCY_CONFIG 
+  CurrencyCode 
 } from "@/lib/currency";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import productMain from "@/assets/product-main.jpg";
 import productHowItWorks from "@/assets/product-how-it-works.jpg";
 import productTemperature from "@/assets/product-temperature.jpg";
@@ -578,23 +570,6 @@ const ProductDetail = () => {
                 <div className="flex-1 h-px bg-border"></div>
                 <h3 className="font-bold text-base whitespace-nowrap">BUNDLE & SAVE</h3>
                 <div className="flex-1 h-px bg-border"></div>
-              </div>
-              
-              {/* Currency Selector */}
-              <div className="flex items-center justify-end gap-2 mb-3">
-                <Globe className="w-4 h-4 text-muted-foreground" />
-                <Select value={currency} onValueChange={(value) => setCurrency(value as CurrencyCode)}>
-                  <SelectTrigger className="w-[140px] h-8">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {Object.entries(CURRENCY_CONFIG).map(([code, config]) => (
-                      <SelectItem key={code} value={code}>
-                        {config.symbol} {code}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
               </div>
 
               <div className="space-y-2">
