@@ -304,81 +304,6 @@ export default function Index() {
       </section>
 
 
-      {/* Featured Product Section */}
-      <section id="features" className="py-16">
-        <div className="container px-4">
-          {loading ? (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground">Loading products...</p>
-            </div>
-          ) : mainProduct ? (
-            <Link to={`/product/${mainProduct.node.handle}`} className="block cursor-pointer group">
-              <div className="max-w-6xl mx-auto">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                  {/* Left - Product Images */}
-                  <div>
-                    <Carousel className="mb-8">
-                      <CarouselContent>
-                        <CarouselItem>
-                          <div className="rounded-2xl overflow-hidden shadow-2xl">
-                            <img src={productMain} alt="FlexiKnee Main" className="w-full h-auto" />
-                          </div>
-                        </CarouselItem>
-                        <CarouselItem>
-                          <div className="rounded-2xl overflow-hidden shadow-2xl">
-                            <img src={productPainRelief} alt="FlexiKnee Pain Relief" className="w-full h-auto" />
-                          </div>
-                        </CarouselItem>
-                        <CarouselItem>
-                          <div className="rounded-2xl overflow-hidden shadow-2xl">
-                            <img src={productTemperature} alt="FlexiKnee Temperature Control" className="w-full h-auto" />
-                          </div>
-                        </CarouselItem>
-                        <CarouselItem>
-                          <div className="rounded-2xl overflow-hidden shadow-2xl">
-                            <img src={productVibration} alt="FlexiKnee Vibration" className="w-full h-auto" />
-                          </div>
-                        </CarouselItem>
-                      </CarouselContent>
-                      <CarouselPrevious />
-                      <CarouselNext />
-                    </Carousel>
-                  </div>
-
-                  {/* Right - Product Info */}
-                  <div>
-                    <div className="mb-8">
-                      <div className="flex items-center gap-2 mb-4">
-                        <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                          ))}
-                        </div>
-                        <span className="text-sm font-medium">(4,800+ Reviews)</span>
-                      </div>
-                      <h3 className="text-3xl font-bold mb-4">{mainProduct.node.title}</h3>
-                      <p className="text-lg text-muted-foreground mb-6">
-                        {mainProduct.node.description}
-                      </p>
-                    </div>
-
-                    <div className="flex flex-col gap-4">
-                      <Button size="lg" className="text-lg px-8 w-full">
-                        <Truck className="mr-2 h-5 w-5" />
-                        Shop Now
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground">No products available. Please connect your Shopify store.</p>
-            </div>
-          )}
-        </div>
-      </section>
 
       {/* Image with Text - 3-in-1 Technology */}
       <section className="py-16 bg-muted/30">
@@ -484,13 +409,7 @@ export default function Index() {
       {/* Blog Posts Section */}
       <section className="py-16 bg-muted/30">
         <div className="container px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Better Knee Health Starts Here</h2>
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">FlexiKnee™ Smart Heated Knee Massager</h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Advanced 3-in-1 therapy engineered for pain-free mobility.
-            </p>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Better Knee Health Starts Here</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
@@ -528,6 +447,82 @@ export default function Index() {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Featured Product Section */}
+      <section id="features" className="py-16">
+        <div className="container px-4">
+          {loading ? (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">Loading products...</p>
+            </div>
+          ) : mainProduct ? (
+            <Link to={`/product/${mainProduct.node.handle}`} className="block cursor-pointer group">
+              <div className="max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                  {/* Left - Product Images */}
+                  <div>
+                    <Carousel className="mb-8">
+                      <CarouselContent>
+                        <CarouselItem>
+                          <div className="rounded-2xl overflow-hidden shadow-2xl">
+                            <img src={productMain} alt="FlexiKnee Main" className="w-full h-auto" />
+                          </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                          <div className="rounded-2xl overflow-hidden shadow-2xl">
+                            <img src={productPainRelief} alt="FlexiKnee Pain Relief" className="w-full h-auto" />
+                          </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                          <div className="rounded-2xl overflow-hidden shadow-2xl">
+                            <img src={productTemperature} alt="FlexiKnee Temperature Control" className="w-full h-auto" />
+                          </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                          <div className="rounded-2xl overflow-hidden shadow-2xl">
+                            <img src={productVibration} alt="FlexiKnee Vibration" className="w-full h-auto" />
+                          </div>
+                        </CarouselItem>
+                      </CarouselContent>
+                      <CarouselPrevious />
+                      <CarouselNext />
+                    </Carousel>
+                  </div>
+
+                  {/* Right - Product Info */}
+                  <div>
+                    <div className="mb-8">
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                          ))}
+                        </div>
+                        <span className="text-sm font-medium">(4,800+ Reviews)</span>
+                      </div>
+                      <h3 className="text-3xl font-bold mb-4">{mainProduct.node.title}</h3>
+                      <p className="text-lg text-muted-foreground mb-6">
+                        {mainProduct.node.description}
+                      </p>
+                    </div>
+
+                    <div className="flex flex-col gap-4">
+                      <Button size="lg" className="text-lg px-8 w-full">
+                        <Truck className="mr-2 h-5 w-5" />
+                        Shop Now
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">No products available. Please connect your Shopify store.</p>
+            </div>
+          )}
         </div>
       </section>
 
