@@ -60,22 +60,37 @@ export default function Index() {
     <div className="min-h-screen">
       <Header />
       {/* Hero Banner */}
-      <Link to="/product/wireless-heated-knee-massager" className="block">
-        <section className="relative w-full overflow-hidden cursor-pointer hover:opacity-95 transition-opacity">
-          {/* Desktop Hero Banner */}
+      {mainProduct ? (
+        <Link to={`/product/${mainProduct.node.handle}`} className="block">
+          <section className="relative w-full overflow-hidden cursor-pointer hover:opacity-95 transition-opacity">
+            {/* Desktop Hero Banner */}
+            <img 
+              src={heroBannerDesktop} 
+              alt="FlexiKnee Smart Heated Knee Massager" 
+              className="hidden md:block w-full h-auto object-cover"
+            />
+            {/* Mobile Hero Banner */}
+            <img 
+              src={heroBannerMobile} 
+              alt="FlexiKnee Smart Heated Knee Massager" 
+              className="block md:hidden w-full h-auto object-cover"
+            />
+          </section>
+        </Link>
+      ) : (
+        <section className="relative w-full overflow-hidden">
           <img 
             src={heroBannerDesktop} 
             alt="FlexiKnee Smart Heated Knee Massager" 
             className="hidden md:block w-full h-auto object-cover"
           />
-          {/* Mobile Hero Banner */}
           <img 
             src={heroBannerMobile} 
             alt="FlexiKnee Smart Heated Knee Massager" 
             className="block md:hidden w-full h-auto object-cover"
           />
         </section>
-      </Link>
+      )}
 
       {/* Scrolling Banner */}
       <ScrollingBanner />
@@ -292,19 +307,18 @@ export default function Index() {
       {/* Featured Product Section */}
       <section id="features" className="py-16">
         <div className="container px-4">
-          <Link to="/product/wireless-heated-knee-massager" className="block cursor-pointer group">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 group-hover:text-primary transition-colors">Wireless Heated Knee Massager</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Advanced 3-in-1 therapy engineered for pain-free mobility.
-              </p>
+          {loading ? (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">Loading products...</p>
             </div>
-          
-            {loading ? (
-              <div className="text-center py-12">
-                <p className="text-muted-foreground">Loading products...</p>
+          ) : mainProduct ? (
+            <Link to={`/product/${mainProduct.node.handle}`} className="block cursor-pointer group">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 group-hover:text-primary transition-colors">{mainProduct.node.title}</h2>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  Advanced 3-in-1 therapy engineered for pain-free mobility.
+                </p>
               </div>
-            ) : mainProduct ? (
               <div className="max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                   {/* Left - Product Images */}
@@ -363,8 +377,12 @@ export default function Index() {
                   </div>
                 </div>
               </div>
-            ) : null}
-          </Link>
+            </Link>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">No products available. Please connect your Shopify store.</p>
+            </div>
+          )}
         </div>
       </section>
 
