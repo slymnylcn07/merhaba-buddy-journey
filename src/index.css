@@ -136,15 +136,13 @@ All colors MUST be HSL.
 }
 
 /* Tidio chat widget - always on the left side */
-#tidio-chat,
-#tidio-chat-code,
-div[id^="tidio"],
-iframe[title*="Tidio"],
-iframe[src*="tidio"],
-iframe[id*="tidio"],
-.tidio-chat,
-[class*="tidio"] {
+#tidio-chat-iframe {
   right: auto !important;
   left: 20px !important;
   bottom: 20px !important;
+}
+
+#tidio-chat {
+  right: auto !important;
+  left: 0 !important;
 }
