@@ -313,12 +313,6 @@ export default function Index() {
             </div>
           ) : mainProduct ? (
             <Link to={`/product/${mainProduct.node.handle}`} className="block cursor-pointer group">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 group-hover:text-primary transition-colors">{mainProduct.node.title}</h2>
-                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                  Advanced 3-in-1 therapy engineered for pain-free mobility.
-                </p>
-              </div>
               <div className="max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                   {/* Left - Product Images */}
@@ -490,7 +484,13 @@ export default function Index() {
       {/* Blog Posts Section */}
       <section className="py-16 bg-muted/30">
         <div className="container px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Better Knee Health Starts Here</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Better Knee Health Starts Here</h2>
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">FlexiKnee™ Smart Heated Knee Massager</h3>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Advanced 3-in-1 therapy engineered for pain-free mobility.
+            </p>
+          </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
