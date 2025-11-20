@@ -53,9 +53,10 @@ export const CartDrawer = () => {
         return;
       }
       
-      // Open checkout immediately in current tab
-      console.log('Redirecting to checkout...');
-      window.location.href = checkoutUrl;
+      // Open checkout in new tab
+      console.log('Opening checkout in new tab...');
+      window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+      setIsOpen(false);
       
     } catch (error) {
       console.error('Checkout failed:', error);
