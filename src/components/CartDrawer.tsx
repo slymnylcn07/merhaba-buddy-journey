@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +15,20 @@ import { useCartStore } from "@/stores/cartStore";
 
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
+  
+  // Move Tidio chat widget when cart is open
+  useEffect(() => {
+    const tidioChat = document.querySelector('#tidio-chat-iframe') as HTMLElement;
+    if (tidioChat) {
+      if (isOpen) {
+        tidioChat.style.right = 'auto';
+        tidioChat.style.left = '20px';
+      } else {
+        tidioChat.style.right = '20px';
+        tidioChat.style.left = 'auto';
+      }
+    }
+  }, [isOpen]);
   const { 
     items, 
     isLoading, 
