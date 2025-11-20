@@ -57,14 +57,15 @@ export const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Customer Service</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="https://flexi-knee.com/#support"
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => {
+                    const chatButton = document.querySelector('[data-chat-button]') as HTMLButtonElement;
+                    if (chatButton) chatButton.click();
+                  }}
+                  className="text-muted-foreground hover:text-primary hover:underline transition-colors text-left"
                 >
-                  Support Center
-                </a>
+                  Chat with us
+                </button>
               </li>
               <li>
                 <Link
@@ -88,16 +89,6 @@ export const Footer = () => {
                 >
                   Home
                 </Link>
-              </li>
-              <li>
-                <a
-                  href="https://flexi-knee.com"
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Main Store
-                </a>
               </li>
             </ul>
           </div>
