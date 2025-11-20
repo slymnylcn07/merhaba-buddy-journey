@@ -135,16 +135,16 @@ All colors MUST be HSL.
   animation-play-state: paused;
 }
 
-/* Tidio chat widget positioning - move to left when cart is open */
-body.cart-open #tidio-chat,
-body.cart-open #tidio-chat-code,
-body.cart-open div[id^="tidio"],
-body.cart-open iframe[title*="Tidio"],
-body.cart-open iframe[src*="tidio"],
-body.cart-open iframe[id*="tidio"],
-body.cart-open .tidio-chat,
-body.cart-open [class*="tidio"] {
+/* Tidio chat widget - always on the left side */
+#tidio-chat,
+#tidio-chat-code,
+div[id^="tidio"],
+iframe[title*="Tidio"],
+iframe[src*="tidio"],
+iframe[id*="tidio"],
+.tidio-chat,
+[class*="tidio"] {
   right: auto !important;
   left: 20px !important;
-  transition: all 0.3s ease-in-out !important;
+  bottom: 20px !important;
 }
