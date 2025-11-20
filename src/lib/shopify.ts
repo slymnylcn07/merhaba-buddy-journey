@@ -206,12 +206,17 @@ export async function createStorefrontCheckout(items: any[]): Promise<string> {
       throw new Error('No checkout URL returned from Shopify');
     }
 
-    // CRITICAL FIX: Force myshopify.com domain for checkout
-    // Custom domains (flexi-knee.com) don't work until properly configured in Shopify
-    const checkoutUrl = cart.checkoutUrl
-      .replace('flexi-knee.com', SHOPIFY_STORE_PERMANENT_DOMAIN)
-      .replace(/(\?|&)channel=[^&]*/, '') // Remove existing channel param
-      + (cart.checkoutUrl.includes('?') ? '&' : '?') + 'channel=online_store';
+    // CRITICAL FIX: Always use myshopify.com domain for checkout
+    // Custom domains don't work for checkout - must use permanent domain
+    let checkoutUrl = cart.checkoutUrl;
+    
+    // Replace any custom domain with the permanent myshopify.com domain
+    checkoutUrl = checkoutUrl.replace(/https:\/\/[^\/]+/, `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}`);
+    
+    // Ensure channel parameter is set correctly
+    const url = new URL(checkoutUrl);
+    url.searchParams.set('channel', 'online_store');
+    checkoutUrl = url.toString();
     
     console.log('Original checkout URL:', cart.checkoutUrl);
     console.log('Fixed checkout URL:', checkoutUrl);
