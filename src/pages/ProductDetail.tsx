@@ -8,8 +8,23 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
-import { ArrowLeft, Star, Package, Clock, BookOpen, Box, Check } from "lucide-react";
+import { ArrowLeft, Star, Package, Clock, BookOpen, Box, Check, Globe } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { 
+  detectUserCountry, 
+  getCurrencyForCountry, 
+  convertPrice, 
+  formatPrice,
+  CurrencyCode,
+  CURRENCY_CONFIG 
+} from "@/lib/currency";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import productMain from "@/assets/product-main.jpg";
 import productHowItWorks from "@/assets/product-how-it-works.jpg";
 import productTemperature from "@/assets/product-temperature.jpg";
@@ -32,8 +47,19 @@ const ProductDetail = () => {
   const [selectedBundle, setSelectedBundle] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
   const [showAllReviews, setShowAllReviews] = useState(false);
+  const [currency, setCurrency] = useState<CurrencyCode>('GBP');
   const reviewsPerPage = 10;
   const addItem = useCartStore((state) => state.addItem);
+
+  // Detect user's currency on mount
+  useEffect(() => {
+    const detectCurrency = async () => {
+      const countryCode = await detectUserCountry();
+      const detectedCurrency = getCurrencyForCountry(countryCode);
+      setCurrency(detectedCurrency);
+    };
+    detectCurrency();
+  }, []);
 
   useEffect(() => {
     const loadProduct = async () => {
@@ -107,12 +133,20 @@ const ProductDetail = () => {
   const images = product.node.images.edges;
   const basePrice = parseFloat(product.node.priceRange.minVariantPrice.amount);
 
-  const bundles = [
+  // Base bundles in GBP
+  const baseBundles = [
     { qty: 1, priceEach: 149, original: 298, discount: 50, tag: null },
     { qty: 2, priceEach: 134.1, original: 596, discount: 55, tag: "MOST POPULAR" },
     { qty: 3, priceEach: 128.14, original: 894, discount: 57, tag: null },
     { qty: 4, priceEach: 119.2, original: 1192, discount: 60, tag: "BEST OFFER" },
   ];
+
+  // Convert bundles to selected currency
+  const bundles = baseBundles.map(bundle => ({
+    ...bundle,
+    priceEach: convertPrice(bundle.priceEach, currency),
+    original: convertPrice(bundle.original, currency),
+  }));
 
   const currentBundle = bundles.find((b) => b.qty === selectedBundle) || bundles[0];
 
@@ -545,6 +579,24 @@ const ProductDetail = () => {
                 <h3 className="font-bold text-base whitespace-nowrap">BUNDLE & SAVE</h3>
                 <div className="flex-1 h-px bg-border"></div>
               </div>
+              
+              {/* Currency Selector */}
+              <div className="flex items-center justify-end gap-2 mb-3">
+                <Globe className="w-4 h-4 text-muted-foreground" />
+                <Select value={currency} onValueChange={(value) => setCurrency(value as CurrencyCode)}>
+                  <SelectTrigger className="w-[140px] h-8">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {Object.entries(CURRENCY_CONFIG).map(([code, config]) => (
+                      <SelectItem key={code} value={code}>
+                        {config.symbol} {code}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
               <div className="space-y-2">
                 {bundles.map((bundle) => (
                   <button
@@ -577,7 +629,9 @@ const ProductDetail = () => {
                             {bundle.qty}x Knee Massager{bundle.qty > 1 ? "s" : ""}
                           </div>
                           {bundle.qty > 1 && (
-                            <div className="text-[11px] text-muted-foreground">${bundle.priceEach.toFixed(2)} each</div>
+                            <div className="text-[11px] text-muted-foreground">
+                              {formatPrice(bundle.priceEach, currency)} each
+                            </div>
                           )}
                           <div className="text-[11px] text-primary font-medium truncate">
                             You Saved {bundle.discount}% + Ebook
@@ -586,10 +640,10 @@ const ProductDetail = () => {
                       </div>
                       <div className="text-right flex-shrink-0">
                         <div className="font-bold text-base whitespace-nowrap">
-                          ${(bundle.priceEach * bundle.qty).toFixed(2)}
+                          {formatPrice(bundle.priceEach * bundle.qty, currency)}
                         </div>
                         <div className="text-[11px] text-muted-foreground line-through whitespace-nowrap">
-                          ${bundle.original.toFixed(2)}
+                          {formatPrice(bundle.original, currency)}
                         </div>
                       </div>
                     </div>
@@ -601,7 +655,7 @@ const ProductDetail = () => {
             {/* CTA */}
             <Button onClick={handleAddToCart} size="lg" className="w-full text-lg h-14 font-bold">
               <Package className="w-5 h-5 mr-2" />
-              ADD TO CART - ${totalPrice.toFixed(2)}
+              ADD TO CART - {formatPrice(totalPrice, currency)}
             </Button>
 
             {/* Delivery Information */}
