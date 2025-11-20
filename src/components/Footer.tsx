@@ -59,8 +59,10 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => {
-                    const chatButton = document.querySelector('[data-chat-button]') as HTMLButtonElement;
-                    if (chatButton) chatButton.click();
+                    const tidio = (window as any).tidioChatApi;
+                    if (tidio) {
+                      tidio.open();
+                    }
                   }}
                   className="text-muted-foreground hover:text-primary hover:underline transition-colors text-left"
                 >
