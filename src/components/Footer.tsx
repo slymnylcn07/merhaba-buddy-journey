@@ -10,36 +10,44 @@ export const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link
-                  to="/terms-of-service"
+                <a
+                  href="https://www.flexi-knee.com/pages/terms-of-service"
                   className="text-muted-foreground hover:text-primary hover:underline transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Terms of Service
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="/privacy-policy"
+                <a
+                  href="https://www.flexi-knee.com/pages/privacy-policy"
                   className="text-muted-foreground hover:text-primary hover:underline transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Privacy Policy
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="/shipping-policy"
+                <a
+                  href="https://www.flexi-knee.com/pages/shipping-policy"
                   className="text-muted-foreground hover:text-primary hover:underline transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Shipping Policy
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="/refund-policy"
+                <a
+                  href="https://www.flexi-knee.com/pages/returns-and-refund-policy"
                   className="text-muted-foreground hover:text-primary hover:underline transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Refund Policy
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
