@@ -19,34 +19,79 @@ export const CartDrawer = () => {
   // Move Tidio chat widget when cart is open
   useEffect(() => {
     const moveTidioWidget = () => {
-      // Try multiple selectors to find Tidio widget
-      const tidioChat = document.querySelector('#tidio-chat') as HTMLElement ||
-                       document.querySelector('#tidio-chat-iframe') as HTMLElement ||
-                       document.querySelector('iframe[title*="Tidio"]') as HTMLElement ||
-                       document.querySelector('[id*="tidio"]') as HTMLElement;
+      // Find all Tidio-related elements
+      const selectors = [
+        '#tidio-chat',
+        '#tidio-chat-code',
+        'div[id^="tidio"]',
+        'iframe[title*="Tidio"]',
+        'iframe[src*="tidio"]',
+        '.tidio-chat',
+        '[class*="tidio"]'
+      ];
       
-      if (tidioChat) {
-        tidioChat.style.transition = 'all 0.3s ease-in-out';
+      let tidioElements: HTMLElement[] = [];
+      
+      selectors.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(el => {
+          if (el instanceof HTMLElement && !tidioElements.includes(el)) {
+            tidioElements.push(el);
+          }
+        });
+      });
+      
+      // Also check for parent containers
+      tidioElements.forEach(el => {
+        let parent = el.parentElement;
+        while (parent && parent !== document.body) {
+          if (parent.id.includes('tidio') || parent.className.includes('tidio')) {
+            if (!tidioElements.includes(parent)) {
+              tidioElements.push(parent);
+            }
+          }
+          parent = parent.parentElement;
+        }
+      });
+      
+      console.log('Found Tidio elements:', tidioElements);
+      
+      tidioElements.forEach(el => {
+        el.style.transition = 'all 0.3s ease-in-out';
         
         if (isOpen) {
-          tidioChat.style.right = 'auto';
-          tidioChat.style.left = '20px';
-          tidioChat.style.bottom = '20px';
+          el.style.right = 'auto !important';
+          el.style.left = '20px !important';
+          el.style.bottom = '20px !important';
         } else {
-          tidioChat.style.right = '20px';
-          tidioChat.style.left = 'auto';
-          tidioChat.style.bottom = '20px';
+          el.style.right = '20px !important';
+          el.style.left = 'auto !important';
+          el.style.bottom = '20px !important';
         }
-      }
+      });
     };
 
-    // Try immediately
+    // Try multiple times with delays to catch lazy-loaded widgets
     moveTidioWidget();
+    const timer1 = setTimeout(moveTidioWidget, 100);
+    const timer2 = setTimeout(moveTidioWidget, 500);
+    const timer3 = setTimeout(moveTidioWidget, 1000);
     
-    // Also try after a small delay in case widget loads late
-    const timer = setTimeout(moveTidioWidget, 500);
+    // Also observe DOM changes for Tidio widget
+    const observer = new MutationObserver(moveTidioWidget);
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['style', 'class', 'id']
+    });
     
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+      observer.disconnect();
+    };
   }, [isOpen]);
   const { 
     items, 
