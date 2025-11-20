@@ -609,24 +609,42 @@ export default function Index() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
-        <div className="container px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Start Your Pain-Free Journey Today
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Join thousands who have found relief with FlexiKnee™
-          </p>
-          <Button size="lg" variant="secondary" className="text-lg px-12" onClick={handleAddToCart}>
-            Shop FlexiKnee™ Now
-          </Button>
-          <div className="flex justify-center gap-8 mt-8 text-sm opacity-90">
-            <span>✓ Free Shipping</span>
-            <span>✓ 30-Day Guarantee</span>
-            <span>✓ Secure Checkout</span>
+      {mainProduct ? (
+        <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
+          <div className="container px-4 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Start Your Pain-Free Journey Today
+            </h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+              Join thousands who have found relief with FlexiKnee™
+            </p>
+            <Link to={`/product/${mainProduct.node.handle}`}>
+              <Button size="lg" variant="secondary" className="text-lg px-12">
+                Shop FlexiKnee™ Now
+              </Button>
+            </Link>
+            <div className="flex justify-center gap-8 mt-8 text-sm opacity-90">
+              <span>✓ Free Shipping</span>
+              <span>✓ 30-Day Guarantee</span>
+              <span>✓ Secure Checkout</span>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
+          <div className="container px-4 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Start Your Pain-Free Journey Today
+            </h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+              Join thousands who have found relief with FlexiKnee™
+            </p>
+            <Button size="lg" variant="secondary" className="text-lg px-12" disabled>
+              No Products Available
+            </Button>
+          </div>
+        </section>
+      )}
       
       <Footer />
     </div>
