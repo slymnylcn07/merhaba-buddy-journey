@@ -124,13 +124,41 @@ const ProductDetail = () => {
 
   const images = product.node.images.edges;
   const basePrice = parseFloat(product.node.priceRange.minVariantPrice.amount);
+  const baseCurrency = product.node.priceRange.minVariantPrice.currencyCode;
 
-  // Base bundles in GBP
+  // Base bundles calculated from Shopify price
+  // Original price is assumed to be 2x the base price (50% discount for 1 item)
+  const originalPriceMultiplier = 2;
+  
   const baseBundles = [
-    { qty: 1, priceEach: 149, original: 298, discount: 50, tag: null },
-    { qty: 2, priceEach: 134.1, original: 596, discount: 55, tag: "MOST POPULAR" },
-    { qty: 3, priceEach: 128.14, original: 894, discount: 57, tag: null },
-    { qty: 4, priceEach: 119.2, original: 1192, discount: 60, tag: "BEST OFFER" },
+    { 
+      qty: 1, 
+      priceEach: basePrice, 
+      original: basePrice * originalPriceMultiplier, 
+      discount: 50, 
+      tag: null 
+    },
+    { 
+      qty: 2, 
+      priceEach: basePrice * 0.90, // 10% additional discount
+      original: basePrice * originalPriceMultiplier * 2, 
+      discount: 55, 
+      tag: "MOST POPULAR" 
+    },
+    { 
+      qty: 3, 
+      priceEach: basePrice * 0.86, // 14% additional discount
+      original: basePrice * originalPriceMultiplier * 3, 
+      discount: 57, 
+      tag: null 
+    },
+    { 
+      qty: 4, 
+      priceEach: basePrice * 0.80, // 20% additional discount
+      original: basePrice * originalPriceMultiplier * 4, 
+      discount: 60, 
+      tag: "BEST OFFER" 
+    },
   ];
 
   // Convert bundles to selected currency
