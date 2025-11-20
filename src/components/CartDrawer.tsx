@@ -18,16 +18,35 @@ export const CartDrawer = () => {
   
   // Move Tidio chat widget when cart is open
   useEffect(() => {
-    const tidioChat = document.querySelector('#tidio-chat-iframe') as HTMLElement;
-    if (tidioChat) {
-      if (isOpen) {
-        tidioChat.style.right = 'auto';
-        tidioChat.style.left = '20px';
-      } else {
-        tidioChat.style.right = '20px';
-        tidioChat.style.left = 'auto';
+    const moveTidioWidget = () => {
+      // Try multiple selectors to find Tidio widget
+      const tidioChat = document.querySelector('#tidio-chat') as HTMLElement ||
+                       document.querySelector('#tidio-chat-iframe') as HTMLElement ||
+                       document.querySelector('iframe[title*="Tidio"]') as HTMLElement ||
+                       document.querySelector('[id*="tidio"]') as HTMLElement;
+      
+      if (tidioChat) {
+        tidioChat.style.transition = 'all 0.3s ease-in-out';
+        
+        if (isOpen) {
+          tidioChat.style.right = 'auto';
+          tidioChat.style.left = '20px';
+          tidioChat.style.bottom = '20px';
+        } else {
+          tidioChat.style.right = '20px';
+          tidioChat.style.left = 'auto';
+          tidioChat.style.bottom = '20px';
+        }
       }
-    }
+    };
+
+    // Try immediately
+    moveTidioWidget();
+    
+    // Also try after a small delay in case widget loads late
+    const timer = setTimeout(moveTidioWidget, 500);
+    
+    return () => clearTimeout(timer);
   }, [isOpen]);
   const { 
     items, 
