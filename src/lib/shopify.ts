@@ -1,7 +1,7 @@
 const SHOPIFY_API_VERSION = '2025-07';
 const SHOPIFY_STORE_PERMANENT_DOMAIN = 'lovable-project-y7ubq.myshopify.com';
 const SHOPIFY_STOREFRONT_URL = `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}/api/${SHOPIFY_API_VERSION}/graphql.json`;
-const SHOPIFY_STOREFRONT_TOKEN = 'e0fb55484e9f178e377b28efc18c8d11';
+const SHOPIFY_STOREFRONT_TOKEN = 'b45929b7a3e1e883f117f0f893bdedf2';
 
 export interface ShopifyProduct {
   node: {
