@@ -6,14 +6,14 @@ export const Footer = () => {
   return (
     <footer className="bg-muted/30 border-t">
       <div className="container px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {/* Column 1 - Logo */}
           <div className="flex flex-col items-start">
             <Link to="/">
               <img 
                 src={flexikneeLogo} 
                 alt="FlexiKnee Logo" 
-                className="h-12 w-auto"
+                className="h-20 w-auto"
               />
             </Link>
             <p className="text-sm text-muted-foreground mt-4">
@@ -57,6 +57,13 @@ export const Footer = () => {
                   Refund Policy
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* Column 3 - Support */}
+          <div>
+            <h3 className="font-bold text-lg mb-4">Support</h3>
+            <ul className="space-y-2">
               <li>
                 <button
                   onClick={() => {
