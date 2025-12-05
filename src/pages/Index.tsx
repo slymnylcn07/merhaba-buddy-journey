@@ -60,37 +60,29 @@ export default function Index() {
     <div className="min-h-screen">
       <Header />
       {/* Hero Banner */}
-      {mainProduct ? (
-        <Link to={`/product/${mainProduct.node.handle}`} className="block">
-          <section className="relative w-full overflow-hidden cursor-pointer hover:opacity-95 transition-opacity">
-            {/* Desktop Hero Banner */}
-            <img 
-              src={heroBannerDesktop} 
-              alt="FlexiKnee Smart Heated Knee Massager" 
-              className="hidden md:block w-full h-auto object-cover"
-            />
-            {/* Mobile Hero Banner */}
-            <img 
-              src={heroBannerMobile} 
-              alt="FlexiKnee Smart Heated Knee Massager" 
-              className="block md:hidden w-full h-auto object-cover"
-            />
-          </section>
-        </Link>
-      ) : (
-        <section className="relative w-full overflow-hidden">
+      {/* Hero Banner - Always render immediately */}
+      <Link to={mainProduct ? `/product/${mainProduct.node.handle}` : '/product/knee-massager-smart-red-light-and-massage-therapy'} className="block">
+        <section className="relative w-full overflow-hidden cursor-pointer hover:opacity-95 transition-opacity">
+          {/* Desktop Hero Banner */}
           <img 
             src={heroBannerDesktop} 
             alt="FlexiKnee Smart Heated Knee Massager" 
             className="hidden md:block w-full h-auto object-cover"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
+          {/* Mobile Hero Banner */}
           <img 
             src={heroBannerMobile} 
             alt="FlexiKnee Smart Heated Knee Massager" 
             className="block md:hidden w-full h-auto object-cover"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
         </section>
-      )}
+      </Link>
 
       {/* Scrolling Banner */}
       <div className="mt-8">
