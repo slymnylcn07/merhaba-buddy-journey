@@ -19,6 +19,7 @@ import {
 } from "@/lib/currency";
 import productMain from "@/assets/product-main.jpg";
 import productHowItWorks from "@/assets/product-how-it-works.jpg";
+import DonationBanner from "@/components/DonationBanner";
 import productTemperature from "@/assets/product-temperature.jpg";
 import productPainRelief from "@/assets/product-pain-relief.jpg";
 import productControl from "@/assets/product-control.jpg";
@@ -712,6 +713,9 @@ const ProductDetail = () => {
                 />
               </div>
             </div>
+
+            {/* Donation Impact Banner */}
+            <DonationBanner />
 
             {/* Free Gifts Section */}
             <div className="space-y-3 mt-1">
