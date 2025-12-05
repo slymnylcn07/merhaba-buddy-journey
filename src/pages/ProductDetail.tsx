@@ -578,17 +578,17 @@ const ProductDetail = () => {
             </div>
 
             {/* Key Benefits - 4 Feature Grid */}
-            <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-2 gap-5 mb-4">
               {/* Left Column */}
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3.5">
                   <span className="text-xl flex-shrink-0">🩺</span>
                   <div>
                     <p className="font-bold text-sm text-foreground">Relief</p>
                     <p className="text-xs text-muted-foreground">Fast-acting heat & vibration to ease knee pain.</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3.5">
                   <span className="text-xl flex-shrink-0">💆</span>
                   <div>
                     <p className="font-bold text-sm text-foreground">Therapy</p>
@@ -598,15 +598,15 @@ const ProductDetail = () => {
               </div>
               {/* Right Column */}
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3.5">
                   <span className="text-xl flex-shrink-0">🚶</span>
                   <div>
                     <p className="font-bold text-sm text-foreground">Freedom</p>
                     <p className="text-xs text-muted-foreground">Move comfortably again — anytime, anywhere.</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-xl flex-shrink-0">🔋</span>
+                <div className="flex items-start gap-3.5">
+                  <span className="text-xl flex-shrink-0">🔌</span>
                   <div>
                     <p className="font-bold text-sm text-foreground">Wireless</p>
                     <p className="text-xs text-muted-foreground">Rechargeable + cord-free for everyday mobility.</p>
