@@ -125,7 +125,11 @@ export const Footer = () => {
           </div>
         </div>
 
+        {/* Foundation Quote */}
         <div className="text-center mt-8 pt-8 border-t">
+          <p className="text-sm text-muted-foreground italic max-w-2xl mx-auto mb-4">
+            "FlexiKnee Foundation exists to remind people that helping someone walk again is one of the most meaningful impacts we can have."
+          </p>
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} FlexiKnee™. All rights reserved.
           </p>

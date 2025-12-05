@@ -1,4 +1,5 @@
 import { Heart, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 import foundationBg from "@/assets/foundation-bg.jpg";
 
 const DonationBanner = () => {
@@ -40,12 +41,12 @@ const DonationBanner = () => {
           
           {/* CTA Link & Micro-copy */}
           <div className="flex flex-col items-center sm:items-end gap-1.5">
-            <a 
-              href="#" 
+            <Link 
+              to="/foundation" 
               className="text-white text-xs font-semibold underline underline-offset-4 decoration-teal-300/70 hover:decoration-white transition-all whitespace-nowrap drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
             >
               Learn More ›
-            </a>
+            </Link>
             <p className="text-teal-200/70 text-[10px] italic">
               Your purchase helps someone move again.
             </p>
