@@ -14,7 +14,7 @@ import productVibration from "@/assets/product-vibration.jpg";
 import productHowItWorks from "@/assets/product-how-it-works.jpg";
 import laserTherapy from "@/assets/laser-therapy.png";
 import heatActivation from "@/assets/heat-activation.jpg";
-import heroBannerDesktop from "@/assets/hero-banner-desktop.png";
+import heroBannerDesktop from "@/assets/hero-banner-desktop-new.png";
 import heroBannerMobile from "@/assets/hero-banner-mobile.png";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
