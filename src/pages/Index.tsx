@@ -93,7 +93,9 @@ export default function Index() {
       )}
 
       {/* Scrolling Banner */}
-      <ScrollingBanner />
+      <div className="mt-8">
+        <ScrollingBanner />
+      </div>
 
       {/* Feature Text Section */}
       <section className="py-16 bg-muted/30">
