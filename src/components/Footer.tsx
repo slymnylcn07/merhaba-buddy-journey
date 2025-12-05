@@ -13,12 +13,9 @@ export const Footer = () => {
               <img 
                 src={flexikneeLogo} 
                 alt="FlexiKnee Logo" 
-                className="h-28 w-auto"
+                className="h-36 w-auto"
               />
             </Link>
-            <p className="text-sm text-muted-foreground mt-4">
-              Advanced knee pain relief technology
-            </p>
           </div>
 
           {/* Column 2 - Legal */}
