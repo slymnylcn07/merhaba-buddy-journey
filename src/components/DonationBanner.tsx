@@ -38,13 +38,18 @@ const DonationBanner = () => {
             </p>
           </div>
           
-          {/* CTA Link */}
-          <a 
-            href="#" 
-            className="text-teal-200 hover:text-white text-xs font-medium underline underline-offset-2 decoration-teal-300/50 hover:decoration-white transition-colors whitespace-nowrap"
-          >
-            Learn More →
-          </a>
+          {/* CTA Link & Micro-copy */}
+          <div className="flex flex-col items-center sm:items-end gap-1.5">
+            <a 
+              href="#" 
+              className="text-white text-xs font-semibold underline underline-offset-4 decoration-teal-300/70 hover:decoration-white transition-all whitespace-nowrap drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+            >
+              Learn More ›
+            </a>
+            <p className="text-teal-200/70 text-[10px] italic">
+              Your purchase helps someone move again.
+            </p>
+          </div>
         </div>
       </div>
     </div>
