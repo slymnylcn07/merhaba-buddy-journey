@@ -577,19 +577,41 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Key Benefits - Above Bundle */}
-            <div className="space-y-3 mb-4">
-              <div className="flex items-start gap-2">
-                <span className="text-xl flex-shrink-0">🩺</span>
-                <p className="text-sm">Melt Knee Pain Away in Minutes</p>
+            {/* Key Benefits - 4 Feature Grid */}
+            <div className="grid grid-cols-2 gap-4 mb-4">
+              {/* Left Column */}
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <span className="text-xl flex-shrink-0">🩺</span>
+                  <div>
+                    <p className="font-bold text-sm text-foreground">Relief</p>
+                    <p className="text-xs text-muted-foreground">Fast-acting heat & vibration to ease knee pain.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-xl flex-shrink-0">💆</span>
+                  <div>
+                    <p className="font-bold text-sm text-foreground">Therapy</p>
+                    <p className="text-xs text-muted-foreground">Deep heat + red light targeting stiff joints.</p>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-start gap-2">
-                <span className="text-xl flex-shrink-0">💆</span>
-                <p className="text-sm">Deep Heat + Red Light Therapy for Stiff Joints</p>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="text-xl flex-shrink-0">🚶</span>
-                <p className="text-sm">Move Comfortably Again - Anytime, Anywhere</p>
+              {/* Right Column */}
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <span className="text-xl flex-shrink-0">🚶</span>
+                  <div>
+                    <p className="font-bold text-sm text-foreground">Freedom</p>
+                    <p className="text-xs text-muted-foreground">Move comfortably again — anytime, anywhere.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-xl flex-shrink-0">🔋</span>
+                  <div>
+                    <p className="font-bold text-sm text-foreground">Wireless</p>
+                    <p className="text-xs text-muted-foreground">Rechargeable + cord-free for everyday mobility.</p>
+                  </div>
+                </div>
               </div>
             </div>
 
