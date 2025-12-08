@@ -16,58 +16,106 @@ export default function RefundPolicy() {
           Back to Home
         </Link>
         
-        <h1 className="text-4xl font-bold mb-8">Refund Policy</h1>
+        <h1 className="text-4xl font-bold mb-8">Return Policy</h1>
         
         <div className="prose prose-slate max-w-none">
           <p className="text-muted-foreground mb-6">
-            Last updated: {new Date().toLocaleDateString()}
+            We have a 30-day return policy, which means you have 30 days after receiving your item to request a return.
           </p>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">1. Return Window</h2>
+            <h2 className="text-2xl font-semibold mb-4">Eligibility for Return</h2>
             <p className="text-muted-foreground">
-              We offer a 30-day return policy. You have 30 days from the date of delivery to request a return.
+              To be eligible for a return, your item must be in the same condition that you received it, unworn or unused, with tags, and in its original packaging. You'll also need the receipt or proof of purchase.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">2. Return Eligibility</h2>
+            <h2 className="text-2xl font-semibold mb-4">How to Start a Return</h2>
+            <p className="text-muted-foreground">
+              To start a return, you can contact us at <a href="mailto:flexikneeofficial@gmail.com" className="text-primary hover:underline">flexikneeofficial@gmail.com</a>.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Return Shipping Address</h2>
             <p className="text-muted-foreground mb-4">
-              To be eligible for a return, your item must be:
+              Please note that returns will need to be sent to the following address:
             </p>
-            <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-              <li>In its original condition</li>
-              <li>Unused and unwashed</li>
-              <li>In the original packaging</li>
-              <li>With receipt or proof of purchase</li>
-            </ul>
+            
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold mb-2">For UK:</h3>
+              <p className="text-muted-foreground">
+                Densea Ltd (# 2649)<br />
+                Unit 4 651 Thurmaston Village Ct<br />
+                LE4 8EB Leicester<br />
+                United Kingdom
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold mb-2">For USA:</h3>
+              <p className="text-muted-foreground">
+                Alphazone (# 1393)<br />
+                655 Driving Park Ave West Dock,<br />
+                14613 Rochester, New York<br />
+                United States
+              </p>
+            </div>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">3. Refund Process</h2>
+            <h2 className="text-2xl font-semibold mb-4">Return Process</h2>
             <p className="text-muted-foreground">
-              Once we receive and inspect your return, we will send you an email notification. If approved, your refund will be processed within 5-10 business days.
+              If your return is accepted, we'll send you a return shipping label, as well as instructions on how and where to send your package. Items sent back to us without first requesting a return will not be accepted.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">4. Return Shipping</h2>
+            <h2 className="text-2xl font-semibold mb-4">Contact for Return Questions</h2>
             <p className="text-muted-foreground">
-              You will be responsible for paying shipping costs for returning your item. Shipping costs are non-refundable.
+              You can always contact us for any return question at <a href="mailto:flexikneeofficial@gmail.com" className="text-primary hover:underline">flexikneeofficial@gmail.com</a>.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">5. Exchanges</h2>
+            <h2 className="text-2xl font-semibold mb-4">Damages and Issues</h2>
             <p className="text-muted-foreground">
-              We only replace items if they are defective or damaged. If you need to exchange for the same item, please contact our support team.
+              Please inspect your order upon reception and contact us immediately if the item is defective, damaged or if you receive the wrong item, so that we can evaluate the issue and make it right.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">6. Contact Us</h2>
+            <h2 className="text-2xl font-semibold mb-4">Exceptions / Non-returnable Items</h2>
+            <p className="text-muted-foreground mb-4">
+              Certain types of items cannot be returned, like perishable goods (such as food, flowers, or plants), custom products (such as special orders or personalized items), and personal care goods (such as beauty products). We also do not accept returns for hazardous materials, flammable liquids, or gases. Please get in touch if you have questions or concerns about your specific item.
+            </p>
             <p className="text-muted-foreground">
-              For return requests and questions, please visit our <a href="https://flexi-knee.com/#support" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Support Center</a>.
+              Unfortunately, we cannot accept returns on sale items or gift cards.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Exchanges</h2>
+            <p className="text-muted-foreground">
+              The fastest way to ensure you get what you want is to return the item you have, and once the return is accepted, make a separate purchase for the new item.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">European Union 14 day cooling off period</h2>
+            <p className="text-muted-foreground">
+              Notwithstanding the above, if the merchandise is being shipped into the European Union, you have the right to cancel or return your order within 14 days, for any reason and without a justification. As above, your item must be in the same condition that you received it, unworn or unused, with tags, and in its original packaging. You'll also need the receipt or proof of purchase.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Refunds</h2>
+            <p className="text-muted-foreground mb-4">
+              We will notify you once we've received and inspected your return, and let you know if the refund was approved or not. If approved, you'll be automatically refunded on your original payment method within 10 business days. Please remember it can take some time for your bank or credit card company to process and post the refund too.
+            </p>
+            <p className="text-muted-foreground">
+              If more than 15 business days have passed since we've approved your return, please contact us at <a href="mailto:flexikneeofficial@gmail.com" className="text-primary hover:underline">flexikneeofficial@gmail.com</a>.
             </p>
           </section>
         </div>
