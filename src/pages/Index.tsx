@@ -16,7 +16,7 @@ import laserTherapy from "@/assets/laser-therapy.png";
 import heatActivation from "@/assets/heat-activation.jpg";
 import heroBannerDesktop from "@/assets/hero-banner-desktop-new.png";
 import heroBannerMobile from "@/assets/hero-banner-mobile.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import ScrollingBanner from "@/components/ScrollingBanner";
@@ -25,6 +25,19 @@ export default function Index() {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
   const addItem = useCartStore((state) => state.addItem);
+  const location = useLocation();
+
+  // Handle hash navigation (scroll to section)
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
 
   useEffect(() => {
     const fetchProducts = async () => {

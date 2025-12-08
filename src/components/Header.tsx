@@ -3,10 +3,29 @@ import { Menu, User } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/flexiknee-logo-new.png";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    
+    if (location.pathname === "/") {
+      // Already on homepage, just scroll to section
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Navigate to homepage with hash
+      navigate("/" + hash);
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -29,23 +48,23 @@ export const Header = () => {
                   Home
                 </a>
                 <a
-                  href="#benefits"
+                  href="/#benefits"
                   className="text-lg font-medium hover:text-primary transition-colors"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => handleAnchorClick(e, "#benefits")}
                 >
                   Benefits
                 </a>
                 <a
-                  href="#features"
+                  href="/#features"
                   className="text-lg font-medium hover:text-primary transition-colors"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => handleAnchorClick(e, "#features")}
                 >
                   Features
                 </a>
                 <a
-                  href="#faq"
+                  href="/#faq"
                   className="text-lg font-medium hover:text-primary transition-colors"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => handleAnchorClick(e, "#faq")}
                 >
                   FAQ
                 </a>
@@ -77,13 +96,13 @@ export const Header = () => {
           <a href="/" className="text-sm font-medium hover:text-primary transition-colors">
             Home
           </a>
-          <a href="#benefits" className="text-sm font-medium hover:text-primary transition-colors">
+          <a href="/#benefits" className="text-sm font-medium hover:text-primary transition-colors" onClick={(e) => handleAnchorClick(e, "#benefits")}>
             Benefits
           </a>
-          <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">
+          <a href="/#features" className="text-sm font-medium hover:text-primary transition-colors" onClick={(e) => handleAnchorClick(e, "#features")}>
             Features
           </a>
-          <a href="#faq" className="text-sm font-medium hover:text-primary transition-colors">
+          <a href="/#faq" className="text-sm font-medium hover:text-primary transition-colors" onClick={(e) => handleAnchorClick(e, "#faq")}>
             FAQ
           </a>
           <a
