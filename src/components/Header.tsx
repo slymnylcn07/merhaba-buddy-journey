@@ -1,5 +1,5 @@
 import { CartDrawer } from "./CartDrawer";
-import { Menu } from "lucide-react";
+import { Menu, User } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useState } from "react";
@@ -94,8 +94,31 @@ export const Header = () => {
           </a>
         </nav>
 
-        {/* Right - Cart */}
-        <div className="flex items-center ml-auto">
+        {/* Right - Account & Cart */}
+        <div className="flex items-center gap-2 ml-auto">
+          <a
+            href="https://shopify.com/97343734050/account"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+          >
+            <User className="h-4 w-4" />
+            <span>My Account</span>
+          </a>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            asChild
+          >
+            <a
+              href="https://shopify.com/97343734050/account"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <User className="h-5 w-5" />
+            </a>
+          </Button>
           <CartDrawer />
         </div>
       </div>

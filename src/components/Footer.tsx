@@ -82,6 +82,16 @@ export const Footer = () => {
                   Track Order
                 </Link>
               </li>
+              <li>
+                <a
+                  href="https://shopify.com/97343734050/account"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
+                >
+                  My Account
+                </a>
+              </li>
             </ul>
           </div>
 
