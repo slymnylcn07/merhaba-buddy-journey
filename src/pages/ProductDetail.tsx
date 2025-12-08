@@ -688,6 +688,9 @@ const ProductDetail = () => {
             <p className="text-center text-[0.945em] mt-3 mb-0 font-bold" style={{ color: "#333333" }}>
               📦 5-9 Day Delivery — Satisfaction Guaranteed
             </p>
+            <p className="text-center text-[0.945em] mt-1 mb-0 font-bold" style={{ color: "#333333" }}>
+              🛡️ 30-Day Returns + 2-Year Warranty Included
+            </p>
 
             {/* Payment Methods */}
             <div className="flex items-center justify-center py-2">
