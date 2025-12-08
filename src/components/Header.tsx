@@ -116,9 +116,7 @@ export const Header = () => {
         {/* Right - Account & Cart */}
         <div className="flex items-center gap-2 ml-auto">
           <a
-            href="https://shopify.com/97343734050/account"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/account"
             className="hidden md:flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <User className="h-4 w-4" />
@@ -130,11 +128,7 @@ export const Header = () => {
             className="md:hidden"
             asChild
           >
-            <a
-              href="https://shopify.com/97343734050/account"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="/account">
               <User className="h-5 w-5" />
             </a>
           </Button>
