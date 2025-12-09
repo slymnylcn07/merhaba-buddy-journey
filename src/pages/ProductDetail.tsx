@@ -82,11 +82,17 @@ const ProductDetail = () => {
     if (!product) return;
 
     const variant = product.node.variants.edges[0].node;
+    const bundle = bundles.find((b) => b.qty === selectedBundle) || bundles[0];
+    
+    // Use converted price and currency
     const cartItem = {
       product,
       variantId: variant.id,
       variantTitle: variant.title,
-      price: variant.price,
+      price: {
+        amount: bundle.priceEach.toFixed(2),
+        currencyCode: currency,
+      },
       quantity: selectedBundle,
       selectedOptions: variant.selectedOptions,
     };
