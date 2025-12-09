@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sheet";
 import { ShoppingCart, Minus, Plus, Trash2, Lock, Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
+import { CURRENCY_CONFIG, CurrencyCode } from "@/lib/currency";
 
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -103,6 +104,7 @@ export const CartDrawer = () => {
                   {items.map((item) => {
                     const originalPrice = parseFloat(item.price.amount) * 2; // Calculate original price (50% off)
                     const currentPrice = parseFloat(item.price.amount);
+                    const currencySymbol = CURRENCY_CONFIG[item.price.currencyCode as CurrencyCode]?.symbol || item.price.currencyCode;
                     
                     return (
                       <div key={item.variantId} className="bg-white rounded-lg p-4 shadow-sm">
@@ -129,10 +131,10 @@ export const CartDrawer = () => {
                             </p>
                             <div className="flex items-center gap-2">
                               <span className="text-gray-400 line-through text-sm">
-                                ${originalPrice.toFixed(2)}
+                                {currencySymbol}{originalPrice.toFixed(2)}
                               </span>
                               <span className="text-lg font-bold text-green-600">
-                                ${currentPrice.toFixed(2)}
+                                {currencySymbol}{currentPrice.toFixed(2)}
                               </span>
                               <span className="text-xs font-semibold text-green-600">
                                 (SAVE 50%)
@@ -187,17 +189,23 @@ export const CartDrawer = () => {
               </div>
               
               <div className="flex-shrink-0 space-y-4 pt-4 border-t bg-[#F8F7FF]">
-                <div className="flex justify-between items-center px-2">
-                  <span className="text-lg font-semibold">Total</span>
-                  <div className="text-right">
-                    <div className="text-sm text-gray-400 line-through">
-                      ${(totalPrice * 2).toFixed(2)}
+                {(() => {
+                  const firstCurrency = items[0]?.price.currencyCode as CurrencyCode;
+                  const currencySymbol = CURRENCY_CONFIG[firstCurrency]?.symbol || firstCurrency || '£';
+                  return (
+                    <div className="flex justify-between items-center px-2">
+                      <span className="text-lg font-semibold">Total</span>
+                      <div className="text-right">
+                        <div className="text-sm text-gray-400 line-through">
+                          {currencySymbol}{(totalPrice * 2).toFixed(2)}
+                        </div>
+                        <div className="text-2xl font-bold text-green-600">
+                          {currencySymbol}{totalPrice.toFixed(2)}
+                        </div>
+                      </div>
                     </div>
-                    <div className="text-2xl font-bold text-green-600">
-                      ${totalPrice.toFixed(2)}
-                    </div>
-                  </div>
-                </div>
+                  );
+                })()}
                 
                 <Button 
                   onClick={handleCheckout}
@@ -217,17 +225,38 @@ export const CartDrawer = () => {
                   )}
                 </Button>
                 
-                {/* Payment Icons */}
-                <div className="flex items-center justify-center gap-3 pt-2">
-                  <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <span className="font-semibold">Secure Payment:</span>
-                    <div className="flex gap-2">
-                      <div className="bg-white px-2 py-1 rounded border text-[10px] font-bold">VISA</div>
-                      <div className="bg-white px-2 py-1 rounded border text-[10px] font-bold">MC</div>
-                      <div className="bg-white px-2 py-1 rounded border text-[10px] font-bold">AMEX</div>
-                      <div className="bg-white px-2 py-1 rounded border text-[10px] font-bold">PayPal</div>
-                    </div>
-                  </div>
+                {/* Payment Icons - Same as Product Page */}
+                <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+                  <img
+                    className="h-5 w-auto"
+                    src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Shop_Pay_logo.svg"
+                    alt="Shop Pay"
+                  />
+                  <img
+                    className="h-5 w-auto"
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
+                    alt="Visa"
+                  />
+                  <img
+                    className="h-5 w-auto"
+                    src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                    alt="Mastercard"
+                  />
+                  <img
+                    className="h-5 w-auto"
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg"
+                    alt="American Express"
+                  />
+                  <img
+                    className="h-5 w-auto"
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg"
+                    alt="Google Pay"
+                  />
+                  <img
+                    className="h-5 w-auto"
+                    src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+                    alt="PayPal"
+                  />
                 </div>
               </div>
             </>
