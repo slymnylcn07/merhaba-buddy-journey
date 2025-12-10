@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 import { ArrowLeft, Star, Package, Clock, BookOpen, Box, Check } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { 
   detectUserCountry, 
@@ -41,8 +42,34 @@ const ProductDetail = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [showAllReviews, setShowAllReviews] = useState(false);
   const [currency, setCurrency] = useState<CurrencyCode>('GBP');
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [isSubscribing, setIsSubscribing] = useState(false);
   const reviewsPerPage = 10;
   const addItem = useCartStore((state) => state.addItem);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail) {
+      toast.error("Please enter your email address");
+      return;
+    }
+    setIsSubscribing(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('subscribe-newsletter', {
+        body: { email: newsletterEmail }
+      });
+      if (error) throw error;
+      toast.success("Thank you! You have successfully subscribed to our newsletter.", {
+        duration: 5000,
+      });
+      setNewsletterEmail("");
+    } catch (error: any) {
+      console.error('Subscription error:', error);
+      toast.error(error.message || "Failed to subscribe. Please try again.");
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
 
   // Detect user's currency on mount
   useEffect(() => {
@@ -1192,6 +1219,33 @@ const ProductDetail = () => {
                 <Package className="w-5 h-5 mr-2" />
                 Add to Cart - ${totalPrice.toFixed(2)}
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter Sign-Up */}
+        <section className="py-16">
+          <div className="container px-4">
+            <div className="max-w-3xl mx-auto text-center bg-primary/5 rounded-2xl p-12 border-2 border-primary/20">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Join 50,000+ People Improving Their Knee Health
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Get exclusive tips, discounts and early access.
+              </p>
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  className="flex-1 px-4 py-3 rounded-lg border-2 border-border focus:border-primary focus:outline-none"
+                  disabled={isSubscribing}
+                />
+                <Button size="lg" className="px-8" type="submit" disabled={isSubscribing}>
+                  {isSubscribing ? "Subscribing..." : "Subscribe"}
+                </Button>
+              </form>
             </div>
           </div>
         </section>
