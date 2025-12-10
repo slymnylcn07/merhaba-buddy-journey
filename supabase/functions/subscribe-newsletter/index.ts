@@ -85,7 +85,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send welcome email
     const emailResponse = await resend.emails.send({
-      from: "FlexiKnee <onboarding@resend.dev>",
+      from: "FlexiKnee <noreply@flexi-knee.com>",
       to: [email],
       subject: "Welcome to FlexiKnee™ Newsletter!",
       html: `
