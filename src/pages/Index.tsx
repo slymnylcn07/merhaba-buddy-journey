@@ -72,7 +72,7 @@ export default function Index() {
 
       if (error) throw error;
 
-      toast.success("Teşekkür ederiz! Bültenimize başarıyla abone oldunuz.", {
+      toast.success("Thank you! You have successfully subscribed to our newsletter.", {
         duration: 5000,
       });
       setNewsletterEmail("");
