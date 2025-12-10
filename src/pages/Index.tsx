@@ -72,7 +72,9 @@ export default function Index() {
 
       if (error) throw error;
 
-      toast.success(data.message || "Successfully subscribed!");
+      toast.success("Teşekkür ederiz! Bültenimize başarıyla abone oldunuz.", {
+        duration: 5000,
+      });
       setNewsletterEmail("");
     } catch (error: any) {
       console.error("Subscription error:", error);
