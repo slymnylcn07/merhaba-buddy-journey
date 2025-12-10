@@ -212,6 +212,7 @@ export default function Index() {
                         src={productHowItWorks} 
                         alt="Step 1: Strap the Device"
                         className="rounded-lg w-full h-auto object-cover"
+                        loading="lazy"
                       />
                       <div>
                         <h3 className="text-2xl font-bold mb-4 text-primary">Step 1: Strap the Device</h3>
@@ -232,6 +233,7 @@ export default function Index() {
                         src={productTemperature} 
                         alt="Step 2: Activate Red-Light Therapy"
                         className="rounded-lg w-full h-auto object-cover"
+                        loading="lazy"
                       />
                       <div>
                         <h3 className="text-2xl font-bold mb-4 text-primary">Step 2: Activate Red-Light Therapy</h3>
@@ -252,6 +254,7 @@ export default function Index() {
                         src={heatActivation} 
                         alt="Step 3: Heat Activation"
                         className="rounded-lg w-full h-auto object-cover"
+                        loading="lazy"
                       />
                       <div>
                         <h3 className="text-2xl font-bold mb-4 text-primary">Step 3: Heat Activation</h3>
@@ -272,6 +275,7 @@ export default function Index() {
                         src={productMain} 
                         alt="Step 4: Vibration Modes" 
                         className="rounded-lg w-full h-auto object-cover"
+                        loading="lazy"
                       />
                       <div>
                         <h3 className="text-2xl font-bold mb-4 text-primary">Step 4: Vibration Modes</h3>
@@ -385,7 +389,7 @@ export default function Index() {
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src={laserTherapy} alt="Laser Irradiation Technology" className="w-full h-auto" />
+              <img src={laserTherapy} alt="Laser Irradiation Technology" className="w-full h-auto" loading="lazy" />
             </div>
           </div>
         </div>
@@ -397,7 +401,7 @@ export default function Index() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Smart Features</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src={productVibration} alt="Product Usage" className="w-full h-auto" />
+              <img src={productVibration} alt="Product Usage" className="w-full h-auto" loading="lazy" />
             </div>
             <div className="space-y-6">
               <div className="flex items-start gap-4 p-6 bg-muted/50 rounded-xl">
@@ -505,22 +509,22 @@ export default function Index() {
                       <CarouselContent>
                         <CarouselItem>
                           <div className="rounded-2xl overflow-hidden shadow-2xl">
-                            <img src={productMain} alt="FlexiKnee Main" className="w-full h-auto" />
+                            <img src={productMain} alt="FlexiKnee Main" className="w-full h-auto" loading="lazy" />
                           </div>
                         </CarouselItem>
                         <CarouselItem>
                           <div className="rounded-2xl overflow-hidden shadow-2xl">
-                            <img src={productPainRelief} alt="FlexiKnee Pain Relief" className="w-full h-auto" />
+                            <img src={productPainRelief} alt="FlexiKnee Pain Relief" className="w-full h-auto" loading="lazy" />
                           </div>
                         </CarouselItem>
                         <CarouselItem>
                           <div className="rounded-2xl overflow-hidden shadow-2xl">
-                            <img src={productTemperature} alt="FlexiKnee Temperature Control" className="w-full h-auto" />
+                            <img src={productTemperature} alt="FlexiKnee Temperature Control" className="w-full h-auto" loading="lazy" />
                           </div>
                         </CarouselItem>
                         <CarouselItem>
                           <div className="rounded-2xl overflow-hidden shadow-2xl">
-                            <img src={productVibration} alt="FlexiKnee Vibration" className="w-full h-auto" />
+                            <img src={productVibration} alt="FlexiKnee Vibration" className="w-full h-auto" loading="lazy" />
                           </div>
                         </CarouselItem>
                       </CarouselContent>
