@@ -538,7 +538,7 @@ export default function Index() {
                             <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                           ))}
                         </div>
-                        <span className="text-sm font-medium">(51 Reviews)</span>
+                        <span className="text-sm font-medium">(1128 Reviews)</span>
                       </div>
                       <h3 className="text-3xl font-bold mb-4">{mainProduct.node.title}</h3>
                       <p className="text-lg text-muted-foreground mb-6">

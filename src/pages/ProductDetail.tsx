@@ -588,7 +588,7 @@ const ProductDetail = () => {
                 ))}
                 <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" style={{ clipPath: "inset(0 30% 0 0)" }} />
               </div>
-              <span className="text-sm font-semibold">4.7 (51 Reviews)</span>
+              <span className="text-sm font-semibold">4.7 (1128 Reviews)</span>
               <Badge
                 variant="secondary"
                 className="bg-green-500/10 text-green-700 dark:text-green-400 border-green-500/20"
