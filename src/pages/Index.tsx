@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -24,6 +26,8 @@ import ScrollingBanner from "@/components/ScrollingBanner";
 export default function Index() {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [isSubscribing, setIsSubscribing] = useState(false);
   const addItem = useCartStore((state) => state.addItem);
   const location = useLocation();
 
@@ -52,6 +56,31 @@ export default function Index() {
     };
     fetchProducts();
   }, []);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail || !newsletterEmail.includes("@")) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    setIsSubscribing(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("subscribe-newsletter", {
+        body: { email: newsletterEmail },
+      });
+
+      if (error) throw error;
+
+      toast.success(data.message || "Successfully subscribed!");
+      setNewsletterEmail("");
+    } catch (error: any) {
+      console.error("Subscription error:", error);
+      toast.error("Failed to subscribe. Please try again.");
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
 
   const mainProduct = products[0];
 
@@ -543,14 +572,19 @@ export default function Index() {
             <p className="text-lg text-muted-foreground mb-8">
               Get exclusive tips, discounts and early access.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
                 className="flex-1 px-4 py-3 rounded-lg border-2 border-border focus:border-primary focus:outline-none"
+                disabled={isSubscribing}
               />
-              <Button size="lg" className="px-8">Subscribe</Button>
-            </div>
+              <Button size="lg" className="px-8" type="submit" disabled={isSubscribing}>
+                {isSubscribing ? "Subscribing..." : "Subscribe"}
+              </Button>
+            </form>
           </div>
         </div>
       </section>
