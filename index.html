@@ -6,8 +6,10 @@
     <title>FlexiKnee</title>
     <meta name="description" content="FlexiKnee Project">
     <meta name="author" content="Lovable" />
-
     
+    <!-- Preload hero banner images for faster LCP -->
+    <link rel="preload" as="image" href="/src/assets/hero-banner-desktop-new.png" media="(min-width: 768px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/src/assets/hero-banner-mobile.png" media="(max-width: 767px)" fetchpriority="high" />
     
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
