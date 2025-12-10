@@ -12,10 +12,11 @@ import {
 } from "@/components/ui/sheet";
 import { ShoppingCart, Minus, Plus, Trash2, Lock, Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
-import { CURRENCY_CONFIG, CurrencyCode } from "@/lib/currency";
+import { CURRENCY_CONFIG, CurrencyCode, detectUserCountry, getCurrencyForCountry } from "@/lib/currency";
 
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [userCurrency, setUserCurrency] = useState<CurrencyCode>('GBP');
   const { 
     items, 
     isLoading, 
@@ -23,9 +24,27 @@ export const CartDrawer = () => {
     removeItem, 
     createCheckout 
   } = useCartStore();
+
+  // Detect user's currency on mount
+  useEffect(() => {
+    const detectCurrency = async () => {
+      const countryCode = await detectUserCountry();
+      const detectedCurrency = getCurrencyForCountry(countryCode);
+      setUserCurrency(detectedCurrency);
+    };
+    detectCurrency();
+  }, []);
   
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
+  
+  // Get currency symbol - use detected currency as fallback for consistency
+  const getCurrencySymbol = (currencyCode: string): string => {
+    const config = CURRENCY_CONFIG[currencyCode as CurrencyCode];
+    if (config) return config.symbol;
+    // Fallback to user's detected currency
+    return CURRENCY_CONFIG[userCurrency]?.symbol || '£';
+  };
 
   const handleCheckout = async () => {
     if (items.length === 0) {
@@ -104,7 +123,7 @@ export const CartDrawer = () => {
                   {items.map((item) => {
                     const originalPrice = parseFloat(item.price.amount) * 2; // Calculate original price (50% off)
                     const currentPrice = parseFloat(item.price.amount);
-                    const currencySymbol = CURRENCY_CONFIG[item.price.currencyCode as CurrencyCode]?.symbol || item.price.currencyCode;
+                    const currencySymbol = getCurrencySymbol(item.price.currencyCode);
                     
                     return (
                       <div key={item.variantId} className="bg-white rounded-lg p-4 shadow-sm">
@@ -190,8 +209,8 @@ export const CartDrawer = () => {
               
               <div className="flex-shrink-0 space-y-4 pt-4 border-t bg-[#F8F7FF]">
                 {(() => {
-                  const firstCurrency = items[0]?.price.currencyCode as CurrencyCode;
-                  const currencySymbol = CURRENCY_CONFIG[firstCurrency]?.symbol || firstCurrency || '£';
+                  const firstCurrency = items[0]?.price.currencyCode || userCurrency;
+                  const currencySymbol = getCurrencySymbol(firstCurrency);
                   return (
                     <div className="flex justify-between items-center px-2">
                       <span className="text-lg font-semibold">Total</span>
