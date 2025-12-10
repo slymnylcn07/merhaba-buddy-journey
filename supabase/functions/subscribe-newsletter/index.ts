@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "https://esm.sh/resend@2.0.0";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -9,9 +10,16 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-interface SubscribeRequest {
-  email: string;
-}
+// Zod schema for email validation
+const subscribeSchema = z.object({
+  email: z
+    .string()
+    .trim()
+    .min(1, { message: "Email is required" })
+    .max(255, { message: "Email must be less than 255 characters" })
+    .email({ message: "Please enter a valid email address" })
+    .toLowerCase(),
+});
 
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
@@ -20,20 +28,25 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { email }: SubscribeRequest = await req.json();
+    const body = await req.json();
     
-    console.log("Newsletter subscription request for:", email);
-
-    if (!email || !email.includes("@")) {
-      console.error("Invalid email provided:", email);
+    // Validate input with zod
+    const validationResult = subscribeSchema.safeParse(body);
+    
+    if (!validationResult.success) {
+      const errorMessage = validationResult.error.errors[0]?.message || "Invalid email";
+      console.error("Email validation failed:", errorMessage);
       return new Response(
-        JSON.stringify({ error: "Valid email is required" }),
+        JSON.stringify({ error: errorMessage }),
         {
           status: 400,
           headers: { "Content-Type": "application/json", ...corsHeaders },
         }
       );
     }
+    
+    const { email } = validationResult.data;
+    console.log("Newsletter subscription request for:", email);
 
     // Create Supabase client
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
