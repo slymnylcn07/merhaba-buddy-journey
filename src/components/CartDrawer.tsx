@@ -36,7 +36,30 @@ export const CartDrawer = () => {
   }, []);
   
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
+  
+  // Dynamic discount based on quantity
+  const getDiscountPercentage = (quantity: number): number => {
+    if (quantity >= 4) return 60;
+    if (quantity >= 3) return 57;
+    if (quantity >= 2) return 55;
+    return 50; // Base discount
+  };
+  
+  const discountPercentage = getDiscountPercentage(totalItems);
+  
+  // Calculate prices based on dynamic discount
+  const getOriginalPrice = (salePrice: number): number => {
+    // Sale price is already discounted at 50%, so original = salePrice * 2
+    return salePrice * 2;
+  };
+  
+  const getDynamicPrice = (salePrice: number): number => {
+    const originalPrice = getOriginalPrice(salePrice);
+    return originalPrice * (1 - discountPercentage / 100);
+  };
+  
+  const totalOriginalPrice = items.reduce((sum, item) => sum + (getOriginalPrice(parseFloat(item.price.amount)) * item.quantity), 0);
+  const totalPrice = items.reduce((sum, item) => sum + (getDynamicPrice(parseFloat(item.price.amount)) * item.quantity), 0);
   
   // Get currency symbol - use detected currency as fallback for consistency
   const getCurrencySymbol = (currencyCode: string): string => {
@@ -121,8 +144,9 @@ export const CartDrawer = () => {
               <div className="flex-1 overflow-y-auto pr-2 min-h-0">
                 <div className="space-y-4">
                   {items.map((item) => {
-                    const originalPrice = parseFloat(item.price.amount) * 2; // Calculate original price (50% off)
-                    const currentPrice = parseFloat(item.price.amount);
+                    const salePrice = parseFloat(item.price.amount);
+                    const originalPrice = getOriginalPrice(salePrice);
+                    const dynamicPrice = getDynamicPrice(salePrice);
                     const currencySymbol = getCurrencySymbol(item.price.currencyCode);
                     
                     return (
@@ -142,7 +166,7 @@ export const CartDrawer = () => {
                             <div className="flex items-start gap-2 mb-1">
                               <h4 className="font-semibold text-sm flex-1">{item.product.node.title}</h4>
                               <Badge className="bg-green-500 hover:bg-green-600 text-white text-xs whitespace-nowrap">
-                                SAVE 50% TODAY
+                                SAVE {discountPercentage}% TODAY
                               </Badge>
                             </div>
                             <p className="text-xs text-muted-foreground mb-2">
@@ -153,10 +177,10 @@ export const CartDrawer = () => {
                                 {currencySymbol}{originalPrice.toFixed(2)}
                               </span>
                               <span className="text-lg font-bold text-green-600">
-                                {currencySymbol}{currentPrice.toFixed(2)}
+                                {currencySymbol}{dynamicPrice.toFixed(2)}
                               </span>
                               <span className="text-xs font-semibold text-green-600">
-                                (SAVE 50%)
+                                (SAVE {discountPercentage}%)
                               </span>
                             </div>
                           </div>
@@ -211,15 +235,22 @@ export const CartDrawer = () => {
                 {(() => {
                   const firstCurrency = items[0]?.price.currencyCode || userCurrency;
                   const currencySymbol = getCurrencySymbol(firstCurrency);
+                  const savings = totalOriginalPrice - totalPrice;
                   return (
-                    <div className="flex justify-between items-center px-2">
-                      <span className="text-lg font-semibold">Total</span>
-                      <div className="text-right">
-                        <div className="text-sm text-gray-400 line-through">
-                          {currencySymbol}{(totalPrice * 2).toFixed(2)}
-                        </div>
-                        <div className="text-2xl font-bold text-green-600">
-                          {currencySymbol}{totalPrice.toFixed(2)}
+                    <div className="space-y-2 px-2">
+                      <div className="flex justify-between items-center text-sm text-green-600 font-medium">
+                        <span>Bundle Discount ({discountPercentage}% OFF)</span>
+                        <span>-{currencySymbol}{savings.toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-lg font-semibold">Total</span>
+                        <div className="text-right">
+                          <div className="text-sm text-gray-400 line-through">
+                            {currencySymbol}{totalOriginalPrice.toFixed(2)}
+                          </div>
+                          <div className="text-2xl font-bold text-green-600">
+                            {currencySymbol}{totalPrice.toFixed(2)}
+                          </div>
                         </div>
                       </div>
                     </div>
