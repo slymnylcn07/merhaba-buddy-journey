@@ -73,10 +73,10 @@ export const CartDrawer = () => {
         return;
       }
       
-      // Open checkout in new tab
-      console.log('Opening checkout in new tab...');
-      window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+      // Redirect to checkout - using location.href to avoid popup blockers on mobile
+      console.log('Redirecting to checkout...');
       setIsOpen(false);
+      window.location.href = checkoutUrl;
       
     } catch (error) {
       console.error('Checkout failed:', error);
