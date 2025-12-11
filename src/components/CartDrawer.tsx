@@ -99,8 +99,12 @@ export const CartDrawer = () => {
     return CURRENCY_CONFIG[userCurrency].symbol;
   };
   
-  // Format price for display (no decimals - all currencies rounded to whole units)
+  // Format price for display
   const formatDisplayPrice = (price: number): string => {
+    // GBP shows decimals, other currencies show whole numbers
+    if (userCurrency === 'GBP') {
+      return `${getCurrencySymbol()}${price.toFixed(2)}`;
+    }
     return `${getCurrencySymbol()}${Math.ceil(price).toFixed(0)}`;
   };
 

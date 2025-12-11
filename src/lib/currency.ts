@@ -48,15 +48,26 @@ export function getCurrencyForCountry(countryCode: string): CurrencyCode {
 
 // Convert price from GBP to another currency
 export function convertPrice(priceInGBP: number, toCurrency: CurrencyCode): number {
+  // GBP stays as-is (no conversion needed)
+  if (toCurrency === 'GBP') {
+    return priceInGBP;
+  }
+  
   const rate = CURRENCY_CONFIG[toCurrency].rate;
   const convertedPrice = priceInGBP * rate;
   
-  // Round up to nearest whole unit for all currencies
+  // Round up to nearest whole unit for non-GBP currencies
   return Math.ceil(convertedPrice);
 }
 
-// Format price with currency symbol (no decimals since we round to whole units)
+// Format price with currency symbol
 export function formatPrice(price: number, currency: CurrencyCode): string {
   const symbol = CURRENCY_CONFIG[currency].symbol;
+  
+  // GBP shows decimals, other currencies show whole numbers
+  if (currency === 'GBP') {
+    return `${symbol}${price.toFixed(2)}`;
+  }
+  
   return `${symbol}${Math.ceil(price).toFixed(0)}`;
 }
