@@ -1,7 +1,7 @@
 // Currency configuration with fixed exchange rates
 export const CURRENCY_CONFIG = {
   GBP: { symbol: '£', name: 'British Pound', rate: 1 },
-  USD: { symbol: '$', name: 'US Dollar', rate: 1.27 },
+  USD: { symbol: '$', name: 'US Dollar', rate: 1.10 },
   EUR: { symbol: '€', name: 'Euro', rate: 1.17 },
   AUD: { symbol: 'A$', name: 'Australian Dollar', rate: 1.95 },
   CAD: { symbol: 'C$', name: 'Canadian Dollar', rate: 1.78 },
@@ -49,11 +49,24 @@ export function getCurrencyForCountry(countryCode: string): CurrencyCode {
 // Convert price from GBP to another currency
 export function convertPrice(priceInGBP: number, toCurrency: CurrencyCode): number {
   const rate = CURRENCY_CONFIG[toCurrency].rate;
-  return Math.round(priceInGBP * rate * 100) / 100;
+  const convertedPrice = priceInGBP * rate;
+  
+  // For USD, round up to nearest $1.00
+  if (toCurrency === 'USD') {
+    return Math.ceil(convertedPrice);
+  }
+  
+  return Math.round(convertedPrice * 100) / 100;
 }
 
 // Format price with currency symbol
 export function formatPrice(price: number, currency: CurrencyCode): string {
   const symbol = CURRENCY_CONFIG[currency].symbol;
+  
+  // For USD, show whole dollars (no decimals) since we round to nearest $1
+  if (currency === 'USD') {
+    return `${symbol}${Math.ceil(price).toFixed(0)}`;
+  }
+  
   return `${symbol}${price.toFixed(2)}`;
 }

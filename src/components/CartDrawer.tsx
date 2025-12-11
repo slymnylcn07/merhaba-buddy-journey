@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/sheet";
 import { ShoppingCart, Minus, Plus, Trash2, Lock, Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
-import { CURRENCY_CONFIG, CurrencyCode, detectUserCountry, getCurrencyForCountry } from "@/lib/currency";
+import { CURRENCY_CONFIG, CurrencyCode, detectUserCountry, getCurrencyForCountry, convertPrice, formatPrice } from "@/lib/currency";
 
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,28 +47,35 @@ export const CartDrawer = () => {
   
   const discountPercentage = getDiscountPercentage(totalItems);
   
-  // Calculate prices based on dynamic discount
-  const getOriginalPrice = (salePrice: number): number => {
-    // Sale price is already discounted at 50%, so original = salePrice * 2
-    return salePrice * 2;
+  // Base GBP prices (our store currency)
+  const BASE_SALE_PRICE_GBP = 79.99;
+  const BASE_ORIGINAL_PRICE_GBP = 159.98;
+  
+  // Get prices in user's currency
+  const getOriginalPriceInCurrency = (): number => {
+    return convertPrice(BASE_ORIGINAL_PRICE_GBP, userCurrency);
   };
   
-  const getDynamicPrice = (salePrice: number): number => {
-    const originalPrice = getOriginalPrice(salePrice);
-    return originalPrice * (1 - discountPercentage / 100);
+  const getDynamicPriceInCurrency = (): number => {
+    const discountedGBP = BASE_ORIGINAL_PRICE_GBP * (1 - discountPercentage / 100);
+    return convertPrice(discountedGBP, userCurrency);
   };
   
-  // Calculate total - first 4 items get discount, 5+ items pay full sale price (79.99)
+  const getSalePriceInCurrency = (): number => {
+    return convertPrice(BASE_SALE_PRICE_GBP, userCurrency);
+  };
+  
+  // Calculate total - first 4 items get discount, 5+ items pay full sale price
   const calculateTotal = () => {
     let totalOrig = 0;
     let totalDiscounted = 0;
     let itemCount = 0;
     
+    const originalPrice = getOriginalPriceInCurrency();
+    const discountedPrice = getDynamicPriceInCurrency();
+    const salePrice = getSalePriceInCurrency();
+    
     items.forEach((item) => {
-      const salePrice = parseFloat(item.price.amount); // 79.99
-      const originalPrice = getOriginalPrice(salePrice); // 159.98
-      const discountedPrice = getDynamicPrice(salePrice); // 63.99 for 4+ items
-      
       for (let i = 0; i < item.quantity; i++) {
         itemCount++;
         totalOrig += originalPrice;
@@ -77,7 +84,7 @@ export const CartDrawer = () => {
         if (itemCount <= 4) {
           totalDiscounted += discountedPrice;
         } else {
-          totalDiscounted += salePrice; // 79.99 for 5th+ items
+          totalDiscounted += salePrice;
         }
       }
     });
@@ -87,12 +94,17 @@ export const CartDrawer = () => {
   
   const { totalOriginalPrice, totalPrice } = calculateTotal();
   
-  // Get currency symbol - use detected currency as fallback for consistency
-  const getCurrencySymbol = (currencyCode: string): string => {
-    const config = CURRENCY_CONFIG[currencyCode as CurrencyCode];
-    if (config) return config.symbol;
-    // Fallback to user's detected currency
-    return CURRENCY_CONFIG[userCurrency]?.symbol || '£';
+  // Get currency symbol
+  const getCurrencySymbol = (): string => {
+    return CURRENCY_CONFIG[userCurrency].symbol;
+  };
+  
+  // Format price for display
+  const formatDisplayPrice = (price: number): string => {
+    if (userCurrency === 'USD') {
+      return `${getCurrencySymbol()}${Math.ceil(price).toFixed(0)}`;
+    }
+    return `${getCurrencySymbol()}${price.toFixed(2)}`;
   };
 
   const handleCheckout = async () => {
@@ -170,10 +182,9 @@ export const CartDrawer = () => {
               <div className="flex-1 overflow-y-auto pr-2 min-h-0">
                 <div className="space-y-4">
                   {items.map((item) => {
-                    const salePrice = parseFloat(item.price.amount);
-                    const originalPrice = getOriginalPrice(salePrice);
-                    const dynamicPrice = getDynamicPrice(salePrice);
-                    const currencySymbol = getCurrencySymbol(item.price.currencyCode);
+                    const originalPrice = getOriginalPriceInCurrency();
+                    const dynamicPrice = getDynamicPriceInCurrency();
+                    const currencySymbol = getCurrencySymbol();
                     
                     return (
                       <div key={item.variantId} className="bg-white rounded-lg p-4 shadow-sm">
@@ -202,10 +213,10 @@ export const CartDrawer = () => {
                             )}
                             <div className="flex items-center gap-2">
                               <span className="text-gray-400 line-through text-sm">
-                                {currencySymbol}{originalPrice.toFixed(2)}
+                                {formatDisplayPrice(originalPrice)}
                               </span>
                               <span className="text-lg font-bold text-green-600">
-                                {currencySymbol}{dynamicPrice.toFixed(2)}
+                                {formatDisplayPrice(dynamicPrice)}
                               </span>
                               <span className="text-xs font-semibold text-green-600">
                                 (SAVE {discountPercentage}%)
@@ -284,19 +295,16 @@ export const CartDrawer = () => {
               
               <div className="flex-shrink-0 space-y-4 pt-4 border-t bg-[#F8F7FF]">
                 {(() => {
-                  const firstCurrency = items[0]?.price.currencyCode || userCurrency;
-                  const currencySymbol = getCurrencySymbol(firstCurrency);
-                  const savings = totalOriginalPrice - totalPrice;
                   return (
                     <div className="space-y-2 px-2">
                       <div className="flex justify-between items-center">
                         <span className="text-lg font-semibold">Total</span>
                         <div className="text-right">
                           <div className="text-sm text-gray-400 line-through">
-                            {currencySymbol}{totalOriginalPrice.toFixed(2)}
+                            {formatDisplayPrice(totalOriginalPrice)}
                           </div>
                           <div className="text-2xl font-bold text-green-600">
-                            {currencySymbol}{totalPrice.toFixed(2)}
+                            {formatDisplayPrice(totalPrice)}
                           </div>
                         </div>
                       </div>
