@@ -51,22 +51,12 @@ export function convertPrice(priceInGBP: number, toCurrency: CurrencyCode): numb
   const rate = CURRENCY_CONFIG[toCurrency].rate;
   const convertedPrice = priceInGBP * rate;
   
-  // For USD, round up to nearest $1.00
-  if (toCurrency === 'USD') {
-    return Math.ceil(convertedPrice);
-  }
-  
-  return Math.round(convertedPrice * 100) / 100;
+  // Round up to nearest whole unit for all currencies
+  return Math.ceil(convertedPrice);
 }
 
-// Format price with currency symbol
+// Format price with currency symbol (no decimals since we round to whole units)
 export function formatPrice(price: number, currency: CurrencyCode): string {
   const symbol = CURRENCY_CONFIG[currency].symbol;
-  
-  // For USD, show whole dollars (no decimals) since we round to nearest $1
-  if (currency === 'USD') {
-    return `${symbol}${Math.ceil(price).toFixed(0)}`;
-  }
-  
-  return `${symbol}${price.toFixed(2)}`;
+  return `${symbol}${Math.ceil(price).toFixed(0)}`;
 }
