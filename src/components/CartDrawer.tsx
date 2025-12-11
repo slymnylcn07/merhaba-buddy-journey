@@ -99,12 +99,9 @@ export const CartDrawer = () => {
     return CURRENCY_CONFIG[userCurrency].symbol;
   };
   
-  // Format price for display
+  // Format price for display (no decimals - all currencies rounded to whole units)
   const formatDisplayPrice = (price: number): string => {
-    if (userCurrency === 'USD') {
-      return `${getCurrencySymbol()}${Math.ceil(price).toFixed(0)}`;
-    }
-    return `${getCurrencySymbol()}${price.toFixed(2)}`;
+    return `${getCurrencySymbol()}${Math.ceil(price).toFixed(0)}`;
   };
 
   const handleCheckout = async () => {
