@@ -598,9 +598,9 @@ const ProductDetail = () => {
             </button>
 
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-3 text-[#111111] dark:text-white">
-                FlexiKnee™ Smart Heated Knee Massager
-              </h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-3 text-[#111111] dark:text-white">
+              {product.node.title}
+            </h1>
               <div className="flex flex-wrap items-center gap-2 mb-4">
                 <Badge className="bg-primary/10 text-primary border-primary/20">#1 Best-Selling</Badge>
                 <Badge variant="outline">
