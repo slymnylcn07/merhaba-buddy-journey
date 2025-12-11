@@ -251,12 +251,35 @@ export const CartDrawer = () => {
                   })}
                 </div>
                 
-                {/* Most Popular Choice Bar */}
-                <div className="mt-4 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-3 text-center">
-                  <p className="text-sm font-medium text-gray-700">
-                    💬 85% of customers made the same choice.
-                  </p>
-                </div>
+                {/* Dynamic Incentive Message */}
+                {totalItems === 1 && (
+                  <div className="mt-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 rounded-lg p-3 text-center animate-pulse">
+                    <p className="text-sm font-semibold text-amber-700">
+                      🔥 Add 1 more for 55% OFF! Limited time offer
+                    </p>
+                  </div>
+                )}
+                {totalItems === 2 && (
+                  <div className="mt-4 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-300 rounded-lg p-3 text-center">
+                    <p className="text-sm font-semibold text-green-700">
+                      ✨ Great choice! Add 1 more for 57% OFF
+                    </p>
+                  </div>
+                )}
+                {totalItems === 3 && (
+                  <div className="mt-4 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-300 rounded-lg p-3 text-center">
+                    <p className="text-sm font-semibold text-purple-700">
+                      🎯 Almost there! Add 1 more for MAX 60% OFF
+                    </p>
+                  </div>
+                )}
+                {totalItems >= 4 && (
+                  <div className="mt-4 bg-gradient-to-r from-green-100 to-emerald-100 border border-green-400 rounded-lg p-3 text-center">
+                    <p className="text-sm font-bold text-green-700">
+                      🎉 MAX DISCOUNT UNLOCKED! You're saving 60%
+                    </p>
+                  </div>
+                )}
               </div>
               
               <div className="flex-shrink-0 space-y-4 pt-4 border-t bg-[#F8F7FF]">
