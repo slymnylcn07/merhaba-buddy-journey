@@ -195,9 +195,11 @@ export const CartDrawer = () => {
                                 SAVE {discountPercentage}% TODAY
                               </Badge>
                             </div>
-                            <p className="text-xs text-muted-foreground mb-2">
-                              {item.selectedOptions.map(option => option.value).join(' • ')}
-                            </p>
+                            {item.selectedOptions.filter(option => option.value.toLowerCase() !== 'default title').length > 0 && (
+                              <p className="text-xs text-muted-foreground mb-2">
+                                {item.selectedOptions.filter(option => option.value.toLowerCase() !== 'default title').map(option => option.value).join(' • ')}
+                              </p>
+                            )}
                             <div className="flex items-center gap-2">
                               <span className="text-gray-400 line-through text-sm">
                                 {currencySymbol}{originalPrice.toFixed(2)}
@@ -264,10 +266,6 @@ export const CartDrawer = () => {
                   const savings = totalOriginalPrice - totalPrice;
                   return (
                     <div className="space-y-2 px-2">
-                      <div className="flex justify-between items-center text-sm text-green-600 font-medium">
-                        <span>Bundle Discount ({discountPercentage}% OFF)</span>
-                        <span>-{currencySymbol}{savings.toFixed(2)}</span>
-                      </div>
                       <div className="flex justify-between items-center">
                         <span className="text-lg font-semibold">Total</span>
                         <div className="text-right">
