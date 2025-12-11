@@ -58,8 +58,34 @@ export const CartDrawer = () => {
     return originalPrice * (1 - discountPercentage / 100);
   };
   
-  const totalOriginalPrice = items.reduce((sum, item) => sum + (getOriginalPrice(parseFloat(item.price.amount)) * item.quantity), 0);
-  const totalPrice = items.reduce((sum, item) => sum + (getDynamicPrice(parseFloat(item.price.amount)) * item.quantity), 0);
+  // Calculate total - first 4 items get discount, 5+ items pay full sale price (79.99)
+  const calculateTotal = () => {
+    let totalOrig = 0;
+    let totalDiscounted = 0;
+    let itemCount = 0;
+    
+    items.forEach((item) => {
+      const salePrice = parseFloat(item.price.amount); // 79.99
+      const originalPrice = getOriginalPrice(salePrice); // 159.98
+      const discountedPrice = getDynamicPrice(salePrice); // 63.99 for 4+ items
+      
+      for (let i = 0; i < item.quantity; i++) {
+        itemCount++;
+        totalOrig += originalPrice;
+        
+        // First 4 items get discounted price, rest pay sale price
+        if (itemCount <= 4) {
+          totalDiscounted += discountedPrice;
+        } else {
+          totalDiscounted += salePrice; // 79.99 for 5th+ items
+        }
+      }
+    });
+    
+    return { totalOriginalPrice: totalOrig, totalPrice: totalDiscounted };
+  };
+  
+  const { totalOriginalPrice, totalPrice } = calculateTotal();
   
   // Get currency symbol - use detected currency as fallback for consistency
   const getCurrencySymbol = (currencyCode: string): string => {
