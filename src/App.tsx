@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,15 +16,16 @@ import Foundation from "./pages/Foundation";
 import NotFound from "./pages/NotFound";
 import { useShopifyPageView } from "./hooks/use-shopify-analytics";
 
-const queryClient = new QueryClient();
-
 // Component to handle Shopify analytics
 const ShopifyAnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
   useShopifyPageView();
   return <>{children}</>;
 };
 
-const App = () => (
+const App = () => {
+  const [queryClient] = useState(() => new QueryClient());
+  
+  return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
@@ -47,6 +49,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 export default App;
