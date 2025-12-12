@@ -1,6 +1,6 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
-import { getProducts, ShopifyProduct } from "@/lib/shopify";
+import { getProducts, ShopifyProduct, createStorefrontCheckout } from "@/lib/shopify";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -8,7 +8,9 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
-import { ArrowLeft, Star, Package, Clock, BookOpen, Box, Check } from "lucide-react";
+import { ArrowLeft, Star, Package, Clock, BookOpen, Box, Check, Loader2, Zap } from "lucide-react";
+import { MobileStickyCTA } from "@/components/MobileStickyCTA";
+import { trackEvent } from "@/hooks/use-google-analytics";
 import { supabase } from "@/integrations/supabase/client";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { 
@@ -46,8 +48,13 @@ const ProductDetail = () => {
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [isSubscribing, setIsSubscribing] = useState(false);
   const reviewsPerPage = 10;
-  const addItem = useCartStore((state) => state.addItem);
+  const { addItem, clearCart } = useCartStore();
   const hasTrackedProductView = useRef(false);
+  const navigate = useNavigate();
+  const ctaSectionRef = useRef<HTMLDivElement>(null);
+  const [isAddingToCart, setIsAddingToCart] = useState(false);
+  const [isBuyingNow, setIsBuyingNow] = useState(false);
+  const [buyNowError, setBuyNowError] = useState<string | null>(null);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -126,30 +133,84 @@ const ProductDetail = () => {
     }
   }, [product]);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     if (!product) return;
+    setIsAddingToCart(true);
 
-    const variant = product.node.variants.edges[0].node;
-    const bundle = bundles.find((b) => b.qty === selectedBundle) || bundles[0];
-    
-    // Use converted price and currency
-    const cartItem = {
-      product,
-      variantId: variant.id,
-      variantTitle: variant.title,
-      price: {
-        amount: bundle.priceEach.toFixed(2),
-        currencyCode: currency,
-      },
-      quantity: selectedBundle,
-      selectedOptions: variant.selectedOptions,
-    };
+    try {
+      const variant = product.node.variants.edges[0].node;
+      const bundle = bundles.find((b) => b.qty === selectedBundle) || bundles[0];
+      
+      const cartItem = {
+        product,
+        variantId: variant.id,
+        variantTitle: variant.title,
+        price: {
+          amount: bundle.priceEach.toFixed(2),
+          currencyCode: currency,
+        },
+        quantity: selectedBundle,
+        selectedOptions: variant.selectedOptions,
+      };
 
-    addItem(cartItem);
-    toast.success("Added to cart!", {
-      description: `${selectedBundle}x ${product.node.title}`,
-      position: "top-center",
-    });
+      addItem(cartItem);
+      toast.success("Added to cart!", {
+        description: `${selectedBundle}x ${product.node.title}`,
+        position: "top-center",
+      });
+    } finally {
+      setIsAddingToCart(false);
+    }
+  };
+
+  const handleBuyNow = async () => {
+    if (!product) return;
+    setIsBuyingNow(true);
+    setBuyNowError(null);
+
+    try {
+      const variant = product.node.variants.edges[0].node;
+      
+      // Track buy now click event
+      trackEvent("buy_now_click", {
+        product_id: product.node.id,
+        variant_id: variant.id,
+        product_title: product.node.title,
+      });
+
+      // Clear cart and add single item
+      clearCart();
+      
+      const cartItem = {
+        product,
+        variantId: variant.id,
+        variantTitle: variant.title,
+        price: {
+          amount: variant.price.amount,
+          currencyCode: variant.price.currencyCode,
+        },
+        quantity: 1,
+        selectedOptions: variant.selectedOptions,
+      };
+
+      addItem(cartItem);
+
+      // Create checkout and redirect
+      const checkoutUrl = await createStorefrontCheckout([cartItem]);
+      
+      if (checkoutUrl) {
+        window.open(checkoutUrl, '_blank');
+      }
+    } catch (error) {
+      console.error("Buy now failed:", error);
+      setBuyNowError("Failed to proceed to checkout. Please try again.");
+      toast.error("Failed to proceed to checkout", {
+        description: "Please try again or use Add to Cart.",
+        position: "top-center",
+      });
+    } finally {
+      setIsBuyingNow(false);
+    }
   };
 
   if (loading) {
@@ -732,11 +793,41 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* CTA */}
-            <Button onClick={handleAddToCart} size="lg" className="w-full text-lg h-14 font-bold">
-              <Package className="w-5 h-5 mr-2" />
-              ADD TO CART - {formatPrice(totalPrice, currency)}
-            </Button>
+            {/* CTA Section */}
+            <div ref={ctaSectionRef} className="space-y-3">
+              <Button 
+                onClick={handleAddToCart} 
+                size="lg" 
+                className="w-full text-lg h-14 font-bold"
+                disabled={isAddingToCart || isBuyingNow}
+              >
+                {isAddingToCart ? (
+                  <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                ) : (
+                  <Package className="w-5 h-5 mr-2" />
+                )}
+                ADD TO CART - {formatPrice(totalPrice, currency)}
+              </Button>
+
+              <Button 
+                onClick={handleBuyNow}
+                variant="outline"
+                size="lg" 
+                className="w-full text-lg h-14 font-bold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                disabled={isAddingToCart || isBuyingNow}
+              >
+                {isBuyingNow ? (
+                  <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                ) : (
+                  <Zap className="w-5 h-5 mr-2" />
+                )}
+                BUY NOW
+              </Button>
+
+              {buyNowError && (
+                <p className="text-sm text-destructive text-center">{buyNowError}</p>
+              )}
+            </div>
 
             {/* Delivery Information */}
             <p className="text-center text-[0.945em] mt-3 mb-0 font-bold" style={{ color: "#333333" }}>
@@ -1284,6 +1375,17 @@ const ProductDetail = () => {
       </div>
 
       <Footer />
+
+      {/* Mobile Sticky CTA Bar */}
+      <MobileStickyCTA
+        price={formatPrice(product.node.variants.edges[0]?.node.price.amount ? parseFloat(product.node.variants.edges[0].node.price.amount) : 0, currency)}
+        variantSummary={product.node.variants.edges[0]?.node.title !== "Default Title" ? product.node.variants.edges[0]?.node.title : undefined}
+        onAddToCart={handleAddToCart}
+        onBuyNow={handleBuyNow}
+        ctaSectionRef={ctaSectionRef}
+        isAddingToCart={isAddingToCart}
+        isBuyingNow={isBuyingNow}
+      />
     </div>
   );
 };
