@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Package, Loader2, Zap } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { trackEvent } from "@/hooks/use-google-analytics";
 
 interface MobileStickyCTAProps {
@@ -76,15 +76,12 @@ export const MobileStickyCTA = ({
             size="sm"
             onClick={handleAddToCartClick}
             disabled={isAddingToCart || isBuyingNow}
-            className="h-11 px-3 text-sm font-semibold"
+            className="h-11 px-4 text-sm font-semibold"
           >
             {isAddingToCart ? (
               <Loader2 className="w-4 h-4 animate-spin" />
             ) : (
-              <>
-                <Package className="w-4 h-4 mr-1" />
-                ADD
-              </>
+              "ADD TO CART"
             )}
           </Button>
           <Button
@@ -96,10 +93,7 @@ export const MobileStickyCTA = ({
             {isBuyingNow ? (
               <Loader2 className="w-4 h-4 animate-spin" />
             ) : (
-              <>
-                <Zap className="w-4 h-4 mr-1" />
-                BUY NOW
-              </>
+              "BUY NOW"
             )}
           </Button>
         </div>
