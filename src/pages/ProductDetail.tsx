@@ -828,7 +828,7 @@ const ProductDetail = () => {
             </div>
 
             {/* Delivery Information */}
-            <p className="text-center text-[0.945em] mt-3 mb-0 font-bold" style={{ color: "#333333" }}>
+            <p className="text-center text-[0.75em] md:text-[0.945em] mt-3 mb-0 font-bold" style={{ color: "#333333" }}>
               📦 5-9 Day Delivery — Satisfaction Guaranteed
             </p>
             <button
@@ -840,12 +840,12 @@ const ProductDetail = () => {
                   window.location.href = '/account';
                 }
               }}
-              className="text-center text-[0.945em] mt-1 mb-0 font-bold hover:underline cursor-pointer transition-opacity hover:opacity-80 w-full"
+              className="text-center text-[0.75em] md:text-[0.945em] mt-1 mb-0 font-bold hover:underline cursor-pointer transition-opacity hover:opacity-80 w-full"
               style={{ color: "#555555" }}
             >
-              🛡️ 30-Day Easy Returns + 2-Year Warranty Included
+              🛡️ 30-Day Returns + 2-Year Warranty
             </button>
-            <p className="text-center text-[0.945em] mt-1 mb-0 font-bold" style={{ color: "#333333" }}>
+            <p className="text-center text-[0.75em] md:text-[0.945em] mt-1 mb-0 font-bold" style={{ color: "#333333" }}>
               💷 VAT Included in Price
             </p>
 
