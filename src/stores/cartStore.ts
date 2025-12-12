@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { ShopifyProduct, createStorefrontCheckout } from '@/lib/shopify';
+import { trackAddToCart, trackCheckoutStarted, trackCartView } from '@/lib/shopify-analytics';
 
 export interface CartItem {
   product: ShopifyProduct;
@@ -56,6 +57,18 @@ export const useCartStore = create<CartStore>()(
         } else {
           set({ items: [...items, item] });
         }
+
+        // Track add to cart event for Shopify Analytics
+        trackAddToCart({
+          productId: item.product.node.id,
+          productTitle: item.product.node.title,
+          productHandle: item.product.node.handle,
+          variantId: item.variantId,
+          variantTitle: item.variantTitle,
+          price: item.price.amount,
+          currency: item.price.currencyCode,
+          quantity: item.quantity,
+        });
       },
 
       updateQuantity: (variantId, quantity) => {
@@ -95,6 +108,25 @@ export const useCartStore = create<CartStore>()(
           console.error('Cannot create checkout: cart is empty');
           return;
         }
+
+        // Track checkout started event for Shopify Analytics
+        const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
+        const totalAmount = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
+        const currency = items[0]?.price.currencyCode || 'GBP';
+        
+        trackCheckoutStarted({
+          totalQuantity,
+          totalAmount: totalAmount.toFixed(2),
+          currency,
+          lines: items.map(item => ({
+            variantId: item.variantId,
+            productId: item.product.node.id,
+            productTitle: item.product.node.title,
+            variantTitle: item.variantTitle,
+            quantity: item.quantity,
+            price: item.price.amount,
+          })),
+        });
 
         setLoading(true);
         try {

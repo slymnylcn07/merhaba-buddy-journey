@@ -13,8 +13,15 @@ import ShippingPolicy from "./pages/ShippingPolicy";
 import RefundPolicy from "./pages/RefundPolicy";
 import Foundation from "./pages/Foundation";
 import NotFound from "./pages/NotFound";
+import { useShopifyPageView } from "./hooks/use-shopify-analytics";
 
 const queryClient = new QueryClient();
+
+// Component to handle Shopify analytics
+const ShopifyAnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
+  useShopifyPageView();
+  return <>{children}</>;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -22,19 +29,21 @@ const App = () => (
       <Toaster />
       <Sonner position="top-center" />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/product/:handle" element={<ProductDetail />} />
-          <Route path="/track-order" element={<TrackOrder />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/shipping-policy" element={<ShippingPolicy />} />
-          <Route path="/refund-policy" element={<RefundPolicy />} />
-          <Route path="/foundation" element={<Foundation />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <ShopifyAnalyticsProvider>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/product/:handle" element={<ProductDetail />} />
+            <Route path="/track-order" element={<TrackOrder />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/shipping-policy" element={<ShippingPolicy />} />
+            <Route path="/refund-policy" element={<RefundPolicy />} />
+            <Route path="/foundation" element={<Foundation />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ShopifyAnalyticsProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
