@@ -843,7 +843,7 @@ const ProductDetail = () => {
               className="text-center text-[0.75em] md:text-[0.945em] mt-1 mb-0 font-bold hover:underline cursor-pointer transition-opacity hover:opacity-80 w-full"
               style={{ color: "#555555" }}
             >
-              🛡️ 30-Day Returns + 2-Year Warranty
+              🛡️ 30-Day Easy Returns + 2-Year Warranty Included
             </button>
             <p className="text-center text-[0.75em] md:text-[0.945em] mt-1 mb-0 font-bold" style={{ color: "#333333" }}>
               💷 VAT Included in Price
