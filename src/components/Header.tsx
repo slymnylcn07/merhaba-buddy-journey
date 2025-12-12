@@ -69,6 +69,13 @@ export const Header = () => {
                   FAQ
                 </a>
                 <a
+                  href="/why-flexiknee"
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Why FlexiKnee
+                </a>
+                <a
                   href="/track-order"
                   className="text-lg font-medium hover:text-primary transition-colors"
                   onClick={() => setMenuOpen(false)}
@@ -104,6 +111,12 @@ export const Header = () => {
           </a>
           <a href="/#faq" className="text-sm font-medium hover:text-primary transition-colors" onClick={(e) => handleAnchorClick(e, "#faq")}>
             FAQ
+          </a>
+          <a
+            href="/why-flexiknee"
+            className="text-sm font-medium hover:text-primary transition-colors"
+          >
+            Why FlexiKnee
           </a>
           <a
             href="/track-order"
