@@ -742,9 +742,20 @@ const ProductDetail = () => {
             <p className="text-center text-[0.945em] mt-3 mb-0 font-bold" style={{ color: "#333333" }}>
               📦 5-9 Day Delivery — Satisfaction Guaranteed
             </p>
-            <p className="text-center text-[0.945em] mt-1 mb-0 font-bold" style={{ color: "#333333" }}>
-              🛡️ 30-Day Returns + 2-Year Warranty Included
-            </p>
+            <button
+              onClick={async () => {
+                const { data: { session } } = await supabase.auth.getSession();
+                if (session) {
+                  window.location.href = '/account#returns';
+                } else {
+                  window.location.href = '/account';
+                }
+              }}
+              className="text-center text-[0.945em] mt-1 mb-0 font-medium hover:underline cursor-pointer transition-opacity hover:opacity-80 w-full"
+              style={{ color: "#555555" }}
+            >
+              🛡️ 30-Day Easy Returns + 2-Year Warranty Included
+            </button>
             <p className="text-center text-[0.945em] mt-1 mb-0 font-bold" style={{ color: "#333333" }}>
               💷 VAT Included in Price
             </p>
