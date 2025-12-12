@@ -62,6 +62,16 @@ export const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Support</h3>
             <ul className="space-y-2">
               <li>
+                <Link
+                  to="/why-flexiknee"
+                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
+                >
+                  Why FlexiKnee
+                </Link>
+              </li>
+            </ul>
+            <ul className="space-y-2">
+              <li>
                 <button
                   onClick={() => {
                     const tidio = (window as any).tidioChatApi;

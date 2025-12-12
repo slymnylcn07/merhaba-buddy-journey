@@ -15,6 +15,7 @@ import RefundPolicy from "./pages/RefundPolicy";
 import Foundation from "./pages/Foundation";
 import AdminAuth from "./pages/AdminAuth";
 import AdminReturns from "./pages/AdminReturns";
+import WhyFlexiKnee from "./pages/WhyFlexiKnee";
 import NotFound from "./pages/NotFound";
 import { useShopifyPageView } from "./hooks/use-shopify-analytics";
 
@@ -44,6 +45,7 @@ const App = () => {
             <Route path="/shipping-policy" element={<ShippingPolicy />} />
             <Route path="/refund-policy" element={<RefundPolicy />} />
             <Route path="/foundation" element={<Foundation />} />
+            <Route path="/why-flexiknee" element={<WhyFlexiKnee />} />
             <Route path="/admin" element={<AdminAuth />} />
             <Route path="/admin/returns" element={<AdminReturns />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
