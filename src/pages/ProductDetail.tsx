@@ -751,7 +751,7 @@ const ProductDetail = () => {
                   window.location.href = '/account';
                 }
               }}
-              className="text-center text-[0.945em] mt-1 mb-0 font-medium hover:underline cursor-pointer transition-opacity hover:opacity-80 w-full"
+              className="text-center text-[0.945em] mt-1 mb-0 font-bold hover:underline cursor-pointer transition-opacity hover:opacity-80 w-full"
               style={{ color: "#555555" }}
             >
               🛡️ 30-Day Easy Returns + 2-Year Warranty Included
