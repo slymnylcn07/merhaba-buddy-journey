@@ -20,10 +20,20 @@ import {
   Sofa,
   Users
 } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const WhyFlexiKnee = () => {
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -137,8 +147,28 @@ const WhyFlexiKnee = () => {
         ref={(el) => (sectionsRef.current[0] = el)}
         className="relative py-16 md:py-24 overflow-hidden opacity-0 translate-y-8 transition-all duration-700 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
-        <div className="container px-4 relative">
+        {/* Parallax Background Elements */}
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"
+          style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+        />
+        <div 
+          className="absolute -top-20 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
+          style={{ transform: `translateY(${scrollY * 0.15}px) translateX(${scrollY * -0.05}px)` }}
+        />
+        <div 
+          className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-primary/8 rounded-full blur-3xl"
+          style={{ transform: `translateY(${scrollY * -0.1}px)` }}
+        />
+        <div 
+          className="absolute top-1/2 left-1/4 w-64 h-64 bg-primary/3 rounded-full blur-2xl"
+          style={{ transform: `translateY(${scrollY * 0.2}px) scale(${1 + scrollY * 0.0005})` }}
+        />
+        <div 
+          className="absolute top-1/3 right-1/4 w-48 h-48 bg-primary/4 rounded-full blur-2xl"
+          style={{ transform: `translateY(${scrollY * -0.12}px)` }}
+        />
+        <div className="container px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs uppercase tracking-wider animate-fade-in">
               Why FlexiKnee
