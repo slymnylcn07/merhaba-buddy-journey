@@ -354,12 +354,6 @@ const Account = () => {
                             Replacement
                           </Label>
                         </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="store-credit" id="store-credit" />
-                          <Label htmlFor="store-credit" className="font-normal cursor-pointer">
-                            Store credit
-                          </Label>
-                        </div>
                       </RadioGroup>
                     </div>
 
