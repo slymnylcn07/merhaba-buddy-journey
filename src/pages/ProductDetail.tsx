@@ -195,11 +195,11 @@ const ProductDetail = () => {
 
       addItem(cartItem);
 
-      // Create checkout and redirect
+      // Create checkout and redirect (use location.href to avoid pop-up blocker)
       const checkoutUrl = await createStorefrontCheckout([cartItem]);
       
       if (checkoutUrl) {
-        window.open(checkoutUrl, '_blank');
+        window.location.href = checkoutUrl;
       }
     } catch (error) {
       console.error("Buy now failed:", error);

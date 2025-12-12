@@ -29,10 +29,9 @@ export const MobileStickyCTA = ({
       if (!ctaSectionRef.current) return;
 
       const rect = ctaSectionRef.current.getBoundingClientRect();
-      const ctaSectionBottom = rect.bottom;
       
-      // Show sticky bar when CTA section is scrolled out of view (above viewport)
-      setIsVisible(ctaSectionBottom < 0);
+      // Show sticky bar when top of CTA section is scrolled above viewport
+      setIsVisible(rect.top < 0);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
