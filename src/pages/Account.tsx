@@ -140,6 +140,25 @@ const Account = () => {
         return;
       }
 
+      // Send email notifications (don't block on failure)
+      supabase.functions.invoke("send-return-notification", {
+        body: {
+          requestId: newReturnId,
+          orderNumber: formData.orderNumber,
+          email: formData.email,
+          fullName: formData.fullName,
+          returnReason: formData.returnReason,
+          preferredResolution: formData.preferredResolution,
+          additionalDetails: formData.additionalDetails,
+        },
+      }).then((res) => {
+        if (res.error) {
+          console.error("Failed to send notification emails:", res.error);
+        } else {
+          console.log("Notification emails sent successfully");
+        }
+      });
+
       setReturnRequestId(newReturnId);
       setSubmitSuccess(true);
     } catch (err) {
