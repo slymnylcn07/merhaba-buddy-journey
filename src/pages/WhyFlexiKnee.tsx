@@ -20,8 +20,30 @@ import {
   Sofa,
   Users
 } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const WhyFlexiKnee = () => {
+  const sectionsRef = useRef<(HTMLElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    sectionsRef.current.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const scrollToFeatures = () => {
     document.getElementById("features-section")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -111,11 +133,14 @@ const WhyFlexiKnee = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
+      <section 
+        ref={(el) => (sectionsRef.current[0] = el)}
+        className="relative py-16 md:py-24 overflow-hidden opacity-0 translate-y-8 transition-all duration-700 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
         <div className="container px-4 relative">
           <div className="max-w-3xl mx-auto text-center">
-            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs uppercase tracking-wider">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs uppercase tracking-wider animate-fade-in">
               Why FlexiKnee
             </Badge>
             <h1 className="text-3xl md:text-5xl font-bold mb-6 text-foreground leading-tight">
@@ -145,7 +170,10 @@ const WhyFlexiKnee = () => {
       </section>
 
       {/* The Problem Section */}
-      <section className="py-12 md:py-16 bg-muted/30">
+      <section 
+        ref={(el) => (sectionsRef.current[1] = el)}
+        className="py-12 md:py-16 bg-muted/30 opacity-0 translate-y-8 transition-all duration-700 ease-out delay-100 [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
+      >
         <div className="container px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
@@ -159,7 +187,11 @@ const WhyFlexiKnee = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features-section" className="py-16 md:py-24">
+      <section 
+        id="features-section" 
+        ref={(el) => (sectionsRef.current[2] = el)}
+        className="py-16 md:py-24 opacity-0 translate-y-8 transition-all duration-700 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
+      >
         <div className="container px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
@@ -173,9 +205,13 @@ const WhyFlexiKnee = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {features.map((feature, index) => (
-                <Card key={index} className="border-border/50 bg-card hover:shadow-lg transition-shadow">
+                <Card 
+                  key={index} 
+                  className="border-border/50 bg-card hover:shadow-lg transition-all duration-500 opacity-0 translate-y-6 [.animate-in_&]:opacity-100 [.animate-in_&]:translate-y-0"
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 transition-transform duration-300 hover:scale-110">
                       <feature.icon className="h-6 w-6 text-primary" />
                     </div>
                     <h3 className="font-semibold text-lg mb-2 text-foreground">{feature.title}</h3>
@@ -189,7 +225,10 @@ const WhyFlexiKnee = () => {
       </section>
 
       {/* Who It's For Section */}
-      <section className="py-16 md:py-20 bg-muted/30">
+      <section 
+        ref={(el) => (sectionsRef.current[3] = el)}
+        className="py-16 md:py-20 bg-muted/30 opacity-0 translate-y-8 transition-all duration-700 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
+      >
         <div className="container px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
@@ -202,9 +241,10 @@ const WhyFlexiKnee = () => {
               {whoItsFor.map((item, index) => (
                 <div 
                   key={index} 
-                  className="flex items-center gap-4 p-4 rounded-xl bg-background border border-border/50"
+                  className="flex items-center gap-4 p-4 rounded-xl bg-background border border-border/50 opacity-0 translate-x-[-20px] transition-all duration-500 [.animate-in_&]:opacity-100 [.animate-in_&]:translate-x-0 hover:border-primary/30 hover:shadow-md"
+                  style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 transition-transform duration-300 hover:scale-110">
                     <item.icon className="h-5 w-5 text-primary" />
                   </div>
                   <span className="text-foreground font-medium">{item.text}</span>
@@ -220,7 +260,10 @@ const WhyFlexiKnee = () => {
       </section>
 
       {/* Trust & Guarantee Section */}
-      <section className="py-16 md:py-24">
+      <section 
+        ref={(el) => (sectionsRef.current[4] = el)}
+        className="py-16 md:py-24 opacity-0 translate-y-8 transition-all duration-700 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
+      >
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -236,9 +279,10 @@ const WhyFlexiKnee = () => {
               {trustItems.map((item, index) => (
                 <div 
                   key={index} 
-                  className="text-center p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/10"
+                  className="text-center p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/10 opacity-0 scale-95 transition-all duration-500 [.animate-in_&]:opacity-100 [.animate-in_&]:scale-100 hover:shadow-lg hover:border-primary/20"
+                  style={{ transitionDelay: `${index * 150}ms` }}
                 >
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 transition-transform duration-300 hover:scale-110 hover:bg-primary/20">
                     <item.icon className="h-7 w-7 text-primary" />
                   </div>
                   <h3 className="font-semibold text-lg mb-2 text-foreground">{item.title}</h3>
@@ -258,7 +302,10 @@ const WhyFlexiKnee = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-20 bg-muted/30">
+      <section 
+        ref={(el) => (sectionsRef.current[5] = el)}
+        className="py-16 md:py-20 bg-muted/30 opacity-0 translate-y-8 transition-all duration-700 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
+      >
         <div className="container px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
@@ -272,7 +319,8 @@ const WhyFlexiKnee = () => {
                 <AccordionItem 
                   key={index} 
                   value={`faq-${index}`}
-                  className="bg-background border border-border/50 rounded-xl px-6 data-[state=open]:shadow-md"
+                  className="bg-background border border-border/50 rounded-xl px-6 data-[state=open]:shadow-md opacity-0 translate-y-4 transition-all duration-500 [.animate-in_&]:opacity-100 [.animate-in_&]:translate-y-0"
+                  style={{ transitionDelay: `${index * 75}ms` }}
                 >
                   <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-4">
                     {faq.question}
@@ -298,7 +346,10 @@ const WhyFlexiKnee = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 md:py-24">
+      <section 
+        ref={(el) => (sectionsRef.current[6] = el)}
+        className="py-16 md:py-24 opacity-0 translate-y-8 transition-all duration-700 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
+      >
         <div className="container px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-4xl font-bold mb-4 text-foreground">
@@ -307,7 +358,7 @@ const WhyFlexiKnee = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Explore the device and start your at-home routine today.
             </p>
-            <Button asChild size="lg" className="text-lg px-10 h-14 font-semibold">
+            <Button asChild size="lg" className="text-lg px-10 h-14 font-semibold transition-transform duration-300 hover:scale-105">
               <Link to="/product/knee-massager-smart-red-light-and-massage-therapy">
                 Go to Product Page
               </Link>
