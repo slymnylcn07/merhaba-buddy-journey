@@ -802,11 +802,10 @@ const ProductDetail = () => {
                 disabled={isAddingToCart || isBuyingNow}
               >
                 {isAddingToCart ? (
-                  <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                  <Loader2 className="w-5 h-5 animate-spin" />
                 ) : (
-                  <Package className="w-5 h-5 mr-2" />
+                  "ADD TO CART"
                 )}
-                ADD TO CART - {formatPrice(totalPrice, currency)}
               </Button>
 
               <Button 
@@ -817,11 +816,10 @@ const ProductDetail = () => {
                 disabled={isAddingToCart || isBuyingNow}
               >
                 {isBuyingNow ? (
-                  <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                  <Loader2 className="w-5 h-5 animate-spin" />
                 ) : (
-                  <Zap className="w-5 h-5 mr-2" />
+                  "BUY NOW"
                 )}
-                BUY NOW
               </Button>
 
               {buyNowError && (
