@@ -18,10 +18,12 @@ import AdminReturns from "./pages/AdminReturns";
 import WhyFlexiKnee from "./pages/WhyFlexiKnee";
 import NotFound from "./pages/NotFound";
 import { useShopifyPageView } from "./hooks/use-shopify-analytics";
+import { useGoogleAnalytics } from "./hooks/use-google-analytics";
 
-// Component to handle Shopify analytics
-const ShopifyAnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
+// Component to handle analytics
+const AnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
   useShopifyPageView();
+  useGoogleAnalytics();
   return <>{children}</>;
 };
 
@@ -34,7 +36,7 @@ const App = () => {
       <Toaster />
       <Sonner position="top-center" />
       <BrowserRouter>
-        <ShopifyAnalyticsProvider>
+        <AnalyticsProvider>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/product/:handle" element={<ProductDetail />} />
@@ -51,7 +53,7 @@ const App = () => {
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </ShopifyAnalyticsProvider>
+        </AnalyticsProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
