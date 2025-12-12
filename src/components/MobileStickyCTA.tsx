@@ -50,11 +50,11 @@ export const MobileStickyCTA = ({
     await onBuyNow();
   };
 
-  if (!isVisible) return null;
-
   return (
     <div 
-      className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t shadow-[0_-4px_20px_rgba(0,0,0,0.1)] md:hidden"
+      className={`fixed bottom-0 left-0 right-0 z-50 bg-background border-t shadow-[0_-4px_20px_rgba(0,0,0,0.1)] md:hidden transition-transform duration-300 ease-out ${
+        isVisible ? 'translate-y-0' : 'translate-y-full'
+      }`}
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <div className="flex items-center justify-between gap-3 px-4 py-3">
@@ -69,13 +69,13 @@ export const MobileStickyCTA = ({
         </div>
 
         {/* Right side - Buttons */}
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center gap-2 flex-shrink-0 mr-14">
           <Button
             variant="outline"
             size="sm"
             onClick={handleAddToCartClick}
             disabled={isAddingToCart || isBuyingNow}
-            className="h-11 px-4 text-sm font-semibold"
+            className="h-12 px-5 text-sm font-semibold"
           >
             {isAddingToCart ? (
               <Loader2 className="w-4 h-4 animate-spin" />
@@ -87,7 +87,7 @@ export const MobileStickyCTA = ({
             size="sm"
             onClick={handleBuyNowClick}
             disabled={isAddingToCart || isBuyingNow}
-            className="h-11 px-4 text-sm font-bold bg-primary hover:bg-primary/90"
+            className="h-12 px-6 text-sm font-bold bg-primary hover:bg-primary/90"
           >
             {isBuyingNow ? (
               <Loader2 className="w-4 h-4 animate-spin" />
