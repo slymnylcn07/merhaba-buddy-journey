@@ -92,7 +92,7 @@ const handler = async (req: Request): Promise<Response> => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "FlexiKnee <onboarding@resend.dev>",
+        from: "FlexiKnee <no-reply@flexi-knee.com>",
         to: [data.email],
         subject: customerSubject,
         html: customerHtml,
@@ -110,7 +110,7 @@ const handler = async (req: Request): Promise<Response> => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "FlexiKnee System <onboarding@resend.dev>",
+        from: "FlexiKnee <no-reply@flexi-knee.com>",
         to: [ADMIN_EMAIL],
         subject: `New Return Request - ${data.requestId}`,
         html: `
