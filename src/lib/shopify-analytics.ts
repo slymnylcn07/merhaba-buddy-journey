@@ -68,6 +68,7 @@ async function sendShopifyAnalyticsEvent(
       },
       metadata: {
         event_created_at_ms: Date.now(),
+        event_sent_at_ms: Date.now(),
       },
     };
 
