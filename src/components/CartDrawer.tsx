@@ -13,6 +13,7 @@ import {
 import { ShoppingCart, Minus, Plus, Trash2, Lock, Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { CURRENCY_CONFIG, CurrencyCode, detectUserCountry, getCurrencyForCountry, convertPrice, formatPrice } from "@/lib/currency";
+import { trackCartView } from "@/lib/shopify-analytics";
 
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,6 +35,27 @@ export const CartDrawer = () => {
     };
     detectCurrency();
   }, []);
+
+  // Track cart view when drawer is opened
+  useEffect(() => {
+    if (isOpen && items.length > 0) {
+      const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
+      const totalAmount = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
+      const currency = items[0]?.price.currencyCode || 'GBP';
+      
+      trackCartView({
+        totalQuantity,
+        totalAmount: totalAmount.toFixed(2),
+        currency,
+        lines: items.map(item => ({
+          variantId: item.variantId,
+          productTitle: item.product.node.title,
+          quantity: item.quantity,
+          price: item.price.amount,
+        })),
+      });
+    }
+  }, [isOpen, items]);
   
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   

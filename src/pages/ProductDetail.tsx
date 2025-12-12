@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -18,6 +18,7 @@ import {
   formatPrice,
   CurrencyCode 
 } from "@/lib/currency";
+import { trackProductView } from "@/lib/shopify-analytics";
 import productMain from "@/assets/product-main.jpg";
 import productHowItWorks from "@/assets/product-how-it-works.jpg";
 import DonationBanner from "@/components/DonationBanner";
@@ -46,6 +47,7 @@ const ProductDetail = () => {
   const [isSubscribing, setIsSubscribing] = useState(false);
   const reviewsPerPage = 10;
   const addItem = useCartStore((state) => state.addItem);
+  const hasTrackedProductView = useRef(false);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -104,6 +106,25 @@ const ProductDetail = () => {
     };
     loadProduct();
   }, [handle]);
+
+  // Track product view for Shopify Analytics
+  useEffect(() => {
+    if (product && !hasTrackedProductView.current) {
+      hasTrackedProductView.current = true;
+      const variant = product.node.variants.edges[0]?.node;
+      const image = product.node.images.edges[0]?.node;
+      
+      trackProductView({
+        productId: product.node.id,
+        productTitle: product.node.title,
+        productHandle: product.node.handle,
+        productPrice: product.node.priceRange.minVariantPrice.amount,
+        productCurrency: product.node.priceRange.minVariantPrice.currencyCode,
+        productVariantId: variant?.id,
+        productImageUrl: image?.url,
+      });
+    }
+  }, [product]);
 
   const handleAddToCart = () => {
     if (!product) return;
