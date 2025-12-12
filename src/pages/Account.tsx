@@ -18,6 +18,7 @@ import {
 import { Package, ShoppingBag, User, LogOut, RotateCcw, Upload, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const RETURN_REASONS = [
   "Defective / not working",
@@ -119,13 +120,34 @@ const Account = () => {
     setIsSubmitting(true);
     lastSubmitRef.current = now;
 
-    // Simulate submission delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
     const newReturnId = generateReturnId();
-    setReturnRequestId(newReturnId);
-    setSubmitSuccess(true);
-    setIsSubmitting(false);
+
+    try {
+      const { error } = await supabase.from("return_requests").insert({
+        request_id: newReturnId,
+        order_number: formData.orderNumber,
+        email: formData.email,
+        full_name: formData.fullName,
+        return_reason: formData.returnReason,
+        preferred_resolution: formData.preferredResolution,
+        additional_details: formData.additionalDetails,
+      });
+
+      if (error) {
+        console.error("Error submitting return request:", error);
+        toast.error("Failed to submit return request. Please try again.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      setReturnRequestId(newReturnId);
+      setSubmitSuccess(true);
+    } catch (err) {
+      console.error("Error submitting return request:", err);
+      toast.error("Failed to submit return request. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToReturns = () => {

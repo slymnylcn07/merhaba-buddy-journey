@@ -35,6 +35,48 @@ export type Database = {
         }
         Relationships: []
       }
+      return_requests: {
+        Row: {
+          additional_details: string
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          order_number: string
+          preferred_resolution: string
+          request_id: string
+          return_reason: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          additional_details: string
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          order_number: string
+          preferred_resolution: string
+          request_id: string
+          return_reason: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          additional_details?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          order_number?: string
+          preferred_resolution?: string
+          request_id?: string
+          return_reason?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
