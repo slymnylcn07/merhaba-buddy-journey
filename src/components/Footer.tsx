@@ -90,6 +90,14 @@ export const Footer = () => {
                   My Account
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/account#returns"
+                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
+                >
+                  Start a Return
+                </Link>
+              </li>
             </ul>
           </div>
 
