@@ -104,6 +104,8 @@ const AdminReturns = () => {
   };
 
   const updateStatus = async (id: string, newStatus: string) => {
+    const request = returns.find((r) => r.id === id);
+    
     const { error } = await supabase
       .from("return_requests")
       .update({ status: newStatus })
@@ -112,10 +114,40 @@ const AdminReturns = () => {
     if (error) {
       console.error("Error updating status:", error);
       toast.error("Durum güncellenemedi");
+      return;
+    }
+
+    // Send approval email if status changed to approved
+    if (newStatus === "approved" && request) {
+      try {
+        const { error: emailError } = await supabase.functions.invoke("send-return-notification", {
+          body: {
+            type: "approved",
+            requestId: request.request_id,
+            orderNumber: request.order_number,
+            email: request.email,
+            fullName: request.full_name,
+            returnReason: request.return_reason,
+            preferredResolution: request.preferred_resolution,
+            additionalDetails: request.additional_details,
+          },
+        });
+
+        if (emailError) {
+          console.error("Error sending approval email:", emailError);
+          toast.warning("Durum güncellendi ancak email gönderilemedi");
+        } else {
+          toast.success("Durum güncellendi ve onay emaili gönderildi");
+        }
+      } catch (err) {
+        console.error("Error invoking email function:", err);
+        toast.warning("Durum güncellendi ancak email gönderilemedi");
+      }
     } else {
       toast.success("Durum güncellendi");
-      fetchReturns();
     }
+
+    fetchReturns();
   };
 
   const handleLogout = async () => {
