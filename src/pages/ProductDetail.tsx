@@ -643,6 +643,13 @@ const ProductDetail = () => {
 
       <div className="container px-3 sm:px-4 py-4 md:py-6 max-w-[100vw] overflow-x-hidden">
 
+        {/* Mobile/Tablet Hero Headline - Hidden on Desktop */}
+        <div className="lg:hidden text-center py-8 md:py-10 mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-foreground px-4">
+            Relieve Knee Pain at Home — Risk-Free for 30 Days
+          </h1>
+        </div>
+
         {/* Top Section - Premium Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-7xl mx-auto mb-12">
           {/* Product Images */}
