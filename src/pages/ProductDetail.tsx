@@ -643,16 +643,6 @@ const ProductDetail = () => {
 
       <div className="container px-3 sm:px-4 py-4 md:py-6 max-w-[100vw] overflow-x-hidden">
 
-        {/* Mobile/Tablet Marketing Text - Hidden on Desktop */}
-        <div className="lg:hidden text-center pt-2 pb-3">
-          <p className="text-sm sm:text-base font-medium text-gray-500 leading-snug">
-            Relieve Knee Pain at Home
-          </p>
-          <p className="text-sm sm:text-base font-medium text-gray-500 leading-snug">
-            Risk-Free for 30 Days
-          </p>
-        </div>
-
         {/* Top Section - Premium Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-7xl mx-auto mb-12">
           {/* Product Images */}
@@ -720,12 +710,6 @@ const ProductDetail = () => {
                 <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" style={{ clipPath: "inset(0 30% 0 0)" }} />
               </div>
               <span className="text-sm font-semibold">4.7 (1128 Reviews)</span>
-              <Badge
-                variant="secondary"
-                className="bg-green-500/10 text-green-700 dark:text-green-400 border-green-500/20"
-              >
-                Happy Customers
-              </Badge>
             </button>
 
             {/* Key Benefits - 4 Feature Grid */}
