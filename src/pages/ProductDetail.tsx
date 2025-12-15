@@ -684,7 +684,21 @@ const ProductDetail = () => {
 
           {/* Product Info */}
           <div className="space-y-6 min-w-0 w-full">
-            {/* Rating & Social Proof */}
+            {/* Title First */}
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold mb-3 text-[#111111] dark:text-white">
+                {product.node.title}
+              </h1>
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <Badge className="bg-[#FF9900] text-white border-[#FF9900] hover:bg-[#FF9900]/90 font-bold px-3 py-1">#1 Best-Selling</Badge>
+                <Badge variant="outline">
+                  <Clock className="w-3 h-3 mr-1" />
+                  2,500+ sold this week
+                </Badge>
+              </div>
+            </div>
+
+            {/* Rating & Social Proof - Below Title */}
             <button
               onClick={() => document.getElementById("reviews-section")?.scrollIntoView({ behavior: "smooth" })}
               className="flex flex-wrap items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"
@@ -703,19 +717,6 @@ const ProductDetail = () => {
                 Happy Customers
               </Badge>
             </button>
-
-            <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-3 text-[#111111] dark:text-white">
-              {product.node.title}
-            </h1>
-              <div className="flex flex-wrap items-center gap-2 mb-4">
-                <Badge className="bg-[#FF9900] text-white border-[#FF9900] hover:bg-[#FF9900]/90 font-bold px-3 py-1">#1 Best-Selling</Badge>
-                <Badge variant="outline">
-                  <Clock className="w-3 h-3 mr-1" />
-                  2,500+ sold this week
-                </Badge>
-              </div>
-            </div>
 
             {/* Key Benefits - 4 Feature Grid */}
             <div className="grid grid-cols-2 gap-6 mb-4">
@@ -818,6 +819,26 @@ const ProductDetail = () => {
               </div>
             </div>
 
+            {/* Quantity Selector */}
+            <div className="space-y-2">
+              <label className="font-bold text-sm">Quantity:</label>
+              <div className="flex gap-2">
+                {[1, 2, 3, 4, 5].map((num) => (
+                  <button
+                    key={num}
+                    onClick={() => setQuantity(num)}
+                    className={`flex-1 h-14 rounded-lg border-2 font-bold text-lg transition-all ${
+                      quantity === num
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-border bg-background hover:border-primary/50"
+                    }`}
+                  >
+                    {num}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* CTA Section */}
             <div ref={ctaSectionRef} className="space-y-3">
               <Button 
@@ -853,9 +874,8 @@ const ProductDetail = () => {
             </div>
 
             {/* Delivery Information with Countdown */}
-            <p className="text-center text-[0.75em] md:text-[0.945em] mt-3 mb-0 font-bold">
-              <span className="text-green-600">📦 FREE</span> delivery <span className="font-black">{deliveryInfo.deliveryDate}</span>. 
-              <span className="text-green-600 font-bold"> Order within {deliveryInfo.hours} hours {deliveryInfo.minutes} minutes.</span>
+            <p className="text-center text-[0.75em] md:text-[0.945em] mt-3 mb-0 font-bold text-foreground">
+              📦 FREE delivery <span className="font-black">{deliveryInfo.deliveryDate}</span>. Order within {deliveryInfo.hours} hours {deliveryInfo.minutes} minutes.
             </p>
             <button
               onClick={async () => {
