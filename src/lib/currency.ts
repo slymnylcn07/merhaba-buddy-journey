@@ -1,7 +1,8 @@
 // Currency configuration with fixed exchange rates
+// Base prices: 1 purchase = £59.99, 2 purchases = £54.99 each
 export const CURRENCY_CONFIG = {
   GBP: { symbol: '£', name: 'British Pound', rate: 1 },
-  USD: { symbol: '$', name: 'US Dollar', rate: 1.10 },
+  USD: { symbol: '$', name: 'US Dollar', rate: 1.20 },
   EUR: { symbol: '€', name: 'Euro', rate: 1.17 },
   AUD: { symbol: 'A$', name: 'Australian Dollar', rate: 1.95 },
   CAD: { symbol: 'C$', name: 'Canadian Dollar', rate: 1.78 },

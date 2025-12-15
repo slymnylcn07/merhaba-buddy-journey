@@ -242,38 +242,27 @@ const ProductDetail = () => {
   const basePrice = parseFloat(product.node.priceRange.minVariantPrice.amount);
   const baseCurrency = product.node.priceRange.minVariantPrice.currencyCode;
 
-  // Base bundles calculated from Shopify price
-  // Original price is assumed to be 2x the base price (50% discount for 1 item)
+  // Fixed GBP prices: 1 purchase = £59.99, 2 purchases = £54.99 each
+  const singlePrice = 59.99;
+  const twoPackPriceEach = 54.99;
   const originalPriceMultiplier = 2;
   
   const baseBundles = [
     { 
       qty: 1, 
-      priceEach: basePrice, 
-      original: basePrice * originalPriceMultiplier, 
+      priceEach: singlePrice, 
+      original: singlePrice * originalPriceMultiplier, 
       discount: 50, 
-      tag: null 
+      tag: null,
+      label: "One purchase"
     },
     { 
       qty: 2, 
-      priceEach: basePrice * 0.90, // 10% additional discount
-      original: basePrice * originalPriceMultiplier * 2, 
-      discount: 55, 
-      tag: "MOST POPULAR" 
-    },
-    { 
-      qty: 3, 
-      priceEach: basePrice * 0.86, // 14% additional discount
-      original: basePrice * originalPriceMultiplier * 3, 
-      discount: 57, 
-      tag: null 
-    },
-    { 
-      qty: 4, 
-      priceEach: basePrice * 0.80, // 20% additional discount
-      original: basePrice * originalPriceMultiplier * 4, 
-      discount: 60, 
-      tag: "BEST OFFER" 
+      priceEach: twoPackPriceEach,
+      original: singlePrice * originalPriceMultiplier * 2, 
+      discount: 54, 
+      tag: "MOST POPULAR",
+      label: "Two purchases"
     },
   ];
 
@@ -599,24 +588,60 @@ const ProductDetail = () => {
   const totalPrice = currentBundle.priceEach * currentBundle.qty;
   const discount = currentBundle.discount;
 
+  // Calculate delivery date and countdown timer
+  const getDeliveryInfo = () => {
+    const now = new Date();
+    // Convert to UK time
+    const ukTime = new Date(now.toLocaleString("en-US", { timeZone: "Europe/London" }));
+    
+    // Calculate time until midnight UK
+    const midnight = new Date(ukTime);
+    midnight.setHours(24, 0, 0, 0);
+    const diffMs = midnight.getTime() - ukTime.getTime();
+    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+    const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+    
+    // Calculate delivery date (max 9 days from now)
+    const deliveryDate = new Date(ukTime);
+    deliveryDate.setDate(deliveryDate.getDate() + 9);
+    
+    // Format delivery date
+    const options: Intl.DateTimeFormatOptions = { 
+      weekday: 'long', 
+      day: 'numeric', 
+      month: 'long' 
+    };
+    const formattedDate = deliveryDate.toLocaleDateString('en-GB', options);
+    
+    return {
+      hours: diffHours,
+      minutes: diffMinutes,
+      deliveryDate: formattedDate
+    };
+  };
+
+  const [deliveryInfo, setDeliveryInfo] = useState(getDeliveryInfo());
+
+  // Update countdown every minute
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDeliveryInfo(getDeliveryInfo());
+    }, 60000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-
-      {/* Scarcity Banner */}
-      <div className="bg-destructive text-destructive-foreground py-3 sticky top-0 z-40">
+      {/* Scarcity Banner - Now at the very top */}
+      <div className="bg-destructive text-destructive-foreground py-3 sticky top-0 z-50">
         <div className="container px-4 text-center">
           <p className="font-semibold text-sm md:text-base">🔥 LIMITED TIME OFFER — 50% OFF TODAY ONLY</p>
         </div>
       </div>
 
-      <div className="container px-3 sm:px-4 py-6 md:py-8 max-w-[100vw] overflow-x-hidden">
-        <Button variant="ghost" asChild className="mb-6">
-          <Link to="/">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Home
-          </Link>
-        </Button>
+      <Header />
+
+      <div className="container px-3 sm:px-4 py-4 md:py-6 max-w-[100vw] overflow-x-hidden">
 
         {/* Top Section - Premium Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-7xl mx-auto mb-12">
@@ -684,7 +709,7 @@ const ProductDetail = () => {
               {product.node.title}
             </h1>
               <div className="flex flex-wrap items-center gap-2 mb-4">
-                <Badge className="bg-primary/10 text-primary border-primary/20">#1 Best-Selling</Badge>
+                <Badge className="bg-[#FF9900] text-white border-[#FF9900] hover:bg-[#FF9900]/90 font-bold px-3 py-1">#1 Best-Selling</Badge>
                 <Badge variant="outline">
                   <Clock className="w-3 h-3 mr-1" />
                   2,500+ sold this week
@@ -730,11 +755,11 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Bundle & Save */}
+            {/* Purchase Options */}
             <div className="space-y-2">
               <div className="flex items-center gap-4 mb-2">
                 <div className="flex-1 h-px bg-border"></div>
-                <h3 className="font-bold text-base whitespace-nowrap">BUNDLE & SAVE</h3>
+                <h3 className="font-bold text-base whitespace-nowrap">Purchase Options</h3>
                 <div className="flex-1 h-px bg-border"></div>
               </div>
 
@@ -767,7 +792,7 @@ const ProductDetail = () => {
                         </div>
                         <div className="min-w-0 flex-1">
                           <div className="font-semibold text-sm truncate">
-                            {bundle.qty}x Knee Massager{bundle.qty > 1 ? "s" : ""}
+                            {bundle.label}
                           </div>
                           {bundle.qty > 1 && (
                             <div className="text-[11px] text-muted-foreground">
@@ -827,9 +852,10 @@ const ProductDetail = () => {
               )}
             </div>
 
-            {/* Delivery Information */}
-            <p className="text-center text-[0.75em] md:text-[0.945em] mt-3 mb-0 font-bold" style={{ color: "#333333" }}>
-              📦 5-9 Day Delivery — Satisfaction Guaranteed
+            {/* Delivery Information with Countdown */}
+            <p className="text-center text-[0.75em] md:text-[0.945em] mt-3 mb-0 font-bold">
+              <span className="text-green-600">📦 FREE</span> delivery <span className="font-black">{deliveryInfo.deliveryDate}</span>. 
+              <span className="text-green-600 font-bold"> Order within {deliveryInfo.hours} hours {deliveryInfo.minutes} minutes.</span>
             </p>
             <button
               onClick={async () => {
