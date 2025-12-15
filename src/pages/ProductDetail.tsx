@@ -56,6 +56,48 @@ const ProductDetail = () => {
   const [isBuyingNow, setIsBuyingNow] = useState(false);
   const [buyNowError, setBuyNowError] = useState<string | null>(null);
 
+  // Calculate delivery date and countdown timer
+  const getDeliveryInfo = () => {
+    const now = new Date();
+    // Convert to UK time
+    const ukTime = new Date(now.toLocaleString("en-US", { timeZone: "Europe/London" }));
+    
+    // Calculate time until midnight UK
+    const midnight = new Date(ukTime);
+    midnight.setHours(24, 0, 0, 0);
+    const diffMs = midnight.getTime() - ukTime.getTime();
+    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+    const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+    
+    // Calculate delivery date (max 9 days from now)
+    const deliveryDate = new Date(ukTime);
+    deliveryDate.setDate(deliveryDate.getDate() + 9);
+    
+    // Format delivery date
+    const options: Intl.DateTimeFormatOptions = { 
+      weekday: 'long', 
+      day: 'numeric', 
+      month: 'long' 
+    };
+    const formattedDate = deliveryDate.toLocaleDateString('en-GB', options);
+    
+    return {
+      hours: diffHours,
+      minutes: diffMinutes,
+      deliveryDate: formattedDate
+    };
+  };
+
+  const [deliveryInfo, setDeliveryInfo] = useState(getDeliveryInfo());
+
+  // Update countdown every minute
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDeliveryInfo(getDeliveryInfo());
+    }, 60000);
+    return () => clearInterval(timer);
+  }, []);
+
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newsletterEmail) {
@@ -587,48 +629,6 @@ const ProductDetail = () => {
     : allReviews.slice(0, 6);
   const totalPrice = currentBundle.priceEach * currentBundle.qty;
   const discount = currentBundle.discount;
-
-  // Calculate delivery date and countdown timer
-  const getDeliveryInfo = () => {
-    const now = new Date();
-    // Convert to UK time
-    const ukTime = new Date(now.toLocaleString("en-US", { timeZone: "Europe/London" }));
-    
-    // Calculate time until midnight UK
-    const midnight = new Date(ukTime);
-    midnight.setHours(24, 0, 0, 0);
-    const diffMs = midnight.getTime() - ukTime.getTime();
-    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
-    const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
-    
-    // Calculate delivery date (max 9 days from now)
-    const deliveryDate = new Date(ukTime);
-    deliveryDate.setDate(deliveryDate.getDate() + 9);
-    
-    // Format delivery date
-    const options: Intl.DateTimeFormatOptions = { 
-      weekday: 'long', 
-      day: 'numeric', 
-      month: 'long' 
-    };
-    const formattedDate = deliveryDate.toLocaleDateString('en-GB', options);
-    
-    return {
-      hours: diffHours,
-      minutes: diffMinutes,
-      deliveryDate: formattedDate
-    };
-  };
-
-  const [deliveryInfo, setDeliveryInfo] = useState(getDeliveryInfo());
-
-  // Update countdown every minute
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setDeliveryInfo(getDeliveryInfo());
-    }, 60000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <div className="min-h-screen bg-background">
