@@ -822,21 +822,17 @@ const ProductDetail = () => {
             {/* Quantity Selector */}
             <div className="space-y-2">
               <label className="font-bold text-sm">Quantity:</label>
-              <div className="flex gap-2">
+              <select
+                value={quantity}
+                onChange={(e) => setQuantity(Number(e.target.value))}
+                className="w-full h-14 rounded-lg border-2 border-border bg-background px-4 font-bold text-lg focus:border-primary focus:outline-none cursor-pointer"
+              >
                 {[1, 2, 3, 4, 5].map((num) => (
-                  <button
-                    key={num}
-                    onClick={() => setQuantity(num)}
-                    className={`flex-1 h-14 rounded-lg border-2 font-bold text-lg transition-all ${
-                      quantity === num
-                        ? "border-primary bg-primary text-primary-foreground"
-                        : "border-border bg-background hover:border-primary/50"
-                    }`}
-                  >
+                  <option key={num} value={num}>
                     {num}
-                  </button>
+                  </option>
                 ))}
-              </div>
+              </select>
             </div>
 
             {/* CTA Section */}
