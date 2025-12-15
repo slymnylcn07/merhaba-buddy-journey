@@ -59,59 +59,41 @@ export const CartDrawer = () => {
   
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   
-  // Dynamic discount based on quantity
+  // Fixed GBP prices matching ProductDetail.tsx: 1 purchase = £59.99, 2+ purchases = £54.99 each
+  const SINGLE_PRICE_GBP = 59.99;
+  const TWO_PACK_PRICE_EACH_GBP = 54.99;
+  const ORIGINAL_PRICE_GBP = 119.98; // Original price per item (2x single price)
+  
+  // Get discount percentage based on quantity (matching ProductDetail)
   const getDiscountPercentage = (quantity: number): number => {
-    if (quantity >= 4) return 60;
-    if (quantity >= 3) return 57;
-    if (quantity >= 2) return 55;
-    return 50; // Base discount
+    if (quantity >= 2) return 54; // 2+ items get 54% off
+    return 50; // Single item gets 50% off
   };
   
   const discountPercentage = getDiscountPercentage(totalItems);
   
-  // Base GBP prices (our store currency)
-  const BASE_SALE_PRICE_GBP = 79.99;
-  const BASE_ORIGINAL_PRICE_GBP = 159.98;
-  
-  // Get prices in user's currency
-  const getOriginalPriceInCurrency = (): number => {
-    return convertPrice(BASE_ORIGINAL_PRICE_GBP, userCurrency);
+  // Get price per item based on quantity
+  const getPricePerItem = (): number => {
+    if (totalItems >= 2) {
+      return convertPrice(TWO_PACK_PRICE_EACH_GBP, userCurrency);
+    }
+    return convertPrice(SINGLE_PRICE_GBP, userCurrency);
   };
   
-  const getDynamicPriceInCurrency = (): number => {
-    const discountedGBP = BASE_ORIGINAL_PRICE_GBP * (1 - discountPercentage / 100);
-    return convertPrice(discountedGBP, userCurrency);
+  // Get original price per item
+  const getOriginalPricePerItem = (): number => {
+    return convertPrice(ORIGINAL_PRICE_GBP, userCurrency);
   };
   
-  const getSalePriceInCurrency = (): number => {
-    return convertPrice(BASE_SALE_PRICE_GBP, userCurrency);
-  };
-  
-  // Calculate total - first 4 items get discount, 5+ items pay full sale price
+  // Calculate total
   const calculateTotal = () => {
-    let totalOrig = 0;
-    let totalDiscounted = 0;
-    let itemCount = 0;
+    const pricePerItem = getPricePerItem();
+    const originalPricePerItem = getOriginalPricePerItem();
     
-    const originalPrice = getOriginalPriceInCurrency();
-    const discountedPrice = getDynamicPriceInCurrency();
-    const salePrice = getSalePriceInCurrency();
+    const totalOriginalPrice = originalPricePerItem * totalItems;
+    const totalPrice = pricePerItem * totalItems;
     
-    items.forEach((item) => {
-      for (let i = 0; i < item.quantity; i++) {
-        itemCount++;
-        totalOrig += originalPrice;
-        
-        // First 4 items get discounted price, rest pay sale price
-        if (itemCount <= 4) {
-          totalDiscounted += discountedPrice;
-        } else {
-          totalDiscounted += salePrice;
-        }
-      }
-    });
-    
-    return { totalOriginalPrice: totalOrig, totalPrice: totalDiscounted };
+    return { totalOriginalPrice, totalPrice };
   };
   
   const { totalOriginalPrice, totalPrice } = calculateTotal();
@@ -205,8 +187,8 @@ export const CartDrawer = () => {
               <div className="flex-1 overflow-y-auto pr-2 min-h-0">
                 <div className="space-y-4">
                   {items.map((item) => {
-                    const originalPrice = getOriginalPriceInCurrency();
-                    const dynamicPrice = getDynamicPriceInCurrency();
+                    const originalPrice = getOriginalPricePerItem();
+                    const dynamicPrice = getPricePerItem();
                     const currencySymbol = getCurrencySymbol();
                     
                     return (
@@ -285,32 +267,18 @@ export const CartDrawer = () => {
                   })}
                 </div>
                 
-                {/* Dynamic Incentive Message */}
+                {/* Dynamic Incentive Message - Only for 1 item */}
                 {totalItems === 1 && (
                   <div className="mt-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 rounded-lg p-3 text-center animate-pulse">
                     <p className="text-sm font-semibold text-amber-700">
-                      🔥 Add 1 more for 55% OFF! Limited time offer
+                      🔥 Add 1 more for 54% OFF! Limited time offer
                     </p>
                   </div>
                 )}
-                {totalItems === 2 && (
-                  <div className="mt-4 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-300 rounded-lg p-3 text-center">
-                    <p className="text-sm font-semibold text-green-700">
-                      ✨ Great choice! Add 1 more for 57% OFF
-                    </p>
-                  </div>
-                )}
-                {totalItems === 3 && (
-                  <div className="mt-4 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-300 rounded-lg p-3 text-center">
-                    <p className="text-sm font-semibold text-purple-700">
-                      🎯 Almost there! Add 1 more for MAX 60% OFF
-                    </p>
-                  </div>
-                )}
-                {totalItems >= 4 && (
+                {totalItems >= 2 && (
                   <div className="mt-4 bg-gradient-to-r from-green-100 to-emerald-100 border border-green-400 rounded-lg p-3 text-center">
                     <p className="text-sm font-bold text-green-700">
-                      🎉 MAX DISCOUNT UNLOCKED! You're saving 60%
+                      🎉 You're saving 54% on your order!
                     </p>
                   </div>
                 )}
