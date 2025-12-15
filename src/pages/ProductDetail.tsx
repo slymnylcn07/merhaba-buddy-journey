@@ -820,16 +820,15 @@ const ProductDetail = () => {
             </div>
 
             {/* Quantity Selector */}
-            <div className="space-y-2">
-              <label className="font-bold text-sm">Quantity:</label>
+            <div>
               <select
                 value={quantity}
                 onChange={(e) => setQuantity(Number(e.target.value))}
-                className="w-full h-14 rounded-lg border-2 border-border bg-background px-4 font-bold text-lg focus:border-primary focus:outline-none cursor-pointer"
+                className="w-full h-14 rounded-lg border-2 border-border bg-gray-100 dark:bg-gray-800 px-4 font-bold text-lg focus:border-primary focus:outline-none cursor-pointer"
               >
                 {[1, 2, 3, 4, 5].map((num) => (
                   <option key={num} value={num}>
-                    {num}
+                    Quantity: {num}
                   </option>
                 ))}
               </select>
@@ -871,7 +870,7 @@ const ProductDetail = () => {
 
             {/* Delivery Information with Countdown */}
             <p className="text-center text-[0.75em] md:text-[0.945em] mt-3 mb-0 font-bold text-foreground">
-              📦 FREE delivery <span className="font-black">{deliveryInfo.deliveryDate}</span>. Order within {deliveryInfo.hours} hours {deliveryInfo.minutes} minutes.
+              📦 FREE DELIVERY <span className="font-black">{deliveryInfo.deliveryDate}</span>. Order within <span className="text-green-600">{deliveryInfo.hours} hours {deliveryInfo.minutes} minutes</span>
             </p>
             <button
               onClick={async () => {
