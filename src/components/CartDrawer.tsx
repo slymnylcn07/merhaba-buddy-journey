@@ -103,13 +103,9 @@ export const CartDrawer = () => {
     return CURRENCY_CONFIG[userCurrency].symbol;
   };
   
-  // Format price for display
+  // Format price for display - all currencies show decimals
   const formatDisplayPrice = (price: number): string => {
-    // GBP shows decimals, other currencies show whole numbers
-    if (userCurrency === 'GBP') {
-      return `${getCurrencySymbol()}${price.toFixed(2)}`;
-    }
-    return `${getCurrencySymbol()}${Math.ceil(price).toFixed(0)}`;
+    return `${getCurrencySymbol()}${price.toFixed(2)}`;
   };
 
   const handleCheckout = async () => {
