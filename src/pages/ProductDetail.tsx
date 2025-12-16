@@ -177,6 +177,19 @@ const ProductDetail = () => {
 
   const handleAddToCart = async () => {
     if (!product) return;
+    
+    // Check current cart total
+    const { items } = useCartStore.getState();
+    const currentTotal = items.reduce((sum, item) => sum + item.quantity, 0);
+    
+    if (currentTotal + selectedBundle > 2) {
+      toast.error("Maximum quantity reached", {
+        description: "A customer can purchase a maximum of 2 items.",
+        position: "top-center",
+      });
+      return;
+    }
+    
     setIsAddingToCart(true);
 
     try {
@@ -820,7 +833,7 @@ const ProductDetail = () => {
                 onChange={(e) => setQuantity(Number(e.target.value))}
                 className="w-full h-14 rounded-lg border-2 border-border bg-gray-100 dark:bg-gray-800 px-4 font-bold text-lg focus:border-primary focus:outline-none cursor-pointer"
               >
-                {[1, 2, 3, 4, 5].map((num) => (
+                {[1, 2].map((num) => (
                   <option key={num} value={num}>
                     Quantity: {num}
                   </option>

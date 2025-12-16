@@ -44,18 +44,29 @@ export const useCartStore = create<CartStore>()(
 
       addItem: (item) => {
         const { items } = get();
+        const currentTotal = items.reduce((sum, i) => sum + i.quantity, 0);
         const existingItem = items.find(i => i.variantId === item.variantId);
+        
+        // Enforce max 2 items total
+        const newQuantity = existingItem 
+          ? existingItem.quantity + item.quantity 
+          : item.quantity;
+        const newTotal = currentTotal - (existingItem?.quantity || 0) + newQuantity;
+        
+        if (newTotal > 2) {
+          return; // Don't add if it exceeds limit
+        }
         
         if (existingItem) {
           set({
             items: items.map(i =>
               i.variantId === item.variantId
-                ? { ...i, quantity: i.quantity + item.quantity }
+                ? { ...i, quantity: Math.min(i.quantity + item.quantity, 2) }
                 : i
             )
           });
         } else {
-          set({ items: [...items, item] });
+          set({ items: [...items, { ...item, quantity: Math.min(item.quantity, 2) }] });
         }
 
         // Track add to cart event for Shopify Analytics
@@ -72,16 +83,26 @@ export const useCartStore = create<CartStore>()(
       },
 
       updateQuantity: (variantId, quantity) => {
-        // Validate and sanitize quantity input
-        const validQuantity = Math.max(0, Math.min(99, Math.floor(Number(quantity))));
+        // Validate and sanitize quantity input - max 2 items per customer
+        const validQuantity = Math.max(0, Math.min(2, Math.floor(Number(quantity))));
         
         if (isNaN(validQuantity) || validQuantity <= 0) {
           get().removeItem(variantId);
           return;
         }
         
+        // Check total cart quantity with new value
+        const { items } = get();
+        const otherItemsTotal = items
+          .filter(item => item.variantId !== variantId)
+          .reduce((sum, item) => sum + item.quantity, 0);
+        
+        if (otherItemsTotal + validQuantity > 2) {
+          return; // Don't update if it exceeds limit
+        }
+        
         set({
-          items: get().items.map(item =>
+          items: items.map(item =>
             item.variantId === variantId ? { ...item, quantity: validQuantity } : item
           )
         });
