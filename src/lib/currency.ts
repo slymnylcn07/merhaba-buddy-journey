@@ -5,7 +5,7 @@ export const CURRENCY_CONFIG = {
   USD: { symbol: '$', name: 'US Dollar', rate: 1.20 },
   EUR: { symbol: '€', name: 'Euro', rate: 1.17 },
   AUD: { symbol: 'A$', name: 'Australian Dollar', rate: 1.95 },
-  CAD: { symbol: 'C$', name: 'Canadian Dollar', rate: 1.78 },
+  CAD: { symbol: 'C$', name: 'Canadian Dollar', rate: 1.666 },
   NZD: { symbol: 'NZ$', name: 'New Zealand Dollar', rate: 2.12 },
 } as const;
 
@@ -57,18 +57,14 @@ export function convertPrice(priceInGBP: number, toCurrency: CurrencyCode): numb
   const rate = CURRENCY_CONFIG[toCurrency].rate;
   const convertedPrice = priceInGBP * rate;
   
-  // Round up to nearest whole unit for non-GBP currencies
-  return Math.ceil(convertedPrice);
+  // Return with 2 decimal precision (no rounding up)
+  return Math.round(convertedPrice * 100) / 100;
 }
 
 // Format price with currency symbol
 export function formatPrice(price: number, currency: CurrencyCode): string {
   const symbol = CURRENCY_CONFIG[currency].symbol;
   
-  // GBP shows decimals, other currencies show whole numbers
-  if (currency === 'GBP') {
-    return `${symbol}${price.toFixed(2)}`;
-  }
-  
-  return `${symbol}${Math.ceil(price).toFixed(0)}`;
+  // All currencies show decimals
+  return `${symbol}${price.toFixed(2)}`;
 }

@@ -246,7 +246,17 @@ export const CartDrawer = () => {
                               variant="outline"
                               size="icon"
                               className="h-7 w-7"
-                              onClick={() => updateQuantity(item.variantId, item.quantity + 1)}
+                              onClick={() => {
+                                if (totalItems >= 2) {
+                                  toast.error("Maximum quantity reached", {
+                                    description: "A customer can purchase a maximum of 2 items.",
+                                    position: "top-center",
+                                  });
+                                  return;
+                                }
+                                updateQuantity(item.variantId, item.quantity + 1);
+                              }}
+                              disabled={totalItems >= 2}
                             >
                               <Plus className="h-3 w-3" />
                             </Button>
