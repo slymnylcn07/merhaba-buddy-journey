@@ -3,7 +3,7 @@
 export const CURRENCY_CONFIG = {
   GBP: { symbol: '£', name: 'British Pound', rate: 1 },
   USD: { symbol: '$', name: 'US Dollar', rate: 1.20 },
-  EUR: { symbol: '€', name: 'Euro', rate: 1.17 },
+  EUR: { symbol: '€', name: 'Euro', rate: 1.158 },
   AUD: { symbol: 'A$', name: 'Australian Dollar', rate: 1.95 },
   CAD: { symbol: 'C$', name: 'Canadian Dollar', rate: 1.666 },
   NZD: { symbol: 'NZ$', name: 'New Zealand Dollar', rate: 2.12 },
