@@ -84,6 +84,48 @@ const TrackOrder = () => {
     };
   }, []);
 
+  // Auto-fill tracking number from URL query parameter
+  useEffect(() => {
+    function getQueryParam(name: string) {
+      return new URLSearchParams(window.location.search).get(name);
+    }
+
+    function setVueInputValue(input: HTMLInputElement, value: string) {
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        "value"
+      )?.set;
+      if (nativeInputValueSetter) {
+        nativeInputValueSetter.call(input, value);
+      }
+      input.dispatchEvent(new Event("input", { bubbles: true }));
+      input.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+
+    const tracking = getQueryParam("tracking");
+    if (!tracking) return;
+
+    let attempts = 0;
+    const timer = setInterval(() => {
+      attempts++;
+      const input = document.querySelector('input[name="nums"]') as HTMLInputElement;
+      if (input) {
+        setVueInputValue(input, tracking);
+        // Auto-click Track button
+        const btn = document.querySelector(
+          ".pp_tracking_button button, button[type='submit']"
+        ) as HTMLButtonElement;
+        if (btn) btn.click();
+        clearInterval(timer);
+      }
+      if (attempts > 80) clearInterval(timer); // ~24 seconds
+    }, 300);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
