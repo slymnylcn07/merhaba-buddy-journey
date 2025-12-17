@@ -18,6 +18,7 @@ import {
   getCurrencyForCountry, 
   convertPrice, 
   formatPrice,
+  getCountryName,
   CurrencyCode 
 } from "@/lib/currency";
 import { trackProductView } from "@/lib/shopify-analytics";
@@ -886,7 +887,7 @@ const ProductDetail = () => {
 
             {/* Delivery Information with Countdown */}
             <p className="text-center text-[0.75em] md:text-[0.945em] mt-3 mb-0 font-bold text-foreground">
-              📦 FREE DELIVERY <span className="font-black">{deliveryInfo.deliveryDate}</span>. Order within <span className="text-green-600">{deliveryInfo.hours} hours {deliveryInfo.minutes} minutes</span>
+              📦 FREE DELIVERY to <span className="font-black">{getCountryName(userCountry)}</span> <span className="font-black">{deliveryInfo.deliveryDate}</span>. Order within <span className="text-green-600">{deliveryInfo.hours} hours {deliveryInfo.minutes} minutes</span>
             </p>
             <button
               onClick={async () => {
