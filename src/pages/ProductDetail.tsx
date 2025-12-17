@@ -45,6 +45,7 @@ const ProductDetail = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [showAllReviews, setShowAllReviews] = useState(false);
   const [currency, setCurrency] = useState<CurrencyCode>('GBP');
+  const [userCountry, setUserCountry] = useState<string>('GB');
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [isSubscribing, setIsSubscribing] = useState(false);
   const reviewsPerPage = 10;
@@ -56,8 +57,11 @@ const ProductDetail = () => {
   const [isBuyingNow, setIsBuyingNow] = useState(false);
   const [buyNowError, setBuyNowError] = useState<string | null>(null);
 
+  // Countries with extended delivery time (12 days)
+  const EXTENDED_DELIVERY_COUNTRIES = ['FI', 'NL', 'SE', 'CH', 'NO', 'NZ', 'AT', 'BE', 'DK'];
+
   // Calculate delivery date and countdown timer
-  const getDeliveryInfo = () => {
+  const getDeliveryInfo = (countryCode: string) => {
     const now = new Date();
     // Convert to UK time
     const ukTime = new Date(now.toLocaleString("en-US", { timeZone: "Europe/London" }));
@@ -69,9 +73,12 @@ const ProductDetail = () => {
     const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
     const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
     
-    // Calculate delivery date (max 9 days from now)
+    // Determine delivery days based on country (12 days for extended countries, 9 days for others)
+    const deliveryDays = EXTENDED_DELIVERY_COUNTRIES.includes(countryCode) ? 12 : 9;
+    
+    // Calculate delivery date
     const deliveryDate = new Date(ukTime);
-    deliveryDate.setDate(deliveryDate.getDate() + 9);
+    deliveryDate.setDate(deliveryDate.getDate() + deliveryDays);
     
     // Format delivery date
     const options: Intl.DateTimeFormatOptions = { 
@@ -88,15 +95,16 @@ const ProductDetail = () => {
     };
   };
 
-  const [deliveryInfo, setDeliveryInfo] = useState(getDeliveryInfo());
+  const [deliveryInfo, setDeliveryInfo] = useState(getDeliveryInfo('GB'));
 
-  // Update countdown every minute
+  // Update countdown every minute and when country changes
   useEffect(() => {
+    setDeliveryInfo(getDeliveryInfo(userCountry));
     const timer = setInterval(() => {
-      setDeliveryInfo(getDeliveryInfo());
+      setDeliveryInfo(getDeliveryInfo(userCountry));
     }, 60000);
     return () => clearInterval(timer);
-  }, []);
+  }, [userCountry]);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -122,14 +130,15 @@ const ProductDetail = () => {
     }
   };
 
-  // Detect user's currency on mount
+  // Detect user's country and currency on mount
   useEffect(() => {
-    const detectCurrency = async () => {
+    const detectCountryAndCurrency = async () => {
       const countryCode = await detectUserCountry();
+      setUserCountry(countryCode);
       const detectedCurrency = getCurrencyForCountry(countryCode);
       setCurrency(detectedCurrency);
     };
-    detectCurrency();
+    detectCountryAndCurrency();
   }, []);
 
   useEffect(() => {
