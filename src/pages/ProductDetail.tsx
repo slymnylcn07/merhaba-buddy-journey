@@ -1395,7 +1395,7 @@ const ProductDetail = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button onClick={handleAddToCart} size="lg" className="text-lg px-8 h-14">
                 <Package className="w-5 h-5 mr-2" />
-                Add to Cart - ${totalPrice.toFixed(2)}
+                Add to Cart - {formatPrice(convertPrice(totalPrice, currency), currency)}
               </Button>
             </div>
           </div>
