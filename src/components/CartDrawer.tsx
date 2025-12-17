@@ -12,12 +12,13 @@ import {
 } from "@/components/ui/sheet";
 import { ShoppingCart, Minus, Plus, Trash2, Lock, Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
-import { CURRENCY_CONFIG, CurrencyCode, detectUserCountry, getCurrencyForCountry, convertPrice, formatPrice } from "@/lib/currency";
+import { CURRENCY_CONFIG, CurrencyCode, detectUserCountry, getCurrencyForCountry, convertPrice, formatPrice, getCountryName } from "@/lib/currency";
 import { trackCartView } from "@/lib/shopify-analytics";
 
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [userCurrency, setUserCurrency] = useState<CurrencyCode>('GBP');
+  const [userCountry, setUserCountry] = useState<string>('GB');
   const { 
     items, 
     isLoading, 
@@ -26,12 +27,49 @@ export const CartDrawer = () => {
     createCheckout 
   } = useCartStore();
 
-  // Detect user's currency on mount
+  // Countries with extended delivery time (12 days)
+  const EXTENDED_DELIVERY_COUNTRIES = ['FI', 'NL', 'SE', 'CH', 'NO', 'NZ', 'AT', 'BE', 'DK'];
+
+  // Calculate delivery date
+  const getDeliveryInfo = (countryCode: string) => {
+    const now = new Date();
+    const ukTime = new Date(now.toLocaleString("en-US", { timeZone: "Europe/London" }));
+    
+    const midnight = new Date(ukTime);
+    midnight.setHours(24, 0, 0, 0);
+    const diffMs = midnight.getTime() - ukTime.getTime();
+    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+    const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+    
+    const deliveryDays = EXTENDED_DELIVERY_COUNTRIES.includes(countryCode) ? 12 : 9;
+    
+    const deliveryDate = new Date(ukTime);
+    deliveryDate.setDate(deliveryDate.getDate() + deliveryDays);
+    
+    const options: Intl.DateTimeFormatOptions = { 
+      weekday: 'long', 
+      day: 'numeric', 
+      month: 'long' 
+    };
+    const formattedDate = deliveryDate.toLocaleDateString('en-GB', options);
+    
+    return {
+      hours: diffHours,
+      minutes: diffMinutes,
+      deliveryDate: formattedDate
+    };
+  };
+
+  const [deliveryInfo, setDeliveryInfo] = useState(getDeliveryInfo('GB'));
+
+  // Detect user's currency and country on mount
   useEffect(() => {
     const detectCurrency = async () => {
       const countryCode = await detectUserCountry();
       const detectedCurrency = getCurrencyForCountry(countryCode);
       setUserCurrency(detectedCurrency);
+      setUserCountry(countryCode);
+      setDeliveryInfo(getDeliveryInfo(countryCode));
     };
     detectCurrency();
   }, []);
@@ -288,6 +326,16 @@ export const CartDrawer = () => {
                     </p>
                   </div>
                 )}
+
+                {/* Delivery Information */}
+                <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
+                  <p className="text-sm font-bold text-blue-700">
+                    📦 FREE DELIVERY to <span className="font-black">{getCountryName(userCountry)}</span> <span className="font-black">{deliveryInfo.deliveryDate}</span>
+                  </p>
+                  <p className="text-xs text-blue-600 mt-1">
+                    Order within <span className="text-green-600 font-semibold">{deliveryInfo.hours} hours {deliveryInfo.minutes} minutes</span>
+                  </p>
+                </div>
               </div>
               
               <div className="flex-shrink-0 space-y-4 pt-4 border-t bg-[#F8F7FF]">
