@@ -1,12 +1,16 @@
 // Currency configuration with fixed exchange rates
 // Base prices: 1 purchase = £59.99, 2 purchases = £54.99 each
 export const CURRENCY_CONFIG = {
-  GBP: { symbol: '£', name: 'British Pound', rate: 1 },
-  USD: { symbol: '$', name: 'US Dollar', rate: 1.20 },
-  EUR: { symbol: '€', name: 'Euro', rate: 1.16669444 },
-  AUD: { symbol: 'A$', name: 'Australian Dollar', rate: 1.95 },
-  CAD: { symbol: 'C$', name: 'Canadian Dollar', rate: 1.666 },
-  NZD: { symbol: 'NZ$', name: 'New Zealand Dollar', rate: 2.12 },
+  GBP: { symbol: '£', name: 'British Pound', rate: 1, roundUp: false },
+  USD: { symbol: '$', name: 'US Dollar', rate: 1.20, roundUp: false },
+  EUR: { symbol: '€', name: 'Euro', rate: 1.16669444, roundUp: false },
+  AUD: { symbol: 'A$', name: 'Australian Dollar', rate: 1.95, roundUp: false },
+  CAD: { symbol: 'C$', name: 'Canadian Dollar', rate: 1.666, roundUp: false },
+  NZD: { symbol: 'NZ$', name: 'New Zealand Dollar', rate: 2.12, roundUp: false },
+  DKK: { symbol: 'kr ', name: 'Danish Krone', rate: 8.62, roundUp: true },
+  SEK: { symbol: 'kr ', name: 'Swedish Krona', rate: 12.63, roundUp: true },
+  CHF: { symbol: 'CHF ', name: 'Swiss Franc', rate: 1.078, roundUp: true },
+  NOK: { symbol: 'kr ', name: 'Norwegian Krone', rate: 13.81, roundUp: true },
 } as const;
 
 export type CurrencyCode = keyof typeof CURRENCY_CONFIG;
@@ -25,9 +29,14 @@ export const COUNTRY_CURRENCY_MAP: Record<string, CurrencyCode> = {
   'AT': 'EUR',
   'IE': 'EUR',
   'PT': 'EUR',
+  'FI': 'EUR',
   'AU': 'AUD',
   'CA': 'CAD',
   'NZ': 'NZD',
+  'DK': 'DKK',
+  'SE': 'SEK',
+  'CH': 'CHF',
+  'NO': 'NOK',
 };
 
 // Get user's country from IP (using a free geolocation API)
@@ -54,17 +63,27 @@ export function convertPrice(priceInGBP: number, toCurrency: CurrencyCode): numb
     return priceInGBP;
   }
   
-  const rate = CURRENCY_CONFIG[toCurrency].rate;
-  const convertedPrice = priceInGBP * rate;
+  const currencyConfig = CURRENCY_CONFIG[toCurrency];
+  const convertedPrice = priceInGBP * currencyConfig.rate;
   
-  // Return with 2 decimal precision (no rounding up)
+  // Round UP to nearest whole number for currencies that require it (DKK, SEK, CHF, NOK)
+  if (currencyConfig.roundUp) {
+    return Math.ceil(convertedPrice);
+  }
+  
+  // Return with 2 decimal precision for other currencies
   return Math.round(convertedPrice * 100) / 100;
 }
 
 // Format price with currency symbol
 export function formatPrice(price: number, currency: CurrencyCode): string {
-  const symbol = CURRENCY_CONFIG[currency].symbol;
+  const currencyConfig = CURRENCY_CONFIG[currency];
   
-  // All currencies show decimals
-  return `${symbol}${price.toFixed(2)}`;
+  // Show no decimals for currencies that round up to whole numbers
+  if (currencyConfig.roundUp) {
+    return `${currencyConfig.symbol}${Math.round(price)}`;
+  }
+  
+  // All other currencies show decimals
+  return `${currencyConfig.symbol}${price.toFixed(2)}`;
 }
