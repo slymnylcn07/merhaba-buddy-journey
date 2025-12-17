@@ -39,6 +39,35 @@ export const COUNTRY_CURRENCY_MAP: Record<string, CurrencyCode> = {
   'NO': 'NOK',
 };
 
+// Country code to country name mapping
+export const COUNTRY_NAMES: Record<string, string> = {
+  'GB': 'United Kingdom',
+  'UK': 'United Kingdom',
+  'US': 'United States',
+  'DE': 'Germany',
+  'FR': 'France',
+  'IT': 'Italy',
+  'ES': 'Spain',
+  'NL': 'Netherlands',
+  'BE': 'Belgium',
+  'AT': 'Austria',
+  'IE': 'Ireland',
+  'PT': 'Portugal',
+  'FI': 'Finland',
+  'AU': 'Australia',
+  'CA': 'Canada',
+  'NZ': 'New Zealand',
+  'DK': 'Denmark',
+  'SE': 'Sweden',
+  'CH': 'Switzerland',
+  'NO': 'Norway',
+};
+
+// Get country name from country code
+export function getCountryName(countryCode: string): string {
+  return COUNTRY_NAMES[countryCode] || countryCode;
+}
+
 // Get user's country from IP (using a free geolocation API)
 export async function detectUserCountry(): Promise<string> {
   try {
