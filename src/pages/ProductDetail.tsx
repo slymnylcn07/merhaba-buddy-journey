@@ -658,7 +658,7 @@ const ProductDetail = () => {
       {/* Scarcity Banner - Now at the very top */}
       <div className="bg-destructive text-destructive-foreground py-3 sticky top-0 z-50">
         <div className="container px-4 text-center">
-          <p className="font-semibold text-sm md:text-base">🔥 LIMITED TIME OFFER — 50% OFF TODAY ONLY</p>
+          <p className="font-semibold text-sm md:text-base">Launch Offer – 50% Off for a Limited Time</p>
         </div>
       </div>
 
