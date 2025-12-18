@@ -666,6 +666,19 @@ const ProductDetail = () => {
 
       <div className="container px-3 sm:px-4 py-4 md:py-6 max-w-[100vw] overflow-x-hidden">
 
+        {/* Mobile Hero Section - Premium Pain Point Content */}
+        <div className="lg:hidden text-center py-8 mb-6">
+          <p className="text-xs tracking-widest text-muted-foreground/70 mb-4 font-medium">
+            FlexiKnee™
+          </p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 leading-tight">
+            Knee Pain Slowing You Down?
+          </h1>
+          <p className="text-base text-muted-foreground font-light max-w-sm mx-auto leading-relaxed">
+            Relieve stiffness and soreness with smart heat & red light therapy — at home, anytime.
+          </p>
+        </div>
+
         {/* Top Section - Premium Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-7xl mx-auto mb-12">
           {/* Product Images */}
