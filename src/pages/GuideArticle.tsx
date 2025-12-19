@@ -28,7 +28,7 @@ import heroDailyRoutine from "@/assets/article-hero-daily-routine.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
-import thumbWhoBenefits from "@/assets/guide-thumb-who-benefits-new.jpg";
+import thumbWhoBenefits from "@/assets/guide-thumb-who-benefits-branded.jpg";
 import thumbDailyRoutine from "@/assets/guide-thumb-daily-routine.jpg";
 
 // Import section images - FlexiKnee branded device images
