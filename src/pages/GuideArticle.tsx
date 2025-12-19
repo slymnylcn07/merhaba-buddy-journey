@@ -370,19 +370,11 @@ const articles: Record<string, ArticleData> = {
         </InfoBox>
 
         <figure className="my-8">
-          <div className="relative mx-auto w-full max-w-md aspect-square rounded-xl border border-border/30 bg-muted/20 p-6 shadow-sm overflow-hidden">
-            <img 
-              src={deviceWhiteFlexikneeSource} 
-              alt="FlexiKnee at-home knee therapy device" 
-              className="w-full h-full object-contain"
-              loading="lazy"
-            />
-            <div className="absolute bottom-4 left-4">
-              <span className="inline-flex items-center rounded-full bg-background/80 px-3 py-1 text-xs font-semibold text-foreground backdrop-blur">
-                FlexiKnee
-              </span>
-            </div>
-          </div>
+          <img 
+            src={blogDeviceDailyRoutine} 
+            alt="Person using FlexiKnee device at home during daily routine" 
+            className="w-full h-auto rounded-xl shadow-sm"
+          />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
             At-home devices fit easily into daily comfort routines
           </figcaption>
