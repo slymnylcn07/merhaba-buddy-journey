@@ -10,15 +10,15 @@ import heroHeatTherapy from "@/assets/article-hero-heat-therapy.jpg";
 import heroWhoBenefits from "@/assets/article-hero-who-benefits.jpg";
 import heroDailyRoutine from "@/assets/article-hero-daily-routine.jpg";
 
-// Import section images
-import sectionStretching from "@/assets/article-section-stretching-new.jpg";
-import sectionWarmth from "@/assets/article-section-warmth.jpg";
-import sectionRedlight from "@/assets/article-section-redlight.jpg";
+// Import section images - FlexiKnee branded device images
+import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
+import blogDeviceMovement from "@/assets/blog-device-movement.jpg";
+import blogDeviceComfortRoutine from "@/assets/blog-device-comfort-routine.jpg";
+import blogDeviceWarmth from "@/assets/blog-device-warmth.jpg";
+import blogDeviceRedlight from "@/assets/blog-device-redlight.jpg";
+import blogDeviceMorning from "@/assets/blog-device-morning.jpg";
+import blogDeviceEvening from "@/assets/blog-device-evening.jpg";
 import sectionRoutine from "@/assets/article-section-routine.jpg";
-import deviceHomeUse from "@/assets/article-device-home-use.jpg";
-import deviceMorning from "@/assets/article-device-morning.jpg";
-import deviceEvening from "@/assets/article-device-evening.jpg";
-import deviceRoutine from "@/assets/article-device-routine.jpg";
 
 interface ArticleData {
   slug: string;
@@ -63,8 +63,8 @@ const articles: Record<string, ArticleData> = {
 
         <figure className="my-8">
           <img 
-            src={deviceHomeUse} 
-            alt="Person using knee therapy device at home on sofa" 
+            src={blogDeviceComfortRoutine} 
+            alt="Person using FlexiKnee therapy device at home on sofa" 
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -93,8 +93,8 @@ const articles: Record<string, ArticleData> = {
 
         <figure className="my-8">
           <img 
-            src={sectionWarmth} 
-            alt="Heat therapy being applied for knee comfort" 
+            src={blogDeviceWarmth} 
+            alt="FlexiKnee device providing heat therapy for knee comfort" 
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -158,8 +158,8 @@ const articles: Record<string, ArticleData> = {
 
         <figure className="my-8">
           <img 
-            src={sectionWarmth} 
-            alt="Heat therapy device providing warmth to knee area" 
+            src={blogDeviceWarmth} 
+            alt="FlexiKnee device providing heat therapy warmth to knee area" 
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -180,8 +180,8 @@ const articles: Record<string, ArticleData> = {
 
         <figure className="my-8">
           <img 
-            src={sectionRedlight} 
-            alt="Red light therapy device emitting therapeutic light" 
+            src={blogDeviceRedlight} 
+            alt="FlexiKnee device emitting red light therapy" 
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -253,8 +253,8 @@ const articles: Record<string, ArticleData> = {
 
         <figure className="my-8">
           <img 
-            src={deviceRoutine} 
-            alt="Person using knee therapy device at home during daily routine" 
+            src={blogDeviceDailyRoutine} 
+            alt="Person using FlexiKnee device at home during daily routine" 
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -286,8 +286,8 @@ const articles: Record<string, ArticleData> = {
 
         <figure className="my-8">
           <img 
-            src={sectionStretching} 
-            alt="Maintaining healthy movement habits alongside therapy" 
+            src={blogDeviceMovement} 
+            alt="Person doing gentle movement with FlexiKnee device" 
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -354,8 +354,8 @@ const articles: Record<string, ArticleData> = {
 
         <figure className="my-8">
           <img 
-            src={deviceMorning} 
-            alt="Person using knee therapy device during morning routine" 
+            src={blogDeviceMorning} 
+            alt="Person using FlexiKnee device during morning routine" 
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -393,8 +393,8 @@ const articles: Record<string, ArticleData> = {
 
         <figure className="my-8">
           <img 
-            src={sectionStretching} 
-            alt="Gentle stretching and movement throughout the day" 
+            src={blogDeviceMovement} 
+            alt="Person doing gentle stretching with FlexiKnee device" 
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -418,8 +418,8 @@ const articles: Record<string, ArticleData> = {
 
         <figure className="my-8">
           <img 
-            src={deviceEvening} 
-            alt="Person using knee therapy device during evening relaxation" 
+            src={blogDeviceEvening} 
+            alt="Person using FlexiKnee device during evening relaxation" 
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
