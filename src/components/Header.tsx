@@ -48,6 +48,13 @@ export const Header = () => {
                   Home
                 </a>
                 <a
+                  href="/product/flexiknee"
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Products
+                </a>
+                <a
                   href="/#benefits"
                   className="text-lg font-medium hover:text-primary transition-colors"
                   onClick={(e) => handleAnchorClick(e, "#benefits")}
@@ -109,6 +116,9 @@ export const Header = () => {
         <nav className="hidden md:flex items-center gap-6 absolute left-4">
           <a href="/" className="text-sm font-medium hover:text-primary transition-colors">
             Home
+          </a>
+          <a href="/product/flexiknee" className="text-sm font-medium hover:text-primary transition-colors">
+            Products
           </a>
           <a href="/#benefits" className="text-sm font-medium hover:text-primary transition-colors" onClick={(e) => handleAnchorClick(e, "#benefits")}>
             Benefits

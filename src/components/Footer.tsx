@@ -63,6 +63,14 @@ export const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
+                  to="/product/flexiknee"
+                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
+                >
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/why-flexiknee"
                   className="text-muted-foreground hover:text-primary hover:underline transition-colors"
                 >
