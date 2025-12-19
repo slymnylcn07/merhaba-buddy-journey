@@ -4,7 +4,7 @@ export const CURRENCY_CONFIG = {
   GBP: { symbol: '£', name: 'British Pound', rate: 1, roundUp: false },
   USD: { symbol: '$', name: 'US Dollar', rate: 1.20, roundUp: false },
   EUR: { symbol: '€', name: 'Euro', rate: 1.16669444, roundUp: false },
-  AUD: { symbol: 'A$', name: 'Australian Dollar', rate: 1.95, roundUp: false },
+  AUD: { symbol: 'A$', name: 'Australian Dollar', rate: 2.05, roundUp: true },
   CAD: { symbol: 'C$', name: 'Canadian Dollar', rate: 1.666, roundUp: false },
   NZD: { symbol: 'NZ$', name: 'New Zealand Dollar', rate: 2.12, roundUp: false },
   DKK: { symbol: 'kr ', name: 'Danish Krone', rate: 8.62, roundUp: true },
