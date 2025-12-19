@@ -1,4 +1,5 @@
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts';
+import { Quote } from 'lucide-react';
 
 // Chart color palette
 const COLORS = ['#ef4444', '#f97316', '#22c55e', '#3b82f6', '#8b5cf6'];
@@ -290,4 +291,66 @@ export const TipsList = ({ tips }: { tips: string[] }) => (
       ))}
     </ul>
   </div>
+);
+
+// Journal/Research Quote Component
+export const JournalQuote = ({ 
+  quote, 
+  source, 
+  publication,
+  year 
+}: { 
+  quote: string; 
+  source: string; 
+  publication: string;
+  year?: string;
+}) => (
+  <blockquote className="bg-blue-50 dark:bg-blue-950/20 rounded-xl p-6 my-8 border-l-4 border-blue-500 relative">
+    <Quote className="absolute top-4 right-4 h-8 w-8 text-blue-200 dark:text-blue-800" />
+    <p className="text-foreground font-light leading-relaxed italic mb-4 pr-8">
+      "{quote}"
+    </p>
+    <footer className="text-sm">
+      <cite className="not-italic">
+        <span className="text-muted-foreground">{source}</span>
+        <span className="text-blue-600 dark:text-blue-400 font-medium block mt-1">
+          {publication}{year && `, ${year}`}
+        </span>
+      </cite>
+    </footer>
+  </blockquote>
+);
+
+// Related Guides Card Component
+export const RelatedGuideCard = ({ 
+  slug, 
+  title, 
+  thumbnail,
+  description 
+}: { 
+  slug: string; 
+  title: string; 
+  thumbnail: string;
+  description: string;
+}) => (
+  <a 
+    href={`/guides/${slug}`}
+    className="group block bg-background border border-border/50 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:border-border transition-all duration-300"
+  >
+    <div className="h-32 overflow-hidden">
+      <img 
+        src={thumbnail} 
+        alt={title}
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      />
+    </div>
+    <div className="p-4">
+      <h4 className="text-sm font-semibold text-foreground mb-2 leading-snug group-hover:text-primary transition-colors line-clamp-2">
+        {title}
+      </h4>
+      <p className="text-xs text-muted-foreground line-clamp-2">
+        {description}
+      </p>
+    </div>
+  </a>
 );
