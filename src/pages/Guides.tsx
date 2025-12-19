@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { ArrowRight, Search, X } from "lucide-react";
+import { ArrowRight, Search, X, Clock } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 // Import images
@@ -19,24 +19,28 @@ const guides = [
     title: "Why Knee Pain Often Doesn't Go Away on Its Own",
     description: "A simple explanation of why knee discomfort can feel persistent and what helps support daily comfort.",
     thumbnail: thumbKneePain,
+    readTime: 5,
   },
   {
     slug: "heat-vs-red-light-therapy",
     title: "Heat vs. Red Light Therapy: What Actually Helps Knee Discomfort?",
     description: "Understand how heat and red light therapy work and how they can support everyday knee comfort.",
     thumbnail: thumbHeatTherapy,
+    readTime: 6,
   },
   {
     slug: "who-benefits-from-knee-therapy-devices",
     title: "Who Benefits Most From At-Home Knee Therapy Devices?",
     description: "Learn who these devices are designed for and what to realistically expect from at-home support.",
     thumbnail: thumbWhoBenefits,
+    readTime: 4,
   },
   {
     slug: "daily-knee-comfort-routine",
     title: "How to Build a Daily Knee Comfort Routine",
     description: "Practical tips for creating sustainable morning and evening habits that support long-term knee comfort.",
     thumbnail: thumbDailyRoutine,
+    readTime: 7,
   },
 ];
 
@@ -134,9 +138,16 @@ const Guides = () => {
                       
                       {/* Content */}
                       <div className="flex-1 p-6 md:p-8 flex flex-col justify-center">
-                        <span className="inline-block text-xs font-semibold tracking-widest text-muted-foreground/60 uppercase mb-3">
-                          Guide
-                        </span>
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="text-xs font-semibold tracking-widest text-muted-foreground/60 uppercase">
+                            Guide
+                          </span>
+                          <span className="text-muted-foreground/40">•</span>
+                          <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                            <Clock className="h-3.5 w-3.5" />
+                            {guide.readTime} min read
+                          </span>
+                        </div>
                         <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors">
                           {guide.title}
                         </h2>
