@@ -13,6 +13,8 @@ export const Footer = () => {
               <img 
                 src={flexikneeLogo} 
                 alt="FlexiKnee Logo" 
+                width={144}
+                height={144}
                 className="h-36 w-auto"
               />
             </Link>
