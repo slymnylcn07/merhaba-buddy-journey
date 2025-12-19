@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 import guidesHero from "@/assets/guides-hero.jpg";
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
-import thumbWhoBenefits from "@/assets/guide-thumb-who-benefits.jpg";
+import thumbWhoBenefits from "@/assets/guide-thumb-who-benefits-new.jpg";
 import thumbDailyRoutine from "@/assets/guide-thumb-daily-routine.jpg";
 
 const guides = [
