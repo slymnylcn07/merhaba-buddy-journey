@@ -928,7 +928,9 @@ const ProductDetail = () => {
               🛡️ 30-Day Easy Returns + 2-Year Warranty Included
             </button>
             <p className="text-center text-[0.75em] md:text-[0.945em] mt-1 mb-0 font-bold" style={{ color: "#333333" }}>
-              💷 VAT Included in Price
+              {userCountry === 'US' || userCountry === 'CA' 
+                ? '🧾 Tax calculated at checkout' 
+                : '💷 VAT Included in Price'}
             </p>
 
             {/* Payment Methods */}
