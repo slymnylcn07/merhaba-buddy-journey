@@ -691,12 +691,48 @@ const GuideArticle = () => {
 
   const article = articles[slug];
 
+  // Convert readable date to ISO format for JSON-LD
+  const getISODate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toISOString();
+  };
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.title,
+    "description": article.metaDescription,
+    "image": `https://flexiknee.com${article.heroImage}`,
+    "datePublished": getISODate(article.publishedDate),
+    "dateModified": getISODate(article.publishedDate),
+    "author": {
+      "@type": "Organization",
+      "name": "FlexiKnee",
+      "url": "https://flexiknee.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "FlexiKnee",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flexiknee.com/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://flexiknee.com/guides/${article.slug}`
+    }
+  };
+
   return (
     <>
       <Helmet>
         <title>{article.metaTitle}</title>
         <meta name="description" content={article.metaDescription} />
         <link rel="canonical" href={`https://flexiknee.com/guides/${article.slug}`} />
+        <script type="application/ld+json">
+          {JSON.stringify(articleJsonLd)}
+        </script>
       </Helmet>
       
       <Header />
