@@ -34,7 +34,7 @@ export const Header = () => {
         <div className="flex items-center">
           <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
@@ -166,7 +166,7 @@ export const Header = () => {
             className="md:hidden"
             asChild
           >
-            <a href="/account">
+            <a href="/account" aria-label="My Account">
               <User className="h-5 w-5" />
             </a>
           </Button>
