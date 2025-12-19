@@ -9,6 +9,7 @@ import guidesHero from "@/assets/guides-hero.jpg";
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
 import thumbWhoBenefits from "@/assets/guide-thumb-who-benefits.jpg";
+import thumbDailyRoutine from "@/assets/guide-thumb-daily-routine.jpg";
 
 const guides = [
   {
@@ -28,6 +29,12 @@ const guides = [
     title: "Who Benefits Most From At-Home Knee Therapy Devices?",
     description: "Learn who these devices are designed for and what to realistically expect from at-home support.",
     thumbnail: thumbWhoBenefits,
+  },
+  {
+    slug: "daily-knee-comfort-routine",
+    title: "How to Build a Daily Knee Comfort Routine",
+    description: "Practical tips for creating sustainable morning and evening habits that support long-term knee comfort.",
+    thumbnail: thumbDailyRoutine,
   },
 ];
 
