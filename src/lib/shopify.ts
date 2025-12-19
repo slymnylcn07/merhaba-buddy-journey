@@ -155,14 +155,18 @@ export async function storefrontApiRequest(query: string, variables: any = {}) {
   });
 
   if (!response.ok) {
-    console.error('Shopify API Error:', response.status, response.statusText);
+    if (import.meta.env.DEV) {
+      console.error('Shopify API Error:', response.status, response.statusText);
+    }
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
   const data = await response.json();
   
   if (data.errors) {
-    console.error('Shopify GraphQL Errors:', data.errors);
+    if (import.meta.env.DEV) {
+      console.error('Shopify GraphQL Errors:', data.errors);
+    }
     throw new Error(`Error calling Shopify: ${data.errors.map((e: any) => e.message).join(', ')}`);
   }
 
@@ -176,14 +180,10 @@ export async function getProducts(first: number = 10): Promise<ShopifyProduct[]>
 
 export async function createStorefrontCheckout(items: any[]): Promise<string> {
   try {
-    console.log('Creating Shopify checkout with items:', items);
-    
     const lines = items.map(item => ({
       quantity: item.quantity,
       merchandiseId: item.variantId,
     }));
-
-    console.log('Formatted cart lines:', lines);
 
     const cartData = await storefrontApiRequest(CART_CREATE_MUTATION, {
       input: {
@@ -191,18 +191,14 @@ export async function createStorefrontCheckout(items: any[]): Promise<string> {
       },
     });
 
-    console.log('Shopify cart response:', cartData);
-
     if (cartData.data.cartCreate.userErrors.length > 0) {
       const errorMessage = `Cart creation failed: ${cartData.data.cartCreate.userErrors.map((e: any) => e.message).join(', ')}`;
-      console.error(errorMessage);
       throw new Error(errorMessage);
     }
 
     const cart = cartData.data.cartCreate.cart;
     
     if (!cart.checkoutUrl) {
-      console.error('Cart response missing checkoutUrl:', cart);
       throw new Error('No checkout URL returned from Shopify');
     }
 
@@ -218,11 +214,11 @@ export async function createStorefrontCheckout(items: any[]): Promise<string> {
     url.searchParams.set('channel', 'online_store');
     checkoutUrl = url.toString();
     
-    console.log('Original checkout URL:', cart.checkoutUrl);
-    console.log('Fixed checkout URL:', checkoutUrl);
     return checkoutUrl;
   } catch (error) {
-    console.error('Error creating storefront checkout:', error);
+    if (import.meta.env.DEV) {
+      console.error('Error creating storefront checkout:', error);
+    }
     throw error;
   }
 }

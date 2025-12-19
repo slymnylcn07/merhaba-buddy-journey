@@ -134,9 +134,7 @@ export const useCartStore = create<CartStore>()(
 
       createCheckout: async () => {
         const { items, setLoading, setCheckoutUrl } = get();
-        console.log('Cart items for checkout:', items);
         if (items.length === 0) {
-          console.error('Cannot create checkout: cart is empty');
           return;
         }
 
@@ -171,12 +169,10 @@ export const useCartStore = create<CartStore>()(
 
         setLoading(true);
         try {
-          console.log('Calling createStorefrontCheckout...');
           const checkoutUrl = await createStorefrontCheckout(items);
-          console.log('Received checkout URL:', checkoutUrl);
           setCheckoutUrl(checkoutUrl);
         } catch (error) {
-          console.error('Failed to create checkout:', error);
+          // Error handled by caller
         } finally {
           setLoading(false);
         }

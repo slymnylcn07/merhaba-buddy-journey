@@ -98,9 +98,11 @@ const sendToShopify = async (eventType: string, eventData: Record<string, any>) 
       });
     }
 
-    console.log(`[Shopify Analytics] ${eventType} sent`, eventData);
+    if (import.meta.env.DEV) {
+      console.log(`[Shopify Analytics] ${eventType} sent`, eventData);
+    }
   } catch (error) {
-    console.warn('[Shopify Analytics] Failed to send event:', error);
+    // Silently fail analytics
   }
 };
 
@@ -110,12 +112,14 @@ const sendStorefrontEvent = async (eventType: string, eventData: Record<string, 
     const clientId = getUniqueClientId();
     const sessionId = getSessionId();
     
-    // Log for debugging
-    console.log(`[Shopify Analytics] ${eventType}`, {
-      clientId,
-      sessionId,
-      ...eventData,
-    });
+    // Log for debugging in development only
+    if (import.meta.env.DEV) {
+      console.log(`[Shopify Analytics] ${eventType}`, {
+        clientId,
+        sessionId,
+        ...eventData,
+      });
+    }
     
     // Store event locally for debugging/verification
     const events = JSON.parse(localStorage.getItem('shopify_events') || '[]');
@@ -129,7 +133,7 @@ const sendStorefrontEvent = async (eventType: string, eventData: Record<string, 
     localStorage.setItem('shopify_events', JSON.stringify(events));
     
   } catch (error) {
-    console.warn('[Shopify Analytics] Event logging failed:', error);
+    // Silently fail analytics
   }
 };
 
