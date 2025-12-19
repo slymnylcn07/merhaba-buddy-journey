@@ -35,6 +35,7 @@ import giftBoxIcon from "@/assets/gift-box-icon.png";
 import laserTherapyNew from "@/assets/laser-therapy-new.png";
 import { VideoReviews } from "@/components/VideoReviews";
 import ScrollingBanner from "@/components/ScrollingBanner";
+import { ProductGuidesSection } from "@/components/ProductGuidesSection";
 
 const ProductDetail = () => {
   const { handle } = useParams();
@@ -1023,6 +1024,9 @@ const ProductDetail = () => {
 
         {/* Customer Video Reviews */}
         <VideoReviews />
+
+        {/* Educational Guides Section */}
+        <ProductGuidesSection />
 
         {/* Pain Points Section */}
         <section className="py-12 bg-muted/30 -mx-4 px-4 mb-12">

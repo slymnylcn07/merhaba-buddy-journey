@@ -69,6 +69,14 @@ export const Footer = () => {
                   Why FlexiKnee
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/guides"
+                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
+                >
+                  Guides
+                </Link>
+              </li>
             </ul>
             <ul className="space-y-2">
               <li>
