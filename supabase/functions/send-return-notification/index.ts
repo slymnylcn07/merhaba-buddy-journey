@@ -6,10 +6,33 @@ const ADMIN_EMAIL = "support@flexiknee.com";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-};
+// Allowed origins for CORS
+const ALLOWED_ORIGINS = [
+  'https://flexiknee.com',
+  'https://www.flexiknee.com',
+  'https://flexi-knee.com',
+  'https://www.flexi-knee.com',
+];
+
+// Development origins
+const DEV_ORIGINS = [
+  'http://localhost:5173',
+  'http://localhost:8080',
+];
+
+function getCorsHeaders(origin: string | null): Record<string, string> {
+  // Check if origin is allowed
+  const allAllowedOrigins = [...ALLOWED_ORIGINS, ...DEV_ORIGINS];
+  // Also allow lovableproject.com domains for preview
+  const isLovablePreview = origin?.includes('.lovableproject.com') || origin?.includes('.lovable.app');
+  const isAllowed = allAllowedOrigins.includes(origin || '') || isLovablePreview;
+  
+  return {
+    "Access-Control-Allow-Origin": isAllowed && origin ? origin : ALLOWED_ORIGINS[0],
+    "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+    "Access-Control-Allow-Credentials": "true",
+  };
+}
 
 interface ReturnNotificationRequest {
   requestId: string;
@@ -40,6 +63,9 @@ function isValidEmail(email: string): boolean {
 }
 
 const handler = async (req: Request): Promise<Response> => {
+  const origin = req.headers.get("origin");
+  const corsHeaders = getCorsHeaders(origin);
+
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
@@ -47,7 +73,7 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const data: ReturnNotificationRequest = await req.json();
     const notificationType = data.type || "new";
-    console.log(`Processing ${notificationType} notification for request:`, data.requestId);
+    console.log(`Processing ${notificationType} notification for request`);
 
     // Create Supabase client
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
@@ -70,7 +96,7 @@ const handler = async (req: Request): Promise<Response> => {
       const { data: { user }, error: authError } = await supabase.auth.getUser(token);
       
       if (authError || !user) {
-        console.error("Invalid token or user not found:", authError?.message);
+        console.error("Invalid token or user not found");
         return new Response(
           JSON.stringify({ error: "Unauthorized - invalid token" }),
           {
@@ -89,7 +115,7 @@ const handler = async (req: Request): Promise<Response> => {
         .maybeSingle();
 
       if (roleError || !roleData) {
-        console.error("User does not have admin role:", user.id);
+        console.error("User does not have admin role");
         return new Response(
           JSON.stringify({ error: "Forbidden - admin access required" }),
           {
@@ -99,7 +125,7 @@ const handler = async (req: Request): Promise<Response> => {
         );
       }
 
-      console.log("Admin authentication verified for user:", user.id);
+      console.log("Admin authentication verified");
     }
 
     // For "new" notifications, verify the return request exists in the database
@@ -111,7 +137,7 @@ const handler = async (req: Request): Promise<Response> => {
         .maybeSingle();
 
       if (fetchError || !returnRequest) {
-        console.error("Return request not found:", data.requestId);
+        console.error("Return request not found");
         return new Response(
           JSON.stringify({ error: "Invalid request - return request not found" }),
           {
@@ -120,12 +146,12 @@ const handler = async (req: Request): Promise<Response> => {
           }
         );
       }
-      console.log("Return request verified:", returnRequest.request_id);
+      console.log("Return request verified");
     }
 
     // Validate email format
     if (!isValidEmail(data.email)) {
-      console.error("Invalid email format:", data.email);
+      console.error("Invalid email format");
       return new Response(
         JSON.stringify({ error: "Invalid email format" }),
         {
@@ -215,7 +241,7 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     const customerResult = await customerEmailRes.json();
-    console.log("Customer email sent:", customerResult);
+    console.log("Customer email sent");
 
     // Send email to admin (only for new requests)
     if (notificationType === "new") {
@@ -255,10 +281,10 @@ const handler = async (req: Request): Promise<Response> => {
       });
 
       const adminResult = await adminEmailRes.json();
-      console.log("Admin email sent:", adminResult);
+      console.log("Admin email sent");
 
       return new Response(
-        JSON.stringify({ success: true, customerEmail: customerResult, adminEmail: adminResult }),
+        JSON.stringify({ success: true }),
         {
           status: 200,
           headers: { "Content-Type": "application/json", ...corsHeaders },
@@ -267,14 +293,14 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     return new Response(
-      JSON.stringify({ success: true, customerEmail: customerResult }),
+      JSON.stringify({ success: true }),
       {
         status: 200,
         headers: { "Content-Type": "application/json", ...corsHeaders },
       }
     );
   } catch (error: any) {
-    console.error("Error sending return notification:", error);
+    console.error("Error sending return notification:", error.message);
     return new Response(
       JSON.stringify({ error: "An error occurred processing your request" }),
       {
