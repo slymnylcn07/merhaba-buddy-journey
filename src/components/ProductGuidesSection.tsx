@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import guideThumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import guideThumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
-import guideThumbWhoBenefits from "@/assets/guide-thumb-who-benefits-new.jpg";
+import guideThumbWhoBenefits from "@/assets/guide-thumb-who-benefits-branded.jpg";
 import guideThumbDailyRoutine from "@/assets/guide-thumb-daily-routine.jpg";
 
 const guides = [
