@@ -48,26 +48,28 @@ const App = () => {
       <Sonner position="top-center" />
       <BrowserRouter>
         <AnalyticsProvider>
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/product/:handle" element={<ProductDetail />} />
-              <Route path="/track-order" element={<TrackOrder />} />
-              <Route path="/account" element={<Account />} />
-              <Route path="/terms-of-service" element={<TermsOfService />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/shipping-policy" element={<ShippingPolicy />} />
-              <Route path="/refund-policy" element={<RefundPolicy />} />
-              <Route path="/foundation" element={<Foundation />} />
-              <Route path="/why-flexiknee" element={<WhyFlexiKnee />} />
-              <Route path="/guides" element={<Guides />} />
-              <Route path="/guides/:slug" element={<GuideArticle />} />
-              <Route path="/admin" element={<AdminAuth />} />
-              <Route path="/admin/returns" element={<AdminReturns />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
+          <main>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/product/:handle" element={<ProductDetail />} />
+                <Route path="/track-order" element={<TrackOrder />} />
+                <Route path="/account" element={<Account />} />
+                <Route path="/terms-of-service" element={<TermsOfService />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/shipping-policy" element={<ShippingPolicy />} />
+                <Route path="/refund-policy" element={<RefundPolicy />} />
+                <Route path="/foundation" element={<Foundation />} />
+                <Route path="/why-flexiknee" element={<WhyFlexiKnee />} />
+                <Route path="/guides" element={<Guides />} />
+                <Route path="/guides/:slug" element={<GuideArticle />} />
+                <Route path="/admin" element={<AdminAuth />} />
+                <Route path="/admin/returns" element={<AdminReturns />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </main>
         </AnalyticsProvider>
       </BrowserRouter>
     </TooltipProvider>
