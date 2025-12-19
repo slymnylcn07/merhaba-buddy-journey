@@ -53,6 +53,39 @@ const Guides = () => {
       guide.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Knee Pain Relief Guides",
+    "description": "Explore simple, easy-to-understand guides about knee discomfort, heat and red light therapy, and at-home solutions designed to support everyday knee comfort.",
+    "numberOfItems": guides.length,
+    "itemListElement": guides.map((guide, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": guide.title,
+      "url": `https://flexiknee.com/guides/${guide.slug}`
+    }))
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Anasayfa",
+        "item": "https://flexiknee.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Guides",
+        "item": "https://flexiknee.com/guides"
+      }
+    ]
+  };
+
   return (
     <>
       <Helmet>
@@ -62,6 +95,12 @@ const Guides = () => {
           content="Explore simple, easy-to-understand guides about knee discomfort, heat and red light therapy, and at-home solutions designed to support everyday knee comfort." 
         />
         <link rel="canonical" href="https://flexiknee.com/guides" />
+        <script type="application/ld+json">
+          {JSON.stringify(itemListJsonLd)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbJsonLd)}
+        </script>
       </Helmet>
       
       <Header />
