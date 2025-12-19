@@ -23,6 +23,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import ScrollingBanner from "@/components/ScrollingBanner";
+import { ProductGuidesSection } from "@/components/ProductGuidesSection";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -340,6 +341,9 @@ export default function Index() {
           </Carousel>
         </div>
       </section>
+
+      {/* Product Guides Section */}
+      <ProductGuidesSection />
 
       {/* Testimonials Section */}
       <section className="py-16">
