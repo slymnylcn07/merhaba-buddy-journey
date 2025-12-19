@@ -50,6 +50,7 @@ interface ArticleData {
   metaTitle: string;
   metaDescription: string;
   heroImage: string;
+  publishedDate: string;
   content: React.ReactNode;
   nextSlug?: string;
   nextTitle?: string;
@@ -64,6 +65,7 @@ const articles: Record<string, ArticleData> = {
     metaTitle: "Why Knee Pain Doesn't Go Away on Its Own | Knee Comfort Guide",
     metaDescription: "Learn why knee pain can feel persistent and discover simple ways to support daily knee comfort at home.",
     heroImage: heroKneePain,
+    publishedDate: "January 15, 2025",
     nextSlug: "heat-vs-red-light-therapy",
     nextTitle: "Heat vs. Red Light Therapy",
     content: (
@@ -203,6 +205,7 @@ const articles: Record<string, ArticleData> = {
     metaTitle: "Heat vs Red Light Therapy for Knees | What Helps Knee Discomfort?",
     metaDescription: "Compare heat therapy and red light therapy and learn how they can support everyday knee comfort.",
     heroImage: heroHeatTherapy,
+    publishedDate: "March 8, 2025",
     nextSlug: "who-benefits-from-knee-therapy-devices",
     nextTitle: "Who Benefits from Therapy Devices",
     content: (
@@ -338,6 +341,7 @@ const articles: Record<string, ArticleData> = {
     metaTitle: "Who Benefits from At-Home Knee Therapy Devices? | Knee Comfort Guide",
     metaDescription: "Discover who at-home knee therapy devices are designed for and how they support everyday knee comfort.",
     heroImage: heroWhoBenefits,
+    publishedDate: "May 22, 2025",
     nextSlug: "daily-knee-comfort-routine",
     nextTitle: "Build a Daily Comfort Routine",
     content: (
@@ -489,6 +493,7 @@ const articles: Record<string, ArticleData> = {
     metaTitle: "How to Build a Daily Knee Comfort Routine | Practical Tips & Guide",
     metaDescription: "Learn how to create a sustainable daily routine for knee comfort with practical morning and evening tips for at-home support.",
     heroImage: heroDailyRoutine,
+    publishedDate: "July 14, 2025",
     nextSlug: "why-knee-pain-doesnt-go-away",
     nextTitle: "Why Knee Pain Doesn't Go Away",
     content: (
@@ -709,13 +714,18 @@ const GuideArticle = () => {
         {/* Article Header */}
         <section className="pt-8 pb-6 md:pt-12 md:pb-8">
           <div className="container px-4 max-w-3xl mx-auto">
-            <Link 
-              to="/guides" 
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Back to Guides
-            </Link>
+            <div className="flex items-center justify-between mb-6">
+              <Link 
+                to="/guides" 
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Back to Guides
+              </Link>
+              <span className="text-sm text-muted-foreground">
+                {article.publishedDate}
+              </span>
+            </div>
             
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 leading-tight tracking-tight">
               {article.title}
