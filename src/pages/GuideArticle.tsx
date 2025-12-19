@@ -724,6 +724,31 @@ const GuideArticle = () => {
     }
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Anasayfa",
+        "item": "https://flexiknee.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Guides",
+        "item": "https://flexiknee.com/guides"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": article.title,
+        "item": `https://flexiknee.com/guides/${article.slug}`
+      }
+    ]
+  };
+
   return (
     <>
       <Helmet>
@@ -732,6 +757,9 @@ const GuideArticle = () => {
         <link rel="canonical" href={`https://flexiknee.com/guides/${article.slug}`} />
         <script type="application/ld+json">
           {JSON.stringify(articleJsonLd)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbJsonLd)}
         </script>
       </Helmet>
       
