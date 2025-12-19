@@ -22,7 +22,7 @@ import {
 // Import article hero images
 import heroKneePain from "@/assets/article-hero-knee-pain.jpg";
 import heroHeatTherapy from "@/assets/article-hero-heat-therapy.jpg";
-import heroWhoBenefits from "@/assets/article-hero-who-benefits-new.jpg";
+import heroWhoBenefits from "@/assets/article-hero-who-benefits-updated.jpg";
 import heroDailyRoutine from "@/assets/article-hero-daily-routine.jpg";
 
 // Import guide thumbnails for related guides
