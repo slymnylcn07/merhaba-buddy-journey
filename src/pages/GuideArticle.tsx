@@ -8,12 +8,17 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import heroKneePain from "@/assets/article-hero-knee-pain.jpg";
 import heroHeatTherapy from "@/assets/article-hero-heat-therapy.jpg";
 import heroWhoBenefits from "@/assets/article-hero-who-benefits.jpg";
+import heroDailyRoutine from "@/assets/article-hero-daily-routine.jpg";
 
 // Import section images
-import sectionStretching from "@/assets/article-section-stretching.jpg";
+import sectionStretching from "@/assets/article-section-stretching-new.jpg";
 import sectionWarmth from "@/assets/article-section-warmth.jpg";
 import sectionRedlight from "@/assets/article-section-redlight.jpg";
 import sectionRoutine from "@/assets/article-section-routine.jpg";
+import deviceHomeUse from "@/assets/article-device-home-use.jpg";
+import deviceMorning from "@/assets/article-device-morning.jpg";
+import deviceEvening from "@/assets/article-device-evening.jpg";
+import deviceRoutine from "@/assets/article-device-routine.jpg";
 
 interface ArticleData {
   slug: string;
@@ -47,23 +52,23 @@ const articles: Record<string, ArticleData> = {
 
         <h2>The Complexity of Knee Joints</h2>
         <p>
-          Our knees are among the most complex and hardworking joints in the body. They bear significant weight and stress throughout daily activities — walking, climbing stairs, sitting, standing, and even simply shifting positions while relaxing.
+          Our knees are among the most complex and hardworking joints in the body. They bear significant weight and stress throughout daily activities: walking, climbing stairs, sitting, standing, and even simply shifting positions while relaxing.
         </p>
         <p>
           This continuous use means that the knee joint is constantly adapting to demands. Over time, this can contribute to feelings of stiffness, tension, or general discomfort that seem to persist regardless of how much you rest.
         </p>
         <p>
-          Unlike a simple muscle ache that might ease after a good night's sleep, knee discomfort often involves multiple factors — including joint stiffness, reduced flexibility, weakened supporting muscles, and the cumulative effects of everyday wear.
+          Unlike a simple muscle ache that might ease after a good night's sleep, knee discomfort often involves multiple factors, including joint stiffness, reduced flexibility, weakened supporting muscles, and the cumulative effects of everyday wear.
         </p>
 
         <figure className="my-8">
           <img 
-            src={sectionStretching} 
-            alt="Person doing gentle stretching exercises at home" 
+            src={deviceHomeUse} 
+            alt="Person using knee therapy device at home on sofa" 
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Gentle movement and stretching can help maintain flexibility
+            At-home therapy devices can be part of a daily comfort routine
           </figcaption>
         </figure>
 
@@ -75,7 +80,7 @@ const articles: Record<string, ArticleData> = {
           When we don't move, our joints can become stiffer. The surrounding muscles may weaken, and blood flow to the area decreases. This can create a cycle where inactivity leads to more discomfort, which leads to more inactivity.
         </p>
         <p>
-          Many health professionals emphasize the importance of gentle, consistent movement as part of managing everyday knee comfort. This doesn't mean pushing through pain — rather, it means finding sustainable ways to keep the joint mobile and the surrounding muscles engaged.
+          Many health professionals emphasize the importance of gentle, consistent movement as part of managing everyday knee comfort. This doesn't mean pushing through pain. Rather, it means finding sustainable ways to keep the joint mobile and the surrounding muscles engaged.
         </p>
 
         <h2>The Role of Daily Habits</h2>
@@ -83,7 +88,7 @@ const articles: Record<string, ArticleData> = {
           Small, consistent habits often play a larger role in knee comfort than occasional intense interventions. Things like how you sit, how long you sit, your footwear choices, and your general activity level all contribute to how your knees feel day to day.
         </p>
         <p>
-          For many people, making small adjustments — taking regular breaks from sitting, incorporating gentle stretches into the morning routine, or applying warmth before activities — can gradually contribute to improved comfort.
+          For many people, making small adjustments like taking regular breaks from sitting, incorporating gentle stretches into the morning routine, or applying warmth before activities can gradually contribute to improved comfort.
         </p>
 
         <figure className="my-8">
@@ -99,7 +104,7 @@ const articles: Record<string, ArticleData> = {
 
         <h2>Supporting Daily Knee Comfort</h2>
         <p>
-          There's no single solution that works for everyone. However, understanding that knee discomfort often requires ongoing attention — rather than a one-time fix — can help set realistic expectations.
+          There's no single solution that works for everyone. However, understanding that knee discomfort often requires ongoing attention, rather than a one-time fix, can help set realistic expectations.
         </p>
         <p>
           Many people find that incorporating multiple supportive approaches works better than relying on any single method. This might include gentle stretching, regular movement throughout the day, warmth application, and using supportive tools or devices.
@@ -137,7 +142,7 @@ const articles: Record<string, ArticleData> = {
     content: (
       <>
         <p>
-          Both heat therapy and red light therapy have become popular options for at-home knee comfort support. Understanding the differences can help you decide which approach might work best for your routine — or whether combining both could be beneficial.
+          Both heat therapy and red light therapy have become popular options for at-home knee comfort support. Understanding the differences can help you decide which approach might work best for your routine, or whether combining both could be beneficial.
         </p>
 
         <h2>Understanding Heat Therapy</h2>
@@ -164,7 +169,7 @@ const articles: Record<string, ArticleData> = {
 
         <h2>Understanding Red Light Therapy</h2>
         <p>
-          Red light therapy uses specific wavelengths of light — typically in the red and near-infrared spectrum — that penetrate the skin's surface. Unlike heat therapy, this approach doesn't rely on temperature to produce its effects.
+          Red light therapy uses specific wavelengths of light, typically in the red and near-infrared spectrum, that penetrate the skin's surface. Unlike heat therapy, this approach doesn't rely on temperature to produce its effects.
         </p>
         <p>
           The theory behind red light therapy is that certain wavelengths of light can be absorbed by cells, potentially supporting cellular energy production and natural regenerative processes. Research in this area continues to evolve.
@@ -197,7 +202,7 @@ const articles: Record<string, ArticleData> = {
 
         <h2>Can You Use Both Together?</h2>
         <p>
-          Many people find that using both approaches — either alternating between them or using devices that combine both technologies — works well for their routine. The immediate comfort of heat combined with the potential longer-term benefits of light therapy can complement each other nicely.
+          Many people find that using both approaches, either alternating between them or using devices that combine both technologies, works well for their routine. The immediate comfort of heat combined with the potential longer-term benefits of light therapy can complement each other nicely.
         </p>
         <p>
           There's no evidence that combining heat and light therapy is problematic for most people. In fact, many modern at-home devices incorporate both modalities in a single unit for convenience.
@@ -205,7 +210,7 @@ const articles: Record<string, ArticleData> = {
 
         <h2>Choosing What's Right for You</h2>
         <p>
-          There's no universal answer to which approach is "better." Some people prefer the immediate soothing feeling of heat, while others are drawn to the light-based approach. Many find that using both together — or alternating based on how they feel — works well.
+          There's no universal answer to which approach is "better." Some people prefer the immediate soothing feeling of heat, while others are drawn to the light-based approach. Many find that using both together, or alternating based on how they feel, works well.
         </p>
         <p>
           The most important factor is consistency. Whatever approach you choose, regular use as part of a daily routine tends to be more beneficial than occasional application. Building a sustainable habit matters more than choosing the "perfect" method.
@@ -227,17 +232,17 @@ const articles: Record<string, ArticleData> = {
     metaTitle: "Who Benefits from At-Home Knee Therapy Devices? | Knee Comfort Guide",
     metaDescription: "Discover who at-home knee therapy devices are designed for and how they support everyday knee comfort.",
     heroImage: heroWhoBenefits,
-    nextSlug: "why-knee-pain-doesnt-go-away",
-    nextTitle: "Why Knee Pain Doesn't Go Away",
+    nextSlug: "daily-knee-comfort-routine",
+    nextTitle: "Build a Daily Comfort Routine",
     content: (
       <>
         <p>
-          Understanding who at-home knee therapy devices are designed for — and who they're not designed for — can help you make an informed decision about whether this approach might fit your needs.
+          Understanding who at-home knee therapy devices are designed for, and who they're not designed for, can help you make an informed decision about whether this approach might fit your needs.
         </p>
 
         <h2>People Experiencing Everyday Stiffness</h2>
         <p>
-          The primary audience for at-home therapy devices is people who experience general knee stiffness — the kind that comes from daily activities, sitting for long periods, staying active, or simply the natural changes that occur over time.
+          The primary audience for at-home therapy devices is people who experience general knee stiffness: the kind that comes from daily activities, sitting for long periods, staying active, or simply the natural changes that occur over time.
         </p>
         <p>
           These individuals often aren't dealing with acute injuries or conditions requiring medical intervention. Rather, they're experiencing ongoing discomfort that affects their daily routine and quality of life.
@@ -248,7 +253,7 @@ const articles: Record<string, ArticleData> = {
 
         <figure className="my-8">
           <img 
-            src={sectionRoutine} 
+            src={deviceRoutine} 
             alt="Person using knee therapy device at home during daily routine" 
             className="w-full h-auto rounded-xl shadow-sm"
           />
@@ -259,18 +264,18 @@ const articles: Record<string, ArticleData> = {
 
         <h2>Those Who Value Convenience and Privacy</h2>
         <p>
-          At-home devices appeal particularly to people who prefer managing their comfort routine on their own schedule. Whether it's first thing in the morning, after work, during your evening wind-down, or before bed — having a device at home allows for complete flexibility.
+          At-home devices appeal particularly to people who prefer managing their comfort routine on their own schedule. Whether it's first thing in the morning, after work, during your evening wind-down, or before bed, having a device at home allows for complete flexibility.
         </p>
         <p>
           This convenience factor is especially valuable for people with busy schedules, those who have difficulty traveling to appointments, or simply those who prefer the privacy and comfort of their own space.
         </p>
         <p>
-          There's also something to be said for being able to use supportive devices while doing other activities — reading, watching television, or simply relaxing. This integration into existing routines makes consistent use more achievable.
+          There's also something to be said for being able to use supportive devices while doing other activities like reading, watching television, or simply relaxing. This integration into existing routines makes consistent use more achievable.
         </p>
 
         <h2>People Committed to Consistency</h2>
         <p>
-          Perhaps the most important characteristic of people who benefit from at-home therapy devices is commitment to consistent use. Like any supportive routine — whether it's stretching, walking, meditation, or other self-care practices — consistency matters more than intensity.
+          Perhaps the most important characteristic of people who benefit from at-home therapy devices is commitment to consistent use. Like any supportive routine, whether it's stretching, walking, meditation, or other self-care practices, consistency matters more than intensity.
         </p>
         <p>
           Using a device once when you remember or only when discomfort is at its worst is unlikely to provide the same results as making it a regular part of your daily routine.
@@ -310,6 +315,147 @@ const articles: Record<string, ArticleData> = {
         </p>
         <p>
           Think of these devices as one tool in a toolkit rather than a complete solution. They support your overall comfort efforts but work best as part of a holistic approach to daily wellbeing.
+        </p>
+
+        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
+          <p className="text-muted-foreground font-light italic mb-0">
+            Some people choose to include at-home therapy devices as part of their daily comfort routine.
+          </p>
+        </div>
+      </>
+    ),
+  },
+  "daily-knee-comfort-routine": {
+    slug: "daily-knee-comfort-routine",
+    title: "How to Build a Daily Knee Comfort Routine",
+    subtitle: "Practical morning and evening tips",
+    intro: "Creating a consistent daily routine is one of the most effective ways to support long-term knee comfort. This guide offers practical suggestions for building morning and evening habits that work with your lifestyle.",
+    metaTitle: "How to Build a Daily Knee Comfort Routine | Practical Tips & Guide",
+    metaDescription: "Learn how to create a sustainable daily routine for knee comfort with practical morning and evening tips for at-home support.",
+    heroImage: heroDailyRoutine,
+    nextSlug: "why-knee-pain-doesnt-go-away",
+    nextTitle: "Why Knee Pain Doesn't Go Away",
+    content: (
+      <>
+        <p>
+          Building a daily knee comfort routine doesn't have to be complicated or time-consuming. The most effective routines are simple, sustainable, and fit naturally into your existing schedule. This guide will help you create a personalized approach that works for your lifestyle.
+        </p>
+
+        <h2>Why Routine Matters</h2>
+        <p>
+          Consistency is perhaps the most important factor in supporting knee comfort over time. Just as brushing your teeth twice a day maintains oral health better than occasional deep cleaning, regular attention to your knees tends to produce better results than sporadic intense efforts.
+        </p>
+        <p>
+          A daily routine also removes the need for willpower. When supportive activities become automatic habits, you don't have to decide each day whether to do them. They simply become part of how you start and end your day.
+        </p>
+        <p>
+          The goal isn't perfection. Missing a day occasionally won't undo your progress. What matters is the overall pattern: are you generally consistent, or does knee care only happen when discomfort reminds you?
+        </p>
+
+        <figure className="my-8">
+          <img 
+            src={deviceMorning} 
+            alt="Person using knee therapy device during morning routine" 
+            className="w-full h-auto rounded-xl shadow-sm"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            Morning routines set a positive tone for the day ahead
+          </figcaption>
+        </figure>
+
+        <h2>Building Your Morning Routine</h2>
+        <p>
+          Morning is often when knees feel stiffest, especially after hours of minimal movement during sleep. A brief morning routine can help ease that stiffness and prepare your joints for the day ahead.
+        </p>
+        <p>
+          <strong>Start gentle:</strong> Before getting out of bed, try some simple movements. Bend and straighten your knees slowly a few times. Rotate your ankles. These small movements help circulate fluid in the joints and signal to your body that it's time to wake up.
+        </p>
+        <p>
+          <strong>Warm up gradually:</strong> If mornings are particularly stiff for you, consider applying warmth for 10 to 15 minutes while you have your morning coffee or check messages. This can be a heating pad, warm towel, or a therapy device with heat function.
+        </p>
+        <p>
+          <strong>Move before sitting:</strong> If possible, do some gentle standing or walking before you settle into a desk chair or sofa. Even a short walk around your home helps maintain the mobility you've gained.
+        </p>
+
+        <h2>Midday Movement Breaks</h2>
+        <p>
+          If you spend much of your day sitting, whether for work or leisure, your knees can become increasingly stiff as hours pass. Building in regular movement breaks can prevent this accumulation of stiffness.
+        </p>
+        <p>
+          <strong>Set reminders:</strong> Use your phone or computer to remind you to stand and move every 30 to 60 minutes. Even a one-minute break can make a significant difference over the course of a day.
+        </p>
+        <p>
+          <strong>Simple desk stretches:</strong> While seated, you can do gentle knee extensions: straighten one leg, hold for a few seconds, then lower. Alternate legs. This keeps blood flowing and prevents joints from becoming too stiff.
+        </p>
+        <p>
+          <strong>Standing moments:</strong> Take phone calls standing when possible. Walk to a colleague's desk instead of sending an email. These small choices add movement throughout your day without requiring dedicated exercise time.
+        </p>
+
+        <figure className="my-8">
+          <img 
+            src={sectionStretching} 
+            alt="Gentle stretching and movement throughout the day" 
+            className="w-full h-auto rounded-xl shadow-sm"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            Gentle movement throughout the day supports ongoing comfort
+          </figcaption>
+        </figure>
+
+        <h2>Creating Your Evening Routine</h2>
+        <p>
+          Evening routines serve a different purpose than morning routines. After a day of activity, whether that meant lots of movement or extended sitting, your knees may benefit from some recovery time before sleep.
+        </p>
+        <p>
+          <strong>Unwind with warmth:</strong> Many people find that using heat or a combination therapy device in the evening helps their knees feel more comfortable. This can be done while watching television, reading, or simply relaxing.
+        </p>
+        <p>
+          <strong>Gentle evening stretches:</strong> Some simple stretches before bed can help reduce morning stiffness. Focus on the muscles around the knee: quadriceps in the front, hamstrings in the back, and calves below.
+        </p>
+        <p>
+          <strong>Elevate if needed:</strong> If you notice any swelling or your knees feel particularly tired, elevating your legs for 15 to 20 minutes can help. This allows gravity to assist fluid drainage and gives the joints a rest.
+        </p>
+
+        <figure className="my-8">
+          <img 
+            src={deviceEvening} 
+            alt="Person using knee therapy device during evening relaxation" 
+            className="w-full h-auto rounded-xl shadow-sm"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            Evening therapy sessions support recovery and prepare for restful sleep
+          </figcaption>
+        </figure>
+
+        <h2>Tips for Building Lasting Habits</h2>
+        <p>
+          <strong>Start small:</strong> Begin with just one or two practices rather than trying to implement a complex routine all at once. Once those become automatic, you can add more.
+        </p>
+        <p>
+          <strong>Link to existing habits:</strong> Attach new knee comfort practices to habits you already have. For example: "After I pour my morning coffee, I'll do my knee movements." This linking makes new habits easier to remember.
+        </p>
+        <p>
+          <strong>Make it convenient:</strong> Keep whatever tools you use (therapy device, heating pad, stretching mat) easily accessible. If you have to dig them out of a closet, you're less likely to use them consistently.
+        </p>
+        <p>
+          <strong>Track your progress:</strong> Some people find it helpful to keep a simple log of their routine. This doesn't need to be detailed. Even checking off days on a calendar can provide motivation and help identify patterns.
+        </p>
+        <p>
+          <strong>Be patient:</strong> It typically takes several weeks for new habits to feel automatic. During this period, you may need to consciously remind yourself. The effort invested in building the habit pays off in long-term consistency.
+        </p>
+
+        <h2>Sample Daily Routine</h2>
+        <p>
+          Here's an example of what a simple daily knee comfort routine might look like. Feel free to adapt this to your schedule and preferences.
+        </p>
+        <p>
+          <strong>Morning (5 to 10 minutes):</strong> Gentle in-bed knee movements, followed by 10 minutes of warmth while having breakfast. Brief standing stretch before sitting down for work.
+        </p>
+        <p>
+          <strong>Midday (throughout the day):</strong> Movement break every hour. Simple seated knee extensions during work. Short walk at lunchtime if possible.
+        </p>
+        <p>
+          <strong>Evening (10 to 15 minutes):</strong> 15-minute therapy session while watching television. Gentle stretches before bed. Legs elevated for a few minutes if knees feel particularly tired.
         </p>
 
         <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
