@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Search, X } from "lucide-react";
+import { Input } from "@/components/ui/input";
 
 // Import images
 import guidesHero from "@/assets/guides-hero.jpg";
@@ -39,6 +41,14 @@ const guides = [
 ];
 
 const Guides = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredGuides = guides.filter(
+    (guide) =>
+      guide.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      guide.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <>
       <Helmet>
@@ -72,46 +82,85 @@ const Guides = () => {
           </div>
         </section>
 
+        {/* Search Section */}
+        <section className="py-8 border-b border-border/30">
+          <div className="container px-4 max-w-2xl mx-auto">
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Search guides..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-12 pr-10 h-12 text-base bg-muted/30 border-border/50 focus:border-primary"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              )}
+            </div>
+            {searchQuery && (
+              <p className="text-sm text-muted-foreground mt-3 text-center">
+                {filteredGuides.length} {filteredGuides.length === 1 ? "guide" : "guides"} found
+              </p>
+            )}
+          </div>
+        </section>
+
         {/* Guide Cards */}
         <section className="py-12 md:py-20">
           <div className="container px-4 max-w-5xl mx-auto">
-            <div className="grid gap-6 md:gap-8">
-              {guides.map((guide) => (
-                <Link 
-                  key={guide.slug} 
-                  to={`/guides/${guide.slug}`}
-                  className="group block"
-                >
-                  <article className="bg-background border border-border/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-border transition-all duration-300 flex flex-col md:flex-row">
-                    {/* Thumbnail */}
-                    <div className="md:w-64 md:min-w-64 h-48 md:h-auto overflow-hidden">
-                      <img 
-                        src={guide.thumbnail} 
-                        alt={guide.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="flex-1 p-6 md:p-8 flex flex-col justify-center">
-                      <span className="inline-block text-xs font-semibold tracking-widest text-muted-foreground/60 uppercase mb-3">
-                        Guide
-                      </span>
-                      <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors">
-                        {guide.title}
-                      </h2>
-                      <p className="text-muted-foreground font-light mb-4 leading-relaxed">
-                        {guide.description}
-                      </p>
-                      <span className="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all">
-                        Read guide
-                        <ArrowRight className="h-4 w-4" />
-                      </span>
-                    </div>
-                  </article>
-                </Link>
-              ))}
-            </div>
+            {filteredGuides.length > 0 ? (
+              <div className="grid gap-6 md:gap-8">
+                {filteredGuides.map((guide) => (
+                  <Link 
+                    key={guide.slug} 
+                    to={`/guides/${guide.slug}`}
+                    className="group block"
+                  >
+                    <article className="bg-background border border-border/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-border transition-all duration-300 flex flex-col md:flex-row">
+                      {/* Thumbnail */}
+                      <div className="md:w-64 md:min-w-64 h-48 md:h-auto overflow-hidden">
+                        <img 
+                          src={guide.thumbnail} 
+                          alt={guide.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="flex-1 p-6 md:p-8 flex flex-col justify-center">
+                        <span className="inline-block text-xs font-semibold tracking-widest text-muted-foreground/60 uppercase mb-3">
+                          Guide
+                        </span>
+                        <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors">
+                          {guide.title}
+                        </h2>
+                        <p className="text-muted-foreground font-light mb-4 leading-relaxed">
+                          {guide.description}
+                        </p>
+                        <span className="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all">
+                          Read guide
+                          <ArrowRight className="h-4 w-4" />
+                        </span>
+                      </div>
+                    </article>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-16">
+                <Search className="h-12 w-12 text-muted-foreground/40 mx-auto mb-4" />
+                <h3 className="text-lg font-medium text-foreground mb-2">No guides found</h3>
+                <p className="text-muted-foreground">
+                  Try adjusting your search terms
+                </p>
+              </div>
+            )}
           </div>
         </section>
       </main>
