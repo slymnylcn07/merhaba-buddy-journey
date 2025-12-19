@@ -25,19 +25,24 @@ export const MobileStickyCTA = ({
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!ctaSectionRef.current) return;
+    if (!ctaSectionRef.current) return;
 
-      const rect = ctaSectionRef.current.getBoundingClientRect();
-      
-      // Show sticky bar when top of CTA section is scrolled above viewport
-      setIsVisible(rect.top < 0);
-    };
+    // Use IntersectionObserver instead of scroll listener to avoid forced reflows
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Show sticky bar when CTA section is not intersecting (scrolled past)
+        setIsVisible(!entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0,
+      }
+    );
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Check initial state
+    observer.observe(ctaSectionRef.current);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => observer.disconnect();
   }, [ctaSectionRef]);
 
   const handleAddToCartClick = async () => {
