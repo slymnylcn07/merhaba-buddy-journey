@@ -103,3 +103,32 @@ export const trackBeginCheckout = (items: Array<{
     })),
   });
 };
+
+// Track purchase event (called after successful checkout)
+export const trackPurchase = (transaction: {
+  transactionId: string;
+  value: number;
+  currency: string;
+  tax?: number;
+  shipping?: number;
+  items: Array<{
+    id: string;
+    name: string;
+    price: string;
+    quantity: number;
+  }>;
+}) => {
+  trackEvent("purchase", {
+    transaction_id: transaction.transactionId,
+    value: transaction.value,
+    currency: transaction.currency,
+    tax: transaction.tax || 0,
+    shipping: transaction.shipping || 0,
+    items: transaction.items.map((item) => ({
+      item_id: item.id,
+      item_name: item.name,
+      price: parseFloat(item.price),
+      quantity: item.quantity,
+    })),
+  });
+};
