@@ -10,7 +10,7 @@ import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 import { ArrowLeft, Star, Package, Clock, BookOpen, Box, Check, Loader2, Zap } from "lucide-react";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
-import { trackEvent } from "@/hooks/use-google-analytics";
+import { trackEvent, trackViewItem } from "@/hooks/use-google-analytics";
 import { supabase } from "@/integrations/supabase/client";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { 
@@ -168,13 +168,14 @@ const ProductDetail = () => {
     loadProduct();
   }, [handle]);
 
-  // Track product view for Shopify Analytics
+  // Track product view for Shopify Analytics and GA4
   useEffect(() => {
     if (product && !hasTrackedProductView.current) {
       hasTrackedProductView.current = true;
       const variant = product.node.variants.edges[0]?.node;
       const image = product.node.images.edges[0]?.node;
       
+      // Shopify Analytics tracking
       trackProductView({
         productId: product.node.id,
         productTitle: product.node.title,
@@ -183,6 +184,14 @@ const ProductDetail = () => {
         productCurrency: product.node.priceRange.minVariantPrice.currencyCode,
         productVariantId: variant?.id,
         productImageUrl: image?.url,
+      });
+
+      // GA4 view_item tracking
+      trackViewItem({
+        id: product.node.id,
+        name: product.node.title,
+        price: product.node.priceRange.minVariantPrice.amount,
+        currency: product.node.priceRange.minVariantPrice.currencyCode,
       });
     }
   }, [product]);

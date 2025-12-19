@@ -1,7 +1,8 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { ShopifyProduct, createStorefrontCheckout } from '@/lib/shopify';
-import { trackAddToCart, trackCheckoutStarted, trackCartView } from '@/lib/shopify-analytics';
+import { trackAddToCart as trackShopifyAddToCart, trackCheckoutStarted, trackCartView } from '@/lib/shopify-analytics';
+import { trackAddToCart as trackGA4AddToCart, trackBeginCheckout as trackGA4BeginCheckout } from '@/hooks/use-google-analytics';
 
 export interface CartItem {
   product: ShopifyProduct;
@@ -70,12 +71,21 @@ export const useCartStore = create<CartStore>()(
         }
 
         // Track add to cart event for Shopify Analytics
-        trackAddToCart({
+        trackShopifyAddToCart({
           productId: item.product.node.id,
           productTitle: item.product.node.title,
           productHandle: item.product.node.handle,
           variantId: item.variantId,
           variantTitle: item.variantTitle,
+          price: item.price.amount,
+          currency: item.price.currencyCode,
+          quantity: item.quantity,
+        });
+
+        // Track add to cart event for GA4
+        trackGA4AddToCart({
+          id: item.product.node.id,
+          name: item.product.node.title,
           price: item.price.amount,
           currency: item.price.currencyCode,
           quantity: item.quantity,
@@ -135,6 +145,7 @@ export const useCartStore = create<CartStore>()(
         const totalAmount = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
         const currency = items[0]?.price.currencyCode || 'GBP';
         
+        // Track checkout started for Shopify Analytics
         trackCheckoutStarted({
           totalQuantity,
           totalAmount: totalAmount.toFixed(2),
@@ -148,6 +159,15 @@ export const useCartStore = create<CartStore>()(
             price: item.price.amount,
           })),
         });
+
+        // Track begin_checkout for GA4
+        trackGA4BeginCheckout(items.map(item => ({
+          id: item.product.node.id,
+          name: item.product.node.title,
+          price: item.price.amount,
+          currency: item.price.currencyCode,
+          quantity: item.quantity,
+        })));
 
         setLoading(true);
         try {
