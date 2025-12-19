@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -22,6 +23,38 @@ import { Link, useLocation } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import ScrollingBanner from "@/components/ScrollingBanner";
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FlexiKnee",
+  "url": "https://flexiknee.com",
+  "logo": "https://flexiknee.com/logo.png",
+  "description": "FlexiKnee offers innovative smart knee massagers combining heat therapy, vibration massage, and red-light technology for knee pain relief.",
+  "sameAs": [
+    "https://facebook.com/flexiknee",
+    "https://instagram.com/flexiknee",
+    "https://twitter.com/flexiknee"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "support@flexiknee.com"
+  }
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "FlexiKnee",
+  "url": "https://flexiknee.com",
+  "description": "Smart knee massagers with heat therapy, vibration, and red-light technology for effective knee pain relief.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://flexiknee.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
 
 export default function Index() {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
@@ -101,8 +134,20 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen">
-      <Header />
+    <>
+      <Helmet>
+        <title>FlexiKnee™ | Smart Heated Knee Massager with Red Light Therapy</title>
+        <meta name="description" content="FlexiKnee™ targets inflammation, stiffness and mobility issues using heat, vibration and red-light technology — all in one smart device." />
+        <link rel="canonical" href="https://flexiknee.com" />
+        <script type="application/ld+json">
+          {JSON.stringify(organizationJsonLd)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(websiteJsonLd)}
+        </script>
+      </Helmet>
+      <div className="min-h-screen">
+        <Header />
       {/* Hero Banner */}
       {/* Hero Banner - Always render immediately */}
       <Link to={mainProduct ? `/product/${mainProduct.node.handle}` : '/product/knee-massager-smart-red-light-and-massage-therapy'} className="block">
@@ -689,6 +734,7 @@ export default function Index() {
       )}
       
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }
