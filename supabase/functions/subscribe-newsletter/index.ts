@@ -5,10 +5,33 @@ import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-};
+// Allowed origins for CORS
+const ALLOWED_ORIGINS = [
+  'https://flexiknee.com',
+  'https://www.flexiknee.com',
+  'https://flexi-knee.com',
+  'https://www.flexi-knee.com',
+];
+
+// Development origins (only add in dev mode)
+const DEV_ORIGINS = [
+  'http://localhost:5173',
+  'http://localhost:8080',
+];
+
+function getCorsHeaders(origin: string | null): Record<string, string> {
+  // Check if origin is allowed
+  const allAllowedOrigins = [...ALLOWED_ORIGINS, ...DEV_ORIGINS];
+  // Also allow lovableproject.com domains for preview
+  const isLovablePreview = origin?.includes('.lovableproject.com') || origin?.includes('.lovable.app');
+  const isAllowed = allAllowedOrigins.includes(origin || '') || isLovablePreview;
+  
+  return {
+    "Access-Control-Allow-Origin": isAllowed && origin ? origin : ALLOWED_ORIGINS[0],
+    "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+    "Access-Control-Allow-Credentials": "true",
+  };
+}
 
 // Zod schema for email validation
 const subscribeSchema = z.object({
@@ -22,6 +45,9 @@ const subscribeSchema = z.object({
 });
 
 const handler = async (req: Request): Promise<Response> => {
+  const origin = req.headers.get("origin");
+  const corsHeaders = getCorsHeaders(origin);
+
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -46,7 +72,7 @@ const handler = async (req: Request): Promise<Response> => {
     }
     
     const { email } = validationResult.data;
-    console.log("Newsletter subscription request for:", email);
+    console.log("Newsletter subscription request received");
 
     // Create Supabase client
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
@@ -61,7 +87,7 @@ const handler = async (req: Request): Promise<Response> => {
       .maybeSingle();
 
     if (existing) {
-      console.log("Email already subscribed:", email);
+      console.log("Email already subscribed");
       return new Response(
         JSON.stringify({ message: "Already subscribed", success: true }),
         {
@@ -77,11 +103,11 @@ const handler = async (req: Request): Promise<Response> => {
       .insert({ email });
 
     if (dbError) {
-      console.error("Database error:", dbError);
+      console.error("Database error:", dbError.message);
       throw new Error("Failed to save subscription");
     }
 
-    console.log("Email saved to database:", email);
+    console.log("Email saved to database");
 
     // Send welcome email
     const emailResponse = await resend.emails.send({
@@ -127,7 +153,7 @@ const handler = async (req: Request): Promise<Response> => {
       `,
     });
 
-    console.log("Welcome email sent successfully:", emailResponse);
+    console.log("Welcome email sent successfully");
 
     return new Response(
       JSON.stringify({ message: "Successfully subscribed!", success: true }),
@@ -137,9 +163,9 @@ const handler = async (req: Request): Promise<Response> => {
       }
     );
   } catch (error: any) {
-    console.error("Error in subscribe-newsletter function:", error);
+    console.error("Error in subscribe-newsletter function:", error.message);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "An error occurred processing your request" }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },

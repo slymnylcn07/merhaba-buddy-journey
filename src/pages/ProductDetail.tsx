@@ -110,8 +110,9 @@ const ProductDetail = () => {
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newsletterEmail) {
-      toast.error("Please enter your email address");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!newsletterEmail || !emailRegex.test(newsletterEmail)) {
+      toast.error("Please enter a valid email address");
       return;
     }
     setIsSubscribing(true);
