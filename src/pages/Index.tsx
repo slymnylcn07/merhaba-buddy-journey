@@ -154,11 +154,13 @@ export default function Index() {
       {/* Hero Banner - Always render immediately */}
       <Link to={mainProduct ? `/product/${mainProduct.node.handle}` : '/product/knee-massager-smart-red-light-and-massage-therapy'} className="block">
         <section className="relative w-full overflow-hidden cursor-pointer hover:opacity-95 transition-opacity">
-          {/* Desktop Hero Banner */}
+        {/* Desktop Hero Banner */}
           <img 
             src={heroBannerDesktop} 
             alt="FlexiKnee Smart Heated Knee Massager" 
             className="hidden md:block w-full h-auto object-cover"
+            width={1920}
+            height={1080}
             loading="eager"
             fetchPriority="high"
             decoding="async"
@@ -168,6 +170,8 @@ export default function Index() {
             src={heroBannerMobile} 
             alt="FlexiKnee Smart Heated Knee Massager" 
             className="block md:hidden w-full h-auto object-cover"
+            width={1024}
+            height={1536}
             loading="eager"
             fetchPriority="high"
             decoding="async"
@@ -258,6 +262,8 @@ export default function Index() {
                       <img 
                         src={productHowItWorks} 
                         alt="Step 1: Strap the Device"
+                        width={935}
+                        height={933}
                         className="rounded-lg w-full h-auto object-cover"
                         loading="lazy"
                       />
@@ -279,6 +285,8 @@ export default function Index() {
                       <img 
                         src={productTemperature} 
                         alt="Step 2: Activate Red-Light Therapy"
+                        width={800}
+                        height={800}
                         className="rounded-lg w-full h-auto object-cover"
                         loading="lazy"
                       />
@@ -300,6 +308,8 @@ export default function Index() {
                       <img 
                         src={heatActivation} 
                         alt="Step 3: Heat Activation"
+                        width={800}
+                        height={800}
                         className="rounded-lg w-full h-auto object-cover"
                         loading="lazy"
                       />
@@ -321,6 +331,8 @@ export default function Index() {
                       <img 
                         src={productMain} 
                         alt="Step 4: Vibration Modes" 
+                        width={1024}
+                        height={1024}
                         className="rounded-lg w-full h-auto object-cover"
                         loading="lazy"
                       />
@@ -439,7 +451,7 @@ export default function Index() {
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src={laserTherapy} alt="Laser Irradiation Technology" className="w-full h-auto" loading="lazy" />
+              <img src={laserTherapy} alt="Laser Irradiation Technology" width={800} height={800} className="w-full h-auto" loading="lazy" />
             </div>
           </div>
         </div>
@@ -451,7 +463,7 @@ export default function Index() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Smart Features</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src={productVibration} alt="Product Usage" className="w-full h-auto" loading="lazy" />
+              <img src={productVibration} alt="Product Usage" width={800} height={800} className="w-full h-auto" loading="lazy" />
             </div>
             <div className="space-y-6">
               <div className="flex items-start gap-4 p-6 bg-muted/50 rounded-xl">

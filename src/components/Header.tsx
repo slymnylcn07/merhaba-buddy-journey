@@ -107,6 +107,8 @@ export const Header = () => {
             <img
               src={logo}
               alt="FlexiKnee™"
+              width={360}
+              height={120}
               className="w-[280px] max-h-[90px] md:w-[360px] md:max-h-[120px] object-contain"
             />
           </a>
