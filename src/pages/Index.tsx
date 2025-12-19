@@ -429,7 +429,7 @@ export default function Index() {
                     <Check className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Targeted Heat Therapy</h4>
+                    <h3 className="font-semibold mb-1 text-base">Targeted Heat Therapy</h3>
                     <p className="text-sm text-muted-foreground">Penetrates deep to relieve stiffness</p>
                   </div>
                 </div>
@@ -438,7 +438,7 @@ export default function Index() {
                     <Check className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Smart Vibration</h4>
+                    <h3 className="font-semibold mb-1 text-base">Smart Vibration</h3>
                     <p className="text-sm text-muted-foreground">Loosens tight muscles instantly</p>
                   </div>
                 </div>
@@ -447,7 +447,7 @@ export default function Index() {
                     <Check className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Red-Light Recovery</h4>
+                    <h3 className="font-semibold mb-1 text-base">Red-Light Recovery</h3>
                     <p className="text-sm text-muted-foreground">Supports long-term joint health</p>
                   </div>
                 </div>
@@ -474,7 +474,7 @@ export default function Index() {
                   <Zap className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg mb-2">Touch Screen Panel</h4>
+                  <h3 className="font-bold text-lg mb-2">Touch Screen Panel</h3>
                   <p className="text-muted-foreground">Easy control at your fingertips</p>
                 </div>
               </div>
@@ -484,7 +484,7 @@ export default function Index() {
                   <Activity className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg mb-2">Infrared LED Ring</h4>
+                  <h3 className="font-bold text-lg mb-2">Infrared LED Ring</h3>
                   <p className="text-muted-foreground">18 therapeutic LEDs</p>
                 </div>
               </div>
@@ -494,7 +494,7 @@ export default function Index() {
                   <Shield className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg mb-2">Adjustable Velcro Straps</h4>
+                  <h3 className="font-bold text-lg mb-2">Adjustable Velcro Straps</h3>
                   <p className="text-muted-foreground">Perfect fit for all knee sizes</p>
                 </div>
               </div>
@@ -504,7 +504,7 @@ export default function Index() {
                   <Battery className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg mb-2">USB-C Charging</h4>
+                  <h3 className="font-bold text-lg mb-2">USB-C Charging</h3>
                   <p className="text-muted-foreground">Fast and convenient power</p>
                 </div>
               </div>
