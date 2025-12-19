@@ -1,5 +1,6 @@
-import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts';
-import { Quote } from 'lucide-react';
+import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
+import { Quote } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Chart color palette
 const COLORS = ['#ef4444', '#f97316', '#22c55e', '#3b82f6', '#8b5cf6'];
@@ -278,14 +279,14 @@ export const StatHighlight = ({ stat, label, description }: { stat: string; labe
 );
 
 export const TipsList = ({ tips }: { tips: string[] }) => (
-  <div className="bg-green-50 dark:bg-green-950/20 rounded-xl p-6 my-8 border border-green-200 dark:border-green-900">
+  <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
     <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-      <span className="text-green-600">✓</span> Quick Tips
+      <span className="text-primary">✓</span> Quick Tips
     </h3>
     <ul className="space-y-2">
       {tips.map((tip, index) => (
         <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
-          <span className="text-green-600 mt-1">•</span>
+          <span className="text-primary mt-1">•</span>
           <span>{tip}</span>
         </li>
       ))}
@@ -305,15 +306,15 @@ export const JournalQuote = ({
   publication: string;
   year?: string;
 }) => (
-  <blockquote className="bg-blue-50 dark:bg-blue-950/20 rounded-xl p-6 my-8 border-l-4 border-blue-500 relative">
-    <Quote className="absolute top-4 right-4 h-8 w-8 text-blue-200 dark:text-blue-800" />
+  <blockquote className="bg-muted/20 rounded-xl p-6 my-8 border-l-4 border-primary relative">
+    <Quote className="absolute top-4 right-4 h-8 w-8 text-muted-foreground/20" />
     <p className="text-foreground font-light leading-relaxed italic mb-4 pr-8">
       "{quote}"
     </p>
     <footer className="text-sm">
       <cite className="not-italic">
         <span className="text-muted-foreground">{source}</span>
-        <span className="text-blue-600 dark:text-blue-400 font-medium block mt-1">
+        <span className="text-primary font-medium block mt-1">
           {publication}{year && `, ${year}`}
         </span>
       </cite>
@@ -333,8 +334,8 @@ export const RelatedGuideCard = ({
   thumbnail: string;
   description: string;
 }) => (
-  <a 
-    href={`/guides/${slug}`}
+  <Link
+    to={`/guides/${slug}`}
     className="group block bg-background border border-border/50 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:border-border transition-all duration-300"
   >
     <div className="h-32 overflow-hidden">
@@ -342,6 +343,7 @@ export const RelatedGuideCard = ({
         src={thumbnail} 
         alt={title}
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        loading="lazy"
       />
     </div>
     <div className="p-4">
@@ -352,5 +354,5 @@ export const RelatedGuideCard = ({
         {description}
       </p>
     </div>
-  </a>
+  </Link>
 );
