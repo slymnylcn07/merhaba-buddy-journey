@@ -289,6 +289,7 @@ export default function Index() {
                         height={800}
                         className="rounded-lg w-full h-auto object-cover"
                         loading="lazy"
+                        decoding="async"
                       />
                       <div>
                         <h3 className="text-2xl font-bold mb-4 text-primary">Step 2: Activate Red-Light Therapy</h3>
@@ -312,6 +313,7 @@ export default function Index() {
                         height={800}
                         className="rounded-lg w-full h-auto object-cover"
                         loading="lazy"
+                        decoding="async"
                       />
                       <div>
                         <h3 className="text-2xl font-bold mb-4 text-primary">Step 3: Heat Activation</h3>
@@ -335,6 +337,7 @@ export default function Index() {
                         height={1024}
                         className="rounded-lg w-full h-auto object-cover"
                         loading="lazy"
+                        decoding="async"
                       />
                       <div>
                         <h3 className="text-2xl font-bold mb-4 text-primary">Step 4: Vibration Modes</h3>
@@ -451,7 +454,7 @@ export default function Index() {
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src={laserTherapy} alt="Laser Irradiation Technology" width={800} height={800} className="w-full h-auto" loading="lazy" />
+              <img src={laserTherapy} alt="Laser Irradiation Technology" width={800} height={800} className="w-full h-auto" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -463,7 +466,7 @@ export default function Index() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Smart Features</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src={productVibration} alt="Product Usage" width={800} height={800} className="w-full h-auto" loading="lazy" />
+              <img src={productVibration} alt="Product Usage" width={800} height={800} className="w-full h-auto" loading="lazy" decoding="async" />
             </div>
             <div className="space-y-6">
               <div className="flex items-start gap-4 p-6 bg-muted/50 rounded-xl">
