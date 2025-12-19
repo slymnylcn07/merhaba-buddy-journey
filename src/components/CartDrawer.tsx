@@ -156,14 +156,9 @@ export const CartDrawer = () => {
     }
 
     try {
-      console.log('Creating checkout...');
-      console.log('Cart items for checkout:', items);
-      
-      console.log('Calling createStorefrontCheckout...');
       await createCheckout();
       
       const checkoutUrl = useCartStore.getState().checkoutUrl;
-      console.log('Received checkout URL:', checkoutUrl);
       
       if (!checkoutUrl) {
         toast.error("Checkout failed", {
@@ -174,12 +169,10 @@ export const CartDrawer = () => {
       }
       
       // Redirect to checkout - using location.href to avoid popup blockers on mobile
-      console.log('Redirecting to checkout...');
       setIsOpen(false);
       window.location.href = checkoutUrl;
       
     } catch (error) {
-      console.error('Checkout failed:', error);
       toast.error("Checkout error", {
         description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
         position: "top-center",

@@ -45,17 +45,7 @@ const Account = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [returnRequestId, setReturnRequestId] = useState("");
-  const lastSubmitRef = useRef<number>(0);
   const honeypotRef = useRef<HTMLInputElement>(null);
-
-  const generateReturnId = () => {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    let id = "RR-";
-    for (let i = 0; i < 6; i++) {
-      id += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return id;
-  };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = Array.from(e.target.files || []);
@@ -79,19 +69,7 @@ const Account = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Honeypot check
-    if (honeypotRef.current?.value) {
-      return;
-    }
-
-    // Rate limiting - 60 seconds
-    const now = Date.now();
-    if (now - lastSubmitRef.current < 60000) {
-      toast.error("Please wait 60 seconds before submitting again");
-      return;
-    }
-
-    // Validation
+    // Client-side validation for better UX (server validates too)
     if (!formData.orderNumber || !formData.email || !formData.fullName) {
       toast.error("Please fill in all required fields");
       return;
@@ -118,51 +96,38 @@ const Account = () => {
     }
 
     setIsSubmitting(true);
-    lastSubmitRef.current = now;
-
-    const newReturnId = generateReturnId();
 
     try {
-      const { error } = await supabase.from("return_requests").insert({
-        request_id: newReturnId,
-        order_number: formData.orderNumber,
-        email: formData.email,
-        full_name: formData.fullName,
-        return_reason: formData.returnReason,
-        preferred_resolution: formData.preferredResolution,
-        additional_details: formData.additionalDetails,
-      });
-
-      if (error) {
-        console.error("Error submitting return request:", error);
-        toast.error("Failed to submit return request. Please try again.");
-        setIsSubmitting(false);
-        return;
-      }
-
-      // Send email notifications (don't block on failure)
-      supabase.functions.invoke("send-return-notification", {
+      // Submit via edge function with server-side validation
+      const { data, error } = await supabase.functions.invoke("submit-return-request", {
         body: {
-          requestId: newReturnId,
           orderNumber: formData.orderNumber,
           email: formData.email,
           fullName: formData.fullName,
           returnReason: formData.returnReason,
           preferredResolution: formData.preferredResolution,
           additionalDetails: formData.additionalDetails,
+          honeypot: honeypotRef.current?.value || "",
         },
-      }).then((res) => {
-        if (res.error) {
-          console.error("Failed to send notification emails:", res.error);
-        } else {
-          console.log("Notification emails sent successfully");
-        }
       });
 
-      setReturnRequestId(newReturnId);
-      setSubmitSuccess(true);
+      if (error) {
+        toast.error("Failed to submit return request. Please try again.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      if (data?.error) {
+        toast.error(data.error);
+        setIsSubmitting(false);
+        return;
+      }
+
+      if (data?.requestId) {
+        setReturnRequestId(data.requestId);
+        setSubmitSuccess(true);
+      }
     } catch (err) {
-      console.error("Error submitting return request:", err);
       toast.error("Failed to submit return request. Please try again.");
     } finally {
       setIsSubmitting(false);

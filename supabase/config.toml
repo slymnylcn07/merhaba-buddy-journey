@@ -1,5 +1,8 @@
 project_id = "rxlkzfllncxyxjmqlxkb"
 
+[functions.submit-return-request]
+verify_jwt = false
+
 [functions.subscribe-newsletter]
 verify_jwt = false
 

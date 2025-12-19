@@ -94,7 +94,6 @@ const AdminReturns = () => {
     const { data, error } = await query;
 
     if (error) {
-      console.error("Error fetching returns:", error);
       toast.error("İade talepleri yüklenemedi");
     } else {
       setReturns(data || []);
@@ -112,7 +111,6 @@ const AdminReturns = () => {
       .eq("id", id);
 
     if (error) {
-      console.error("Error updating status:", error);
       toast.error("Durum güncellenemedi");
       return;
     }
@@ -134,13 +132,11 @@ const AdminReturns = () => {
         });
 
         if (emailError) {
-          console.error("Error sending approval email:", emailError);
           toast.warning("Durum güncellendi ancak email gönderilemedi");
         } else {
           toast.success("Durum güncellendi ve onay emaili gönderildi");
         }
       } catch (err) {
-        console.error("Error invoking email function:", err);
         toast.warning("Durum güncellendi ancak email gönderilemedi");
       }
     } else {

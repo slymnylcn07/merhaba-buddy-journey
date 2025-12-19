@@ -19,11 +19,6 @@ export const useGoogleAnalytics = () => {
         page_path: location.pathname + location.search,
         page_title: document.title,
       });
-      
-      console.log("[Google Analytics] page_view sent", {
-        page_path: location.pathname + location.search,
-        page_title: document.title,
-      });
     }
   }, [location]);
 };
@@ -35,7 +30,6 @@ export const trackEvent = (
 ) => {
   if (typeof window.gtag !== "undefined") {
     window.gtag("event", eventName, eventParams);
-    console.log("[Google Analytics] event sent", { eventName, eventParams });
   }
 };
 
