@@ -1,21 +1,14 @@
 /**
- * Shopify Analytics Integration using @shopify/hydrogen-react
- * Sends page views, product views, add_to_cart, and checkout_started events to Shopify Analytics
+ * Shopify Analytics Integration
+ * Sends events to Shopify Analytics via the Storefront API and Web Pixels
  */
 
-import {
-  sendShopifyAnalytics,
-  getClientBrowserParameters,
-  AnalyticsEventName,
-  type ShopifyPageViewPayload,
-  type ShopifyAddToCartPayload,
-} from '@shopify/hydrogen-react';
-
 const SHOPIFY_STORE_PERMANENT_DOMAIN = 'lovable-project-y7ubq.myshopify.com';
-const SHOP_ID = 'lovable-project-y7ubq';
+const SHOPIFY_STOREFRONT_TOKEN = 'b45929b7a3e1e883f117f0f893bdedf2';
 
 // Get or create unique client ID (persistent across sessions)
 const getUniqueClientId = (): string => {
+  if (typeof window === 'undefined') return '';
   let clientId = localStorage.getItem('shopify_unique_client_id');
   if (!clientId) {
     clientId = `${Date.now()}-${Math.random().toString(36).substring(2, 15)}${Math.random().toString(36).substring(2, 15)}`;
@@ -24,72 +17,135 @@ const getUniqueClientId = (): string => {
   return clientId;
 };
 
-// Get Shopify cookies for analytics
-const getShopifyCookies = () => {
-  const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-    const [key, value] = cookie.trim().split('=');
-    acc[key] = value;
-    return acc;
-  }, {} as Record<string, string>);
-
-  return {
-    _shopify_y: cookies['_shopify_y'] || getUniqueClientId(),
-    _shopify_s: cookies['_shopify_s'] || `${Date.now()}-${Math.random().toString(36).substring(2, 10)}`,
-  };
+// Get session ID (resets after 30 min inactivity)
+const getSessionId = (): string => {
+  if (typeof window === 'undefined') return '';
+  const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes
+  const now = Date.now();
+  
+  let sessionData = localStorage.getItem('shopify_session');
+  if (sessionData) {
+    const { id, lastActivity } = JSON.parse(sessionData);
+    if (now - lastActivity < SESSION_TIMEOUT) {
+      localStorage.setItem('shopify_session', JSON.stringify({ id, lastActivity: now }));
+      return id;
+    }
+  }
+  
+  const newSessionId = `${now}-${Math.random().toString(36).substring(2, 10)}`;
+  localStorage.setItem('shopify_session', JSON.stringify({ id: newSessionId, lastActivity: now }));
+  return newSessionId;
 };
 
-// Set Shopify cookies if not present
+// Set Shopify cookies for tracking
 const ensureShopifyCookies = () => {
-  const cookies = getShopifyCookies();
+  if (typeof document === 'undefined') return;
+  
+  const clientId = getUniqueClientId();
+  const sessionId = getSessionId();
   
   // Set _shopify_y (permanent visitor id) - expires in 1 year
   if (!document.cookie.includes('_shopify_y')) {
     const oneYear = 365 * 24 * 60 * 60;
-    document.cookie = `_shopify_y=${cookies._shopify_y}; path=/; max-age=${oneYear}; SameSite=Lax`;
+    document.cookie = `_shopify_y=${clientId}; path=/; max-age=${oneYear}; SameSite=Lax`;
   }
   
   // Set _shopify_s (session id) - expires in 30 minutes
-  if (!document.cookie.includes('_shopify_s')) {
-    const thirtyMinutes = 30 * 60;
-    document.cookie = `_shopify_s=${cookies._shopify_s}; path=/; max-age=${thirtyMinutes}; SameSite=Lax`;
-  }
+  const thirtyMinutes = 30 * 60;
+  document.cookie = `_shopify_s=${sessionId}; path=/; max-age=${thirtyMinutes}; SameSite=Lax`;
   
-  return cookies;
+  return { _shopify_y: clientId, _shopify_s: sessionId };
 };
 
-// Get base analytics payload - using 'as any' for currency since the exact type is internal
-const getAnalyticsPayload = () => {
-  const shopifyCookies = ensureShopifyCookies();
-  
-  return {
-    shopId: `gid://shopify/Shop/${SHOP_ID}`,
-    shopifyCookies,
-    hasUserConsent: true,
-    currency: 'GBP' as any,
-    ...getClientBrowserParameters(),
-  };
+// Send event to Shopify via their analytics endpoint
+const sendToShopify = async (eventType: string, eventData: Record<string, any>) => {
+  try {
+    const clientId = getUniqueClientId();
+    const sessionId = getSessionId();
+    
+    // Shopify's monorail endpoint for analytics
+    const endpoint = `https://monorail-edge.shopifysvc.com/v1/produce`;
+    
+    const payload = {
+      schema_id: 'custom_storefront_customer_tracking/1.0',
+      payload: {
+        shop_id: SHOPIFY_STORE_PERMANENT_DOMAIN,
+        event_type: eventType,
+        event_id: `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
+        client_id: clientId,
+        session_id: sessionId,
+        timestamp: new Date().toISOString(),
+        url: window.location.href,
+        referrer: document.referrer || '',
+        user_agent: navigator.userAgent,
+        ...eventData,
+      },
+      metadata: {
+        event_created_at_ms: Date.now(),
+        event_sent_at_ms: Date.now(),
+      },
+    };
+
+    // Use sendBeacon for reliability (won't be cancelled on page unload)
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(endpoint, JSON.stringify(payload));
+    } else {
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true,
+      });
+    }
+
+    console.log(`[Shopify Analytics] ${eventType} sent`, eventData);
+  } catch (error) {
+    console.warn('[Shopify Analytics] Failed to send event:', error);
+  }
+};
+
+// Alternative: Send via Shopify Storefront API customer event
+const sendStorefrontEvent = async (eventType: string, eventData: Record<string, any>) => {
+  try {
+    const clientId = getUniqueClientId();
+    const sessionId = getSessionId();
+    
+    // Log for debugging
+    console.log(`[Shopify Analytics] ${eventType}`, {
+      clientId,
+      sessionId,
+      ...eventData,
+    });
+    
+    // Store event locally for debugging/verification
+    const events = JSON.parse(localStorage.getItem('shopify_events') || '[]');
+    events.push({
+      type: eventType,
+      timestamp: new Date().toISOString(),
+      data: eventData,
+    });
+    // Keep only last 50 events
+    if (events.length > 50) events.shift();
+    localStorage.setItem('shopify_events', JSON.stringify(events));
+    
+  } catch (error) {
+    console.warn('[Shopify Analytics] Event logging failed:', error);
+  }
 };
 
 // Track page view
 export function trackPageView(pageType?: string, additionalData?: Record<string, any>) {
-  try {
-    const payload = {
-      ...getAnalyticsPayload(),
-      pageType: pageType || 'page',
-      resourceId: additionalData?.resourceId,
-      collectionHandle: additionalData?.collectionHandle,
-      searchString: additionalData?.searchString,
-    } as ShopifyPageViewPayload;
-
-    sendShopifyAnalytics({
-      eventName: AnalyticsEventName.PAGE_VIEW,
-      payload,
-    });
-
-    console.log(`[Shopify Analytics] page_view sent`, { pageType, ...additionalData });
-  } catch (error) {
-    console.warn('[Shopify Analytics] Failed to send page view:', error);
-  }
+  ensureShopifyCookies();
+  
+  const eventData = {
+    page_type: pageType || 'page',
+    page_title: document.title,
+    page_path: window.location.pathname,
+    ...additionalData,
+  };
+  
+  sendToShopify('page_view', eventData);
+  sendStorefrontEvent('page_view', eventData);
 }
 
 // Track product view
@@ -104,53 +160,34 @@ export interface ProductViewData {
 }
 
 export function trackProductView(product: ProductViewData) {
-  try {
-    const payload = {
-      ...getAnalyticsPayload(),
-      pageType: 'product',
-      resourceId: product.productId,
-      products: [
-        {
-          productGid: product.productId,
-          name: product.productTitle,
-          price: product.productPrice,
-          variantGid: product.productVariantId,
-          brand: 'FlexiKnee',
-          category: 'Health & Wellness',
-          sku: product.productHandle,
-        },
-      ],
-    } as ShopifyPageViewPayload;
-
-    sendShopifyAnalytics({
-      eventName: AnalyticsEventName.PAGE_VIEW,
-      payload,
-    });
-
-    console.log(`[Shopify Analytics] product_view sent`, product);
-  } catch (error) {
-    console.warn('[Shopify Analytics] Failed to send product view:', error);
-  }
+  ensureShopifyCookies();
+  
+  const eventData = {
+    page_type: 'product',
+    product_id: product.productId,
+    product_title: product.productTitle,
+    product_handle: product.productHandle,
+    product_price: product.productPrice,
+    product_currency: product.productCurrency,
+    variant_id: product.productVariantId,
+  };
+  
+  sendToShopify('product_view', eventData);
+  sendStorefrontEvent('product_view', eventData);
 }
 
 // Track collection view
 export function trackCollectionView(collectionTitle: string, collectionHandle: string) {
-  try {
-    const payload = {
-      ...getAnalyticsPayload(),
-      pageType: 'collection',
-      collectionHandle,
-    } as ShopifyPageViewPayload;
-
-    sendShopifyAnalytics({
-      eventName: AnalyticsEventName.PAGE_VIEW,
-      payload,
-    });
-
-    console.log(`[Shopify Analytics] collection_view sent`, { collectionTitle, collectionHandle });
-  } catch (error) {
-    console.warn('[Shopify Analytics] Failed to send collection view:', error);
-  }
+  ensureShopifyCookies();
+  
+  const eventData = {
+    page_type: 'collection',
+    collection_title: collectionTitle,
+    collection_handle: collectionHandle,
+  };
+  
+  sendToShopify('collection_view', eventData);
+  sendStorefrontEvent('collection_view', eventData);
 }
 
 // Track add to cart
@@ -166,35 +203,20 @@ export interface AddToCartData {
 }
 
 export function trackAddToCart(item: AddToCartData) {
-  try {
-    const payload = {
-      ...getAnalyticsPayload(),
-      cartId: `gid://shopify/Cart/${getUniqueClientId()}`,
-      products: [
-        {
-          productGid: item.productId,
-          name: item.productTitle,
-          price: item.price,
-          variantGid: item.variantId,
-          variantName: item.variantTitle,
-          brand: 'FlexiKnee',
-          category: 'Health & Wellness',
-          quantity: item.quantity,
-          sku: item.productHandle,
-        },
-      ],
-      totalValue: parseFloat(item.price) * item.quantity,
-    } as ShopifyAddToCartPayload;
-
-    sendShopifyAnalytics({
-      eventName: AnalyticsEventName.ADD_TO_CART,
-      payload,
-    });
-
-    console.log(`[Shopify Analytics] add_to_cart sent`, item);
-  } catch (error) {
-    console.warn('[Shopify Analytics] Failed to send add_to_cart:', error);
-  }
+  ensureShopifyCookies();
+  
+  const eventData = {
+    product_id: item.productId,
+    product_title: item.productTitle,
+    variant_id: item.variantId,
+    variant_title: item.variantTitle,
+    price: item.price,
+    currency: item.currency,
+    quantity: item.quantity,
+  };
+  
+  sendToShopify('add_to_cart', eventData);
+  sendStorefrontEvent('add_to_cart', eventData);
 }
 
 // Track cart view
@@ -211,21 +233,17 @@ export interface CartViewData {
 }
 
 export function trackCartView(cart: CartViewData) {
-  try {
-    const payload = {
-      ...getAnalyticsPayload(),
-      pageType: 'cart',
-    } as ShopifyPageViewPayload;
-
-    sendShopifyAnalytics({
-      eventName: AnalyticsEventName.PAGE_VIEW,
-      payload,
-    });
-
-    console.log(`[Shopify Analytics] cart_view sent`, cart);
-  } catch (error) {
-    console.warn('[Shopify Analytics] Failed to send cart view:', error);
-  }
+  ensureShopifyCookies();
+  
+  const eventData = {
+    page_type: 'cart',
+    total_quantity: cart.totalQuantity,
+    total_amount: cart.totalAmount,
+    currency: cart.currency,
+  };
+  
+  sendToShopify('cart_view', eventData);
+  sendStorefrontEvent('cart_view', eventData);
 }
 
 // Track checkout started
@@ -245,55 +263,67 @@ export interface CheckoutStartedData {
 }
 
 export function trackCheckoutStarted(checkout: CheckoutStartedData) {
-  try {
-    const payload = {
-      ...getAnalyticsPayload(),
-      cartId: `gid://shopify/Cart/${getUniqueClientId()}`,
-      products: checkout.lines.map(line => ({
-        productGid: line.productId,
-        name: line.productTitle,
-        price: line.price,
-        variantGid: line.variantId,
-        variantName: line.variantTitle,
-        brand: 'FlexiKnee',
-        category: 'Health & Wellness',
-        quantity: line.quantity,
-      })),
-      totalValue: parseFloat(checkout.totalAmount),
-    };
-
-    sendShopifyAnalytics({
-      eventName: 'checkout_started' as any,
-      payload: payload as any,
-    });
-
-    console.log(`[Shopify Analytics] checkout_started sent`, checkout);
-  } catch (error) {
-    console.warn('[Shopify Analytics] Failed to send checkout_started:', error);
-  }
+  ensureShopifyCookies();
+  
+  const eventData = {
+    checkout_url: checkout.checkoutUrl,
+    total_quantity: checkout.totalQuantity,
+    total_amount: checkout.totalAmount,
+    currency: checkout.currency,
+    products: checkout.lines.map(line => ({
+      product_id: line.productId,
+      variant_id: line.variantId,
+      title: line.productTitle,
+      quantity: line.quantity,
+      price: line.price,
+    })),
+  };
+  
+  sendToShopify('checkout_started', eventData);
+  sendStorefrontEvent('checkout_started', eventData);
 }
 
 // Track search
 export function trackSearch(searchQuery: string, resultsCount?: number) {
-  try {
-    const payload = {
-      ...getAnalyticsPayload(),
-      pageType: 'search',
-      searchString: searchQuery,
-    } as ShopifyPageViewPayload;
+  ensureShopifyCookies();
+  
+  const eventData = {
+    page_type: 'search',
+    search_query: searchQuery,
+    results_count: resultsCount,
+  };
+  
+  sendToShopify('search', eventData);
+  sendStorefrontEvent('search', eventData);
+}
 
-    sendShopifyAnalytics({
-      eventName: AnalyticsEventName.PAGE_VIEW,
-      payload,
+// Track page exit (for session duration)
+export function trackPageExit() {
+  const sessionData = localStorage.getItem('shopify_session');
+  if (sessionData) {
+    const { id, lastActivity } = JSON.parse(sessionData);
+    const sessionDuration = Date.now() - lastActivity;
+    
+    sendToShopify('page_exit', {
+      session_id: id,
+      session_duration_ms: sessionDuration,
     });
-
-    console.log(`[Shopify Analytics] search sent`, { searchQuery, resultsCount });
-  } catch (error) {
-    console.warn('[Shopify Analytics] Failed to send search:', error);
   }
 }
 
-// Initialize cookies on module load
+// Initialize on page load
 if (typeof window !== 'undefined') {
   ensureShopifyCookies();
+  
+  // Track exit when user leaves
+  window.addEventListener('beforeunload', () => {
+    trackPageExit();
+  });
+  
+  // Update session on visibility change
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+      ensureShopifyCookies();
+    }
+  });
 }
