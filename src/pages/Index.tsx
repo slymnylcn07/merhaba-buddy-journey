@@ -163,7 +163,7 @@ export default function Index() {
             height={1080}
             loading="eager"
             fetchPriority="high"
-            decoding="async"
+            decoding="sync"
           />
           {/* Mobile Hero Banner */}
           <img 
@@ -174,7 +174,7 @@ export default function Index() {
             height={1536}
             loading="eager"
             fetchPriority="high"
-            decoding="async"
+            decoding="sync"
           />
         </section>
       </Link>
