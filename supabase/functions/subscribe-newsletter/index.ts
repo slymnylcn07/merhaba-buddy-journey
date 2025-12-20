@@ -7,8 +7,6 @@ const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 // Allowed origins for CORS
 const ALLOWED_ORIGINS = [
-  'https://flexiknee.com',
-  'https://www.flexiknee.com',
   'https://flexi-knee.com',
   'https://www.flexi-knee.com',
 ];

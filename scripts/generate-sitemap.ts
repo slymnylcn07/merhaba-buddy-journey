@@ -3,7 +3,7 @@ import { guidesData, staticPages } from "../src/data/guides";
 import * as fs from "fs";
 import * as path from "path";
 
-const SITE_URL = "https://flexiknee.com";
+const SITE_URL = "https://flexi-knee.com";
 
 function generateSitemap(): string {
   const today = new Date().toISOString().split("T")[0];

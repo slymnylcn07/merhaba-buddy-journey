@@ -59,7 +59,7 @@ const Guides = () => {
       "@type": "ListItem",
       "position": index + 1,
       "name": guide.title,
-      "url": `https://flexiknee.com/guides/${guide.slug}`
+      "url": `https://flexi-knee.com/guides/${guide.slug}`
     }))
   };
 
@@ -71,13 +71,13 @@ const Guides = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Anasayfa",
-        "item": "https://flexiknee.com"
+        "item": "https://flexi-knee.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Guides",
-        "item": "https://flexiknee.com/guides"
+        "item": "https://flexi-knee.com/guides"
       }
     ]
   };
@@ -90,7 +90,7 @@ const Guides = () => {
           name="description" 
           content="Explore simple, easy-to-understand guides about knee discomfort, heat and red light therapy, and at-home solutions designed to support everyday knee comfort." 
         />
-        <link rel="canonical" href="https://flexiknee.com/guides" />
+        <link rel="canonical" href="https://flexi-knee.com/guides" />
         <script type="application/ld+json">
           {JSON.stringify(itemListJsonLd)}
         </script>

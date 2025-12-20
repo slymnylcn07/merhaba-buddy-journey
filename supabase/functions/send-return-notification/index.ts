@@ -2,14 +2,12 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-const ADMIN_EMAIL = "support@flexiknee.com";
+const ADMIN_EMAIL = "support@flexi-knee.com";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
 // Allowed origins for CORS
 const ALLOWED_ORIGINS = [
-  'https://flexiknee.com',
-  'https://www.flexiknee.com',
   'https://flexi-knee.com',
   'https://www.flexi-knee.com',
 ];
