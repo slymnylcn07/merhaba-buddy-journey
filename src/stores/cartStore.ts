@@ -3,6 +3,7 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 import { ShopifyProduct, createStorefrontCheckout } from '@/lib/shopify';
 import { trackAddToCart as trackShopifyAddToCart, trackCheckoutStarted, trackCartView } from '@/lib/shopify-analytics';
 import { trackAddToCart as trackGA4AddToCart, trackBeginCheckout as trackGA4BeginCheckout } from '@/hooks/use-google-analytics';
+import { trackAddToCart as trackMetaAddToCart, trackInitiateCheckout as trackMetaInitiateCheckout } from '@/hooks/use-meta-tracking';
 
 export interface CartItem {
   product: ShopifyProduct;
@@ -90,6 +91,15 @@ export const useCartStore = create<CartStore>()(
           currency: item.price.currencyCode,
           quantity: item.quantity,
         });
+
+        // Track add to cart event for Meta Pixel / CAPI
+        trackMetaAddToCart({
+          id: item.product.node.id,
+          name: item.product.node.title,
+          price: parseFloat(item.price.amount),
+          currency: item.price.currencyCode,
+          quantity: item.quantity,
+        });
       },
 
       updateQuantity: (variantId, quantity) => {
@@ -166,6 +176,14 @@ export const useCartStore = create<CartStore>()(
           currency: item.price.currencyCode,
           quantity: item.quantity,
         })));
+
+        // Track InitiateCheckout for Meta Pixel / CAPI
+        trackMetaInitiateCheckout({
+          contentIds: items.map(item => item.product.node.id),
+          value: totalAmount,
+          currency,
+          numItems: totalQuantity,
+        });
 
         setLoading(true);
         try {

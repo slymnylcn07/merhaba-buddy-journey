@@ -8,3 +8,6 @@ verify_jwt = false
 
 [functions.send-return-notification]
 verify_jwt = false
+
+[functions.meta-conversions-api]
+verify_jwt = false
