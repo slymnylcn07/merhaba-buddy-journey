@@ -2206,6 +2206,12 @@ const GuideArticle = () => {
                     "heat-vs-red-light-therapy": thumbHeatTherapy,
                     "who-benefits-from-knee-therapy-devices": thumbWhoBenefits,
                     "daily-knee-comfort-routine": thumbDailyRoutine,
+                    "pain-in-the-knee-causes-locations": thumbKneePainCauses,
+                    "back-of-knee-pain-explained": thumbBackKneePain,
+                    "side-knee-pain-comfort-guide": thumbSideKneePain,
+                    "running-knee-pain-guide": thumbRunningKneePain,
+                    "knee-arthritis-pain-guide": thumbKneeArthritis,
+                    "sharp-knee-pain-guide": thumbSharpKneePain,
                   };
                   return (
                     <RelatedGuideCard
