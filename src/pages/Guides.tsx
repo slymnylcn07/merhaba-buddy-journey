@@ -12,6 +12,9 @@ import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
 import thumbWhoBenefits from "@/assets/guide-thumb-who-benefits-branded.jpg";
 import thumbDailyRoutine from "@/assets/guide-thumb-daily-routine.jpg";
+import thumbKneePainCauses from "@/assets/guide-thumb-knee-pain-causes.jpg";
+import thumbBackKneePain from "@/assets/guide-thumb-back-knee-pain.jpg";
+import thumbSideKneePain from "@/assets/guide-thumb-side-knee-pain.jpg";
 
 const guides = [
   {
@@ -41,6 +44,27 @@ const guides = [
     description: "Practical tips for creating sustainable morning and evening habits that support long-term knee comfort.",
     thumbnail: thumbDailyRoutine,
     readTime: 7,
+  },
+  {
+    slug: "pain-in-the-knee-causes-locations",
+    title: "Pain in the Knee: Common Causes, Locations, and What Helps",
+    description: "Explore the most common knee pain causes, from sharp knee pain to pain when bending knee, and discover practical relief options for your knee joint.",
+    thumbnail: thumbKneePainCauses,
+    readTime: 12,
+  },
+  {
+    slug: "back-of-knee-pain-explained",
+    title: "Back of Knee Pain Explained: Causes, Symptoms, and Relief Options",
+    description: "Learn about behind knee pain including Baker's cyst, pain when straightening leg, and effective bakers cyst treatment options.",
+    thumbnail: thumbBackKneePain,
+    readTime: 11,
+  },
+  {
+    slug: "side-knee-pain-comfort-guide",
+    title: "Side Knee Pain: Why It Happens and How to Support Daily Comfort",
+    description: "Understand pain on the side of knee, whether inside or outside, left knee pain or right knee pain, plus knee cap pain relief strategies.",
+    thumbnail: thumbSideKneePain,
+    readTime: 10,
   },
 ];
 

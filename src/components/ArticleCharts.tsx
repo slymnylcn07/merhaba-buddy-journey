@@ -356,3 +356,316 @@ export const RelatedGuideCard = ({
     </div>
   </Link>
 );
+
+// NEW CHARTS FOR KNEE PAIN CAUSES ARTICLE
+export const KneePainLocationsChart = () => {
+  const data = [
+    { name: 'Front (Kneecap)', value: 35 },
+    { name: 'Back of Knee', value: 25 },
+    { name: 'Inner Side', value: 20 },
+    { name: 'Outer Side', value: 20 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Common Knee Pain Locations</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              outerRadius={80}
+              fill="#8884d8"
+              dataKey="value"
+              label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+            >
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Distribution of common pain locations in the knee joint</p>
+    </div>
+  );
+};
+
+export const KneePainCausesChart = () => {
+  const data = [
+    { cause: 'Overuse', percentage: 40 },
+    { cause: 'Age-Related', percentage: 28 },
+    { cause: 'Injury', percentage: 18 },
+    { cause: 'Poor Posture', percentage: 14 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Common Causes of Knee Pain</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} layout="vertical">
+            <XAxis type="number" domain={[0, 50]} />
+            <YAxis dataKey="cause" type="category" width={90} />
+            <Tooltip formatter={(value) => [`${value}%`, 'Percentage']} />
+            <Bar dataKey="percentage" fill="#ef4444" radius={[0, 4, 4, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Most common contributing factors to knee discomfort</p>
+    </div>
+  );
+};
+
+export const SharpPainTriggersChart = () => {
+  const data = [
+    { trigger: 'Bending', level: 85 },
+    { trigger: 'Stairs', level: 90 },
+    { trigger: 'Squatting', level: 95 },
+    { trigger: 'Kneeling', level: 88 },
+    { trigger: 'Running', level: 78 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Activities That Trigger Sharp Knee Pain</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} layout="vertical">
+            <XAxis type="number" domain={[0, 100]} />
+            <YAxis dataKey="trigger" type="category" width={80} />
+            <Tooltip formatter={(value) => [`${value}%`, 'Pain Level']} />
+            <Bar dataKey="level" fill="#f97316" radius={[0, 4, 4, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Pain intensity triggered by common activities</p>
+    </div>
+  );
+};
+
+// CHARTS FOR BACK OF KNEE PAIN ARTICLE
+export const BackOfKneeCausesChart = () => {
+  const data = [
+    { name: "Baker's Cyst", value: 30 },
+    { name: 'Hamstring Strain', value: 25 },
+    { name: 'Meniscus Issue', value: 20 },
+    { name: 'Arthritis', value: 15 },
+    { name: 'Muscle Tightness', value: 10 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Common Causes of Back of Knee Pain</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              outerRadius={80}
+              fill="#8884d8"
+              dataKey="value"
+              label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+            >
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Distribution of causes for pain behind the knee</p>
+    </div>
+  );
+};
+
+export const LegStraighteningPainChart = () => {
+  const data = [
+    { activity: 'Full Extension', pain: 85 },
+    { activity: 'Partial Extension', pain: 55 },
+    { activity: 'Bent Position', pain: 35 },
+    { activity: 'Walking', pain: 50 },
+    { activity: 'Sitting', pain: 25 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Pain Level When Straightening Leg</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} layout="vertical">
+            <XAxis type="number" domain={[0, 100]} />
+            <YAxis dataKey="activity" type="category" width={100} tick={{ fontSize: 11 }} />
+            <Tooltip formatter={(value) => [`${value}%`, 'Pain Intensity']} />
+            <Bar dataKey="pain" fill="#ef4444" radius={[0, 4, 4, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Pain when straightening leg varies by position</p>
+    </div>
+  );
+};
+
+export const BakersCystTreatmentChart = () => {
+  const data = [
+    { treatment: 'Rest & Ice', effectiveness: 70 },
+    { treatment: 'Compression', effectiveness: 65 },
+    { treatment: 'Heat Therapy', effectiveness: 75 },
+    { treatment: 'Gentle Stretch', effectiveness: 80 },
+    { treatment: 'Activity Mod.', effectiveness: 85 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">At-Home Relief Approaches</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data}>
+            <XAxis dataKey="treatment" tick={{ fontSize: 9 }} />
+            <YAxis domain={[0, 100]} />
+            <Tooltip formatter={(value) => [`${value}%`, 'Effectiveness']} />
+            <Bar dataKey="effectiveness" fill="#22c55e" radius={[4, 4, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Reported effectiveness of home-based relief methods</p>
+    </div>
+  );
+};
+
+// CHARTS FOR SIDE KNEE PAIN ARTICLE
+export const SideKneePainTypesChart = () => {
+  const data = [
+    { name: 'Lateral (Outer)', value: 45 },
+    { name: 'Medial (Inner)', value: 40 },
+    { name: 'Both Sides', value: 15 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Side Knee Pain Distribution</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              outerRadius={80}
+              fill="#8884d8"
+              dataKey="value"
+              label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+            >
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Where people experience side knee pain</p>
+    </div>
+  );
+};
+
+export const LeftVsRightKneePainChart = () => {
+  const data = [
+    { factor: 'Dominant Leg', left: 45, right: 55 },
+    { factor: 'Driving', left: 30, right: 70 },
+    { factor: 'Sports', left: 48, right: 52 },
+    { factor: 'Standing', left: 50, right: 50 },
+    { factor: 'Stairs', left: 47, right: 53 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Left vs Right Knee Pain by Activity</h3>
+      <div className="h-72">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} layout="vertical">
+            <XAxis type="number" domain={[0, 100]} />
+            <YAxis dataKey="factor" type="category" width={80} tick={{ fontSize: 11 }} />
+            <Tooltip />
+            <Bar dataKey="left" fill="#3b82f6" name="Left Knee" radius={[0, 4, 4, 0]} />
+            <Bar dataKey="right" fill="#8b5cf6" name="Right Knee" radius={[0, 4, 4, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="flex justify-center gap-6 mt-3">
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 rounded bg-blue-500"></div>
+          <span className="text-xs text-muted-foreground">Left Knee</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 rounded bg-purple-500"></div>
+          <span className="text-xs text-muted-foreground">Right Knee</span>
+        </div>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Which knee is more affected by different activities</p>
+    </div>
+  );
+};
+
+export const KneecapPainCausesChart = () => {
+  const data = [
+    { cause: 'Muscle Imbalance', percentage: 35 },
+    { cause: 'Overuse', percentage: 30 },
+    { cause: 'Alignment', percentage: 20 },
+    { cause: 'Tight IT Band', percentage: 15 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Common Causes of Kneecap Pain</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} layout="vertical">
+            <XAxis type="number" domain={[0, 50]} />
+            <YAxis dataKey="cause" type="category" width={100} tick={{ fontSize: 11 }} />
+            <Tooltip formatter={(value) => [`${value}%`, 'Percentage']} />
+            <Bar dataKey="percentage" fill="#f97316" radius={[0, 4, 4, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">What typically contributes to kneecap discomfort</p>
+    </div>
+  );
+};
+
+export const DailyComfortStrategiesChart = () => {
+  const data = [
+    { name: 'Stretching', value: 90, color: '#22c55e' },
+    { name: 'Heat/Cold', value: 85, color: '#3b82f6' },
+    { name: 'Rest Breaks', value: 80, color: '#f97316' },
+    { name: 'Posture Fix', value: 75, color: '#8b5cf6' },
+    { name: 'Footwear', value: 70, color: '#ef4444' },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Daily Comfort Strategies Effectiveness</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data}>
+            <XAxis dataKey="name" tick={{ fontSize: 10 }} />
+            <YAxis domain={[0, 100]} />
+            <Tooltip formatter={(value) => [`${value}%`, 'Effectiveness']} />
+            <Bar dataKey="value" radius={[4, 4, 0, 0]}>
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.color} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">How effective common daily strategies are for knee comfort</p>
+    </div>
+  );
+};
