@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
+import { Helmet } from "react-helmet";
 import { getProducts, ShopifyProduct, createStorefrontCheckout } from "@/lib/shopify";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -666,6 +667,28 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{product.node.title} | FlexiKnee™ Smart Knee Massager</title>
+        <meta name="description" content="FlexiKnee™ Smart Heated Knee Massager with Red Light Therapy. Targets inflammation, stiffness and mobility issues using heat, vibration and red-light technology." />
+        <link rel="canonical" href={`https://flexi-knee.com/product/${handle}`} />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="product" />
+        <meta property="og:url" content={`https://flexi-knee.com/product/${handle}`} />
+        <meta property="og:title" content={`${product.node.title} | FlexiKnee™`} />
+        <meta property="og:description" content="FlexiKnee™ Smart Heated Knee Massager with Red Light Therapy. Targets inflammation, stiffness and mobility issues." />
+        <meta property="og:image" content={images[0]?.node.url || "https://flexi-knee.com/images/og-image.jpg"} />
+        <meta property="og:site_name" content="FlexiKnee" />
+        <meta property="product:price:amount" content={currentBundle.priceEach.toFixed(2)} />
+        <meta property="product:price:currency" content={currency} />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@FlexiKnee" />
+        <meta name="twitter:title" content={`${product.node.title} | FlexiKnee™`} />
+        <meta name="twitter:description" content="FlexiKnee™ Smart Heated Knee Massager with Red Light Therapy for effective knee pain relief." />
+        <meta name="twitter:image" content={images[0]?.node.url || "https://flexi-knee.com/images/og-image.jpg"} />
+      </Helmet>
       {/* Scarcity Banner - Now at the very top */}
       <div className="bg-destructive text-destructive-foreground py-3 sticky top-0 z-50">
         <div className="container px-4 text-center">

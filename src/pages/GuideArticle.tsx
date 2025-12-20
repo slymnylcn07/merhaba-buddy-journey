@@ -2363,6 +2363,24 @@ const GuideArticle = () => {
         <title>{article.metaTitle}</title>
         <meta name="description" content={article.metaDescription} />
         <link rel="canonical" href={`https://flexi-knee.com/guides/${article.slug}`} />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://flexi-knee.com/guides/${article.slug}`} />
+        <meta property="og:title" content={article.metaTitle} />
+        <meta property="og:description" content={article.metaDescription} />
+        <meta property="og:image" content={article.heroImage} />
+        <meta property="og:site_name" content="FlexiKnee" />
+        <meta property="article:published_time" content={article.publishedDate || new Date().toISOString()} />
+        <meta property="article:author" content="FlexiKnee Health Team" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@FlexiKnee" />
+        <meta name="twitter:title" content={article.metaTitle} />
+        <meta name="twitter:description" content={article.metaDescription} />
+        <meta name="twitter:image" content={article.heroImage} />
+        
         <script type="application/ld+json">
           {JSON.stringify(articleJsonLd)}
         </script>
