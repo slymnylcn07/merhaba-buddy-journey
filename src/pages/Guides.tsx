@@ -13,8 +13,11 @@ import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
 import thumbWhoBenefits from "@/assets/guide-thumb-who-benefits-branded.jpg";
 import thumbDailyRoutine from "@/assets/guide-thumb-daily-routine.jpg";
 import thumbKneePainCauses from "@/assets/guide-thumb-knee-pain-causes.jpg";
-import thumbBackKneePain from "@/assets/guide-thumb-back-knee-pain.jpg";
+import thumbBackKneePain from "@/assets/guide-thumb-back-knee-pain-new.jpg";
 import thumbSideKneePain from "@/assets/guide-thumb-side-knee-pain.jpg";
+import thumbRunningKneePain from "@/assets/guide-thumb-running-knee-pain.jpg";
+import thumbKneeArthritis from "@/assets/guide-thumb-knee-arthritis.jpg";
+import thumbSharpKneePain from "@/assets/guide-thumb-sharp-knee-pain.jpg";
 
 const guides = [
   {
@@ -65,6 +68,27 @@ const guides = [
     description: "Understand pain on the side of knee, whether inside or outside, left knee pain or right knee pain, plus knee cap pain relief strategies.",
     thumbnail: thumbSideKneePain,
     readTime: 10,
+  },
+  {
+    slug: "running-knee-pain-guide",
+    title: "Running Knee Pain: Common Injuries, Triggers, and What Runners Can Do",
+    description: "Learn about running knee pain including patellar tendinitis, meniscus tear, ACL injury, and effective strategies for pain when bending knee.",
+    thumbnail: thumbRunningKneePain,
+    readTime: 14,
+  },
+  {
+    slug: "knee-arthritis-pain-guide",
+    title: "Knee Arthritis Pain: Understanding Joint Pain and Daily Support Options",
+    description: "Comprehensive guide to knee arthritis including arthritis knee pain management, knee pain exercises, knee support options, and when to consider knee replacement.",
+    thumbnail: thumbKneeArthritis,
+    readTime: 13,
+  },
+  {
+    slug: "sharp-knee-pain-guide",
+    title: "Sharp Knee Pain That Comes and Goes: What It Means and When to Act",
+    description: "Understand sharp stabbing pain in knee that comes and goes, pain when straightening leg, pain inside knee, and whether sciatica can cause knee pain.",
+    thumbnail: thumbSharpKneePain,
+    readTime: 12,
   },
 ];
 

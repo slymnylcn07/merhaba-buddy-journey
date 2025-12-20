@@ -278,21 +278,26 @@ export const StatHighlight = ({ stat, label, description }: { stat: string; labe
   </div>
 );
 
-export const TipsList = ({ tips }: { tips: string[] }) => (
-  <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
-    <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-      <span className="text-primary">✓</span> Quick Tips
-    </h3>
-    <ul className="space-y-2">
-      {tips.map((tip, index) => (
-        <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
-          <span className="text-primary mt-1">•</span>
-          <span>{tip}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+export const TipsList = ({ tips, title, items }: { tips?: string[]; title?: string; items?: string[] }) => {
+  const listItems = items || tips || [];
+  const displayTitle = title || "Quick Tips";
+  
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+        <span className="text-primary">✓</span> {displayTitle}
+      </h3>
+      <ul className="space-y-2">
+        {listItems.map((tip, index) => (
+          <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
+            <span className="text-primary mt-1">•</span>
+            <span>{tip}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 // Journal/Research Quote Component
 export const JournalQuote = ({ 
