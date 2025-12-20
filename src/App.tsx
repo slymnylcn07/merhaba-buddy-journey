@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import { useShopifyPageView } from "./hooks/use-shopify-analytics";
 import { useGoogleAnalytics } from "./hooks/use-google-analytics";
+import { useMetaTracking } from "./hooks/use-meta-tracking";
 
 // Lazy load non-critical routes for code splitting
 const ProductDetail = lazy(() => import("./pages/ProductDetail"));
@@ -35,6 +36,7 @@ const PageLoader = () => (
 const AnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
   useShopifyPageView();
   useGoogleAnalytics();
+  useMetaTracking();
   return <>{children}</>;
 };
 
