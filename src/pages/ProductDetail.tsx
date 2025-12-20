@@ -23,6 +23,7 @@ import {
   CurrencyCode 
 } from "@/lib/currency";
 import { trackProductView } from "@/lib/shopify-analytics";
+import { trackProductView as trackMetaProductView } from "@/hooks/use-meta-tracking";
 import productMain from "@/assets/product-main.jpg";
 import productHowItWorks from "@/assets/product-how-it-works.jpg";
 import DonationBanner from "@/components/DonationBanner";
@@ -192,6 +193,14 @@ const ProductDetail = () => {
         id: product.node.id,
         name: product.node.title,
         price: product.node.priceRange.minVariantPrice.amount,
+        currency: product.node.priceRange.minVariantPrice.currencyCode,
+      });
+
+      // Meta Pixel ViewContent tracking
+      trackMetaProductView({
+        id: product.node.id,
+        name: product.node.title,
+        price: parseFloat(product.node.priceRange.minVariantPrice.amount),
         currency: product.node.priceRange.minVariantPrice.currencyCode,
       });
     }
