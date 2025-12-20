@@ -669,3 +669,275 @@ export const DailyComfortStrategiesChart = () => {
     </div>
   );
 };
+
+// Article 8: Running Knee Pain
+export const RunningInjuryTypesChart = () => {
+  const data = [
+    { name: "Runner's Knee", value: 35 },
+    { name: 'Patellar Tendinitis', value: 25 },
+    { name: 'IT Band Syndrome', value: 20 },
+    { name: 'Meniscus Tear', value: 12 },
+    { name: 'ACL Injury', value: 8 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Common Running Knee Injuries Distribution</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              outerRadius={80}
+              fill="#8884d8"
+              dataKey="value"
+              label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+            >
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Percentage of knee injuries among runners</p>
+    </div>
+  );
+};
+
+export const PainWhenBendingChart = () => {
+  const data = [
+    { trigger: 'Squatting', severity: 90 },
+    { trigger: 'Stairs Down', severity: 85 },
+    { trigger: 'Lunges', severity: 80 },
+    { trigger: 'Kneeling', severity: 75 },
+    { trigger: 'Sitting Long', severity: 60 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Pain Severity When Bending Knee - Common Triggers</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} layout="vertical">
+            <XAxis type="number" domain={[0, 100]} />
+            <YAxis dataKey="trigger" type="category" width={90} tick={{ fontSize: 11 }} />
+            <Tooltip formatter={(value) => [`${value}%`, 'Pain Severity']} />
+            <Bar dataKey="severity" fill="#ef4444" radius={[0, 4, 4, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Activities that commonly trigger pain when bending the knee</p>
+    </div>
+  );
+};
+
+export const RunnerRecoveryChart = () => {
+  const data = [
+    { method: 'Rest + Ice', effectiveness: 75 },
+    { method: 'Physical Therapy', effectiveness: 90 },
+    { method: 'Strengthening', effectiveness: 85 },
+    { method: 'Knee Support', effectiveness: 70 },
+    { method: 'Form Correction', effectiveness: 88 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Recovery Methods Effectiveness for Runners</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data}>
+            <XAxis dataKey="method" tick={{ fontSize: 10 }} />
+            <YAxis domain={[0, 100]} />
+            <Tooltip formatter={(value) => [`${value}%`, 'Effectiveness']} />
+            <Bar dataKey="effectiveness" fill="#22c55e" radius={[4, 4, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">How effective various recovery methods are for running knee pain</p>
+    </div>
+  );
+};
+
+// Article 9: Knee Arthritis Pain
+export const ArthritisTypesChart = () => {
+  const data = [
+    { name: 'Osteoarthritis', value: 65 },
+    { name: 'Rheumatoid', value: 15 },
+    { name: 'Post-traumatic', value: 12 },
+    { name: 'Other Types', value: 8 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Types of Knee Arthritis Distribution</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              outerRadius={80}
+              fill="#8884d8"
+              dataKey="value"
+              label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+            >
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Osteoarthritis is the most common form affecting the knee joint</p>
+    </div>
+  );
+};
+
+export const ArthritisExerciseBenefitsChart = () => {
+  const data = [
+    { exercise: 'Swimming', benefit: 95 },
+    { exercise: 'Walking', benefit: 85 },
+    { exercise: 'Cycling', benefit: 88 },
+    { exercise: 'Yoga', benefit: 80 },
+    { exercise: 'Strength', benefit: 82 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Knee Pain Exercises Effectiveness for Arthritis</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} layout="vertical">
+            <XAxis type="number" domain={[0, 100]} />
+            <YAxis dataKey="exercise" type="category" width={80} tick={{ fontSize: 11 }} />
+            <Tooltip formatter={(value) => [`${value}%`, 'Benefit Level']} />
+            <Bar dataKey="benefit" fill="#3b82f6" radius={[0, 4, 4, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Low-impact exercises provide the best support for arthritis knee pain</p>
+    </div>
+  );
+};
+
+export const KneeReplacementFactorsChart = () => {
+  const data = [
+    { factor: 'Severe Pain', importance: 95 },
+    { factor: 'Limited Mobility', importance: 90 },
+    { factor: 'Failed Treatment', importance: 85 },
+    { factor: 'Quality of Life', importance: 88 },
+    { factor: 'Age/Health', importance: 70 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Factors Considered for Knee Replacement</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data}>
+            <XAxis dataKey="factor" tick={{ fontSize: 9 }} />
+            <YAxis domain={[0, 100]} />
+            <Tooltip formatter={(value) => [`${value}%`, 'Importance']} />
+            <Bar dataKey="importance" fill="#f97316" radius={[4, 4, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Key factors healthcare providers consider for knee replacement decisions</p>
+    </div>
+  );
+};
+
+// Article 10: Sharp Knee Pain
+export const SharpPainPatternsChart = () => {
+  const data = [
+    { name: 'Intermittent', value: 40 },
+    { name: 'Activity-Related', value: 30 },
+    { name: 'Weight-Bearing', value: 20 },
+    { name: 'Random Onset', value: 10 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Sharp Stabbing Pain Patterns - When It Comes and Goes</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              outerRadius={80}
+              fill="#8884d8"
+              dataKey="value"
+              label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+            >
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Common patterns when sharp stabbing pain in knee comes and goes</p>
+    </div>
+  );
+};
+
+export const SciaticaKneePainChart = () => {
+  const data = [
+    { condition: 'Sciatica Related', percentage: 25 },
+    { condition: 'Local Knee Issue', percentage: 55 },
+    { condition: 'Combined Factors', percentage: 15 },
+    { condition: 'Other Referred', percentage: 5 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Can Sciatica Cause Knee Pain? Pain Source Analysis</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} layout="vertical">
+            <XAxis type="number" domain={[0, 60]} />
+            <YAxis dataKey="condition" type="category" width={100} tick={{ fontSize: 10 }} />
+            <Tooltip formatter={(value) => [`${value}%`, 'Percentage']} />
+            <Bar dataKey="percentage" fill="#8b5cf6" radius={[0, 4, 4, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Understanding whether sciatica can cause knee pain and how often</p>
+    </div>
+  );
+};
+
+export const KneePainBelowKneecapChart = () => {
+  const data = [
+    { location: 'Below Kneecap', cases: 35 },
+    { location: 'Inside Knee', cases: 28 },
+    { location: 'Front of Knee', cases: 22 },
+    { location: 'Around Kneecap', cases: 15 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Knee Pain Location Distribution - Below Kneecap Focus</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data}>
+            <XAxis dataKey="location" tick={{ fontSize: 10 }} />
+            <YAxis domain={[0, 40]} />
+            <Tooltip formatter={(value) => [`${value}%`, 'Cases']} />
+            <Bar dataKey="cases" fill="#ef4444" radius={[4, 4, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Where sharp pain is most commonly felt around the knee</p>
+    </div>
+  );
+};
