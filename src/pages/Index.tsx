@@ -29,8 +29,8 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "FlexiKnee",
-  "url": "https://flexiknee.com",
-  "logo": "https://flexiknee.com/logo.png",
+  "url": "https://flexi-knee.com",
+  "logo": "https://flexi-knee.com/logo.png",
   "description": "FlexiKnee offers innovative smart knee massagers combining heat therapy, vibration massage, and red-light technology for knee pain relief.",
   "sameAs": [
     "https://facebook.com/flexiknee",
@@ -40,7 +40,7 @@ const organizationJsonLd = {
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer service",
-    "email": "support@flexiknee.com"
+    "email": "support@flexi-knee.com"
   }
 };
 
@@ -48,11 +48,11 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "FlexiKnee",
-  "url": "https://flexiknee.com",
+  "url": "https://flexi-knee.com",
   "description": "Smart knee massagers with heat therapy, vibration, and red-light technology for effective knee pain relief.",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://flexiknee.com/search?q={search_term_string}",
+    "target": "https://flexi-knee.com/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 };
@@ -140,7 +140,7 @@ export default function Index() {
       <Helmet>
         <title>FlexiKnee™ | Smart Heated Knee Massager with Red Light Therapy</title>
         <meta name="description" content="FlexiKnee™ targets inflammation, stiffness and mobility issues using heat, vibration and red-light technology — all in one smart device." />
-        <link rel="canonical" href="https://flexiknee.com" />
+        <link rel="canonical" href="https://flexi-knee.com" />
         <script type="application/ld+json">
           {JSON.stringify(organizationJsonLd)}
         </script>
