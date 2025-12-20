@@ -1,8 +1,8 @@
 # FlexiKnee Robots.txt
-# https://flexiknee.com
+# https://flexi-knee.com
 
 # Sitemap location
-Sitemap: https://flexiknee.com/sitemap.xml
+Sitemap: https://flexi-knee.com/sitemap.xml
 
 # Allow all major search engine crawlers
 User-agent: Googlebot
