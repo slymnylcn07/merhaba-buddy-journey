@@ -24,7 +24,7 @@ function sitemapPlugin(): Plugin {
 }
 
 function generateSitemap() {
-  const SITE_URL = "https://flexiknee.com";
+  const SITE_URL = "https://flexi-knee.com";
   const today = new Date().toISOString().split("T")[0];
 
   // Read guides data dynamically

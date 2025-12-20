@@ -2296,25 +2296,25 @@ const GuideArticle = () => {
     "@type": "Article",
     "headline": article.title,
     "description": article.metaDescription,
-    "image": `https://flexiknee.com${article.heroImage}`,
+    "image": `https://flexi-knee.com${article.heroImage}`,
     "datePublished": getISODate(article.publishedDate),
     "dateModified": getISODate(article.publishedDate),
     "author": {
       "@type": "Organization",
       "name": "FlexiKnee",
-      "url": "https://flexiknee.com"
+      "url": "https://flexi-knee.com"
     },
     "publisher": {
       "@type": "Organization",
       "name": "FlexiKnee",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://flexiknee.com/logo.png"
+        "url": "https://flexi-knee.com/logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://flexiknee.com/guides/${article.slug}`
+      "@id": `https://flexi-knee.com/guides/${article.slug}`
     }
   };
 
@@ -2326,19 +2326,19 @@ const GuideArticle = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://flexiknee.com"
+        "item": "https://flexi-knee.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Guides",
-        "item": "https://flexiknee.com/guides"
+        "item": "https://flexi-knee.com/guides"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": article.title,
-        "item": `https://flexiknee.com/guides/${article.slug}`
+        "item": `https://flexi-knee.com/guides/${article.slug}`
       }
     ]
   };
@@ -2362,7 +2362,7 @@ const GuideArticle = () => {
       <Helmet>
         <title>{article.metaTitle}</title>
         <meta name="description" content={article.metaDescription} />
-        <link rel="canonical" href={`https://flexiknee.com/guides/${article.slug}`} />
+        <link rel="canonical" href={`https://flexi-knee.com/guides/${article.slug}`} />
         <script type="application/ld+json">
           {JSON.stringify(articleJsonLd)}
         </script>
