@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ExternalLink } from "lucide-react";
@@ -128,6 +129,25 @@ const TrackOrder = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Track Your Order | FlexiKnee™</title>
+        <meta name="description" content="Track your FlexiKnee order shipment. Enter your order details to see real-time delivery updates and tracking information." />
+        <link rel="canonical" href="https://flexi-knee.com/track-order" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://flexi-knee.com/track-order" />
+        <meta property="og:title" content="Track Your Order | FlexiKnee™" />
+        <meta property="og:description" content="Track your FlexiKnee order shipment with real-time delivery updates." />
+        <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
+        <meta property="og:site_name" content="FlexiKnee" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@FlexiKnee" />
+        <meta name="twitter:title" content="Track Your Order | FlexiKnee™" />
+      </Helmet>
+      
       <Header />
       
       <main className="flex-1 container mx-auto px-4 py-8 md:py-12">

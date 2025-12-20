@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -140,6 +141,27 @@ const WhyFlexiKnee = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Why FlexiKnee | Smarter Knee Relief Designed for Real Life</title>
+        <meta name="description" content="Discover what makes FlexiKnee different — a premium knee therapy device combining comfort-focused design with targeted heat and light support for at-home relief." />
+        <link rel="canonical" href="https://flexi-knee.com/why-flexiknee" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://flexi-knee.com/why-flexiknee" />
+        <meta property="og:title" content="Why FlexiKnee | Smarter Knee Relief Designed for Real Life" />
+        <meta property="og:description" content="Discover what makes FlexiKnee different — a premium knee therapy device combining comfort-focused design with targeted heat and light support for at-home relief." />
+        <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
+        <meta property="og:site_name" content="FlexiKnee" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@FlexiKnee" />
+        <meta name="twitter:title" content="Why FlexiKnee | Smarter Knee Relief Designed for Real Life" />
+        <meta name="twitter:description" content="Discover what makes FlexiKnee different — a premium knee therapy device for at-home relief." />
+        <meta name="twitter:image" content="https://flexi-knee.com/images/og-image.jpg" />
+      </Helmet>
+      
       <Header />
       
       {/* Hero Section */}

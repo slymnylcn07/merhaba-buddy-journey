@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
@@ -6,6 +7,26 @@ import { ArrowLeft } from "lucide-react";
 export default function RefundPolicy() {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Return Policy | FlexiKnee™</title>
+        <meta name="description" content="FlexiKnee offers a 30-day return policy. Learn about our return process, eligibility requirements, and how to start a return." />
+        <link rel="canonical" href="https://flexi-knee.com/refund-policy" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://flexi-knee.com/refund-policy" />
+        <meta property="og:title" content="Return Policy | FlexiKnee™" />
+        <meta property="og:description" content="FlexiKnee offers a 30-day return policy. Learn about our return process and eligibility requirements." />
+        <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
+        <meta property="og:site_name" content="FlexiKnee" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@FlexiKnee" />
+        <meta name="twitter:title" content="Return Policy | FlexiKnee™" />
+        <meta name="twitter:description" content="FlexiKnee offers a 30-day return policy." />
+      </Helmet>
+      
       <Header />
       <div className="container px-4 py-12 max-w-4xl mx-auto">
         <Link 

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
@@ -6,6 +7,26 @@ import { ArrowLeft } from "lucide-react";
 export default function ShippingPolicy() {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Shipping Policy | FlexiKnee™</title>
+        <meta name="description" content="FlexiKnee provides fast, reliable tracked delivery. Learn about our shipping regions, delivery times, and tracking options." />
+        <link rel="canonical" href="https://flexi-knee.com/shipping-policy" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://flexi-knee.com/shipping-policy" />
+        <meta property="og:title" content="Shipping Policy | FlexiKnee™" />
+        <meta property="og:description" content="FlexiKnee provides fast, reliable tracked delivery worldwide." />
+        <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
+        <meta property="og:site_name" content="FlexiKnee" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@FlexiKnee" />
+        <meta name="twitter:title" content="Shipping Policy | FlexiKnee™" />
+        <meta name="twitter:description" content="FlexiKnee provides fast, reliable tracked delivery worldwide." />
+      </Helmet>
+      
       <Header />
       <div className="container px-4 py-12 max-w-4xl mx-auto">
         <Link 

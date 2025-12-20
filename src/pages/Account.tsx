@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -140,6 +141,25 @@ const Account = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <Helmet>
+        <title>My Account | FlexiKnee™</title>
+        <meta name="description" content="Manage your FlexiKnee orders, track shipments, and submit return requests from your personal dashboard." />
+        <link rel="canonical" href="https://flexi-knee.com/account" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://flexi-knee.com/account" />
+        <meta property="og:title" content="My Account | FlexiKnee™" />
+        <meta property="og:description" content="Manage your FlexiKnee orders and track shipments." />
+        <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
+        <meta property="og:site_name" content="FlexiKnee" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@FlexiKnee" />
+        <meta name="twitter:title" content="My Account | FlexiKnee™" />
+      </Helmet>
+      
       <Header />
 
       <main className="flex-1 container mx-auto px-4 py-12">

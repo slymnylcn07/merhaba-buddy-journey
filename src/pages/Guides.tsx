@@ -91,6 +91,22 @@ const Guides = () => {
           content="Explore simple, easy-to-understand guides about knee discomfort, heat and red light therapy, and at-home solutions designed to support everyday knee comfort." 
         />
         <link rel="canonical" href="https://flexi-knee.com/guides" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://flexi-knee.com/guides" />
+        <meta property="og:title" content="Knee Pain Relief Guides | Everyday Knee Comfort & At-Home Support" />
+        <meta property="og:description" content="Explore simple, easy-to-understand guides about knee discomfort, heat and red light therapy, and at-home solutions designed to support everyday knee comfort." />
+        <meta property="og:image" content="https://flexi-knee.com/images/guides-og-image.jpg" />
+        <meta property="og:site_name" content="FlexiKnee" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@FlexiKnee" />
+        <meta name="twitter:title" content="Knee Pain Relief Guides | Everyday Knee Comfort & At-Home Support" />
+        <meta name="twitter:description" content="Explore simple, easy-to-understand guides about knee discomfort, heat and red light therapy, and at-home solutions designed to support everyday knee comfort." />
+        <meta name="twitter:image" content="https://flexi-knee.com/images/guides-og-image.jpg" />
+        
         <script type="application/ld+json">
           {JSON.stringify(itemListJsonLd)}
         </script>

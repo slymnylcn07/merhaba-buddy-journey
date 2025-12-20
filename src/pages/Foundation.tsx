@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Heart, Globe, Sparkles, MessageCircle, Users } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -6,6 +7,27 @@ import foundationBg from "@/assets/foundation-bg.jpg";
 const Foundation = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>FlexiKnee Foundation | Supporting Mobility & Joint Health</title>
+        <meta name="description" content="The FlexiKnee Foundation supports joint health, mobility awareness, and pain research initiatives. A portion of every order contributes to helping people move again." />
+        <link rel="canonical" href="https://flexi-knee.com/foundation" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://flexi-knee.com/foundation" />
+        <meta property="og:title" content="FlexiKnee Foundation | Supporting Mobility & Joint Health" />
+        <meta property="og:description" content="The FlexiKnee Foundation supports joint health, mobility awareness, and pain research initiatives. A portion of every order contributes to helping people move again." />
+        <meta property="og:image" content="https://flexi-knee.com/images/foundation-og-image.jpg" />
+        <meta property="og:site_name" content="FlexiKnee" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@FlexiKnee" />
+        <meta name="twitter:title" content="FlexiKnee Foundation | Supporting Mobility & Joint Health" />
+        <meta name="twitter:description" content="The FlexiKnee Foundation supports joint health, mobility awareness, and pain research initiatives." />
+        <meta name="twitter:image" content="https://flexi-knee.com/images/foundation-og-image.jpg" />
+      </Helmet>
+      
       <Header />
       
       {/* Hero Section */}

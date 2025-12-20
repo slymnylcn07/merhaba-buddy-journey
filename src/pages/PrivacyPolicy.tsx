@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
@@ -6,6 +7,26 @@ import { ArrowLeft } from "lucide-react";
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Privacy Policy | FlexiKnee™</title>
+        <meta name="description" content="Read FlexiKnee's Privacy Policy to understand how we collect, use, and protect your personal information when you use our services." />
+        <link rel="canonical" href="https://flexi-knee.com/privacy-policy" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://flexi-knee.com/privacy-policy" />
+        <meta property="og:title" content="Privacy Policy | FlexiKnee™" />
+        <meta property="og:description" content="Read FlexiKnee's Privacy Policy to understand how we collect, use, and protect your personal information." />
+        <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
+        <meta property="og:site_name" content="FlexiKnee" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@FlexiKnee" />
+        <meta name="twitter:title" content="Privacy Policy | FlexiKnee™" />
+        <meta name="twitter:description" content="Read FlexiKnee's Privacy Policy." />
+      </Helmet>
+      
       <Header />
       <div className="container px-4 py-12 max-w-4xl mx-auto">
         <Link 
