@@ -79,6 +79,11 @@ import sectionRunnerForm from "@/assets/article-section-runner-form.jpg";
 import sectionArthritisExercise from "@/assets/article-section-arthritis-exercise.jpg";
 import sectionStretchingRelief from "@/assets/article-section-stretching-relief.jpg";
 
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 interface ArticleData {
   slug: string;
   title: string;
@@ -91,6 +96,7 @@ interface ArticleData {
   content: React.ReactNode;
   nextSlug?: string;
   nextTitle?: string;
+  faqs?: FAQItem[];
 }
 
 const articles: Record<string, ArticleData> = {
@@ -233,6 +239,28 @@ const articles: Record<string, ArticleData> = {
         </div>
       </>
     ),
+    faqs: [
+      {
+        question: "Why doesn't my knee pain go away with rest?",
+        answer: "Rest alone often isn't enough because knee discomfort typically involves multiple factors including joint stiffness, reduced flexibility, and weakened muscles. While rest is important, complete inactivity can make stiffness worse by reducing joint lubrication and muscle strength."
+      },
+      {
+        question: "How long does it take for knee pain to improve?",
+        answer: "Improvement timeline varies depending on the cause. Chronic, low-grade knee discomfort often responds better to consistent daily care over weeks or months rather than occasional intensive treatments. Building sustainable daily habits typically yields the best long-term results."
+      },
+      {
+        question: "What daily habits help with knee comfort?",
+        answer: "Helpful habits include taking regular breaks from sitting, incorporating gentle morning stretches, applying warmth before activities, staying hydrated to support joint lubrication, and keeping your knees moving through their full range of motion daily."
+      },
+      {
+        question: "Should I use heat or cold for knee stiffness?",
+        answer: "For general stiffness, warmth is often more beneficial as it helps relax muscles and increase blood flow. Cold is typically better for reducing swelling after activity or acute injury. Many people find alternating between heat and cold helpful."
+      },
+      {
+        question: "When should I see a doctor for knee pain?",
+        answer: "Seek professional evaluation if you experience significant swelling, inability to bear weight, locking or giving way of the knee, fever with joint pain, or if your discomfort doesn't improve with consistent home care over several weeks."
+      }
+    ],
   },
   "heat-vs-red-light-therapy": {
     slug: "heat-vs-red-light-therapy",
@@ -369,6 +397,28 @@ const articles: Record<string, ArticleData> = {
         </div>
       </>
     ),
+    faqs: [
+      {
+        question: "Is heat therapy or red light therapy better for knee pain?",
+        answer: "Both can be effective for different purposes. Heat therapy provides immediate relief by relaxing muscles and increasing blood flow. Red light therapy works at a cellular level to support tissue health. Many people find combining both approaches offers the best results."
+      },
+      {
+        question: "How often should I use heat therapy on my knees?",
+        answer: "Heat therapy can generally be used daily or even multiple times per day. Sessions of 15-20 minutes are typically recommended. Avoid falling asleep with heating devices and never apply heat to acute injuries or inflamed areas."
+      },
+      {
+        question: "Does red light therapy actually work for knee pain?",
+        answer: "Research suggests red light therapy can support cellular energy production and may help with tissue repair processes. Many users report gradual improvements with consistent use over weeks, though results vary between individuals."
+      },
+      {
+        question: "Can I use heat therapy and red light therapy together?",
+        answer: "Yes, many therapy devices now combine both modalities. Using them together can provide both the immediate soothing benefits of heat and the cellular-level support of red light therapy."
+      },
+      {
+        question: "How long before I see results from red light therapy?",
+        answer: "Red light therapy typically requires consistent use over several weeks to see noticeable benefits. Most studies showing positive results involve regular sessions over 2-8 weeks, with continued use for maintenance."
+      }
+    ],
   },
   "who-benefits-from-knee-therapy-devices": {
     slug: "who-benefits-from-knee-therapy-devices",
@@ -521,6 +571,28 @@ const articles: Record<string, ArticleData> = {
         </div>
       </>
     ),
+    faqs: [
+      {
+        question: "Who benefits most from at-home knee therapy devices?",
+        answer: "Those who typically benefit most include people over 40 with everyday knee stiffness, individuals who stand or walk a lot for work, anyone experiencing age-related joint stiffness, and active people dealing with activity-related knee fatigue."
+      },
+      {
+        question: "Are at-home knee therapy devices effective?",
+        answer: "For appropriate users with everyday knee discomfort, these devices can be effective as part of a comprehensive approach that includes gentle movement and good daily habits. They work best for general stiffness rather than acute injuries or structural issues."
+      },
+      {
+        question: "How long should I use a knee therapy device each day?",
+        answer: "Most devices recommend 15-20 minute sessions, and can be used once or twice daily. Consistency matters more than duration—regular daily use typically yields better results than occasional longer sessions."
+      },
+      {
+        question: "Can knee therapy devices replace physical therapy?",
+        answer: "These devices complement but don't replace professional care. They're designed for everyday comfort support, while physical therapy addresses underlying biomechanical issues, provides tailored exercises, and offers professional diagnosis."
+      },
+      {
+        question: "What should I expect from an at-home knee therapy device?",
+        answer: "Realistic expectations include temporary relief from stiffness, support for daily comfort, and being one component of a broader self-care routine. They won't cure underlying conditions, replace professional treatment, or provide instant permanent relief."
+      }
+    ],
   },
   "daily-knee-comfort-routine": {
     slug: "daily-knee-comfort-routine",
@@ -716,6 +788,28 @@ const articles: Record<string, ArticleData> = {
         </div>
       </>
     ),
+    faqs: [
+      {
+        question: "What is the best morning routine for knee comfort?",
+        answer: "An effective morning routine includes ankle circles while still in bed, gentle knee bends, leg extensions to warm up the joint, hamstring stretches, and applying warmth to stiff knees before starting your day."
+      },
+      {
+        question: "How often should I take movement breaks for my knees?",
+        answer: "Aim for a 2-minute movement break every 30 minutes of sitting. Stand up, shift weight, do mini squats, or walk a few steps. These brief breaks help maintain joint lubrication and prevent stiffness buildup."
+      },
+      {
+        question: "What should I do for my knees before bed?",
+        answer: "An evening routine might include a warmth session with a heating pad or therapy device, gentle stretches to release tension from the day, elevating your legs briefly, and staying hydrated before sleep."
+      },
+      {
+        question: "How long does it take to build a knee comfort routine?",
+        answer: "Start with just one or two elements rather than trying to implement everything at once. Most people find that after 2-3 weeks of consistent practice, the basic routine becomes automatic. Add more elements gradually."
+      },
+      {
+        question: "What exercises help with daily knee comfort?",
+        answer: "Effective exercises include gentle knee bends, leg extensions, ankle circles, hamstring stretches, and low-impact activities like swimming or cycling. Focus on gentle, consistent movement rather than intense workouts."
+      }
+    ],
   },
   "pain-in-the-knee-causes-locations": {
     slug: "pain-in-the-knee-causes-locations",
@@ -938,6 +1032,28 @@ const articles: Record<string, ArticleData> = {
         </div>
       </>
     ),
+    faqs: [
+      {
+        question: "What are the most common causes of knee pain?",
+        answer: "Common causes include age-related changes, overuse from repetitive activities, previous injuries, excess weight placing stress on joints, muscle weakness or imbalance, and conditions like osteoarthritis or tendinitis."
+      },
+      {
+        question: "Where is my knee pain located and what does it mean?",
+        answer: "Front knee pain often relates to the kneecap or patellar tendon. Inner pain may involve the medial meniscus or MCL. Outer pain might be IT band syndrome. Back-of-knee pain can involve Baker's cyst or hamstring issues. Location helps identify the cause."
+      },
+      {
+        question: "Is walking good for knee pain?",
+        answer: "Gentle walking on flat surfaces is usually beneficial for knee pain as it helps maintain joint lubrication and muscle strength without excessive stress. Start slowly and listen to your body's signals."
+      },
+      {
+        question: "Should I use heat or ice for knee pain?",
+        answer: "Heat works well for chronic stiffness and muscle tension, improving blood flow. Ice is better for acute injuries and reducing swelling. Many people benefit from alternating between the two depending on their symptoms."
+      },
+      {
+        question: "When should I see a doctor for knee pain?",
+        answer: "See a doctor if you have significant swelling, can't bear weight, notice the knee locking or giving way, have fever with joint pain, or if pain persists despite consistent home care for several weeks."
+      }
+    ],
   },
   "back-of-knee-pain-explained": {
     slug: "back-of-knee-pain-explained",
@@ -1158,6 +1274,28 @@ const articles: Record<string, ArticleData> = {
         </div>
       </>
     ),
+    faqs: [
+      {
+        question: "What causes pain in the back of the knee?",
+        answer: "Common causes include Baker's cyst (fluid-filled swelling), hamstring issues, calf muscle problems, popliteal artery issues, and referred pain from other areas. The specific cause depends on how and when the pain occurs."
+      },
+      {
+        question: "What is a Baker's cyst and how is it treated?",
+        answer: "A Baker's cyst is a fluid-filled swelling behind the knee, usually resulting from excess fluid in the joint. Treatment focuses on managing the underlying cause, rest, compression, and sometimes aspiration or corticosteroid injection."
+      },
+      {
+        question: "Why does the back of my knee hurt when I straighten my leg?",
+        answer: "Pain when straightening may indicate tight hamstrings, Baker's cyst compression, popliteus muscle issues, or problems with the posterior knee structures. The sensation of tightness or pulling often relates to soft tissue tension."
+      },
+      {
+        question: "Is walking good for back of knee pain?",
+        answer: "Gentle walking is usually beneficial as it promotes blood flow and prevents stiffness. However, if pain worsens with walking, reduce the distance or intensity and consult a healthcare provider if it persists."
+      },
+      {
+        question: "When should I worry about pain behind my knee?",
+        answer: "Seek immediate attention if you have sudden severe pain, significant swelling, warmth or redness, calf swelling (possible blood clot), numbness, or inability to bear weight. These may indicate serious conditions."
+      }
+    ],
   },
   "side-knee-pain-comfort-guide": {
     slug: "side-knee-pain-comfort-guide",
@@ -1395,6 +1533,28 @@ const articles: Record<string, ArticleData> = {
         </div>
       </>
     ),
+    faqs: [
+      {
+        question: "What causes pain on the side of the knee?",
+        answer: "Inner (medial) side pain often relates to the MCL, medial meniscus, or pes anserine tendons. Outer (lateral) side pain commonly involves IT band syndrome, LCL strain, or lateral meniscus issues. The specific cause depends on activities and how the pain presents."
+      },
+      {
+        question: "What is IT band syndrome?",
+        answer: "IT band syndrome occurs when the iliotibial band (tissue running from hip to shin) becomes tight or irritated, causing pain on the outer side of the knee. It's common in runners and cyclists and typically worsens with repetitive bending and straightening."
+      },
+      {
+        question: "Why does the inside of my knee hurt?",
+        answer: "Pain inside the knee may come from the medial meniscus, MCL, or pes anserine tendons. Activities involving twisting or pivoting can irritate these structures. Inner knee pain is common in runners and those who do a lot of stair climbing."
+      },
+      {
+        question: "How do I treat side knee pain at home?",
+        answer: "Home treatment includes rest from aggravating activities, ice for inflammation, stretching (especially IT band and hip flexors), strengthening exercises for hip and thigh muscles, and wearing appropriate footwear. Foam rolling can help with IT band tightness."
+      },
+      {
+        question: "When should I see a doctor for side knee pain?",
+        answer: "See a doctor if pain is severe, you have significant swelling, the knee feels unstable or buckles, you experience locking or catching, or if self-care hasn't helped after several weeks of consistent effort."
+      }
+    ],
   },
   "running-knee-pain-guide": {
     slug: "running-knee-pain-guide",
@@ -1601,6 +1761,28 @@ const articles: Record<string, ArticleData> = {
         </div>
       </>
     ),
+    faqs: [
+      {
+        question: "Why does my knee hurt when I run?",
+        answer: "Running knee pain commonly results from patellofemoral syndrome (runner's knee), IT band syndrome, patellar tendinitis, or meniscus issues. Overtraining, improper footwear, muscle imbalances, and poor running form are frequent contributing factors."
+      },
+      {
+        question: "What is patellar tendinitis and how do I treat it?",
+        answer: "Patellar tendinitis (jumper's knee) is inflammation of the tendon connecting kneecap to shinbone. Treatment includes rest, ice, eccentric strengthening exercises, patellar straps for support, and gradual return to activity. Most cases improve with conservative care."
+      },
+      {
+        question: "How do I know if I have a meniscus tear from running?",
+        answer: "Meniscus tears typically cause pain along the joint line, swelling, catching or locking sensations, and difficulty fully straightening the knee. Pain often worsens with twisting movements or deep squatting. An MRI can confirm the diagnosis."
+      },
+      {
+        question: "When can I return to running after a knee injury?",
+        answer: "Return to running when you can walk pain-free, have regained full range of motion and strength, and can perform single-leg exercises without pain. Start with a gradual run/walk program and increase slowly. Consult a healthcare provider for specific guidance."
+      },
+      {
+        question: "How can I prevent running knee pain?",
+        answer: "Prevention includes proper warm-up, gradual training progression (10% rule), appropriate footwear, cross-training, strength training for legs and core, adequate rest between hard efforts, and addressing any biomechanical issues with gait analysis."
+      }
+    ],
   },
   "knee-arthritis-pain-guide": {
     slug: "knee-arthritis-pain-guide",
@@ -1815,6 +1997,28 @@ const articles: Record<string, ArticleData> = {
         </div>
       </>
     ),
+    faqs: [
+      {
+        question: "What are the symptoms of knee arthritis?",
+        answer: "Common symptoms include joint pain that worsens with activity, morning stiffness lasting less than 30 minutes, swelling, creaking or grinding sensations (crepitus), reduced range of motion, and difficulty with stairs, squatting, or prolonged walking."
+      },
+      {
+        question: "What exercises help with knee arthritis?",
+        answer: "Beneficial exercises include low-impact activities like swimming, cycling, and water aerobics; strengthening exercises for quadriceps, hamstrings, and hips; gentle range-of-motion exercises; and balance training. Always start slowly and progress gradually."
+      },
+      {
+        question: "What is the best knee support for arthritis pain?",
+        answer: "Options include unloader braces that shift weight from affected areas, compression sleeves for mild support and warmth, hinged braces for stability, and patellar stabilizers. The best choice depends on your specific symptoms and arthritis location."
+      },
+      {
+        question: "When should I consider knee replacement?",
+        answer: "Knee replacement may be considered when conservative treatments no longer control pain, arthritis significantly limits daily activities, pain affects sleep, or imaging shows severe joint damage. It's typically a last resort after other options fail."
+      },
+      {
+        question: "Can knee arthritis be reversed?",
+        answer: "Cartilage damage cannot be reversed, but symptoms can be effectively managed. Weight loss, exercise, appropriate support, and medical treatments can significantly reduce pain and improve function. Early intervention helps slow progression."
+      }
+    ],
   },
   "sharp-knee-pain-guide": {
     slug: "sharp-knee-pain-guide",
@@ -2047,6 +2251,28 @@ const articles: Record<string, ArticleData> = {
         </div>
       </>
     ),
+    faqs: [
+      {
+        question: "Why do I have sharp knee pain that comes and goes?",
+        answer: "Intermittent sharp knee pain often results from mechanical issues like loose bodies, meniscus tears, plica syndrome, or patellar tracking problems. The pain appears when irritated structures are compressed or caught during movement, then resolves when they're free."
+      },
+      {
+        question: "What causes sharp pain when straightening the knee?",
+        answer: "Pain when straightening can indicate plica syndrome, patellar tracking issues, meniscus tears, loose bodies, or patellofemoral problems. The specific movement stretches or compresses the affected structure, triggering the sharp sensation."
+      },
+      {
+        question: "Can sciatica cause knee pain?",
+        answer: "Yes, sciatica can cause referred pain to the knee. When the L3 or L4 nerve roots are affected, pain may radiate to the front of the knee. If knee pain comes with back or hip symptoms, sciatica should be considered as a possible cause."
+      },
+      {
+        question: "What does sharp pain below the kneecap mean?",
+        answer: "Sharp pain below the kneecap often indicates patellar tendinitis, fat pad impingement, or issues with the patellar ligament. Pain that worsens with jumping, running, or climbing stairs is particularly suggestive of tendon involvement."
+      },
+      {
+        question: "When should I see a doctor for sharp knee pain?",
+        answer: "See a doctor if pain is severe, associated with significant swelling, causes locking or giving way, prevents weight bearing, is accompanied by fever, or doesn't improve with rest and home care within a few weeks."
+      }
+    ],
   },
 };
 
@@ -2099,7 +2325,7 @@ const GuideArticle = () => {
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Anasayfa",
+        "name": "Home",
         "item": "https://flexiknee.com"
       },
       {
@@ -2117,6 +2343,20 @@ const GuideArticle = () => {
     ]
   };
 
+  // Generate FAQPage JSON-LD if article has FAQs
+  const faqJsonLd = article.faqs && article.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": article.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
   return (
     <>
       <Helmet>
@@ -2129,6 +2369,11 @@ const GuideArticle = () => {
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbJsonLd)}
         </script>
+        {faqJsonLd && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqJsonLd)}
+          </script>
+        )}
       </Helmet>
       
       <Header />
