@@ -23,7 +23,7 @@ import {
   CurrencyCode 
 } from "@/lib/currency";
 import { trackProductView } from "@/lib/shopify-analytics";
-import { trackProductView as trackMetaProductView } from "@/hooks/use-meta-tracking";
+import { trackProductView as trackMetaProductView, trackAddToCart as trackMetaAddToCart } from "@/hooks/use-meta-tracking";
 import productMain from "@/assets/product-main.jpg";
 import productHowItWorks from "@/assets/product-how-it-works.jpg";
 import DonationBanner from "@/components/DonationBanner";
@@ -240,6 +240,16 @@ const ProductDetail = () => {
       };
 
       addItem(cartItem);
+      
+      // Meta Pixel AddToCart tracking
+      trackMetaAddToCart({
+        id: product.node.id,
+        name: product.node.title,
+        price: bundle.priceEach,
+        currency: currency,
+        quantity: selectedBundle,
+      });
+      
       toast.success("Added to cart!", {
         description: `${selectedBundle}x ${product.node.title}`,
         position: "top-center",
