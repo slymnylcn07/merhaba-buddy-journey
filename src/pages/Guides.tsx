@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, Search, X, Clock } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { guidesData } from "@/data/guides";
 
 // Import images
 import guidesHero from "@/assets/guides-hero.jpg";
@@ -19,78 +20,25 @@ import thumbRunningKneePain from "@/assets/guide-thumb-running-knee-pain.jpg";
 import thumbKneeArthritis from "@/assets/guide-thumb-knee-arthritis.jpg";
 import thumbSharpKneePain from "@/assets/guide-thumb-sharp-knee-pain.jpg";
 
-const guides = [
-  {
-    slug: "why-knee-pain-doesnt-go-away",
-    title: "Why Knee Pain Often Doesn't Go Away on Its Own",
-    description: "A simple explanation of why knee discomfort can feel persistent and what helps support daily comfort.",
-    thumbnail: thumbKneePain,
-    readTime: 5,
-  },
-  {
-    slug: "heat-vs-red-light-therapy",
-    title: "Heat vs. Red Light Therapy: What Actually Helps Knee Discomfort?",
-    description: "Understand how heat and red light therapy work and how they can support everyday knee comfort.",
-    thumbnail: thumbHeatTherapy,
-    readTime: 6,
-  },
-  {
-    slug: "who-benefits-from-knee-therapy-devices",
-    title: "Who Benefits Most From At-Home Knee Therapy Devices?",
-    description: "Learn who these devices are designed for and what to realistically expect from at-home support.",
-    thumbnail: thumbWhoBenefits,
-    readTime: 4,
-  },
-  {
-    slug: "daily-knee-comfort-routine",
-    title: "How to Build a Daily Knee Comfort Routine",
-    description: "Practical tips for creating sustainable morning and evening habits that support long-term knee comfort.",
-    thumbnail: thumbDailyRoutine,
-    readTime: 7,
-  },
-  {
-    slug: "pain-in-the-knee-causes-locations",
-    title: "Pain in the Knee: Common Causes, Locations, and What Helps",
-    description: "Explore the most common knee pain causes, from sharp knee pain to pain when bending knee, and discover practical relief options for your knee joint.",
-    thumbnail: thumbKneePainCauses,
-    readTime: 12,
-  },
-  {
-    slug: "back-of-knee-pain-explained",
-    title: "Back of Knee Pain Explained: Causes, Symptoms, and Relief Options",
-    description: "Learn about behind knee pain including Baker's cyst, pain when straightening leg, and effective bakers cyst treatment options.",
-    thumbnail: thumbBackKneePain,
-    readTime: 11,
-  },
-  {
-    slug: "side-knee-pain-comfort-guide",
-    title: "Side Knee Pain: Why It Happens and How to Support Daily Comfort",
-    description: "Understand pain on the side of knee, whether inside or outside, left knee pain or right knee pain, plus knee cap pain relief strategies.",
-    thumbnail: thumbSideKneePain,
-    readTime: 10,
-  },
-  {
-    slug: "running-knee-pain-guide",
-    title: "Running Knee Pain: Common Injuries, Triggers, and What Runners Can Do",
-    description: "Learn about running knee pain including patellar tendinitis, meniscus tear, ACL injury, and effective strategies for pain when bending knee.",
-    thumbnail: thumbRunningKneePain,
-    readTime: 14,
-  },
-  {
-    slug: "knee-arthritis-pain-guide",
-    title: "Knee Arthritis Pain: Understanding Joint Pain and Daily Support Options",
-    description: "Comprehensive guide to knee arthritis including arthritis knee pain management, knee pain exercises, knee support options, and when to consider knee replacement.",
-    thumbnail: thumbKneeArthritis,
-    readTime: 13,
-  },
-  {
-    slug: "sharp-knee-pain-guide",
-    title: "Sharp Knee Pain That Comes and Goes: What It Means and When to Act",
-    description: "Understand sharp stabbing pain in knee that comes and goes, pain when straightening leg, pain inside knee, and whether sciatica can cause knee pain.",
-    thumbnail: thumbSharpKneePain,
-    readTime: 12,
-  },
-];
+// Map slugs to thumbnails
+const thumbnailMap: Record<string, string> = {
+  "why-knee-pain-doesnt-go-away": thumbKneePain,
+  "heat-vs-red-light-therapy": thumbHeatTherapy,
+  "who-benefits-from-knee-therapy-devices": thumbWhoBenefits,
+  "daily-knee-comfort-routine": thumbDailyRoutine,
+  "pain-in-the-knee-causes-locations": thumbKneePainCauses,
+  "back-of-knee-pain-explained": thumbBackKneePain,
+  "side-knee-pain-comfort-guide": thumbSideKneePain,
+  "running-knee-pain-guide": thumbRunningKneePain,
+  "knee-arthritis-pain-guide": thumbKneeArthritis,
+  "sharp-knee-pain-guide": thumbSharpKneePain,
+};
+
+// Combine data with thumbnails
+const guides = guidesData.map(guide => ({
+  ...guide,
+  thumbnail: thumbnailMap[guide.slug] || thumbKneePain,
+}));
 
 const Guides = () => {
   const [searchQuery, setSearchQuery] = useState("");
