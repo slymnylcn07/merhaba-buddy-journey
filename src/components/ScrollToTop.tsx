@@ -1,9 +1,21 @@
 import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigationType } from "react-router-dom";
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
+  const navigationType = useNavigationType();
   const prevPathname = useRef(pathname);
+  const scrollPositions = useRef<Map<string, number>>(new Map());
+
+  // Save scroll position before route change
+  useEffect(() => {
+    const handleScroll = () => {
+      scrollPositions.current.set(prevPathname.current, window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     // Skip if it's just a hash change on the same page (anchor navigation)
@@ -12,49 +24,30 @@ const ScrollToTop = () => {
       return;
     }
 
-    // Check if this is a back/forward navigation using the navigation API
-    const navType = window.performance?.getEntriesByType?.("navigation")?.[0] as PerformanceNavigationTiming | undefined;
-    const isBackForward = navType?.type === "back_forward" || 
-      (window.history.state?.idx !== undefined && window.history.state?.scroll !== undefined);
+    // Save current scroll position before navigating away
+    scrollPositions.current.set(prevPathname.current, window.scrollY);
 
-    // Don't scroll to top on back/forward - let browser handle scroll restoration
-    if (!isBackForward) {
+    // Check if this is a back/forward navigation (POP = browser back/forward)
+    const isBackForward = navigationType === "POP";
+
+    if (isBackForward) {
+      // Restore saved scroll position for this route
+      const savedPosition = scrollPositions.current.get(pathname);
+      if (typeof savedPosition === "number") {
+        // Delay to ensure DOM is rendered
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            window.scrollTo(0, savedPosition);
+          }, 0);
+        });
+      }
+    } else {
+      // Normal navigation - scroll to top
       window.scrollTo(0, 0);
     }
 
     prevPathname.current = pathname;
-  }, [pathname, hash]);
-
-  // Save scroll position before leaving the page
-  useEffect(() => {
-    const saveScrollPosition = () => {
-      if (window.history.state) {
-        window.history.replaceState(
-          { ...window.history.state, scroll: window.scrollY },
-          ""
-        );
-      }
-    };
-
-    window.addEventListener("beforeunload", saveScrollPosition);
-    
-    // Also save on route changes
-    return () => {
-      saveScrollPosition();
-      window.removeEventListener("beforeunload", saveScrollPosition);
-    };
-  }, [pathname]);
-
-  // Restore scroll position on back/forward
-  useEffect(() => {
-    const savedScroll = window.history.state?.scroll;
-    if (typeof savedScroll === "number") {
-      // Use requestAnimationFrame to ensure DOM is ready
-      requestAnimationFrame(() => {
-        window.scrollTo(0, savedScroll);
-      });
-    }
-  }, [pathname]);
+  }, [pathname, hash, navigationType]);
 
   return null;
 };
