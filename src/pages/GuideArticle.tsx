@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -2279,11 +2278,6 @@ const articles: Record<string, ArticleData> = {
 
 const GuideArticle = () => {
   const { slug } = useParams<{ slug: string }>();
-  
-  // Scroll to top when article changes
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [slug]);
   
   if (!slug || !articles[slug]) {
     return <Navigate to="/guides" replace />;
