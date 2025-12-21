@@ -78,6 +78,20 @@ export const guidesData: GuideData[] = [
     readTime: 12,
     lastModified: "2025-12-20",
   },
+  {
+    slug: "how-to-strengthen-knees",
+    title: "How to Strengthen Knees for Better Daily Support and Stability",
+    description: "Learn everyday habits, gentle movements, and lifestyle factors that support stronger knees and improved daily knee comfort.",
+    readTime: 10,
+    lastModified: "2025-12-21",
+  },
+  {
+    slug: "understanding-knee-injuries",
+    title: "Understanding Knee Injuries: Common Types, Symptoms, and Recovery Considerations",
+    description: "An educational overview of common knee injuries, typical symptoms, and general recovery considerations to help you understand knee joint health.",
+    readTime: 11,
+    lastModified: "2025-12-21",
+  },
 ];
 
 // Static pages for sitemap
