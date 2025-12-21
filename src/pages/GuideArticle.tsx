@@ -2499,28 +2499,8 @@ const articles: Record<string, ArticleData> = {
             Some people choose to include at-home therapy devices as part of their daily knee comfort routine.
           </p>
         </div>
-
-        <h2>Frequently Asked Questions</h2>
       </>
     ),
-    faqs: [
-      {
-        question: "How long does it take to strengthen knees?",
-        answer: "Building noticeable knee strength typically takes several weeks to months of consistent effort. Most people begin feeling improvements in stability and comfort within 4 to 8 weeks of regular, gentle activity. However, maintaining these benefits requires ongoing attention to the habits that support knee health."
-      },
-      {
-        question: "Can weak knees be strengthened at any age?",
-        answer: "Yes, the muscles supporting your knees can be strengthened at any age. While the pace of improvement may vary, the body retains its ability to build muscle and improve function throughout life. Starting gently and progressing gradually is especially important for older adults."
-      },
-      {
-        question: "What activities are best for knee stability?",
-        answer: "Low-impact activities like walking, swimming, cycling, and gentle strength-building movements tend to support knee stability without excessive stress. The best activity is one you enjoy and can do consistently. Finding what works for your body and lifestyle matters more than choosing a 'perfect' exercise."
-      },
-      {
-        question: "Should I use a knee brace for support?",
-        answer: "Knee braces can provide temporary support during activities, but they shouldn't replace strengthening efforts. Relying too heavily on external support may allow the surrounding muscles to weaken. If you use a brace, continue working on building natural strength alongside it."
-      }
-    ],
   },
   "understanding-knee-injuries": {
     slug: "understanding-knee-injuries",
@@ -2749,28 +2729,8 @@ const articles: Record<string, ArticleData> = {
             Some people choose to include at-home therapy devices as part of their daily knee comfort routine.
           </p>
         </div>
-
-        <h2>Frequently Asked Questions</h2>
       </>
     ),
-    faqs: [
-      {
-        question: "How do I know if my knee injury is serious?",
-        answer: "Signs that may indicate a more serious knee injury include inability to bear weight, significant swelling developing rapidly, visible deformity, locking of the joint, or severe pain that doesn't improve with rest. If you experience any of these, seeking professional evaluation is appropriate."
-      },
-      {
-        question: "How long does it take for a knee injury to heal?",
-        answer: "Recovery time varies greatly depending on the type and severity of injury. Minor strains may resolve in 1-2 weeks, while ligament tears or meniscus injuries may take several months. Your healthcare provider can give you expectations based on your specific situation."
-      },
-      {
-        question: "Should I rest completely after a knee injury?",
-        answer: "Complete rest is rarely recommended for extended periods. While protecting the injured knee is important initially, maintaining appropriate movement helps prevent stiffness and muscle weakness. The right balance depends on your specific injury and should be guided by professional advice."
-      },
-      {
-        question: "Can knee injuries heal on their own?",
-        answer: "Some knee injuries, particularly minor strains and sprains, can heal with appropriate self-care and time. However, more significant injuries to ligaments, menisci, or cartilage may require professional intervention. If symptoms persist or are severe, evaluation is recommended."
-      }
-    ],
   },
 };
 
