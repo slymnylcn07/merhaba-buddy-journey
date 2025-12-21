@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, Search, X, Clock } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
 import { guidesData } from "@/data/guides";
 
 // Import images
@@ -40,8 +41,34 @@ const guides = guidesData.map(guide => ({
   thumbnail: thumbnailMap[guide.slug] || thumbKneePain,
 }));
 
+// Skeleton component for guide cards
+const GuideCardSkeleton = () => (
+  <article className="bg-background border border-border/50 rounded-2xl overflow-hidden shadow-sm flex flex-col md:flex-row">
+    <div className="md:w-64 md:min-w-64 h-48 md:h-auto">
+      <Skeleton className="w-full h-full min-h-[12rem]" />
+    </div>
+    <div className="flex-1 p-6 md:p-8 flex flex-col justify-center">
+      <div className="flex items-center gap-3 mb-3">
+        <Skeleton className="h-3 w-12" />
+        <Skeleton className="h-3 w-16" />
+      </div>
+      <Skeleton className="h-7 w-3/4 mb-3" />
+      <Skeleton className="h-4 w-full mb-2" />
+      <Skeleton className="h-4 w-2/3 mb-4" />
+      <Skeleton className="h-4 w-24" />
+    </div>
+  </article>
+);
+
 const Guides = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simulate initial load for skeleton display
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 300);
+    return () => clearTimeout(timer);
+  }, []);
 
   const filteredGuides = guides.filter(
     (guide) =>
@@ -169,7 +196,13 @@ const Guides = () => {
         {/* Guide Cards */}
         <section className="py-12 md:py-20">
           <div className="container px-4 max-w-5xl mx-auto">
-            {filteredGuides.length > 0 ? (
+            {isLoading ? (
+              <div className="grid gap-6 md:gap-8">
+                {[1, 2, 3, 4].map((i) => (
+                  <GuideCardSkeleton key={i} />
+                ))}
+              </div>
+            ) : filteredGuides.length > 0 ? (
               <div className="grid gap-6 md:gap-8">
                 {filteredGuides.map((guide) => (
                   <Link 
@@ -184,6 +217,7 @@ const Guides = () => {
                           src={guide.thumbnail} 
                           alt={guide.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
                         />
                       </div>
                       
