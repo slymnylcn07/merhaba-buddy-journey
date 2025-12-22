@@ -2933,6 +2933,8 @@ const GuideArticle = () => {
                     "running-knee-pain-guide": thumbRunningKneePain,
                     "knee-arthritis-pain-guide": thumbKneeArthritis,
                     "sharp-knee-pain-guide": thumbSharpKneePain,
+                    "how-to-strengthen-knees": thumbStrengthenKnees,
+                    "understanding-knee-injuries": thumbKneeInjuries,
                   };
                   return (
                     <RelatedGuideCard
