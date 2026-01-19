@@ -170,6 +170,13 @@ export const guidesData: GuideData[] = [
     readTime: 11,
     lastModified: "2026-01-19",
   },
+  {
+    slug: "how-to-fix-knee-pain",
+    title: "How to Fix Knee Pain: What People Commonly Mean & Daily Habits That Help With Comfort",
+    description: "Understand what 'fixing' knee pain really means and discover supportive daily habits that help with everyday knee comfort.",
+    readTime: 11,
+    lastModified: "2026-01-19",
+  },
 ];
 
 // Static pages for sitemap
