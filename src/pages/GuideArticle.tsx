@@ -127,6 +127,33 @@ interface ArticleData {
   faqs?: FAQItem[];
 }
 
+// Context-aware CTA snippets for each article
+const articleCTAs: Record<string, string> = {
+  "why-knee-pain-doesnt-go-away": "If you're exploring gentle ways to support daily knee comfort at home, some people find warmth-based devices a helpful addition to their routine.",
+  "heat-vs-red-light-therapy": "For those curious about combining warmth and infrared in one at-home option, FlexiKnee™ offers a gentle approach worth exploring.",
+  "who-benefits-from-knee-therapy-devices": "If you're wondering whether an at-home knee support device might fit your lifestyle, you can explore what FlexiKnee™ offers.",
+  "daily-knee-comfort-routine": "Many people choose to include a gentle warmth-based device as part of their daily knee comfort routine.",
+  "pain-in-the-knee-causes-locations": "For those looking into supportive at-home tools, some find gentle warmth and infrared options worth exploring.",
+  "back-of-knee-pain-explained": "If you're considering supportive tools for everyday comfort, warmth-based at-home options are something many people explore.",
+  "side-knee-pain-comfort-guide": "Some people add gentle at-home devices to their comfort routine; you can read more about what FlexiKnee™ offers.",
+  "running-knee-pain-guide": "Runners sometimes explore gentle warmth-based support tools as part of their post-activity routine.",
+  "knee-arthritis-pain-guide": "For those seeking gentle at-home comfort options, warmth and infrared devices are among the tools people commonly explore.",
+  "sharp-knee-pain-guide": "If you're curious about gentle at-home comfort support, some people find warmth-based tools a helpful addition.",
+  "how-to-strengthen-knees": "Alongside exercises, some people explore gentle warmth-based devices as part of their overall knee comfort approach.",
+  "understanding-knee-injuries": "For those interested in supportive at-home options during recovery, gentle warmth devices are worth learning about.",
+  "best-infrared-knee-massagers": "If you're exploring infrared knee massagers, you can read more about what FlexiKnee™ offers as a gentle at-home option.",
+  "sharp-knee-pain-comes-and-goes": "For those curious about gentle daily support tools, some people explore warmth and infrared comfort devices.",
+  "side-knee-pain-inner-outer": "If you're considering at-home support options, warmth-based devices are something many people add to their comfort routines.",
+  "red-light-therapy-for-knees": "For those interested in exploring red light and infrared options at home, FlexiKnee™ combines both in a gentle, everyday device.",
+  "back-of-knee-pain-daily-habits": "Some people include gentle warmth-based devices in their daily habits for added knee comfort.",
+  "daily-knee-care-routine": "A gentle at-home device like FlexiKnee™ is one option people explore as part of their daily knee care.",
+  "heat-vs-ice-for-knees": "If warmth feels right for you, some people explore at-home devices that offer gentle heat and infrared support.",
+  "do-knee-massagers-work": "If you're curious about what to expect from at-home knee devices, you can explore what FlexiKnee™ offers.",
+  "is-infrared-safe-for-knees": "For those interested in gentle infrared support at home, FlexiKnee™ is one option designed with everyday use in mind.",
+  "warmth-vs-infrared-knee-routines": "If you're exploring how to combine warmth and infrared in your routine, FlexiKnee™ offers both in one at-home device.",
+  "knee-pain-worse-at-night": "Some people find that using a gentle warmth-based device before bed helps them feel more comfortable in the evening.",
+};
+
 const articles: Record<string, ArticleData> = {
   "why-knee-pain-doesnt-go-away": {
     slug: "why-knee-pain-doesnt-go-away",
@@ -5031,6 +5058,21 @@ const GuideArticle = () => {
             ">
               {article.content}
             </div>
+            
+            {/* Context-Aware CTA Snippet */}
+            {articleCTAs[slug] && (
+              <div className="mt-12 pt-8 border-t border-border/30">
+                <p className="text-muted-foreground font-light leading-relaxed">
+                  {articleCTAs[slug]}{" "}
+                  <a 
+                    href="https://flexi-knee.com/product/flexiknee" 
+                    className="text-primary hover:underline transition-colors"
+                  >
+                    Learn more about FlexiKnee™
+                  </a>.
+                </p>
+              </div>
+            )}
           </div>
         </article>
 
