@@ -237,6 +237,21 @@ const Guides = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Smooth scroll to section with header offset
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 100; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   const filteredGuides = guides.filter(
     (guide) =>
       guide.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -496,30 +511,30 @@ const Guides = () => {
               <div className="container px-4 max-w-6xl mx-auto">
                 <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
                   <span className="text-sm text-[#8B7355] font-medium">Browse by:</span>
-                  <a 
-                    href="#by-location" 
+                  <button 
+                    onClick={() => scrollToSection('by-location')}
                     className="text-sm text-[#6B6B6B] hover:text-primary transition-colors"
                   >
                     By Location
-                  </a>
-                  <a 
-                    href="#by-activity" 
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('by-activity')}
                     className="text-sm text-[#6B6B6B] hover:text-primary transition-colors"
                   >
                     By Activity
-                  </a>
-                  <a 
-                    href="#by-habits" 
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('by-habits')}
                     className="text-sm text-[#6B6B6B] hover:text-primary transition-colors"
                   >
                     By Habits
-                  </a>
-                  <a 
-                    href="#by-comfort-methods" 
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('by-comfort-methods')}
                     className="text-sm text-[#6B6B6B] hover:text-primary transition-colors"
                   >
                     By Comfort Methods
-                  </a>
+                  </button>
                 </nav>
               </div>
             </section>
