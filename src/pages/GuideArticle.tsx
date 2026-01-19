@@ -5069,7 +5069,8 @@ const GuideArticle = () => {
                   background: '#F9F6F3',
                   color: '#4A4A4A',
                   fontSize: '16px',
-                  lineHeight: '1.6'
+                  lineHeight: '1.6',
+                  boxShadow: '0 4px 20px -4px rgba(0, 0, 0, 0.08)'
                 }}
               >
                 {articleCTAs[slug]}{" "}
