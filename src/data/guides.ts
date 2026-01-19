@@ -184,6 +184,13 @@ export const guidesData: GuideData[] = [
     readTime: 11,
     lastModified: "2026-01-19",
   },
+  {
+    slug: "top-of-knee-pain-patterns",
+    title: "Top of Knee Pain: What It Often Means & Common Daily Patterns People Notice",
+    description: "Understand common daily patterns linked to top of knee discomfort and discover supportive habits for everyday comfort.",
+    readTime: 10,
+    lastModified: "2026-01-19",
+  },
 ];
 
 // Static pages for sitemap
