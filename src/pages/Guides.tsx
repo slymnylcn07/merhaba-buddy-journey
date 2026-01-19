@@ -238,13 +238,13 @@ const Guides = () => {
                     to={`/guides/${guide.slug}`}
                     className="group block"
                   >
-                    <article className="bg-background border border-border/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-border transition-all duration-300 flex flex-col md:flex-row">
+                    <article className="bg-background border border-border/40 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/5 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 ease-out flex flex-col md:flex-row">
                       {/* Thumbnail */}
                       <div className="md:w-64 md:min-w-64 h-48 md:h-auto overflow-hidden">
                         <img 
                           src={guide.thumbnail} 
                           alt={guide.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
                           loading="lazy"
                         />
                       </div>
@@ -261,15 +261,15 @@ const Guides = () => {
                             {guide.readTime} min read
                           </span>
                         </div>
-                        <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors">
+                        <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors duration-300">
                           {guide.title}
                         </h2>
                         <p className="text-muted-foreground font-light mb-4 leading-relaxed">
                           {guide.description}
                         </p>
-                        <span className="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all">
+                        <span className="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all duration-300">
                           Read guide
-                          <ArrowRight className="h-4 w-4" />
+                          <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform duration-300" />
                         </span>
                       </div>
                     </article>
