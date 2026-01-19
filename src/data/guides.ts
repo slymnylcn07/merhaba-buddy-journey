@@ -191,6 +191,13 @@ export const guidesData: GuideData[] = [
     readTime: 10,
     lastModified: "2026-01-19",
   },
+  {
+    slug: "best-running-shoes-knee-pain",
+    title: "Best Running Shoes for Knee Pain: What Runners Look For & Common Fit Mistakes",
+    description: "Learn what runners look for in knee-friendly shoes, common fit mistakes, and running habits that influence comfort.",
+    readTime: 11,
+    lastModified: "2026-01-19",
+  },
 ];
 
 // Static pages for sitemap

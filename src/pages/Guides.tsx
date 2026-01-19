@@ -37,6 +37,7 @@ import thumbNightKneePain from "@/assets/guide-thumb-night-knee-pain-v3.jpg";
 import thumbFixKneePain from "@/assets/guide-thumb-fix-knee-pain.jpg";
 import thumbWomenMenKneeComfort from "@/assets/guide-thumb-women-men-knee-comfort.jpg";
 import thumbTopKneePain from "@/assets/guide-thumb-top-knee-pain.jpg";
+import thumbRunningShoesKnee from "@/assets/guide-thumb-running-shoes-knee.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
@@ -67,6 +68,7 @@ const thumbnailMap: Record<string, string> = {
   "how-to-fix-knee-pain": thumbFixKneePain,
   "women-men-knee-comfort-patterns": thumbWomenMenKneeComfort,
   "top-of-knee-pain-patterns": thumbTopKneePain,
+  "best-running-shoes-knee-pain": thumbRunningShoesKnee,
 };
 
 // Combine data with thumbnails
