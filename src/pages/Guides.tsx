@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { ArrowRight, Search, X, Clock } from "lucide-react";
+import { ArrowRight, Search, X, Clock, ChevronDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { guidesData } from "@/data/guides";
@@ -230,6 +230,7 @@ const SectionHeader = ({ id, title, subtitle }: { id: string; title: string; sub
 const Guides = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [showAllGuides, setShowAllGuides] = useState(false);
   const searchResultsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -263,6 +264,23 @@ const Guides = () => {
   const activityGuides = activitySlugs.map(getGuide).filter(Boolean) as typeof guides;
   const homeComfortGuides = homeComfortSlugs.map(getGuide).filter(Boolean) as typeof guides;
   const experiencesGuides = experiencesSlugs.map(getGuide).filter(Boolean) as typeof guides;
+
+  // Get all slugs used in curated sections
+  const curatedSlugs = useMemo(() => {
+    const allCurated = new Set([
+      ...featuredSlugs,
+      ...locationSlugs,
+      ...activitySlugs,
+      ...homeComfortSlugs,
+      ...experiencesSlugs,
+    ]);
+    return allCurated;
+  }, []);
+
+  // Get guides not in any curated section
+  const uncategorizedGuides = useMemo(() => {
+    return guides.filter(guide => !curatedSlugs.has(guide.slug));
+  }, [curatedSlugs]);
 
   const itemListJsonLd = {
     "@context": "https://schema.org",
@@ -505,6 +523,40 @@ const Guides = () => {
                 )}
               </div>
             </section>
+
+            {/* Browse All Guides - Expandable */}
+            {uncategorizedGuides.length > 0 && (
+              <section className="py-12 md:py-16 bg-white">
+                <div className="container px-4 max-w-6xl mx-auto">
+                  <button
+                    onClick={() => setShowAllGuides(!showAllGuides)}
+                    className="w-full flex items-center justify-between gap-4 group"
+                  >
+                    <div className="text-left">
+                      <h2 className="text-2xl md:text-3xl font-semibold text-[#3D3D3D] mb-1 group-hover:text-primary transition-colors">
+                        Browse All Guides
+                      </h2>
+                      <p className="text-[#6B6B6B] font-light">
+                        {uncategorizedGuides.length} additional guides to explore
+                      </p>
+                    </div>
+                    <div className={`flex-shrink-0 w-10 h-10 rounded-full bg-[#F5F1ED] flex items-center justify-center transition-transform duration-300 ${showAllGuides ? 'rotate-180' : ''}`}>
+                      <ChevronDown className="h-5 w-5 text-[#8B7355]" />
+                    </div>
+                  </button>
+                  
+                  <div 
+                    className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 overflow-hidden transition-all duration-500 ease-in-out ${
+                      showAllGuides ? 'mt-8 max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    {uncategorizedGuides.map((guide) => (
+                      <GuideCard key={guide.slug} guide={guide} compact />
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
 
             {/* Footer Mini Navigation */}
             <section className="py-8 border-t border-[#E5DDD4]">
