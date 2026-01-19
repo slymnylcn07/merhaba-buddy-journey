@@ -205,6 +205,13 @@ export const guidesData: GuideData[] = [
     readTime: 11,
     lastModified: "2026-01-19",
   },
+  {
+    slug: "cause-of-knee-pain-patterns",
+    title: "Cause of Knee Pain: Common Daily Patterns & Lifestyle Factors People Often Notice",
+    description: "Explore common daily patterns and lifestyle factors that influence knee discomfort in everyday life.",
+    readTime: 11,
+    lastModified: "2026-01-19",
+  },
 ];
 
 // Static pages for sitemap
