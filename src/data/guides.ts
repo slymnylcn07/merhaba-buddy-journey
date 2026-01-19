@@ -177,6 +177,13 @@ export const guidesData: GuideData[] = [
     readTime: 11,
     lastModified: "2026-01-19",
   },
+  {
+    slug: "women-men-knee-comfort-patterns",
+    title: "Why Knee Discomfort Often Feels Different for Women vs. Men: Common Daily Patterns & Lifestyle Habits",
+    description: "Explore common daily patterns and lifestyle habits that influence knee comfort differently for women and men.",
+    readTime: 11,
+    lastModified: "2026-01-19",
+  },
 ];
 
 // Static pages for sitemap
