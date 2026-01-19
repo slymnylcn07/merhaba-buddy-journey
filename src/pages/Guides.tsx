@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { ArrowRight, Search, X, Clock, ChevronDown } from "lucide-react";
+import { ArrowRight, Search, X, Clock, ChevronDown, ArrowUp } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { guidesData } from "@/data/guides";
@@ -231,6 +231,7 @@ const Guides = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [showAllGuides, setShowAllGuides] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const searchResultsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -238,8 +239,26 @@ const Guides = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Track scroll position to show/hide Jump to Top button
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Scroll to top function
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }, []);
+
   // Smooth scroll to section with header offset
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       const headerOffset = 100; // Account for fixed header
@@ -251,7 +270,7 @@ const Guides = () => {
         behavior: "smooth"
       });
     }
-  };
+  }, []);
 
   const filteredGuides = guides.filter(
     (guide) =>
@@ -593,6 +612,17 @@ const Guides = () => {
           </>
         )}
       </main>
+
+      {/* Jump to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center transition-all duration-300 hover:bg-primary/90 hover:scale-110 ${
+          showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+        }`}
+        aria-label="Jump to top of page"
+      >
+        <ArrowUp className="h-5 w-5" />
+      </button>
 
       <Footer />
     </>
