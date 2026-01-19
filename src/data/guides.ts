@@ -198,6 +198,13 @@ export const guidesData: GuideData[] = [
     readTime: 11,
     lastModified: "2026-01-19",
   },
+  {
+    slug: "knee-pain-treatment-daily-habits",
+    title: "Knee Pain Treatment: What People Commonly Mean & Everyday Comfort Routines They Explore",
+    description: "Understand what 'treatment' means in daily life and explore common comfort routines people use for knee support.",
+    readTime: 11,
+    lastModified: "2026-01-19",
+  },
 ];
 
 // Static pages for sitemap
