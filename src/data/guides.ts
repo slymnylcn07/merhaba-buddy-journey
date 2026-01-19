@@ -149,6 +149,20 @@ export const guidesData: GuideData[] = [
     readTime: 10,
     lastModified: "2026-01-19",
   },
+  {
+    slug: "is-infrared-safe-for-knees",
+    title: "Is Infrared Safe for Knees? What People Commonly Ask (2026 Guide)",
+    description: "A calm, informative guide addressing common questions about infrared technology and how it is used for knee comfort in daily routines.",
+    readTime: 11,
+    lastModified: "2026-01-19",
+  },
+  {
+    slug: "warmth-vs-infrared-knee-routines",
+    title: "Warmth vs Infrared: How People Use Both in Daily Knee Routines",
+    description: "Explore how warmth and infrared technology are used differently in daily knee comfort routines and when people choose one over the other.",
+    readTime: 10,
+    lastModified: "2026-01-19",
+  },
 ];
 
 // Static pages for sitemap
