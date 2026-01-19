@@ -6527,12 +6527,31 @@ const GuideArticle = () => {
     return date.toISOString();
   };
 
+  // Get article keywords from title for SEO
+  const getKeywords = (title: string): string => {
+    const keywordPhrases = [
+      "knee pain", "knee discomfort", "knee comfort", "knee therapy",
+      "heat therapy", "red light therapy", "infrared therapy", "knee massager",
+      "running knee", "arthritis knee", "sharp knee pain", "back of knee",
+      "side knee pain", "knee exercises", "knee support", "daily routine"
+    ];
+    return keywordPhrases.filter(phrase => 
+      title.toLowerCase().includes(phrase.split(" ")[0])
+    ).slice(0, 5).join(", ") || "knee comfort, knee wellness, at-home support";
+  };
+
+  const canonicalUrl = `https://flexi-knee.com/guides/${article.slug}`;
+
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    },
     "headline": article.title,
     "description": article.metaDescription,
-    "image": `https://flexi-knee.com${article.heroImage}`,
+    "image": [`https://flexi-knee.com${article.heroImage}`],
     "datePublished": getISODate(article.publishedDate),
     "dateModified": getISODate(article.publishedDate),
     "author": {
@@ -6545,13 +6564,14 @@ const GuideArticle = () => {
       "name": "FlexiKnee",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://flexi-knee.com/logo.png"
+        "url": "https://flexi-knee.com/flexiknee-logo.png",
+        "width": 200,
+        "height": 60
       }
     },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://flexi-knee.com/guides/${article.slug}`
-    }
+    "inLanguage": "en",
+    "articleSection": "Guides",
+    "keywords": getKeywords(article.title)
   };
 
   const breadcrumbJsonLd = {
@@ -6598,24 +6618,27 @@ const GuideArticle = () => {
       <Helmet>
         <title>{article.metaTitle}</title>
         <meta name="description" content={article.metaDescription} />
-        <link rel="canonical" href={`https://flexi-knee.com/guides/${article.slug}`} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
         
         {/* Open Graph Meta Tags */}
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://flexi-knee.com/guides/${article.slug}`} />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={article.metaTitle} />
         <meta property="og:description" content={article.metaDescription} />
-        <meta property="og:image" content={article.heroImage} />
+        <meta property="og:image" content={`https://flexi-knee.com${article.heroImage}`} />
         <meta property="og:site_name" content="FlexiKnee" />
-        <meta property="article:published_time" content={article.publishedDate || new Date().toISOString()} />
-        <meta property="article:author" content="FlexiKnee Health Team" />
+        <meta property="article:published_time" content={getISODate(article.publishedDate)} />
+        <meta property="article:modified_time" content={getISODate(article.publishedDate)} />
+        <meta property="article:author" content="FlexiKnee" />
+        <meta property="article:section" content="Guides" />
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@FlexiKnee" />
         <meta name="twitter:title" content={article.metaTitle} />
         <meta name="twitter:description" content={article.metaDescription} />
-        <meta name="twitter:image" content={article.heroImage} />
+        <meta name="twitter:image" content={`https://flexi-knee.com${article.heroImage}`} />
         
         <script type="application/ld+json">
           {JSON.stringify(articleJsonLd)}

@@ -301,11 +301,14 @@ const Guides = () => {
     return guides.filter(guide => !curatedSlugs.has(guide.slug));
   }, [curatedSlugs]);
 
+  const canonicalUrl = "https://flexi-knee.com/guides";
+
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Knee Comfort Guides",
+    "name": "Simple Guides for Everyday Knee Comfort",
     "description": "Simple guides for everyday knee comfort: understand daily patterns, habits, and supportive at-home routines — without medical advice or treatment claims.",
+    "url": canonicalUrl,
     "numberOfItems": guides.length,
     "itemListElement": guides.map((guide, index) => ({
       "@type": "ListItem",
@@ -329,9 +332,32 @@ const Guides = () => {
         "@type": "ListItem",
         "position": 2,
         "name": "Guides",
-        "item": "https://flexi-knee.com/guides"
+        "item": canonicalUrl
       }
     ]
+  };
+
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Simple Guides for Everyday Knee Comfort",
+    "description": "These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines — without medical advice or treatment claims.",
+    "url": canonicalUrl,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "FlexiKnee",
+      "url": "https://flexi-knee.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "FlexiKnee",
+      "url": "https://flexi-knee.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flexi-knee.com/flexiknee-logo.png"
+      }
+    },
+    "inLanguage": "en"
   };
 
   const showSearchResults = searchQuery.length > 0;
@@ -344,21 +370,25 @@ const Guides = () => {
           name="description" 
           content="These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines — without medical advice or treatment claims." 
         />
-        <link rel="canonical" href="https://flexi-knee.com/guides" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://flexi-knee.com/guides" />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content="Simple Guides for Everyday Knee Comfort | FlexiKnee" />
         <meta property="og:description" content="These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines — without medical advice or treatment claims." />
-        <meta property="og:image" content="https://flexi-knee.com/images/guides-og-image.jpg" />
+        <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@FlexiKnee" />
         <meta name="twitter:title" content="Simple Guides for Everyday Knee Comfort | FlexiKnee" />
         <meta name="twitter:description" content="These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines — without medical advice or treatment claims." />
-        <meta name="twitter:image" content="https://flexi-knee.com/images/guides-og-image.jpg" />
+        <meta name="twitter:image" content="https://flexi-knee.com/images/og-image.jpg" />
         
+        <script type="application/ld+json">
+          {JSON.stringify(webPageJsonLd)}
+        </script>
         <script type="application/ld+json">
           {JSON.stringify(itemListJsonLd)}
         </script>
