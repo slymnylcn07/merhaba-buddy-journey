@@ -5062,7 +5062,7 @@ const GuideArticle = () => {
             {/* Premium CTA Highlight Box */}
             {articleCTAs[slug] && (
               <div 
-                className="mt-12 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg"
+                className="mt-12 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg border-l-4 border-primary"
                 style={{
                   padding: '18px',
                   borderRadius: '12px',
