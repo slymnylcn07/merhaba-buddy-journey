@@ -33,7 +33,7 @@ import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
 import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
 import thumbInfraredSafety from "@/assets/guide-thumb-infrared-safety-v2.jpg";
 import thumbWarmthVsInfrared from "@/assets/guide-thumb-warmth-vs-infrared-v2.jpg";
-import thumbNightKneePain from "@/assets/guide-thumb-night-knee-pain-v2.jpg";
+import thumbNightKneePain from "@/assets/guide-thumb-night-knee-pain-v3.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
