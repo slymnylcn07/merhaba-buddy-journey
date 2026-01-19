@@ -163,6 +163,13 @@ export const guidesData: GuideData[] = [
     readTime: 10,
     lastModified: "2026-01-19",
   },
+  {
+    slug: "knee-pain-worse-at-night",
+    title: "Why Knee Discomfort Feels Worse at Night & What People Usually Do at Home",
+    description: "Understand why nighttime knee discomfort is common and discover calming evening routines people use for better rest.",
+    readTime: 11,
+    lastModified: "2026-01-19",
+  },
 ];
 
 // Static pages for sitemap
