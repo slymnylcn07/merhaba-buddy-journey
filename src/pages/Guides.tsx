@@ -22,6 +22,15 @@ import thumbKneeArthritis from "@/assets/guide-thumb-knee-arthritis.jpg";
 import thumbSharpKneePain from "@/assets/guide-thumb-sharp-knee-pain.jpg";
 import thumbStrengthenKnees from "@/assets/guide-thumb-strengthen-knees.jpg";
 import thumbKneeInjuries from "@/assets/guide-thumb-knee-injuries.jpg";
+// New article thumbnails
+import thumbInfraredMassager from "@/assets/guide-thumb-infrared-massager.jpg";
+import thumbSharpPainPatterns from "@/assets/guide-thumb-sharp-pain-patterns.jpg";
+import thumbSidePainDetailed from "@/assets/guide-thumb-side-pain-detailed.jpg";
+import thumbRedLightResearch from "@/assets/guide-thumb-red-light-research.jpg";
+import thumbBackKneeDetailed from "@/assets/guide-thumb-back-knee-detailed.jpg";
+import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
+import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
+import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
@@ -37,6 +46,15 @@ const thumbnailMap: Record<string, string> = {
   "sharp-knee-pain-guide": thumbSharpKneePain,
   "how-to-strengthen-knees": thumbStrengthenKnees,
   "understanding-knee-injuries": thumbKneeInjuries,
+  // New articles
+  "best-infrared-knee-massagers": thumbInfraredMassager,
+  "sharp-knee-pain-comes-and-goes": thumbSharpPainPatterns,
+  "side-knee-pain-inner-outer": thumbSidePainDetailed,
+  "red-light-therapy-for-knees": thumbRedLightResearch,
+  "back-of-knee-pain-daily-habits": thumbBackKneeDetailed,
+  "daily-knee-care-routine": thumbDailyRoutineNew,
+  "heat-vs-ice-for-knees": thumbHeatVsIce,
+  "do-knee-massagers-work": thumbMassagerExpectations,
 };
 
 // Combine data with thumbnails

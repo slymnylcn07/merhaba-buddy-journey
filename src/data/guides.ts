@@ -92,6 +92,63 @@ export const guidesData: GuideData[] = [
     readTime: 11,
     lastModified: "2025-12-21",
   },
+  // New articles added January 2026
+  {
+    slug: "best-infrared-knee-massagers",
+    title: "Best Infrared Knee Massagers: What to Know Before Buying (2026 Guide)",
+    description: "Explore what infrared knee massagers offer, key features to consider, and how they can support your daily knee comfort routine.",
+    readTime: 10,
+    lastModified: "2026-01-19",
+  },
+  {
+    slug: "sharp-knee-pain-comes-and-goes",
+    title: "Why Sharp Knee Pain Comes and Goes: Causes, Daily Patterns & Gentle Support Options",
+    description: "Understand why sharp knee pain comes and goes, common daily patterns, and gentle support options for everyday comfort.",
+    readTime: 11,
+    lastModified: "2026-01-19",
+  },
+  {
+    slug: "side-knee-pain-inner-outer",
+    title: "Side Knee Pain Explained: Inner vs Outer Knee Discomfort & Everyday Support Tips",
+    description: "Learn about inner and outer side knee pain, what influences each type, and practical everyday support tips.",
+    readTime: 10,
+    lastModified: "2026-01-19",
+  },
+  {
+    slug: "red-light-therapy-for-knees",
+    title: "Red Light Therapy for Knees: What Studies Actually Say (2026 Review)",
+    description: "A balanced look at what research suggests about red light therapy for knee comfort and how it fits into daily routines.",
+    readTime: 11,
+    lastModified: "2026-01-19",
+  },
+  {
+    slug: "back-of-knee-pain-daily-habits",
+    title: "Back of Knee Pain: Common Causes, Daily Habits & When People Usually Seek Help",
+    description: "Explore common causes of back of knee pain, daily habits that influence comfort, and when to consider professional guidance.",
+    readTime: 10,
+    lastModified: "2026-01-19",
+  },
+  {
+    slug: "daily-knee-care-routine",
+    title: "Daily Knee Care Routine: Simple Habits for Long-Term Comfort",
+    description: "Build a sustainable daily knee care routine with simple morning and evening habits that support long-term comfort.",
+    readTime: 9,
+    lastModified: "2026-01-19",
+  },
+  {
+    slug: "heat-vs-ice-for-knees",
+    title: "Heat vs Ice for Knee Discomfort: What Works Best for Daily Life?",
+    description: "Compare heat and ice for knee comfort, understand when each approach may help, and learn how to incorporate them into daily life.",
+    readTime: 9,
+    lastModified: "2026-01-19",
+  },
+  {
+    slug: "do-knee-massagers-work",
+    title: "Do Knee Massagers Actually Work? What to Expect & What Not To (2026 Guide)",
+    description: "A realistic look at knee massagers: what they can offer, what to expect, and how to set appropriate expectations.",
+    readTime: 10,
+    lastModified: "2026-01-19",
+  },
 ];
 
 // Static pages for sitemap

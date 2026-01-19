@@ -51,6 +51,15 @@ import heroKneeArthritis from "@/assets/article-hero-knee-arthritis.jpg";
 import heroSharpKneePain from "@/assets/article-hero-sharp-knee-pain.jpg";
 import heroStrengthenKnees from "@/assets/article-hero-strengthen-knees.jpg";
 import heroKneeInjuries from "@/assets/article-hero-knee-injuries.jpg";
+// New article hero images
+import heroInfraredMassager from "@/assets/article-hero-infrared-massager.jpg";
+import heroSharpPainPatterns from "@/assets/article-hero-sharp-pain-patterns.jpg";
+import heroSidePainDetailed from "@/assets/article-hero-side-pain-detailed.jpg";
+import heroRedLightResearch from "@/assets/article-hero-red-light-research.jpg";
+import heroBackKneeDetailed from "@/assets/article-hero-back-knee-detailed.jpg";
+import heroDailyRoutineNew from "@/assets/article-hero-daily-routine-new.jpg";
+import heroHeatVsIce from "@/assets/article-hero-heat-vs-ice.jpg";
+import heroMassagerExpectations from "@/assets/article-hero-massager-expectations.jpg";
 
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
@@ -65,6 +74,15 @@ import thumbKneeArthritis from "@/assets/guide-thumb-knee-arthritis.jpg";
 import thumbSharpKneePain from "@/assets/guide-thumb-sharp-knee-pain.jpg";
 import thumbStrengthenKnees from "@/assets/guide-thumb-strengthen-knees.jpg";
 import thumbKneeInjuries from "@/assets/guide-thumb-knee-injuries.jpg";
+// New article thumbnails
+import thumbInfraredMassager from "@/assets/guide-thumb-infrared-massager.jpg";
+import thumbSharpPainPatterns from "@/assets/guide-thumb-sharp-pain-patterns.jpg";
+import thumbSidePainDetailed from "@/assets/guide-thumb-side-pain-detailed.jpg";
+import thumbRedLightResearch from "@/assets/guide-thumb-red-light-research.jpg";
+import thumbBackKneeDetailed from "@/assets/guide-thumb-back-knee-detailed.jpg";
+import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
+import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
+import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -2731,6 +2749,243 @@ const articles: Record<string, ArticleData> = {
         </div>
       </>
     ),
+  },
+
+  // ============== NEW ARTICLES ADDED JANUARY 2026 ==============
+
+  "best-infrared-knee-massagers": {
+    slug: "best-infrared-knee-massagers",
+    title: "Best Infrared Knee Massagers: What to Know Before Buying (2026 Guide)",
+    subtitle: "A practical guide to infrared knee devices",
+    intro: "If you're considering an infrared knee massager for daily comfort support, understanding what these devices offer can help you make an informed choice. This guide explores the key features, benefits, and considerations for at-home infrared knee devices.",
+    metaTitle: "Best Infrared Knee Massagers 2026 | Buying Guide & What to Know",
+    metaDescription: "Explore infrared knee massagers, key features to consider, and how they support daily knee comfort.",
+    heroImage: heroInfraredMassager,
+    publishedDate: "January 19, 2026",
+    nextSlug: "sharp-knee-pain-comes-and-goes",
+    nextTitle: "Why Sharp Knee Pain Comes and Goes",
+    content: (
+      <>
+        <p>The world of at-home knee comfort devices has expanded significantly in recent years. Among the options available, <strong>infrared knee massagers</strong> have become increasingly popular for people looking to support their daily knee comfort routine.</p>
+        <h2>Understanding Infrared Knee Massagers</h2>
+        <p>An <strong>infrared knee massager</strong> is a wearable device designed to wrap around the knee area and deliver a combination of warmth, often through infrared technology, along with other comfort features.</p>
+        <TipsList tips={["Infrared technology delivers warmth that penetrates deeper than surface-level heating", "Many devices combine heat with vibration or massage functions", "Wireless designs allow for use during daily activities", "Adjustable settings let you customize the experience"]} />
+        <h2>Key Features to Consider</h2>
+        <p>When evaluating an <strong>infrared knee device</strong>, several features distinguish one product from another. Understanding these can help you identify what matters most for your specific needs.</p>
+        <h3>Heat Technology</h3>
+        <p>Not all heat is created equal. Traditional heating pads warm the surface of the skin, while infrared technology is designed to deliver warmth that reaches deeper tissue layers.</p>
+        <h3>Fit and Adjustability</h3>
+        <p>A device that doesn't fit properly won't deliver its benefits effectively. Look for adjustable straps that accommodate different knee sizes and leg shapes.</p>
+        <h2>Setting Realistic Expectations</h2>
+        <p>While <strong>infrared knee devices</strong> can be a valuable addition to a comfort routine, it's important to approach them with realistic expectations. These are comfort tools, not medical devices.</p>
+        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
+          <p className="text-muted-foreground font-light italic mb-0">Some people find that infrared knee devices become a valued part of their daily comfort routine.</p>
+        </div>
+      </>
+    ),
+    faqs: [
+      { question: "What is an infrared knee massager?", answer: "An infrared knee massager is a wearable device that wraps around the knee to deliver warmth through infrared technology, often combined with other features like vibration." },
+      { question: "How long should I use an infrared knee device?", answer: "Most people use these devices for 15 to 30 minutes per session. Always follow the manufacturer's guidelines." },
+      { question: "Are infrared knee massagers safe?", answer: "For general comfort support, most infrared knee devices are designed for regular daily use. Consult a healthcare professional if you have specific health conditions." }
+    ],
+  },
+
+  "sharp-knee-pain-comes-and-goes": {
+    slug: "sharp-knee-pain-comes-and-goes",
+    title: "Why Sharp Knee Pain Comes and Goes: Causes, Daily Patterns & Gentle Support Options",
+    subtitle: "Understanding intermittent knee discomfort",
+    intro: "Experiencing sharp knee pain that comes and goes can be puzzling and frustrating. Understanding the patterns behind this type of intermittent discomfort can help you make sense of what you're experiencing.",
+    metaTitle: "Sharp Knee Pain Comes and Goes | Causes, Patterns & Support",
+    metaDescription: "Understand why sharp knee pain comes and goes, common patterns, and gentle support options.",
+    heroImage: heroSharpPainPatterns,
+    publishedDate: "January 19, 2026",
+    content: (
+      <>
+        <p>Few things are more confusing than <strong>sharp knee pain that comes and goes</strong>. One moment you're walking comfortably, the next you experience a sudden twinge.</p>
+        <h2>Why Knee Discomfort Can Be Intermittent</h2>
+        <p>The knee is a remarkably complex joint, and <strong>sharp knee pain</strong> that appears and disappears often reflects this complexity.</p>
+        <h2>Common Patterns People Notice</h2>
+        <p>Many people notice that sharp knee pain appears during or after specific activities: climbing stairs, standing from a seated position, or walking on uneven surfaces.</p>
+        <TipsList tips={["Keep a simple log noting when discomfort occurs", "Note weather conditions when symptoms appear", "Track how long discomfort lasts", "Notice whether morning or evening tends to be more comfortable"]} />
+        <h2>Gentle Support Options</h2>
+        <p>When <strong>sharp knee pain comes and goes</strong>, having a toolkit of gentle support options allows you to respond appropriately to varying comfort needs.</p>
+        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
+          <p className="text-muted-foreground font-light italic mb-0">Some people find that at-home warming devices help support their daily knee comfort routine.</p>
+        </div>
+      </>
+    ),
+    faqs: [
+      { question: "Why does sharp knee pain come and go?", answer: "Intermittent knee discomfort often reflects how the knee responds to various factors including activity, position, temperature, and stress." },
+      { question: "Should I be concerned?", answer: "Occasional intermittent discomfort is common. If patterns change significantly or new symptoms appear, professional evaluation is advisable." }
+    ],
+  },
+
+  "side-knee-pain-inner-outer": {
+    slug: "side-knee-pain-inner-outer",
+    title: "Side Knee Pain Explained: Inner vs Outer Knee Discomfort & Everyday Support Tips",
+    subtitle: "Understanding discomfort on either side of the knee",
+    intro: "Experiencing side knee pain, whether on the inner or outer portion of the knee, is a common concern. Understanding what might contribute to discomfort on each side can help you develop more targeted support habits.",
+    metaTitle: "Side Knee Pain: Inner vs Outer Knee Discomfort & Support Tips",
+    metaDescription: "Learn about inner and outer side knee pain and practical everyday support tips.",
+    heroImage: heroSidePainDetailed,
+    publishedDate: "January 19, 2026",
+    content: (
+      <>
+        <p>When <strong>side knee pain</strong> appears, understanding where exactly the discomfort is located can provide helpful context.</p>
+        <h2>Understanding Knee Anatomy: Inner vs Outer</h2>
+        <p>The inner side (medial) and outer side (lateral) each have their own ligaments, cartilage portions, and muscle attachments.</p>
+        <h2>What Influences Inner Knee Discomfort</h2>
+        <p><strong>Inner knee pain</strong> often relates to how forces are distributed across the joint. Walking patterns and footwear can significantly influence comfort.</p>
+        <h2>What Influences Outer Knee Discomfort</h2>
+        <p><strong>Outer knee pain</strong> often appears in connection with repetitive activities. The IT band can become tight and contribute to outer knee discomfort.</p>
+        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
+          <p className="text-muted-foreground font-light italic mb-0">Some people find that at-home warming devices help support daily comfort.</p>
+        </div>
+      </>
+    ),
+    faqs: [
+      { question: "What causes inner knee pain?", answer: "Inner knee discomfort can be influenced by walking patterns, footwear, and activities involving pivoting or side-to-side movement." },
+      { question: "What causes outer knee pain?", answer: "Outer knee discomfort often relates to repetitive activities and IT band tension." }
+    ],
+  },
+
+  "red-light-therapy-for-knees": {
+    slug: "red-light-therapy-for-knees",
+    title: "Red Light Therapy for Knees: What Studies Actually Say (2026 Review)",
+    subtitle: "A balanced look at the research",
+    intro: "Red light therapy has gained attention as a potential support for knee comfort. This guide provides a balanced overview of what studies suggest.",
+    metaTitle: "Red Light Therapy for Knees: What Research Says (2026 Review)",
+    metaDescription: "A balanced look at what research suggests about red light therapy for knee comfort.",
+    heroImage: heroRedLightResearch,
+    publishedDate: "January 19, 2026",
+    content: (
+      <>
+        <p><strong>Red light therapy for knees</strong> has become increasingly popular. This guide offers a straightforward look at the current state of knowledge.</p>
+        <h2>Understanding Red Light Therapy</h2>
+        <p>Red light therapy uses specific wavelengths of red and near-infrared light that penetrate into tissue.</p>
+        <h2>What Research Suggests</h2>
+        <p>Studies have shown mixed results. Some research suggests potential benefits, while others show modest or variable results.</p>
+        <h2>Setting Realistic Expectations</h2>
+        <p>The most helpful approach involves balanced expectations. It's not a miracle solution, but for some people, it may provide meaningful support.</p>
+        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
+          <p className="text-muted-foreground font-light italic mb-0">Some people incorporate red light therapy devices into their daily knee comfort routine.</p>
+        </div>
+      </>
+    ),
+    faqs: [
+      { question: "Does red light therapy help knee discomfort?", answer: "Research shows variable results. Individual responses vary, and consistent use tends to produce the best outcomes." }
+    ],
+  },
+
+  "back-of-knee-pain-daily-habits": {
+    slug: "back-of-knee-pain-daily-habits",
+    title: "Back of Knee Pain: Common Causes, Daily Habits & When People Usually Seek Help",
+    subtitle: "Understanding discomfort behind the knee",
+    intro: "Experiencing discomfort behind the knee can be concerning. Understanding what commonly contributes to this can help you develop supportive daily habits.",
+    metaTitle: "Back of Knee Pain: Causes, Daily Habits & When to Seek Help",
+    metaDescription: "Explore back of knee pain causes and daily habits that influence comfort.",
+    heroImage: heroBackKneeDetailed,
+    publishedDate: "January 19, 2026",
+    content: (
+      <>
+        <p><strong>Back of knee pain</strong> often feels different from discomfort at the front or sides of the knee.</p>
+        <h2>Common Patterns People Notice</h2>
+        <p>Many people notice tightness when straightening the leg or discomfort after prolonged sitting.</p>
+        <h2>Daily Habits That Influence Comfort</h2>
+        <TipsList tips={["Take regular breaks from prolonged sitting", "Incorporate gentle hamstring stretching", "Avoid sitting with legs crossed for extended periods", "Apply warmth when stiffness is present"]} />
+        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
+          <p className="text-muted-foreground font-light italic mb-0">Some people include at-home warming devices for supporting back of knee comfort.</p>
+        </div>
+      </>
+    ),
+    faqs: [
+      { question: "What causes pain behind the knee?", answer: "Back of knee discomfort can arise from muscle tension, joint structures, or fluid accumulation." }
+    ],
+  },
+
+  "daily-knee-care-routine": {
+    slug: "daily-knee-care-routine",
+    title: "Daily Knee Care Routine: Simple Habits for Long-Term Comfort",
+    subtitle: "Building sustainable knee comfort practices",
+    intro: "Creating a daily knee care routine doesn't require hours of time. Simple, consistent habits can support long-term knee comfort.",
+    metaTitle: "Daily Knee Care Routine: Simple Habits for Long-Term Comfort",
+    metaDescription: "Build a sustainable daily knee care routine with simple habits for comfort.",
+    heroImage: heroDailyRoutineNew,
+    publishedDate: "January 19, 2026",
+    content: (
+      <>
+        <p>A <strong>daily knee routine</strong> works best when it's simple enough to maintain consistently.</p>
+        <h2>Morning Knee Care</h2>
+        <p>Before getting out of bed, spend a minute gently bending and straightening your knees.</p>
+        <h2>Throughout the Day</h2>
+        <p>If your day involves prolonged sitting, brief movement breaks help maintain knee flexibility.</p>
+        <h2>Evening Knee Routine</h2>
+        <p>Evening is often an ideal time for warmth application and gentle movement.</p>
+        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
+          <p className="text-muted-foreground font-light italic mb-0">Some people include at-home therapy devices as part of their knee care routine.</p>
+        </div>
+      </>
+    ),
+    faqs: [
+      { question: "How long should a daily knee routine take?", answer: "An effective routine can be as brief as 5 to 10 minutes morning and evening." }
+    ],
+  },
+
+  "heat-vs-ice-for-knees": {
+    slug: "heat-vs-ice-for-knees",
+    title: "Heat vs Ice for Knee Discomfort: What Works Best for Daily Life?",
+    subtitle: "Comparing warmth and cold for knee comfort",
+    intro: "When knee discomfort appears, one common question is whether to reach for heat or ice. Understanding when each works best can help you respond effectively.",
+    metaTitle: "Heat vs Ice for Knees: What Works Best for Daily Comfort?",
+    metaDescription: "Compare heat and ice for knee comfort and when each helps.",
+    heroImage: heroHeatVsIce,
+    publishedDate: "January 19, 2026",
+    content: (
+      <>
+        <p>The <strong>heat vs ice for knees</strong> question is common. Both have genuine benefits but work differently.</p>
+        <h2>How Heat Works for Knees</h2>
+        <p>Heat increases blood flow, relaxes muscles, and provides immediate soothing comfort. Best for stiffness and chronic discomfort.</p>
+        <h2>How Cold Works for Knees</h2>
+        <p>Cold reduces inflammation and swelling. Best for visible swelling or after intense activity.</p>
+        <InfoBox title="The Basic Rule">
+          <p>Use cold for visible swelling, use heat for stiffness. When in doubt, heat is often more comfortable for general daily use.</p>
+        </InfoBox>
+        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
+          <p className="text-muted-foreground font-light italic mb-0">Some people include at-home warming devices as part of their supportive routines.</p>
+        </div>
+      </>
+    ),
+    faqs: [
+      { question: "Should I use heat or ice for stiffness?", answer: "Heat is generally better for stiffness as it increases blood flow and relaxes muscles." }
+    ],
+  },
+
+  "do-knee-massagers-work": {
+    slug: "do-knee-massagers-work",
+    title: "Do Knee Massagers Actually Work? What to Expect & What Not To (2026 Guide)",
+    subtitle: "Setting realistic expectations",
+    intro: "With knee massagers becoming popular, many wonder: do they actually work? This guide provides a balanced perspective on what these devices can realistically offer.",
+    metaTitle: "Do Knee Massagers Work? Expectations & 2026 Reality Guide",
+    metaDescription: "A realistic look at knee massagers: what they offer and what to expect.",
+    heroImage: heroMassagerExpectations,
+    publishedDate: "January 19, 2026",
+    content: (
+      <>
+        <p>The question "<strong>do knee massagers work</strong>" doesn't have a simple answer. Like most comfort tools, expectations need to be grounded in reality.</p>
+        <h2>What Knee Massagers Actually Do</h2>
+        <p>Modern knee massagers typically combine heat, vibration, and sometimes light therapy. The heat function is the most well-established benefit.</p>
+        <h2>What These Devices Can Offer</h2>
+        <TipsList tips={["Comfort and relaxation", "Support for daily routines", "Convenience of multiple functions in one device", "Portability for various situations"]} />
+        <h2>What Not to Expect</h2>
+        <p>Knee massagers are comfort tools, not medical devices. They don't provide dramatic, immediate transformation. Benefits are gradual with consistent use.</p>
+        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
+          <p className="text-muted-foreground font-light italic mb-0">Many people find that at-home knee devices become a valued part of their daily comfort routine.</p>
+        </div>
+      </>
+    ),
+    faqs: [
+      { question: "Do knee massagers really work?", answer: "They can provide genuine comfort support when approached as supportive tools for daily routines rather than medical devices." }
+    ],
   },
 };
 
