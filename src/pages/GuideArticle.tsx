@@ -5059,18 +5059,27 @@ const GuideArticle = () => {
               {article.content}
             </div>
             
-            {/* Context-Aware CTA Snippet */}
+            {/* Premium CTA Highlight Box */}
             {articleCTAs[slug] && (
-              <div className="mt-12 pt-8 border-t border-border/30">
-                <p className="text-muted-foreground font-light leading-relaxed">
-                  {articleCTAs[slug]}{" "}
-                  <a 
-                    href="https://flexi-knee.com/product/flexiknee" 
-                    className="text-primary hover:underline transition-colors"
-                  >
-                    Learn more about FlexiKnee™
-                  </a>.
-                </p>
+              <div 
+                className="mt-12"
+                style={{
+                  padding: '18px',
+                  borderRadius: '12px',
+                  background: '#F9F6F3',
+                  color: '#4A4A4A',
+                  fontSize: '16px',
+                  lineHeight: '1.6'
+                }}
+              >
+                {articleCTAs[slug]}{" "}
+                <a 
+                  href="https://flexi-knee.com/product/flexiknee" 
+                  style={{ color: '#5A7DFF', textDecoration: 'none' }}
+                  className="hover:underline"
+                >
+                  Learn more about FlexiKnee™
+                </a>
               </div>
             )}
           </div>
