@@ -31,6 +31,9 @@ import thumbBackKneeDetailed from "@/assets/guide-thumb-back-knee-detailed.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
 import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
 import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
+import thumbInfraredSafety from "@/assets/guide-thumb-infrared-safety-v2.jpg";
+import thumbWarmthVsInfrared from "@/assets/guide-thumb-warmth-vs-infrared-v2.jpg";
+import thumbNightKneePain from "@/assets/guide-thumb-night-knee-pain-v2.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
@@ -55,6 +58,9 @@ const thumbnailMap: Record<string, string> = {
   "daily-knee-care-routine": thumbDailyRoutineNew,
   "heat-vs-ice-for-knees": thumbHeatVsIce,
   "do-knee-massagers-work": thumbMassagerExpectations,
+  "is-infrared-safe-for-knees": thumbInfraredSafety,
+  "warmth-vs-infrared-knee-routines": thumbWarmthVsInfrared,
+  "knee-pain-worse-at-night": thumbNightKneePain,
 };
 
 // Combine data with thumbnails

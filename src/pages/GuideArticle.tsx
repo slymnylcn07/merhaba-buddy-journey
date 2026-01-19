@@ -86,9 +86,9 @@ import thumbBackKneeDetailed from "@/assets/guide-thumb-back-knee-detailed.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
 import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
 import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
-import thumbInfraredSafety from "@/assets/guide-thumb-infrared-safety.jpg";
-import thumbWarmthVsInfrared from "@/assets/guide-thumb-warmth-vs-infrared.jpg";
-import thumbNightKneePain from "@/assets/guide-thumb-night-knee-pain.jpg";
+import thumbInfraredSafety from "@/assets/guide-thumb-infrared-safety-v2.jpg";
+import thumbWarmthVsInfrared from "@/assets/guide-thumb-warmth-vs-infrared-v2.jpg";
+import thumbNightKneePain from "@/assets/guide-thumb-night-knee-pain-v2.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
