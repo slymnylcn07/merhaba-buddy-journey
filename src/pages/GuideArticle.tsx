@@ -1,3 +1,4 @@
+import { useState, useEffect, useCallback } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -6499,6 +6500,20 @@ const articles: Record<string, ArticleData> = {
 
 const GuideArticle = () => {
   const { slug } = useParams<{ slug: string }>();
+  const [readProgress, setReadProgress] = useState(0);
+  
+  // Track reading progress
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      setReadProgress(Math.min(100, Math.max(0, progress)));
+    };
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   
   if (!slug || !articles[slug]) {
     return <Navigate to="/guides" replace />;
@@ -6616,6 +6631,14 @@ const GuideArticle = () => {
       </Helmet>
       
       <Header />
+      
+      {/* Reading Progress Bar */}
+      <div className="fixed top-0 left-0 right-0 z-[60] h-1 bg-transparent">
+        <div 
+          className="h-full bg-primary transition-all duration-150 ease-out"
+          style={{ width: `${readProgress}%` }}
+        />
+      </div>
       
       <main className="min-h-screen bg-background">
         {/* Article Hero */}
