@@ -212,6 +212,13 @@ export const guidesData: GuideData[] = [
     readTime: 11,
     lastModified: "2026-01-19",
   },
+  {
+    slug: "front-knee-tightness-after-activity",
+    title: "Why the Front or Top of the Knee Feels Tight After Activity (Non-Medical Guide)",
+    description: "Understand why front or top knee tightness occurs after activity and discover daily habits that support comfort.",
+    readTime: 10,
+    lastModified: "2026-01-20",
+  },
 ];
 
 // Static pages for sitemap
