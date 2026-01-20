@@ -226,6 +226,13 @@ export const guidesData: GuideData[] = [
     readTime: 10,
     lastModified: "2026-01-20",
   },
+  {
+    slug: "below-knee-discomfort-teens-adults",
+    title: "Below-Knee Discomfort in Teenagers and Active Adults: Common Daily Patterns",
+    description: "Understand why below-knee discomfort is common in active teens and adults, and discover supportive daily habits for comfort.",
+    readTime: 10,
+    lastModified: "2026-01-20",
+  },
 ];
 
 // Static pages for sitemap
