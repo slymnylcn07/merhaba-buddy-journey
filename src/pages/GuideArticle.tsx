@@ -71,7 +71,7 @@ import heroRunningShoesKnee from "@/assets/article-hero-running-shoes-knee.jpg";
 import heroKneePainTreatment from "@/assets/article-hero-knee-pain-treatment.jpg";
 import heroCauseKneePain from "@/assets/article-hero-cause-knee-pain.jpg";
 import heroFrontKneeTightness from "@/assets/article-hero-front-knee-tightness.jpg";
-import heroKneeLowerBodyConnection from "@/assets/article-hero-knee-lower-body-connection.jpg";
+import heroKneeLowerBodyConnection from "@/assets/article-hero-knee-lower-body-connection-v2.jpg";
 import heroBelowKneeDiscomfort from "@/assets/article-hero-below-knee-discomfort.jpg";
 
 // Import guide thumbnails for related guides
@@ -105,9 +105,9 @@ import thumbTopKneePain from "@/assets/guide-thumb-top-knee-pain.jpg";
 import thumbRunningShoesKnee from "@/assets/guide-thumb-running-shoes-knee.jpg";
 import thumbKneePainTreatment from "@/assets/guide-thumb-knee-pain-treatment.jpg";
 import thumbCauseKneePain from "@/assets/guide-thumb-cause-knee-pain.jpg";
-import thumbFrontKneeTightness from "@/assets/guide-thumb-front-knee-tightness.jpg";
-import thumbKneeLowerBodyConnection from "@/assets/guide-thumb-knee-lower-body-connection.jpg";
-import thumbBelowKneeDiscomfort from "@/assets/guide-thumb-below-knee-discomfort.jpg";
+import thumbFrontKneeTightness from "@/assets/guide-thumb-front-knee-tightness-v2.jpg";
+import thumbKneeLowerBodyConnection from "@/assets/guide-thumb-knee-lower-body-connection-v2.jpg";
+import thumbBelowKneeDiscomfort from "@/assets/guide-thumb-below-knee-discomfort-v2.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
