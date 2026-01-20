@@ -219,6 +219,13 @@ export const guidesData: GuideData[] = [
     readTime: 10,
     lastModified: "2026-01-20",
   },
+  {
+    slug: "knee-discomfort-lower-back-hips",
+    title: "Why Knee Discomfort Sometimes Feels Connected to the Lower Back or Hips",
+    description: "Explore why knee discomfort can feel connected to lower body tension and discover daily movement patterns that support comfort.",
+    readTime: 10,
+    lastModified: "2026-01-20",
+  },
 ];
 
 // Static pages for sitemap
