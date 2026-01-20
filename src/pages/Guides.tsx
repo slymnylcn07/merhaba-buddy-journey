@@ -38,6 +38,9 @@ import thumbTopKneePain from "@/assets/guide-thumb-top-knee-pain.jpg";
 import thumbRunningShoesKnee from "@/assets/guide-thumb-running-shoes-knee.jpg";
 import thumbKneePainTreatment from "@/assets/guide-thumb-knee-pain-treatment.jpg";
 import thumbCauseKneePain from "@/assets/guide-thumb-cause-knee-pain.jpg";
+import thumbFrontKneeTightness from "@/assets/guide-thumb-front-knee-tightness-v2.jpg";
+import thumbKneeLowerBodyConnection from "@/assets/guide-thumb-knee-lower-body-connection-v2.jpg";
+import thumbBelowKneeDiscomfort from "@/assets/guide-thumb-below-knee-discomfort-v2.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
@@ -70,6 +73,9 @@ const thumbnailMap: Record<string, string> = {
   "best-running-shoes-knee-pain": thumbRunningShoesKnee,
   "knee-pain-treatment-daily-habits": thumbKneePainTreatment,
   "cause-of-knee-pain-patterns": thumbCauseKneePain,
+  "front-top-knee-tightness-activity": thumbFrontKneeTightness,
+  "knee-discomfort-lower-back-hips-connection": thumbKneeLowerBodyConnection,
+  "below-knee-discomfort-teens-adults": thumbBelowKneeDiscomfort,
 };
 
 // Combine data with thumbnails
