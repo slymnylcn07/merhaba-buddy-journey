@@ -2571,6 +2571,28 @@ const articles: Record<string, ArticleData> = {
         </div>
       </>
     ),
+    faqs: [
+      {
+        question: "What are the best exercises to strengthen weak knees?",
+        answer: "Effective exercises include gentle leg extensions, hamstring curls, wall sits, step-ups on low platforms, and straight leg raises. Focus on building strength in the quadriceps, hamstrings, and hip muscles that support the knee joint. Start gently and progress gradually."
+      },
+      {
+        question: "How long does it take to strengthen weak knees?",
+        answer: "Most people notice improvement within 4 to 8 weeks of consistent, gentle exercise. However, meaningful strength gains typically develop over 2 to 3 months of regular practice. Consistency matters more than intensity, and patience with the process yields the best results."
+      },
+      {
+        question: "Can I strengthen my knees without exercise equipment?",
+        answer: "Yes, many effective knee-strengthening exercises require no equipment. Wall sits, step-ups on stairs, standing leg raises, and gentle squats can all be done at home with no special equipment. Your body weight provides sufficient resistance for building supportive strength."
+      },
+      {
+        question: "Why do my knees feel weak when climbing stairs?",
+        answer: "Stair climbing requires significant work from the muscles around the knee. Weakness during stairs often indicates that the quadriceps and hip muscles may benefit from strengthening. Building strength in these supporting muscles typically improves stair-climbing comfort."
+      },
+      {
+        question: "Does walking help strengthen knees?",
+        answer: "Walking provides gentle, low-impact conditioning that supports knee health. While it may not build significant muscle strength alone, regular walking maintains joint mobility, promotes circulation, and complements a more targeted strengthening routine."
+      }
+    ],
   },
   "understanding-knee-injuries": {
     slug: "understanding-knee-injuries",
@@ -2801,6 +2823,28 @@ const articles: Record<string, ArticleData> = {
         </div>
       </>
     ),
+    faqs: [
+      {
+        question: "What are the most common types of knee injuries?",
+        answer: "Common knee injuries include ligament sprains (particularly ACL and MCL), meniscus tears, tendon injuries like patellar tendinitis, cartilage damage, and bursitis. The specific type depends on how the injury occurred and which structures were affected."
+      },
+      {
+        question: "How do I know if my knee injury is serious?",
+        answer: "Signs that warrant prompt evaluation include significant swelling, inability to bear weight, visible deformity, severe pain, locking of the knee, or symptoms that worsen over several days. If you experience any of these, professional assessment is advisable."
+      },
+      {
+        question: "How long do knee injuries typically take to heal?",
+        answer: "Recovery times vary significantly depending on the injury type and severity. Minor strains may improve within weeks, while more significant injuries like ligament or meniscus tears may require months. Following professional guidance supports optimal recovery."
+      },
+      {
+        question: "Should I use ice or heat on a knee injury?",
+        answer: "Ice is generally recommended for acute injuries to reduce swelling, especially in the first 48 to 72 hours. Heat may be helpful later for stiffness. The appropriate approach depends on the injury stage, so following professional guidance is recommended."
+      },
+      {
+        question: "Can knee injuries heal on their own without treatment?",
+        answer: "Some minor knee injuries may improve with rest and basic self-care. However, significant injuries often benefit from professional evaluation to ensure proper healing. Untreated injuries can sometimes lead to ongoing problems or increased vulnerability to future issues."
+      }
+    ],
   },
 
   // ============== NEW ARTICLES ADDED JANUARY 2026 ==============
