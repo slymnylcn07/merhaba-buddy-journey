@@ -1,41 +1,75 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import guideThumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
-import guideThumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
-import guideThumbWhoBenefits from "@/assets/guide-thumb-who-benefits-branded.jpg";
-import guideThumbDailyRoutine from "@/assets/guide-thumb-daily-routine.jpg";
+import { guidesData } from "@/data/guides";
 
-const guides = [
-  {
-    slug: "understanding-knee-pain",
-    title: "Why Knee Pain Often Doesn't Go Away on Its Own",
-    description: "A simple explanation of why knee discomfort can feel persistent and what helps support daily comfort.",
-    thumbnail: guideThumbKneePain,
-  },
-  {
-    slug: "heat-therapy-vs-red-light",
-    title: "Heat vs. Red Light Therapy: What Actually Helps Knee Discomfort?",
-    description: "Understand how heat and red light therapy work and how they can support everyday knee comfort.",
-    thumbnail: guideThumbHeatTherapy,
-  },
-  {
-    slug: "who-benefits-from-knee-therapy",
-    title: "Who Benefits Most From At-Home Knee Therapy Devices?",
-    description: "Learn who these devices are designed for and what to realistically expect from at-home support.",
-    thumbnail: guideThumbWhoBenefits,
-  },
-  {
-    slug: "daily-knee-comfort-routine",
-    title: "How to Build a Daily Knee Comfort Routine",
-    description: "Practical tips for creating sustainable morning and evening habits that support long-term knee comfort.",
-    thumbnail: guideThumbDailyRoutine,
-  },
-];
+// Import thumbnails for the recent guides
+import thumbFrontKneeTightness from "@/assets/guide-thumb-front-knee-tightness-v2.jpg";
+import thumbKneeLowerBodyConnection from "@/assets/guide-thumb-knee-lower-body-connection-v2.jpg";
+import thumbBelowKneeDiscomfort from "@/assets/guide-thumb-below-knee-discomfort-v2.jpg";
+import thumbCauseKneePain from "@/assets/guide-thumb-cause-knee-pain.jpg";
+import thumbKneePainTreatment from "@/assets/guide-thumb-knee-pain-treatment.jpg";
+import thumbRunningShoesKnee from "@/assets/guide-thumb-running-shoes-knee.jpg";
+import thumbTopKneePain from "@/assets/guide-thumb-top-knee-pain.jpg";
+import thumbWomenMenKneeComfort from "@/assets/guide-thumb-women-men-knee-comfort.jpg";
+import thumbHowToFixKneePain from "@/assets/guide-thumb-fix-knee-pain.jpg";
+import thumbNightKneePain from "@/assets/guide-thumb-night-knee-pain-v3.jpg";
+
+// Map slugs to thumbnails
+const thumbnailMap: Record<string, string> = {
+  "front-knee-tightness-after-activity": thumbFrontKneeTightness,
+  "knee-discomfort-lower-back-hips": thumbKneeLowerBodyConnection,
+  "below-knee-discomfort-teens-adults": thumbBelowKneeDiscomfort,
+  "cause-of-knee-pain-patterns": thumbCauseKneePain,
+  "knee-pain-treatment-daily-habits": thumbKneePainTreatment,
+  "best-running-shoes-knee-pain": thumbRunningShoesKnee,
+  "top-of-knee-pain-patterns": thumbTopKneePain,
+  "women-men-knee-comfort-patterns": thumbWomenMenKneeComfort,
+  "how-to-fix-knee-pain": thumbHowToFixKneePain,
+  "knee-pain-worse-at-night": thumbNightKneePain,
+};
+
+// Get the 10 most recent guides (last 10 from the array)
+const recentGuides = guidesData.slice(-10).reverse();
 
 export const ProductGuidesSection = () => {
+  // Split guides: first 5 for left column, next 5 for right column
+  const leftColumnGuides = recentGuides.slice(0, 5);
+  const rightColumnGuides = recentGuides.slice(5, 10);
+
+  const GuideCard = ({ guide }: { guide: typeof guidesData[0] }) => (
+    <Link
+      to={`/guides/${guide.slug}`}
+      className="group flex gap-4 p-4 bg-card rounded-xl border border-border/50 hover:border-primary/30 hover:shadow-md transition-all duration-300 h-full"
+    >
+      {/* Thumbnail */}
+      <div className="w-20 h-14 md:w-24 md:h-16 flex-shrink-0 rounded-lg overflow-hidden bg-muted">
+        <img
+          src={thumbnailMap[guide.slug] || "/placeholder.svg"}
+          alt={guide.title}
+          width={96}
+          height={64}
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 min-w-0 flex flex-col justify-center">
+        <h3 className="font-semibold text-sm text-foreground line-clamp-2 mb-1 group-hover:text-primary transition-colors leading-tight">
+          {guide.title}
+        </h3>
+        <span className="text-xs font-medium text-primary flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity mt-auto">
+          Read guide
+          <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+        </span>
+      </div>
+    </Link>
+  );
+
   return (
     <section className="py-16 bg-background">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-5xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10">
           <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">
@@ -46,41 +80,27 @@ export const ProductGuidesSection = () => {
           </p>
         </div>
 
-        {/* Guide Cards - Vertical Stack */}
-        <div className="space-y-4">
-          {guides.map((guide) => (
-            <Link
-              key={guide.slug}
-              to={`/guides/${guide.slug}`}
-              className="group flex gap-4 p-4 bg-card rounded-xl border border-border/50 hover:border-primary/30 hover:shadow-md transition-all duration-300"
-            >
-              {/* Thumbnail */}
-              <div className="w-24 h-16 md:w-32 md:h-20 flex-shrink-0 rounded-lg overflow-hidden bg-muted">
-                <img
-                  src={guide.thumbnail}
-                  alt={guide.title}
-                  width={168}
-                  height={168}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
+        {/* Desktop & Tablet: 2 columns (5 + 5) */}
+        <div className="hidden md:grid md:grid-cols-2 gap-6">
+          {/* Left Column */}
+          <div className="flex flex-col gap-4">
+            {leftColumnGuides.map((guide) => (
+              <GuideCard key={guide.slug} guide={guide} />
+            ))}
+          </div>
 
-              {/* Content */}
-              <div className="flex-1 min-w-0 flex flex-col justify-center">
-                <h3 className="font-semibold text-sm md:text-base text-foreground line-clamp-2 mb-1 group-hover:text-primary transition-colors">
-                  {guide.title}
-                </h3>
-                <p className="text-xs md:text-sm text-muted-foreground line-clamp-1 mb-2">
-                  {guide.description}
-                </p>
-                <span className="text-xs font-medium text-primary flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
-                  Read guide
-                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </div>
-            </Link>
+          {/* Right Column */}
+          <div className="flex flex-col gap-4">
+            {rightColumnGuides.map((guide) => (
+              <GuideCard key={guide.slug} guide={guide} />
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile: 1 column, only first 5 */}
+        <div className="md:hidden flex flex-col gap-4">
+          {leftColumnGuides.map((guide) => (
+            <GuideCard key={guide.slug} guide={guide} />
           ))}
         </div>
       </div>
