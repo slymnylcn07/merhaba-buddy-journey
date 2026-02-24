@@ -304,6 +304,27 @@ export const guidesData: GuideData[] = [
     readTime: 13,
     lastModified: "2026-02-24",
   },
+  {
+    slug: "heat-or-ice-knee-pain-situations",
+    title: "Heat or Ice for Knee Pain? What Works Best in Each Situation",
+    description: "Not sure whether to use heat or ice for knee pain? This guide breaks down which approach works best in common everyday situations for daily knee comfort.",
+    readTime: 10,
+    lastModified: "2026-02-24",
+  },
+  {
+    slug: "sharp-stabbing-knee-pain-comfort",
+    title: "Sharp Stabbing Pain in the Knee: Causes & At-Home Comfort Guide",
+    description: "Experiencing sharp stabbing pain in the knee? Learn common causes, daily patterns, and at-home comfort strategies to support your everyday knee comfort.",
+    readTime: 11,
+    lastModified: "2026-02-24",
+  },
+  {
+    slug: "running-shoes-knee-pain-discomfort",
+    title: "Running Shoes and Knee Pain: Can the Wrong Shoes Cause Discomfort?",
+    description: "Can wrong running shoes cause knee pain? Learn how footwear affects knee comfort, common shoe mistakes, and how to support your knees during and after runs.",
+    readTime: 10,
+    lastModified: "2026-02-24",
+  },
 ];
 
 // Static pages for sitemap
