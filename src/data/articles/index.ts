@@ -7,4 +7,7 @@ export { bestHeatedKneeMassagerArthritis } from "./best-heated-knee-massager-art
 export { heatOrIceKneePain } from "./heat-or-ice-knee-pain";
 export { smartHeatedKneeBraces2026 } from "./smart-heated-knee-braces-2026";
 export { heatRedLightTherapyBenefits2026 } from "./heat-red-light-therapy-benefits-2026";
+export { doKneeMassagersWork } from "./do-knee-massagers-work";
+export { runningShoesKneePain } from "./running-shoes-knee-pain";
+export { sharpKneePainCauses } from "./sharp-knee-pain-causes";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
