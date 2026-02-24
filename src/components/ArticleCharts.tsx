@@ -341,17 +341,17 @@ export const RelatedGuideCard = ({
 }) => (
   <Link
     to={`/guides/${slug}`}
-    className="group block bg-background border border-border/50 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:border-border transition-all duration-300"
+    className="group block bg-background border border-border/50 rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300"
   >
-    <div className="h-36 overflow-hidden">
+    <div className="aspect-[16/10] overflow-hidden">
       <img 
         src={thumbnail} 
         alt={title}
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500"
         loading="lazy"
       />
     </div>
-    <div className="px-4 py-3">
+    <div className="px-4 py-3.5">
       <h4 className="text-sm font-semibold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">
         {title}
       </h4>
