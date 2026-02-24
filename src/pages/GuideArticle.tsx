@@ -108,6 +108,20 @@ import thumbCauseKneePain from "@/assets/guide-thumb-cause-knee-pain.jpg";
 import thumbFrontKneeTightness from "@/assets/guide-thumb-front-knee-tightness-v2.jpg";
 import thumbKneeLowerBodyConnection from "@/assets/guide-thumb-knee-lower-body-connection-v2.jpg";
 import thumbBelowKneeDiscomfort from "@/assets/guide-thumb-below-knee-discomfort-v2.jpg";
+// New unique thumbnails for duplicates
+import thumbFlexikneeReview from "@/assets/guide-thumb-flexiknee-review.jpg";
+import thumbCompetitorsComparison from "@/assets/guide-thumb-competitors-comparison.jpg";
+import thumbInfraredGuide2026 from "@/assets/guide-thumb-infrared-guide-2026.jpg";
+import thumbHeatIceScience from "@/assets/guide-thumb-heat-ice-science.jpg";
+import thumbHeatIceSituations from "@/assets/guide-thumb-heat-ice-situations.jpg";
+import thumbSharpPainRelief from "@/assets/guide-thumb-sharp-pain-relief.jpg";
+import thumbIntermittentPain from "@/assets/guide-thumb-intermittent-pain.jpg";
+import thumbRunningShoesCauses from "@/assets/guide-thumb-running-shoes-causes.jpg";
+import thumbRunningShoesDiscomfort from "@/assets/guide-thumb-running-shoes-discomfort.jpg";
+import thumbSidePainExplained from "@/assets/guide-thumb-side-pain-explained.jpg";
+import thumbArthritisMassager from "@/assets/guide-thumb-arthritis-massager.jpg";
+import thumbHeatRedlightBenefits from "@/assets/guide-thumb-heat-redlight-benefits.jpg";
+import thumbSharpStabbingComfort from "@/assets/guide-thumb-sharp-stabbing-comfort.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -7450,24 +7464,23 @@ const GuideArticle = () => {
                     "front-knee-tightness-after-activity": thumbFrontKneeTightness,
                     "knee-discomfort-lower-back-hips": thumbKneeLowerBodyConnection,
                     "below-knee-discomfort-teens-adults": thumbBelowKneeDiscomfort,
-                    // New commercial articles - Feb 2026
-                    "flexiknee-review-2026": thumbInfraredMassager,
-                    "flexiknee-vs-competitors-2026": thumbMassagerExpectations,
-                    "best-heated-knee-massager-arthritis": thumbKneeArthritis,
-                    "heat-or-ice-knee-pain-science": thumbHeatVsIce,
+                    // New commercial articles - Feb 2026 (unique thumbnails)
+                    "flexiknee-review-2026": thumbFlexikneeReview,
+                    "flexiknee-vs-competitors-2026": thumbCompetitorsComparison,
+                    "best-heated-knee-massager-arthritis": thumbArthritisMassager,
+                    "heat-or-ice-knee-pain-science": thumbHeatIceScience,
                     "smart-heated-knee-braces-2026": thumbMassagerExpectations,
-                    "heat-red-light-therapy-benefits-2026": thumbRedLightResearch,
-                    // New commercial articles - Feb 2026 batch 3
-                    "running-shoes-knee-pain-causes-fixes": thumbRunningShoesKnee,
-                    "sharp-knee-pain-causes-relief": thumbSharpPainPatterns,
-                    "infrared-knee-massager-guide-2026": thumbInfraredMassager,
-                    // Last 6 articles - Feb 2026
-                    "heat-or-ice-knee-pain-situations": thumbHeatVsIce,
-                    "sharp-stabbing-knee-pain-comfort": thumbSharpKneePain,
-                    "running-shoes-knee-pain-discomfort": thumbRunningShoesKnee,
+                    "heat-red-light-therapy-benefits-2026": thumbHeatRedlightBenefits,
+                    "running-shoes-knee-pain-causes-fixes": thumbRunningShoesCauses,
+                    "sharp-knee-pain-causes-relief": thumbSharpPainRelief,
+                    "infrared-knee-massager-guide-2026": thumbInfraredGuide2026,
+                    // Last 6 articles - Feb 2026 (unique thumbnails)
+                    "heat-or-ice-knee-pain-situations": thumbHeatIceSituations,
+                    "sharp-stabbing-knee-pain-comfort": thumbSharpStabbingComfort,
+                    "running-shoes-knee-pain-discomfort": thumbRunningShoesDiscomfort,
                     "infrared-vs-heating-pads": thumbInfraredMassager,
-                    "intermittent-knee-pain-guide": thumbSharpPainPatterns,
-                    "side-of-knee-pain-explained": thumbSidePainDetailed,
+                    "intermittent-knee-pain-guide": thumbIntermittentPain,
+                    "side-of-knee-pain-explained": thumbSidePainExplained,
                   };
                   return (
                     <RelatedGuideCard
