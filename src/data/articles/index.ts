@@ -11,4 +11,7 @@ export { doKneeMassagersWork } from "./do-knee-massagers-work";
 export { runningShoesKneePain } from "./running-shoes-knee-pain";
 export { sharpKneePainCauses } from "./sharp-knee-pain-causes";
 export { infraredKneeMassagerGuide2026 } from "./infrared-knee-massager-guide-2026";
+export { heatOrIceKneePainSituations } from "./heat-or-ice-knee-pain-situations";
+export { sharpStabbingKneePainComfort } from "./sharp-stabbing-knee-pain-comfort";
+export { runningShoesKneePainDiscomfort } from "./running-shoes-knee-pain-discomfort";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
