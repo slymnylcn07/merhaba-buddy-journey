@@ -1,3 +1,5 @@
+import deviceImage from '@/assets/flexiknee-device-main.jpg';
+
 const PRODUCT_URL = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
 
 interface PremiumCTAProps {
@@ -15,6 +17,11 @@ const PremiumCTA = ({ headline, text }: PremiumCTAProps) => (
       padding: '20px',
     }}
   >
+    <img
+      src={deviceImage}
+      alt="FlexiKnee Smart Heated Knee Device"
+      className="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-xl flex-shrink-0"
+    />
     <div className="flex-1">
       <p className="text-foreground font-semibold text-base mb-2 leading-snug">{headline}</p>
       <p className="text-muted-foreground text-sm leading-relaxed mb-4">{text}</p>
