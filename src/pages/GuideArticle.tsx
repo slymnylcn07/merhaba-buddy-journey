@@ -126,6 +126,13 @@ import sectionRunnerForm from "@/assets/article-section-runner-form.jpg";
 import sectionArthritisExercise from "@/assets/article-section-arthritis-exercise.jpg";
 import sectionStretchingRelief from "@/assets/article-section-stretching-relief.jpg";
 
+// Import new articles from separate files
+import {
+  flexikneeReview2026,
+  flexikneeVsCompetitors2026,
+  bestHeatedKneeMassagerArthritis,
+} from "@/data/articles";
+
 interface FAQItem {
   question: string;
   answer: string;
@@ -7226,6 +7233,13 @@ const articles: Record<string, ArticleData> = {
   },
 };
 
+// Merge new articles from separate files
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis];
+for (const exp of newArticleExports) {
+  articles[exp.article.slug] = exp.article;
+  articleCTAs[exp.article.slug] = exp.cta;
+}
+
 const GuideArticle = () => {
   const { slug } = useParams<{ slug: string }>();
   const [readProgress, setReadProgress] = useState(0);
@@ -7518,6 +7532,10 @@ const GuideArticle = () => {
                     "front-knee-tightness-after-activity": thumbFrontKneeTightness,
                     "knee-discomfort-lower-back-hips": thumbKneeLowerBodyConnection,
                     "below-knee-discomfort-teens-adults": thumbBelowKneeDiscomfort,
+                    // New commercial articles - Feb 2026
+                    "flexiknee-review-2026": thumbInfraredMassager,
+                    "flexiknee-vs-competitors-2026": thumbMassagerExpectations,
+                    "best-heated-knee-massager-arthritis": thumbKneeArthritis,
                   };
                   return (
                     <RelatedGuideCard
