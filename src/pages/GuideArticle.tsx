@@ -180,6 +180,7 @@ interface ArticleData {
   nextSlug?: string;
   nextTitle?: string;
   faqs?: FAQItem[];
+  seoTags?: string;
 }
 
 // Context-aware CTA data for each article (headline + text)
@@ -375,6 +376,7 @@ const articles: Record<string, ArticleData> = {
         answer: "Seek professional evaluation if you experience significant swelling, inability to bear weight, locking or giving way of the knee, fever with joint pain, or if your discomfort doesn't improve with consistent home care over several weeks."
       }
     ],
+    seoTags: "persistent knee discomfort, knee stiffness patterns, daily knee habits, why knees stay uncomfortable, chronic knee awareness, long-term knee comfort, joint stiffness daily, knee comfort routine, understanding knee discomfort",
   },
   "heat-vs-red-light-therapy": {
     slug: "heat-vs-red-light-therapy",
@@ -528,6 +530,7 @@ const articles: Record<string, ArticleData> = {
         answer: "Red light therapy typically requires consistent use over several weeks to see noticeable benefits. Most studies showing positive results involve regular sessions over 2-8 weeks, with continued use for maintenance."
       }
     ],
+    seoTags: "heat therapy knee comfort, red light knee support, warmth-based knee care, infrared knee comfort, at-home knee warmth, red light wavelength knee, heat vs red light, photobiomodulation comfort, daily warmth routine",
   },
   "who-benefits-from-knee-therapy-devices": {
     slug: "who-benefits-from-knee-therapy-devices",
@@ -697,6 +700,7 @@ const articles: Record<string, ArticleData> = {
         answer: "Realistic expectations include temporary relief from stiffness, support for daily comfort, and being one component of a broader self-care routine. They won't cure underlying conditions, replace professional treatment, or provide instant permanent relief."
       }
     ],
+    seoTags: "knee comfort devices, at-home knee support, who needs knee massager, daily knee device use, knee warmth device, realistic expectations knee devices, knee comfort tools, wireless knee support",
   },
   "daily-knee-comfort-routine": {
     slug: "daily-knee-comfort-routine",
@@ -909,6 +913,7 @@ const articles: Record<string, ArticleData> = {
         answer: "Effective exercises include gentle knee bends, leg extensions, ankle circles, hamstring stretches, and low-impact activities like swimming or cycling. Focus on gentle, consistent movement rather than intense workouts."
       }
     ],
+    seoTags: "daily knee routine, morning knee habits, evening knee comfort, knee care schedule, consistent knee support, gentle knee movement, building knee habits, knee warmth routine, simple knee care",
   },
   "pain-in-the-knee-causes-locations": {
     slug: "pain-in-the-knee-causes-locations",
@@ -1153,6 +1158,7 @@ const articles: Record<string, ArticleData> = {
         answer: "See a doctor if you have significant swelling, can't bear weight, notice the knee locking or giving way, have fever with joint pain, or if pain persists despite consistent home care for several weeks."
       }
     ],
+    seoTags: "knee discomfort locations, front knee awareness, back of knee stiffness, side knee patterns, knee discomfort causes, where knee hurts, knee location patterns, understanding knee areas",
   },
   "back-of-knee-pain-explained": {
     slug: "back-of-knee-pain-explained",
@@ -1395,6 +1401,7 @@ const articles: Record<string, ArticleData> = {
         answer: "Seek immediate attention if you have sudden severe pain, significant swelling, warmth or redness, calf swelling (possible blood clot), numbness, or inability to bear weight. These may indicate serious conditions."
       }
     ],
+    seoTags: "back of knee discomfort, behind knee stiffness, popliteal area comfort, knee bending tightness, hamstring knee connection, back knee daily habits, behind knee awareness, leg straightening discomfort",
   },
   "side-knee-pain-comfort-guide": {
     slug: "side-knee-pain-comfort-guide",
@@ -1654,6 +1661,7 @@ const articles: Record<string, ArticleData> = {
         answer: "See a doctor if pain is severe, you have significant swelling, the knee feels unstable or buckles, you experience locking or catching, or if self-care hasn't helped after several weeks of consistent effort."
       }
     ],
+    seoTags: "side knee discomfort, lateral knee comfort, medial knee awareness, IT band knee connection, inner knee patterns, outer knee stiffness, side knee daily support, knee alignment habits",
   },
   "running-knee-pain-guide": {
     slug: "running-knee-pain-guide",
@@ -1882,6 +1890,7 @@ const articles: Record<string, ArticleData> = {
         answer: "Prevention includes proper warm-up, gradual training progression (10% rule), appropriate footwear, cross-training, strength training for legs and core, adequate rest between hard efforts, and addressing any biomechanical issues with gait analysis."
       }
     ],
+    seoTags: "running knee discomfort, runner knee awareness, post-run knee comfort, knee comfort while running, jogging knee patterns, runner knee habits, running form knee connection, stride knee comfort",
   },
   "knee-arthritis-pain-guide": {
     slug: "knee-arthritis-pain-guide",
@@ -2118,6 +2127,7 @@ const articles: Record<string, ArticleData> = {
         answer: "Cartilage damage cannot be reversed, but symptoms can be effectively managed. Weight loss, exercise, appropriate support, and medical treatments can significantly reduce pain and improve function. Early intervention helps slow progression."
       }
     ],
+    seoTags: "knee arthritis comfort, joint stiffness daily routine, arthritis knee warmth, morning joint stiffness, arthritis daily habits, knee joint comfort support, gentle joint movement, arthritis lifestyle patterns",
   },
   "sharp-knee-pain-guide": {
     slug: "sharp-knee-pain-guide",
@@ -2372,6 +2382,7 @@ const articles: Record<string, ArticleData> = {
         answer: "See a doctor if pain is severe, associated with significant swelling, causes locking or giving way, prevents weight bearing, is accompanied by fever, or doesn't improve with rest and home care within a few weeks."
       }
     ],
+    seoTags: "sharp knee discomfort, intermittent knee awareness, sudden knee sensation, knee discomfort patterns, unpredictable knee comfort, sharp knee moments, knee comfort response, daily knee awareness",
   },
   "how-to-strengthen-knees": {
     slug: "how-to-strengthen-knees",
@@ -2613,6 +2624,7 @@ const articles: Record<string, ArticleData> = {
         answer: "Walking provides gentle, low-impact conditioning that supports knee health. While it may not build significant muscle strength alone, regular walking maintains joint mobility, promotes circulation, and complements a more targeted strengthening routine."
       }
     ],
+    seoTags: "knee strengthening habits, daily knee support exercises, gentle knee movements, knee stability routine, leg strength for knees, sustainable knee exercises, knee muscle support, low-impact knee strength",
   },
   "understanding-knee-injuries": {
     slug: "understanding-knee-injuries",
@@ -2860,6 +2872,7 @@ const articles: Record<string, ArticleData> = {
         answer: "Some minor knee injuries may improve with rest and basic self-care. However, significant injuries often benefit from professional evaluation to ensure proper healing. Untreated injuries can sometimes lead to ongoing problems or increased vulnerability to future issues."
       }
     ],
+    seoTags: "knee injury awareness, common knee concerns, knee recovery habits, injury prevention daily, knee joint understanding, knee health education, post-injury comfort, knee protection habits",
   },
 
   // ============== NEW ARTICLES ADDED JANUARY 2026 ==============
@@ -3016,6 +3029,7 @@ const articles: Record<string, ArticleData> = {
       { question: "What's the difference between infrared and regular heating pads?", answer: "Traditional heating pads warm the skin's surface through direct contact, while infrared technology like that in FlexiKnee uses specific light wavelengths designed to penetrate deeper into tissue. This can provide a different quality of warmth that many users find more satisfying." },
       { question: "How do I choose the right infrared knee massager?", answer: "Consider factors like adjustable temperature settings, proper fit for your knee size, battery life for wireless models, vibration settings that match your preferences, and user reviews focusing on long-term durability and satisfaction. FlexiKnee offers all these features in a convenient package." }
     ],
+    seoTags: "infrared knee massager, knee device features, infrared warmth knee, buying knee massager, knee massager comparison, wireless knee device, adjustable knee warmth, knee massager daily use",
   },
 
   "sharp-knee-pain-comes-and-goes": {
@@ -3182,6 +3196,7 @@ const articles: Record<string, ArticleData> = {
       { question: "Does weather really affect knee discomfort?", answer: "Many people report weather-related patterns in their knee discomfort, particularly with changes in barometric pressure, humidity, or temperature. While scientific understanding continues to develop, personal observation of your own patterns can be valuable for managing daily comfort." },
       { question: "How can I reduce how often sharp knee pain occurs?", answer: "Building consistent supportive habits often helps reduce frequency. This includes staying well-hydrated, maintaining a balance of movement and rest, prioritizing quality sleep, managing stress, and having gentle support options available for when discomfort does appear." }
     ],
+    seoTags: "intermittent sharp knee, knee discomfort comes goes, variable knee comfort, daily knee patterns, knee awareness fluctuations, unpredictable knee discomfort, supportive knee habits, comfort pattern tracking",
   },
 
   "side-knee-pain-inner-outer": {
@@ -3354,6 +3369,7 @@ const articles: Record<string, ArticleData> = {
       { question: "Does footwear affect side knee pain?", answer: "Yes, footwear can significantly influence side knee comfort. Worn or unsupportive shoes may contribute to movement patterns that stress one side of the knee more than the other. Well-fitting, supportive shoes help distribute forces more evenly across the joint." },
       { question: "What helps both inner and outer knee discomfort?", answer: "General strategies that support both include applying gentle warmth, maintaining gentle movement through a comfortable range, attention to alignment during daily activities, wearing supportive footwear, and building consistent daily knee comfort habits." }
     ],
+    seoTags: "inner knee discomfort, outer knee awareness, lateral knee patterns, medial knee comfort, side knee daily support, knee side stiffness, inner outer knee habits, footwear knee connection",
   },
 
   "red-light-therapy-for-knees": {
@@ -3601,6 +3617,7 @@ const articles: Record<string, ArticleData> = {
       { question: "What's the difference between red light and infrared therapy?", answer: "Red light (typically 630 to 660 nm) is visible and affects more superficial tissues. Near-infrared light (typically 810 to 850 nm) is invisible and is designed to penetrate deeper into tissue. Many modern devices combine both wavelengths to potentially address different tissue depths. Both fall under the broader category of photobiomodulation therapy." },
       { question: "Should I use red light therapy alone or with other approaches?", answer: "Red light therapy tends to work best as part of a comprehensive knee comfort routine that includes other supportive habits like warmth application, gentle movement, and attention to daily patterns. Research and practical experience suggest that relying on any single approach rarely produces optimal results compared to multi-modal routines." }
     ],
+    seoTags: "red light knee research, photobiomodulation knee comfort, red light wavelength knee, knee comfort light therapy, red light daily use, research-based knee support, at-home red light knee, gentle light knee comfort",
   },
 
   "back-of-knee-pain-daily-habits": {
@@ -3767,6 +3784,7 @@ const articles: Record<string, ArticleData> = {
       { question: "What daily habits help back of knee comfort?", answer: "Helpful habits include taking regular breaks from sitting, gentle hamstring and calf stretching, attention to sleep position, warmth application for stiffness, and avoiding prolonged positions that stress the back of the knee like sitting with legs crossed." },
       { question: "When should I see a doctor for back of knee pain?", answer: "Consider seeking professional evaluation for visible swelling that doesn't resolve, new lumps or bumps, discomfort that significantly limits activities, worsening symptoms over time, numbness or tingling in the lower leg, or warmth and redness in the area." }
     ],
+    seoTags: "behind knee daily habits, back knee stiffness routine, hamstring knee comfort, sitting position knee, back knee morning stiffness, gentle stretching back knee, daily movement back knee, warmth behind knee",
   },
 
   "daily-knee-care-routine": {
@@ -3935,6 +3953,7 @@ const articles: Record<string, ArticleData> = {
       { question: "What if I miss a day of my knee routine?", answer: "Missing occasional days won't undo your progress. The benefits come from overall patterns rather than perfect adherence. Simply resume your routine the next day without worry or trying to make up for missed days." },
       { question: "How long until I notice benefits from a daily routine?", answer: "Many people notice subtle improvements within a week or two, with more significant benefits appearing over 4 to 8 weeks of consistent practice. Individual timelines vary based on starting point and specific needs." }
     ],
+    seoTags: "daily knee care, morning knee routine, evening knee habits, simple knee maintenance, knee care consistency, gentle knee care, sustainable knee routine, knee comfort schedule",
   },
 
   "heat-vs-ice-for-knees": {
@@ -4100,6 +4119,7 @@ const articles: Record<string, ArticleData> = {
       { question: "Which is better for chronic knee discomfort?", answer: "For ongoing discomfort without active swelling, most people find heat more consistently helpful and comfortable. Warmth supports circulation, relaxes muscles, and provides soothing sensations. Reserve cold for times when visible swelling is present." },
       { question: "What if I'm not sure whether to use heat or ice?", answer: "When in doubt for chronic situations without visible swelling, heat is generally a safe and comfortable choice. If your knee is puffy, warm to the touch, or visibly swollen, cold is usually better. Starting with mild warmth is typically a safe approach when uncertain." }
     ],
+    seoTags: "heat vs ice knee, when to use heat knee, when to use ice knee, warmth for knee stiffness, cold for knee swelling, heat or cold knee, daily knee warmth choice, temperature knee comfort",
   },
 
   "do-knee-massagers-work": {
@@ -4262,6 +4282,7 @@ const articles: Record<string, ArticleData> = {
       { question: "Can knee massagers replace physical therapy or medical treatment?", answer: "No, knee massagers are comfort tools, not replacements for professional care. They can complement other approaches to knee comfort but should not replace professional evaluation, diagnosis, and treatment when medical attention is needed." },
       { question: "What features matter most in a knee massager?", answer: "Heat function tends to be the most consistently beneficial feature. Beyond that, proper fit and comfort, ease of daily use, adequate battery life for wireless models, and adjustable settings that let you personalize the experience are typically most important." }
     ],
+    seoTags: "knee massager effectiveness, realistic knee device expectations, daily knee massager use, knee comfort tool value, consistent knee device routine, at-home knee massager, knee massager features, warmth vibration knee",
   },
   "is-infrared-safe-for-knees": {
     slug: "is-infrared-safe-for-knees",
@@ -4468,6 +4489,7 @@ const articles: Record<string, ArticleData> = {
       { question: "How long should I use an infrared knee device?", answer: "Most home infrared devices are designed for sessions of 15 to 30 minutes. Many people use them once or twice daily as part of morning and evening routines. Always check your specific device's recommendations for optimal use." },
       { question: "Who should avoid using infrared knee devices?", answer: "Those with certain skin sensitivities, reduced sensation in their legs, or specific health conditions may want to consult a healthcare provider before use. Avoid using on damaged skin, open wounds, or areas with decreased sensation. When in doubt, professional guidance is recommended." }
     ],
+    seoTags: "infrared safety knees, daily infrared knee use, infrared warmth safety, knee device safety, infrared comfort routine, non-UV knee warmth, safe knee warming, infrared session guidelines",
   },
   "warmth-vs-infrared-knee-routines": {
     slug: "warmth-vs-infrared-knee-routines",
@@ -4693,6 +4715,7 @@ const articles: Record<string, ArticleData> = {
       { question: "Which is more convenient for daily use?", answer: "It depends on your routine. Portable infrared devices offer flexibility to move around while using them. Traditional heating pads work well for dedicated relaxation time in one spot. Many modern devices combine both convenience and effectiveness." },
       { question: "Do I need both warmth and infrared for knee comfort?", answer: "No, you don't need both. Many people are happy with one approach that suits their lifestyle. Some prefer having options for different situations. Start with one approach and see if it meets your needs before adding alternatives." }
     ],
+    seoTags: "warmth vs infrared knee, traditional heat knee, infrared knee comparison, daily warmth routine, heat pad vs infrared, knee comfort approaches, choosing knee warmth, portable knee warmth",
   },
   "knee-pain-worse-at-night": {
     slug: "knee-pain-worse-at-night",
@@ -4938,6 +4961,7 @@ const articles: Record<string, ArticleData> = {
       { question: "Should I use ice or heat for nighttime knee discomfort?", answer: "Most people find warmth more comfortable for nighttime use, as it can help relax muscles and ease stiffness. Heat is generally calming before sleep, while ice is more commonly used for acute situations. Personal preference varies, so experimenting with what feels best for you is reasonable." },
       { question: "How does sleeping position affect knee comfort?", answer: "Sleeping position significantly impacts knee pressure and comfort. Side sleepers often benefit from placing a pillow between their knees. Back sleepers may find relief with a pillow under their knees. Experimenting with positions and pillow placement can help you find what works best for your comfort." }
     ],
+    seoTags: "nighttime knee discomfort, evening knee stiffness, knee comfort before bed, sleep position knee, nighttime warmth routine, why knees hurt at night, bedtime knee habits, evening knee wind-down",
   },
 
   "how-to-fix-knee-pain": {
@@ -5188,6 +5212,7 @@ const articles: Record<string, ArticleData> = {
       { question: "Can at-home devices help with knee comfort?", answer: "Some people find that warmth-based devices and other at-home tools support their comfort routines. These are typically used as part of broader daily habits rather than standalone solutions. Individual experiences vary, so what works for one person may differ for another." },
       { question: "How long does it take to notice improvement in knee comfort?", answer: "Meaningful changes in comfort patterns often develop gradually over weeks of consistent habits rather than overnight. Small, sustainable daily practices tend to produce better long-term results than dramatic short-term efforts. Patience and consistency are typically more valuable than intensity." }
     ],
+    seoTags: "daily knee comfort habits, knee discomfort understanding, gentle knee support, daily knee adjustments, sustainable knee comfort, at-home knee routine, practical knee habits, knee comfort lifestyle",
   },
 
   "women-men-knee-comfort-patterns": {
@@ -5459,6 +5484,7 @@ const articles: Record<string, ArticleData> = {
       { question: "Why does sitting for long periods make knees feel stiff?", answer: "Extended periods in the same position can lead to feelings of stiffness when you finally move. This is a nearly universal experience regardless of gender. Taking brief movement breaks throughout seated periods is a common habit people use to address this pattern." },
       { question: "Why does cold weather affect knee comfort?", answer: "Many people report increased knee sensitivity during cold weather. This is a commonly observed pattern that affects people of all backgrounds. Keeping warm, wearing appropriate layers, and using warmth-based comfort routines are approaches many people use during colder seasons." }
     ],
+    seoTags: "women knee comfort patterns, men knee discomfort differences, gender knee daily habits, lifestyle knee comfort, footwear knee connection, standing knee awareness, daily routine knee patterns, caregiving knee comfort",
   },
 
   "top-of-knee-pain-patterns": {
@@ -5708,6 +5734,7 @@ const articles: Record<string, ArticleData> = {
       { question: "Is it normal to feel front knee discomfort after a long day?", answer: "Yes, noticing front knee awareness after active or long days is very common. Accumulated daily activity often leads to increased knee awareness by evening. This pattern is widely reported and generally reflects normal responses to daily demands." },
       { question: "What habits help support daily front knee comfort?", answer: "Common supportive habits include gentle movement throughout the day, avoiding prolonged static positions, using warmth-based comfort routines, wearing supportive footwear, and creating comfortable rest environments. Consistency with simple habits often produces better results than occasional dramatic efforts." }
     ],
+    seoTags: "top of knee discomfort, front knee tightness, above kneecap awareness, knee stiffness after sitting, stairs knee discomfort, front knee daily patterns, kneecap area comfort, knee pressure sensation",
   },
 
   "best-running-shoes-knee-pain": {
@@ -5982,6 +6009,7 @@ const articles: Record<string, ArticleData> = {
       { question: "How long should running shoes typically last?", answer: "Most running shoes have recommended mileage ranges, often 300-500 miles depending on the shoe and runner. After this, cushioning and support properties typically degrade. Many runners track their shoe mileage and notice changes in how shoes feel as they age. Replacing worn shoes is a common practice for maintaining comfort." },
       { question: "Can changing running shoes help with knee comfort?", answer: "Footwear is one factor that can influence running comfort. For some runners, finding better-suited shoes makes a noticeable difference. However, shoes work alongside running form, training habits, and other factors. Changing shoes alone may or may not address comfort concerns; a holistic approach considering multiple factors is often most effective." }
     ],
+    seoTags: "running shoes knee comfort, shoe fit knee impact, cushioning knee support, runner footwear choices, knee-friendly running shoes, shoe replacement knee, running form knee, stride shoe connection",
   },
 
   "knee-pain-treatment-daily-habits": {
@@ -6210,6 +6238,7 @@ const articles: Record<string, ArticleData> = {
       { question: "Are home comfort habits commonly used?", answer: "Yes, many people develop home-based comfort routines including movement awareness, warmth-based habits, evening wind-down practices, and environmental adjustments. These everyday approaches are very common and represent what most people actually mean when searching for support options." },
       { question: "Why does the location of discomfort feel different?", answer: "Different knee areas are associated with different activities and movement patterns. Front knee sensations often relate to stairs and sitting transitions, back of knee to leg straightening, and sides to specific movement types. Recognizing your location patterns can help you understand your personal influences." }
     ],
+    seoTags: "knee comfort routines, daily knee support habits, sustainable knee comfort, knee discomfort understanding, practical knee care, lifestyle knee support, warmth-based knee habits, at-home knee approach",
   },
 
   "cause-of-knee-pain-patterns": {
@@ -6504,6 +6533,7 @@ const articles: Record<string, ArticleData> = {
       { question: "Why does cold weather affect knee comfort?", answer: "Many people report changes in knee comfort during cold or damp weather. While individual experiences vary widely, temperature and humidity changes are commonly mentioned as influencing factors. Warmth-based routines are often incorporated during colder periods." },
       { question: "Why does discomfort appear in different locations?", answer: "Different knee areas respond to different activities and movement patterns. Front knee sensations often relate to stairs and sitting transitions, back of knee to leg straightening, and sides to specific lateral movements. Recognizing where your sensations appear can help you identify which activities or patterns might be involved." }
     ],
+    seoTags: "knee discomfort causes daily, lifestyle knee patterns, sitting knee stiffness, standing knee fatigue, weather knee comfort, activity level knee connection, daily knee influences, environmental knee factors",
   },
 
   "front-knee-tightness-after-activity": {
@@ -6706,6 +6736,7 @@ const articles: Record<string, ArticleData> = {
       { question: "Why does front knee tightness feel worse in the evening?", answer: "Evening is when many people notice front knee tightness most. By this time, the day's cumulative activity has added up, and as your body winds down from active periods, sensations that were less noticeable during movement become more apparent. This is a very common timing pattern." },
       { question: "Can sitting with bent knees cause front knee tightness?", answer: "Extended periods of sitting with bent knees is one of the most commonly mentioned factors in front knee tightness. When transitioning from sitting to standing after long sedentary periods, many people notice stiffness or pressure at the front of the knee. Taking brief movement breaks is a habit some people find supportive." }
     ],
+    seoTags: "front knee tightness, top of knee after activity, knee pressure after stairs, post-activity knee awareness, kneecap tightness, evening front knee stiffness, activity-related knee sensation, warm-down knee comfort",
   },
 
   "knee-discomfort-lower-back-hips": {
@@ -6926,6 +6957,7 @@ const articles: Record<string, ArticleData> = {
       { question: "Why does lower body discomfort feel worse in the evening?", answer: "Evenings are when many people notice lower body sensations most. The day's cumulative activity and demands have added up, and as your body winds down, sensations that were masked during active periods become more apparent. This timing pattern is very common for connected knee and lower body sensations." },
       { question: "Do footwear choices affect knee and lower body comfort?", answer: "Yes, many people notice correlations between their footwear and how their lower body feels. The shoes you wear influence how your knees, hips, and lower back respond to walking and standing throughout the day. Different footwear on different surfaces can contribute to varying sensations in connected areas of the lower body." }
     ],
+    seoTags: "knee lower back connection, knee hip relationship, lower body comfort, connected knee discomfort, sitting posture lower body, walking pattern knee back, whole body knee comfort, lower body daily habits",
   },
 
   "below-knee-discomfort-teens-adults": {
@@ -7179,6 +7211,7 @@ const articles: Record<string, ArticleData> = {
       { question: "How can active adults support below-knee comfort?", answer: "Active adults can support below-knee comfort by paying attention to activity patterns, incorporating adequate rest between demanding sessions, choosing appropriate footwear, and developing post-activity routines that include gentle habits like warmth application. Awareness of personal patterns helps in understanding what supports your individual comfort." },
       { question: "Does footwear affect below-knee sensations?", answer: "Yes, footwear can significantly influence how the below-knee area feels, particularly for active individuals. Shoes designed for your specific activities, with appropriate cushioning and support, often contribute to better comfort. Many people notice differences in how their legs feel with different footwear choices, making this an important consideration for active lifestyles." }
     ],
+    seoTags: "below knee discomfort, teen knee awareness, active lifestyle knee, below kneecap sensation, sports knee discomfort, youth knee comfort, post-activity below knee, rest recovery knee comfort",
   },
 };
 
@@ -7408,6 +7441,13 @@ const GuideArticle = () => {
               prose-figcaption:text-sm prose-figcaption:text-muted-foreground
             ">
               {article.content}
+
+              {/* SEO Tags */}
+              {article.seoTags && (
+                <div className="my-6">
+                  <p className="text-sm text-muted-foreground"><strong>SEO Tags:</strong> {article.seoTags}</p>
+                </div>
+              )}
             </div>
             
             {/* Premium CTA Highlight Box */}

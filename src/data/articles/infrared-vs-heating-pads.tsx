@@ -107,5 +107,6 @@ export const infraredVsHeatingPads: ArticleExport = {
         />
       </>
     ),
+    seoTags: "infrared vs heating pad, knee warmth comparison, heating pad knee, infrared knee comfort, wireless vs wired knee warmth, deeper warmth infrared, targeted knee comfort, daily knee warming options",
   },
 };

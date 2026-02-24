@@ -18,6 +18,7 @@ export interface ArticleData {
   nextSlug?: string;
   nextTitle?: string;
   faqs?: FAQItem[];
+  seoTags?: string;
 }
 
 export interface ArticleExport {

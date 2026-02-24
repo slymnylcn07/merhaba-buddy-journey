@@ -200,10 +200,8 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and customer experiences. Always consult a healthcare professional for persistent or severe knee concerns.
         </div>
 
-        <div className="my-6">
-          <p className="text-sm text-muted-foreground"><strong>SEO Tags:</strong> heat and red light therapy for knees, red light therapy knee pain, benefits of heat therapy knee, photobiomodulation knee, infrared therapy for knee pain, red light therapy 2026 research, heat therapy vs red light, combined therapy knee comfort, FlexiKnee red light, knee pain relief at home, red light therapy benefits, heat therapy knee arthritis, at-home knee therapy device, infrared knee massager benefits</p>
-        </div>
       </>
     ),
+    seoTags: "heat and red light knee, combined warmth red light, photobiomodulation knee comfort, infrared red light knee, warmth red light benefits, daily knee warmth routine, at-home knee comfort combo, red light research knee",
   },
 };

@@ -185,5 +185,6 @@ export const runningShoesKneePain: ArticleExport = {
         </div>
       </>
     ),
+    seoTags: "running shoes knee discomfort, shoe impact on knee, footwear knee comfort, runner knee daily habits, shoe cushioning knee, post-run knee comfort routine, shoe choice knee connection, running knee warmth routine",
   },
 };

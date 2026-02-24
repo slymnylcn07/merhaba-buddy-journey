@@ -248,5 +248,6 @@ export const infraredKneeMassagerGuide2026: ArticleExport = {
         </div>
       </>
     ),
+    seoTags: "infrared knee massager guide, choosing infrared knee device, infrared warmth comfort, deep warmth knee support, wireless infrared knee, daily infrared knee routine, infrared vs surface heat, knee device selection",
   },
 };

@@ -126,10 +126,8 @@ export const runningShoesKneePainDiscomfort: ArticleExport = {
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and customer experiences. Always consult a healthcare professional for persistent or severe knee concerns.
         </div>
 
-        <div className="my-6">
-          <p className="text-sm text-muted-foreground"><strong>SEO Tags:</strong> running shoes and knee pain, can wrong shoes cause knee pain, running shoes knee discomfort, best shoes for knee comfort, knee pain after running, running shoe cushioning, shoe replacement schedule, post-run knee comfort, runner knee support, FlexiKnee</p>
-        </div>
       </>
     ),
+    seoTags: "running shoes knee discomfort, wrong shoes knee impact, shoe replacement knee comfort, post-run knee warmth, runner knee daily support, cushioning shoe knee, shoe fit knee comfort, running knee habits",
   },
 };

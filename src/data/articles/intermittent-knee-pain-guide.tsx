@@ -115,5 +115,6 @@ export const intermittentKneePainGuide: ArticleExport = {
         />
       </>
     ),
+    seoTags: "intermittent knee discomfort, knee comes and goes, unpredictable knee comfort, daily knee comfort habits, weather knee connection, consistent knee routine, managing knee discomfort patterns, gentle daily knee support",
   },
 };

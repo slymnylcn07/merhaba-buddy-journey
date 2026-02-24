@@ -172,10 +172,8 @@ export const heatOrIceKneePain: ArticleExport = {
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and customer experiences. Always consult a healthcare professional for persistent or severe knee concerns.
         </div>
 
-        <div className="my-6">
-          <p className="text-sm text-muted-foreground"><strong>SEO Tags:</strong> heat or ice for knee pain, heat vs ice knee, heat therapy for knee pain, red light therapy knees, should I use heat or ice on my knee, knee pain heat or cold, best treatment for knee pain, heated knee massager, FlexiKnee review, knee pain relief at home, infrared therapy knee, heat therapy vs ice therapy, knee stiffness relief, knee comfort routine</p>
-        </div>
       </>
     ),
+    seoTags: "heat or ice knee, warmth vs cold knee, heat therapy knee comfort, when to warm knee, when to cool knee, daily knee warmth decision, knee comfort temperature, red light warmth knee combo",
   },
 };
