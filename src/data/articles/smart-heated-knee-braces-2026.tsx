@@ -1,6 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
+import heroImage from "@/assets/article-hero-smart-knee-braces.jpg";
 
 const productLink = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
 
@@ -13,7 +14,7 @@ export const smartHeatedKneeBraces2026: ArticleExport = {
     intro: "The market for smart heated knee braces has expanded significantly in 2026, with new features like red light therapy, app connectivity, and multi-zone heating. This buyer's guide reviews the top 5 devices and helps you understand what matters most when choosing the right one for your needs.",
     metaTitle: "Smart Heated Knee Braces 2026 Buyer's Guide – Top 5 Reviewed",
     metaDescription: "Compare the top 5 smart heated knee braces in 2026. Features, pricing, pros and cons reviewed. Find the best heated knee brace device for your needs.",
-    heroImage: "",
+    heroImage: heroImage,
     publishedDate: "February 24, 2026",
     nextSlug: "heat-red-light-therapy-benefits-2026",
     nextTitle: "Benefits of Heat + Red Light Therapy for Knee Pain",

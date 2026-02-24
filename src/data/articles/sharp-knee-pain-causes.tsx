@@ -1,5 +1,6 @@
 import { ArticleExport } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
+import heroImage from "@/assets/article-hero-sharp-knee-causes.jpg";
 
 export const sharpKneePainCauses: ArticleExport = {
   cta: "",
@@ -10,7 +11,7 @@ export const sharpKneePainCauses: ArticleExport = {
     intro: "Sharp knee pain that appears suddenly and then disappears can be confusing and frustrating. This guide explores the most common causes, when to seek help, and what home-based support options, including heat therapy, can offer between episodes.",
     metaTitle: "Sharp Knee Pain That Comes & Goes: Causes, Relief & Home Treatment (2026)",
     metaDescription: "Sharp knee pain that comes and goes? Learn common causes, relief options, and home treatments including heat therapy. Complete guide with when to see a doctor.",
-    heroImage: "",
+    heroImage: heroImage,
     publishedDate: "February 24, 2026",
     faqs: [
       { question: "Why does my knee suddenly hurt and then stop?", answer: "Intermittent sharp knee pain often results from loose cartilage fragments, minor meniscus tears, patellar tracking issues, or inflammatory conditions that flare up with certain movements or activities." },

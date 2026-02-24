@@ -1,6 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
+import heroImage from "@/assets/article-hero-heat-or-ice-science.jpg";
 
 export const heatOrIceKneePain: ArticleExport = {
   cta: "",
@@ -11,7 +12,7 @@ export const heatOrIceKneePain: ArticleExport = {
     intro: "The age-old debate of heat versus ice for knee pain continues to confuse many people. This comprehensive guide breaks down the science behind both approaches and explains why combining heat with red light therapy may offer superior support for long-term knee comfort.",
     metaTitle: "Heat or Ice for Knee Pain? Science Breakdown + Heat & Red Light Benefits",
     metaDescription: "Should you use heat or ice for knee pain? Complete science breakdown comparing both methods, plus why heat combined with red light therapy works better for lasting comfort.",
-    heroImage: "",
+    heroImage: heroImage,
     publishedDate: "February 24, 2026",
     nextSlug: "smart-heated-knee-braces-2026",
     nextTitle: "Smart Heated Knee Braces 2026 Buyer's Guide",
