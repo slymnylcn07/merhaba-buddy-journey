@@ -14,4 +14,7 @@ export { infraredKneeMassagerGuide2026 } from "./infrared-knee-massager-guide-20
 export { heatOrIceKneePainSituations } from "./heat-or-ice-knee-pain-situations";
 export { sharpStabbingKneePainComfort } from "./sharp-stabbing-knee-pain-comfort";
 export { runningShoesKneePainDiscomfort } from "./running-shoes-knee-pain-discomfort";
+export { infraredVsHeatingPads } from "./infrared-vs-heating-pads";
+export { intermittentKneePainGuide } from "./intermittent-knee-pain-guide";
+export { sideOfKneePainExplained } from "./side-of-knee-pain-explained";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";

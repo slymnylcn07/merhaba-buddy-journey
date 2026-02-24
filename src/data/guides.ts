@@ -325,6 +325,27 @@ export const guidesData: GuideData[] = [
     readTime: 10,
     lastModified: "2026-02-24",
   },
+  {
+    slug: "infrared-vs-heating-pads",
+    title: "Infrared Knee Massagers: Are They Really Better Than Heating Pads?",
+    description: "Compare infrared knee massagers and heating pads for daily knee comfort. Learn which approach offers better warmth delivery, convenience, and value.",
+    readTime: 10,
+    lastModified: "2026-02-24",
+  },
+  {
+    slug: "intermittent-knee-pain-guide",
+    title: "Intermittent Knee Pain: Why It Comes and Goes (Daily Comfort Guide)",
+    description: "Understand why knee pain comes and goes, common daily patterns, and practical habits for supporting consistent knee comfort.",
+    readTime: 11,
+    lastModified: "2026-02-24",
+  },
+  {
+    slug: "side-of-knee-pain-explained",
+    title: "Side-of-Knee Pain Explained: Causes, Shoes, and At-Home Comfort Tips",
+    description: "Learn about inner and outer side-of-knee discomfort, how shoes influence knee comfort, and at-home tips for daily support.",
+    readTime: 11,
+    lastModified: "2026-02-24",
+  },
 ];
 
 // Static pages for sitemap
