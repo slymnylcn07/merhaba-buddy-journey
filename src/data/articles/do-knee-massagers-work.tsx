@@ -1,5 +1,6 @@
 import { ArticleExport } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
+import heroImage from "@/assets/article-hero-do-massagers-work.jpg";
 
 export const doKneeMassagersWork: ArticleExport = {
   cta: "",
@@ -10,7 +11,7 @@ export const doKneeMassagersWork: ArticleExport = {
     intro: "Knee massagers are everywhere in 2026. But do they actually work? This honest guide separates marketing hype from science-backed evidence and real user experiences to help you decide if a knee massager is right for you.",
     metaTitle: "Do Knee Massagers Work? Science-Based Guide + Real User Results (2026)",
     metaDescription: "Do knee massagers actually work? Honest guide based on scientific research and real user experiences. Learn what to expect and what not to from heated knee massagers in 2026.",
-    heroImage: "",
+    heroImage: heroImage,
     publishedDate: "February 24, 2026",
     faqs: [
       { question: "Do knee massagers actually reduce pain?", answer: "Research shows that heat therapy and vibration can temporarily reduce discomfort and improve circulation. They work best as part of a consistent daily routine rather than a one-time solution." },

@@ -1,6 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
+import heroImage from "@/assets/article-hero-sharp-stabbing.jpg";
 
 export const sharpStabbingKneePainComfort: ArticleExport = {
   cta: "",
@@ -11,7 +12,7 @@ export const sharpStabbingKneePainComfort: ArticleExport = {
     intro: "Sharp, stabbing knee pain can feel alarming, especially when it seems to come out of nowhere. This guide explores common reasons behind that sudden, intense sensation and shares practical at-home approaches that many people use to support their daily comfort.",
     metaTitle: "Sharp Stabbing Pain in the Knee: Causes & At-Home Comfort Guide",
     metaDescription: "Experiencing sharp stabbing pain in the knee? Learn common causes, daily patterns, and at-home comfort strategies to support your everyday knee comfort.",
-    heroImage: "",
+    heroImage: heroImage,
     publishedDate: "February 24, 2026",
     nextSlug: "running-shoes-knee-pain-discomfort",
     nextTitle: "Running Shoes and Knee Pain: Can the Wrong Shoes Cause Discomfort?",

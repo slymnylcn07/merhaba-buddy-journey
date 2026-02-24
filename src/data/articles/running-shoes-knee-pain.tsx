@@ -1,5 +1,6 @@
 import { ArticleExport } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
+import heroImage from "@/assets/article-hero-running-shoes-knee.jpg";
 
 export const runningShoesKneePain: ArticleExport = {
   cta: "",
@@ -10,7 +11,7 @@ export const runningShoesKneePain: ArticleExport = {
     intro: "Knee pain is the most common complaint among runners. While proper footwear is essential for prevention, recovery is equally important. This guide covers how running shoes affect your knees, common mistakes, and when adding a heat therapy device to your routine makes sense.",
     metaTitle: "Running Shoes & Knee Pain: Causes, Fixes & Recovery Tips (2026 Guide)",
     metaDescription: "Running shoes and knee pain: understand the connection, common fit mistakes, and when a heat therapy device like FlexiKnee helps with post-run recovery. Complete 2026 guide.",
-    heroImage: "",
+    heroImage: heroImage,
     publishedDate: "February 24, 2026",
     faqs: [
       { question: "Can wrong running shoes cause knee pain?", answer: "Yes. Shoes that don't match your foot type, gait pattern, or running surface can alter your biomechanics and contribute to knee discomfort. Common issues include insufficient cushioning, wrong arch support, and worn-out soles." },

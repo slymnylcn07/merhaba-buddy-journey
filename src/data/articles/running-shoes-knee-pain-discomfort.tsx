@@ -1,6 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
+import heroImage from "@/assets/article-hero-running-shoes-discomfort.jpg";
 
 export const runningShoesKneePainDiscomfort: ArticleExport = {
   cta: "",
@@ -11,7 +12,7 @@ export const runningShoesKneePainDiscomfort: ArticleExport = {
     intro: "Your running shoes do more than just protect your feet. The right pair supports your entire lower body, while the wrong pair can contribute to knee discomfort over time. This guide explores the connection between footwear and knee comfort, and what you can do about it.",
     metaTitle: "Running Shoes and Knee Pain: Can the Wrong Shoes Cause Discomfort?",
     metaDescription: "Can wrong running shoes cause knee pain? Learn how footwear affects knee comfort, common shoe mistakes, and how to support your knees during and after runs.",
-    heroImage: "",
+    heroImage: heroImage,
     publishedDate: "February 24, 2026",
     nextSlug: "heat-or-ice-knee-pain-situations",
     nextTitle: "Heat or Ice for Knee Pain? What Works Best in Each Situation",

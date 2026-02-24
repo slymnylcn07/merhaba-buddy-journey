@@ -1,6 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
+import heroImage from "@/assets/article-hero-heat-ice-situations.jpg";
 
 export const heatOrIceKneePainSituations: ArticleExport = {
   cta: "",
@@ -11,7 +12,7 @@ export const heatOrIceKneePainSituations: ArticleExport = {
     intro: "Knowing whether to reach for heat or ice when your knee feels uncomfortable can make a real difference in your day. This guide walks through common everyday situations and helps you understand which approach tends to work best for each one.",
     metaTitle: "Heat or Ice for Knee Pain? What Works Best in Each Situation",
     metaDescription: "Not sure whether to use heat or ice for knee pain? This guide breaks down which approach works best in common everyday situations for daily knee comfort.",
-    heroImage: "",
+    heroImage: heroImage,
     publishedDate: "February 24, 2026",
     nextSlug: "sharp-stabbing-knee-pain-comfort",
     nextTitle: "Sharp Stabbing Pain in the Knee: Causes & At-Home Comfort Guide",

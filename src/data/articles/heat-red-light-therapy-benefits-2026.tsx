@@ -1,8 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
-
-
+import heroImage from "@/assets/article-hero-heat-redlight-benefits.jpg";
 
 export const heatRedLightTherapyBenefits2026: ArticleExport = {
   cta: "",
@@ -13,7 +12,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
     intro: "Heat therapy and red light therapy have each been studied independently for years. But it's the combination of both that's generating the most interest among researchers and knee comfort seekers in 2026. This updated guide summarizes the latest evidence on how heat and red light therapy work together to support knee comfort.",
     metaTitle: "Heat + Red Light Therapy for Knee Pain: 2026 Research & Benefits",
     metaDescription: "Updated 2026 research summary on heat and red light therapy benefits for knee pain. Learn how combining both therapies supports daily knee comfort and recovery.",
-    heroImage: "",
+    heroImage: heroImage,
     publishedDate: "February 24, 2026",
     nextSlug: "do-knee-massagers-actually-work-guide",
     nextTitle: "Do Knee Massagers Actually Work?",
