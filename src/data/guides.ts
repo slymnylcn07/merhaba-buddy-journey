@@ -233,6 +233,28 @@ export const guidesData: GuideData[] = [
     readTime: 10,
     lastModified: "2026-01-20",
   },
+  // New commercial articles - February 2026
+  {
+    slug: "flexiknee-review-2026",
+    title: "FlexiKnee Review 2026: Does It Really Work? Full Breakdown + Pros & Cons",
+    description: "Honest FlexiKnee review for 2026. Full breakdown of features, pros, cons, and who benefits most from this smart heated knee massager with red light therapy.",
+    readTime: 12,
+    lastModified: "2026-02-24",
+  },
+  {
+    slug: "flexiknee-vs-competitors-2026",
+    title: "FlexiKnee vs Revix vs HeatPulse vs Hydragun: Which Knee Massager Is Best in 2026?",
+    description: "Compare FlexiKnee, Revix, HeatPulse, and Hydragun knee massagers side by side. Features, pricing, pros and cons for 2026.",
+    readTime: 11,
+    lastModified: "2026-02-24",
+  },
+  {
+    slug: "best-heated-knee-massager-arthritis",
+    title: "Best Heated Knee Massagers for Arthritis Comfort: FlexiKnee Ranked #1 in 2026",
+    description: "Discover the best heated knee massagers for arthritis comfort in 2026. Learn why FlexiKnee ranks #1 with heat, red light, and vibration therapy combined.",
+    readTime: 13,
+    lastModified: "2026-02-24",
+  },
 ];
 
 // Static pages for sitemap
