@@ -10,4 +10,5 @@ export { heatRedLightTherapyBenefits2026 } from "./heat-red-light-therapy-benefi
 export { doKneeMassagersWork } from "./do-knee-massagers-work";
 export { runningShoesKneePain } from "./running-shoes-knee-pain";
 export { sharpKneePainCauses } from "./sharp-knee-pain-causes";
+export { infraredKneeMassagerGuide2026 } from "./infrared-knee-massager-guide-2026";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
