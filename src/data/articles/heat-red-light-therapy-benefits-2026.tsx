@@ -3,18 +3,24 @@ import { Link } from "react-router-dom";
 
 const productLink = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
 
-const CTABox = () => (
-  <div className="my-8 p-6 bg-[#F9F6F3] border-l-4 border-primary rounded-r-lg hover:shadow-md transition-shadow">
-    <p className="font-semibold text-lg mb-2">Experience Heat + Red Light Therapy at Home</p>
-    <p className="text-muted-foreground mb-4">FlexiKnee™ delivers clinically-studied wavelengths of red light combined with soothing heat and vibration massage — designed for daily knee comfort.</p>
-    <a href={productLink} className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
-      Shop FlexiKnee™ Now →
-    </a>
-  </div>
-);
-
+const CTABox = ({ variant = "mid" }: { variant?: "mid" | "end" }) => {
+  if (variant === "end") {
+    return (
+      <div className="my-8">
+        <p>If you prefer an easy at-home option that combines heat and red light for daily knee comfort, the FlexiKnee Smart Heated Knee Device brings both together with gentle vibration support.</p>
+        <p>👉 <a href={productLink} className="text-primary hover:underline font-medium">View full product details here</a></p>
+      </div>
+    );
+  }
+  return (
+    <div className="my-8">
+      <p>Some people prefer having an at-home device that combines heat and red light therapy for their daily knee comfort routine. FlexiKnee uses soothing warmth, red light wavelengths, and gentle vibration in one easy-to-use device.</p>
+      <p>👉 <a href={productLink} className="text-primary hover:underline font-medium">Learn more about FlexiKnee</a></p>
+    </div>
+  );
+};
 export const heatRedLightTherapyBenefits2026: ArticleExport = {
-  cta: "For those interested in combining heat and red light therapy at home, FlexiKnee™ delivers both modalities in one easy-to-use knee device.",
+  cta: "",
   article: {
     slug: "heat-red-light-therapy-benefits-2026",
     title: "Benefits of Heat + Red Light Therapy for Knee Pain: Updated 2026 Research Summary",
@@ -133,7 +139,6 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
           For those who prefer a multi-faceted approach to knee comfort — combining good footwear, gentle movement, and at-home devices — heat + red light therapy fits naturally into a broader wellness routine. This is especially true for those who also address <Link to="/guides/knee-discomfort-lower-back-hips" className="text-primary hover:underline">the connection between knee and lower body comfort</Link>.
         </p>
 
-        <CTABox />
 
         <h2>How to Build a Heat + Red Light Routine for Your Knees</h2>
         <p>
@@ -189,7 +194,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
           <li>Growing interest in how younger active adults and <Link to="/guides/below-knee-discomfort-teens-adults" className="text-primary hover:underline">teens with below-knee discomfort</Link> respond to combined therapy</li>
         </ul>
 
-        <CTABox />
+        <CTABox variant="end" />
 
         <h2>Key Takeaways</h2>
         <ul className="list-disc pl-6 space-y-2 my-4">

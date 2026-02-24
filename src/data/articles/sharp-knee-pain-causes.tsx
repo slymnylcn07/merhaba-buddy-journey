@@ -1,7 +1,7 @@
 import { ArticleExport } from "./types";
 
 export const sharpKneePainCauses: ArticleExport = {
-  cta: "For daily comfort support between flare-ups, FlexiKnee™ combines heat, red light, and vibration therapy in one at-home device.",
+  cta: "",
   article: {
     slug: "sharp-knee-pain-causes-relief",
     title: "Sharp Knee Pain That Comes and Goes: Causes, Relief Options & Home Treatments",
@@ -180,11 +180,12 @@ export const sharpKneePainCauses: ArticleExport = {
           <li><strong>Invest in recovery tools</strong> — Quality at-home devices support long-term comfort</li>
         </ol>
 
-        <div className="my-8 p-6 bg-primary/5 rounded-xl border border-primary/20">
-          <p className="text-lg font-semibold text-foreground mb-2">🏆 Take control of your knee comfort</p>
-          <p className="text-muted-foreground mb-3">FlexiKnee™ combines three science-backed therapies — heat, red light, and vibration — in one easy-to-use device. Build a daily comfort routine that works.</p>
-          <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Get FlexiKnee™ Today →</a>
-        </div>
+        <p>
+          If you prefer an easy at-home option for daily knee comfort between episodes, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle support.
+        </p>
+        <p>
+          👉 <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="text-primary hover:underline font-medium">View full product details here</a>
+        </p>
 
         <h2>Related Guides</h2>
         <ul>

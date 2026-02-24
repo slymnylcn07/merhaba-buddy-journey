@@ -3,18 +3,24 @@ import { Link } from "react-router-dom";
 
 const productLink = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
 
-const CTABox = () => (
-  <div className="my-8 p-6 bg-[#F9F6F3] border-l-4 border-primary rounded-r-lg hover:shadow-md transition-shadow">
-    <p className="font-semibold text-lg mb-2">Ready to Experience Heat + Red Light Therapy at Home?</p>
-    <p className="text-muted-foreground mb-4">FlexiKnee™ combines soothing heat, red light therapy, and vibration massage in one smart device designed for daily knee comfort.</p>
-    <a href={productLink} className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
-      Shop FlexiKnee™ Now →
-    </a>
-  </div>
-);
-
+const CTABox = ({ variant = "mid" }: { variant?: "mid" | "end" }) => {
+  if (variant === "end") {
+    return (
+      <div className="my-8">
+        <p>If you prefer an easy at-home option for daily knee comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth, red light, and gentle vibration support.</p>
+        <p>👉 <a href={productLink} className="text-primary hover:underline font-medium">View full product details here</a></p>
+      </div>
+    );
+  }
+  return (
+    <div className="my-8">
+      <p>While daily habits and lifestyle adjustments can support knee comfort, some people also prefer having an at-home device that provides gentle warmth and support. FlexiKnee uses soothing heat, targeted massage, and red-light technology as part of a daily comfort routine.</p>
+      <p>👉 <a href={productLink} className="text-primary hover:underline font-medium">Learn more about FlexiKnee</a></p>
+    </div>
+  );
+};
 export const heatOrIceKneePain: ArticleExport = {
-  cta: "If you're leaning toward heat-based support for your knees, FlexiKnee™ combines gentle warmth with red light therapy for everyday comfort.",
+  cta: "",
   article: {
     slug: "heat-or-ice-knee-pain-science",
     title: "Heat or Ice for Knee Pain? Complete Science Breakdown + Why Heat + Red Light Works Better",
@@ -129,7 +135,6 @@ export const heatOrIceKneePain: ArticleExport = {
           If you experience <Link to="/guides/side-knee-pain-comfort-guide" className="text-primary hover:underline">side knee discomfort</Link> after sitting for long periods, gentle heat therapy can help relax the surrounding muscles and improve comfort when you start moving again.
         </p>
 
-        <CTABox />
 
         <h2>The Limitations of Ice for Long-Term Knee Health</h2>
         <p>
@@ -169,7 +174,7 @@ export const heatOrIceKneePain: ArticleExport = {
           <li><strong>For long-term support:</strong> Incorporate a heat + red light device into your daily routine for comprehensive comfort</li>
         </ol>
 
-        <CTABox />
+        <CTABox variant="end" />
 
         <h2>Final Thoughts: Heat Wins for Long-Term Knee Comfort</h2>
         <p>

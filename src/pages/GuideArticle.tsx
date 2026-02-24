@@ -162,38 +162,38 @@ interface ArticleData {
 
 // Context-aware CTA snippets for each article
 const articleCTAs: Record<string, string> = {
-  "why-knee-pain-doesnt-go-away": "If you're exploring gentle ways to support daily knee comfort at home, some people find warmth-based devices a helpful addition to their routine.",
-  "heat-vs-red-light-therapy": "For those curious about combining warmth and infrared in one at-home option, FlexiKnee™ offers a gentle approach worth exploring.",
-  "who-benefits-from-knee-therapy-devices": "If you're wondering whether an at-home knee support device might fit your lifestyle, you can explore what FlexiKnee™ offers.",
-  "daily-knee-comfort-routine": "Many people choose to include a gentle warmth-based device as part of their daily knee comfort routine.",
-  "pain-in-the-knee-causes-locations": "For those looking into supportive at-home tools, some find gentle warmth and infrared options worth exploring.",
-  "back-of-knee-pain-explained": "If you're considering supportive tools for everyday comfort, warmth-based at-home options are something many people explore.",
-  "side-knee-pain-comfort-guide": "Some people add gentle at-home devices to their comfort routine; you can read more about what FlexiKnee™ offers.",
-  "running-knee-pain-guide": "Runners sometimes explore gentle warmth-based support tools as part of their post-activity routine.",
-  "knee-arthritis-pain-guide": "For those seeking gentle at-home comfort options, warmth and infrared devices are among the tools people commonly explore.",
-  "sharp-knee-pain-guide": "If you're curious about gentle at-home comfort support, some people find warmth-based tools a helpful addition.",
-  "how-to-strengthen-knees": "Alongside exercises, some people explore gentle warmth-based devices as part of their overall knee comfort approach.",
-  "understanding-knee-injuries": "For those interested in supportive at-home options during recovery, gentle warmth devices are worth learning about.",
-  "best-infrared-knee-massagers": "If you're exploring infrared knee massagers, you can read more about what FlexiKnee™ offers as a gentle at-home option.",
-  "sharp-knee-pain-comes-and-goes": "For those curious about gentle daily support tools, some people explore warmth and infrared comfort devices.",
-  "side-knee-pain-inner-outer": "If you're considering at-home support options, warmth-based devices are something many people add to their comfort routines.",
-  "red-light-therapy-for-knees": "For those interested in exploring red light and infrared options at home, FlexiKnee™ combines both in a gentle, everyday device.",
-  "back-of-knee-pain-daily-habits": "Some people include gentle warmth-based devices in their daily habits for added knee comfort.",
-  "daily-knee-care-routine": "A gentle at-home device like FlexiKnee™ is one option people explore as part of their daily knee care.",
-  "heat-vs-ice-for-knees": "If warmth feels right for you, some people explore at-home devices that offer gentle heat and infrared support.",
-  "do-knee-massagers-work": "If you're curious about what to expect from at-home knee devices, you can explore what FlexiKnee™ offers.",
-  "is-infrared-safe-for-knees": "For those interested in gentle infrared support at home, FlexiKnee™ is one option designed with everyday use in mind.",
-  "warmth-vs-infrared-knee-routines": "If you're exploring how to combine warmth and infrared in your routine, FlexiKnee™ offers both in one at-home device.",
-  "knee-pain-worse-at-night": "Some people find that using a gentle warmth-based device before bed helps them feel more comfortable in the evening.",
-  "how-to-fix-knee-pain": "If you're building supportive daily habits, some people explore gentle warmth-based devices as part of their at-home comfort routine.",
-  "women-men-knee-comfort-patterns": "For those exploring gentle at-home support options, warmth-based devices like FlexiKnee™ are one option people incorporate into their daily comfort routines.",
-  "top-of-knee-pain-patterns": "If you're looking for gentle at-home support for front knee comfort, some people find warmth-based devices a helpful addition to their daily routines.",
-  "best-running-shoes-knee-pain": "Many runners incorporate gentle warmth-based devices like FlexiKnee into their post-run comfort routines for soothing support.",
-  "knee-pain-treatment-daily-habits": "For those building daily comfort routines, FlexiKnee™ offers gentle warmth and vibration that some people incorporate into their at-home habits.",
-  "cause-of-knee-pain-patterns": "For those exploring supportive daily habits, some people find warmth-based devices like FlexiKnee™ a helpful addition to their at-home comfort routines.",
-  "front-knee-tightness-after-activity": "If you're looking for gentle at-home support for front knee comfort, some people find warmth-based devices like FlexiKnee™ a soothing addition to their evening wind-down routines.",
-  "knee-discomfort-lower-back-hips": "For those exploring gentle at-home support for lower body comfort, some people find warmth-based devices like FlexiKnee™ a helpful addition to their daily routines.",
-  "below-knee-discomfort-teens-adults": "For active teens and adults exploring gentle at-home support, some people find warmth-based devices like FlexiKnee™ a helpful addition to their post-activity routines.",
+  "why-knee-pain-doesnt-go-away": "If you prefer an easy at-home option for daily knee comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle support.",
+  "heat-vs-red-light-therapy": "If you're interested in combining warmth and red light in your daily routine, the FlexiKnee Smart Heated Knee Device brings both together in one comfortable device.",
+  "who-benefits-from-knee-therapy-devices": "If you're considering an at-home knee comfort device, the FlexiKnee Smart Heated Knee Device offers soothing warmth, red light, and gentle vibration for daily use.",
+  "daily-knee-comfort-routine": "For an easy addition to your daily knee comfort routine, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle vibration support.",
+  "pain-in-the-knee-causes-locations": "If you prefer at-home comfort support for your knees, the FlexiKnee Smart Heated Knee Device offers adjustable warmth and gentle vibration for everyday use.",
+  "back-of-knee-pain-explained": "If you're looking for a comfortable at-home knee support option, the FlexiKnee Smart Heated Knee Device delivers soothing warmth and gentle massage.",
+  "side-knee-pain-comfort-guide": "For daily knee comfort support at home, the FlexiKnee Smart Heated Knee Device offers soothing warmth, red light, and gentle vibration.",
+  "running-knee-pain-guide": "For post-run knee comfort, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle support as part of your recovery routine.",
+  "knee-arthritis-pain-guide": "If you're exploring daily knee comfort options, the FlexiKnee Smart Heated Knee Device combines soothing warmth with red light and vibration support.",
+  "sharp-knee-pain-guide": "For daily comfort support between episodes, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle vibration at home.",
+  "how-to-strengthen-knees": "To complement your knee-strengthening routine, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle support after exercise.",
+  "understanding-knee-injuries": "For comfortable at-home support during your recovery journey, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle vibration.",
+  "best-infrared-knee-massagers": "If you prefer a comprehensive infrared knee device, the FlexiKnee Smart Heated Knee Device combines adjustable warmth, red light, and vibration in one device.",
+  "sharp-knee-pain-comes-and-goes": "For daily comfort support between flare-ups, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle vibration at home.",
+  "side-knee-pain-inner-outer": "For comfortable at-home knee support, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle vibration for daily use.",
+  "red-light-therapy-for-knees": "If you're interested in red light support for your knees, the FlexiKnee Smart Heated Knee Device combines red light with warmth and vibration in one device.",
+  "back-of-knee-pain-daily-habits": "For an easy addition to your daily knee comfort habits, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle support.",
+  "daily-knee-care-routine": "For an easy at-home option to support your daily knee care, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle vibration.",
+  "heat-vs-ice-for-knees": "If warmth feels right for your knees, the FlexiKnee Smart Heated Knee Device provides adjustable heat along with red light and gentle vibration support.",
+  "do-knee-massagers-work": "If you're curious about a well-designed knee comfort device, the FlexiKnee Smart Heated Knee Device combines warmth, red light, and vibration for daily support.",
+  "is-infrared-safe-for-knees": "For comfortable infrared support at home, the FlexiKnee Smart Heated Knee Device is designed for safe, everyday use with adjustable settings.",
+  "warmth-vs-infrared-knee-routines": "If you'd like both warmth and infrared in one device, the FlexiKnee Smart Heated Knee Device offers both alongside gentle vibration for daily knee comfort.",
+  "knee-pain-worse-at-night": "For a soothing addition to your evening knee comfort routine, the FlexiKnee Smart Heated Knee Device provides gentle warmth and vibration before bed.",
+  "how-to-fix-knee-pain": "If you prefer an easy at-home option for daily knee comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle support.",
+  "women-men-knee-comfort-patterns": "For everyday knee comfort support, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle vibration for daily use.",
+  "top-of-knee-pain-patterns": "For comfortable at-home front knee support, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle vibration for daily routines.",
+  "best-running-shoes-knee-pain": "For post-run knee comfort alongside proper footwear, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle support.",
+  "knee-pain-treatment-daily-habits": "For an easy addition to your daily comfort habits, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle vibration at home.",
+  "cause-of-knee-pain-patterns": "For daily knee comfort support at home, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle vibration.",
+  "front-knee-tightness-after-activity": "For comfortable post-activity front knee support, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle vibration for evening wind-down.",
+  "knee-discomfort-lower-back-hips": "For daily lower body comfort support, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle vibration for your knees.",
+  "below-knee-discomfort-teens-adults": "For active teens and adults seeking comfortable post-activity support, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle vibration.",
 };
 
 const articles: Record<string, ArticleData> = {
@@ -329,11 +329,6 @@ const articles: Record<string, ArticleData> = {
           These devices are designed to be used regularly as part of a daily routine, not as replacement for professional care when it's needed. They work best when combined with other healthy habits like gentle movement, proper rest, and attention to daily ergonomics.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            Some people choose to include at-home therapy devices as part of their daily comfort routine.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -487,11 +482,6 @@ const articles: Record<string, ArticleData> = {
           The most important factor is consistency. Whatever approach you choose, regular use as part of a daily routine tends to be more beneficial than occasional application. Building a sustainable habit matters more than choosing the "perfect" method.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            Some people choose to include at-home therapy devices as part of their daily comfort routine.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -661,11 +651,6 @@ const articles: Record<string, ArticleData> = {
           Think of these devices as one tool in a toolkit rather than a complete solution. They support your overall comfort efforts but work best as part of a holistic approach to daily wellbeing.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            Some people choose to include at-home therapy devices as part of their daily comfort routine.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -878,11 +863,6 @@ const articles: Record<string, ArticleData> = {
           Some people find they need more attention in the morning, while others benefit more from evening care. Some weeks you may need more intensive support, while other times a lighter routine suffices. Flexibility within consistency is the key.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            Some people choose to include at-home therapy devices as part of their daily comfort routine.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -2587,11 +2567,6 @@ const articles: Record<string, ArticleData> = {
           Some people find that at-home support tools complement their daily routines. Warmth application before activity can help prepare stiff joints, while gentle support afterward may aid in recovery. Whatever approaches you choose, making them a regular part of your day tends to yield the best results.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            Some people choose to include at-home therapy devices as part of their daily knee comfort routine.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -2839,11 +2814,6 @@ const articles: Record<string, ArticleData> = {
           Many people find that incorporating supportive habits into their daily routine, from gentle movement to appropriate rest, becomes second nature over time. The goal isn't perfection but consistent attention to the practices that help your knees feel and function their best.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            Some people choose to include at-home therapy devices as part of their daily knee comfort routine.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -3015,11 +2985,6 @@ const articles: Record<string, ArticleData> = {
           Reading user reviews from people with similar needs can provide practical insights. Pay attention to comments about fit, ease of use, durability, and long-term satisfaction rather than focusing solely on initial impressions. A device that works well after months of use is more valuable than one that impresses initially but disappoints over time.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            Many people find that the <strong>FlexiKnee</strong> becomes a valued part of their daily comfort routine when used consistently over time.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -4472,11 +4437,6 @@ const articles: Record<string, ArticleData> = {
           As with any new addition to your routine, starting conservatively, listening to your body, and consulting with a healthcare provider if you have specific concerns are all sensible approaches. For most people, infrared represents a comfortable, convenient option for at-home knee comfort support.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            Infrared technology has become a popular option for home knee comfort, valued for its gentle warmth and ease of use. The FlexiKnee device combines infrared with other comfort features for a comprehensive daily knee care experience.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -4702,11 +4662,6 @@ const articles: Record<string, ArticleData> = {
           Whether you choose warmth, infrared, or a combination of both, the goal is the same: creating sustainable comfort habits that help you feel your best throughout each day.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            The FlexiKnee device combines infrared technology with adjustable warmth and vibration massage, offering a versatile option for those who want multiple comfort modalities in a single, portable device.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -4952,11 +4907,6 @@ const articles: Record<string, ArticleData> = {
           Rather than viewing nighttime discomfort as something to worry about, consider it an invitation to develop calming evening habits that support your overall wellbeing. With consistent attention to your comfort needs, evenings can become a time of restoration rather than frustration.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            The FlexiKnee device offers gentle warmth and soothing vibration that many people incorporate into their evening comfort routines. Its portable, wireless design allows for comfortable use while relaxing before bed.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -5207,11 +5157,6 @@ const articles: Record<string, ArticleData> = {
           Remember that experiencing some knee discomfort is a normal part of life for many adults. The goal isn't perfection but rather creating conditions that support your overall comfort and wellbeing. With attention to your daily patterns and gentle, consistent habits, meaningful improvement is often possible.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            Many people incorporate gentle warmth-based devices like FlexiKnee into their daily comfort routines. As a supportive at-home option, it combines warmth and gentle vibration in a portable design suitable for everyday use.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -5484,11 +5429,6 @@ const articles: Record<string, ArticleData> = {
           Small, consistent habits often make the biggest difference in daily comfort. Whether it's taking movement breaks, adjusting footwear choices, incorporating warmth into your routine, or creating supportive environments, gentle experimentation can help you discover what works best for your individual needs.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            Many people incorporate gentle warmth-based devices like FlexiKnee into their daily comfort routines. Its combination of warmth and gentle vibration provides a soothing experience that can complement other supportive habits.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -5737,11 +5677,6 @@ const articles: Record<string, ArticleData> = {
           Remember that experiencing some front knee awareness is normal, especially after active days or during certain activities. Simple, consistent habits often support better overall comfort than dramatic interventions. Be patient with the process and pay attention to what works for your individual experience.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            For those exploring at-home comfort options, FlexiKnee offers gentle warmth and soothing vibration that some people incorporate into their daily front knee comfort routines.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -6016,11 +5951,6 @@ const articles: Record<string, ArticleData> = {
           Take time to test different options, pay attention to how different shoes feel during your runs, and be willing to experiment. With awareness and gradual adjustments, most runners can find footwear that supports comfortable running.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            Many runners incorporate gentle warmth-based devices like FlexiKnee into their post-run recovery routines. The combination of warmth and gentle vibration provides soothing comfort after running.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -6249,11 +6179,6 @@ const articles: Record<string, ArticleData> = {
           Remember that experiencing some knee discomfort is common for many adults. The goal isn't elimination but rather developing habits and routines that support your overall comfort and wellbeing. With attention to your daily patterns and gentle, consistent habits, meaningful improvement is often possible.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            Many people incorporate gentle warmth-based devices like FlexiKnee into their daily comfort routines. The combination of warmth and gentle vibration provides soothing comfort that complements other supportive habits.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -6548,11 +6473,6 @@ const articles: Record<string, ArticleData> = {
           Remember that experiencing some knee awareness is very common for adults. The goal isn't perfection but rather developing daily habits that support your overall wellbeing. With attention to patterns and consistent, gentle adjustments, many people find meaningful improvement in their daily comfort.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
-          <p className="text-muted-foreground font-light italic mb-0">
-            Some people include gentle warmth-based devices like FlexiKnee in their daily routines. The combination of warmth and gentle vibration provides comforting sensations that complement awareness of daily patterns.
-          </p>
-        </div>
       </>
     ),
     faqs: [
@@ -7482,13 +7402,15 @@ const GuideArticle = () => {
                   boxShadow: '0 4px 20px -4px rgba(0, 0, 0, 0.08)'
                 }}
               >
-                {articleCTAs[slug]}{" "}
+                {articleCTAs[slug]}
+                <br /><br />
+                👉{" "}
                 <a 
-                  href="https://flexi-knee.com/product/flexiknee" 
+                  href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" 
                   style={{ color: '#5A7DFF', textDecoration: 'none' }}
                   className="hover:underline"
                 >
-                  Learn more about FlexiKnee™
+                  View full product details here
                 </a>
               </div>
             )}

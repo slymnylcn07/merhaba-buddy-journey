@@ -7,26 +7,24 @@ import type { ArticleExport } from "./types";
 const PRODUCT_URL = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
 
 const ProductCTA = ({ variant = "default" }: { variant?: "default" | "compare" | "final" }) => {
-  const messages = {
-    default: "Looking for an infrared knee massager that combines heat, red light, and vibration in one device?",
-    compare: "Want to see how FlexiKnee compares to basic infrared wraps on features, price, and user satisfaction?",
-    final: "Ready to add infrared support to your daily knee comfort routine? See what FlexiKnee offers.",
-  };
+  if (variant === "final") {
+    return (
+      <div className="my-8">
+        <p>If you prefer an easy at-home option for daily infrared knee comfort, the FlexiKnee Smart Heated Knee Device combines infrared warmth, adjustable heat, and gentle vibration in one wireless device.</p>
+        <p>👉 <a href={PRODUCT_URL} className="text-primary hover:underline font-medium">View full product details here</a></p>
+      </div>
+    );
+  }
   return (
-    <div className="my-8 p-6 bg-primary/5 border border-primary/20 rounded-xl text-center">
-      <p className="text-foreground font-medium mb-3">{messages[variant]}</p>
-      <a
-        href={PRODUCT_URL}
-        className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-      >
-        → Explore FlexiKnee™ Smart Massager
-      </a>
+    <div className="my-8">
+      <p>While daily habits and lifestyle adjustments can support knee comfort, some people also prefer having an at-home device that provides gentle infrared warmth and support. FlexiKnee uses soothing heat, targeted massage, and red-light technology as part of a daily comfort routine.</p>
+      <p>👉 <a href={PRODUCT_URL} className="text-primary hover:underline font-medium">Learn more about FlexiKnee</a></p>
     </div>
   );
 };
 
 export const infraredKneeMassagerGuide2026: ArticleExport = {
-  cta: "If you're exploring infrared knee massagers, FlexiKnee combines heat, red light, and vibration therapy in one smart device designed for daily comfort.",
+  cta: "",
   article: {
     slug: "infrared-knee-massager-guide-2026",
     title: "Infrared Knee Massager Guide 2026: How They Work, What to Expect & Best Options",
@@ -175,7 +173,7 @@ export const infraredKneeMassagerGuide2026: ArticleExport = {
           <li><strong>People with nighttime knee discomfort:</strong> Those who notice increased stiffness or discomfort in the evening. Our <Link to="/guides/knee-pain-worse-at-night" className="text-primary hover:underline">nighttime knee discomfort guide</Link> explores this pattern.</li>
         </ul>
 
-        <ProductCTA variant="compare" />
+        
 
         <h2>Top Infrared Knee Massagers in 2026: How They Compare</h2>
         <p>

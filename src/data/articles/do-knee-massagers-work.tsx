@@ -1,7 +1,7 @@
 import { ArticleExport } from "./types";
 
 export const doKneeMassagersWork: ArticleExport = {
-  cta: "If you're curious about what a well-designed knee massager can offer, FlexiKnee™ combines heat, red light, and vibration in one at-home device.",
+  cta: "",
   article: {
     slug: "do-knee-massagers-work",
     title: "Do Knee Massagers Actually Work? Honest Guide Based on Science + Real Users",
@@ -183,11 +183,12 @@ export const doKneeMassagersWork: ArticleExport = {
           The key is choosing a quality device with proven therapeutic features, setting realistic expectations, and committing to consistent daily use. Those who do typically find that a knee massager becomes an indispensable part of their comfort routine.
         </p>
 
-        <div className="my-8 p-6 bg-primary/5 rounded-xl border border-primary/20">
-          <p className="text-lg font-semibold text-foreground mb-2">🏆 The #1 Rated Knee Massager in 2026</p>
-          <p className="text-muted-foreground mb-3">FlexiKnee™ combines all three science-backed therapies in one premium device. Join thousands who've made it part of their daily comfort routine.</p>
-          <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Get FlexiKnee™ Today →</a>
-        </div>
+        <p>
+          If you prefer an easy at-home option for daily knee comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth, red light, and gentle vibration support.
+        </p>
+        <p>
+          👉 <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="text-primary hover:underline font-medium">View full product details here</a>
+        </p>
 
         <h2>Related Guides</h2>
         <ul>
