@@ -1,24 +1,9 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
+import PremiumCTA from "@/components/PremiumCTA";
 
 const productLink = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
 
-const CTABox = ({ variant = "mid" }: { variant?: "mid" | "end" }) => {
-  if (variant === "end") {
-    return (
-      <div className="my-8">
-        <p>If you prefer an easy at-home option for daily knee comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth, red light, and gentle vibration in one wireless device.</p>
-        <p>👉 <a href={productLink} className="text-primary hover:underline font-medium">View full product details here</a></p>
-      </div>
-    );
-  }
-  return (
-    <div className="my-8">
-      <p>While choosing the right device depends on your needs, some people prefer having a multi-therapy option that combines warmth, red light, and vibration in one device. FlexiKnee offers all three for daily knee comfort support.</p>
-      <p>👉 <a href={productLink} className="text-primary hover:underline font-medium">Learn more about FlexiKnee</a></p>
-    </div>
-  );
-};
 export const smartHeatedKneeBraces2026: ArticleExport = {
   cta: "",
   article: {
@@ -42,7 +27,7 @@ export const smartHeatedKneeBraces2026: ArticleExport = {
     content: (
       <>
         <p>
-          The <strong>smart heated knee brace</strong> market has evolved dramatically in 2026. What was once a simple heating pad strapped to your knee has become a sophisticated multi-therapy device capable of delivering targeted heat, red light therapy, vibration massage, and more — all from a single, wearable unit.
+          The <strong>smart heated knee brace</strong> market has evolved dramatically in 2026. What was once a simple heating pad strapped to your knee has become a sophisticated multi-therapy device capable of delivering targeted heat, red light therapy, vibration massage, and more: all from a single, wearable unit.
         </p>
         <p>
           But with dozens of options now available, choosing the right device can feel overwhelming. This buyer's guide reviews the top 5 smart heated knee braces in 2026, explains what features actually matter, and helps you make an informed decision based on your specific needs.
@@ -65,10 +50,10 @@ export const smartHeatedKneeBraces2026: ArticleExport = {
 
         <h3>1. FlexiKnee™ Smart Heated Knee Massager — Best Overall</h3>
         <p>
-          The <a href={productLink} className="text-primary hover:underline font-medium">FlexiKnee™</a> earns the top spot by combining all three major therapy modalities — heat, red light, and vibration — in a single, well-designed device. It features 3 adjustable heat levels (reaching up to 65°C), integrated red light therapy with clinically-relevant wavelengths, and a multi-speed vibration massage system.
+          The <a href={productLink} className="text-primary hover:underline font-medium">FlexiKnee™</a> earns the top spot by combining all three major therapy modalities: heat, red light, and vibration in a single, well-designed device. It features 3 adjustable heat levels (reaching up to 65°C), integrated red light therapy with clinically-relevant wavelengths, and a multi-speed vibration massage system.
         </p>
         <p>
-          What sets FlexiKnee apart is its ergonomic knee wrap design that contours naturally to the joint, ensuring consistent contact and therapy delivery. The wireless, rechargeable design means you can use it anywhere — at home, at work, or while traveling.
+          What sets FlexiKnee apart is its ergonomic knee wrap design that contours naturally to the joint, ensuring consistent contact and therapy delivery. The wireless, rechargeable design means you can use it anywhere: at home, at work, or while traveling.
         </p>
         <p><strong>Pros:</strong> Triple therapy (heat + red light + vibration), ergonomic knee-specific design, wireless & rechargeable, 3 heat levels, auto-shutoff safety</p>
         <p><strong>Cons:</strong> Premium pricing, only available online</p>
@@ -99,9 +84,12 @@ export const smartHeatedKneeBraces2026: ArticleExport = {
           For those who want simple, reliable heat therapy without extra features, the ThermaWrap offers consistent warmth in a lightweight design. It's the most basic option on this list but does one thing well.
         </p>
         <p><strong>Pros:</strong> Simple, lightweight, affordable, reliable heat</p>
-        <p><strong>Cons:</strong> Heat only — no red light or vibration, no adjustable settings</p>
+        <p><strong>Cons:</strong> Heat only: no red light or vibration, no adjustable settings</p>
 
-        <CTABox />
+        <PremiumCTA
+          headline="Want the most complete heated knee brace available?"
+          text="FlexiKnee combines adjustable heat, red light therapy, and vibration massage in one ergonomic wireless wrap designed specifically for the knee joint."
+        />
 
         <h2>Comparison Table: Top 5 Smart Heated Knee Braces 2026</h2>
         <div className="overflow-x-auto my-8">
@@ -132,7 +120,7 @@ export const smartHeatedKneeBraces2026: ArticleExport = {
         <h2>Key Features to Evaluate Before Buying</h2>
         <h3>1. Therapy Modalities</h3>
         <p>
-          The most effective devices combine multiple therapies. Heat provides surface-level muscle relaxation, red light supports deeper tissue comfort, and vibration helps break up tension. A device that offers all three — like FlexiKnee — provides the most comprehensive support. Learn more about why this combination matters in our guide on <Link to="/guides/heat-vs-red-light-therapy" className="text-primary hover:underline">heat vs. red light therapy</Link>.
+          The most effective devices combine multiple therapies. Heat provides surface-level muscle relaxation, red light supports deeper tissue comfort, and vibration helps break up tension. A device that offers all three provides the most comprehensive support. Learn more about why this combination matters in our guide on <Link to="/guides/heat-vs-red-light-therapy" className="text-primary hover:underline">heat vs. red light therapy</Link>.
         </p>
 
         <h3>2. Ergonomic Design</h3>
@@ -150,15 +138,13 @@ export const smartHeatedKneeBraces2026: ArticleExport = {
           Always check for safety features like auto-shutoff timers and overheat protection. Quality devices should have relevant safety certifications and clear usage guidelines.
         </p>
 
-        <CTABox variant="end" />
-
         <h2>Who Benefits Most From Smart Heated Knee Braces?</h2>
         <p>
           Smart heated knee braces can support a wide range of people:
         </p>
         <ul className="list-disc pl-6 space-y-2 my-4">
           <li><strong>Active adults over 40:</strong> Dealing with age-related stiffness and reduced flexibility</li>
-          <li><strong>Runners and athletes:</strong> Looking for post-activity recovery support — see our guide on <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee comfort</Link></li>
+          <li><strong>Runners and athletes:</strong> Looking for post-activity recovery support: see our guide on <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee comfort</Link></li>
           <li><strong>People with arthritis:</strong> Seeking daily comfort support for stiff, achy knees</li>
           <li><strong>Office workers:</strong> Experiencing stiffness from prolonged sitting</li>
           <li><strong>Active teenagers:</strong> Managing growth-related or activity-related <Link to="/guides/below-knee-discomfort-teens-adults" className="text-primary hover:underline">below-knee discomfort</Link></li>
@@ -183,6 +169,11 @@ export const smartHeatedKneeBraces2026: ArticleExport = {
         <p>
           While budget options like Revix work for basic heat, and premium alternatives like Hydragun offer sleek design, FlexiKnee delivers the best combination of features and value for anyone serious about daily knee comfort.
         </p>
+
+        <PremiumCTA
+          headline="Ready to invest in your daily knee comfort?"
+          text="FlexiKnee's triple-therapy approach and wireless design make it the top-rated smart heated knee brace in 2026. See full details and pricing."
+        />
 
         <div className="my-8 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground italic">
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and customer experiences. Always consult a healthcare professional for persistent or severe knee concerns.

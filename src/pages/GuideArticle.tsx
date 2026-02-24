@@ -126,6 +126,8 @@ import sectionRunnerForm from "@/assets/article-section-runner-form.jpg";
 import sectionArthritisExercise from "@/assets/article-section-arthritis-exercise.jpg";
 import sectionStretchingRelief from "@/assets/article-section-stretching-relief.jpg";
 
+import PremiumCTA from "@/components/PremiumCTA";
+
 // Import new articles from separate files
 import {
   flexikneeReview2026,
@@ -160,40 +162,40 @@ interface ArticleData {
   faqs?: FAQItem[];
 }
 
-// Context-aware CTA snippets for each article
-const articleCTAs: Record<string, string> = {
-  "why-knee-pain-doesnt-go-away": "If you prefer an easy at-home option for daily knee comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle support.",
-  "heat-vs-red-light-therapy": "If you're interested in combining warmth and red light in your daily routine, the FlexiKnee Smart Heated Knee Device brings both together in one comfortable device.",
-  "who-benefits-from-knee-therapy-devices": "If you're considering an at-home knee comfort device, the FlexiKnee Smart Heated Knee Device offers soothing warmth, red light, and gentle vibration for daily use.",
-  "daily-knee-comfort-routine": "For an easy addition to your daily knee comfort routine, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle vibration support.",
-  "pain-in-the-knee-causes-locations": "If you prefer at-home comfort support for your knees, the FlexiKnee Smart Heated Knee Device offers adjustable warmth and gentle vibration for everyday use.",
-  "back-of-knee-pain-explained": "If you're looking for a comfortable at-home knee support option, the FlexiKnee Smart Heated Knee Device delivers soothing warmth and gentle massage.",
-  "side-knee-pain-comfort-guide": "For daily knee comfort support at home, the FlexiKnee Smart Heated Knee Device offers soothing warmth, red light, and gentle vibration.",
-  "running-knee-pain-guide": "For post-run knee comfort, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle support as part of your recovery routine.",
-  "knee-arthritis-pain-guide": "If you're exploring daily knee comfort options, the FlexiKnee Smart Heated Knee Device combines soothing warmth with red light and vibration support.",
-  "sharp-knee-pain-guide": "For daily comfort support between episodes, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle vibration at home.",
-  "how-to-strengthen-knees": "To complement your knee-strengthening routine, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle support after exercise.",
-  "understanding-knee-injuries": "For comfortable at-home support during your recovery journey, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle vibration.",
-  "best-infrared-knee-massagers": "If you prefer a comprehensive infrared knee device, the FlexiKnee Smart Heated Knee Device combines adjustable warmth, red light, and vibration in one device.",
-  "sharp-knee-pain-comes-and-goes": "For daily comfort support between flare-ups, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle vibration at home.",
-  "side-knee-pain-inner-outer": "For comfortable at-home knee support, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle vibration for daily use.",
-  "red-light-therapy-for-knees": "If you're interested in red light support for your knees, the FlexiKnee Smart Heated Knee Device combines red light with warmth and vibration in one device.",
-  "back-of-knee-pain-daily-habits": "For an easy addition to your daily knee comfort habits, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle support.",
-  "daily-knee-care-routine": "For an easy at-home option to support your daily knee care, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle vibration.",
-  "heat-vs-ice-for-knees": "If warmth feels right for your knees, the FlexiKnee Smart Heated Knee Device provides adjustable heat along with red light and gentle vibration support.",
-  "do-knee-massagers-work": "If you're curious about a well-designed knee comfort device, the FlexiKnee Smart Heated Knee Device combines warmth, red light, and vibration for daily support.",
-  "is-infrared-safe-for-knees": "For comfortable infrared support at home, the FlexiKnee Smart Heated Knee Device is designed for safe, everyday use with adjustable settings.",
-  "warmth-vs-infrared-knee-routines": "If you'd like both warmth and infrared in one device, the FlexiKnee Smart Heated Knee Device offers both alongside gentle vibration for daily knee comfort.",
-  "knee-pain-worse-at-night": "For a soothing addition to your evening knee comfort routine, the FlexiKnee Smart Heated Knee Device provides gentle warmth and vibration before bed.",
-  "how-to-fix-knee-pain": "If you prefer an easy at-home option for daily knee comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle support.",
-  "women-men-knee-comfort-patterns": "For everyday knee comfort support, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle vibration for daily use.",
-  "top-of-knee-pain-patterns": "For comfortable at-home front knee support, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle vibration for daily routines.",
-  "best-running-shoes-knee-pain": "For post-run knee comfort alongside proper footwear, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle support.",
-  "knee-pain-treatment-daily-habits": "For an easy addition to your daily comfort habits, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle vibration at home.",
-  "cause-of-knee-pain-patterns": "For daily knee comfort support at home, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle vibration.",
-  "front-knee-tightness-after-activity": "For comfortable post-activity front knee support, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle vibration for evening wind-down.",
-  "knee-discomfort-lower-back-hips": "For daily lower body comfort support, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle vibration for your knees.",
-  "below-knee-discomfort-teens-adults": "For active teens and adults seeking comfortable post-activity support, the FlexiKnee Smart Heated Knee Device provides soothing warmth and gentle vibration.",
+// Context-aware CTA data for each article (headline + text)
+const articleCTAs: Record<string, { headline: string; text: string }> = {
+  "why-knee-pain-doesnt-go-away": { headline: "Want an easier way to support your knees every day?", text: "The FlexiKnee Smart Heated Knee Device combines gentle warmth, red light, and vibration massage to help keep your daily comfort routine simple and consistent." },
+  "heat-vs-red-light-therapy": { headline: "Curious about combining warmth and red light at home?", text: "FlexiKnee brings heat therapy and red light together in one comfortable, easy-to-use device designed for your daily knee routine." },
+  "who-benefits-from-knee-therapy-devices": { headline: "Thinking about an at-home knee comfort device?", text: "FlexiKnee delivers soothing warmth, red light wavelengths, and gentle vibration in a wireless wrap designed for everyday use." },
+  "daily-knee-comfort-routine": { headline: "Looking to simplify your daily knee comfort routine?", text: "FlexiKnee provides soothing warmth and gentle vibration support in one device, making it easy to stay consistent every morning and evening." },
+  "pain-in-the-knee-causes-locations": { headline: "Ready for comfortable at-home knee support?", text: "FlexiKnee offers adjustable warmth and gentle vibration for everyday use, no matter where your knee discomfort tends to show up." },
+  "back-of-knee-pain-explained": { headline: "Need soothing support for behind-the-knee comfort?", text: "FlexiKnee wraps around the entire knee area, delivering gentle warmth and massage to help ease everyday stiffness and tension." },
+  "side-knee-pain-comfort-guide": { headline: "Want daily comfort support for side knee discomfort?", text: "FlexiKnee provides targeted warmth, red light, and gentle vibration to support the muscles and tissues around your knee joint." },
+  "running-knee-pain-guide": { headline: "Looking for post-run knee comfort support?", text: "FlexiKnee helps runners wind down with soothing warmth and gentle vibration as part of a post-activity recovery routine." },
+  "knee-arthritis-pain-guide": { headline: "Exploring daily comfort options for stiff knees?", text: "FlexiKnee combines soothing warmth with red light and vibration support, designed for people who want consistent daily joint comfort." },
+  "sharp-knee-pain-guide": { headline: "Need comfort support between sharp pain episodes?", text: "FlexiKnee offers soothing warmth and gentle vibration at home, helping you stay comfortable between unpredictable flare-ups." },
+  "how-to-strengthen-knees": { headline: "Want to complement your knee-strengthening exercises?", text: "FlexiKnee provides soothing warmth and gentle support after workouts, helping your knees feel comfortable as you build strength." },
+  "understanding-knee-injuries": { headline: "Looking for comfortable at-home support during recovery?", text: "FlexiKnee offers soothing warmth and gentle vibration to support your comfort during the recovery journey." },
+  "best-infrared-knee-massagers": { headline: "Interested in a comprehensive infrared knee device?", text: "FlexiKnee combines adjustable warmth, red light, and vibration in one wireless device designed specifically for the knee joint." },
+  "sharp-knee-pain-comes-and-goes": { headline: "Need daily comfort between unpredictable flare-ups?", text: "FlexiKnee provides soothing warmth and gentle vibration at home to help you stay comfortable between episodes." },
+  "side-knee-pain-inner-outer": { headline: "Want at-home support for inner or outer knee comfort?", text: "FlexiKnee wraps around the full knee, delivering targeted warmth and gentle vibration for daily comfort support." },
+  "red-light-therapy-for-knees": { headline: "Interested in red light support for your knees?", text: "FlexiKnee combines red light wavelengths with warmth and vibration in one wireless knee wrap for daily use." },
+  "back-of-knee-pain-daily-habits": { headline: "Want to add warmth to your daily knee comfort habits?", text: "FlexiKnee makes it simple to incorporate soothing warmth and gentle massage into your everyday routine." },
+  "daily-knee-care-routine": { headline: "Need an easy device for your daily knee care?", text: "FlexiKnee offers soothing warmth and gentle vibration support in one device, perfect for morning and evening routines." },
+  "heat-vs-ice-for-knees": { headline: "Prefer warmth for your daily knee comfort?", text: "FlexiKnee provides adjustable heat along with red light and gentle vibration, all in one comfortable knee wrap." },
+  "do-knee-massagers-work": { headline: "Curious about a well-designed knee comfort device?", text: "FlexiKnee combines warmth, red light, and vibration for daily support, backed by thousands of positive user experiences." },
+  "is-infrared-safe-for-knees": { headline: "Looking for safe, everyday infrared knee support?", text: "FlexiKnee is designed for daily use with adjustable settings and built-in safety features for comfortable infrared warmth." },
+  "warmth-vs-infrared-knee-routines": { headline: "Want both warmth and infrared in one device?", text: "FlexiKnee combines surface warmth with infrared light and gentle vibration for comprehensive daily knee comfort." },
+  "knee-pain-worse-at-night": { headline: "Need a soothing addition to your evening routine?", text: "FlexiKnee provides gentle warmth and vibration before bed, helping your knees feel more comfortable through the night." },
+  "how-to-fix-knee-pain": { headline: "Looking for an easy at-home knee comfort option?", text: "FlexiKnee offers soothing warmth, red light, and gentle vibration to support your daily knee comfort routine." },
+  "women-men-knee-comfort-patterns": { headline: "Want everyday knee comfort support designed for you?", text: "FlexiKnee provides soothing warmth and gentle vibration in a one-size wrap that adapts to different knee sizes and comfort needs." },
+  "top-of-knee-pain-patterns": { headline: "Need comfortable at-home front knee support?", text: "FlexiKnee wraps around the knee area, delivering targeted warmth and gentle vibration for daily front-of-knee comfort." },
+  "best-running-shoes-knee-pain": { headline: "Pair your footwear with post-run knee comfort?", text: "FlexiKnee provides soothing warmth and gentle support after every run, complementing proper shoe choices for complete knee care." },
+  "knee-pain-treatment-daily-habits": { headline: "Want to upgrade your daily comfort habits?", text: "FlexiKnee offers soothing warmth and gentle vibration at home, making daily knee comfort support simple and consistent." },
+  "cause-of-knee-pain-patterns": { headline: "Looking for daily knee comfort support at home?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help support your knees throughout the day." },
+  "front-knee-tightness-after-activity": { headline: "Need post-activity front knee comfort support?", text: "FlexiKnee delivers soothing warmth and gentle vibration to help your front knee area unwind after activity." },
+  "knee-discomfort-lower-back-hips": { headline: "Want to support your whole lower body comfort?", text: "FlexiKnee provides soothing warmth and gentle vibration for your knees, complementing hip and back comfort routines." },
+  "below-knee-discomfort-teens-adults": { headline: "Need comfortable post-activity support for active legs?", text: "FlexiKnee provides soothing warmth and gentle vibration for teens and adults who need daily knee comfort after sports or activity." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7164,7 +7166,7 @@ const articles: Record<string, ArticleData> = {
 const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
-  articleCTAs[exp.article.slug] = exp.cta;
+  // Modular articles handle their own CTAs inline
 }
 
 const GuideArticle = () => {
@@ -7390,29 +7392,10 @@ const GuideArticle = () => {
             
             {/* Premium CTA Highlight Box */}
             {articleCTAs[slug] && (
-              <div 
-                className="mt-12 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg border-l-4 border-primary"
-                style={{
-                  padding: '18px',
-                  borderRadius: '12px',
-                  background: '#F9F6F3',
-                  color: '#4A4A4A',
-                  fontSize: '16px',
-                  lineHeight: '1.6',
-                  boxShadow: '0 4px 20px -4px rgba(0, 0, 0, 0.08)'
-                }}
-              >
-                {articleCTAs[slug]}
-                <br /><br />
-                👉{" "}
-                <a 
-                  href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" 
-                  style={{ color: '#5A7DFF', textDecoration: 'none' }}
-                  className="hover:underline"
-                >
-                  View full product details here
-                </a>
-              </div>
+              <PremiumCTA
+                headline={articleCTAs[slug].headline}
+                text={articleCTAs[slug].text}
+              />
             )}
           </div>
         </article>

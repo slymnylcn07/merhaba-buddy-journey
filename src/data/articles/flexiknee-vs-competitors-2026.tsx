@@ -6,11 +6,10 @@ import {
 } from "@/components/ArticleCharts";
 import { Link } from "react-router-dom";
 import type { ArticleExport } from "./types";
+import PremiumCTA from "@/components/PremiumCTA";
 
 import heroMassagerExpectations from "@/assets/article-hero-massager-expectations.jpg";
 import blogDeviceWarmth from "@/assets/blog-device-warmth.jpg";
-
-const PRODUCT_URL = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
 
 export const flexikneeVsCompetitors2026: ArticleExport = {
   cta: "",
@@ -168,17 +167,10 @@ export const flexikneeVsCompetitors2026: ArticleExport = {
           <p>Generic massage devices apply force and stimulation broadly. Knee-specific wraps position heat, light, and vibration directly where they're needed most: around the joint capsule and surrounding soft tissue. This targeted approach means each session delivers more focused support to the areas that matter most for knee comfort.</p>
         </InfoBox>
 
-        {/* CTA Block 1 */}
-        <div className="my-10 p-6 rounded-xl border-l-4 border-primary" style={{ background: '#F9F6F3' }}>
-          <p className="text-foreground font-medium mb-3">Want the most comprehensive at-home option?</p>
-          <p className="text-muted-foreground mb-4">FlexiKnee combines all three modalities in one wireless, knee-specific device.</p>
-          <a
-            href={PRODUCT_URL}
-            className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
-          >
-            Explore FlexiKnee →
-          </a>
-        </div>
+        <PremiumCTA
+          headline="Want the most comprehensive at-home knee comfort option?"
+          text="FlexiKnee combines all three modalities in one wireless, knee-specific device designed for consistent daily use."
+        />
 
         <h2>Which Device Fits Your Needs?</h2>
         <p>
@@ -256,12 +248,10 @@ export const flexikneeVsCompetitors2026: ArticleExport = {
           helpful for understanding how device placement and daily habits work together.
         </p>
 
-        <p>
-          If you prefer an easy at-home option for comprehensive daily knee comfort, the FlexiKnee Smart Heated Knee Device combines warmth, red light, and vibration in one wireless device.
-        </p>
-        <p>
-          👉 <a href={PRODUCT_URL} className="text-primary hover:underline font-medium">View full product details here</a>
-        </p>
+        <PremiumCTA
+          headline="Ready to choose the best knee comfort device for your routine?"
+          text="FlexiKnee combines warmth, red light, and vibration in one wireless device. See the full specs and user reviews."
+        />
 
         {/* Disclaimer */}
         <div className="mt-12 p-4 rounded-lg bg-muted/30 border border-border/30">

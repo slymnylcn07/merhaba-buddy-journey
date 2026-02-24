@@ -6,13 +6,12 @@ import {
 } from "@/components/ArticleCharts";
 import { Link } from "react-router-dom";
 import type { ArticleExport } from "./types";
+import PremiumCTA from "@/components/PremiumCTA";
 
 import heroInfraredMassager from "@/assets/article-hero-infrared-massager.jpg";
 import blogDeviceWarmth from "@/assets/blog-device-warmth.jpg";
 import blogDeviceRedlight from "@/assets/blog-device-redlight.jpg";
 import blogDeviceComfortRoutine from "@/assets/blog-device-comfort-routine.jpg";
-
-const PRODUCT_URL = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
 
 export const flexikneeReview2026: ArticleExport = {
   cta: "",
@@ -73,7 +72,7 @@ export const flexikneeReview2026: ArticleExport = {
         </p>
         <p>
           Unlike clinical or professional-grade equipment, FlexiKnee is positioned as a convenient, daily-use device that integrates into existing morning or evening routines. You can learn more about the full specifications on the{" "}
-          <a href={PRODUCT_URL} className="text-primary hover:underline font-medium">
+          <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="text-primary hover:underline font-medium">
             FlexiKnee product page
           </a>.
         </p>
@@ -120,17 +119,10 @@ export const flexikneeReview2026: ArticleExport = {
           <p>Rather than addressing comfort from a single angle, FlexiKnee combines warmth for circulation support, red light for cellular wellness, and vibration for muscle tension. This multi-modal approach means users don't need to purchase and manage three separate devices.</p>
         </InfoBox>
 
-        {/* CTA Block 1 */}
-        <div className="my-10 p-6 rounded-xl border-l-4 border-primary" style={{ background: '#F9F6F3' }}>
-          <p className="text-foreground font-medium mb-3">Ready to explore FlexiKnee for yourself?</p>
-          <p className="text-muted-foreground mb-4">See the full product details, specifications, and current pricing.</p>
-          <a
-            href={PRODUCT_URL}
-            className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
-          >
-            View FlexiKnee Product Page →
-          </a>
-        </div>
+        <PremiumCTA
+          headline="Ready to explore FlexiKnee for yourself?"
+          text="See the full product details, specifications, and current pricing for the FlexiKnee Smart Heated Knee Device."
+        />
 
         <h2>Pros: What Users Appreciate Most</h2>
         <p>
@@ -277,12 +269,10 @@ export const flexikneeReview2026: ArticleExport = {
           description="Based on verified customer reviews across all platforms"
         />
 
-        <p>
-          If you prefer an easy at-home option for daily knee comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle support.
-        </p>
-        <p>
-          👉 <a href={PRODUCT_URL} className="text-primary hover:underline font-medium">View full product details here</a>
-        </p>
+        <PremiumCTA
+          headline="Want to experience FlexiKnee's 3-in-1 comfort for yourself?"
+          text="Thousands of users have made FlexiKnee part of their daily routine. See the full product details, specs, and current pricing."
+        />
 
         {/* Disclaimer */}
         <div className="mt-12 p-4 rounded-lg bg-muted/30 border border-border/30">

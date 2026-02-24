@@ -1,24 +1,9 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
+import PremiumCTA from "@/components/PremiumCTA";
 
-const productLink = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
 
-const CTABox = ({ variant = "mid" }: { variant?: "mid" | "end" }) => {
-  if (variant === "end") {
-    return (
-      <div className="my-8">
-        <p>If you prefer an easy at-home option that combines heat and red light for daily knee comfort, the FlexiKnee Smart Heated Knee Device brings both together with gentle vibration support.</p>
-        <p>👉 <a href={productLink} className="text-primary hover:underline font-medium">View full product details here</a></p>
-      </div>
-    );
-  }
-  return (
-    <div className="my-8">
-      <p>Some people prefer having an at-home device that combines heat and red light therapy for their daily knee comfort routine. FlexiKnee uses soothing warmth, red light wavelengths, and gentle vibration in one easy-to-use device.</p>
-      <p>👉 <a href={productLink} className="text-primary hover:underline font-medium">Learn more about FlexiKnee</a></p>
-    </div>
-  );
-};
+
 export const heatRedLightTherapyBenefits2026: ArticleExport = {
   cta: "",
   article: {
@@ -34,7 +19,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
     nextTitle: "Do Knee Massagers Actually Work?",
     faqs: [
       { question: "What is red light therapy for knees?", answer: "Red light therapy (photobiomodulation) uses specific wavelengths of light (typically 630-850nm) that penetrate skin and tissue to support cellular energy production and comfort at a deeper level." },
-      { question: "How does heat therapy help knee pain?", answer: "Heat therapy increases blood flow through vasodilation, relaxes muscles around the knee joint, improves flexibility, and helps reduce stiffness — especially beneficial for chronic knee concerns." },
+      { question: "How does heat therapy help knee pain?", answer: "Heat therapy increases blood flow through vasodilation, relaxes muscles around the knee joint, improves flexibility, and helps reduce stiffness, especially beneficial for chronic knee concerns." },
       { question: "Is combining heat and red light therapy better than using either alone?", answer: "Research suggests the combination may offer synergistic benefits: heat prepares tissue by increasing blood flow, while red light works at the cellular level to support mitochondrial function and tissue comfort." },
       { question: "How often should I use heat and red light therapy on my knees?", answer: "Most people benefit from 15-20 minute sessions once or twice daily. Consistency over weeks and months tends to produce the best outcomes." },
       { question: "Is red light therapy safe for knee use?", answer: "Red light therapy is generally considered safe when used as directed. Quality devices include appropriate safety features and are designed for regular home use." },
@@ -51,7 +36,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
 
         <h2>Heat Therapy: What the Research Shows</h2>
         <p>
-          Heat therapy (thermotherapy) is one of the oldest and most widely studied approaches to musculoskeletal comfort. The mechanism is well-understood: applied warmth causes vasodilation — the widening of blood vessels — which increases blood flow to the targeted area.
+          Heat therapy (thermotherapy) is one of the oldest and most widely studied approaches to musculoskeletal comfort. The mechanism is well-understood: applied warmth causes vasodilation, the widening of blood vessels, which increases blood flow to the targeted area.
         </p>
         <p>
           <strong>Key research findings on heat therapy for knees:</strong>
@@ -69,7 +54,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
 
         <h2>Red Light Therapy: The Science Behind Photobiomodulation</h2>
         <p>
-          Red light therapy — also known as photobiomodulation (PBM) or low-level light therapy (LLLT) — uses specific wavelengths of visible and near-infrared light to interact with tissue at the cellular level. The primary mechanism involves the interaction of photons with cytochrome c oxidase in mitochondria, the energy-producing structures within cells.
+          Red light therapy, also known as photobiomodulation (PBM) or low-level light therapy (LLLT), uses specific wavelengths of visible and near-infrared light to interact with tissue at the cellular level. The primary mechanism involves the interaction of photons with cytochrome c oxidase in mitochondria, the energy-producing structures within cells.
         </p>
         <p>
           <strong>Updated 2026 research highlights:</strong>
@@ -78,15 +63,18 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
           <li>A 2025 meta-analysis of 47 studies found that photobiomodulation showed positive effects on knee comfort in 78% of trials reviewed</li>
           <li>Wavelengths between 630-850nm demonstrated the strongest evidence for tissue penetration and cellular interaction</li>
           <li>Studies show that red light therapy may support collagen production, which is relevant for cartilage and connective tissue health</li>
-          <li>Research indicates cumulative benefits — meaning consistent use over weeks yields better outcomes than sporadic application</li>
+          <li>Research indicates cumulative benefits, meaning consistent use over weeks yields better outcomes than sporadic application</li>
           <li>New 2026 studies suggest that combining red light with heat may enhance photon absorption by pre-warming tissue</li>
         </ul>
 
-        <CTABox />
+        <PremiumCTA
+          headline="Interested in combining heat and red light at home?"
+          text="FlexiKnee uses soothing warmth, red light wavelengths, and gentle vibration in one easy-to-use device designed for your daily knee comfort routine."
+        />
 
         <h2>The Synergy Effect: Why Combining Heat + Red Light Works Better</h2>
         <p>
-          Perhaps the most compelling finding in recent research is that heat and red light therapy appear to produce <strong>synergistic effects</strong> — meaning their combined benefit is greater than simply adding the individual benefits together.
+          Perhaps the most compelling finding in recent research is that heat and red light therapy appear to produce <strong>synergistic effects</strong>, meaning their combined benefit is greater than simply adding the individual benefits together.
         </p>
         <p>
           Here's why this synergy occurs:
@@ -106,7 +94,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
           </li>
         </ol>
         <p>
-          This synergistic relationship is one of the key reasons devices like the <a href={productLink} className="text-primary hover:underline font-medium">FlexiKnee™ Smart Heated Knee Massager</a> integrate both heat and red light therapy into a single device — it's not just convenience, it's better science.
+          This synergistic relationship is one of the key reasons devices that integrate both heat and red light therapy into a single device are gaining attention among people seeking comprehensive at-home knee support.
         </p>
 
         <h2>Adding Vibration: The Third Modality</h2>
@@ -120,7 +108,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
           <li><strong>Lymphatic support:</strong> Rhythmic vibration may help support natural fluid movement around the joint</li>
         </ul>
         <p>
-          The combination of all three — heat, red light, and vibration — represents the most comprehensive at-home knee therapy approach available in 2026.
+          The combination of all three: heat, red light, and vibration, represents the most comprehensive at-home knee therapy approach available in 2026.
         </p>
 
         <h2>Real-World Applications: Who Benefits Most?</h2>
@@ -136,7 +124,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
 
         <h3>People Exploring Holistic Knee Comfort</h3>
         <p>
-          For those who prefer a multi-faceted approach to knee comfort — combining good footwear, gentle movement, and at-home devices — heat + red light therapy fits naturally into a broader wellness routine. This is especially true for those who also address <Link to="/guides/knee-discomfort-lower-back-hips" className="text-primary hover:underline">the connection between knee and lower body comfort</Link>.
+          For those who prefer a multi-faceted approach to knee comfort, combining good footwear, gentle movement, and at-home devices, heat + red light therapy fits naturally into a broader wellness routine. This is especially true for those who also address <Link to="/guides/knee-discomfort-lower-back-hips" className="text-primary hover:underline">the connection between knee and lower body comfort</Link>.
         </p>
 
 
@@ -157,7 +145,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
         <ul className="list-disc pl-6 space-y-2 my-4">
           <li>Use 1-2 hours before bedtime for optimal relaxation</li>
           <li>Start with higher heat settings if stiffness has built up during the day</li>
-          <li>Focus on relaxation — this is also a good time for mindful breathing</li>
+          <li>Focus on relaxation: this is also a good time for mindful breathing</li>
           <li>Reduce activity after your session to maintain the relaxed state</li>
         </ul>
 
@@ -165,7 +153,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
         <ul className="list-disc pl-6 space-y-2 my-4">
           <li>Apply within 30 minutes of finishing exercise for best results</li>
           <li>Use alongside gentle foam rolling or stretching of surrounding muscles</li>
-          <li>Stay hydrated — heat therapy increases local circulation, and hydration supports this process</li>
+          <li>Stay hydrated: heat therapy increases local circulation, and hydration supports this process</li>
         </ul>
 
         <h2>What to Look for in a Combined Therapy Device</h2>
@@ -179,9 +167,6 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
           <li><strong>Safety certifications:</strong> Auto-shutoff, overheat protection, and relevant safety standards</li>
           <li><strong>Battery life:</strong> Wireless devices should last through at least one full session without recharging</li>
         </ul>
-        <p>
-          The <a href={productLink} className="text-primary hover:underline font-medium">FlexiKnee™</a> checks all of these boxes, which is one of the reasons it consistently ranks as the top choice for people looking for a combined heat + red light + vibration device.
-        </p>
 
         <h2>What Research Suggests Going Forward</h2>
         <p>
@@ -194,21 +179,23 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
           <li>Growing interest in how younger active adults and <Link to="/guides/below-knee-discomfort-teens-adults" className="text-primary hover:underline">teens with below-knee discomfort</Link> respond to combined therapy</li>
         </ul>
 
-        <CTABox variant="end" />
-
         <h2>Key Takeaways</h2>
         <ul className="list-disc pl-6 space-y-2 my-4">
           <li>Heat therapy and red light therapy each have strong evidence supporting their use for knee comfort</li>
           <li>Combining both therapies creates synergistic effects that neither can achieve alone</li>
           <li>Adding vibration massage provides a third complementary modality for comprehensive support</li>
-          <li>Consistency matters — daily use over weeks and months produces the best outcomes</li>
-          <li>Quality matters — look for devices with specified wavelengths, adjustable heat, and safety features</li>
-          <li>FlexiKnee™ offers the most complete combination of all three therapies in a knee-specific design</li>
+          <li>Consistency matters: daily use over weeks and months produces the best outcomes</li>
+          <li>Quality matters: look for devices with specified wavelengths, adjustable heat, and safety features</li>
         </ul>
 
         <p>
           Whether you're exploring at-home knee comfort for the first time or looking to upgrade from basic approaches, the combination of heat, red light therapy, and vibration represents the most evidence-supported, comprehensive strategy available in 2026. And for those ready to explore the right footwear alongside therapy, our guide on <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee comfort</Link> is a helpful companion read.
         </p>
+
+        <PremiumCTA
+          headline="Ready to experience the heat + red light synergy?"
+          text="FlexiKnee brings heat therapy, red light wavelengths, and vibration massage together in one wireless knee device for comprehensive daily comfort."
+        />
 
         <div className="my-8 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground italic">
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and customer experiences. Always consult a healthcare professional for persistent or severe knee concerns.

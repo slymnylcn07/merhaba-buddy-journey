@@ -1,24 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
+import PremiumCTA from "@/components/PremiumCTA";
 
-const productLink = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
-
-const CTABox = ({ variant = "mid" }: { variant?: "mid" | "end" }) => {
-  if (variant === "end") {
-    return (
-      <div className="my-8">
-        <p>If you prefer an easy at-home option for daily knee comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth, red light, and gentle vibration support.</p>
-        <p>👉 <a href={productLink} className="text-primary hover:underline font-medium">View full product details here</a></p>
-      </div>
-    );
-  }
-  return (
-    <div className="my-8">
-      <p>While daily habits and lifestyle adjustments can support knee comfort, some people also prefer having an at-home device that provides gentle warmth and support. FlexiKnee uses soothing heat, targeted massage, and red-light technology as part of a daily comfort routine.</p>
-      <p>👉 <a href={productLink} className="text-primary hover:underline font-medium">Learn more about FlexiKnee</a></p>
-    </div>
-  );
-};
 export const heatOrIceKneePain: ArticleExport = {
   cta: "",
   article: {
@@ -43,7 +26,7 @@ export const heatOrIceKneePain: ArticleExport = {
     content: (
       <>
         <p>
-          When knee discomfort strikes, the first question most people ask is simple: <strong>should I use heat or ice?</strong> It's one of the most searched health questions online, and for good reason — the wrong choice can sometimes make things feel worse rather than better.
+          When knee discomfort strikes, the first question most people ask is simple: <strong>should I use heat or ice?</strong> It's one of the most searched health questions online, and for good reason: the wrong choice can sometimes make things feel worse rather than better.
         </p>
         <p>
           This guide breaks down the science behind both heat and ice therapy for knee comfort, explores when each approach makes sense, and explains why emerging research on heat combined with red light therapy is changing how people think about long-term knee support.
@@ -54,7 +37,7 @@ export const heatOrIceKneePain: ArticleExport = {
           Ice therapy, also known as cryotherapy, has been a go-to recommendation for decades. The principle is straightforward: cold temperatures cause blood vessels to constrict (vasoconstriction), which can help reduce swelling and numb acute discomfort.
         </p>
         <p>
-          <strong>When ice works best:</strong> Ice is generally most effective in the acute phase — typically the first 48 to 72 hours after an injury, strain, or sudden onset of swelling. If your knee is visibly swollen, warm to the touch, or you've just experienced a specific injury, ice is usually the recommended first response.
+          <strong>When ice works best:</strong> Ice is generally most effective in the acute phase: typically the first 48 to 72 hours after an injury, strain, or sudden onset of swelling. If your knee is visibly swollen, warm to the touch, or you've just experienced a specific injury, ice is usually the recommended first response.
         </p>
         <p>
           However, the limitations of ice are important to understand. While ice can temporarily reduce swelling and provide a numbing effect, it doesn't address the underlying factors that contribute to chronic knee discomfort. For ongoing stiffness, muscle tension, or age-related joint changes, ice alone rarely provides lasting support.
@@ -81,7 +64,10 @@ export const heatOrIceKneePain: ArticleExport = {
           If you're dealing with <Link to="/guides/knee-discomfort-lower-back-hips" className="text-primary hover:underline">knee discomfort connected to lower back or hip tension</Link>, heat therapy can be especially helpful since warmth supports comfort across interconnected muscle groups.
         </p>
 
-        <CTABox />
+        <PremiumCTA
+          headline="Prefer warmth for your daily knee comfort?"
+          text="FlexiKnee uses soothing heat, red light wavelengths, and targeted massage to support your daily knee comfort routine in one easy-to-use device."
+        />
 
         <h2>Heat vs Ice: Side-by-Side Comparison</h2>
         <div className="overflow-x-auto my-8">
@@ -107,13 +93,13 @@ export const heatOrIceKneePain: ArticleExport = {
 
         <h2>Why Red Light Therapy Changes the Equation</h2>
         <p>
-          While heat therapy alone offers significant benefits for chronic knee comfort, the addition of red light therapy (also called photobiomodulation) introduces a deeper level of support. Red light therapy uses specific wavelengths of light — typically in the 630-850nm range — that can penetrate skin and tissue.
+          While heat therapy alone offers significant benefits for chronic knee comfort, the addition of red light therapy (also called photobiomodulation) introduces a deeper level of support. Red light therapy uses specific wavelengths of light, typically in the 630-850nm range, that can penetrate skin and tissue.
         </p>
         <p>
           Research published in peer-reviewed journals suggests that red light therapy may support cellular energy production through interaction with mitochondria. This cellular-level support is something neither heat nor ice can provide on their own.
         </p>
         <p>
-          When combined with heat therapy, red light creates a synergistic effect: heat increases blood flow and relaxes muscles on the surface level, while red light works at a deeper cellular level. This combination is why devices that integrate both modalities, like the <a href={productLink} className="text-primary hover:underline font-medium">FlexiKnee™ Smart Heated Knee Massager</a>, are gaining attention among people seeking comprehensive at-home knee support.
+          When combined with heat therapy, red light creates a synergistic effect: heat increases blood flow and relaxes muscles on the surface level, while red light works at a deeper cellular level. This combination is why devices that integrate both modalities are gaining attention among people seeking comprehensive at-home knee support.
         </p>
         <p>
           For a deeper look at what research says about red light therapy specifically, check out our guide on <Link to="/guides/heat-vs-red-light-therapy" className="text-primary hover:underline">heat vs. red light therapy for knee discomfort</Link>.
@@ -147,7 +133,7 @@ export const heatOrIceKneePain: ArticleExport = {
           <li><strong>Inconvenience:</strong> Ice packs require freezing, can be messy, and don't conform well to the knee's complex shape</li>
         </ul>
         <p>
-          This is particularly relevant for younger active adults and teenagers who may experience <Link to="/guides/below-knee-discomfort-teens-adults" className="text-primary hover:underline">below-knee discomfort during active periods</Link> — heat-based support is often more practical for their lifestyle needs.
+          This is particularly relevant for younger active adults and teenagers who may experience <Link to="/guides/below-knee-discomfort-teens-adults" className="text-primary hover:underline">below-knee discomfort during active periods</Link>: heat-based support is often more practical for their lifestyle needs.
         </p>
 
         <h2>Why Heat + Red Light + Vibration Is the Modern Approach</h2>
@@ -159,9 +145,6 @@ export const heatOrIceKneePain: ArticleExport = {
           <li><strong>Red light:</strong> Supports cellular energy production and deep tissue comfort</li>
           <li><strong>Vibration:</strong> Provides gentle massage that helps break up tension and improve circulation further</li>
         </ul>
-        <p>
-          The <a href={productLink} className="text-primary hover:underline font-medium">FlexiKnee™ Smart Heated Knee Massager</a> is specifically designed to deliver all three of these modalities in a single, easy-to-use device. With adjustable heat levels, integrated red light therapy, and vibration massage, it offers a comprehensive approach to daily knee comfort that goes far beyond what ice or heat alone can provide.
-        </p>
 
         <h2>Building a Science-Based Knee Comfort Routine</h2>
         <p>
@@ -174,15 +157,15 @@ export const heatOrIceKneePain: ArticleExport = {
           <li><strong>For long-term support:</strong> Incorporate a heat + red light device into your daily routine for comprehensive comfort</li>
         </ol>
 
-        <CTABox variant="end" />
-
         <h2>Final Thoughts: Heat Wins for Long-Term Knee Comfort</h2>
         <p>
-          While ice therapy has its place in acute injury management, the evidence clearly favors heat therapy — especially heat combined with red light therapy — for the kind of everyday knee support most people are looking for. The ability to relax muscles, improve circulation, and support tissue at the cellular level makes heat + red light a superior daily choice.
+          While ice therapy has its place in acute injury management, the evidence clearly favors heat therapy, especially heat combined with red light therapy, for the kind of everyday knee support most people are looking for. The ability to relax muscles, improve circulation, and support tissue at the cellular level makes heat + red light a superior daily choice.
         </p>
-        <p>
-          For those ready to move beyond the heat-vs-ice debate and embrace a more comprehensive approach, a multi-therapy device like FlexiKnee™ offers the convenience and effectiveness that modern knee comfort routines demand.
-        </p>
+
+        <PremiumCTA
+          headline="Ready to embrace the heat + red light approach?"
+          text="FlexiKnee combines adjustable heat, red light therapy, and vibration massage in one wireless device for comprehensive daily knee comfort."
+        />
 
         <div className="my-8 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground italic">
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and customer experiences. Always consult a healthcare professional for persistent or severe knee concerns.

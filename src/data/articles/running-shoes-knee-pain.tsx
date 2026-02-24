@@ -1,4 +1,5 @@
 import { ArticleExport } from "./types";
+import PremiumCTA from "@/components/PremiumCTA";
 
 export const runningShoesKneePain: ArticleExport = {
   cta: "",
@@ -20,7 +21,7 @@ export const runningShoesKneePain: ArticleExport = {
     content: (
       <>
         <p>
-          <strong>Runner's knee, IT band syndrome, patellar tendinitis</strong> — these are just a few of the conditions that plague runners at every level. While training volume and biomechanics play major roles, one factor that's often overlooked is sitting right at the bottom of the chain: <strong>your running shoes</strong>.
+          <strong>Runner's knee, IT band syndrome, patellar tendinitis</strong>: these are just a few of the conditions that plague runners at every level. While training volume and biomechanics play major roles, one factor that's often overlooked is sitting right at the bottom of the chain: <strong>your running shoes</strong>.
         </p>
         <p>
           In this guide, we'll explore how footwear affects knee health, what mistakes runners commonly make, and why recovery tools like heat therapy devices are becoming an essential part of the modern runner's toolkit.
@@ -31,7 +32,7 @@ export const runningShoesKneePain: ArticleExport = {
           Your running shoes are the primary interface between your body and the ground. Every stride generates impact forces of 2–3 times your body weight, and your shoes determine how that force is distributed through your legs and, critically, through your knee joints.
         </p>
         <p>
-          When shoes fit properly and match your gait, they help distribute impact evenly, support natural alignment, and cushion the repetitive stress of running. When they don't, the imbalance gets transferred up the kinetic chain — often landing squarely on the knee.
+          When shoes fit properly and match your gait, they help distribute impact evenly, support natural alignment, and cushion the repetitive stress of running. When they don't, the imbalance gets transferred up the kinetic chain, often landing squarely on the knee.
         </p>
 
         <h3>The Biomechanical Connection</h3>
@@ -55,12 +56,12 @@ export const runningShoesKneePain: ArticleExport = {
           Not all running shoes are created equal. Stability shoes, neutral shoes, and motion-control shoes each serve different biomechanical needs. Wearing a stability shoe when you need a neutral shoe (or vice versa) can introduce compensatory movements that stress the knee.
         </p>
         <p>
-          <strong>The fix:</strong> Get a professional gait analysis at a running specialty store. Many offer free video analysis that can identify your pronation pattern and recommend appropriate shoe types.
+          <strong>The approach:</strong> Get a professional gait analysis at a running specialty store. Many offer free video analysis that can identify your pronation pattern and recommend appropriate shoe types.
         </p>
 
         <h3>2. Running in Worn-Out Shoes</h3>
         <p>
-          Running shoes lose their cushioning and support gradually — you might not notice the decline until your knees do. Most experts recommend replacing running shoes every 300–500 miles, though this varies by shoe type and running surface.
+          Running shoes lose their cushioning and support gradually: you might not notice the decline until your knees do. Most experts recommend replacing running shoes every 300–500 miles, though this varies by shoe type and running surface.
         </p>
 
         <h3>3. Choosing Style Over Function</h3>
@@ -103,18 +104,17 @@ export const runningShoesKneePain: ArticleExport = {
           For detailed shoe recommendations, check out our guide on <a href="/guides/best-running-shoes-knee-pain">best running shoes for knee pain</a>.
         </p>
 
-        <div className="my-8 p-6 bg-primary/5 rounded-xl border border-primary/20">
-          <p className="text-lg font-semibold text-foreground mb-2">🏃 Good shoes prevent — but recovery heals</p>
-          <p className="text-muted-foreground mb-3">Even with the perfect shoes, runners need recovery support. FlexiKnee™ provides targeted heat, red light, and vibration therapy to help your knees recover after every run.</p>
-          <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Explore FlexiKnee™ for Runners →</a>
-        </div>
+        <PremiumCTA
+          headline="Good shoes prevent, but recovery supports comfort"
+          text="Even with the perfect shoes, runners benefit from recovery support. FlexiKnee provides targeted heat, red light, and vibration therapy to help your knees feel comfortable after every run."
+        />
 
         <h2>Why Shoes Alone Aren't Enough: The Recovery Gap</h2>
         <p>
-          Here's a truth many runners learn the hard way: <strong>even the best running shoes can't fully protect your knees from the cumulative impact of training</strong>. Shoes are preventive — they help minimize the stress each stride places on your joints. But they don't actively support recovery.
+          Here's a truth many runners learn the hard way: <strong>even the best running shoes can't fully protect your knees from the cumulative impact of training</strong>. Shoes are preventive: they help minimize the stress each stride places on your joints. But they don't actively support recovery.
         </p>
         <p>
-          This is where the concept of the "recovery gap" comes in. Your knees absorb thousands of impacts per run. Over time, this creates micro-level stress that needs active recovery support — not just passive rest.
+          This is where the concept of the "recovery gap" comes in. Your knees absorb thousands of impacts per run. Over time, this creates micro-level stress that needs active recovery support, not just passive rest.
         </p>
         <p>
           Research shows that heat therapy can significantly support post-exercise recovery by increasing blood flow, reducing muscle tension, and supporting the body's natural repair processes. This is why more runners are incorporating heat therapy devices into their post-run routines.
@@ -134,11 +134,11 @@ export const runningShoesKneePain: ArticleExport = {
 
         <h3>The Ideal Post-Run Recovery Protocol</h3>
         <ol>
-          <li><strong>Cool down</strong> — 5–10 minutes of walking immediately after your run</li>
-          <li><strong>Gentle stretching</strong> — Focus on quads, hamstrings, IT band, and calves</li>
-          <li><strong>Heat therapy session</strong> — 15–20 minutes of targeted warmth to the knee area</li>
-          <li><strong>Hydration and nutrition</strong> — Support your body's natural recovery processes</li>
-          <li><strong>Elevation</strong> — If any swelling is present, elevate for 10–15 minutes</li>
+          <li><strong>Cool down</strong>: 5–10 minutes of walking immediately after your run</li>
+          <li><strong>Gentle stretching</strong>: Focus on quads, hamstrings, IT band, and calves</li>
+          <li><strong>Heat therapy session</strong>: 15–20 minutes of targeted warmth to the knee area</li>
+          <li><strong>Hydration and nutrition</strong>: Support your body's natural recovery processes</li>
+          <li><strong>Elevation</strong>: If any swelling is present, elevate for 10–15 minutes</li>
         </ol>
 
 
@@ -154,23 +154,21 @@ export const runningShoesKneePain: ArticleExport = {
           Think of your running shoes as the first line of defense and a heat therapy device as the active recovery tool that helps your knees bounce back between sessions. Together, they form a complete knee protection system.
         </p>
         <p>
-          For teens and younger runners, the considerations are slightly different — read our guide on <a href="/guides/below-knee-discomfort-teens-adults">below-knee discomfort in teens and active adults</a> for age-specific guidance.
+          For teens and younger runners, the considerations are slightly different: read our guide on <a href="/guides/below-knee-discomfort-teens-adults">below-knee discomfort in teens and active adults</a> for age-specific guidance.
         </p>
 
         <h2>The Bottom Line</h2>
         <p>
-          <strong>Your running shoes matter enormously for knee health</strong> — but they're only half the equation. Prevention through proper footwear needs to be paired with active recovery support. As running science continues to evolve, the evidence increasingly supports combining smart shoe choices with targeted heat therapy for comprehensive knee care.
+          <strong>Your running shoes matter enormously for knee health</strong>, but they're only half the equation. Prevention through proper footwear needs to be paired with active recovery support. As running science continues to evolve, the evidence increasingly supports combining smart shoe choices with targeted heat therapy for comprehensive knee care.
         </p>
         <p>
           Get your shoes right. Build your recovery routine. And give your knees the consistent daily support they need to keep you running for years to come.
         </p>
 
-        <p>
-          If you prefer an easy at-home option for post-run knee comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth, red light, and gentle vibration for your recovery routine.
-        </p>
-        <p>
-          👉 <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="text-primary hover:underline font-medium">View full product details here</a>
-        </p>
+        <PremiumCTA
+          headline="Complete your running recovery routine"
+          text="FlexiKnee offers soothing warmth, red light, and gentle vibration to support your knees after every run. See the full product details and runner-specific tips."
+        />
 
         <h2>Related Guides</h2>
         <ul>

@@ -1,4 +1,5 @@
 import { ArticleExport } from "./types";
+import PremiumCTA from "@/components/PremiumCTA";
 
 export const doKneeMassagersWork: ArticleExport = {
   cta: "",
@@ -29,13 +30,13 @@ export const doKneeMassagersWork: ArticleExport = {
           Before evaluating whether knee massagers work, we need to define what "working" means. Most people expect one or more of these outcomes:
         </p>
         <ul>
-          <li><strong>Temporary comfort improvement</strong> — feeling better during and after use</li>
-          <li><strong>Improved mobility</strong> — less stiffness when moving, bending, or walking</li>
-          <li><strong>Better daily function</strong> — being able to do more activities with less discomfort</li>
-          <li><strong>Long-term routine support</strong> — sustained comfort when used consistently</li>
+          <li><strong>Temporary comfort improvement</strong>: feeling better during and after use</li>
+          <li><strong>Improved mobility</strong>: less stiffness when moving, bending, or walking</li>
+          <li><strong>Better daily function</strong>: being able to do more activities with less discomfort</li>
+          <li><strong>Long-term routine support</strong>: sustained comfort when used consistently</li>
         </ul>
         <p>
-          What knee massagers are <em>not</em> designed to do is cure underlying conditions, replace medical treatment, or fix structural damage. Setting realistic expectations is crucial to being satisfied with any at-home device.
+          What knee massagers are <em>not</em> designed to do is cure underlying conditions, replace medical treatment, or address structural damage. Setting realistic expectations is crucial to being satisfied with any at-home device.
         </p>
 
         <h2>The Science Behind Knee Massagers</h2>
@@ -48,7 +49,7 @@ export const doKneeMassagersWork: ArticleExport = {
           Heat therapy is one of the most well-studied approaches for joint comfort. Research published in the <em>Journal of Clinical Medicine</em> confirms that applying controlled heat to joints can increase blood flow, reduce muscle tension, and improve flexibility. For knee discomfort specifically, heat has been shown to provide temporary comfort improvement in multiple clinical studies.
         </p>
         <p>
-          The key finding: heat works best when applied consistently as part of a daily routine, rather than sporadically when discomfort peaks. This is why dedicated devices often outperform simple hot packs — they make consistent application easier.
+          The key finding: heat works best when applied consistently as part of a daily routine, rather than sporadically when discomfort peaks. This is why dedicated devices often outperform simple hot packs: they make consistent application easier.
         </p>
 
         <h3>2. Vibration Therapy</h3>
@@ -66,7 +67,7 @@ export const doKneeMassagersWork: ArticleExport = {
 
         <h2>What Real Users Actually Experience</h2>
         <p>
-          Science is one thing — real-world experience is another. After analyzing hundreds of verified user reviews across multiple knee massager brands, clear patterns emerge:
+          Science is one thing: real-world experience is another. After analyzing hundreds of verified user reviews across multiple knee massager brands, clear patterns emerge:
         </p>
 
         <div className="overflow-x-auto my-8">
@@ -92,22 +93,21 @@ export const doKneeMassagersWork: ArticleExport = {
           The most consistent feedback: <strong>knee massagers work best when used regularly</strong>. Users who incorporate them into a daily routine report significantly better outcomes than those who use them only when discomfort flares up.
         </p>
 
-        <div className="my-8 p-6 bg-primary/5 rounded-xl border border-primary/20">
-          <p className="text-lg font-semibold text-foreground mb-2">🔬 Looking for a device backed by real results?</p>
-          <p className="text-muted-foreground mb-3">FlexiKnee™ combines heat, red light, and vibration therapy — all three science-backed approaches in one device. Thousands of users report improved daily knee comfort.</p>
-          <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Try FlexiKnee™ Risk-Free →</a>
-        </div>
+        <PremiumCTA
+          headline="Looking for a device backed by real results?"
+          text="FlexiKnee combines heat, red light, and vibration therapy: all three science-backed approaches in one device. Thousands of users report improved daily knee comfort."
+        />
 
         <h2>When Knee Massagers Work Best</h2>
         <p>
           Based on both research and user data, knee massagers tend to be most effective for:
         </p>
         <ul>
-          <li><strong>Age-related stiffness</strong> — daily wear and general joint stiffness that comes with aging</li>
-          <li><strong>Post-activity discomfort</strong> — soreness after walking, exercise, or standing for long periods</li>
-          <li><strong>Morning stiffness</strong> — that feeling of "rusty joints" when you first wake up</li>
-          <li><strong>Arthritis-related discomfort</strong> — particularly osteoarthritis where heat therapy is commonly recommended</li>
-          <li><strong>Recovery support</strong> — as a complement to physical therapy or exercise routines</li>
+          <li><strong>Age-related stiffness</strong>: daily wear and general joint stiffness that comes with aging</li>
+          <li><strong>Post-activity discomfort</strong>: soreness after walking, exercise, or standing for long periods</li>
+          <li><strong>Morning stiffness</strong>: that feeling of "rusty joints" when you first wake up</li>
+          <li><strong>Arthritis-related discomfort</strong>: particularly osteoarthritis where heat therapy is commonly recommended</li>
+          <li><strong>Recovery support</strong>: as a complement to physical therapy or exercise routines</li>
         </ul>
         <p>
           People dealing with <a href="/guides/side-knee-pain-comfort-guide">side knee discomfort</a> or <a href="/guides/below-knee-discomfort-teens-adults">below-knee discomfort</a> often find that the combination of heat and gentle massage provides meaningful comfort improvement when used consistently.
@@ -156,25 +156,19 @@ export const doKneeMassagersWork: ArticleExport = {
           Whether you already own a knee massager or are considering one, these tips will help you maximize the benefits:
         </p>
         <ol>
-          <li><strong>Be consistent</strong> — Use it daily, ideally at the same times (morning and/or evening)</li>
-          <li><strong>Pair with gentle movement</strong> — Light stretching before or after use can enhance the benefits</li>
-          <li><strong>Start with lower settings</strong> — Let your body adjust, then increase intensity gradually</li>
-          <li><strong>Target the right timing</strong> — Morning use for stiffness, evening use for post-activity soreness</li>
-          <li><strong>Combine with other habits</strong> — Good footwear, hydration, and movement breaks all contribute to better outcomes</li>
+          <li><strong>Be consistent</strong>: Use it daily, ideally at the same times (morning and/or evening)</li>
+          <li><strong>Pair with gentle movement</strong>: Light stretching before or after use can enhance the benefits</li>
+          <li><strong>Start with lower settings</strong>: Let your body adjust, then increase intensity gradually</li>
+          <li><strong>Target the right timing</strong>: Morning use for stiffness, evening use for post-activity soreness</li>
+          <li><strong>Combine with other habits</strong>: Good footwear, hydration, and movement breaks all contribute to better outcomes</li>
         </ol>
         <p>
           Building a complete <a href="/guides/knee-discomfort-lower-back-hips">daily comfort routine</a> that addresses the whole lower body often yields better results than focusing on the knee alone.
         </p>
 
-        <div className="my-8 p-6 bg-primary/5 rounded-xl border border-primary/20">
-          <p className="text-lg font-semibold text-foreground mb-2">✅ Ready to experience the difference?</p>
-          <p className="text-muted-foreground mb-3">FlexiKnee™ is designed for daily use with adjustable heat, red light therapy, and vibration massage — everything research suggests works best for knee comfort.</p>
-          <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Shop FlexiKnee™ Now →</a>
-        </div>
-
         <h2>The Bottom Line: Do Knee Massagers Work?</h2>
         <p>
-          <strong>Yes — with caveats.</strong> The science supports that heat therapy, vibration, and red light therapy can each contribute to improved knee comfort. When combined in a quality device and used consistently, knee massagers can be a valuable part of your daily comfort routine.
+          <strong>Yes, with caveats.</strong> The science supports that heat therapy, vibration, and red light therapy can each contribute to improved knee comfort. When combined in a quality device and used consistently, knee massagers can be a valuable part of your daily comfort routine.
         </p>
         <p>
           They're not a miracle cure, and they won't replace professional medical care for serious conditions. But for the millions of people dealing with everyday knee stiffness, post-activity soreness, or age-related discomfort, a well-designed knee massager can make a meaningful difference in daily quality of life.
@@ -183,12 +177,10 @@ export const doKneeMassagersWork: ArticleExport = {
           The key is choosing a quality device with proven therapeutic features, setting realistic expectations, and committing to consistent daily use. Those who do typically find that a knee massager becomes an indispensable part of their comfort routine.
         </p>
 
-        <p>
-          If you prefer an easy at-home option for daily knee comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth, red light, and gentle vibration support.
-        </p>
-        <p>
-          👉 <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="text-primary hover:underline font-medium">View full product details here</a>
-        </p>
+        <PremiumCTA
+          headline="Ready to experience the difference a quality knee massager makes?"
+          text="FlexiKnee is designed for daily use with adjustable heat, red light therapy, and vibration massage: everything research suggests works best for knee comfort."
+        />
 
         <h2>Related Guides</h2>
         <ul>
