@@ -255,6 +255,27 @@ export const guidesData: GuideData[] = [
     readTime: 13,
     lastModified: "2026-02-24",
   },
+  {
+    slug: "heat-or-ice-knee-pain-science",
+    title: "Heat or Ice for Knee Pain? Complete Science Breakdown + Why Heat + Red Light Works Better",
+    description: "Should you use heat or ice for knee pain? Complete science breakdown comparing both methods, plus why heat combined with red light therapy works better for lasting comfort.",
+    readTime: 12,
+    lastModified: "2026-02-24",
+  },
+  {
+    slug: "smart-heated-knee-braces-2026",
+    title: "Smart Heated Knee Braces 2026 Buyer's Guide: Top 5 Devices Reviewed",
+    description: "Compare the top 5 smart heated knee braces in 2026. Features, pricing, pros and cons reviewed. Find the best heated knee brace device for your needs.",
+    readTime: 13,
+    lastModified: "2026-02-24",
+  },
+  {
+    slug: "heat-red-light-therapy-benefits-2026",
+    title: "Benefits of Heat + Red Light Therapy for Knee Pain: Updated 2026 Research Summary",
+    description: "Updated 2026 research summary on heat and red light therapy benefits for knee pain. Learn how combining both therapies supports daily knee comfort and recovery.",
+    readTime: 12,
+    lastModified: "2026-02-24",
+  },
 ];
 
 // Static pages for sitemap

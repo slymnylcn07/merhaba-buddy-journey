@@ -4,4 +4,7 @@
 export { flexikneeReview2026 } from "./flexiknee-review-2026";
 export { flexikneeVsCompetitors2026 } from "./flexiknee-vs-competitors-2026";
 export { bestHeatedKneeMassagerArthritis } from "./best-heated-knee-massager-arthritis";
+export { heatOrIceKneePain } from "./heat-or-ice-knee-pain";
+export { smartHeatedKneeBraces2026 } from "./smart-heated-knee-braces-2026";
+export { heatRedLightTherapyBenefits2026 } from "./heat-red-light-therapy-benefits-2026";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
