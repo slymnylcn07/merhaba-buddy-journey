@@ -297,6 +297,13 @@ export const guidesData: GuideData[] = [
     readTime: 12,
     lastModified: "2026-02-24",
   },
+  {
+    slug: "infrared-knee-massager-guide-2026",
+    title: "Infrared Knee Massager Guide 2026: How They Work, What to Expect & Best Options",
+    description: "Complete 2026 guide to infrared knee massagers. Learn how infrared therapy works for knees, what to expect, key features to look for, and the best devices available.",
+    readTime: 13,
+    lastModified: "2026-02-24",
+  },
 ];
 
 // Static pages for sitemap
