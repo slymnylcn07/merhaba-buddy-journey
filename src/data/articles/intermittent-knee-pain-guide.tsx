@@ -1,6 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
+import heroImage from "@/assets/article-hero-intermittent-knee.jpg";
 
 export const intermittentKneePainGuide: ArticleExport = {
   cta: "",
@@ -11,7 +12,7 @@ export const intermittentKneePainGuide: ArticleExport = {
     intro: "Knee discomfort that appears one day and disappears the next can be confusing and frustrating. This guide explores common reasons why knee discomfort comes and goes and shares practical habits for supporting daily comfort.",
     metaTitle: "Intermittent Knee Pain: Why It Comes and Goes | Daily Comfort Guide",
     metaDescription: "Why does knee pain come and go? Understand common patterns behind intermittent knee discomfort and build daily habits that support consistent comfort.",
-    heroImage: "",
+    heroImage: heroImage,
     publishedDate: "February 24, 2026",
     nextSlug: "side-of-knee-pain-explained",
     nextTitle: "Side-of-Knee Pain Explained: Causes, Shoes, and At-Home Comfort Tips",

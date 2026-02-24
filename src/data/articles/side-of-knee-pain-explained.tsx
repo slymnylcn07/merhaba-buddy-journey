@@ -1,6 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
+import heroImage from "@/assets/article-hero-side-knee-explained.jpg";
 
 export const sideOfKneePainExplained: ArticleExport = {
   cta: "",
@@ -11,7 +12,7 @@ export const sideOfKneePainExplained: ArticleExport = {
     intro: "Discomfort along the inner or outer side of the knee is one of the most common patterns people notice. This guide explores what often contributes to side-of-knee discomfort and shares practical everyday strategies for supporting comfort.",
     metaTitle: "Side-of-Knee Pain Explained: Causes, Shoes & At-Home Comfort Tips",
     metaDescription: "Side-of-knee pain bothering you? Learn common causes of inner and outer knee discomfort, how shoes play a role, and at-home comfort tips for daily support.",
-    heroImage: "",
+    heroImage: heroImage,
     publishedDate: "February 24, 2026",
     nextSlug: "infrared-vs-heating-pads",
     nextTitle: "Infrared Knee Massagers: Are They Really Better Than Heating Pads?",
