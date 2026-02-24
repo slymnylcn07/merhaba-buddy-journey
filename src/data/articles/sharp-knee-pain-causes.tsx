@@ -194,5 +194,6 @@ export const sharpKneePainCauses: ArticleExport = {
         </div>
       </>
     ),
+    seoTags: "sharp knee discomfort patterns, intermittent knee awareness, sudden knee sensation causes, knee comfort daily management, unpredictable knee comfort, knee discomfort triggers, at-home knee comfort support, warmth sharp knee comfort",
   },
 };

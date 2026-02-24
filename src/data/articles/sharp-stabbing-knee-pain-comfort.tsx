@@ -138,10 +138,8 @@ export const sharpStabbingKneePainComfort: ArticleExport = {
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and customer experiences. Always consult a healthcare professional for persistent or severe knee concerns.
         </div>
 
-        <div className="my-6">
-          <p className="text-sm text-muted-foreground"><strong>SEO Tags:</strong> sharp stabbing pain in knee, sharp knee pain causes, stabbing pain in knee, sudden sharp knee pain, sharp pain in knee when walking, sharp pain in knee when bending, knee pain at-home comfort, knee pain daily routine, sharp knee pain support, FlexiKnee</p>
-        </div>
       </>
     ),
+    seoTags: "sharp stabbing knee comfort, sudden knee discomfort support, knee comfort during sharp moments, daily knee comfort habits, gentle knee support sharp discomfort, at-home sharp knee comfort, warmth for sharp knee, knee awareness routine",
   },
 };

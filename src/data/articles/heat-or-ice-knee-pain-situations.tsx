@@ -139,10 +139,8 @@ export const heatOrIceKneePainSituations: ArticleExport = {
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and customer experiences. Always consult a healthcare professional for persistent or severe knee concerns.
         </div>
 
-        <div className="my-6">
-          <p className="text-sm text-muted-foreground"><strong>SEO Tags:</strong> heat or ice for knee pain, heat vs ice knee, should I use heat or ice on my knee, knee pain heat or cold, when to use ice on knee, when to use heat on knee, heat therapy knee, ice therapy knee pain, knee stiffness heat, knee swelling ice, best knee comfort routine, FlexiKnee</p>
-        </div>
       </>
     ),
+    seoTags: "heat or ice knee situations, when heat helps knee, when ice helps knee, knee comfort warmth choice, daily knee temperature decision, swelling vs stiffness knee, warmth-based knee habits, practical heat ice guide",
   },
 };

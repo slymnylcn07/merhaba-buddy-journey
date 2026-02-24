@@ -325,10 +325,8 @@ export const bestHeatedKneeMassagerArthritis: ArticleExport = {
           </p>
         </div>
 
-        <div className="hidden">
-          best heated knee massager for arthritis, heated knee massager arthritis, knee massager for arthritis, best knee massager for joint pain, heated knee brace arthritis, infrared knee massager arthritis, knee arthritis heat therapy, best knee device 2026, flexiknee arthritis, heated knee wrap for stiffness, at-home knee therapy arthritis, joint comfort device, knee warmth therapy, red light knee arthritis, vibration knee massager
-        </div>
       </>
     ),
+    seoTags: "heated knee massager arthritis, joint stiffness warmth, arthritis knee comfort device, infrared knee arthritis, daily knee joint support, heated knee wrap, knee warmth routine arthritis, at-home joint comfort",
   },
 };

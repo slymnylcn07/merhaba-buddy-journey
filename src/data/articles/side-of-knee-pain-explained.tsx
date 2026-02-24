@@ -122,5 +122,6 @@ export const sideOfKneePainExplained: ArticleExport = {
         />
       </>
     ),
+    seoTags: "side knee discomfort explained, lateral knee comfort, medial knee awareness, inner knee daily support, outer knee habits, footwear side knee connection, stretching side knee comfort, daily side knee routine",
   },
 };
