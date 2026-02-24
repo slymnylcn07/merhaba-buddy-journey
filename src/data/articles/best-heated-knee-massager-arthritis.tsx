@@ -6,13 +6,13 @@ import {
 } from "@/components/ArticleCharts";
 import { Link } from "react-router-dom";
 import type { ArticleExport } from "./types";
+import PremiumCTA from "@/components/PremiumCTA";
 
 import heroKneeArthritis from "@/assets/article-hero-knee-arthritis.jpg";
 import blogDeviceWarmth from "@/assets/blog-device-warmth.jpg";
 import blogDeviceComfortRoutine from "@/assets/blog-device-comfort-routine.jpg";
 import blogDeviceMorning from "@/assets/blog-device-morning.jpg";
 
-const PRODUCT_URL = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
 
 export const bestHeatedKneeMassagerArthritis: ArticleExport = {
   cta: "",
@@ -126,17 +126,10 @@ export const bestHeatedKneeMassagerArthritis: ArticleExport = {
           <p>Research consistently shows that regular, daily use of heat therapy yields better results than occasional intensive sessions. When evaluating devices, prioritize convenience and comfort of use, as these factors directly influence how consistently you'll integrate the device into your routine.</p>
         </InfoBox>
 
-        {/* CTA Block 1 */}
-        <div className="my-10 p-6 rounded-xl border-l-4 border-primary" style={{ background: '#F9F6F3' }}>
-          <p className="text-foreground font-medium mb-3">Looking for the most comprehensive heated knee device?</p>
-          <p className="text-muted-foreground mb-4">FlexiKnee combines adjustable heat with red light and vibration in one wireless wrap.</p>
-          <a
-            href={PRODUCT_URL}
-            className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
-          >
-            View FlexiKnee Details →
-          </a>
-        </div>
+        <PremiumCTA
+          headline="Looking for the most comprehensive heated knee device?"
+          text="FlexiKnee combines adjustable heat with red light and vibration in one wireless wrap, designed for daily joint comfort support."
+        />
 
         <h2>Top 5 Heated Knee Massagers for Joint Comfort (2026)</h2>
 
@@ -320,12 +313,10 @@ export const bestHeatedKneeMassagerArthritis: ArticleExport = {
           description="FlexiKnee leads the category with its 3-in-1 multi-modal approach"
         />
 
-        <p>
-          If you prefer an easy at-home option for daily joint comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth, red light, and gentle vibration support.
-        </p>
-        <p>
-          👉 <a href={PRODUCT_URL} className="text-primary hover:underline font-medium">View full product details here</a>
-        </p>
+        <PremiumCTA
+          headline="Ready to support your daily joint comfort?"
+          text="FlexiKnee offers soothing warmth, red light wavelengths, and gentle vibration in one wireless device, ranked #1 for arthritis comfort in 2026."
+        />
 
         {/* Disclaimer */}
         <div className="mt-12 p-4 rounded-lg bg-muted/30 border border-border/30">

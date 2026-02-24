@@ -1,4 +1,5 @@
 import { ArticleExport } from "./types";
+import PremiumCTA from "@/components/PremiumCTA";
 
 export const sharpKneePainCauses: ArticleExport = {
   cta: "",
@@ -6,7 +7,7 @@ export const sharpKneePainCauses: ArticleExport = {
     slug: "sharp-knee-pain-causes-relief",
     title: "Sharp Knee Pain That Comes and Goes: Causes, Relief Options & Home Treatments",
     subtitle: "Understanding unpredictable knee pain patterns and what you can do at home",
-    intro: "Sharp knee pain that appears suddenly and then disappears can be confusing and frustrating. This guide explores the most common causes, when to seek help, and what home-based support options — including heat therapy — can offer between episodes.",
+    intro: "Sharp knee pain that appears suddenly and then disappears can be confusing and frustrating. This guide explores the most common causes, when to seek help, and what home-based support options, including heat therapy, can offer between episodes.",
     metaTitle: "Sharp Knee Pain That Comes & Goes: Causes, Relief & Home Treatment (2026)",
     metaDescription: "Sharp knee pain that comes and goes? Learn common causes, relief options, and home treatments including heat therapy. Complete guide with when to see a doctor.",
     heroImage: "",
@@ -20,17 +21,17 @@ export const sharpKneePainCauses: ArticleExport = {
     content: (
       <>
         <p>
-          You're walking normally, then suddenly — <strong>a sharp, stabbing pain shoots through your knee</strong>. Minutes later, it's gone. This pattern of sharp knee pain that comes and goes is one of the most common and frustrating knee complaints. Understanding why it happens is the first step toward managing it effectively.
+          You're walking normally, then suddenly a <strong>sharp, stabbing pain shoots through your knee</strong>. Minutes later, it's gone. This pattern of sharp knee pain that comes and goes is one of the most common and frustrating knee complaints. Understanding why it happens is the first step toward managing it effectively.
         </p>
 
         <h2>Why Sharp Knee Pain Comes and Goes</h2>
         <p>
-          Intermittent sharp knee pain differs from constant, dull aching. The "comes and goes" nature typically points to mechanical or positional triggers — meaning certain movements, positions, or activities provoke the pain, while others don't. Here are the most common causes:
+          Intermittent sharp knee pain differs from constant, dull aching. The "comes and goes" nature typically points to mechanical or positional triggers, meaning certain movements, positions, or activities provoke the pain, while others don't. Here are the most common causes:
         </p>
 
         <h3>1. Meniscus Issues</h3>
         <p>
-          The meniscus is a C-shaped piece of cartilage that cushions your knee joint. Small tears or wear in the meniscus can cause sharp pain that appears during specific movements — twisting, squatting, or getting up from a seated position — and then resolves when the knee returns to a neutral position.
+          The meniscus is a C-shaped piece of cartilage that cushions your knee joint. Small tears or wear in the meniscus can cause sharp pain that appears during specific movements (twisting, squatting, or getting up from a seated position) and then resolves when the knee returns to a neutral position.
         </p>
         <p>
           Meniscus-related pain often comes with a sensation of catching or locking in the joint. If the torn piece temporarily shifts position, it can cause sudden sharp pain that resolves when it shifts back.
@@ -38,7 +39,7 @@ export const sharpKneePainCauses: ArticleExport = {
 
         <h3>2. Patellar Tracking Problems</h3>
         <p>
-          Your kneecap (patella) glides in a groove on your thighbone. When it doesn't track properly — due to muscle imbalances, tightness, or structural factors — it can create sharp pain that occurs during specific movements like climbing stairs, squatting, or sitting for extended periods.
+          Your kneecap (patella) glides in a groove on your thighbone. When it doesn't track properly, due to muscle imbalances, tightness, or structural factors, it can create sharp pain that occurs during specific movements like climbing stairs, squatting, or sitting for extended periods.
         </p>
         <p>
           This is particularly common among runners and is sometimes called "runner's knee" or patellofemoral pain syndrome. The pain typically worsens with certain activities and resolves with rest.
@@ -46,7 +47,7 @@ export const sharpKneePainCauses: ArticleExport = {
 
         <h3>3. Loose Bodies in the Joint</h3>
         <p>
-          Small fragments of bone or cartilage can float within the knee joint space. These "loose bodies" don't always cause pain — but when they get caught between the joint surfaces during movement, they can cause sudden, sharp, catching pain that resolves when the fragment shifts position.
+          Small fragments of bone or cartilage can float within the knee joint space. These "loose bodies" don't always cause pain, but when they get caught between the joint surfaces during movement, they can cause sudden, sharp, catching pain that resolves when the fragment shifts position.
         </p>
 
         <h3>4. Inflammatory Flare-Ups</h3>
@@ -89,11 +90,10 @@ export const sharpKneePainCauses: ArticleExport = {
           </table>
         </div>
 
-        <div className="my-8 p-6 bg-primary/5 rounded-xl border border-primary/20">
-          <p className="text-lg font-semibold text-foreground mb-2">🔥 Support your knees between episodes</p>
-          <p className="text-muted-foreground mb-3">FlexiKnee™ provides targeted heat, red light, and vibration therapy to support daily comfort and help manage the periods between sharp pain episodes.</p>
-          <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Try FlexiKnee™ Risk-Free →</a>
-        </div>
+        <PremiumCTA
+          headline="Want support between sharp pain episodes?"
+          text="FlexiKnee provides targeted heat, red light, and vibration therapy to support daily comfort and help manage the periods between unpredictable knee pain episodes."
+        />
 
         <h2>When to See a Healthcare Professional</h2>
         <p>
@@ -101,8 +101,8 @@ export const sharpKneePainCauses: ArticleExport = {
         </p>
         <ul>
           <li><strong>Pain is worsening</strong> in frequency or intensity over weeks</li>
-          <li><strong>Swelling accompanies the pain</strong> — especially if the knee feels warm or looks red</li>
-          <li><strong>The knee locks or gives way</strong> — you can't fully bend or straighten it</li>
+          <li><strong>Swelling accompanies the pain</strong>, especially if the knee feels warm or looks red</li>
+          <li><strong>The knee locks or gives way</strong>: you can't fully bend or straighten it</li>
           <li><strong>You can't bear weight</strong> on the affected leg during episodes</li>
           <li><strong>Pain disrupts sleep</strong> regularly</li>
           <li><strong>There's visible deformity</strong> or significant instability</li>
@@ -111,7 +111,7 @@ export const sharpKneePainCauses: ArticleExport = {
           These signs may indicate a condition that benefits from professional diagnosis and targeted treatment. Don't wait for the pain to become constant before seeking help.
         </p>
 
-        <h2>Home-Based Relief Options That Help</h2>
+        <h2>Home-Based Comfort Options That Help</h2>
         <p>
           For the many people whose intermittent sharp knee pain doesn't require surgical intervention, home-based approaches can significantly improve daily comfort and reduce episode frequency:
         </p>
@@ -126,7 +126,7 @@ export const sharpKneePainCauses: ArticleExport = {
 
         <h3>Gentle Strengthening</h3>
         <p>
-          Strengthening the muscles around the knee — particularly the quadriceps, hamstrings, and glutes — can improve joint stability and reduce the likelihood of pain-triggering movements. Focus on low-impact exercises like:
+          Strengthening the muscles around the knee, particularly the quadriceps, hamstrings, and glutes, can improve joint stability and reduce the likelihood of pain-triggering movements. Focus on low-impact exercises like:
         </p>
         <ul>
           <li>Straight leg raises</li>
@@ -138,7 +138,7 @@ export const sharpKneePainCauses: ArticleExport = {
 
         <h3>Movement Modification</h3>
         <p>
-          Identifying and modifying the movements that trigger your sharp pain can reduce episode frequency. This doesn't mean avoiding all activity — rather, it means finding alternative ways to perform problematic movements or building up to them gradually.
+          Identifying and modifying the movements that trigger your sharp pain can reduce episode frequency. This doesn't mean avoiding all activity: rather, it means finding alternative ways to perform problematic movements or building up to them gradually.
         </p>
 
         <h3>Daily Comfort Routines</h3>
@@ -146,19 +146,13 @@ export const sharpKneePainCauses: ArticleExport = {
           Building consistent daily habits is often more effective than reactive treatment. A morning and evening routine that includes gentle movement, heat therapy, and stretching can create a foundation of comfort that makes sharp episodes less frequent and less severe.
         </p>
 
-        <div className="my-8 p-6 bg-primary/5 rounded-xl border border-primary/20">
-          <p className="text-lg font-semibold text-foreground mb-2">✅ Build your daily comfort routine</p>
-          <p className="text-muted-foreground mb-3">FlexiKnee™ makes it easy to incorporate heat, red light, and massage therapy into your daily routine — helping you stay comfortable between episodes and support long-term knee health.</p>
-          <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Shop FlexiKnee™ →</a>
-        </div>
-
         <h2>Heat vs. Ice: Which Is Better for Sharp Knee Pain?</h2>
         <p>
           This is one of the most common questions about intermittent knee pain, and the answer depends on timing:
         </p>
         <ul>
           <li><strong>During an acute episode with swelling:</strong> Ice may help reduce inflammation (15–20 minutes, with a cloth barrier)</li>
-          <li><strong>Between episodes for prevention:</strong> Heat therapy is generally preferred — it improves circulation, reduces stiffness, and supports daily comfort</li>
+          <li><strong>Between episodes for prevention:</strong> Heat therapy is generally preferred: it improves circulation, reduces stiffness, and supports daily comfort</li>
           <li><strong>For chronic, recurring patterns:</strong> Heat therapy as a daily routine is typically more beneficial than reactive ice application</li>
         </ul>
         <p>
@@ -173,19 +167,17 @@ export const sharpKneePainCauses: ArticleExport = {
           The key principles:
         </p>
         <ol>
-          <li><strong>Track your patterns</strong> — Note what triggers episodes and what helps</li>
-          <li><strong>Stay active wisely</strong> — Modify activities rather than avoiding them entirely</li>
-          <li><strong>Build daily habits</strong> — Consistent heat therapy, gentle movement, and stretching</li>
-          <li><strong>Seek help when needed</strong> — Don't ignore worsening patterns or new symptoms</li>
-          <li><strong>Invest in recovery tools</strong> — Quality at-home devices support long-term comfort</li>
+          <li><strong>Track your patterns</strong>: Note what triggers episodes and what helps</li>
+          <li><strong>Stay active wisely</strong>: Modify activities rather than avoiding them entirely</li>
+          <li><strong>Build daily habits</strong>: Consistent heat therapy, gentle movement, and stretching</li>
+          <li><strong>Seek help when needed</strong>: Don't ignore worsening patterns or new symptoms</li>
+          <li><strong>Invest in recovery tools</strong>: Quality at-home devices support long-term comfort</li>
         </ol>
 
-        <p>
-          If you prefer an easy at-home option for daily knee comfort between episodes, the FlexiKnee Smart Heated Knee Device offers soothing warmth and gentle support.
-        </p>
-        <p>
-          👉 <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="text-primary hover:underline font-medium">View full product details here</a>
-        </p>
+        <PremiumCTA
+          headline="Build your daily comfort routine for unpredictable knee pain"
+          text="FlexiKnee makes it easy to incorporate heat, red light, and massage therapy into your daily routine, helping you stay comfortable between episodes."
+        />
 
         <h2>Related Guides</h2>
         <ul>
