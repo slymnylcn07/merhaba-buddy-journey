@@ -7462,77 +7462,151 @@ const GuideArticle = () => {
 
         {/* Related Guides Section */}
         <section className="py-12 bg-muted/20">
-          <div className="container px-4 max-w-5xl mx-auto">
+          <div className="container px-4 max-w-3xl mx-auto">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-6 text-center">
               Continue Reading
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {Object.values(articles)
-                .filter((a) => a.slug !== slug)
-                .map((relatedArticle) => {
-                  const thumbnails: Record<string, string> = {
-                    "why-knee-pain-doesnt-go-away": thumbKneePain,
-                    "heat-vs-red-light-therapy": thumbHeatTherapy,
-                    "who-benefits-from-knee-therapy-devices": thumbWhoBenefits,
-                    "daily-knee-comfort-routine": thumbDailyRoutine,
-                    "pain-in-the-knee-causes-locations": thumbKneePainCauses,
-                    "back-of-knee-pain-explained": thumbBackKneePain,
-                    "side-knee-pain-comfort-guide": thumbSideKneePain,
-                    "running-knee-pain-guide": thumbRunningKneePain,
-                    "knee-arthritis-pain-guide": thumbKneeArthritis,
-                    "sharp-knee-pain-guide": thumbSharpKneePain,
-                    "how-to-strengthen-knees": thumbStrengthenKnees,
-                    "understanding-knee-injuries": thumbKneeInjuries,
-                    // New articles - January 2026
-                    "best-infrared-knee-massagers": thumbInfraredMassager,
-                    "sharp-knee-pain-comes-and-goes": thumbSharpPainPatterns,
-                    "side-knee-pain-inner-outer": thumbSidePainDetailed,
-                    "red-light-therapy-for-knees": thumbRedLightResearch,
-                    "back-of-knee-pain-daily-habits": thumbBackKneeDetailed,
-                    "daily-knee-care-routine": thumbDailyRoutineNew,
-                    "heat-vs-ice-for-knees": thumbHeatVsIce,
-                    "do-knee-massagers-work": thumbMassagerExpectations,
-                    "is-infrared-safe-for-knees": thumbInfraredSafety,
-                    "warmth-vs-infrared-knee-routines": thumbWarmthVsInfrared,
-                    "knee-pain-worse-at-night": thumbNightKneePain,
-                    "how-to-fix-knee-pain": thumbFixKneePain,
-                    "women-men-knee-comfort-patterns": thumbWomenMenKneeComfort,
-                    "top-of-knee-pain-patterns": thumbTopKneePain,
-                    "best-running-shoes-knee-pain": thumbRunningShoesKnee,
-                    "knee-pain-treatment-daily-habits": thumbKneePainTreatment,
-                    "cause-of-knee-pain-patterns": thumbCauseKneePain,
-                    "front-knee-tightness-after-activity": thumbFrontKneeTightness,
-                    "knee-discomfort-lower-back-hips": thumbKneeLowerBodyConnection,
-                    "below-knee-discomfort-teens-adults": thumbBelowKneeDiscomfort,
-                    // New commercial articles - Feb 2026 (unique thumbnails)
-                    "flexiknee-review-2026": thumbFlexikneeReview,
-                    "flexiknee-vs-competitors-2026": thumbCompetitorsComparison,
-                    "best-heated-knee-massager-arthritis": thumbArthritisMassager,
-                    "heat-or-ice-knee-pain-science": thumbHeatIceScience,
-                    "smart-heated-knee-braces-2026": thumbMassagerExpectations,
-                    "heat-red-light-therapy-benefits-2026": thumbHeatRedlightBenefits,
-                    "running-shoes-knee-pain-causes-fixes": thumbRunningShoesCauses,
-                    "sharp-knee-pain-causes-relief": thumbSharpPainRelief,
-                    "infrared-knee-massager-guide-2026": thumbInfraredGuide2026,
-                    // Last 6 articles - Feb 2026 (unique thumbnails)
-                    "heat-or-ice-knee-pain-situations": thumbHeatIceSituations,
-                    "sharp-stabbing-knee-pain-comfort": thumbSharpStabbingComfort,
-                    "running-shoes-knee-pain-discomfort": thumbRunningShoesDiscomfort,
-                    "infrared-vs-heating-pads": thumbInfraredMassager,
-                    "intermittent-knee-pain-guide": thumbIntermittentPain,
-                    "side-of-knee-pain-explained": thumbSidePainExplained,
-                  };
-                  return (
+            {(() => {
+              const thumbnails: Record<string, string> = {
+                "why-knee-pain-doesnt-go-away": thumbKneePain,
+                "heat-vs-red-light-therapy": thumbHeatTherapy,
+                "who-benefits-from-knee-therapy-devices": thumbWhoBenefits,
+                "daily-knee-comfort-routine": thumbDailyRoutine,
+                "pain-in-the-knee-causes-locations": thumbKneePainCauses,
+                "back-of-knee-pain-explained": thumbBackKneePain,
+                "side-knee-pain-comfort-guide": thumbSideKneePain,
+                "running-knee-pain-guide": thumbRunningKneePain,
+                "knee-arthritis-pain-guide": thumbKneeArthritis,
+                "sharp-knee-pain-guide": thumbSharpKneePain,
+                "how-to-strengthen-knees": thumbStrengthenKnees,
+                "understanding-knee-injuries": thumbKneeInjuries,
+                "best-infrared-knee-massagers": thumbInfraredMassager,
+                "sharp-knee-pain-comes-and-goes": thumbSharpPainPatterns,
+                "side-knee-pain-inner-outer": thumbSidePainDetailed,
+                "red-light-therapy-for-knees": thumbRedLightResearch,
+                "back-of-knee-pain-daily-habits": thumbBackKneeDetailed,
+                "daily-knee-care-routine": thumbDailyRoutineNew,
+                "heat-vs-ice-for-knees": thumbHeatVsIce,
+                "do-knee-massagers-work": thumbMassagerExpectations,
+                "is-infrared-safe-for-knees": thumbInfraredSafety,
+                "warmth-vs-infrared-knee-routines": thumbWarmthVsInfrared,
+                "knee-pain-worse-at-night": thumbNightKneePain,
+                "how-to-fix-knee-pain": thumbFixKneePain,
+                "women-men-knee-comfort-patterns": thumbWomenMenKneeComfort,
+                "top-of-knee-pain-patterns": thumbTopKneePain,
+                "best-running-shoes-knee-pain": thumbRunningShoesKnee,
+                "knee-pain-treatment-daily-habits": thumbKneePainTreatment,
+                "cause-of-knee-pain-patterns": thumbCauseKneePain,
+                "front-knee-tightness-after-activity": thumbFrontKneeTightness,
+                "knee-discomfort-lower-back-hips": thumbKneeLowerBodyConnection,
+                "below-knee-discomfort-teens-adults": thumbBelowKneeDiscomfort,
+                "flexiknee-review-2026": thumbFlexikneeReview,
+                "flexiknee-vs-competitors-2026": thumbCompetitorsComparison,
+                "best-heated-knee-massager-arthritis": thumbArthritisMassager,
+                "heat-or-ice-knee-pain-science": thumbHeatIceScience,
+                "smart-heated-knee-braces-2026": thumbMassagerExpectations,
+                "heat-red-light-therapy-benefits-2026": thumbHeatRedlightBenefits,
+                "running-shoes-knee-pain-causes-fixes": thumbRunningShoesCauses,
+                "sharp-knee-pain-causes-relief": thumbSharpPainRelief,
+                "infrared-knee-massager-guide-2026": thumbInfraredGuide2026,
+                "heat-or-ice-knee-pain-situations": thumbHeatIceSituations,
+                "sharp-stabbing-knee-pain-comfort": thumbSharpStabbingComfort,
+                "running-shoes-knee-pain-discomfort": thumbRunningShoesDiscomfort,
+                "infrared-vs-heating-pads": thumbInfraredMassager,
+                "intermittent-knee-pain-guide": thumbIntermittentPain,
+                "side-of-knee-pain-explained": thumbSidePainExplained,
+              };
+
+              // Topic clusters for relevant recommendations
+              const topicClusters: Record<string, string[]> = {
+                // Heat vs Ice cluster
+                "heat-vs-red-light-therapy": ["heat-or-ice-knee-pain-science", "heat-or-ice-knee-pain-situations", "heat-red-light-therapy-benefits-2026"],
+                "heat-vs-ice-for-knees": ["heat-or-ice-knee-pain-science", "heat-or-ice-knee-pain-situations", "heat-vs-red-light-therapy"],
+                "heat-or-ice-knee-pain-science": ["heat-vs-ice-for-knees", "heat-or-ice-knee-pain-situations", "heat-vs-red-light-therapy"],
+                "heat-or-ice-knee-pain-situations": ["heat-or-ice-knee-pain-science", "heat-vs-ice-for-knees", "heat-red-light-therapy-benefits-2026"],
+                // Infrared & device cluster
+                "best-infrared-knee-massagers": ["infrared-knee-massager-guide-2026", "infrared-vs-heating-pads", "is-infrared-safe-for-knees"],
+                "infrared-knee-massager-guide-2026": ["best-infrared-knee-massagers", "infrared-vs-heating-pads", "warmth-vs-infrared-knee-routines"],
+                "infrared-vs-heating-pads": ["best-infrared-knee-massagers", "warmth-vs-infrared-knee-routines", "infrared-knee-massager-guide-2026"],
+                "is-infrared-safe-for-knees": ["best-infrared-knee-massagers", "infrared-knee-massager-guide-2026", "warmth-vs-infrared-knee-routines"],
+                "warmth-vs-infrared-knee-routines": ["infrared-vs-heating-pads", "is-infrared-safe-for-knees", "heat-vs-red-light-therapy"],
+                // Massager & device reviews cluster
+                "do-knee-massagers-work": ["best-infrared-knee-massagers", "flexiknee-review-2026", "flexiknee-vs-competitors-2026"],
+                "flexiknee-review-2026": ["flexiknee-vs-competitors-2026", "best-heated-knee-massager-arthritis", "do-knee-massagers-work"],
+                "flexiknee-vs-competitors-2026": ["flexiknee-review-2026", "smart-heated-knee-braces-2026", "best-heated-knee-massager-arthritis"],
+                "best-heated-knee-massager-arthritis": ["flexiknee-review-2026", "knee-arthritis-pain-guide", "smart-heated-knee-braces-2026"],
+                "smart-heated-knee-braces-2026": ["flexiknee-vs-competitors-2026", "best-heated-knee-massager-arthritis", "infrared-knee-massager-guide-2026"],
+                "who-benefits-from-knee-therapy-devices": ["do-knee-massagers-work", "flexiknee-review-2026", "best-infrared-knee-massagers"],
+                // Red light therapy cluster
+                "red-light-therapy-for-knees": ["heat-red-light-therapy-benefits-2026", "heat-vs-red-light-therapy", "warmth-vs-infrared-knee-routines"],
+                "heat-red-light-therapy-benefits-2026": ["red-light-therapy-for-knees", "heat-vs-red-light-therapy", "best-infrared-knee-massagers"],
+                // Sharp knee pain cluster
+                "sharp-knee-pain-guide": ["sharp-knee-pain-comes-and-goes", "sharp-knee-pain-causes-relief", "sharp-stabbing-knee-pain-comfort"],
+                "sharp-knee-pain-comes-and-goes": ["sharp-knee-pain-guide", "sharp-stabbing-knee-pain-comfort", "intermittent-knee-pain-guide"],
+                "sharp-knee-pain-causes-relief": ["sharp-knee-pain-guide", "sharp-stabbing-knee-pain-comfort", "sharp-knee-pain-comes-and-goes"],
+                "sharp-stabbing-knee-pain-comfort": ["sharp-knee-pain-causes-relief", "sharp-knee-pain-comes-and-goes", "intermittent-knee-pain-guide"],
+                "intermittent-knee-pain-guide": ["sharp-knee-pain-comes-and-goes", "sharp-stabbing-knee-pain-comfort", "knee-pain-worse-at-night"],
+                // Side knee pain cluster
+                "side-knee-pain-comfort-guide": ["side-knee-pain-inner-outer", "side-of-knee-pain-explained", "pain-in-the-knee-causes-locations"],
+                "side-knee-pain-inner-outer": ["side-knee-pain-comfort-guide", "side-of-knee-pain-explained", "pain-in-the-knee-causes-locations"],
+                "side-of-knee-pain-explained": ["side-knee-pain-inner-outer", "side-knee-pain-comfort-guide", "best-running-shoes-knee-pain"],
+                // Back of knee cluster
+                "back-of-knee-pain-explained": ["back-of-knee-pain-daily-habits", "pain-in-the-knee-causes-locations", "knee-pain-worse-at-night"],
+                "back-of-knee-pain-daily-habits": ["back-of-knee-pain-explained", "daily-knee-care-routine", "knee-pain-worse-at-night"],
+                // Running & shoes cluster
+                "running-knee-pain-guide": ["best-running-shoes-knee-pain", "running-shoes-knee-pain-causes-fixes", "running-shoes-knee-pain-discomfort"],
+                "best-running-shoes-knee-pain": ["running-shoes-knee-pain-causes-fixes", "running-shoes-knee-pain-discomfort", "running-knee-pain-guide"],
+                "running-shoes-knee-pain-causes-fixes": ["best-running-shoes-knee-pain", "running-shoes-knee-pain-discomfort", "running-knee-pain-guide"],
+                "running-shoes-knee-pain-discomfort": ["running-shoes-knee-pain-causes-fixes", "best-running-shoes-knee-pain", "running-knee-pain-guide"],
+                // Daily routine & habits cluster
+                "daily-knee-comfort-routine": ["daily-knee-care-routine", "how-to-fix-knee-pain", "knee-pain-treatment-daily-habits"],
+                "daily-knee-care-routine": ["daily-knee-comfort-routine", "knee-pain-treatment-daily-habits", "how-to-strengthen-knees"],
+                "knee-pain-treatment-daily-habits": ["daily-knee-care-routine", "daily-knee-comfort-routine", "how-to-fix-knee-pain"],
+                "how-to-fix-knee-pain": ["knee-pain-treatment-daily-habits", "daily-knee-care-routine", "how-to-strengthen-knees"],
+                // General knee pain cluster
+                "why-knee-pain-doesnt-go-away": ["pain-in-the-knee-causes-locations", "cause-of-knee-pain-patterns", "knee-pain-treatment-daily-habits"],
+                "pain-in-the-knee-causes-locations": ["cause-of-knee-pain-patterns", "why-knee-pain-doesnt-go-away", "sharp-knee-pain-guide"],
+                "cause-of-knee-pain-patterns": ["pain-in-the-knee-causes-locations", "why-knee-pain-doesnt-go-away", "knee-pain-treatment-daily-habits"],
+                // Arthritis cluster
+                "knee-arthritis-pain-guide": ["best-heated-knee-massager-arthritis", "how-to-strengthen-knees", "heat-red-light-therapy-benefits-2026"],
+                // Strengthen & injuries cluster
+                "how-to-strengthen-knees": ["daily-knee-care-routine", "understanding-knee-injuries", "knee-arthritis-pain-guide"],
+                "understanding-knee-injuries": ["how-to-strengthen-knees", "running-knee-pain-guide", "sharp-knee-pain-guide"],
+                // Night & gender patterns
+                "knee-pain-worse-at-night": ["intermittent-knee-pain-guide", "daily-knee-care-routine", "back-of-knee-pain-daily-habits"],
+                "women-men-knee-comfort-patterns": ["cause-of-knee-pain-patterns", "knee-pain-treatment-daily-habits", "daily-knee-care-routine"],
+                // Location-specific
+                "top-of-knee-pain-patterns": ["front-knee-tightness-after-activity", "pain-in-the-knee-causes-locations", "how-to-strengthen-knees"],
+                "front-knee-tightness-after-activity": ["top-of-knee-pain-patterns", "running-knee-pain-guide", "how-to-strengthen-knees"],
+                "knee-discomfort-lower-back-hips": ["cause-of-knee-pain-patterns", "how-to-strengthen-knees", "women-men-knee-comfort-patterns"],
+                "below-knee-discomfort-teens-adults": ["front-knee-tightness-after-activity", "running-knee-pain-guide", "how-to-strengthen-knees"],
+              };
+
+              // Get topic-relevant articles (max 3)
+              const clusterSlugs = topicClusters[slug] || [];
+              const relatedArticles = clusterSlugs
+                .filter((s) => s !== slug && articles[s])
+                .map((s) => articles[s])
+                .slice(0, 3);
+
+              // Fallback: if no cluster defined, pick first 3 other articles
+              const finalArticles = relatedArticles.length > 0
+                ? relatedArticles
+                : Object.values(articles).filter((a) => a.slug !== slug).slice(0, 3);
+
+              return (
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                  {finalArticles.map((relatedArticle) => (
                     <RelatedGuideCard
                       key={relatedArticle.slug}
                       slug={relatedArticle.slug}
                       title={relatedArticle.title}
                       thumbnail={thumbnails[relatedArticle.slug]}
-                      description={relatedArticle.intro.slice(0, 100) + "..."}
                     />
-                  );
-                })}
-            </div>
+                  ))}
+                </div>
+              );
+            })()}
           </div>
         </section>
 

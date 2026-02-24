@@ -337,13 +337,13 @@ export const RelatedGuideCard = ({
   slug: string; 
   title: string; 
   thumbnail: string;
-  description: string;
+  description?: string;
 }) => (
   <Link
     to={`/guides/${slug}`}
     className="group block bg-background border border-border/50 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:border-border transition-all duration-300"
   >
-    <div className="h-32 overflow-hidden">
+    <div className="h-36 overflow-hidden">
       <img 
         src={thumbnail} 
         alt={title}
@@ -351,13 +351,10 @@ export const RelatedGuideCard = ({
         loading="lazy"
       />
     </div>
-    <div className="p-4">
-      <h4 className="text-sm font-semibold text-foreground mb-2 leading-snug group-hover:text-primary transition-colors line-clamp-2">
+    <div className="px-4 py-3">
+      <h4 className="text-sm font-semibold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">
         {title}
       </h4>
-      <p className="text-xs text-muted-foreground line-clamp-2">
-        {description}
-      </p>
     </div>
   </Link>
 );
