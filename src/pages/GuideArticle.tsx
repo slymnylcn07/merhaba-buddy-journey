@@ -131,6 +131,9 @@ import {
   flexikneeReview2026,
   flexikneeVsCompetitors2026,
   bestHeatedKneeMassagerArthritis,
+  heatOrIceKneePain,
+  smartHeatedKneeBraces2026,
+  heatRedLightTherapyBenefits2026,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -7234,7 +7237,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   articleCTAs[exp.article.slug] = exp.cta;
@@ -7536,6 +7539,9 @@ const GuideArticle = () => {
                     "flexiknee-review-2026": thumbInfraredMassager,
                     "flexiknee-vs-competitors-2026": thumbMassagerExpectations,
                     "best-heated-knee-massager-arthritis": thumbKneeArthritis,
+                    "heat-or-ice-knee-pain-science": thumbHeatVsIce,
+                    "smart-heated-knee-braces-2026": thumbMassagerExpectations,
+                    "heat-red-light-therapy-benefits-2026": thumbRedLightResearch,
                   };
                   return (
                     <RelatedGuideCard
