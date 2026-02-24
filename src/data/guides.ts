@@ -276,6 +276,27 @@ export const guidesData: GuideData[] = [
     readTime: 12,
     lastModified: "2026-02-24",
   },
+  {
+    slug: "do-knee-massagers-work",
+    title: "Do Knee Massagers Actually Work? Honest Guide Based on Science + Real Users",
+    description: "Do knee massagers actually work? Honest guide based on scientific research and real user experiences. Learn what to expect from heated knee massagers in 2026.",
+    readTime: 11,
+    lastModified: "2026-02-24",
+  },
+  {
+    slug: "running-shoes-knee-pain-causes-fixes",
+    title: "Running Shoes & Knee Pain: Causes, Fixes & When You Need a Heat Therapy Device",
+    description: "Running shoes and knee pain: understand the connection, common fit mistakes, and when a heat therapy device helps with post-run recovery.",
+    readTime: 12,
+    lastModified: "2026-02-24",
+  },
+  {
+    slug: "sharp-knee-pain-causes-relief",
+    title: "Sharp Knee Pain That Comes and Goes: Causes, Relief Options & Home Treatments",
+    description: "Sharp knee pain that comes and goes? Learn common causes, relief options, and home treatments including heat therapy for daily comfort.",
+    readTime: 12,
+    lastModified: "2026-02-24",
+  },
 ];
 
 // Static pages for sitemap

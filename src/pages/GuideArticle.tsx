@@ -134,6 +134,9 @@ import {
   heatOrIceKneePain,
   smartHeatedKneeBraces2026,
   heatRedLightTherapyBenefits2026,
+  doKneeMassagersWork,
+  runningShoesKneePain,
+  sharpKneePainCauses,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -7237,7 +7240,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   articleCTAs[exp.article.slug] = exp.cta;
@@ -7542,6 +7545,9 @@ const GuideArticle = () => {
                     "heat-or-ice-knee-pain-science": thumbHeatVsIce,
                     "smart-heated-knee-braces-2026": thumbMassagerExpectations,
                     "heat-red-light-therapy-benefits-2026": thumbRedLightResearch,
+                    // New commercial articles - Feb 2026 batch 3
+                    "running-shoes-knee-pain-causes-fixes": thumbRunningShoesKnee,
+                    "sharp-knee-pain-causes-relief": thumbSharpPainPatterns,
                   };
                   return (
                     <RelatedGuideCard
