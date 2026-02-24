@@ -7461,6 +7461,13 @@ const GuideArticle = () => {
                     "running-shoes-knee-pain-causes-fixes": thumbRunningShoesKnee,
                     "sharp-knee-pain-causes-relief": thumbSharpPainPatterns,
                     "infrared-knee-massager-guide-2026": thumbInfraredMassager,
+                    // Last 6 articles - Feb 2026
+                    "heat-or-ice-knee-pain-situations": thumbHeatVsIce,
+                    "sharp-stabbing-knee-pain-comfort": thumbSharpKneePain,
+                    "running-shoes-knee-pain-discomfort": thumbRunningShoesKnee,
+                    "infrared-vs-heating-pads": thumbInfraredMassager,
+                    "intermittent-knee-pain-guide": thumbSharpPainPatterns,
+                    "side-of-knee-pain-explained": thumbSidePainDetailed,
                   };
                   return (
                     <RelatedGuideCard

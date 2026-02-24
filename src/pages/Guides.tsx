@@ -73,9 +73,26 @@ const thumbnailMap: Record<string, string> = {
   "best-running-shoes-knee-pain": thumbRunningShoesKnee,
   "knee-pain-treatment-daily-habits": thumbKneePainTreatment,
   "cause-of-knee-pain-patterns": thumbCauseKneePain,
-  "front-top-knee-tightness-activity": thumbFrontKneeTightness,
-  "knee-discomfort-lower-back-hips-connection": thumbKneeLowerBodyConnection,
+  "front-knee-tightness-after-activity": thumbFrontKneeTightness,
+  "knee-discomfort-lower-back-hips": thumbKneeLowerBodyConnection,
   "below-knee-discomfort-teens-adults": thumbBelowKneeDiscomfort,
+  // Commercial articles - Feb 2026
+  "flexiknee-review-2026": thumbInfraredMassager,
+  "flexiknee-vs-competitors-2026": thumbMassagerExpectations,
+  "best-heated-knee-massager-arthritis": thumbKneeArthritis,
+  "heat-or-ice-knee-pain-science": thumbHeatVsIce,
+  "smart-heated-knee-braces-2026": thumbMassagerExpectations,
+  "heat-red-light-therapy-benefits-2026": thumbRedLightResearch,
+  "running-shoes-knee-pain-causes-fixes": thumbRunningShoesKnee,
+  "sharp-knee-pain-causes-relief": thumbSharpPainPatterns,
+  "infrared-knee-massager-guide-2026": thumbInfraredMassager,
+  // Last 6 articles - Feb 2026
+  "heat-or-ice-knee-pain-situations": thumbHeatVsIce,
+  "sharp-stabbing-knee-pain-comfort": thumbSharpKneePain,
+  "running-shoes-knee-pain-discomfort": thumbRunningShoesKnee,
+  "infrared-vs-heating-pads": thumbInfraredMassager,
+  "intermittent-knee-pain-guide": thumbSharpPainPatterns,
+  "side-of-knee-pain-explained": thumbSidePainDetailed,
 };
 
 // Combine data with thumbnails
