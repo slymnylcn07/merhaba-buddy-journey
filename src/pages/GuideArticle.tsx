@@ -7461,9 +7461,9 @@ const GuideArticle = () => {
         </article>
 
         {/* Related Guides Section */}
-        <section className="py-12 bg-muted/20">
-          <div className="container px-4 max-w-3xl mx-auto">
-            <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-6 text-center">
+        <section className="py-16 md:py-20 bg-muted/20">
+          <div className="container px-4 max-w-4xl mx-auto">
+            <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-5 text-center">
               Continue Reading
             </h2>
             {(() => {
@@ -7595,7 +7595,7 @@ const GuideArticle = () => {
                 : Object.values(articles).filter((a) => a.slug !== slug).slice(0, 3);
 
               return (
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-3xl mx-auto">
                   {finalArticles.map((relatedArticle) => (
                     <RelatedGuideCard
                       key={relatedArticle.slug}
