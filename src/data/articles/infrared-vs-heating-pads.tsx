@@ -1,6 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
+import heroImage from "@/assets/article-hero-infrared-vs-heating.jpg";
 
 export const infraredVsHeatingPads: ArticleExport = {
   cta: "",
@@ -11,7 +12,7 @@ export const infraredVsHeatingPads: ArticleExport = {
     intro: "Heating pads have been a household staple for decades, but infrared knee massagers are quickly gaining attention. This guide compares both approaches so you can decide which one fits your daily comfort routine best.",
     metaTitle: "Infrared Knee Massagers vs Heating Pads: Which Is Better?",
     metaDescription: "Are infrared knee massagers really better than heating pads? Compare warmth delivery, comfort features, and daily usability to find the best option for your knees.",
-    heroImage: "",
+    heroImage: heroImage,
     publishedDate: "February 24, 2026",
     nextSlug: "intermittent-knee-pain-guide",
     nextTitle: "Intermittent Knee Pain: Why It Comes and Goes",
