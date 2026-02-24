@@ -3,18 +3,24 @@ import { Link } from "react-router-dom";
 
 const productLink = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
 
-const CTABox = () => (
-  <div className="my-8 p-6 bg-[#F9F6F3] border-l-4 border-primary rounded-r-lg hover:shadow-md transition-shadow">
-    <p className="font-semibold text-lg mb-2">Looking for the #1-Rated Smart Heated Knee Device?</p>
-    <p className="text-muted-foreground mb-4">FlexiKnee™ combines adjustable heat, red light therapy, and vibration massage — all in one ergonomic knee wrap.</p>
-    <a href={productLink} className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
-      Shop FlexiKnee™ Now →
-    </a>
-  </div>
-);
-
+const CTABox = ({ variant = "mid" }: { variant?: "mid" | "end" }) => {
+  if (variant === "end") {
+    return (
+      <div className="my-8">
+        <p>If you prefer an easy at-home option for daily knee comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth, red light, and gentle vibration in one wireless device.</p>
+        <p>👉 <a href={productLink} className="text-primary hover:underline font-medium">View full product details here</a></p>
+      </div>
+    );
+  }
+  return (
+    <div className="my-8">
+      <p>While choosing the right device depends on your needs, some people prefer having a multi-therapy option that combines warmth, red light, and vibration in one device. FlexiKnee offers all three for daily knee comfort support.</p>
+      <p>👉 <a href={productLink} className="text-primary hover:underline font-medium">Learn more about FlexiKnee</a></p>
+    </div>
+  );
+};
 export const smartHeatedKneeBraces2026: ArticleExport = {
-  cta: "If you're comparing smart heated knee braces, FlexiKnee™ stands out with its triple-therapy approach combining heat, red light, and vibration.",
+  cta: "",
   article: {
     slug: "smart-heated-knee-braces-2026",
     title: "Smart Heated Knee Braces 2026 Buyer's Guide: Top 5 Devices Reviewed",
@@ -144,7 +150,7 @@ export const smartHeatedKneeBraces2026: ArticleExport = {
           Always check for safety features like auto-shutoff timers and overheat protection. Quality devices should have relevant safety certifications and clear usage guidelines.
         </p>
 
-        <CTABox />
+        <CTABox variant="end" />
 
         <h2>Who Benefits Most From Smart Heated Knee Braces?</h2>
         <p>

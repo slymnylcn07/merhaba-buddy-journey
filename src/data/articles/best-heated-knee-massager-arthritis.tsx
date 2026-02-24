@@ -15,7 +15,7 @@ import blogDeviceMorning from "@/assets/blog-device-morning.jpg";
 const PRODUCT_URL = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
 
 export const bestHeatedKneeMassagerArthritis: ArticleExport = {
-  cta: "For those exploring gentle at-home warmth support for daily joint comfort, FlexiKnee™ offers adjustable heat combined with red light and vibration in one device.",
+  cta: "",
   article: {
     slug: "best-heated-knee-massager-arthritis",
     title: "Best Heated Knee Massagers for Arthritis Comfort: FlexiKnee Ranked #1 in 2026",
@@ -251,17 +251,6 @@ export const bestHeatedKneeMassagerArthritis: ArticleExport = {
           offers practical tips that complement device use.
         </p>
 
-        {/* CTA Block 2 */}
-        <div className="my-10 p-6 rounded-xl border-l-4 border-primary" style={{ background: '#F9F6F3' }}>
-          <p className="text-foreground font-medium mb-3">Start your daily comfort routine with FlexiKnee</p>
-          <p className="text-muted-foreground mb-4">The #1 ranked heated knee massager for joint comfort in 2026.</p>
-          <a
-            href={PRODUCT_URL}
-            className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
-          >
-            Shop FlexiKnee →
-          </a>
-        </div>
 
         <h2>Who Benefits Most from Heated Knee Massagers?</h2>
         <p>
@@ -331,17 +320,12 @@ export const bestHeatedKneeMassagerArthritis: ArticleExport = {
           description="FlexiKnee leads the category with its 3-in-1 multi-modal approach"
         />
 
-        {/* CTA Block 3 */}
-        <div className="my-10 p-6 rounded-xl border-l-4 border-primary" style={{ background: '#F9F6F3' }}>
-          <p className="text-foreground font-medium mb-3">Ready for daily joint comfort support?</p>
-          <p className="text-muted-foreground mb-4">FlexiKnee: the #1 heated knee massager with heat, red light, and vibration. Free shipping on all orders.</p>
-          <a
-            href={PRODUCT_URL}
-            className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
-          >
-            Order FlexiKnee Today →
-          </a>
-        </div>
+        <p>
+          If you prefer an easy at-home option for daily joint comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth, red light, and gentle vibration support.
+        </p>
+        <p>
+          👉 <a href={PRODUCT_URL} className="text-primary hover:underline font-medium">View full product details here</a>
+        </p>
 
         {/* Disclaimer */}
         <div className="mt-12 p-4 rounded-lg bg-muted/30 border border-border/30">

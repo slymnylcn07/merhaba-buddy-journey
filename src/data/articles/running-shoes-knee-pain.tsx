@@ -1,7 +1,7 @@
 import { ArticleExport } from "./types";
 
 export const runningShoesKneePain: ArticleExport = {
-  cta: "For post-run recovery, FlexiKnee™ offers heat, red light, and vibration therapy to support your knees after every session.",
+  cta: "",
   article: {
     slug: "running-shoes-knee-pain-causes-fixes",
     title: "Running Shoes & Knee Pain: Causes, Fixes & When You Need a Heat Therapy Device",
@@ -141,11 +141,6 @@ export const runningShoesKneePain: ArticleExport = {
           <li><strong>Elevation</strong> — If any swelling is present, elevate for 10–15 minutes</li>
         </ol>
 
-        <div className="my-8 p-6 bg-primary/5 rounded-xl border border-primary/20">
-          <p className="text-lg font-semibold text-foreground mb-2">⚡ Built for runners. Designed for recovery.</p>
-          <p className="text-muted-foreground mb-3">FlexiKnee™ is cordless, portable, and ready in seconds — perfect for your post-run routine. Adjustable heat, red light therapy, and vibration massage all in one device.</p>
-          <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Shop FlexiKnee™ →</a>
-        </div>
 
         <h2>Prevention + Recovery: The Complete Knee Protection System</h2>
         <p>
@@ -170,11 +165,12 @@ export const runningShoesKneePain: ArticleExport = {
           Get your shoes right. Build your recovery routine. And give your knees the consistent daily support they need to keep you running for years to come.
         </p>
 
-        <div className="my-8 p-6 bg-primary/5 rounded-xl border border-primary/20">
-          <p className="text-lg font-semibold text-foreground mb-2">🏆 The Runner's Recovery Companion</p>
-          <p className="text-muted-foreground mb-3">Join thousands of runners who use FlexiKnee™ as part of their daily recovery routine. Heat + red light + vibration therapy in one cordless, portable device.</p>
-          <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Get FlexiKnee™ for Runners →</a>
-        </div>
+        <p>
+          If you prefer an easy at-home option for post-run knee comfort, the FlexiKnee Smart Heated Knee Device offers soothing warmth, red light, and gentle vibration for your recovery routine.
+        </p>
+        <p>
+          👉 <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="text-primary hover:underline font-medium">View full product details here</a>
+        </p>
 
         <h2>Related Guides</h2>
         <ul>
