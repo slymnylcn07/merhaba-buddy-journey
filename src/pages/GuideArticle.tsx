@@ -112,8 +112,8 @@ import thumbFrontKneeTightness from "@/assets/guide-thumb-front-knee-tightness-v
 import thumbKneeLowerBodyConnection from "@/assets/guide-thumb-knee-lower-body-connection-v2.jpg";
 import thumbBelowKneeDiscomfort from "@/assets/guide-thumb-below-knee-discomfort-v2.jpg";
 // New unique thumbnails for duplicates
-import thumbFlexikneeReview from "@/assets/guide-thumb-flexiknee-review.jpg";
-import thumbCompetitorsComparison from "@/assets/guide-thumb-competitors-comparison.jpg";
+import thumbFlexikneeReview from "@/assets/guide-thumb-flexiknee-review-new.jpg";
+import thumbCompetitorsComparison from "@/assets/guide-thumb-competitors-comparison-new.jpg";
 import thumbInfraredGuide2026 from "@/assets/guide-thumb-infrared-guide-2026.jpg";
 import thumbHeatIceScience from "@/assets/guide-thumb-heat-ice-science.jpg";
 import thumbHeatIceSituations from "@/assets/guide-thumb-heat-ice-situations.jpg";
@@ -122,7 +122,7 @@ import thumbIntermittentPain from "@/assets/guide-thumb-intermittent-pain.jpg";
 import thumbRunningShoesCauses from "@/assets/guide-thumb-running-shoes-causes.jpg";
 import thumbRunningShoesDiscomfort from "@/assets/guide-thumb-running-shoes-discomfort.jpg";
 import thumbSidePainExplained from "@/assets/guide-thumb-side-pain-explained.jpg";
-import thumbArthritisMassager from "@/assets/guide-thumb-arthritis-massager.jpg";
+import thumbArthritisMassager from "@/assets/guide-thumb-arthritis-massager-new.jpg";
 import thumbHeatRedlightBenefits from "@/assets/guide-thumb-heat-redlight-benefits.jpg";
 import thumbSharpStabbingComfort from "@/assets/guide-thumb-sharp-stabbing-comfort.jpg";
 import thumbBackKneeCommon from "@/assets/guide-thumb-back-knee-common.jpg";
