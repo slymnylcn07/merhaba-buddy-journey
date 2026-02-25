@@ -185,6 +185,7 @@ import {
   itBandPainLocationDiagram,
   whyDoMyKneesHurtWhenSleeping,
   whyDoMyKneesCrackOrPop,
+  kneePainAfterSittingCrossLegged,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -252,6 +253,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "it-band-pain-location-diagram": { headline: "Want soothing support for the outer knee zone?", text: "FlexiKnee delivers warmth, red light, and gentle vibration to the exact area where IT band discomfort is most commonly felt." },
   "why-do-my-knees-hurt-when-sleeping": { headline: "Need soothing nighttime knee comfort support?", text: "FlexiKnee provides gentle warmth, red light, and vibration before bed, helping your knees feel relaxed and comfortable through the night." },
   "why-do-my-knees-crack-or-pop": { headline: "Want daily comfort support for your knee joints?", text: "FlexiKnee provides soothing warmth and gentle vibration to help keep your knees comfortable, flexible, and supported through everyday movements." },
+  "knee-pain-after-sitting-cross-legged": { headline: "Need support for post-sitting knee comfort?", text: "FlexiKnee provides soothing warmth and gentle vibration to help your knees transition comfortably after prolonged sitting periods." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7344,7 +7346,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7654,6 +7656,7 @@ const GuideArticle = () => {
                 "it-band-syndrome-explained": thumbItBandSyndrome,
                 "it-band-pain-location-diagram": thumbItBandDiagram,
                 "why-do-my-knees-crack-or-pop": thumbKneePainCauses,
+                "knee-pain-after-sitting-cross-legged": thumbBackKneeCommon,
               };
 
               // Topic clusters for relevant recommendations
@@ -7729,6 +7732,7 @@ const GuideArticle = () => {
                 "it-band-syndrome-explained": ["it-band-pain-location-diagram", "side-knee-pain-comfort-guide", "runners-knee-pain-location"],
                 "it-band-pain-location-diagram": ["it-band-syndrome-explained", "side-knee-pain-comfort-guide", "running-knee-pain-guide"],
                 "why-do-my-knees-crack-or-pop": ["how-to-strengthen-knees", "front-knee-tightness-after-activity", "knee-warmth-daily-comfort"],
+                "knee-pain-after-sitting-cross-legged": ["back-of-knee-pain-common", "front-knee-tightness-after-activity", "how-to-strengthen-knees"],
               };
 
               // Get topic-relevant articles (max 3)

@@ -63,6 +63,7 @@ import thumbRunnersKneeLocation from "@/assets/guide-thumb-runners-knee-location
 import thumbItBandSyndrome from "@/assets/guide-thumb-it-band-syndrome.jpg";
 import thumbItBandDiagram from "@/assets/guide-thumb-it-band-diagram.jpg";
 import thumbKneeCrackingCrepitus from "@/assets/guide-thumb-knee-cracking-crepitus.jpg";
+import thumbKneePainSittingCrossLegged from "@/assets/guide-thumb-knee-pain-sitting-cross-legged.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
@@ -123,6 +124,7 @@ const thumbnailMap: Record<string, string> = {
   "it-band-pain-location-diagram": thumbItBandDiagram,
   "why-do-my-knees-hurt-when-sleeping": thumbNightKneePain,
   "why-do-my-knees-crack-or-pop": thumbKneeCrackingCrepitus,
+  "knee-pain-after-sitting-cross-legged": thumbKneePainSittingCrossLegged,
 };
 
 // Combine data with thumbnails

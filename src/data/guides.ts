@@ -410,9 +410,14 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-02-25",
   },
+  {
+    slug: "knee-pain-after-sitting-cross-legged",
+    title: "Knee Pain After Sitting Cross-Legged: Causes, Positions & Comfort Tips",
+    description: "Learn why knee pain after sitting cross-legged happens. Explore causes of back of knee pain, knee stiffness after sitting, and practical daily comfort tips.",
+    readTime: 14,
+    lastModified: "2026-02-25",
+  },
 ];
-
-// Static pages for sitemap
 export const staticPages = [
   { path: "/", priority: 1.0, changefreq: "weekly" },
   { path: "/guides", priority: 0.9, changefreq: "weekly" },
