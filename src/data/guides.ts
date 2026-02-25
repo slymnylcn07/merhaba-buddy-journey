@@ -382,6 +382,13 @@ export const guidesData: GuideData[] = [
     readTime: 12,
     lastModified: "2026-02-25",
   },
+  {
+    slug: "it-band-syndrome-explained",
+    title: "IT Band Syndrome Explained: Why Side Knee Discomfort Happens and Common Patterns Runners Notice",
+    description: "Learn why IT band syndrome causes outer knee discomfort, common patterns runners notice, and everyday comfort approaches for side knee sensations.",
+    readTime: 11,
+    lastModified: "2026-02-25",
+  },
 ];
 
 // Static pages for sitemap
