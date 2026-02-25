@@ -3,29 +3,29 @@ import { ArrowRight } from "lucide-react";
 import { guidesData } from "@/data/guides";
 
 // Import thumbnails for the recent guides
-import thumbFrontKneeTightness from "@/assets/guide-thumb-front-knee-tightness-v2.jpg";
-import thumbKneeLowerBodyConnection from "@/assets/guide-thumb-knee-lower-body-connection-v2.jpg";
-import thumbBelowKneeDiscomfort from "@/assets/guide-thumb-below-knee-discomfort-v2.jpg";
-import thumbCauseKneePain from "@/assets/guide-thumb-cause-knee-pain.jpg";
-import thumbKneePainTreatment from "@/assets/guide-thumb-knee-pain-treatment.jpg";
-import thumbRunningShoesKnee from "@/assets/guide-thumb-running-shoes-knee.jpg";
-import thumbTopKneePain from "@/assets/guide-thumb-top-knee-pain.jpg";
-import thumbWomenMenKneeComfort from "@/assets/guide-thumb-women-men-knee-comfort.jpg";
-import thumbHowToFixKneePain from "@/assets/guide-thumb-fix-knee-pain.jpg";
+import thumbBackKneeCommon from "@/assets/guide-thumb-back-knee-common.jpg";
+import thumbSmartMassagersBreakdown from "@/assets/guide-thumb-smart-massagers-breakdown-new.jpg";
+import thumbKneeWarmthDaily from "@/assets/guide-thumb-knee-warmth-daily.jpg";
+import thumbKneePainLocations from "@/assets/guide-thumb-knee-pain-locations.jpg";
+import thumbKneeLocationMap from "@/assets/guide-thumb-knee-location-map.jpg";
+import thumbRunnersKneeLocation from "@/assets/guide-thumb-runners-knee-location.jpg";
+import thumbItBandSyndrome from "@/assets/guide-thumb-it-band-syndrome.jpg";
+import thumbItBandDiagram from "@/assets/guide-thumb-it-band-diagram.jpg";
 import thumbNightKneePain from "@/assets/guide-thumb-night-knee-pain-v3.jpg";
+import thumbKneePainTreatment from "@/assets/guide-thumb-knee-pain-treatment.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
-  "front-knee-tightness-after-activity": thumbFrontKneeTightness,
-  "knee-discomfort-lower-back-hips": thumbKneeLowerBodyConnection,
-  "below-knee-discomfort-teens-adults": thumbBelowKneeDiscomfort,
-  "cause-of-knee-pain-patterns": thumbCauseKneePain,
+  "back-of-knee-pain-common": thumbBackKneeCommon,
+  "smart-knee-massagers-breakdown": thumbSmartMassagersBreakdown,
+  "knee-warmth-daily-comfort": thumbKneeWarmthDaily,
+  "knee-pain-locations-visual-guide": thumbKneePainLocations,
+  "knee-pain-location-map-2026": thumbKneeLocationMap,
+  "runners-knee-pain-location": thumbRunnersKneeLocation,
+  "it-band-syndrome-explained": thumbItBandSyndrome,
+  "it-band-pain-location-diagram": thumbItBandDiagram,
+  "why-do-my-knees-hurt-when-sleeping": thumbNightKneePain,
   "knee-pain-treatment-daily-habits": thumbKneePainTreatment,
-  "best-running-shoes-knee-pain": thumbRunningShoesKnee,
-  "top-of-knee-pain-patterns": thumbTopKneePain,
-  "women-men-knee-comfort-patterns": thumbWomenMenKneeComfort,
-  "how-to-fix-knee-pain": thumbHowToFixKneePain,
-  "knee-pain-worse-at-night": thumbNightKneePain,
 };
 
 // Get the 10 most recent guides (last 10 from the array)
