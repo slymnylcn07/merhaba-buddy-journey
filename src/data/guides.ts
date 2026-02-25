@@ -389,6 +389,13 @@ export const guidesData: GuideData[] = [
     readTime: 11,
     lastModified: "2026-02-25",
   },
+  {
+    slug: "it-band-pain-location-diagram",
+    title: "IT Band Pain Location Diagram: A Simple Visual Guide to Outer Knee Discomfort",
+    description: "Visual guide to IT band pain location with diagrams. See where IT band discomfort is commonly felt, outer knee zones, and how it differs from other side knee sensations.",
+    readTime: 7,
+    lastModified: "2026-02-25",
+  },
 ];
 
 // Static pages for sitemap
