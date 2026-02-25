@@ -639,8 +639,8 @@ const Guides = () => {
                   </button>
                   
                   <div 
-                    className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 overflow-hidden transition-all duration-500 ease-in-out ${
-                      showAllGuides ? 'mt-8 max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                    className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 transition-all duration-500 ease-in-out ${
+                      showAllGuides ? 'mt-8 opacity-100 max-h-[12000px]' : 'max-h-0 opacity-0 overflow-hidden'
                     }`}
                   >
                     {uncategorizedGuides.map((guide) => (
