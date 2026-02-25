@@ -337,6 +337,11 @@ export const kneePainLocationMap2026: ArticleExport = {
           <li>Gentle warmth along the outer knee after activity</li>
         </ul>
 
+        <PremiumCTA
+          headline="Map your comfort — support every zone with one device"
+          text="FlexiKnee wraps around the entire knee, delivering warmth, red light, and gentle vibration to support comfort across all 10 discomfort zones."
+        />
+
         <SectionDivider />
 
         {/* --- Zone 6: Back of Knee --- */}
@@ -565,11 +570,6 @@ export const kneePainLocationMap2026: ArticleExport = {
           </p>
         </div>
 
-        {/* --- End CTA --- */}
-        <PremiumCTA
-          headline="Support every zone on your knee pain location map"
-          text="FlexiKnee delivers soothing warmth, red light, and gentle vibration to the entire knee area — designed for daily comfort across all discomfort zones."
-        />
       </>
     ),
   },
