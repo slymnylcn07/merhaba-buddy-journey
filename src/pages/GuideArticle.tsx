@@ -7450,11 +7450,13 @@ const GuideArticle = () => {
           <div className="container px-4 max-w-3xl mx-auto">
             <div className="prose prose-lg max-w-none
               prose-headings:font-semibold prose-headings:text-foreground prose-headings:tracking-tight
-              prose-h2:text-xl prose-h2:md:text-2xl prose-h2:mt-10 prose-h2:mb-4
+              prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-12 prose-h2:mb-5 prose-h2:border-b prose-h2:border-border/30 prose-h2:pb-3
+              prose-h3:text-lg prose-h3:md:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-foreground/90
               prose-p:text-muted-foreground prose-p:font-light prose-p:leading-relaxed prose-p:mb-5
               prose-a:text-primary prose-a:no-underline hover:prose-a:underline
               prose-strong:text-foreground prose-strong:font-semibold
               prose-figcaption:text-sm prose-figcaption:text-muted-foreground
+              prose-li:text-muted-foreground prose-li:font-light
             ">
               {article.content}
 
