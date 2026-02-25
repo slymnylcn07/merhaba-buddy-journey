@@ -55,7 +55,7 @@ import thumbArthritisMassager from "@/assets/guide-thumb-arthritis-massager-new.
 import thumbHeatRedlightBenefits from "@/assets/guide-thumb-heat-redlight-benefits.jpg";
 import thumbSharpStabbingComfort from "@/assets/guide-thumb-sharp-stabbing-comfort.jpg";
 import thumbBackKneeCommon from "@/assets/guide-thumb-back-knee-common.jpg";
-import thumbSmartMassagersBreakdown from "@/assets/guide-thumb-smart-massagers-breakdown.jpg";
+import thumbSmartMassagersBreakdown from "@/assets/guide-thumb-smart-massagers-breakdown-new.jpg";
 import thumbKneeWarmthDaily from "@/assets/guide-thumb-knee-warmth-daily.jpg";
 
 // Map slugs to thumbnails
