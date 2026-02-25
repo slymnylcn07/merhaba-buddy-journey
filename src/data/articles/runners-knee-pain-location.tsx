@@ -295,7 +295,39 @@ export const runnersKneePainLocation = {
 
         <SectionDivider />
 
-        {/* --- Conclusion --- */}
+        {/* --- Runner's Quick Checklist --- */}
+        <h2>Runner's Quick Checklist</h2>
+        <p>
+          Use this simple checklist to support your knee comfort before and after every run. Small, consistent habits make the biggest difference over time.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8">
+          <div className="rounded-xl border border-border/40 p-5 bg-muted/20">
+            <h3 className="flex items-center gap-2">🏃 Before Your Run</h3>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li>✅ Dynamic warm-up (leg swings, walking lunges) — 5 minutes minimum</li>
+              <li>✅ Check your shoes for wear — replace every 400–500 miles</li>
+              <li>✅ Apply gentle warmth to stiff areas if needed</li>
+              <li>✅ Start with an easy pace for the first 5–10 minutes</li>
+              <li>✅ Choose your surface — vary between road, trail, and track</li>
+              <li>✅ Hydrate before heading out</li>
+            </ul>
+          </div>
+
+          <div className="rounded-xl border border-border/40 p-5 bg-muted/20">
+            <h3 className="flex items-center gap-2">🧘 After Your Run</h3>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li>✅ Cool-down walk for 5 minutes — don't sit immediately</li>
+              <li>✅ Gentle static stretches (quads, hamstrings, calves, IT band)</li>
+              <li>✅ Apply warmth to any areas that feel stiff or tight</li>
+              <li>✅ Foam roll the outer thigh, quads, and calves</li>
+              <li>✅ Rehydrate and refuel within 30 minutes</li>
+              <li>✅ Note which knee areas felt sensitive — track patterns over time</li>
+            </ul>
+          </div>
+        </div>
+
+
         <h2>Putting It All Together</h2>
         <p>
           Knowing your runner's knee pain location is one of the most practical things you can do to support your daily running comfort. Rather than treating all knee discomfort the same, paying attention to <em>where</em> the sensation shows up helps you focus on the right habits — whether that's strengthening specific muscles, adjusting your form, upgrading your shoes, or simply adding warmth to your post-run routine.
