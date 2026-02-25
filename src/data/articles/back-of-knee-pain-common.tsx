@@ -1,4 +1,5 @@
 import { ArticleExport } from "./types";
+import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-back-knee-common.jpg";
 
@@ -33,9 +34,9 @@ export const backOfKneePainCommon: ArticleExport = {
         <p>
           What makes this area particularly sensitive is that it serves as a transition point between two major muscle groups. When either the hamstrings or calves become tight, fatigued, or overworked, the posterior knee often absorbs the resulting tension. This is why people who sit for long periods, walk extensively, or exercise regularly tend to notice discomfort in this specific area.
         </p>
-        <p>
-          Additionally, the popliteal fossa (the soft area directly behind the knee) contains important blood vessels and nerves. While this doesn't mean every sensation is cause for concern, it does explain why even minor changes in daily habits, posture, or activity levels can influence how the back of the knee feels from day to day.
-        </p>
+         <p>
+           Additionally, the popliteal fossa (the soft area directly behind the knee) contains important blood vessels and nerves. While this doesn't mean every sensation is cause for concern, it does explain why even minor changes in daily habits, posture, or activity levels can influence how the back of the knee feels from day to day. For an earlier perspective on posterior knee patterns, see our <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back-of-knee comfort overview</Link>.
+         </p>
 
         <h2>Common Daily Patterns People Notice</h2>
         <p>
@@ -81,12 +82,12 @@ export const backOfKneePainCommon: ArticleExport = {
         </p>
 
         <h3>Footwear and Gait Patterns</h3>
-        <p>
-          Shoes with poor arch support, worn-out cushioning, or inappropriate heel height can alter your natural gait, placing additional strain on the back of the knee with every step. High heels shift body weight forward and increase tension in the calf-knee junction, while completely flat shoes without support can cause the foot to overpronate, transferring stress upward through the leg.
-        </p>
-        <p>
-          Choosing supportive footwear, particularly for activities that involve extended walking or standing, is one of the simplest and most impactful ways to support posterior knee comfort. Consider replacing worn-out shoes regularly, as cushioning degrades significantly after 400 to 500 miles of use.
-        </p>
+         <p>
+           Shoes with poor arch support, worn-out cushioning, or inappropriate heel height can alter your natural gait, placing additional strain on the back of the knee with every step. For detailed shoe selection advice, see our <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee comfort guide</Link>.
+         </p>
+         <p>
+           Choosing supportive footwear, particularly for activities that involve extended walking or standing, is one of the simplest and most impactful ways to support posterior knee comfort. Consider replacing worn-out shoes regularly, as cushioning degrades significantly after 400 to 500 miles of use.
+         </p>
 
         <h3>Hydration, Nutrition, and Sleep</h3>
         <p>
@@ -172,13 +173,13 @@ export const backOfKneePainCommon: ArticleExport = {
           A healthcare professional can provide proper evaluation and guidance tailored to your specific situation. Early professional input is especially valuable if the discomfort appeared suddenly or is accompanied by other symptoms.
         </p>
 
-        <h2>The Bottom Line</h2>
-        <p>
-          Back-of-knee discomfort is one of the most common joint concerns people experience, and in the vast majority of cases, it is closely connected to daily habits like sitting posture, footwear choices, activity levels, and general lifestyle factors. The posterior knee area is sensitive because it sits at the intersection of multiple muscle groups and stabilizing structures, which means it tends to reflect the cumulative effects of how you move (or don't move) throughout the day.
-        </p>
-        <p>
-          By understanding the patterns, recognizing which habits may be contributing, and building a simple daily routine that includes gentle movement, stretching, and warmth support, you can meaningfully improve your posterior knee comfort over time. The key is consistency: small daily habits compound into significant long-term results.
-        </p>
+         <h2>The Bottom Line</h2>
+         <p>
+           Back-of-knee discomfort is one of the most common joint concerns people experience, and in the vast majority of cases, it is closely connected to daily habits like sitting posture, footwear choices, activity levels, and general lifestyle factors. The posterior knee area is sensitive because it sits at the intersection of multiple muscle groups and stabilizing structures, which means it tends to reflect the cumulative effects of how you move (or don't move) throughout the day. Since knee comfort is often connected to the whole lower body, our guide on <Link to="/guides/knee-discomfort-lower-back-hips" className="text-primary hover:underline">knee discomfort and the lower back/hip connection</Link> explores this relationship.
+         </p>
+         <p>
+           By understanding the patterns, recognizing which habits may be contributing, and building a simple daily routine that includes gentle movement, stretching, and warmth support, you can meaningfully improve your posterior knee comfort over time. The key is consistency: small daily habits compound into significant long-term results. For guidance on using warmth effectively, see our <Link to="/guides/heat-vs-red-light-therapy" className="text-primary hover:underline">heat vs. red light therapy guide</Link>.
+         </p>
 
         <div className="mt-10 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground">
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and customer experiences. Always consult a healthcare professional for persistent or severe knee discomfort.

@@ -1,4 +1,5 @@
 import { ArticleExport } from "./types";
+import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-smart-massagers-breakdown.jpg";
 
@@ -77,12 +78,12 @@ export const smartKneeMassagersBreakdown: ArticleExport = {
         <p>
           Red light and near-infrared wavelengths represent the newest and most technologically advanced feature in smart knee massagers. Unlike surface heat, these wavelengths can penetrate deeper into tissue, potentially supporting comfort at levels that warmth alone cannot reach.
         </p>
-        <p>
-          While the research landscape around red light therapy continues to evolve, the existing body of evidence is encouraging. Many peer-reviewed studies have explored the effects of specific light wavelengths on tissue comfort and recovery, and while results vary across studies, the overall direction of the research is positive.
-        </p>
-        <p>
-          From a practical user perspective, many people report that devices combining red light with heat feel more effective than heat-only options. Whether this is due to the light wavelengths themselves, the psychological benefit of a more comprehensive approach, or both, the consistent user feedback suggests that the combination adds meaningful value.
-        </p>
+         <p>
+           While the research landscape around red light therapy continues to evolve, the existing body of evidence is encouraging. Many peer-reviewed studies have explored the effects of specific light wavelengths on tissue comfort and recovery. For more on what the science says, see our <Link to="/guides/heat-vs-red-light-therapy" className="text-primary hover:underline">heat vs. red light therapy guide</Link>.
+         </p>
+         <p>
+           From a practical user perspective, many people report that devices combining red light with heat feel more effective than heat-only options. Whether this is due to the light wavelengths themselves, the psychological benefit of a more comprehensive approach, or both, the consistent user feedback suggests that the combination adds meaningful value. For a head-to-head comparison of top devices, see our <Link to="/guides/flexiknee-vs-competitors-2026" className="text-primary hover:underline">FlexiKnee vs. competitors breakdown</Link>.
+         </p>
 
         <h2>What Users Actually Report: Patterns From Hundreds of Reviews</h2>
         <p>
@@ -147,10 +148,10 @@ export const smartKneeMassagersBreakdown: ArticleExport = {
           If your knee discomfort is severe, sudden, or accompanied by swelling, instability, locking, or giving way, a healthcare professional should be your first point of contact. Smart knee massagers work best as a complement to other healthy habits, not as a replacement for professional guidance when it is needed.
         </p>
 
-        <h2>How to Choose the Right Smart Knee Massager</h2>
-        <p>
-          Not all smart knee massagers are created equal. If you're considering purchasing one, here are the factors that tend to matter most based on user satisfaction data:
-        </p>
+         <h2>How to Choose the Right Smart Knee Massager</h2>
+         <p>
+           Not all smart knee massagers are created equal. If you're considering purchasing one, here are the factors that tend to matter most based on user satisfaction data. For a comprehensive buyer's guide, our <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massager guide</Link> covers features, pricing, and what to look for.
+         </p>
         <ul>
           <li><strong>Number of therapy modes</strong>: devices that combine heat, vibration, and red light tend to score higher in user satisfaction than single-mode devices</li>
           <li><strong>Adjustability</strong>: the ability to control temperature, vibration intensity, and mode independently allows you to customize sessions to your changing needs</li>
@@ -173,13 +174,13 @@ export const smartKneeMassagersBreakdown: ArticleExport = {
           <li><strong>Clean and maintain your device</strong>: wiping down the interior surface after each use and charging regularly ensures consistent performance and longevity</li>
         </ol>
 
-        <h2>The Bottom Line</h2>
-        <p>
-          Smart knee massagers deliver on their core promises of controlled warmth, gentle vibration, and convenient hands-free operation. The addition of red light technology in premium devices adds another layer of support that many users find valuable. These are not miracle devices, and they are not substitutes for professional care when it is needed.
-        </p>
-        <p>
-          What they are, when used consistently as part of a thoughtful daily routine, is a practical and effective way to support everyday knee comfort for many people. The users who report the highest satisfaction are those who approach the experience with realistic expectations, commit to daily use, and view their device as one piece of a broader comfort strategy that includes movement, stretching, and healthy lifestyle habits.
-        </p>
+         <h2>The Bottom Line</h2>
+         <p>
+           Smart knee massagers deliver on their core promises of controlled warmth, gentle vibration, and convenient hands-free operation. The addition of red light technology in premium devices adds another layer of support that many users find valuable. These are not miracle devices, and they are not substitutes for professional care when it is needed. For a deeper dive into the effectiveness question, our <Link to="/guides/do-knee-massagers-actually-work-guide" className="text-primary hover:underline">do knee massagers work guide</Link> provides an evidence-based perspective.
+         </p>
+         <p>
+           What they are, when used consistently as part of a thoughtful daily routine, is a practical and effective way to support everyday knee comfort for many people. The users who report the highest satisfaction are those who approach the experience with realistic expectations, commit to daily use, and view their device as one piece of a broader comfort strategy. Building a comprehensive <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee care routine</Link> can help you get the most from your device.
+         </p>
         <p>
           The key, as with most wellness habits, is choosing a quality device, setting realistic expectations, and committing to regular, consistent use.
         </p>

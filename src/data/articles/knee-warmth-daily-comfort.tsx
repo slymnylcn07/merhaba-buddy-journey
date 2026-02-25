@@ -1,4 +1,5 @@
 import { ArticleExport } from "./types";
+import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-knee-warmth-daily.jpg";
 
@@ -80,9 +81,9 @@ export const kneeWarmthDailyComfort: ArticleExport = {
         <p>
           An evening warmth session can help your knees feel more comfortable before bed, potentially supporting better rest and reducing the overnight stiffening that makes mornings uncomfortable. The calming, relaxing nature of warmth also supports the transition from an active day to restful sleep.
         </p>
-        <p>
-          Many users pair their evening warmth session with gentle stretching as part of their nighttime routine. The combination of warmth and gentle movement can leave the knees feeling significantly more relaxed going into sleep, which often translates into a more comfortable morning. This evening-to-morning connection is one of the most consistently reported benefits of a daily warmth routine.
-        </p>
+         <p>
+           Many users pair their evening warmth session with gentle stretching as part of their nighttime routine. The combination of warmth and gentle movement can leave the knees feeling significantly more relaxed going into sleep, which often translates into a more comfortable morning. This evening-to-morning connection is one of the most consistently reported benefits of a daily warmth routine. If your knees tend to be <Link to="/guides/knee-pain-worse-at-night" className="text-primary hover:underline">worse at night</Link>, our nighttime comfort guide offers additional strategies.
+         </p>
 
         <h2>When Warmth May Not Be the Best Choice</h2>
         <p>
@@ -95,9 +96,9 @@ export const kneeWarmthDailyComfort: ArticleExport = {
         </p>
 
         <h3>Immediately After Acute Injury</h3>
-        <p>
-          In the first 24 to 48 hours after a sudden knee injury (such as a twist, fall, or impact), most wellness guidelines suggest cold rather than warmth. Heat can increase blood flow to an already inflamed area, potentially increasing swelling and discomfort during the acute phase. After the initial inflammatory phase subsides (typically after 48 to 72 hours), warmth can become a supportive part of the comfort routine.
-        </p>
+         <p>
+           In the first 24 to 48 hours after a sudden knee injury (such as a twist, fall, or impact), most wellness guidelines suggest cold rather than warmth. Heat can increase blood flow to an already inflamed area, potentially increasing swelling and discomfort during the acute phase. After the initial inflammatory phase subsides (typically after 48 to 72 hours), warmth can become a supportive part of the comfort routine. For help deciding between heat and ice, see our <Link to="/guides/heat-or-ice-knee-pain-situations" className="text-primary hover:underline">heat or ice situations guide</Link>.
+         </p>
 
         <h3>During Active Inflammation</h3>
         <p>
@@ -139,9 +140,9 @@ export const kneeWarmthDailyComfort: ArticleExport = {
           </table>
         </div>
 
-        <p>
-          The critical factor for most people is not which method produces the most heat, but which method they will actually use consistently. A method that is convenient, comfortable, and easy to integrate into daily life will always outperform a theoretically superior method that is too cumbersome to use regularly.
-        </p>
+         <p>
+           The critical factor for most people is not which method produces the most heat, but which method they will actually use consistently. A method that is convenient, comfortable, and easy to integrate into daily life will always outperform a theoretically superior method that is too cumbersome to use regularly. For a detailed comparison between traditional and infrared options, see our <Link to="/guides/infrared-vs-heating-pads" className="text-primary hover:underline">infrared vs. heating pads guide</Link>.
+         </p>
 
         <h2>Building an Effective Daily Warmth Routine</h2>
         <p>
@@ -180,13 +181,13 @@ export const kneeWarmthDailyComfort: ArticleExport = {
           <li><strong>Track your experience</strong>: keep brief notes for the first two weeks about when you apply warmth and how your knees feel throughout the day. Patterns often emerge that help you optimize your timing and duration.</li>
         </ul>
 
-        <h2>The Bottom Line</h2>
-        <p>
-          Warmth is a simple, accessible, and time-tested way to support daily knee comfort for many people. It works best for stiffness, soreness, and general discomfort, particularly when used consistently as part of a structured daily routine rather than as an occasional response to peak discomfort.
-        </p>
-        <p>
-          Understanding when warmth helps most (morning stiffness, post-activity recovery, evening relaxation) and when other approaches may be more appropriate (acute injury, active swelling, inflammation) allows you to use this natural comfort strategy effectively and safely. The best warmth routine is the one you will actually follow every day, so choose a method that fits naturally into your lifestyle.
-        </p>
+         <h2>The Bottom Line</h2>
+         <p>
+           Warmth is a simple, accessible, and time-tested way to support daily knee comfort for many people. It works best for stiffness, soreness, and general discomfort, particularly when used consistently as part of a structured daily routine rather than as an occasional response to peak discomfort. For more on combining warmth with red light, see our <Link to="/guides/heat-vs-red-light-therapy" className="text-primary hover:underline">heat vs. red light therapy guide</Link>.
+         </p>
+         <p>
+           Understanding when warmth helps most (morning stiffness, post-activity recovery, evening relaxation) and when other approaches may be more appropriate (acute injury, active swelling, inflammation) allows you to use this natural comfort strategy effectively and safely. The best warmth routine is the one you will actually follow every day, so choose a method that fits naturally into your lifestyle. Our <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link> can help you structure a complete approach.
+         </p>
 
         <div className="mt-10 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground">
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and customer experiences. Always consult a healthcare professional for persistent or severe knee discomfort.
