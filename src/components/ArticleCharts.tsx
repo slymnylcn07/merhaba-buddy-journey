@@ -1083,3 +1083,79 @@ export const KneeSoundTypesChart = () => {
     </div>
   );
 };
+
+// Knee Pain After Sitting Cross-Legged Charts
+export const SittingKneePainCausesChart = () => {
+  const data = [
+    { name: 'Deep Flexion Stress', value: 30 },
+    { name: 'Rotational Load', value: 22 },
+    { name: 'Reduced Circulation', value: 20 },
+    { name: 'Muscle Shortening', value: 18 },
+    { name: 'Fluid Stagnation', value: 10 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Contributing Factors to Knee Pain After Sitting Cross-Legged</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              outerRadius={80}
+              fill="#8884d8"
+              dataKey="value"
+              label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+            >
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Based on common biomechanical factors observed in cross-legged sitting</p>
+    </div>
+  );
+};
+
+export const SittingPositionImpactChart = () => {
+  const data = [
+    { position: 'Cross-Legged', stress: 90, comfort: 20 },
+    { position: 'Kneeling', stress: 85, comfort: 25 },
+    { position: 'Legs Tucked', stress: 75, comfort: 30 },
+    { position: '90° Chair', stress: 30, comfort: 85 },
+    { position: 'Legs Extended', stress: 15, comfort: 90 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Sitting Positions: Knee Stress vs Comfort Level</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data}>
+            <XAxis dataKey="position" tick={{ fontSize: 10 }} />
+            <YAxis domain={[0, 100]} />
+            <Tooltip />
+            <Bar dataKey="stress" fill="#ef4444" name="Knee Stress %" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="comfort" fill="#22c55e" name="Comfort %" radius={[4, 4, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="flex justify-center gap-6 mt-3">
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 rounded bg-red-500"></div>
+          <span className="text-xs text-muted-foreground">Knee Stress</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 rounded bg-green-500"></div>
+          <span className="text-xs text-muted-foreground">Comfort Level</span>
+        </div>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Relative stress and comfort levels for common seated positions</p>
+    </div>
+  );
+};
