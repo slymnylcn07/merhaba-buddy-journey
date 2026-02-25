@@ -77,6 +77,7 @@ import heroBackKneeCommon from "@/assets/article-hero-back-knee-common.jpg";
 import heroSmartMassagersBreakdown from "@/assets/article-hero-smart-massagers-breakdown.jpg";
 import heroKneeWarmthDaily from "@/assets/article-hero-knee-warmth-daily.jpg";
 import heroKneePainLocations from "@/assets/article-hero-knee-pain-locations.jpg";
+import heroRunnersKneeLocation from "@/assets/article-hero-runners-knee-location.jpg";
 
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
@@ -131,6 +132,7 @@ import thumbSmartMassagersBreakdown from "@/assets/guide-thumb-smart-massagers-b
 import thumbKneeWarmthDaily from "@/assets/guide-thumb-knee-warmth-daily.jpg";
 import thumbKneePainLocations from "@/assets/guide-thumb-knee-pain-locations.jpg";
 import thumbKneeLocationMap from "@/assets/guide-thumb-knee-location-map.jpg";
+import thumbRunnersKneeLocation from "@/assets/guide-thumb-runners-knee-location.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -174,6 +176,7 @@ import {
   kneeWarmthDailyComfort,
   kneePainLocationsVisualGuide,
   kneePainLocationMap2026,
+  runnersKneePainLocation,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -236,6 +239,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-warmth-daily-comfort": { headline: "Want effortless daily warmth for your knees?", text: "FlexiKnee provides adjustable, consistent warmth along with red light and vibration, making your daily comfort routine simple and effective." },
   "knee-pain-locations-visual-guide": { headline: "Want location-specific comfort support for your knee?", text: "FlexiKnee wraps around the entire knee area, delivering soothing warmth, red light, and gentle vibration to support comfort in all zones." },
   "knee-pain-location-map-2026": { headline: "Support every zone on your knee pain location map", text: "FlexiKnee delivers soothing warmth, red light, and gentle vibration to the entire knee area — designed for daily comfort across all discomfort zones." },
+  "runners-knee-pain-location": { headline: "Support your knees after every run", text: "FlexiKnee wraps around the full knee area, delivering soothing warmth, red light, and gentle vibration — designed for runners who want daily comfort support." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7235,7 +7239,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7541,6 +7545,7 @@ const GuideArticle = () => {
                 "knee-warmth-daily-comfort": thumbKneeWarmthDaily,
                 "knee-pain-locations-visual-guide": thumbKneePainLocations,
                 "knee-pain-location-map-2026": thumbKneeLocationMap,
+                "runners-knee-pain-location": thumbRunnersKneeLocation,
               };
 
               // Topic clusters for relevant recommendations
@@ -7612,6 +7617,7 @@ const GuideArticle = () => {
                 "knee-warmth-daily-comfort": ["heat-vs-ice-for-knees", "heat-or-ice-knee-pain-situations", "warmth-vs-infrared-knee-routines"],
                 "knee-pain-locations-visual-guide": ["pain-in-the-knee-causes-locations", "back-of-knee-pain-explained", "side-knee-pain-comfort-guide"],
                 "knee-pain-location-map-2026": ["knee-pain-locations-visual-guide", "pain-in-the-knee-causes-locations", "side-knee-pain-comfort-guide"],
+                "runners-knee-pain-location": ["running-knee-pain-guide", "best-running-shoes-knee-pain", "sharp-knee-pain-guide"],
               };
 
               // Get topic-relevant articles (max 3)
