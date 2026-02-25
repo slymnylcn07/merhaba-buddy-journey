@@ -7448,7 +7448,7 @@ const GuideArticle = () => {
         {/* Article Content */}
         <article className="py-8 md:py-10">
           <div className="container px-4 max-w-3xl mx-auto">
-            <div className="max-w-none
+            <div className="article-content max-w-none
               [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-foreground [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:pb-3 [&_h2]:border-b [&_h2]:border-border/30
               [&_h3]:text-lg [&_h3]:md:text-xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-foreground [&_h3]:mt-8 [&_h3]:mb-3
               [&_p]:text-muted-foreground [&_p]:font-light [&_p]:leading-relaxed [&_p]:mb-5
