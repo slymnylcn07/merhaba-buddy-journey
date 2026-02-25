@@ -7448,15 +7448,15 @@ const GuideArticle = () => {
         {/* Article Content */}
         <article className="py-8 md:py-10">
           <div className="container px-4 max-w-3xl mx-auto">
-            <div className="prose prose-lg max-w-none
-              prose-headings:font-semibold prose-headings:text-foreground prose-headings:tracking-tight
-              prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-12 prose-h2:mb-5 prose-h2:border-b prose-h2:border-border/30 prose-h2:pb-3
-              prose-h3:text-lg prose-h3:md:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-foreground/90
-              prose-p:text-muted-foreground prose-p:font-light prose-p:leading-relaxed prose-p:mb-5
-              prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-              prose-strong:text-foreground prose-strong:font-semibold
-              prose-figcaption:text-sm prose-figcaption:text-muted-foreground
-              prose-li:text-muted-foreground prose-li:font-light
+            <div className="max-w-none
+              [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-foreground [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:pb-3 [&_h2]:border-b [&_h2]:border-border/30
+              [&_h3]:text-lg [&_h3]:md:text-xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-foreground [&_h3]:mt-8 [&_h3]:mb-3
+              [&_p]:text-muted-foreground [&_p]:font-light [&_p]:leading-relaxed [&_p]:mb-5
+              [&_a]:text-primary [&_a]:no-underline hover:[&_a]:underline
+              [&_strong]:text-foreground [&_strong]:font-semibold
+              [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-5
+              [&_li]:text-muted-foreground [&_li]:font-light [&_li]:leading-relaxed [&_li]:mb-1
+              [&_img]:w-full [&_img]:rounded-xl [&_img]:my-6 [&_img]:max-h-96 [&_img]:object-contain
             ">
               {article.content}
 
