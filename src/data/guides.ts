@@ -375,6 +375,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-02-25",
   },
+  {
+    slug: "runners-knee-pain-location",
+    title: "Runner's Knee Pain Location: Why It Happens and What People Commonly Feel",
+    description: "Explore where runners commonly feel knee discomfort — front, inner, outer, and back of knee. Learn what each location means and everyday comfort approaches.",
+    readTime: 12,
+    lastModified: "2026-02-25",
+  },
 ];
 
 // Static pages for sitemap
