@@ -13,8 +13,7 @@
     <link rel="dns-prefetch" href="https://lovable-project-y7ubq.myshopify.com" />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://code.tidio.co" crossorigin />
-    <link rel="dns-prefetch" href="https://code.tidio.co" />
+    <!-- Tidio preconnect removed - widget loads after 3s delay -->
     
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC0R5G1JG"></script>
@@ -54,10 +53,20 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- Shopify Inbox Chat Widget -->
-    <script async src="https://cdn.shopify.com/shopifycloud/shop_chat/storefront/shopifyChatV1.js"></script>
-    
-    <!-- Tidio Live Chat Widget -->
-    <script src="//code.tidio.co/qrflynkxtrfrqkwckpvwudqcz1thx3w4.js" async></script>
+    <!-- Shopify Inbox Chat Widget - deferred to improve LCP -->
+    <script>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var s1 = document.createElement('script');
+          s1.src = 'https://cdn.shopify.com/shopifycloud/shop_chat/storefront/shopifyChatV1.js';
+          s1.async = true;
+          document.body.appendChild(s1);
+          var s2 = document.createElement('script');
+          s2.src = '//code.tidio.co/qrflynkxtrfrqkwckpvwudqcz1thx3w4.js';
+          s2.async = true;
+          document.body.appendChild(s2);
+        }, 3000);
+      });
+    </script>
   </body>
 </html>
