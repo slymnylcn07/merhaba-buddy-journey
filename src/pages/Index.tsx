@@ -590,22 +590,22 @@ export default function Index() {
                       <CarouselContent>
                         <CarouselItem>
                           <div className="rounded-2xl overflow-hidden shadow-2xl">
-                            <img src={productMain} alt="FlexiKnee Main" className="w-full h-auto" loading="lazy" />
+                            <img src={productMain} alt="FlexiKnee Main" width={1024} height={1024} className="w-full h-auto" loading="lazy" decoding="async" />
                           </div>
                         </CarouselItem>
                         <CarouselItem>
                           <div className="rounded-2xl overflow-hidden shadow-2xl">
-                            <img src={productPainRelief} alt="FlexiKnee Pain Relief" className="w-full h-auto" loading="lazy" />
+                            <img src={productPainRelief} alt="FlexiKnee Pain Relief" width={1024} height={1024} className="w-full h-auto" loading="lazy" decoding="async" />
                           </div>
                         </CarouselItem>
                         <CarouselItem>
                           <div className="rounded-2xl overflow-hidden shadow-2xl">
-                            <img src={productTemperature} alt="FlexiKnee Temperature Control" className="w-full h-auto" loading="lazy" />
+                            <img src={productTemperature} alt="FlexiKnee Temperature Control" width={800} height={800} className="w-full h-auto" loading="lazy" decoding="async" />
                           </div>
                         </CarouselItem>
                         <CarouselItem>
                           <div className="rounded-2xl overflow-hidden shadow-2xl">
-                            <img src={productVibration} alt="FlexiKnee Vibration" className="w-full h-auto" loading="lazy" />
+                            <img src={productVibration} alt="FlexiKnee Vibration" width={800} height={800} className="w-full h-auto" loading="lazy" decoding="async" />
                           </div>
                         </CarouselItem>
                       </CarouselContent>
