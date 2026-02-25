@@ -9,7 +9,8 @@ interface PremiumCTAProps {
 
 const PremiumCTA = ({ headline, text }: PremiumCTAProps) => (
   <div
-    className="my-10 flex flex-col sm:flex-row items-start gap-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+    data-cta="premium"
+    className="my-10 flex flex-col sm:flex-row items-start gap-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg [&_img]:!w-24 [&_img]:sm:!w-28 [&_img]:!h-24 [&_img]:sm:!h-28 [&_img]:!max-h-28 [&_img]:!my-0 [&_img]:!object-cover [&_p]:!mb-2 [&_p:last-of-type]:!mb-4 [&_a]:!text-white [&_a]:!no-underline"
     style={{
       background: '#F2FFF8',
       border: '1.5px solid #C0EECF',
