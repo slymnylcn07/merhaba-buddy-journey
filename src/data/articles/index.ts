@@ -20,4 +20,5 @@ export { sideOfKneePainExplained } from "./side-of-knee-pain-explained";
 export { backOfKneePainCommon } from "./back-of-knee-pain-common";
 export { smartKneeMassagersBreakdown } from "./smart-knee-massagers-breakdown";
 export { kneeWarmthDailyComfort } from "./knee-warmth-daily-comfort";
+export { kneePainLocationsVisualGuide } from "./knee-pain-locations-visual-guide";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
