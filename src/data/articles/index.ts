@@ -26,4 +26,5 @@ export { runnersKneePainLocation } from "./runners-knee-pain-location";
 export { itBandSyndromeExplained } from "./it-band-syndrome-explained";
 export { itBandPainLocationDiagram } from "./it-band-pain-location-diagram";
 export { whyDoMyKneesHurtWhenSleeping } from "./why-do-my-knees-hurt-when-sleeping";
+export { whyDoMyKneesCrackOrPop } from "./why-do-my-knees-crack-or-pop";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";

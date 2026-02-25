@@ -403,6 +403,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-02-25",
   },
+  {
+    slug: "why-do-my-knees-crack-or-pop",
+    title: "Why Do My Knees Crack or Pop? Complete Guide to Knee Clicking, Crepitus & Daily Comfort Tips",
+    description: "Learn why knees crack and pop. Understand knee clicking, crepitus causes, and when knee cracking sounds are normal. Practical daily comfort tips included.",
+    readTime: 14,
+    lastModified: "2026-02-25",
+  },
 ];
 
 // Static pages for sitemap
