@@ -3,14 +3,14 @@ import PremiumCTA from "@/components/PremiumCTA";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import heroImage from "@/assets/article-hero-knee-location-map.jpg";
-import diagramFrontKnee from "@/assets/diagram-front-knee-zone.jpg";
-import diagramInnerKnee from "@/assets/diagram-inner-knee-zone.jpg";
-import diagramOuterKnee from "@/assets/diagram-outer-knee-zone.jpg";
-import diagramBackKnee from "@/assets/diagram-back-knee-zone.jpg";
-import diagramBelowKneecap from "@/assets/diagram-below-kneecap-zone.jpg";
-import diagramAboveKneecap from "@/assets/diagram-above-kneecap-zone.jpg";
-import diagramITBand from "@/assets/diagram-it-band-zone.jpg";
-import diagramJointLine from "@/assets/diagram-joint-line-zone.jpg";
+import mapFrontKnee from "@/assets/map-zone-front-knee.jpg";
+import mapInnerKnee from "@/assets/map-zone-inner-knee.jpg";
+import mapOuterKnee from "@/assets/map-zone-outer-knee.jpg";
+import mapBackKnee from "@/assets/map-zone-back-knee.jpg";
+import mapBelowKneecap from "@/assets/map-zone-below-kneecap.jpg";
+import mapAboveKneecap from "@/assets/map-zone-above-kneecap.jpg";
+import mapITBand from "@/assets/map-zone-it-band.jpg";
+import mapJointLine from "@/assets/map-zone-joint-line.jpg";
 
 const SectionDivider = () => (
   <hr className="my-10 border-t border-border/40" />
@@ -63,6 +63,84 @@ const ZoneExplorer = () => {
   );
 };
 
+// Comparison table component
+const ComfortComparisonTable = () => (
+  <div className="my-10 overflow-x-auto">
+    <table className="w-full text-sm border-collapse">
+      <thead>
+        <tr className="bg-primary/5">
+          <th className="text-left p-3 border border-border/40 font-bold text-foreground">Zone</th>
+          <th className="text-left p-3 border border-border/40 font-bold text-foreground">Primary Comfort Approach</th>
+          <th className="text-left p-3 border border-border/40 font-bold text-foreground">Best Time to Apply</th>
+          <th className="text-left p-3 border border-border/40 font-bold text-foreground">Key Daily Habit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td className="p-3 border border-border/40 font-semibold text-foreground">Front Knee</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Quad stretches + warmth</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">After prolonged sitting</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Movement breaks every 45–60 min</td>
+        </tr>
+        <tr className="bg-muted/20">
+          <td className="p-3 border border-border/40 font-semibold text-foreground">Below Kneecap</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Warm-up + gradual intensity</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Before & after activity</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Proper warm-up routine</td>
+        </tr>
+        <tr>
+          <td className="p-3 border border-border/40 font-semibold text-foreground">Above Kneecap</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Quad stretching + massage</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">After stairs or cycling</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Regular quad flexibility work</td>
+        </tr>
+        <tr className="bg-muted/20">
+          <td className="p-3 border border-border/40 font-semibold text-foreground">Inner Knee</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Supportive footwear + inner thigh stretches</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Evening wind-down</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Proper arch support in shoes</td>
+        </tr>
+        <tr>
+          <td className="p-3 border border-border/40 font-semibold text-foreground">Outer Knee</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Foam rolling + hip strengthening</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">After running or walking</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Gradual activity increases</td>
+        </tr>
+        <tr className="bg-muted/20">
+          <td className="p-3 border border-border/40 font-semibold text-foreground">Back of Knee</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Hamstring stretches + warmth</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Morning routine</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Gentle morning stretching</td>
+        </tr>
+        <tr>
+          <td className="p-3 border border-border/40 font-semibold text-foreground">IT Band</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Foam rolling + route variation</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Post-activity</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Hip abductor exercises</td>
+        </tr>
+        <tr className="bg-muted/20">
+          <td className="p-3 border border-border/40 font-semibold text-foreground">Tendon Area</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Eccentric strengthening + warmth</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">After intense sessions</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">10% weekly load increase max</td>
+        </tr>
+        <tr>
+          <td className="p-3 border border-border/40 font-semibold text-foreground">Joint Line</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Avoid deep squats + knee padding</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Before deep bending</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Use padding when kneeling</td>
+        </tr>
+        <tr className="bg-muted/20">
+          <td className="p-3 border border-border/40 font-semibold text-foreground">Generalized</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Consistent movement + warmth</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Morning & evening</td>
+          <td className="p-3 border border-border/40 text-muted-foreground">Stay active & hydrated</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+);
+
 export const kneePainLocationMap2026: ArticleExport = {
   cta: "",
   article: {
@@ -98,7 +176,7 @@ export const kneePainLocationMap2026: ArticleExport = {
 
         {/* --- Zone 1: Front of Knee --- */}
         <h2>1. Front of Knee (Patellar Region)</h2>
-        <img src={diagramFrontKnee} alt="Knee pain location chart: front of knee patellar region diagram" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
+        <img src={mapFrontKnee} alt="Knee pain location chart: front of knee patellar region diagram" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
 
         <h3>Location Overview</h3>
         <p>
@@ -131,7 +209,7 @@ export const kneePainLocationMap2026: ArticleExport = {
 
         {/* --- Zone 2: Below the Kneecap --- */}
         <h2>2. Below the Kneecap (Infrapatellar Region)</h2>
-        <img src={diagramBelowKneecap} alt="Knee pain location chart: below kneecap infrapatellar region" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
+        <img src={mapBelowKneecap} alt="Knee pain location chart: below kneecap infrapatellar region" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
 
         <h3>Location Overview</h3>
         <p>
@@ -164,7 +242,7 @@ export const kneePainLocationMap2026: ArticleExport = {
 
         {/* --- Zone 3: Above the Kneecap --- */}
         <h2>3. Above the Kneecap (Suprapatellar Region)</h2>
-        <img src={diagramAboveKneecap} alt="Knee pain location chart: above kneecap suprapatellar region" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
+        <img src={mapAboveKneecap} alt="Knee pain location chart: above kneecap suprapatellar region" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
 
         <h3>Location Overview</h3>
         <p>
@@ -197,7 +275,7 @@ export const kneePainLocationMap2026: ArticleExport = {
 
         {/* --- Zone 4: Inner Knee --- */}
         <h2>4. Inner Knee (Medial Side)</h2>
-        <img src={diagramInnerKnee} alt="Knee pain location chart: inner medial knee zone" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
+        <img src={mapInnerKnee} alt="Knee pain location chart: inner medial knee zone" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
 
         <h3>Location Overview</h3>
         <p>
@@ -230,7 +308,7 @@ export const kneePainLocationMap2026: ArticleExport = {
 
         {/* --- Zone 5: Outer Knee --- */}
         <h2>5. Outer Knee (Lateral Side)</h2>
-        <img src={diagramOuterKnee} alt="Knee pain location chart: outer lateral knee zone" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
+        <img src={mapOuterKnee} alt="Knee pain location chart: outer lateral knee zone" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
 
         <h3>Location Overview</h3>
         <p>
@@ -259,17 +337,11 @@ export const kneePainLocationMap2026: ArticleExport = {
           <li>Gentle warmth along the outer knee after activity</li>
         </ul>
 
-        {/* --- Mid-article CTA --- */}
-        <PremiumCTA
-          headline="Map your comfort — support every zone with one device"
-          text="FlexiKnee wraps around the entire knee, delivering warmth, red light, and gentle vibration to support comfort across all 10 discomfort zones."
-        />
-
         <SectionDivider />
 
         {/* --- Zone 6: Back of Knee --- */}
         <h2>6. Back of Knee (Popliteal Region)</h2>
-        <img src={diagramBackKnee} alt="Knee pain location chart: back posterior popliteal knee zone" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
+        <img src={mapBackKnee} alt="Knee pain location chart: back posterior popliteal knee zone" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
 
         <h3>Location Overview</h3>
         <p>
@@ -302,7 +374,7 @@ export const kneePainLocationMap2026: ArticleExport = {
 
         {/* --- Zone 7: IT Band Area --- */}
         <h2>7. IT Band / Lateral Tension Zone</h2>
-        <img src={diagramITBand} alt="Knee pain location chart: IT band lateral tension zone" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
+        <img src={mapITBand} alt="Knee pain location chart: IT band lateral tension zone" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
 
         <h3>Location Overview</h3>
         <p>
@@ -335,7 +407,7 @@ export const kneePainLocationMap2026: ArticleExport = {
 
         {/* --- Zone 8: Tendon Area --- */}
         <h2>8. Tendon Area (Quadriceps & Patellar Tendon)</h2>
-        <img src={diagramAboveKneecap} alt="Knee pain location chart: tendon area above and below kneecap" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
+        <img src={mapAboveKneecap} alt="Knee pain location chart: tendon area above and below kneecap" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
 
         <h3>Location Overview</h3>
         <p>
@@ -368,7 +440,7 @@ export const kneePainLocationMap2026: ArticleExport = {
 
         {/* --- Zone 9: Joint Line Area --- */}
         <h2>9. Joint Line Area (Medial & Lateral)</h2>
-        <img src={diagramJointLine} alt="Knee pain location chart: joint line where femur meets tibia" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
+        <img src={mapJointLine} alt="Knee pain location chart: joint line where femur meets tibia" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
 
         <h3>Location Overview</h3>
         <p>
@@ -401,7 +473,7 @@ export const kneePainLocationMap2026: ArticleExport = {
 
         {/* --- Zone 10: Generalized Knee Discomfort --- */}
         <h2>10. Generalized Knee Discomfort (Diffuse / Whole-Knee)</h2>
-        <img src={diagramFrontKnee} alt="Knee pain location chart: generalized whole-knee discomfort zone" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
+        <img src={mapFrontKnee} alt="Knee pain location chart: generalized whole-knee discomfort zone" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
 
         <h3>Location Overview</h3>
         <p>
@@ -431,6 +503,16 @@ export const kneePainLocationMap2026: ArticleExport = {
           <li>Supportive footwear for all-day wear</li>
           <li>Staying hydrated and maintaining a balanced activity level</li>
         </ul>
+
+        <SectionDivider />
+
+        {/* --- Comfort Comparison Table --- */}
+        <h2>Comfort Approach Comparison: All 10 Zones at a Glance</h2>
+        <p>
+          Use this <strong>knee pain location chart</strong> comparison table to quickly identify the best comfort approach for each zone. Each area responds to slightly different strategies — this summary helps you build an efficient daily routine.
+        </p>
+
+        <ComfortComparisonTable />
 
         <SectionDivider />
 
