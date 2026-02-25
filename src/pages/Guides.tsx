@@ -58,6 +58,10 @@ import thumbBackKneeCommon from "@/assets/guide-thumb-back-knee-common.jpg";
 import thumbSmartMassagersBreakdown from "@/assets/guide-thumb-smart-massagers-breakdown-new.jpg";
 import thumbKneeWarmthDaily from "@/assets/guide-thumb-knee-warmth-daily.jpg";
 import thumbKneePainLocations from "@/assets/guide-thumb-knee-pain-locations.jpg";
+import thumbKneeLocationMap from "@/assets/guide-thumb-knee-location-map.jpg";
+import thumbRunnersKneeLocation from "@/assets/guide-thumb-runners-knee-location.jpg";
+import thumbItBandSyndrome from "@/assets/guide-thumb-it-band-syndrome.jpg";
+import thumbItBandDiagram from "@/assets/guide-thumb-it-band-diagram.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
@@ -112,6 +116,10 @@ const thumbnailMap: Record<string, string> = {
   "smart-knee-massagers-breakdown": thumbSmartMassagersBreakdown,
   "knee-warmth-daily-comfort": thumbKneeWarmthDaily,
   "knee-pain-locations-visual-guide": thumbKneePainLocations,
+  "knee-pain-location-map-2026": thumbKneeLocationMap,
+  "runners-knee-pain-location": thumbRunnersKneeLocation,
+  "it-band-syndrome-explained": thumbItBandSyndrome,
+  "it-band-pain-location-diagram": thumbItBandDiagram,
 };
 
 // Combine data with thumbnails
@@ -153,6 +161,8 @@ const locationSlugs = [
   "sharp-stabbing-knee-pain-comfort",
   "intermittent-knee-pain-guide",
   "knee-pain-locations-visual-guide",
+  "knee-pain-location-map-2026",
+  "it-band-pain-location-diagram",
 ];
 
 // Category 2: Knee Discomfort by Activity
@@ -169,6 +179,8 @@ const activitySlugs = [
   "women-men-knee-comfort-patterns",
   "knee-pain-worse-at-night",
   "how-to-fix-knee-pain",
+  "runners-knee-pain-location",
+  "it-band-syndrome-explained",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
