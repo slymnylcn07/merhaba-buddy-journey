@@ -170,28 +170,20 @@ export default function Index() {
       {/* Hero Banner - Always render immediately */}
       <Link to={mainProduct ? `/product/${mainProduct.node.handle}` : '/product/knee-massager-smart-red-light-and-massage-therapy'} className="block">
         <section className="relative w-full overflow-hidden cursor-pointer hover:opacity-95 transition-opacity">
-        {/* Desktop Hero Banner */}
-          <img 
-            src={heroBannerDesktop} 
-            alt="FlexiKnee Smart Heated Knee Massager" 
-            className="hidden md:block w-full h-auto object-cover"
-            width={1920}
-            height={1080}
-            loading="eager"
-            fetchPriority="high"
-            decoding="sync"
-          />
-          {/* Mobile Hero Banner */}
-          <img 
-            src={heroBannerMobile} 
-            alt="FlexiKnee Smart Heated Knee Massager" 
-            className="block md:hidden w-full h-auto object-cover"
-            width={1024}
-            height={1536}
-            loading="eager"
-            fetchPriority="high"
-            decoding="sync"
-          />
+          <picture>
+            <source media="(min-width: 768px)" srcSet={heroBannerDesktop} />
+            <source media="(max-width: 767px)" srcSet={heroBannerMobile} />
+            <img 
+              src={heroBannerDesktop} 
+              alt="FlexiKnee Smart Heated Knee Massager" 
+              className="w-full h-auto object-cover"
+              width={1920}
+              height={1080}
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
+            />
+          </picture>
         </section>
       </Link>
 
