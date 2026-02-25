@@ -943,3 +943,68 @@ export const KneePainBelowKneecapChart = () => {
     </div>
   );
 };
+
+// CHARTS FOR WHY DO MY KNEES HURT WHEN SLEEPING ARTICLE
+export const NightKneePainCausesChart = () => {
+  const data = [
+    { cause: 'Joint Stiffness', percentage: 32 },
+    { cause: 'Muscle Tension', percentage: 24 },
+    { cause: 'Activity Strain', percentage: 18 },
+    { cause: 'Cartilage Wear', percentage: 14 },
+    { cause: 'Meniscus Issues', percentage: 12 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Most Common Causes of Night Knee Pain</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} layout="vertical">
+            <XAxis type="number" domain={[0, 40]} />
+            <YAxis dataKey="cause" type="category" width={110} tick={{ fontSize: 11 }} />
+            <Tooltip formatter={(value) => [`${value}%`, 'Reported Frequency']} />
+            <Bar dataKey="percentage" fill="#8b5cf6" radius={[0, 4, 4, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Based on common patterns reported by people with nighttime knee discomfort</p>
+    </div>
+  );
+};
+
+export const SleepPositionImpactChart = () => {
+  const data = [
+    { name: 'Back + Pillow', comfort: 85, stress: 15 },
+    { name: 'Side + Pillow', comfort: 70, stress: 35 },
+    { name: 'Side (no pillow)', comfort: 40, stress: 65 },
+    { name: 'Stomach', comfort: 25, stress: 80 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Sleeping Position & Knee Comfort</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data}>
+            <XAxis dataKey="name" tick={{ fontSize: 10 }} />
+            <YAxis domain={[0, 100]} />
+            <Tooltip />
+            <Bar dataKey="comfort" fill="#22c55e" name="Comfort %" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="stress" fill="#ef4444" name="Knee Stress %" radius={[4, 4, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="flex justify-center gap-6 mt-3">
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 rounded bg-green-500"></div>
+          <span className="text-xs text-muted-foreground">Comfort Level</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 rounded bg-red-500"></div>
+          <span className="text-xs text-muted-foreground">Knee Stress</span>
+        </div>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Relative comfort and stress levels for common sleeping positions</p>
+    </div>
+  );
+};
