@@ -55,6 +55,9 @@ import thumbSidePainExplained from "@/assets/guide-thumb-side-pain-explained.jpg
 import thumbArthritisMassager from "@/assets/guide-thumb-arthritis-massager.jpg";
 import thumbHeatRedlightBenefits from "@/assets/guide-thumb-heat-redlight-benefits.jpg";
 import thumbSharpStabbingComfort from "@/assets/guide-thumb-sharp-stabbing-comfort.jpg";
+import thumbBackKneeCommon from "@/assets/guide-thumb-back-knee-common.jpg";
+import thumbSmartMassagersBreakdown from "@/assets/guide-thumb-smart-massagers-breakdown.jpg";
+import thumbKneeWarmthDaily from "@/assets/guide-thumb-knee-warmth-daily.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
@@ -107,6 +110,10 @@ const thumbnailMap: Record<string, string> = {
   "infrared-vs-heating-pads": thumbInfraredMassager,
   "intermittent-knee-pain-guide": thumbIntermittentPain,
   "side-of-knee-pain-explained": thumbSidePainExplained,
+  // New articles - Feb 25
+  "back-of-knee-pain-common": thumbBackKneeCommon,
+  "smart-knee-massagers-breakdown": thumbSmartMassagersBreakdown,
+  "knee-warmth-daily-comfort": thumbKneeWarmthDaily,
 };
 
 // Combine data with thumbnails
