@@ -58,7 +58,7 @@ export const itBandPainLocationDiagram = {
         </figure>
 
         <p>
-          Because this band crosses the knee joint on the outside, it is especially sensitive to <strong>repetitive motion</strong>. That's why runners and cyclists tend to notice sensations in this area more often than others. For a broader overview of running-related knee concerns, see our <Link to="/guides/running-knee-pain-guide" className="text-primary underline hover:text-primary/80">running knee guide</Link>.
+          Because this band crosses the knee joint on the outside, it is especially sensitive to <strong>repetitive motion</strong>. That's why runners and cyclists tend to notice sensations in this area more often than others. For a detailed breakdown of why this happens and common runner patterns, see our <Link to="/guides/it-band-syndrome-explained" className="text-primary underline hover:text-primary/80">IT band syndrome guide</Link>. For a broader overview of running-related knee concerns, see our <Link to="/guides/running-knee-pain-guide" className="text-primary underline hover:text-primary/80">running knee guide</Link>.
         </p>
 
         <SectionDivider />

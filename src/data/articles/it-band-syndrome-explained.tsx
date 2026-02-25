@@ -55,7 +55,7 @@ export const itBandSyndromeExplained = {
           <li>Every time the knee bends and straightens, the IT band slides over the outer knee</li>
         </ul>
         <p>
-          Because it crosses the knee joint on the outside, the IT band is particularly sensitive to <strong>repetitive motion</strong>, which is why runners tend to notice sensations in this area more than most people.
+          Because it crosses the knee joint on the outside, the IT band is particularly sensitive to <strong>repetitive motion</strong>, which is why runners tend to notice sensations in this area more than most people. For a visual breakdown of exactly where these sensations show up, see our <Link to="/guides/it-band-pain-location-diagram" className="text-primary underline hover:text-primary/80">IT band pain location diagram</Link>.
         </p>
 
         <h3>How People Commonly Describe This Discomfort</h3>
