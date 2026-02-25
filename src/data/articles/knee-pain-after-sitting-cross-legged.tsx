@@ -287,10 +287,6 @@ export const kneePainAfterSittingCrossLegged: ArticleExport = {
           "Alternate between different seated positions throughout the day"
         ]} />
 
-        <PremiumCTA
-          headline="Want to support your knees through long sitting days?"
-          text="FlexiKnee provides adjustable warmth and gentle vibration to help your knees stay comfortable, whether you are at your desk, traveling, or relaxing at home."
-        />
 
         <h2>Explore More Knee Comfort Guides</h2>
         <p>
