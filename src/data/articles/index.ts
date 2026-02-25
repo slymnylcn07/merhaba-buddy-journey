@@ -25,4 +25,5 @@ export { kneePainLocationMap2026 } from "./knee-pain-location-map-2026";
 export { runnersKneePainLocation } from "./runners-knee-pain-location";
 export { itBandSyndromeExplained } from "./it-band-syndrome-explained";
 export { itBandPainLocationDiagram } from "./it-band-pain-location-diagram";
+export { whyDoMyKneesHurtWhenSleeping } from "./why-do-my-knees-hurt-when-sleeping";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
