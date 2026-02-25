@@ -301,7 +301,7 @@ export const runnersKneePainLocation = {
           Use this simple checklist to support your knee comfort before and after every run. Small, consistent habits make the biggest difference over time.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
           <div className="rounded-xl border border-border/40 p-5 bg-muted/20">
             <h3 className="flex items-center gap-2">🏃 Before Your Run</h3>
             <ul className="mt-3 space-y-2 text-sm">
@@ -323,6 +323,18 @@ export const runnersKneePainLocation = {
               <li>✅ Foam roll the outer thigh, quads, and calves</li>
               <li>✅ Rehydrate and refuel within 30 minutes</li>
               <li>✅ Note which knee areas felt sensitive — track patterns over time</li>
+            </ul>
+          </div>
+
+          <div className="rounded-xl border border-border/40 p-5 bg-muted/20">
+            <h3 className="flex items-center gap-2">📅 Weekly Maintenance</h3>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li>✅ Hip and glute strengthening (clamshells, lateral band walks)</li>
+              <li>✅ Quad strengthening (wall sits, step-ups, single-leg squats)</li>
+              <li>✅ Deep hamstring and calf flexibility work</li>
+              <li>✅ Core stability exercises (planks, dead bugs)</li>
+              <li>✅ One rest or cross-training day (swimming, cycling)</li>
+              <li>✅ Review your weekly mileage — increase by no more than 10%</li>
             </ul>
           </div>
         </div>
