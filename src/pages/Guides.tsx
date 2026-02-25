@@ -120,6 +120,7 @@ const thumbnailMap: Record<string, string> = {
   "runners-knee-pain-location": thumbRunnersKneeLocation,
   "it-band-syndrome-explained": thumbItBandSyndrome,
   "it-band-pain-location-diagram": thumbItBandDiagram,
+  "why-do-my-knees-hurt-when-sleeping": thumbNightKneePain,
 };
 
 // Combine data with thumbnails
