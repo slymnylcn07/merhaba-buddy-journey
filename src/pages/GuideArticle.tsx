@@ -183,6 +183,7 @@ import {
   runnersKneePainLocation,
   itBandSyndromeExplained,
   itBandPainLocationDiagram,
+  whyDoMyKneesHurtWhenSleeping,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -248,6 +249,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "runners-knee-pain-location": { headline: "Support your knees after every run", text: "FlexiKnee wraps around the full knee area, delivering soothing warmth, red light, and gentle vibration — designed for runners who want daily comfort support." },
   "it-band-syndrome-explained": { headline: "Need outer knee comfort support after runs?", text: "FlexiKnee wraps around the full knee area, delivering soothing warmth, red light, and gentle vibration to the outer knee zone where IT band sensations are most common." },
   "it-band-pain-location-diagram": { headline: "Want soothing support for the outer knee zone?", text: "FlexiKnee delivers warmth, red light, and gentle vibration to the exact area where IT band discomfort is most commonly felt." },
+  "why-do-my-knees-hurt-when-sleeping": { headline: "Need soothing nighttime knee comfort support?", text: "FlexiKnee provides gentle warmth, red light, and vibration before bed, helping your knees feel relaxed and comfortable through the night." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7340,7 +7342,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline

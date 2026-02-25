@@ -396,6 +396,13 @@ export const guidesData: GuideData[] = [
     readTime: 7,
     lastModified: "2026-02-25",
   },
+  {
+    slug: "why-do-my-knees-hurt-when-sleeping",
+    title: "Why Do My Knees Hurt When Sleeping? Complete Guide to Night Knee Pain, Causes & Comfort Tips",
+    description: "Discover why knee pain gets worse at night and when sleeping. Explore common causes, best sleeping positions for knee comfort, and daily tips for better rest.",
+    readTime: 14,
+    lastModified: "2026-02-25",
+  },
 ];
 
 // Static pages for sitemap
