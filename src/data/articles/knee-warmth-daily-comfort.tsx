@@ -188,19 +188,6 @@ export const kneeWarmthDailyComfort: ArticleExport = {
           Understanding when warmth helps most (morning stiffness, post-activity recovery, evening relaxation) and when other approaches may be more appropriate (acute injury, active swelling, inflammation) allows you to use this natural comfort strategy effectively and safely. The best warmth routine is the one you will actually follow every day, so choose a method that fits naturally into your lifestyle.
         </p>
 
-        <PremiumCTA
-          headline="Make daily knee warmth effortless"
-          text="FlexiKnee provides adjustable, consistent warmth along with red light and vibration, making your daily comfort routine simple and effective."
-        />
-
-        <h2>Related Guides</h2>
-        <ul>
-          <li><a href="/guides/heat-vs-ice-for-knees">Heat vs Ice for Knee Discomfort: What Works Best?</a></li>
-          <li><a href="/guides/heat-or-ice-knee-pain-situations">Heat or Ice for Knee Pain? What Works Best in Each Situation</a></li>
-          <li><a href="/guides/warmth-vs-infrared-knee-routines">Warmth vs Infrared: How People Use Both</a></li>
-          <li><a href="/guides/daily-knee-care-routine">Daily Knee Care Routine: Simple Habits</a></li>
-        </ul>
-
         <div className="mt-10 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground">
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and customer experiences. Always consult a healthcare professional for persistent or severe knee discomfort.
         </div>

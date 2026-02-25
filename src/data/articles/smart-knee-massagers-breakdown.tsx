@@ -184,14 +184,6 @@ export const smartKneeMassagersBreakdown: ArticleExport = {
           The key, as with most wellness habits, is choosing a quality device, setting realistic expectations, and committing to regular, consistent use.
         </p>
 
-        <h2>Related Guides</h2>
-        <ul>
-          <li><a href="/guides/do-knee-massagers-work">Do Knee Massagers Actually Work? Science-Based Guide</a></li>
-          <li><a href="/guides/infrared-knee-massager-guide-2026">Infrared Knee Massager Guide 2026</a></li>
-          <li><a href="/guides/heat-vs-red-light-therapy">Heat vs. Red Light Therapy for Knee Comfort</a></li>
-          <li><a href="/guides/daily-knee-care-routine">Daily Knee Care Routine: Simple Habits</a></li>
-        </ul>
-
         <div className="mt-10 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground">
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and customer experiences. Always consult a healthcare professional for persistent or severe knee discomfort.
         </div>
