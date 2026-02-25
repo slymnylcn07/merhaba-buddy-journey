@@ -57,6 +57,7 @@ import thumbSharpStabbingComfort from "@/assets/guide-thumb-sharp-stabbing-comfo
 import thumbBackKneeCommon from "@/assets/guide-thumb-back-knee-common.jpg";
 import thumbSmartMassagersBreakdown from "@/assets/guide-thumb-smart-massagers-breakdown-new.jpg";
 import thumbKneeWarmthDaily from "@/assets/guide-thumb-knee-warmth-daily.jpg";
+import thumbKneePainLocations from "@/assets/guide-thumb-knee-pain-locations.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
@@ -110,6 +111,7 @@ const thumbnailMap: Record<string, string> = {
   "back-of-knee-pain-common": thumbBackKneeCommon,
   "smart-knee-massagers-breakdown": thumbSmartMassagersBreakdown,
   "knee-warmth-daily-comfort": thumbKneeWarmthDaily,
+  "knee-pain-locations-visual-guide": thumbKneePainLocations,
 };
 
 // Combine data with thumbnails
@@ -150,6 +152,7 @@ const locationSlugs = [
   "sharp-knee-pain-causes-relief",
   "sharp-stabbing-knee-pain-comfort",
   "intermittent-knee-pain-guide",
+  "knee-pain-locations-visual-guide",
 ];
 
 // Category 2: Knee Discomfort by Activity
