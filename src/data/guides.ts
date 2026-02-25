@@ -346,6 +346,28 @@ export const guidesData: GuideData[] = [
     readTime: 11,
     lastModified: "2026-02-24",
   },
+  // New articles - February 25, 2026
+  {
+    slug: "back-of-knee-pain-common",
+    title: "Back-of-Knee Pain: What It Means & When It's Common",
+    description: "Explore common causes of back-of-knee discomfort, when it typically appears, and supportive daily habits for everyday comfort.",
+    readTime: 10,
+    lastModified: "2026-02-25",
+  },
+  {
+    slug: "smart-knee-massagers-breakdown",
+    title: "Smart Knee Massagers: Do They Actually Work? A Non-Medical Breakdown",
+    description: "A non-medical breakdown of smart knee massager features, user experiences, and realistic expectations for 2026.",
+    readTime: 11,
+    lastModified: "2026-02-25",
+  },
+  {
+    slug: "knee-warmth-daily-comfort",
+    title: "Knee Warmth for Daily Relief: When Heat Helps & When It Doesn't",
+    description: "Learn when warmth helps with daily knee comfort and when other approaches may be more appropriate. Practical heat therapy guide.",
+    readTime: 10,
+    lastModified: "2026-02-25",
+  },
 ];
 
 // Static pages for sitemap
