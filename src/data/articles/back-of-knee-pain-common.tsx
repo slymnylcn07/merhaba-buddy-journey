@@ -180,19 +180,6 @@ export const backOfKneePainCommon: ArticleExport = {
           By understanding the patterns, recognizing which habits may be contributing, and building a simple daily routine that includes gentle movement, stretching, and warmth support, you can meaningfully improve your posterior knee comfort over time. The key is consistency: small daily habits compound into significant long-term results.
         </p>
 
-        <PremiumCTA
-          headline="Ready to support your daily knee comfort routine?"
-          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one device designed for everyday posterior knee comfort."
-        />
-
-        <h2>Related Guides</h2>
-        <ul>
-          <li><a href="/guides/back-of-knee-pain-explained">Back of Knee Pain Explained: Causes, Symptoms, and Options</a></li>
-          <li><a href="/guides/back-of-knee-pain-daily-habits">Back of Knee Pain: Common Causes & Daily Habits</a></li>
-          <li><a href="/guides/daily-knee-care-routine">Daily Knee Care Routine: Simple Habits for Long-Term Comfort</a></li>
-          <li><a href="/guides/knee-discomfort-lower-back-hips">Why Knee Discomfort Sometimes Feels Connected to the Lower Back or Hips</a></li>
-        </ul>
-
         <div className="mt-10 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground">
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and customer experiences. Always consult a healthcare professional for persistent or severe knee discomfort.
         </div>
