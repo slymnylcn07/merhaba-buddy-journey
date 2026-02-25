@@ -30,15 +30,15 @@ export const sideOfKneePainExplained: ArticleExport = {
         </p>
 
         <h2>Inner vs. Outer Knee Discomfort: What's the Difference?</h2>
-        <p>
-          The inner (medial) and outer (lateral) sides of the knee are supported by different structures, and discomfort in each area tends to have different influences.
-        </p>
+         <p>
+           The inner (medial) and outer (lateral) sides of the knee are supported by different structures, and discomfort in each area tends to have different influences. For a deeper dive into both types, our <Link to="/guides/side-knee-pain-comfort-guide" className="text-primary hover:underline">side knee comfort guide</Link> covers inner and outer patterns in detail.
+         </p>
         <p>
           <strong>Inner knee discomfort</strong> is often associated with how your foot lands when you walk, the strength of the muscles along your inner thigh, and how much rotational stress the knee experiences during daily movement. Many people notice it more after walking on uneven surfaces or wearing flat, unsupportive shoes.
         </p>
-        <p>
-          <strong>Outer knee discomfort</strong> is frequently connected to the band of tissue that runs along the outside of the thigh (often called the IT band), activity levels, and hip strength. Runners and people who stand for long periods often notice this pattern more than others.
-        </p>
+         <p>
+           <strong>Outer knee discomfort</strong> is frequently connected to the band of tissue that runs along the outside of the thigh (often called the IT band), activity levels, and hip strength. Runners and people who stand for long periods often notice this pattern more than others. Our <Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT band syndrome guide</Link> explains this connection in depth.
+         </p>
 
         <h2>How Footwear Affects Side-of-Knee Comfort</h2>
         <p>
@@ -54,9 +54,9 @@ export const sideOfKneePainExplained: ArticleExport = {
           <li>High heels that shift weight distribution through the knee</li>
           <li>Running shoes that don't match your gait pattern</li>
         </ul>
-        <p>
-          Paying attention to how your knees feel in different shoes can reveal useful patterns. Many people find that simply rotating to more supportive footwear makes a noticeable difference in their daily knee comfort.
-        </p>
+         <p>
+           Paying attention to how your knees feel in different shoes can reveal useful patterns. Many people find that simply rotating to more supportive footwear makes a noticeable difference in their daily knee comfort. For guidance on choosing the right shoes, see our <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee comfort guide</Link>.
+         </p>
 
         <h2>Daily Habits That Influence Side Knee Comfort</h2>
         <p>
@@ -108,10 +108,10 @@ export const sideOfKneePainExplained: ArticleExport = {
           A professional can help identify specific contributing factors and recommend targeted approaches that complement your daily comfort routine.
         </p>
 
-        <h2>Building a Long-Term Comfort Approach</h2>
-        <p>
-          Side-of-knee discomfort is often manageable with consistent attention to a few key daily habits. The combination of supportive footwear, regular gentle movement, targeted stretching, and warmth-based comfort tools tends to provide the most reliable results over time.
-        </p>
+         <h2>Building a Long-Term Comfort Approach</h2>
+         <p>
+           Side-of-knee discomfort is often manageable with consistent attention to a few key daily habits. The combination of supportive footwear, regular gentle movement, targeted stretching, and warmth-based comfort tools tends to provide the most reliable results over time. For a visual overview of how different knee zones connect, our <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee pain locations visual guide</Link> maps out each area and its comfort strategies.
+         </p>
         <p>
           Rather than focusing on any single approach, building a routine that addresses multiple factors — shoes, movement, warmth, and stretching — gives you the best chance of enjoying consistent daily comfort, no matter which side of the knee tends to bother you most.
         </p>

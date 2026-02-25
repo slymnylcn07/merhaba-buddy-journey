@@ -41,9 +41,9 @@ export const infraredVsHeatingPads: ArticleExport = {
         <p>
           Infrared knee massagers are specifically designed for the knee joint. They typically wrap around the entire knee area, delivering warmth through infrared light wavelengths that penetrate more deeply than surface-level heat alone. Many devices also include vibration massage and red light features.
         </p>
-        <p>
-          The key difference is in how the warmth reaches the joint. While a heating pad warms the skin's surface, infrared wavelengths are absorbed deeper into the tissue, which many users find provides a more thorough sense of comfort. The wrap-around design also means the warmth stays consistent without needing constant readjustment.
-        </p>
+         <p>
+           The key difference is in how the warmth reaches the joint. While a heating pad warms the skin's surface, infrared wavelengths are absorbed deeper into the tissue, which many users find provides a more thorough sense of comfort. The wrap-around design also means the warmth stays consistent without needing constant readjustment. For a detailed look at the science behind infrared technology, see our <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massager guide</Link>.
+         </p>
 
         <h2>Convenience and Daily Usability</h2>
         <p>
@@ -93,13 +93,16 @@ export const infraredVsHeatingPads: ArticleExport = {
           <li>Consistency is important and you want built-in timers and settings</li>
         </ul>
 
-        <h2>Making the Right Choice for Your Routine</h2>
-        <p>
-          Both heating pads and infrared knee massagers have their place. If your knee comfort is something you actively manage on a daily basis, a device that's specifically designed for the knee joint tends to make the routine easier, more consistent, and more enjoyable.
-        </p>
-        <p>
-          The best approach is to think about how you currently use warmth and whether a more targeted, feature-rich option would make your daily comfort routine simpler. For many people, the switch from a general heating pad to a dedicated knee device feels like a meaningful upgrade in their everyday quality of life.
-        </p>
+         <h2>Making the Right Choice for Your Routine</h2>
+         <p>
+           Both heating pads and infrared knee massagers have their place. If your knee comfort is something you actively manage on a daily basis, a device that's specifically designed for the knee joint tends to make the routine easier, more consistent, and more enjoyable. For more on how warmth and infrared compare in practice, check our <Link to="/guides/warmth-vs-infrared-knee-routines" className="text-primary hover:underline">warmth vs. infrared comparison</Link>.
+         </p>
+         <p>
+           The best approach is to think about how you currently use warmth and whether a more targeted, feature-rich option would make your daily comfort routine simpler. For many people, the switch from a general heating pad to a dedicated knee device feels like a meaningful upgrade in their everyday quality of life. Our guide on <Link to="/guides/heat-vs-red-light-therapy" className="text-primary hover:underline">heat vs. red light therapy</Link> explores why adding red light to your warmth routine can deepen the benefits.
+         </p>
+         <p>
+           If you're still deciding between heat and cold for your needs, our <Link to="/guides/heat-or-ice-knee-pain-situations" className="text-primary hover:underline">heat or ice situations guide</Link> helps you choose the right approach for each scenario.
+         </p>
 
         <PremiumCTA
           headline="Ready to upgrade from your heating pad?"

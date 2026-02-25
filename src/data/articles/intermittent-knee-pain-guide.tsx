@@ -33,9 +33,9 @@ export const intermittentKneePainGuide: ArticleExport = {
         <p>
           The knee joint is influenced by a wide range of factors throughout each day. Your activity level, the shoes you wore, how long you sat at your desk, the weather outside, and even your sleep quality can all influence how your knees feel on any given day.
         </p>
-        <p>
-          This is why knee discomfort can feel unpredictable. It's rarely caused by just one thing. Instead, it's usually the result of multiple small factors adding up. On days when several of these factors align unfavorably, discomfort appears. On better days, those same factors happen to be in your favor.
-        </p>
+         <p>
+           This is why knee discomfort can feel unpredictable. It's rarely caused by just one thing. Instead, it's usually the result of multiple small factors adding up. On days when several of these factors align unfavorably, discomfort appears. On better days, those same factors happen to be in your favor. If your discomfort tends to feel sharp or sudden, our <Link to="/guides/sharp-knee-pain-comes-and-goes" className="text-primary hover:underline">sharp knee pain guide</Link> covers that specific pattern in more detail.
+         </p>
 
         <h2>Common Daily Factors That Influence Knee Comfort</h2>
         <p>
@@ -78,12 +78,12 @@ export const intermittentKneePainGuide: ArticleExport = {
         />
 
         <h2>When Discomfort Tends to Be Worse</h2>
-        <p>
-          Many people notice patterns in when their knee discomfort is most noticeable. Common times include first thing in the morning (when joints are stiff from sleep), after sitting for long periods, after unusual physical activity, or during weather changes.
-        </p>
-        <p>
-          Keeping a simple mental note of when your knees tend to feel their best and worst can help you identify which daily habits are most supportive. Over time, this awareness often leads to naturally gravitating toward the habits that keep your knees more comfortable.
-        </p>
+         <p>
+           Many people notice patterns in when their knee discomfort is most noticeable. Common times include first thing in the morning (when joints are stiff from sleep), after sitting for long periods, after unusual physical activity, or during weather changes. If your discomfort tends to be <Link to="/guides/knee-pain-worse-at-night" className="text-primary hover:underline">worse at night</Link>, our nighttime comfort guide explores evening-specific strategies.
+         </p>
+         <p>
+           Keeping a simple mental note of when your knees tend to feel their best and worst can help you identify which daily habits are most supportive. Over time, this awareness often leads to naturally gravitating toward the habits that keep your knees more comfortable. Building a structured <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine</Link> can help stabilize your experience day to day.
+         </p>
 
         <h2>The Importance of Consistency</h2>
         <p>
@@ -93,13 +93,13 @@ export const intermittentKneePainGuide: ArticleExport = {
           Think of it like brushing your teeth: you don't skip it just because you don't have a toothache. Similarly, maintaining your knee comfort habits on good days helps prevent the next uncomfortable day from being as intense.
         </p>
 
-        <h2>Supportive Tools for Daily Comfort</h2>
-        <p>
-          Beyond movement and stretching, many people find that warmth-based tools provide meaningful support for intermittent knee discomfort. Devices that combine warmth with other modalities like gentle vibration or red light can make a daily comfort routine feel more complete and enjoyable.
-        </p>
-        <p>
-          The most practical devices are ones that are easy to use consistently. Wireless, lightweight options that you can use while relaxing tend to see the highest adherence because they fit seamlessly into your existing daily habits.
-        </p>
+         <h2>Supportive Tools for Daily Comfort</h2>
+         <p>
+           Beyond movement and stretching, many people find that warmth-based tools provide meaningful support for intermittent knee discomfort. Devices that combine warmth with other modalities like gentle vibration or red light can make a daily comfort routine feel more complete and enjoyable. To understand why warmth works well for daily comfort, see our <Link to="/guides/heat-vs-red-light-therapy" className="text-primary hover:underline">heat vs. red light therapy guide</Link>.
+         </p>
+         <p>
+           The most practical devices are ones that are easy to use consistently. Wireless, lightweight options that you can use while relaxing tend to see the highest adherence because they fit seamlessly into your existing daily habits. Our <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">knee warmth daily comfort guide</Link> explores when and how to use warmth most effectively.
+         </p>
 
         <h2>Finding Your Personal Comfort Pattern</h2>
         <p>
