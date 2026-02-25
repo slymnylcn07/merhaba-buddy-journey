@@ -184,6 +184,7 @@ import {
   itBandSyndromeExplained,
   itBandPainLocationDiagram,
   whyDoMyKneesHurtWhenSleeping,
+  whyDoMyKneesCrackOrPop,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -250,6 +251,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "it-band-syndrome-explained": { headline: "Need outer knee comfort support after runs?", text: "FlexiKnee wraps around the full knee area, delivering soothing warmth, red light, and gentle vibration to the outer knee zone where IT band sensations are most common." },
   "it-band-pain-location-diagram": { headline: "Want soothing support for the outer knee zone?", text: "FlexiKnee delivers warmth, red light, and gentle vibration to the exact area where IT band discomfort is most commonly felt." },
   "why-do-my-knees-hurt-when-sleeping": { headline: "Need soothing nighttime knee comfort support?", text: "FlexiKnee provides gentle warmth, red light, and vibration before bed, helping your knees feel relaxed and comfortable through the night." },
+  "why-do-my-knees-crack-or-pop": { headline: "Want daily comfort support for your knee joints?", text: "FlexiKnee provides soothing warmth and gentle vibration to help keep your knees comfortable, flexible, and supported through everyday movements." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7342,7 +7344,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7651,6 +7653,7 @@ const GuideArticle = () => {
                 "runners-knee-pain-location": thumbRunnersKneeLocation,
                 "it-band-syndrome-explained": thumbItBandSyndrome,
                 "it-band-pain-location-diagram": thumbItBandDiagram,
+                "why-do-my-knees-crack-or-pop": thumbKneePainCauses,
               };
 
               // Topic clusters for relevant recommendations
@@ -7725,6 +7728,7 @@ const GuideArticle = () => {
                 "runners-knee-pain-location": ["running-knee-pain-guide", "best-running-shoes-knee-pain", "it-band-syndrome-explained"],
                 "it-band-syndrome-explained": ["it-band-pain-location-diagram", "side-knee-pain-comfort-guide", "runners-knee-pain-location"],
                 "it-band-pain-location-diagram": ["it-band-syndrome-explained", "side-knee-pain-comfort-guide", "running-knee-pain-guide"],
+                "why-do-my-knees-crack-or-pop": ["how-to-strengthen-knees", "front-knee-tightness-after-activity", "knee-warmth-daily-comfort"],
               };
 
               // Get topic-relevant articles (max 3)

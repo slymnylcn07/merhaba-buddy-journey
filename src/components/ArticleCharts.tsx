@@ -1008,3 +1008,78 @@ export const SleepPositionImpactChart = () => {
     </div>
   );
 };
+
+// Knee Cracking / Crepitus Article Charts
+export const KneeCrackingCausesChart = () => {
+  const data = [
+    { name: 'Gas Bubble Release', value: 45 },
+    { name: 'Tendon Movement', value: 25 },
+    { name: 'Cartilage Changes', value: 15 },
+    { name: 'Ligament Shifting', value: 10 },
+    { name: 'Other Factors', value: 5 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Most Common Causes of Knee Cracking Sounds</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              outerRadius={80}
+              fill="#8884d8"
+              dataKey="value"
+              label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+            >
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Based on common patterns observed in knee crepitus research</p>
+    </div>
+  );
+};
+
+export const KneeSoundTypesChart = () => {
+  const data = [
+    { type: 'Clicking', frequency: 75, concern: 10 },
+    { type: 'Popping', frequency: 85, concern: 15 },
+    { type: 'Grinding', frequency: 35, concern: 40 },
+    { type: 'Catching', frequency: 15, concern: 55 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Knee Sound Types: Frequency vs Professional Concern Level</h3>
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data}>
+            <XAxis dataKey="type" tick={{ fontSize: 11 }} />
+            <YAxis domain={[0, 100]} />
+            <Tooltip />
+            <Bar dataKey="frequency" fill="#3b82f6" name="How Common %" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="concern" fill="#f97316" name="Concern Level %" radius={[4, 4, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="flex justify-center gap-6 mt-3">
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 rounded bg-blue-500"></div>
+          <span className="text-xs text-muted-foreground">How Common</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 rounded bg-orange-500"></div>
+          <span className="text-xs text-muted-foreground">Concern Level</span>
+        </div>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Relative frequency and professional concern level for different knee sound types</p>
+    </div>
+  );
+};
