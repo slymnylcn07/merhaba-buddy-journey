@@ -16,13 +16,18 @@
     <link rel="preconnect" href="https://ipapi.co" crossorigin />
     <link rel="dns-prefetch" href="https://ipapi.co" />
     
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC0R5G1JG"></script>
+    <!-- Google Analytics 4 - deferred to improve Speed Index -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5QC0R5G1JG');
+      window.addEventListener('load', function() {
+        var gs = document.createElement('script');
+        gs.async = true;
+        gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-5QC0R5G1JG';
+        document.head.appendChild(gs);
+        gtag('js', new Date());
+        gtag('config', 'G-5QC0R5G1JG');
+      });
     </script>
     
     <!-- Preload hero banner images for faster LCP -->
