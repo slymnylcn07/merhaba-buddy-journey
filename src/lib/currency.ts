@@ -68,16 +68,37 @@ export function getCountryName(countryCode: string): string {
   return COUNTRY_NAMES[countryCode] || countryCode;
 }
 
-// Get user's country from IP (using a free geolocation API)
-export async function detectUserCountry(): Promise<string> {
-  try {
-    const response = await fetch('https://ipapi.co/json/');
-    const data = await response.json();
-    return data.country_code || 'GB';
-  } catch (error) {
-    console.error('Error detecting country:', error);
-    return 'GB'; // Default to UK
-  }
+// Get user's country from IP (deferred to avoid blocking critical chain)
+let cachedCountry: string | null = null;
+let countryPromise: Promise<string> | null = null;
+
+export function detectUserCountry(): Promise<string> {
+  if (cachedCountry) return Promise.resolve(cachedCountry);
+  if (countryPromise) return countryPromise;
+
+  countryPromise = new Promise<string>((resolve) => {
+    const doFetch = () => {
+      fetch('https://ipapi.co/json/')
+        .then(r => r.json())
+        .then(data => {
+          cachedCountry = data.country_code || 'GB';
+          resolve(cachedCountry);
+        })
+        .catch(() => {
+          cachedCountry = 'GB';
+          resolve('GB');
+        });
+    };
+
+    // Defer the fetch to after initial render
+    if (typeof requestIdleCallback !== 'undefined') {
+      requestIdleCallback(doFetch);
+    } else {
+      setTimeout(doFetch, 100);
+    }
+  });
+
+  return countryPromise;
 }
 
 // Get currency for a country code
