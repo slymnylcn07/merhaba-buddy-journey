@@ -21,4 +21,5 @@ export { backOfKneePainCommon } from "./back-of-knee-pain-common";
 export { smartKneeMassagersBreakdown } from "./smart-knee-massagers-breakdown";
 export { kneeWarmthDailyComfort } from "./knee-warmth-daily-comfort";
 export { kneePainLocationsVisualGuide } from "./knee-pain-locations-visual-guide";
+export { kneePainLocationMap2026 } from "./knee-pain-location-map-2026";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";

@@ -130,6 +130,7 @@ import thumbBackKneeCommon from "@/assets/guide-thumb-back-knee-common.jpg";
 import thumbSmartMassagersBreakdown from "@/assets/guide-thumb-smart-massagers-breakdown-new.jpg";
 import thumbKneeWarmthDaily from "@/assets/guide-thumb-knee-warmth-daily.jpg";
 import thumbKneePainLocations from "@/assets/guide-thumb-knee-pain-locations.jpg";
+import thumbKneeLocationMap from "@/assets/guide-thumb-knee-location-map.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -172,6 +173,7 @@ import {
   smartKneeMassagersBreakdown,
   kneeWarmthDailyComfort,
   kneePainLocationsVisualGuide,
+  kneePainLocationMap2026,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -233,6 +235,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "smart-knee-massagers-breakdown": { headline: "Curious about a quality smart knee massager?", text: "FlexiKnee combines adjustable heat, red light, and vibration massage in one wireless device designed for daily knee comfort." },
   "knee-warmth-daily-comfort": { headline: "Want effortless daily warmth for your knees?", text: "FlexiKnee provides adjustable, consistent warmth along with red light and vibration, making your daily comfort routine simple and effective." },
   "knee-pain-locations-visual-guide": { headline: "Want location-specific comfort support for your knee?", text: "FlexiKnee wraps around the entire knee area, delivering soothing warmth, red light, and gentle vibration to support comfort in all zones." },
+  "knee-pain-location-map-2026": { headline: "Support every zone on your knee pain location map", text: "FlexiKnee delivers soothing warmth, red light, and gentle vibration to the entire knee area — designed for daily comfort across all discomfort zones." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7232,7 +7235,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7537,6 +7540,7 @@ const GuideArticle = () => {
                 "smart-knee-massagers-breakdown": thumbSmartMassagersBreakdown,
                 "knee-warmth-daily-comfort": thumbKneeWarmthDaily,
                 "knee-pain-locations-visual-guide": thumbKneePainLocations,
+                "knee-pain-location-map-2026": thumbKneeLocationMap,
               };
 
               // Topic clusters for relevant recommendations
@@ -7607,6 +7611,7 @@ const GuideArticle = () => {
                 "smart-knee-massagers-breakdown": ["do-knee-massagers-work", "infrared-knee-massager-guide-2026", "heat-vs-red-light-therapy"],
                 "knee-warmth-daily-comfort": ["heat-vs-ice-for-knees", "heat-or-ice-knee-pain-situations", "warmth-vs-infrared-knee-routines"],
                 "knee-pain-locations-visual-guide": ["pain-in-the-knee-causes-locations", "back-of-knee-pain-explained", "side-knee-pain-comfort-guide"],
+                "knee-pain-location-map-2026": ["knee-pain-locations-visual-guide", "pain-in-the-knee-causes-locations", "side-knee-pain-comfort-guide"],
               };
 
               // Get topic-relevant articles (max 3)

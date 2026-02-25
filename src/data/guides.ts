@@ -368,6 +368,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-02-25",
   },
+  {
+    slug: "knee-pain-location-map-2026",
+    title: "The Ultimate Knee Pain Location Map (2026 Visual Guide + Interactive Breakdown)",
+    description: "Ultimate knee pain location chart and map for 2026. Visual guide to 10+ discomfort zones with daily comfort tips, interactive breakdown, and knee pain location and meaning explained.",
+    readTime: 15,
+    lastModified: "2026-02-25",
+  },
 ];
 
 // Static pages for sitemap
