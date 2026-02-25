@@ -17,4 +17,7 @@ export { runningShoesKneePainDiscomfort } from "./running-shoes-knee-pain-discom
 export { infraredVsHeatingPads } from "./infrared-vs-heating-pads";
 export { intermittentKneePainGuide } from "./intermittent-knee-pain-guide";
 export { sideOfKneePainExplained } from "./side-of-knee-pain-explained";
+export { backOfKneePainCommon } from "./back-of-knee-pain-common";
+export { smartKneeMassagersBreakdown } from "./smart-knee-massagers-breakdown";
+export { kneeWarmthDailyComfort } from "./knee-warmth-daily-comfort";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";

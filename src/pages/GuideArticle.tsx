@@ -73,6 +73,9 @@ import heroCauseKneePain from "@/assets/article-hero-cause-knee-pain.jpg";
 import heroFrontKneeTightness from "@/assets/article-hero-front-knee-tightness.jpg";
 import heroKneeLowerBodyConnection from "@/assets/article-hero-knee-lower-body-connection-v2.jpg";
 import heroBelowKneeDiscomfort from "@/assets/article-hero-below-knee-discomfort.jpg";
+import heroBackKneeCommon from "@/assets/article-hero-back-knee-common.jpg";
+import heroSmartMassagersBreakdown from "@/assets/article-hero-smart-massagers-breakdown.jpg";
+import heroKneeWarmthDaily from "@/assets/article-hero-knee-warmth-daily.jpg";
 
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
@@ -122,6 +125,9 @@ import thumbSidePainExplained from "@/assets/guide-thumb-side-pain-explained.jpg
 import thumbArthritisMassager from "@/assets/guide-thumb-arthritis-massager.jpg";
 import thumbHeatRedlightBenefits from "@/assets/guide-thumb-heat-redlight-benefits.jpg";
 import thumbSharpStabbingComfort from "@/assets/guide-thumb-sharp-stabbing-comfort.jpg";
+import thumbBackKneeCommon from "@/assets/guide-thumb-back-knee-common.jpg";
+import thumbSmartMassagersBreakdown from "@/assets/guide-thumb-smart-massagers-breakdown.jpg";
+import thumbKneeWarmthDaily from "@/assets/guide-thumb-knee-warmth-daily.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -160,6 +166,9 @@ import {
   infraredVsHeatingPads,
   intermittentKneePainGuide,
   sideOfKneePainExplained,
+  backOfKneePainCommon,
+  smartKneeMassagersBreakdown,
+  kneeWarmthDailyComfort,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -217,6 +226,9 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "front-knee-tightness-after-activity": { headline: "Need post-activity front knee comfort support?", text: "FlexiKnee delivers soothing warmth and gentle vibration to help your front knee area unwind after activity." },
   "knee-discomfort-lower-back-hips": { headline: "Want to support your whole lower body comfort?", text: "FlexiKnee provides soothing warmth and gentle vibration for your knees, complementing hip and back comfort routines." },
   "below-knee-discomfort-teens-adults": { headline: "Need comfortable post-activity support for active legs?", text: "FlexiKnee provides soothing warmth and gentle vibration for teens and adults who need daily knee comfort after sports or activity." },
+  "back-of-knee-pain-common": { headline: "Looking for daily support for behind-the-knee comfort?", text: "FlexiKnee wraps around the full knee area, delivering soothing warmth and gentle vibration to help ease everyday posterior knee stiffness." },
+  "smart-knee-massagers-breakdown": { headline: "Curious about a quality smart knee massager?", text: "FlexiKnee combines adjustable heat, red light, and vibration massage in one wireless device designed for daily knee comfort." },
+  "knee-warmth-daily-comfort": { headline: "Want effortless daily warmth for your knees?", text: "FlexiKnee provides adjustable, consistent warmth along with red light and vibration, making your daily comfort routine simple and effective." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7216,7 +7228,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7515,6 +7527,9 @@ const GuideArticle = () => {
                 "infrared-vs-heating-pads": thumbInfraredMassager,
                 "intermittent-knee-pain-guide": thumbIntermittentPain,
                 "side-of-knee-pain-explained": thumbSidePainExplained,
+                "back-of-knee-pain-common": thumbBackKneeCommon,
+                "smart-knee-massagers-breakdown": thumbSmartMassagersBreakdown,
+                "knee-warmth-daily-comfort": thumbKneeWarmthDaily,
               };
 
               // Topic clusters for relevant recommendations
@@ -7580,6 +7595,10 @@ const GuideArticle = () => {
                 "front-knee-tightness-after-activity": ["top-of-knee-pain-patterns", "running-knee-pain-guide", "how-to-strengthen-knees"],
                 "knee-discomfort-lower-back-hips": ["cause-of-knee-pain-patterns", "how-to-strengthen-knees", "women-men-knee-comfort-patterns"],
                 "below-knee-discomfort-teens-adults": ["front-knee-tightness-after-activity", "running-knee-pain-guide", "how-to-strengthen-knees"],
+                // New articles - Feb 25
+                "back-of-knee-pain-common": ["back-of-knee-pain-explained", "back-of-knee-pain-daily-habits", "daily-knee-care-routine"],
+                "smart-knee-massagers-breakdown": ["do-knee-massagers-work", "infrared-knee-massager-guide-2026", "heat-vs-red-light-therapy"],
+                "knee-warmth-daily-comfort": ["heat-vs-ice-for-knees", "heat-or-ice-knee-pain-situations", "warmth-vs-infrared-knee-routines"],
               };
 
               // Get topic-relevant articles (max 3)
