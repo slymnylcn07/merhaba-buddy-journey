@@ -1504,7 +1504,7 @@ const articles: Record<string, ArticleData> = {
 
         <h2>Outer Knee Pain: Lateral Discomfort</h2>
         <p>
-          Pain on the outer side of the knee is often related to the iliotibial (IT) band, a thick band of connective tissue that runs from the hip down to the outer knee. IT band syndrome is one of the most common causes of lateral knee pain, especially in runners and cyclists. For a deeper look at how the IT band contributes to side knee sensations, see our <Link to="/guides/it-band-syndrome-explained" className="text-primary underline hover:text-primary/80">IT band syndrome guide</Link>.
+           Pain on the outer side of the knee is often related to the iliotibial (IT) band, a thick band of connective tissue that runs from the hip down to the outer knee. IT band syndrome is one of the most common causes of lateral knee pain, especially in runners and cyclists. For a deeper look at how the IT band contributes to side knee sensations, see our <Link to="/guides/it-band-syndrome-explained" className="text-primary underline hover:text-primary/80">IT band syndrome guide</Link>, or explore our <Link to="/guides/it-band-pain-location-diagram" className="text-primary underline hover:text-primary/80">IT band pain location diagram</Link> for a visual breakdown.
         </p>
         <p>
           <strong>IT band syndrome:</strong> When the IT band becomes tight or irritated, it can create friction as it passes over the bony prominence on the outer knee during bending and straightening movements. This typically causes a burning or aching pain on side of knee that worsens with repetitive activities.
