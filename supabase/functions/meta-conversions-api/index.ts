@@ -1,9 +1,22 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+const ALLOWED_ORIGINS = [
+  'https://flexi-knee.com',
+  'https://www.flexi-knee.com',
+  'https://merhaba-buddy-journey.lovable.app',
+];
+
+function getCorsHeaders(origin: string | null): Record<string, string> {
+  const isLovablePreview = origin?.includes('.lovableproject.com') || origin?.includes('.lovable.app');
+  const isAllowed = ALLOWED_ORIGINS.includes(origin || '') || isLovablePreview;
+
+  return {
+    'Access-Control-Allow-Origin': isAllowed && origin ? origin : ALLOWED_ORIGINS[0],
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
+  };
+}
+
+const VALID_EVENT_NAMES = ['PageView', 'ViewContent', 'AddToCart', 'InitiateCheckout', 'Purchase', 'Lead'];
 
 interface MetaEventData {
   event_name: string;
@@ -84,6 +97,9 @@ async function normalizeAndHashPhone(phone: string): Promise<string> {
 }
 
 serve(async (req) => {
+  const origin = req.headers.get('origin');
+  const corsHeaders = getCorsHeaders(origin);
+
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -102,6 +118,49 @@ serve(async (req) => {
     }
 
     const body: RequestBody = await req.json();
+
+    // Validate event name
+    if (!body.event_name || !VALID_EVENT_NAMES.includes(body.event_name)) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid event_name' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Validate event_id
+    if (!body.event_id || typeof body.event_id !== 'string' || body.event_id.length > 100) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid event_id' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Validate event_source_url
+    try {
+      new URL(body.event_source_url);
+    } catch {
+      return new Response(
+        JSON.stringify({ error: 'Invalid event_source_url' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Validate numeric custom_data fields
+    if (body.custom_data) {
+      if (body.custom_data.value !== undefined && (typeof body.custom_data.value !== 'number' || body.custom_data.value < 0)) {
+        return new Response(
+          JSON.stringify({ error: 'Invalid custom_data.value' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      if (body.custom_data.currency && (typeof body.custom_data.currency !== 'string' || body.custom_data.currency.length !== 3)) {
+        return new Response(
+          JSON.stringify({ error: 'Invalid custom_data.currency' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+    }
+
     console.log('Received event:', body.event_name, 'Event ID:', body.event_id);
 
     // Get client IP from headers
