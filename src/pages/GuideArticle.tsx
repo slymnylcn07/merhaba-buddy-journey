@@ -430,7 +430,7 @@ const articles: Record<string, ArticleData> = {
     title: "Heat vs. Red Light Therapy: What Actually Helps Knee Discomfort?",
     subtitle: "Comparing two popular at-home approaches",
     intro: "When looking for ways to support knee comfort at home, you may have come across both heat therapy and red light therapy. This guide helps you understand how each works so you can make an informed choice.",
-    metaTitle: "Heat vs Red Light Therapy for Knees | What Helps Knee Discomfort?",
+    metaTitle: "Heat vs Red Light Therapy for Knees | Comfort Guide",
     metaDescription: "Compare heat therapy and red light therapy and learn how they can support everyday knee comfort.",
     heroImage: heroHeatTherapy,
     publishedDate: "March 8, 2025",
@@ -553,9 +553,8 @@ const articles: Record<string, ArticleData> = {
           The most important factor is consistency. Whatever approach you choose, regular use as part of a daily routine tends to be more beneficial than occasional application. Building a sustainable habit matters more than choosing the "perfect" method.
         </p>
         <p>
-          For more on who these devices work best for, see our guide on <Link to="/guides/who-benefits-from-knee-therapy-devices" className="text-primary hover:underline">who benefits most from at-home knee therapy devices</Link>. If you're specifically comparing heat and ice, our detailed breakdown on <Link to="/guides/heat-or-ice-knee-pain-science" className="text-primary hover:underline">heat or ice for knee pain</Link> covers when each is appropriate. You can also explore how <Link to="/guides/infrared-vs-heating-pads" className="text-primary hover:underline">infrared compares to traditional heating pads</Link> for a deeper look at modern heat-based options.
+          For more on who these devices work best for, see our guide on <Link to="/guides/who-benefits-from-knee-therapy-devices" className="text-primary hover:underline">who benefits most from at-home knee therapy devices</Link>. If you're specifically comparing heat and ice, our detailed breakdown on <Link to="/guides/heat-or-ice-knee-pain-science" className="text-primary hover:underline">heat or ice for knee pain</Link> covers when each is appropriate. You can also explore how <Link to="/guides/infrared-vs-heating-pads" className="text-primary hover:underline">infrared compares to traditional heating pads</Link> for a deeper look at modern heat-based options. For building these therapies into your daily routine, check out our <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link>. And if warmth is your preferred approach, learn more about <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">when warmth helps and when it doesn't</Link>.
         </p>
-
       </>
     ),
     faqs: [
@@ -587,7 +586,7 @@ const articles: Record<string, ArticleData> = {
     title: "Who Benefits Most From At-Home Knee Therapy Devices?",
     subtitle: "Setting realistic expectations",
     intro: "At-home knee therapy devices have become increasingly popular, but they're not designed for everyone. This guide helps you understand who typically benefits most and what you can realistically expect.",
-    metaTitle: "Who Benefits from At-Home Knee Therapy Devices? | Knee Comfort Guide",
+    metaTitle: "Who Benefits from Knee Therapy Devices? | Guide",
     metaDescription: "Discover who at-home knee therapy devices are designed for and how they support everyday knee comfort.",
     heroImage: heroWhoBenefits,
     publishedDate: "May 22, 2025",
@@ -760,7 +759,7 @@ const articles: Record<string, ArticleData> = {
     title: "How to Build a Daily Knee Comfort Routine",
     subtitle: "Practical morning and evening tips",
     intro: "Creating a consistent daily routine is one of the most effective ways to support long-term knee comfort. This guide offers practical suggestions for building morning and evening habits that work with your lifestyle.",
-    metaTitle: "How to Build a Daily Knee Comfort Routine | Practical Tips & Guide",
+    metaTitle: "Daily Knee Comfort Routine: Practical Tips & Guide",
     metaDescription: "Learn how to create a sustainable daily routine for knee comfort with practical morning and evening tips for at-home support.",
     heroImage: heroDailyRoutine,
     publishedDate: "July 14, 2025",
@@ -1959,10 +1958,10 @@ const articles: Record<string, ArticleData> = {
   },
   "knee-arthritis-pain-guide": {
     slug: "knee-arthritis-pain-guide",
-    title: "Knee Arthritis Pain: Understanding Joint Pain and Daily Support Options",
+    title: "Knee Arthritis: Joint Pain & Daily Support Options",
     subtitle: "Managing arthritis knee pain for daily comfort",
     intro: "Knee arthritis affects millions worldwide, causing chronic knee joint pain that can significantly impact daily life. Whether you're exploring knee pain exercises, considering knee support for pain management, or wondering about knee replacement options, this guide provides comprehensive information about understanding and managing arthritis knee pain.",
-    metaTitle: "Knee Arthritis Pain: Joint Pain Management & Daily Support Guide",
+    metaTitle: "Knee Arthritis: Joint Pain & Daily Support Guide",
     metaDescription: "Comprehensive guide to knee arthritis including arthritis knee pain management, knee pain exercises, knee support options, and when to consider knee replacement.",
     heroImage: heroKneeArthritis,
     publishedDate: "December 20, 2025",
@@ -2199,10 +2198,10 @@ const articles: Record<string, ArticleData> = {
   },
   "sharp-knee-pain-guide": {
     slug: "sharp-knee-pain-guide",
-    title: "Sharp Knee Pain That Comes and Goes: What It Means and When to Act",
+    title: "Sharp Knee Pain That Comes & Goes: When to Act",
     subtitle: "Understanding intermittent sharp knee pain",
     intro: "Experiencing sharp knee pain that comes and goes can be confusing and concerning. Whether you're dealing with sharp stabbing pain in knee that appears suddenly, pain in knee when straightening leg, or discomfort around your knee pain below kneecap, this guide explores the possible causes and helps you understand when professional evaluation is warranted.",
-    metaTitle: "Sharp Knee Pain That Comes and Goes: Causes & When to Seek Help",
+    metaTitle: "Sharp Knee Pain That Comes & Goes: Causes & Relief",
     metaDescription: "Understand sharp stabbing pain in knee that comes and goes, pain when straightening leg, pain inside knee, and whether sciatica can cause knee pain. Complete guide.",
     heroImage: heroSharpKneePain,
     publishedDate: "December 20, 2025",
@@ -2460,7 +2459,7 @@ const articles: Record<string, ArticleData> = {
     title: "How to Strengthen Knees for Better Daily Support and Stability",
     subtitle: "Building everyday habits for lasting knee comfort",
     intro: "Understanding how to strengthen knees is one of the most valuable steps you can take toward better daily comfort and stability. This guide explores practical habits, gentle movements, and lifestyle factors that support stronger, more resilient knees.",
-    metaTitle: "How to Strengthen Knees for Better Daily Support & Stability | Knee Comfort Guide",
+    metaTitle: "How to Strengthen Knees for Daily Support & Stability",
     metaDescription: "Learn how to strengthen knees with everyday habits, gentle movements, and lifestyle factors that support better knee stability and daily comfort.",
     heroImage: heroStrengthenKnees,
     publishedDate: "December 21, 2025",
@@ -2702,10 +2701,10 @@ const articles: Record<string, ArticleData> = {
   },
   "understanding-knee-injuries": {
     slug: "understanding-knee-injuries",
-    title: "Understanding Knee Injuries: Common Types, Symptoms, and Recovery Considerations",
+    title: "Knee Injuries: Common Types, Symptoms & Recovery",
     subtitle: "An educational overview of knee joint health",
     intro: "A knee injury can be an unsettling experience, whether it happens suddenly or develops over time. This guide provides an educational overview of common knee injuries, typical symptoms people experience, and general considerations during the recovery period.",
-    metaTitle: "Understanding Knee Injuries: Types, Symptoms & Recovery | Knee Health Guide",
+    metaTitle: "Knee Injuries: Types, Symptoms & Recovery Guide",
     metaDescription: "Learn about common knee injuries, typical symptoms, and general recovery considerations in this educational overview of knee joint health.",
     heroImage: heroKneeInjuries,
     publishedDate: "December 21, 2025",
@@ -7377,7 +7376,26 @@ const GuideArticle = () => {
   }, []);
   
   if (!slug || !articles[slug]) {
-    return <Navigate to="/guides" replace />;
+    return (
+      <>
+        <Helmet>
+          <title>Page Not Found | FlexiKnee</title>
+          <meta name="robots" content="noindex, nofollow" />
+          <meta name="description" content="The guide you are looking for could not be found." />
+        </Helmet>
+        <Header />
+        <div className="flex min-h-screen items-center justify-center bg-muted">
+          <div className="text-center">
+            <h1 className="mb-4 text-4xl font-bold">404</h1>
+            <p className="mb-4 text-xl text-muted-foreground">Guide not found</p>
+            <Link to="/guides" className="text-primary underline hover:text-primary/90">
+              Browse All Guides
+            </Link>
+          </div>
+        </div>
+        <Footer />
+      </>
+    );
   }
 
   const article = articles[slug];
@@ -7474,6 +7492,62 @@ const GuideArticle = () => {
     }))
   } : null;
 
+  // Generate HowTo JSON-LD for routine/exercise/posture guides
+  const howToSchemas: Record<string, { name: string; description: string; steps: { name: string; text: string }[] }> = {
+    "daily-knee-comfort-routine": {
+      name: "How to Build a Daily Knee Comfort Routine",
+      description: "A step-by-step guide to building sustainable morning, midday, and evening habits that support long-term knee comfort.",
+      steps: [
+        { name: "Morning Knee Care", text: "Start with gentle knee bends while still in bed for 1-2 minutes. Apply warmth during breakfast for 10-15 minutes. Do a brief standing stretch before sitting for work." },
+        { name: "Midday Movement Breaks", text: "Set reminders to stand and move every 30-60 minutes. Do seated knee extensions during phone calls. Take short walks and use stairs when possible." },
+        { name: "Evening Recovery Routine", text: "Use a heat or combination therapy device while relaxing for 15-20 minutes. Do gentle quadricep, hamstring, and calf stretches. Elevate legs if needed before bed." },
+      ],
+    },
+    "daily-knee-care-routine": {
+      name: "Daily Knee Care Routine: Simple Habits for Comfort",
+      description: "Build a sustainable daily knee care routine with simple morning and evening habits.",
+      steps: [
+        { name: "Morning Warm-Up", text: "Perform gentle range-of-motion exercises before getting out of bed. Apply warmth to stiff areas for 10 minutes." },
+        { name: "Stay Active Throughout the Day", text: "Take movement breaks every 30-60 minutes. Incorporate gentle walking and avoid prolonged sitting without stretching." },
+        { name: "Evening Wind-Down", text: "Apply warmth or use a therapy device for 15-20 minutes. Do gentle stretches focusing on muscles around the knee. Prepare for restful sleep with leg elevation if needed." },
+      ],
+    },
+    "how-to-strengthen-knees": {
+      name: "How to Strengthen Knees for Daily Support",
+      description: "Practical habits and gentle exercises to build stronger, more resilient knees.",
+      steps: [
+        { name: "Start with Gentle Movement", text: "Begin with low-impact activities like walking, swimming, or gentle cycling to build baseline strength without overloading the joints." },
+        { name: "Build Supporting Muscles", text: "Focus on quadriceps, hamstrings, and calf muscles through gentle exercises like wall sits, step-ups, and seated leg extensions." },
+        { name: "Add Balance Training", text: "Incorporate single-leg balance exercises and proprioception drills to improve knee stability and joint awareness." },
+        { name: "Maintain Consistency", text: "Make knee-strengthening activities part of your daily routine. Consistency over weeks and months yields better results than occasional intense sessions." },
+      ],
+    },
+    "how-to-fix-knee-pain": {
+      name: "How to Support Daily Knee Comfort at Home",
+      description: "Practical daily habits for supporting knee comfort and reducing everyday discomfort.",
+      steps: [
+        { name: "Identify Your Patterns", text: "Track when discomfort occurs throughout the day. Note activities, positions, and times that seem to trigger or worsen knee discomfort." },
+        { name: "Build Supportive Daily Habits", text: "Incorporate gentle movement, warmth application, and stretching into your morning and evening routines." },
+        { name: "Use Supportive Tools", text: "Consider at-home therapy devices that combine warmth, red light, and gentle vibration for consistent daily support." },
+        { name: "Stay Consistent", text: "Maintain your comfort routine daily. Regular, moderate attention to knee care produces better long-term results than sporadic intensive efforts." },
+      ],
+    },
+  };
+
+  const howToData = howToSchemas[slug || ""];
+  const howToJsonLd = howToData ? {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": howToData.name,
+    "description": howToData.description,
+    "step": howToData.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": step.name,
+      "text": step.text,
+    })),
+  } : null;
+
   return (
     <>
       <Helmet>
@@ -7510,6 +7584,11 @@ const GuideArticle = () => {
         {faqJsonLd && (
           <script type="application/ld+json">
             {JSON.stringify(faqJsonLd)}
+          </script>
+        )}
+        {howToJsonLd && (
+          <script type="application/ld+json">
+            {JSON.stringify(howToJsonLd)}
           </script>
         )}
       </Helmet>
