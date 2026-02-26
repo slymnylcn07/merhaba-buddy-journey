@@ -425,6 +425,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-02-26",
   },
+  {
+    slug: "knee-pain-after-standing",
+    title: "Knee Pain After Standing: Why It Happens & Comfort Strategies That Help",
+    description: "Why does knee pain when standing happen? Explore causes of knee pain after standing all day, standing posture tips, and patellofemoral pain syndrome comfort strategies.",
+    readTime: 14,
+    lastModified: "2026-02-26",
+  },
 ];
 export const staticPages = [
   { path: "/", priority: 1.0, changefreq: "weekly" },
