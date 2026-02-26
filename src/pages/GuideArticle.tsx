@@ -80,7 +80,7 @@ import heroKneePainLocations from "@/assets/article-hero-knee-pain-locations.jpg
 import heroRunnersKneeLocation from "@/assets/article-hero-runners-knee-location.jpg";
 import heroItBandSyndrome from "@/assets/article-hero-it-band-syndrome.jpg";
 import heroItBandDiagram from "@/assets/article-hero-it-band-diagram.jpg";
-
+import heroKneeStiffnessResting from "@/assets/article-hero-knee-stiffness-resting.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -137,6 +137,7 @@ import thumbKneeLocationMap from "@/assets/guide-thumb-knee-location-map.jpg";
 import thumbRunnersKneeLocation from "@/assets/guide-thumb-runners-knee-location.jpg";
 import thumbItBandSyndrome from "@/assets/guide-thumb-it-band-syndrome.jpg";
 import thumbItBandDiagram from "@/assets/guide-thumb-it-band-diagram.jpg";
+import thumbKneeStiffnessResting from "@/assets/guide-thumb-knee-stiffness-resting.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -186,6 +187,7 @@ import {
   whyDoMyKneesHurtWhenSleeping,
   whyDoMyKneesCrackOrPop,
   kneePainAfterSittingCrossLegged,
+  kneeStiffnessAfterResting,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -254,6 +256,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "why-do-my-knees-hurt-when-sleeping": { headline: "Need soothing nighttime knee comfort support?", text: "FlexiKnee provides gentle warmth, red light, and vibration before bed, helping your knees feel relaxed and comfortable through the night." },
   "why-do-my-knees-crack-or-pop": { headline: "Want daily comfort support for your knee joints?", text: "FlexiKnee provides soothing warmth and gentle vibration to help keep your knees comfortable, flexible, and supported through everyday movements." },
   "knee-pain-after-sitting-cross-legged": { headline: "Need support for post-sitting knee comfort?", text: "FlexiKnee provides soothing warmth and gentle vibration to help your knees transition comfortably after prolonged sitting periods." },
+  "why-do-my-knees-feel-tight-after-resting": { headline: "Want to ease post-rest knee stiffness at home?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration to help your knees transition from rest to movement more comfortably." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7346,7 +7349,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7657,6 +7660,7 @@ const GuideArticle = () => {
                 "it-band-pain-location-diagram": thumbItBandDiagram,
                 "why-do-my-knees-crack-or-pop": thumbKneePainCauses,
                 "knee-pain-after-sitting-cross-legged": thumbBackKneeCommon,
+                "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
               };
 
               // Topic clusters for relevant recommendations
@@ -7733,6 +7737,7 @@ const GuideArticle = () => {
                 "it-band-pain-location-diagram": ["it-band-syndrome-explained", "side-knee-pain-comfort-guide", "running-knee-pain-guide"],
                 "why-do-my-knees-crack-or-pop": ["how-to-strengthen-knees", "front-knee-tightness-after-activity", "knee-warmth-daily-comfort"],
                 "knee-pain-after-sitting-cross-legged": ["back-of-knee-pain-common", "front-knee-tightness-after-activity", "how-to-strengthen-knees"],
+                "why-do-my-knees-feel-tight-after-resting": ["knee-pain-after-sitting-cross-legged", "why-do-my-knees-hurt-when-sleeping", "back-of-knee-pain-common"],
               };
 
               // Get topic-relevant articles (max 3)

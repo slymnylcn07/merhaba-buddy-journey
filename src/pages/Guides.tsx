@@ -64,6 +64,7 @@ import thumbItBandSyndrome from "@/assets/guide-thumb-it-band-syndrome.jpg";
 import thumbItBandDiagram from "@/assets/guide-thumb-it-band-diagram.jpg";
 import thumbKneeCrackingCrepitus from "@/assets/guide-thumb-knee-cracking-crepitus.jpg";
 import thumbKneePainSittingCrossLegged from "@/assets/guide-thumb-knee-pain-sitting-cross-legged.jpg";
+import thumbKneeStiffnessResting from "@/assets/guide-thumb-knee-stiffness-resting.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
@@ -125,6 +126,7 @@ const thumbnailMap: Record<string, string> = {
   "why-do-my-knees-hurt-when-sleeping": thumbNightKneePain,
   "why-do-my-knees-crack-or-pop": thumbKneeCrackingCrepitus,
   "knee-pain-after-sitting-cross-legged": thumbKneePainSittingCrossLegged,
+  "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
 };
 
 // Combine data with thumbnails
@@ -186,6 +188,9 @@ const activitySlugs = [
   "how-to-fix-knee-pain",
   "runners-knee-pain-location",
   "it-band-syndrome-explained",
+  "why-do-my-knees-crack-or-pop",
+  "knee-pain-after-sitting-cross-legged",
+  "why-do-my-knees-feel-tight-after-resting",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
