@@ -13,6 +13,8 @@ import thumbItBandSyndrome from "@/assets/guide-thumb-it-band-syndrome.jpg";
 import thumbItBandDiagram from "@/assets/guide-thumb-it-band-diagram.jpg";
 import thumbNightKneePain from "@/assets/guide-thumb-night-knee-pain-v3.jpg";
 import thumbSidePainExplained from "@/assets/guide-thumb-side-pain-explained.jpg";
+import thumbKneeCrackingCrepitus from "@/assets/guide-thumb-knee-cracking-crepitus.jpg";
+import thumbKneePainSittingCrossLegged from "@/assets/guide-thumb-knee-pain-sitting-cross-legged.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
@@ -26,6 +28,8 @@ const thumbnailMap: Record<string, string> = {
   "it-band-pain-location-diagram": thumbItBandDiagram,
   "why-do-my-knees-hurt-when-sleeping": thumbNightKneePain,
   "side-of-knee-pain-explained": thumbSidePainExplained,
+  "why-do-my-knees-crack-or-pop": thumbKneeCrackingCrepitus,
+  "knee-pain-after-sitting-cross-legged": thumbKneePainSittingCrossLegged,
 };
 
 // Get the 10 most recent guides (last 10 from the array)
