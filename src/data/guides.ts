@@ -417,6 +417,14 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-02-25",
   },
+  // New article - February 26, 2026
+  {
+    slug: "why-do-my-knees-feel-tight-after-resting",
+    title: "Why Do My Knees Feel Tight or Stiff After Resting?",
+    description: "Explore why knees feel tight or stiff after resting, sitting, or sleeping. Understand knee stiffness causes, morning tightness patterns, and daily comfort tips.",
+    readTime: 14,
+    lastModified: "2026-02-26",
+  },
 ];
 export const staticPages = [
   { path: "/", priority: 1.0, changefreq: "weekly" },

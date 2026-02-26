@@ -28,4 +28,5 @@ export { itBandPainLocationDiagram } from "./it-band-pain-location-diagram";
 export { whyDoMyKneesHurtWhenSleeping } from "./why-do-my-knees-hurt-when-sleeping";
 export { whyDoMyKneesCrackOrPop } from "./why-do-my-knees-crack-or-pop";
 export { kneePainAfterSittingCrossLegged } from "./knee-pain-after-sitting-cross-legged";
+export { kneeStiffnessAfterResting } from "./knee-stiffness-after-resting";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
