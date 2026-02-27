@@ -7621,17 +7621,21 @@ const GuideArticle = () => {
         <script id="ld-breadcrumb" type="application/ld+json">
           {JSON.stringify(breadcrumbJsonLd)}
         </script>
-        {faqJsonLd && (
+      </Helmet>
+      {faqJsonLd && (
+        <Helmet>
           <script id="ld-faq" type="application/ld+json">
             {JSON.stringify(faqJsonLd)}
           </script>
-        )}
-        {howToJsonLd && (
+        </Helmet>
+      )}
+      {howToJsonLd && (
+        <Helmet>
           <script id="ld-howto" type="application/ld+json">
             {JSON.stringify(howToJsonLd)}
           </script>
-        )}
-      </Helmet>
+        </Helmet>
+      )}
       
       <Header />
       
