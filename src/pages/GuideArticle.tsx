@@ -7615,19 +7615,19 @@ const GuideArticle = () => {
         <meta name="twitter:description" content={article.metaDescription} />
         <meta name="twitter:image" content={`https://flexi-knee.com${article.heroImage}`} />
         
-        <script type="application/ld+json">
+        <script id="ld-article" type="application/ld+json">
           {JSON.stringify(articleJsonLd)}
         </script>
-        <script type="application/ld+json">
+        <script id="ld-breadcrumb" type="application/ld+json">
           {JSON.stringify(breadcrumbJsonLd)}
         </script>
         {faqJsonLd && (
-          <script type="application/ld+json">
+          <script id="ld-faq" type="application/ld+json">
             {JSON.stringify(faqJsonLd)}
           </script>
         )}
         {howToJsonLd && (
-          <script type="application/ld+json">
+          <script id="ld-howto" type="application/ld+json">
             {JSON.stringify(howToJsonLd)}
           </script>
         )}
