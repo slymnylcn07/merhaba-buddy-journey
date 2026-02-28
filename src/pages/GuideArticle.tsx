@@ -82,6 +82,7 @@ import heroItBandSyndrome from "@/assets/article-hero-it-band-syndrome.jpg";
 import heroItBandDiagram from "@/assets/article-hero-it-band-diagram.jpg";
 import heroKneeStiffnessResting from "@/assets/article-hero-knee-stiffness-resting.jpg";
 import heroKneePainStanding from "@/assets/article-hero-knee-pain-standing.jpg";
+import heroBestRedLightKnee from "@/assets/article-hero-best-red-light-knee.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
