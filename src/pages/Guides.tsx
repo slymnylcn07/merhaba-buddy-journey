@@ -212,6 +212,7 @@ const methodsSlugs = [
   "heat-red-light-therapy-benefits-2026",
   "heat-or-ice-knee-pain-situations",
   "knee-warmth-daily-comfort",
+  "best-red-light-therapy-knee",
 ];
 
 // Category 4: Device Comparisons & Buying Guides
