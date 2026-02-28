@@ -193,6 +193,7 @@ import {
   kneePainAfterSittingCrossLegged,
   kneeStiffnessAfterResting,
   kneePainAfterStanding,
+  bestRedLightTherapyKnee,
 } from "@/data/articles";
 
 interface FAQItem {
