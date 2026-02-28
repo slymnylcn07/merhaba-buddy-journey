@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArticleData } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
+import heroImg from "@/assets/article-hero-knee-exercises.jpg";
 import exerciseStraightLegRaise from "@/assets/exercise-straight-leg-raise.jpg";
 import exerciseWallSit from "@/assets/exercise-wall-sit.jpg";
 import exerciseCalfRaise from "@/assets/exercise-calf-raise.jpg";
