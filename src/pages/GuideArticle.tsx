@@ -7810,6 +7810,10 @@ const GuideArticle = () => {
                 "why-do-my-knees-crack-or-pop": thumbKneePainCauses,
                 "knee-pain-after-sitting-cross-legged": thumbBackKneeCommon,
                 "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
+                "knee-pain-after-standing": thumbKneePainStanding,
+                "best-red-light-therapy-knee": thumbBestRedLightKnee,
+                "knee-pain-exercises-guide": thumbKneeExercises,
+                "what-causes-knee-pain-guide": thumbCauseKneePainNew,
               };
 
               // Topic clusters for relevant recommendations
