@@ -66,6 +66,7 @@ import thumbKneeCrackingCrepitus from "@/assets/guide-thumb-knee-cracking-crepit
 import thumbKneePainSittingCrossLegged from "@/assets/guide-thumb-knee-pain-sitting-cross-legged.jpg";
 import thumbKneeStiffnessResting from "@/assets/guide-thumb-knee-stiffness-resting.jpg";
 import thumbKneePainStanding from "@/assets/guide-thumb-knee-pain-standing.jpg";
+import thumbBestRedLightKnee from "@/assets/guide-thumb-best-red-light-knee.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "why-knee-pain-doesnt-go-away": thumbKneePain,
