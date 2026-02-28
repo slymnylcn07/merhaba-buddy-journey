@@ -306,10 +306,6 @@ const article: ArticleData = {
         If you're exploring at-home options, our guide on <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">strengthening knees for daily support</Link> covers how exercise and supportive tools work together. For those interested in heat-based approaches, our <Link to="/guides/heat-vs-red-light-therapy" className="text-primary hover:underline">heat vs. red light therapy comparison</Link> provides a balanced overview of both methods.
       </p>
 
-      <PremiumCTA
-        headline="Explore our smart knee therapy solutions"
-        text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device — designed for daily comfort before and after your knee exercise routine."
-      />
     </>
   ),
   faqs: [
