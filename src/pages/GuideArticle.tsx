@@ -7580,6 +7580,16 @@ const GuideArticle = () => {
         { name: "Apply Warmth if Stiff", text: "If knees feel stiff or tight after cross-legged sitting, apply warmth for 10-15 minutes to ease muscle tension around the joint." },
       ],
     },
+    "knee-pain-exercises-guide": {
+      name: "Daily Knee Exercise Routine for Strength and Mobility",
+      description: "A complete daily knee exercise routine combining strengthening and mobility exercises for everyday comfort.",
+      steps: [
+        { name: "Morning Warm-Up", text: "Do 10 gentle heel slides per leg and 10 ankle circles per foot while sitting on the bed. Apply warmth for 5-10 minutes if knees feel stiff." },
+        { name: "Strengthening Block", text: "Perform 2 sets each of straight leg raises (10-15 reps per leg), wall sits (10-30 second holds x 3), and glute bridges (10-15 reps). Focus on slow, controlled movement." },
+        { name: "Mobility Block", text: "Complete 2 sets of seated knee extensions (10 reps per leg), ankle circles (10 each direction per foot), and standing hamstring curls (10 reps per leg)." },
+        { name: "Evening Cool-Down", text: "End with gentle calf raises (15 reps) and heel slides (10 per leg). Follow with 10-15 minutes of warmth application to help muscles and joints relax before sleep." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];
