@@ -446,6 +446,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-02-28",
   },
+  {
+    slug: "what-causes-knee-pain-guide",
+    title: "What Causes Knee Pain? Reasons, Patterns & Tips",
+    description: "What causes knee pain? Learn common causes by location, sudden knee pain without injury, knee pain in females, and daily relief tips for lasting comfort.",
+    readTime: 16,
+    lastModified: "2026-02-28",
+  },
 ];
 
 export const staticPages = [
