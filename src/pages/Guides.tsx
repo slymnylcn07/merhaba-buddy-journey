@@ -177,6 +177,7 @@ const locationSlugs = [
   "knee-pain-locations-visual-guide",
   "knee-pain-location-map-2026",
   "it-band-pain-location-diagram",
+  "what-causes-knee-pain-guide",
 ];
 
 // Category 2: Knee Discomfort by Activity
