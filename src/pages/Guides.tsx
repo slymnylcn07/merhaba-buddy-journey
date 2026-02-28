@@ -197,6 +197,7 @@ const activitySlugs = [
   "knee-pain-after-sitting-cross-legged",
   "why-do-my-knees-feel-tight-after-resting",
   "knee-pain-after-standing",
+  "knee-pain-exercises-guide",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
