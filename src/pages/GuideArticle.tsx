@@ -7891,6 +7891,10 @@ const GuideArticle = () => {
                 "why-do-my-knees-crack-or-pop": ["how-to-strengthen-knees", "front-knee-tightness-after-activity", "knee-warmth-daily-comfort"],
                 "knee-pain-after-sitting-cross-legged": ["back-of-knee-pain-common", "front-knee-tightness-after-activity", "how-to-strengthen-knees"],
                 "why-do-my-knees-feel-tight-after-resting": ["knee-pain-after-sitting-cross-legged", "why-do-my-knees-hurt-when-sleeping", "back-of-knee-pain-common"],
+                "knee-pain-after-standing": ["front-knee-tightness-after-activity", "daily-knee-care-routine", "how-to-strengthen-knees"],
+                "best-red-light-therapy-knee": ["heat-red-light-therapy-benefits-2026", "red-light-therapy-for-knees", "heat-vs-red-light-therapy"],
+                "knee-pain-exercises-guide": ["how-to-strengthen-knees", "daily-knee-care-routine", "what-causes-knee-pain-guide"],
+                "what-causes-knee-pain-guide": ["pain-in-the-knee-causes-locations", "cause-of-knee-pain-patterns", "knee-pain-locations-visual-guide"],
               };
 
               // Get topic-relevant articles (max 3)
