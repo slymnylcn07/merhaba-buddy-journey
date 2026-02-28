@@ -263,10 +263,7 @@ export const whatCausesKneePain: ArticleExport = {
           <li><strong>Stay patient</strong> — lasting comfort improvements come from weeks of consistent habits, not one-time fixes</li>
         </ol>
 
-        <PremiumCTA
-          headline="Start your daily knee comfort routine today"
-          text="FlexiKnee makes it easy to incorporate warmth, red light, and gentle vibration into your daily routine — supporting your knees through every activity and life stage."
-        />
+
 
         <h2>Related Guides</h2>
         <ul>
