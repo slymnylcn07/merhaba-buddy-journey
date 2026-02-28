@@ -200,6 +200,7 @@ const activitySlugs = [
   "why-do-my-knees-feel-tight-after-resting",
   "knee-pain-after-standing",
   "knee-pain-exercises-guide",
+  "what-causes-knee-pain-guide",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
