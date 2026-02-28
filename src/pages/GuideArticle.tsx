@@ -145,6 +145,7 @@ import thumbKneeStiffnessResting from "@/assets/guide-thumb-knee-stiffness-resti
 import thumbKneePainStanding from "@/assets/guide-thumb-knee-pain-standing.jpg";
 import thumbBestRedLightKnee from "@/assets/guide-thumb-best-red-light-knee.jpg";
 import thumbKneeExercises from "@/assets/guide-thumb-knee-exercises.jpg";
+import thumbCauseKneePainNew from "@/assets/guide-thumb-cause-knee-pain-new.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
