@@ -83,6 +83,7 @@ import heroItBandDiagram from "@/assets/article-hero-it-band-diagram.jpg";
 import heroKneeStiffnessResting from "@/assets/article-hero-knee-stiffness-resting.jpg";
 import heroKneePainStanding from "@/assets/article-hero-knee-pain-standing.jpg";
 import heroBestRedLightKnee from "@/assets/article-hero-best-red-light-knee.jpg";
+import heroKneeExercises from "@/assets/article-hero-knee-exercises.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -142,6 +143,7 @@ import thumbItBandDiagram from "@/assets/guide-thumb-it-band-diagram.jpg";
 import thumbKneeStiffnessResting from "@/assets/guide-thumb-knee-stiffness-resting.jpg";
 import thumbKneePainStanding from "@/assets/guide-thumb-knee-pain-standing.jpg";
 import thumbBestRedLightKnee from "@/assets/guide-thumb-best-red-light-knee.jpg";
+import thumbKneeExercises from "@/assets/guide-thumb-knee-exercises.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -194,6 +196,7 @@ import {
   kneeStiffnessAfterResting,
   kneePainAfterStanding,
   bestRedLightTherapyKnee,
+  kneePainExercisesGuide,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -265,6 +268,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "why-do-my-knees-feel-tight-after-resting": { headline: "Want to ease post-rest knee stiffness at home?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration to help your knees transition from rest to movement more comfortably." },
   "knee-pain-after-standing": { headline: "Need knee comfort support after standing all day?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover after long periods on your feet." },
   "best-red-light-therapy-knee": { headline: "Looking for the best red light therapy for your knees?", text: "FlexiKnee combines red light wavelengths with adjustable warmth and gentle vibration in one wireless knee wrap for convenient daily comfort support." },
+  "knee-pain-exercises-guide": { headline: "Want to complement your exercises with daily comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration after workouts — helping your knees recover and stay comfortable as you build strength." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7356,7 +7360,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7574,6 +7578,16 @@ const GuideArticle = () => {
         { name: "Stretch After Uncrossing", text: "When you uncross your legs, do a gentle seated knee extension and hold for 10 seconds. Follow with a figure-four hip stretch to release tension." },
         { name: "Use Alternative Sitting Positions", text: "Try sitting with feet flat on the floor, using a cushion for hip elevation, or sitting in a supported reclined position instead." },
         { name: "Apply Warmth if Stiff", text: "If knees feel stiff or tight after cross-legged sitting, apply warmth for 10-15 minutes to ease muscle tension around the joint." },
+      ],
+    },
+    "knee-pain-exercises-guide": {
+      name: "Daily Knee Exercise Routine for Strength and Mobility",
+      description: "A complete daily knee exercise routine combining strengthening and mobility exercises for everyday comfort.",
+      steps: [
+        { name: "Morning Warm-Up", text: "Do 10 gentle heel slides per leg and 10 ankle circles per foot while sitting on the bed. Apply warmth for 5-10 minutes if knees feel stiff." },
+        { name: "Strengthening Block", text: "Perform 2 sets each of straight leg raises (10-15 reps per leg), wall sits (10-30 second holds x 3), and glute bridges (10-15 reps). Focus on slow, controlled movement." },
+        { name: "Mobility Block", text: "Complete 2 sets of seated knee extensions (10 reps per leg), ankle circles (10 each direction per foot), and standing hamstring curls (10 reps per leg)." },
+        { name: "Evening Cool-Down", text: "End with gentle calf raises (15 reps) and heel slides (10 per leg). Follow with 10-15 minutes of warmth application to help muscles and joints relax before sleep." },
       ],
     },
   };

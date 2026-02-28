@@ -439,6 +439,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-02-28",
   },
+  {
+    slug: "knee-pain-exercises-guide",
+    title: "Knee Pain Exercises: Strength, Mobility & Comfort",
+    description: "Best knee pain exercises for strength, mobility, and daily comfort. Straight leg raises, quad strengthening, ankle mobility, and a senior-friendly routine.",
+    readTime: 15,
+    lastModified: "2026-02-28",
+  },
 ];
 
 export const staticPages = [
