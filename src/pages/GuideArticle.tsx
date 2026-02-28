@@ -264,6 +264,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-pain-after-sitting-cross-legged": { headline: "Need support for post-sitting knee comfort?", text: "FlexiKnee provides soothing warmth and gentle vibration to help your knees transition comfortably after prolonged sitting periods." },
   "why-do-my-knees-feel-tight-after-resting": { headline: "Want to ease post-rest knee stiffness at home?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration to help your knees transition from rest to movement more comfortably." },
   "knee-pain-after-standing": { headline: "Need knee comfort support after standing all day?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover after long periods on your feet." },
+  "best-red-light-therapy-knee": { headline: "Looking for the best red light therapy for your knees?", text: "FlexiKnee combines red light wavelengths with adjustable warmth and gentle vibration in one wireless knee wrap for convenient daily comfort support." },
 };
 
 const articles: Record<string, ArticleData> = {
