@@ -68,6 +68,7 @@ import thumbKneeStiffnessResting from "@/assets/guide-thumb-knee-stiffness-resti
 import thumbKneePainStanding from "@/assets/guide-thumb-knee-pain-standing.jpg";
 import thumbBestRedLightKnee from "@/assets/guide-thumb-best-red-light-knee.jpg";
 import thumbKneeExercises from "@/assets/guide-thumb-knee-exercises.jpg";
+import thumbCauseKneePainNew from "@/assets/guide-thumb-cause-knee-pain-new.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "why-knee-pain-doesnt-go-away": thumbKneePain,
@@ -132,6 +133,7 @@ const thumbnailMap: Record<string, string> = {
   "knee-pain-after-standing": thumbKneePainStanding,
   "best-red-light-therapy-knee": thumbBestRedLightKnee,
   "knee-pain-exercises-guide": thumbKneeExercises,
+  "what-causes-knee-pain-guide": thumbCauseKneePainNew,
 };
 
 // Combine data with thumbnails
@@ -175,6 +177,7 @@ const locationSlugs = [
   "knee-pain-locations-visual-guide",
   "knee-pain-location-map-2026",
   "it-band-pain-location-diagram",
+  "what-causes-knee-pain-guide",
 ];
 
 // Category 2: Knee Discomfort by Activity
@@ -198,6 +201,7 @@ const activitySlugs = [
   "why-do-my-knees-feel-tight-after-resting",
   "knee-pain-after-standing",
   "knee-pain-exercises-guide",
+  "what-causes-knee-pain-guide",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort

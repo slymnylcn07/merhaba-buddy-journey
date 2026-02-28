@@ -32,4 +32,5 @@ export { kneeStiffnessAfterResting } from "./knee-stiffness-after-resting";
 export { kneePainAfterStanding } from "./knee-pain-after-standing";
 export { bestRedLightTherapyKnee } from "./best-red-light-therapy-knee";
 export { kneePainExercisesGuide } from "./knee-pain-exercises-guide";
+export { whatCausesKneePain } from "./what-causes-knee-pain";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
