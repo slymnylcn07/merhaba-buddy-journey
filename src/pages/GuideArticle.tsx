@@ -84,6 +84,7 @@ import heroKneeStiffnessResting from "@/assets/article-hero-knee-stiffness-resti
 import heroKneePainStanding from "@/assets/article-hero-knee-pain-standing.jpg";
 import heroBestRedLightKnee from "@/assets/article-hero-best-red-light-knee.jpg";
 import heroKneeExercises from "@/assets/article-hero-knee-exercises.jpg";
+import heroCauseKneePainNew from "@/assets/article-hero-cause-knee-pain-new.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
