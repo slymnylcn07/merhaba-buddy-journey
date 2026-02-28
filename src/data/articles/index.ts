@@ -30,4 +30,5 @@ export { whyDoMyKneesCrackOrPop } from "./why-do-my-knees-crack-or-pop";
 export { kneePainAfterSittingCrossLegged } from "./knee-pain-after-sitting-cross-legged";
 export { kneeStiffnessAfterResting } from "./knee-stiffness-after-resting";
 export { kneePainAfterStanding } from "./knee-pain-after-standing";
+export { bestRedLightTherapyKnee } from "./best-red-light-therapy-knee";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";

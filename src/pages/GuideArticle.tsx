@@ -82,6 +82,7 @@ import heroItBandSyndrome from "@/assets/article-hero-it-band-syndrome.jpg";
 import heroItBandDiagram from "@/assets/article-hero-it-band-diagram.jpg";
 import heroKneeStiffnessResting from "@/assets/article-hero-knee-stiffness-resting.jpg";
 import heroKneePainStanding from "@/assets/article-hero-knee-pain-standing.jpg";
+import heroBestRedLightKnee from "@/assets/article-hero-best-red-light-knee.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -140,6 +141,7 @@ import thumbItBandSyndrome from "@/assets/guide-thumb-it-band-syndrome.jpg";
 import thumbItBandDiagram from "@/assets/guide-thumb-it-band-diagram.jpg";
 import thumbKneeStiffnessResting from "@/assets/guide-thumb-knee-stiffness-resting.jpg";
 import thumbKneePainStanding from "@/assets/guide-thumb-knee-pain-standing.jpg";
+import thumbBestRedLightKnee from "@/assets/guide-thumb-best-red-light-knee.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -191,6 +193,7 @@ import {
   kneePainAfterSittingCrossLegged,
   kneeStiffnessAfterResting,
   kneePainAfterStanding,
+  bestRedLightTherapyKnee,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -261,6 +264,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-pain-after-sitting-cross-legged": { headline: "Need support for post-sitting knee comfort?", text: "FlexiKnee provides soothing warmth and gentle vibration to help your knees transition comfortably after prolonged sitting periods." },
   "why-do-my-knees-feel-tight-after-resting": { headline: "Want to ease post-rest knee stiffness at home?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration to help your knees transition from rest to movement more comfortably." },
   "knee-pain-after-standing": { headline: "Need knee comfort support after standing all day?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover after long periods on your feet." },
+  "best-red-light-therapy-knee": { headline: "Looking for the best red light therapy for your knees?", text: "FlexiKnee combines red light wavelengths with adjustable warmth and gentle vibration in one wireless knee wrap for convenient daily comfort support." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7352,7 +7356,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline

@@ -17,6 +17,7 @@ import thumbKneeCrackingCrepitus from "@/assets/guide-thumb-knee-cracking-crepit
 import thumbKneePainSittingCrossLegged from "@/assets/guide-thumb-knee-pain-sitting-cross-legged.jpg";
 import thumbKneeStiffnessResting from "@/assets/guide-thumb-knee-stiffness-resting.jpg";
 import thumbKneePainStanding from "@/assets/guide-thumb-knee-pain-standing.jpg";
+import thumbBestRedLightKnee from "@/assets/guide-thumb-best-red-light-knee.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "back-of-knee-pain-common": thumbBackKneeCommon,
@@ -33,6 +34,7 @@ const thumbnailMap: Record<string, string> = {
   "knee-pain-after-sitting-cross-legged": thumbKneePainSittingCrossLegged,
   "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
   "knee-pain-after-standing": thumbKneePainStanding,
+  "best-red-light-therapy-knee": thumbBestRedLightKnee,
 };
 
 // Get the 10 most recent guides (last 10 from the array)

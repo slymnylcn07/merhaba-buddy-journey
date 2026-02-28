@@ -66,6 +66,7 @@ import thumbKneeCrackingCrepitus from "@/assets/guide-thumb-knee-cracking-crepit
 import thumbKneePainSittingCrossLegged from "@/assets/guide-thumb-knee-pain-sitting-cross-legged.jpg";
 import thumbKneeStiffnessResting from "@/assets/guide-thumb-knee-stiffness-resting.jpg";
 import thumbKneePainStanding from "@/assets/guide-thumb-knee-pain-standing.jpg";
+import thumbBestRedLightKnee from "@/assets/guide-thumb-best-red-light-knee.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "why-knee-pain-doesnt-go-away": thumbKneePain,
@@ -128,6 +129,7 @@ const thumbnailMap: Record<string, string> = {
   "knee-pain-after-sitting-cross-legged": thumbKneePainSittingCrossLegged,
   "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
   "knee-pain-after-standing": thumbKneePainStanding,
+  "best-red-light-therapy-knee": thumbBestRedLightKnee,
 };
 
 // Combine data with thumbnails
@@ -210,6 +212,7 @@ const methodsSlugs = [
   "heat-red-light-therapy-benefits-2026",
   "heat-or-ice-knee-pain-situations",
   "knee-warmth-daily-comfort",
+  "best-red-light-therapy-knee",
 ];
 
 // Category 4: Device Comparisons & Buying Guides
