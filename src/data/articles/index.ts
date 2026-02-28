@@ -31,4 +31,5 @@ export { kneePainAfterSittingCrossLegged } from "./knee-pain-after-sitting-cross
 export { kneeStiffnessAfterResting } from "./knee-stiffness-after-resting";
 export { kneePainAfterStanding } from "./knee-pain-after-standing";
 export { bestRedLightTherapyKnee } from "./best-red-light-therapy-knee";
+export { kneePainExercisesGuide } from "./knee-pain-exercises-guide";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";

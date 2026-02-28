@@ -268,6 +268,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "why-do-my-knees-feel-tight-after-resting": { headline: "Want to ease post-rest knee stiffness at home?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration to help your knees transition from rest to movement more comfortably." },
   "knee-pain-after-standing": { headline: "Need knee comfort support after standing all day?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover after long periods on your feet." },
   "best-red-light-therapy-knee": { headline: "Looking for the best red light therapy for your knees?", text: "FlexiKnee combines red light wavelengths with adjustable warmth and gentle vibration in one wireless knee wrap for convenient daily comfort support." },
+  "knee-pain-exercises-guide": { headline: "Want to complement your exercises with daily comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration after workouts — helping your knees recover and stay comfortable as you build strength." },
 };
 
 const articles: Record<string, ArticleData> = {
