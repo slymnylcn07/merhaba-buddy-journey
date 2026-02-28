@@ -131,6 +131,7 @@ const thumbnailMap: Record<string, string> = {
   "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
   "knee-pain-after-standing": thumbKneePainStanding,
   "best-red-light-therapy-knee": thumbBestRedLightKnee,
+  "knee-pain-exercises-guide": thumbKneeExercises,
 };
 
 // Combine data with thumbnails
