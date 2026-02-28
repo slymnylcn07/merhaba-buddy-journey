@@ -141,6 +141,7 @@ import thumbItBandSyndrome from "@/assets/guide-thumb-it-band-syndrome.jpg";
 import thumbItBandDiagram from "@/assets/guide-thumb-it-band-diagram.jpg";
 import thumbKneeStiffnessResting from "@/assets/guide-thumb-knee-stiffness-resting.jpg";
 import thumbKneePainStanding from "@/assets/guide-thumb-knee-pain-standing.jpg";
+import thumbBestRedLightKnee from "@/assets/guide-thumb-best-red-light-knee.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
