@@ -34,6 +34,7 @@ const thumbnailMap: Record<string, string> = {
   "knee-pain-after-sitting-cross-legged": thumbKneePainSittingCrossLegged,
   "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
   "knee-pain-after-standing": thumbKneePainStanding,
+  "best-red-light-therapy-knee": thumbBestRedLightKnee,
 };
 
 // Get the 10 most recent guides (last 10 from the array)

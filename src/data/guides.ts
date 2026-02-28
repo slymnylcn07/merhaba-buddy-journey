@@ -432,6 +432,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-02-26",
   },
+  {
+    slug: "best-red-light-therapy-knee",
+    title: "Best Red Light Therapy for Knee Pain (2026 Guide)",
+    description: "Discover the best red light therapy for knee pain. Learn how it works, benefits for arthritis and joint pain, device types, and realistic expectations.",
+    readTime: 14,
+    lastModified: "2026-02-28",
+  },
 ];
 
 export const staticPages = [
