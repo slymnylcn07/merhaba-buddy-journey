@@ -16,7 +16,7 @@ const article: ArticleData = {
   intro: "Whether you're dealing with morning stiffness, post-activity soreness, or age-related knee discomfort, the right exercises can make a meaningful difference. This comprehensive guide covers the best knee pain exercises for strengthening, mobility, and daily comfort — with step-by-step illustrations and a senior-friendly routine.",
   metaTitle: "Knee Pain Exercises: Strength & Mobility Guide (2026)",
   metaDescription: "Best knee pain exercises for strength, mobility, and daily comfort. Includes straight leg raises, quadriceps strengthening, ankle mobility, and a senior-friendly routine.",
-  heroImage: "",
+  heroImage: heroImg,
   publishedDate: "February 28, 2026",
   nextSlug: "how-to-strengthen-knees",
   nextTitle: "How to Strengthen Knees",
