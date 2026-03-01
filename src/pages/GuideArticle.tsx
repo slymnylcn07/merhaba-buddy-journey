@@ -280,6 +280,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-pain-exercises-guide": { headline: "Want to complement your exercises with daily comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration after workouts — helping your knees recover and stay comfortable as you build strength." },
   "what-causes-knee-pain-guide": { headline: "Understanding your knee pain causes? Support your knees daily", text: "FlexiKnee delivers soothing warmth, red light, and gentle vibration to the entire knee area — designed for daily comfort support no matter the cause of your discomfort." },
   "knee-pain-after-40": { headline: "Want daily comfort support for aging knees?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device — designed for adults over 40 who want consistent daily knee comfort support." },
+  "why-knee-pain-gets-worse-with-age": { headline: "Support your aging joints with daily comfort", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device, helping you manage age-related knee changes with a simple daily routine." },
 };
 
 const articles: Record<string, ArticleData> = {
