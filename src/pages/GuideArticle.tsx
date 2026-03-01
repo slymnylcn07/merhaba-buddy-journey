@@ -74,7 +74,7 @@ import heroFrontKneeTightness from "@/assets/article-hero-front-knee-tightness.j
 import heroKneeLowerBodyConnection from "@/assets/article-hero-knee-lower-body-connection-v2.jpg";
 import heroBelowKneeDiscomfort from "@/assets/article-hero-below-knee-discomfort.jpg";
 import heroBackKneeCommon from "@/assets/article-hero-back-knee-common.jpg";
-import heroSmartMassagersBreakdown from "@/assets/article-hero-smart-massagers-breakdown.jpg";
+import heroSmartMassagersBreakdown from "@/assets/article-hero-smart-massagers-breakdown-new.jpg";
 import heroKneeWarmthDaily from "@/assets/article-hero-knee-warmth-daily.jpg";
 import heroKneePainLocations from "@/assets/article-hero-knee-pain-locations.jpg";
 import heroRunnersKneeLocation from "@/assets/article-hero-runners-knee-location.jpg";
