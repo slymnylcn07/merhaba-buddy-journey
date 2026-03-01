@@ -139,6 +139,7 @@ const thumbnailMap: Record<string, string> = {
   "what-causes-knee-pain-guide": thumbCauseKneePainNew,
   "knee-pain-after-40": thumbKneePainAfter40,
   "why-knee-pain-gets-worse-with-age": thumbJointAgingChanges,
+  "morning-knee-stiffness-after-40": thumbMorningStiffness40s,
 };
 
 // Combine data with thumbnails
