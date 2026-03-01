@@ -70,8 +70,8 @@ export const kneePainAfter40: ArticleExport = {
 
         <figure className="my-8">
           <img
-            src={heroImage}
-            alt="Educational diagram showing knee joint aging process with cartilage changes"
+            src={diagramAgingComparison}
+            alt="Comparison diagram showing healthy knee joint versus aging knee joint with cartilage and fluid changes"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
