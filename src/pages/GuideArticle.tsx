@@ -7818,6 +7818,7 @@ const GuideArticle = () => {
                 "best-red-light-therapy-knee": thumbBestRedLightKnee,
                 "knee-pain-exercises-guide": thumbKneeExercises,
                 "what-causes-knee-pain-guide": thumbCauseKneePainNew,
+                "knee-pain-after-40": thumbKneePainAfter40,
               };
 
               // Topic clusters for relevant recommendations
