@@ -208,6 +208,7 @@ import {
   whatCausesKneePain,
   kneePainAfter40,
   whyKneePainGetsWorseWithAge,
+  morningKneeStiffnessAfter40,
 } from "@/data/articles";
 
 interface FAQItem {
