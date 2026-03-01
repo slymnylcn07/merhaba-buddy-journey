@@ -257,11 +257,6 @@ export const whyKneePainGetsWorseWithAge: ArticleExport = {
         <p>
           Whether you are in your 40s noticing the first signs of change or in your 50s managing daily stiffness, the strategies outlined in this guide can help you maintain comfort and function for decades to come. For a deeper look at age-specific patterns, explore our guide on <Link to="/guides/knee-pain-after-40" className="text-primary hover:underline">knee pain after age 40 and 50</Link>.
         </p>
-
-        <PremiumCTA
-          headline="Support your aging joints with daily warmth"
-          text="FlexiKnee delivers soothing warmth, red light, and gentle vibration to help your knees feel comfortable and supported through everyday activities."
-        />
       </>
     ),
   },
