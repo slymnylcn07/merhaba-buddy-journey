@@ -1,6 +1,7 @@
 import { ArticleExport } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-knee-pain-after-40.jpg";
+import diagramAgingComparison from "@/assets/diagram-knee-aging-comparison.jpg";
 import sectionMorningStiffness from "@/assets/article-section-morning-stiffness-40s.jpg";
 import sectionDailyComfort from "@/assets/article-section-daily-comfort-routine-40s.jpg";
 import { InfoBox, StatHighlight, TipsList, RelatedGuideCard } from "@/components/ArticleCharts";
@@ -69,8 +70,8 @@ export const kneePainAfter40: ArticleExport = {
 
         <figure className="my-8">
           <img
-            src={heroImage}
-            alt="Educational diagram showing knee joint aging process with cartilage changes"
+            src={diagramAgingComparison}
+            alt="Comparison diagram showing healthy knee joint versus aging knee joint with cartilage and fluid changes"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
