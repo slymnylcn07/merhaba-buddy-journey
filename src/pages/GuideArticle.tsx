@@ -7823,6 +7823,7 @@ const GuideArticle = () => {
                 "knee-pain-exercises-guide": thumbKneeExercises,
                 "what-causes-knee-pain-guide": thumbCauseKneePainNew,
                 "knee-pain-after-40": thumbKneePainAfter40,
+                "why-knee-pain-gets-worse-with-age": thumbJointAgingChanges,
               };
 
               // Topic clusters for relevant recommendations
