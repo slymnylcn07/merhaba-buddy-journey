@@ -200,6 +200,7 @@ import {
   bestRedLightTherapyKnee,
   kneePainExercisesGuide,
   whatCausesKneePain,
+  kneePainAfter40,
 } from "@/data/articles";
 
 interface FAQItem {
