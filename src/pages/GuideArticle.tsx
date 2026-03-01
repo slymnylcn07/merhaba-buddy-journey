@@ -7905,6 +7905,7 @@ const GuideArticle = () => {
                 "knee-pain-exercises-guide": ["how-to-strengthen-knees", "daily-knee-care-routine", "what-causes-knee-pain-guide"],
                 "what-causes-knee-pain-guide": ["pain-in-the-knee-causes-locations", "cause-of-knee-pain-patterns", "knee-pain-locations-visual-guide"],
                 "knee-pain-after-40": ["what-causes-knee-pain-guide", "why-do-my-knees-feel-tight-after-resting", "knee-arthritis-pain-guide"],
+                "why-knee-pain-gets-worse-with-age": ["knee-pain-after-40", "why-do-my-knees-crack-or-pop", "how-to-strengthen-knees"],
               };
 
               // Get topic-relevant articles (max 3)
