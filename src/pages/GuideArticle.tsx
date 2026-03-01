@@ -87,6 +87,7 @@ import heroKneeExercises from "@/assets/article-hero-knee-exercises.jpg";
 import heroCauseKneePainNew from "@/assets/article-hero-cause-knee-pain-new.jpg";
 import heroKneePainAfter40 from "@/assets/article-hero-knee-pain-after-40.jpg";
 import heroJointAgingChanges from "@/assets/article-hero-joint-aging-changes.jpg";
+import heroMorningStiffness40s from "@/assets/article-hero-morning-stiffness-40s-v2.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
