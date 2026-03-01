@@ -74,7 +74,7 @@ import heroFrontKneeTightness from "@/assets/article-hero-front-knee-tightness.j
 import heroKneeLowerBodyConnection from "@/assets/article-hero-knee-lower-body-connection-v2.jpg";
 import heroBelowKneeDiscomfort from "@/assets/article-hero-below-knee-discomfort.jpg";
 import heroBackKneeCommon from "@/assets/article-hero-back-knee-common.jpg";
-import heroSmartMassagersBreakdown from "@/assets/device-branded.jpg";
+import heroSmartMassagersBreakdown from "@/assets/article-hero-smart-massagers-breakdown-v3.jpg";
 import heroKneeWarmthDaily from "@/assets/article-hero-knee-warmth-daily.jpg";
 import heroKneePainLocations from "@/assets/article-hero-knee-pain-locations.jpg";
 import heroRunnersKneeLocation from "@/assets/article-hero-runners-knee-location.jpg";
@@ -7622,7 +7622,6 @@ const GuideArticle = () => {
     })),
   } : null;
 
-  const useContainedHero = article.slug === "smart-knee-massagers-breakdown";
 
   return (
     <>
@@ -7688,11 +7687,8 @@ const GuideArticle = () => {
         <section className="relative">
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-background z-10" />
           <div 
-            className={`h-[40vh] md:h-[50vh] bg-no-repeat ${useContainedHero ? "bg-contain bg-center" : "bg-cover bg-center"}`}
-            style={{ 
-              backgroundImage: `url(${article.heroImage})`,
-              backgroundColor: useContainedHero ? "hsl(var(--muted))" : undefined,
-            }}
+            className="h-[40vh] md:h-[50vh] bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${article.heroImage})` }}
           />
         </section>
 
