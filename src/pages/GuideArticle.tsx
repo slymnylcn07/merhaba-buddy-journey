@@ -7900,6 +7900,7 @@ const GuideArticle = () => {
                 "best-red-light-therapy-knee": ["heat-red-light-therapy-benefits-2026", "red-light-therapy-for-knees", "heat-vs-red-light-therapy"],
                 "knee-pain-exercises-guide": ["how-to-strengthen-knees", "daily-knee-care-routine", "what-causes-knee-pain-guide"],
                 "what-causes-knee-pain-guide": ["pain-in-the-knee-causes-locations", "cause-of-knee-pain-patterns", "knee-pain-locations-visual-guide"],
+                "knee-pain-after-40": ["what-causes-knee-pain-guide", "why-do-my-knees-feel-tight-after-resting", "knee-arthritis-pain-guide"],
               };
 
               // Get topic-relevant articles (max 3)
