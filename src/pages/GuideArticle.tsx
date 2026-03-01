@@ -7622,7 +7622,6 @@ const GuideArticle = () => {
     })),
   } : null;
 
-  const useContainedHero = article.slug === "smart-knee-massagers-breakdown";
 
   return (
     <>
