@@ -460,6 +460,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-01",
   },
+  {
+    slug: "why-knee-pain-gets-worse-with-age",
+    title: "Why Knee Pain Gets Worse With Age: Explained",
+    description: "Understand why knee pain gets worse with age. Learn about cartilage thinning, fluid loss, muscle changes, and daily habits that protect aging knees.",
+    readTime: 16,
+    lastModified: "2026-03-01",
+  },
 ];
 
 export const staticPages = [

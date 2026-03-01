@@ -70,6 +70,7 @@ import thumbBestRedLightKnee from "@/assets/guide-thumb-best-red-light-knee.jpg"
 import thumbKneeExercises from "@/assets/guide-thumb-knee-exercises.jpg";
 import thumbCauseKneePainNew from "@/assets/guide-thumb-cause-knee-pain-new.jpg";
 import thumbKneePainAfter40 from "@/assets/guide-thumb-knee-pain-after-40.jpg";
+import thumbJointAgingChanges from "@/assets/guide-thumb-joint-aging-changes.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "why-knee-pain-doesnt-go-away": thumbKneePain,
@@ -136,6 +137,7 @@ const thumbnailMap: Record<string, string> = {
   "knee-pain-exercises-guide": thumbKneeExercises,
   "what-causes-knee-pain-guide": thumbCauseKneePainNew,
   "knee-pain-after-40": thumbKneePainAfter40,
+  "why-knee-pain-gets-worse-with-age": thumbJointAgingChanges,
 };
 
 // Combine data with thumbnails
@@ -205,6 +207,7 @@ const activitySlugs = [
   "knee-pain-exercises-guide",
   "what-causes-knee-pain-guide",
   "knee-pain-after-40",
+  "why-knee-pain-gets-worse-with-age",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
