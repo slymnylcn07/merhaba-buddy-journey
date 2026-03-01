@@ -467,6 +467,13 @@ export const guidesData: GuideData[] = [
     readTime: 16,
     lastModified: "2026-03-01",
   },
+  {
+    slug: "morning-knee-stiffness-after-40",
+    title: "Morning Knee Stiffness After 40: Causes & Relief",
+    description: "Why do knees feel stiff every morning after 40? Learn the causes of morning knee stiffness, what happens during sleep, and simple daily habits for relief.",
+    readTime: 14,
+    lastModified: "2026-03-01",
+  },
 ];
 
 export const staticPages = [
