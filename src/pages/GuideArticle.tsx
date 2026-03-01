@@ -7688,8 +7688,11 @@ const GuideArticle = () => {
         <section className="relative">
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-background z-10" />
           <div 
-            className="h-[40vh] md:h-[50vh] bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${article.heroImage})` }}
+            className={`h-[40vh] md:h-[50vh] bg-no-repeat ${useContainedHero ? "bg-contain bg-center" : "bg-cover bg-center"}`}
+            style={{ 
+              backgroundImage: `url(${article.heroImage})`,
+              backgroundColor: useContainedHero ? "hsl(var(--muted))" : undefined,
+            }}
           />
         </section>
 
