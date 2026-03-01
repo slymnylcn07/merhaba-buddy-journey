@@ -204,6 +204,7 @@ const activitySlugs = [
   "knee-pain-after-standing",
   "knee-pain-exercises-guide",
   "what-causes-knee-pain-guide",
+  "knee-pain-after-40",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
