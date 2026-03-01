@@ -276,6 +276,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "best-red-light-therapy-knee": { headline: "Looking for the best red light therapy for your knees?", text: "FlexiKnee combines red light wavelengths with adjustable warmth and gentle vibration in one wireless knee wrap for convenient daily comfort support." },
   "knee-pain-exercises-guide": { headline: "Want to complement your exercises with daily comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration after workouts — helping your knees recover and stay comfortable as you build strength." },
   "what-causes-knee-pain-guide": { headline: "Understanding your knee pain causes? Support your knees daily", text: "FlexiKnee delivers soothing warmth, red light, and gentle vibration to the entire knee area — designed for daily comfort support no matter the cause of your discomfort." },
+  "knee-pain-after-40": { headline: "Want daily comfort support for aging knees?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device — designed for adults over 40 who want consistent daily knee comfort support." },
 };
 
 const articles: Record<string, ArticleData> = {
