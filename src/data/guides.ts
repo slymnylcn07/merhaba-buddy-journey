@@ -453,6 +453,13 @@ export const guidesData: GuideData[] = [
     readTime: 16,
     lastModified: "2026-02-28",
   },
+  {
+    slug: "knee-pain-after-40",
+    title: "Knee Pain After 40 & 50: Why It Happens & Daily Tips",
+    description: "Why does knee pain increase after 40 and 50? Learn about age-related joint changes, morning stiffness patterns, and daily habits that support lasting knee comfort.",
+    readTime: 15,
+    lastModified: "2026-03-01",
+  },
 ];
 
 export const staticPages = [

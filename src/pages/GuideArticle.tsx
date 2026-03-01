@@ -85,6 +85,7 @@ import heroKneePainStanding from "@/assets/article-hero-knee-pain-standing.jpg";
 import heroBestRedLightKnee from "@/assets/article-hero-best-red-light-knee.jpg";
 import heroKneeExercises from "@/assets/article-hero-knee-exercises.jpg";
 import heroCauseKneePainNew from "@/assets/article-hero-cause-knee-pain-new.jpg";
+import heroKneePainAfter40 from "@/assets/article-hero-knee-pain-after-40.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -146,6 +147,7 @@ import thumbKneePainStanding from "@/assets/guide-thumb-knee-pain-standing.jpg";
 import thumbBestRedLightKnee from "@/assets/guide-thumb-best-red-light-knee.jpg";
 import thumbKneeExercises from "@/assets/guide-thumb-knee-exercises.jpg";
 import thumbCauseKneePainNew from "@/assets/guide-thumb-cause-knee-pain-new.jpg";
+import thumbKneePainAfter40 from "@/assets/guide-thumb-knee-pain-after-40.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -200,6 +202,7 @@ import {
   bestRedLightTherapyKnee,
   kneePainExercisesGuide,
   whatCausesKneePain,
+  kneePainAfter40,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -273,6 +276,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "best-red-light-therapy-knee": { headline: "Looking for the best red light therapy for your knees?", text: "FlexiKnee combines red light wavelengths with adjustable warmth and gentle vibration in one wireless knee wrap for convenient daily comfort support." },
   "knee-pain-exercises-guide": { headline: "Want to complement your exercises with daily comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration after workouts — helping your knees recover and stay comfortable as you build strength." },
   "what-causes-knee-pain-guide": { headline: "Understanding your knee pain causes? Support your knees daily", text: "FlexiKnee delivers soothing warmth, red light, and gentle vibration to the entire knee area — designed for daily comfort support no matter the cause of your discomfort." },
+  "knee-pain-after-40": { headline: "Want daily comfort support for aging knees?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device — designed for adults over 40 who want consistent daily knee comfort support." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7364,7 +7368,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7814,6 +7818,7 @@ const GuideArticle = () => {
                 "best-red-light-therapy-knee": thumbBestRedLightKnee,
                 "knee-pain-exercises-guide": thumbKneeExercises,
                 "what-causes-knee-pain-guide": thumbCauseKneePainNew,
+                "knee-pain-after-40": thumbKneePainAfter40,
               };
 
               // Topic clusters for relevant recommendations
@@ -7895,6 +7900,7 @@ const GuideArticle = () => {
                 "best-red-light-therapy-knee": ["heat-red-light-therapy-benefits-2026", "red-light-therapy-for-knees", "heat-vs-red-light-therapy"],
                 "knee-pain-exercises-guide": ["how-to-strengthen-knees", "daily-knee-care-routine", "what-causes-knee-pain-guide"],
                 "what-causes-knee-pain-guide": ["pain-in-the-knee-causes-locations", "cause-of-knee-pain-patterns", "knee-pain-locations-visual-guide"],
+                "knee-pain-after-40": ["what-causes-knee-pain-guide", "why-do-my-knees-feel-tight-after-resting", "knee-arthritis-pain-guide"],
               };
 
               // Get topic-relevant articles (max 3)
