@@ -207,6 +207,7 @@ const activitySlugs = [
   "knee-pain-exercises-guide",
   "what-causes-knee-pain-guide",
   "knee-pain-after-40",
+  "why-knee-pain-gets-worse-with-age",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
