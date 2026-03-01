@@ -33,4 +33,5 @@ export { kneePainAfterStanding } from "./knee-pain-after-standing";
 export { bestRedLightTherapyKnee } from "./best-red-light-therapy-knee";
 export { kneePainExercisesGuide } from "./knee-pain-exercises-guide";
 export { whatCausesKneePain } from "./what-causes-knee-pain";
+export { kneePainAfter40 } from "./knee-pain-after-40";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
