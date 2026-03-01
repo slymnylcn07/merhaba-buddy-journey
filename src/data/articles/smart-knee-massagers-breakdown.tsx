@@ -1,7 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
-import heroImage from "@/assets/device-branded.jpg";
+import heroImage from "@/assets/article-hero-smart-massagers-breakdown-v3.jpg";
 
 export const smartKneeMassagersBreakdown: ArticleExport = {
   cta: "",
