@@ -1,6 +1,7 @@
 import { ArticleExport } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-knee-pain-after-40.jpg";
+import diagramAgingComparison from "@/assets/diagram-knee-aging-comparison.jpg";
 import sectionMorningStiffness from "@/assets/article-section-morning-stiffness-40s.jpg";
 import sectionDailyComfort from "@/assets/article-section-daily-comfort-routine-40s.jpg";
 import { InfoBox, StatHighlight, TipsList, RelatedGuideCard } from "@/components/ArticleCharts";
