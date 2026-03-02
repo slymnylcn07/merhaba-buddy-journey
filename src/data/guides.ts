@@ -474,6 +474,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-01",
   },
+  {
+    slug: "knee-pain-getting-up-after-sitting",
+    title: "Knee Pain Getting Up After Sitting: Causes & Tips",
+    description: "Why do knees hurt when standing up after sitting? Learn age-related causes of knee stiffness after sitting, first-movement pain, and daily relief strategies.",
+    readTime: 15,
+    lastModified: "2026-03-02",
+  },
 ];
 
 export const staticPages = [
