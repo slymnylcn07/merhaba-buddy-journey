@@ -259,10 +259,6 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
           year="2025"
         />
 
-        <PremiumCTA
-          headline="Support your daily knee comfort routine"
-          text="FlexiKnee combines soothing warmth, red light therapy, and gentle vibration to help your knees feel more comfortable during daily transitions from sitting to standing."
-        />
 
         <h2>When to Consider Professional Guidance</h2>
         <p>
