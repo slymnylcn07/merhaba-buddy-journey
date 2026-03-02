@@ -481,6 +481,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-02",
   },
+  {
+    slug: "knee-pain-after-long-walks",
+    title: "Why Knees Hurt After Long Walks Over 40: Causes & Relief",
+    description: "Why do knees hurt after long walks? Learn walking biomechanics changes after 40, inner vs outer knee pain, and daily at-home relief strategies.",
+    readTime: 15,
+    lastModified: "2026-03-02",
+  },
 ];
 
 export const staticPages = [

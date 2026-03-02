@@ -89,6 +89,7 @@ import heroKneePainAfter40 from "@/assets/article-hero-knee-pain-after-40.jpg";
 import heroJointAgingChanges from "@/assets/article-hero-joint-aging-changes.jpg";
 import heroMorningStiffness40s from "@/assets/article-hero-morning-stiffness-40s-v2.jpg";
 import heroKneePainGettingUpSitting from "@/assets/article-hero-knee-pain-getting-up-sitting.jpg";
+import heroKneePainLongWalks from "@/assets/article-hero-knee-pain-long-walks.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -154,6 +155,7 @@ import thumbKneePainAfter40 from "@/assets/guide-thumb-knee-pain-after-40.jpg";
 import thumbJointAgingChanges from "@/assets/guide-thumb-joint-aging-changes.jpg";
 import thumbMorningStiffness40s from "@/assets/guide-thumb-morning-stiffness-40s.jpg";
 import thumbKneePainGettingUpSitting from "@/assets/guide-thumb-knee-pain-getting-up-sitting.jpg";
+import thumbKneePainLongWalks from "@/assets/guide-thumb-knee-pain-long-walks.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
