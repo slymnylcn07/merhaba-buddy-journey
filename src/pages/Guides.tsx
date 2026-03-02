@@ -72,6 +72,9 @@ import thumbCauseKneePainNew from "@/assets/guide-thumb-cause-knee-pain-new.jpg"
 import thumbKneePainAfter40 from "@/assets/guide-thumb-knee-pain-after-40.jpg";
 import thumbJointAgingChanges from "@/assets/guide-thumb-joint-aging-changes.jpg";
 import thumbMorningStiffness40s from "@/assets/guide-thumb-morning-stiffness-40s.jpg";
+import thumbKneePainGettingUpSitting from "@/assets/guide-thumb-knee-pain-getting-up-sitting.jpg";
+import thumbKneePainLongWalks from "@/assets/guide-thumb-knee-pain-long-walks.jpg";
+import thumbKneeMobilityAfter50 from "@/assets/guide-thumb-knee-mobility-after-50.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "why-knee-pain-doesnt-go-away": thumbKneePain,
@@ -140,6 +143,9 @@ const thumbnailMap: Record<string, string> = {
   "knee-pain-after-40": thumbKneePainAfter40,
   "why-knee-pain-gets-worse-with-age": thumbJointAgingChanges,
   "morning-knee-stiffness-after-40": thumbMorningStiffness40s,
+  "knee-pain-getting-up-after-sitting": thumbKneePainGettingUpSitting,
+  "knee-pain-after-long-walks": thumbKneePainLongWalks,
+  "knee-mobility-after-50": thumbKneeMobilityAfter50,
 };
 
 // Combine data with thumbnails
