@@ -20,6 +20,12 @@ import thumbKneePainStanding from "@/assets/guide-thumb-knee-pain-standing.jpg";
 import thumbBestRedLightKnee from "@/assets/guide-thumb-best-red-light-knee.jpg";
 import thumbKneeExercises from "@/assets/guide-thumb-knee-exercises.jpg";
 import thumbCauseKneePainNew from "@/assets/guide-thumb-cause-knee-pain-new.jpg";
+import thumbKneePainAfter40 from "@/assets/guide-thumb-knee-pain-after-40.jpg";
+import thumbJointAgingChanges from "@/assets/guide-thumb-joint-aging-changes.jpg";
+import thumbMorningStiffness40s from "@/assets/guide-thumb-morning-stiffness-40s.jpg";
+import thumbKneePainGettingUpSitting from "@/assets/guide-thumb-knee-pain-getting-up-sitting.jpg";
+import thumbKneePainLongWalks from "@/assets/guide-thumb-knee-pain-long-walks.jpg";
+import thumbKneeMobilityAfter50 from "@/assets/guide-thumb-knee-mobility-after-50.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "back-of-knee-pain-common": thumbBackKneeCommon,
@@ -39,6 +45,12 @@ const thumbnailMap: Record<string, string> = {
   "best-red-light-therapy-knee": thumbBestRedLightKnee,
   "knee-pain-exercises-guide": thumbKneeExercises,
   "what-causes-knee-pain-guide": thumbCauseKneePainNew,
+  "knee-pain-after-40": thumbKneePainAfter40,
+  "why-knee-pain-gets-worse-with-age": thumbJointAgingChanges,
+  "morning-knee-stiffness-after-40": thumbMorningStiffness40s,
+  "knee-pain-getting-up-after-sitting": thumbKneePainGettingUpSitting,
+  "knee-pain-after-long-walks": thumbKneePainLongWalks,
+  "knee-mobility-after-50": thumbKneeMobilityAfter50,
 };
 
 // Get the 10 most recent guides (last 10 from the array)
