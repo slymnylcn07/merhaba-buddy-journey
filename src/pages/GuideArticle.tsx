@@ -7833,6 +7833,8 @@ const GuideArticle = () => {
                 "what-causes-knee-pain-guide": thumbCauseKneePainNew,
                 "knee-pain-after-40": thumbKneePainAfter40,
                 "why-knee-pain-gets-worse-with-age": thumbJointAgingChanges,
+                "morning-knee-stiffness-after-40": thumbMorningStiffness40s,
+                "knee-pain-getting-up-after-sitting": thumbKneePainGettingUpSitting,
               };
 
               // Topic clusters for relevant recommendations
@@ -7916,6 +7918,8 @@ const GuideArticle = () => {
                 "what-causes-knee-pain-guide": ["pain-in-the-knee-causes-locations", "cause-of-knee-pain-patterns", "knee-pain-locations-visual-guide"],
                 "knee-pain-after-40": ["what-causes-knee-pain-guide", "why-do-my-knees-feel-tight-after-resting", "knee-arthritis-pain-guide"],
                 "why-knee-pain-gets-worse-with-age": ["knee-pain-after-40", "why-do-my-knees-crack-or-pop", "how-to-strengthen-knees"],
+                "morning-knee-stiffness-after-40": ["knee-pain-after-40", "why-do-my-knees-feel-tight-after-resting", "knee-pain-getting-up-after-sitting"],
+                "knee-pain-getting-up-after-sitting": ["why-do-my-knees-feel-tight-after-resting", "knee-pain-after-sitting-cross-legged", "knee-pain-after-40"],
               };
 
               // Get topic-relevant articles (max 3)
