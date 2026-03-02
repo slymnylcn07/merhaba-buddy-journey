@@ -159,6 +159,7 @@ import thumbMorningStiffness40s from "@/assets/guide-thumb-morning-stiffness-40s
 import thumbKneePainGettingUpSitting from "@/assets/guide-thumb-knee-pain-getting-up-sitting.jpg";
 import thumbKneePainLongWalks from "@/assets/guide-thumb-knee-pain-long-walks.jpg";
 import thumbKneeMobilityAfter50 from "@/assets/guide-thumb-knee-mobility-after-50.jpg";
+import thumbSuddenKneePain from "@/assets/guide-thumb-sudden-knee-pain.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
