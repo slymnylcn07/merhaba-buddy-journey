@@ -214,6 +214,7 @@ import {
   whyKneePainGetsWorseWithAge,
   morningKneeStiffnessAfter40,
   kneePainGettingUpAfterSitting,
+  kneePainAfterLongWalks,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -291,6 +292,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "why-knee-pain-gets-worse-with-age": { headline: "Support your aging joints with daily comfort", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device, helping you manage age-related knee changes with a simple daily routine." },
   "morning-knee-stiffness-after-40": { headline: "Start your mornings with comfortable knees", text: "FlexiKnee provides adjustable warmth, red light, and gentle vibration to help your knees warm up before your first step of the day." },
   "knee-pain-getting-up-after-sitting": { headline: "Make standing up comfortable again", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees transition smoothly from sitting to standing every day." },
+  "knee-pain-after-long-walks": { headline: "Support your knees after every walk", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long walks — making your daily walking routine sustainable." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7382,7 +7384,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7837,6 +7839,7 @@ const GuideArticle = () => {
                 "why-knee-pain-gets-worse-with-age": thumbJointAgingChanges,
                 "morning-knee-stiffness-after-40": thumbMorningStiffness40s,
                 "knee-pain-getting-up-after-sitting": thumbKneePainGettingUpSitting,
+                "knee-pain-after-long-walks": thumbKneePainLongWalks,
               };
 
               // Topic clusters for relevant recommendations
@@ -7922,6 +7925,7 @@ const GuideArticle = () => {
                 "why-knee-pain-gets-worse-with-age": ["knee-pain-after-40", "why-do-my-knees-crack-or-pop", "how-to-strengthen-knees"],
                 "morning-knee-stiffness-after-40": ["knee-pain-after-40", "why-do-my-knees-feel-tight-after-resting", "knee-pain-getting-up-after-sitting"],
                 "knee-pain-getting-up-after-sitting": ["why-do-my-knees-feel-tight-after-resting", "knee-pain-after-sitting-cross-legged", "knee-pain-after-40"],
+                "knee-pain-after-long-walks": ["running-knee-pain-guide", "it-band-syndrome-explained", "knee-pain-after-40"],
               };
 
               // Get topic-relevant articles (max 3)
