@@ -495,6 +495,13 @@ export const guidesData: GuideData[] = [
     readTime: 16,
     lastModified: "2026-03-02",
   },
+  {
+    slug: "sudden-knee-pain-guide",
+    title: "Sudden Knee Pain: Hidden Causes & When to Act",
+    description: "Why does sudden knee pain happen without injury? Explore hidden causes by location, sensation patterns, situational triggers, and when to pay attention.",
+    readTime: 15,
+    lastModified: "2026-03-02",
+  },
 ];
 
 export const staticPages = [
