@@ -488,6 +488,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-02",
   },
+  {
+    slug: "knee-mobility-after-50",
+    title: "Knee Mobility After 50: Daily Movement & Comfort Routine",
+    description: "How to maintain knee mobility after 50 with daily movement routines, gentle stretches, and low-impact exercises for flexible, comfortable knees.",
+    readTime: 16,
+    lastModified: "2026-03-02",
+  },
 ];
 
 export const staticPages = [
