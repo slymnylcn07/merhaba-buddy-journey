@@ -38,4 +38,5 @@ export { whyKneePainGetsWorseWithAge } from "./why-knee-pain-gets-worse-with-age
 export { morningKneeStiffnessAfter40 } from "./morning-knee-stiffness-after-40";
 export { kneePainGettingUpAfterSitting } from "./knee-pain-getting-up-after-sitting";
 export { kneePainAfterLongWalks } from "./knee-pain-after-long-walks";
+export { kneeMobilityAfter50 } from "./knee-mobility-after-50";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
