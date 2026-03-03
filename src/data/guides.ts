@@ -523,6 +523,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-03",
   },
+  {
+    slug: "cold-weather-knee-pain",
+    title: "Knees Hurt in Cold Weather? Causes Explained",
+    description: "Why do knees hurt in cold weather? Learn how temperature drops, barometric pressure, and humidity cause knee stiffness and discover warmth-based comfort strategies.",
+    readTime: 15,
+    lastModified: "2026-03-03",
+  },
 ];
 
 export const staticPages = [
