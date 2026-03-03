@@ -92,6 +92,7 @@ import heroKneePainGettingUpSitting from "@/assets/article-hero-knee-pain-gettin
 import heroKneePainLongWalks from "@/assets/article-hero-knee-pain-long-walks.jpg";
 import heroKneeMobilityAfter50 from "@/assets/article-hero-knee-mobility-after-50.jpg";
 import heroSuddenKneePain from "@/assets/article-hero-sudden-knee-pain.jpg";
+import heroNightKneePain40 from "@/assets/article-hero-night-knee-pain-40.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -160,6 +161,7 @@ import thumbKneePainGettingUpSitting from "@/assets/guide-thumb-knee-pain-gettin
 import thumbKneePainLongWalks from "@/assets/guide-thumb-knee-pain-long-walks.jpg";
 import thumbKneeMobilityAfter50 from "@/assets/guide-thumb-knee-mobility-after-50.jpg";
 import thumbSuddenKneePain from "@/assets/guide-thumb-sudden-knee-pain.jpg";
+import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -221,6 +223,7 @@ import {
   kneePainAfterLongWalks,
   kneeMobilityAfter50,
   suddenKneePainGuide,
+  kneePainAtNightAfter40,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -301,6 +304,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-pain-after-long-walks": { headline: "Support your knees after every walk", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long walks, making your daily walking routine sustainable." },
   "knee-mobility-after-50": { headline: "Support your daily knee mobility routine", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees warm up for daily mobility exercises and feel more comfortable through every movement." },
   "sudden-knee-pain-guide": { headline: "Need comfort support for sudden knee episodes?", text: "FlexiKnee delivers soothing warmth, red light, and gentle vibration to help your knees feel comfortable between unexpected pain episodes." },
+  "knee-pain-at-night-after-40": { headline: "Want a soothing evening knee comfort routine?", text: "FlexiKnee provides adjustable warmth, red light, and gentle vibration before bed — helping your knees relax and feel more comfortable through the night." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7392,7 +7396,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline

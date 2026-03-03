@@ -353,8 +353,5 @@ const article = {
 
 export const kneePainAtNightAfter40: ArticleExport = {
   article,
-  cta: {
-    headline: "Want a soothing evening knee comfort routine?",
-    text: "FlexiKnee provides adjustable warmth, red light, and gentle vibration before bed — helping your knees relax and feel more comfortable through the night."
-  }
+  cta: "Want a soothing evening knee comfort routine?"
 };
