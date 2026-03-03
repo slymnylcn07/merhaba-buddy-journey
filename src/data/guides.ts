@@ -509,6 +509,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-03",
   },
+  {
+    slug: "knee-clicking-when-walking",
+    title: "Knee Clicking When Walking or Bending Explained",
+    description: "Why does your knee click when walking, bending, or on stairs? Learn about movement-based knee clicking, popping without pain, and when to pay attention.",
+    readTime: 14,
+    lastModified: "2026-03-03",
+  },
 ];
 
 export const staticPages = [

@@ -93,6 +93,7 @@ import heroKneePainLongWalks from "@/assets/article-hero-knee-pain-long-walks.jp
 import heroKneeMobilityAfter50 from "@/assets/article-hero-knee-mobility-after-50.jpg";
 import heroSuddenKneePain from "@/assets/article-hero-sudden-knee-pain.jpg";
 import heroNightKneePain40 from "@/assets/article-hero-night-knee-pain-40.jpg";
+import heroKneeClickingWalking from "@/assets/article-hero-knee-clicking-walking.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -162,6 +163,7 @@ import thumbKneePainLongWalks from "@/assets/guide-thumb-knee-pain-long-walks.jp
 import thumbKneeMobilityAfter50 from "@/assets/guide-thumb-knee-mobility-after-50.jpg";
 import thumbSuddenKneePain from "@/assets/guide-thumb-sudden-knee-pain.jpg";
 import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40.jpg";
+import thumbKneeClickingWalking from "@/assets/guide-thumb-knee-clicking-walking.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -224,6 +226,7 @@ import {
   kneeMobilityAfter50,
   suddenKneePainGuide,
   kneePainAtNightAfter40,
+  kneeClickingWhenWalking,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -305,6 +308,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-mobility-after-50": { headline: "Support your daily knee mobility routine", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees warm up for daily mobility exercises and feel more comfortable through every movement." },
   "sudden-knee-pain-guide": { headline: "Need comfort support for sudden knee episodes?", text: "FlexiKnee delivers soothing warmth, red light, and gentle vibration to help your knees feel comfortable between unexpected pain episodes." },
   "knee-pain-at-night-after-40": { headline: "Want a soothing evening knee comfort routine?", text: "FlexiKnee provides adjustable warmth, red light, and gentle vibration before bed — helping your knees relax and feel more comfortable through the night." },
+  "knee-clicking-when-walking": { headline: "Want daily comfort support for clicking knees?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help keep your knee joints comfortable and supported through everyday movements." },
 };
 
 const articles: Record<string, ArticleData> = {
