@@ -232,6 +232,11 @@ const articleContent = (
       <p>If your knee stiffness eases within 5-10 minutes of gentle walking and doesn't return until your next rest period, it's very likely inactivity-related. If stiffness persists beyond 30 minutes of movement or worsens with activity, it may be worth exploring other factors with a healthcare provider.</p>
     </InfoBox>
 
+    <PremiumCTA
+      headline="Want to ease rest-related knee stiffness at home?"
+      text="FlexiKnee combines soothing warmth, red light, and gentle vibration to help your knees transition from rest to movement more comfortably — perfect for use before standing up."
+    />
+
     <h2>When Resting Stiffness Is Normal vs. a Warning Sign</h2>
     <p>
       Not all <strong>knee stiffness after resting</strong> is cause for concern. In fact, some degree of "start-up" stiffness is a perfectly normal part of how joints work — especially as we age.
