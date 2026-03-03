@@ -43,4 +43,5 @@ export { suddenKneePainGuide } from "./sudden-knee-pain-guide";
 export { kneePainAtNightAfter40 } from "./knee-pain-at-night-after-40";
 export { kneeClickingWhenWalking } from "./knee-clicking-when-walking";
 export { kneesHurtAfterResting } from "./knees-hurt-after-resting";
+export { coldWeatherKneePain } from "./cold-weather-knee-pain";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
