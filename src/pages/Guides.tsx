@@ -78,6 +78,7 @@ import thumbKneeMobilityAfter50 from "@/assets/guide-thumb-knee-mobility-after-5
 import thumbSuddenKneePain from "@/assets/guide-thumb-sudden-knee-pain.jpg";
 import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40.jpg";
 import thumbKneeClickingWalking from "@/assets/guide-thumb-knee-clicking-walking.jpg";
+import thumbKneesHurtAfterResting from "@/assets/guide-thumb-knees-hurt-after-resting.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "why-knee-pain-doesnt-go-away": thumbKneePain,
@@ -152,6 +153,7 @@ const thumbnailMap: Record<string, string> = {
   "sudden-knee-pain-guide": thumbSuddenKneePain,
   "knee-pain-at-night-after-40": thumbNightKneePain40,
   "knee-clicking-when-walking": thumbKneeClickingWalking,
+  "knees-hurt-after-resting": thumbKneesHurtAfterResting,
 };
 
 // Combine data with thumbnails
@@ -226,6 +228,7 @@ const activitySlugs = [
   "why-knee-pain-gets-worse-with-age",
   "morning-knee-stiffness-after-40",
   "knee-pain-at-night-after-40",
+  "knees-hurt-after-resting",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
