@@ -302,10 +302,6 @@ const articleContent = (
       For more comprehensive daily strategies, our <Link to="/guides/daily-knee-care-routine">daily knee care routine guide</Link> covers morning, midday, and evening habits that support comfortable joints.
     </p>
 
-    <PremiumCTA
-      headline="Want to ease rest-related knee stiffness at home?"
-      text="FlexiKnee combines soothing warmth, red light, and gentle vibration to help your knees transition from rest to movement more comfortably — perfect for use before standing up."
-    />
 
     <h2>Frequently Asked Questions</h2>
 
