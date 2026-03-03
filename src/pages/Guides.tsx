@@ -77,6 +77,7 @@ import thumbKneePainLongWalks from "@/assets/guide-thumb-knee-pain-long-walks.jp
 import thumbKneeMobilityAfter50 from "@/assets/guide-thumb-knee-mobility-after-50.jpg";
 import thumbSuddenKneePain from "@/assets/guide-thumb-sudden-knee-pain.jpg";
 import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40.jpg";
+import thumbKneeClickingWalking from "@/assets/guide-thumb-knee-clicking-walking.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "why-knee-pain-doesnt-go-away": thumbKneePain,
@@ -150,6 +151,7 @@ const thumbnailMap: Record<string, string> = {
   "knee-mobility-after-50": thumbKneeMobilityAfter50,
   "sudden-knee-pain-guide": thumbSuddenKneePain,
   "knee-pain-at-night-after-40": thumbNightKneePain40,
+  "knee-clicking-when-walking": thumbKneeClickingWalking,
 };
 
 // Combine data with thumbnails
@@ -214,6 +216,7 @@ const activitySlugs = [
   "runners-knee-pain-location",
   "it-band-syndrome-explained",
   "why-do-my-knees-crack-or-pop",
+  "knee-clicking-when-walking",
   "knee-pain-after-sitting-cross-legged",
   "why-do-my-knees-feel-tight-after-resting",
   "knee-pain-after-standing",
