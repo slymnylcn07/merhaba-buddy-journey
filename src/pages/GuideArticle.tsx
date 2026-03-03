@@ -7634,6 +7634,16 @@ const GuideArticle = () => {
         { name: "Evening Cool-Down", text: "End with gentle calf raises (15 reps) and heel slides (10 per leg). Follow with 10-15 minutes of warmth application to help muscles and joints relax before sleep." },
       ],
     },
+    "knees-hurt-after-resting": {
+      name: "How to Reduce Knee Stiffness After Resting",
+      description: "Simple steps to minimize inactivity stiffness and first-movement knee pain after rest periods.",
+      steps: [
+        { name: "Keep Joints Moving During Rest", text: "Do gentle ankle circles and toe curls every 20-30 minutes while resting. This keeps some synovial fluid circulating without fully getting up." },
+        { name: "Apply Warmth Before Standing", text: "Use a warm compress or heat therapy device on your knees for 10-15 minutes before you plan to stand up from a long rest period." },
+        { name: "Stand Up Slowly", text: "When transitioning from rest to movement, take your first 5-10 steps slowly and gently. Allow 2-5 minutes for your joints to warm up before walking at your normal pace." },
+        { name: "Stay Hydrated", text: "Drink water consistently throughout the day to support healthy synovial fluid production and keep your joint lubrication at its best." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];
