@@ -502,6 +502,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-02",
   },
+  {
+    slug: "knee-pain-at-night-after-40",
+    title: "Knee Pain at Night After 40: Age-Related Causes",
+    description: "Why does knee pain get worse at night after 40? Learn age-related causes of night knee stiffness, sleeping positions, and evening comfort routines for better rest.",
+    readTime: 15,
+    lastModified: "2026-03-03",
+  },
 ];
 
 export const staticPages = [
