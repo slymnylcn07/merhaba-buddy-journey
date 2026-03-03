@@ -516,6 +516,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-03",
   },
+  {
+    slug: "knees-hurt-after-resting",
+    title: "Knees Hurt After Resting? Inactivity Stiffness Guide",
+    description: "Why do knees hurt after resting? Understand inactivity stiffness, first-movement pain, fluid thickening during rest, and practical tips to reduce stiffness.",
+    readTime: 15,
+    lastModified: "2026-03-03",
+  },
 ];
 
 export const staticPages = [
