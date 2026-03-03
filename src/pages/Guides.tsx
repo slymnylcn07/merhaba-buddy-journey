@@ -76,6 +76,7 @@ import thumbKneePainGettingUpSitting from "@/assets/guide-thumb-knee-pain-gettin
 import thumbKneePainLongWalks from "@/assets/guide-thumb-knee-pain-long-walks.jpg";
 import thumbKneeMobilityAfter50 from "@/assets/guide-thumb-knee-mobility-after-50.jpg";
 import thumbSuddenKneePain from "@/assets/guide-thumb-sudden-knee-pain.jpg";
+import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "why-knee-pain-doesnt-go-away": thumbKneePain,
@@ -148,6 +149,7 @@ const thumbnailMap: Record<string, string> = {
   "knee-pain-after-long-walks": thumbKneePainLongWalks,
   "knee-mobility-after-50": thumbKneeMobilityAfter50,
   "sudden-knee-pain-guide": thumbSuddenKneePain,
+  "knee-pain-at-night-after-40": thumbNightKneePain40,
 };
 
 // Combine data with thumbnails

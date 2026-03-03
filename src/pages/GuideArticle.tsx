@@ -7854,6 +7854,7 @@ const GuideArticle = () => {
                 "knee-pain-after-long-walks": thumbKneePainLongWalks,
                 "knee-mobility-after-50": thumbKneeMobilityAfter50,
                 "sudden-knee-pain-guide": thumbSuddenKneePain,
+                "knee-pain-at-night-after-40": thumbNightKneePain40,
               };
 
               // Topic clusters for relevant recommendations
@@ -7942,6 +7943,7 @@ const GuideArticle = () => {
                 "knee-pain-after-long-walks": ["running-knee-pain-guide", "it-band-syndrome-explained", "knee-pain-after-40"],
                 "knee-mobility-after-50": ["how-to-strengthen-knees", "knee-pain-after-40", "why-knee-pain-gets-worse-with-age"],
                 "sudden-knee-pain-guide": ["sharp-knee-pain-comes-and-goes", "intermittent-knee-pain-guide", "back-of-knee-pain-common"],
+                "knee-pain-at-night-after-40": ["why-do-my-knees-hurt-when-sleeping", "knee-pain-after-40", "morning-knee-stiffness-after-40"],
               };
 
               // Get topic-relevant articles (max 3)
