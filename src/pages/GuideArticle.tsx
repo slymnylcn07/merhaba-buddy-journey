@@ -97,6 +97,7 @@ import heroKneeClickingWalking from "@/assets/article-hero-knee-clicking-walking
 import heroKneesHurtAfterResting from "@/assets/article-hero-knees-hurt-after-resting.jpg";
 import heroColdWeatherKneePain from "@/assets/article-hero-cold-weather-knee-pain.jpg";
 import heroKneePainAfterExercise from "@/assets/article-hero-knee-pain-after-exercise.jpg";
+import heroKneePainClimbingStairs from "@/assets/article-hero-knee-pain-climbing-stairs.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -170,6 +171,7 @@ import thumbKneeClickingWalking from "@/assets/guide-thumb-knee-clicking-walking
 import thumbKneesHurtAfterResting from "@/assets/guide-thumb-knees-hurt-after-resting.jpg";
 import thumbColdWeatherKneePain from "@/assets/guide-thumb-cold-weather-knee-pain.jpg";
 import thumbKneePainAfterExercise from "@/assets/guide-thumb-knee-pain-after-exercise.jpg";
+import thumbKneePainClimbingStairs from "@/assets/guide-thumb-knee-pain-climbing-stairs.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -236,6 +238,7 @@ import {
   kneesHurtAfterResting,
   coldWeatherKneePain,
   kneePainAfterExercise,
+  kneePainClimbingStairs,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -321,6 +324,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knees-hurt-after-resting": { headline: "Want to ease rest-related knee stiffness at home?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration to help your knees transition from rest to movement more comfortably." },
   "cold-weather-knee-pain": { headline: "Need warmth support for cold-weather knee comfort?", text: "FlexiKnee provides adjustable soothing warmth, red light, and gentle vibration to help your knees stay comfortable during cold weather." },
   "knee-pain-after-exercise": { headline: "Want post-workout knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after every workout session." },
+  "knee-pain-climbing-stairs": { headline: "Need comfort support for stair climbing?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable after every flight of stairs." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7412,7 +7416,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7884,6 +7888,8 @@ const GuideArticle = () => {
                 "knee-clicking-when-walking": thumbKneeClickingWalking,
                 "knees-hurt-after-resting": thumbKneesHurtAfterResting,
                 "cold-weather-knee-pain": thumbColdWeatherKneePain,
+                "knee-pain-after-exercise": thumbKneePainAfterExercise,
+                "knee-pain-climbing-stairs": thumbKneePainClimbingStairs,
               };
 
               // Topic clusters for relevant recommendations
