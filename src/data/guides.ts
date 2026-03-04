@@ -544,6 +544,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-04",
   },
+  {
+    slug: "knee-pain-going-down-stairs",
+    title: "Knee Pain Going Down Stairs: Why It Hurts & Fixes",
+    description: "Discover why knee pain is often worse going down stairs. Learn about eccentric loading, patellofemoral stress, and daily habits for knee comfort.",
+    readTime: 14,
+    lastModified: "2026-03-04",
+  },
 ];
 
 export const staticPages = [
