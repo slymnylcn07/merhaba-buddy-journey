@@ -530,6 +530,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-03",
   },
+  {
+    slug: "knee-pain-after-exercise",
+    title: "Knees Hurt After Exercise? Causes & Recovery",
+    description: "Why do knees hurt after exercise but not during? Learn about delayed knee pain after workouts, common causes, normal soreness vs warning signs, and recovery tips.",
+    readTime: 14,
+    lastModified: "2026-03-04",
+  },
 ];
 
 export const staticPages = [
