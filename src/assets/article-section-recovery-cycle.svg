@@ -1,80 +1,67 @@
-<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="1200" fill="#FFFFFF"/>
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="800" fill="#FFFFFF"/>
 
-  <!-- Ring -->
-  <circle cx="600" cy="600" r="360" stroke="#E5E7EB" stroke-width="28" fill="none"/>
+  <!-- Outer ring -->
+  <circle cx="400" cy="400" r="240" stroke="#D1D5DB" stroke-width="3" fill="none"/>
 
-  <!-- Direction arrows on ring -->
-  <g fill="#9CA3AF" transform="translate(600 600)">
-    <polygon points="215,-289 242,-279 220,-258" transform="rotate(0)"/>
-    <polygon points="289,94 315,103 293,124" transform="rotate(0)"/>
-    <polygon points="0,344 26,353 4,374" transform="rotate(0)"/>
-    <polygon points="-289,94 -263,103 -285,124" transform="rotate(0)"/>
-    <polygon points="-215,-289 -189,-279 -211,-258" transform="rotate(0)"/>
+  <!-- Arrows on ring (clockwise) -->
+  <polygon points="400,158 408,170 392,170" fill="#9CA3AF"/>
+  <polygon points="628,330 620,342 632,342" fill="#9CA3AF"/>
+  <polygon points="560,620 548,618 556,632" fill="#9CA3AF"/>
+  <polygon points="240,620 252,618 244,632" fill="#9CA3AF"/>
+  <polygon points="172,330 180,342 168,342" fill="#9CA3AF"/>
+
+  <!-- Node 1: Cool Down (top) -->
+  <circle cx="400" cy="160" r="48" fill="#2563EB"/>
+  <g fill="#FFFFFF">
+    <circle cx="400" cy="145" r="5"/>
+    <line x1="400" y1="150" x2="400" y2="168" stroke="#FFFFFF" stroke-width="3"/>
+    <line x1="400" y1="158" x2="390" y2="166" stroke="#FFFFFF" stroke-width="3"/>
+    <line x1="400" y1="158" x2="410" y2="166" stroke="#FFFFFF" stroke-width="3"/>
+    <line x1="400" y1="168" x2="392" y2="178" stroke="#FFFFFF" stroke-width="3"/>
+    <line x1="400" y1="168" x2="408" y2="178" stroke="#FFFFFF" stroke-width="3"/>
   </g>
+  <text x="400" y="228" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#2563EB">Cool Down</text>
 
-  <!-- Step nodes (perfectly symmetric) -->
-  <circle cx="600" cy="240" r="96" fill="#2563EB"/>
-  <circle cx="942" cy="489" r="96" fill="#F59E0B"/>
-  <circle cx="812" cy="891" r="96" fill="#10B981"/>
-  <circle cx="388" cy="891" r="96" fill="#14B8A6"/>
-  <circle cx="258" cy="489" r="96" fill="#8B5CF6"/>
+  <!-- Node 2: Apply Warmth (top-right) -->
+  <circle cx="629" cy="327" r="48" fill="#F59E0B"/>
+  <g stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" fill="none">
+    <path d="M617,314 C613,324 623,332 619,342"/>
+    <path d="M629,310 C625,322 635,330 631,342"/>
+    <path d="M641,314 C637,324 647,332 643,342"/>
+  </g>
+  <text x="629" y="396" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#F59E0B">Apply Warmth</text>
+
+  <!-- Node 3: Gentle Stretching (bottom-right) -->
+  <circle cx="541" cy="594" r="48" fill="#10B981"/>
+  <g fill="#FFFFFF">
+    <circle cx="541" cy="578" r="5"/>
+    <line x1="541" y1="583" x2="527" y2="598" stroke="#FFFFFF" stroke-width="3"/>
+    <line x1="527" y1="598" x2="518" y2="598" stroke="#FFFFFF" stroke-width="3"/>
+    <line x1="527" y1="598" x2="541" y2="610" stroke="#FFFFFF" stroke-width="3"/>
+    <line x1="541" y1="583" x2="555" y2="590" stroke="#FFFFFF" stroke-width="3"/>
+  </g>
+  <text x="541" y="662" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#10B981">Gentle Stretching</text>
+
+  <!-- Node 4: Rest & Hydrate (bottom-left) -->
+  <circle cx="259" cy="594" r="48" fill="#14B8A6"/>
+  <g fill="#FFFFFF">
+    <path d="M247,580 C238,595 239,606 247,612 C255,606 256,595 247,580 Z"/>
+    <rect x="260" y="583" width="14" height="28" rx="3"/>
+    <rect x="263" y="578" width="8" height="5" rx="2"/>
+  </g>
+  <text x="259" y="662" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#14B8A6">Rest &amp; Hydrate</text>
+
+  <!-- Node 5: Light Movement Next Day (top-left) -->
+  <circle cx="171" cy="327" r="48" fill="#8B5CF6"/>
+  <g fill="#FFFFFF">
+    <path d="M152,340 C160,340 166,344 170,350 L182,350 C186,350 190,354 190,358 C190,362 186,366 182,366 L152,366 C146,366 140,360 140,354 C140,347 146,340 152,340 Z"/>
+    <rect x="156" y="333" width="8" height="7" rx="2"/>
+  </g>
+  <text x="171" y="396" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#8B5CF6">Light Movement</text>
+  <text x="171" y="414" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#8B5CF6">Next Day</text>
 
   <!-- Center title -->
-  <text x="600" y="570" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="56" font-weight="800" fill="#111827">Post-Exercise</text>
-  <text x="600" y="640" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="56" font-weight="800" fill="#111827">Knee Recovery Cycle</text>
-
-  <!-- Icons -->
-  <!-- 1. Cool Down (walk icon) -->
-  <g stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <circle cx="600" cy="198" r="10"/>
-    <path d="M600 208 L600 235"/>
-    <path d="M600 216 L584 228"/>
-    <path d="M600 216 L617 226"/>
-    <path d="M600 235 L586 253"/>
-    <path d="M600 235 L618 256"/>
-  </g>
-
-  <!-- 2. Apply Warmth (heat waves) -->
-  <g stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" fill="none">
-    <path d="M918 190 C910 205 926 218 918 234"/>
-    <path d="M942 184 C934 201 950 216 942 234"/>
-    <path d="M966 190 C958 205 974 218 966 234"/>
-  </g>
-
-  <!-- 3. Gentle Stretching (stretch icon) -->
-  <g stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <circle cx="812" cy="846" r="10"/>
-    <path d="M812 856 L790 876"/>
-    <path d="M790 876 L774 876"/>
-    <path d="M790 876 L812 894"/>
-    <path d="M812 856 L832 866"/>
-  </g>
-
-  <!-- 4. Rest & Hydrate (drop + glass) -->
-  <g fill="#FFFFFF">
-    <path d="M364 842 C350 862 351 878 364 888 C377 878 378 862 364 842 Z"/>
-    <rect x="395" y="844" width="20" height="42" rx="4"/>
-    <rect x="400" y="837" width="10" height="7" rx="2"/>
-  </g>
-
-  <!-- 5. Light Movement Next Day (shoe icon) -->
-  <g fill="#FFFFFF">
-    <path d="M224 857 C236 857 246 862 252 872 L272 872 C279 872 284 878 284 884 C284 890 279 895 272 895 L224 895 C214 895 206 887 206 876 C206 866 214 857 224 857 Z"/>
-    <rect x="232" y="847" width="12" height="10" rx="2"/>
-  </g>
-
-  <!-- Labels -->
-  <g font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-    <text x="600" y="292">Cool Down</text>
-
-    <text x="942" y="540">Apply Warmth</text>
-
-    <text x="812" y="942">Gentle Stretching</text>
-
-    <text x="388" y="942">Rest &amp; Hydrate</text>
-
-    <text x="258" y="534">Light Movement</text>
-    <text x="258" y="562">Next Day</text>
-  </g>
+  <text x="400" y="390" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#111827">Post-Exercise</text>
+  <text x="400" y="424" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#111827">Knee Recovery Cycle</text>
 </svg>
