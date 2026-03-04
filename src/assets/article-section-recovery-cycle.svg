@@ -1,0 +1,83 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#FFFFFF"/>
+
+  <!-- Center title -->
+  <text x="600" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#111827">Post-Exercise</text>
+  <text x="600" y="485" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#111827">Knee Recovery Cycle</text>
+
+  <!-- Circular guide path -->
+  <circle cx="600" cy="450" r="300" stroke="#E5E7EB" stroke-width="28" fill="none"/>
+
+  <!-- Arrows around circle -->
+  <g fill="#9CA3AF">
+    <polygon points="607,134 634,148 603,168"/>
+    <polygon points="863,276 886,296 854,303"/>
+    <polygon points="912,560 904,589 875,572"/>
+    <polygon points="729,770 700,778 709,749"/>
+    <polygon points="470,772 441,762 463,741"/>
+    <polygon points="272,596 264,567 293,574"/>
+    <polygon points="255,340 276,317 286,348"/>
+    <polygon points="423,156 451,145 446,176"/>
+  </g>
+
+  <!-- Step circles -->
+  <g>
+    <circle cx="600" cy="150" r="92" fill="#2563EB"/>
+    <circle cx="812" cy="238" r="92" fill="#F59E0B"/>
+    <circle cx="900" cy="450" r="92" fill="#10B981"/>
+    <circle cx="388" cy="662" r="92" fill="#14B8A6"/>
+    <circle cx="600" cy="750" r="92" fill="#8B5CF6"/>
+  </g>
+
+  <!-- Icons (simple vector glyphs) -->
+  <!-- Cool Down walking icon -->
+  <g stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <circle cx="600" cy="118" r="10"/>
+    <path d="M600 128 L600 153"/>
+    <path d="M600 136 L584 146"/>
+    <path d="M600 136 L617 146"/>
+    <path d="M600 153 L586 171"/>
+    <path d="M600 153 L617 173"/>
+  </g>
+
+  <!-- Apply Warmth icon -->
+  <g fill="#FFFFFF">
+    <path d="M812 112 C796 136 798 155 812 166 C826 155 828 136 812 112 Z"/>
+    <path d="M788 118 C776 136 778 151 788 160 C798 151 800 136 788 118 Z"/>
+    <path d="M836 118 C824 136 826 151 836 160 C846 151 848 136 836 118 Z"/>
+  </g>
+
+  <!-- Gentle Stretching icon -->
+  <g stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <circle cx="900" cy="418" r="10"/>
+    <path d="M900 430 L886 452 L910 468"/>
+    <path d="M886 452 L867 452"/>
+    <path d="M910 468 L926 482"/>
+    <path d="M900 430 L917 438"/>
+  </g>
+
+  <!-- Rest & Hydrate icon -->
+  <g fill="#FFFFFF">
+    <path d="M388 620 C373 642 374 658 388 668 C402 658 403 642 388 620 Z"/>
+    <rect x="414" y="622" width="22" height="46" rx="5"/>
+    <rect x="420" y="614" width="10" height="8" rx="2"/>
+  </g>
+
+  <!-- Light movement next day icon (bike) -->
+  <g stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <circle cx="564" cy="768" r="20"/>
+    <circle cx="636" cy="768" r="20"/>
+    <path d="M564 768 L596 742 L618 768 L584 768"/>
+    <path d="M596 742 L620 742"/>
+  </g>
+
+  <!-- Labels -->
+  <g font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+    <text x="600" y="205">Cool Down</text>
+    <text x="812" y="296">Apply Warmth</text>
+    <text x="900" y="505">Gentle Stretching</text>
+    <text x="388" y="712">Rest &amp; Hydrate</text>
+    <text x="600" y="808">Light Movement</text>
+    <text x="600" y="838">Next Day</text>
+  </g>
+</svg>
