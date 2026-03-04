@@ -9,7 +9,7 @@ import heroImage from "@/assets/article-hero-knee-pain-after-exercise.jpg";
 import sectionKneeLoad from "@/assets/article-section-knee-load-exercise.jpg";
 import sectionMuscleVsJoint from "@/assets/article-section-muscle-vs-joint-pain.jpg";
 import sectionRunningImpact from "@/assets/article-section-running-impact-knee.jpg";
-import sectionRecoveryCycle from "@/assets/article-section-recovery-cycle.jpg";
+import sectionRecoveryCycle from "@/assets/article-section-recovery-cycle.svg";
 
 const faqs = [
   {
