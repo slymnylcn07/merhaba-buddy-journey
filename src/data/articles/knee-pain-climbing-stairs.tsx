@@ -579,11 +579,6 @@ const articleContent = (
       <p>When climbing stairs, lead with your stronger (less painful) leg going up, and lead with your weaker (more painful) leg going down. This technique is used by physiotherapists worldwide and ensures the stronger leg does the heavier lifting work in both directions.</p>
     </InfoBox>
 
-    <PremiumCTA
-      headline="Support your knees after every stair climb"
-      text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after daily stair climbing."
-    />
-
     <p>
       For more exercises and strengthening strategies, explore our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee pain exercises guide</Link> and our guide to <Link to="/guides/knee-pain-when-walking" className="text-primary hover:underline">knee pain when walking</Link> for related movement patterns.
     </p>
