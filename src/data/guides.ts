@@ -537,6 +537,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-04",
   },
+  {
+    slug: "knee-pain-climbing-stairs",
+    title: "Knee Pain When Climbing Stairs: Causes & Tips",
+    description: "Understand why knee pain happens when climbing stairs and how strengthening habits can support lasting knee comfort. Covers biomechanics, common causes, and daily routines.",
+    readTime: 14,
+    lastModified: "2026-03-04",
+  },
 ];
 
 export const staticPages = [
