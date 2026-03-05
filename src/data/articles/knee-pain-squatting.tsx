@@ -425,7 +425,7 @@ const articleContent = (
 
     <SquatBiomechanicsDiagram />
 
-    <InfoBox title="Key Insight" emoji="💡">
+    <InfoBox title="💡 Key Insight">
       Knee pain during squats is rarely about the knee alone — it's usually related to how your hips, ankles, and quadriceps share the load. Understanding this chain helps you address the root cause rather than just the symptom.
     </InfoBox>
 
@@ -493,7 +493,7 @@ const articleContent = (
       Adding weight too quickly, squatting deeper than usual, or performing explosive squat variations without preparation can create sudden sharp pain. The joint structures haven't had time to adapt to the new demands, and the sharp sensation is often the body's signal to slow down.
     </p>
 
-    <InfoBox title="When to Seek Professional Guidance" emoji="⚠️">
+    <InfoBox title="⚠️ When to Seek Professional Guidance">
       If sharp knee pain during squats is accompanied by swelling, locking, giving way, or persists beyond a few days of rest and modification, consult a healthcare professional for proper evaluation.
     </InfoBox>
 
@@ -600,7 +600,7 @@ const articleContent = (
 
     <PatellaMovementDiagram />
 
-    <InfoBox title="Recovery Timeline" emoji="📅">
+    <InfoBox title="📅 Recovery Timeline">
       Muscles adapt in 2–4 weeks. Tendons and cartilage need 8–12 weeks. Give your joints time to catch up to your muscular strength — this patience prevents most squat-related knee discomfort.
     </InfoBox>
 
@@ -663,6 +663,7 @@ export const kneePainSquatting: ArticleExport = {
     metaDescription: "Discover why knee pain happens during squats. Learn about squat biomechanics, patellofemoral stress, and at-home adjustments for comfortable squatting.",
     heroImage: heroImage,
     publishedDate: "March 5, 2026",
+    content: articleContent,
     nextSlug: "knee-pain-climbing-stairs",
     nextTitle: "Knee Pain When Climbing Stairs",
     faqs: faqs,
