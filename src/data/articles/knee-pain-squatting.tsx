@@ -645,11 +645,6 @@ const articleContent = (
       "Rise by driving through your heels and squeezing your glutes",
       "Apply gentle warmth to your knees after your session",
     ]} />
-
-    <PremiumCTA
-      headline="Support your knees after squatting workouts"
-      text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device — designed for comfortable post-workout knee recovery."
-    />
   </>
 );
 
