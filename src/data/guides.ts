@@ -551,6 +551,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-04",
   },
+  {
+    slug: "knee-pain-when-squatting",
+    title: "Knee Pain When Squatting: Biomechanics & Fixes",
+    description: "Learn why knee pain happens during squats. Explore squat biomechanics, patellofemoral stress, and at-home adjustments for comfortable squatting.",
+    readTime: 15,
+    lastModified: "2026-03-05",
+  },
 ];
 
 export const staticPages = [
