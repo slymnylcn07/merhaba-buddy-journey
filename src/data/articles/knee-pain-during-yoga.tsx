@@ -15,7 +15,7 @@ import imgCorrectIncorrect from "@/assets/article-yoga-correct-incorrect-knee.jp
 const faqs = [
   {
     question: "Why do my knees hurt during yoga?",
-    answer: "Knee discomfort during yoga is commonly caused by limited hip or ankle mobility, which forces the knee joint to compensate by rotating or flexing beyond its comfortable range. Poses that involve deep bending, kneeling, or cross-legged positions can place significant pressure on the knee structures — especially if alignment is not maintained.",
+    answer: "Knee discomfort during yoga is commonly caused by limited hip or ankle mobility, which forces the knee joint to compensate by rotating or flexing beyond its comfortable range. Poses that involve deep bending, kneeling, or cross-legged positions can place significant pressure on the knee structures, especially if alignment is not maintained.",
   },
   {
     question: "Is knee pain during yoga normal?",
@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     question: "Why does lotus pose hurt my knees?",
-    answer: "Lotus pose requires significant external hip rotation. When hip mobility is limited, the rotational force transfers directly to the knee joint — which is primarily designed for flexion and extension, not rotation. This mismatch creates medial knee pressure that can feel uncomfortable or even painful.",
+    answer: "Lotus pose requires significant external hip rotation. When hip mobility is limited, the rotational force transfers directly to the knee joint, which is primarily designed for flexion and extension, not rotation. This mismatch creates medial knee pressure that can feel uncomfortable or even painful.",
   },
   {
     question: "Should I stop yoga if my knees hurt?",
@@ -53,7 +53,7 @@ const kneePainDuringYoga: ArticleExport = {
     slug: "knee-pain-during-yoga",
     title: "Why Knees Pain During Yoga: Common Poses That Stress the Joint",
     subtitle: "Understanding knee discomfort in yoga practice",
-    intro: "Yoga is widely considered a gentle, joint-friendly practice — but many practitioners experience unexpected knee discomfort during certain poses. This guide explores why knee pain happens during yoga, which poses place the most stress on the knee joint, and what practical adjustments can support more comfortable practice.",
+    intro: "Yoga is widely considered a gentle, joint-friendly practice, but many practitioners experience unexpected knee discomfort during certain poses. This guide explores why knee pain happens during yoga, which poses place the most stress on the knee joint, and what practical adjustments can support more comfortable practice.",
     metaTitle: "Knee Pain During Yoga: Poses That Stress Knees",
     metaDescription: "Learn why knee pain happens during yoga poses like lotus and pigeon. Discover how hip mobility, alignment, and modifications support comfortable practice.",
     heroImage: heroImage,
@@ -110,10 +110,10 @@ const kneePainDuringYoga: ArticleExport = {
 
         {/* Introduction */}
         <p>
-          Yoga is often recommended as one of the gentlest forms of exercise — a practice that builds flexibility, improves balance, and supports joint health. So it can be surprising and frustrating when <strong>knee pain during yoga</strong> appears, especially in poses that are supposed to feel calming and restorative.
+          Yoga is often recommended as one of the gentlest forms of exercise, a practice that builds flexibility, improves balance, and supports joint health. So it can be surprising and frustrating when <strong>knee pain during yoga</strong> appears, especially in poses that are supposed to feel calming and restorative.
         </p>
         <p>
-          The reality is that several common yoga poses place significant mechanical demands on the knee joint. When flexibility limitations, alignment issues, or insufficient mobility in the hips and ankles are present, the knee often becomes the point where stress accumulates. Understanding why this happens — and what you can do about it — is the first step toward a more comfortable practice.
+          The reality is that several common yoga poses place significant mechanical demands on the knee joint. When flexibility limitations, alignment issues, or insufficient mobility in the hips and ankles are present, the knee often becomes the point where stress accumulates. Understanding why this happens, and what you can do about it, is the first step toward a more comfortable practice.
         </p>
 
         <StatHighlight
@@ -125,21 +125,21 @@ const kneePainDuringYoga: ArticleExport = {
         {/* Section 1: Why yoga can stress the knee */}
         <h2>Why Yoga Can Sometimes Stress the Knee Joint</h2>
         <p>
-          The knee is a hinge joint — primarily designed for flexion (bending) and extension (straightening). Unlike the hip, which is a ball-and-socket joint with multi-directional movement, the knee has very limited rotational capacity. This fundamental design difference is at the heart of why <strong>yoga knee pain</strong> happens.
+          The knee is a hinge joint, primarily designed for flexion (bending) and extension (straightening). Unlike the hip, which is a ball-and-socket joint with multi-directional movement, the knee has very limited rotational capacity. This fundamental design difference is at the heart of why <strong>yoga knee pain</strong> happens.
         </p>
         <p>
-          Many yoga poses require the lower body to move into positions that demand significant rotation, deep flexion, or sustained weight-bearing on the knee. When the hip or ankle can't provide enough range of motion, the body compensates by forcing rotation or lateral stress through the knee joint — a structure not designed to handle those forces comfortably.
+          Many yoga poses require the lower body to move into positions that demand significant rotation, deep flexion, or sustained weight-bearing on the knee. When the hip or ankle can't provide enough range of motion, the body compensates by forcing rotation or lateral stress through the knee joint, a structure not designed to handle those forces comfortably.
         </p>
 
         <InfoBox title="Knee Joint Rotation Limitations">
-          <p>The knee allows approximately 10–15 degrees of internal and external rotation when bent — far less than the hip's 40–60 degrees. When yoga poses demand more rotation than the hip can provide, the excess force transfers directly to the knee's ligaments and meniscus.</p>
+          <p>The knee allows approximately 10 to 15 degrees of internal and external rotation when bent, far less than the hip's 40 to 60 degrees. When yoga poses demand more rotation than the hip can provide, the excess force transfers directly to the knee's ligaments and meniscus.</p>
         </InfoBox>
 
         <p>
           Key factors that contribute to <strong>knee pressure in yoga poses</strong> include:
         </p>
         <TipsList tips={[
-          "Deep flexion beyond the knee's comfortable range (past 120–140 degrees)",
+          "Deep flexion beyond the knee's comfortable range (past 120 to 140 degrees)",
           "Rotational demands that exceed hip mobility",
           "Pressure transfer from tight hips and restricted ankles",
           "Prolonged kneeling or weight-bearing on the knee cap",
@@ -166,7 +166,7 @@ const kneePainDuringYoga: ArticleExport = {
 
         <h3>Lotus Pose (Padmasana)</h3>
         <p>
-          Lotus pose is perhaps the most well-known cause of <strong>lotus pose knee pain</strong>. This seated position requires each foot to rest on the opposite thigh, demanding extreme external hip rotation. When hip flexibility is insufficient — which is common, especially in Western practitioners who spend most of their time sitting in chairs — the rotational force transfers to the medial (inner) knee, compressing the meniscus and straining the collateral ligaments.
+          Lotus pose is perhaps the most well-known cause of <strong>lotus pose knee pain</strong>. This seated position requires each foot to rest on the opposite thigh, demanding extreme external hip rotation. When hip flexibility is insufficient, which is common especially in Western practitioners who spend most of their time sitting in chairs, the rotational force transfers to the medial (inner) knee, compressing the meniscus and straining the collateral ligaments.
         </p>
         <p>
           Many yoga teachers now advise against forcing full lotus and recommend half-lotus or simple cross-legged positions as safer alternatives until adequate hip mobility is developed.
@@ -174,7 +174,7 @@ const kneePainDuringYoga: ArticleExport = {
 
         <h3>Hero Pose (Virasana)</h3>
         <p>
-          In hero pose, you sit between your heels with the knees fully bent. This position places the knee in maximum flexion — often beyond 150 degrees — while the weight of the body presses down through the joint. For people with tight quadriceps or existing kneecap sensitivity, this pose can create significant anterior (front) knee pressure and compression of the structures behind the kneecap.
+          In hero pose, you sit between your heels with the knees fully bent. This position places the knee in maximum flexion, often beyond 150 degrees, while the weight of the body presses down through the joint. For people with tight quadriceps or existing kneecap sensitivity, this pose can create significant anterior (front) knee pressure and compression of the structures behind the kneecap.
         </p>
 
         <h3>Child's Pose (Balasana)</h3>
@@ -201,7 +201,7 @@ const kneePainDuringYoga: ArticleExport = {
 
         <h3>Deep Kneeling Poses</h3>
         <p>
-          Poses that involve direct kneeling — such as low lunges, camel pose, or gate pose — place the body weight directly through the kneecap and surrounding structures. Without adequate cushioning or modification, these poses can irritate the prepatellar bursa and create discomfort in the front of the knee.
+          Poses that involve direct kneeling, such as low lunges, camel pose, or gate pose, place the body weight directly through the kneecap and surrounding structures. Without adequate cushioning or modification, these poses can irritate the prepatellar bursa and create discomfort in the front of the knee.
         </p>
 
         <InfoBox title="Pose Pressure Hierarchy">
@@ -211,7 +211,7 @@ const kneePainDuringYoga: ArticleExport = {
         {/* Section 3: Hip mobility and knee pain */}
         <h2>Why Limited Hip Mobility Often Causes Knee Pain in Yoga</h2>
         <p>
-          One of the most important — and frequently overlooked — connections in <strong>yoga knee pain causes</strong> is the relationship between hip mobility and knee stress. The hip and knee are kinetically linked through the femur (thigh bone), and limitations in one joint directly affect the other.
+          One of the most important, and frequently overlooked, connections in <strong>yoga knee pain causes</strong> is the relationship between hip mobility and knee stress. The hip and knee are kinetically linked through the femur (thigh bone), and limitations in one joint directly affect the other.
         </p>
         <p>
           When the hip can't provide enough rotation for a pose, the body naturally compensates by rotating through the knee joint instead. This compensation pattern is the primary mechanism behind most yoga-related knee discomfort.
@@ -233,17 +233,17 @@ const kneePainDuringYoga: ArticleExport = {
           The three key mobility limitations that contribute to <strong>knees hurt during yoga</strong>:
         </p>
         <TipsList tips={[
-          "Tight external hip rotators — forces knee rotation in lotus and pigeon poses",
-          "Restricted hip flexors — increases anterior knee pressure in kneeling and lunging poses",
-          "Limited ankle dorsiflexion — shifts body weight forward onto the knee in squatting and warrior poses",
+          "Tight external hip rotators: forces knee rotation in lotus and pigeon poses",
+          "Restricted hip flexors: increases anterior knee pressure in kneeling and lunging poses",
+          "Limited ankle dorsiflexion: shifts body weight forward onto the knee in squatting and warrior poses",
         ]} />
         <p>
-          This is why experienced yoga teachers often emphasize that poses like lotus and pigeon are actually <em>hip</em> stretches — not knee stretches. If you feel the stretch primarily in your knee rather than your hip, it's a clear signal that the pose needs modification. The sensation should be felt in the hip and glute area, not around the knee joint. You can learn more about how hip mobility affects knee comfort in our guide on <Link to="/guides/knee-pain-after-sitting-cross-legged" className="text-primary hover:underline">knee pain after sitting cross-legged</Link>.
+          This is why experienced yoga teachers often emphasize that poses like lotus and pigeon are actually <em>hip</em> stretches, not knee stretches. If you feel the stretch primarily in your knee rather than your hip, it's a clear signal that the pose needs modification. The sensation should be felt in the hip and glute area, not around the knee joint. You can learn more about how hip mobility affects knee comfort in our guide on <Link to="/guides/knee-pain-after-sitting-cross-legged" className="text-primary hover:underline">knee pain after sitting cross-legged</Link>.
         </p>
 
         <PremiumCTA
           headline="Support your knees during yoga practice"
-          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device — designed for comfortable pre- and post-yoga knee support."
+          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device, designed for comfortable pre- and post-yoga knee support."
         />
 
         {/* Section 4: Biomechanics mistakes */}
@@ -254,12 +254,12 @@ const kneePainDuringYoga: ArticleExport = {
 
         <h3>Forcing Deep Poses Too Quickly</h3>
         <p>
-          One of the most damaging habits in yoga practice is pushing into deep poses before the body is ready. Flexibility develops gradually over weeks and months — not within a single session. Attempting to match the depth of an instructor or experienced practitioner can place immediate and excessive stress on the knee joint.
+          One of the most damaging habits in yoga practice is pushing into deep poses before the body is ready. Flexibility develops gradually over weeks and months, not within a single session. Attempting to match the depth of an instructor or experienced practitioner can place immediate and excessive stress on the knee joint.
         </p>
 
         <h3>Twisting the Knee Joint</h3>
         <p>
-          The knee is designed primarily for flexion and extension — not rotation. When practitioners twist the foot or lower leg while the knee is bearing weight, the rotational force can strain the meniscus, collateral ligaments, and surrounding structures. This is particularly common in transitions between poses.
+          The knee is designed primarily for flexion and extension, not rotation. When practitioners twist the foot or lower leg while the knee is bearing weight, the rotational force can strain the meniscus, collateral ligaments, and surrounding structures. This is particularly common in transitions between poses.
         </p>
 
         <h3>Collapsing the Knee Inward</h3>
@@ -275,7 +275,7 @@ const kneePainDuringYoga: ArticleExport = {
             loading="lazy"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Correct vs. incorrect knee alignment — maintaining proper tracking reduces joint stress
+            Correct vs. incorrect knee alignment: maintaining proper tracking reduces joint stress
           </figcaption>
         </figure>
 
@@ -309,7 +309,7 @@ const kneePainDuringYoga: ArticleExport = {
 
         <h3>Use Yoga Blocks and Cushions</h3>
         <p>
-          Props are not a sign of weakness — they're tools for joint safety. Place a folded blanket or cushion under the knees during kneeling poses. Use a block under the hips in seated poses to reduce knee flexion angle. In pigeon pose, place a block under the front hip to reduce the rotational demand on the knee.
+          Props are not a sign of weakness. They are tools for joint safety. Place a folded blanket or cushion under the knees during kneeling poses. Use a block under the hips in seated poses to reduce knee flexion angle. In pigeon pose, place a block under the front hip to reduce the rotational demand on the knee.
         </p>
 
         <h3>Modify Pose Depth</h3>
@@ -324,12 +324,12 @@ const kneePainDuringYoga: ArticleExport = {
 
         <h3>Adjust Foot and Knee Alignment</h3>
         <p>
-          In standing poses, ensure your knee tracks over the center of your foot — not inward or outward. In lunges, keep the front knee directly above the ankle. In seated poses, if you feel pulling in the inner knee, back off the pose depth until the sensation is felt only in the hip.
+          In standing poses, ensure your knee tracks over the center of your foot, not inward or outward. In lunges, keep the front knee directly above the ankle. In seated poses, if you feel pulling in the inner knee, back off the pose depth until the sensation is felt only in the hip.
         </p>
 
         <h3>Focus on Gradual Flexibility</h3>
         <p>
-          Flexibility is a long-term adaptation. Consistent, gentle practice over weeks and months produces far better results — and far less injury risk — than aggressive stretching in a single session. Your knees will thank you for patience. Learn more about gradual approaches in our <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting guide</Link>.
+          Flexibility is a long-term adaptation. Consistent, gentle practice over weeks and months produces far better results, and far less injury risk, than aggressive stretching in a single session. Your knees will thank you for patience. Learn more about gradual approaches in our <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting guide</Link>.
         </p>
 
         <TipsList tips={[
@@ -344,7 +344,7 @@ const kneePainDuringYoga: ArticleExport = {
         {/* Section 6: Why beginners experience more knee pain */}
         <h2>Why Beginners Experience Knee Discomfort in Yoga More Often</h2>
         <p>
-          New yoga practitioners report knee discomfort at higher rates than experienced practitioners — and there are clear biomechanical reasons for this pattern. Understanding <strong>why do my knees hurt in yoga</strong> as a beginner can help set realistic expectations and prevent unnecessary frustration.
+          New yoga practitioners report knee discomfort at higher rates than experienced practitioners, and there are clear biomechanical reasons for this pattern. Understanding <strong>why do my knees hurt in yoga</strong> as a beginner can help set realistic expectations and prevent unnecessary frustration.
         </p>
 
         <h3>Flexibility Imbalance</h3>
@@ -354,7 +354,7 @@ const kneePainDuringYoga: ArticleExport = {
 
         <h3>Joint Adaptation</h3>
         <p>
-          Like any physical activity, yoga places new demands on the body that require an adaptation period. The connective tissues around the knee — tendons, ligaments, and the joint capsule — need time to gradually adapt to the ranges of motion required in yoga. This adaptation process takes weeks, not days.
+          Like any physical activity, yoga places new demands on the body that require an adaptation period. The connective tissues around the knee (tendons, ligaments, and the joint capsule) need time to gradually adapt to the ranges of motion required in yoga. This adaptation process takes weeks, not days.
         </p>
 
         <h3>Overstretching Early in Practice</h3>
@@ -363,7 +363,7 @@ const kneePainDuringYoga: ArticleExport = {
         </p>
 
         <StatHighlight
-          stat="3–4×"
+          stat="3 to 4×"
           label="higher knee discomfort rates in first-year yoga practitioners"
           description="Compared to those with 3+ years of regular practice"
         />
@@ -376,31 +376,31 @@ const kneePainDuringYoga: ArticleExport = {
 
         <h3>Proper Warm-Up</h3>
         <p>
-          Never start with deep poses. Begin every practice with 5–10 minutes of gentle movement — cat-cow stretches, gentle hip circles, ankle rotations, and easy standing poses. This warm-up increases synovial fluid production in the knee, improving lubrication and reducing friction during deeper poses.
+          Never start with deep poses. Begin every practice with 5 to 10 minutes of gentle movement: cat-cow stretches, gentle hip circles, ankle rotations, and easy standing poses. This warm-up increases synovial fluid production in the knee, improving lubrication and reducing friction during deeper poses.
         </p>
 
         <h3>Slow Progression</h3>
         <p>
-          Follow the 10% rule: increase pose depth or hold time by no more than 10% per week. This gradual approach allows the connective tissues to adapt safely. A posture that feels impossible today may become comfortable in 8–12 weeks with consistent, gentle practice.
+          Follow the 10% rule: increase pose depth or hold time by no more than 10% per week. This gradual approach allows the connective tissues to adapt safely. A posture that feels impossible today may become comfortable in 8 to 12 weeks with consistent, gentle practice.
         </p>
 
         <h3>Mobility Training</h3>
         <p>
-          Dedicate 10–15 minutes daily to hip and ankle mobility exercises separate from your yoga practice. This targeted work improves the specific ranges of motion that reduce knee compensation during poses. See our <Link to="/guides/knee-mobility-after-50" className="text-primary hover:underline">knee mobility guide</Link> for specific exercises.
+          Dedicate 10 to 15 minutes daily to hip and ankle mobility exercises separate from your yoga practice. This targeted work improves the specific ranges of motion that reduce knee compensation during poses. See our <Link to="/guides/knee-mobility-after-50" className="text-primary hover:underline">knee mobility guide</Link> for specific exercises.
         </p>
 
         <h3>Recovery Practices</h3>
         <p>
-          After yoga sessions, support your knees with gentle recovery: apply warmth to promote circulation, perform light quad and calf stretches, and consider using a <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">daily warmth routine</Link> to keep the joint tissues supple between sessions. Cold weather can also affect knee readiness — learn more in our <Link to="/guides/cold-weather-knee-pain" className="text-primary hover:underline">cold weather knee comfort guide</Link>.
+          After yoga sessions, support your knees with gentle recovery: apply warmth to promote circulation, perform light quad and calf stretches, and consider using a <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">daily warmth routine</Link> to keep the joint tissues supple between sessions. Cold weather can also affect knee readiness. Learn more in our <Link to="/guides/cold-weather-knee-pain" className="text-primary hover:underline">cold weather knee comfort guide</Link>.
         </p>
 
         <TipsList tips={[
-          "Warm up for 5–10 minutes before attempting any deep poses",
+          "Warm up for 5 to 10 minutes before attempting any deep poses",
           "Increase pose depth by only 10% per week",
           "Practice hip mobility exercises for 10–15 minutes daily",
           "Apply warmth to the knee area before and after yoga sessions",
           "Keep a practice journal to track which poses feel comfortable",
-          "Listen to your body — mild sensation is okay, sharp pain is a stop signal",
+          "Listen to your body: mild sensation is okay, sharp pain is a stop signal",
           "Alternate demanding yoga sessions with gentler practices",
         ]} />
 
