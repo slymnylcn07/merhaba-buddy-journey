@@ -100,6 +100,7 @@ import heroKneePainAfterExercise from "@/assets/article-hero-knee-pain-after-exe
 import heroKneePainClimbingStairs from "@/assets/article-hero-knee-pain-climbing-stairs.jpg";
 import heroKneePainGoingDownStairs from "@/assets/article-hero-knee-pain-going-down-stairs.jpg";
 import heroKneePainSquatting from "@/assets/article-hero-knee-pain-squatting.jpg";
+import heroKneePainYoga from "@/assets/article-hero-knee-pain-yoga.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -176,6 +177,7 @@ import thumbKneePainAfterExercise from "@/assets/guide-thumb-knee-pain-after-exe
 import thumbKneePainClimbingStairs from "@/assets/guide-thumb-knee-pain-climbing-stairs.jpg";
 import thumbKneePainGoingDownStairs from "@/assets/guide-thumb-knee-pain-going-down-stairs.jpg";
 import thumbKneePainSquatting from "@/assets/guide-thumb-knee-pain-squatting.jpg";
+import thumbKneePainYoga from "@/assets/guide-thumb-knee-pain-yoga.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -245,6 +247,7 @@ import {
   kneePainClimbingStairs,
   kneePainGoingDownStairs,
   kneePainSquatting,
+  kneePainDuringYoga,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -333,6 +336,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-pain-climbing-stairs": { headline: "Need comfort support for stair climbing?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable after every flight of stairs." },
   "knee-pain-going-down-stairs": { headline: "Need comfort support after descending stairs?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after daily stair descent." },
   "knee-pain-when-squatting": { headline: "Need post-squat knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after squatting workouts." },
+  "knee-pain-during-yoga": { headline: "Need comfort support for your yoga practice?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable before and after yoga sessions." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7424,7 +7428,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7900,6 +7904,7 @@ const GuideArticle = () => {
                 "knee-pain-climbing-stairs": thumbKneePainClimbingStairs,
                 "knee-pain-going-down-stairs": thumbKneePainGoingDownStairs,
                 "knee-pain-when-squatting": thumbKneePainSquatting,
+                "knee-pain-during-yoga": thumbKneePainYoga,
               };
 
               // Topic clusters for relevant recommendations
@@ -7996,6 +8001,7 @@ const GuideArticle = () => {
                 "knee-pain-climbing-stairs": ["knee-pain-going-down-stairs", "knee-pain-after-exercise", "how-to-strengthen-knees"],
                 "knee-pain-going-down-stairs": ["knee-pain-climbing-stairs", "knee-pain-when-squatting", "knee-pain-after-exercise"],
                 "knee-pain-when-squatting": ["knee-pain-after-exercise", "knee-pain-exercises-guide", "how-to-strengthen-knees"],
+                "knee-pain-during-yoga": ["knee-pain-after-sitting-cross-legged", "knee-pain-when-squatting", "knee-mobility-after-50"],
               };
 
               // Get topic-relevant articles (max 3)

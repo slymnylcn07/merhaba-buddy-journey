@@ -558,6 +558,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-05",
   },
+  {
+    slug: "knee-pain-during-yoga",
+    title: "Knee Pain During Yoga: Poses That Stress Knees",
+    description: "Learn why knee pain happens during yoga poses like lotus and pigeon. Discover how hip mobility, alignment, and modifications support comfortable practice.",
+    readTime: 15,
+    lastModified: "2026-03-07",
+  },
 ];
 
 export const staticPages = [
