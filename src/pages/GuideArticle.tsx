@@ -100,6 +100,7 @@ import heroKneePainAfterExercise from "@/assets/article-hero-knee-pain-after-exe
 import heroKneePainClimbingStairs from "@/assets/article-hero-knee-pain-climbing-stairs.jpg";
 import heroKneePainGoingDownStairs from "@/assets/article-hero-knee-pain-going-down-stairs.jpg";
 import heroKneePainSquatting from "@/assets/article-hero-knee-pain-squatting.jpg";
+import heroKneePainYoga from "@/assets/article-hero-knee-pain-yoga.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -176,6 +177,7 @@ import thumbKneePainAfterExercise from "@/assets/guide-thumb-knee-pain-after-exe
 import thumbKneePainClimbingStairs from "@/assets/guide-thumb-knee-pain-climbing-stairs.jpg";
 import thumbKneePainGoingDownStairs from "@/assets/guide-thumb-knee-pain-going-down-stairs.jpg";
 import thumbKneePainSquatting from "@/assets/guide-thumb-knee-pain-squatting.jpg";
+import thumbKneePainYoga from "@/assets/guide-thumb-knee-pain-yoga.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -245,6 +247,7 @@ import {
   kneePainClimbingStairs,
   kneePainGoingDownStairs,
   kneePainSquatting,
+  kneePainDuringYoga,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -333,6 +336,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-pain-climbing-stairs": { headline: "Need comfort support for stair climbing?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable after every flight of stairs." },
   "knee-pain-going-down-stairs": { headline: "Need comfort support after descending stairs?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after daily stair descent." },
   "knee-pain-when-squatting": { headline: "Need post-squat knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after squatting workouts." },
+  "knee-pain-during-yoga": { headline: "Need comfort support for your yoga practice?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable before and after yoga sessions." },
 };
 
 const articles: Record<string, ArticleData> = {
