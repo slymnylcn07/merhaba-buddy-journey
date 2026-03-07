@@ -201,7 +201,7 @@ const kneePainDuringYoga: ArticleExport = {
 
         <h3>Deep Kneeling Poses</h3>
         <p>
-          Poses that involve direct kneeling — such as low lunges, camel pose, or gate pose — place the body weight directly through the kneecap and surrounding structures. Without adequate cushioning or modification, these poses can irritate the prepatellar bursa and create discomfort in the front of the knee.
+          Poses that involve direct kneeling, such as low lunges, camel pose, or gate pose, place the body weight directly through the kneecap and surrounding structures. Without adequate cushioning or modification, these poses can irritate the prepatellar bursa and create discomfort in the front of the knee.
         </p>
 
         <InfoBox title="Pose Pressure Hierarchy">
@@ -324,12 +324,12 @@ const kneePainDuringYoga: ArticleExport = {
 
         <h3>Adjust Foot and Knee Alignment</h3>
         <p>
-          In standing poses, ensure your knee tracks over the center of your foot — not inward or outward. In lunges, keep the front knee directly above the ankle. In seated poses, if you feel pulling in the inner knee, back off the pose depth until the sensation is felt only in the hip.
+          In standing poses, ensure your knee tracks over the center of your foot, not inward or outward. In lunges, keep the front knee directly above the ankle. In seated poses, if you feel pulling in the inner knee, back off the pose depth until the sensation is felt only in the hip.
         </p>
 
         <h3>Focus on Gradual Flexibility</h3>
         <p>
-          Flexibility is a long-term adaptation. Consistent, gentle practice over weeks and months produces far better results — and far less injury risk — than aggressive stretching in a single session. Your knees will thank you for patience. Learn more about gradual approaches in our <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting guide</Link>.
+          Flexibility is a long-term adaptation. Consistent, gentle practice over weeks and months produces far better results, and far less injury risk, than aggressive stretching in a single session. Your knees will thank you for patience. Learn more about gradual approaches in our <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting guide</Link>.
         </p>
 
         <TipsList tips={[
@@ -391,7 +391,7 @@ const kneePainDuringYoga: ArticleExport = {
 
         <h3>Recovery Practices</h3>
         <p>
-          After yoga sessions, support your knees with gentle recovery: apply warmth to promote circulation, perform light quad and calf stretches, and consider using a <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">daily warmth routine</Link> to keep the joint tissues supple between sessions. Cold weather can also affect knee readiness — learn more in our <Link to="/guides/cold-weather-knee-pain" className="text-primary hover:underline">cold weather knee comfort guide</Link>.
+          After yoga sessions, support your knees with gentle recovery: apply warmth to promote circulation, perform light quad and calf stretches, and consider using a <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">daily warmth routine</Link> to keep the joint tissues supple between sessions. Cold weather can also affect knee readiness. Learn more in our <Link to="/guides/cold-weather-knee-pain" className="text-primary hover:underline">cold weather knee comfort guide</Link>.
         </p>
 
         <TipsList tips={[
