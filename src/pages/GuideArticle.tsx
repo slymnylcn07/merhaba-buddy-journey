@@ -274,6 +274,7 @@ import {
   kneeBursitisGuide,
   patellofemoralPainSyndrome,
   kneePainAfterCarRides,
+  warmFeelingInKnee,
 } from "@/data/articles";
 
 interface FAQItem {
