@@ -75,7 +75,7 @@ const article = {
       />
 
       {/* Section 1 */}
-      <h2>How Long Sitting Affects the Knee Joint</h2>
+      <h2 id="how-long-sitting-affects-knee">How Long Sitting Affects the Knee Joint</h2>
       <p>
         When you sit in an airplane seat, your knee typically stays bent at approximately 90 degrees for the entire flight duration. This sustained position affects the joint in several important ways that contribute to post-flight stiffness.
       </p>
