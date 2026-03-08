@@ -93,7 +93,7 @@ const article = {
       </figure>
 
       <p>
-        When blood flow increases to the knee — whether from exercise, irritation, or the body's natural recovery processes — you may notice warmth on the skin surface around the joint. This is because blood carries heat, and increased circulation naturally raises the temperature of the surrounding area.
+        When blood flow increases to the knee, whether from exercise, irritation, or the body's natural recovery processes, you may notice warmth on the skin surface around the joint. This is because blood carries heat, and increased circulation naturally raises the temperature of the surrounding area.
       </p>
 
       <InfoBox title="Understanding Joint Warmth">
