@@ -77,7 +77,7 @@ const article = {
       <h2>What a Warm Sensation in the Knee Usually Means</h2>
 
       <p>
-        A warm feeling in the knee is typically the body's way of signaling increased activity in the joint area. The knee joint is surrounded by tissues that rely on consistent blood flow to function well — muscles, tendons, ligaments, and the synovial membrane that lines the joint capsule all receive nutrition through circulation.
+        A warm feeling in the knee is typically the body's way of signaling increased activity in the joint area. The knee joint is surrounded by tissues that rely on consistent blood flow to function well: muscles, tendons, ligaments, and the synovial membrane that lines the joint capsule all receive nutrition through circulation.
       </p>
 
       <figure className="my-8">
