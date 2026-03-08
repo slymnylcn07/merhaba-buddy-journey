@@ -280,6 +280,7 @@ import {
   kneePainAfterCarRides,
   warmFeelingInKnee,
   heavyFeelingInKnees,
+  kneePainAfterFlights,
 } from "@/data/articles";
 
 interface FAQItem {
