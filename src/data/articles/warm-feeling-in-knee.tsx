@@ -134,7 +134,7 @@ const article = {
 
       <h3>Tissue Irritation</h3>
       <p>
-        When tissues around the knee become mildly irritated — from overuse, repetitive movements, or sustained pressure — the body's natural response includes increasing blood flow to the area. This increased circulation brings immune cells and nutrients that support tissue maintenance, but it also brings heat.
+        When tissues around the knee become mildly irritated from overuse, repetitive movements, or sustained pressure, the body's natural response includes increasing blood flow to the area. This increased circulation brings immune cells and nutrients that support tissue maintenance, but it also brings heat.
       </p>
 
       <h3>Environmental and Temperature Changes</h3>
