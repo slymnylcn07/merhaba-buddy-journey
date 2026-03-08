@@ -228,9 +228,9 @@ export const clickingKneeWithoutPain: ArticleExport = {
             alt="Diagram showing joint mechanics and force distribution during movement"
             className="w-full h-auto rounded-xl shadow-sm"
           />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Different movements place varying amounts of pressure on the joint, influencing clicking frequency
-          </figcaption>
+           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+             Everyday activities like using stairs engage the knee through movements that commonly produce clicking sounds
+           </figcaption>
         </figure>
 
         <h3>Squatting</h3>
