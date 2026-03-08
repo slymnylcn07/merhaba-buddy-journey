@@ -7939,6 +7939,7 @@ const GuideArticle = () => {
                 "knee-weakness-without-pain": thumbKneeWeaknessNoPain,
                 "plica-syndrome-knee-pain": thumbPlicaSyndrome,
                 "knee-bursitis-guide": thumbKneeBursitis,
+                "patellofemoral-pain-syndrome": thumbPFPS,
               };
 
               // Topic clusters for relevant recommendations

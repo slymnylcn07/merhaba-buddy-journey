@@ -261,6 +261,7 @@ const activitySlugs = [
   "knee-weakness-without-pain",
   "plica-syndrome-knee-pain",
   "knee-bursitis-guide",
+  "patellofemoral-pain-syndrome",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
