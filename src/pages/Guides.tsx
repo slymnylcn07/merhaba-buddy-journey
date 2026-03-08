@@ -93,6 +93,7 @@ import thumbPlicaSyndrome from "@/assets/guide-thumb-plica-syndrome.jpg";
 import thumbKneeBursitis from "@/assets/guide-thumb-knee-bursitis.jpg";
 import thumbPFPS from "@/assets/guide-thumb-pfps.jpg";
 import thumbKneePainCarRides from "@/assets/guide-thumb-knee-pain-car-rides.jpg";
+import thumbWarmFeelingKnee from "@/assets/guide-thumb-warm-feeling-knee.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "why-knee-pain-doesnt-go-away": thumbKneePain,
@@ -182,6 +183,7 @@ const thumbnailMap: Record<string, string> = {
   "knee-bursitis-guide": thumbKneeBursitis,
   "patellofemoral-pain-syndrome": thumbPFPS,
   "knee-pain-after-car-rides": thumbKneePainCarRides,
+  "warm-feeling-in-knee": thumbWarmFeelingKnee,
 };
 
 // Combine data with thumbnails
@@ -265,6 +267,7 @@ const activitySlugs = [
   "knee-bursitis-guide",
   "patellofemoral-pain-syndrome",
   "knee-pain-after-car-rides",
+  "warm-feeling-in-knee",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
