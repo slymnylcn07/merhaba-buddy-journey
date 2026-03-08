@@ -58,8 +58,8 @@ export const burningKneeSensation: ArticleExport = {
     metaDescription: "Learn why your knee feels warm or burning. Discover common causes of burning knee pain, when to take action, and home strategies that support joint comfort and recovery.",
     heroImage: heroImage,
     publishedDate: "March 8, 2026",
-    nextSlug: "knee-tightness-without-pain",
-    nextTitle: "Knee Tightness Without Pain",
+    nextSlug: "knee-weakness-without-pain",
+    nextTitle: "Knee Weakness Without Pain",
     seoTags: "burning sensation in knee,burning knee pain,knee burning sensation,burning feeling in knee,burning pain in knee,knee feels warm or burning,knee inflammation sensation,overuse knee irritation,patellofemoral joint pressure,nerve irritation knee,burning knee after exercise,warm knee joint feeling",
     faqs,
     content: (
