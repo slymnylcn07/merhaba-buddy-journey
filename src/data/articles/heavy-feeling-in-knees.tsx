@@ -54,8 +54,8 @@ const article = {
   metaDescription: "Learn why your knees feel heavy, common causes including muscle fatigue and circulation, and simple everyday strategies to support lighter, more comfortable knee movement.",
   heroImage,
   publishedDate: "March 8, 2026",
-  nextSlug: undefined as string | undefined,
-  nextTitle: undefined as string | undefined,
+  nextSlug: "knee-pain-after-flights",
+  nextTitle: "Knee Pain After Long Flights",
   faqs,
   seoTags: "heavy feeling in knees, knees feel heavy, heavy knees walking, knee heaviness sensation, leg muscle fatigue knee, knee joint fatigue, reduced circulation knees, muscle tiredness knee, knee support muscles, everyday knee comfort",
   content: (
