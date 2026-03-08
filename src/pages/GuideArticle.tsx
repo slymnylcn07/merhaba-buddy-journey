@@ -7916,13 +7916,6 @@ const GuideArticle = () => {
                 </div>
               )}
 
-              {/* Share Block - test for knee-pain-after-flights only */}
-              {slug === "knee-pain-after-flights" && (
-                <ArticleShareBlock
-                  url={`https://merhaba-buddy-journey.lovable.app/guides/${slug}`}
-                  title={article.title}
-                />
-              )}
             </div>
             
             {/* Premium CTA Highlight Box */}
@@ -7930,6 +7923,14 @@ const GuideArticle = () => {
               <PremiumCTA
                 headline={articleCTAs[slug].headline}
                 text={articleCTAs[slug].text}
+              />
+            )}
+
+            {/* Share Block - test for knee-pain-after-flights only */}
+            {slug === "knee-pain-after-flights" && (
+              <ArticleShareBlock
+                url={`https://merhaba-buddy-journey.lovable.app/guides/${slug}`}
+                title={article.title}
               />
             )}
           </div>
