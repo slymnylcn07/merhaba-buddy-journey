@@ -283,6 +283,7 @@ import {
   warmFeelingInKnee,
   heavyFeelingInKnees,
   kneePainAfterFlights,
+  kneePainWhenKneeling,
 } from "@/data/articles";
 
 interface FAQItem {
