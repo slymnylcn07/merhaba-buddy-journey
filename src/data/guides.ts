@@ -621,6 +621,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-08",
   },
+  {
+    slug: "warm-feeling-in-knee",
+    title: "Warm Feeling in the Knee: Causes & Comfort",
+    description: "Learn why your knee feels warm, common causes of knee warmth including circulation and activity, and simple everyday strategies to support comfortable knee joints.",
+    readTime: 14,
+    lastModified: "2026-03-08",
+  },
 ];
 
 export const staticPages = [
