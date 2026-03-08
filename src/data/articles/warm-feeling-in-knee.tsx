@@ -357,7 +357,7 @@ const article = {
       </InfoBox>
 
       <p>
-        Understanding the warm sensations in your knee is an important part of maintaining long-term joint comfort. In most cases, knee warmth is your body's natural response to activity and movement — a sign that your circulatory system is working to support your joints. By building healthy daily habits, maintaining balanced muscle strength, and paying attention to how your knees respond to different activities, you can support comfortable, active movement for years to come.
+        Understanding the warm sensations in your knee is an important part of maintaining long-term joint comfort. In most cases, knee warmth is your body's natural response to activity and movement, a sign that your circulatory system is working to support your joints. By building healthy daily habits, maintaining balanced muscle strength, and paying attention to how your knees respond to different activities, you can support comfortable, active movement for years to come.
       </p>
     </>
   ),
