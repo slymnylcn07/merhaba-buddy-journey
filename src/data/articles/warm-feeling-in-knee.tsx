@@ -97,7 +97,7 @@ const article = {
       </p>
 
       <InfoBox title="Understanding Joint Warmth">
-        <p>The sensation of warmth in the knee is closely linked to blood flow. When the body directs more circulation to the joint area — for recovery, activity support, or tissue maintenance — the increased blood volume raises local temperature. This is a normal physiological process that happens throughout the body.</p>
+        <p>The sensation of warmth in the knee is closely linked to blood flow. When the body directs more circulation to the joint area for recovery, activity support, or tissue maintenance, the increased blood volume raises local temperature. This is a normal physiological process that happens throughout the body.</p>
       </InfoBox>
 
       <p>
