@@ -258,6 +258,7 @@ import {
   kneePainHiking,
   kneeTightnessWithoutPain,
   burningKneeSensation,
+  kneeWeaknessWithoutPain,
 } from "@/data/articles";
 
 interface FAQItem {
