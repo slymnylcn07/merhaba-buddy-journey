@@ -259,7 +259,7 @@ const article = {
       </p>
 
       {/* Section 7 */}
-      <h2>When Knee Discomfort After Travel Should Be Evaluated</h2>
+      <h2 id="when-knee-discomfort-evaluated">When Knee Discomfort After Travel Should Be Evaluated</h2>
       <p>
         For most people, knee stiffness after a long flight is temporary and resolves within 30-60 minutes of normal walking and movement. However, certain signs suggest that it may be worth seeking professional evaluation.
       </p>
