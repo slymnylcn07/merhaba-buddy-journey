@@ -274,7 +274,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Gradual Activity Progression</h3>
         <p>
-          Sudden increases in activity level — such as starting a new exercise program or significantly increasing running distance — can temporarily increase knee clicking as tissues adapt to new demands. Progressing gradually (no more than a 10% increase per week) gives the joint time to adapt and helps minimize unnecessary sounds.
+          Sudden increases in activity level, such as starting a new exercise program or significantly increasing running distance, can temporarily increase knee clicking as tissues adapt to new demands. Progressing gradually (no more than a 10% increase per week) gives the joint time to adapt and helps minimize unnecessary sounds.
         </p>
 
         <h3>Staying Hydrated</h3>
