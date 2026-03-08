@@ -276,7 +276,7 @@ const article = {
       </p>
 
       {/* Summary */}
-      <h2>Supporting Your Knees Through Air Travel</h2>
+      <h2 id="supporting-knees-air-travel">Supporting Your Knees Through Air Travel</h2>
       <p>
         Knee stiffness after long flights is a common experience driven by the combination of prolonged sitting, reduced circulation, cabin pressure changes, and muscle inactivity. The good news is that understanding these factors makes it straightforward to take steps that reduce their impact.
       </p>
