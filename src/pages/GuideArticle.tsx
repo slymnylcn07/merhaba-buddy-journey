@@ -179,6 +179,7 @@ import thumbKneePainClimbingStairs from "@/assets/guide-thumb-knee-pain-climbing
 import thumbKneePainGoingDownStairs from "@/assets/guide-thumb-knee-pain-going-down-stairs.jpg";
 import thumbKneePainSquatting from "@/assets/guide-thumb-knee-pain-squatting.jpg";
 import thumbKneePainYoga from "@/assets/guide-thumb-knee-pain-yoga.jpg";
+import thumbKneePainHiking from "@/assets/guide-thumb-knee-pain-hiking.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
