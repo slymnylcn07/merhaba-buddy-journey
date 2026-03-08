@@ -328,14 +328,16 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
           While occasional knee weakness is common and often related to muscle conditioning, certain patterns may warrant professional evaluation.
         </p>
 
-        <InfoBox title="Signs That May Warrant Professional Evaluation" items={[
-          "Repeated episodes of the knee giving way or buckling unexpectedly during daily activities",
-          "Difficulty supporting your body weight on the affected leg during walking or standing",
-          "Weakness that progressively worsens over weeks or months despite regular activity",
-          "New swelling, locking, or catching sensations that accompany the weakness",
-          "Instability that significantly limits your ability to perform normal daily tasks",
-          "Knee weakness that appeared suddenly after a specific incident or fall",
-        ]} />
+        <InfoBox title="Signs That May Warrant Professional Evaluation">
+          <ul className="space-y-2 text-muted-foreground">
+            <li>Repeated episodes of the knee giving way or buckling unexpectedly during daily activities</li>
+            <li>Difficulty supporting your body weight on the affected leg during walking or standing</li>
+            <li>Weakness that progressively worsens over weeks or months despite regular activity</li>
+            <li>New swelling, locking, or catching sensations that accompany the weakness</li>
+            <li>Instability that significantly limits your ability to perform normal daily tasks</li>
+            <li>Knee weakness that appeared suddenly after a specific incident or fall</li>
+          </ul>
+        </InfoBox>
 
         <p>
           If your knee weakness is mild, occasional, and improves with movement and exercise, it is most likely related to muscle conditioning. However, trusting your instincts is important. If something feels different or concerning, seeking guidance from a healthcare professional is always a reasonable step.
