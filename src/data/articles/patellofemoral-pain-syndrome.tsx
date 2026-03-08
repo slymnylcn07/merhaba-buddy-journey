@@ -210,8 +210,8 @@ export const patellofemoralPainSyndrome: ArticleExport = {
         </p>
 
         <PremiumCTA
-          title="Support Your Kneecap Comfort Daily"
-          description="FlexiKnee provides soothing warmth, red light, and gentle vibration to help support front-of-knee comfort during your daily routine."
+          headline="Support Your Kneecap Comfort Daily"
+          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help support front-of-knee comfort during your daily routine."
         />
 
         <h2>Everyday Strategies That May Support Knee Comfort</h2>
