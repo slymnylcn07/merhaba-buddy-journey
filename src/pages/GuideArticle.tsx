@@ -7773,6 +7773,17 @@ const GuideArticle = () => {
         { name: "Walk Gently After Landing", text: "Spend 10-15 minutes walking at a comfortable pace after landing to help your knees transition from the prolonged sitting position back to normal movement patterns." },
       ],
     },
+    "knee-pain-when-kneeling": {
+      name: "How to Reduce Knee Discomfort When Kneeling",
+      description: "Simple strategies to minimize front-of-knee pressure and support knee comfort during and after kneeling activities.",
+      steps: [
+        { name: "Use a Kneeling Pad or Cushion", text: "Place a thick kneeling pad, folded towel, or foam cushion under your knees whenever you kneel on hard surfaces. This single change reduces the direct pressure on the kneecap and prepatellar bursa significantly." },
+        { name: "Take Position Breaks Every 5-10 Minutes", text: "Set a mental timer to stand up and walk for 30-60 seconds every 5-10 minutes during kneeling activities. This allows blood flow to return to the compressed tissues and prevents cumulative soreness." },
+        { name: "Alternate Kneeling Positions", text: "Switch between full kneeling, half-kneeling with one foot forward, and sitting back on your heels. Rotating positions distributes pressure across different areas of the knee rather than concentrating it on one spot." },
+        { name: "Strengthen Supporting Muscles", text: "Perform quadriceps strengthening exercises like wall sits and straight-leg raises 3-4 times per week. Stronger leg muscles provide better control during kneeling transitions and reduce impact on the kneecap." },
+        { name: "Apply Warmth After Kneeling Activities", text: "After extended kneeling sessions, apply soothing warmth to the front of the knee for 10-15 minutes to help the tissues recover and reduce any residual sensitivity." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];
