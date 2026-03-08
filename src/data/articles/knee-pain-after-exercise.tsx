@@ -130,7 +130,7 @@ const articleContent = (
     </figure>
 
     <InfoBox title="The Endorphin Window">
-      <p>Your body's natural painkilling chemicals can remain elevated for 30–90 minutes after exercise ends. This is why many people feel great immediately after a workout but start noticing knee stiffness only later in the day. Understanding this "endorphin window" helps explain the delayed nature of post-exercise knee soreness.</p>
+      <p>Your body's natural painkilling chemicals can remain elevated for 30 to 90 minutes after exercise ends. This is why many people feel great immediately after a workout but start noticing knee stiffness only later in the day. Understanding this "endorphin window" helps explain the delayed nature of post-exercise knee soreness.</p>
     </InfoBox>
 
     {/* ── Section 2 ── */}
