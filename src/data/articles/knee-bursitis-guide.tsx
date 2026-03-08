@@ -58,6 +58,8 @@ export const kneeBursitisGuide: ArticleExport = {
     metaDescription: "Learn what knee bursitis is, common causes of bursa irritation, typical symptoms, and 40+ everyday strategies to support knee comfort. Clear educational guide for adults.",
     heroImage: heroImage,
     publishedDate: "March 8, 2026",
+    nextSlug: "patellofemoral-pain-syndrome",
+    nextTitle: "Patellofemoral Pain Syndrome: Symptoms & Everyday Relief",
     faqs: faqs,
     content: (
       <>

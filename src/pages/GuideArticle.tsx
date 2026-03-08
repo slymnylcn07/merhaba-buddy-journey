@@ -268,6 +268,7 @@ import {
   kneeWeaknessWithoutPain,
   plicaSyndromeKneePain,
   kneeBursitisGuide,
+  patellofemoralPainSyndrome,
 } from "@/data/articles";
 
 interface FAQItem {
