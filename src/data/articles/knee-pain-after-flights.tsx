@@ -139,7 +139,7 @@ const article = {
       </p>
 
       {/* Section 3 */}
-      <h2>Why Knees Feel Stiff When Standing After Flying</h2>
+      <h2 id="stiff-knees-standing-after-flying">Why Knees Feel Stiff When Standing After Flying</h2>
 
       <figure className="my-8">
         <img
