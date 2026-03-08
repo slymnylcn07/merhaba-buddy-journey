@@ -7803,6 +7803,17 @@ const GuideArticle = () => {
         { name: "Take Movement Breaks", text: "Stand and walk briefly every 30-45 minutes during prolonged sitting to reduce sustained kneecap compression against the thigh bone." },
       ],
     },
+    "clicking-knee-without-pain": {
+      name: "How to Support Healthy Knee Movement and Reduce Clicking",
+      description: "Simple daily habits to support smooth, quiet knee movement and maintain healthy joint function over time.",
+      steps: [
+        { name: "Stay Active with Regular Movement", text: "Take movement breaks every 30-45 minutes during prolonged sitting. Stand, walk a few steps, and do gentle knee bends to keep joint fluid circulating and prevent gas buildup that causes loud pops." },
+        { name: "Strengthen Surrounding Muscles", text: "Perform quadriceps, hamstring, and calf strengthening exercises 3-4 times per week. Balanced muscle strength helps the kneecap track smoothly and reduces unnecessary tendon friction." },
+        { name: "Include Daily Mobility Work", text: "Spend 5-10 minutes daily on gentle knee stretching and mobility exercises to promote healthy synovial fluid distribution and keep surrounding soft tissues supple." },
+        { name: "Progress Activities Gradually", text: "Increase exercise intensity, duration, or volume by no more than 10% per week. Gradual progression gives the joint and surrounding tissues time to adapt without producing excessive sounds." },
+        { name: "Stay Well Hydrated", text: "Drink water consistently throughout the day to support healthy synovial fluid production. Proper hydration helps the knee's natural lubrication system work more effectively." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];

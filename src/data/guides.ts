@@ -656,6 +656,13 @@ export const guidesData: GuideData[] = [
     readTime: 16,
     lastModified: "2026-03-08",
   },
+  {
+    slug: "clicking-knee-without-pain",
+    title: "Clicking Knee Without Pain: What It Means",
+    description: "Why does your knee click without pain? Learn about normal knee clicking sounds, joint crepitus, gas release, and when painless knee popping needs attention.",
+    readTime: 15,
+    lastModified: "2026-03-08",
+  },
 ];
 
 export const staticPages = [
