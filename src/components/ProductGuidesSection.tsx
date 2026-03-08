@@ -37,6 +37,7 @@ import thumbKneePainGoingDownStairs from "@/assets/guide-thumb-knee-pain-going-d
 import thumbKneePainSquatting from "@/assets/guide-thumb-knee-pain-squatting.jpg";
 import thumbKneePainYoga from "@/assets/guide-thumb-knee-pain-yoga.jpg";
 import thumbKneePainHiking from "@/assets/guide-thumb-knee-pain-hiking.jpg";
+import thumbKneeTightnessNoPain from "@/assets/guide-thumb-knee-tightness-no-pain.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "back-of-knee-pain-common": thumbBackKneeCommon,
