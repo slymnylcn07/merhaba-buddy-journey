@@ -190,7 +190,7 @@ const article = {
       </p>
 
       {/* Section 5 */}
-      <h2>Simple Strategies to Reduce Stiffness During Flights</h2>
+      <h2 id="strategies-reduce-stiffness">Simple Strategies to Reduce Stiffness During Flights</h2>
 
       <figure className="my-8">
         <img
