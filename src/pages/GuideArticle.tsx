@@ -187,6 +187,7 @@ import thumbKneePainHiking from "@/assets/guide-thumb-knee-pain-hiking.jpg";
 import thumbKneeTightnessNoPain from "@/assets/guide-thumb-knee-tightness-no-pain.jpg";
 import thumbBurningKneeSensation from "@/assets/guide-thumb-burning-knee-sensation.jpg";
 import thumbKneeWeaknessNoPain from "@/assets/guide-thumb-knee-weakness-no-pain.jpg";
+import thumbPlicaSyndrome from "@/assets/guide-thumb-plica-syndrome.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
