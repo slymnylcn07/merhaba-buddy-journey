@@ -254,10 +254,6 @@ export const kneePainWhenKneeling: ArticleExport = {
           A healthcare professional can help identify specific contributing factors and recommend targeted approaches that complement your daily comfort strategies.
         </p>
 
-        <PremiumCTA
-          headline="Support your knees after kneeling activities"
-          text="FlexiKnee's wrap-around design delivers soothing infrared warmth and gentle vibration to the front knee area, helping your knees recover comfortably after gardening, cleaning, or any kneeling work."
-        />
       </>
     ),
     seoTags: "knee pain when kneeling, kneeling knee discomfort, front knee pressure kneeling, kneecap pressure pain, prepatellar knee irritation, knee pain kneeling floor, kneeling discomfort support, knee joint compression kneeling, knee comfort kneeling activities, daily knee kneeling habits",
