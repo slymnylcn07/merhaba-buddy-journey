@@ -59,4 +59,5 @@ export { patellofemoralPainSyndrome } from "./patellofemoral-pain-syndrome";
 export { kneePainAfterCarRides } from "./knee-pain-after-car-rides";
 export { warmFeelingInKnee } from "./warm-feeling-in-knee";
 export { heavyFeelingInKnees } from "./heavy-feeling-in-knees";
+export { kneePainAfterFlights } from "./knee-pain-after-flights";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";

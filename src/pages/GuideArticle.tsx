@@ -111,6 +111,7 @@ import heroPFPS from "@/assets/article-hero-pfps.jpg";
 import heroKneePainCarRides from "@/assets/article-hero-knee-pain-car-rides.jpg";
 import heroWarmFeelingKnee from "@/assets/article-hero-warm-feeling-knee.jpg";
 import heroHeavyKnees from "@/assets/article-hero-heavy-knees.jpg";
+import heroKneePainFlights from "@/assets/article-hero-knee-pain-flights.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -198,6 +199,7 @@ import thumbPFPS from "@/assets/guide-thumb-pfps.jpg";
 import thumbKneePainCarRides from "@/assets/guide-thumb-knee-pain-car-rides.jpg";
 import thumbWarmFeelingKnee from "@/assets/guide-thumb-warm-feeling-knee.jpg";
 import thumbHeavyKnees from "@/assets/guide-thumb-heavy-knees.jpg";
+import thumbKneePainFlights from "@/assets/guide-thumb-knee-pain-flights.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -278,6 +280,7 @@ import {
   kneePainAfterCarRides,
   warmFeelingInKnee,
   heavyFeelingInKnees,
+  kneePainAfterFlights,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -377,6 +380,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-pain-after-car-rides": { headline: "Need post-travel knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long drives." },
   "warm-feeling-in-knee": { headline: "Want soothing warmth support for your knees?", text: "FlexiKnee provides adjustable heat, red light, and gentle vibration in one wireless device — designed for daily knee comfort support." },
   "heavy-feeling-in-knees": { headline: "Support your knees with daily warmth and comfort", text: "FlexiKnee provides adjustable warmth, red light, and gentle vibration in one wireless device, designed for daily knee comfort support." },
+  "knee-pain-after-flights": { headline: "Want post-travel knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long flights and travel days." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7468,7 +7472,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7752,6 +7756,17 @@ const GuideArticle = () => {
         { name: "Walk for 5-10 Minutes as a Reset", text: "When knees feel heavy, a short walk activates all major supporting muscle groups, promotes circulation, and restores the natural rhythm of joint fluid movement." },
       ],
     },
+    "knee-pain-after-flights": {
+      name: "How to Reduce Knee Stiffness During Long Flights",
+      description: "Simple strategies to keep your knees comfortable during and after long flights by maintaining circulation and joint mobility.",
+      steps: [
+        { name: "Perform Seated Ankle Pumps", text: "Every 20-30 minutes, point your toes up and down 10-15 times to activate the calf muscle pump and promote blood circulation back from the lower legs." },
+        { name: "Do Gentle Knee Extensions", text: "Straighten one leg at a time under the seat in front of you and hold for 5 seconds, then slowly lower. Repeat 5 times per leg every hour to keep the joint mobile." },
+        { name: "Walk the Aisle Regularly", text: "Stand and walk the aisle at least once every 1-2 hours during long flights to restore full circulation and give the knee joint a break from the bent position." },
+        { name: "Stay Hydrated Throughout the Flight", text: "Drink water consistently during the flight to counteract cabin dehydration and support healthy blood flow and joint fluid production." },
+        { name: "Walk Gently After Landing", text: "Spend 10-15 minutes walking at a comfortable pace after landing to help your knees transition from the prolonged sitting position back to normal movement patterns." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];
@@ -7997,6 +8012,9 @@ const GuideArticle = () => {
                 "knee-bursitis-guide": thumbKneeBursitis,
                 "patellofemoral-pain-syndrome": thumbPFPS,
                 "knee-pain-after-car-rides": thumbKneePainCarRides,
+                "warm-feeling-in-knee": thumbWarmFeelingKnee,
+                "heavy-feeling-in-knees": thumbHeavyKnees,
+                "knee-pain-after-flights": thumbKneePainFlights,
               };
 
               // Topic clusters for relevant recommendations
@@ -8095,6 +8113,16 @@ const GuideArticle = () => {
                 "knee-pain-when-squatting": ["knee-pain-after-exercise", "knee-pain-exercises-guide", "how-to-strengthen-knees"],
                 "knee-pain-during-yoga": ["knee-pain-after-sitting-cross-legged", "knee-pain-when-squatting", "knee-mobility-after-50"],
                 "knee-pain-when-hiking": ["knee-pain-after-long-walks", "knee-pain-climbing-stairs", "knee-pain-after-exercise"],
+                "knee-tightness-without-pain": ["why-do-my-knees-feel-tight-after-resting", "knee-pain-after-sitting-cross-legged", "knee-warmth-daily-comfort"],
+                "burning-sensation-in-knee": ["warm-feeling-in-knee", "knee-pain-after-exercise", "knee-warmth-daily-comfort"],
+                "knee-weakness-without-pain": ["how-to-strengthen-knees", "knee-pain-exercises-guide", "heavy-feeling-in-knees"],
+                "plica-syndrome-knee-pain": ["patellofemoral-pain-syndrome", "knee-bursitis-guide", "front-knee-tightness-after-activity"],
+                "knee-bursitis-guide": ["plica-syndrome-knee-pain", "patellofemoral-pain-syndrome", "knee-pain-after-exercise"],
+                "patellofemoral-pain-syndrome": ["plica-syndrome-knee-pain", "front-knee-tightness-after-activity", "knee-pain-climbing-stairs"],
+                "knee-pain-after-car-rides": ["knee-pain-after-flights", "why-do-my-knees-feel-tight-after-resting", "knee-pain-after-sitting-cross-legged"],
+                "warm-feeling-in-knee": ["burning-sensation-in-knee", "knee-warmth-daily-comfort", "heavy-feeling-in-knees"],
+                "heavy-feeling-in-knees": ["knee-weakness-without-pain", "knee-tightness-without-pain", "knee-pain-after-flights"],
+                "knee-pain-after-flights": ["knee-pain-after-car-rides", "why-do-my-knees-feel-tight-after-resting", "knee-tightness-without-pain"],
               };
 
               // Get topic-relevant articles (max 3)

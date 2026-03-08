@@ -635,6 +635,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-08",
   },
+  {
+    slug: "knee-pain-after-flights",
+    title: "Knee Pain After Long Flights: Relief Tips",
+    description: "Learn why knees feel stiff after long flights. Discover causes of knee pain from prolonged sitting during travel and simple strategies to support comfort.",
+    readTime: 14,
+    lastModified: "2026-03-08",
+  },
 ];
 
 export const staticPages = [
