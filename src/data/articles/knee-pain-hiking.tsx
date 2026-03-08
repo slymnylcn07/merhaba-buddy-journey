@@ -58,8 +58,8 @@ const kneePainHiking: ArticleExport = {
     metaDescription: "Discover why knee pain happens when hiking, especially downhill. Learn about trail impact, incline stress, trekking pole benefits, and practical prevention strategies.",
     heroImage: heroImage,
     publishedDate: "March 8, 2026",
-    nextSlug: "knee-pain-during-yoga",
-    nextTitle: "Knee Pain During Yoga",
+    nextSlug: "knee-tightness-without-pain",
+    nextTitle: "Knee Tightness Without Pain",
     seoTags: "knee pain when hiking,hiking knee pain,downhill hiking knee pain,knee pain after hiking,trail knee stress,hiking knee joint support,trekking pole knee comfort,steep incline knee pressure,hiking knee prevention,knee support hiking trails,knee discomfort downhill,hiking knee conditioning",
     faqs,
     content: (

@@ -572,6 +572,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-08",
   },
+  {
+    slug: "knee-tightness-without-pain",
+    title: "Knee Tightness Without Pain: What It Means",
+    description: "Learn why your knee feels tight without pain. Discover common causes of knee stiffness, when to take action, and daily habits that support joint flexibility.",
+    readTime: 14,
+    lastModified: "2026-03-08",
+  },
 ];
 
 export const staticPages = [
