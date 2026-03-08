@@ -58,8 +58,8 @@ const kneePainDuringYoga: ArticleExport = {
     metaDescription: "Learn why knee pain happens during yoga poses like lotus and pigeon. Discover how hip mobility, alignment, and modifications support comfortable practice.",
     heroImage: heroImage,
     publishedDate: "March 7, 2026",
-    nextSlug: "knee-pain-when-squatting",
-    nextTitle: "Knee Pain When Squatting",
+    nextSlug: "knee-pain-when-hiking",
+    nextTitle: "Knee Pain When Hiking",
     faqs: faqs,
     seoTags: "knee pain during yoga, yoga knee pain, lotus pose knee pain, pigeon pose knee discomfort, yoga knee alignment, knee pressure yoga poses, hip mobility yoga, yoga knee joint stress, knee strain stretching, yoga knee comfort, yoga knee modifications, yoga blocks knee support, child pose knee discomfort, yoga beginners knee protection",
     content: (
