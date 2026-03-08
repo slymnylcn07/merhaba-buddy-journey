@@ -649,6 +649,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-08",
   },
+  {
+    slug: "pain-behind-kneecap",
+    title: "Pain Behind the Kneecap: Causes & Everyday Relief",
+    description: "Why does your kneecap hurt when bending, walking, or using stairs? Learn common causes of pain behind the kneecap and simple daily habits for knee comfort.",
+    readTime: 16,
+    lastModified: "2026-03-08",
+  },
 ];
 
 export const staticPages = [
