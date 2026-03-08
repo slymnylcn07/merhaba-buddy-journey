@@ -351,6 +351,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-pain-when-hiking": { headline: "Support your knees after every trail", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after hiking, making your post-trail recovery routine simple and effective." },
   "knee-tightness-without-pain": { headline: "Want daily warmth support for stiff knees?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel more flexible and comfortable throughout the day." },
   "burning-sensation-in-knee": { headline: "Want soothing warmth for irritated knees?", text: "FlexiKnee provides adjustable warmth, red light, and gentle vibration to help support knee comfort during your daily recovery routine." },
+  "knee-weakness-without-pain": { headline: "Support your knee stability every day", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable and supported before and after your daily strengthening routine." },
 };
 
 const articles: Record<string, ArticleData> = {
