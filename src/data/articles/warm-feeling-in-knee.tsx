@@ -232,7 +232,7 @@ const article = {
 
       <h3>Progressive Warmth with New Activities</h3>
       <p>
-        Starting a new exercise routine or significantly increasing your activity level can lead to more noticeable knee warmth as your joints adapt to new demands. This is why gradual progression is important — allowing your body time to adapt reduces the intensity of these warmth responses.
+        Starting a new exercise routine or significantly increasing your activity level can lead to more noticeable knee warmth as your joints adapt to new demands. This is why gradual progression is important, as allowing your body time to adapt reduces the intensity of these warmth responses.
       </p>
 
       <PremiumCTA headline="Want soothing warmth support for your knees?" text="FlexiKnee provides adjustable heat, red light, and gentle vibration in one wireless device — designed for daily knee comfort support." />
