@@ -255,7 +255,7 @@ const article = {
 
       <h3>Hydration</h3>
       <p>
-        Staying well-hydrated supports healthy blood flow, joint fluid production, and overall tissue function. When the body is properly hydrated, circulation is more efficient and temperature regulation works more effectively — both of which can influence how warm your knees feel after activity.
+        Staying well-hydrated supports healthy blood flow, joint fluid production, and overall tissue function. When the body is properly hydrated, circulation is more efficient and temperature regulation works more effectively, both of which can influence how warm your knees feel after activity.
       </p>
 
       <h3>Gentle Movement Throughout the Day</h3>
