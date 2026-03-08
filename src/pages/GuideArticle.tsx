@@ -7756,6 +7756,17 @@ const GuideArticle = () => {
         { name: "Walk for 5-10 Minutes as a Reset", text: "When knees feel heavy, a short walk activates all major supporting muscle groups, promotes circulation, and restores the natural rhythm of joint fluid movement." },
       ],
     },
+    "knee-pain-after-flights": {
+      name: "How to Reduce Knee Stiffness During Long Flights",
+      description: "Simple strategies to keep your knees comfortable during and after long flights by maintaining circulation and joint mobility.",
+      steps: [
+        { name: "Perform Seated Ankle Pumps", text: "Every 20-30 minutes, point your toes up and down 10-15 times to activate the calf muscle pump and promote blood circulation back from the lower legs." },
+        { name: "Do Gentle Knee Extensions", text: "Straighten one leg at a time under the seat in front of you and hold for 5 seconds, then slowly lower. Repeat 5 times per leg every hour to keep the joint mobile." },
+        { name: "Walk the Aisle Regularly", text: "Stand and walk the aisle at least once every 1-2 hours during long flights to restore full circulation and give the knee joint a break from the bent position." },
+        { name: "Stay Hydrated Throughout the Flight", text: "Drink water consistently during the flight to counteract cabin dehydration and support healthy blood flow and joint fluid production." },
+        { name: "Walk Gently After Landing", text: "Spend 10-15 minutes walking at a comfortable pace after landing to help your knees transition from the prolonged sitting position back to normal movement patterns." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];
