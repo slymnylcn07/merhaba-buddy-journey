@@ -168,7 +168,7 @@ const article = {
       </InfoBox>
 
       {/* Section 4 */}
-      <h2>Travel Situations That Increase Knee Stiffness</h2>
+      <h2 id="travel-situations-increase-stiffness">Travel Situations That Increase Knee Stiffness</h2>
       <p>
         While any long flight can lead to knee stiffness, certain travel situations tend to make it more likely or more pronounced.
       </p>
