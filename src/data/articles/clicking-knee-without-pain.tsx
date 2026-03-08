@@ -320,10 +320,6 @@ export const clickingKneeWithoutPain: ArticleExport = {
           <strong>Important:</strong> This guide is educational and does not replace professional medical advice. If you're concerned about your knee sounds, consulting a healthcare professional is always a good idea.
         </p>
 
-        <PremiumCTA
-          headline="Keep your knees comfortable and flexible"
-          text="FlexiKnee's wrap-around design delivers soothing infrared warmth and gentle vibration to the entire knee area, supporting smooth joint movement and everyday comfort."
-        />
       </>
     ),
   },
