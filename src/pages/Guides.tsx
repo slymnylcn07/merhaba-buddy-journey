@@ -255,6 +255,7 @@ const activitySlugs = [
   "knee-pain-after-exercise",
   "knee-pain-when-squatting",
   "knee-weakness-without-pain",
+  "plica-syndrome-knee-pain",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
