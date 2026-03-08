@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "Is a warm knee normal after activity?",
-    answer: "Yes, it is very common for knees to feel warm after physical activity. Exercise increases blood flow throughout the body, and the knee joint — one of the most active joints — naturally receives more circulation during and after movement. This warmth typically subsides within 30-60 minutes of rest.",
+    answer: "Yes, it is very common for knees to feel warm after physical activity. Exercise increases blood flow throughout the body, and the knee joint, one of the most active joints, naturally receives more circulation during and after movement. This warmth typically subsides within 30-60 minutes of rest.",
   },
   {
     question: "Does inflammation cause warmth in the knee?",
@@ -61,7 +61,7 @@ const article = {
   content: (
     <>
       <p>
-        The knee joint is one of the busiest joints in the body — bending, straightening, and bearing weight thousands of times each day. With all this activity, it's natural for the knee to occasionally feel warm. But when that warmth becomes noticeable or persistent, it's worth understanding what your body may be telling you.
+        The knee joint is one of the busiest joints in the body, bending, straightening, and bearing weight thousands of times each day. With all this activity, it's natural for the knee to occasionally feel warm. But when that warmth becomes noticeable or persistent, it's worth understanding what your body may be telling you.
       </p>
 
       <StatHighlight
@@ -77,7 +77,7 @@ const article = {
       <h2>What a Warm Sensation in the Knee Usually Means</h2>
 
       <p>
-        A warm feeling in the knee is typically the body's way of signaling increased activity in the joint area. The knee joint is surrounded by tissues that rely on consistent blood flow to function well — muscles, tendons, ligaments, and the synovial membrane that lines the joint capsule all receive nutrition through circulation.
+        A warm feeling in the knee is typically the body's way of signaling increased activity in the joint area. The knee joint is surrounded by tissues that rely on consistent blood flow to function well: muscles, tendons, ligaments, and the synovial membrane that lines the joint capsule all receive nutrition through circulation.
       </p>
 
       <figure className="my-8">
@@ -93,11 +93,11 @@ const article = {
       </figure>
 
       <p>
-        When blood flow increases to the knee — whether from exercise, irritation, or the body's natural recovery processes — you may notice warmth on the skin surface around the joint. This is because blood carries heat, and increased circulation naturally raises the temperature of the surrounding area.
+        When blood flow increases to the knee, whether from exercise, irritation, or the body's natural recovery processes, you may notice warmth on the skin surface around the joint. This is because blood carries heat, and increased circulation naturally raises the temperature of the surrounding area.
       </p>
 
       <InfoBox title="Understanding Joint Warmth">
-        <p>The sensation of warmth in the knee is closely linked to blood flow. When the body directs more circulation to the joint area — for recovery, activity support, or tissue maintenance — the increased blood volume raises local temperature. This is a normal physiological process that happens throughout the body.</p>
+        <p>The sensation of warmth in the knee is closely linked to blood flow. When the body directs more circulation to the joint area for recovery, activity support, or tissue maintenance, the increased blood volume raises local temperature. This is a normal physiological process that happens throughout the body.</p>
       </InfoBox>
 
       <p>
@@ -134,7 +134,7 @@ const article = {
 
       <h3>Tissue Irritation</h3>
       <p>
-        When tissues around the knee become mildly irritated — from overuse, repetitive movements, or sustained pressure — the body's natural response includes increasing blood flow to the area. This increased circulation brings immune cells and nutrients that support tissue maintenance, but it also brings heat.
+        When tissues around the knee become mildly irritated from overuse, repetitive movements, or sustained pressure, the body's natural response includes increasing blood flow to the area. This increased circulation brings immune cells and nutrients that support tissue maintenance, but it also brings heat.
       </p>
 
       <h3>Environmental and Temperature Changes</h3>
@@ -218,7 +218,7 @@ const article = {
 
       <h3>The Post-Activity Warmth Window</h3>
       <p>
-        After moderate to vigorous exercise, it's normal for the knee area to feel warm for anywhere from 15 minutes to an hour. During this time, the body is actively recovering — delivering nutrients, removing metabolic waste, and supporting tissue repair. This warmth typically resolves gradually as circulation returns to resting levels.
+        After moderate to vigorous exercise, it's normal for the knee area to feel warm for anywhere from 15 minutes to an hour. During this time, the body is actively recovering: delivering nutrients, removing metabolic waste, and supporting tissue repair. This warmth typically resolves gradually as circulation returns to resting levels.
       </p>
 
       <h3>Why One Knee May Feel Warmer Than the Other</h3>
@@ -232,10 +232,10 @@ const article = {
 
       <h3>Progressive Warmth with New Activities</h3>
       <p>
-        Starting a new exercise routine or significantly increasing your activity level can lead to more noticeable knee warmth as your joints adapt to new demands. This is why gradual progression is important — allowing your body time to adapt reduces the intensity of these warmth responses.
+        Starting a new exercise routine or significantly increasing your activity level can lead to more noticeable knee warmth as your joints adapt to new demands. This is why gradual progression is important, as allowing your body time to adapt reduces the intensity of these warmth responses.
       </p>
 
-      <PremiumCTA headline="Want soothing warmth support for your knees?" text="FlexiKnee provides adjustable heat, red light, and gentle vibration in one wireless device — designed for daily knee comfort support." />
+      <PremiumCTA headline="Want soothing warmth support for your knees?" text="FlexiKnee provides adjustable heat, red light, and gentle vibration in one wireless device, designed for daily knee comfort support." />
 
       <h2>Simple Ways to Support Knee Comfort</h2>
 
@@ -255,7 +255,7 @@ const article = {
 
       <h3>Hydration</h3>
       <p>
-        Staying well-hydrated supports healthy blood flow, joint fluid production, and overall tissue function. When the body is properly hydrated, circulation is more efficient and temperature regulation works more effectively — both of which can influence how warm your knees feel after activity.
+        Staying well-hydrated supports healthy blood flow, joint fluid production, and overall tissue function. When the body is properly hydrated, circulation is more efficient and temperature regulation works more effectively, both of which can influence how warm your knees feel after activity.
       </p>
 
       <h3>Gentle Movement Throughout the Day</h3>
@@ -265,7 +265,7 @@ const article = {
 
       <h3>Appropriate Activity Progression</h3>
       <p>
-        If you're starting a new activity or returning to exercise after a break, increase intensity gradually. The 10% rule — increasing volume or intensity by no more than 10% per week — helps your joints adapt without excessive stress responses. For more on maintaining comfortable knee movement, explore our <Link to="/guides/knee-tightness-without-pain" className="text-primary hover:underline">knee tightness without pain guide</Link>.
+        If you're starting a new activity or returning to exercise after a break, increase intensity gradually. The 10% rule, increasing volume or intensity by no more than 10% per week, helps your joints adapt without excessive stress responses. For more on maintaining comfortable knee movement, explore our <Link to="/guides/knee-tightness-without-pain" className="text-primary hover:underline">knee tightness without pain guide</Link>.
       </p>
 
       <TipsList tips={[
@@ -357,7 +357,7 @@ const article = {
       </InfoBox>
 
       <p>
-        Understanding the warm sensations in your knee is an important part of maintaining long-term joint comfort. In most cases, knee warmth is your body's natural response to activity and movement — a sign that your circulatory system is working to support your joints. By building healthy daily habits, maintaining balanced muscle strength, and paying attention to how your knees respond to different activities, you can support comfortable, active movement for years to come.
+        Understanding the warm sensations in your knee is an important part of maintaining long-term joint comfort. In most cases, knee warmth is your body's natural response to activity and movement, a sign that your circulatory system is working to support your joints. By building healthy daily habits, maintaining balanced muscle strength, and paying attention to how your knees respond to different activities, you can support comfortable, active movement for years to come.
       </p>
     </>
   ),
