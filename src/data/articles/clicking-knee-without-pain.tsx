@@ -308,7 +308,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Joint Instability</h3>
         <p>
-          If your knee feels like it might give way, catch, or lock during movement, this is a more significant concern than clicking alone. These sensations can suggest that internal structures of the knee — such as the meniscus or ligaments — may need evaluation.
+          If your knee feels like it might give way, catch, or lock during movement, this is a more significant concern than clicking alone. These sensations can suggest that internal structures of the knee, such as the meniscus or ligaments, may need evaluation.
         </p>
 
         <h3>Difficulty Bending or Straightening</h3>
