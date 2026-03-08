@@ -313,7 +313,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Difficulty Bending or Straightening</h3>
         <p>
-          Clicking combined with a reduced range of motion — difficulty fully bending or fully straightening the knee — may indicate a mechanical issue within the joint that a healthcare professional should assess.
+          Clicking combined with a reduced range of motion, such as difficulty fully bending or fully straightening the knee, may indicate a mechanical issue within the joint that a healthcare professional should assess.
         </p>
 
         <p>
