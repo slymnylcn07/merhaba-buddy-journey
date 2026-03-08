@@ -565,6 +565,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-07",
   },
+  {
+    slug: "knee-pain-when-hiking",
+    title: "Knee Pain When Hiking: Trail Impact & Prevention",
+    description: "Discover why knee pain happens when hiking, especially downhill. Learn about trail impact, incline stress, trekking poles, and practical prevention strategies.",
+    readTime: 15,
+    lastModified: "2026-03-08",
+  },
 ];
 
 export const staticPages = [

@@ -49,4 +49,5 @@ export { kneePainClimbingStairs } from "./knee-pain-climbing-stairs";
 export { kneePainGoingDownStairs } from "./knee-pain-going-down-stairs";
 export { kneePainSquatting } from "./knee-pain-squatting";
 export { kneePainDuringYoga } from "./knee-pain-during-yoga";
+export { kneePainHiking } from "./knee-pain-hiking";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
