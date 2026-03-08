@@ -586,6 +586,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-08",
   },
+  {
+    slug: "knee-weakness-without-pain",
+    title: "Knee Weakness Without Pain: Signs & Support",
+    description: "Learn why your knees feel weak without pain. Discover common causes of knee instability, when to take action, and daily habits that support knee strength.",
+    readTime: 14,
+    lastModified: "2026-03-08",
+  },
 ];
 
 export const staticPages = [
