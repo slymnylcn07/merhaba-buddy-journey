@@ -7886,6 +7886,14 @@ const GuideArticle = () => {
           </div>
         </section>
 
+        {/* Share Sidebar - test for knee-pain-after-flights only */}
+        {slug === "knee-pain-after-flights" && (
+          <ArticleShareSidebar
+            url={`https://merhaba-buddy-journey.lovable.app/guides/${slug}`}
+            title={article.title}
+          />
+        )}
+
         {/* Article Content */}
         <article className="py-8 md:py-10">
           <div className="container px-4 max-w-3xl mx-auto">
