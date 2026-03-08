@@ -303,7 +303,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Pain During or After Movement</h3>
         <p>
-          Clicking that was previously painless but starts to come with discomfort — even mild discomfort — is worth noting. Pain can indicate that the structures producing the sound are becoming irritated or that a new issue has developed. See our guide on <Link to="/guides/knee-pain-when-squatting">knee discomfort when squatting</Link> for activity-specific information.
+          Clicking that was previously painless but starts to come with discomfort, even mild discomfort, is worth noting. Pain can indicate that the structures producing the sound are becoming irritated or that a new issue has developed. See our guide on <Link to="/guides/knee-pain-when-squatting">knee discomfort when squatting</Link> for activity-specific information.
         </p>
 
         <h3>Joint Instability</h3>
