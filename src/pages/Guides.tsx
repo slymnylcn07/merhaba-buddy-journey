@@ -267,6 +267,7 @@ const activitySlugs = [
   "knee-bursitis-guide",
   "patellofemoral-pain-syndrome",
   "knee-pain-after-car-rides",
+  "warm-feeling-in-knee",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort

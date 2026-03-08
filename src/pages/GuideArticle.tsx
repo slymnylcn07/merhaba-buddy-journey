@@ -7726,6 +7726,17 @@ const GuideArticle = () => {
         { name: "Walk Gently After Arriving", text: "When you reach your destination, walk slowly for 5-10 minutes before attempting stairs or demanding activities. Allow your joints to warm up gradually." },
       ],
     },
+    "warm-feeling-in-knee": {
+      name: "How to Support Knee Comfort When Your Knee Feels Warm",
+      description: "Everyday strategies to understand and manage warm sensations in the knee joint for daily comfort.",
+      steps: [
+        { name: "Cool Down After Activity", text: "Take 5-10 minutes after exercise to cool down with gentle walking and light stretching, allowing blood flow to normalize and reduce post-activity knee warmth." },
+        { name: "Elevate Your Legs After Demanding Activities", text: "Rest with your leg slightly elevated after particularly demanding activities to help reduce excess blood pooling around the knee and allow warmth to resolve more quickly." },
+        { name: "Stay Hydrated Throughout the Day", text: "Drink water consistently to support healthy blood flow, joint fluid production, and temperature regulation, all of which influence how warm your knees feel." },
+        { name: "Incorporate Regular Gentle Movement", text: "Avoid alternating between long periods of inactivity and intense exercise. Regular moderate activity helps maintain steady circulation without dramatic warmth spikes." },
+        { name: "Progress Activity Levels Gradually", text: "Increase exercise volume and intensity by no more than 10% per week. Gradual progression allows joints to adapt without excessive stress and warmth responses." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];
