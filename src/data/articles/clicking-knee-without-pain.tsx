@@ -61,11 +61,11 @@ export const clickingKneeWithoutPain: ArticleExport = {
     content: (
       <>
         <p>
-          Have you ever stood up from a chair and heard a loud pop from your knee? Or noticed a consistent clicking sound when you straighten your leg? If there's no pain involved, these sounds can feel surprising — even alarming. But <strong>knee clicking without pain</strong> is one of the most common joint experiences people report, and it's usually nothing to worry about.
+          Have you ever stood up from a chair and heard a loud pop from your knee? Or noticed a consistent clicking sound when you straighten your leg? If there's no pain involved, these sounds can feel surprising, even alarming. But <strong>knee clicking without pain</strong> is one of the most common joint experiences people report, and it's usually nothing to worry about.
         </p>
         <p>
-          The knee is one of the most complex joints in the body. It involves multiple bones, layers of cartilage, fluid-filled capsules, tendons, and ligaments — all working together during every step, bend, and twist. With so many moving parts, it's completely natural for the joint to produce sounds from time to time.
-        </p>
+           The knee is one of the most complex joints in the body. It involves multiple bones, layers of cartilage, fluid-filled capsules, tendons, and ligaments, all working together during every step, bend, and twist. With so many moving parts, it's completely natural for the joint to produce sounds from time to time.
+         </p>
         <p>
           This guide explores the science behind <strong>knee clicking no pain</strong> experiences, explains when these sounds are perfectly normal, and helps you understand what daily habits support quiet, comfortable knee movement over time.
         </p>
@@ -97,14 +97,14 @@ export const clickingKneeWithoutPain: ArticleExport = {
             alt="Illustration showing a tendon gliding over a bony surface during joint movement"
             className="w-full h-auto rounded-xl shadow-sm"
           />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Tendons naturally slide over bony surfaces, occasionally producing clicking sounds
-          </figcaption>
+           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+             Gentle stretching movements engage the tendons and ligaments around the knee joint
+           </figcaption>
         </figure>
 
         <h3>Joint Fluid Gas Release</h3>
         <p>
-          Your knee joint is filled with synovial fluid, a natural lubricant that reduces friction during movement. This fluid contains dissolved gases like nitrogen and carbon dioxide. When pressure inside the joint changes — such as when you bend or straighten your leg — these gases can form tiny bubbles that quickly collapse. This process, known as <strong>cavitation</strong>, produces the familiar pop or crack sound.
+          Your knee joint is filled with synovial fluid, a natural lubricant that reduces friction during movement. This fluid contains dissolved gases like nitrogen and carbon dioxide. When pressure inside the joint changes, such as when you bend or straighten your leg, these gases can form tiny bubbles that quickly collapse. This process, known as <strong>cavitation</strong>, produces the familiar pop or crack sound.
         </p>
 
         <figure className="my-8">
@@ -160,12 +160,12 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Joint Lubrication</h3>
         <p>
-          Synovial fluid doesn't just reduce friction — it also contains gases that naturally expand and contract as pressure changes within the joint capsule. When you move after a period of stillness, these pressure changes are more pronounced, which is why <strong>normal knee clicking</strong> tends to be more noticeable after sitting or sleeping.
+          Synovial fluid doesn't just reduce friction. It also contains gases that naturally expand and contract as pressure changes within the joint capsule. When you move after a period of stillness, these pressure changes are more pronounced, which is why <strong>normal knee clicking</strong> tends to be more noticeable after sitting or sleeping.
         </p>
 
         <h3>Tendon Movement Over Bone</h3>
         <p>
-          The tendons around the knee — particularly the quadriceps tendon above the kneecap and the patellar tendon below — must slide and adjust with every knee movement. As they glide over ridges and bumps on the bone surfaces, they can produce snapping or clicking sounds. This is entirely normal and happens in many joints throughout the body, not just the knee.
+          The tendons around the knee, particularly the quadriceps tendon above the kneecap and the patellar tendon below, must slide and adjust with every knee movement. As they glide over ridges and bumps on the bone surfaces, they can produce snapping or clicking sounds. This is entirely normal and happens in many joints throughout the body, not just the knee.
         </p>
 
         <h3>Pressure Changes Inside the Joint</h3>
@@ -228,9 +228,9 @@ export const clickingKneeWithoutPain: ArticleExport = {
             alt="Diagram showing joint mechanics and force distribution during movement"
             className="w-full h-auto rounded-xl shadow-sm"
           />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Different movements place varying amounts of pressure on the joint, influencing clicking frequency
-          </figcaption>
+           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+             Everyday activities like using stairs engage the knee through movements that commonly produce clicking sounds
+           </figcaption>
         </figure>
 
         <h3>Squatting</h3>
@@ -245,7 +245,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Stretching</h3>
         <p>
-          When you stretch the knee through its full range — especially first thing in the morning or after prolonged sitting — the pressure changes and tendon adjustments can produce prominent popping sounds. Many people notice their loudest knee sounds during stretching routines.
+          When you stretch the knee through its full range, especially first thing in the morning or after prolonged sitting, the pressure changes and tendon adjustments can produce prominent popping sounds. Many people notice their loudest knee sounds during stretching routines.
         </p>
 
         <h3>Prolonged Sitting</h3>
@@ -264,7 +264,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Maintaining Muscle Balance</h3>
         <p>
-          The muscles around the knee — quadriceps, hamstrings, and calf muscles — work together to guide the joint through movement. When these muscles are balanced in strength and flexibility, the kneecap tracks more smoothly and tendons move more efficiently. Regular strengthening exercises can help reduce unnecessary friction and sound.
+          The muscles around the knee, including the quadriceps, hamstrings, and calf muscles, work together to guide the joint through movement. When these muscles are balanced in strength and flexibility, the kneecap tracks more smoothly and tendons move more efficiently. Regular strengthening exercises can help reduce unnecessary friction and sound.
         </p>
 
         <h3>Improving Joint Mobility</h3>
@@ -274,7 +274,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Gradual Activity Progression</h3>
         <p>
-          Sudden increases in activity level — such as starting a new exercise program or significantly increasing running distance — can temporarily increase knee clicking as tissues adapt to new demands. Progressing gradually (no more than a 10% increase per week) gives the joint time to adapt and helps minimize unnecessary sounds.
+          Sudden increases in activity level, such as starting a new exercise program or significantly increasing running distance, can temporarily increase knee clicking as tissues adapt to new demands. Progressing gradually (no more than a 10% increase per week) gives the joint time to adapt and helps minimize unnecessary sounds.
         </p>
 
         <h3>Staying Hydrated</h3>
@@ -284,7 +284,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Avoiding Prolonged Static Positions</h3>
         <p>
-          If you sit or stand for long periods, taking brief movement breaks every 30–45 minutes helps keep joint fluid circulating and prevents the gas buildup that leads to loud pops when you finally move. Simple actions like standing up, walking a few steps, or doing gentle knee bends can make a difference.
+          If you sit or stand for long periods, taking brief movement breaks every 30 to 45 minutes helps keep joint fluid circulating and prevents the gas buildup that leads to loud pops when you finally move. Simple actions like standing up, walking a few steps, or doing gentle knee bends can make a difference.
         </p>
 
         <p>
@@ -293,7 +293,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h2>When Knee Sounds Should Be Evaluated</h2>
         <p>
-          While this guide focuses on <strong>knee clicking without pain</strong> — which is usually harmless — there are situations where knee sounds warrant professional evaluation. Understanding these warning signs can help you make informed decisions about when to seek guidance:
+          While this guide focuses on <strong>knee clicking without pain</strong>, which is usually harmless, there are situations where knee sounds warrant professional evaluation. Understanding these warning signs can help you make informed decisions about when to seek guidance:
         </p>
 
         <h3>Persistent Swelling</h3>
@@ -303,27 +303,23 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Pain During or After Movement</h3>
         <p>
-          Clicking that was previously painless but starts to come with discomfort — even mild discomfort — is worth noting. Pain can indicate that the structures producing the sound are becoming irritated or that a new issue has developed. See our guide on <Link to="/guides/knee-pain-when-squatting">knee discomfort when squatting</Link> for activity-specific information.
+          Clicking that was previously painless but starts to come with discomfort, even mild discomfort, is worth noting. Pain can indicate that the structures producing the sound are becoming irritated or that a new issue has developed. See our guide on <Link to="/guides/knee-pain-when-squatting">knee discomfort when squatting</Link> for activity-specific information.
         </p>
 
         <h3>Joint Instability</h3>
         <p>
-          If your knee feels like it might give way, catch, or lock during movement, this is a more significant concern than clicking alone. These sensations can suggest that internal structures of the knee — such as the meniscus or ligaments — may need evaluation.
+          If your knee feels like it might give way, catch, or lock during movement, this is a more significant concern than clicking alone. These sensations can suggest that internal structures of the knee, such as the meniscus or ligaments, may need evaluation.
         </p>
 
         <h3>Difficulty Bending or Straightening</h3>
         <p>
-          Clicking combined with a reduced range of motion — difficulty fully bending or fully straightening the knee — may indicate a mechanical issue within the joint that a healthcare professional should assess.
+          Clicking combined with a reduced range of motion, such as difficulty fully bending or fully straightening the knee, may indicate a mechanical issue within the joint that a healthcare professional should assess.
         </p>
 
         <p>
           <strong>Important:</strong> This guide is educational and does not replace professional medical advice. If you're concerned about your knee sounds, consulting a healthcare professional is always a good idea.
         </p>
 
-        <PremiumCTA
-          headline="Keep your knees comfortable and flexible"
-          text="FlexiKnee's wrap-around design delivers soothing infrared warmth and gentle vibration to the entire knee area, supporting smooth joint movement and everyday comfort."
-        />
       </>
     ),
   },
