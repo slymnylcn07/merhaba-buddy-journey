@@ -8154,6 +8154,7 @@ const GuideArticle = () => {
                 "warm-feeling-in-knee": ["burning-sensation-in-knee", "knee-warmth-daily-comfort", "heavy-feeling-in-knees"],
                 "heavy-feeling-in-knees": ["knee-weakness-without-pain", "knee-tightness-without-pain", "knee-pain-after-flights"],
                 "knee-pain-after-flights": ["knee-pain-after-car-rides", "why-do-my-knees-feel-tight-after-resting", "knee-tightness-without-pain"],
+                "knee-pain-when-kneeling": ["knee-bursitis-guide", "knee-pain-when-squatting", "patellofemoral-pain-syndrome"],
               };
 
               // Get topic-relevant articles (max 3)
