@@ -8113,6 +8113,16 @@ const GuideArticle = () => {
                 "knee-pain-when-squatting": ["knee-pain-after-exercise", "knee-pain-exercises-guide", "how-to-strengthen-knees"],
                 "knee-pain-during-yoga": ["knee-pain-after-sitting-cross-legged", "knee-pain-when-squatting", "knee-mobility-after-50"],
                 "knee-pain-when-hiking": ["knee-pain-after-long-walks", "knee-pain-climbing-stairs", "knee-pain-after-exercise"],
+                "knee-tightness-without-pain": ["why-do-my-knees-feel-tight-after-resting", "knee-pain-after-sitting-cross-legged", "knee-warmth-daily-comfort"],
+                "burning-sensation-in-knee": ["warm-feeling-in-knee", "knee-pain-after-exercise", "knee-warmth-daily-comfort"],
+                "knee-weakness-without-pain": ["how-to-strengthen-knees", "knee-pain-exercises-guide", "heavy-feeling-in-knees"],
+                "plica-syndrome-knee-pain": ["patellofemoral-pain-syndrome", "knee-bursitis-guide", "front-knee-tightness-after-activity"],
+                "knee-bursitis-guide": ["plica-syndrome-knee-pain", "patellofemoral-pain-syndrome", "knee-pain-after-exercise"],
+                "patellofemoral-pain-syndrome": ["plica-syndrome-knee-pain", "front-knee-tightness-after-activity", "knee-pain-climbing-stairs"],
+                "knee-pain-after-car-rides": ["knee-pain-after-flights", "why-do-my-knees-feel-tight-after-resting", "knee-pain-after-sitting-cross-legged"],
+                "warm-feeling-in-knee": ["burning-sensation-in-knee", "knee-warmth-daily-comfort", "heavy-feeling-in-knees"],
+                "heavy-feeling-in-knees": ["knee-weakness-without-pain", "knee-tightness-without-pain", "knee-pain-after-flights"],
+                "knee-pain-after-flights": ["knee-pain-after-car-rides", "why-do-my-knees-feel-tight-after-resting", "knee-tightness-without-pain"],
               };
 
               // Get topic-relevant articles (max 3)

@@ -92,6 +92,7 @@ const thumbnailMap: Record<string, string> = {
   "knee-pain-after-car-rides": thumbKneePainCarRides,
   "warm-feeling-in-knee": thumbWarmFeelingKnee,
   "heavy-feeling-in-knees": thumbHeavyKnees,
+  "knee-pain-after-flights": thumbKneePainFlights,
 };
 
 // Get the 10 most recent guides (last 10 from the array)
