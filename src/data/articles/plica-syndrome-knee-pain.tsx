@@ -12,6 +12,9 @@ import imgSoftTissue from "@/assets/article-knee-soft-tissue.jpg";
 import imgBendingMotion from "@/assets/article-knee-bending-motion.jpg";
 import imgInnerIrritation from "@/assets/article-inner-knee-irritation.jpg";
 
+const nextSlug = "knee-bursitis-guide";
+const nextTitle = "Knee Bursitis: Causes, Symptoms & Comfort";
+
 const faqs = [
   {
     question: "What is plica syndrome in the knee?",
