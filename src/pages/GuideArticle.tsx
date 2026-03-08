@@ -7937,7 +7937,7 @@ const GuideArticle = () => {
         </article>
 
         {/* Related Guides Section */}
-        <section className="py-16 md:py-20 bg-muted/20">
+        <section className="py-8 md:py-10 bg-muted/20">
           <div className="container px-4 max-w-4xl mx-auto">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-5 text-center">
               Continue Reading

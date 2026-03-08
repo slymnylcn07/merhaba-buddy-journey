@@ -105,7 +105,7 @@ export const ArticleShareSidebar = ({ url, title }: ShareButtonsProps) => {
 
 export const ArticleShareBlock = ({ url, title }: ShareButtonsProps) => {
   return (
-    <div className="my-10 py-8 border-t border-border/30">
+    <div className="mt-10 mb-0 py-8 border-t border-border/30">
       <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Share this guide</h3>
       <div className="flex items-center justify-center gap-3 flex-wrap">
         {shareButtons(url, title).map((btn) => (
