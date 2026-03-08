@@ -243,16 +243,16 @@ const articleContent = (
     {/* ── Section 5 ── */}
     <h2>Why Beginners and Returning Exercisers Experience This More</h2>
     <p>
-      If you're new to exercise or returning after a long break, you're significantly more likely to experience <strong>delayed knee pain after exercise</strong>. This isn't a sign that you're doing something wrong — it's a sign that your body is adapting to new demands.
+      If you're new to exercise or returning after a long break, you're significantly more likely to experience <strong>delayed knee pain after exercise</strong>. This isn't a sign that you're doing something wrong, it's a sign that your body is adapting to new demands.
     </p>
     <p>
       When you haven't been regularly active, the muscles around your knee joint are weaker and less conditioned. They fatigue faster during exercise, which means more stress gets transferred directly to the joint. Additionally, your cartilage, tendons, and ligaments need time to strengthen and adapt to new loads.
     </p>
     <p>
-      This adaptation process typically takes 4–8 weeks of consistent, progressive exercise. During this period, it's completely normal to experience some post-workout knee soreness — as long as it follows the "normal soreness" pattern described above.
+      This adaptation process typically takes 4 to 8 weeks of consistent, progressive exercise. During this period, it's completely normal to experience some post-workout knee soreness, as long as it follows the "normal soreness" pattern described above.
     </p>
     <p>
-      People over 40 may notice this adaptation period takes slightly longer, as the <Link to="/guides/knee-pain-after-40" className="text-primary hover:underline">age-related changes in joint tissues</Link> mean the body needs more recovery time between sessions. This doesn't mean you should avoid exercise — quite the opposite. It simply means progressing more gradually.
+      People over 40 may notice this adaptation period takes slightly longer, as the <Link to="/guides/knee-pain-after-40" className="text-primary hover:underline">age-related changes in joint tissues</Link> mean the body needs more recovery time between sessions. This doesn't mean you should avoid exercise, quite the opposite. It simply means progressing more gradually.
     </p>
 
     <StatHighlight
@@ -260,6 +260,51 @@ const articleContent = (
       label="typical adaptation period for knee joints to adjust to new exercise routines"
       description="Gradual progression during this window significantly reduces post-exercise knee discomfort"
     />
+
+    {/* ── New Subsection: Why Knee Pain Often Appears After Workouts ── */}
+    <h2>Why Knee Pain Often Appears After Workouts</h2>
+    <p>
+      Many people search for answers to <strong>knee pain after workout</strong> sessions because the timing feels so confusing. You can push through an entire gym session feeling fine, only to wake up the next day with <strong>aching knees after exercise</strong>. Understanding why this happens can help you manage it more effectively.
+    </p>
+
+    <h3>Delayed Muscle Fatigue</h3>
+    <p>
+      Your muscles don't always signal fatigue immediately. During a workout, your body prioritizes performance, recruiting muscle fibers to keep you moving. It's only after you stop that the full extent of muscle fatigue becomes apparent. When the quadriceps, hamstrings, and calf muscles are depleted, they provide less support to the knee joint, which can lead to <strong>sore knees after workout</strong> sessions.
+    </p>
+
+    <h3>Joint Load During Squats or Running</h3>
+    <p>
+      High-load exercises like squats, lunges, and running place considerable compressive and impact forces on the knee joint. During <Link to="/guides/knee-pain-squatting" className="text-primary hover:underline">squats</Link>, the patellofemoral joint can experience forces several times your body weight. During running, each stride adds repetitive load that accumulates over thousands of steps. This cumulative <strong>knee pain from workout</strong> activity often doesn't register until the body enters its recovery phase.
+    </p>
+
+    <h3>Inflammation Response After Training</h3>
+    <p>
+      After intense or prolonged exercise, your body initiates a natural inflammatory response. This process sends repair cells and fluid to the tissues around the knee, which is essential for recovery but also creates temporary swelling, warmth, and discomfort. This is a primary reason people experience <strong>aching knees after exercise</strong>, particularly if the workout involved new movements or increased intensity.
+    </p>
+
+    <h3>Temporary Knee Weakness After Workouts</h3>
+    <p>
+      It's common to notice that your knees feel less stable or slightly weak in the hours following a tough session. This <strong>weak knee feeling</strong> happens because fatigued muscles cannot stabilize the joint as effectively as they do when fresh. If you frequently wonder <strong>why do my knees feel weak after workout</strong> routines, the answer usually comes down to muscle exhaustion rather than a structural problem. As your muscles recover and rebuild, this feeling typically resolves within a day or two.
+    </p>
+
+    {/* ── New Subsection: Why Some People Feel Knee Weakness After Exercise ── */}
+    <h2>Why Some People Feel Knee Weakness After Exercise</h2>
+    <p>
+      Beyond soreness, many people report a distinct sensation of <strong>knee weakness after workouts</strong>. This feeling, where the knee seems unsteady, less supportive, or slightly "wobbly," is different from pain and can be just as concerning.
+    </p>
+    <p>
+      Post-exercise knee weakness is usually tied to temporary muscle fatigue rather than joint damage. The quadriceps, which play a critical role in stabilizing the kneecap and controlling knee movement, are often the first to fatigue during leg-intensive workouts. When these muscles are depleted, the knee can feel unstable even though the joint structures themselves are intact.
+    </p>
+    <p>
+      If you regularly experience <Link to="/guides/knee-weakness-without-pain" className="text-primary hover:underline">knee weakness without pain</Link>, it may be worth evaluating your overall leg strength and recovery habits. Weakness that persists well beyond the 24 to 48 hour recovery window, or that appears even after light activity, could indicate an imbalance in the muscles supporting the knee.
+    </p>
+    <p>
+      Similarly, some people notice a sense of <Link to="/guides/knee-tightness-without-pain" className="text-primary hover:underline">knee tightness without pain</Link> after workouts, which often accompanies the weakness sensation. This combination of tightness and instability typically improves with consistent strength training, proper warm-ups, and adequate recovery between sessions.
+    </p>
+
+    <InfoBox title="Weakness vs. Pain After Exercise">
+      <p>Knee weakness and knee pain after a workout are related but distinct sensations. Pain signals tissue stress or irritation, while weakness reflects muscle fatigue and reduced joint stabilization. Both are common after exercise, but persistent weakness that doesn't improve with rest deserves attention from a healthcare professional.</p>
+    </InfoBox>
 
     {/* ── Section 6 ── */}
     <h2>Daily Habits That Reduce Knee Discomfort After Workouts</h2>
@@ -269,15 +314,15 @@ const articleContent = (
 
     <h3>Before Exercise</h3>
     <TipsList tips={[
-      "Warm up with 5–10 minutes of light walking or gentle cycling before your main activity",
+      "Warm up with 5 to 10 minutes of light walking or gentle cycling before your main activity",
       "Include dynamic stretches that take your joints through their full range of motion",
       "Wear supportive, well-fitting shoes appropriate for your activity",
-      "Stay hydrated — proper hydration helps maintain the viscosity of joint fluid",
+      "Stay hydrated, as proper hydration helps maintain the viscosity of joint fluid",
     ]} />
 
     <h3>After Exercise</h3>
     <TipsList tips={[
-      "Cool down gradually rather than stopping abruptly — walk for 5 minutes after running",
+      "Cool down gradually rather than stopping abruptly, walk for 5 minutes after running",
       "Apply warmth to your knees to support blood flow and comfort in the hours after exercise",
       "Elevate your legs when resting to help reduce any post-exercise fluid accumulation",
       "Stay gently active on rest days with light walking or swimming rather than complete inactivity",
