@@ -642,6 +642,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-08",
   },
+  {
+    slug: "knee-pain-when-kneeling",
+    title: "Knee Pain When Kneeling: Causes & Simple Relief",
+    description: "Why does your knee hurt when kneeling? Learn common causes of kneeling knee pain, front knee pressure, and simple everyday strategies for comfort and support.",
+    readTime: 15,
+    lastModified: "2026-03-08",
+  },
 ];
 
 export const staticPages = [
