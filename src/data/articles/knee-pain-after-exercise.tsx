@@ -108,13 +108,13 @@ const articleContent = (
       It seems counterintuitive: if exercise is causing knee stress, why don't you feel it <em>while</em> you're exercising? The answer lies in your body's built-in pain management system.
     </p>
     <p>
-      During physical activity, your body releases a cocktail of natural chemicals — endorphins, adrenaline, and norepinephrine — that act as powerful natural painkillers. These substances temporarily reduce your sensitivity to discomfort, allowing you to push through your workout without feeling the full impact on your joints.
+      During physical activity, your body releases a cocktail of natural chemicals, including endorphins, adrenaline, and norepinephrine, that act as powerful natural painkillers. These substances temporarily reduce your sensitivity to discomfort, allowing you to push through your workout without feeling the full impact on your joints.
     </p>
     <p>
-      Once you stop exercising, these chemicals gradually decrease. As your body transitions from "activity mode" to "recovery mode," your nervous system becomes more sensitive again. At the same time, your body's natural inflammatory response begins — sending blood, nutrients, and repair cells to the areas that experienced the most stress.
+      Once you stop exercising, these chemicals gradually decrease. As your body transitions from "activity mode" to "recovery mode," your nervous system becomes more sensitive again. At the same time, your body's natural inflammatory response begins, sending blood, nutrients, and repair cells to the areas that experienced the most stress.
     </p>
     <p>
-      For many people, this means <strong>knee pain after a workout</strong> becomes noticeable 2–12 hours after the activity ends, with some experiencing peak discomfort the following morning. This delayed pattern is why so many people wonder, <em>"Why do my knees hurt after exercise when they felt perfectly fine during it?"</em>
+      For many people, this means <strong>knee pain from workout</strong> sessions becomes noticeable 2 to 12 hours after the activity ends, with some experiencing peak discomfort the following morning. This delayed pattern is why so many people wonder, <em>"Why do my knees hurt after exercise when they felt perfectly fine during it?"</em> Some also notice their <strong>knees feel weak after workout</strong> routines, which is closely related to delayed muscle fatigue.
     </p>
 
     <figure className="my-8">
