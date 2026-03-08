@@ -87,13 +87,13 @@ const articleContent = (
 
     {/* ── Introduction ── */}
     <p>
-      You just finished a great workout — you felt strong, energized, and your knees were perfectly fine. But a few hours later, or maybe the next morning, your <strong>knees hurt after exercise</strong> in a way they never did during the activity itself. Sound familiar?
+      You just finished a great workout, you felt strong, energized, and your knees were perfectly fine. But a few hours later, or maybe the next morning, your <strong>knees hurt after exercise</strong> in a way they never did during the activity itself. Sound familiar?
     </p>
     <p>
-      This is one of the most common — and most confusing — experiences for active adults. <strong>Knee pain after exercise</strong> that appears hours or even a full day later affects millions of people, from weekend joggers to gym regulars. And yet, most people don't understand <em>why</em> it happens or what it means.
+      This is one of the most common, and most confusing, experiences for active adults. <strong>Knee pain after workout</strong> sessions that appears hours or even a full day later affects millions of people, from weekend joggers to gym regulars. Whether you describe it as <strong>sore knees after workout</strong> routines or a general <strong>aching knees after exercise</strong>, most people don't understand <em>why</em> it happens or what it means.
     </p>
     <p>
-      In this guide, we'll explain the science behind <strong>delayed knee pain after exercise</strong>, help you tell the difference between normal soreness and warning signs, and share practical recovery strategies that support long-term knee comfort.
+      In this guide, we'll explain the science behind <strong>delayed knee pain after exercise</strong>, help you tell the difference between normal soreness and warning signs, and share practical recovery strategies that support long-term knee comfort. We'll also explore why some people feel <strong>knee weakness after workouts</strong> and what you can do about it.
     </p>
 
     <StatHighlight
