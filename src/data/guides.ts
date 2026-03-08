@@ -600,6 +600,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-08",
   },
+  {
+    slug: "knee-bursitis-guide",
+    title: "Knee Bursitis: Causes, Symptoms & Comfort",
+    description: "Learn what knee bursitis is, common causes of bursa irritation, typical symptoms, and 40+ everyday strategies to support knee comfort and mobility.",
+    readTime: 16,
+    lastModified: "2026-03-08",
+  },
 ];
 
 export const staticPages = [

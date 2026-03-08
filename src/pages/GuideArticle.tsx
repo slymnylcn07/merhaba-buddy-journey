@@ -106,6 +106,7 @@ import heroKneeTightnessNoPain from "@/assets/article-hero-knee-tightness-no-pai
 import heroBurningKneeSensation from "@/assets/article-hero-burning-knee-sensation.jpg";
 import heroKneeWeaknessNoPain from "@/assets/article-hero-knee-weakness-no-pain.jpg";
 import heroPlicaSyndrome from "@/assets/article-hero-plica-syndrome.jpg";
+import heroKneeBursitis from "@/assets/article-hero-knee-bursitis.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -188,6 +189,7 @@ import thumbKneeTightnessNoPain from "@/assets/guide-thumb-knee-tightness-no-pai
 import thumbBurningKneeSensation from "@/assets/guide-thumb-burning-knee-sensation.jpg";
 import thumbKneeWeaknessNoPain from "@/assets/guide-thumb-knee-weakness-no-pain.jpg";
 import thumbPlicaSyndrome from "@/assets/guide-thumb-plica-syndrome.jpg";
+import thumbKneeBursitis from "@/assets/guide-thumb-knee-bursitis.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -263,6 +265,7 @@ import {
   burningKneeSensation,
   kneeWeaknessWithoutPain,
   plicaSyndromeKneePain,
+  kneeBursitisGuide,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -357,6 +360,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "burning-sensation-in-knee": { headline: "Want soothing warmth for irritated knees?", text: "FlexiKnee provides adjustable warmth, red light, and gentle vibration to help support knee comfort during your daily recovery routine." },
   "knee-weakness-without-pain": { headline: "Support your knee stability every day", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable and supported before and after your daily strengthening routine." },
   "plica-syndrome-knee-pain": { headline: "Support your knee comfort during recovery", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable and supported as part of your daily knee comfort routine." },
+  "knee-bursitis-guide": { headline: "Want gentle warmth for irritated knee bursae?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help support knee comfort during your daily routine." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7448,7 +7452,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7930,6 +7934,7 @@ const GuideArticle = () => {
                 "burning-sensation-in-knee": thumbBurningKneeSensation,
                 "knee-weakness-without-pain": thumbKneeWeaknessNoPain,
                 "plica-syndrome-knee-pain": thumbPlicaSyndrome,
+                "knee-bursitis-guide": thumbKneeBursitis,
               };
 
               // Topic clusters for relevant recommendations
