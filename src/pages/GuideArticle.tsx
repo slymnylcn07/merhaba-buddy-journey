@@ -364,6 +364,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-weakness-without-pain": { headline: "Support your knee stability every day", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable and supported before and after your daily strengthening routine." },
   "plica-syndrome-knee-pain": { headline: "Support your knee comfort during recovery", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable and supported as part of your daily knee comfort routine." },
   "knee-bursitis-guide": { headline: "Want gentle warmth for irritated knee bursae?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help support knee comfort during your daily routine." },
+  "patellofemoral-pain-syndrome": { headline: "Need front-of-knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help support kneecap comfort during your daily routine." },
 };
 
 const articles: Record<string, ArticleData> = {
