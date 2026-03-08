@@ -136,33 +136,32 @@ const articleContent = (
     {/* ── Section 2 ── */}
     <h2>Common Causes of Delayed Knee Pain After Workouts</h2>
     <p>
-      Not all post-exercise knee discomfort has the same cause. Understanding <em>why</em> your <strong>knees hurt after working out</strong> can help you make smarter decisions about your routine. Here are the most common factors:
+      Not all post-exercise knee discomfort has the same cause. Understanding <em>why</em> your <strong>knees hurt after working out</strong> can help you make smarter decisions about your routine. Whether you experience <strong>sore knees after workout</strong> sessions or a dull ache that lingers, here are the most common factors:
     </p>
 
     <h3>Muscle Fatigue Around the Knee</h3>
     <p>
-      Your knee joint is supported and stabilized by the muscles around it — primarily the quadriceps, hamstrings, and calves. When these muscles become fatigued during exercise, they can't absorb shock as efficiently. This means more stress transfers directly to the knee joint itself, leading to <strong>knee soreness after activity</strong> that you feel later.
+      Your knee joint is supported and stabilized by the muscles around it, primarily the quadriceps, hamstrings, and calves. When these muscles become fatigued during exercise, they can't absorb shock as efficiently. This means more stress transfers directly to the knee joint itself, leading to <strong>knee soreness after activity</strong> that you feel later. This muscle fatigue can also explain <strong>why knees feel weak after a workout</strong>.
     </p>
 
     <h3>Joint Load Accumulation</h3>
     <p>
-      Every step you take during a run puts roughly 3–4 times your body weight through your knee joint. Over the course of a 30-minute jog, that adds up to thousands of loading cycles. While each individual step may not cause discomfort, the <em>cumulative</em> effect of all that load can trigger a delayed inflammatory response. This is one of the most common reasons for <strong>knee pain after running</strong>.
+      Every step you take during a run puts roughly 3 to 4 times your body weight through your knee joint. Over the course of a 30-minute jog, that adds up to thousands of loading cycles. While each individual step may not cause discomfort, the <em>cumulative</em> effect of all that load can trigger a delayed inflammatory response. This is one of the most common reasons for <strong>knee pain after running</strong> and <strong>aching knees after exercise</strong>.
     </p>
 
     <h3>Natural Inflammatory Response</h3>
     <p>
-      Exercise creates micro-stress on the tissues around your knee — cartilage, tendons, ligaments, and the joint capsule itself. Your body responds by sending inflammatory cells and extra fluid to the area to begin repairs. This process is completely normal, but it can cause temporary swelling, stiffness, and aching that peaks 12–48 hours after exercise.
+      Exercise creates micro-stress on the tissues around your knee, including cartilage, tendons, ligaments, and the joint capsule itself. Your body responds by sending inflammatory cells and extra fluid to the area to begin repairs. This process is completely normal, but it can cause temporary swelling, stiffness, and aching that peaks 12 to 48 hours after exercise.
     </p>
 
     <h3>Sudden Increase in Activity</h3>
     <p>
-      One of the biggest predictors of <strong>knee pain after a workout</strong> is doing too much, too fast. If you've recently increased your running distance, added squats to your routine, or returned to exercise after a break, your knee joint hasn't had time to adapt to the new demands. This "overload without adaptation" pattern is extremely common.
+      One of the biggest predictors of <strong>knee pain from workout</strong> sessions is doing too much, too fast. If you've recently increased your running distance, added squats to your routine, or returned to exercise after a break, your knee joint hasn't had time to adapt to the new demands. This "overload without adaptation" pattern is extremely common.
     </p>
 
     <h3>Insufficient Recovery</h3>
     <p>
-      Your body needs time between workouts to repair and adapt. If you're exercising intensely on consecutive days without adequate recovery, the micro-stress accumulates faster than your body can repair it. Over time, this can turn occasional post-workout soreness into a persistent pattern of <strong>knee pain after gym</strong> sessions.
-    </p>
+      Your body needs time between workouts to repair and adapt. If you're exercising intensely on consecutive days without adequate recovery, the micro-stress accumulates faster than your body can repair it. Over time, this can turn occasional post-workout soreness into a persistent pattern of <strong>knee pain after gym</strong> sessions.</p>
 
     <PremiumCTA
       headline="Want post-workout knee comfort support?"
