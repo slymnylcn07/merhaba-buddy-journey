@@ -262,6 +262,7 @@ import {
   kneeTightnessWithoutPain,
   burningKneeSensation,
   kneeWeaknessWithoutPain,
+  plicaSyndromeKneePain,
 } from "@/data/articles";
 
 interface FAQItem {
