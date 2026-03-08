@@ -104,7 +104,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Joint Fluid Gas Release</h3>
         <p>
-          Your knee joint is filled with synovial fluid, a natural lubricant that reduces friction during movement. This fluid contains dissolved gases like nitrogen and carbon dioxide. When pressure inside the joint changes — such as when you bend or straighten your leg — these gases can form tiny bubbles that quickly collapse. This process, known as <strong>cavitation</strong>, produces the familiar pop or crack sound.
+          Your knee joint is filled with synovial fluid, a natural lubricant that reduces friction during movement. This fluid contains dissolved gases like nitrogen and carbon dioxide. When pressure inside the joint changes, such as when you bend or straighten your leg, these gases can form tiny bubbles that quickly collapse. This process, known as <strong>cavitation</strong>, produces the familiar pop or crack sound.
         </p>
 
         <figure className="my-8">
