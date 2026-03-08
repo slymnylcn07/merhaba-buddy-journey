@@ -252,6 +252,7 @@ const activitySlugs = [
   "cold-weather-knee-pain",
   "knee-pain-after-exercise",
   "knee-pain-when-squatting",
+  "knee-weakness-without-pain",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
