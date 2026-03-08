@@ -42,6 +42,9 @@ const shareButtons = (url: string, title: string) => [
   },
 ];
 
+const BUTTON_CLASS =
+  "w-10 h-10 flex items-center justify-center bg-white border border-[#eeeeee] rounded-[10px] shadow-[0_2px_8px_rgba(0,0,0,0.05)] text-muted-foreground transition-all duration-200 ease-in-out hover:scale-105 hover:text-primary";
+
 const CopyButton = ({ url }: { url: string }) => {
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
@@ -50,13 +53,20 @@ const CopyButton = ({ url }: { url: string }) => {
     setTimeout(() => setCopied(false), 2000);
   };
   return (
-    <button
-      onClick={handleCopy}
-      title="Copy link"
-      className="w-10 h-10 flex items-center justify-center rounded-lg bg-muted/60 text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all shadow-sm"
-    >
-      {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-    </button>
+    <div className="relative">
+      <button
+        onClick={handleCopy}
+        title="Copy link"
+        className={BUTTON_CLASS}
+      >
+        {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
+      </button>
+      {copied && (
+        <div className="absolute left-12 top-1/2 -translate-y-1/2 whitespace-nowrap bg-white border border-[#eeeeee] rounded-lg px-3 py-1.5 text-xs font-medium text-foreground shadow-[0_2px_8px_rgba(0,0,0,0.08)] animate-fade-in">
+          Link copied!
+        </div>
+      )}
+    </div>
   );
 };
 
