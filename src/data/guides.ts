@@ -593,6 +593,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-08",
   },
+  {
+    slug: "plica-syndrome-knee-pain",
+    title: "Plica Syndrome Knee Pain: Home Management",
+    description: "Learn what plica syndrome is and why knee plica irritation occurs. Discover common causes, everyday triggers, and simple strategies to support knee comfort.",
+    readTime: 14,
+    lastModified: "2026-03-08",
+  },
 ];
 
 export const staticPages = [

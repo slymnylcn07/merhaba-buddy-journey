@@ -58,8 +58,8 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
     metaDescription: "Learn why your knees feel weak without pain. Discover common causes of knee instability, when to take action, and simple daily habits that support knee strength.",
     heroImage: heroImage,
     publishedDate: "March 8, 2026",
-    nextSlug: "burning-sensation-in-knee",
-    nextTitle: "Burning Sensation in the Knee",
+    nextSlug: "plica-syndrome-knee-pain",
+    nextTitle: "Plica Syndrome Knee Pain",
     seoTags: "knee weakness without pain,weak knee feeling,knees feel weak but no pain,knee instability without pain,why does my knee feel weak,weak knees when walking,knee stability muscles,temporary knee weakness,knee support muscles,weak knees after activity,leg muscle fatigue knee,knee joint stability",
     faqs,
     content: (
