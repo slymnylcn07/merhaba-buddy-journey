@@ -275,6 +275,7 @@ const activitySlugs = [
   "knee-pain-after-car-rides",
   "warm-feeling-in-knee",
   "heavy-feeling-in-knees",
+  "knee-pain-when-kneeling",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
