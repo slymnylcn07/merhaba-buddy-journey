@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "Is a warm knee normal after activity?",
-    answer: "Yes, it is very common for knees to feel warm after physical activity. Exercise increases blood flow throughout the body, and the knee joint — one of the most active joints — naturally receives more circulation during and after movement. This warmth typically subsides within 30-60 minutes of rest.",
+    answer: "Yes, it is very common for knees to feel warm after physical activity. Exercise increases blood flow throughout the body, and the knee joint, one of the most active joints, naturally receives more circulation during and after movement. This warmth typically subsides within 30-60 minutes of rest.",
   },
   {
     question: "Does inflammation cause warmth in the knee?",
