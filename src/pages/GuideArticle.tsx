@@ -7907,6 +7907,14 @@ const GuideArticle = () => {
                   <p className="text-sm text-muted-foreground"><strong>SEO Tags:</strong> {article.seoTags}</p>
                 </div>
               )}
+
+              {/* Share Block - test for knee-pain-after-flights only */}
+              {slug === "knee-pain-after-flights" && (
+                <ArticleShareBlock
+                  url={`https://merhaba-buddy-journey.lovable.app/guides/${slug}`}
+                  title={article.title}
+                />
+              )}
             </div>
             
             {/* Premium CTA Highlight Box */}
