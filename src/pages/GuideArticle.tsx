@@ -116,6 +116,7 @@ import heroHeavyKnees from "@/assets/article-hero-heavy-knees.jpg";
 import heroKneePainFlights from "@/assets/article-hero-knee-pain-flights.jpg";
 import heroKneePainKneeling from "@/assets/article-hero-knee-pain-kneeling.jpg";
 import heroPainBehindKneecap from "@/assets/article-hero-pain-behind-kneecap.jpg";
+import heroClickingKneeNoPain from "@/assets/article-hero-clicking-knee-no-pain.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
