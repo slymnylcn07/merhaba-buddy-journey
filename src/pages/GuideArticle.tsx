@@ -195,6 +195,7 @@ import thumbPlicaSyndrome from "@/assets/guide-thumb-plica-syndrome.jpg";
 import thumbKneeBursitis from "@/assets/guide-thumb-knee-bursitis.jpg";
 import thumbPFPS from "@/assets/guide-thumb-pfps.jpg";
 import thumbKneePainCarRides from "@/assets/guide-thumb-knee-pain-car-rides.jpg";
+import thumbWarmFeelingKnee from "@/assets/guide-thumb-warm-feeling-knee.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
