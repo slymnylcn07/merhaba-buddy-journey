@@ -109,6 +109,7 @@ import heroPlicaSyndrome from "@/assets/article-hero-plica-syndrome.jpg";
 import heroKneeBursitis from "@/assets/article-hero-knee-bursitis.jpg";
 import heroPFPS from "@/assets/article-hero-pfps.jpg";
 import heroKneePainCarRides from "@/assets/article-hero-knee-pain-car-rides.jpg";
+import heroWarmFeelingKnee from "@/assets/article-hero-warm-feeling-knee.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
