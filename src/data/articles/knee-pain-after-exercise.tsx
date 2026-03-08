@@ -14,15 +14,15 @@ import sectionRecoveryCycle from "@/assets/article-section-recovery-cycle.svg";
 const faqs = [
   {
     question: "Why do my knees hurt after exercise?",
-    answer: "During exercise, your body releases endorphins and adrenaline that can mask discomfort. Once you stop and these chemicals drop, your body's natural inflammatory response kicks in to repair micro-stress on the joint — which is why knee pain often appears hours after your workout rather than during it.",
+    answer: "During exercise, your body releases endorphins and adrenaline that can mask discomfort. Once you stop and these chemicals drop, your body's natural inflammatory response kicks in to repair micro-stress on the joint, which is why knee pain often appears hours after your workout rather than during it.",
   },
   {
     question: "Is knee soreness after running normal?",
-    answer: "Mild, diffuse soreness around the knee area after running is common, especially if you've increased your distance or intensity. This usually fades within 24–48 hours. However, sharp or localized pain that worsens with each run should be evaluated by a healthcare professional.",
+    answer: "Mild, diffuse soreness around the knee area after running is common, especially if you've increased your distance or intensity. This usually fades within 24 to 48 hours. However, sharp or localized pain that worsens with each run should be evaluated by a healthcare professional.",
   },
   {
     question: "Why do knees hurt the next day after a workout?",
-    answer: "This is often called delayed onset soreness. After exercise, your body goes through a repair cycle that peaks 12–48 hours later. The knee joint absorbs significant load during workouts, and the tissues around the joint may swell slightly as part of the natural recovery process.",
+    answer: "This is often called delayed onset soreness. After exercise, your body goes through a repair cycle that peaks 12 to 48 hours later. The knee joint absorbs significant load during workouts, and the tissues around the joint may swell slightly as part of the natural recovery process.",
   },
   {
     question: "Can exercise cause delayed knee pain?",
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "How long should knee soreness last after exercise?",
-    answer: "Normal post-exercise knee soreness typically peaks at 24–48 hours and resolves within 3 days. If your knee pain lasts longer than 72 hours, gets progressively worse, or includes swelling, locking, or instability, it's worth consulting a healthcare provider.",
+    answer: "Normal post-exercise knee soreness typically peaks at 24 to 48 hours and resolves within 3 days. If your knee pain lasts longer than 72 hours, gets progressively worse, or includes swelling, locking, or instability, it's worth consulting a healthcare provider.",
   },
   {
     question: "What exercises reduce knee pain?",
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     question: "Why do my knees hurt more the day after a workout?",
-    answer: "The day after a workout, your body is in peak recovery mode. Blood flow to the exercised area increases, bringing inflammatory cells that help repair micro-stress — but this process also creates temporary swelling and sensitivity. Additionally, overnight rest means fluid can pool around the joint, making the knee feel stiffer upon waking.",
+    answer: "The day after a workout, your body is in peak recovery mode. Blood flow to the exercised area increases, bringing inflammatory cells that help repair micro-stress, but this process also creates temporary swelling and sensitivity. Additionally, overnight rest means fluid can pool around the joint, making the knee feel stiffer upon waking.",
   },
 ];
 
