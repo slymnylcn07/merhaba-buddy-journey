@@ -93,7 +93,7 @@ export const ArticleShareSidebar = ({ url, title }: ShareButtonsProps) => {
           target="_blank"
           rel="noopener noreferrer"
           title={`Share on ${btn.name}`}
-          className="w-10 h-10 flex items-center justify-center rounded-lg bg-muted/60 text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all shadow-sm"
+          className={BUTTON_CLASS}
         >
           {btn.icon}
         </a>
