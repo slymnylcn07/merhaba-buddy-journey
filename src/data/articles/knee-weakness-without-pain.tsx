@@ -295,14 +295,16 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
           Beyond specific exercises, certain daily habits can help maintain knee strength and reduce episodes of weakness.
         </p>
 
-        <InfoBox title="Habits That Build Knee Strength Over Time" items={[
-          "Take short walking breaks every 30 to 60 minutes during extended sitting periods",
-          "Use stairs when possible instead of elevators to maintain leg strength naturally",
-          "Stand on one leg briefly while waiting in line or brushing teeth to challenge balance and knee stability",
-          "Stretch the quadriceps, hamstrings, and calves at least once daily to maintain flexibility",
-          "Practice good posture while standing and walking to keep the hip-knee-ankle chain aligned",
-          "Increase activity levels gradually when returning to exercise after a break",
-        ]} />
+        <InfoBox title="Habits That Build Knee Strength Over Time">
+          <ul className="space-y-2 text-muted-foreground">
+            <li>Take short walking breaks every 30 to 60 minutes during extended sitting periods</li>
+            <li>Use stairs when possible instead of elevators to maintain leg strength naturally</li>
+            <li>Stand on one leg briefly while waiting in line or brushing teeth to challenge balance and knee stability</li>
+            <li>Stretch the quadriceps, hamstrings, and calves at least once daily to maintain flexibility</li>
+            <li>Practice good posture while standing and walking to keep the hip-knee-ankle chain aligned</li>
+            <li>Increase activity levels gradually when returning to exercise after a break</li>
+          </ul>
+        </InfoBox>
 
         <figure className="my-8">
           <img
