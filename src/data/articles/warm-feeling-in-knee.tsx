@@ -265,7 +265,7 @@ const article = {
 
       <h3>Appropriate Activity Progression</h3>
       <p>
-        If you're starting a new activity or returning to exercise after a break, increase intensity gradually. The 10% rule — increasing volume or intensity by no more than 10% per week — helps your joints adapt without excessive stress responses. For more on maintaining comfortable knee movement, explore our <Link to="/guides/knee-tightness-without-pain" className="text-primary hover:underline">knee tightness without pain guide</Link>.
+        If you're starting a new activity or returning to exercise after a break, increase intensity gradually. The 10% rule, increasing volume or intensity by no more than 10% per week, helps your joints adapt without excessive stress responses. For more on maintaining comfortable knee movement, explore our <Link to="/guides/knee-tightness-without-pain" className="text-primary hover:underline">knee tightness without pain guide</Link>.
       </p>
 
       <TipsList tips={[
