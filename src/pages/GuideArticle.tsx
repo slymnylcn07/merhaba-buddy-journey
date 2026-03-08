@@ -7741,6 +7741,17 @@ const GuideArticle = () => {
         { name: "Progress Activity Levels Gradually", text: "Increase exercise volume and intensity by no more than 10% per week. Gradual progression allows joints to adapt without excessive stress and warmth responses." },
       ],
     },
+    "heavy-feeling-in-knees": {
+      name: "How to Reduce Heavy Feeling in the Knees",
+      description: "Everyday strategies to combat knee heaviness through movement, strengthening, and circulation support.",
+      steps: [
+        { name: "Take Regular Movement Breaks", text: "Stand and walk for 2-5 minutes every 30-45 minutes during prolonged sitting to reactivate the calf muscle pump and restore blood circulation to the lower limbs." },
+        { name: "Strengthen Your Leg Muscles", text: "Perform exercises like wall sits, leg raises, step-ups, and gentle squats 3-4 times per week to build the quadriceps, hamstrings, and calf endurance that keeps knees feeling lighter." },
+        { name: "Stay Hydrated Throughout the Day", text: "Drink water consistently to support healthy blood viscosity, muscle function, and joint fluid production, all of which reduce the sensation of heaviness." },
+        { name: "Stretch Daily", text: "Spend 5-10 minutes stretching quadriceps, hamstrings, and calves to improve blood flow, reduce muscle tension, and help knees feel lighter and more responsive." },
+        { name: "Walk for 5-10 Minutes as a Reset", text: "When knees feel heavy, a short walk activates all major supporting muscle groups, promotes circulation, and restores the natural rhythm of joint fluid movement." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];

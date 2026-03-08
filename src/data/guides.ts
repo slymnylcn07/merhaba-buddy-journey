@@ -628,6 +628,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-08",
   },
+  {
+    slug: "heavy-feeling-in-knees",
+    title: "Heavy Feeling in the Knees: Why It Happens",
+    description: "Learn why your knees feel heavy, common causes including muscle fatigue and circulation, and simple everyday strategies to support lighter, more comfortable knee movement.",
+    readTime: 14,
+    lastModified: "2026-03-08",
+  },
 ];
 
 export const staticPages = [
