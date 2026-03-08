@@ -107,6 +107,7 @@ import heroBurningKneeSensation from "@/assets/article-hero-burning-knee-sensati
 import heroKneeWeaknessNoPain from "@/assets/article-hero-knee-weakness-no-pain.jpg";
 import heroPlicaSyndrome from "@/assets/article-hero-plica-syndrome.jpg";
 import heroKneeBursitis from "@/assets/article-hero-knee-bursitis.jpg";
+import heroPFPS from "@/assets/article-hero-pfps.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
