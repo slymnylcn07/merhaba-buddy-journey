@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ArticleShareSidebar, ArticleShareBlock } from "@/components/ArticleShareSidebar";
+import ArticleTableOfContents from "@/components/ArticleTableOfContents";
 import {
   KneePainFactorsChart,
   DailyActivityImpactChart,
@@ -7897,6 +7898,21 @@ const GuideArticle = () => {
         {/* Article Content */}
         <article className="py-8 md:py-10">
           <div className="container px-4 max-w-3xl mx-auto">
+            {/* Table of Contents - test for knee-pain-after-flights only */}
+            {slug === "knee-pain-after-flights" && (
+              <ArticleTableOfContents
+                items={[
+                  { label: "How long sitting affects the knee", id: "how-long-sitting-affects-knee" },
+                  { label: "Why circulation changes during flights", id: "circulation-changes-during-flights" },
+                  { label: "Why knees feel stiff when standing", id: "stiff-knees-standing-after-flying" },
+                  { label: "Travel situations that increase stiffness", id: "travel-situations-increase-stiffness" },
+                  { label: "Simple strategies to reduce stiffness", id: "strategies-reduce-stiffness" },
+                  { label: "Daily habits for knee mobility", id: "daily-habits-knee-mobility" },
+                  { label: "When knee discomfort should be evaluated", id: "when-knee-discomfort-evaluated" },
+                  { label: "Supporting your knees through air travel", id: "supporting-knees-air-travel" },
+                ]}
+              />
+            )}
             <div className="article-content max-w-none
               [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-foreground [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:pb-3 [&_h2]:border-b [&_h2]:border-border/30
               [&_h3]:text-lg [&_h3]:md:text-xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-foreground [&_h3]:mt-8 [&_h3]:mb-3

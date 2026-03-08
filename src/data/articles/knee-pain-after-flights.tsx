@@ -75,7 +75,7 @@ const article = {
       />
 
       {/* Section 1 */}
-      <h2>How Long Sitting Affects the Knee Joint</h2>
+      <h2 id="how-long-sitting-affects-knee">How Long Sitting Affects the Knee Joint</h2>
       <p>
         When you sit in an airplane seat, your knee typically stays bent at approximately 90 degrees for the entire flight duration. This sustained position affects the joint in several important ways that contribute to post-flight stiffness.
       </p>
@@ -107,7 +107,7 @@ const article = {
       </InfoBox>
 
       {/* Section 2 */}
-      <h2>Why Circulation Changes During Flights</h2>
+      <h2 id="circulation-changes-during-flights">Why Circulation Changes During Flights</h2>
       <p>
         Blood circulation in the lower legs naturally slows down when you sit for extended periods, and flying adds several additional factors that can make this more pronounced.
       </p>
@@ -139,7 +139,7 @@ const article = {
       </p>
 
       {/* Section 3 */}
-      <h2>Why Knees Feel Stiff When Standing After Flying</h2>
+      <h2 id="stiff-knees-standing-after-flying">Why Knees Feel Stiff When Standing After Flying</h2>
 
       <figure className="my-8">
         <img
@@ -168,7 +168,7 @@ const article = {
       </InfoBox>
 
       {/* Section 4 */}
-      <h2>Travel Situations That Increase Knee Stiffness</h2>
+      <h2 id="travel-situations-increase-stiffness">Travel Situations That Increase Knee Stiffness</h2>
       <p>
         While any long flight can lead to knee stiffness, certain travel situations tend to make it more likely or more pronounced.
       </p>
@@ -190,7 +190,7 @@ const article = {
       </p>
 
       {/* Section 5 */}
-      <h2>Simple Strategies to Reduce Stiffness During Flights</h2>
+      <h2 id="strategies-reduce-stiffness">Simple Strategies to Reduce Stiffness During Flights</h2>
 
       <figure className="my-8">
         <img
@@ -228,7 +228,7 @@ const article = {
       />
 
       {/* Section 6 */}
-      <h2>Daily Habits That Support Knee Mobility During Travel</h2>
+      <h2 id="daily-habits-knee-mobility">Daily Habits That Support Knee Mobility During Travel</h2>
 
       <figure className="my-8">
         <img
@@ -259,7 +259,7 @@ const article = {
       </p>
 
       {/* Section 7 */}
-      <h2>When Knee Discomfort After Travel Should Be Evaluated</h2>
+      <h2 id="when-knee-discomfort-evaluated">When Knee Discomfort After Travel Should Be Evaluated</h2>
       <p>
         For most people, knee stiffness after a long flight is temporary and resolves within 30-60 minutes of normal walking and movement. However, certain signs suggest that it may be worth seeking professional evaluation.
       </p>
@@ -276,7 +276,7 @@ const article = {
       </p>
 
       {/* Summary */}
-      <h2>Supporting Your Knees Through Air Travel</h2>
+      <h2 id="supporting-knees-air-travel">Supporting Your Knees Through Air Travel</h2>
       <p>
         Knee stiffness after long flights is a common experience driven by the combination of prolonged sitting, reduced circulation, cabin pressure changes, and muscle inactivity. The good news is that understanding these factors makes it straightforward to take steps that reduce their impact.
       </p>
