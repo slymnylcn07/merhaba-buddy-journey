@@ -340,6 +340,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-pain-going-down-stairs": { headline: "Need comfort support after descending stairs?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after daily stair descent." },
   "knee-pain-when-squatting": { headline: "Need post-squat knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after squatting workouts." },
   "knee-pain-during-yoga": { headline: "Need comfort support for your yoga practice?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable before and after yoga sessions." },
+  "knee-pain-when-hiking": { headline: "Support your knees after every trail", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after hiking, making your post-trail recovery routine simple and effective." },
 };
 
 const articles: Record<string, ArticleData> = {
