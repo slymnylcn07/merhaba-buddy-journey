@@ -57,8 +57,8 @@ export const kneePainAfterCarRides: ArticleExport = {
     metaDescription: "Learn why knees hurt after long car rides and driving. Discover causes of knee stiffness after sitting, simple relief strategies, and daily habits for travel comfort.",
     heroImage: heroImage,
     publishedDate: "March 8, 2026",
-    nextSlug: "patellofemoral-pain-syndrome",
-    nextTitle: "Patellofemoral Pain Syndrome: Symptoms & Everyday Relief",
+    nextSlug: "warm-feeling-in-knee",
+    nextTitle: "Warm Feeling in the Knee: Causes & Everyday Comfort",
     faqs: faqs,
     seoTags: "knee pain after long car rides,knee pain after driving,knee stiffness after driving,knees hurt after long drive,stiff knees after sitting long time,knee pain after long travel,knee discomfort after driving,knee stiffness after sitting,long sitting knee pain,knee compression sitting,knee tightness after travel,joint stiffness after inactivity,travel knee comfort",
     content: (
