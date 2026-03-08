@@ -7711,6 +7711,17 @@ const GuideArticle = () => {
         { name: "Take Movement Breaks", text: "If you sit for long periods, stand and walk briefly every 30-45 minutes to reduce sustained kneecap compression against the femoral groove." },
       ],
     },
+    "knee-pain-after-car-rides": {
+      name: "How to Reduce Knee Stiffness During Long Car Rides",
+      description: "Simple strategies to minimize knee stiffness and discomfort during and after long drives and travel.",
+      steps: [
+        { name: "Adjust Your Seat Position", text: "Move the seat back slightly to allow a knee angle of 110-120 degrees rather than 90 degrees. Adjust seat height and tilt so your thighs are supported and feet comfortably reach the pedals." },
+        { name: "Take Movement Breaks Every 1-2 Hours", text: "Stop and walk around for at least 5-10 minutes every 1-2 hours. Plan your route to include rest stops at appropriate intervals." },
+        { name: "Perform In-Seat Exercises", text: "While seated, do gentle ankle circles, toe raises, and isometric quadriceps contractions to maintain some muscle activity and promote circulation." },
+        { name: "Stretch During Travel Stops", text: "At each stop, stretch your quadriceps, hamstrings, and calves. Hold each stretch for 20-30 seconds to counteract the tightening effects of prolonged sitting." },
+        { name: "Walk Gently After Arriving", text: "When you reach your destination, walk slowly for 5-10 minutes before attempting stairs or demanding activities. Allow your joints to warm up gradually." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];
