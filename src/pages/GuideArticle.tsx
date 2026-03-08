@@ -271,6 +271,7 @@ import {
   plicaSyndromeKneePain,
   kneeBursitisGuide,
   patellofemoralPainSyndrome,
+  kneePainAfterCarRides,
 } from "@/data/articles";
 
 interface FAQItem {
