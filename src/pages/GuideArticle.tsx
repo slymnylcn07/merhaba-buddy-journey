@@ -7788,6 +7788,17 @@ const GuideArticle = () => {
         { name: "Apply Warmth After Kneeling Activities", text: "After extended kneeling sessions, apply soothing warmth to the front of the knee for 10-15 minutes to help the tissues recover and reduce any residual sensitivity." },
       ],
     },
+    "pain-behind-kneecap": {
+      name: "How to Support Kneecap Comfort During Daily Activities",
+      description: "Simple strategies to reduce pressure behind the kneecap and support comfortable knee movement during stairs, squats, and everyday activities.",
+      steps: [
+        { name: "Strengthen Your Quadriceps", text: "Perform straight-leg raises, wall sits, and terminal knee extensions 3-4 times per week to build the quadriceps muscles that guide the kneecap within its groove and distribute pressure evenly." },
+        { name: "Build Hip and Glute Stability", text: "Include clamshells, side-lying leg raises, and single-leg bridges to improve lower limb alignment and prevent the knee from collapsing inward during movement." },
+        { name: "Stretch Key Muscle Groups", text: "Regularly stretch quadriceps, hamstrings, IT band, and calves for 20-30 seconds each to maintain balanced tension around the knee joint." },
+        { name: "Progress Activity Gradually", text: "Increase training volume, intensity, and duration by no more than 10% per week. Allow the kneecap area time to adapt to new demands." },
+        { name: "Take Movement Breaks", text: "Stand and walk briefly every 30-45 minutes during prolonged sitting to reduce sustained kneecap compression against the thigh bone." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];
