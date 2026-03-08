@@ -58,8 +58,8 @@ export const kneeTightnessWithoutPain: ArticleExport = {
     metaDescription: "Learn why your knee feels tight without pain. Discover common causes of knee stiffness, when to take action, and daily habits that support joint flexibility and comfort.",
     heroImage: heroImage,
     publishedDate: "March 8, 2026",
-    nextSlug: "knee-pain-when-hiking",
-    nextTitle: "Knee Pain When Hiking",
+    nextSlug: "burning-sensation-in-knee",
+    nextTitle: "Burning Sensation in the Knees",
     seoTags: "knee tightness without pain,knee stiffness without pain,tight knee feeling,stiff knee no pain,knee tightness when bending,tight knee after sitting,morning knee stiffness,knee joint stiffness without swelling,reduced knee mobility,knee flexibility limitation,knee stiffness causes,tight knee joint feeling",
     faqs,
     content: (

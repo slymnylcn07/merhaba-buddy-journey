@@ -76,6 +76,7 @@ const thumbnailMap: Record<string, string> = {
   "knee-pain-during-yoga": thumbKneePainYoga,
   "knee-pain-when-hiking": thumbKneePainHiking,
   "knee-tightness-without-pain": thumbKneeTightnessNoPain,
+  "burning-sensation-in-knee": thumbBurningKneeSensation,
 };
 
 // Get the 10 most recent guides (last 10 from the array)
