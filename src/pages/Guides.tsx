@@ -258,6 +258,7 @@ const activitySlugs = [
   "knee-pain-when-squatting",
   "knee-weakness-without-pain",
   "plica-syndrome-knee-pain",
+  "knee-bursitis-guide",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort

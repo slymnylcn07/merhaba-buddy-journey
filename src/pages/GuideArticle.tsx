@@ -7934,6 +7934,7 @@ const GuideArticle = () => {
                 "burning-sensation-in-knee": thumbBurningKneeSensation,
                 "knee-weakness-without-pain": thumbKneeWeaknessNoPain,
                 "plica-syndrome-knee-pain": thumbPlicaSyndrome,
+                "knee-bursitis-guide": thumbKneeBursitis,
               };
 
               // Topic clusters for relevant recommendations
