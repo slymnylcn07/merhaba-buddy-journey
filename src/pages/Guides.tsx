@@ -179,6 +179,7 @@ const thumbnailMap: Record<string, string> = {
   "knee-weakness-without-pain": thumbKneeWeaknessNoPain,
   "plica-syndrome-knee-pain": thumbPlicaSyndrome,
   "knee-bursitis-guide": thumbKneeBursitis,
+  "patellofemoral-pain-syndrome": thumbPFPS,
 };
 
 // Combine data with thumbnails
