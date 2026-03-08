@@ -270,6 +270,7 @@ const activitySlugs = [
   "patellofemoral-pain-syndrome",
   "knee-pain-after-car-rides",
   "warm-feeling-in-knee",
+  "heavy-feeling-in-knees",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
