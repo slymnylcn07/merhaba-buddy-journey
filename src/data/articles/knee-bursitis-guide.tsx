@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
+// nextSlug/nextTitle updated to chain to patellofemoral-pain-syndrome
 
 import heroImage from "@/assets/article-hero-knee-bursitis.jpg";
 import imgBursaAnatomy from "@/assets/article-bursa-anatomy.jpg";

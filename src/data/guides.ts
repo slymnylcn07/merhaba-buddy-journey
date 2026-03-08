@@ -607,6 +607,13 @@ export const guidesData: GuideData[] = [
     readTime: 16,
     lastModified: "2026-03-08",
   },
+  {
+    slug: "patellofemoral-pain-syndrome",
+    title: "Patellofemoral Pain Syndrome: Symptoms & Relief",
+    description: "Learn what patellofemoral pain syndrome is, common PFPS symptoms, why kneecap pain occurs during stairs and squats, and everyday strategies for knee comfort.",
+    readTime: 15,
+    lastModified: "2026-03-08",
+  },
 ];
 
 export const staticPages = [
