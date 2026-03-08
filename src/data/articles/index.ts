@@ -56,4 +56,5 @@ export { kneeWeaknessWithoutPain } from "./knee-weakness-without-pain";
 export { plicaSyndromeKneePain } from "./plica-syndrome-knee-pain";
 export { kneeBursitisGuide } from "./knee-bursitis-guide";
 export { patellofemoralPainSyndrome } from "./patellofemoral-pain-syndrome";
+export { kneePainAfterCarRides } from "./knee-pain-after-car-rides";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
