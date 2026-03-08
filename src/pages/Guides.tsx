@@ -264,6 +264,7 @@ const activitySlugs = [
   "plica-syndrome-knee-pain",
   "knee-bursitis-guide",
   "patellofemoral-pain-syndrome",
+  "knee-pain-after-car-rides",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort

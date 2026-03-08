@@ -7955,6 +7955,7 @@ const GuideArticle = () => {
                 "plica-syndrome-knee-pain": thumbPlicaSyndrome,
                 "knee-bursitis-guide": thumbKneeBursitis,
                 "patellofemoral-pain-syndrome": thumbPFPS,
+                "knee-pain-after-car-rides": thumbKneePainCarRides,
               };
 
               // Topic clusters for relevant recommendations
