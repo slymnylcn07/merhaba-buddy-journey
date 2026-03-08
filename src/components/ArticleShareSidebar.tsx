@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Check, Copy, Facebook, Twitter } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
