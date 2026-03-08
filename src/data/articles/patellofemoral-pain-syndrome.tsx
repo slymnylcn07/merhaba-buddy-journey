@@ -57,8 +57,8 @@ export const patellofemoralPainSyndrome: ArticleExport = {
     metaDescription: "Learn what patellofemoral pain syndrome is, common PFPS symptoms, why kneecap pain occurs during stairs and squats, and everyday strategies for knee comfort.",
     heroImage: heroImage,
     publishedDate: "March 8, 2026",
-    nextSlug: "knee-bursitis-guide",
-    nextTitle: "Knee Bursitis: Causes, Symptoms & Comfort Strategies",
+    nextSlug: "knee-pain-after-car-rides",
+    nextTitle: "Why Knees Hurt After Long Car Rides: Stiffness & Simple Relief",
     faqs: faqs,
     seoTags: "patellofemoral pain syndrome,pfps knee pain,runner's knee pain,pain around kneecap,knee pain under kneecap,patellofemoral knee pain,kneecap pain when bending,front knee pain stairs,knee pain while squatting,patella joint irritation,kneecap pressure pain,runner knee discomfort,kneecap alignment,knee comfort strategies,patellofemoral joint",
     content: (
