@@ -183,6 +183,7 @@ import thumbKneePainSquatting from "@/assets/guide-thumb-knee-pain-squatting.jpg
 import thumbKneePainYoga from "@/assets/guide-thumb-knee-pain-yoga.jpg";
 import thumbKneePainHiking from "@/assets/guide-thumb-knee-pain-hiking.jpg";
 import thumbKneeTightnessNoPain from "@/assets/guide-thumb-knee-tightness-no-pain.jpg";
+import thumbBurningKneeSensation from "@/assets/guide-thumb-burning-knee-sensation.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
