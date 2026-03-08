@@ -218,7 +218,7 @@ const article = {
 
       <h3>The Post-Activity Warmth Window</h3>
       <p>
-        After moderate to vigorous exercise, it's normal for the knee area to feel warm for anywhere from 15 minutes to an hour. During this time, the body is actively recovering — delivering nutrients, removing metabolic waste, and supporting tissue repair. This warmth typically resolves gradually as circulation returns to resting levels.
+        After moderate to vigorous exercise, it's normal for the knee area to feel warm for anywhere from 15 minutes to an hour. During this time, the body is actively recovering: delivering nutrients, removing metabolic waste, and supporting tissue repair. This warmth typically resolves gradually as circulation returns to resting levels.
       </p>
 
       <h3>Why One Knee May Feel Warmer Than the Other</h3>
