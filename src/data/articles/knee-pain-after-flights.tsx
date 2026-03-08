@@ -228,7 +228,7 @@ const article = {
       />
 
       {/* Section 6 */}
-      <h2>Daily Habits That Support Knee Mobility During Travel</h2>
+      <h2 id="daily-habits-knee-mobility">Daily Habits That Support Knee Mobility During Travel</h2>
 
       <figure className="my-8">
         <img
