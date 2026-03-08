@@ -614,6 +614,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-08",
   },
+  {
+    slug: "knee-pain-after-car-rides",
+    title: "Knee Pain After Long Car Rides: Causes & Relief",
+    description: "Learn why knees hurt after long car rides and driving. Discover causes of knee stiffness after sitting, simple relief strategies, and daily habits for travel comfort.",
+    readTime: 15,
+    lastModified: "2026-03-08",
+  },
 ];
 
 export const staticPages = [
