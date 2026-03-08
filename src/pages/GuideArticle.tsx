@@ -7696,6 +7696,17 @@ const GuideArticle = () => {
         { name: "Stay Hydrated", text: "Drink water consistently throughout the day to support healthy synovial fluid production and keep your joint lubrication at its best." },
       ],
     },
+    "patellofemoral-pain-syndrome": {
+      name: "How to Support Kneecap Comfort with Patellofemoral Pain",
+      description: "Everyday strategies to support patellofemoral joint comfort and reduce kneecap irritation during daily activities.",
+      steps: [
+        { name: "Strengthen Your Quadriceps", text: "Perform exercises like straight-leg raises, wall sits, and terminal knee extensions to build the quadriceps muscles that guide the kneecap within the femoral groove." },
+        { name: "Build Hip and Glute Stability", text: "Include clamshells, side-lying leg raises, and single-leg bridges in your routine to improve lower limb alignment and reduce inward knee rotation during movement." },
+        { name: "Progress Activity Gradually", text: "Increase training volume, intensity, and duration by no more than 10% per week. Avoid sudden jumps in activity that may overload the patellofemoral joint." },
+        { name: "Stretch Key Muscle Groups", text: "Regularly stretch your quadriceps, hamstrings, IT band, and calves for 20-30 seconds each to maintain balanced tension around the knee joint." },
+        { name: "Take Movement Breaks", text: "If you sit for long periods, stand and walk briefly every 30-45 minutes to reduce sustained kneecap compression against the femoral groove." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];
