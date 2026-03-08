@@ -104,7 +104,7 @@ import heroKneePainYoga from "@/assets/article-hero-knee-pain-yoga.jpg";
 import heroKneePainHiking from "@/assets/article-hero-knee-pain-hiking.jpg";
 import heroKneeTightnessNoPain from "@/assets/article-hero-knee-tightness-no-pain.jpg";
 import heroBurningKneeSensation from "@/assets/article-hero-burning-knee-sensation.jpg";
-// Import guide thumbnails for related guides
+import heroKneeWeaknessNoPain from "@/assets/article-hero-knee-weakness-no-pain.jpg";
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
 import thumbWhoBenefits from "@/assets/guide-thumb-who-benefits-branded.jpg";
