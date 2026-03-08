@@ -65,7 +65,7 @@ export const ArticleShareSidebar = ({ url, title }: ShareButtonsProps) => {
   if (isMobile) return null;
 
   return (
-    <div className="hidden lg:flex fixed left-[max(1rem,calc((50% - 22rem) / 2))] top-1/2 -translate-y-1/2 flex-col gap-3 z-40">
+    <div className="hidden lg:flex fixed left-[calc((50%-24rem)/2-1.25rem)] top-1/2 -translate-y-1/2 flex-col gap-3 z-40">
       {shareButtons(url, title).map((btn) => (
         <a
           key={btn.name}
