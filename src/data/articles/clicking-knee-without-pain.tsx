@@ -64,8 +64,8 @@ export const clickingKneeWithoutPain: ArticleExport = {
           Have you ever stood up from a chair and heard a loud pop from your knee? Or noticed a consistent clicking sound when you straighten your leg? If there's no pain involved, these sounds can feel surprising, even alarming. But <strong>knee clicking without pain</strong> is one of the most common joint experiences people report, and it's usually nothing to worry about.
         </p>
         <p>
-          The knee is one of the most complex joints in the body. It involves multiple bones, layers of cartilage, fluid-filled capsules, tendons, and ligaments — all working together during every step, bend, and twist. With so many moving parts, it's completely natural for the joint to produce sounds from time to time.
-        </p>
+           The knee is one of the most complex joints in the body. It involves multiple bones, layers of cartilage, fluid-filled capsules, tendons, and ligaments, all working together during every step, bend, and twist. With so many moving parts, it's completely natural for the joint to produce sounds from time to time.
+         </p>
         <p>
           This guide explores the science behind <strong>knee clicking no pain</strong> experiences, explains when these sounds are perfectly normal, and helps you understand what daily habits support quiet, comfortable knee movement over time.
         </p>
