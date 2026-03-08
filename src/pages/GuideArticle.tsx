@@ -110,6 +110,7 @@ import heroKneeBursitis from "@/assets/article-hero-knee-bursitis.jpg";
 import heroPFPS from "@/assets/article-hero-pfps.jpg";
 import heroKneePainCarRides from "@/assets/article-hero-knee-pain-car-rides.jpg";
 import heroWarmFeelingKnee from "@/assets/article-hero-warm-feeling-knee.jpg";
+import heroHeavyKnees from "@/assets/article-hero-heavy-knees.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -196,6 +197,7 @@ import thumbKneeBursitis from "@/assets/guide-thumb-knee-bursitis.jpg";
 import thumbPFPS from "@/assets/guide-thumb-pfps.jpg";
 import thumbKneePainCarRides from "@/assets/guide-thumb-knee-pain-car-rides.jpg";
 import thumbWarmFeelingKnee from "@/assets/guide-thumb-warm-feeling-knee.jpg";
+import thumbHeavyKnees from "@/assets/guide-thumb-heavy-knees.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -275,6 +277,7 @@ import {
   patellofemoralPainSyndrome,
   kneePainAfterCarRides,
   warmFeelingInKnee,
+  heavyFeelingInKnees,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -373,6 +376,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "patellofemoral-pain-syndrome": { headline: "Need front-of-knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help support kneecap comfort during your daily routine." },
   "knee-pain-after-car-rides": { headline: "Need post-travel knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long drives." },
   "warm-feeling-in-knee": { headline: "Want soothing warmth support for your knees?", text: "FlexiKnee provides adjustable heat, red light, and gentle vibration in one wireless device — designed for daily knee comfort support." },
+  "heavy-feeling-in-knees": { headline: "Support your knees with daily warmth and comfort", text: "FlexiKnee provides adjustable warmth, red light, and gentle vibration in one wireless device, designed for daily knee comfort support." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7464,7 +7468,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7735,6 +7739,17 @@ const GuideArticle = () => {
         { name: "Stay Hydrated Throughout the Day", text: "Drink water consistently to support healthy blood flow, joint fluid production, and temperature regulation, all of which influence how warm your knees feel." },
         { name: "Incorporate Regular Gentle Movement", text: "Avoid alternating between long periods of inactivity and intense exercise. Regular moderate activity helps maintain steady circulation without dramatic warmth spikes." },
         { name: "Progress Activity Levels Gradually", text: "Increase exercise volume and intensity by no more than 10% per week. Gradual progression allows joints to adapt without excessive stress and warmth responses." },
+      ],
+    },
+    "heavy-feeling-in-knees": {
+      name: "How to Reduce Heavy Feeling in the Knees",
+      description: "Everyday strategies to combat knee heaviness through movement, strengthening, and circulation support.",
+      steps: [
+        { name: "Take Regular Movement Breaks", text: "Stand and walk for 2-5 minutes every 30-45 minutes during prolonged sitting to reactivate the calf muscle pump and restore blood circulation to the lower limbs." },
+        { name: "Strengthen Your Leg Muscles", text: "Perform exercises like wall sits, leg raises, step-ups, and gentle squats 3-4 times per week to build the quadriceps, hamstrings, and calf endurance that keeps knees feeling lighter." },
+        { name: "Stay Hydrated Throughout the Day", text: "Drink water consistently to support healthy blood viscosity, muscle function, and joint fluid production, all of which reduce the sensation of heaviness." },
+        { name: "Stretch Daily", text: "Spend 5-10 minutes stretching quadriceps, hamstrings, and calves to improve blood flow, reduce muscle tension, and help knees feel lighter and more responsive." },
+        { name: "Walk for 5-10 Minutes as a Reset", text: "When knees feel heavy, a short walk activates all major supporting muscle groups, promotes circulation, and restores the natural rhythm of joint fluid movement." },
       ],
     },
   };

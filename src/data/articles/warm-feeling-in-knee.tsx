@@ -54,8 +54,8 @@ const article = {
   metaDescription: "Learn why your knee feels warm, common causes of knee warmth including circulation and activity, and simple everyday strategies to support comfortable knee joints.",
   heroImage,
   publishedDate: "March 8, 2026",
-  nextSlug: undefined as string | undefined,
-  nextTitle: undefined as string | undefined,
+  nextSlug: "heavy-feeling-in-knees",
+  nextTitle: "Heavy Feeling in the Knees: Why It Happens & What Helps",
   faqs,
   seoTags: "warm feeling in knee, knee feels warm, warm knee sensation, knee warmth causes, knee joint warmth, knee circulation comfort, warm knee joint, heat sensation knee, knee tissue warmth, everyday knee comfort",
   content: (

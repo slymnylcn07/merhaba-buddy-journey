@@ -45,6 +45,7 @@ import thumbKneeBursitis from "@/assets/guide-thumb-knee-bursitis.jpg";
 import thumbPFPS from "@/assets/guide-thumb-pfps.jpg";
 import thumbKneePainCarRides from "@/assets/guide-thumb-knee-pain-car-rides.jpg";
 import thumbWarmFeelingKnee from "@/assets/guide-thumb-warm-feeling-knee.jpg";
+import thumbHeavyKnees from "@/assets/guide-thumb-heavy-knees.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "back-of-knee-pain-common": thumbBackKneeCommon,
@@ -89,6 +90,7 @@ const thumbnailMap: Record<string, string> = {
   "patellofemoral-pain-syndrome": thumbPFPS,
   "knee-pain-after-car-rides": thumbKneePainCarRides,
   "warm-feeling-in-knee": thumbWarmFeelingKnee,
+  "heavy-feeling-in-knees": thumbHeavyKnees,
 };
 
 // Get the 10 most recent guides (last 10 from the array)
