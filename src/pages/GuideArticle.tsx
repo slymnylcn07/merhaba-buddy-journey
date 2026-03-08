@@ -8171,6 +8171,7 @@ const GuideArticle = () => {
                 "heavy-feeling-in-knees": ["knee-weakness-without-pain", "knee-tightness-without-pain", "knee-pain-after-flights"],
                 "knee-pain-after-flights": ["knee-pain-after-car-rides", "why-do-my-knees-feel-tight-after-resting", "knee-tightness-without-pain"],
                 "knee-pain-when-kneeling": ["knee-bursitis-guide", "knee-pain-when-squatting", "patellofemoral-pain-syndrome"],
+                "pain-behind-kneecap": ["patellofemoral-pain-syndrome", "knee-pain-climbing-stairs", "knee-pain-when-squatting"],
               };
 
               // Get topic-relevant articles (max 3)
