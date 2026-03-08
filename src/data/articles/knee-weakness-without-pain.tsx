@@ -254,8 +254,8 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
         </p>
 
         <PremiumCTA
-          title="Support Your Knee Stability Every Day"
-          description="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable and supported before and after your daily strengthening routine."
+          headline="Support Your Knee Stability Every Day"
+          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable and supported before and after your daily strengthening routine."
         />
 
         {/* Section 5 */}
