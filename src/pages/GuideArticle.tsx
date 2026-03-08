@@ -7925,13 +7925,11 @@ const GuideArticle = () => {
               />
             )}
 
-            {/* Share Block - test for knee-pain-after-flights only */}
-            {slug === "knee-pain-after-flights" && (
-              <ArticleShareBlock
-                url={`https://flexi-knee.com/guides/${slug}`}
-                title={article.title}
-              />
-            )}
+            {/* Share Block */}
+            <ArticleShareBlock
+              url={`https://flexi-knee.com/guides/${slug}`}
+              title={article.title}
+            />
           </div>
         </article>
 
