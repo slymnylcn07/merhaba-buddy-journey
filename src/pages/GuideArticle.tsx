@@ -7889,7 +7889,7 @@ const GuideArticle = () => {
         {/* Share Sidebar - test for knee-pain-after-flights only */}
         {slug === "knee-pain-after-flights" && (
           <ArticleShareSidebar
-            url={`https://merhaba-buddy-journey.lovable.app/guides/${slug}`}
+            url={`https://flexi-knee.com/guides/${slug}`}
             title={article.title}
           />
         )}
