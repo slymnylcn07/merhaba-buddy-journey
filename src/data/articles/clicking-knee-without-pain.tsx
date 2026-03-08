@@ -293,7 +293,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h2>When Knee Sounds Should Be Evaluated</h2>
         <p>
-          While this guide focuses on <strong>knee clicking without pain</strong> — which is usually harmless — there are situations where knee sounds warrant professional evaluation. Understanding these warning signs can help you make informed decisions about when to seek guidance:
+          While this guide focuses on <strong>knee clicking without pain</strong>, which is usually harmless, there are situations where knee sounds warrant professional evaluation. Understanding these warning signs can help you make informed decisions about when to seek guidance:
         </p>
 
         <h3>Persistent Swelling</h3>
