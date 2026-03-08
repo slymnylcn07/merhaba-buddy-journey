@@ -61,8 +61,8 @@ export const plicaSyndromeKneePain: ArticleExport = {
     metaDescription: "Learn what plica syndrome is and why knee plica irritation occurs. Discover common causes, everyday triggers, and simple home strategies to support knee comfort.",
     heroImage: heroImage,
     publishedDate: "March 8, 2026",
-    nextSlug: "knee-weakness-without-pain",
-    nextTitle: "Knee Weakness Without Pain",
+    nextSlug: "knee-bursitis-guide",
+    nextTitle: "Knee Bursitis: Causes, Symptoms & Comfort",
     seoTags: "plica syndrome knee pain,plica syndrome knee,knee plica syndrome,medial plica knee pain,plica irritation knee,plica knee symptoms,inflamed plica knee,knee joint tissue irritation,medial knee fold,inner knee irritation,knee bending discomfort,knee joint friction,soft tissue knee irritation",
     faqs,
     content: (
