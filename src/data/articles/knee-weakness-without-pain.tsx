@@ -118,12 +118,14 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
           Knee weakness without pain often points to one or more of the following factors:
         </p>
 
-        <InfoBox title="Common Indicators of Non-Painful Knee Weakness" items={[
-          "Muscle fatigue around the knee, especially in the quadriceps or hamstrings",
-          "Reduced muscle activation after periods of inactivity or prolonged sitting",
-          "Temporary joint instability caused by tired or deconditioned stabilizing muscles",
-          "Decreased overall leg strength that affects how well the knee is supported during movement",
-        ]} />
+        <InfoBox title="Common Indicators of Non-Painful Knee Weakness">
+          <ul className="space-y-2 text-muted-foreground">
+            <li>Muscle fatigue around the knee, especially in the quadriceps or hamstrings</li>
+            <li>Reduced muscle activation after periods of inactivity or prolonged sitting</li>
+            <li>Temporary joint instability caused by tired or deconditioned stabilizing muscles</li>
+            <li>Decreased overall leg strength that affects how well the knee is supported during movement</li>
+          </ul>
+        </InfoBox>
 
         <p>
           The key distinction here is that this type of weakness typically reflects a muscular or conditioning issue rather than joint damage. The knee joint itself may be structurally sound, but the muscles responsible for keeping it stable during walking, climbing, or standing may not be activating as effectively as they should.
