@@ -193,6 +193,7 @@ import thumbKneeWeaknessNoPain from "@/assets/guide-thumb-knee-weakness-no-pain.
 import thumbPlicaSyndrome from "@/assets/guide-thumb-plica-syndrome.jpg";
 import thumbKneeBursitis from "@/assets/guide-thumb-knee-bursitis.jpg";
 import thumbPFPS from "@/assets/guide-thumb-pfps.jpg";
+import thumbKneePainCarRides from "@/assets/guide-thumb-knee-pain-car-rides.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
