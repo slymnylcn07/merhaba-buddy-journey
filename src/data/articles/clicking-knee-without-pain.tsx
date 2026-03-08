@@ -264,7 +264,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Maintaining Muscle Balance</h3>
         <p>
-          The muscles around the knee — quadriceps, hamstrings, and calf muscles — work together to guide the joint through movement. When these muscles are balanced in strength and flexibility, the kneecap tracks more smoothly and tendons move more efficiently. Regular strengthening exercises can help reduce unnecessary friction and sound.
+          The muscles around the knee, including the quadriceps, hamstrings, and calf muscles, work together to guide the joint through movement. When these muscles are balanced in strength and flexibility, the kneecap tracks more smoothly and tendons move more efficiently. Regular strengthening exercises can help reduce unnecessary friction and sound.
         </p>
 
         <h3>Improving Joint Mobility</h3>
