@@ -376,6 +376,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "patellofemoral-pain-syndrome": { headline: "Need front-of-knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help support kneecap comfort during your daily routine." },
   "knee-pain-after-car-rides": { headline: "Need post-travel knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long drives." },
   "warm-feeling-in-knee": { headline: "Want soothing warmth support for your knees?", text: "FlexiKnee provides adjustable heat, red light, and gentle vibration in one wireless device — designed for daily knee comfort support." },
+  "heavy-feeling-in-knees": { headline: "Support your knees with daily warmth and comfort", text: "FlexiKnee provides adjustable warmth, red light, and gentle vibration in one wireless device, designed for daily knee comfort support." },
 };
 
 const articles: Record<string, ArticleData> = {
