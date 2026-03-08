@@ -245,7 +245,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Stretching</h3>
         <p>
-          When you stretch the knee through its full range — especially first thing in the morning or after prolonged sitting — the pressure changes and tendon adjustments can produce prominent popping sounds. Many people notice their loudest knee sounds during stretching routines.
+          When you stretch the knee through its full range, especially first thing in the morning or after prolonged sitting, the pressure changes and tendon adjustments can produce prominent popping sounds. Many people notice their loudest knee sounds during stretching routines.
         </p>
 
         <h3>Prolonged Sitting</h3>
