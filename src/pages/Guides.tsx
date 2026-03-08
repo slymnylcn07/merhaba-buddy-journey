@@ -278,6 +278,7 @@ const activitySlugs = [
   "warm-feeling-in-knee",
   "heavy-feeling-in-knees",
   "knee-pain-when-kneeling",
+  "pain-behind-kneecap",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
