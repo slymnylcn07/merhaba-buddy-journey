@@ -8012,6 +8012,9 @@ const GuideArticle = () => {
                 "knee-bursitis-guide": thumbKneeBursitis,
                 "patellofemoral-pain-syndrome": thumbPFPS,
                 "knee-pain-after-car-rides": thumbKneePainCarRides,
+                "warm-feeling-in-knee": thumbWarmFeelingKnee,
+                "heavy-feeling-in-knees": thumbHeavyKnees,
+                "knee-pain-after-flights": thumbKneePainFlights,
               };
 
               // Topic clusters for relevant recommendations
