@@ -165,7 +165,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Tendon Movement Over Bone</h3>
         <p>
-          The tendons around the knee — particularly the quadriceps tendon above the kneecap and the patellar tendon below — must slide and adjust with every knee movement. As they glide over ridges and bumps on the bone surfaces, they can produce snapping or clicking sounds. This is entirely normal and happens in many joints throughout the body, not just the knee.
+          The tendons around the knee, particularly the quadriceps tendon above the kneecap and the patellar tendon below, must slide and adjust with every knee movement. As they glide over ridges and bumps on the bone surfaces, they can produce snapping or clicking sounds. This is entirely normal and happens in many joints throughout the body, not just the knee.
         </p>
 
         <h3>Pressure Changes Inside the Joint</h3>
