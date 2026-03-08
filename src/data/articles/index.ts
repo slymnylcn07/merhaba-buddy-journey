@@ -61,4 +61,5 @@ export { warmFeelingInKnee } from "./warm-feeling-in-knee";
 export { heavyFeelingInKnees } from "./heavy-feeling-in-knees";
 export { kneePainAfterFlights } from "./knee-pain-after-flights";
 export { kneePainWhenKneeling } from "./knee-pain-when-kneeling";
+export { painBehindKneecap } from "./pain-behind-kneecap";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";

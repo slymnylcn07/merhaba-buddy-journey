@@ -115,6 +115,7 @@ import heroWarmFeelingKnee from "@/assets/article-hero-warm-feeling-knee.jpg";
 import heroHeavyKnees from "@/assets/article-hero-heavy-knees.jpg";
 import heroKneePainFlights from "@/assets/article-hero-knee-pain-flights.jpg";
 import heroKneePainKneeling from "@/assets/article-hero-knee-pain-kneeling.jpg";
+import heroPainBehindKneecap from "@/assets/article-hero-pain-behind-kneecap.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -204,6 +205,7 @@ import thumbWarmFeelingKnee from "@/assets/guide-thumb-warm-feeling-knee.jpg";
 import thumbHeavyKnees from "@/assets/guide-thumb-heavy-knees.jpg";
 import thumbKneePainFlights from "@/assets/guide-thumb-knee-pain-flights.jpg";
 import thumbKneePainKneeling from "@/assets/guide-thumb-knee-pain-kneeling.jpg";
+import thumbPainBehindKneecap from "@/assets/guide-thumb-pain-behind-kneecap.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -286,6 +288,7 @@ import {
   heavyFeelingInKnees,
   kneePainAfterFlights,
   kneePainWhenKneeling,
+  painBehindKneecap,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -387,6 +390,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "heavy-feeling-in-knees": { headline: "Support your knees with daily warmth and comfort", text: "FlexiKnee provides adjustable warmth, red light, and gentle vibration in one wireless device, designed for daily knee comfort support." },
   "knee-pain-after-flights": { headline: "Want post-travel knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long flights and travel days." },
   "knee-pain-when-kneeling": { headline: "Need comfort support for kneeling activities?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after gardening, cleaning, or any kneeling work." },
+  "pain-behind-kneecap": { headline: "Want soothing support for kneecap discomfort?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to the front knee area, helping your kneecap recover after stairs, runs, and daily activities." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7478,7 +7482,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7784,6 +7788,17 @@ const GuideArticle = () => {
         { name: "Apply Warmth After Kneeling Activities", text: "After extended kneeling sessions, apply soothing warmth to the front of the knee for 10-15 minutes to help the tissues recover and reduce any residual sensitivity." },
       ],
     },
+    "pain-behind-kneecap": {
+      name: "How to Support Kneecap Comfort During Daily Activities",
+      description: "Simple strategies to reduce pressure behind the kneecap and support comfortable knee movement during stairs, squats, and everyday activities.",
+      steps: [
+        { name: "Strengthen Your Quadriceps", text: "Perform straight-leg raises, wall sits, and terminal knee extensions 3-4 times per week to build the quadriceps muscles that guide the kneecap within its groove and distribute pressure evenly." },
+        { name: "Build Hip and Glute Stability", text: "Include clamshells, side-lying leg raises, and single-leg bridges to improve lower limb alignment and prevent the knee from collapsing inward during movement." },
+        { name: "Stretch Key Muscle Groups", text: "Regularly stretch quadriceps, hamstrings, IT band, and calves for 20-30 seconds each to maintain balanced tension around the knee joint." },
+        { name: "Progress Activity Gradually", text: "Increase training volume, intensity, and duration by no more than 10% per week. Allow the kneecap area time to adapt to new demands." },
+        { name: "Take Movement Breaks", text: "Stand and walk briefly every 30-45 minutes during prolonged sitting to reduce sustained kneecap compression against the thigh bone." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];
@@ -8046,6 +8061,7 @@ const GuideArticle = () => {
                 "heavy-feeling-in-knees": thumbHeavyKnees,
                 "knee-pain-after-flights": thumbKneePainFlights,
                 "knee-pain-when-kneeling": thumbKneePainKneeling,
+                "pain-behind-kneecap": thumbPainBehindKneecap,
               };
 
               // Topic clusters for relevant recommendations
@@ -8155,6 +8171,7 @@ const GuideArticle = () => {
                 "heavy-feeling-in-knees": ["knee-weakness-without-pain", "knee-tightness-without-pain", "knee-pain-after-flights"],
                 "knee-pain-after-flights": ["knee-pain-after-car-rides", "why-do-my-knees-feel-tight-after-resting", "knee-tightness-without-pain"],
                 "knee-pain-when-kneeling": ["knee-bursitis-guide", "knee-pain-when-squatting", "patellofemoral-pain-syndrome"],
+                "pain-behind-kneecap": ["patellofemoral-pain-syndrome", "knee-pain-climbing-stairs", "knee-pain-when-squatting"],
               };
 
               // Get topic-relevant articles (max 3)
