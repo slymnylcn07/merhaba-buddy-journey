@@ -8007,6 +8007,7 @@ const GuideArticle = () => {
                 "knee-pain-going-down-stairs": ["knee-pain-climbing-stairs", "knee-pain-when-squatting", "knee-pain-after-exercise"],
                 "knee-pain-when-squatting": ["knee-pain-after-exercise", "knee-pain-exercises-guide", "how-to-strengthen-knees"],
                 "knee-pain-during-yoga": ["knee-pain-after-sitting-cross-legged", "knee-pain-when-squatting", "knee-mobility-after-50"],
+                "knee-pain-when-hiking": ["knee-pain-after-long-walks", "knee-pain-climbing-stairs", "knee-pain-after-exercise"],
               };
 
               // Get topic-relevant articles (max 3)
