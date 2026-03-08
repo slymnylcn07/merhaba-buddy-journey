@@ -160,7 +160,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Joint Lubrication</h3>
         <p>
-          Synovial fluid doesn't just reduce friction — it also contains gases that naturally expand and contract as pressure changes within the joint capsule. When you move after a period of stillness, these pressure changes are more pronounced, which is why <strong>normal knee clicking</strong> tends to be more noticeable after sitting or sleeping.
+          Synovial fluid doesn't just reduce friction. It also contains gases that naturally expand and contract as pressure changes within the joint capsule. When you move after a period of stillness, these pressure changes are more pronounced, which is why <strong>normal knee clicking</strong> tends to be more noticeable after sitting or sleeping.
         </p>
 
         <h3>Tendon Movement Over Bone</h3>
