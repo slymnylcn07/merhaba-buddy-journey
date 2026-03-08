@@ -176,7 +176,7 @@ const articleContent = (
 
     <h3>Running & Jogging</h3>
     <p>
-      Running is a high-impact, repetitive activity. Each stride sends significant force through the knee joint, and a typical 5K run involves roughly 3,000–4,000 foot strikes. The repetitive nature means that even small alignment issues or muscle imbalances can compound into noticeable <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">post-run knee discomfort</Link>.
+      Running is a high-impact, repetitive activity. Each stride sends significant force through the knee joint, and a typical 5K run involves roughly 3,000 to 4,000 foot strikes. The repetitive nature means that even small alignment issues or muscle imbalances can compound into noticeable <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">post-run knee discomfort</Link>.
     </p>
 
     <figure className="my-8">
@@ -187,23 +187,23 @@ const articleContent = (
         loading="lazy"
       />
       <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        Each running stride places 3–4x your body weight through the knee joint, creating cumulative load over thousands of repetitions
+        Each running stride places 3 to 4x your body weight through the knee joint, creating cumulative load over thousands of repetitions
       </figcaption>
     </figure>
 
     <h3>Squats & Lunges</h3>
     <p>
-      Deep knee bending exercises put the kneecap (patella) under significant pressure against the thighbone. The deeper you squat, the more compressive force the patellofemoral joint experiences. This is why people often feel front-of-knee soreness the day after a leg day at the gym, even if the squats themselves felt comfortable.
+      Deep knee bending exercises put the kneecap (patella) under significant pressure against the thighbone. The deeper you squat, the more compressive force the patellofemoral joint experiences. This is why people often feel front-of-knee soreness the day after a leg day at the gym, even if the <Link to="/guides/knee-pain-squatting" className="text-primary hover:underline">squats themselves felt comfortable</Link>.
     </p>
 
     <h3>Stairs & Step Exercises</h3>
     <p>
-      Going up and down stairs — or doing step-up exercises — combines the impact of running with the deep bending of squats. The knee joint handles both compressive forces and shearing forces simultaneously, making stair-based activities particularly demanding on the joint structures.
+      Going up and down stairs, or doing step-up exercises, combines the impact of running with the deep bending of squats. The knee joint handles both compressive forces and shearing forces simultaneously, making stair-based activities particularly demanding on the joint structures.
     </p>
 
     <TipsList tips={[
       "Start with shorter distances or lighter loads and build up gradually over weeks",
-      "Maintain proper form — knee alignment over your toes during squats and lunges",
+      "Maintain proper form with knee alignment over your toes during squats and lunges",
       "Alternate high-impact days with low-impact recovery activities like swimming or cycling",
       "Include a proper cool-down period with gentle walking and stretching after each session",
     ]} />
