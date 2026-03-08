@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArticleShareSidebar, ArticleShareBlock } from "@/components/ArticleShareSidebar";
 import {
   KneePainFactorsChart,
   DailyActivityImpactChart,
@@ -7885,6 +7886,14 @@ const GuideArticle = () => {
           </div>
         </section>
 
+        {/* Share Sidebar - test for knee-pain-after-flights only */}
+        {slug === "knee-pain-after-flights" && (
+          <ArticleShareSidebar
+            url={`https://merhaba-buddy-journey.lovable.app/guides/${slug}`}
+            title={article.title}
+          />
+        )}
+
         {/* Article Content */}
         <article className="py-8 md:py-10">
           <div className="container px-4 max-w-3xl mx-auto">
@@ -7905,6 +7914,14 @@ const GuideArticle = () => {
                 <div className="my-6">
                   <p className="text-sm text-muted-foreground"><strong>SEO Tags:</strong> {article.seoTags}</p>
                 </div>
+              )}
+
+              {/* Share Block - test for knee-pain-after-flights only */}
+              {slug === "knee-pain-after-flights" && (
+                <ArticleShareBlock
+                  url={`https://merhaba-buddy-journey.lovable.app/guides/${slug}`}
+                  title={article.title}
+                />
               )}
             </div>
             
