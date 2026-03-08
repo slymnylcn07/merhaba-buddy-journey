@@ -97,9 +97,9 @@ export const clickingKneeWithoutPain: ArticleExport = {
             alt="Illustration showing a tendon gliding over a bony surface during joint movement"
             className="w-full h-auto rounded-xl shadow-sm"
           />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Tendons naturally slide over bony surfaces, occasionally producing clicking sounds
-          </figcaption>
+           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+             Gentle stretching movements engage the tendons and ligaments around the knee joint
+           </figcaption>
         </figure>
 
         <h3>Joint Fluid Gas Release</h3>
