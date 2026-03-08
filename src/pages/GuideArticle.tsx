@@ -205,6 +205,7 @@ import thumbWarmFeelingKnee from "@/assets/guide-thumb-warm-feeling-knee.jpg";
 import thumbHeavyKnees from "@/assets/guide-thumb-heavy-knees.jpg";
 import thumbKneePainFlights from "@/assets/guide-thumb-knee-pain-flights.jpg";
 import thumbKneePainKneeling from "@/assets/guide-thumb-knee-pain-kneeling.jpg";
+import thumbPainBehindKneecap from "@/assets/guide-thumb-pain-behind-kneecap.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
