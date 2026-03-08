@@ -579,6 +579,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-08",
   },
+  {
+    slug: "burning-sensation-in-knee",
+    title: "Burning Sensation in Knee: Causes & Relief",
+    description: "Learn why your knee feels warm or burning. Discover common causes of burning knee pain, when to take action, and home strategies that support joint comfort.",
+    readTime: 14,
+    lastModified: "2026-03-08",
+  },
 ];
 
 export const staticPages = [
