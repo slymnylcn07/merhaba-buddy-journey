@@ -284,7 +284,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
 
         <h3>Avoiding Prolonged Static Positions</h3>
         <p>
-          If you sit or stand for long periods, taking brief movement breaks every 30–45 minutes helps keep joint fluid circulating and prevents the gas buildup that leads to loud pops when you finally move. Simple actions like standing up, walking a few steps, or doing gentle knee bends can make a difference.
+          If you sit or stand for long periods, taking brief movement breaks every 30 to 45 minutes helps keep joint fluid circulating and prevents the gas buildup that leads to loud pops when you finally move. Simple actions like standing up, walking a few steps, or doing gentle knee bends can make a difference.
         </p>
 
         <p>
