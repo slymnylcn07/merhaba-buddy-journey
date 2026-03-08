@@ -107,7 +107,7 @@ const article = {
       </InfoBox>
 
       {/* Section 2 */}
-      <h2>Why Circulation Changes During Flights</h2>
+      <h2 id="circulation-changes-during-flights">Why Circulation Changes During Flights</h2>
       <p>
         Blood circulation in the lower legs naturally slows down when you sit for extended periods, and flying adds several additional factors that can make this more pronounced.
       </p>
