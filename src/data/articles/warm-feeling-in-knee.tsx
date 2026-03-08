@@ -61,7 +61,7 @@ const article = {
   content: (
     <>
       <p>
-        The knee joint is one of the busiest joints in the body — bending, straightening, and bearing weight thousands of times each day. With all this activity, it's natural for the knee to occasionally feel warm. But when that warmth becomes noticeable or persistent, it's worth understanding what your body may be telling you.
+        The knee joint is one of the busiest joints in the body, bending, straightening, and bearing weight thousands of times each day. With all this activity, it's natural for the knee to occasionally feel warm. But when that warmth becomes noticeable or persistent, it's worth understanding what your body may be telling you.
       </p>
 
       <StatHighlight
