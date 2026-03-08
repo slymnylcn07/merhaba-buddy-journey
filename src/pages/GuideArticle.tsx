@@ -107,6 +107,7 @@ import heroBurningKneeSensation from "@/assets/article-hero-burning-knee-sensati
 import heroKneeWeaknessNoPain from "@/assets/article-hero-knee-weakness-no-pain.jpg";
 import heroPlicaSyndrome from "@/assets/article-hero-plica-syndrome.jpg";
 import heroKneeBursitis from "@/assets/article-hero-knee-bursitis.jpg";
+import heroPFPS from "@/assets/article-hero-pfps.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -190,6 +191,7 @@ import thumbBurningKneeSensation from "@/assets/guide-thumb-burning-knee-sensati
 import thumbKneeWeaknessNoPain from "@/assets/guide-thumb-knee-weakness-no-pain.jpg";
 import thumbPlicaSyndrome from "@/assets/guide-thumb-plica-syndrome.jpg";
 import thumbKneeBursitis from "@/assets/guide-thumb-knee-bursitis.jpg";
+import thumbPFPS from "@/assets/guide-thumb-pfps.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -266,6 +268,7 @@ import {
   kneeWeaknessWithoutPain,
   plicaSyndromeKneePain,
   kneeBursitisGuide,
+  patellofemoralPainSyndrome,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -361,6 +364,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-weakness-without-pain": { headline: "Support your knee stability every day", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable and supported before and after your daily strengthening routine." },
   "plica-syndrome-knee-pain": { headline: "Support your knee comfort during recovery", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable and supported as part of your daily knee comfort routine." },
   "knee-bursitis-guide": { headline: "Want gentle warmth for irritated knee bursae?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help support knee comfort during your daily routine." },
+  "patellofemoral-pain-syndrome": { headline: "Need front-of-knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help support kneecap comfort during your daily routine." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7452,7 +7456,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7690,6 +7694,17 @@ const GuideArticle = () => {
         { name: "Apply Warmth Before Standing", text: "Use a warm compress or heat therapy device on your knees for 10-15 minutes before you plan to stand up from a long rest period." },
         { name: "Stand Up Slowly", text: "When transitioning from rest to movement, take your first 5-10 steps slowly and gently. Allow 2-5 minutes for your joints to warm up before walking at your normal pace." },
         { name: "Stay Hydrated", text: "Drink water consistently throughout the day to support healthy synovial fluid production and keep your joint lubrication at its best." },
+      ],
+    },
+    "patellofemoral-pain-syndrome": {
+      name: "How to Support Kneecap Comfort with Patellofemoral Pain",
+      description: "Everyday strategies to support patellofemoral joint comfort and reduce kneecap irritation during daily activities.",
+      steps: [
+        { name: "Strengthen Your Quadriceps", text: "Perform exercises like straight-leg raises, wall sits, and terminal knee extensions to build the quadriceps muscles that guide the kneecap within the femoral groove." },
+        { name: "Build Hip and Glute Stability", text: "Include clamshells, side-lying leg raises, and single-leg bridges in your routine to improve lower limb alignment and reduce inward knee rotation during movement." },
+        { name: "Progress Activity Gradually", text: "Increase training volume, intensity, and duration by no more than 10% per week. Avoid sudden jumps in activity that may overload the patellofemoral joint." },
+        { name: "Stretch Key Muscle Groups", text: "Regularly stretch your quadriceps, hamstrings, IT band, and calves for 20-30 seconds each to maintain balanced tension around the knee joint." },
+        { name: "Take Movement Breaks", text: "If you sit for long periods, stand and walk briefly every 30-45 minutes to reduce sustained kneecap compression against the femoral groove." },
       ],
     },
   };
@@ -7935,6 +7950,7 @@ const GuideArticle = () => {
                 "knee-weakness-without-pain": thumbKneeWeaknessNoPain,
                 "plica-syndrome-knee-pain": thumbPlicaSyndrome,
                 "knee-bursitis-guide": thumbKneeBursitis,
+                "patellofemoral-pain-syndrome": thumbPFPS,
               };
 
               // Topic clusters for relevant recommendations

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
+// nextSlug/nextTitle updated to chain to patellofemoral-pain-syndrome
 
 import heroImage from "@/assets/article-hero-knee-bursitis.jpg";
 import imgBursaAnatomy from "@/assets/article-bursa-anatomy.jpg";
@@ -57,6 +58,8 @@ export const kneeBursitisGuide: ArticleExport = {
     metaDescription: "Learn what knee bursitis is, common causes of bursa irritation, typical symptoms, and 40+ everyday strategies to support knee comfort. Clear educational guide for adults.",
     heroImage: heroImage,
     publishedDate: "March 8, 2026",
+    nextSlug: "patellofemoral-pain-syndrome",
+    nextTitle: "Patellofemoral Pain Syndrome: Symptoms & Everyday Relief",
     faqs: faqs,
     content: (
       <>
