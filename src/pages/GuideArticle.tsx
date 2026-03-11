@@ -7818,6 +7818,18 @@ const GuideArticle = () => {
         { name: "Stay Well Hydrated", text: "Drink water consistently throughout the day to support healthy synovial fluid production. Proper hydration helps the knee's natural lubrication system work more effectively." },
       ],
     },
+    "exercises-to-relieve-knee-pain-at-home": {
+      name: "How to Do Knee Exercises at Home for Pain Relief",
+      description: "A step-by-step guide to simple home exercises that support knee comfort, strength, and mobility for everyday movement.",
+      steps: [
+        { name: "Warm Up with Gentle Movement", text: "Walk around gently for 2 to 3 minutes or do slow ankle circles to prepare the knee joint and surrounding muscles for exercise." },
+        { name: "Perform Straight Leg Raises", text: "Lie on your back, tighten the quadriceps of one leg, and slowly lift it about 12 inches off the floor. Hold for 3 to 5 seconds, then lower. Repeat 10 to 15 times per leg." },
+        { name: "Do Seated Knee Extensions", text: "Sit in a sturdy chair and slowly straighten one leg. Hold for 3 to 5 seconds, focusing on tightening the quadriceps, then lower. Repeat 10 to 15 times per leg." },
+        { name: "Practice Wall Supported Mini Squats", text: "Stand with your back against a wall, feet shoulder width apart. Slowly slide down to a comfortable angle (30 to 45 degrees), hold for 5 to 10 seconds, then slide back up. Repeat 8 to 12 times." },
+        { name: "Add Heel Slides for Mobility", text: "Lie on your back and slowly slide one heel toward your buttock, bending the knee. Slide back out straight. Repeat 10 to 15 times per leg." },
+        { name: "Finish with Stretching and Cool Down", text: "Stretch your hamstrings, quadriceps, and calves for 20 to 30 seconds each. End with gentle walking to allow the joint to return to a resting state." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];
