@@ -209,6 +209,7 @@ import thumbKneePainFlights from "@/assets/guide-thumb-knee-pain-flights.jpg";
 import thumbKneePainKneeling from "@/assets/guide-thumb-knee-pain-kneeling.jpg";
 import thumbPainBehindKneecap from "@/assets/guide-thumb-pain-behind-kneecap.jpg";
 import thumbClickingKneeNoPain from "@/assets/guide-thumb-clicking-knee-no-pain.jpg";
+import thumbKneeExercisesHome from "@/assets/guide-thumb-knee-exercises-home.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
