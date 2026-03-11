@@ -63,4 +63,5 @@ export { kneePainAfterFlights } from "./knee-pain-after-flights";
 export { kneePainWhenKneeling } from "./knee-pain-when-kneeling";
 export { painBehindKneecap } from "./pain-behind-kneecap";
 export { clickingKneeWithoutPain } from "./clicking-knee-without-pain";
+export { exercisesToRelieveKneePainAtHome } from "./exercises-to-relieve-knee-pain-at-home";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
