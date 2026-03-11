@@ -398,6 +398,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-pain-when-kneeling": { headline: "Need comfort support for kneeling activities?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after gardening, cleaning, or any kneeling work." },
   "pain-behind-kneecap": { headline: "Want soothing support for kneecap discomfort?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to the front knee area, helping your kneecap recover after stairs, runs, and daily activities." },
   "clicking-knee-without-pain": { headline: "Want daily comfort support for your knee joints?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help keep your knees comfortable, flexible, and supported through everyday movements." },
+  "exercises-to-relieve-knee-pain-at-home": { headline: "Want post-exercise knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after every home exercise session." },
 };
 
 const articles: Record<string, ArticleData> = {
