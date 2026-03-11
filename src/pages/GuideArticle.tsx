@@ -294,6 +294,7 @@ import {
   kneePainWhenKneeling,
   painBehindKneecap,
   clickingKneeWithoutPain,
+  exercisesToRelieveKneePainAtHome,
 } from "@/data/articles";
 
 interface FAQItem {
