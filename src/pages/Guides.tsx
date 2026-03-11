@@ -284,6 +284,7 @@ const activitySlugs = [
   "knee-pain-when-kneeling",
   "pain-behind-kneecap",
   "clicking-knee-without-pain",
+  "exercises-to-relieve-knee-pain-at-home",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
