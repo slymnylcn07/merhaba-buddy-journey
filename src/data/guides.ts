@@ -663,6 +663,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-08",
   },
+  {
+    slug: "exercises-to-relieve-knee-pain-at-home",
+    title: "Exercises to Relieve Knee Pain at Home",
+    description: "Simple step by step knee exercises you can do at home to support knee comfort, strengthen surrounding muscles, and improve joint mobility for everyday movement.",
+    readTime: 16,
+    lastModified: "2026-03-11",
+  },
 ];
 
 export const staticPages = [

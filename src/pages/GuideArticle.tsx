@@ -117,6 +117,7 @@ import heroKneePainFlights from "@/assets/article-hero-knee-pain-flights.jpg";
 import heroKneePainKneeling from "@/assets/article-hero-knee-pain-kneeling.jpg";
 import heroPainBehindKneecap from "@/assets/article-hero-pain-behind-kneecap.jpg";
 import heroClickingKneeNoPain from "@/assets/article-hero-clicking-knee-no-pain.jpg";
+import heroKneeExercisesHome from "@/assets/article-hero-knee-exercises-home.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -208,6 +209,7 @@ import thumbKneePainFlights from "@/assets/guide-thumb-knee-pain-flights.jpg";
 import thumbKneePainKneeling from "@/assets/guide-thumb-knee-pain-kneeling.jpg";
 import thumbPainBehindKneecap from "@/assets/guide-thumb-pain-behind-kneecap.jpg";
 import thumbClickingKneeNoPain from "@/assets/guide-thumb-clicking-knee-no-pain.jpg";
+import thumbKneeExercisesHome from "@/assets/guide-thumb-knee-exercises-home.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -292,6 +294,7 @@ import {
   kneePainWhenKneeling,
   painBehindKneecap,
   clickingKneeWithoutPain,
+  exercisesToRelieveKneePainAtHome,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -395,6 +398,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-pain-when-kneeling": { headline: "Need comfort support for kneeling activities?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after gardening, cleaning, or any kneeling work." },
   "pain-behind-kneecap": { headline: "Want soothing support for kneecap discomfort?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to the front knee area, helping your kneecap recover after stairs, runs, and daily activities." },
   "clicking-knee-without-pain": { headline: "Want daily comfort support for your knee joints?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help keep your knees comfortable, flexible, and supported through everyday movements." },
+  "exercises-to-relieve-knee-pain-at-home": { headline: "Want post-exercise knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after every home exercise session." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7486,7 +7490,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, clickingKneeWithoutPain];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, clickingKneeWithoutPain, exercisesToRelieveKneePainAtHome];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -7814,6 +7818,18 @@ const GuideArticle = () => {
         { name: "Stay Well Hydrated", text: "Drink water consistently throughout the day to support healthy synovial fluid production. Proper hydration helps the knee's natural lubrication system work more effectively." },
       ],
     },
+    "exercises-to-relieve-knee-pain-at-home": {
+      name: "How to Do Knee Exercises at Home for Pain Relief",
+      description: "A step-by-step guide to simple home exercises that support knee comfort, strength, and mobility for everyday movement.",
+      steps: [
+        { name: "Warm Up with Gentle Movement", text: "Walk around gently for 2 to 3 minutes or do slow ankle circles to prepare the knee joint and surrounding muscles for exercise." },
+        { name: "Perform Straight Leg Raises", text: "Lie on your back, tighten the quadriceps of one leg, and slowly lift it about 12 inches off the floor. Hold for 3 to 5 seconds, then lower. Repeat 10 to 15 times per leg." },
+        { name: "Do Seated Knee Extensions", text: "Sit in a sturdy chair and slowly straighten one leg. Hold for 3 to 5 seconds, focusing on tightening the quadriceps, then lower. Repeat 10 to 15 times per leg." },
+        { name: "Practice Wall Supported Mini Squats", text: "Stand with your back against a wall, feet shoulder width apart. Slowly slide down to a comfortable angle (30 to 45 degrees), hold for 5 to 10 seconds, then slide back up. Repeat 8 to 12 times." },
+        { name: "Add Heel Slides for Mobility", text: "Lie on your back and slowly slide one heel toward your buttock, bending the knee. Slide back out straight. Repeat 10 to 15 times per leg." },
+        { name: "Finish with Stretching and Cool Down", text: "Stretch your hamstrings, quadriceps, and calves for 20 to 30 seconds each. End with gentle walking to allow the joint to return to a resting state." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];
@@ -8078,6 +8094,7 @@ const GuideArticle = () => {
                 "knee-pain-when-kneeling": thumbKneePainKneeling,
                 "pain-behind-kneecap": thumbPainBehindKneecap,
                 "clicking-knee-without-pain": thumbClickingKneeNoPain,
+                "exercises-to-relieve-knee-pain-at-home": thumbKneeExercisesHome,
               };
 
               // Topic clusters for relevant recommendations
@@ -8189,6 +8206,7 @@ const GuideArticle = () => {
                 "knee-pain-when-kneeling": ["knee-bursitis-guide", "knee-pain-when-squatting", "patellofemoral-pain-syndrome"],
                 "pain-behind-kneecap": ["patellofemoral-pain-syndrome", "knee-pain-climbing-stairs", "knee-pain-when-squatting"],
                 "clicking-knee-without-pain": ["why-do-my-knees-crack-or-pop", "knee-tightness-without-pain", "patellofemoral-pain-syndrome"],
+                "exercises-to-relieve-knee-pain-at-home": ["knee-pain-exercises-guide", "knee-mobility-after-50", "knee-pain-when-squatting"],
               };
 
               // Get topic-relevant articles (max 3)
