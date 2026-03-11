@@ -8082,6 +8082,7 @@ const GuideArticle = () => {
                 "knee-pain-when-kneeling": thumbKneePainKneeling,
                 "pain-behind-kneecap": thumbPainBehindKneecap,
                 "clicking-knee-without-pain": thumbClickingKneeNoPain,
+                "exercises-to-relieve-knee-pain-at-home": thumbKneeExercisesHome,
               };
 
               // Topic clusters for relevant recommendations
