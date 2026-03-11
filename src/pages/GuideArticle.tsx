@@ -8194,6 +8194,7 @@ const GuideArticle = () => {
                 "knee-pain-when-kneeling": ["knee-bursitis-guide", "knee-pain-when-squatting", "patellofemoral-pain-syndrome"],
                 "pain-behind-kneecap": ["patellofemoral-pain-syndrome", "knee-pain-climbing-stairs", "knee-pain-when-squatting"],
                 "clicking-knee-without-pain": ["why-do-my-knees-crack-or-pop", "knee-tightness-without-pain", "patellofemoral-pain-syndrome"],
+                "exercises-to-relieve-knee-pain-at-home": ["knee-pain-exercises-guide", "knee-mobility-after-50", "knee-pain-when-squatting"],
               };
 
               // Get topic-relevant articles (max 3)
