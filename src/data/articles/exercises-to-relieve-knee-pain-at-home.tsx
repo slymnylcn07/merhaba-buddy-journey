@@ -245,9 +245,11 @@ export const exercisesToRelieveKneePainAtHome: ArticleExport = {
           <strong>What it does:</strong> Activates the quadriceps muscle without joint movement, helping maintain muscle engagement and connection even when other exercises feel uncomfortable.
         </p>
 
-        <PremiumCTA
-          headline="Support your knees after every home workout"
-          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after exercise, making your at-home knee routine more effective."
+        <JournalQuote
+          quote="Exercise therapy is one of the most consistently supported interventions for improving physical function and reducing symptoms in adults with knee osteoarthritis."
+          source="British Journal of Sports Medicine"
+          year="2019"
+          doi="10.1136/bjsports-2018-100452"
         />
 
         <InfoBox title="Daily Knee Exercise Tip">
