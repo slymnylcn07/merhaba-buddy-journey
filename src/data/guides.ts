@@ -670,6 +670,13 @@ export const guidesData: GuideData[] = [
     readTime: 16,
     lastModified: "2026-03-11",
   },
+  {
+    slug: "post-exercise-knee-pain-guide",
+    title: "Knee Pain After Exercise: When It's Normal and When It Isn't",
+    description: "Learn to tell the difference between normal post-workout knee soreness and warning signs that may need attention.",
+    readTime: 14,
+    lastModified: "2026-03-12",
+  },
 ];
 
 export const staticPages = [

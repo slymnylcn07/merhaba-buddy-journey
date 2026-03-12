@@ -118,6 +118,7 @@ import heroKneePainKneeling from "@/assets/article-hero-knee-pain-kneeling.jpg";
 import heroPainBehindKneecap from "@/assets/article-hero-pain-behind-kneecap.jpg";
 import heroClickingKneeNoPain from "@/assets/article-hero-clicking-knee-no-pain.jpg";
 import heroKneeExercisesHome from "@/assets/article-hero-knee-exercises-home.jpg";
+import heroPostExerciseKneePain from "@/assets/article-hero-post-exercise-knee-pain.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -210,6 +211,7 @@ import thumbKneePainKneeling from "@/assets/guide-thumb-knee-pain-kneeling.jpg";
 import thumbPainBehindKneecap from "@/assets/guide-thumb-pain-behind-kneecap.jpg";
 import thumbClickingKneeNoPain from "@/assets/guide-thumb-clicking-knee-no-pain.jpg";
 import thumbKneeExercisesHome from "@/assets/guide-thumb-knee-exercises-home.jpg";
+import thumbPostExerciseKneePain from "@/assets/guide-thumb-post-exercise-knee-pain.jpg";
 
 // Import section images - FlexiKnee branded device images
 import blogDeviceDailyRoutine from "@/assets/blog-device-daily-routine.jpg";
@@ -295,6 +297,7 @@ import {
   painBehindKneecap,
   clickingKneeWithoutPain,
   exercisesToRelieveKneePainAtHome,
+  postExerciseKneePainGuide,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -7490,7 +7493,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, clickingKneeWithoutPain, exercisesToRelieveKneePainAtHome];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, clickingKneeWithoutPain, exercisesToRelieveKneePainAtHome, postExerciseKneePainGuide];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
