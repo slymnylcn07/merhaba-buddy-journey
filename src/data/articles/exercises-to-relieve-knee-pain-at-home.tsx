@@ -185,6 +185,11 @@ export const exercisesToRelieveKneePainAtHome: ArticleExport = {
           <strong>What it does:</strong> Builds overall leg strength in a controlled, supported position. This exercise helps strengthen the muscles that support the knee during <Link to="/guides/knee-pain-when-squatting">squatting movements</Link>.
         </p>
 
+        <PremiumCTA
+          headline="Support your knees after every home workout"
+          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after exercise, making your at-home knee routine more effective."
+        />
+
         <h3>5. Heel Slides</h3>
         <p>
           Heel slides are a gentle <strong>knee mobility exercise</strong> that helps improve the knee's range of motion without placing weight on the joint. They are especially helpful for people who feel stiff after sitting or resting.
