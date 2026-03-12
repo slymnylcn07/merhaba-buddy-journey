@@ -247,9 +247,9 @@ export const exercisesToRelieveKneePainAtHome: ArticleExport = {
 
         <JournalQuote
           quote="Exercise therapy is one of the most consistently supported interventions for improving physical function and reducing symptoms in adults with knee osteoarthritis."
-          source="British Journal of Sports Medicine"
+          source="Fransen M, McConnell S, Harmer AR, et al."
+          publication="British Journal of Sports Medicine"
           year="2019"
-          doi="10.1136/bjsports-2018-100452"
         />
 
         <InfoBox title="Daily Knee Exercise Tip">
