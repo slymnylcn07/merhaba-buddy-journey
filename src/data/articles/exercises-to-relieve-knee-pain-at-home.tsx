@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArticleExport } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
-import { StatHighlight, InfoBox } from "@/components/ArticleCharts";
+import { StatHighlight, InfoBox, JournalQuote } from "@/components/ArticleCharts";
 
 import heroImage from "@/assets/article-hero-knee-exercises-home.jpg";
 import imgStraightLegRaise from "@/assets/article-straight-leg-raise-exercise.jpg";
