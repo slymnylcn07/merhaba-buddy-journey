@@ -289,6 +289,8 @@ const activitySlugs = [
   "pain-behind-kneecap",
   "clicking-knee-without-pain",
   "exercises-to-relieve-knee-pain-at-home",
+  "post-exercise-knee-pain-guide",
+  "knee-swelling-after-exercise",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
