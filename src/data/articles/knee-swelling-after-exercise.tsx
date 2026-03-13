@@ -249,6 +249,7 @@ const articleContent = (
 
     <JournalQuote
       quote="Therapeutic exercise has been shown to support joint function and reduce symptoms associated with knee joint concerns, including swelling and stiffness, when applied consistently over time."
+      source="Fransen et al."
       publication="British Journal of Sports Medicine"
       year="2015"
     />
