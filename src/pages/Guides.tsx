@@ -199,6 +199,7 @@ const thumbnailMap: Record<string, string> = {
   "clicking-knee-without-pain": thumbClickingKneeNoPain,
   "exercises-to-relieve-knee-pain-at-home": thumbKneeExercisesHome,
   "post-exercise-knee-pain-guide": thumbPostExerciseKneePain,
+  "knee-swelling-after-exercise": thumbKneeSwellingExercise,
 };
 
 // Combine data with thumbnails
