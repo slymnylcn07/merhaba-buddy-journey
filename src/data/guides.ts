@@ -677,6 +677,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-12",
   },
+  {
+    slug: "knee-swelling-after-exercise",
+    title: "Knee Swelling After Exercise: What Your Body Is Telling You",
+    description: "Learn why your knee may swell after exercise, when post-workout swelling is a normal recovery response, and when knee swelling may need closer attention.",
+    readTime: 15,
+    lastModified: "2026-03-13",
+  },
 ];
 
 export const staticPages = [
