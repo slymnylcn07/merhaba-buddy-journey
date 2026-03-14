@@ -24,7 +24,7 @@ const PremiumCTA = ({ headline, text }: PremiumCTAProps) => (
       className="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-xl flex-shrink-0"
     />
     <div className="flex-1">
-      <p className="text-foreground font-bold text-base mb-2 leading-snug">{headline}</p>
+      <p className="text-foreground !font-bold text-base mb-2 leading-snug">{headline}</p>
       <p className="text-muted-foreground text-sm leading-relaxed mb-4">{text}</p>
       <a
         href={PRODUCT_URL}
