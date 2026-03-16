@@ -159,15 +159,51 @@ const kneePainDuringYoga: ArticleExport = {
           Many yoga teachers now advise against forcing full lotus and recommend half-lotus or simple cross-legged positions as safer alternatives until adequate hip mobility is developed.
         </p>
 
+        <figure className="my-8">
+          <img
+            src={imgLotusPose}
+            alt="Woman performing Lotus Pose (Padmasana) on a yoga mat with proper alignment"
+            className="w-full h-auto rounded-xl shadow-sm max-w-lg mx-auto"
+            loading="lazy"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            Lotus Pose (Padmasana) requires significant external hip rotation
+          </figcaption>
+        </figure>
+
         <h3>Hero Pose (Virasana)</h3>
         <p>
           In hero pose, you sit between your heels with the knees fully bent. This position places the knee in maximum flexion, often beyond 150 degrees, while the weight of the body presses down through the joint. For people with tight quadriceps or existing kneecap sensitivity, this pose can create significant anterior (front) knee pressure and compression of the structures behind the kneecap.
         </p>
 
+        <figure className="my-8">
+          <img
+            src={imgHeroPose}
+            alt="Woman performing Hero Pose (Virasana) with knees together and sitting between heels"
+            className="w-full h-auto rounded-xl shadow-sm max-w-lg mx-auto"
+            loading="lazy"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            Hero Pose (Virasana) places the knee in deep flexion under body weight
+          </figcaption>
+        </figure>
+
         <h3>Child's Pose (Balasana)</h3>
         <p>
           Often considered a "resting" pose, <strong>child's pose knee discomfort</strong> can catch practitioners off guard. The deep knee flexion required, combined with the body's weight pressing down, creates substantial compressive force through the knee joint. People with tight calves, limited ankle dorsiflexion, or anterior knee sensitivity often find this pose uncomfortable.
         </p>
+
+        <figure className="my-8">
+          <img
+            src={imgChildPose}
+            alt="Woman performing Child's Pose (Balasana) with arms extended forward on yoga mat"
+            className="w-full h-auto rounded-xl shadow-sm max-w-lg mx-auto"
+            loading="lazy"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            Child's Pose (Balasana) creates compressive force through deep knee flexion
+          </figcaption>
+        </figure>
 
         <h3>Pigeon Pose (Eka Pada Rajakapotasana)</h3>
         <p>
