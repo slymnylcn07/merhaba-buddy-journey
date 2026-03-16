@@ -49,56 +49,7 @@ const articleContent = (
         }
       `}</script>
     </Helmet>
-    <Helmet>
-      <script id="ld-faq-knee-swelling" type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Why does my knee swell after exercise?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Knee swelling after exercise can result from increased fluid circulation around the joint, temporary inflammation from physical stress, or the body's natural response to unfamiliar activity levels." }
-            },
-            {
-              "@type": "Question",
-              "name": "Is knee swelling after a workout normal?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Mild, temporary swelling that resolves within a day or two is often a normal part of the body's recovery process after physical activity, especially after new or intense workouts." }
-            },
-            {
-              "@type": "Question",
-              "name": "How long should swelling last after exercise?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Mild post-exercise swelling typically subsides within 24 to 48 hours with rest and gentle movement. Swelling that persists beyond a few days may need closer attention." }
-            },
-            {
-              "@type": "Question",
-              "name": "Can exercise cause fluid in the knee?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Physical activity can temporarily increase synovial fluid production around the knee joint as part of the body's natural response to joint stress and recovery." }
-            },
-            {
-              "@type": "Question",
-              "name": "Why does my knee swell after running?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Running places repetitive impact on the knee joint, which can trigger temporary fluid accumulation as the body responds to the increased physical demand on the joint structures." }
-            },
-            {
-              "@type": "Question",
-              "name": "How can I reduce swelling after workouts?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Supporting recovery through gentle movement, gradual activity progression, balanced muscle strengthening, and adequate rest between workout sessions can help manage post-exercise knee swelling." }
-            },
-            {
-              "@type": "Question",
-              "name": "When should knee swelling be evaluated?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Consider seeking evaluation if swelling persists for more than a few days, is accompanied by sharp pain or joint instability, or progressively worsens with continued activity." }
-            },
-            {
-              "@type": "Question",
-              "name": "Can strengthening exercises support knee stability?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Yes. Strengthening the muscles around the knee, including the quadriceps, hamstrings, and calves, helps distribute joint load more evenly and supports overall knee stability during exercise." }
-            }
-          ]
-        }
-      `}</script>
-    </Helmet>
+
 
     <p>
       Many people notice some degree of knee swelling after exercise. Whether it appears as mild puffiness, a feeling of tightness, or visible changes around the knee, it can be concerning if you are not sure what your body is telling you.
