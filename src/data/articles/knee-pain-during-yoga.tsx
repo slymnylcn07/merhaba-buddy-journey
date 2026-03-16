@@ -82,22 +82,6 @@ const kneePainDuringYoga: ArticleExport = {
               "mainEntityOfPage": { "@type": "WebPage", "@id": "https://flexi-knee.com/guides/knee-pain-during-yoga" }
             }
           `}</script>
-          <script type="application/ld+json" id="ld-faq-yoga-knee">{`
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                { "@type": "Question", "name": "Why do my knees hurt during yoga?", "acceptedAnswer": { "@type": "Answer", "text": "Knee discomfort during yoga is commonly caused by limited hip or ankle mobility, which forces the knee joint to compensate by rotating or flexing beyond its comfortable range." } },
-                { "@type": "Question", "name": "Is knee pain during yoga normal?", "acceptedAnswer": { "@type": "Answer", "text": "Mild knee awareness is relatively common, especially for beginners. However, persistent or sharp knee pain during yoga is not normal and signals a need for modifications." } },
-                { "@type": "Question", "name": "Which yoga poses cause knee pain?", "acceptedAnswer": { "@type": "Answer", "text": "Lotus Pose, Hero Pose, Pigeon Pose, Child's Pose, and deep kneeling positions are most commonly associated with knee discomfort." } },
-                { "@type": "Question", "name": "Can yoga damage the knees?", "acceptedAnswer": { "@type": "Answer", "text": "When practiced with proper alignment, yoga is generally safe. Forcing poses beyond your mobility can contribute to ligament strain or cartilage stress." } },
-                { "@type": "Question", "name": "How can I prevent knee pain in yoga?", "acceptedAnswer": { "@type": "Answer", "text": "Use props, modify pose depth, improve hip mobility gradually, warm up before deep poses, and avoid forcing positions." } },
-                { "@type": "Question", "name": "Why does lotus pose hurt my knees?", "acceptedAnswer": { "@type": "Answer", "text": "Lotus pose requires significant external hip rotation. Limited hip mobility transfers rotational force to the knee joint, creating medial knee pressure." } },
-                { "@type": "Question", "name": "Should I stop yoga if my knees hurt?", "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. Modify poses, use props, and build hip mobility gradually. If pain persists, consult a healthcare professional." } },
-                { "@type": "Question", "name": "How can beginners protect their knees in yoga?", "acceptedAnswer": { "@type": "Answer", "text": "Prioritize alignment over depth, use props, avoid forcing deep poses, warm up thoroughly, and progress slowly over weeks." } }
-              ]
-            }
-          `}</script>
           <script type="application/ld+json" id="ld-breadcrumb-yoga-knee">{`
             {
               "@context": "https://schema.org",
