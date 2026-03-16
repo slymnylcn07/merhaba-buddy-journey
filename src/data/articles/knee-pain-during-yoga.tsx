@@ -11,6 +11,9 @@ import imgAlignment from "@/assets/article-yoga-knee-alignment.jpg";
 import imgHipKnee from "@/assets/article-yoga-hip-knee-connection.jpg";
 import imgPigeonStress from "@/assets/article-yoga-pigeon-knee-stress.jpg";
 import imgCorrectIncorrect from "@/assets/article-yoga-correct-incorrect-knee.jpg";
+import imgLotusPose from "@/assets/article-yoga-lotus-pose.jpg";
+import imgHeroPose from "@/assets/article-yoga-hero-pose.jpg";
+import imgChildPose from "@/assets/article-yoga-child-pose.jpg";
 
 const faqs = [
   {
