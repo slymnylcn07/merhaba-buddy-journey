@@ -64,7 +64,7 @@ const kneePainDuringYoga: ArticleExport = {
     nextSlug: "knee-pain-when-hiking",
     nextTitle: "Knee Pain When Hiking",
     faqs: faqs,
-    seoTags: "knee pain during yoga, yoga knee pain, lotus pose knee pain, pigeon pose knee discomfort, yoga knee alignment, knee pressure yoga poses, hip mobility yoga, yoga knee joint stress, knee strain stretching, yoga knee comfort, yoga knee modifications, yoga blocks knee support, child pose knee discomfort, yoga beginners knee protection",
+    seoTags: "knee pain during yoga, yoga knee pain, lotus pose knee pain, pigeon pose knee discomfort, yoga knee alignment, knee pressure yoga poses, hip mobility yoga, yoga knee joint stress, knee strain stretching, yoga knee comfort, yoga knee modifications, yoga blocks knee support, child pose knee discomfort, yoga beginners knee protection, knee pain yoga, yoga for knee pain, knee joint pain yoga, knee pain after yoga",
     content: (
       <>
         <Helmet>
