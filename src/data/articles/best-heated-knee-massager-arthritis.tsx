@@ -393,6 +393,6 @@ export const bestHeatedKneeMassagerArthritis: ArticleExport = {
 
       </>
     ),
-    seoTags: "heated knee massager arthritis, best knee massager for knee pain, knee massager ratings, heated knee massager reviews, best knee massager device, joint stiffness warmth, arthritis knee comfort device, infrared knee arthritis, daily knee joint support, heated knee wrap, knee warmth routine arthritis, at-home joint comfort",
+    seoTags: "best knee massager with heat, best knee massager for arthritis, best heated knee massager, heated knee brace for arthritis, best heated knee brace for arthritis, best knee massager reviews, heated knee massager reviews, knee massager ratings, best knee massager device, joint stiffness warmth, arthritis knee comfort device, daily knee joint support",
   },
 };
