@@ -258,11 +258,6 @@ export const itBandPainLocationDiagram = {
           Active individuals who cycle, hike, or participate in sports involving repetitive knee bending also report similar lateral knee sensations. The key visual indicator, as shown in an <strong>it band pain outer thigh diagram</strong>, is that the discomfort follows the band's pathway rather than appearing in an isolated spot. For more on running-specific patterns, our <Link to="/guides/running-knee-pain-guide" className="text-primary underline hover:text-primary/80">running knee comfort guide</Link> covers this topic in detail.
         </p>
 
-        <PremiumCTA
-          headline="Support your outer knee during and after activity"
-          text="FlexiKnee delivers targeted warmth and gentle vibration to the lateral knee zone, designed for the areas where IT band discomfort is most commonly felt."
-        />
-
         <SectionDivider />
 
         {/* --- Conclusion --- */}
