@@ -324,6 +324,7 @@ interface ArticleData {
   nextTitle?: string;
   faqs?: FAQItem[];
   seoTags?: string;
+  lastUpdated?: string;
 }
 
 // Context-aware CTA data for each article (headline + text)
