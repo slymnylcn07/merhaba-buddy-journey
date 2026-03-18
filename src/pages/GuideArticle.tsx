@@ -7711,7 +7711,7 @@ const GuideArticle = () => {
     "description": article.metaDescription,
     "image": [`https://flexi-knee.com${article.heroImage}`],
     "datePublished": getISODate(article.publishedDate),
-    "dateModified": getISODate(article.publishedDate),
+    "dateModified": getISODate(article.lastUpdated || article.publishedDate),
     "author": {
       "@type": "Organization",
       "name": "FlexiKnee",
