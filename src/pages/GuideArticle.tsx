@@ -8004,7 +8004,7 @@ const GuideArticle = () => {
         <meta property="og:image" content={`https://flexi-knee.com${article.heroImage}`} />
         <meta property="og:site_name" content="FlexiKnee" />
         <meta property="article:published_time" content={getISODate(article.publishedDate)} />
-        <meta property="article:modified_time" content={getISODate(article.publishedDate)} />
+        <meta property="article:modified_time" content={getISODate(article.lastUpdated || article.publishedDate)} />
         <meta property="article:author" content="FlexiKnee" />
         <meta property="article:section" content="Guides" />
         

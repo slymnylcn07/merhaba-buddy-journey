@@ -19,6 +19,7 @@ export interface ArticleData {
   nextTitle?: string;
   faqs?: FAQItem[];
   seoTags?: string;
+  lastUpdated?: string;
 }
 
 export interface ArticleExport {
