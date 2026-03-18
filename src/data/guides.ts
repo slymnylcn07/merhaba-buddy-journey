@@ -684,6 +684,13 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-03-13",
   },
+  {
+    slug: "sore-knees-after-workout",
+    title: "Why Knees Feel Sore After a Workout: Normal Fatigue or Warning Sign",
+    description: "Learn why your knees feel sore after working out, the difference between normal muscle fatigue and warning signs, and simple recovery tips for sore knees.",
+    readTime: 14,
+    lastModified: "2026-03-18",
+  },
 ];
 
 export const staticPages = [
