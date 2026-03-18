@@ -8070,6 +8070,9 @@ const GuideArticle = () => {
               </Link>
               <span className="text-sm text-muted-foreground">
                 {article.publishedDate}
+                {article.lastUpdated && (
+                  <span className="ml-2 text-xs text-muted-foreground/70">· Last updated: {article.lastUpdated}</span>
+                )}
               </span>
             </div>
             
