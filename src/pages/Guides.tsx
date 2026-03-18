@@ -293,6 +293,7 @@ const activitySlugs = [
   "exercises-to-relieve-knee-pain-at-home",
   "post-exercise-knee-pain-guide",
   "knee-swelling-after-exercise",
+  "sore-knees-after-workout",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
