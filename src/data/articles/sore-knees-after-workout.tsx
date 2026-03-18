@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { StatHighlight, InfoBox, JournalQuote } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
-import heroImage from "@/assets/article-hero-sore-knees-workout.jpg";
+import heroImage from "@/assets/article-hero-sore-knees-workout-v2.jpg";
 import sorenessZonesImg from "@/assets/article-knee-soreness-zones-workout.jpg";
 import recoveryRoutineImg from "@/assets/article-knee-recovery-routine-diagram.jpg";
 
