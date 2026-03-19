@@ -2833,6 +2833,11 @@ const articles: Record<string, ArticleData> = {
           <strong>Medial plica irritation:</strong> The medial plica is a common location for plica syndrome. Sharp, catching pain on the inner side of the knee, often with a snapping sensation, suggests this condition.
         </p>
 
+        <PremiumCTA
+          headline="Need comfort support between sharp pain episodes?"
+          text="FlexiKnee offers soothing warmth, red light, and gentle vibration at home, helping you stay comfortable between unpredictable flare-ups."
+        />
+
         <h2>Stabbing Pain in Back of Knee</h2>
         <p>
           Stabbing pain in back of knee (the posterior region) can be related to Baker's cysts, hamstring tendon irritation, or popliteal muscle strain. Sharp shooting pain in knee that originates behind the joint may also involve the gastrocnemius heads or, less commonly, vascular structures. If you notice pain in back of leg behind knee that radiates downward, the calf muscles or their tendon attachments may be contributing.
