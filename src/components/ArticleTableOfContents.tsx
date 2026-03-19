@@ -161,8 +161,8 @@ export const ArticleTableOfContents = ({
   }
 
   return (
-    <aside className="sticky top-24 self-start">
-      <div className="w-44 xl:w-48">
+    <aside className="sticky top-24 self-start lg:-translate-x-5 xl:-translate-x-7">
+      <div className="w-40 xl:w-44">
         <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">On This Page</p>
         <nav className="border-l border-border/50 pl-4">
           <div className="overflow-hidden transition-all duration-300 ease-out">
