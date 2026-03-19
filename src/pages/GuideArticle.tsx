@@ -415,6 +415,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "exercises-to-relieve-knee-pain-at-home": { headline: "Want post-exercise knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after every home exercise session." },
   "knee-swelling-after-exercise": { headline: "Support your knees during post-workout recovery", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable after exercise, making your recovery routine simple and consistent." },
   "sore-knees-after-workout": { headline: "Support your knees after every workout", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable after exercise, making your recovery routine simple and consistent." },
+  "knee-recovery-exercises-after-workout": { headline: "Make knee recovery part of every workout", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration to support your knees after every training session, helping you stay active and comfortable day after day." },
 };
 
 const articles: Record<string, ArticleData> = {
