@@ -220,7 +220,10 @@ const articleContent = (
       Step-ups require the lead knee to stabilize your entire body weight as you rise. The movement combines knee flexion with a balance challenge, and the quad muscles work hard to control both the upward and downward phases. Higher step heights increase the demand on the knee joint.
     </p>
 
-    <PremiumCTA />
+    <PremiumCTA
+      headline="Support your knees after every leg day"
+      text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after squats, lunges, and other leg exercises."
+    />
 
     <h2>The Role of Technique and Form</h2>
 
