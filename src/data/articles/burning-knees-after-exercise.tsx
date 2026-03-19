@@ -332,7 +332,7 @@ export const burningKneesAfterExercise: ArticleExport = {
           </figcaption>
         </figure>
 
-        <PremiumCTA headline="Warmth and Comfort for Post-Exercise Recovery" text="FlexiKnee delivers soothing heat therapy and red light directly to your knee, helping to ease burning sensations and support your body's natural recovery process." />
+
 
         <h2>Exercise Habits That Support Knee Comfort</h2>
 
