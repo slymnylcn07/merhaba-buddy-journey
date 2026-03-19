@@ -15,7 +15,7 @@ export const smartHeatedKneeBraces2026: ArticleExport = {
     metaTitle: "Smart Heated Knee Braces 2026 Buyer's Guide - Top 5 Reviewed",
     metaDescription: "Compare the top 5 smart heated knee braces in 2026. Features, pricing, pros and cons reviewed. Find the best heated knee brace device for your needs.",
     heroImage: heroImage,
-    publishedDate: "February 24, 2026",
+    publishedDate: "March 19, 2026",
     nextSlug: "heat-red-light-therapy-benefits-2026",
     nextTitle: "Benefits of Heat + Red Light Therapy for Knee Pain",
     faqs: [
