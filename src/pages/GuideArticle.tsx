@@ -1656,7 +1656,7 @@ const articles: Record<string, ArticleData> = {
 
         <h2>Hamstring-Related Behind Knee Pain</h2>
         <p>
-          The hamstring muscles are frequently involved in back of knee pain. These three muscles—biceps femoris, semitendinosus, and semimembranosus—all attach near the back of the knee, making this a common site for hamstring-related discomfort.
+          The hamstring muscles are frequently involved in back of knee pain. These three muscles (biceps femoris, semitendinosus, and semimembranosus) all attach near the back of the knee, making this a common site for hamstring-related discomfort.
         </p>
         <p>
           <strong>Hamstring tightness:</strong> Many people with behind knee pain simply have tight hamstrings that are pulling on their attachments. This tightness can develop from prolonged sitting, insufficient stretching, or muscle imbalances. The resulting discomfort often feels like a pulling or stretching sensation behind the knee.
