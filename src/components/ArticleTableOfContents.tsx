@@ -124,7 +124,9 @@ export const ArticleTableOfContents = ({
     const container = itemsContainerRef.current;
     if (!container) return;
 
-    const updateRows = () => {
+    let rafId: number | null = null;
+
+    const computeRows = () => {
       const children = Array.from(container.children) as HTMLElement[];
       const newSet = new Set<number>();
       for (let i = 1; i < children.length; i++) {
@@ -141,10 +143,21 @@ export const ArticleTableOfContents = ({
       }
     };
 
-    updateRows();
-    const ro = new ResizeObserver(updateRows);
+    // Compute synchronously on mount / heading change
+    computeRows();
+
+    // Debounced ResizeObserver to avoid rapid re-fire loops during CSS transitions
+    const onResize = () => {
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(computeRows);
+    };
+
+    const ro = new ResizeObserver(onResize);
     ro.observe(container);
-    return () => ro.disconnect();
+    return () => {
+      ro.disconnect();
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, [variant, displayedHeadings]);
 
   const handleClick = useCallback((id: string) => {
