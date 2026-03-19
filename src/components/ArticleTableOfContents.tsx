@@ -134,7 +134,11 @@ export const ArticleTableOfContents = ({
           newSet.add(i);
         }
       }
-      setSameRowSet(newSet);
+      const prev = sameRowRef.current;
+      if (newSet.size !== prev.size || [...newSet].some((v) => !prev.has(v))) {
+        sameRowRef.current = newSet;
+        forceRender();
+      }
     };
 
     updateRows();
