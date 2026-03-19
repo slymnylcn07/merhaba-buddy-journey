@@ -8146,13 +8146,14 @@ const GuideArticle = () => {
           />
         </section>
 
-        {/* Article Header - Meta row + H1 stay centered */}
+        {/* Article Header */}
         <section className="pt-8 md:pt-12">
-          <div className="container px-4 max-w-3xl mx-auto lg:max-w-6xl">
-            {/* Meta row - always centered within content width */}
-            <div className="lg:ml-auto lg:max-w-3xl lg:pl-0" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-              <div className="lg:mx-0 max-w-3xl">
-                <div className="flex items-center justify-between mb-6">
+          <div className="container mx-auto max-w-6xl px-4">
+            <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
+              <div className="hidden lg:block" />
+
+              <div className="min-w-0 max-w-3xl">
+                <div className="mb-6 flex items-center justify-between">
                   <Link 
                     to="/guides" 
                     className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -8165,7 +8166,7 @@ const GuideArticle = () => {
                   </span>
                 </div>
                 
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 leading-tight tracking-tight">
+                <h1 className="mb-4 text-2xl font-bold leading-tight tracking-tight text-foreground md:text-3xl lg:text-4xl">
                   {article.title}
                 </h1>
               </div>
@@ -8176,7 +8177,7 @@ const GuideArticle = () => {
         {/* Two-column layout starts at subtitle level */}
         <section className="pb-6 md:pb-8">
           <div className="container mx-auto max-w-6xl px-4">
-            <div className="lg:grid lg:grid-cols-[11rem_minmax(0,48rem)] lg:gap-x-12 xl:grid-cols-[12rem_minmax(0,48rem)] xl:gap-x-14">
+            <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
               {!isMobile && (
                 <div className="hidden lg:block">
                   <ArticleTableOfContents variant="desktop" initialCount={6} />
@@ -8213,8 +8214,9 @@ const GuideArticle = () => {
         {/* Article Content */}
         <article className="py-8 md:py-10">
           <div className="container mx-auto max-w-6xl px-4">
-            <div className="lg:grid lg:grid-cols-[11rem_minmax(0,48rem)] lg:gap-x-12 xl:grid-cols-[12rem_minmax(0,48rem)] xl:gap-x-14">
+            <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
               <div className="hidden lg:block" />
+
 
               <div className="min-w-0 max-w-3xl">
                 <div className="article-content max-w-none
