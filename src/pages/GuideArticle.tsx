@@ -238,6 +238,11 @@ import sectionSideStretch from "@/assets/article-section-side-stretch.jpg";
 import sectionRunnerForm from "@/assets/article-section-runner-form.jpg";
 import sectionArthritisExercise from "@/assets/article-section-arthritis-exercise.jpg";
 import sectionStretchingRelief from "@/assets/article-section-stretching-relief.jpg";
+import sharpKneeAnatomyDiagram from "@/assets/article-sharp-knee-anatomy-diagram.jpg";
+import sharpKneeNervePathway from "@/assets/article-sharp-knee-nerve-pathway.jpg";
+import sharpKneeKneecapPressure from "@/assets/article-sharp-knee-kneecap-pressure.jpg";
+import sharpKneeSideStress from "@/assets/article-sharp-knee-side-stress.jpg";
+import sharpKneePainCycle from "@/assets/article-sharp-knee-pain-cycle.jpg";
 
 import PremiumCTA from "@/components/PremiumCTA";
 
