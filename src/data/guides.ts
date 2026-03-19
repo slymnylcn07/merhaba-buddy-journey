@@ -705,6 +705,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-19",
   },
+  {
+    slug: "burning-knees-after-exercise",
+    title: "Burning Knees After Exercise: What Causes the Sensation",
+    description: "Understand why your knees burn after exercise. Learn what causes burning knee sensations, how they differ from other pain types, and recovery habits that help.",
+    readTime: 14,
+    lastModified: "2026-03-19",
+  },
 ];
 
 export const staticPages = [
