@@ -35,6 +35,7 @@ export const ArticleTableOfContents = ({
   const observerRef = useRef<IntersectionObserver | null>(null);
   const itemsContainerRef = useRef<HTMLDivElement | null>(null);
   const sameRowRef = useRef<Set<number>>(new Set());
+  const toggleLockRef = useRef<number | null>(null);
   const [, forceRender] = useReducer((x: number) => x + 1, 0);
 
   useEffect(() => {
