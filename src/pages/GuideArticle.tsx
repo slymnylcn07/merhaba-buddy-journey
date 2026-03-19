@@ -8173,27 +8173,26 @@ const GuideArticle = () => {
 
         {/* Two-column layout starts at subtitle level */}
         <section className="pb-6 md:pb-8">
-          <div className="container px-4 mx-auto max-w-6xl">
-            <div className="flex gap-8 lg:gap-10 justify-center">
-              {/* Desktop TOC - aligned with subtitle */}
-              <ArticleTableOfContents />
+          <div className="container mx-auto max-w-6xl px-4">
+            <div className="lg:grid lg:grid-cols-[11rem_minmax(0,48rem)] lg:gap-x-12 xl:grid-cols-[12rem_minmax(0,48rem)] xl:gap-x-14">
+              <div className="hidden lg:block">
+                <ArticleTableOfContents variant="desktop" initialCount={6} />
+              </div>
 
-              {/* Main column: subtitle, intro, mobile TOC, then article body */}
-              <div className="max-w-3xl w-full min-w-0">
+              <div className="min-w-0 max-w-3xl">
                 {article.subtitle && (
-                  <p className="text-lg text-primary/80 font-medium mb-4">
+                  <p className="mb-4 text-lg font-medium text-primary/80">
                     {article.subtitle}
                   </p>
                 )}
-                
-                <p className="text-muted-foreground font-light leading-relaxed text-lg">
+
+                <div className="lg:hidden mb-6">
+                  <ArticleTableOfContents variant="mobile" initialCount={5} />
+                </div>
+
+                <p className="text-lg font-light leading-relaxed text-muted-foreground">
                   {article.intro}
                 </p>
-
-                {/* Mobile/Tablet TOC - below intro */}
-                <div className="lg:hidden mt-6">
-                  <ArticleTableOfContents />
-                </div>
               </div>
             </div>
           </div>
@@ -8207,13 +8206,11 @@ const GuideArticle = () => {
 
         {/* Article Content */}
         <article className="py-8 md:py-10">
-          <div className="container px-4 mx-auto max-w-6xl">
-            <div className="flex gap-8 lg:gap-10 justify-center">
-              {/* Spacer to match TOC sidebar width on desktop */}
-              <div className="hidden lg:block w-52 xl:w-56 shrink-0" />
+          <div className="container mx-auto max-w-6xl px-4">
+            <div className="lg:grid lg:grid-cols-[11rem_minmax(0,48rem)] lg:gap-x-12 xl:grid-cols-[12rem_minmax(0,48rem)] xl:gap-x-14">
+              <div className="hidden lg:block" />
 
-              {/* Main content */}
-              <div className="max-w-3xl w-full min-w-0">
+              <div className="min-w-0 max-w-3xl">
                 <div className="article-content max-w-none
                   [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-foreground [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:pb-3 [&_h2]:border-b [&_h2]:border-border/30
                   [&_h3]:text-lg [&_h3]:md:text-xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-foreground [&_h3]:mt-8 [&_h3]:mb-3
