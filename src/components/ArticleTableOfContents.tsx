@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ListTree } from "lucide-react";
 
 interface TocItem {
   id: string;
