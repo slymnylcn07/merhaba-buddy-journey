@@ -1708,7 +1708,7 @@ const articles: Record<string, ArticleData> = {
           <strong>Heat therapy:</strong> Warmth applied to the back of the knee can help relax tight muscles and increase blood flow to the area. This can be particularly soothing for muscle-related behind knee pain.
         </p>
         <p>
-          <strong>Activity modification:</strong> Identifying activities that worsen your pain in back of knee and modifying them temporarily can allow healing to occur. This doesn't mean complete rest—gentle movement is usually beneficial—but it might mean reducing intensity or duration.
+          <strong>Activity modification:</strong> Identifying activities that worsen your pain in back of knee and modifying them temporarily can allow healing to occur. This doesn't mean complete rest, as gentle movement is usually beneficial, but it might mean reducing intensity or duration.
         </p>
         <p>
           <strong>Strengthening exercises:</strong> Building strength in the hamstrings, calves, and hip muscles helps support the knee and can reduce strain on the posterior structures.
