@@ -8187,43 +8187,52 @@ const GuideArticle = () => {
           title={article.title}
         />
 
-        {/* Article Content */}
+        {/* Article Content with TOC sidebar */}
         <article className="py-8 md:py-10">
-          <div className="container px-4 max-w-3xl mx-auto">
-            <div className="article-content max-w-none
-              [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-foreground [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:pb-3 [&_h2]:border-b [&_h2]:border-border/30
-              [&_h3]:text-lg [&_h3]:md:text-xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-foreground [&_h3]:mt-8 [&_h3]:mb-3
-              [&_p]:text-muted-foreground [&_p]:font-light [&_p]:leading-relaxed [&_p]:mb-5
-              [&_a]:text-primary [&_a]:no-underline hover:[&_a]:underline
-              [&_strong]:text-foreground [&_strong]:font-semibold
-              [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-5
-              [&_li]:text-muted-foreground [&_li]:font-light [&_li]:leading-relaxed [&_li]:mb-1
-              [&_img]:w-full [&_img]:rounded-xl [&_img]:my-6 [&_img]:max-h-96 [&_img]:object-contain
-            ">
-              {article.content}
+          <div className="container px-4 mx-auto max-w-6xl">
+            <div className="flex gap-8 lg:gap-10 justify-center">
+              {/* Desktop TOC - left sidebar */}
+              <ArticleTableOfContents />
 
-              {/* SEO Tags */}
-              {article.seoTags && (
-                <div className="my-6">
-                  <p className="text-sm text-muted-foreground"><strong>SEO Tags:</strong> {article.seoTags}</p>
+              {/* Main content */}
+              <div className="max-w-3xl w-full min-w-0">
+                <div className="article-content max-w-none
+                  [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-foreground [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:pb-3 [&_h2]:border-b [&_h2]:border-border/30
+                  [&_h3]:text-lg [&_h3]:md:text-xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-foreground [&_h3]:mt-8 [&_h3]:mb-3
+                  [&_p]:text-muted-foreground [&_p]:font-light [&_p]:leading-relaxed [&_p]:mb-5
+                  [&_a]:text-primary [&_a]:no-underline hover:[&_a]:underline
+                  [&_strong]:text-foreground [&_strong]:font-semibold
+                  [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-5
+                  [&_li]:text-muted-foreground [&_li]:font-light [&_li]:leading-relaxed [&_li]:mb-1
+                  [&_img]:w-full [&_img]:rounded-xl [&_img]:my-6 [&_img]:max-h-96 [&_img]:object-contain
+                ">
+                  {article.content}
+
+                  {/* SEO Tags */}
+                  {article.seoTags && (
+                    <div className="my-6">
+                      <p className="text-sm text-muted-foreground"><strong>SEO Tags:</strong> {article.seoTags}</p>
+                    </div>
+                  )}
                 </div>
-              )}
+                
+                {/* Premium CTA Highlight Box */}
+                {articleCTAs[slug] && (
+                  <PremiumCTA
+                    headline={articleCTAs[slug].headline}
+                    text={articleCTAs[slug].text}
+                  />
+                )}
 
+                {/* Share Block */}
+                <ArticleShareBlock
+                  url={`https://flexi-knee.com/guides/${slug}`}
+                  title={article.title}
+                />
+              </div>
             </div>
-            
-            {/* Premium CTA Highlight Box */}
-            {articleCTAs[slug] && (
-              <PremiumCTA
-                headline={articleCTAs[slug].headline}
-                text={articleCTAs[slug].text}
-              />
-            )}
-
-            {/* Share Block */}
-            <ArticleShareBlock
-              url={`https://flexi-knee.com/guides/${slug}`}
-              title={article.title}
-            />
+          </div>
+        </article>
           </div>
         </article>
 
