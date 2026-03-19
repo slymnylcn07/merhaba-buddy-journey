@@ -131,7 +131,7 @@ export const ArticleTableOfContents = ({
       <div className="rounded-xl border border-border/50 bg-background/80 px-4 py-3 backdrop-blur-sm">
         <div className="mb-2.5 flex items-center gap-1.5">
           <ListTree className="h-3 w-3 shrink-0" style={{ color: "hsl(var(--toc-label))" }} strokeWidth={2.2} />
-          <p className="text-[13px] font-bold uppercase tracking-[0.22em]" style={{ color: "hsl(var(--toc-label))" }}>On This Page</p>
+          <p className="text-[14.5px] font-bold uppercase tracking-[0.22em]" style={{ color: "hsl(var(--toc-label))" }}>On This Page</p>
         </div>
         <div className="overflow-hidden transition-all duration-300 ease-out">
           <div className="flex flex-wrap gap-x-3 gap-y-2">
@@ -139,7 +139,7 @@ export const ArticleTableOfContents = ({
               <button
                 key={heading.id}
                 onClick={() => handleClick(heading.id)}
-                className="text-left text-[12.5px] leading-5 transition-colors duration-200"
+                className="text-left text-[14px] leading-6 transition-colors duration-200"
                 style={{
                   color: activeId === heading.id
                     ? "hsl(var(--toc-active))"
