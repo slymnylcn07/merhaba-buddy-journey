@@ -8233,8 +8233,6 @@ const GuideArticle = () => {
             </div>
           </div>
         </article>
-          </div>
-        </article>
 
         {/* Related Guides Section */}
         <section className="py-8 md:py-10 bg-muted/20">
