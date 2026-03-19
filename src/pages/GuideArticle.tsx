@@ -305,6 +305,7 @@ import {
   postExerciseKneePainGuide,
   kneeSwellingAfterExercise,
   soreKneesAfterWorkout,
+  kneeRecoveryExercisesAfterWorkout,
 } from "@/data/articles";
 
 interface FAQItem {
