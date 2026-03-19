@@ -8209,11 +8209,7 @@ const GuideArticle = () => {
           </div>
         </section>
 
-        {/* Share Sidebar */}
-        <ArticleShareSidebar
-          url={`https://flexi-knee.com/guides/${slug}`}
-          title={article.title}
-        />
+        {/* Share Sidebar removed for cleaner editorial layout */}
 
         {/* Article Content */}
         <article className="md:pt-2">
