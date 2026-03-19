@@ -8177,9 +8177,11 @@ const GuideArticle = () => {
         <section className="pb-6 md:pb-8">
           <div className="container mx-auto max-w-6xl px-4">
             <div className="lg:grid lg:grid-cols-[11rem_minmax(0,48rem)] lg:gap-x-12 xl:grid-cols-[12rem_minmax(0,48rem)] xl:gap-x-14">
-              <div className="hidden lg:block">
-                <ArticleTableOfContents variant="desktop" initialCount={6} />
-              </div>
+              {!isMobile && (
+                <div className="hidden lg:block">
+                  <ArticleTableOfContents variant="desktop" initialCount={6} />
+                </div>
+              )}
 
               <div className="min-w-0 max-w-3xl">
                 {article.subtitle && (
@@ -8188,9 +8190,11 @@ const GuideArticle = () => {
                   </p>
                 )}
 
-                <div className="lg:hidden mb-6">
-                  <ArticleTableOfContents variant="mobile" initialCount={5} />
-                </div>
+                {isMobile && (
+                  <div className="mb-6 lg:hidden">
+                    <ArticleTableOfContents variant="mobile" initialCount={5} />
+                  </div>
+                )}
 
                 <p className="text-lg font-light leading-relaxed text-muted-foreground">
                   {article.intro}
