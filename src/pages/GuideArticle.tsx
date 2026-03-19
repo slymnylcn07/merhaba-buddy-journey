@@ -195,6 +195,7 @@ import thumbSuddenKneePain from "@/assets/guide-thumb-sudden-knee-pain.jpg";
 import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40.jpg";
 import thumbKneeClickingWalking from "@/assets/guide-thumb-knee-clicking-walking.jpg";
 import thumbKneesHurtAfterResting from "@/assets/guide-thumb-knees-hurt-after-resting.jpg";
+import thumbKneePainSittingCrossLegged from "@/assets/guide-thumb-knee-pain-sitting-cross-legged.jpg";
 import thumbColdWeatherKneePain from "@/assets/guide-thumb-cold-weather-knee-pain.jpg";
 import thumbKneePainAfterExercise from "@/assets/guide-thumb-knee-pain-after-exercise.jpg";
 import thumbKneePainClimbingStairs from "@/assets/guide-thumb-knee-pain-climbing-stairs.jpg";
