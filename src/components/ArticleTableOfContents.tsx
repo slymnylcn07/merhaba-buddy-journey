@@ -182,7 +182,7 @@ export const ArticleTableOfContents = ({
                   <li key={heading.id}>
                     <button
                       onClick={() => handleClick(heading.id)}
-                      className={`-ml-4 block w-full border-l-2 pr-2 pl-4 text-left text-[13px] leading-[1.55] transition-all duration-200 ${
+                      className={`-ml-4 block w-full border-l-2 pr-2 pl-4 text-left text-[14px] leading-[1.55] transition-all duration-200 ${
                         isActive
                           ? "font-semibold"
                           : isFirst
