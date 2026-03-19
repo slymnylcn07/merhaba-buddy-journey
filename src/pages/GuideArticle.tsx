@@ -2654,7 +2654,7 @@ const articles: Record<string, ArticleData> = {
     slug: "sharp-knee-pain-guide",
     title: "Sharp Knee Pain That Comes & Goes: When to Act",
     subtitle: "Understanding intermittent sharp knee pain",
-    intro: "Experiencing sharp knee pain that comes and goes can be confusing and concerning. Whether you're dealing with sharp stabbing pain in knee that appears suddenly, pain in knee when straightening leg, or discomfort around your knee pain below kneecap, this guide explores the possible causes and helps you understand when professional evaluation is warranted.",
+    intro: "Sharp knee pain that comes and goes can be alarming, especially when it strikes without warning. Whether you feel a sharp pain in knee during movement, experience intermittent knee pain at rest, or notice sudden stabbing sensations around the kneecap, understanding why it happens is the first step toward managing it. This guide explores common causes of sharp knee pain, what different sensations may indicate, and when professional evaluation is a good idea.",
     metaTitle: "Sharp Knee Pain That Comes & Goes: Causes & Relief",
     metaDescription: "Understand sharp stabbing pain in knee that comes and goes, pain when straightening leg, pain inside knee, and whether sciatica can cause knee pain. Complete guide.",
     heroImage: heroSharpKneePain,
