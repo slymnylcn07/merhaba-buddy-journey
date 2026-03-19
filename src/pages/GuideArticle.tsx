@@ -1761,26 +1761,42 @@ const articles: Record<string, ArticleData> = {
     faqs: [
       {
         question: "What causes pain in the back of the knee?",
-        answer: "Common causes include Baker's cyst (fluid-filled swelling), hamstring issues, calf muscle problems, popliteal artery issues, and referred pain from other areas. The specific cause depends on how and when the pain occurs."
+        answer: "Common causes include Baker's cyst (fluid-filled swelling), hamstring tightness, calf muscle strain, and referred discomfort from the hip or lower back. The specific cause depends on when and how the discomfort appears, and which movements make it better or worse."
       },
       {
         question: "What is a Baker's cyst and how is it treated?",
-        answer: "A Baker's cyst is a fluid-filled swelling behind the knee, usually resulting from excess fluid in the joint. Treatment focuses on managing the underlying cause, rest, compression, and sometimes aspiration or corticosteroid injection."
+        answer: "A Baker's cyst is a fluid-filled swelling behind the knee, usually resulting from excess fluid in the joint. Treatment focuses on managing the underlying cause, rest, compression, and gentle movement to maintain flexibility."
       },
       {
         question: "Why does the back of my knee hurt when I straighten my leg?",
-        answer: "Pain when straightening may indicate tight hamstrings, Baker's cyst compression, popliteus muscle issues, or problems with the posterior knee structures. The sensation of tightness or pulling often relates to soft tissue tension."
+        answer: "Pain when straightening may indicate tight hamstrings, Baker's cyst compression, popliteus muscle involvement, or tension in the posterior knee structures. The sensation of tightness or pulling often relates to soft tissue that has shortened after inactivity."
+      },
+      {
+        question: "Why do I feel pain behind the knee?",
+        answer: "Discomfort behind the knee can come from the muscles, tendons, bursa, or joint capsule in the popliteal area. Prolonged sitting, overuse during exercise, and changes in activity level are among the most frequent everyday triggers."
+      },
+      {
+        question: "What causes tightness in the back of knee?",
+        answer: "Tightness in the back of knee is most commonly related to hamstring or calf tension, especially after long periods of sitting or following exercise. Regular gentle stretching and movement breaks throughout the day can help maintain flexibility in this area."
+      },
+      {
+        question: "Why is there pressure behind my knee?",
+        answer: "Pressure behind the knee often relates to fluid accumulation, such as a Baker's cyst, or to muscle tension in the popliteal region. If the pressure is mild and improves with movement, it is usually muscular. Persistent or worsening pressure should be evaluated by a professional."
+      },
+      {
+        question: "What is the medical term for behind the knee?",
+        answer: "The area behind the knee is medically known as the popliteal fossa or popliteal region. This term refers to the diamond-shaped space at the back of the knee where muscles, blood vessels, and nerves converge."
       },
       {
         question: "Is walking good for back of knee pain?",
-        answer: "Gentle walking is usually beneficial as it promotes blood flow and prevents stiffness. However, if pain worsens with walking, reduce the distance or intensity and consult a healthcare provider if it persists."
+        answer: "Gentle walking is usually beneficial as it promotes blood flow and prevents stiffness. However, if discomfort worsens with walking, reduce the distance or intensity and consult a healthcare provider if it persists."
       },
       {
         question: "When should I worry about pain behind my knee?",
-        answer: "Seek immediate attention if you have sudden severe pain, significant swelling, warmth or redness, calf swelling (possible blood clot), numbness, or inability to bear weight. These may indicate serious conditions."
+        answer: "Seek attention if you have sudden severe discomfort, significant swelling, warmth or redness, calf swelling, numbness, or inability to bear weight. These may indicate conditions that require professional evaluation."
       }
     ],
-    seoTags: "back of knee discomfort, behind knee stiffness, popliteal area comfort, knee bending tightness, hamstring knee connection, back knee daily habits, behind knee awareness, leg straightening discomfort",
+    seoTags: "back of knee discomfort, behind knee stiffness, popliteal area comfort, muscle behind knee, tightness in back of knee, pressure behind knee, pain in back of leg behind knee, knot behind the knee, swelling back of knee, hamstring knee connection, back knee daily habits, behind knee awareness, stiffness in back of knee, back of knee muscle",
   },
   "side-knee-pain-comfort-guide": {
     slug: "side-knee-pain-comfort-guide",
