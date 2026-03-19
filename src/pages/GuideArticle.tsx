@@ -8174,12 +8174,12 @@ const GuideArticle = () => {
           </div>
         </section>
 
-        {/* Two-column layout starts at subtitle level */}
+        {/* Two-column layout: subtitle + intro + article content in one section */}
         <section className="pb-6 md:pb-8">
           <div className="container mx-auto max-w-6xl px-4">
             <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
               {!isMobile && (
-                <div className="hidden lg:block">
+                <div className="hidden lg:block relative">
                   <ArticleTableOfContents variant="desktop" initialCount={6} />
                 </div>
               )}
@@ -8200,6 +8200,8 @@ const GuideArticle = () => {
                 <p className="text-lg font-light leading-relaxed text-muted-foreground">
                   {article.intro}
                 </p>
+
+                <hr className="my-6 border-t border-border/30" />
               </div>
             </div>
           </div>
@@ -8212,11 +8214,10 @@ const GuideArticle = () => {
         />
 
         {/* Article Content */}
-        <article className="py-8 md:py-10">
+        <article className="md:pt-2">
           <div className="container mx-auto max-w-6xl px-4">
             <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
               <div className="hidden lg:block" />
-
 
               <div className="min-w-0 max-w-3xl">
                 <div className="article-content max-w-none
@@ -8229,7 +8230,6 @@ const GuideArticle = () => {
                   [&_li]:text-muted-foreground [&_li]:font-light [&_li]:leading-relaxed [&_li]:mb-1
                   [&_img]:w-full [&_img]:rounded-xl [&_img]:my-6 [&_img]:max-h-96 [&_img]:object-contain
                 ">
-                  {article.content}
 
                   {/* SEO Tags */}
                   {article.seoTags && (
