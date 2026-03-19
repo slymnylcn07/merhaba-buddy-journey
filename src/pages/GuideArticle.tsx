@@ -2801,10 +2801,22 @@ const articles: Record<string, ArticleData> = {
 
         <KneePainBelowKneecapChart />
 
-        <h2>Pain Inside Knee: Medial Pain Patterns</h2>
+        <h2>Stabbing Pain in Side of Knee and Inner Knee</h2>
         <p>
-          Pain inside knee (on the inner side) can manifest as sharp, intermittent discomfort. The medial knee contains several structures that can be sources of sudden, sharp pain.
+          Stabbing pain in side of knee can occur on either the inner (medial) or outer (lateral) aspect. Pain inside knee on the inner side often involves the medial meniscus, the medial collateral ligament, or the medial plica. On the outer side, the IT band and lateral meniscus are common sources. Sharp intermittent knee pain at the sides of the joint is frequently linked to activities that involve twisting, pivoting, or lateral movement.
         </p>
+
+        <figure className="my-8">
+          <img
+            src={sharpKneeSideStress}
+            alt="Side knee stress visualization showing medial and lateral stress zones"
+            className="w-full h-auto rounded-xl shadow-sm"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            Medial and lateral knee stress zones: where stabbing side pain typically originates
+          </figcaption>
+        </figure>
+
         <p>
           <strong>Medial meniscus tears:</strong> The inner meniscus is more commonly torn than the outer. Sharp pain inside knee during twisting or squatting often indicates meniscal involvement.
         </p>
@@ -2815,6 +2827,11 @@ const articles: Record<string, ArticleData> = {
           <strong>Medial plica irritation:</strong> The medial plica is a common location for plica syndrome. Sharp, catching pain on the inner side of the knee, often with a snapping sensation, suggests this condition.
         </p>
 
+        <h2>Stabbing Pain in Back of Knee</h2>
+        <p>
+          Stabbing pain in back of knee (the posterior region) can be related to Baker's cysts, hamstring tendon irritation, or popliteal muscle strain. Sharp shooting pain in knee that originates behind the joint may also involve the gastrocnemius heads or, less commonly, vascular structures. If you notice pain in back of leg behind knee that radiates downward, the calf muscles or their tendon attachments may be contributing.
+        </p>
+
         <TipsList
           title="Managing Intermittent Knee Pain"
           items={[
@@ -2823,7 +2840,7 @@ const articles: Record<string, ArticleData> = {
             "Apply ice after episodes of sharp pain to reduce any inflammation",
             "Gentle stretching and strengthening may help stabilize the joint",
             "Consider a supportive brace if pain occurs during specific activities",
-            "Don't ignore locking or catching sensations—these warrant evaluation"
+            "Don't ignore locking or catching sensations: these warrant evaluation"
           ]}
         />
 
