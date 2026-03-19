@@ -250,17 +250,6 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
         <h2>Back of Knee (Popliteal Region)</h2>
         <img src={diagramBackKnee} alt="Diagram showing back posterior popliteal region on the knee pain location chart" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
 
-        <figure className="my-6">
-          <img
-            src={diagramBackKneePainViz}
-            alt="Back of knee pain visualization showing hamstring tendons, popliteal area, gastrocnemius, and popliteal fossa"
-            className="w-full max-w-lg mx-auto h-auto rounded-xl shadow-sm"
-            loading="lazy"
-          />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            A detailed visualization of the back of knee discomfort zone
-          </figcaption>
-        </figure>
 
         <h3>Location Overview</h3>
         <p>
