@@ -286,10 +286,9 @@ export const burningKneesAfterExercise: ArticleExport = {
           Persistent burning that does not resolve with rest, or burning that is accompanied by visible changes in the knee such as swelling or warmth that you can feel on the surface, may suggest that the joint is under more stress than normal recovery can address. In these cases, a healthcare professional can help identify whether additional support or evaluation is needed.
         </p>
 
-        <InfoBox
-          title="Supporting Gradual Progression"
-          description="Gradual training progression helps reduce excessive stress on the knee and may lower the chance of burning sensations. Increasing distance, intensity, or duration by no more than 10 percent per week gives the joint tissues time to adapt."
-        />
+        <InfoBox title="Supporting Gradual Progression">
+          Gradual training progression helps reduce excessive stress on the knee and may lower the chance of burning sensations. Increasing distance, intensity, or duration by no more than 10 percent per week gives the joint tissues time to adapt.
+        </InfoBox>
 
         <h2>Recovery Habits That May Help Reduce Burning Sensation</h2>
 
