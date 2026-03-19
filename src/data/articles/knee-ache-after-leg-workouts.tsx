@@ -378,7 +378,6 @@ export const kneeAcheAfterLegWorkouts = {
     metaDescription: "Learn why knees ache after leg workouts like squats and lunges. Understand how muscle fatigue, training intensity, and form affect knee comfort after leg day.",
     heroImage: heroImage,
     publishedDate: "March 19, 2026",
-    lastUpdated: "2026-03-19",
     content: articleContent,
     nextSlug: undefined,
     nextTitle: undefined,
