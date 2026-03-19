@@ -139,7 +139,7 @@ export const ArticleTableOfContents = ({
               <button
                 key={heading.id}
                 onClick={() => handleClick(heading.id)}
-                className="text-left text-[12.5px] leading-5 transition-colors duration-200"
+                className="text-left text-[14px] leading-6 transition-colors duration-200"
                 style={{
                   color: activeId === heading.id
                     ? "hsl(var(--toc-active))"
