@@ -34,7 +34,8 @@ export const ArticleTableOfContents = ({
   const [expanded, setExpanded] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const itemsContainerRef = useRef<HTMLDivElement | null>(null);
-  const [sameRowSet, setSameRowSet] = useState<Set<number>>(new Set());
+  const sameRowRef = useRef<Set<number>>(new Set());
+  const [, forceRender] = useReducer((x: number) => x + 1, 0);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
