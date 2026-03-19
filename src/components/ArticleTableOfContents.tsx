@@ -178,7 +178,7 @@ export const ArticleTableOfContents = ({
           <ListTree className="h-3 w-3 shrink-0" style={{ color: "hsl(var(--toc-label))" }} strokeWidth={2.2} />
           <p className="text-[14.5px] font-bold uppercase tracking-[0.22em]" style={{ color: "hsl(var(--toc-label))" }}>On This Page</p>
         </div>
-        <div className="overflow-hidden transition-all duration-300 ease-out">
+        <div>
           <div ref={itemsContainerRef} className="flex flex-wrap items-center gap-y-2">
             {displayedHeadings.map((heading, index) => (
               <span key={heading.id} className="flex items-center">
