@@ -204,17 +204,6 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
         <h2>Outer Knee (Lateral Side)</h2>
         <img src={diagramOuterKnee} alt="Diagram showing outer lateral side of knee on the knee map" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
 
-        <figure className="my-6">
-          <img
-            src={diagramSideKneePain}
-            alt="Side knee pain diagram showing IT band, lateral collateral ligament, and lateral meniscus locations"
-            className="w-full max-w-lg mx-auto h-auto rounded-xl shadow-sm"
-            loading="lazy"
-          />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            A side knee pain diagram highlighting the IT band and lateral structures
-          </figcaption>
-        </figure>
 
         <h3>Location Overview</h3>
         <p>
