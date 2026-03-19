@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo, useRef, useLayoutEffect } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef, useLayoutEffect, useReducer } from "react";
 import { ChevronDown, ListTree } from "lucide-react";
 
 interface TocItem {
