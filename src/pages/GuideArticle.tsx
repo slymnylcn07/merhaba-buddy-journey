@@ -1677,16 +1677,16 @@ const articles: Record<string, ArticleData> = {
 
         <h2>Other Causes of Pain in Back of Knee</h2>
         <p>
-          While Baker's cysts and hamstring issues are common, several other conditions can cause behind knee pain.
+          While Baker's cysts and hamstring issues are common, several other conditions can cause discomfort behind the knee.
         </p>
         <p>
-          <strong>Gastrocnemius strain:</strong> The calf muscle attaches behind the knee, and strains here can mimic other causes of back of knee pain. This typically occurs during pushing-off movements or sudden acceleration.
+          <strong>Gastrocnemius strain:</strong> The calf muscle attaches behind the knee, and strains here can mimic other causes of back of knee discomfort. This typically occurs during pushing-off movements or sudden acceleration.
         </p>
         <p>
-          <strong>Popliteal artery entrapment:</strong> In rare cases, the artery behind the knee can become compressed, particularly during exercise. This causes cramping and pain in back of knee that improves with rest.
+          <strong>Popliteal artery entrapment:</strong> In rare cases, the artery behind the knee can become compressed, particularly during exercise. This causes cramping and pressure behind the knee that improves with rest.
         </p>
         <p>
-          <strong>Referred pain:</strong> Sometimes pain felt behind the knee actually originates elsewhere, such as in the hip or lower back. The nervous system can interpret signals from these areas as coming from the knee.
+          <strong>Referred pain from the leg or back:</strong> Sometimes pain in the back of leg behind the knee actually originates elsewhere, such as in the hip, lower back, or sciatic nerve pathway. The nervous system can interpret signals from these areas as coming from the knee, which is why posterior knee discomfort occasionally extends up into the thigh or down into the calf.
         </p>
 
         <JournalQuote
