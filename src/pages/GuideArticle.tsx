@@ -1561,15 +1561,39 @@ const articles: Record<string, ArticleData> = {
 
         <BackOfKneeCausesChart />
 
+        <h2>Common Symptoms: What Back of Knee Discomfort Feels Like</h2>
+        <p>
+          People describe pain at the back of the knee in many different ways, and recognizing your specific pattern can help guide the right approach. Some of the most commonly reported sensations include:
+        </p>
+        <ul>
+          <li><strong>Tightness in back of knee:</strong> a pulling or restricted feeling, especially after sitting or first thing in the morning, often related to hamstring or calf tension</li>
+          <li><strong>Stiffness in back of knee:</strong> difficulty bending or straightening the leg fully, particularly after periods of inactivity</li>
+          <li><strong>Pressure behind the knee:</strong> a sense of fullness or compression in the popliteal area, sometimes associated with fluid accumulation</li>
+          <li><strong>Pain and tightness behind knee:</strong> a combination of aching and restricted movement that tends to worsen with prolonged standing or walking</li>
+          <li><strong>Pain and swelling behind the knee:</strong> visible puffiness along with discomfort, which may indicate a Baker's cyst or other fluid-related issue</li>
+          <li><strong>Pain in back of leg behind knee:</strong> discomfort that extends beyond the joint itself, traveling into the upper calf or lower thigh area</li>
+        </ul>
+        <p>
+          The way your symptoms present, along with when they tend to appear and what makes them better or worse, provides valuable clues about which structures may be involved.
+        </p>
+
+        <h3>What Does a Lump or Knot Behind the Knee Mean?</h3>
+        <p>
+          Some people notice a distinct lump behind the knee that hurts when pressed or during certain movements. This is often a Baker's cyst (covered in detail below), but not always. A knot in back of knee can also relate to a swollen lymph node, a ganglion cyst, or localized muscle tension that has formed a firm, tender spot.
+        </p>
+        <p>
+          If you feel a knot behind the knee that appeared gradually and fluctuates with activity, it is often fluid-related and tends to respond well to conservative management. However, any new or rapidly growing lump behind the knee that hurts persistently should be evaluated by a healthcare professional to rule out less common causes.
+        </p>
+
         <h2>Understanding Baker's Cyst</h2>
         <p>
-          A Baker's cyst, also called a popliteal cyst, is one of the most common causes of behind knee pain. Despite its name, it's not really a true cyst—it's a collection of joint fluid that has accumulated in the bursa behind the knee.
+          A Baker's cyst, also called a popliteal cyst, is one of the most recognized causes of swelling on the back of leg behind the knee. Despite its name, it's not really a true cyst: it's a collection of joint fluid that has accumulated in the bursa behind the knee.
         </p>
         <p>
           Baker's cyst typically develops when there's an underlying issue in the knee joint itself, such as cartilage wear or inflammation. The joint produces excess fluid as a protective response, and this fluid can push backward into the popliteal bursa, causing it to expand.
         </p>
         <p>
-          The symptoms of a Baker's cyst can vary considerably. Some people have a visible bulge behind the knee that feels soft or spongy. Others experience tightness, stiffness, or pain in back of knee that worsens with activity or prolonged standing. In some cases, the cyst can cause pain when straightening leg fully.
+          The symptoms of a Baker's cyst can vary considerably. Some people have a visible bulge behind the knee that feels soft or spongy. Others experience tightness, stiffness, or pain and swelling behind the knee that worsens with activity or prolonged standing. In some cases, the cyst can cause noticeable discomfort when straightening the leg fully.
         </p>
 
         <InfoBox title="Signs of a Baker's Cyst">
