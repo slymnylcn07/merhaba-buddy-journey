@@ -302,8 +302,8 @@ export const kneeRecoveryExercisesAfterWorkout = {
     heroImage: heroImage,
     publishedDate: "March 19, 2026",
     content: articleContent,
-    nextSlug: "sore-knees-after-workout",
-    nextTitle: "Why Knees Feel Sore After a Workout: Normal Fatigue or Warning Sign",
+    nextSlug: "knee-ache-after-leg-workouts",
+    nextTitle: "Why Knees Ache After Leg Workouts",
     faqs: [
       { question: "Why do my knees hurt after working out?", answer: "Knee pain after a workout is most commonly caused by muscle fatigue, joint stress from repetitive movement, or doing too much too quickly. The muscles around the knee absorb significant load during exercise, and temporary soreness is part of the body's natural recovery process." },
       { question: "Is knee pain after a workout normal?", answer: "Yes, mild knee soreness that appears gradually after exercise and resolves within two to three days is typically a normal response. This is especially common after unfamiliar exercises, increased intensity, or returning to activity after a break." },
