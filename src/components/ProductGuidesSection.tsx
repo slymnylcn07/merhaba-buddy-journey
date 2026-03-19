@@ -54,6 +54,7 @@ import thumbKneeExercisesHome from "@/assets/guide-thumb-knee-exercises-home.jpg
 import thumbPostExerciseKneePain from "@/assets/guide-thumb-post-exercise-knee-pain.jpg";
 import thumbKneeSwellingExercise from "@/assets/guide-thumb-knee-swelling-exercise.jpg";
 import thumbSoreKneesWorkout from "@/assets/guide-thumb-sore-knees-workout.jpg";
+import thumbKneeRecoveryExercises from "@/assets/guide-thumb-knee-recovery-exercises.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
