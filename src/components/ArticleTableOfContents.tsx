@@ -179,6 +179,17 @@ export const ArticleTableOfContents = ({
     window.scrollTo({ top, behavior: "smooth" });
   }, [variant]);
 
+  const handleToggleExpanded = useCallback(() => {
+    if (toggleLockRef.current !== null) {
+      window.clearTimeout(toggleLockRef.current);
+    }
+
+    setExpanded((value) => !value);
+    toggleLockRef.current = window.setTimeout(() => {
+      toggleLockRef.current = null;
+    }, 400);
+  }, []);
+
   if (headings.length === 0) return null;
 
   if (variant === "mobile") {
