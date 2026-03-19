@@ -8230,6 +8230,7 @@ const GuideArticle = () => {
                   [&_li]:text-muted-foreground [&_li]:font-light [&_li]:leading-relaxed [&_li]:mb-1
                   [&_img]:w-full [&_img]:rounded-xl [&_img]:my-6 [&_img]:max-h-96 [&_img]:object-contain
                 ">
+                  {article.content}
 
                   {/* SEO Tags */}
                   {article.seoTags && (
