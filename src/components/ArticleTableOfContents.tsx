@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo, useRef, useLayoutEffect, useReducer } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { ChevronDown, ListTree } from "lucide-react";
 
 interface TocItem {
@@ -33,10 +33,7 @@ export const ArticleTableOfContents = ({
   const [activeId, setActiveId] = useState<string>("");
   const [expanded, setExpanded] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
-  const itemsContainerRef = useRef<HTMLDivElement | null>(null);
-  const sameRowRef = useRef<Set<number>>(new Set());
   const toggleLockRef = useRef<number | null>(null);
-  const [, forceRender] = useReducer((x: number) => x + 1, 0);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -126,49 +123,6 @@ export const ArticleTableOfContents = ({
   }, [headings, initialCount]);
 
   const displayedHeadings = expanded ? headings : prioritizedHeadings;
-  const hasMore = headings.length > displayedHeadings.length;
-
-  // Detect which items share a row with their previous sibling
-  useLayoutEffect(() => {
-    if (variant !== "mobile") return;
-    const container = itemsContainerRef.current;
-    if (!container) return;
-
-    let rafId: number | null = null;
-
-    const computeRows = () => {
-      const children = Array.from(container.children) as HTMLElement[];
-      const newSet = new Set<number>();
-      for (let i = 1; i < children.length; i++) {
-        const prevTop = children[i - 1].getBoundingClientRect().top;
-        const currTop = children[i].getBoundingClientRect().top;
-        if (Math.abs(currTop - prevTop) < 4) {
-          newSet.add(i);
-        }
-      }
-      const prev = sameRowRef.current;
-      if (newSet.size !== prev.size || [...newSet].some((v) => !prev.has(v))) {
-        sameRowRef.current = newSet;
-        forceRender();
-      }
-    };
-
-    // Compute synchronously on mount / heading change
-    computeRows();
-
-    // Debounced ResizeObserver to avoid rapid re-fire loops during CSS transitions
-    const onResize = () => {
-      if (rafId !== null) cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(computeRows);
-    };
-
-    const ro = new ResizeObserver(onResize);
-    ro.observe(container);
-    return () => {
-      ro.disconnect();
-      if (rafId !== null) cancelAnimationFrame(rafId);
-    };
-  }, [variant, displayedHeadings]);
 
   const handleClick = useCallback((id: string) => {
     const element = document.getElementById(id);
@@ -190,17 +144,6 @@ export const ArticleTableOfContents = ({
     }, 400);
   }, []);
 
-  const handleToggleExpanded = useCallback(() => {
-    if (toggleLockRef.current !== null) {
-      window.clearTimeout(toggleLockRef.current);
-    }
-
-    setExpanded((value) => !value);
-    toggleLockRef.current = window.setTimeout(() => {
-      toggleLockRef.current = null;
-    }, 400);
-  }, []);
-
   if (headings.length === 0) return null;
 
   if (variant === "mobile") {
@@ -208,31 +151,31 @@ export const ArticleTableOfContents = ({
       <div className="rounded-xl border border-border/50 bg-background/80 px-4 py-3 backdrop-blur-sm">
         <div className="mb-2.5 flex items-center gap-1.5">
           <ListTree className="h-3 w-3 shrink-0" style={{ color: "hsl(var(--toc-label))" }} strokeWidth={2.2} />
-          <p className="text-[14.5px] font-bold uppercase tracking-[0.22em]" style={{ color: "hsl(var(--toc-label))" }}>On This Page</p>
+          <p className="text-[14.5px] font-bold uppercase tracking-[0.22em]" style={{ color: "hsl(var(--toc-label))" }}>
+            On This Page
+          </p>
         </div>
-        <div>
-          <div ref={itemsContainerRef} className="flex flex-wrap items-center gap-y-2">
-            {displayedHeadings.map((heading, index) => (
-              <span key={heading.id} className="flex items-center">
-                {sameRowRef.current.has(index) && (
-                  <span className="mx-2 text-[14px] select-none" style={{ color: "hsl(var(--toc-border))" }}>|</span>
-                )}
+
+        <ul className="space-y-1.5">
+          {displayedHeadings.map((heading) => {
+            const isActive = activeId === heading.id;
+
+            return (
+              <li key={heading.id}>
                 <button
                   onClick={() => handleClick(heading.id)}
-                  className="text-left text-[14px] leading-6 transition-colors duration-200"
+                  className="block w-full rounded-md px-1 py-1 text-left text-[14px] leading-6 transition-colors duration-200"
                   style={{
-                    color: activeId === heading.id
-                      ? "hsl(var(--toc-active))"
-                      : "hsl(var(--toc-link))",
-                    fontWeight: activeId === heading.id ? 600 : 400,
+                    color: isActive ? "hsl(var(--toc-active))" : "hsl(var(--toc-link))",
                   }}
                 >
                   {heading.text}
                 </button>
-              </span>
-            ))}
-          </div>
-        </div>
+              </li>
+            );
+          })}
+        </ul>
+
         {headings.length > prioritizedHeadings.length && (
           <button
             onClick={handleToggleExpanded}
@@ -247,7 +190,6 @@ export const ArticleTableOfContents = ({
     );
   }
 
-  // Determine if this is the first displayed heading (for stronger emphasis)
   const firstDisplayedId = displayedHeadings[0]?.id;
 
   return (
@@ -282,9 +224,7 @@ export const ArticleTableOfContents = ({
                           : isFirst
                             ? "hsl(var(--toc-active))"
                             : "hsl(var(--toc-link))",
-                        borderColor: isActive
-                          ? "hsl(var(--toc-active))"
-                          : undefined,
+                        borderColor: isActive ? "hsl(var(--toc-active))" : undefined,
                         transform: !isActive ? "translateX(0)" : undefined,
                         transition: "color 180ms ease-in-out, transform 180ms ease-in-out, border-color 180ms ease-in-out",
                       }}
@@ -314,8 +254,8 @@ export const ArticleTableOfContents = ({
           </div>
           {headings.length > prioritizedHeadings.length && (
             <button
-               onClick={handleToggleExpanded}
-               className="mt-4 inline-flex items-center gap-1 text-[10.5px] font-medium uppercase tracking-[0.15em] transition-colors duration-200"
+              onClick={handleToggleExpanded}
+              className="mt-4 inline-flex items-center gap-1 text-[10.5px] font-medium uppercase tracking-[0.15em] transition-colors duration-200"
               style={{ color: "hsl(var(--toc-label))" }}
               onMouseEnter={(e) => { e.currentTarget.style.color = "hsl(var(--toc-accent))"; }}
               onMouseLeave={(e) => { e.currentTarget.style.color = "hsl(var(--toc-label))"; }}
