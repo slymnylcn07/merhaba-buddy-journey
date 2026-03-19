@@ -68,4 +68,5 @@ export { postExerciseKneePainGuide } from "./post-exercise-knee-pain-guide";
 export { kneeSwellingAfterExercise } from "./knee-swelling-after-exercise";
 export { soreKneesAfterWorkout } from "./sore-knees-after-workout";
 export { kneeRecoveryExercisesAfterWorkout } from "./knee-recovery-exercises-after-workout";
+export { kneeAcheAfterLegWorkouts } from "./knee-ache-after-leg-workouts";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
