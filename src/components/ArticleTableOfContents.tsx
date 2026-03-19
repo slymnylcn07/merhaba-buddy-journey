@@ -224,7 +224,7 @@ export const ArticleTableOfContents = ({
         </div>
         {headings.length > prioritizedHeadings.length && (
           <button
-            onClick={() => setExpanded((value) => !value)}
+            onClick={handleToggleExpanded}
             className="mt-3 inline-flex items-center gap-1 text-[10.5px] font-medium uppercase tracking-[0.15em] transition-colors duration-200"
             style={{ color: "hsl(var(--toc-label))" }}
           >
