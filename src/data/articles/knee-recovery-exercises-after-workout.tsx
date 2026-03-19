@@ -288,10 +288,6 @@ const articleContent = (
       <p>Building a short post-workout recovery routine does not require complicated equipment or significant time. Just 10 minutes of light movement and targeted stretching after every session can make a meaningful difference in how your knees feel the next day. Consistency matters more than duration.</p>
     </InfoBox>
 
-    <PremiumCTA
-      headline="Make knee recovery part of every workout"
-      text="FlexiKnee combines soothing warmth, red light, and gentle vibration to support your knees after every training session, helping you stay active and comfortable day after day."
-    />
   </>
 );
 
