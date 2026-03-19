@@ -208,7 +208,7 @@ export const burningKneesAfterExercise: ArticleExport = {
         </p>
 
         <StatHighlight
-          value="Burning"
+          stat="Burning"
           label="Typically diffuse, gradual onset, associated with overuse and recovery"
         />
 
