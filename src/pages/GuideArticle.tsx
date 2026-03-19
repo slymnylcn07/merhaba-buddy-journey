@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ArticleShareSidebar, ArticleShareBlock } from "@/components/ArticleShareSidebar";
+import { ArticleTableOfContents } from "@/components/ArticleTableOfContents";
 
 import {
   KneePainFactorsChart,
