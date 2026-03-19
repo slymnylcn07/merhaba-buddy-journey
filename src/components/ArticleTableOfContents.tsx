@@ -117,6 +117,31 @@ export const ArticleTableOfContents = ({
   const displayedHeadings = expanded ? headings : prioritizedHeadings;
   const hasMore = headings.length > displayedHeadings.length;
 
+  // Detect which items share a row with their previous sibling
+  useLayoutEffect(() => {
+    if (variant !== "mobile") return;
+    const container = itemsContainerRef.current;
+    if (!container) return;
+
+    const updateRows = () => {
+      const children = Array.from(container.children) as HTMLElement[];
+      const newSet = new Set<number>();
+      for (let i = 1; i < children.length; i++) {
+        const prevTop = children[i - 1].getBoundingClientRect().top;
+        const currTop = children[i].getBoundingClientRect().top;
+        if (Math.abs(currTop - prevTop) < 4) {
+          newSet.add(i);
+        }
+      }
+      setSameRowSet(newSet);
+    };
+
+    updateRows();
+    const ro = new ResizeObserver(updateRows);
+    ro.observe(container);
+    return () => ro.disconnect();
+  }, [variant, displayedHeadings]);
+
   const handleClick = useCallback((id: string) => {
     const element = document.getElementById(id);
     if (!element) return;
