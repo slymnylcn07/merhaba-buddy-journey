@@ -164,7 +164,7 @@ export const ArticleTableOfContents = ({
   const firstDisplayedId = displayedHeadings[0]?.id;
 
   return (
-    <aside className="sticky top-28 self-start lg:-translate-x-7 xl:-translate-x-9">
+    <aside className="sticky top-28 self-start lg:-translate-x-8 xl:-translate-x-10">
       <div className="w-48 xl:w-56">
         <div className="mb-5 flex items-center gap-2">
           <ListTree className="h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--toc-label))" }} strokeWidth={2.2} />
@@ -182,7 +182,7 @@ export const ArticleTableOfContents = ({
                   <li key={heading.id}>
                     <button
                       onClick={() => handleClick(heading.id)}
-                      className={`-ml-4 block w-full border-l-2 pr-2 pl-4 text-left text-[14px] leading-[1.55] transition-all duration-200 ${
+                      className={`-ml-4 block w-full border-l-2 pr-2 pl-4 text-left text-[14.5px] leading-[1.55] transition-all duration-200 ${
                         isActive
                           ? "font-semibold"
                           : isFirst

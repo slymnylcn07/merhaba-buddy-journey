@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { ArticleShareSidebar, ArticleShareBlock } from "@/components/ArticleShareSidebar";
+import { ArticleShareBlock } from "@/components/ArticleShareSidebar";
 import { ArticleTableOfContents } from "@/components/ArticleTableOfContents";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -8174,8 +8174,8 @@ const GuideArticle = () => {
           </div>
         </section>
 
-        {/* Two-column layout: subtitle + intro + article content in one section */}
-        <section className="pb-6 md:pb-8">
+        {/* Editorial article layout: TOC follows content until CTA without shifting the article */}
+        <section className="pb-6 md:pb-8 md:pt-2">
           <div className="container mx-auto max-w-6xl px-4">
             <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
               {!isMobile && (
@@ -8184,7 +8184,7 @@ const GuideArticle = () => {
                 </div>
               )}
 
-              <div className="min-w-0 max-w-3xl">
+              <article className="min-w-0 max-w-3xl">
                 {article.subtitle && (
                   <p className="mb-4 text-lg font-medium text-primary/80">
                     {article.subtitle}
@@ -8202,20 +8202,7 @@ const GuideArticle = () => {
                 </p>
 
                 <hr className="my-6 border-t border-border/30" />
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Share Sidebar removed for cleaner editorial layout */}
-
-        {/* Article Content */}
-        <article className="md:pt-2">
-          <div className="container mx-auto max-w-6xl px-4">
-            <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
-              <div className="hidden lg:block" />
-
-              <div className="min-w-0 max-w-3xl">
                 <div className="article-content max-w-none
                   [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-foreground [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:pb-3 [&_h2]:border-b [&_h2]:border-border/30
                   [&_h3]:text-lg [&_h3]:md:text-xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-foreground [&_h3]:mt-8 [&_h3]:mb-3
@@ -8243,8 +8230,17 @@ const GuideArticle = () => {
                     text={articleCTAs[slug].text}
                   />
                 )}
+              </article>
+            </div>
+          </div>
+        </section>
 
-                {/* Share Block */}
+        {/* Share Block */}
+        <section>
+          <div className="container mx-auto max-w-6xl px-4">
+            <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
+              <div className="hidden lg:block" />
+              <div className="min-w-0 max-w-3xl">
                 <ArticleShareBlock
                   url={`https://flexi-knee.com/guides/${slug}`}
                   title={article.title}
@@ -8252,7 +8248,7 @@ const GuideArticle = () => {
               </div>
             </div>
           </div>
-        </article>
+        </section>
 
         {/* Related Guides Section */}
         <section className="py-8 md:py-10 bg-muted/20">
