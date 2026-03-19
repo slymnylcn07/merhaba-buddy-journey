@@ -2773,15 +2773,27 @@ const articles: Record<string, ArticleData> = {
           </figcaption>
         </figure>
 
-        <h2>Knee Pain Below Kneecap</h2>
+        <h2>Sharp Pain Kneecap and Below</h2>
         <p>
-          Knee pain below kneecap is a common location for sharp pain, particularly in active individuals. The area just below the kneecap is where the patellar tendon attaches, making it susceptible to stress and irritation.
+          Sharp pain kneecap is a common location for intermittent discomfort, particularly in active individuals. Stabbing pain in knee cap can feel like a sudden jab right at the front of the knee, especially during squatting, kneeling, or going down stairs. The area just below the kneecap is where the patellar tendon attaches, making it susceptible to stress and irritation.
         </p>
+
+        <figure className="my-8">
+          <img
+            src={sharpKneeKneecapPressure}
+            alt="Kneecap pressure diagram showing stress zones and contact areas during movement"
+            className="w-full h-auto rounded-xl shadow-sm"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            Kneecap pressure zones: where sharp pain is most commonly felt during bending and loading
+          </figcaption>
+        </figure>
+
         <p>
           <strong>Patellar tendinopathy:</strong> Irritation or degeneration of the patellar tendon causes pain directly below the kneecap. This is common in activities involving jumping or repetitive knee bending. Sharp pain may occur suddenly with certain movements.
         </p>
         <p>
-          <strong>Infrapatellar fat pad impingement:</strong> The fat pad beneath the kneecap can become pinched during knee movements, causing sudden sharp pain. This often worsens with prolonged standing or hyperextension.
+          <strong>Infrapatellar fat pad impingement:</strong> The fat pad beneath the kneecap can become pinched during knee movements, causing sudden sharp pain. This often worsens with prolonged standing or hyperextension. The sensation is frequently described as a pinching pain in knee.
         </p>
         <p>
           <strong>Osgood-Schlatter remnants:</strong> If you had Osgood-Schlatter disease as an adolescent, the bony bump below your kneecap can remain sensitive and occasionally cause sharp pain, particularly with kneeling.
