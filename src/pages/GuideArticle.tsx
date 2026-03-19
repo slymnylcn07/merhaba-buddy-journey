@@ -1513,7 +1513,7 @@ const articles: Record<string, ArticleData> = {
     slug: "back-of-knee-pain-explained",
     title: "Back of Knee Pain Explained: Causes, Symptoms, and Relief Options",
     subtitle: "Understanding behind knee discomfort",
-    intro: "Pain in the back of knee can be particularly puzzling because it's an area we don't often think about until something goes wrong. Whether you're experiencing pain when straightening leg, have been told you might have a Baker's cyst, or simply feel persistent behind knee pain, this guide will help you understand what's happening and what might help.",
+    intro: "Pain in the back of the knee can be particularly puzzling because it's an area we don't often think about until something goes wrong. Whether you notice tightness behind the knee after sitting, a dull ache during activity, or persistent stiffness in the back of knee area, this guide will help you understand the structures involved, recognize common symptoms, and find supportive strategies that work.",
     metaTitle: "Back of Knee Pain: Causes, Baker's Cyst Treatment & Relief",
     metaDescription: "Learn about behind knee pain causes including Baker's cyst, pain when straightening leg, and effective relief options. Comprehensive guide to back of knee discomfort.",
     heroImage: heroBackKneePain,
