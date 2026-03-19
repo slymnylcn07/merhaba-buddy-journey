@@ -347,10 +347,6 @@ const articleContent = (
       A thorough warm-up increases blood flow to the muscles, improves joint lubrication, and prepares the nervous system for heavy loading. Five to ten minutes of light cycling, bodyweight squats, and dynamic stretching before your leg workout significantly reduces the stress your knees experience during the first working sets.
     </p>
 
-    <PremiumCTA
-      headline="Keep your knees comfortable between leg sessions"
-      text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device, helping your knees feel supported and ready for your next workout."
-    />
 
     <h2>When Knee Discomfort Should Be Monitored More Closely</h2>
 
