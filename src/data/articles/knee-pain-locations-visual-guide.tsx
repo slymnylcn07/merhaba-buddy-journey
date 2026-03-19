@@ -204,17 +204,6 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
         <h2>Outer Knee (Lateral Side)</h2>
         <img src={diagramOuterKnee} alt="Diagram showing outer lateral side of knee on the knee map" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
 
-        <figure className="my-6">
-          <img
-            src={diagramSideKneePain}
-            alt="Side knee pain diagram showing IT band, lateral collateral ligament, and lateral meniscus locations"
-            className="w-full max-w-lg mx-auto h-auto rounded-xl shadow-sm"
-            loading="lazy"
-          />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            A side knee pain diagram highlighting the IT band and lateral structures
-          </figcaption>
-        </figure>
 
         <h3>Location Overview</h3>
         <p>
@@ -250,17 +239,6 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
         <h2>Back of Knee (Popliteal Region)</h2>
         <img src={diagramBackKnee} alt="Diagram showing back posterior popliteal region on the knee pain location chart" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
 
-        <figure className="my-6">
-          <img
-            src={diagramBackKneePainViz}
-            alt="Back of knee pain visualization showing hamstring tendons, popliteal area, gastrocnemius, and popliteal fossa"
-            className="w-full max-w-lg mx-auto h-auto rounded-xl shadow-sm"
-            loading="lazy"
-          />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            A detailed visualization of the back of knee discomfort zone
-          </figcaption>
-        </figure>
 
         <h3>Location Overview</h3>
         <p>
@@ -290,6 +268,18 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
           <li>Leg elevation in the evening to reduce accumulated tension</li>
         </ul>
 
+        <figure className="my-6">
+          <img
+            src={diagramBackKneePainViz}
+            alt="Back of knee pain visualization showing hamstring tendons, popliteal area, gastrocnemius, and popliteal fossa"
+            className="w-full max-w-lg mx-auto h-auto rounded-xl shadow-sm"
+            loading="lazy"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            A detailed visualization of the back of knee discomfort zone
+          </figcaption>
+        </figure>
+
         {/* --- Mid-article CTA (1 of 2) --- */}
         <PremiumCTA
           headline="Want location-specific comfort support for your knee?"
@@ -300,7 +290,7 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
 
         {/* --- Zone 5: Below the Kneecap --- */}
         <h2>Below the Kneecap (Infrapatellar Region)</h2>
-        <img src={diagramBelowKneecap} alt="Diagram showing below kneecap infrapatellar area on knee pain chart" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
+        
 
         <figure className="my-6">
           <img
