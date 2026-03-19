@@ -268,6 +268,18 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
           <li>Leg elevation in the evening to reduce accumulated tension</li>
         </ul>
 
+        <figure className="my-6">
+          <img
+            src={diagramBackKneePainViz}
+            alt="Back of knee pain visualization showing hamstring tendons, popliteal area, gastrocnemius, and popliteal fossa"
+            className="w-full max-w-lg mx-auto h-auto rounded-xl shadow-sm"
+            loading="lazy"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            A detailed visualization of the back of knee discomfort zone
+          </figcaption>
+        </figure>
+
         {/* --- Mid-article CTA (1 of 2) --- */}
         <PremiumCTA
           headline="Want location-specific comfort support for your knee?"
