@@ -1518,6 +1518,7 @@ const articles: Record<string, ArticleData> = {
     metaDescription: "Learn about behind knee pain causes including Baker's cyst, pain when straightening leg, and effective relief options. Comprehensive guide to back of knee discomfort.",
     heroImage: heroBackKneePain,
     publishedDate: "December 16, 2025",
+    lastUpdated: "March 19, 2026",
     nextSlug: "side-knee-pain-comfort-guide",
     nextTitle: "Side Knee Pain Guide",
     content: (
