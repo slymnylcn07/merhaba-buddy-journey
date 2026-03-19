@@ -398,7 +398,7 @@ export const postExerciseKneePainGuide: ArticleExport = {
     metaTitle: "Knee Pain After Exercise: Normal or Not?",
     metaDescription: "Is knee pain after exercise normal? Learn to tell the difference between typical post-workout soreness and warning signs that may need attention in this practical guide.",
     heroImage: heroImage,
-    publishedDate: "2026-03-12",
+    publishedDate: "March 12, 2026",
     content: articleContent,
     faqs,
     seoTags: "knee pain after exercise,knee pain after workout,sore knees after workout,aching knees after exercise,post workout knee pain,knee hurts after exercising,post exercise knee soreness,knee discomfort after workout,delayed knee soreness,exercise related knee pain,knee recovery after workout,knee comfort after exercise,normal knee soreness,knee warning signs",
