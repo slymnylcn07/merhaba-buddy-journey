@@ -698,6 +698,13 @@ export const guidesData: GuideData[] = [
     readTime: 16,
     lastModified: "2026-03-19",
   },
+  {
+    slug: "knee-ache-after-leg-workouts",
+    title: "Why Knees Ache After Leg Workouts",
+    description: "Understand why knees ache after leg workouts like squats and lunges. Learn how muscle fatigue, training intensity, and form affect post-leg day knee comfort.",
+    readTime: 14,
+    lastModified: "2026-03-19",
+  },
 ];
 
 export const staticPages = [
