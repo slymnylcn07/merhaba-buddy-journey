@@ -300,7 +300,7 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
 
         {/* --- Zone 5: Below the Kneecap --- */}
         <h2>Below the Kneecap (Infrapatellar Region)</h2>
-        <img src={diagramBelowKneecap} alt="Diagram showing below kneecap infrapatellar area on knee pain chart" className="w-full rounded-xl my-6 max-h-96 object-contain bg-[#FFF9F0]" loading="lazy" />
+        
 
         <figure className="my-6">
           <img
