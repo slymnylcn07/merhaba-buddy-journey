@@ -129,18 +129,23 @@ export const ArticleTableOfContents = ({
   if (variant === "mobile") {
     return (
       <div className="rounded-xl border border-border/50 bg-background/80 px-4 py-3 backdrop-blur-sm">
-        <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">On This Page</p>
+        <div className="mb-2.5 flex items-center gap-1.5">
+          <ListTree className="h-3 w-3 shrink-0" style={{ color: "hsl(var(--toc-label))" }} strokeWidth={2.2} />
+          <p className="text-[13px] font-bold uppercase tracking-[0.22em]" style={{ color: "hsl(var(--toc-label))" }}>On This Page</p>
+        </div>
         <div className="overflow-hidden transition-all duration-300 ease-out">
           <div className="flex flex-wrap gap-x-3 gap-y-2">
             {displayedHeadings.map((heading) => (
               <button
                 key={heading.id}
                 onClick={() => handleClick(heading.id)}
-                className={`text-left text-xs leading-5 transition-colors ${
-                  activeId === heading.id
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
+                className="text-left text-[12.5px] leading-5 transition-colors duration-200"
+                style={{
+                  color: activeId === heading.id
+                    ? "hsl(var(--toc-active))"
+                    : "hsl(var(--toc-link))",
+                  fontWeight: activeId === heading.id ? 600 : 400,
+                }}
               >
                 {heading.text}
               </button>
@@ -150,9 +155,10 @@ export const ArticleTableOfContents = ({
         {headings.length > prioritizedHeadings.length && (
           <button
             onClick={() => setExpanded((value) => !value)}
-            className="mt-3 inline-flex items-center gap-1 text-[11px] font-medium uppercase tracking-[0.12em] text-primary transition-colors hover:text-primary/80"
+            className="mt-3 inline-flex items-center gap-1 text-[10.5px] font-medium uppercase tracking-[0.15em] transition-colors duration-200"
+            style={{ color: "hsl(var(--toc-label))" }}
           >
-            {expanded ? "Show less" : "Show more"}
+            {expanded ? "Show less" : `Show all ${headings.length}`}
             <ChevronDown className={`h-3 w-3 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`} />
           </button>
         )}
