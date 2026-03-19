@@ -3008,7 +3008,7 @@ const articles: Record<string, ArticleData> = {
     faqs: [
       {
         question: "Why do I have sharp knee pain that comes and goes?",
-        answer: "Intermittent sharp knee pain often results from mechanical issues like loose bodies, meniscus tears, plica syndrome, or patellar tracking problems. The pain appears when irritated structures are compressed or caught during movement, then resolves when they're free."
+        answer: "Intermittent sharp knee pain often results from mechanical issues like loose bodies, meniscus tears, plica syndrome, or patellar tracking problems. The pain appears when irritated structures are compressed or caught during movement, then resolves when they return to a neutral position."
       },
       {
         question: "What causes sharp pain when straightening the knee?",
@@ -3020,14 +3020,38 @@ const articles: Record<string, ArticleData> = {
       },
       {
         question: "What does sharp pain below the kneecap mean?",
-        answer: "Sharp pain below the kneecap often indicates patellar tendinitis, fat pad impingement, or issues with the patellar ligament. Pain that worsens with jumping, running, or climbing stairs is particularly suggestive of tendon involvement."
+        answer: "Sharp pain below the kneecap often indicates patellar tendon irritation, fat pad impingement, or issues with the patellar ligament. Pain that worsens with jumping, running, or climbing stairs is particularly suggestive of tendon involvement."
       },
       {
         question: "When should I see a doctor for sharp knee pain?",
-        answer: "See a doctor if pain is severe, associated with significant swelling, causes locking or giving way, prevents weight bearing, is accompanied by fever, or doesn't improve with rest and home care within a few weeks."
+        answer: "See a doctor if pain is severe, associated with significant swelling, causes locking or giving way, prevents weight bearing, is accompanied by fever, or does not improve with rest and home care within a few weeks."
+      },
+      {
+        question: "Why do I get sharp knee pain randomly?",
+        answer: "Random sharp knee pain is usually triggered by subtle joint mechanics you may not notice, such as slight twisting during walking, a loose body shifting position, or a meniscal flap catching briefly. Tracking when it happens can reveal hidden patterns."
+      },
+      {
+        question: "Why does my knee hurt suddenly then stop?",
+        answer: "This pattern is common with mechanical issues inside the joint. A structure like a loose body or torn meniscus flap briefly catches during movement, causing sudden pain, then releases and returns to a neutral position where it no longer causes discomfort."
+      },
+      {
+        question: "Is stabbing knee pain normal?",
+        answer: "Occasional stabbing knee pain can occur from minor mechanical irritation and is not always a sign of a serious problem. However, frequent or worsening stabbing pain, especially if paired with swelling or instability, should be evaluated by a professional."
+      },
+      {
+        question: "What causes shooting pain in the knee?",
+        answer: "Shooting pain in the knee is often nerve-related, potentially from local nerve irritation, referred pain from the back or hip, or compression of small nerves around the joint. It may also result from a meniscal tear or loose body catching during movement."
+      },
+      {
+        question: "Why does knee pain come and go?",
+        answer: "Knee pain that comes and goes typically relates to positional or activity-based triggers. Structures inside the joint may only become irritated in certain positions, and inflammation levels can fluctuate with activity, rest, and even weather changes."
+      },
+      {
+        question: "What does needle like pain in the knee mean?",
+        answer: "Needle like pain in the knee is usually related to nerve irritation, either from a local source within the knee or from referred signals along the femoral or sciatic nerve pathways. It tends to be brief and pinpoint, often appearing and disappearing quickly."
       }
     ],
-    seoTags: "sharp knee discomfort, intermittent knee awareness, sudden knee sensation, knee discomfort patterns, unpredictable knee comfort, sharp knee moments, knee comfort response, daily knee awareness",
+    seoTags: "sharp knee pain, sharp pain in knee, knee pain that comes and goes, sharp stabbing pain in knee, stabbing knee pain, shooting pain in knee, sudden sharp pain in knee, intermittent knee pain, sharp pain kneecap, stabbing pain in side of knee, stabbing pain in back of knee, pinching pain in knee, needle like pain in knee, stabbing knee pain at night, sharp shooting pain in knee at rest, causes of sharp knee pain",
   },
   "how-to-strengthen-knees": {
     slug: "how-to-strengthen-knees",
