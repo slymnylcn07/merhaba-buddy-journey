@@ -34,7 +34,7 @@ export const Header = () => {
         <div className="flex items-center">
           <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu">
+              <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Open menu">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
@@ -109,13 +109,13 @@ export const Header = () => {
               alt="FlexiKnee™"
               width={360}
               height={120}
-              className="w-[280px] max-h-[90px] md:w-[360px] md:max-h-[120px] object-contain"
+              className="w-[280px] max-h-[90px] lg:w-[360px] lg:max-h-[120px] object-contain"
             />
           </a>
         </div>
 
         {/* Desktop Navigation - Hidden on mobile */}
-        <nav className="hidden md:flex items-center gap-6 absolute left-4">
+        <nav className="hidden lg:flex items-center gap-6 absolute left-4">
           <a href="/" className="text-sm font-medium hover:text-primary transition-colors">
             Home
           </a>
@@ -155,7 +155,7 @@ export const Header = () => {
         <div className="flex items-center gap-2 ml-auto">
           <a
             href="/account"
-            className="hidden md:flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+            className="hidden lg:flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <User className="h-4 w-4" />
             <span>My Account</span>
@@ -163,7 +163,7 @@ export const Header = () => {
           <a 
             href="/account" 
             aria-label="My Account"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 w-9 md:hidden"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 w-9 lg:hidden"
           >
             <User className="h-5 w-5" />
           </a>
