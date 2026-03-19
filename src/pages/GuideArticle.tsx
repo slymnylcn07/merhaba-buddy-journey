@@ -2675,16 +2675,54 @@ const articles: Record<string, ArticleData> = {
 
         <h2>Understanding Sharp Knee Pain Patterns</h2>
         <p>
-          Sharp knee pain differs from the dull, aching discomfort associated with conditions like arthritis. It's typically sudden, intense, and may feel like a stabbing, shooting, or electrical sensation. When this sharp stabbing pain in knee comes and goes, it often follows certain patterns that can help identify the cause.
+          Sharp knee pain differs from the dull, aching discomfort associated with conditions like arthritis. It is typically sudden, intense, and may feel like a stabbing, shooting, or electrical sensation. Stabbing knee pain often feels like a knife-like jab concentrated in one spot, while shooting pain in knee tends to travel quickly through the joint or along the leg. Some people describe a shock pain in knee, similar to a brief electrical jolt, and others notice a needle like pain in knee that is pinpoint and fleeting.
         </p>
         <p>
-          Some people experience sharp pain only with specific movements—like pain in knee when straightening leg fully or when bending deeply. Others notice it occurs randomly, seemingly without trigger. Pay attention to these patterns, as they provide valuable diagnostic clues.
+          When sharp stabbing pain in knee comes and goes, it often follows certain patterns that can help identify the cause. Some people experience sharp pain only with specific movements, like pain in knee when straightening leg fully or when bending deeply. Others notice it occurs randomly, seemingly without trigger. Pay attention to these patterns, as they provide valuable clues about which structures may be involved.
         </p>
         <p>
-          The intermittent nature of this pain can actually be informative. Constant, unrelenting pain suggests different causes than pain that appears and disappears. The coming and going pattern often relates to mechanical issues in the joint or irritation of specific structures.
+          The intermittent nature of this pain can actually be informative. Constant, unrelenting pain suggests different causes than knee pain that comes and goes. The coming and going pattern often relates to mechanical issues in the joint or irritation of specific structures that are only affected in certain positions.
         </p>
 
+        <figure className="my-8">
+          <img
+            src={sharpKneeAnatomyDiagram}
+            alt="Knee joint anatomy diagram showing bones, cartilage, and structures involved in sharp knee pain"
+            className="w-full h-auto rounded-xl shadow-sm"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            Anatomy of the knee joint: understanding the structures that can produce sharp pain
+          </figcaption>
+        </figure>
+
         <SharpPainPatternsChart />
+
+        <h2>What Does Sharp Knee Pain That Comes and Goes Mean?</h2>
+        <p>
+          Sharp stabbing pain in knee that comes and goes usually means that a structure inside or around the joint is being temporarily irritated during certain movements or positions. Unlike constant pain, intermittent sharp pain in knee often points to mechanical causes, where something catches, shifts, or gets compressed briefly before returning to a neutral state. Knee pain that comes and goes is one of the most common patterns people report, and while it can feel alarming, it is frequently related to manageable issues.
+        </p>
+
+        <StatHighlight
+          stat="Most common"
+          label="pattern reported: sharp pain that appears with movement and fades at rest"
+          description="Intermittent mechanical symptoms are among the most frequently evaluated knee complaints"
+        />
+
+        <h3>Why Does Sharp Knee Pain Appear Suddenly?</h3>
+        <p>
+          Sudden sharp pain in knee can occur when a loose body catches in the joint, when a meniscus flap folds during movement, or when a nerve is briefly compressed. Sudden shooting pain in knee may also happen during a misstep, a twist, or a change of direction that momentarily stresses a vulnerable structure. In many cases the pain resolves within seconds as the structure returns to its normal position.
+        </p>
+
+        <figure className="my-8">
+          <img
+            src={sharpKneePainCycle}
+            alt="Intermittent pain cycle diagram showing trigger, sharp pain episode, temporary relief, and return to normal"
+            className="w-full h-auto rounded-xl shadow-sm"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            The intermittent pain cycle: how sharp knee pain episodes typically progress
+          </figcaption>
+        </figure>
 
         <h2>Sharp Stabbing Pain in Knee That Comes and Goes</h2>
         <p>
