@@ -1697,6 +1697,36 @@ const articles: Record<string, ArticleData> = {
           year="2023"
         />
 
+        <h2>Why Does the Back of My Knee Hurt?</h2>
+        <p>
+          The back of your knee may hurt due to muscle tightness, joint stress, or fluid buildup in the popliteal area. Hamstring tension, calf strain, and Baker's cysts are among the most frequent causes. Pain in the back of knee often develops gradually from everyday habits like prolonged sitting, sudden increases in activity, or wearing unsupportive footwear.
+        </p>
+
+        <h2>What Causes Pain Behind the Knee?</h2>
+        <p>
+          Pain behind the knee is commonly caused by strain or tension in the muscles and tendons that cross the back of the joint. Fluid accumulation, such as a Baker's cyst, can also produce aching and pressure behind the knee. In some cases, referred discomfort from the hip or lower back contributes to the sensation.
+        </p>
+
+        <h3>What Are Common Causes of Pain Behind the Knee?</h3>
+        <ul>
+          <li><strong>Muscle strain:</strong> overstretched or fatigued hamstring or calf muscles</li>
+          <li><strong>Baker's cyst:</strong> fluid-filled swelling in the popliteal bursa</li>
+          <li><strong>Joint inflammation:</strong> irritation of the knee joint capsule or surrounding tissues</li>
+          <li><strong>Tight hamstrings:</strong> shortened muscles pulling on their attachment points near the knee</li>
+          <li><strong>Meniscal wear:</strong> cartilage changes that affect posterior knee comfort</li>
+          <li><strong>Referred pain:</strong> discomfort originating from the hip, back, or sciatic nerve</li>
+        </ul>
+
+        <h2>Why Is There Pressure Behind My Knee?</h2>
+        <p>
+          Pressure behind the knee usually results from fluid accumulation in the popliteal region or tension in the surrounding muscles. A Baker's cyst is one of the most common causes of this feeling, producing a sense of fullness that may worsen when bending or straightening the leg. Muscle tightness in the calves or hamstrings can also create a compressed sensation behind the knee.
+        </p>
+
+        <h2>What Does Tightness in the Back of Knee Mean?</h2>
+        <p>
+          Tightness in the back of knee typically indicates that the hamstring tendons, calf muscles, or joint capsule have become stiff or restricted. This often happens after prolonged sitting, sleeping, or periods of inactivity. Gentle stretching and regular movement breaks usually help relieve this sensation, though persistent tightness may point to an underlying issue worth evaluating.
+        </p>
+
         <h2>Self-Care Strategies for Back of Knee Pain</h2>
         <p>
           Many cases of behind knee pain respond well to consistent self-care. Here are strategies that can help:
