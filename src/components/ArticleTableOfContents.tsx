@@ -124,7 +124,9 @@ export const ArticleTableOfContents = ({
     const container = itemsContainerRef.current;
     if (!container) return;
 
-    const updateRows = () => {
+    let rafId: number | null = null;
+
+    const computeRows = () => {
       const children = Array.from(container.children) as HTMLElement[];
       const newSet = new Set<number>();
       for (let i = 1; i < children.length; i++) {
@@ -141,10 +143,21 @@ export const ArticleTableOfContents = ({
       }
     };
 
-    updateRows();
-    const ro = new ResizeObserver(updateRows);
+    // Compute synchronously on mount / heading change
+    computeRows();
+
+    // Debounced ResizeObserver to avoid rapid re-fire loops during CSS transitions
+    const onResize = () => {
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(computeRows);
+    };
+
+    const ro = new ResizeObserver(onResize);
     ro.observe(container);
-    return () => ro.disconnect();
+    return () => {
+      ro.disconnect();
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, [variant, displayedHeadings]);
 
   const handleClick = useCallback((id: string) => {
@@ -165,7 +178,7 @@ export const ArticleTableOfContents = ({
           <ListTree className="h-3 w-3 shrink-0" style={{ color: "hsl(var(--toc-label))" }} strokeWidth={2.2} />
           <p className="text-[14.5px] font-bold uppercase tracking-[0.22em]" style={{ color: "hsl(var(--toc-label))" }}>On This Page</p>
         </div>
-        <div className="overflow-hidden transition-all duration-300 ease-out">
+        <div>
           <div ref={itemsContainerRef} className="flex flex-wrap items-center gap-y-2">
             {displayedHeadings.map((heading, index) => (
               <span key={heading.id} className="flex items-center">
