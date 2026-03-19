@@ -310,6 +310,7 @@ import {
   kneeSwellingAfterExercise,
   soreKneesAfterWorkout,
   kneeRecoveryExercisesAfterWorkout,
+  kneeAcheAfterLegWorkouts,
 } from "@/data/articles";
 
 interface FAQItem {
