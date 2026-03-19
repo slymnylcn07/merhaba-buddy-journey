@@ -2659,6 +2659,7 @@ const articles: Record<string, ArticleData> = {
     metaDescription: "Understand sharp stabbing pain in knee that comes and goes, pain when straightening leg, pain inside knee, and whether sciatica can cause knee pain. Complete guide.",
     heroImage: heroSharpKneePain,
     publishedDate: "December 20, 2025",
+    lastUpdated: "March 19, 2026",
     nextSlug: "why-knee-pain-doesnt-go-away",
     nextTitle: "Why Knee Pain Doesn't Go Away",
     content: (
