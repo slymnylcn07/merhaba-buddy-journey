@@ -8544,6 +8544,7 @@ const GuideArticle = () => {
                 "runners-knee-pain-location": thumbRunnersKneeLocation,
                 "it-band-syndrome-explained": thumbItBandSyndrome,
                 "it-band-pain-location-diagram": thumbItBandDiagram,
+                "why-do-my-knees-hurt-when-sleeping": thumbNightKneePain,
                 "why-do-my-knees-crack-or-pop": thumbKneePainCauses,
                 "knee-pain-after-sitting-cross-legged": thumbBackKneeCommon,
                 "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
