@@ -8191,11 +8191,9 @@ const GuideArticle = () => {
                   </p>
                 )}
 
-                {isMobile && (
-                  <div className="mb-6 lg:hidden">
-                    <ArticleTableOfContents variant="mobile" initialCount={5} />
-                  </div>
-                )}
+                <div className="mb-6 lg:hidden">
+                  <ArticleTableOfContents variant="mobile" initialCount={5} />
+                </div>
 
                 <p className="text-lg font-light leading-relaxed text-muted-foreground">
                   {article.intro}
