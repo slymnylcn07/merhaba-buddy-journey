@@ -155,7 +155,7 @@ export const Header = () => {
         <div className="flex items-center gap-2 ml-auto">
           <a
             href="/account"
-            className="hidden md:flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+            className="hidden lg:flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <User className="h-4 w-4" />
             <span>My Account</span>
