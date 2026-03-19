@@ -1534,19 +1534,22 @@ const articles: Record<string, ArticleData> = {
 
         <h2>Anatomy of the Back of the Knee</h2>
         <p>
-          Understanding the structures behind your knee helps explain why back of knee pain can feel so different from discomfort in other areas. The popliteal region contains:
+          Understanding the muscles behind the knee and the surrounding structures helps explain why back of knee discomfort can feel so different from pain in other areas. The area behind the knee is often referred to medically as the popliteal region, and it contains several important structures layered closely together:
         </p>
         <p>
-          <strong>Hamstring tendons:</strong> The three hamstring muscles at the back of your thigh all attach near the back of the knee. Tightness or strain in these tendons is a common cause of behind knee pain.
+          <strong>Hamstring tendons:</strong> The three hamstring muscles at the back of your thigh all attach near the back of the knee. The muscle behind the knee that people feel most often when they notice tightness is usually one of these hamstring insertions. Strain or tension in these tendons is one of the most common sources of discomfort in this area.
         </p>
         <p>
-          <strong>Gastrocnemius muscle:</strong> This is the larger calf muscle, and its two heads attach behind the knee. Issues here can cause pain in back of knee that extends downward into the calf.
+          <strong>Gastrocnemius muscle:</strong> This is the larger calf muscle, and its two heads attach directly behind the knee joint. As a major back of knee muscle, issues here can cause discomfort that extends downward into the calf and upward into the posterior knee.
         </p>
         <p>
-          <strong>Popliteal bursa:</strong> This is a small fluid-filled sac that sits behind the knee joint. When it becomes inflamed or filled with excess fluid, it can form what's commonly known as a Baker's cyst.
+          <strong>Popliteus muscle:</strong> A smaller but important muscle that sits deep in the back of the knee, helping to unlock the joint during bending. Together with the gastrocnemius and hamstrings, these muscles behind the knee work as a group to stabilize and move the joint through its full range.
         </p>
         <p>
-          <strong>Joint capsule:</strong> The back of the knee joint itself is covered by a capsule that can become irritated or inflamed, contributing to pain when straightening leg or during certain movements.
+          <strong>Popliteal bursa:</strong> This is a small fluid-filled sac that cushions the back of the knee joint. When it becomes inflamed or filled with excess fluid, it can form what's commonly known as a Baker's cyst.
+        </p>
+        <p>
+          <strong>Joint capsule:</strong> The back of the knee joint itself is covered by a capsule that can become irritated or inflamed, contributing to discomfort when straightening the leg or during certain movements.
         </p>
 
         <JournalQuote
