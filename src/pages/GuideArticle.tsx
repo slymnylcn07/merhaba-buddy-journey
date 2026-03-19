@@ -8179,8 +8179,10 @@ const GuideArticle = () => {
           <div className="container mx-auto max-w-6xl px-4">
             <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
               {!isMobile && (
-                <div className="hidden lg:block relative">
-                  <ArticleTableOfContents variant="desktop" initialCount={6} />
+                <div className="relative hidden lg:block">
+                  <div className="absolute inset-x-0 top-0">
+                    <ArticleTableOfContents variant="desktop" initialCount={6} />
+                  </div>
                 </div>
               )}
 
