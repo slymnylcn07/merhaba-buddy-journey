@@ -109,6 +109,7 @@ const thumbnailMap: Record<string, string> = {
   "post-exercise-knee-pain-guide": thumbPostExerciseKneePain,
   "knee-swelling-after-exercise": thumbKneeSwellingExercise,
   "sore-knees-after-workout": thumbSoreKneesWorkout,
+  "knee-recovery-exercises-after-workout": thumbKneeRecoveryExercises,
 };
 
 // Get the 10 most recent guides (last 10 from the array)
