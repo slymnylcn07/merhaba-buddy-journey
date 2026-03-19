@@ -8173,11 +8173,11 @@ const GuideArticle = () => {
             <p className="text-muted-foreground font-light leading-relaxed text-lg">
               {article.intro}
             </p>
+          </div>
 
-            {/* Mobile TOC - below title */}
-            <div className="lg:hidden mt-6">
-              <ArticleTableOfContents />
-            </div>
+          {/* Mobile/Tablet TOC - below intro, before article body */}
+          <div className="lg:hidden container px-4 mx-auto max-w-3xl mt-6">
+            <ArticleTableOfContents />
           </div>
         </section>
 
