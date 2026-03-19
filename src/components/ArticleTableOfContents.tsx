@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { ChevronDown, List } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 interface TocItem {
@@ -8,9 +8,7 @@ interface TocItem {
 }
 
 interface ArticleTableOfContentsProps {
-  /** CSS selector scope to find h2 elements */
   contentSelector?: string;
-  /** Number of items to show before "Show more" */
   initialCount?: number;
 }
 
@@ -24,7 +22,6 @@ export const ArticleTableOfContents = ({
   const isMobile = useIsMobile();
   const observerRef = useRef<IntersectionObserver | null>(null);
 
-  // Extract headings from DOM after render
   useEffect(() => {
     const timer = setTimeout(() => {
       const container = document.querySelector(contentSelector);
@@ -42,14 +39,11 @@ export const ArticleTableOfContents = ({
     return () => clearTimeout(timer);
   }, [contentSelector]);
 
-  // Intersection observer for active heading
   useEffect(() => {
     if (headings.length === 0) return;
-
     observerRef.current?.disconnect();
 
     const callback: IntersectionObserverCallback = (entries) => {
-      // Find the first visible heading
       const visible = entries
         .filter((e) => e.isIntersecting)
         .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
@@ -85,90 +79,88 @@ export const ArticleTableOfContents = ({
   const visibleHeadings = expanded ? headings : headings.slice(0, initialCount);
   const hasMore = headings.length > initialCount;
 
-  // Mobile: inline card below title
+  // Mobile/Tablet: inline horizontal chips
   if (isMobile) {
     return (
-      <div className="mb-8 rounded-xl border border-border/40 bg-muted/30 p-5">
-        <div className="flex items-center gap-2 mb-3">
-          <List className="h-4 w-4 text-primary" />
-          <span className="text-sm font-semibold text-foreground">On This Page</span>
-        </div>
-        <nav>
-          <ul className="space-y-2">
-            {visibleHeadings.map((h) => (
-              <li key={h.id}>
-                <button
-                  onClick={() => handleClick(h.id)}
-                  className={`text-left text-sm leading-snug transition-colors w-full ${
-                    activeId === h.id
-                      ? "text-primary font-medium"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {h.text}
-                </button>
-              </li>
-            ))}
-          </ul>
-          {hasMore && !expanded && (
+      <div className="mb-6 py-4 px-4 rounded-lg border border-border/30 bg-muted/20">
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">On This Page</p>
+        <div className="flex flex-wrap gap-2">
+          {visibleHeadings.map((h) => (
             <button
-              onClick={() => setExpanded(true)}
-              className="mt-3 flex items-center gap-1 text-xs font-medium text-primary hover:text-primary/80 transition-colors"
+              key={h.id}
+              onClick={() => handleClick(h.id)}
+              className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
+                activeId === h.id
+                  ? "border-primary/40 bg-primary/10 text-primary font-medium"
+                  : "border-border/40 text-muted-foreground hover:text-foreground hover:border-border"
+              }`}
             >
-              Show more
-              <ChevronDown className="h-3 w-3" />
+              {h.text}
             </button>
-          )}
-        </nav>
+          ))}
+        </div>
+        {hasMore && !expanded && (
+          <button
+            onClick={() => setExpanded(true)}
+            className="mt-3 flex items-center gap-1 text-xs font-medium text-primary hover:text-primary/80 transition-colors"
+          >
+            Show more
+            <ChevronDown className="h-3 w-3" />
+          </button>
+        )}
+        {expanded && hasMore && (
+          <button
+            onClick={() => setExpanded(false)}
+            className="mt-3 flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Show less
+            <ChevronDown className="h-3 w-3 rotate-180" />
+          </button>
+        )}
       </div>
     );
   }
 
-  // Desktop: sticky sidebar
+  // Desktop: minimal sticky sidebar with left accent border
   return (
-    <div className="hidden lg:block sticky top-24 w-56 xl:w-60 shrink-0">
-      <div className="rounded-xl border border-border/40 bg-muted/20 p-4">
-        <div className="flex items-center gap-2 mb-3">
-          <List className="h-4 w-4 text-primary" />
-          <span className="text-sm font-semibold text-foreground">On This Page</span>
-        </div>
-        <nav>
-          <ul className="space-y-1.5">
-            {visibleHeadings.map((h) => (
-              <li key={h.id}>
-                <button
-                  onClick={() => handleClick(h.id)}
-                  className={`text-left text-[13px] leading-snug transition-all w-full py-1 px-2 rounded-md ${
-                    activeId === h.id
-                      ? "text-primary font-medium bg-primary/5"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted/40"
-                  }`}
-                >
-                  {h.text}
-                </button>
-              </li>
-            ))}
-          </ul>
-          {hasMore && !expanded && (
-            <button
-              onClick={() => setExpanded(true)}
-              className="mt-2 flex items-center gap-1 text-xs font-medium text-primary hover:text-primary/80 transition-colors px-2"
-            >
-              Show more
-              <ChevronDown className="h-3 w-3" />
-            </button>
-          )}
-          {expanded && hasMore && (
-            <button
-              onClick={() => setExpanded(false)}
-              className="mt-2 flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors px-2"
-            >
-              Show less
-              <ChevronDown className="h-3 w-3 rotate-180" />
-            </button>
-          )}
-        </nav>
-      </div>
+    <div className="hidden lg:block sticky top-24 w-52 xl:w-56 shrink-0 self-start">
+      <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-4">On This Page</p>
+      <nav className="border-l-2 border-border/40">
+        <ul className="space-y-0.5">
+          {visibleHeadings.map((h) => (
+            <li key={h.id}>
+              <button
+                onClick={() => handleClick(h.id)}
+                className={`block text-left text-[13px] leading-snug w-full py-1.5 pl-4 pr-2 -ml-[2px] border-l-2 transition-all duration-200 ${
+                  activeId === h.id
+                    ? "border-primary text-primary font-medium"
+                    : "border-transparent text-muted-foreground hover:text-foreground hover:border-border"
+                }`}
+              >
+                {h.text}
+              </button>
+            </li>
+          ))}
+        </ul>
+        {hasMore && !expanded && (
+          <button
+            onClick={() => setExpanded(true)}
+            className="mt-3 flex items-center gap-1 text-xs font-medium text-primary hover:text-primary/80 transition-colors pl-4"
+          >
+            Show more
+            <ChevronDown className="h-3 w-3" />
+          </button>
+        )}
+        {expanded && hasMore && (
+          <button
+            onClick={() => setExpanded(false)}
+            className="mt-3 flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors pl-4"
+          >
+            Show less
+            <ChevronDown className="h-3 w-3 rotate-180" />
+          </button>
+        )}
+      </nav>
     </div>
   );
 };
