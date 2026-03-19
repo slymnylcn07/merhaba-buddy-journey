@@ -161,10 +161,10 @@ export const ArticleTableOfContents = ({
           <p className="text-[14.5px] font-bold uppercase tracking-[0.22em]" style={{ color: "hsl(var(--toc-label))" }}>On This Page</p>
         </div>
         <div className="overflow-hidden transition-all duration-300 ease-out">
-          <div className="flex flex-wrap items-center gap-y-2">
+          <div ref={itemsContainerRef} className="flex flex-wrap items-center gap-y-2">
             {displayedHeadings.map((heading, index) => (
               <span key={heading.id} className="flex items-center">
-                {index > 0 && (
+                {sameRowSet.has(index) && (
                   <span className="mx-2 text-[14px] select-none" style={{ color: "hsl(var(--toc-border))" }}>|</span>
                 )}
                 <button
