@@ -164,15 +164,15 @@ export const ArticleTableOfContents = ({
   const firstDisplayedId = displayedHeadings[0]?.id;
 
   return (
-    <aside className="sticky top-28 self-start lg:-translate-x-5 xl:-translate-x-7">
-      <div className="w-[11.5rem] xl:w-52">
+    <aside className="sticky top-28 self-start lg:-translate-x-7 xl:-translate-x-9">
+      <div className="w-48 xl:w-56">
         <div className="mb-5 flex items-center gap-2">
-          <ListTree className="h-3.5 w-3.5 shrink-0 opacity-70" style={{ color: "hsl(var(--toc-label))" }} strokeWidth={2} />
-          <p className="text-[10px] font-semibold uppercase tracking-[0.25em]" style={{ color: "hsl(var(--toc-label))" }}>
+          <ListTree className="h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--toc-label))" }} strokeWidth={2.2} />
+          <p className="text-[10.5px] font-semibold uppercase tracking-[0.22em]" style={{ color: "hsl(var(--toc-label))" }}>
             On This Page
           </p>
         </div>
-        <nav className="border-l-[1.5px] pl-4" style={{ borderColor: "hsl(var(--toc-border))" }}>
+        <nav className="border-l-2 pl-4" style={{ borderColor: "hsl(var(--toc-border))" }}>
           <div className="overflow-hidden transition-all duration-300 ease-out">
             <ul className="space-y-2.5">
               {displayedHeadings.map((heading) => {
@@ -182,13 +182,23 @@ export const ArticleTableOfContents = ({
                   <li key={heading.id}>
                     <button
                       onClick={() => handleClick(heading.id)}
-                      className={`-ml-4 block w-full border-l-[1.5px] pr-2 pl-4 text-left text-[12.5px] leading-[1.5] transition-all duration-200 ${
+                      className={`-ml-4 block w-full border-l-2 pr-2 pl-4 text-left text-[13px] leading-[1.55] transition-all duration-200 ${
                         isActive
-                          ? "border-primary font-semibold text-foreground"
+                          ? "font-semibold"
                           : isFirst
-                            ? "border-transparent font-medium text-foreground/80"
-                            : "border-transparent font-normal text-muted-foreground"
+                            ? "border-transparent font-medium"
+                            : "border-transparent font-normal"
                       }`}
+                      style={{
+                        color: isActive
+                          ? "hsl(var(--toc-active))"
+                          : isFirst
+                            ? "hsl(var(--toc-active))"
+                            : "hsl(var(--toc-link))",
+                        borderColor: isActive
+                          ? "hsl(var(--toc-active))"
+                          : undefined,
+                      }}
                       onMouseEnter={(e) => {
                         if (!isActive) {
                           e.currentTarget.style.color = "hsl(var(--toc-accent))";
@@ -197,7 +207,9 @@ export const ArticleTableOfContents = ({
                       }}
                       onMouseLeave={(e) => {
                         if (!isActive) {
-                          e.currentTarget.style.color = "";
+                          e.currentTarget.style.color = isFirst
+                            ? "hsl(var(--toc-active))"
+                            : "hsl(var(--toc-link))";
                           e.currentTarget.style.borderColor = "transparent";
                         }
                       }}
@@ -212,7 +224,7 @@ export const ArticleTableOfContents = ({
           {headings.length > prioritizedHeadings.length && (
             <button
               onClick={() => setExpanded((value) => !value)}
-              className="mt-4 inline-flex items-center gap-1 text-[10px] font-medium uppercase tracking-[0.16em] transition-colors duration-200"
+              className="mt-4 inline-flex items-center gap-1 text-[10.5px] font-medium uppercase tracking-[0.15em] transition-colors duration-200"
               style={{ color: "hsl(var(--toc-label))" }}
               onMouseEnter={(e) => { e.currentTarget.style.color = "hsl(var(--toc-accent))"; }}
               onMouseLeave={(e) => { e.currentTarget.style.color = "hsl(var(--toc-label))"; }}
