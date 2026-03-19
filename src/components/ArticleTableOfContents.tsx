@@ -219,7 +219,7 @@ export const ArticleTableOfContents = ({
                   <li key={heading.id}>
                     <button
                       onClick={() => handleClick(heading.id)}
-                      className={`-ml-4 block w-full border-l-2 pr-2 pl-4 text-left text-[14.5px] leading-[1.55] transition-all duration-200 ${
+                      className={`-ml-4 block w-full border-l-2 pr-2 pl-4 text-left text-[14.5px] leading-[1.55] ${
                         isActive
                           ? "font-semibold"
                           : isFirst
@@ -235,11 +235,14 @@ export const ArticleTableOfContents = ({
                         borderColor: isActive
                           ? "hsl(var(--toc-active))"
                           : undefined,
+                        transform: !isActive ? "translateX(0)" : undefined,
+                        transition: "color 180ms ease-in-out, transform 180ms ease-in-out, border-color 180ms ease-in-out",
                       }}
                       onMouseEnter={(e) => {
                         if (!isActive) {
                           e.currentTarget.style.color = "hsl(var(--toc-accent))";
                           e.currentTarget.style.borderColor = "hsl(var(--toc-border))";
+                          e.currentTarget.style.transform = "translateX(2px)";
                         }
                       }}
                       onMouseLeave={(e) => {
@@ -248,6 +251,7 @@ export const ArticleTableOfContents = ({
                             ? "hsl(var(--toc-active))"
                             : "hsl(var(--toc-link))";
                           e.currentTarget.style.borderColor = "transparent";
+                          e.currentTarget.style.transform = "translateX(0)";
                         }
                       }}
                     >
