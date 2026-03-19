@@ -65,7 +65,7 @@ export const ArticleTableOfContents = ({
   }, [contentSelector]);
 
   useEffect(() => {
-    if (headings.length === 0) return;
+    if (headings.length === 0 || variant === "desktop") return;
 
     observerRef.current?.disconnect();
 
@@ -90,7 +90,7 @@ export const ArticleTableOfContents = ({
     });
 
     return () => observerRef.current?.disconnect();
-  }, [headings]);
+  }, [headings, variant]);
 
   const prioritizedHeadings = useMemo(() => {
     if (headings.length <= initialCount) return headings;
