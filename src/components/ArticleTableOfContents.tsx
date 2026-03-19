@@ -169,7 +169,7 @@ export const ArticleTableOfContents = ({
           <div ref={itemsContainerRef} className="flex flex-wrap items-center gap-y-2">
             {displayedHeadings.map((heading, index) => (
               <span key={heading.id} className="flex items-center">
-                {sameRowSet.has(index) && (
+                {sameRowRef.current.has(index) && (
                   <span className="mx-2 text-[14px] select-none" style={{ color: "hsl(var(--toc-border))" }}>|</span>
                 )}
                 <button
