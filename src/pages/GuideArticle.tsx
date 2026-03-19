@@ -1518,6 +1518,7 @@ const articles: Record<string, ArticleData> = {
     metaDescription: "Learn about behind knee pain causes including Baker's cyst, pain when straightening leg, and effective relief options. Comprehensive guide to back of knee discomfort.",
     heroImage: heroBackKneePain,
     publishedDate: "December 16, 2025",
+    lastUpdated: "March 19, 2026",
     nextSlug: "side-knee-pain-comfort-guide",
     nextTitle: "Side Knee Pain Guide",
     content: (
@@ -1655,7 +1656,7 @@ const articles: Record<string, ArticleData> = {
 
         <h2>Hamstring-Related Behind Knee Pain</h2>
         <p>
-          The hamstring muscles are frequently involved in back of knee pain. These three muscles—biceps femoris, semitendinosus, and semimembranosus—all attach near the back of the knee, making this a common site for hamstring-related discomfort.
+          The hamstring muscles are frequently involved in back of knee pain. These three muscles (biceps femoris, semitendinosus, and semimembranosus) all attach near the back of the knee, making this a common site for hamstring-related discomfort.
         </p>
         <p>
           <strong>Hamstring tightness:</strong> Many people with behind knee pain simply have tight hamstrings that are pulling on their attachments. This tightness can develop from prolonged sitting, insufficient stretching, or muscle imbalances. The resulting discomfort often feels like a pulling or stretching sensation behind the knee.
@@ -1669,7 +1670,7 @@ const articles: Record<string, ArticleData> = {
 
         <TipsList tips={[
           "Stretch your hamstrings gently and regularly",
-          "Avoid bouncing during stretches—hold steady for 30 seconds",
+          "Avoid bouncing during stretches: hold steady for 30 seconds",
           "Warm up before activity to prepare the muscles",
           "Strengthen the hamstrings with exercises like bridges or leg curls",
           "Take breaks from prolonged sitting to prevent tightness"
@@ -1707,13 +1708,13 @@ const articles: Record<string, ArticleData> = {
           <strong>Heat therapy:</strong> Warmth applied to the back of the knee can help relax tight muscles and increase blood flow to the area. This can be particularly soothing for muscle-related behind knee pain.
         </p>
         <p>
-          <strong>Activity modification:</strong> Identifying activities that worsen your pain in back of knee and modifying them temporarily can allow healing to occur. This doesn't mean complete rest—gentle movement is usually beneficial—but it might mean reducing intensity or duration.
+          <strong>Activity modification:</strong> Identifying activities that worsen your pain in back of knee and modifying them temporarily can allow healing to occur. This doesn't mean complete rest, as gentle movement is usually beneficial, but it might mean reducing intensity or duration.
         </p>
         <p>
           <strong>Strengthening exercises:</strong> Building strength in the hamstrings, calves, and hip muscles helps support the knee and can reduce strain on the posterior structures.
         </p>
         <p>
-          For a deeper look at daily habits that affect the back of the knee, see our guide on <Link to="/guides/back-of-knee-pain-common" className="text-primary hover:underline">common back-of-knee discomfort patterns</Link>. Strengthening the muscles around your knee is also key—our guide on <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen knees</Link> covers practical approaches. If your discomfort is connected to running, explore our <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">running knee pain guide</Link> for sport-specific advice. Those dealing with sharp sensations may also find our <Link to="/guides/sharp-knee-pain-guide" className="text-primary hover:underline">sharp knee pain guide</Link> helpful.
+          For a deeper look at daily habits that affect the back of the knee, see our guide on <Link to="/guides/back-of-knee-pain-common" className="text-primary hover:underline">common back-of-knee discomfort patterns</Link>. Strengthening the muscles around your knee is also important, and our guide on <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen knees</Link> covers practical approaches. If your discomfort is connected to running, explore our <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">running knee pain guide</Link> for sport-specific advice. Those dealing with sharp sensations may also find our <Link to="/guides/sharp-knee-pain-guide" className="text-primary hover:underline">sharp knee pain guide</Link> helpful.
         </p>
 
         <h2>When to Seek Professional Evaluation</h2>
