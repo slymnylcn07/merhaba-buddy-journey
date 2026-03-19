@@ -157,7 +157,7 @@ export const burningKneesAfterExercise: ArticleExport = {
           Joint stress after exercise triggers a cascade of biological responses designed to support repair. The body releases inflammatory molecules, increases synovial fluid production, and directs additional blood flow to the stressed area. While this response is entirely normal and necessary for recovery, it can produce sensations of warmth, fullness, and burning around the knee. This knee inflammation feeling is particularly common after high-intensity or longer-duration activities.
         </p>
 
-        <PremiumCTA />
+        <PremiumCTA headline="Support Your Knees After Every Workout" text="The FlexiKnee device combines heat therapy, red light, and massage to help soothe burning sensations and support post-exercise knee comfort at home." />
 
         <h2>Burning Sensation After Different Activities</h2>
 
