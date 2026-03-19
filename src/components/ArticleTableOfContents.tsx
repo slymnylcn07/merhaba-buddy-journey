@@ -162,20 +162,38 @@ export const ArticleTableOfContents = ({
 
   return (
     <aside className="sticky top-24 self-start lg:-translate-x-5 xl:-translate-x-7">
-      <div className="w-40 xl:w-44">
-        <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">On This Page</p>
-        <nav className="border-l border-border/50 pl-4">
+      <div className="w-44 xl:w-48">
+        <div className="mb-4 flex items-center gap-1.5">
+          <ListTree className="h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--toc-label))" }} strokeWidth={2.2} />
+          <p className="text-[10.5px] font-semibold uppercase tracking-[0.22em]" style={{ color: "hsl(var(--toc-label))" }}>
+            On This Page
+          </p>
+        </div>
+        <nav className="border-l pl-4" style={{ borderColor: "hsl(var(--toc-border))" }}>
           <div className="overflow-hidden transition-all duration-300 ease-out">
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {displayedHeadings.map((heading) => (
                 <li key={heading.id}>
                   <button
                     onClick={() => handleClick(heading.id)}
-                    className={`-ml-4 block w-full border-l pr-2 pl-4 text-left text-[13px] leading-5 transition-all duration-200 ${
+                    className={`-ml-4 block w-full border-l pr-2 pl-4 text-left text-[12.5px] leading-[1.45] transition-all duration-250 ${
                       activeId === heading.id
-                        ? "border-primary text-foreground"
-                        : "border-transparent text-muted-foreground hover:border-border hover:text-foreground"
+                        ? "border-primary font-medium text-foreground"
+                        : "border-transparent text-muted-foreground"
                     }`}
+                    style={activeId !== heading.id ? {} : undefined}
+                    onMouseEnter={(e) => {
+                      if (activeId !== heading.id) {
+                        e.currentTarget.style.color = "hsl(var(--toc-accent))";
+                        e.currentTarget.style.borderColor = "hsl(var(--toc-border))";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (activeId !== heading.id) {
+                        e.currentTarget.style.color = "";
+                        e.currentTarget.style.borderColor = "transparent";
+                      }
+                    }}
                   >
                     {heading.text}
                   </button>
@@ -186,7 +204,10 @@ export const ArticleTableOfContents = ({
           {headings.length > prioritizedHeadings.length && (
             <button
               onClick={() => setExpanded((value) => !value)}
-              className="mt-4 inline-flex items-center gap-1 text-[11px] font-medium uppercase tracking-[0.12em] text-primary transition-colors hover:text-primary/80"
+              className="mt-4 inline-flex items-center gap-1 text-[10.5px] font-medium uppercase tracking-[0.14em] transition-colors duration-200"
+              style={{ color: "hsl(var(--toc-label))" }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "hsl(var(--toc-accent))"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "hsl(var(--toc-label))"; }}
             >
               {expanded ? "Show less" : "Show more"}
               <ChevronDown className={`h-3 w-3 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`} />
