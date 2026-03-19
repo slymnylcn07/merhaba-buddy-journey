@@ -8144,40 +8144,58 @@ const GuideArticle = () => {
           />
         </section>
 
-        {/* Article Header */}
-        <section className="pt-8 pb-6 md:pt-12 md:pb-8">
-          <div className="container px-4 max-w-3xl mx-auto">
-            <div className="flex items-center justify-between mb-6">
-              <Link 
-                to="/guides" 
-                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                Back to Guides
-              </Link>
-              <span className="text-sm text-muted-foreground">
-                {article.lastUpdated ? `Updated ${article.lastUpdated}` : article.publishedDate}
-              </span>
+        {/* Article Header - Meta row + H1 stay centered */}
+        <section className="pt-8 md:pt-12">
+          <div className="container px-4 max-w-3xl mx-auto lg:max-w-6xl">
+            {/* Meta row - always centered within content width */}
+            <div className="lg:ml-auto lg:max-w-3xl lg:pl-0" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+              <div className="lg:mx-0 max-w-3xl">
+                <div className="flex items-center justify-between mb-6">
+                  <Link 
+                    to="/guides" 
+                    className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <ArrowLeft className="h-4 w-4" />
+                    Back to Guides
+                  </Link>
+                  <span className="text-sm text-muted-foreground">
+                    {article.lastUpdated ? `Updated ${article.lastUpdated}` : article.publishedDate}
+                  </span>
+                </div>
+                
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 leading-tight tracking-tight">
+                  {article.title}
+                </h1>
+              </div>
             </div>
-            
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 leading-tight tracking-tight">
-              {article.title}
-            </h1>
-            
-            {article.subtitle && (
-              <p className="text-lg text-primary/80 font-medium mb-4">
-                {article.subtitle}
-              </p>
-            )}
-            
-            <p className="text-muted-foreground font-light leading-relaxed text-lg">
-              {article.intro}
-            </p>
           </div>
+        </section>
 
-          {/* Mobile/Tablet TOC - below intro, before article body */}
-          <div className="lg:hidden container px-4 mx-auto max-w-3xl mt-6">
-            <ArticleTableOfContents />
+        {/* Two-column layout starts at subtitle level */}
+        <section className="pb-6 md:pb-8">
+          <div className="container px-4 mx-auto max-w-6xl">
+            <div className="flex gap-8 lg:gap-10 justify-center">
+              {/* Desktop TOC - aligned with subtitle */}
+              <ArticleTableOfContents />
+
+              {/* Main column: subtitle, intro, mobile TOC, then article body */}
+              <div className="max-w-3xl w-full min-w-0">
+                {article.subtitle && (
+                  <p className="text-lg text-primary/80 font-medium mb-4">
+                    {article.subtitle}
+                  </p>
+                )}
+                
+                <p className="text-muted-foreground font-light leading-relaxed text-lg">
+                  {article.intro}
+                </p>
+
+                {/* Mobile/Tablet TOC - below intro */}
+                <div className="lg:hidden mt-6">
+                  <ArticleTableOfContents />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -8187,12 +8205,12 @@ const GuideArticle = () => {
           title={article.title}
         />
 
-        {/* Article Content with TOC sidebar */}
+        {/* Article Content */}
         <article className="py-8 md:py-10">
           <div className="container px-4 mx-auto max-w-6xl">
             <div className="flex gap-8 lg:gap-10 justify-center">
-              {/* Desktop TOC - left sidebar */}
-              <ArticleTableOfContents />
+              {/* Spacer to match TOC sidebar width on desktop */}
+              <div className="hidden lg:block w-52 xl:w-56 shrink-0" />
 
               {/* Main content */}
               <div className="max-w-3xl w-full min-w-0">
