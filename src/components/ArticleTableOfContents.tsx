@@ -303,8 +303,8 @@ export const ArticleTableOfContents = ({
           </div>
           {headings.length > prioritizedHeadings.length && (
             <button
-              onClick={() => setExpanded((value) => !value)}
-              className="mt-4 inline-flex items-center gap-1 text-[10.5px] font-medium uppercase tracking-[0.15em] transition-colors duration-200"
+               onClick={handleToggleExpanded}
+               className="mt-4 inline-flex items-center gap-1 text-[10.5px] font-medium uppercase tracking-[0.15em] transition-colors duration-200"
               style={{ color: "hsl(var(--toc-label))" }}
               onMouseEnter={(e) => { e.currentTarget.style.color = "hsl(var(--toc-accent))"; }}
               onMouseLeave={(e) => { e.currentTarget.style.color = "hsl(var(--toc-label))"; }}
