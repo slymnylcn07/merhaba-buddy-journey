@@ -168,7 +168,7 @@ export const ArticleTableOfContents = ({
       <div className="w-48 xl:w-56">
         <div className="mb-5 flex items-center gap-2">
           <ListTree className="h-3.5 w-3.5 shrink-0" style={{ color: "hsl(var(--toc-label))" }} strokeWidth={2.2} />
-          <p className="text-[10.5px] font-semibold uppercase tracking-[0.22em]" style={{ color: "hsl(var(--toc-label))" }}>
+          <p className="text-[15.5px] font-bold uppercase tracking-[0.22em]" style={{ color: "hsl(var(--toc-label))" }}>
             On This Page
           </p>
         </div>
