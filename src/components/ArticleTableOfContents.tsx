@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo, useRef, useLayoutEffect } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef, useLayoutEffect, useReducer } from "react";
 import { ChevronDown, ListTree } from "lucide-react";
 
 interface TocItem {
@@ -34,7 +34,8 @@ export const ArticleTableOfContents = ({
   const [expanded, setExpanded] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const itemsContainerRef = useRef<HTMLDivElement | null>(null);
-  const [sameRowSet, setSameRowSet] = useState<Set<number>>(new Set());
+  const sameRowRef = useRef<Set<number>>(new Set());
+  const [, forceRender] = useReducer((x: number) => x + 1, 0);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -133,7 +134,11 @@ export const ArticleTableOfContents = ({
           newSet.add(i);
         }
       }
-      setSameRowSet(newSet);
+      const prev = sameRowRef.current;
+      if (newSet.size !== prev.size || [...newSet].some((v) => !prev.has(v))) {
+        sameRowRef.current = newSet;
+        forceRender();
+      }
     };
 
     updateRows();
@@ -164,7 +169,7 @@ export const ArticleTableOfContents = ({
           <div ref={itemsContainerRef} className="flex flex-wrap items-center gap-y-2">
             {displayedHeadings.map((heading, index) => (
               <span key={heading.id} className="flex items-center">
-                {sameRowSet.has(index) && (
+                {sameRowRef.current.has(index) && (
                   <span className="mx-2 text-[14px] select-none" style={{ color: "hsl(var(--toc-border))" }}>|</span>
                 )}
                 <button
