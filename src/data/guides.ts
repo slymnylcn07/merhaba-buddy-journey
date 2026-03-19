@@ -691,6 +691,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-18",
   },
+  {
+    slug: "knee-recovery-exercises-after-workout",
+    title: "Best Post-Workout Recovery Exercises for the Knees",
+    description: "Discover the best post-workout knee recovery exercises, learn why knees hurt after working out, and find practical tips for knee soreness after exercise.",
+    readTime: 16,
+    lastModified: "2026-03-19",
+  },
 ];
 
 export const staticPages = [
