@@ -374,7 +374,7 @@ const articleContent = (
 
     <h3>Progressive Loading</h3>
     <p>
-      The single most effective way to reduce <strong>knee pain after exercise</strong> over time is to follow the principle of progressive loading. This means increasing your workout intensity, distance, or weight by no more than 10% per week. This gradual approach gives your knee joint tissues time to adapt and strengthen.
+      The single most effective way to reduce <strong>knee pain after exercise</strong> over time is to follow the principle of progressive loading. This means increasing your workout intensity, distance, or weight by no more than 10% per week. This gradual approach gives your knee joint tissues time to adapt and strengthen. If leg day in particular tends to leave your knees aching, our guide on <Link to="/guides/knee-ache-after-leg-workouts" className="text-primary hover:underline">why knees ache after leg workouts</Link> covers the specific factors behind squat and lunge-related discomfort.
     </p>
 
     <h3>Understanding What Causes Your Knee Pain</h3>
