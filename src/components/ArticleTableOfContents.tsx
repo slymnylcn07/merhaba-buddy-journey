@@ -74,12 +74,15 @@ export const ArticleTableOfContents = ({
     observerRef.current?.disconnect();
 
     const callback: IntersectionObserverCallback = (entries) => {
+      if (toggleLockRef.current !== null) return;
+
       const intersecting = entries
         .filter((entry) => entry.isIntersecting)
         .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
 
       if (intersecting.length > 0) {
-        setActiveId(intersecting[0].target.id);
+        const nextId = intersecting[0].target.id;
+        setActiveId((current) => (current === nextId ? current : nextId));
       }
     };
 
@@ -93,7 +96,13 @@ export const ArticleTableOfContents = ({
       if (element) observerRef.current?.observe(element);
     });
 
-    return () => observerRef.current?.disconnect();
+    return () => {
+      observerRef.current?.disconnect();
+      if (toggleLockRef.current !== null) {
+        window.clearTimeout(toggleLockRef.current);
+        toggleLockRef.current = null;
+      }
+    };
   }, [headings, variant]);
 
   const prioritizedHeadings = useMemo(() => {
