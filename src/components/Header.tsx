@@ -115,7 +115,7 @@ export const Header = () => {
         </div>
 
         {/* Desktop Navigation - Hidden on mobile */}
-        <nav className="hidden md:flex items-center gap-6 absolute left-4">
+        <nav className="hidden lg:flex items-center gap-6 absolute left-4">
           <a href="/" className="text-sm font-medium hover:text-primary transition-colors">
             Home
           </a>
