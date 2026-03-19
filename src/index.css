@@ -39,10 +39,10 @@ All colors MUST be HSL.
     --input: 214.3 31.8% 91.4%;
     --ring: 145 63% 32%;
     --toc-accent: 213 55% 48%;
-    --toc-border: 213 35% 78%;
-    --toc-label: 213 35% 45%;
-    --toc-link: 220 15% 40%;
-    --toc-active: 213 55% 45%;
+    --toc-border: 213 30% 75%;
+    --toc-label: 213 40% 38%;
+    --toc-link: 220 18% 34%;
+    --toc-active: 213 55% 42%;
 
     --radius: 0.75rem;
     
