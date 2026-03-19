@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef, useLayoutEffect } from "react";
 import { ChevronDown, ListTree } from "lucide-react";
 
 interface TocItem {
@@ -33,6 +33,8 @@ export const ArticleTableOfContents = ({
   const [activeId, setActiveId] = useState<string>("");
   const [expanded, setExpanded] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const itemsContainerRef = useRef<HTMLDivElement | null>(null);
+  const [sameRowSet, setSameRowSet] = useState<Set<number>>(new Set());
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -115,6 +117,31 @@ export const ArticleTableOfContents = ({
   const displayedHeadings = expanded ? headings : prioritizedHeadings;
   const hasMore = headings.length > displayedHeadings.length;
 
+  // Detect which items share a row with their previous sibling
+  useLayoutEffect(() => {
+    if (variant !== "mobile") return;
+    const container = itemsContainerRef.current;
+    if (!container) return;
+
+    const updateRows = () => {
+      const children = Array.from(container.children) as HTMLElement[];
+      const newSet = new Set<number>();
+      for (let i = 1; i < children.length; i++) {
+        const prevTop = children[i - 1].getBoundingClientRect().top;
+        const currTop = children[i].getBoundingClientRect().top;
+        if (Math.abs(currTop - prevTop) < 4) {
+          newSet.add(i);
+        }
+      }
+      setSameRowSet(newSet);
+    };
+
+    updateRows();
+    const ro = new ResizeObserver(updateRows);
+    ro.observe(container);
+    return () => ro.disconnect();
+  }, [variant, displayedHeadings]);
+
   const handleClick = useCallback((id: string) => {
     const element = document.getElementById(id);
     if (!element) return;
@@ -134,10 +161,10 @@ export const ArticleTableOfContents = ({
           <p className="text-[14.5px] font-bold uppercase tracking-[0.22em]" style={{ color: "hsl(var(--toc-label))" }}>On This Page</p>
         </div>
         <div className="overflow-hidden transition-all duration-300 ease-out">
-          <div className="flex flex-wrap items-center gap-y-2">
+          <div ref={itemsContainerRef} className="flex flex-wrap items-center gap-y-2">
             {displayedHeadings.map((heading, index) => (
               <span key={heading.id} className="flex items-center">
-                {index > 0 && (
+                {sameRowSet.has(index) && (
                   <span className="mx-2 text-[14px] select-none" style={{ color: "hsl(var(--toc-border))" }}>|</span>
                 )}
                 <button
