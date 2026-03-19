@@ -47,6 +47,14 @@ import thumbKneePainCarRides from "@/assets/guide-thumb-knee-pain-car-rides.jpg"
 import thumbWarmFeelingKnee from "@/assets/guide-thumb-warm-feeling-knee.jpg";
 import thumbHeavyKnees from "@/assets/guide-thumb-heavy-knees.jpg";
 import thumbKneePainFlights from "@/assets/guide-thumb-knee-pain-flights.jpg";
+import thumbKneePainKneeling from "@/assets/guide-thumb-knee-pain-kneeling.jpg";
+import thumbPainBehindKneecap from "@/assets/guide-thumb-pain-behind-kneecap.jpg";
+import thumbClickingKneeNoPain from "@/assets/guide-thumb-clicking-knee-no-pain.jpg";
+import thumbKneeExercisesHome from "@/assets/guide-thumb-knee-exercises-home.jpg";
+import thumbPostExerciseKneePain from "@/assets/guide-thumb-post-exercise-knee-pain.jpg";
+import thumbKneeSwellingExercise from "@/assets/guide-thumb-knee-swelling-exercise.jpg";
+import thumbSoreKneesWorkout from "@/assets/guide-thumb-sore-knees-workout.jpg";
+
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "back-of-knee-pain-common": thumbBackKneeCommon,
@@ -93,6 +101,13 @@ const thumbnailMap: Record<string, string> = {
   "warm-feeling-in-knee": thumbWarmFeelingKnee,
   "heavy-feeling-in-knees": thumbHeavyKnees,
   "knee-pain-after-flights": thumbKneePainFlights,
+  "knee-pain-when-kneeling": thumbKneePainKneeling,
+  "pain-behind-kneecap": thumbPainBehindKneecap,
+  "clicking-knee-without-pain": thumbClickingKneeNoPain,
+  "exercises-to-relieve-knee-pain-at-home": thumbKneeExercisesHome,
+  "post-exercise-knee-pain-guide": thumbPostExerciseKneePain,
+  "knee-swelling-after-exercise": thumbKneeSwellingExercise,
+  "sore-knees-after-workout": thumbSoreKneesWorkout,
 };
 
 // Get the 10 most recent guides (last 10 from the array)
