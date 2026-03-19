@@ -1670,7 +1670,7 @@ const articles: Record<string, ArticleData> = {
 
         <TipsList tips={[
           "Stretch your hamstrings gently and regularly",
-          "Avoid bouncing during stretches—hold steady for 30 seconds",
+          "Avoid bouncing during stretches: hold steady for 30 seconds",
           "Warm up before activity to prepare the muscles",
           "Strengthen the hamstrings with exercises like bridges or leg curls",
           "Take breaks from prolonged sitting to prevent tightness"
