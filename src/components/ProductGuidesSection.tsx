@@ -54,6 +54,7 @@ import thumbKneeExercisesHome from "@/assets/guide-thumb-knee-exercises-home.jpg
 import thumbPostExerciseKneePain from "@/assets/guide-thumb-post-exercise-knee-pain.jpg";
 import thumbKneeSwellingExercise from "@/assets/guide-thumb-knee-swelling-exercise.jpg";
 import thumbSoreKneesWorkout from "@/assets/guide-thumb-sore-knees-workout.jpg";
+import thumbKneeRecoveryExercises from "@/assets/guide-thumb-knee-recovery-exercises.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
@@ -108,6 +109,7 @@ const thumbnailMap: Record<string, string> = {
   "post-exercise-knee-pain-guide": thumbPostExerciseKneePain,
   "knee-swelling-after-exercise": thumbKneeSwellingExercise,
   "sore-knees-after-workout": thumbSoreKneesWorkout,
+  "knee-recovery-exercises-after-workout": thumbKneeRecoveryExercises,
 };
 
 // Get the 10 most recent guides (last 10 from the array)

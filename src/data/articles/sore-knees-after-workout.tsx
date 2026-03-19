@@ -239,8 +239,8 @@ export const soreKneesAfterWorkout = {
     heroImage: heroImage,
     publishedDate: "March 18, 2026",
     content: articleContent,
-    nextSlug: "knee-swelling-after-exercise",
-    nextTitle: "Knee Swelling After Exercise: What Your Body Is Telling You",
+    nextSlug: "knee-recovery-exercises-after-workout",
+    nextTitle: "Best Post-Workout Recovery Exercises for the Knees",
     faqs: [
       { question: "Why are my knees sore after working out?", answer: "Knee soreness after a workout is often caused by normal muscle fatigue, especially after new or intense exercises. The muscles around the knee absorb significant load during activity, and temporary soreness is part of the body's natural recovery process." },
       { question: "Is knee soreness after exercise normal?", answer: "Yes, mild knee soreness that appears gradually after exercise and resolves within two to three days is typically a normal response. This is especially common after unfamiliar exercises or increased workout intensity." },
