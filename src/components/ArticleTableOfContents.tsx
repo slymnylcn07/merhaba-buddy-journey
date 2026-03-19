@@ -65,7 +65,7 @@ export const ArticleTableOfContents = ({
   }, [contentSelector]);
 
   useEffect(() => {
-    if (headings.length === 0) return;
+    if (headings.length === 0 || variant === "desktop") return;
 
     observerRef.current?.disconnect();
 
@@ -90,7 +90,7 @@ export const ArticleTableOfContents = ({
     });
 
     return () => observerRef.current?.disconnect();
-  }, [headings]);
+  }, [headings, variant]);
 
   const prioritizedHeadings = useMemo(() => {
     if (headings.length <= initialCount) return headings;
@@ -134,21 +134,25 @@ export const ArticleTableOfContents = ({
           <p className="text-[14.5px] font-bold uppercase tracking-[0.22em]" style={{ color: "hsl(var(--toc-label))" }}>On This Page</p>
         </div>
         <div className="overflow-hidden transition-all duration-300 ease-out">
-          <div className="flex flex-wrap gap-x-3 gap-y-2">
-            {displayedHeadings.map((heading) => (
-              <button
-                key={heading.id}
-                onClick={() => handleClick(heading.id)}
-                className="text-left text-[14px] leading-6 transition-colors duration-200"
-                style={{
-                  color: activeId === heading.id
-                    ? "hsl(var(--toc-active))"
-                    : "hsl(var(--toc-link))",
-                  fontWeight: activeId === heading.id ? 600 : 400,
-                }}
-              >
-                {heading.text}
-              </button>
+          <div className="flex flex-wrap items-center gap-y-2">
+            {displayedHeadings.map((heading, index) => (
+              <span key={heading.id} className="flex items-center">
+                {index > 0 && (
+                  <span className="mx-2 text-[14px] select-none" style={{ color: "hsl(var(--toc-border))" }}>|</span>
+                )}
+                <button
+                  onClick={() => handleClick(heading.id)}
+                  className="text-left text-[14px] leading-6 transition-colors duration-200"
+                  style={{
+                    color: activeId === heading.id
+                      ? "hsl(var(--toc-active))"
+                      : "hsl(var(--toc-link))",
+                    fontWeight: activeId === heading.id ? 600 : 400,
+                  }}
+                >
+                  {heading.text}
+                </button>
+              </span>
             ))}
           </div>
         </div>
