@@ -8547,7 +8547,7 @@ const GuideArticle = () => {
                 "it-band-pain-location-diagram": thumbItBandDiagram,
                 "why-do-my-knees-hurt-when-sleeping": thumbNightKneePain,
                 "why-do-my-knees-crack-or-pop": thumbKneePainCauses,
-                "knee-pain-after-sitting-cross-legged": thumbBackKneeCommon,
+                "knee-pain-after-sitting-cross-legged": thumbKneePainSittingCrossLegged,
                 "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
                 "knee-pain-after-standing": thumbKneePainStanding,
                 "best-red-light-therapy-knee": thumbBestRedLightKnee,
