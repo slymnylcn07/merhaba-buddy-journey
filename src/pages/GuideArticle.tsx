@@ -195,6 +195,7 @@ import thumbSuddenKneePain from "@/assets/guide-thumb-sudden-knee-pain.jpg";
 import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40.jpg";
 import thumbKneeClickingWalking from "@/assets/guide-thumb-knee-clicking-walking.jpg";
 import thumbKneesHurtAfterResting from "@/assets/guide-thumb-knees-hurt-after-resting.jpg";
+import thumbKneePainSittingCrossLegged from "@/assets/guide-thumb-knee-pain-sitting-cross-legged.jpg";
 import thumbColdWeatherKneePain from "@/assets/guide-thumb-cold-weather-knee-pain.jpg";
 import thumbKneePainAfterExercise from "@/assets/guide-thumb-knee-pain-after-exercise.jpg";
 import thumbKneePainClimbingStairs from "@/assets/guide-thumb-knee-pain-climbing-stairs.jpg";
@@ -8546,7 +8547,7 @@ const GuideArticle = () => {
                 "it-band-pain-location-diagram": thumbItBandDiagram,
                 "why-do-my-knees-hurt-when-sleeping": thumbNightKneePain,
                 "why-do-my-knees-crack-or-pop": thumbKneePainCauses,
-                "knee-pain-after-sitting-cross-legged": thumbBackKneeCommon,
+                "knee-pain-after-sitting-cross-legged": thumbKneePainSittingCrossLegged,
                 "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
                 "knee-pain-after-standing": thumbKneePainStanding,
                 "best-red-light-therapy-knee": thumbBestRedLightKnee,
