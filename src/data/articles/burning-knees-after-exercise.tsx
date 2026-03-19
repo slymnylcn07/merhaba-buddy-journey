@@ -111,10 +111,9 @@ export const burningKneesAfterExercise: ArticleExport = {
           </figcaption>
         </figure>
 
-        <InfoBox
-          title="Understanding the Burning Feeling"
-          description="After intense or repetitive movement, the knee area may feel warm or burning due to temporary tissue sensitivity and increased blood flow. This is the body's natural recovery signal and usually fades within hours."
-        />
+        <InfoBox title="Understanding the Burning Feeling">
+          After intense or repetitive movement, the knee area may feel warm or burning due to temporary tissue sensitivity and increased blood flow. This is the body's natural recovery signal and usually fades within hours.
+        </InfoBox>
 
         <h2>Common Reasons for Burning Knees After Exercise</h2>
 
