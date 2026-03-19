@@ -2844,15 +2844,35 @@ const articles: Record<string, ArticleData> = {
           ]}
         />
 
+        <h2>Nerve-Related Sensations: Pinching, Needle, and Shock Pain</h2>
+        <p>
+          Some sharp knee sensations have a distinctly nerve-related quality. A pinching pain in knee may feel like soft tissue is being caught or squeezed within the joint during movement. Needle like pain in knee is often described as a very localized, pinpoint sensation that comes and goes quickly. Shock pain in knee feels similar to a brief electrical impulse, sometimes radiating slightly above or below the joint.
+        </p>
+
+        <figure className="my-8">
+          <img
+            src={sharpKneeNervePathway}
+            alt="Nerve pain pathway visualization in the knee showing referred pain zones"
+            className="w-full h-auto rounded-xl shadow-sm"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            Nerve pathways around the knee: how referred and local nerve sensations may present
+          </figcaption>
+        </figure>
+
+        <p>
+          These nerve-related sensations can originate from local nerve irritation around the knee, from referred signals via the sciatic or femoral nerve pathways, or from compression of small nerves where they pass through tight tissue. If you consistently feel electrical or needle-like sensations, it is worth exploring whether the source is within the knee itself or further up the chain.
+        </p>
+
         <h2>Does Sciatica Cause Knee Pain?</h2>
         <p>
-          Many people wonder: does sciatica cause knee pain? The answer is yes—can sciatica cause knee pain is a valid question because nerve-related pain doesn't always follow expected patterns. Understanding referred pain helps explain these seemingly unrelated symptoms.
+          Many people wonder: does sciatica cause knee pain? The answer is yes. Can sciatica cause knee pain is a valid question because nerve-related pain doesn't always follow expected patterns. Understanding referred pain helps explain these seemingly unrelated symptoms.
         </p>
         <p>
           Sciatica involves irritation of the sciatic nerve, which runs from the lower back through the buttock and down the leg. While classic sciatica causes pain along the back of the thigh and calf, nerve pain can sometimes be felt in the knee area.
         </p>
         <p>
-          When asking can sciatica cause knee pain, consider these points: the nerve branches that supply the knee area can be affected by spinal issues, causing pain that seems to originate in the knee itself. This is called referred pain—pain felt in a location different from its actual source.
+          When asking can sciatica cause knee pain, consider these points: the nerve branches that supply the knee area can be affected by spinal issues, causing pain that seems to originate in the knee itself. This is called referred pain, where pain is felt in a location different from its actual source.
         </p>
 
         <SciaticaKneePainChart />
@@ -2879,6 +2899,11 @@ const articles: Record<string, ArticleData> = {
         <InfoBox title="Sciatica vs. Local Knee Problems">
           <p>If your sharp knee pain is accompanied by back pain, numbness, tingling, or pain radiating down the leg, does sciatica cause knee pain becomes an important question to explore with your healthcare provider. Treatment for nerve-related knee pain differs significantly from treatment for local knee problems.</p>
         </InfoBox>
+
+        <h3>Stabbing Knee Pain at Night and at Rest</h3>
+        <p>
+          Stabbing knee pain at night can be particularly disruptive. Some people notice sharp shooting pain in knee at rest that wakes them from sleep or prevents them from finding a comfortable position. Nighttime sharp pain is sometimes related to inflammation that peaks during inactivity, nerve sensitivity that becomes more noticeable in quiet environments, or positional compression of irritated structures. If sharp pain consistently appears at night without a clear daytime trigger, it is worth mentioning to a healthcare provider.
+        </p>
 
         <h2>When to Seek Immediate Evaluation</h2>
         <p>
