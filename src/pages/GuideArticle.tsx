@@ -8172,6 +8172,11 @@ const GuideArticle = () => {
             <p className="text-muted-foreground font-light leading-relaxed text-lg">
               {article.intro}
             </p>
+
+            {/* Mobile TOC - below title */}
+            <div className="lg:hidden mt-6">
+              <ArticleTableOfContents />
+            </div>
           </div>
         </section>
 
