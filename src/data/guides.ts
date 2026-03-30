@@ -712,6 +712,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-19",
   },
+  {
+    slug: "home-remedies-knee-pain",
+    title: "Home Remedies for Knee Pain: Comfort at Home",
+    description: "Discover simple home remedies for knee pain. Learn daily habits, warm and cold approaches, gentle movement, and natural methods to support knee comfort at home.",
+    readTime: 14,
+    lastModified: "2026-03-30",
+  },
 ];
 
 export const staticPages = [
