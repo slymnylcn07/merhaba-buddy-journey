@@ -322,6 +322,7 @@ import {
   kneeRecoveryExercisesAfterWorkout,
   kneeAcheAfterLegWorkouts,
   burningKneesAfterExercise,
+  homeRemediesKneePain,
 } from "@/data/articles";
 
 interface FAQItem {
