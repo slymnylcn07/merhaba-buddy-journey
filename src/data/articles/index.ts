@@ -71,4 +71,5 @@ export { kneeRecoveryExercisesAfterWorkout } from "./knee-recovery-exercises-aft
 export { kneeAcheAfterLegWorkouts } from "./knee-ache-after-leg-workouts";
 export { burningKneesAfterExercise } from "./burning-knees-after-exercise";
 export { homeRemediesKneePain } from "./home-remedies-knee-pain";
+export { whatMakesKneePainWorse } from "./what-makes-knee-pain-worse";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
