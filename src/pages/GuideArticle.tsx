@@ -126,6 +126,7 @@ import heroKneeRecoveryExercises from "@/assets/article-hero-knee-recovery-exerc
 import heroKneeAcheLegWorkouts from "@/assets/article-hero-knee-ache-leg-workouts.jpg";
 import heroBurningKneesAfterExercise from "@/assets/article-hero-burning-knees-after-exercise.jpg";
 import heroHomeRemediesKneePain from "@/assets/article-hero-home-remedies-knee-pain.jpg";
+import heroWhatMakesKneePainWorse from "@/assets/article-hero-what-makes-knee-pain-worse.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
@@ -225,6 +226,7 @@ import thumbKneeRecoveryExercises from "@/assets/guide-thumb-knee-recovery-exerc
 import thumbKneeAcheLegWorkouts from "@/assets/guide-thumb-knee-ache-leg-workouts.jpg";
 import thumbBurningKneesAfterExercise from "@/assets/guide-thumb-burning-knees-after-exercise.jpg";
 import thumbHomeRemediesKneePain from "@/assets/guide-thumb-home-remedies-knee-pain-v2.jpg";
+import thumbWhatMakesKneePainWorse from "@/assets/guide-thumb-what-makes-knee-pain-worse.jpg";
 import blogWhoBenefitsRelaxing from "@/assets/article-who-benefits-home-relaxing.jpg";
 
 // Import section images - FlexiKnee branded device images
@@ -323,6 +325,7 @@ import {
   kneeAcheAfterLegWorkouts,
   burningKneesAfterExercise,
   homeRemediesKneePain,
+  whatMakesKneePainWorse,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -434,6 +437,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-ache-after-leg-workouts": { headline: "Support your knees after every leg day", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after squats, lunges, and other leg exercises." },
   "burning-knees-after-exercise": { headline: "Soothe burning knees after every workout", text: "FlexiKnee delivers gentle heat therapy, red light, and massage to help ease burning sensations in the knee after exercise and support comfortable recovery." },
   "home-remedies-knee-pain": { headline: "Want an easy way to support knee comfort at home?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device designed for everyday knee comfort at home." },
+  "what-makes-knee-pain-worse": { headline: "Support your knees with better daily habits", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration to support your knee comfort routine and help reduce daily joint strain." },
 };
 
 const articles: Record<string, ArticleData> = {
@@ -7966,7 +7970,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, clickingKneeWithoutPain, exercisesToRelieveKneePainAtHome, postExerciseKneePainGuide, kneeSwellingAfterExercise, soreKneesAfterWorkout, kneeRecoveryExercisesAfterWorkout, kneeAcheAfterLegWorkouts, burningKneesAfterExercise, homeRemediesKneePain];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, clickingKneeWithoutPain, exercisesToRelieveKneePainAtHome, postExerciseKneePainGuide, kneeSwellingAfterExercise, soreKneesAfterWorkout, kneeRecoveryExercisesAfterWorkout, kneeAcheAfterLegWorkouts, burningKneesAfterExercise, homeRemediesKneePain, whatMakesKneePainWorse];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -8588,6 +8592,7 @@ const GuideArticle = () => {
                 "exercises-to-relieve-knee-pain-at-home": thumbKneeExercisesHome,
                 "burning-knees-after-exercise": thumbBurningKneesAfterExercise,
                 "home-remedies-knee-pain": thumbHomeRemediesKneePain,
+                "what-makes-knee-pain-worse": thumbWhatMakesKneePainWorse,
               };
 
               // Topic clusters for relevant recommendations
@@ -8701,6 +8706,7 @@ const GuideArticle = () => {
                 "clicking-knee-without-pain": ["why-do-my-knees-crack-or-pop", "knee-tightness-without-pain", "patellofemoral-pain-syndrome"],
                 "exercises-to-relieve-knee-pain-at-home": ["knee-pain-exercises-guide", "knee-mobility-after-50", "knee-pain-when-squatting"],
                 "home-remedies-knee-pain": ["exercises-to-relieve-knee-pain-at-home", "knee-warmth-daily-comfort", "daily-knee-care-routine"],
+                "what-makes-knee-pain-worse": ["home-remedies-knee-pain", "knee-pain-getting-up-after-sitting", "why-knee-pain-gets-worse-with-age"],
               };
 
               // Get topic-relevant articles (max 3)
