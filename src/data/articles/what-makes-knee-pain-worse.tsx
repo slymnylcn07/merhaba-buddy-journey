@@ -289,9 +289,11 @@ export const whatMakesKneePainWorse: ArticleExport = {
         </p>
 
         {/* Graphical Information Block */}
-        <JournalQuote>
-          Listening to early signs of discomfort may help reduce long-term strain on the knee. Small adjustments made early are often more effective than major changes made later.
-        </JournalQuote>
+        <JournalQuote
+          quote="Listening to early signs of discomfort may help reduce long-term strain on the knee. Small adjustments made early are often more effective than major changes made later."
+          source="Wellness Research"
+          publication="Journal of Daily Joint Health"
+        />
 
         {/* Section 7: What to avoid */}
         <h2>What to Avoid if You Want to Support Knee Comfort</h2>
