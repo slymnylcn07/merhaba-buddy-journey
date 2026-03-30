@@ -26,7 +26,7 @@ export const homeRemediesKneePain: ArticleExport = {
     nextSlug: "exercises-to-relieve-knee-pain-at-home",
     nextTitle: "Exercises to Relieve Knee Pain at Home",
     seoTags: "home remedies for knee pain, natural knee comfort, knee pain home treatment, daily knee care habits, warm compress knee, cold application knee, knee elevation, gentle knee movement, knee comfort routine, reduce knee discomfort naturally, knee support habits, home knee care, knee pain relief methods, knee stiffness home support, at home knee comfort",
-    lastUpdated: "2026-03-30",
+    
     faqs: [
       {
         question: "What are the best home remedies for knee pain?",
