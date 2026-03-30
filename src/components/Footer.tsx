@@ -17,7 +17,6 @@ export const Footer = () => {
                   height={144}
                   className="h-36 w-auto"
                 />
-              </picture>
             </Link>
           </div>
 
