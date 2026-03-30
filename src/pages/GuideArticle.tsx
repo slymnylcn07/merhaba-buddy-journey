@@ -224,7 +224,7 @@ import thumbKneeSwellingExercise from "@/assets/guide-thumb-knee-swelling-exerci
 import thumbKneeRecoveryExercises from "@/assets/guide-thumb-knee-recovery-exercises.jpg";
 import thumbKneeAcheLegWorkouts from "@/assets/guide-thumb-knee-ache-leg-workouts.jpg";
 import thumbBurningKneesAfterExercise from "@/assets/guide-thumb-burning-knees-after-exercise.jpg";
-import thumbHomeRemediesKneePain from "@/assets/guide-thumb-home-remedies-knee-pain.jpg";
+import thumbHomeRemediesKneePain from "@/assets/guide-thumb-home-remedies-knee-pain-v2.jpg";
 import blogWhoBenefitsRelaxing from "@/assets/article-who-benefits-home-relaxing.jpg";
 
 // Import section images - FlexiKnee branded device images
