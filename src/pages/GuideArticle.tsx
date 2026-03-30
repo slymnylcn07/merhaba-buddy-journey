@@ -8711,6 +8711,7 @@ const GuideArticle = () => {
                 "exercises-to-relieve-knee-pain-at-home": ["knee-pain-exercises-guide", "knee-mobility-after-50", "knee-pain-when-squatting"],
                 "home-remedies-knee-pain": ["exercises-to-relieve-knee-pain-at-home", "knee-warmth-daily-comfort", "daily-knee-care-routine"],
                 "what-makes-knee-pain-worse": ["home-remedies-knee-pain", "knee-pain-getting-up-after-sitting", "why-knee-pain-gets-worse-with-age"],
+                "weight-affects-knee-pain": ["what-makes-knee-pain-worse", "knee-pain-climbing-stairs", "knee-pain-after-long-walks"],
               };
 
               // Get topic-relevant articles (max 3)
