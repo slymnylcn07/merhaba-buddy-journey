@@ -27,7 +27,8 @@ import thumbKneePainGettingUpSitting from "@/assets/guide-thumb-knee-pain-gettin
 import thumbKneePainLongWalks from "@/assets/guide-thumb-knee-pain-long-walks.jpg";
 import thumbKneeMobilityAfter50 from "@/assets/guide-thumb-knee-mobility-after-50.jpg";
 import thumbSuddenKneePain from "@/assets/guide-thumb-sudden-knee-pain.jpg";
-import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40.jpg";
+import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40-v2.jpg";
+import thumbHomeRemediesKneePain from "@/assets/guide-thumb-home-remedies-knee-pain.jpg";
 import thumbKneeClickingWalking from "@/assets/guide-thumb-knee-clicking-walking.jpg";
 import thumbKneesHurtAfterResting from "@/assets/guide-thumb-knees-hurt-after-resting.jpg";
 import thumbColdWeatherKneePain from "@/assets/guide-thumb-cold-weather-knee-pain.jpg";
@@ -112,6 +113,7 @@ const thumbnailMap: Record<string, string> = {
   "sore-knees-after-workout": thumbSoreKneesWorkout,
   "knee-recovery-exercises-after-workout": thumbKneeRecoveryExercises,
   "knee-ache-after-leg-workouts": thumbKneeAcheLegWorkouts,
+  "home-remedies-knee-pain": thumbHomeRemediesKneePain,
 };
 
 // Get the 10 most recent guides (last 10 from the array)

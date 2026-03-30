@@ -76,7 +76,7 @@ import thumbKneePainGettingUpSitting from "@/assets/guide-thumb-knee-pain-gettin
 import thumbKneePainLongWalks from "@/assets/guide-thumb-knee-pain-long-walks.jpg";
 import thumbKneeMobilityAfter50 from "@/assets/guide-thumb-knee-mobility-after-50.jpg";
 import thumbSuddenKneePain from "@/assets/guide-thumb-sudden-knee-pain.jpg";
-import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40.jpg";
+import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40-v2.jpg";
 import thumbKneeClickingWalking from "@/assets/guide-thumb-knee-clicking-walking.jpg";
 import thumbKneesHurtAfterResting from "@/assets/guide-thumb-knees-hurt-after-resting.jpg";
 import thumbColdWeatherKneePain from "@/assets/guide-thumb-cold-weather-knee-pain.jpg";
@@ -105,6 +105,7 @@ import thumbKneeSwellingExercise from "@/assets/guide-thumb-knee-swelling-exerci
 import thumbSoreKneesWorkout from "@/assets/guide-thumb-sore-knees-workout.jpg";
 import thumbKneeRecoveryExercises from "@/assets/guide-thumb-knee-recovery-exercises.jpg";
 import thumbKneeAcheLegWorkouts from "@/assets/guide-thumb-knee-ache-leg-workouts.jpg";
+import thumbHomeRemediesKneePain from "@/assets/guide-thumb-home-remedies-knee-pain.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "why-knee-pain-doesnt-go-away": thumbKneePain,
@@ -206,6 +207,7 @@ const thumbnailMap: Record<string, string> = {
   "sore-knees-after-workout": thumbSoreKneesWorkout,
   "knee-recovery-exercises-after-workout": thumbKneeRecoveryExercises,
   "knee-ache-after-leg-workouts": thumbKneeAcheLegWorkouts,
+  "home-remedies-knee-pain": thumbHomeRemediesKneePain,
 };
 
 // Combine data with thumbnails
