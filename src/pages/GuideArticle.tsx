@@ -8320,6 +8320,9 @@ const GuideArticle = () => {
   } : null;
 
 
+  // Combine all JSON-LD schemas into a single array for one-shot injection
+  const allSchemas = [articleJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd].filter(Boolean);
+
   return (
     <>
       <Helmet>
@@ -8347,27 +8350,13 @@ const GuideArticle = () => {
         <meta name="twitter:description" content={article.metaDescription} />
         <meta name="twitter:image" content={`https://flexi-knee.com${article.heroImage}`} />
         
-        <script id="ld-article" type="application/ld+json">
-          {JSON.stringify(articleJsonLd)}
-        </script>
-        <script id="ld-breadcrumb" type="application/ld+json">
-          {JSON.stringify(breadcrumbJsonLd)}
-        </script>
+        {/* All structured data in a single Helmet for immediate injection */}
+        {allSchemas.map((schema, i) => (
+          <script key={i} id={`ld-schema-${i}`} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
       </Helmet>
-      {faqJsonLd && (
-        <Helmet>
-          <script id="ld-faq" type="application/ld+json">
-            {JSON.stringify(faqJsonLd)}
-          </script>
-        </Helmet>
-      )}
-      {howToJsonLd && (
-        <Helmet>
-          <script id="ld-howto" type="application/ld+json">
-            {JSON.stringify(howToJsonLd)}
-          </script>
-        </Helmet>
-      )}
       
       <Header />
       
