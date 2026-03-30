@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, MapPin } from "lucide-react";
-import flexikneeLogoWebp from "@/assets/flexiknee-logo-new.webp";
-import flexikneeLogo from "@/assets/flexiknee-logo-new.png";
+import flexikneeLogo from "@/assets/flexiknee-logo-new.webp";
 
 export const Footer = () => {
   return (
