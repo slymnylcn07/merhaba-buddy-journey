@@ -26,7 +26,7 @@ export const homeRemediesKneePain: ArticleExport = {
     nextSlug: "exercises-to-relieve-knee-pain-at-home",
     nextTitle: "Exercises to Relieve Knee Pain at Home",
     seoTags: "home remedies for knee pain, natural knee comfort, knee pain home treatment, daily knee care habits, warm compress knee, cold application knee, knee elevation, gentle knee movement, knee comfort routine, reduce knee discomfort naturally, knee support habits, home knee care, knee pain relief methods, knee stiffness home support, at home knee comfort",
-    lastUpdated: "2026-03-30",
+    
     faqs: [
       {
         question: "What are the best home remedies for knee pain?",
@@ -347,10 +347,10 @@ export const homeRemediesKneePain: ArticleExport = {
           <img
             src={imgDailyRoutine}
             alt="Daily knee care routine timeline showing morning, midday, evening, and bedtime activities"
-            className="w-full h-auto rounded-xl shadow-sm"
+            className="w-full max-w-3xl mx-auto h-auto rounded-xl shadow-sm"
             loading="lazy"
-            width={1024}
-            height={1024}
+            width={1200}
+            height={900}
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
             A simple daily knee care routine can make a meaningful difference over time
@@ -389,11 +389,6 @@ export const homeRemediesKneePain: ArticleExport = {
           quote="Consistent daily habits, rather than occasional intensive interventions, tend to produce the most sustainable improvements in joint comfort over time."
           source="Journal of Lifestyle Medicine"
           publication="2024"
-        />
-
-        <PremiumCTA
-          headline="Make home knee care simple and consistent"
-          text="FlexiKnee provides adjustable warmth, red light, and gentle vibration to support your daily knee comfort routine at home."
         />
 
         <p>
