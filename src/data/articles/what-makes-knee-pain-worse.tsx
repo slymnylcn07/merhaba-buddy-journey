@@ -74,7 +74,7 @@ export const whatMakesKneePainWorse: ArticleExport = {
         </p>
 
         <StatHighlight
-          value="Cumulative"
+          stat="Cumulative"
           label="Daily strain on the knee accumulates over time, even from seemingly minor habits"
         />
 
