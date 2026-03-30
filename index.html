@@ -16,17 +16,19 @@
     <link rel="preconnect" href="https://ipapi.co" crossorigin />
     <link rel="dns-prefetch" href="https://ipapi.co" />
     
-    <!-- Google Analytics 4 - deferred to improve Speed Index -->
+    <!-- Google Analytics 4 - heavily deferred to reduce unused JS impact -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       window.addEventListener('load', function() {
-        var gs = document.createElement('script');
-        gs.async = true;
-        gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-5QC0R5G1JG';
-        document.head.appendChild(gs);
-        gtag('js', new Date());
-        gtag('config', 'G-5QC0R5G1JG');
+        setTimeout(function() {
+          var gs = document.createElement('script');
+          gs.async = true;
+          gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-5QC0R5G1JG';
+          document.head.appendChild(gs);
+          gtag('js', new Date());
+          gtag('config', 'G-5QC0R5G1JG');
+        }, 5000);
       });
     </script>
     

@@ -46,8 +46,8 @@ export const initMetaPixel = (pixelId?: string) => {
     window.fbq('track', 'PageView');
   };
 
-  // Defer pixel loading significantly to avoid blocking Speed Index
-  setTimeout(doInit, 3500);
+  // Defer pixel loading significantly to reduce unused JS impact
+  setTimeout(doInit, 6000);
 };
 
 // Track PageView
