@@ -325,6 +325,7 @@ import {
   kneeAcheAfterLegWorkouts,
   burningKneesAfterExercise,
   homeRemediesKneePain,
+  whatMakesKneePainWorse,
 } from "@/data/articles";
 
 interface FAQItem {
