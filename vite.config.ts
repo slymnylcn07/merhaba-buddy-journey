@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
+import { execSync } from "child_process";
 
 // Sitemap generator plugin - auto-updates when guides change
 function sitemapPlugin(): Plugin {
