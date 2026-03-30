@@ -179,7 +179,10 @@ export const homeRemediesKneePain: ArticleExport = {
           </figcaption>
         </figure>
 
-        <PremiumCTA />
+        <PremiumCTA
+          headline="Want an easy way to add warmth to your daily knee routine?"
+          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device designed for everyday knee comfort at home."
+        />
 
         <h2>Warm vs. Cold: Which Approach Works for What</h2>
         <p>
