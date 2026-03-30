@@ -180,8 +180,8 @@ export default function Index() {
               src="/images/hero-banner-mobile.webp" 
               alt="FlexiKnee Smart Heated Knee Massager" 
               className="w-full h-auto object-cover"
-              width={1920}
-              height={1080}
+              width={750}
+              height={1125}
               loading="eager"
               fetchPriority="high"
               decoding="sync"
