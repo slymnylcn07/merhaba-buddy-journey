@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, MapPin } from "lucide-react";
-import flexikneeLogoWebp from "@/assets/flexiknee-logo-new.webp";
-import flexikneeLogo from "@/assets/flexiknee-logo-new.png";
+import flexikneeLogo from "@/assets/flexiknee-logo-new.webp";
 
 export const Footer = () => {
   return (
@@ -11,16 +10,13 @@ export const Footer = () => {
           {/* Column 1 - Logo */}
           <div className="flex flex-col items-start">
             <Link to="/">
-              <picture>
-                <source srcSet={flexikneeLogoWebp} type="image/webp" />
-                <img 
+              <img 
                   src={flexikneeLogo} 
                   alt="FlexiKnee Logo" 
                   width={144}
                   height={144}
                   className="h-36 w-auto"
                 />
-              </picture>
             </Link>
           </div>
 
