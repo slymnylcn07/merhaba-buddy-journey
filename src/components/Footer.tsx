@@ -10,9 +10,7 @@ export const Footer = () => {
           {/* Column 1 - Logo */}
           <div className="flex flex-col items-start">
             <Link to="/">
-              <picture>
-                <source srcSet={flexikneeLogoWebp} type="image/webp" />
-                <img 
+              <img 
                   src={flexikneeLogo} 
                   alt="FlexiKnee Logo" 
                   width={144}

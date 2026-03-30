@@ -162,12 +162,10 @@ export default function Index() {
       <Link to={mainProduct ? `/product/${mainProduct.node.handle}` : '/product/knee-massager-smart-red-light-and-massage-therapy'} className="block">
         <section className="relative w-full overflow-hidden cursor-pointer hover:opacity-95 transition-opacity">
           <picture>
-            <source media="(min-width: 768px)" srcSet={heroBannerDesktopWebp} type="image/webp" />
-            <source media="(min-width: 768px)" srcSet={heroBannerDesktop} type="image/png" />
-            <source media="(max-width: 767px)" srcSet={heroBannerMobileWebp} type="image/webp" />
-            <source media="(max-width: 767px)" srcSet={heroBannerMobile} type="image/png" />
+            <source media="(min-width: 768px)" srcSet={heroBannerDesktop} type="image/webp" />
+            <source media="(max-width: 767px)" srcSet={heroBannerMobile} type="image/webp" />
             <img 
-              src={heroBannerDesktop} 
+              src={heroBannerMobile} 
               alt="FlexiKnee Smart Heated Knee Massager" 
               className="w-full h-auto object-cover"
               width={1920}

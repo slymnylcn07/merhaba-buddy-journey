@@ -46,12 +46,8 @@ export const initMetaPixel = (pixelId?: string) => {
     window.fbq('track', 'PageView');
   };
 
-  // Defer pixel loading to after initial paint
-  if (typeof requestIdleCallback !== 'undefined') {
-    requestIdleCallback(doInit);
-  } else {
-    setTimeout(doInit, 200);
-  }
+  // Defer pixel loading significantly to avoid blocking Speed Index
+  setTimeout(doInit, 3500);
 };
 
 // Track PageView
