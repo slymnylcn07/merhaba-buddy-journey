@@ -16,20 +16,28 @@
     <link rel="preconnect" href="https://ipapi.co" crossorigin />
     <link rel="dns-prefetch" href="https://ipapi.co" />
     
-    <!-- Google Analytics 4 - heavily deferred to reduce unused JS impact -->
+    <!-- Google Analytics 4 - deferred until first user interaction to reduce unused JS -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      window.addEventListener('load', function() {
-        setTimeout(function() {
+      (function(){
+        var loaded = false;
+        function loadGA() {
+          if (loaded) return;
+          loaded = true;
           var gs = document.createElement('script');
           gs.async = true;
           gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-5QC0R5G1JG';
           document.head.appendChild(gs);
           gtag('js', new Date());
           gtag('config', 'G-5QC0R5G1JG');
-        }, 5000);
-      });
+        }
+        ['scroll','click','touchstart','keydown'].forEach(function(e){
+          window.addEventListener(e, loadGA, {once:true,passive:true});
+        });
+        // Fallback: load after 8s if no interaction
+        window.addEventListener('load', function(){ setTimeout(loadGA, 8000); });
+      })();
     </script>
     
     <!-- Preload hero banner images for faster LCP -->

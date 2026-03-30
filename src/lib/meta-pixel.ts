@@ -46,8 +46,18 @@ export const initMetaPixel = (pixelId?: string) => {
     window.fbq('track', 'PageView');
   };
 
-  // Defer pixel loading significantly to reduce unused JS impact
-  setTimeout(doInit, 6000);
+  // Defer pixel loading until first user interaction to reduce unused JS
+  let loaded = false;
+  const loadOnce = () => {
+    if (loaded) return;
+    loaded = true;
+    doInit();
+  };
+  ['scroll', 'click', 'touchstart', 'keydown'].forEach(evt => {
+    window.addEventListener(evt, loadOnce, { once: true, passive: true });
+  });
+  // Fallback: load after 10s if no interaction
+  setTimeout(loadOnce, 10000);
 };
 
 // Track PageView
