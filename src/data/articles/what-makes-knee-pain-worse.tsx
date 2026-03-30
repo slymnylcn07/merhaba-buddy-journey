@@ -301,31 +301,31 @@ export const whatMakesKneePainWorse: ArticleExport = {
           Based on the patterns discussed above, here is a clear summary of the key habits and behaviors to avoid if you want to reduce knee strain and support better comfort.
         </p>
 
-        <div className="bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 rounded-xl p-6 my-8">
-          <h3 className="text-lg font-bold text-red-800 dark:text-red-300 mb-4">Habits to Avoid for Better Knee Comfort</h3>
+        <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6 my-8">
+          <h3 className="text-lg font-bold text-destructive mb-4">Habits to Avoid for Better Knee Comfort</h3>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
-              <span className="text-red-500 font-bold text-lg leading-none mt-0.5">✕</span>
+              <span className="text-destructive font-bold text-lg leading-none mt-0.5">✕</span>
               <span><strong>Sudden overload:</strong> Jumping into intense activity without gradual preparation or warm-up</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-red-500 font-bold text-lg leading-none mt-0.5">✕</span>
+              <span className="text-destructive font-bold text-lg leading-none mt-0.5">✕</span>
               <span><strong>Poor posture:</strong> Slouching, locking knees, or shifting weight unevenly while sitting or standing</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-red-500 font-bold text-lg leading-none mt-0.5">✕</span>
+              <span className="text-destructive font-bold text-lg leading-none mt-0.5">✕</span>
               <span><strong>Long periods of inactivity:</strong> Sitting or lying down for hours without any movement breaks</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-red-500 font-bold text-lg leading-none mt-0.5">✕</span>
+              <span className="text-destructive font-bold text-lg leading-none mt-0.5">✕</span>
               <span><strong>Repetitive strain:</strong> Performing the same movements day after day without variation</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-red-500 font-bold text-lg leading-none mt-0.5">✕</span>
+              <span className="text-destructive font-bold text-lg leading-none mt-0.5">✕</span>
               <span><strong>Ignoring early signals:</strong> Dismissing stiffness, mild swelling, or occasional discomfort as "normal"</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-red-500 font-bold text-lg leading-none mt-0.5">✕</span>
+              <span className="text-destructive font-bold text-lg leading-none mt-0.5">✕</span>
               <span><strong>Unsupportive footwear:</strong> Wearing flat, worn-out, or poorly fitting shoes during daily activities</span>
             </li>
           </ul>
