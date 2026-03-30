@@ -79,7 +79,21 @@ export default function Index() {
         setLoading(false);
       }
     };
-    fetchProducts();
+
+    // Defer Shopify API call to break the critical network dependency chain
+    const runDeferred = () => {
+      if ('requestIdleCallback' in window) {
+        (window as any).requestIdleCallback(() => fetchProducts(), { timeout: 3000 });
+      } else {
+        setTimeout(fetchProducts, 1000);
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      runDeferred();
+    } else {
+      window.addEventListener('load', runDeferred, { once: true });
+    }
   }, []);
 
   const handleSubscribe = async (e: React.FormEvent) => {
