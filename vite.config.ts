@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
+import { execSync } from "child_process";
 
 // Sitemap generator plugin - auto-updates when guides change
 function sitemapPlugin(): Plugin {
@@ -104,6 +105,25 @@ export default defineConfig(({ mode }) => ({
     react(),
     sitemapPlugin(),
     mode === "development" && componentTagger(),
+    // Prerender guide pages after production build for SEO
+    mode === "production" && {
+      name: "prerender-guides",
+      closeBundle: {
+        sequential: true,
+        async handler() {
+          console.log("\n🚀 Starting prerendering...");
+          try {
+            execSync("npx tsx scripts/prerender.ts", {
+              cwd: path.resolve(__dirname),
+              stdio: "inherit",
+              timeout: 300000,
+            });
+          } catch (e) {
+            console.error("⚠️ Prerendering failed (non-blocking):", (e as Error).message);
+          }
+        },
+      },
+    },
   ].filter(Boolean),
   resolve: {
     alias: {
