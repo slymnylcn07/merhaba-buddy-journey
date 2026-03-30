@@ -347,10 +347,10 @@ export const homeRemediesKneePain: ArticleExport = {
           <img
             src={imgDailyRoutine}
             alt="Daily knee care routine timeline showing morning, midday, evening, and bedtime activities"
-            className="w-full h-auto rounded-xl shadow-sm"
+            className="w-full max-w-3xl mx-auto h-auto rounded-xl shadow-sm"
             loading="lazy"
-            width={1024}
-            height={1024}
+            width={1200}
+            height={900}
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
             A simple daily knee care routine can make a meaningful difference over time
