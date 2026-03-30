@@ -4,7 +4,8 @@ import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import logo from "@/assets/flexiknee-logo-new.png";
+import logoWebp from "@/assets/flexiknee-logo-new.webp";
+import logoPng from "@/assets/flexiknee-logo-new.png";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
