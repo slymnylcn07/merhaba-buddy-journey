@@ -130,6 +130,20 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-query': ['@tanstack/react-query'],
+          'vendor-supabase': ['@supabase/supabase-js'],
+          'vendor-shopify': ['@shopify/hydrogen-react'],
+          'vendor-ui': ['@radix-ui/react-toast', '@radix-ui/react-tooltip', '@radix-ui/react-dialog', '@radix-ui/react-accordion'],
+          'vendor-recharts': ['recharts'],
+        },
+      },
+    },
+  },
   // Strip console.log and debugger statements in production builds
   esbuild: {
     drop: mode === "production" ? ["console", "debugger"] : [],
