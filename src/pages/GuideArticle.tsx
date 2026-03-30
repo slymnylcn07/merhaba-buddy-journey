@@ -440,6 +440,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "burning-knees-after-exercise": { headline: "Soothe burning knees after every workout", text: "FlexiKnee delivers gentle heat therapy, red light, and massage to help ease burning sensations in the knee after exercise and support comfortable recovery." },
   "home-remedies-knee-pain": { headline: "Want an easy way to support knee comfort at home?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device designed for everyday knee comfort at home." },
   "what-makes-knee-pain-worse": { headline: "Support your knees with better daily habits", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration to support your knee comfort routine and help reduce daily joint strain." },
+  "weight-affects-knee-pain": { headline: "Support your knees with gentle daily warmth", text: "FlexiKnee combines soothing heat, red light, and gentle vibration to support your knee comfort routine alongside healthy daily habits for your joints." },
 };
 
 const articles: Record<string, ArticleData> = {
