@@ -70,4 +70,5 @@ export { soreKneesAfterWorkout } from "./sore-knees-after-workout";
 export { kneeRecoveryExercisesAfterWorkout } from "./knee-recovery-exercises-after-workout";
 export { kneeAcheAfterLegWorkouts } from "./knee-ache-after-leg-workouts";
 export { burningKneesAfterExercise } from "./burning-knees-after-exercise";
+export { homeRemediesKneePain } from "./home-remedies-knee-pain";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
