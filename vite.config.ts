@@ -125,6 +125,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     sitemapPlugin(),
+    cssPreloadPlugin(),
     mode === "development" && componentTagger(),
     // Prerender guide pages after production build for SEO
     mode === "production" && {
