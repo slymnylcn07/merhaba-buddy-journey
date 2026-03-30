@@ -226,6 +226,7 @@ import thumbKneeRecoveryExercises from "@/assets/guide-thumb-knee-recovery-exerc
 import thumbKneeAcheLegWorkouts from "@/assets/guide-thumb-knee-ache-leg-workouts.jpg";
 import thumbBurningKneesAfterExercise from "@/assets/guide-thumb-burning-knees-after-exercise.jpg";
 import thumbHomeRemediesKneePain from "@/assets/guide-thumb-home-remedies-knee-pain-v2.jpg";
+import thumbWhatMakesKneePainWorse from "@/assets/guide-thumb-what-makes-knee-pain-worse.jpg";
 import blogWhoBenefitsRelaxing from "@/assets/article-who-benefits-home-relaxing.jpg";
 
 // Import section images - FlexiKnee branded device images
