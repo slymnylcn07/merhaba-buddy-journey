@@ -62,18 +62,30 @@ export const useMetaTracking = () => {
   }, []);
 
   useEffect(() => {
-    // Defer page view tracking to avoid blocking TTI
-    const timeoutId = setTimeout(() => {
+    // Defer page view tracking to break critical network dependency chain
+    let cancelled = false;
+    const doTrack = () => {
+      if (cancelled) return;
       const eventId = generateEventId();
-      
-      // Client-side pixel
       trackMetaPageView();
-      
-      // Server-side CAPI
       sendToConversionsAPI('PageView', eventId);
-    }, 100);
-    
-    return () => clearTimeout(timeoutId);
+    };
+
+    const runDeferred = () => {
+      if ('requestIdleCallback' in window) {
+        (window as any).requestIdleCallback(doTrack, { timeout: 5000 });
+      } else {
+        setTimeout(doTrack, 2000);
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      runDeferred();
+    } else {
+      window.addEventListener('load', runDeferred, { once: true });
+    }
+
+    return () => { cancelled = true; };
   }, [location.pathname]);
 };
 

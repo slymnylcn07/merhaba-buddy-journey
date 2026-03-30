@@ -90,11 +90,19 @@ export function detectUserCountry(): Promise<string> {
         });
     };
 
-    // Defer the fetch to after initial render
-    if (typeof requestIdleCallback !== 'undefined') {
-      requestIdleCallback(doFetch);
+    // Defer the fetch to after window.load to break critical network chain
+    const runDeferred = () => {
+      if (typeof requestIdleCallback !== 'undefined') {
+        requestIdleCallback(doFetch, { timeout: 4000 });
+      } else {
+        setTimeout(doFetch, 1500);
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      runDeferred();
     } else {
-      setTimeout(doFetch, 100);
+      window.addEventListener('load', runDeferred, { once: true });
     }
   });
 
