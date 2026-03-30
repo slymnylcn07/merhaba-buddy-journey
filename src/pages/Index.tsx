@@ -6,8 +6,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useCartStore } from "@/stores/cartStore";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { Flame, Zap, Activity, Battery } from "lucide-react";
-import heroBannerDesktop from "@/assets/hero-banner-desktop-new.webp";
-import heroBannerMobile from "@/assets/hero-banner-mobile.webp";
 import { Link, useLocation } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
