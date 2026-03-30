@@ -8591,6 +8591,7 @@ const GuideArticle = () => {
                 "exercises-to-relieve-knee-pain-at-home": thumbKneeExercisesHome,
                 "burning-knees-after-exercise": thumbBurningKneesAfterExercise,
                 "home-remedies-knee-pain": thumbHomeRemediesKneePain,
+                "what-makes-knee-pain-worse": thumbWhatMakesKneePainWorse,
               };
 
               // Topic clusters for relevant recommendations
