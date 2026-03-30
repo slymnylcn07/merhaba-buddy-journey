@@ -76,7 +76,7 @@ import thumbKneePainGettingUpSitting from "@/assets/guide-thumb-knee-pain-gettin
 import thumbKneePainLongWalks from "@/assets/guide-thumb-knee-pain-long-walks.jpg";
 import thumbKneeMobilityAfter50 from "@/assets/guide-thumb-knee-mobility-after-50.jpg";
 import thumbSuddenKneePain from "@/assets/guide-thumb-sudden-knee-pain.jpg";
-import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40.jpg";
+import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40-v2.jpg";
 import thumbKneeClickingWalking from "@/assets/guide-thumb-knee-clicking-walking.jpg";
 import thumbKneesHurtAfterResting from "@/assets/guide-thumb-knees-hurt-after-resting.jpg";
 import thumbColdWeatherKneePain from "@/assets/guide-thumb-cold-weather-knee-pain.jpg";
