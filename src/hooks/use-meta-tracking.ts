@@ -62,14 +62,18 @@ export const useMetaTracking = () => {
   }, []);
 
   useEffect(() => {
-    // Track page view on route change
-    const eventId = generateEventId();
+    // Defer page view tracking to avoid blocking TTI
+    const timeoutId = setTimeout(() => {
+      const eventId = generateEventId();
+      
+      // Client-side pixel
+      trackMetaPageView();
+      
+      // Server-side CAPI
+      sendToConversionsAPI('PageView', eventId);
+    }, 100);
     
-    // Client-side pixel
-    trackMetaPageView();
-    
-    // Server-side CAPI
-    sendToConversionsAPI('PageView', eventId);
+    return () => clearTimeout(timeoutId);
   }, [location.pathname]);
 };
 
