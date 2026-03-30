@@ -8315,6 +8315,116 @@ const GuideArticle = () => {
         { name: "Finish with Stretching and Cool Down", text: "Stretch your hamstrings, quadriceps, and calves for 20 to 30 seconds each. End with gentle walking to allow the joint to return to a resting state." },
       ],
     },
+    "home-remedies-knee-pain": {
+      name: "How to Use Home Remedies for Knee Pain Relief",
+      description: "Simple, evidence-informed home remedies and daily habits to support knee comfort without leaving the house.",
+      steps: [
+        { name: "Apply Warmth to Stiff Knees", text: "Use a warm compress, heating pad, or heat therapy device on the knee for 15-20 minutes to relax tight muscles, improve circulation, and ease morning or post-rest stiffness." },
+        { name: "Try Gentle Stretching", text: "Stretch the quadriceps, hamstrings, and calves for 20-30 seconds each. Gentle daily stretching helps maintain flexibility and reduces tension around the knee joint." },
+        { name: "Use Elevation After Activity", text: "Rest with your leg elevated on a pillow for 15-20 minutes after demanding activities to help reduce swelling and promote fluid drainage from the knee area." },
+        { name: "Stay Active with Low-Impact Movement", text: "Walk, swim, or cycle gently for 20-30 minutes daily. Consistent low-impact movement keeps joints lubricated and prevents stiffness from building up." },
+        { name: "Maintain a Consistent Daily Routine", text: "Combine warmth application, stretching, and gentle movement into a morning and evening routine. Consistency over weeks produces better results than occasional intensive efforts." },
+      ],
+    },
+    "what-makes-knee-pain-worse": {
+      name: "How to Avoid Common Habits That Worsen Knee Pain",
+      description: "Identify and change everyday habits that may be making your knee discomfort worse, from inactivity to overexertion.",
+      steps: [
+        { name: "Avoid Prolonged Sitting Without Breaks", text: "Stand and walk for 2-3 minutes every 30-45 minutes during sedentary periods. Prolonged sitting causes synovial fluid to stagnate, increasing stiffness and discomfort." },
+        { name: "Don't Skip Warm-Ups Before Activity", text: "Always spend 5-10 minutes warming up with gentle walking or light stretching before exercise. Cold muscles and joints are more vulnerable to strain and discomfort." },
+        { name: "Avoid Sudden Increases in Activity", text: "Increase exercise intensity, duration, or volume by no more than 10% per week. Sudden jumps in activity overload the knee joint and surrounding tissues." },
+        { name: "Wear Supportive Footwear", text: "Replace worn-out shoes and choose footwear with proper arch support and cushioning. Poor footwear alters leg alignment and transfers excess stress to the knees." },
+        { name: "Maintain a Healthy Weight", text: "Even modest weight reduction (5-10%) can significantly decrease the mechanical load on weight-bearing knee joints during daily activities like walking and climbing stairs." },
+      ],
+    },
+    "weight-affects-knee-pain": {
+      name: "How to Manage Weight for Better Knee Comfort",
+      description: "Practical steps to reduce knee stress through sustainable weight management and joint-friendly lifestyle changes.",
+      steps: [
+        { name: "Understand the Weight-Knee Connection", text: "Every pound of body weight creates roughly 3-4 pounds of force on the knees during walking. Recognizing this multiplier helps motivate even small weight changes for meaningful relief." },
+        { name: "Start with Low-Impact Exercise", text: "Begin with joint-friendly activities like swimming, cycling, or water aerobics that burn calories without placing excessive stress on the knee joints." },
+        { name: "Make Gradual Dietary Changes", text: "Focus on sustainable changes like adding more vegetables, lean proteins, and whole grains while reducing processed foods. Crash diets are unsustainable and can deplete joint-supporting nutrients." },
+        { name: "Set Realistic Goals", text: "Aim for 0.5-1 pound of weight loss per week. Even a 5-10% reduction in body weight can produce noticeable improvements in knee comfort during daily activities." },
+        { name: "Support Recovery with Warmth Therapy", text: "Use a heat therapy device on the knees for 15-20 minutes after exercise sessions to ease post-activity stiffness and maintain consistency in your movement routine." },
+      ],
+    },
+    "morning-knee-stiffness-after-40": {
+      name: "How to Ease Morning Knee Stiffness After 40",
+      description: "A step-by-step morning routine to reduce knee stiffness and improve mobility as you age.",
+      steps: [
+        { name: "Do In-Bed Knee Bends", text: "Before getting up, slowly bend and straighten each knee 10 times while lying in bed. This gently circulates synovial fluid and prepares the joint for weight-bearing." },
+        { name: "Apply Morning Warmth", text: "Place a warm compress or heat therapy device on stiff knees for 10-15 minutes while having breakfast. Warmth relaxes tight muscles and improves range of motion." },
+        { name: "Perform Gentle Standing Stretches", text: "Do a standing quad stretch and calf stretch for 20-30 seconds per side. These target the muscles that tighten most overnight and contribute to morning stiffness." },
+        { name: "Take a Short Morning Walk", text: "Walk gently for 5-10 minutes at a comfortable pace. This activates all supporting muscle groups, distributes joint fluid, and transitions the knees into daily activity." },
+        { name: "Stay Hydrated From the Start", text: "Drink a glass of water first thing in the morning. Overnight dehydration reduces synovial fluid viscosity, and rehydrating early supports smoother joint movement throughout the day." },
+      ],
+    },
+    "knee-pain-climbing-stairs": {
+      name: "How to Climb Stairs with Less Knee Discomfort",
+      description: "Practical techniques and strengthening strategies to make stair climbing more comfortable for your knees.",
+      steps: [
+        { name: "Lead with Your Stronger Leg Going Up", text: "When climbing stairs, step up with your less affected leg first, then bring the other leg to meet it. This reduces the load on the more sensitive knee during the push-off phase." },
+        { name: "Use the Handrail for Support", text: "Lightly grip the handrail to distribute some of your body weight through your arms. This simple habit reduces the force on your knees by up to 15-20% per step." },
+        { name: "Take One Step at a Time", text: "Avoid taking stairs two at a time. Single steps keep the knee bend angle smaller and reduce the peak force on the patellofemoral joint during each step." },
+        { name: "Strengthen Your Quadriceps and Glutes", text: "Perform wall sits, step-ups, and glute bridges 3-4 times per week. Stronger leg muscles absorb more of the stair-climbing force, protecting the knee joint." },
+        { name: "Apply Warmth Before Stair-Heavy Days", text: "If you know you'll be using stairs frequently, apply warmth to your knees for 10-15 minutes beforehand to improve circulation and prepare the joint for repeated loading." },
+      ],
+    },
+    "knee-pain-going-down-stairs": {
+      name: "How to Go Down Stairs with Less Knee Pain",
+      description: "Techniques to reduce the high knee forces experienced when descending stairs, including muscle strengthening and movement strategies.",
+      steps: [
+        { name: "Lead with Your More Affected Leg Going Down", text: "When descending, step down with the more affected leg first while the stronger leg controls the lowering. This gives your stronger muscles the job of decelerating your body weight." },
+        { name: "Slow Your Descent", text: "Take each step slowly and deliberately rather than rushing. Controlled descent reduces the peak impact forces that shoot through the knee joint with each step." },
+        { name: "Use the Handrail Consistently", text: "Hold the handrail to offload some body weight through your arms. This is especially important going down, where knee forces can reach 3-4 times body weight per step." },
+        { name: "Build Eccentric Quad Strength", text: "Practice slow wall sits and controlled step-downs from a low platform. Eccentric (lowering) quad strength is the key muscle action needed for comfortable stair descent." },
+        { name: "Stretch After Stair Use", text: "After descending multiple flights, stretch your quadriceps and calves for 20-30 seconds each to release the tension that builds up during the eccentric loading of stair descent." },
+      ],
+    },
+    "knee-pain-squatting": {
+      name: "How to Squat with Less Knee Discomfort",
+      description: "Step-by-step guidance on squat modifications and strengthening strategies to reduce knee stress during squatting movements.",
+      steps: [
+        { name: "Limit Your Squat Depth", text: "Start with quarter or half squats rather than deep squats. Keeping the knee bend below 90 degrees significantly reduces the compressive force on the patellofemoral joint." },
+        { name: "Keep Your Knees Aligned Over Your Toes", text: "As you squat, ensure your knees track over your second and third toes without collapsing inward. Proper alignment distributes force evenly across the joint surface." },
+        { name: "Use a Wall or Chair for Support", text: "Perform wall-supported squats or use a chair behind you as a depth guide. External support lets you control the movement and reduces anxiety about knee strain." },
+        { name: "Strengthen Supporting Muscles", text: "Build quadriceps, glute, and hamstring strength with exercises like leg presses, bridges, and step-ups. Stronger muscles absorb more of the squatting force before it reaches the joint." },
+        { name: "Warm Up Before Squatting Activities", text: "Spend 5-10 minutes with gentle walking and leg swings before any squatting. Warm muscles and joints handle compressive forces more effectively than cold ones." },
+      ],
+    },
+    "knee-pain-hiking": {
+      name: "How to Hike Comfortably with Knee Pain",
+      description: "Preparation, technique, and recovery strategies to enjoy hiking while supporting knee comfort on trails.",
+      steps: [
+        { name: "Use Trekking Poles", text: "Trekking poles redistribute 15-25% of the load away from your knees, especially during downhill sections. Plant the poles ahead of you and use them to control your descent speed." },
+        { name: "Choose Appropriate Trails", text: "Start with relatively flat or gently rolling trails. Avoid steep descents early on, as downhill walking generates 3-4 times body weight in knee forces per step." },
+        { name: "Wear Supportive Hiking Footwear", text: "Choose hiking shoes or boots with good ankle support, cushioned soles, and proper arch support. Replace worn-out footwear that has lost its shock-absorbing capacity." },
+        { name: "Take Frequent Breaks on Longer Hikes", text: "Rest for 5-10 minutes every 45-60 minutes during longer hikes. Use breaks to stretch your quadriceps, hamstrings, and calves and keep joint fluid circulating." },
+        { name: "Apply Warmth After the Hike", text: "When you return, apply heat therapy to your knees for 15-20 minutes to help the muscles and joints recover from the sustained loading of the trail." },
+      ],
+    },
+    "knee-recovery-exercises-after-workout": {
+      name: "How to Do Knee Recovery Exercises After a Workout",
+      description: "A post-workout knee recovery routine combining cool-down movement, stretching, and warmth application for joint comfort.",
+      steps: [
+        { name: "Cool Down with Gentle Walking", text: "Walk at an easy pace for 5-10 minutes immediately after your workout. This gradually reduces heart rate and allows the muscles around the knee to transition from high to low activity without abrupt stiffness." },
+        { name: "Stretch the Quadriceps", text: "Hold a standing or side-lying quad stretch for 20-30 seconds per leg. The quadriceps bear the most workload during most exercises and tighten quickly if not stretched post-workout." },
+        { name: "Stretch the Hamstrings and Calves", text: "Perform a seated or standing hamstring stretch and a wall calf stretch for 20-30 seconds each per leg. Balanced flexibility across the knee joint reduces uneven stress on the kneecap." },
+        { name: "Do Gentle Heel Slides", text: "Lie on your back and slowly slide one heel toward your buttock, then back out straight. Repeat 10-15 times per leg to maintain full knee range of motion after exercise." },
+        { name: "Apply Warmth for 15-20 Minutes", text: "Finish your recovery with a heat therapy device or warm compress on the knees for 15-20 minutes to relax the muscles, promote circulation, and ease any residual tightness." },
+      ],
+    },
+    "cold-weather-knee-pain": {
+      name: "How to Protect Your Knees in Cold Weather",
+      description: "Practical strategies to keep your knees comfortable and mobile during cold weather months.",
+      steps: [
+        { name: "Keep Your Knees Warm", text: "Wear thermal knee sleeves, leg warmers, or layered clothing over your knees when going outside in cold weather. Keeping the joint warm prevents cold-induced stiffness and muscle tightening." },
+        { name: "Warm Up Longer Before Outdoor Activity", text: "Extend your warm-up to 10-15 minutes in cold weather with indoor walking, gentle knee bends, and leg swings before heading outside. Cold muscles and joints need more time to reach optimal function." },
+        { name: "Apply Heat Before Going Out", text: "Use a heat therapy device or warm compress on your knees for 10-15 minutes before cold-weather outings. Pre-warming the joint improves synovial fluid viscosity and reduces initial stiffness." },
+        { name: "Stay Active Indoors on Very Cold Days", text: "On extremely cold days, substitute outdoor walks with indoor activities like stationary cycling, yoga, or gentle home exercises to maintain joint mobility without cold exposure." },
+        { name: "Maintain Indoor Humidity and Warmth", text: "Keep your home comfortably warm and use a humidifier if needed. Low humidity and cold indoor temperatures can contribute to joint stiffness, especially overnight and in the early morning." },
+      ],
+    },
   };
 
   const howToData = howToSchemas[slug || ""];
