@@ -726,6 +726,13 @@ export const guidesData: GuideData[] = [
     readTime: 13,
     lastModified: "2026-03-30",
   },
+  {
+    slug: "weight-affects-knee-pain",
+    title: "How Your Weight Affects Knee Pain: What to Know",
+    description: "Discover how your weight affects knee pain, joint pressure during daily activities, and simple habits that may support better knee comfort over time.",
+    readTime: 14,
+    lastModified: "2026-03-30",
+  },
 ];
 
 export const staticPages = [
