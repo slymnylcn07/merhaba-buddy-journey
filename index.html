@@ -64,11 +64,13 @@
 
     <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/h2CiMmJ1PASa9ayDecSanvCyqVI2/uploads/1763635682157-favicon-16x16.png">
     
-    <!-- Critical inline styles for static hero to enable fast LCP without waiting for CSS bundle -->
+    <!-- Critical inline styles for FCP: paint static hero before CSS bundle loads -->
     <style>
+      *,*::before,*::after{box-sizing:border-box}
+      body{margin:0;padding:0;background:#fff;color:#0b1320;font-family:system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
       .static-hero{display:block;width:100%;overflow:hidden}
       .static-hero img{display:block;width:100%;height:auto;object-fit:cover}
-      .root-mounted .static-hero{display:none}
+      #root{min-height:100vh}
     </style>
 </head>
 
