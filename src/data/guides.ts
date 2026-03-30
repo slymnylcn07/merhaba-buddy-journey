@@ -719,6 +719,13 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-30",
   },
+  {
+    slug: "what-makes-knee-pain-worse",
+    title: "What Makes Knee Pain Worse? Habits to Avoid",
+    description: "Learn what makes knee pain worse and which daily habits to avoid. Discover posture mistakes, movement patterns, and lifestyle factors that increase knee discomfort.",
+    readTime: 13,
+    lastModified: "2026-03-30",
+  },
 ];
 
 export const staticPages = [
