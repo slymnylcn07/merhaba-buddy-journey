@@ -134,7 +134,7 @@ export const whatMakesKneePainWorse: ArticleExport = {
         </figure>
 
         {/* Graphical Highlight Block */}
-        <InfoBox>
+        <InfoBox title="Key Insight">
           Small daily habits repeated over time can place more stress on the knee than occasional intense activity. Recognizing these patterns is the first step toward reducing unnecessary strain.
         </InfoBox>
 
