@@ -55,57 +55,6 @@ const articleContent = (
       `}</script>
     </Helmet>
 
-    <Helmet>
-      <script id="ld-faq-knee-ache-leg-workouts" type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Why do my knees hurt after leg day?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Leg day places significant load on the knee joint through exercises like squats and lunges. Muscle fatigue reduces the support around the knee, and the combination of heavy loads and repeated bending creates temporary joint stress that often shows up as aching hours after training." }
-            },
-            {
-              "@type": "Question",
-              "name": "Is knee pain after leg workouts normal?",
-              "acceptedAnswer": { "@type": "Answer", "text": "A dull, general ache in the hours or day following a leg workout is common and usually reflects normal muscle and joint fatigue. However, sharp or localized pain during or immediately after training may indicate something that needs closer attention." }
-            },
-            {
-              "@type": "Question",
-              "name": "Why do squats cause knee pain?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Squats involve deep knee flexion under load, which increases compression forces on the kneecap and surrounding structures. When quad muscles fatigue or technique breaks down, the knee absorbs more stress than it should, which can lead to post-workout aching." }
-            },
-            {
-              "@type": "Question",
-              "name": "Why do lunges hurt my knees?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Lunges place asymmetric load on each knee individually. The front knee absorbs significant force at the bottom of the movement. If stride length is too short or the knee tracks inward, the joint experiences uneven stress that often results in post-exercise discomfort." }
-            },
-            {
-              "@type": "Question",
-              "name": "How can I reduce knee pain after leg day?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Focus on proper warm-up before training, controlled movement during exercises, and adequate recovery afterward. Light mobility work, gentle stretching, and gradual progression of training loads all help reduce the amount of stress your knees absorb on leg day." }
-            },
-            {
-              "@type": "Question",
-              "name": "Is soreness different from injury?",
-              "acceptedAnswer": { "@type": "Answer", "text": "General soreness tends to be diffuse, develops gradually after training, and improves within a few days. Injury-related discomfort is often sharp, localized to a specific spot, may involve swelling, and does not improve with basic rest and recovery." }
-            },
-            {
-              "@type": "Question",
-              "name": "Should I stop training if my knees ache?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Mild aching that resolves within a day or two does not necessarily mean you need to stop. Adjusting intensity, improving form, and allowing adequate recovery between sessions can often address the issue. Persistent or worsening discomfort deserves professional evaluation." }
-            },
-            {
-              "@type": "Question",
-              "name": "How can I protect my knees during leg workouts?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Warm up thoroughly before training, focus on controlled movement rather than momentum, progress loads gradually, and ensure balanced development of all leg muscles. Post-workout mobility and recovery habits also play a significant role in long-term knee comfort." }
-            }
-          ]
-        }
-      `}</script>
-    </Helmet>
-
     <p>
       If your knees ache after leg workouts, you are not alone. Squats, lunges, leg press, and other lower body exercises place unique demands on the knee joint that differ from everyday movement. Understanding why this happens can help you train smarter and keep your knees comfortable for the long term.
     </p>
