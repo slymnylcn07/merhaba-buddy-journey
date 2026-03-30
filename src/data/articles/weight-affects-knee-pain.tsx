@@ -297,11 +297,6 @@ export const weightAffectsKneePain: ArticleExport = {
         <p>
           Changes in knee comfort often happen gradually rather than overnight. Be patient with yourself and focus on the process rather than expecting immediate results. Small improvements in daily habits can compound into significant differences over weeks and months.
         </p>
-
-        <PremiumCTA
-          headline="Support your knees with gentle daily warmth"
-          text="FlexiKnee combines soothing heat, red light, and gentle vibration to support your knee comfort routine. A simple addition to better daily habits for your joints."
-        />
       </>
     ),
   },
