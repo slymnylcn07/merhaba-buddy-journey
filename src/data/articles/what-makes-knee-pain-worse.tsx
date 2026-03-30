@@ -4,7 +4,7 @@ import { ArticleExport } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
 import { StatHighlight, InfoBox, JournalQuote } from "@/components/ArticleCharts";
 
-import heroImage from "@/assets/article-hero-what-makes-knee-pain-worse.jpg";
+import heroImage from "@/assets/article-hero-what-makes-knee-pain-worse-v2.jpg";
 import imgPostureComparison from "@/assets/article-knee-worse-posture-comparison.jpg";
 import imgAlignment from "@/assets/article-knee-worse-alignment.jpg";
 import imgSittingStanding from "@/assets/article-knee-worse-sitting-standing.jpg";
