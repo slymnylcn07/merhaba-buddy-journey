@@ -8596,6 +8596,7 @@ const GuideArticle = () => {
                 "burning-knees-after-exercise": thumbBurningKneesAfterExercise,
                 "home-remedies-knee-pain": thumbHomeRemediesKneePain,
                 "what-makes-knee-pain-worse": thumbWhatMakesKneePainWorse,
+                "weight-affects-knee-pain": thumbWeightKneePain,
               };
 
               // Topic clusters for relevant recommendations
