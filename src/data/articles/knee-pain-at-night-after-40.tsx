@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import { InfoBox, StatHighlight, TipsList, JournalQuote } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-night-knee-pain-40.jpg";
 import sectionNightStiffnessCycle from "@/assets/article-section-night-stiffness-cycle.jpg";
@@ -63,47 +62,6 @@ const article = {
   seoTags: "knee pain at night, night knee stiffness over 40, knees hurt at night, knee pain worse at night, age-related knee pain, nighttime knee throbbing, knee pain sleeping, joint stiffness at night, knee ache after resting, night pain flare patterns, knee pain lying down, evening knee comfort routine, knee pain waking up, fluid redistribution knee",
   content: (
     <>
-      <Helmet>
-        <title>Knee Pain at Night After 40: Causes & Comfort Tips</title>
-        <meta name="description" content="Why does knee pain get worse at night after 40? Learn age-related causes of night knee stiffness, sleeping position tips, and evening comfort routines for better rest." />
-        <link rel="canonical" href="https://flexiknee.com/guides/knee-pain-at-night-after-40" />
-        <meta property="og:title" content="Knee Pain at Night After 40: Causes & Comfort Tips" />
-        <meta property="og:description" content="Why does knee pain get worse at night after 40? Learn age-related causes of night knee stiffness, sleeping position tips, and evening comfort routines for better rest." />
-        <meta property="og:url" content="https://flexiknee.com/guides/knee-pain-at-night-after-40" />
-        <meta property="og:image" content="https://flexiknee.com/images/og-image.jpg" />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:title" content="Knee Pain at Night After 40: Causes & Comfort Tips" />
-        <meta name="twitter:description" content="Why does knee pain get worse at night after 40? Learn age-related causes of night knee stiffness, sleeping position tips, and evening comfort routines for better rest." />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": "What Causes Knee Pain at Night for Adults Over 40?",
-          "description": "Why does knee pain get worse at night after 40? Learn age-related causes of night knee stiffness, sleeping position tips, and evening comfort routines.",
-          "author": { "@type": "Organization", "name": "FlexiKnee" },
-          "publisher": { "@type": "Organization", "name": "FlexiKnee", "logo": { "@type": "ImageObject", "url": "https://flexiknee.com/images/og-image.jpg" } },
-          "datePublished": "2026-03-03",
-          "dateModified": "2026-03-03",
-          "mainEntityOfPage": { "@type": "WebPage", "@id": "https://flexiknee.com/guides/knee-pain-at-night-after-40" }
-        })}</script>
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
-          }))
-        })}</script>
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://flexiknee.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://flexiknee.com/guides" },
-            { "@type": "ListItem", "position": 3, "name": "Knee Pain at Night After 40", "item": "https://flexiknee.com/guides/knee-pain-at-night-after-40" }
-          ]
-        })}</script>
-      </Helmet>
 
       <h2>Why Knee Pain Commonly Worsens at Night After 40</h2>
       <p>

@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -67,33 +66,6 @@ const kneePainDuringYoga: ArticleExport = {
     seoTags: "knee pain during yoga, yoga knee pain, lotus pose knee pain, pigeon pose knee discomfort, yoga knee alignment, knee pressure yoga poses, hip mobility yoga, yoga knee joint stress, knee strain stretching, yoga knee comfort, yoga knee modifications, yoga blocks knee support, child pose knee discomfort, yoga beginners knee protection, knee pain yoga, yoga for knee pain, knee joint pain yoga, knee pain after yoga",
     content: (
       <>
-        <Helmet>
-          <script type="application/ld+json" id="ld-article-yoga-knee">{`
-            {
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "headline": "Why Knees Pain During Yoga: Common Poses That Stress the Joint",
-              "description": "Learn why knee pain happens during yoga poses like lotus and pigeon. Discover how hip mobility, alignment, and modifications support comfortable practice.",
-              "image": "https://flexi-knee.com/assets/article-hero-knee-pain-yoga.jpg",
-              "author": { "@type": "Organization", "name": "FlexiKnee" },
-              "publisher": { "@type": "Organization", "name": "FlexiKnee", "logo": { "@type": "ImageObject", "url": "https://flexi-knee.com/logo.png" } },
-              "datePublished": "2026-03-07",
-              "dateModified": "2026-03-07",
-              "mainEntityOfPage": { "@type": "WebPage", "@id": "https://flexi-knee.com/guides/knee-pain-during-yoga" }
-            }
-          `}</script>
-          <script type="application/ld+json" id="ld-breadcrumb-yoga-knee">{`
-            {
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://flexi-knee.com/" },
-                { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://flexi-knee.com/guides" },
-                { "@type": "ListItem", "position": 3, "name": "Knee Pain During Yoga", "item": "https://flexi-knee.com/guides/knee-pain-during-yoga" }
-              ]
-            }
-          `}</script>
-        </Helmet>
 
         {/* Introduction */}
         <p>

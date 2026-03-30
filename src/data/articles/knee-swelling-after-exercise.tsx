@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { StatHighlight, InfoBox, JournalQuote } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -11,45 +10,6 @@ import kneeExerciseStressImg from "@/assets/article-knee-exercise-stress.jpg";
 
 const articleContent = (
   <>
-    <Helmet>
-      <script id="ld-article-knee-swelling" type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": "Knee Swelling After Exercise: What Your Body Is Telling You",
-          "description": "Learn why your knee may swell after exercise, when swelling is a normal recovery response, and when it may need closer attention.",
-          "author": {
-            "@type": "Organization",
-            "name": "FlexiKnee"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "FlexiKnee",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://flexi-knee.com/logo.png"
-            }
-          },
-          "datePublished": "2026-03-13",
-          "dateModified": "2026-03-13",
-          "mainEntityOfPage": "https://flexi-knee.com/guides/knee-swelling-after-exercise"
-        }
-      `}</script>
-    </Helmet>
-    <Helmet>
-      <script id="ld-breadcrumb-knee-swelling" type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://flexi-knee.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://flexi-knee.com/guides" },
-            { "@type": "ListItem", "position": 3, "name": "Knee Swelling After Exercise", "item": "https://flexi-knee.com/guides/knee-swelling-after-exercise" }
-          ]
-        }
-      `}</script>
-    </Helmet>
-
 
     <p>
       Many people notice some degree of knee swelling after exercise. Whether it appears as mild puffiness, a feeling of tightness, or visible changes around the knee, it can be concerning if you are not sure what your body is telling you.

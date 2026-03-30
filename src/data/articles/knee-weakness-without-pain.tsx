@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -64,43 +63,6 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
     faqs,
     content: (
       <>
-        <Helmet>
-          <script id="ld-howto" type="application/ld+json">{`
-            {
-              "@context": "https://schema.org",
-              "@type": "HowTo",
-              "name": "How to Support Knee Stability at Home",
-              "description": "Practical strategies and daily habits to help support knee strength and reduce feelings of weakness or instability.",
-              "step": [
-                {
-                  "@type": "HowToStep",
-                  "name": "Strengthen Leg Muscles",
-                  "text": "Perform gentle strengthening exercises like wall sits, step-ups, and leg extensions to build quadriceps and hamstring support around the knee joint."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Improve Hip Stability",
-                  "text": "Include hip-focused exercises such as hip bridges, clamshells, and side-lying leg raises to improve the stability of the entire lower body chain."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Practice Gentle Mobility Exercises",
-                  "text": "Incorporate daily mobility work including gentle knee bends, ankle circles, and hip rotations to maintain joint range of motion."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Maintain Regular Physical Activity",
-                  "text": "Stay consistently active with low-impact activities like walking, swimming, or cycling to keep the muscles around the knee engaged and conditioned."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Progress Gradually",
-                  "text": "Increase exercise intensity slowly over time rather than making sudden jumps in activity level, allowing the muscles and joints to adapt safely."
-                }
-              ]
-            }
-          `}</script>
-        </Helmet>
 
         {/* Section 1 */}
         <h2>What Knee Weakness Without Pain May Indicate</h2>

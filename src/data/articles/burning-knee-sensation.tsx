@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -64,48 +63,6 @@ export const burningKneeSensation: ArticleExport = {
     faqs,
     content: (
       <>
-        <Helmet>
-          <script id="ld-howto" type="application/ld+json">{`
-            {
-              "@context": "https://schema.org",
-              "@type": "HowTo",
-              "name": "How to Manage a Burning Sensation in the Knee at Home",
-              "description": "Practical strategies and daily habits to help reduce burning knee sensations and support joint comfort at home.",
-              "step": [
-                {
-                  "@type": "HowToStep",
-                  "name": "Allow gentle rest and recovery",
-                  "text": "Reduce or temporarily avoid the activity that triggered the burning sensation. Give the knee time to recover without complete immobilization."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Stretch the surrounding muscles",
-                  "text": "Gently stretch the quadriceps, hamstrings, and calves to reduce tension around the knee joint that may contribute to irritation."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Strengthen the muscles supporting the knee",
-                  "text": "Gradually build quadriceps, glute, and hamstring strength with low-impact exercises to better support the knee during daily activities."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Reduce repetitive stress on the joint",
-                  "text": "Vary your activities to avoid sustained repetitive knee bending. Alternate between different types of movement throughout the day."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Return to activity gradually",
-                  "text": "When the burning sensation subsides, return to your normal activity level gradually rather than resuming at full intensity immediately."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Support daily joint comfort with warmth",
-                  "text": "Apply gentle warmth to the knee area before movement to support circulation and joint comfort during your daily routine."
-                }
-              ]
-            }
-          `}</script>
-        </Helmet>
 
         {/* Section 1 */}
         <h2>What a Burning Sensation in the Knee Usually Means</h2>

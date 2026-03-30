@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -44,41 +43,6 @@ const faqs = [
 
 const articleContent = (
   <>
-    <Helmet>
-      <script id="ld-article" type="application/ld+json">{JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Knee Pain Going Down Stairs: Why It Hurts More & Home Fixes",
-        "description": "Understand why knee pain is often worse going down stairs and discover home fixes that support daily knee comfort.",
-        "image": "https://flexi-knee.com/og-knee-pain-going-down-stairs.jpg",
-        "author": { "@type": "Organization", "name": "FlexiKnee" },
-        "publisher": { "@type": "Organization", "name": "FlexiKnee", "logo": { "@type": "ImageObject", "url": "https://flexi-knee.com/logo.png" } },
-        "datePublished": "2026-03-04",
-        "dateModified": "2026-03-04",
-      })}</script>
-    </Helmet>
-    <Helmet>
-      <script id="ld-faq" type="application/ld+json">{JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
-        })),
-      })}</script>
-    </Helmet>
-    <Helmet>
-      <script id="ld-breadcrumb" type="application/ld+json">{JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://flexi-knee.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://flexi-knee.com/guides" },
-          { "@type": "ListItem", "position": 3, "name": "Knee Pain Going Down Stairs", "item": "https://flexi-knee.com/guides/knee-pain-going-down-stairs" },
-        ],
-      })}</script>
-    </Helmet>
 
     {/* INTRODUCTION */}
     <p>
@@ -529,7 +493,6 @@ const articleContent = (
     <p>
       For those who find even gentle stair descent uncomfortable, consider descending sideways while holding the handrail. This technique reduces the knee bend angle and shifts some of the load to the hip muscles instead of concentrating it on the kneecap. If your discomfort extends beyond stairs to <Link to="/guides/knee-pain-when-bending" className="text-primary hover:underline">knee pain when bending</Link> in general, the underlying cause may require broader attention.
     </p>
-
 
     <h2>Building Long-Term Comfort: A Summary</h2>
     <p>

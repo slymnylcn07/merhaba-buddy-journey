@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -64,43 +63,6 @@ const kneePainHiking: ArticleExport = {
     faqs,
     content: (
       <>
-        <Helmet>
-          <script id="ld-howto" type="application/ld+json">{`
-            {
-              "@context": "https://schema.org",
-              "@type": "HowTo",
-              "name": "How to Prevent Knee Pain When Hiking",
-              "description": "Practical steps to reduce knee stress and discomfort during hiking on trails, inclines, and downhill sections.",
-              "step": [
-                {
-                  "@type": "HowToStep",
-                  "name": "Use trekking poles",
-                  "text": "Trekking poles redistribute up to 25% of the load away from your knees during descent, reducing braking force on the joint."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Take shorter steps on descents",
-                  "text": "Shorter steps reduce the angle of knee flexion at each footfall, lowering the impact force that travels through the patellofemoral joint."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Strengthen your quadriceps and glutes",
-                  "text": "Strong quads control eccentric loading during descent, while strong glutes stabilize the pelvis and prevent inward knee collapse."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Wear proper hiking footwear",
-                  "text": "Supportive hiking boots with good cushioning, ankle support, and a sturdy sole help absorb trail impact and stabilize your foot on uneven surfaces."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Increase distance gradually",
-                  "text": "Build your hiking distance and elevation gain progressively over weeks to allow your joints, muscles, and connective tissue to adapt to trail demands."
-                }
-              ]
-            }
-          `}</script>
-        </Helmet>
 
         <p>
           If you have ever finished a trail hike with aching knees, you are not alone. Knee pain when hiking is one of the most commonly reported discomforts among both casual and experienced hikers. While flat-surface walking rarely creates the same level of knee stress, the combination of uneven terrain, steep inclines, and prolonged descents can significantly increase the load on your knee joints.

@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -67,43 +66,6 @@ export const plicaSyndromeKneePain: ArticleExport = {
     faqs,
     content: (
       <>
-        <Helmet>
-          <script id="ld-howto" type="application/ld+json">{`
-            {
-              "@context": "https://schema.org",
-              "@type": "HowTo",
-              "name": "How to Support Knee Comfort with Plica Irritation at Home",
-              "description": "Practical strategies and daily habits to help manage plica syndrome symptoms and support knee comfort at home.",
-              "step": [
-                {
-                  "@type": "HowToStep",
-                  "name": "Reduce Repetitive Strain",
-                  "text": "Temporarily reduce activities that involve repetitive knee bending, such as running, cycling, or squatting, to allow the irritated tissue time to settle."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Practice Gentle Mobility Exercises",
-                  "text": "Perform gentle knee bending and straightening exercises to maintain range of motion without placing excessive stress on the plica tissue."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Strengthen Surrounding Muscles",
-                  "text": "Build strength in the quadriceps, hamstrings, and hip muscles to improve joint mechanics and reduce friction on the plica during movement."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Warm Up Before Exercise",
-                  "text": "Always warm up before physical activity with gentle movements and light walking to prepare the knee joint and surrounding tissues for more demanding activity."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Return to Activity Gradually",
-                  "text": "When resuming physical activity after a period of rest, increase intensity gradually rather than returning to full levels immediately to prevent re-irritation."
-                }
-              ]
-            }
-          `}</script>
-        </Helmet>
 
         {/* Section 1 */}
         <h2>What the Knee Plica Actually Is</h2>

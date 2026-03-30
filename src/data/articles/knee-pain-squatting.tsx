@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -349,57 +348,6 @@ const HipKneeLoadDiagram = () => (
 
 const articleContent = (
   <>
-    <Helmet>
-      <script id="ld-article" type="application/ld+json">{JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Knee Pain When Squatting: Biomechanics & At-Home Adjustments",
-        "description": "Learn why knee pain happens during squats. Explore squat biomechanics, common causes, and at-home adjustments for knee comfort.",
-        "image": "https://flexi-knee.com/og-knee-pain-squatting.jpg",
-        "author": { "@type": "Organization", "name": "FlexiKnee" },
-        "publisher": { "@type": "Organization", "name": "FlexiKnee", "logo": { "@type": "ImageObject", "url": "https://flexi-knee.com/logo.png" } },
-        "datePublished": "2026-03-05",
-        "dateModified": "2026-03-05",
-      })}</script>
-    </Helmet>
-    <Helmet>
-      <script id="ld-breadcrumb" type="application/ld+json">{JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://flexi-knee.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://flexi-knee.com/guides" },
-          { "@type": "ListItem", "position": 3, "name": "Knee Pain When Squatting", "item": "https://flexi-knee.com/guides/knee-pain-when-squatting" },
-        ],
-      })}</script>
-    </Helmet>
-    <Helmet>
-      <script id="ld-faq" type="application/ld+json">{JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
-        })),
-      })}</script>
-    </Helmet>
-    <Helmet>
-      <script id="ld-howto" type="application/ld+json">{JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "HowTo",
-        "name": "How to Reduce Knee Pain When Squatting",
-        "description": "Step-by-step adjustments to reduce knee discomfort during squatting movements.",
-        "step": [
-          { "@type": "HowToStep", "name": "Warm Up Your Lower Body", "text": "Spend 5-10 minutes warming up with light walking, leg swings, and gentle hip circles before squatting." },
-          { "@type": "HowToStep", "name": "Activate Your Glutes", "text": "Perform glute bridges or clamshells before squats to ensure your hip muscles are engaged and ready to share the load." },
-          { "@type": "HowToStep", "name": "Check Your Stance Width", "text": "Stand with feet shoulder-width apart or slightly wider. Turn toes outward 15-30 degrees for better hip engagement." },
-          { "@type": "HowToStep", "name": "Control Your Squat Depth", "text": "Start with quarter or half squats and gradually increase depth only as comfort allows." },
-          { "@type": "HowToStep", "name": "Keep Heels Planted", "text": "Ensure your heels stay firmly on the ground throughout the squat. Use a small wedge under your heels if ankle mobility is limited." },
-          { "@type": "HowToStep", "name": "Apply Warmth After Squatting", "text": "Use gentle warmth on the knee area after squatting to support comfortable recovery." },
-        ],
-      })}</script>
-    </Helmet>
 
     {/* Section 1: Why Squatting Places Unique Stress */}
     <h2>Why Squatting Places Unique Stress on the Knee Joint</h2>
