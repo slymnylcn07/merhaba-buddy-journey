@@ -391,7 +391,10 @@ export const homeRemediesKneePain: ArticleExport = {
           publication="2024"
         />
 
-        <PremiumCTA />
+        <PremiumCTA
+          headline="Make home knee care simple and consistent"
+          text="FlexiKnee provides adjustable warmth, red light, and gentle vibration to support your daily knee comfort routine at home."
+        />
 
         <p>
           The most important thing about home remedies for knee pain is consistency. No single approach works overnight, but when you combine several of these strategies and practice them regularly, many people notice meaningful improvements in how their knees feel during everyday activities.
