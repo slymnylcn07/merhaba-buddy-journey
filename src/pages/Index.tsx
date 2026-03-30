@@ -6,8 +6,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useCartStore } from "@/stores/cartStore";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { Flame, Zap, Activity, Battery } from "lucide-react";
-import heroBannerDesktop from "@/assets/hero-banner-desktop-new.webp";
-import heroBannerMobile from "@/assets/hero-banner-mobile.webp";
 import { Link, useLocation } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -176,10 +174,10 @@ export default function Index() {
       <Link to={mainProduct ? `/product/${mainProduct.node.handle}` : '/product/knee-massager-smart-red-light-and-massage-therapy'} className="block">
         <section className="relative w-full overflow-hidden cursor-pointer hover:opacity-95 transition-opacity">
           <picture>
-            <source media="(min-width: 768px)" srcSet={heroBannerDesktop} type="image/webp" />
-            <source media="(max-width: 767px)" srcSet={heroBannerMobile} type="image/webp" />
+            <source media="(min-width: 768px)" srcSet="/images/hero-banner-desktop.webp" type="image/webp" />
+            <source media="(max-width: 767px)" srcSet="/images/hero-banner-mobile.webp" type="image/webp" />
             <img 
-              src={heroBannerMobile} 
+              src="/images/hero-banner-mobile.webp" 
               alt="FlexiKnee Smart Heated Knee Massager" 
               className="w-full h-auto object-cover"
               width={1920}
