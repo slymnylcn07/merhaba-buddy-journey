@@ -4,7 +4,7 @@ import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-weight-knee-pain.jpg";
-import imgJointLoad from "@/assets/article-weight-knee-joint-load.jpg";
+import imgJointLoad from "@/assets/article-weight-knee-joint-load-v2.jpg";
 import imgVsPressure from "@/assets/article-weight-vs-pressure.jpg";
 import imgWalkingLoad from "@/assets/article-weight-walking-load.jpg";
 import imgStairsPressure from "@/assets/article-weight-stairs-pressure.jpg";
