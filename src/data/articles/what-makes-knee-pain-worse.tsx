@@ -392,35 +392,35 @@ export const whatMakesKneePainWorse: ArticleExport = {
           </figcaption>
         </figure>
 
-        <div className="bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-xl p-6 my-8">
-          <h3 className="text-lg font-bold text-green-800 dark:text-green-300 mb-4">Daily Knee Comfort Checklist</h3>
+        <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 my-8">
+          <h3 className="text-lg font-bold text-primary mb-4">Daily Knee Comfort Checklist</h3>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
-              <span className="text-green-500 font-bold text-lg leading-none mt-0.5">✓</span>
+              <span className="text-primary font-bold text-lg leading-none mt-0.5">✓</span>
               <span>Take a 2 to 3 minute movement break every 30 to 45 minutes of sitting</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-green-500 font-bold text-lg leading-none mt-0.5">✓</span>
+              <span className="text-primary font-bold text-lg leading-none mt-0.5">✓</span>
               <span>Check your posture: feet flat, knees at 90 degrees, weight evenly distributed</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-green-500 font-bold text-lg leading-none mt-0.5">✓</span>
+              <span className="text-primary font-bold text-lg leading-none mt-0.5">✓</span>
               <span>Warm up for 5 to 10 minutes before any intense activity</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-green-500 font-bold text-lg leading-none mt-0.5">✓</span>
+              <span className="text-primary font-bold text-lg leading-none mt-0.5">✓</span>
               <span>Vary your activities throughout the day and week</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-green-500 font-bold text-lg leading-none mt-0.5">✓</span>
+              <span className="text-primary font-bold text-lg leading-none mt-0.5">✓</span>
               <span>Wear supportive, well-fitting footwear during daily activities</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-green-500 font-bold text-lg leading-none mt-0.5">✓</span>
+              <span className="text-primary font-bold text-lg leading-none mt-0.5">✓</span>
               <span>Listen to early discomfort signals and adjust your activity level</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-green-500 font-bold text-lg leading-none mt-0.5">✓</span>
+              <span className="text-primary font-bold text-lg leading-none mt-0.5">✓</span>
               <span>Prioritize quality sleep for joint recovery</span>
             </li>
           </ul>
