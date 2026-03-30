@@ -22,7 +22,6 @@ export const weightAffectsKneePain: ArticleExport = {
     metaDescription: "Learn how your weight affects knee pain and joint pressure. Understand how daily load, body weight, and simple habit changes may influence knee comfort over time.",
     heroImage: heroImage,
     publishedDate: "March 30, 2026",
-    lastUpdated: "2026-03-30",
     nextSlug: "what-makes-knee-pain-worse",
     nextTitle: "What Makes Knee Pain Worse? Habits to Avoid",
     faqs: [
