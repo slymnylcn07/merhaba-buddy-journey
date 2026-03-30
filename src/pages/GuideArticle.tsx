@@ -125,6 +125,7 @@ import heroKneeSwellingExercise from "@/assets/article-hero-knee-swelling-exerci
 import heroKneeRecoveryExercises from "@/assets/article-hero-knee-recovery-exercises.jpg";
 import heroKneeAcheLegWorkouts from "@/assets/article-hero-knee-ache-leg-workouts.jpg";
 import heroBurningKneesAfterExercise from "@/assets/article-hero-burning-knees-after-exercise.jpg";
+import heroHomeRemediesKneePain from "@/assets/article-hero-home-remedies-knee-pain.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
