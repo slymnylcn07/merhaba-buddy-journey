@@ -5,6 +5,27 @@ import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 import { execSync } from "child_process";
 
+// Converts render-blocking CSS <link> tags to non-blocking preloads in production HTML
+function cssPreloadPlugin(): Plugin {
+  return {
+    name: "css-preload",
+    enforce: "post",
+    transformIndexHtml: {
+      order: "post",
+      handler(html) {
+        // Match Vite-injected CSS link tags (hashed asset filenames)
+        return html.replace(
+          /<link\s+rel="stylesheet"([^>]*)\s+href="(\/assets\/[^"]+\.css)"([^>]*)>/g,
+          (_match, before, href, after) => {
+            const crossorigin = (before + after).includes("crossorigin") ? "" : ' crossorigin';
+            return `<link rel="preload" href="${href}" as="style"${crossorigin} onload="this.onload=null;this.rel='stylesheet'"${before}${after}><noscript><link rel="stylesheet" href="${href}"${before}${after}></noscript>`;
+          }
+        );
+      },
+    },
+  };
+}
+
 // Sitemap generator plugin - auto-updates when guides change
 function sitemapPlugin(): Plugin {
   return {
