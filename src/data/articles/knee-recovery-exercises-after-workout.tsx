@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { StatHighlight, InfoBox, JournalQuote } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -11,44 +10,6 @@ import hamstringStretchImg from "@/assets/article-knee-recovery-hamstring-stretc
 
 const articleContent = (
   <>
-    <Helmet>
-      <script id="ld-article-knee-recovery-exercises" type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": "Best Post-Workout Recovery Exercises for the Knees",
-          "description": "Discover the best post-workout knee recovery exercises, learn why knees hurt after working out, and find practical strategies for reducing knee soreness after exercise.",
-          "author": {
-            "@type": "Organization",
-            "name": "FlexiKnee"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "FlexiKnee",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://flexi-knee.com/logo.png"
-            }
-          },
-          "datePublished": "2026-03-19",
-          "dateModified": "2026-03-19",
-          "mainEntityOfPage": "https://flexi-knee.com/guides/knee-recovery-exercises-after-workout"
-        }
-      `}</script>
-    </Helmet>
-    <Helmet>
-      <script id="ld-breadcrumb-knee-recovery-exercises" type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://flexi-knee.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://flexi-knee.com/guides" },
-            { "@type": "ListItem", "position": 3, "name": "Knee Recovery Exercises After Workout", "item": "https://flexi-knee.com/guides/knee-recovery-exercises-after-workout" }
-          ]
-        }
-      `}</script>
-    </Helmet>
 
     <p>
       You just finished an intense session at the gym and now your knees are aching. If you regularly experience knee pain after a workout, you are not alone. Sore knees after exercise are one of the most common complaints among active people, whether you run, lift weights, or do general fitness training. The good news is that with the right knee recovery after workout habits, most post-workout knee discomfort can be managed and even prevented over time.

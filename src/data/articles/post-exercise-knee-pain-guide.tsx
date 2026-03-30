@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { InfoBox, StatHighlight, TipsList, JournalQuote } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -50,42 +49,6 @@ const faqs = [
 
 const articleContent = (
   <>
-    <Helmet>
-      <script id="ld-article" type="application/ld+json">{JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Knee Pain After Exercise: When It's Normal and When It Isn't",
-        "description": "Learn when knee pain after exercise is a normal response and when it may need attention. A practical guide to post-workout knee soreness and recovery.",
-        "image": "https://flexi-knee.com/og-post-exercise-knee-pain.jpg",
-        "author": { "@type": "Organization", "name": "FlexiKnee" },
-        "publisher": { "@type": "Organization", "name": "FlexiKnee", "logo": { "@type": "ImageObject", "url": "https://flexi-knee.com/logo.png" } },
-        "datePublished": "2026-03-12",
-        "dateModified": "2026-03-12",
-        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://flexi-knee.com/guides/post-exercise-knee-pain-guide" },
-      })}</script>
-    </Helmet>
-    <Helmet>
-      <script id="ld-faq" type="application/ld+json">{JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(f => ({
-          "@type": "Question",
-          "name": f.question,
-          "acceptedAnswer": { "@type": "Answer", "text": f.answer },
-        })),
-      })}</script>
-    </Helmet>
-    <Helmet>
-      <script id="ld-breadcrumb" type="application/ld+json">{JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://flexi-knee.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://flexi-knee.com/guides" },
-          { "@type": "ListItem", "position": 3, "name": "Knee Pain After Exercise: Normal vs Warning Signs", "item": "https://flexi-knee.com/guides/post-exercise-knee-pain-guide" },
-        ],
-      })}</script>
-    </Helmet>
 
     {/* Introduction */}
     <p>

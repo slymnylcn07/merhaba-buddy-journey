@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { StatHighlight, InfoBox } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -12,48 +11,6 @@ import kneeRecoveryFatigue from "@/assets/article-knee-recovery-fatigue.jpg";
 
 const articleContent = (
   <>
-    <Helmet>
-      <script id="ld-article-knee-ache-leg-workouts" type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": "Why Knees Ache After Leg Workouts",
-          "description": "Understand why your knees ache after leg workouts, how muscle fatigue and training intensity affect knee stress, and what recovery habits support long term comfort.",
-          "author": {
-            "@type": "Organization",
-            "name": "FlexiKnee"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "FlexiKnee",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://flexi-knee.com/logo.png"
-            }
-          },
-          "datePublished": "2026-03-19",
-          "dateModified": "2026-03-19",
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://flexi-knee.com/guides/knee-ache-after-leg-workouts"
-          }
-        }
-      `}</script>
-    </Helmet>
-
-    <Helmet>
-      <script id="ld-breadcrumb-knee-ache-leg-workouts" type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://flexi-knee.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://flexi-knee.com/guides" },
-            { "@type": "ListItem", "position": 3, "name": "Why Knees Ache After Leg Workouts", "item": "https://flexi-knee.com/guides/knee-ache-after-leg-workouts" }
-          ]
-        }
-      `}</script>
-    </Helmet>
 
     <p>
       If your knees ache after leg workouts, you are not alone. Squats, lunges, leg press, and other lower body exercises place unique demands on the knee joint that differ from everyday movement. Understanding why this happens can help you train smarter and keep your knees comfortable for the long term.
@@ -295,7 +252,6 @@ const articleContent = (
     <p>
       A thorough warm-up increases blood flow to the muscles, improves joint lubrication, and prepares the nervous system for heavy loading. Five to ten minutes of light cycling, bodyweight squats, and dynamic stretching before your leg workout significantly reduces the stress your knees experience during the first working sets.
     </p>
-
 
     <h2>When Knee Discomfort Should Be Monitored More Closely</h2>
 

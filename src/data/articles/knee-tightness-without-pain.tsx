@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -64,48 +63,6 @@ export const kneeTightnessWithoutPain: ArticleExport = {
     faqs,
     content: (
       <>
-        <Helmet>
-          <script id="ld-howto" type="application/ld+json">{`
-            {
-              "@context": "https://schema.org",
-              "@type": "HowTo",
-              "name": "How to Manage Knee Tightness Without Pain",
-              "description": "Practical daily habits and gentle exercises to help reduce knee stiffness and improve joint flexibility when there is no pain present.",
-              "step": [
-                {
-                  "@type": "HowToStep",
-                  "name": "Incorporate gentle morning mobility",
-                  "text": "Start each day with slow knee bends and gentle leg swings to distribute synovial fluid and warm up the joint before full activity."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Stretch surrounding muscles regularly",
-                  "text": "Stretch the quadriceps, hamstrings, and calves for 5 to 10 minutes daily to reduce muscle tension that contributes to knee tightness."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Take movement breaks throughout the day",
-                  "text": "Stand up and walk briefly every 30 to 45 minutes to prevent joint stiffness from prolonged sitting."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Improve hip and ankle mobility",
-                  "text": "Perform hip circles and ankle rotations regularly, as limited mobility in these joints can transfer stiffness to the knee."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Apply gentle warmth before activity",
-                  "text": "Use a warm compress or heated knee wrap before movement to support circulation and help the joint feel more comfortable."
-                },
-                {
-                  "@type": "HowToStep",
-                  "name": "Build gradual strength",
-                  "text": "Strengthen the quadriceps and glutes with low-impact exercises like wall sits, step-ups, and leg presses to give the knee joint better muscular support."
-                }
-              ]
-            }
-          `}</script>
-        </Helmet>
 
         {/* Section 1 */}
         <h2>What Knee Tightness Without Pain Usually Means</h2>

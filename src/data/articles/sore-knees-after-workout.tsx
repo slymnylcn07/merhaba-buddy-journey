@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { StatHighlight, InfoBox, JournalQuote } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -8,44 +7,6 @@ import recoveryRoutineImg from "@/assets/article-knee-recovery-routine-diagram.j
 
 const articleContent = (
   <>
-    <Helmet>
-      <script id="ld-article-sore-knees-workout" type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": "Why Knees Feel Sore After a Workout: Normal Fatigue or Warning Sign",
-          "description": "Learn why your knees feel sore after a workout, the difference between normal muscle fatigue and warning signs, and how to support recovery.",
-          "author": {
-            "@type": "Organization",
-            "name": "FlexiKnee"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "FlexiKnee",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://flexi-knee.com/logo.png"
-            }
-          },
-          "datePublished": "2026-03-18",
-          "dateModified": "2026-03-18",
-          "mainEntityOfPage": "https://flexi-knee.com/guides/sore-knees-after-workout"
-        }
-      `}</script>
-    </Helmet>
-    <Helmet>
-      <script id="ld-breadcrumb-sore-knees-workout" type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://flexi-knee.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://flexi-knee.com/guides" },
-            { "@type": "ListItem", "position": 3, "name": "Sore Knees After Workout", "item": "https://flexi-knee.com/guides/sore-knees-after-workout" }
-          ]
-        }
-      `}</script>
-    </Helmet>
 
     <p>
       If you have ever finished a workout and thought "why are my knees sore," you are not alone. Knee soreness after exercise is one of the most common concerns for people who run, lift weights, or stay active through daily movement. The good news is that mild soreness is often a normal part of the recovery process.
