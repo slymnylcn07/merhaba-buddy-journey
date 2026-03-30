@@ -6,7 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useCartStore } from "@/stores/cartStore";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { Flame, Zap, Activity, Battery } from "lucide-react";
+import heroBannerDesktopWebp from "@/assets/hero-banner-desktop-new.webp";
 import heroBannerDesktop from "@/assets/hero-banner-desktop-new.png";
+import heroBannerMobileWebp from "@/assets/hero-banner-mobile.webp";
 import heroBannerMobile from "@/assets/hero-banner-mobile.png";
 import { Link, useLocation } from "react-router-dom";
 import { Header } from "@/components/Header";
@@ -162,8 +164,10 @@ export default function Index() {
       <Link to={mainProduct ? `/product/${mainProduct.node.handle}` : '/product/knee-massager-smart-red-light-and-massage-therapy'} className="block">
         <section className="relative w-full overflow-hidden cursor-pointer hover:opacity-95 transition-opacity">
           <picture>
-            <source media="(min-width: 768px)" srcSet={heroBannerDesktop} />
-            <source media="(max-width: 767px)" srcSet={heroBannerMobile} />
+            <source media="(min-width: 768px)" srcSet={heroBannerDesktopWebp} type="image/webp" />
+            <source media="(min-width: 768px)" srcSet={heroBannerDesktop} type="image/png" />
+            <source media="(max-width: 767px)" srcSet={heroBannerMobileWebp} type="image/webp" />
+            <source media="(max-width: 767px)" srcSet={heroBannerMobile} type="image/png" />
             <img 
               src={heroBannerDesktop} 
               alt="FlexiKnee Smart Heated Knee Massager" 

@@ -4,7 +4,8 @@ import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import logo from "@/assets/flexiknee-logo-new.png";
+import logoWebp from "@/assets/flexiknee-logo-new.webp";
+import logoPng from "@/assets/flexiknee-logo-new.png";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -104,13 +105,16 @@ export const Header = () => {
         {/* Center - Logo */}
         <div className="absolute left-1/2 -translate-x-1/2">
           <a href="/" className="flex items-center gap-2">
-            <img
-              src={logo}
-              alt="FlexiKnee™"
-              width={360}
-              height={120}
-              className="w-[280px] max-h-[90px] lg:w-[360px] lg:max-h-[120px] object-contain"
-            />
+            <picture>
+              <source srcSet={logoWebp} type="image/webp" />
+              <img
+                src={logoPng}
+                alt="FlexiKnee™"
+                width={360}
+                height={120}
+                className="w-[280px] max-h-[90px] lg:w-[360px] lg:max-h-[120px] object-contain"
+              />
+            </picture>
           </a>
         </div>
 

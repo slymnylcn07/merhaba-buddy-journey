@@ -6,13 +6,13 @@ import { Check, Flame, Zap, Activity, Battery, Shield, Truck, Star } from "lucid
 import { Link } from "react-router-dom";
 import { ShopifyProduct } from "@/lib/shopify";
 import { ProductGuidesSection } from "@/components/ProductGuidesSection";
-import productPainRelief from "@/assets/product-pain-relief.jpg";
-import productTemperature from "@/assets/product-temperature.jpg";
-import productMain from "@/assets/product-main.jpg";
-import productVibration from "@/assets/product-vibration.jpg";
-import productHowItWorks from "@/assets/product-how-it-works.jpg";
-import laserTherapy from "@/assets/laser-therapy.png";
-import heatActivation from "@/assets/heat-activation.jpg";
+import productPainRelief from "@/assets/product-pain-relief.webp";
+import productTemperature from "@/assets/product-temperature.webp";
+import productMain from "@/assets/product-main.webp";
+import productVibration from "@/assets/product-vibration.webp";
+import productHowItWorks from "@/assets/product-how-it-works.webp";
+import laserTherapy from "@/assets/laser-therapy.webp";
+import heatActivation from "@/assets/heat-activation.webp";
 
 interface IndexBelowFoldProps {
   mainProduct: ShopifyProduct | undefined;
