@@ -7983,7 +7983,7 @@ for (const exp of newArticleExports) {
 const GuideArticle = () => {
   const { slug } = useParams<{ slug: string }>();
   const [readProgress, setReadProgress] = useState(0);
-  const isMobile = useIsMobile();
+  
   
   // Track reading progress
   useEffect(() => {
