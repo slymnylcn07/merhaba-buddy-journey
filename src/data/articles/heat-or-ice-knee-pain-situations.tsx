@@ -82,7 +82,7 @@ export const heatOrIceKneePainSituations: ArticleExport = {
 
         <h3>Morning Stiffness</h3>
         <p>
-          Reaching for warmth in the morning is almost always the better option. Cold can make morning stiffness feel worse by tightening already tense muscles. A warm session helps ease into your day more comfortably.
+          Reaching for warmth in the morning is almost always the better option. Cold can make <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning stiffness</Link> feel worse by tightening already tense muscles. A warm session helps ease into your day more comfortably. A warm session helps ease into your day more comfortably.
         </p>
 
         <h3>After Yard Work or Household Chores</h3>
