@@ -542,7 +542,7 @@ const articleContent = (
     </InfoBox>
 
     <p>
-      For more exercises and strengthening strategies, explore our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee pain exercises guide</Link> and our guide to <Link to="/guides/knee-pain-when-walking" className="text-primary hover:underline">knee pain when walking</Link> for related movement patterns.
+      For more exercises and strengthening strategies, explore our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee pain exercises guide</Link> and our guide to <Link to="/guides/For more exercises and strengthening strategies, explore our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee pain exercises guide</Link> and our guide to <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">knee pain when walking</Link> for related movement patterns.
     </p>
   </>
 );

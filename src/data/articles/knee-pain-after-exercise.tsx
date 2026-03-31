@@ -270,7 +270,7 @@ const articleContent = (
 
     <h3>Squats and Lunges</h3>
     <p>
-      Deep knee bending exercises put the kneecap (patella) under significant pressure against the thighbone. The deeper you squat, the more compressive force the patellofemoral joint experiences. This is why people often feel front-of-knee soreness the day after a leg day at the gym, even if the <Link to="/guides/knee-pain-squatting" className="text-primary hover:underline">squats themselves felt comfortable</Link>.
+      Deep knee bending exercises put the kneecap (patella) under significant pressure against the thighbone. The deeper you squat, the more compressive force the patellofemoral joint experiences. This is why people often feel front-of-knee soreness the day after a leg day at the gym, even if the <Link to="/guides/Deep knee bending exercises put the kneecap (patella) under significant pressure against the thighbone. The deeper you squat, the more compressive force the patellofemoral joint experiences. This is why people often feel front-of-knee soreness the day after a leg day at the gym, even if the <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">squats themselves felt comfortable</Link>." className="text-primary hover:underline">squats themselves felt comfortable</Link>.
     </p>
 
     <h3>Stairs and Step Exercises</h3>
