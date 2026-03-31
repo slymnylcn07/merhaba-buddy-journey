@@ -516,7 +516,7 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
         {/* --- Bottom Line --- */}
         <h2>The Bottom Line</h2>
         <p>
-          Knee discomfort can appear in many different <strong>knee pain locations</strong>, and each zone tends to reflect different daily patterns and lifestyle habits. By using a <strong>knee pain location chart</strong> approach and paying attention to your personal patterns, you can build more targeted and effective daily comfort routines. Understanding your <strong>knee pain anatomy</strong> does not require expertise. Small, zone-aware habits practiced daily tend to produce the most meaningful improvements in overall knee comfort.
+          Knee discomfort can appear in many different <strong>knee pain locations</strong>, and each zone tends to reflect different daily patterns and lifestyle habits. By using a <strong>knee pain location chart</strong> approach and paying attention to your personal patterns, you can build more targeted and effective <Link to="/guides/daily-knee-comfort-routine" className="text-primary underline hover:opacity-80">daily comfort routines</Link>. Understanding your <strong>knee pain anatomy</strong> does not require expertise. Small, zone-aware habits practiced daily tend to produce the most meaningful improvements in overall knee comfort.
         </p>
 
         <div className="mt-10 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground">
