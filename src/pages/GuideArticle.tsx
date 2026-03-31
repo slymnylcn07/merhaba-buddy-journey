@@ -128,6 +128,8 @@ import heroBurningKneesAfterExercise from "@/assets/article-hero-burning-knees-a
 import heroHomeRemediesKneePain from "@/assets/article-hero-home-remedies-knee-pain.jpg";
 import heroWhatMakesKneePainWorse from "@/assets/article-hero-what-makes-knee-pain-worse-v2.jpg";
 import heroWeightKneePain from "@/assets/article-hero-weight-knee-pain.jpg";
+import shoeBrandsFlatlay from "@/assets/article-running-shoe-brands-flatlay.jpg";
+import shoeWearCheck from "@/assets/article-shoe-wear-check.jpg";
 // Import guide thumbnails for related guides
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
