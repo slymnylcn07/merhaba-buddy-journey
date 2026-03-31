@@ -127,7 +127,7 @@ export const heatOrIceKneePainSituations: ArticleExport = {
 
         <h2>Final Thoughts</h2>
         <p>
-          The heat-or-ice question doesn't have to be complicated. For most everyday knee comfort needs, warmth is the more practical and effective choice. Ice has its place for acute swelling, but for the kind of daily stiffness and achiness most people experience, a consistent warmth-based routine, especially one that combines heat with red light support, tends to offer the most noticeable difference over time.
+          The heat-or-ice question doesn't have to be complicated. For most everyday knee comfort needs, warmth is the more practical and effective choice. Ice has its place for acute swelling, but for the kind of daily stiffness and achiness most people experience, a consistent warmth-based routine, especially one that combines <Link to="/guides/heat-or-ice-knee-pain-science" className="text-primary hover:underline">science-backed heat approaches</Link> with red light support, tends to offer the most noticeable difference over time.
         </p>
 
         <PremiumCTA
