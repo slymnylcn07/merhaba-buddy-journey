@@ -343,7 +343,7 @@ export const burningKneesAfterExercise: ArticleExport = {
         <h3>Proper Warm-Up</h3>
 
         <p>
-          A thorough warm-up prepares the joint tissues for the demands ahead by gradually increasing blood flow, raising tissue temperature, and improving the viscosity of synovial fluid. Starting a workout with cold, stiff tissues means the knee is absorbing stress before it is fully prepared, which can amplify the post-exercise burning response. Five to ten minutes of light movement before your main activity can make a meaningful difference.
+          A thorough warm-up prepares the joint tissues for the demands ahead by gradually increasing blood flow, raising tissue temperature, and improving the viscosity of synovial fluid. Starting a workout with cold, stiff tissues means the knee is absorbing stress before it is fully prepared, which can amplify the post-exercise burning response. Five to ten minutes of light movement before your main activity can make a meaningful difference. For warm-up exercises, see our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee exercises guide</Link>.
         </p>
 
         <h3>Controlled Movement</h3>
