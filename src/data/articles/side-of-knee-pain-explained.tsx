@@ -66,7 +66,7 @@ export const sideOfKneePainExplained: ArticleExport = {
           <li><strong>Sitting with legs crossed:</strong> This can place uneven pressure on the inner knee over time</li>
           <li><strong>Standing on one leg:</strong> Shifting weight to one side repeatedly stresses that knee's outer structures</li>
           <li><strong>Walking on slopes:</strong> Inclines and declines change how forces pass through the knee</li>
-          <li><strong>Sleeping position:</strong> Side sleepers sometimes notice knee discomfort from knees pressing together</li>
+          <li><strong>Sleeping position:</strong> Side sleepers sometimes notice knee discomfort from knees pressing together. Our <Link to="/guides/why-do-my-knees-hurt-when-sleeping" className="text-primary hover:underline">nighttime knee comfort guide</Link> covers this in detail</li>
         </ul>
 
         <h2>Simple Stretches for Side-of-Knee Comfort</h2>
