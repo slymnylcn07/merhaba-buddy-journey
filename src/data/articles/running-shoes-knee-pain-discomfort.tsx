@@ -1,7 +1,10 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
+import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
 import heroImage from "@/assets/article-hero-running-shoes-discomfort.jpg";
+import shoesLineupImage from "@/assets/article-running-shoes-lineup.jpg";
+import postRunStretchImage from "@/assets/article-post-run-knee-stretch.jpg";
 
 export const runningShoesKneePainDiscomfort: ArticleExport = {
   cta: "",
@@ -87,6 +90,61 @@ export const runningShoesKneePainDiscomfort: ArticleExport = {
           It's worth noting that no single brand works for everyone. Two runners with the same foot size can have very different experiences with the same shoe because of differences in foot shape, arch height, pronation pattern, and personal preference. The right shoe is the one that fits your foot comfortably and supports your natural movement pattern, regardless of brand name or price tag.
         </p>
 
+        <div className="my-8">
+          <h3 className="text-lg font-semibold mb-4">Running Shoe Brand Comparison at a Glance</h3>
+          <div className="overflow-x-auto rounded-lg border border-border">
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-muted/50">
+                  <TableHead className="font-semibold">Brand</TableHead>
+                  <TableHead className="font-semibold">Primary Focus</TableHead>
+                  <TableHead className="font-semibold">Cushioning Level</TableHead>
+                  <TableHead className="font-semibold">Stability</TableHead>
+                  <TableHead className="font-semibold">Best Suited For</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="font-medium">Nike</TableCell>
+                  <TableCell>Comfort and performance balance</TableCell>
+                  <TableCell>Moderate to high</TableCell>
+                  <TableCell>Varies by model</TableCell>
+                  <TableCell>Versatile runners across distances</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Asics</TableCell>
+                  <TableCell>Structured support</TableCell>
+                  <TableCell>Moderate (gel-based)</TableCell>
+                  <TableCell>High</TableCell>
+                  <TableCell>Runners needing pronation control</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Brooks</TableCell>
+                  <TableCell>Stability and durability</TableCell>
+                  <TableCell>Moderate (adaptive DNA)</TableCell>
+                  <TableCell>High</TableCell>
+                  <TableCell>Consistent daily training runners</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Hoka</TableCell>
+                  <TableCell>Maximum cushioning</TableCell>
+                  <TableCell>Very high</TableCell>
+                  <TableCell>Moderate</TableCell>
+                  <TableCell>Runners prioritizing shock absorption</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
+          <p className="text-sm text-muted-foreground mt-2 italic">
+            Note: Features vary by specific model within each brand. This table reflects general brand tendencies, not individual shoe specifications.
+          </p>
+        </div>
+
+        <figure className="my-8">
+          <img src={shoesLineupImage} alt="Different types of running shoes lined up showing variety in cushioning and support styles" loading="lazy" width={1200} height={720} className="rounded-lg w-full h-auto" />
+          <figcaption className="text-sm text-muted-foreground mt-2 text-center">Different running shoe styles offer varying levels of cushioning and support for different foot types.</figcaption>
+        </figure>
+
         <PremiumCTA
           headline="A simple post-run comfort step worth adding"
           text="Many runners combine proper footwear with a post-run comfort routine to support their knees. FlexiKnee offers gentle warmth and vibration that fits naturally into those few minutes after you cool down, helping your knees transition from high-impact activity to rest."
@@ -160,6 +218,11 @@ export const runningShoesKneePainDiscomfort: ArticleExport = {
           <li><strong>Running surface:</strong> Concrete is harder on joints than asphalt, which is harder than trails or tracks. Varying your surfaces can reduce repetitive stress</li>
           <li><strong>Recovery routine:</strong> What you do after running matters as much as what you do during it. A consistent post-run routine supports the transition from activity to rest</li>
         </ul>
+
+        <figure className="my-8">
+          <img src={postRunStretchImage} alt="Runner stretching knee and lower leg after a run in a park setting" loading="lazy" width={1200} height={720} className="rounded-lg w-full h-auto" />
+          <figcaption className="text-sm text-muted-foreground mt-2 text-center">A consistent post-run stretching routine supports knee comfort alongside proper footwear choices.</figcaption>
+        </figure>
 
         <h2>Beyond Shoes: The Post-Run Comfort Routine</h2>
         <p>
