@@ -181,7 +181,7 @@ const articleContent = (
     </figure>
 
     <p>
-      If you're also experiencing discomfort during other activities, our guide on <Link to="/guides/knee-pain-when-bending" className="text-primary hover:underline">knee pain when bending</Link> explains similar biomechanical patterns that affect the knee at deeper flexion angles.
+      If you're also experiencing discomfort during other activities, our guide on <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">knee pain when bending</Link> explains similar biomechanical patterns that affect the knee at deeper flexion angles.
     </p>
 
     {/* SECTION 3 */}
@@ -267,7 +267,7 @@ const articleContent = (
 
     <h3>Bending</h3>
     <p>
-      Any activity that requires sustained <Link to="/guides/knee-pain-when-bending" className="text-primary hover:underline">knee bending</Link> — kneeling, gardening, or getting in and out of low chairs — can trigger similar discomfort because the patellofemoral contact force increases with greater flexion angles.
+      Any activity that requires sustained <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">knee bending</Link> — kneeling, gardening, or getting in and out of low chairs — can trigger similar discomfort because the patellofemoral contact force increases with greater flexion angles.
     </p>
 
     <h3>Running</h3>
@@ -277,7 +277,7 @@ const articleContent = (
 
     <h3>Long Walking Sessions</h3>
     <p>
-      Extended walking, particularly on uneven terrain or hills, can fatigue the muscles that support the knee. As these muscles tire, the joint absorbs more impact, which may trigger symptoms similar to stair-related pain. Our <Link to="/guides/knee-pain-when-walking" className="text-primary hover:underline">knee pain when walking</Link> guide covers this in depth.
+      Extended walking, particularly on uneven terrain or hills, can fatigue the muscles that support the knee. As these muscles tire, the joint absorbs more impact, which may trigger symptoms similar to stair-related pain. Our <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">knee pain when walking</Link> guide covers this in depth.
     </p>
 
     {/* Illustration 3: Muscle groups supporting the knee */}
@@ -542,7 +542,7 @@ const articleContent = (
     </InfoBox>
 
     <p>
-      For more exercises and strengthening strategies, explore our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee pain exercises guide</Link> and our guide to <Link to="/guides/knee-pain-when-walking" className="text-primary hover:underline">knee pain when walking</Link> for related movement patterns.
+      For more exercises and strengthening strategies, explore our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee pain exercises guide</Link> and our guide to <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">knee pain when walking</Link> for related movement patterns.
     </p>
   </>
 );

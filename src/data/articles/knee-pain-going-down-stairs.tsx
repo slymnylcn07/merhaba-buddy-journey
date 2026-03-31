@@ -491,7 +491,7 @@ const articleContent = (
     </figure>
 
     <p>
-      For those who find even gentle stair descent uncomfortable, consider descending sideways while holding the handrail. This technique reduces the knee bend angle and shifts some of the load to the hip muscles instead of concentrating it on the kneecap. If your discomfort extends beyond stairs to <Link to="/guides/knee-pain-when-bending" className="text-primary hover:underline">knee pain when bending</Link> in general, the underlying cause may require broader attention.
+      For those who find even gentle stair descent uncomfortable, consider descending sideways while holding the handrail. This technique reduces the knee bend angle and shifts some of the load to the hip muscles instead of concentrating it on the kneecap. If your discomfort extends beyond stairs to <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">knee pain when bending</Link> in general, the underlying cause may require broader attention.
     </p>
 
     <h2>Building Long-Term Comfort: A Summary</h2>
