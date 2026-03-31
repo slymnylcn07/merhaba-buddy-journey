@@ -160,7 +160,7 @@ export const flexikneeVsCompetitors2026: ArticleExport = {
           Hydragun takes a fundamentally different approach. Rather than a knee-specific wrap, it's a handheld percussion massager designed for full-body use. While it can be used on the muscles around the knee, it doesn't provide targeted warmth or wrap-around support specific to the knee joint.
         </p>
         <p>
-          For athletes and fitness enthusiasts who want a versatile massage tool for their entire body, Hydragun has clear appeal. But for users specifically seeking knee comfort support, a knee-specific device typically delivers more targeted results.
+          For athletes and fitness enthusiasts who want a versatile massage tool for their entire body, Hydragun has clear appeal. But for users specifically seeking knee comfort support, a knee-specific device typically delivers more targeted results. Our <Link to="/guides/do-knee-massagers-work" className="text-primary hover:underline">guide on whether knee massagers work</Link> compares targeted vs. general approaches.
         </p>
 
         <InfoBox title="Why Knee-Specific Design Matters">
