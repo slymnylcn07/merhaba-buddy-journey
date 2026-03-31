@@ -114,7 +114,7 @@ export const runningShoesKneePainDiscomfort: ArticleExport = {
 
         <h2>Final Thoughts</h2>
         <p>
-          Your running shoes are one of the most important and most controllable factors in your knee comfort equation. Choosing the right pair, replacing them on schedule, and paying attention to how your knees respond can make a meaningful difference. Pair smart footwear choices with a consistent post-run comfort routine, and your knees are more likely to feel supported mile after mile.
+          Your running shoes are one of the most important and most controllable factors in your knee comfort equation. Choosing the right pair, replacing them on schedule, and paying attention to how your knees respond can make a meaningful difference. Pair smart footwear choices with a consistent post-run comfort routine, and your knees are more likely to feel supported mile after mile. If outer knee discomfort is a recurring pattern, our <Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT band syndrome guide</Link> explores how running mechanics affect the lateral knee.
         </p>
 
         <PremiumCTA
