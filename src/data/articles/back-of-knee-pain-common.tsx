@@ -55,7 +55,7 @@ export const backOfKneePainCommon: ArticleExport = {
 
         <h3>First Thing in the Morning</h3>
         <p>
-          Overnight inactivity allows tissues to settle into a shortened, less flexible state. Many people describe a feeling of tightness or stiffness behind the knee during their first few steps of the day. This typically improves within 10 to 15 minutes of gentle movement as the tissues warm up and circulation increases.
+          Overnight inactivity allows tissues to settle into a shortened, less flexible state. Many people describe a feeling of tightness or stiffness behind the knee during their first few steps of the day. This typically improves within 10 to 15 minutes of gentle movement as the tissues warm up and circulation increases. Our <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning stiffness guide</Link> covers additional strategies for easing into your day.
         </p>
 
         <h3>After Exercise or Physical Activity</h3>
