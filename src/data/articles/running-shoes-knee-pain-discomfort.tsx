@@ -103,7 +103,7 @@ export const runningShoesKneePainDiscomfort: ArticleExport = {
           Sometimes knee discomfort during or after running persists even after addressing footwear. This can happen when other factors are involved:
         </p>
         <ul className="list-disc pl-6 space-y-2 my-4">
-          <li>Muscle weakness in the hips or thighs that affects knee alignment during running</li>
+          <li>Muscle weakness in the hips or thighs that affects knee alignment during running. Our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee exercises guide</Link> covers strengthening options</li>
           <li>Running form habits that place extra stress on the knees</li>
           <li>Training volume increases that are too rapid for the body to adapt</li>
           <li>Running surface choices that are harder on the joints</li>
