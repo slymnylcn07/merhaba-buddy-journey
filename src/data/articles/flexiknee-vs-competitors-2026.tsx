@@ -214,7 +214,7 @@ export const flexikneeVsCompetitors2026: ArticleExport = {
           <strong>Comfort during use:</strong> Wrap-around knee devices allow hands-free use, meaning you can wear them while doing other activities. Handheld devices require active engagement during each session. For busy people, hands-free options tend to get used more often.
         </p>
         <p>
-          <strong>Long-term value:</strong> Consider the cost of adding missing modalities separately. If you start with a heat-only device and later want vibration and red light, you'll spend more overall than choosing a multi-modal option from the start.
+          <strong>Long-term value:</strong> Consider the cost of adding missing modalities separately. If you start with a heat-only device and later want vibration and red light, you'll spend more overall than choosing a multi-modal option from the start. For a closer look at how heat-only compares to infrared, see our <Link to="/guides/infrared-vs-heating-pads" className="text-primary hover:underline">infrared vs heating pads comparison</Link>.
         </p>
 
         <JournalQuote
