@@ -38,7 +38,7 @@ export const sharpStabbingKneePainComfort: ArticleExport = {
         </p>
         <ul className="list-disc pl-6 space-y-2 my-4">
           <li><strong>Muscle tightness:</strong> When the muscles around the knee become tight or imbalanced, they can create pulling sensations that feel sharp during certain movements</li>
-          <li><strong>Joint stiffness:</strong> After periods of inactivity, like sitting for hours or sleeping, the knee joint can feel locked up, and the first few movements may produce sharp sensations</li>
+          <li><strong>Joint stiffness:</strong> After periods of inactivity, like <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">sitting for hours</Link> or sleeping, the knee joint can feel locked up, and the first few movements may produce sharp sensations</li>
           <li><strong>Overuse patterns:</strong> Repetitive activities, especially those involving bending, squatting, or climbing, can contribute to discomfort that intensifies over time</li>
           <li><strong>Position changes:</strong> Many people notice sharp sensations specifically when transitioning between positions, like standing up or starting to walk after sitting</li>
           <li><strong>Activity level changes:</strong> Suddenly increasing exercise intensity or trying new activities can sometimes trigger sharp responses from the knee</li>
