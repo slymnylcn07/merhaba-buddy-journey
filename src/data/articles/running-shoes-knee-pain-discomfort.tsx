@@ -1,7 +1,10 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
+import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
 import heroImage from "@/assets/article-hero-running-shoes-discomfort.jpg";
+import shoesLineupImage from "@/assets/article-running-shoes-lineup.jpg";
+import postRunStretchImage from "@/assets/article-post-run-knee-stretch.jpg";
 
 export const runningShoesKneePainDiscomfort: ArticleExport = {
   cta: "",
