@@ -179,7 +179,7 @@ export const flexikneeVsCompetitors2026: ArticleExport = {
 
         <TipsList tips={[
           "Choose FlexiKnee if you want the most comprehensive multi-modal approach in a single wireless device",
-          "Choose Revix if heat therapy alone is your primary need and you don't require portability. See our guide on " + "infrared vs heating pads for a detailed comparison",
+          "Choose Revix if heat therapy alone is your primary need and you don't require portability",
           "Choose HeatPulse if you're on a tight budget and want basic heat plus vibration",
           "Choose Hydragun if you need a full-body percussion tool and knee comfort is secondary",
         ]} />
