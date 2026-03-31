@@ -349,7 +349,7 @@ export const burningKneesAfterExercise: ArticleExport = {
         <h3>Controlled Movement</h3>
 
         <p>
-          Performing exercises with controlled speed and proper alignment reduces the peak forces that pass through the knee. Rapid, uncontrolled movements, especially during exercises like squats, lunges, and jumping, can create force spikes that stress the joint beyond what the surrounding muscles can manage. Focusing on smooth, deliberate movement patterns helps distribute load more evenly and reduces the likelihood of post-exercise burning.
+          Performing exercises with controlled speed and proper alignment reduces the peak forces that pass through the knee. Rapid, uncontrolled movements, especially during exercises like <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">squats</Link>, lunges, and jumping, can create force spikes that stress the joint beyond what the surrounding muscles can manage. Focusing on smooth, deliberate movement patterns helps distribute load more evenly and reduces the likelihood of post-exercise burning.
         </p>
 
         <h3>Avoiding Sudden Overload</h3>

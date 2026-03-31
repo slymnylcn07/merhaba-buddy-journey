@@ -97,7 +97,7 @@ export const sideOfKneePainExplained: ArticleExport = {
           <li>Take regular movement breaks if you sit or stand for long periods</li>
           <li>Use a pillow between your knees when sleeping on your side</li>
           <li>Rotate between supportive shoes and avoid wearing the same pair every day</li>
-          <li>Incorporate gentle strengthening exercises for your hips and thighs</li>
+          <li>Incorporate gentle <Link to="/guides/exercises-to-relieve-knee-pain-at-home" className="text-primary hover:underline">strengthening exercises</Link> for your hips and thighs</li>
         </ul>
 
         <h2>When to Consider Professional Guidance</h2>
