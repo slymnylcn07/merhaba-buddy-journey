@@ -109,7 +109,7 @@ export const runningShoesKneePainDiscomfort: ArticleExport = {
           <li>Running surface choices that are harder on the joints</li>
         </ul>
         <p>
-          In these cases, a multi-pronged approach that includes footwear, strength support, running form awareness, and a consistent at-home comfort routine tends to be most effective.
+          In these cases, a multi-pronged approach that includes footwear, strength support, running form awareness, and a consistent <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">at-home comfort routine</Link> tends to be most effective.
         </p>
 
         <h2>Final Thoughts</h2>
