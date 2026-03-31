@@ -37,7 +37,7 @@ export const runningShoesKneePainDiscomfort: ArticleExport = {
           When shoes provide appropriate cushioning and support, they help spread impact forces more evenly across the foot. When they don't, whether due to poor fit, worn-out cushioning, or the wrong type of support, more of that impact reaches the knee joint directly.
         </p>
         <p>
-          This doesn't mean shoes are always the cause of knee discomfort, but they're one of the most controllable factors in the equation.
+          This doesn't mean shoes are always the <Link to="/guides/cause-of-knee-pain-patterns" className="text-primary hover:underline">cause of knee discomfort</Link>, but they're one of the most controllable factors in the equation.
         </p>
 
         <h2>Common Shoe-Related Factors That Influence Knee Comfort</h2>
