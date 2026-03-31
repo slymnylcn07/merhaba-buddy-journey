@@ -77,7 +77,7 @@ export const heatOrIceKneePainSituations: ArticleExport = {
         <h2>Situation-by-Situation Breakdown</h2>
         <h3>After a Long Walk or Hike</h3>
         <p>
-          If your knees feel achy but not swollen after a long walk, warmth is usually the better choice. It helps the muscles around the knee relax and can ease that heavy, tired feeling. If you notice any puffiness, a short ice session first can help before transitioning to warmth.
+          If your knees feel achy but not swollen after a <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">long walk</Link>, warmth is usually the better choice. It helps the muscles around the knee relax and can ease that heavy, tired feeling. If you notice any puffiness, a short ice session first can help before transitioning to warmth. It helps the muscles around the knee relax and can ease that heavy, tired feeling. If you notice any puffiness, a short ice session first can help before transitioning to warmth.
         </p>
 
         <h3>Morning Stiffness</h3>
