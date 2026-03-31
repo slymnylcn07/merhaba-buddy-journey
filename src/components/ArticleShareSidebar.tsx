@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Check, Copy, Facebook, Twitter } from "lucide-react";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 const PinterestIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
