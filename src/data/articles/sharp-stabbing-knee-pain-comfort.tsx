@@ -52,7 +52,7 @@ export const sharpStabbingKneePainComfort: ArticleExport = {
           <li><strong>First thing in the morning:</strong> The knee feels stiff and the first few steps may produce sharp sensations that ease as you warm up</li>
           <li><strong>After sitting for extended periods:</strong> Getting up from a desk, car seat, or couch can trigger a brief sharp feeling</li>
           <li><strong>During stairs:</strong> <Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">Going up or down stairs</Link> is one of the most common triggers for sharp knee sensations</li>
-          <li><strong>During weather changes:</strong> Some people notice their knees feel more sensitive during damp or cold weather</li>
+          <li><strong>During weather changes:</strong> Some people notice their knees feel more sensitive during <Link to="/guides/cold-weather-knee-pain" className="text-primary hover:underline">damp or cold weather</Link></li>
           <li><strong>Late in the day:</strong> After hours of accumulated activity, the knee may feel more reactive in the evening</li>
         </ul>
         <p>
