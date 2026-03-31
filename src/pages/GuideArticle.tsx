@@ -6912,10 +6912,6 @@ const articles: Record<string, ArticleData> = {
           Take time to test different options, pay attention to how different shoes feel during your runs, and be willing to experiment. With awareness and gradual adjustments, most runners can find footwear that supports comfortable running.
         </p>
 
-        <PremiumCTA
-          headline="Support your knees as part of your post-run routine"
-          text="Many runners find that combining proper footwear with a few minutes of gentle warmth after cooling down helps their knees transition comfortably from running to rest. FlexiKnee offers adjustable warmth, red light therapy, and gentle vibration in one wireless device, designed to fit naturally into the post-run window when your knees benefit most from support."
-        />
 
       </>
     ),
