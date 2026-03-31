@@ -277,7 +277,7 @@ const articleContent = (
 
     <h3>Long Walking Sessions</h3>
     <p>
-      Extended walking, particularly on uneven terrain or hills, can fatigue the muscles that support the knee. As these muscles tire, the joint absorbs more impact, which may trigger symptoms similar to stair-related pain. Our <Link to="/guides/knee-pain-when-walking" className="text-primary hover:underline">knee pain when walking</Link> guide covers this in depth.
+      Extended walking, particularly on uneven terrain or hills, can fatigue the muscles that support the knee. As these muscles tire, the joint absorbs more impact, which may trigger symptoms similar to stair-related pain. Our <Link to="/guides/Extended walking, particularly on uneven terrain or hills, can fatigue the muscles that support the knee. As these muscles tire, the joint absorbs more impact, which may trigger symptoms similar to stair-related pain. Our <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">knee pain when walking</Link> guide covers this in depth.
     </p>
 
     {/* Illustration 3: Muscle groups supporting the knee */}
