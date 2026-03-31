@@ -178,7 +178,7 @@ const articleContent = (
 
     <h3>Poor Movement Mechanics</h3>
     <p>
-      How you move during exercise matters as much as what you do. Poor alignment during <Link to="/guides/How you move during exercise matters as much as what you do. Poor alignment during <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">squats</Link>, running with an uneven stride, or allowing the knees to collapse inward during lunges can concentrate stress on specific areas of the joint, leading to focused discomfort." className="text-primary hover:underline">squats</Link>, running with an uneven stride, or allowing the knees to collapse inward during lunges can concentrate stress on specific areas of the joint, leading to focused discomfort.
+      How you move during exercise matters as much as what you do. Poor alignment during <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">squats</Link>, running with an uneven stride, or allowing the knees to collapse inward during lunges can concentrate stress on specific areas of the joint, leading to focused discomfort.
     </p>
 
     <h3>Insufficient Recovery Time</h3>
