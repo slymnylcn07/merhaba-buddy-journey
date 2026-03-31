@@ -219,6 +219,11 @@ export const runningShoesKneePainDiscomfort: ArticleExport = {
           <li><strong>Recovery routine:</strong> What you do after running matters as much as what you do during it. A consistent post-run routine supports the transition from activity to rest</li>
         </ul>
 
+        <figure className="my-8">
+          <img src={postRunStretchImage} alt="Runner stretching knee and lower leg after a run in a park setting" loading="lazy" width={1200} height={720} className="rounded-lg w-full h-auto" />
+          <figcaption className="text-sm text-muted-foreground mt-2 text-center">A consistent post-run stretching routine supports knee comfort alongside proper footwear choices.</figcaption>
+        </figure>
+
         <h2>Beyond Shoes: The Post-Run Comfort Routine</h2>
         <p>
           Even with perfect shoes, your knees benefit from a consistent post-run routine. The transition from high-impact running to rest is a key window for supporting comfort, and many experienced runners consider this routine just as important as their shoe choice:
