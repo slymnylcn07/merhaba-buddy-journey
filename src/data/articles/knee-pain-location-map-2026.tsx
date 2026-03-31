@@ -437,7 +437,7 @@ export const kneePainLocationMap2026: ArticleExport = {
         <ul>
           <li>Eccentric strengthening exercises (slow, controlled leg extensions)</li>
           <li>Adequate warm-up before any high-demand activity</li>
-          <li>Ice after acute intense sessions, warmth for chronic stiffness</li>
+          <li>Ice after acute intense sessions, <Link to="/guides/heat-or-ice-knee-pain-science" className="text-primary underline hover:opacity-80">warmth for chronic stiffness</Link></li>
           <li>Gradual load progression — never increase training volume by more than 10% weekly</li>
         </ul>
 
