@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Check, Copy, Facebook, Twitter } from "lucide-react";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 const PinterestIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -71,7 +70,6 @@ const CopyButton = ({ url }: { url: string }) => {
 };
 
 export const ArticleShareSidebar = ({ url, title }: ShareButtonsProps) => {
-  const isMobile = useIsMobile();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -81,8 +79,6 @@ export const ArticleShareSidebar = ({ url, title }: ShareButtonsProps) => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  if (isMobile) return null;
 
   return (
     <div className={`hidden lg:flex fixed right-[calc((50%-24rem)/2-1.25rem)] top-1/2 -translate-y-1/2 flex-col gap-3 z-40 transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0 pointer-events-none"}`}>

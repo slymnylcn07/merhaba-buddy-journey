@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -6,7 +6,7 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ArticleShareBlock } from "@/components/ArticleShareSidebar";
 import { ArticleTableOfContents } from "@/components/ArticleTableOfContents";
-import { useIsMobile } from "@/hooks/use-mobile";
+
 
 import {
   KneePainFactorsChart,
@@ -7983,7 +7983,7 @@ for (const exp of newArticleExports) {
 const GuideArticle = () => {
   const { slug } = useParams<{ slug: string }>();
   const [readProgress, setReadProgress] = useState(0);
-  const isMobile = useIsMobile();
+  
   
   // Track reading progress
   useEffect(() => {
@@ -8532,11 +8532,9 @@ const GuideArticle = () => {
         <section className="pb-6 md:pb-8 md:pt-2">
           <div className="container mx-auto max-w-6xl px-4">
             <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
-              {!isMobile && (
-                <div className="hidden lg:block">
-                  <ArticleTableOfContents variant="desktop" initialCount={6} />
-                </div>
-              )}
+              <div className="hidden lg:block">
+                <ArticleTableOfContents variant="desktop" initialCount={6} />
+              </div>
 
               <article className="min-w-0 max-w-3xl">
                 {article.subtitle && (
