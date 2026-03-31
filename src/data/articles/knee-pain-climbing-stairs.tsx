@@ -267,7 +267,7 @@ const articleContent = (
 
     <h3>Bending</h3>
     <p>
-      Any activity that requires sustained <Link to="/guides/Any activity that requires sustained <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">knee bending</Link> — kneeling, gardening, or getting in and out of low chairs — can trigger similar discomfort because the patellofemoral contact force increases with greater flexion angles.</Link> — kneeling, gardening, or getting in and out of low chairs — can trigger similar discomfort because the patellofemoral contact force increases with greater flexion angles.
+      Any activity that requires sustained <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">knee bending</Link> — kneeling, gardening, or getting in and out of low chairs — can trigger similar discomfort because the patellofemoral contact force increases with greater flexion angles. that requires sustained <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">knee bending</Link> — kneeling, gardening, or getting in and out of low chairs — can trigger similar discomfort because the patellofemoral contact force increases with greater flexion angles.</Link> — kneeling, gardening, or getting in and out of low chairs — can trigger similar discomfort because the patellofemoral contact force increases with greater flexion angles.
     </p>
 
     <h3>Running</h3>
