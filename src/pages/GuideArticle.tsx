@@ -6,7 +6,7 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ArticleShareBlock } from "@/components/ArticleShareSidebar";
 import { ArticleTableOfContents } from "@/components/ArticleTableOfContents";
-import { useIsMobile } from "@/hooks/use-mobile";
+
 
 import {
   KneePainFactorsChart,
