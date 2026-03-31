@@ -180,7 +180,7 @@ export const kneePainLocationMap2026: ArticleExport = {
 
         <h3>Location Overview</h3>
         <p>
-          The front of the knee, centered around the kneecap (patella), is the most commonly reported discomfort zone on any knee pain location chart. The kneecap glides within a groove on the thigh bone during every bend and straighten movement.
+          The front of the knee, centered around the kneecap (patella), is the most commonly reported discomfort zone on any knee pain location chart. The kneecap glides within a groove on the thigh bone during every bend and straighten movement. Our <Link to="/guides/patellofemoral-pain-syndrome" className="text-primary underline hover:opacity-80">patellofemoral pain guide</Link> explains this mechanism in detail.
         </p>
 
         <h3>What It Feels Like</h3>
