@@ -192,7 +192,7 @@ export const kneePainLocationMap2026: ArticleExport = {
 
         <h3>When People Commonly Feel It</h3>
         <ul>
-          <li><strong>Stairs:</strong> Going up or down places high demand on the patellar groove</li>
+          <li><strong>Stairs:</strong> <Link to="/guides/knee-pain-climbing-stairs" className="text-primary underline hover:opacity-80">Going up or down</Link> places high demand on the patellar groove</li>
           <li><strong>Sitting:</strong> Extended desk work or long drives with bent knees</li>
           <li><strong>Squatting:</strong> Deep bending activities like gardening or lifting</li>
         </ul>
