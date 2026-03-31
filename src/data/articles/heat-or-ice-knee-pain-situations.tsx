@@ -87,7 +87,7 @@ export const heatOrIceKneePainSituations: ArticleExport = {
 
         <h3>After Yard Work or Household Chores</h3>
         <p>
-          Activities that involve kneeling, squatting, or standing for long stretches can leave knees feeling sore. If there's no visible swelling, warmth and gentle movement are usually enough to help your knees recover their comfortable range.
+          Activities that involve <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">kneeling</Link>, squatting, or standing for long stretches can leave knees feeling sore. If there's no visible swelling, warmth and gentle movement are usually enough to help your knees recover their comfortable range. If there's no visible swelling, warmth and gentle movement are usually enough to help your knees recover their comfortable range.
         </p>
 
         <h3>Post-Exercise Recovery</h3>
