@@ -181,7 +181,7 @@ const articleContent = (
     </figure>
 
     <p>
-      If you're also experiencing discomfort during other activities, our guide on <Link to="/guides/If you're also experiencing discomfort during other activities, our guide on <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">knee pain when bending</Link> explains similar biomechanical patterns that affect the knee at deeper flexion angles.</Link> explains similar biomechanical patterns that affect the knee at deeper flexion angles.
+      If you're also experiencing discomfort during other activities, our guide on <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">knee pain when bending</Link> explains similar biomechanical patterns that affect the knee at deeper flexion angles. experiencing discomfort during other activities, our guide on <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">knee pain when bending</Link> explains similar biomechanical patterns that affect the knee at deeper flexion angles.</Link> explains similar biomechanical patterns that affect the knee at deeper flexion angles.
     </p>
 
     {/* SECTION 3 */}
