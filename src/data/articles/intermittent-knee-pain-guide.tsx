@@ -69,7 +69,7 @@ export const intermittentKneePainGuide: ArticleExport = {
           <li>A few minutes of gentle stretching in the morning</li>
           <li>Regular movement breaks throughout the day</li>
           <li>A warmth session in the evening to help your knees unwind</li>
-          <li>Staying hydrated and wearing supportive footwear</li>
+          <li>Staying hydrated and wearing <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">supportive footwear</Link></li>
         </ul>
 
         <PremiumCTA

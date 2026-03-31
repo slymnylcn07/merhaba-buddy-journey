@@ -38,7 +38,7 @@ export const sharpStabbingKneePainComfort: ArticleExport = {
         </p>
         <ul className="list-disc pl-6 space-y-2 my-4">
           <li><strong>Muscle tightness:</strong> When the muscles around the knee become tight or imbalanced, they can create pulling sensations that feel sharp during certain movements</li>
-          <li><strong>Joint stiffness:</strong> After periods of inactivity, like sitting for hours or sleeping, the knee joint can feel locked up, and the first few movements may produce sharp sensations</li>
+          <li><strong>Joint stiffness:</strong> After periods of inactivity, like <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">sitting for hours</Link> or sleeping, the knee joint can feel locked up, and the first few movements may produce sharp sensations</li>
           <li><strong>Overuse patterns:</strong> Repetitive activities, especially those involving bending, squatting, or climbing, can contribute to discomfort that intensifies over time</li>
           <li><strong>Position changes:</strong> Many people notice sharp sensations specifically when transitioning between positions, like standing up or starting to walk after sitting</li>
           <li><strong>Activity level changes:</strong> Suddenly increasing exercise intensity or trying new activities can sometimes trigger sharp responses from the knee</li>
@@ -51,8 +51,8 @@ export const sharpStabbingKneePainComfort: ArticleExport = {
         <ul className="list-disc pl-6 space-y-2 my-4">
           <li><strong>First thing in the morning:</strong> The knee feels stiff and the first few steps may produce sharp sensations that ease as you warm up</li>
           <li><strong>After sitting for extended periods:</strong> Getting up from a desk, car seat, or couch can trigger a brief sharp feeling</li>
-          <li><strong>During stairs:</strong> Going up or down stairs is one of the most common triggers for sharp knee sensations</li>
-          <li><strong>During weather changes:</strong> Some people notice their knees feel more sensitive during damp or cold weather</li>
+          <li><strong>During stairs:</strong> <Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">Going up or down stairs</Link> is one of the most common triggers for sharp knee sensations</li>
+          <li><strong>During weather changes:</strong> Some people notice their knees feel more sensitive during <Link to="/guides/cold-weather-knee-pain" className="text-primary hover:underline">damp or cold weather</Link></li>
           <li><strong>Late in the day:</strong> After hours of accumulated activity, the knee may feel more reactive in the evening</li>
         </ul>
         <p>

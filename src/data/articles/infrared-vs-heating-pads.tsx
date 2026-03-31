@@ -108,7 +108,7 @@ export const infraredVsHeatingPads: ArticleExport = {
           <li>Convenient wireless use during daily activities</li>
         </ul>
         <p>
-          Many users who switch from heating pads to infrared devices report that the warmth feels more complete and longer-lasting. This may be because infrared wavelengths reach tissue layers that surface heat simply cannot access.
+          Many users who switch from heating pads to infrared devices report that the warmth feels more complete and longer-lasting. This may be because infrared wavelengths reach tissue layers that surface heat simply cannot access. For more on the science behind this, see our <Link to="/guides/best-red-light-therapy-knee" className="text-primary hover:underline">red light therapy for knees guide</Link>.
         </p>
 
         <img

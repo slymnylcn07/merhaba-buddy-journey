@@ -180,7 +180,7 @@ export const kneePainLocationMap2026: ArticleExport = {
 
         <h3>Location Overview</h3>
         <p>
-          The front of the knee, centered around the kneecap (patella), is the most commonly reported discomfort zone on any knee pain location chart. The kneecap glides within a groove on the thigh bone during every bend and straighten movement.
+          The front of the knee, centered around the kneecap (patella), is the most commonly reported discomfort zone on any knee pain location chart. The kneecap glides within a groove on the thigh bone during every bend and straighten movement. Our <Link to="/guides/patellofemoral-pain-syndrome" className="text-primary underline hover:opacity-80">patellofemoral pain guide</Link> explains this mechanism in detail.
         </p>
 
         <h3>What It Feels Like</h3>
@@ -192,7 +192,7 @@ export const kneePainLocationMap2026: ArticleExport = {
 
         <h3>When People Commonly Feel It</h3>
         <ul>
-          <li><strong>Stairs:</strong> Going up or down places high demand on the patellar groove</li>
+          <li><strong>Stairs:</strong> <Link to="/guides/knee-pain-climbing-stairs" className="text-primary underline hover:opacity-80">Going up or down</Link> places high demand on the patellar groove</li>
           <li><strong>Sitting:</strong> Extended desk work or long drives with bent knees</li>
           <li><strong>Squatting:</strong> Deep bending activities like gardening or lifting</li>
         </ul>
@@ -437,7 +437,7 @@ export const kneePainLocationMap2026: ArticleExport = {
         <ul>
           <li>Eccentric strengthening exercises (slow, controlled leg extensions)</li>
           <li>Adequate warm-up before any high-demand activity</li>
-          <li>Ice after acute intense sessions, warmth for chronic stiffness</li>
+          <li>Ice after acute intense sessions, <Link to="/guides/heat-or-ice-knee-pain-science" className="text-primary underline hover:opacity-80">warmth for chronic stiffness</Link></li>
           <li>Gradual load progression — never increase training volume by more than 10% weekly</li>
         </ul>
 

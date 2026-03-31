@@ -55,7 +55,7 @@ export const backOfKneePainCommon: ArticleExport = {
 
         <h3>First Thing in the Morning</h3>
         <p>
-          Overnight inactivity allows tissues to settle into a shortened, less flexible state. Many people describe a feeling of tightness or stiffness behind the knee during their first few steps of the day. This typically improves within 10 to 15 minutes of gentle movement as the tissues warm up and circulation increases.
+          Overnight inactivity allows tissues to settle into a shortened, less flexible state. Many people describe a feeling of tightness or stiffness behind the knee during their first few steps of the day. This typically improves within 10 to 15 minutes of gentle movement as the tissues warm up and circulation increases. Our <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning stiffness guide</Link> covers additional strategies for easing into your day.
         </p>
 
         <h3>After Exercise or Physical Activity</h3>
@@ -65,7 +65,7 @@ export const backOfKneePainCommon: ArticleExport = {
 
         <h3>During Weather Changes</h3>
         <p>
-          While the exact mechanism is debated, many people consistently report increased posterior knee stiffness during cold, damp, or rapidly changing weather conditions. Barometric pressure changes may influence joint fluid behavior and tissue flexibility, though individual experiences vary widely.
+          While the exact mechanism is debated, many people consistently report increased posterior knee stiffness during <Link to="/guides/cold-weather-knee-pain" className="text-primary hover:underline">cold, damp, or rapidly changing weather conditions</Link>. Barometric pressure changes may influence joint fluid behavior and tissue flexibility, though individual experiences vary widely.
         </p>
 
         <h2>Lifestyle Factors That Influence Posterior Knee Comfort</h2>

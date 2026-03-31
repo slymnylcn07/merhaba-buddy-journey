@@ -160,7 +160,7 @@ export const flexikneeVsCompetitors2026: ArticleExport = {
           Hydragun takes a fundamentally different approach. Rather than a knee-specific wrap, it's a handheld percussion massager designed for full-body use. While it can be used on the muscles around the knee, it doesn't provide targeted warmth or wrap-around support specific to the knee joint.
         </p>
         <p>
-          For athletes and fitness enthusiasts who want a versatile massage tool for their entire body, Hydragun has clear appeal. But for users specifically seeking knee comfort support, a knee-specific device typically delivers more targeted results.
+          For athletes and fitness enthusiasts who want a versatile massage tool for their entire body, Hydragun has clear appeal. But for users specifically seeking knee comfort support, a knee-specific device typically delivers more targeted results. Our <Link to="/guides/do-knee-massagers-work" className="text-primary hover:underline">guide on whether knee massagers work</Link> compares targeted vs. general approaches.
         </p>
 
         <InfoBox title="Why Knee-Specific Design Matters">
@@ -214,7 +214,7 @@ export const flexikneeVsCompetitors2026: ArticleExport = {
           <strong>Comfort during use:</strong> Wrap-around knee devices allow hands-free use, meaning you can wear them while doing other activities. Handheld devices require active engagement during each session. For busy people, hands-free options tend to get used more often.
         </p>
         <p>
-          <strong>Long-term value:</strong> Consider the cost of adding missing modalities separately. If you start with a heat-only device and later want vibration and red light, you'll spend more overall than choosing a multi-modal option from the start.
+          <strong>Long-term value:</strong> Consider the cost of adding missing modalities separately. If you start with a heat-only device and later want vibration and red light, you'll spend more overall than choosing a multi-modal option from the start. For a closer look at how heat-only compares to infrared, see our <Link to="/guides/infrared-vs-heating-pads" className="text-primary hover:underline">infrared vs heating pads comparison</Link>.
         </p>
 
         <JournalQuote

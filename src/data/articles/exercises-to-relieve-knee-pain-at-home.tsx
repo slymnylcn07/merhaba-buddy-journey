@@ -287,7 +287,7 @@ export const exercisesToRelieveKneePainAtHome: ArticleExport = {
           Beyond specific exercises, several daily habits can contribute to better knee comfort over time:
         </p>
         <ul>
-          <li><strong>Walking regularly:</strong> Even short daily walks of 15 to 20 minutes help maintain knee mobility, promote circulation, and keep the muscles around the joint active. Walking is one of the most accessible <strong>low impact knee exercises</strong> available.</li>
+          <li><strong>Walking regularly:</strong> Even short daily walks of 15 to 20 minutes help maintain knee mobility, promote circulation, and keep the muscles around the joint active. Walking is one of the most accessible <strong>low impact knee exercises</strong> available. If you notice discomfort during <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">longer walks</Link>, adjusting your pace and footwear can help.</li>
           <li><strong>Gentle stretching throughout the day:</strong> Brief stretching breaks, especially after long periods of sitting, help prevent stiffness from building up. Focus on the quadriceps, hamstrings, and calves.</li>
           <li><strong>Good posture habits:</strong> How you sit and stand affects knee loading. Avoid crossing your legs for extended periods and try to keep your weight evenly distributed when standing. Learn about <Link to="/guides/patellofemoral-pain-syndrome">how posture affects the kneecap</Link>.</li>
           <li><strong>Balanced leg strength:</strong> Make sure your exercise routine addresses all the major muscle groups around the knee, not just the quadriceps. The hamstrings, calves, and hip muscles all play important roles in knee stability.</li>

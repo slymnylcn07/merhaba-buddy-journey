@@ -245,7 +245,7 @@ const articleContent = (
 
     <h3>Balanced Muscle Development</h3>
     <p>
-      Imbalances between the quadriceps and hamstrings, or between the inner and outer thigh muscles, can alter how forces are distributed across the knee. Including exercises that target the hamstrings, glutes, and hip stabilizers alongside quad-dominant movements helps create balanced support for the joint. For more on strengthening exercises, see our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee pain exercises guide for strength, mobility, and comfort</Link>.
+      Imbalances between the quadriceps and hamstrings, or between the inner and outer thigh muscles, can alter how forces are distributed across the knee. Including exercises that target the hamstrings, glutes, and hip stabilizers alongside quad-dominant movements helps create balanced support for the joint. If outer knee aching is especially noticeable, our <Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT band syndrome guide</Link> explains the connection. For more on strengthening exercises, see our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee pain exercises guide for strength, mobility, and comfort</Link>.
     </p>
 
     <h3>Proper Warm-Up</h3>

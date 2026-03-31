@@ -168,7 +168,7 @@ export const itBandSyndromeExplained = {
         {/* --- Section 4: IT Band vs Other Side Knee Discomfort --- */}
         <h2>IT Band vs Other Side Knee Discomfort</h2>
         <p>
-          Not all outer or side knee discomfort is IT band-related. Here's a simple comparison to help you understand the differences:
+          Not all outer or side knee discomfort is IT band-related. Here's a simple comparison to help you understand the differences. For a broader overview of all knee zones, see our <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary underline hover:text-primary/80">knee pain locations visual guide</Link>:
         </p>
 
         <div className="overflow-x-auto my-8">

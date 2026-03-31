@@ -121,7 +121,7 @@ export const smartKneeMassagersBreakdown: ArticleExport = {
           Based on extensive user feedback and general wellness patterns, smart knee massagers tend to work best for specific groups and situations:
         </p>
         <ul>
-          <li><strong>People with everyday stiffness</strong>: age-related joint stiffness that builds up throughout the day or appears first thing in the morning responds particularly well to consistent warmth and vibration</li>
+          <li><strong>People with everyday stiffness</strong>: age-related joint stiffness that builds up throughout the day or appears <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">first thing in the morning</Link> responds particularly well to consistent warmth and vibration</li>
           <li><strong>Active adults recovering from exercise</strong>: post-workout soreness and tightness around the knee is a common use case, with many runners, cyclists, and gym-goers using their device as part of their cool-down routine</li>
           <li><strong>Office workers and desk-bound professionals</strong>: people who sit for extended periods and notice knee stiffness when standing often find that a brief session during or after work makes a meaningful difference</li>
           <li><strong>People seeking a daily comfort routine</strong>: those who want a consistent, easy-to-use wellness habit that doesn't require appointments, travel, or complex preparation</li>

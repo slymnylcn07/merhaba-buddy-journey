@@ -343,13 +343,13 @@ export const burningKneesAfterExercise: ArticleExport = {
         <h3>Proper Warm-Up</h3>
 
         <p>
-          A thorough warm-up prepares the joint tissues for the demands ahead by gradually increasing blood flow, raising tissue temperature, and improving the viscosity of synovial fluid. Starting a workout with cold, stiff tissues means the knee is absorbing stress before it is fully prepared, which can amplify the post-exercise burning response. Five to ten minutes of light movement before your main activity can make a meaningful difference.
+          A thorough warm-up prepares the joint tissues for the demands ahead by gradually increasing blood flow, raising tissue temperature, and improving the viscosity of synovial fluid. Starting a workout with cold, stiff tissues means the knee is absorbing stress before it is fully prepared, which can amplify the post-exercise burning response. Five to ten minutes of light movement before your main activity can make a meaningful difference. For warm-up exercises, see our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee exercises guide</Link>.
         </p>
 
         <h3>Controlled Movement</h3>
 
         <p>
-          Performing exercises with controlled speed and proper alignment reduces the peak forces that pass through the knee. Rapid, uncontrolled movements, especially during exercises like squats, lunges, and jumping, can create force spikes that stress the joint beyond what the surrounding muscles can manage. Focusing on smooth, deliberate movement patterns helps distribute load more evenly and reduces the likelihood of post-exercise burning.
+          Performing exercises with controlled speed and proper alignment reduces the peak forces that pass through the knee. Rapid, uncontrolled movements, especially during exercises like <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">squats</Link>, lunges, and jumping, can create force spikes that stress the joint beyond what the surrounding muscles can manage. Focusing on smooth, deliberate movement patterns helps distribute load more evenly and reduces the likelihood of post-exercise burning.
         </p>
 
         <h3>Avoiding Sudden Overload</h3>

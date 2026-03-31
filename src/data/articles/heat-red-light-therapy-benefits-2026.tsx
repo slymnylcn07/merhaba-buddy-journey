@@ -113,7 +113,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
         <h2>Real-World Applications: Who Benefits Most?</h2>
         <h3>People With Morning Knee Stiffness</h3>
         <p>
-          If your knees feel stiff and reluctant to move when you first get up, a 15-minute morning session with heat + red light therapy can help ease into the day more comfortably. The warmth relaxes stiff tissues while red light supports the cellular processes involved in daily joint function.
+          If your knees feel stiff and reluctant to move when you first get up, a 15-minute morning session with heat + red light therapy can help ease into the day more comfortably. The warmth relaxes stiff tissues while red light supports the cellular processes involved in daily joint function. Our <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning stiffness guide</Link> covers additional strategies for starting your day well.
         </p>
 
         <h3>Active Adults and Weekend Warriors</h3>

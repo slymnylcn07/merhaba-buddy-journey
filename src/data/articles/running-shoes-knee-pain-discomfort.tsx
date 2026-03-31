@@ -37,7 +37,7 @@ export const runningShoesKneePainDiscomfort: ArticleExport = {
           When shoes provide appropriate cushioning and support, they help spread impact forces more evenly across the foot. When they don't, whether due to poor fit, worn-out cushioning, or the wrong type of support, more of that impact reaches the knee joint directly.
         </p>
         <p>
-          This doesn't mean shoes are always the cause of knee discomfort, but they're one of the most controllable factors in the equation.
+          This doesn't mean shoes are always the <Link to="/guides/cause-of-knee-pain-patterns" className="text-primary hover:underline">cause of knee discomfort</Link>, but they're one of the most controllable factors in the equation.
         </p>
 
         <h2>Common Shoe-Related Factors That Influence Knee Comfort</h2>
@@ -103,18 +103,18 @@ export const runningShoesKneePainDiscomfort: ArticleExport = {
           Sometimes knee discomfort during or after running persists even after addressing footwear. This can happen when other factors are involved:
         </p>
         <ul className="list-disc pl-6 space-y-2 my-4">
-          <li>Muscle weakness in the hips or thighs that affects knee alignment during running</li>
+          <li>Muscle weakness in the hips or thighs that affects knee alignment during running. Our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee exercises guide</Link> covers strengthening options</li>
           <li>Running form habits that place extra stress on the knees</li>
           <li>Training volume increases that are too rapid for the body to adapt</li>
           <li>Running surface choices that are harder on the joints</li>
         </ul>
         <p>
-          In these cases, a multi-pronged approach that includes footwear, strength support, running form awareness, and a consistent at-home comfort routine tends to be most effective.
+          In these cases, a multi-pronged approach that includes footwear, strength support, running form awareness, and a consistent <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">at-home comfort routine</Link> tends to be most effective.
         </p>
 
         <h2>Final Thoughts</h2>
         <p>
-          Your running shoes are one of the most important and most controllable factors in your knee comfort equation. Choosing the right pair, replacing them on schedule, and paying attention to how your knees respond can make a meaningful difference. Pair smart footwear choices with a consistent post-run comfort routine, and your knees are more likely to feel supported mile after mile.
+          Your running shoes are one of the most important and most controllable factors in your knee comfort equation. Choosing the right pair, replacing them on schedule, and paying attention to how your knees respond can make a meaningful difference. Pair smart footwear choices with a consistent post-run comfort routine, and your knees are more likely to feel supported mile after mile. If outer knee discomfort is a recurring pattern, our <Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT band syndrome guide</Link> explores how running mechanics affect the lateral knee.
         </p>
 
         <PremiumCTA

@@ -77,17 +77,17 @@ export const heatOrIceKneePainSituations: ArticleExport = {
         <h2>Situation-by-Situation Breakdown</h2>
         <h3>After a Long Walk or Hike</h3>
         <p>
-          If your knees feel achy but not swollen after a long walk, warmth is usually the better choice. It helps the muscles around the knee relax and can ease that heavy, tired feeling. If you notice any puffiness, a short ice session first can help before transitioning to warmth.
+          If your knees feel achy but not swollen after a <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">long walk</Link>, warmth is usually the better choice. It helps the muscles around the knee relax and can ease that heavy, tired feeling. If you notice any puffiness, a short ice session first can help before transitioning to warmth. It helps the muscles around the knee relax and can ease that heavy, tired feeling. If you notice any puffiness, a short ice session first can help before transitioning to warmth.
         </p>
 
         <h3>Morning Stiffness</h3>
         <p>
-          Reaching for warmth in the morning is almost always the better option. Cold can make morning stiffness feel worse by tightening already tense muscles. A warm session helps ease into your day more comfortably.
+          Reaching for warmth in the morning is almost always the better option. Cold can make <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning stiffness</Link> feel worse by tightening already tense muscles. A warm session helps ease into your day more comfortably. A warm session helps ease into your day more comfortably.
         </p>
 
         <h3>After Yard Work or Household Chores</h3>
         <p>
-          Activities that involve kneeling, squatting, or standing for long stretches can leave knees feeling sore. If there's no visible swelling, warmth and gentle movement are usually enough to help your knees recover their comfortable range.
+          Activities that involve <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">kneeling</Link>, squatting, or standing for long stretches can leave knees feeling sore. If there's no visible swelling, warmth and gentle movement are usually enough to help your knees recover their comfortable range. If there's no visible swelling, warmth and gentle movement are usually enough to help your knees recover their comfortable range.
         </p>
 
         <h3>Post-Exercise Recovery</h3>
@@ -127,7 +127,7 @@ export const heatOrIceKneePainSituations: ArticleExport = {
 
         <h2>Final Thoughts</h2>
         <p>
-          The heat-or-ice question doesn't have to be complicated. For most everyday knee comfort needs, warmth is the more practical and effective choice. Ice has its place for acute swelling, but for the kind of daily stiffness and achiness most people experience, a consistent warmth-based routine, especially one that combines heat with red light support, tends to offer the most noticeable difference over time.
+          The heat-or-ice question doesn't have to be complicated. For most everyday knee comfort needs, warmth is the more practical and effective choice. Ice has its place for acute swelling, but for the kind of daily stiffness and achiness most people experience, a consistent warmth-based routine, especially one that combines <Link to="/guides/heat-or-ice-knee-pain-science" className="text-primary hover:underline">science-backed heat approaches</Link> with red light support, tends to offer the most noticeable difference over time.
         </p>
 
         <PremiumCTA

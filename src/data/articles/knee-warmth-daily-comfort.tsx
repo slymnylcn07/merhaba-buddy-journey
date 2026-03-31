@@ -102,7 +102,7 @@ export const kneeWarmthDailyComfort: ArticleExport = {
 
         <h3>During Active Inflammation</h3>
         <p>
-          If your knee feels hot, red, and uncomfortable without any warmth application, these signs suggest active inflammation. Adding external heat in this situation may not provide the comfort you are looking for and could make the area feel more uncomfortable. This is a good time to consult with a healthcare professional about the most appropriate approach for your situation.
+          If your knee feels hot, red, and uncomfortable without any warmth application, these signs suggest active inflammation. Adding external heat in this situation may not provide the comfort you are looking for and could make the area feel more uncomfortable. This is a good time to consult with a healthcare professional about the most appropriate approach for your situation. Understanding the <Link to="/guides/warm-feeling-in-knee" className="text-primary hover:underline">warm feeling in the knee</Link> can help you distinguish between natural warmth and signs that need attention.
         </p>
 
         <h3>With Certain Skin Sensitivities</h3>

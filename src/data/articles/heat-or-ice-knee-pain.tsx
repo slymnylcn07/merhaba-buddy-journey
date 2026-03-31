@@ -153,7 +153,7 @@ export const heatOrIceKneePain: ArticleExport = {
         </p>
         <ol className="list-decimal pl-6 space-y-2 my-4">
           <li><strong>For acute injuries:</strong> Use ice for 15-20 minutes, 2-3 times daily for the first 48-72 hours</li>
-          <li><strong>For chronic stiffness:</strong> Use heat therapy daily, ideally morning and evening</li>
+          <li><strong>For chronic stiffness:</strong> Use heat therapy daily, ideally morning and evening. Our <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link> covers how to build this habit</li>
           <li><strong>For post-activity recovery:</strong> Start with ice if swollen, transition to heat within 24-48 hours</li>
           <li><strong>For long-term support:</strong> Incorporate a heat + red light device into your daily routine for comprehensive comfort</li>
         </ol>

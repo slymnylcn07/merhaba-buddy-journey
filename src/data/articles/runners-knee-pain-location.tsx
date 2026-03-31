@@ -271,7 +271,7 @@ export const runnersKneePainLocation = {
                 <td className="border border-border/40 px-4 py-3 font-medium">Inner (Medial)</td>
                 <td className="border border-border/40 px-4 py-3">Dull ache, tenderness</td>
                 <td className="border border-border/40 px-4 py-3">Overpronation, worn shoes</td>
-                <td className="border border-border/40 px-4 py-3">Hip exercises, gait check</td>
+                <td className="border border-border/40 px-4 py-3">Hip exercises, gait check, <Link to="/guides/best-running-shoes-knee-pain" className="text-primary underline hover:text-primary/80">proper shoes</Link></td>
               </tr>
               <tr>
                 <td className="border border-border/40 px-4 py-3 font-medium">Outer (Lateral)</td>
