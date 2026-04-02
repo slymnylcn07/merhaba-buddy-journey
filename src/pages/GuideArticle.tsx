@@ -3541,6 +3541,11 @@ const articles: Record<string, ArticleData> = {
           Hiking combines prolonged walking with uneven terrain, elevation changes, and often heavy packs. The combination of impact, instability, and sustained effort makes the knee particularly vulnerable during long hikes, especially on downhill sections. Our guide on <Link to="/guides/knee-pain-hiking" className="text-primary hover:underline">knee comfort while hiking</Link> covers practical considerations.
         </p>
 
+        <PremiumCTA
+          headline="Looking for comfortable at-home knee support?"
+          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device, fitting naturally into daily comfort routines during and after recovery."
+        />
+
         <SectionDivider />
 
         <h2>Typical Symptoms People Notice</h2>
