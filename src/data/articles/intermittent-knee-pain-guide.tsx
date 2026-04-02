@@ -34,7 +34,7 @@ export const intermittentKneePainGuide: ArticleExport = {
           The knee joint is influenced by a wide range of factors throughout each day. Your activity level, the shoes you wore, how long you sat at your desk, the weather outside, and even your sleep quality can all influence how your knees feel on any given day.
         </p>
          <p>
-           This is why knee discomfort can feel unpredictable. It's rarely caused by just one thing. Instead, it's usually the result of multiple small factors adding up. On days when several of these factors align unfavorably, discomfort appears. On better days, those same factors happen to be in your favor. If your discomfort tends to feel sharp or sudden, our <Link to="/guides/sharp-knee-pain-comes-and-goes" className="text-primary hover:underline">sharp knee pain guide</Link> covers that specific pattern in more detail.
+           This is why knee discomfort can feel unpredictable. It's rarely caused by just one thing. Instead, it's usually the result of multiple small factors adding up. On days when several of these factors align unfavorably, discomfort appears. On better days, those same factors happen to be in your favor. If your discomfort tends to feel sharp or sudden, our <Link to="/guides/sharp-knee-pain-comes-and-goes" className="text-primary hover:underline">sharp knee pain guide</Link> covers that specific pattern in more detail. For a broader view of what causes intermittent sharp episodes, our guide on <Link to="/guides/sharp-knee-pain-causes-relief" className="text-primary hover:underline">sharp knee pain causes and relief</Link> explores the most common triggers.
          </p>
 
         <h2>Common Daily Factors That Influence Knee Comfort</h2>

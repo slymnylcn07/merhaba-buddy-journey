@@ -27,7 +27,7 @@ export const kneeWarmthDailyComfort: ArticleExport = {
           There is something deeply comforting about warmth. Whether it is a warm bath after a long day, a heated blanket on a cold evening, or a warm compress on a stiff joint, our bodies seem to naturally respond well to gentle heat. This instinct is well-founded: warmth has been used for comfort and wellness support across virtually every culture and historical period.
         </p>
         <p>
-          But when it comes to daily knee comfort, understanding <strong>when warmth helps most, when it might not be the best choice, and how to use it most effectively</strong> can make a real difference in your experience and results. This guide provides a practical, thorough look at how warmth can support your knees throughout the day.
+          But when it comes to daily knee comfort, understanding <strong>when warmth helps most, when it might not be the best choice, and how to use it most effectively</strong> can make a real difference in your experience and results. This guide provides a practical, thorough look at how warmth can support your knees throughout the day. If you have noticed your knee feeling warm on its own without applying heat, our guide on <Link to="/guides/warm-feeling-in-knee" className="text-primary hover:underline">warm feeling in the knee</Link> explains what that sensation typically means. And if warmth coincides with a burning sensation, see our guide on <Link to="/guides/burning-sensation-in-knee" className="text-primary hover:underline">burning sensation in the knee</Link> for a deeper look.
         </p>
 
         <h2>Why Warmth Feels Good on Knees: The Science Behind It</h2>
