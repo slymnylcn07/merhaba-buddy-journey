@@ -3731,6 +3731,9 @@ const articles: Record<string, ArticleData> = {
           Even minor <strong>knee injuries</strong> typically require weeks to fully resolve. More significant injuries may take months. Setting realistic expectations from the beginning helps manage frustration and supports consistent effort throughout the process.
         </p>
 
+        <KneeInjuryRecoveryTimelineChart />
+        </p>
+
         <h3>Progress Isn't Always Linear</h3>
         <p>
           Good days and harder days are normal during recovery. A setback doesn't necessarily mean something is wrong. The overall trend matters more than daily fluctuations. Tracking progress over weeks rather than hours provides a more accurate picture.
