@@ -40,7 +40,7 @@ const articleContent = (
 
     <h3>Muscle Fatigue Reduces Joint Support</h3>
     <p>
-      Your quadriceps, hamstrings, and calves act as dynamic stabilizers for the knee. During intense leg training, these muscles fatigue progressively. As they tire, they become less effective at absorbing and distributing forces across the joint. The knee itself begins to absorb more of the load directly, which contributes to that familiar post-workout aching sensation.
+      Your quadriceps, hamstrings, and calves act as dynamic stabilizers for the knee. During intense leg training, these muscles fatigue progressively. As they tire, they become less effective at absorbing and distributing forces across the joint. The knee itself begins to absorb more of the load directly, which contributes to that familiar post-workout aching sensation. If the ache feels more like a warm or <Link to="/guides/burning-knees-after-exercise" className="text-primary hover:underline">burning sensation in your knees after leg day</Link>, that may indicate increased tissue sensitivity from cumulative stress.
     </p>
 
     <h3>Increased Load from Strength Exercises</h3>

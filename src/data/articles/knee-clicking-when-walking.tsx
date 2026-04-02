@@ -26,7 +26,7 @@ export const kneeClickingWhenWalking = {
     content: (
       <>
         <p>
-          Knee clicking during everyday movement is one of the most common joint concerns, and also one of the most misunderstood. Many people assume clicking means something is damaged or worn out, but in most cases, movement-based knee sounds are completely harmless and don't indicate a problem.
+          Knee clicking during everyday movement is one of the most common joint concerns, and also one of the most misunderstood. Many people assume clicking means something is damaged or worn out, but in most cases, movement-based knee sounds are completely harmless and don't indicate a problem. If your knee clicks without any accompanying discomfort, our guide on <Link to="/guides/clicking-knee-without-pain" className="text-primary hover:underline">clicking knee without pain</Link> covers why painless joint sounds are typically normal.
         </p>
         <p>
           Whether you notice a <strong>clicking sound in knee when walking</strong>, a pop when you bend down, or a snap on the stairs, these sounds usually come from normal joint mechanics. This guide focuses specifically on <strong>knee clicking that happens during movement</strong>: walking, bending, squatting, climbing stairs, and standing up. If you're looking for a broader overview of cracking and popping, our <Link to="/guides/why-do-my-knees-crack-or-pop" className="text-primary hover:underline">complete guide to knee cracking and crepitus</Link> covers the general topic in depth.

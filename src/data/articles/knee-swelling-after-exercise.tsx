@@ -108,7 +108,7 @@ const articleContent = (
     </figure>
 
     <p>
-      Normal post-exercise swelling tends to follow a predictable pattern. It appears within hours after activity, peaks within the first day, and gradually resolves as the body completes its recovery process.
+      Normal post-exercise swelling tends to follow a predictable pattern. It appears within hours after activity, peaks within the first day, and gradually resolves as the body completes its recovery process. Some people also notice a <Link to="/guides/burning-knees-after-exercise" className="text-primary hover:underline">burning sensation in their knees after exercise</Link>, which is a separate but related response driven by increased blood flow and tissue sensitivity.
     </p>
 
     <h2>Signs That Knee Swelling May Need Attention</h2>

@@ -26,7 +26,7 @@ const articleContent = (
       The knee joint is surrounded by muscles, tendons, and a protective capsule filled with synovial fluid. During exercise, these structures absorb load and manage movement. When the workout is over, the body begins its recovery process, and this is when many people notice that their knees are sore.
     </p>
     <p>
-      It is important to understand the difference between muscle fatigue and joint discomfort. Muscle fatigue typically feels like a dull, general ache in the muscles around the knee, such as the quadriceps or hamstrings. Joint discomfort, on the other hand, tends to feel more localized within the knee itself, sometimes with a sensation of tightness, stiffness, or pressure.
+      It is important to understand the difference between muscle fatigue and joint discomfort. Muscle fatigue typically feels like a dull, general ache in the muscles around the knee, such as the quadriceps or hamstrings. Joint discomfort, on the other hand, tends to feel more localized within the knee itself, sometimes with a sensation of tightness, stiffness, or pressure. Some people also experience a distinct <Link to="/guides/burning-knees-after-exercise" className="text-primary hover:underline">burning sensation in the knee after exercise</Link>, which is a separate pattern worth understanding.
     </p>
 
     <StatHighlight

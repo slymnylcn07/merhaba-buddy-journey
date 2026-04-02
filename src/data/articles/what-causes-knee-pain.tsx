@@ -1,4 +1,5 @@
 import { ArticleExport } from "./types";
+import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-cause-knee-pain-new.jpg";
 import diagramFront from "@/assets/diagram-front-knee-zone.jpg";
@@ -45,7 +46,7 @@ export const whatCausesKneePain: ArticleExport = {
           The knee is one of the largest and most complex joints in the body. It connects the thighbone (femur) to the shinbone (tibia), with the kneecap (patella) providing a protective shield at the front. Surrounding this joint are ligaments, tendons, cartilage, and a fluid-filled capsule that work together to allow smooth bending, straightening, and rotation.
         </p>
         <p>
-          When any of these components experience stress, wear, or imbalance, <strong>knee pain</strong> can follow. The causes range widely — from simple muscle tightness to more complex structural changes — but most everyday knee discomfort falls into a few well-understood categories:
+          When any of these components experience stress, wear, or imbalance, <strong>knee pain</strong> can follow. The causes range widely — from simple muscle tightness to more complex structural changes — but most everyday knee discomfort falls into a few well-understood categories. If you are looking for practical ways to address knee discomfort day to day, our guide on <Link to="/guides/how-to-fix-knee-pain" className="text-primary hover:underline">how to fix knee pain with daily habits</Link> offers actionable steps:
         </p>
         <ul>
           <li><strong>Overuse and repetitive stress</strong> — activities that repeatedly load the knee without adequate recovery</li>

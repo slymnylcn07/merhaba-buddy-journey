@@ -1,4 +1,5 @@
 import { ArticleExport } from "./types";
+import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-sharp-knee-causes.jpg";
 
@@ -40,10 +41,10 @@ export const sharpKneePainCauses: ArticleExport = {
 
         <h3>2. Patellar Tracking Problems</h3>
         <p>
-          Your kneecap (patella) glides in a groove on your thighbone. When it doesn't track properly, due to muscle imbalances, tightness, or structural factors, it can create sharp pain that occurs during specific movements like climbing stairs, squatting, or sitting for extended periods.
+          Your kneecap (patella) glides in a groove on your thighbone. When it doesn't track properly, due to muscle imbalances, tightness, or structural factors, it can create sharp pain that occurs during specific movements like <Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">climbing stairs</Link>, <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">squatting</Link>, or sitting for extended periods.
         </p>
         <p>
-          This is particularly common among runners and is sometimes called "runner's knee" or patellofemoral pain syndrome. The pain typically worsens with certain activities and resolves with rest.
+          This is particularly common among runners and is sometimes called "runner's knee" or <Link to="/guides/patellofemoral-pain-syndrome" className="text-primary hover:underline">patellofemoral pain syndrome</Link>. The pain typically worsens with certain activities and resolves with rest. For a focused look at kneecap-related discomfort, see our guide on <Link to="/guides/pain-behind-kneecap" className="text-primary hover:underline">pain behind the kneecap</Link>.
         </p>
 
         <h3>3. Loose Bodies in the Joint</h3>
@@ -53,12 +54,12 @@ export const sharpKneePainCauses: ArticleExport = {
 
         <h3>4. Inflammatory Flare-Ups</h3>
         <p>
-          Conditions like osteoarthritis or gout can cause intermittent inflammatory flare-ups that produce sharp pain during active periods and then subside. These flare-ups are often triggered by activity levels, weather changes, dietary factors, or stress.
+          Conditions like osteoarthritis or gout can cause intermittent inflammatory flare-ups that produce sharp pain during active periods and then subside. These flare-ups are often triggered by activity levels, <Link to="/guides/cold-weather-knee-pain" className="text-primary hover:underline">weather changes</Link>, dietary factors, or stress. For broader context on what makes discomfort worse, see our guide on <Link to="/guides/what-makes-knee-pain-worse" className="text-primary hover:underline">what makes knee pain worse</Link>.
         </p>
 
         <h3>5. IT Band Syndrome</h3>
         <p>
-          The iliotibial (IT) band runs from your hip to your shin along the outside of your thigh. When it becomes tight or inflamed, it can cause sharp pain on the outside of the knee, particularly during activities like running, cycling, or going downstairs. For more on this, see our guide on <a href="/guides/side-knee-pain-comfort-guide">side knee pain patterns</a>.
+          The iliotibial (IT) band runs from your hip to your shin along the outside of your thigh. When it becomes tight or inflamed, it can cause sharp pain on the outside of the knee, particularly during activities like running, cycling, or <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">going downstairs</Link>. For more on outer knee patterns, see our <Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT band syndrome guide</Link> and <Link to="/guides/side-of-knee-pain-explained" className="text-primary hover:underline">side knee pain overview</Link>.
         </p>
 
         <h3>6. Nerve-Related Pain</h3>

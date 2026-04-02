@@ -92,7 +92,7 @@ export const burningKneeSensation: ArticleExport = {
         </figure>
 
         <p>
-          <strong>Increased circulation or inflammation response</strong> is the body's natural reaction to irritation. When joint tissues are stressed, blood vessels in the area dilate, delivering more oxygen and nutrients to support recovery. This increased blood flow creates warmth and, in some cases, a noticeable burning sensation that can feel intense even without significant structural damage.
+          <strong>Increased circulation or inflammation response</strong> is the body's natural reaction to irritation. When joint tissues are stressed, blood vessels in the area dilate, delivering more oxygen and nutrients to support recovery. This increased blood flow creates warmth and, in some cases, a noticeable burning sensation that can feel intense even without significant structural damage. If the sensation feels more like general warmth rather than a distinct burning, our guide on <Link to="/guides/warm-feeling-in-knee" className="text-primary hover:underline">warm feeling in the knee</Link> covers that specific pattern.
         </p>
         <p>
           <strong>Nerve sensitivity</strong> around the knee can also contribute. Several nerves pass near or through the knee joint area, and when surrounding tissues become inflamed or tense, these nerves may become temporarily more sensitive, producing a burning or tingling sensation. This is particularly common when muscles tighten after exercise or prolonged inactivity.

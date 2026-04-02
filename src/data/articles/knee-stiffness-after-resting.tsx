@@ -240,7 +240,7 @@ export const kneeStiffnessAfterResting: ArticleExport = {
 
         <h3>Why Legs Feel Heavy</h3>
         <p>
-          The sensation of heavy legs after resting is closely related to circulation. When you sit or lie down for extended periods, blood flow to the lower extremities slows. Gravity makes it harder for blood to return from the legs to the heart, which can create a sensation of heaviness, fullness, or sluggishness. This is why many people find that their legs feel heavy even before <strong>knee stiffness</strong> becomes apparent, particularly after long flights, car rides, or desk sessions.
+          The sensation of heavy legs after resting is closely related to circulation. When you sit or lie down for extended periods, blood flow to the lower extremities slows. Gravity makes it harder for blood to return from the legs to the heart, which can create a sensation of heaviness, fullness, or sluggishness. This is why many people find that their legs feel heavy even before <strong>knee stiffness</strong> becomes apparent, particularly after long flights, car rides, or desk sessions. If this heaviness is a recurring pattern for you, our guide on <Link to="/guides/heavy-feeling-in-knees" className="text-primary hover:underline">heavy feeling in the knees</Link> explores the causes and strategies in more detail.
         </p>
 
         <h3>The Muscle-Joint Feedback Loop</h3>

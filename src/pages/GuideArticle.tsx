@@ -3614,7 +3614,7 @@ const articles: Record<string, ArticleData> = {
         </p>
 
         <p>
-          Infrared technology differs from conventional heating methods in how it delivers warmth. While traditional heating pads warm the skin's surface through conduction, infrared wavelengths are designed to penetrate more deeply into tissue. This can create a different quality of warmth that many users describe as more satisfying and longer-lasting.
+          Infrared technology differs from conventional heating methods in how it delivers warmth. While traditional heating pads warm the skin's surface through conduction, infrared wavelengths are designed to penetrate more deeply into tissue. This can create a different quality of warmth that many users describe as more satisfying and longer-lasting. For a detailed comparison of these two approaches, see our guide on <Link to="/guides/infrared-vs-heating-pads" className="text-primary hover:underline">infrared vs heating pads</Link>. And for a broader look at the heated knee brace market, our <Link to="/guides/smart-heated-knee-braces-2026" className="text-primary hover:underline">2026 smart heated knee brace guide</Link> compares the top devices.
         </p>
 
         <InfoBox title="Infrared vs Traditional Heat">
@@ -4350,7 +4350,7 @@ const articles: Record<string, ArticleData> = {
         </p>
 
         <p>
-          This guide explores why <strong>behind-knee tension</strong> occurs, what patterns people commonly notice, supportive daily habits, and when seeking professional guidance might be appropriate.
+          This guide explores why <strong>behind-knee tension</strong> occurs, what patterns people commonly notice, supportive daily habits, and when seeking professional guidance might be appropriate. For a broader look at posterior knee comfort patterns, see our guide on <Link to="/guides/back-of-knee-pain-common" className="text-primary hover:underline">common back-of-knee discomfort</Link>.
         </p>
 
         <h2>Understanding the Back of the Knee</h2>
@@ -5725,7 +5725,7 @@ const articles: Record<string, ArticleData> = {
         />
 
         <p>
-          This guide reframes the concept of "fixing" knee discomfort toward something more realistic and sustainable: understanding your daily patterns, developing supportive habits, and creating an environment that promotes everyday comfort.
+          This guide reframes the concept of "fixing" knee discomfort toward something more realistic and sustainable: understanding your daily patterns, developing supportive habits, and creating an environment that promotes everyday comfort. For simple, practical home-based approaches you can start today, see our guide on <Link to="/guides/home-remedies-knee-pain" className="text-primary hover:underline">home remedies for knee pain</Link>. To understand what causes knee discomfort in the first place, see our <Link to="/guides/what-causes-knee-pain" className="text-primary hover:underline">complete guide to knee pain causes</Link>.
         </p>
 
         <h2>Why People Search "How to Fix Knee Pain"</h2>
@@ -6946,7 +6946,7 @@ const articles: Record<string, ArticleData> = {
         </p>
 
         <p>
-          This guide focuses on the lifestyle and routine aspects of knee comfort. Rather than discussing clinical approaches, we explore what <strong>knee pain treatment</strong> typically means in the context of daily life, and the common patterns and habits people develop to support their comfort.
+          This guide focuses on the lifestyle and routine aspects of knee comfort. Rather than discussing clinical approaches, we explore what <strong>knee pain treatment</strong> typically means in the context of daily life, and the common patterns and habits people develop to support their comfort. For a practical companion to this guide, see our article on <Link to="/guides/how-to-fix-knee-pain" className="text-primary hover:underline">how to fix knee pain through daily habits</Link> and our guide on <Link to="/guides/home-remedies-knee-pain" className="text-primary hover:underline">home remedies for knee pain</Link>.
         </p>
 
         <StatHighlight 

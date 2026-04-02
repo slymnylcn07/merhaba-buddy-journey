@@ -169,7 +169,7 @@ const articleContent = (
     {/* ── NEW: Stiff Knee Without Pain ── */}
     <h3>Why Does My Knee Feel Tight Even Without Pain?</h3>
     <p>
-      Many people notice a <strong>stiff knee no pain</strong> pattern after workouts. The knee feels tight, restricted, or hard to bend fully, but there is no actual pain involved. This is common and usually related to temporary fluid changes within the joint and muscle tightness from the recovery process. A few minutes of gentle movement typically resolves this sensation.
+      Many people notice a <strong>stiff knee no pain</strong> pattern after workouts. The knee feels tight, restricted, or hard to bend fully, but there is no actual pain involved. This is common and usually related to temporary fluid changes within the joint and muscle tightness from the recovery process. A few minutes of gentle movement typically resolves this sensation. If the sensation feels more like warmth or a burning feeling rather than stiffness, our guide on <Link to="/guides/burning-knees-after-exercise" className="text-primary hover:underline">burning knees after exercise</Link> explains what that may indicate.
     </p>
 
     {/* ── Section 2: Common Causes ── */}

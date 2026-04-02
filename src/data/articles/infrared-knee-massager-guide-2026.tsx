@@ -46,7 +46,7 @@ export const infraredKneeMassagerGuide2026: ArticleExport = {
           The market for at-home knee comfort devices has grown rapidly, and infrared knee massagers sit at the center of that growth. Unlike simple heating pads or basic vibration wraps, infrared devices use light-based technology to deliver warmth beneath the skin's surface, targeting deeper tissue for more meaningful comfort support.
         </p>
         <p>
-          But with dozens of products available, it can be hard to know what actually matters. This guide covers how infrared knee massagers work, what the research suggests, key features to evaluate, and which devices are worth your consideration in 2026.
+          But with dozens of products available, it can be hard to know what actually matters. This guide covers how infrared knee massagers work, what the research suggests, key features to evaluate, and which devices are worth your consideration in 2026. If you want to see specific product comparisons side by side, our <Link to="/guides/best-infrared-knee-massagers" className="text-primary hover:underline">best infrared knee massagers buyer's guide</Link> ranks the top options.
         </p>
 
         <h2>What Is Infrared Therapy and How Does It Apply to Knees?</h2>
