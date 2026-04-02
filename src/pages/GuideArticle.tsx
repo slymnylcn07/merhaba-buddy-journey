@@ -36,6 +36,8 @@ import {
   SharpPainPatternsChart,
   SciaticaKneePainChart,
   KneePainBelowKneecapChart,
+  KneeInjuryTypeFrequencyChart,
+  KneeInjuryRecoveryTimelineChart,
   InfoBox,
   StatHighlight,
   TipsList,
