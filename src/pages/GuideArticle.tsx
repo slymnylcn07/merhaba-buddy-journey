@@ -3732,7 +3732,6 @@ const articles: Record<string, ArticleData> = {
         </p>
 
         <KneeInjuryRecoveryTimelineChart />
-        </p>
 
         <h3>Progress Isn't Always Linear</h3>
         <p>
