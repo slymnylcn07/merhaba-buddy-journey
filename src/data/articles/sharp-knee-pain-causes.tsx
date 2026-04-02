@@ -1,4 +1,5 @@
 import { ArticleExport } from "./types";
+import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-sharp-knee-causes.jpg";
 
