@@ -1159,3 +1159,67 @@ export const SittingPositionImpactChart = () => {
     </div>
   );
 };
+
+// Knee Injuries Article: Injury Type Frequency Chart
+export const KneeInjuryTypeFrequencyChart = () => {
+  const data = [
+    { type: 'Ligament Sprains', percentage: 30 },
+    { type: 'Meniscus Tears', percentage: 25 },
+    { type: 'Tendon Issues', percentage: 18 },
+    { type: 'Cartilage Wear', percentage: 15 },
+    { type: 'Bursitis', percentage: 12 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Common Knee Injury Types by Reported Frequency</h3>
+      <div className="h-72">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} layout="vertical" margin={{ left: 20, right: 30, top: 5, bottom: 5 }}>
+            <XAxis type="number" domain={[0, 35]} tickFormatter={(v) => `${v}%`} tick={{ fontSize: 12 }} />
+            <YAxis type="category" dataKey="type" width={120} tick={{ fontSize: 12 }} />
+            <Tooltip formatter={(value: number) => `${value}%`} />
+            <Bar dataKey="percentage" radius={[0, 6, 6, 0]}>
+              {data.map((_, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Based on general orthopedic reporting patterns across age groups</p>
+    </div>
+  );
+};
+
+// Knee Injuries Article: Recovery Timeline Chart
+export const KneeInjuryRecoveryTimelineChart = () => {
+  const data = [
+    { type: 'Minor Strain', weeks: 3 },
+    { type: 'Mild Sprain', weeks: 6 },
+    { type: 'Meniscus Tear', weeks: 12 },
+    { type: 'MCL Sprain', weeks: 10 },
+    { type: 'ACL Injury', weeks: 28 },
+  ];
+
+  return (
+    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">General Recovery Timelines by Injury Type</h3>
+      <div className="h-72">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} margin={{ left: 10, right: 30, top: 5, bottom: 5 }}>
+            <XAxis dataKey="type" tick={{ fontSize: 11 }} interval={0} angle={-15} textAnchor="end" height={50} />
+            <YAxis tick={{ fontSize: 12 }} label={{ value: 'Weeks', angle: -90, position: 'insideLeft', style: { fontSize: 12 } }} />
+            <Tooltip formatter={(value: number) => `~${value} weeks`} />
+            <Bar dataKey="weeks" radius={[6, 6, 0, 0]}>
+              {data.map((_, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <p className="text-xs text-muted-foreground text-center mt-2">Approximate ranges vary significantly based on individual factors and severity</p>
+    </div>
+  );
+};
