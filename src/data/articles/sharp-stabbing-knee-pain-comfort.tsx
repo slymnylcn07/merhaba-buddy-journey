@@ -29,7 +29,7 @@ export const sharpStabbingKneePainComfort: ArticleExport = {
           That sudden, sharp sensation in your knee can stop you mid-step. Whether it happens when climbing stairs, standing up from a chair, or simply walking, sharp stabbing knee pain is one of the most common comfort concerns people search for answers about.
         </p>
         <p>
-          While the sensation can feel intense, understanding the common patterns behind it can help you feel more informed and confident about supporting your daily comfort.
+          While the sensation can feel intense, understanding the common patterns behind it can help you feel more informed and confident about supporting your daily comfort. If your sharp knee pain tends to come and go rather than remain constant, our guide on <Link to="/guides/sharp-knee-pain-causes-relief" className="text-primary hover:underline">sharp knee pain that comes and goes</Link> covers the specific triggers behind intermittent episodes.
         </p>
 
         <h2>Common Reasons Behind Sharp Knee Sensations</h2>

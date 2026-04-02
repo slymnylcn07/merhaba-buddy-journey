@@ -64,7 +64,7 @@ export const patellofemoralPainSyndrome: ArticleExport = {
     content: (
       <>
         <p>
-          If you have ever noticed a dull ache around the front of your knee that seems to worsen when you climb stairs, squat, or sit for long periods, you may be experiencing what is commonly known as <strong>patellofemoral pain syndrome</strong> (PFPS). This condition, sometimes called runner's knee, is one of the most frequently reported causes of <strong>pain around the kneecap</strong> in both active and less active adults.
+          If you have ever noticed a dull ache around the front of your knee that seems to worsen when you climb stairs, squat, or sit for long periods, you may be experiencing what is commonly known as <strong>patellofemoral pain syndrome</strong> (PFPS). This condition, sometimes called runner's knee, is one of the most frequently reported causes of <strong>pain around the kneecap</strong> in both active and less active adults. For a focused look at what happens behind the kneecap specifically, our guide on <Link to="/guides/pain-behind-kneecap" className="text-primary hover:underline">pain behind the kneecap</Link> covers the mechanical factors in detail.
         </p>
         <p>
           Understanding why this discomfort occurs and what everyday habits may help can make a meaningful difference in how your knees feel day to day. This guide breaks down the basics of the patellofemoral joint, explains why <strong>pfps knee pain</strong> develops, and shares practical strategies that may support your comfort.

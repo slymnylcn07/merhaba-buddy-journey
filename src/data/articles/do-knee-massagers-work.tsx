@@ -44,7 +44,7 @@ export const doKneeMassagersWork: ArticleExport = {
           <li><strong>Long-term routine support</strong>: sustained comfort when used consistently</li>
         </ul>
         <p>
-          What knee massagers are <em>not</em> designed to do is cure underlying conditions, replace medical treatment, or address structural damage. Setting realistic expectations is crucial to being satisfied with any at-home device.
+          What knee massagers are <em>not</em> designed to do is cure underlying conditions, replace medical treatment, or address structural damage. Setting realistic expectations is crucial to being satisfied with any at-home device. For a practical comparison of what different types of smart devices offer, see our <Link to="/guides/smart-knee-massagers-breakdown" className="text-primary hover:underline">non-medical breakdown of smart knee massagers</Link> and our <Link to="/guides/smart-heated-knee-braces-2026" className="text-primary hover:underline">2026 smart heated knee brace buyer's guide</Link>.
         </p>
 
         <h2>The Science Behind Knee Massagers</h2>

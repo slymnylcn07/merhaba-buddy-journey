@@ -100,7 +100,7 @@ export const kneePainAfterCarRides: ArticleExport = {
 
         <h3>Reduced Circulation</h3>
         <p>
-          Prolonged sitting compresses the blood vessels behind the knee and in the thigh, reducing blood flow to the muscles, tendons, and joint structures around the knee. This <strong>reduced circulation knee joint</strong> pattern means that the tissues receive less oxygen and nutrients while metabolic waste products accumulate, contributing to sensations of heaviness and discomfort. If you have noticed similar patterns in other situations, our guide on <Link to="/guides/knees-hurt-after-resting" className="text-primary hover:underline">why knees hurt after resting</Link> explores this further.
+           Prolonged sitting compresses the blood vessels behind the knee and in the thigh, reducing blood flow to the muscles, tendons, and joint structures around the knee. This <strong>reduced circulation knee joint</strong> pattern means that the tissues receive less oxygen and nutrients while metabolic waste products accumulate, contributing to sensations of heaviness and discomfort. This same heaviness pattern is something many people recognize from other situations as well, as explored in our guide on <Link to="/guides/heavy-feeling-in-knees" className="text-primary hover:underline">why knees feel heavy</Link>. If you have noticed similar patterns in other situations, our guide on <Link to="/guides/knees-hurt-after-resting" className="text-primary hover:underline">why knees hurt after resting</Link> explores this further.
         </p>
 
         <h3>Joint Compression</h3>
