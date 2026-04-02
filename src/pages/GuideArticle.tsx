@@ -6946,7 +6946,7 @@ const articles: Record<string, ArticleData> = {
         </p>
 
         <p>
-          This guide focuses on the lifestyle and routine aspects of knee comfort. Rather than discussing clinical approaches, we explore what <strong>knee pain treatment</strong> typically means in the context of daily life, and the common patterns and habits people develop to support their comfort.
+          This guide focuses on the lifestyle and routine aspects of knee comfort. Rather than discussing clinical approaches, we explore what <strong>knee pain treatment</strong> typically means in the context of daily life, and the common patterns and habits people develop to support their comfort. For a practical companion to this guide, see our article on <Link to="/guides/how-to-fix-knee-pain" className="text-primary hover:underline">how to fix knee pain through daily habits</Link> and our guide on <Link to="/guides/home-remedies-knee-pain" className="text-primary hover:underline">home remedies for knee pain</Link>.
         </p>
 
         <StatHighlight 
