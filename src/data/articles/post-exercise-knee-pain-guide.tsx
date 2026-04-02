@@ -91,7 +91,7 @@ const articleContent = (
 
     <h3>Increased Circulation</h3>
     <p>
-      Exercise increases blood flow throughout the body, including to the areas around the knee. After exercise, this increased circulation continues as the body delivers nutrients and repair cells to the tissues that were actively working. This natural process can create a feeling of warmth, fullness, or mild stiffness around the knee.
+      Exercise increases blood flow throughout the body, including to the areas around the knee. After exercise, this increased circulation continues as the body delivers nutrients and repair cells to the tissues that were actively working. This natural process can create a feeling of warmth, fullness, or mild stiffness around the knee. When this warmth feels more like a distinct burning sensation, it is often a sign of increased tissue sensitivity, something our guide on <Link to="/guides/burning-knees-after-exercise" className="text-primary hover:underline">burning knees after exercise</Link> explores in detail.
     </p>
 
     <h3>Temporary Inflammation Response</h3>

@@ -77,7 +77,7 @@ export const whyDoMyKneesCrackOrPop: ArticleExport = {
           Not all crepitus sounds are the same, and understanding the differences can help you assess your own knee sounds more accurately:
         </p>
         <ul>
-          <li><strong>Painless popping or clicking</strong>: Usually caused by gas bubble release or tendon movement. This is the most common type and is generally not a concern.</li>
+          <li><strong>Painless popping or clicking</strong>: Usually caused by gas bubble release or tendon movement. This is the most common type and is generally not a concern. For more on this pattern, see our guide on <Link to="/guides/clicking-knee-without-pain" className="text-primary hover:underline">clicking knee without pain</Link>.</li>
           <li><strong>Grinding or crunching sensation</strong>: Often related to cartilage surface changes. This type may feel like sandpaper rubbing within the joint and can be more noticeable during certain movements.</li>
           <li><strong>Catching or locking</strong>: Occasionally, knee sounds may be accompanied by a sensation that the knee briefly catches or locks during movement. This pattern is less common and may warrant professional evaluation.</li>
         </ul>
