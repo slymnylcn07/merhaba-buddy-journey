@@ -33,7 +33,7 @@ export const infraredVsHeatingPads: ArticleExport = {
     content: (
       <>
         <p>
-          If you've ever draped a heating pad over your knee and wished it would stay in place, you already understand one of the key limitations of traditional warmth options. Infrared knee massagers are designed to address exactly this kind of everyday frustration, but are they genuinely better? Let's look at how both approaches compare.
+          If you've ever draped a heating pad over your knee and wished it would stay in place, you already understand one of the key limitations of traditional warmth options. Infrared knee massagers are designed to address exactly this kind of everyday frustration, but are they genuinely better? Let's look at how both approaches compare. For a more detailed look at how smart devices stack up against one another, our <Link to="/guides/smart-knee-massagers-breakdown" className="text-primary hover:underline">smart knee massager breakdown</Link> and <Link to="/guides/best-infrared-knee-massagers" className="text-primary hover:underline">best infrared knee massagers guide</Link> offer side-by-side comparisons.
         </p>
 
         <h2>How Infrared Therapy Works</h2>

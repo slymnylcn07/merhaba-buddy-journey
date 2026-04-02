@@ -64,10 +64,10 @@ export const homeRemediesKneePain: ArticleExport = {
     content: (
       <>
         <p>
-          If you have ever searched for ways to help your knees feel better without leaving the house, you are not alone. Home remedies for knee pain are among the most searched health topics, and for good reason. Many people experience everyday knee discomfort that does not require professional intervention but still affects how they move, sleep, and go about their day.
+          If you have ever searched for ways to help your knees feel better without leaving the house, you are not alone. Home remedies for knee pain are among the most searched health topics, and for good reason. Many people experience everyday knee discomfort that does not require professional intervention but still affects how they move, sleep, and go about their day. For a broader view of building comfort habits into your routine, our guide on <Link to="/guides/knee-pain-treatment-daily-habits" className="text-primary hover:underline">knee pain treatment through daily habits</Link> explores how small, consistent changes add up.
         </p>
         <p>
-          This guide is not about exercise routines or workout-specific recovery. For those topics, see our guides on <Link to="/guides/exercises-to-relieve-knee-pain-at-home" className="text-primary hover:underline">exercises to relieve knee pain at home</Link> and <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">best knee pain exercises for strength and mobility</Link>. Instead, this article focuses on the simple, practical things you can do at home right now to support your knee comfort.
+          This guide is not about exercise routines or workout-specific recovery. For those topics, see our guides on <Link to="/guides/exercises-to-relieve-knee-pain-at-home" className="text-primary hover:underline">exercises to relieve knee pain at home</Link> and <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">best knee pain exercises for strength and mobility</Link>. If you want to understand the bigger picture of what "fixing" knee pain means and the daily habits that genuinely help, see our guide on <Link to="/guides/how-to-fix-knee-pain" className="text-primary hover:underline">how to fix knee pain</Link>. This article focuses on the simple, practical things you can do at home right now to support your knee comfort.
         </p>
 
         <StatHighlight
