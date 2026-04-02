@@ -67,7 +67,7 @@ export const kneePainAfterCarRides: ArticleExport = {
           Have you ever stepped out of your car after a long road trip and noticed that your knees feel stiff, tight, or reluctant to move? <strong>Knee pain after long car rides</strong> is an incredibly common experience that affects people of all ages. Whether you are a daily commuter, a long-distance driver, or someone who simply spends extended time as a passenger, understanding why this happens can help you take practical steps to support your knee comfort during travel.
         </p>
         <p>
-          The good news is that travel-related <strong>knee stiffness after driving</strong> is usually temporary and responds well to simple everyday strategies. This guide explains the mechanical factors behind the discomfort and shares practical tips that may help you arrive at your destination feeling more comfortable.
+          The good news is that travel-related <strong>knee stiffness after driving</strong> is usually temporary and responds well to simple everyday strategies. This guide explains the mechanical factors behind the discomfort and shares practical tips that may help you arrive at your destination feeling more comfortable. If you also notice knee discomfort specifically after air travel, our guide on <Link to="/guides/knee-pain-after-flights" className="text-primary hover:underline">knee pain after long flights</Link> covers the unique factors that come into play during flying.
         </p>
 
         <InfoBox title="Important Note">
