@@ -5725,7 +5725,7 @@ const articles: Record<string, ArticleData> = {
         />
 
         <p>
-          This guide reframes the concept of "fixing" knee discomfort toward something more realistic and sustainable: understanding your daily patterns, developing supportive habits, and creating an environment that promotes everyday comfort.
+          This guide reframes the concept of "fixing" knee discomfort toward something more realistic and sustainable: understanding your daily patterns, developing supportive habits, and creating an environment that promotes everyday comfort. For simple, practical home-based approaches you can start today, see our guide on <Link to="/guides/home-remedies-knee-pain" className="text-primary hover:underline">home remedies for knee pain</Link>. To understand what causes knee discomfort in the first place, see our <Link to="/guides/what-causes-knee-pain" className="text-primary hover:underline">complete guide to knee pain causes</Link>.
         </p>
 
         <h2>Why People Search "How to Fix Knee Pain"</h2>
