@@ -59,7 +59,7 @@ export const sharpKneePainCauses: ArticleExport = {
 
         <h3>5. IT Band Syndrome</h3>
         <p>
-          The iliotibial (IT) band runs from your hip to your shin along the outside of your thigh. When it becomes tight or inflamed, it can cause sharp pain on the outside of the knee, particularly during activities like running, cycling, or going downstairs. For more on this, see our guide on <a href="/guides/side-knee-pain-comfort-guide">side knee pain patterns</a>.
+          The iliotibial (IT) band runs from your hip to your shin along the outside of your thigh. When it becomes tight or inflamed, it can cause sharp pain on the outside of the knee, particularly during activities like running, cycling, or <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">going downstairs</Link>. For more on outer knee patterns, see our <Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT band syndrome guide</Link> and <Link to="/guides/side-of-knee-pain-explained" className="text-primary hover:underline">side knee pain overview</Link>.
         </p>
 
         <h3>6. Nerve-Related Pain</h3>
