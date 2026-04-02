@@ -41,10 +41,10 @@ export const sharpKneePainCauses: ArticleExport = {
 
         <h3>2. Patellar Tracking Problems</h3>
         <p>
-          Your kneecap (patella) glides in a groove on your thighbone. When it doesn't track properly, due to muscle imbalances, tightness, or structural factors, it can create sharp pain that occurs during specific movements like climbing stairs, squatting, or sitting for extended periods.
+          Your kneecap (patella) glides in a groove on your thighbone. When it doesn't track properly, due to muscle imbalances, tightness, or structural factors, it can create sharp pain that occurs during specific movements like <Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">climbing stairs</Link>, <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">squatting</Link>, or sitting for extended periods.
         </p>
         <p>
-          This is particularly common among runners and is sometimes called "runner's knee" or patellofemoral pain syndrome. The pain typically worsens with certain activities and resolves with rest.
+          This is particularly common among runners and is sometimes called "runner's knee" or <Link to="/guides/patellofemoral-pain-syndrome" className="text-primary hover:underline">patellofemoral pain syndrome</Link>. The pain typically worsens with certain activities and resolves with rest. For a focused look at kneecap-related discomfort, see our guide on <Link to="/guides/pain-behind-kneecap" className="text-primary hover:underline">pain behind the kneecap</Link>.
         </p>
 
         <h3>3. Loose Bodies in the Joint</h3>
