@@ -4350,7 +4350,7 @@ const articles: Record<string, ArticleData> = {
         </p>
 
         <p>
-          This guide explores why <strong>behind-knee tension</strong> occurs, what patterns people commonly notice, supportive daily habits, and when seeking professional guidance might be appropriate.
+          This guide explores why <strong>behind-knee tension</strong> occurs, what patterns people commonly notice, supportive daily habits, and when seeking professional guidance might be appropriate. For a broader look at posterior knee comfort patterns, see our guide on <Link to="/guides/back-of-knee-pain-common" className="text-primary hover:underline">common back-of-knee discomfort</Link>.
         </p>
 
         <h2>Understanding the Back of the Knee</h2>
