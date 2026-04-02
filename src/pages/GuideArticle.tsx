@@ -3614,7 +3614,7 @@ const articles: Record<string, ArticleData> = {
         </p>
 
         <p>
-          Infrared technology differs from conventional heating methods in how it delivers warmth. While traditional heating pads warm the skin's surface through conduction, infrared wavelengths are designed to penetrate more deeply into tissue. This can create a different quality of warmth that many users describe as more satisfying and longer-lasting.
+          Infrared technology differs from conventional heating methods in how it delivers warmth. While traditional heating pads warm the skin's surface through conduction, infrared wavelengths are designed to penetrate more deeply into tissue. This can create a different quality of warmth that many users describe as more satisfying and longer-lasting. For a detailed comparison of these two approaches, see our guide on <Link to="/guides/infrared-vs-heating-pads" className="text-primary hover:underline">infrared vs heating pads</Link>. And for a broader look at the heated knee brace market, our <Link to="/guides/smart-heated-knee-braces-2026" className="text-primary hover:underline">2026 smart heated knee brace guide</Link> compares the top devices.
         </p>
 
         <InfoBox title="Infrared vs Traditional Heat">
