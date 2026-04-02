@@ -3462,6 +3462,8 @@ const articles: Record<string, ArticleData> = {
           Bursae are small, fluid-filled sacs that cushion and reduce friction around the knee. When these become inflamed, usually from repetitive pressure or overuse, the result is bursitis. This is more of an overuse condition than an acute injury, but it causes significant <strong>knee discomfort</strong> for many people. For a deeper look at this condition, see our guide on <Link to="/guides/knee-bursitis-guide" className="text-primary hover:underline">knee bursitis</Link>.
         </p>
 
+        <KneeInjuryTypeFrequencyChart />
+
         <figure className="my-8">
           <img 
             src={sectionKneeBending} 
