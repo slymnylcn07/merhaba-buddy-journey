@@ -54,7 +54,7 @@ export const sharpKneePainCauses: ArticleExport = {
 
         <h3>4. Inflammatory Flare-Ups</h3>
         <p>
-          Conditions like osteoarthritis or gout can cause intermittent inflammatory flare-ups that produce sharp pain during active periods and then subside. These flare-ups are often triggered by activity levels, weather changes, dietary factors, or stress.
+          Conditions like osteoarthritis or gout can cause intermittent inflammatory flare-ups that produce sharp pain during active periods and then subside. These flare-ups are often triggered by activity levels, <Link to="/guides/cold-weather-knee-pain" className="text-primary hover:underline">weather changes</Link>, dietary factors, or stress. For broader context on what makes discomfort worse, see our guide on <Link to="/guides/what-makes-knee-pain-worse" className="text-primary hover:underline">what makes knee pain worse</Link>.
         </p>
 
         <h3>5. IT Band Syndrome</h3>
