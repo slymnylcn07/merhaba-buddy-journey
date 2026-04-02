@@ -446,6 +446,10 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "weight-affects-knee-pain": { headline: "Support your knees with gentle daily warmth", text: "FlexiKnee combines soothing heat, red light, and gentle vibration to support your knee comfort routine alongside healthy daily habits for your joints." },
 };
 
+const SectionDivider = () => (
+  <hr className="my-10 border-t border-border/40" />
+);
+
 const articles: Record<string, ArticleData> = {
   "why-knee-pain-doesnt-go-away": {
     slug: "why-knee-pain-doesnt-go-away",
