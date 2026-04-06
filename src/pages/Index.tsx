@@ -143,11 +143,11 @@ export default function Index() {
       <Helmet>
         <title>FlexiKnee™ | Smart Heated Knee Massager with Red Light Therapy</title>
         <meta name="description" content="FlexiKnee™ targets inflammation, stiffness and mobility issues using heat, vibration and red-light technology — all in one smart device." />
-        <link rel="canonical" href="https://flexi-knee.com" />
+        <link rel="canonical" href="https://flexi-knee.com/" />
         
         {/* Open Graph Meta Tags */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://flexi-knee.com" />
+        <meta property="og:url" content="https://flexi-knee.com/" />
         <meta property="og:title" content="FlexiKnee™ | Smart Heated Knee Massager with Red Light Therapy" />
         <meta property="og:description" content="FlexiKnee™ targets inflammation, stiffness and mobility issues using heat, vibration and red-light technology — all in one smart device." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
