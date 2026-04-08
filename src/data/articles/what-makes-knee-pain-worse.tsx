@@ -369,7 +369,7 @@ export const whatMakesKneePainWorse: ArticleExport = {
 
         <h3>Step 4: Build Consistency Over Time</h3>
         <p>
-          The most effective approach to knee comfort is consistency. Regular, moderate habits practiced over weeks and months tend to produce better results than intense efforts followed by periods of neglect. Think of knee care as a daily practice rather than a one-time fix.
+          The most effective approach to knee comfort is consistency. Regular, moderate habits practiced over weeks and months tend to produce better results than intense efforts followed by periods of neglect. Think of knee care as a daily practice rather than a one-time fix. If exercise is one of your main pain triggers, our guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link> covers specific recovery strategies. For stair-related discomfort, see our guide on <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">knee pain going down stairs</Link>.
         </p>
 
         <h3>Step 5: Monitor and Adjust</h3>

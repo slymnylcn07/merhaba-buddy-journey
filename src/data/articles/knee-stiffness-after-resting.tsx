@@ -31,7 +31,7 @@ export const kneeStiffnessAfterResting: ArticleExport = {
       { question: "Why does my knee feel stiff but not painful?", answer: "Stiff knee no pain is a very common experience. Stiffness refers to resistance or reduced range of motion, while pain involves active discomfort. Many people experience knee tightness after rest that involves only a feeling of resistance without any sharp or aching sensation." },
       { question: "Why does the back of my knee feel tight?", answer: "The back of the knee contains hamstring tendons, the popliteal area, and several soft tissue structures that compress and shorten during sitting. When you stand, these structures need time to lengthen again, creating the tight pulling sensation behind the knee." },
       { question: "What causes knee stiffness after sitting for a long time?", answer: "Prolonged sitting holds the knee at roughly 90 degrees, which shortens the hamstrings and stretches the quadriceps tendon. Synovial fluid settles, blood flow decreases, and surrounding tissues adapt to the seated position. The transition to standing then creates noticeable stiffness." },
-      { question: "How can I reduce knee stiffness after sitting?", answer: "Effective strategies include gentle knee bends before standing, applying warmth for 10 to 15 minutes, regular stretching of the quadriceps, hamstrings, and calves, staying well hydrated, and taking movement breaks every 30 to 45 minutes during prolonged sitting." },
+      { question: "How can I reduce knee stiffness after sitting?", answer: "Effective strategies include gentle knee bends before standing, applying warmth for 10 to 15 minutes, regular stretching of the quadriceps, hamstrings, and calves, staying well hydrated, and taking movement breaks every 30 to 45 minutes during prolonged sitting. If stiffness is worse after exercise days, post-exercise recovery habits may help. Clicking sounds after sitting are typically harmless and resolve as the joint warms up." },
     ],
     seoTags: "stiff knees from sitting, stiff knee after sitting, knee stiffness after sitting, stiff knees after sitting, knee feels tight, knee tightness, tightness in knee, knee stiffness, stiffness in knee, why does my knee feel tight, why are my knees stiff after sitting, knee feels tight and stiff, knee feels stiff, back of knee feels tight, tight muscles around knee, knee pain and stiffness after sitting, stiff knee no pain, knee joint stiffness after sitting, knee gets stiff when sitting",
     content: (
@@ -507,6 +507,8 @@ export const kneeStiffnessAfterResting: ArticleExport = {
           <li><Link to="/guides/knee-pain-after-sitting-cross-legged" className="text-primary hover:underline">Knee Pain After Sitting Cross-Legged</Link></li>
           <li><Link to="/guides/why-do-my-knees-crack-or-pop" className="text-primary hover:underline">Why Do My Knees Crack or Pop?</Link></li>
           <li><Link to="/guides/side-knee-pain-comfort-guide" className="text-primary hover:underline">Side Knee Pain Comfort Guide</Link></li>
+          <li><Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">Knee Pain After Exercise: Why It Happens and What Helps</Link></li>
+          <li><Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">Knee Clicking When Walking: What It Means</Link></li>
         </ul>
       </>
     ),

@@ -224,7 +224,7 @@ export const kneeBursitisGuide: ArticleExport = {
 
         <div className="my-8 rounded-xl overflow-hidden">
           <img src={imgBursaFriction} alt="Cross-section showing bursa fluid sac cushioning between bone surfaces during knee movement" className="w-full h-auto rounded-xl" loading="lazy" />
-          <p className="text-sm text-muted-foreground mt-2 text-center">Bursae act as fluid cushions between bone and soft tissue, reducing friction during every knee movement.</p>
+          <p className="text-sm text-muted-foreground mt-2 text-center">Bursae act as fluid cushions between bone and soft tissue, reducing friction during every knee movement. People with bursitis often notice increased discomfort when <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">going down stairs</Link> or after <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">exercise sessions</Link>.</p>
         </div>
 
         <h3>Joint-Friendly Activity Choices</h3>

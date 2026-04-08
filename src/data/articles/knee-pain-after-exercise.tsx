@@ -56,6 +56,18 @@ const faqs = [
     question: "When is post-exercise knee pain serious?",
     answer: "Seek professional advice if your knee pain includes visible swelling, inability to bear weight, locking or giving way, sharp pain at a specific point, or if discomfort persists beyond 72 hours. These signs may indicate something beyond normal post-exercise soreness.",
   },
+  {
+    question: "Why does my knee click after exercise?",
+    answer: "Clicking or popping sounds in the knee after exercise are common and usually related to gas bubbles releasing in the joint fluid, tendon movement over bony surfaces, or temporary changes in kneecap tracking caused by muscle fatigue. If the clicking is painless, it is generally considered harmless.",
+  },
+  {
+    question: "Can going down stairs make post-exercise knee pain worse?",
+    answer: "Yes. Descending stairs places 5 to 8 times your body weight through the kneecap, which is significantly more than flat walking. If your knees are already sore from exercise, stair descent can temporarily intensify the discomfort because the muscles are too fatigued to absorb the load effectively.",
+  },
+  {
+    question: "Should I use an infrared knee massager after exercise?",
+    answer: "Many people find that using an infrared knee massager after exercise provides deeper, longer-lasting warmth compared to a standard heating pad. The infrared wavelengths penetrate below the skin surface, supporting blood flow and helping the muscles around the knee relax during the recovery period.",
+  },
 ];
 
 const articleContent = (
@@ -455,6 +467,29 @@ const articleContent = (
       <p>Increase your exercise volume (distance, weight, or duration) by no more than 10% per week. This is one of the most well-established guidelines for preventing overuse-related knee discomfort. For example, if you ran 20 km this week, aim for no more than 22 km next week. Small, consistent progressions lead to big results with less risk.</p>
     </InfoBox>
 
+    {/* ── NEW: Real-World Scenarios ── */}
+    <h2>Real-World Scenarios: When Post-Exercise Knee Soreness Catches People Off Guard</h2>
+    <p>
+      Understanding delayed knee soreness becomes easier when you see it in everyday contexts. Consider these common scenarios that active adults experience regularly.
+    </p>
+    <p>
+      <strong>The weekend warrior pattern:</strong> You spend most of the week at a desk, then play an intense game of basketball or go for a long hike on Saturday. By Sunday morning, both knees feel stiff and achy. This happens because your joints have not been conditioned for the sudden spike in activity. The muscles around your knee fatigue quickly, transferring more load to the joint itself. People who also notice <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">clicking sounds when walking</Link> after these weekend sessions are often hearing normal joint mechanics amplified by temporary inflammation.
+    </p>
+    <p>
+      <strong>The gradual buildup:</strong> You have been running consistently for months, but recently increased your distance by 25% in a single week. Your knees felt fine during each run, but by the end of the week, a persistent ache settles around both kneecaps. This is a textbook example of cumulative overload outpacing your body's recovery capacity. Following the 10% rule for weekly volume increases helps prevent this pattern.
+    </p>
+    <p>
+      <strong>The post-travel return:</strong> After two weeks of vacation with minimal activity, you jump back into your regular gym routine. The next morning, your knees feel significantly sorer than usual. This happens because the adaptation you built before your break partially reversed during inactivity. Your muscles, tendons, and joint tissues need a transition period to rebuild their conditioning. If you experience <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">knee pain going down stairs</Link> during this transition, it is typically a sign of temporary kneecap sensitivity from the sudden return to loading.
+    </p>
+
+    <h2>How Movement Patterns Affect Post-Exercise Knee Discomfort</h2>
+    <p>
+      The way you move during exercise has a direct impact on how your knees feel afterward. Poor movement patterns do not always cause immediate pain, but they create asymmetric loading that compounds over time. Common patterns that contribute to delayed knee soreness include letting the knees collapse inward during squats, overstriding while running, and landing heavily on the heels during step exercises. Each of these habits places additional stress on specific knee structures that becomes noticeable during the recovery period. For a broader perspective on movement-related discomfort, our guide on <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">what causes knee pain</Link> explores how daily movement habits influence joint comfort.
+    </p>
+    <p>
+      Paying attention to how your feet, knees, and hips align during exercise can significantly reduce post-workout soreness over time. If you notice that one knee consistently hurts more than the other after workouts, it may point to an imbalance in your movement patterns rather than a structural issue with the joint itself. People who use <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massagers</Link> as part of their post-workout routine often report that warmth application helps them identify which areas feel tightest and most in need of attention.
+    </p>
+
     {/* ── Featured Snippet Blocks ── */}
     <h2>Why Do Knees Hurt After Exercise but Not During?</h2>
     <p>
@@ -488,7 +523,7 @@ export const kneePainAfterExercise: ArticleExport = {
     metaDescription: "Why do knees hurt after exercise but not during? Learn about sore knees after workouts, knee pain after leg day, swelling, stiffness, and recovery tips.",
     heroImage: heroImage,
     publishedDate: "March 4, 2026",
-    lastUpdated: "March 19, 2026",
+    lastUpdated: "April 8, 2026",
     content: articleContent,
     nextSlug: "cold-weather-knee-pain",
     nextTitle: "Cold Weather Knee Pain",

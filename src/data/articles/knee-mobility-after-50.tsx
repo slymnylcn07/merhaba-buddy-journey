@@ -287,7 +287,7 @@ export const kneeMobilityAfter50: ArticleExport = {
           <li>You have difficulty performing basic daily activities like dressing, bathing, or getting in and out of a car</li>
         </ul>
         <p>
-          A healthcare provider or physical therapist can assess your specific situation and create a targeted program. For a broader understanding of knee discomfort factors, see our guide on <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">what causes knee discomfort</Link>.
+          A healthcare provider or physical therapist can assess your specific situation and create a targeted program. For a broader understanding of knee discomfort factors, see our guide on <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">what causes knee discomfort</Link>. If you notice <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking when walking</Link> alongside reduced mobility, this is often related to the same cartilage and fluid changes rather than a separate concern. An <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massager</Link> can complement your mobility routine by providing deeper warmth before exercise sessions.
         </p>
 
         <InfoBox title="Summary: Your Knee Mobility Action Plan">

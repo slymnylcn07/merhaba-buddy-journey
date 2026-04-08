@@ -288,7 +288,7 @@ export const clickingKneeWithoutPain: ArticleExport = {
         </p>
 
         <p>
-          For a comprehensive approach to knee comfort, explore our guide on <Link to="/guides/knee-tightness-without-pain">knee tightness without pain</Link>.
+          For a comprehensive approach to knee comfort, explore our guide on <Link to="/guides/knee-tightness-without-pain">knee tightness without pain</Link>. If your knee clicking is most noticeable during walking, our detailed guide on <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking when walking</Link> covers every movement scenario in depth. Those interested in at-home warmth therapy to support joint lubrication may find our <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massager guide</Link> helpful.
         </p>
 
         <h2>When Knee Sounds Should Be Evaluated</h2>

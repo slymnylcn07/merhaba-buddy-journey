@@ -232,6 +232,21 @@ const featuredSlugs = [
   "daily-knee-comfort-routine",
 ];
 
+// Priority Guides (high-impact SEO articles)
+const prioritySlugs = [
+  "knee-pain-after-exercise",
+  "knee-clicking-when-walking",
+  "knee-pain-going-down-stairs",
+  "infrared-knee-massager-guide-2026",
+];
+
+const priorityDescriptions: Record<string, string> = {
+  "knee-pain-after-exercise": "Understand why knee soreness appears hours after exercise, the difference between normal fatigue and warning signs, and recovery strategies that work.",
+  "knee-clicking-when-walking": "Learn why your knee clicks during walking, bending, and stairs, what different sounds mean, and when clicking deserves attention.",
+  "knee-pain-going-down-stairs": "Discover why descending stairs creates more knee pressure than climbing, the biomechanics involved, and daily habits for comfortable stair use.",
+  "infrared-knee-massager-guide-2026": "Compare the best infrared knee massagers of 2026, understand how infrared therapy works, and find the right device for your daily routine.",
+};
+
 // Category 1: Knee Discomfort by Location
 const locationSlugs = [
   // Top 4 (shown in grid)
@@ -575,7 +590,7 @@ const Guides = () => {
     <>
       <Helmet>
         <title>Simple Guides for Everyday Knee Comfort | FlexiKnee</title>
-        <meta name="description" content="These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines — without medical advice or treatment claims." />
+        <meta name="description" content="Explore 100+ guides on knee pain after exercise, knee clicking when walking, stair discomfort, and daily comfort routines. Practical, non-medical knee care tips." />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
@@ -603,8 +618,14 @@ const Guides = () => {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3D3D3D] mb-6 leading-tight tracking-tight">
               Simple Guides for Everyday Knee Comfort
             </h1>
+            <p className="text-base md:text-lg text-[#6B6B6B] font-light leading-relaxed max-w-3xl mx-auto mb-4">
+              These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines. Whether you experience knee pain after exercise, notice your knees clicking when walking, or feel stiffness after sitting, our library covers the topics that matter most.
+            </p>
+            <p className="text-base md:text-lg text-[#6B6B6B] font-light leading-relaxed max-w-3xl mx-auto mb-4">
+              Knee discomfort is one of the most common concerns for adults over 30. From movement-related soreness and stair discomfort to age-related stiffness and daily comfort routines, each guide is designed to help you make informed decisions about your knee health without medical jargon or treatment claims.
+            </p>
             <p className="text-base md:text-lg text-[#6B6B6B] font-light leading-relaxed max-w-3xl mx-auto mb-10">
-              These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines — without medical advice or treatment claims.
+              Explore guides organized by location, activity, at-home methods, and device comparisons to find the information most relevant to your situation.
             </p>
             
             {/* Search */}
@@ -660,6 +681,52 @@ const Guides = () => {
         {/* Main Content - Hide when searching */}
         {!showSearchResults && (
           <>
+            {/* Featured Guides - Priority Articles */}
+            <section className="py-12 md:py-16 bg-white">
+              <div className="container px-4 max-w-6xl mx-auto">
+                <SectionHeader 
+                  id="priority-guides"
+                  title="Featured Guides"
+                  subtitle="Our most-read guides covering the knee concerns people search for most."
+                />
+                {isLoading ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {[1, 2, 3, 4].map((i) => <FeaturedCardSkeleton key={i} />)}
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {prioritySlugs.map(slug => {
+                      const guide = getGuide(slug);
+                      if (!guide) return null;
+                      return (
+                        <Link key={slug} to={`/guides/${slug}`} className="group block">
+                          <article className="rounded-2xl overflow-hidden bg-[#FAF7F2] shadow-sm hover:shadow-lg transition-all duration-300 h-full border-2 border-primary/10">
+                            <div className="aspect-[4/3] overflow-hidden">
+                              <img src={guide.thumbnail} alt={guide.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                            </div>
+                            <div className="p-5 md:p-6">
+                              <div className="flex items-center gap-2 mb-3">
+                                <span className="text-xs font-medium text-primary uppercase tracking-wider">Featured</span>
+                                <span className="text-[#C4B5A4]">•</span>
+                                <span className="inline-flex items-center gap-1 text-xs text-[#8B7355]">
+                                  <Clock className="h-3 w-3" />
+                                  {guide.readTime} min
+                                </span>
+                              </div>
+                              <h3 className="text-lg md:text-xl font-semibold text-[#3D3D3D] leading-snug mb-2 group-hover:text-primary transition-colors">
+                                {guide.title}
+                              </h3>
+                              <p className="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2">{priorityDescriptions[slug] || guide.description}</p>
+                            </div>
+                          </article>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            </section>
+
             {/* Start Here */}
             <section className="py-12 md:py-16">
               <div className="container px-4 max-w-6xl mx-auto">
@@ -692,20 +759,38 @@ const Guides = () => {
               bgWhite
             />
 
+            {/* Contextual bridge */}
+            <section className="py-6">
+              <div className="container px-4 max-w-4xl mx-auto">
+                <p className="text-[#6B6B6B] text-sm leading-relaxed text-center">
+                  Many people experience knee discomfort during specific movements rather than at rest. Whether you notice <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link>, hear <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">clicking sounds while walking</Link>, or feel aching when <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">going down stairs</Link>, understanding activity-related patterns can help you make better daily choices.
+                </p>
+              </div>
+            </section>
+
             {/* Category 2: By Activity */}
             <CategorySection
               id="by-activity"
               title="Knee Discomfort by Activity"
-              subtitle="Guides for runners, walkers, and anyone who notices knee sensations during movement."
+              subtitle="Guides for runners, walkers, and anyone who notices knee sensations during movement. Learn why exercises, stairs, and daily activities affect your knees differently."
               allSlugs={activitySlugs}
               isLoading={isLoading}
             />
+
+            {/* Contextual bridge */}
+            <section className="py-6">
+              <div className="container px-4 max-w-4xl mx-auto">
+                <p className="text-[#6B6B6B] text-sm leading-relaxed text-center">
+                  Alongside movement, your daily habits and at-home routines play a significant role in knee comfort. From warmth application and gentle stretching to <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massagers</Link>, there are many approaches to support your joints throughout the day.
+                </p>
+              </div>
+            </section>
 
             {/* Category 3: At-Home Methods */}
             <CategorySection
               id="by-methods"
               title="At-Home Methods & Daily Comfort"
-              subtitle="Explore different approaches people use at home to support daily knee comfort."
+              subtitle="Explore different approaches people use at home to support daily knee comfort, from heat and cold therapy to red light and daily routines."
               allSlugs={methodsSlugs}
               isLoading={isLoading}
               bgWhite
@@ -715,7 +800,7 @@ const Guides = () => {
             <CategorySection
               id="by-devices"
               title="Device Comparisons & Buying Guides"
-              subtitle="Compare popular knee comfort devices and find the right option for your needs."
+              subtitle="Compare popular knee comfort devices including infrared massagers, heated braces, and red light therapy options. Find the right device for your daily routine."
               allSlugs={deviceSlugs}
               isLoading={isLoading}
             />
@@ -754,11 +839,50 @@ const Guides = () => {
               </div>
             </section>
 
+            {/* FAQ Section */}
+            <section className="py-12 md:py-16 bg-white">
+              <div className="container px-4 max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-semibold text-[#3D3D3D] mb-8">Frequently Asked Questions About Knee Comfort</h2>
+                <div className="space-y-6">
+                  {[
+                    { q: "What are the most common causes of knee pain?", a: "Knee pain is most commonly caused by overuse, muscle imbalances, age-related cartilage changes, and repetitive loading during activities like walking, running, and climbing stairs. Understanding the specific pattern of your discomfort helps identify the most effective daily habits for comfort." },
+                    { q: "Why do my knees hurt after exercise but not during?", a: "During exercise, your body releases endorphins that mask discomfort. After you stop, the body's natural inflammatory response begins to repair stressed tissues, which is why soreness often appears hours later. This delayed pattern is normal and usually resolves within 2 to 3 days." },
+                    { q: "Is knee clicking when walking something to worry about?", a: "In most cases, no. Knee clicking during walking is usually caused by gas bubbles in the joint fluid, tendons gliding over bony surfaces, or normal kneecap tracking variations. Painless clicking is considered a normal part of joint mechanics." },
+                    { q: "Why does going down stairs hurt my knees more than climbing?", a: "Descending stairs places 5 to 8 times your body weight through the kneecap, compared to 3 to 4 times when climbing. The eccentric braking action required to control your descent concentrates pressure on the kneecap and surrounding cartilage." },
+                    { q: "What home methods help with daily knee discomfort?", a: "Simple daily habits that support knee comfort include gentle movement and stretching, applying warmth to stiff joints, maintaining balanced leg strength, wearing supportive footwear, staying hydrated, and taking regular movement breaks during prolonged sitting." },
+                    { q: "How do infrared knee massagers differ from regular heating pads?", a: "Infrared knee massagers use light wavelengths that penetrate deeper into tissue compared to surface-level heat pads. This deeper warmth supports blood flow and helps relax muscles below the skin's surface. Many devices also include vibration massage for additional comfort support." },
+                  ].map((faq, i) => (
+                    <div key={i} className="border-b border-[#E5DDD4] pb-5">
+                      <h3 className="text-base font-semibold text-[#3D3D3D] mb-2">{faq.q}</h3>
+                      <p className="text-sm text-[#6B6B6B] leading-relaxed">{faq.a}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* SEO Text Block */}
+            <section className="py-12 md:py-16">
+              <div className="container px-4 max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-semibold text-[#3D3D3D] mb-6">Understanding Knee Discomfort Patterns</h2>
+                <p className="text-[#6B6B6B] leading-relaxed mb-4">
+                  Knee discomfort affects millions of adults worldwide, and understanding the patterns behind it is the first step toward building effective daily comfort habits. Whether you experience knee pain when walking, notice stiffness after sitting, or feel soreness after physical activity, each pattern has specific causes rooted in how the knee joint functions during everyday movement.
+                </p>
+                <p className="text-[#6B6B6B] leading-relaxed mb-4">
+                  Daily habits play a significant role in how your knees feel over time. Simple practices like maintaining balanced leg strength, applying warmth to stiff joints, staying gently active throughout the day, and wearing supportive footwear can meaningfully improve your daily knee comfort. The guides in this library are designed to help you understand these patterns and build sustainable routines that support your joints.
+                </p>
+                <p className="text-[#6B6B6B] leading-relaxed">
+                  Explore our guides to learn about <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link>, <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking during walking</Link>, <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">stair-related knee discomfort</Link>, and <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">at-home comfort devices</Link>. Each guide provides practical, educational information to help you make informed decisions about your knee health.
+                </p>
+              </div>
+            </section>
+
             {/* Footer Mini Navigation */}
             <section className="py-8 border-t border-[#E5DDD4]">
               <div className="container px-4 max-w-6xl mx-auto">
                 <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
                   <span className="text-sm text-[#8B7355] font-medium">Browse by:</span>
+                  <button onClick={() => scrollToSection('priority-guides')} className="text-sm text-[#6B6B6B] hover:text-primary transition-colors">Featured</button>
                   <button onClick={() => scrollToSection('by-location')} className="text-sm text-[#6B6B6B] hover:text-primary transition-colors">By Location</button>
                   <button onClick={() => scrollToSection('by-activity')} className="text-sm text-[#6B6B6B] hover:text-primary transition-colors">By Activity</button>
                   <button onClick={() => scrollToSection('by-methods')} className="text-sm text-[#6B6B6B] hover:text-primary transition-colors">Methods & Comfort</button>

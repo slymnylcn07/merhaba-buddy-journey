@@ -246,7 +246,7 @@ const articleContent = (
     </ul>
 
     <InfoBox title="The 10-Minute Recovery Rule">
-      <p>Building a short post-workout recovery routine does not require complicated equipment or significant time. Just 10 minutes of light movement and targeted stretching after every session can make a meaningful difference in how your knees feel the next day. Consistency matters more than duration.</p>
+      <p>Building a short post-workout recovery routine does not require complicated equipment or significant time. Just 10 minutes of light movement and targeted stretching after every session can make a meaningful difference in how your knees feel the next day. Consistency matters more than duration. For a deeper understanding of why post-exercise knee soreness occurs and what it means, see our comprehensive guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link>. Adding an <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massager session</Link> after your recovery stretches can provide an additional layer of comfort support.</p>
     </InfoBox>
 
   </>

@@ -39,6 +39,18 @@ const faqs = [
     question: "When should knee pain on stairs be checked?",
     answer: "See a healthcare professional if your stair-related knee pain persists for more than 2 weeks, worsens progressively, includes swelling or warmth around the joint, causes your knee to lock, catch, or give way, or prevents you from doing daily activities comfortably. Early evaluation can help identify the cause and guide appropriate support.",
   },
+  {
+    question: "Does knee clicking on stairs mean something is wrong?",
+    answer: "Not necessarily. Clicking or popping sounds on stairs are common because the kneecap is under higher compression than during flat walking. Painless clicking is typically caused by normal joint mechanics. However, clicking combined with pain, catching, or swelling deserves closer attention.",
+  },
+  {
+    question: "Can post-exercise soreness make stair descent worse?",
+    answer: "Yes. If your quadriceps are already fatigued from a workout, they cannot absorb the braking forces of stair descent as effectively. This means more stress transfers to the kneecap and surrounding structures, making stairs feel more uncomfortable than usual during the recovery period.",
+  },
+  {
+    question: "Is an infrared knee massager helpful for stair-related knee discomfort?",
+    answer: "Many people find that applying infrared warmth after stair-intensive days helps support blood flow and relaxes the muscles around the knee. The deeper warmth penetration compared to surface-level heat pads may provide more effective comfort during the recovery period.",
+  },
 ];
 
 const articleContent = (
@@ -492,6 +504,29 @@ const articleContent = (
 
     <p>
       For those who find even gentle stair descent uncomfortable, consider descending sideways while holding the handrail. This technique reduces the knee bend angle and shifts some of the load to the hip muscles instead of concentrating it on the kneecap. If your discomfort extends beyond stairs to <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">knee pain when bending</Link> in general, the underlying cause may require broader attention.
+    </p>
+
+    {/* ── NEW: Real-Life Stair Scenarios ── */}
+    <h2>Real-Life Stair Scenarios and What They Mean for Your Knees</h2>
+    <p>
+      Understanding how different stair situations affect your knees can help you make practical adjustments throughout your day.
+    </p>
+    <p>
+      <strong>The office stairwell challenge:</strong> If you work in a multi-story building and take the stairs throughout the day, your knees accumulate significant loading over dozens of trips. Many people notice that their knees feel fine in the morning but become progressively more uncomfortable by late afternoon. This pattern reflects cumulative fatigue in the quadriceps muscles rather than sudden damage. Spacing your stair trips and taking the elevator occasionally during the afternoon can help manage this load.
+    </p>
+    <p>
+      <strong>Post-exercise stair sensitivity:</strong> If you notice that stairs feel harder on days after leg workouts, this is directly related to the delayed muscle fatigue discussed in our guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link>. When your quadriceps are already fatigued from squats, lunges, or running, they cannot absorb the braking forces of stair descent as effectively. Planning your stair-heavy days and workout days to avoid overlap can make a meaningful difference.
+    </p>
+    <p>
+      <strong>Cold morning stair stiffness:</strong> Many people report that their knees feel stiffest and most uncomfortable on stairs first thing in the morning, particularly during colder months. This is because overnight rest allows synovial fluid to thicken and muscles to stiffen. A brief warm-up before tackling stairs, even just a minute of gentle knee bends, helps redistribute joint fluid and reduce that initial discomfort.
+    </p>
+
+    <h2>How Stair Discomfort Connects to Other Knee Patterns</h2>
+    <p>
+      Knee pain on stairs rarely exists in isolation. People who experience discomfort when descending stairs often notice related patterns in other daily activities. You may find that your knees also <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">click or pop during walking</Link>, feel stiff after sitting for long periods, or ache after long walks. These patterns share a common thread: the kneecap and surrounding structures are sensitive to loading, compression, and repetitive motion.
+    </p>
+    <p>
+      Recognizing these connections helps you build a more comprehensive approach to knee comfort rather than addressing each symptom separately. A daily routine that includes gentle strengthening, regular movement breaks, and warmth application can address multiple discomfort patterns simultaneously. For those exploring at-home support tools, our <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massager guide</Link> explains how deeper warmth technology can complement your daily knee care routine.
     </p>
 
     <h2>Building Long-Term Comfort: A Summary</h2>

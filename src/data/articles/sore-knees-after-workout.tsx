@@ -184,7 +184,7 @@ const articleContent = (
       <li><strong>Daily consistency:</strong> The most effective recovery routines are the ones you do regularly. Even on days when your knees feel fine, a brief movement and stretching session can help maintain flexibility and support long-term comfort.</li>
     </ul>
     <p>
-      Building this type of routine into your daily schedule, whether after workouts or as part of your morning or evening habits, creates a foundation for healthier, more comfortable knees over time.
+      Building this type of routine into your daily schedule, whether after workouts or as part of your morning or evening habits, creates a foundation for healthier, more comfortable knees over time. For a deeper understanding of why knees hurt after exercise but not during, our comprehensive guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link> explains the delayed soreness mechanism in detail. People who also experience <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">discomfort going down stairs</Link> after workouts are often dealing with temporary quadriceps fatigue that makes stair descent harder. An <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massager</Link> can provide deeper, longer-lasting warmth as part of your recovery routine.
     </p>
   </>
 );

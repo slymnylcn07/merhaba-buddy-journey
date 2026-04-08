@@ -253,7 +253,7 @@ export const exercisesToRelieveKneePainAtHome: ArticleExport = {
         />
 
         <InfoBox title="Daily Knee Exercise Tip">
-          <p>Small daily exercise routines can support knee strength and stability over time. Even 10 to 15 minutes of gentle strengthening and mobility work, done consistently, can make a noticeable difference in how your knees feel during everyday activities.</p>
+          <p>Small daily exercise routines can support knee strength and stability over time. Even 10 to 15 minutes of gentle strengthening and mobility work, done consistently, can make a noticeable difference in how your knees feel during everyday activities. If your knees tend to be sore after more intense exercise sessions, our guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link> explains the delayed soreness mechanism and how to manage it. For those who find stairs particularly challenging, our <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">stair descent guide</Link> covers specific strengthening exercises for comfortable stair use.</p>
         </InfoBox>
 
         <h2>How Often to Do Knee Exercises at Home</h2>
