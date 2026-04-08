@@ -249,7 +249,7 @@ export const whatCausesKneePain: ArticleExport = {
           <li>Joint warmth, redness, or fever alongside knee pain</li>
         </ul>
         <p>
-          Early professional guidance can help identify specific causes and create targeted approaches. Don't wait for discomfort to become constant before seeking support.
+          Early professional guidance can help identify specific causes and create targeted approaches. Don't wait for discomfort to become constant before seeking support. Common activity-related triggers include <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee discomfort that appears after exercise</Link> and <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">knee pain when going down stairs</Link>, both of which have specific biomechanical explanations.
         </p>
 
         <h2>Building Your Daily Knee Comfort Foundation</h2>

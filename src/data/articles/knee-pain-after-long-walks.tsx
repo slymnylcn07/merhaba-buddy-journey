@@ -263,6 +263,7 @@ export const kneePainAfterLongWalks: ArticleExport = {
           <p>✓ Take strategic stretch breaks during walks over 30 minutes</p>
           <p>✓ Complete your post-walk recovery routine: stretch, warmth, gentle movement</p>
           <p>✓ Listen to your knees — adjust distance when needed</p>
+          <p>If you notice <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">clicking or popping sounds</Link> during or after long walks, this is usually related to normal joint mechanics and is not a cause for concern unless accompanied by pain. After particularly long walks, using an <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massager</Link> can help support recovery</p>
         </InfoBox>
       </>
     ),

@@ -277,7 +277,7 @@ const articleContent = (
 
     <h3>Why do knees stiffen when temperature drops?</h3>
     <p>
-      When temperatures fall, three things happen: synovial fluid in the joint thickens, muscles around the knee tighten, and blood flow decreases. Together, these create the characteristic stiffness that makes your first movements in cold conditions feel tight and uncomfortable.
+      When temperatures fall, three things happen: synovial fluid in the joint thickens, muscles around the knee tighten, and blood flow decreases. Together, these create the characteristic stiffness that makes your first movements in cold conditions feel tight and uncomfortable. Cold weather can also amplify <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking during walking</Link> because thicker joint fluid and tighter muscles change how the kneecap tracks. Activities like <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">going down stairs</Link> may feel notably harder in winter months.
     </p>
 
     <h3>Why does damp weather make knees ache?</h3>

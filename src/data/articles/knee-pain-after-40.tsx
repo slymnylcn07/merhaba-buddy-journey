@@ -1,4 +1,5 @@
 import { ArticleExport } from "./types";
+import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-knee-pain-after-40.jpg";
 import diagramAgingComparison from "@/assets/diagram-knee-aging-comparison.jpg";
@@ -182,7 +183,7 @@ export const kneePainAfter40: ArticleExport = {
 
         <h3>Extended Walking</h3>
         <p>
-          While walking is generally one of the best activities for knee health, extended walks (over 30-60 minutes) can be challenging for aging knees. The cumulative impact, especially on hard surfaces, can trigger achiness or swelling. Proper footwear and pacing strategies make a significant difference — see our guide on <a href="/guides/best-running-shoes-knee-pain">choosing knee-friendly shoes</a>.
+          While walking is generally one of the best activities for knee health, extended walks (over 30-60 minutes) can be challenging for aging knees. The cumulative impact, especially on hard surfaces, can trigger achiness or swelling. Proper footwear and pacing strategies make a significant difference — see our guide on <a href="/guides/best-running-shoes-knee-pain">choosing knee-friendly shoes</a>. Many people in this age group also notice that <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link> takes longer to resolve than it did in their younger years, and <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking during walking</Link> may become more noticeable as cartilage surfaces change.
         </p>
 
         <PremiumCTA

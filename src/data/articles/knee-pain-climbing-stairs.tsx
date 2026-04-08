@@ -471,7 +471,7 @@ const articleContent = (
 
     <h3>Use the Handrail Strategically</h3>
     <p>
-      Lightly grip the handrail for balance — not to pull yourself up. Using the handrail for balance reduces the stabilization demand on your knee muscles without creating a crutch dependency.
+      Lightly grip the handrail for balance — not to pull yourself up. Using the handrail for balance reduces the stabilization demand on your knee muscles without creating a crutch dependency. If you find descending even harder than climbing, our detailed guide on <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">knee pain going down stairs</Link> explains the eccentric loading pattern and specific techniques for comfortable descent. Many people also notice <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking sounds</Link> on stairs, which are usually normal mechanical events amplified by the higher forces involved.
     </p>
 
     <h3>Take One Step at a Time</h3>

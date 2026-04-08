@@ -269,7 +269,7 @@ export const bestRedLightTherapyKnee: ArticleExport = {
           The <strong>best red light therapy for knee</strong> comfort comes from devices specifically designed for the knee joint — particularly those that combine red light with complementary modalities like heat and gentle vibration. This multi-modal approach addresses knee comfort from multiple angles simultaneously.
         </p>
         <p>
-          Whether you're dealing with knee discomfort from arthritis, running, standing all day, or simply the natural changes that come with age, red light therapy is worth exploring as part of your daily comfort toolkit.
+          Whether you're dealing with knee discomfort from arthritis, running, standing all day, or simply the natural changes that come with age, red light therapy is worth exploring as part of your daily comfort toolkit. For those specifically interested in devices that combine red light with other modalities, our <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massager guide</Link> compares the leading options for 2026. Active adults dealing with <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">post-exercise knee soreness</Link> often find that red light therapy applied within the first hour after activity provides the most noticeable comfort benefits.
         </p>
         <p>
           <em>This content is not medical advice. It is based on general research and user experiences. Always consult a healthcare professional for specific medical concerns.</em>
