@@ -618,8 +618,14 @@ const Guides = () => {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3D3D3D] mb-6 leading-tight tracking-tight">
               Simple Guides for Everyday Knee Comfort
             </h1>
+            <p className="text-base md:text-lg text-[#6B6B6B] font-light leading-relaxed max-w-3xl mx-auto mb-4">
+              These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines. Whether you experience knee pain after exercise, notice your knees clicking when walking, or feel stiffness after sitting, our library covers the topics that matter most.
+            </p>
+            <p className="text-base md:text-lg text-[#6B6B6B] font-light leading-relaxed max-w-3xl mx-auto mb-4">
+              Knee discomfort is one of the most common concerns for adults over 30. From movement-related soreness and stair discomfort to age-related stiffness and daily comfort routines, each guide is designed to help you make informed decisions about your knee health without medical jargon or treatment claims.
+            </p>
             <p className="text-base md:text-lg text-[#6B6B6B] font-light leading-relaxed max-w-3xl mx-auto mb-10">
-              These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines — without medical advice or treatment claims.
+              Explore guides organized by location, activity, at-home methods, and device comparisons to find the information most relevant to your situation.
             </p>
             
             {/* Search */}
