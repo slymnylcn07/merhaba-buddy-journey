@@ -22,6 +22,7 @@ import thumbSharpKneePain from "@/assets/guide-thumb-sharp-knee-pain.jpg";
 import thumbStrengthenKnees from "@/assets/guide-thumb-strengthen-knees.jpg";
 import thumbKneeInjuries from "@/assets/guide-thumb-knee-injuries.jpg";
 import thumbInfraredMassager from "@/assets/guide-thumb-infrared-massager.jpg";
+import thumbInfraredVsHeatingPads from "@/assets/guide-thumb-infrared-vs-heating-pads.jpg";
 import thumbSharpPainPatterns from "@/assets/guide-thumb-sharp-pain-patterns.jpg";
 import thumbSidePainDetailed from "@/assets/guide-thumb-side-pain-detailed.jpg";
 import thumbRedLightResearch from "@/assets/guide-thumb-red-light-research.jpg";
@@ -154,7 +155,7 @@ const thumbnailMap: Record<string, string> = {
   "heat-or-ice-knee-pain-situations": thumbHeatIceSituations,
   "sharp-stabbing-knee-pain-comfort": thumbSharpStabbingComfort,
   "running-shoes-knee-pain-discomfort": thumbRunningShoesDiscomfort,
-  "infrared-vs-heating-pads": thumbInfraredMassager,
+  "infrared-vs-heating-pads": thumbInfraredVsHeatingPads,
   "intermittent-knee-pain-guide": thumbIntermittentPain,
   "side-of-knee-pain-explained": thumbSidePainExplained,
   "back-of-knee-pain-common": thumbBackKneeCommon,
