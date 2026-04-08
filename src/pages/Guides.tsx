@@ -440,6 +440,7 @@ const CategorySection = ({
   id,
   title,
   subtitle,
+  contextText,
   allSlugs,
   isLoading,
   bgWhite = false,
@@ -447,6 +448,7 @@ const CategorySection = ({
   id: string;
   title: string;
   subtitle: string;
+  contextText?: React.ReactNode;
   allSlugs: string[];
   isLoading: boolean;
   bgWhite?: boolean;
@@ -460,6 +462,11 @@ const CategorySection = ({
     <section className={`py-12 md:py-16 ${bgWhite ? 'bg-white' : ''}`}>
       <div className="container px-4 max-w-6xl mx-auto">
         <SectionHeader id={id} title={title} subtitle={subtitle} />
+        {contextText && (
+          <p className="text-sm text-[#6B6B6B] leading-relaxed max-w-3xl mb-6 -mt-4">
+            {contextText}
+          </p>
+        )}
         {isLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[1, 2, 3, 4].map((i) => <CardSkeleton key={i} />)}
