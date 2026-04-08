@@ -681,6 +681,52 @@ const Guides = () => {
         {/* Main Content - Hide when searching */}
         {!showSearchResults && (
           <>
+            {/* Featured Guides - Priority Articles */}
+            <section className="py-12 md:py-16 bg-white">
+              <div className="container px-4 max-w-6xl mx-auto">
+                <SectionHeader 
+                  id="priority-guides"
+                  title="Featured Guides"
+                  subtitle="Our most-read guides covering the knee concerns people search for most."
+                />
+                {isLoading ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {[1, 2, 3, 4].map((i) => <FeaturedCardSkeleton key={i} />)}
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {prioritySlugs.map(slug => {
+                      const guide = getGuide(slug);
+                      if (!guide) return null;
+                      return (
+                        <Link key={slug} to={`/guides/${slug}`} className="group block">
+                          <article className="rounded-2xl overflow-hidden bg-[#FAF7F2] shadow-sm hover:shadow-lg transition-all duration-300 h-full border-2 border-primary/10">
+                            <div className="aspect-[4/3] overflow-hidden">
+                              <img src={guide.thumbnail} alt={guide.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                            </div>
+                            <div className="p-5 md:p-6">
+                              <div className="flex items-center gap-2 mb-3">
+                                <span className="text-xs font-medium text-primary uppercase tracking-wider">Featured</span>
+                                <span className="text-[#C4B5A4]">•</span>
+                                <span className="inline-flex items-center gap-1 text-xs text-[#8B7355]">
+                                  <Clock className="h-3 w-3" />
+                                  {guide.readTime} min
+                                </span>
+                              </div>
+                              <h3 className="text-lg md:text-xl font-semibold text-[#3D3D3D] leading-snug mb-2 group-hover:text-primary transition-colors">
+                                {guide.title}
+                              </h3>
+                              <p className="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2">{priorityDescriptions[slug] || guide.description}</p>
+                            </div>
+                          </article>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            </section>
+
             {/* Start Here */}
             <section className="py-12 md:py-16">
               <div className="container px-4 max-w-6xl mx-auto">
