@@ -56,6 +56,18 @@ const faqs = [
     question: "When is post-exercise knee pain serious?",
     answer: "Seek professional advice if your knee pain includes visible swelling, inability to bear weight, locking or giving way, sharp pain at a specific point, or if discomfort persists beyond 72 hours. These signs may indicate something beyond normal post-exercise soreness.",
   },
+  {
+    question: "Why does my knee click after exercise?",
+    answer: "Clicking or popping sounds in the knee after exercise are common and usually related to gas bubbles releasing in the joint fluid, tendon movement over bony surfaces, or temporary changes in kneecap tracking caused by muscle fatigue. If the clicking is painless, it is generally considered harmless.",
+  },
+  {
+    question: "Can going down stairs make post-exercise knee pain worse?",
+    answer: "Yes. Descending stairs places 5 to 8 times your body weight through the kneecap, which is significantly more than flat walking. If your knees are already sore from exercise, stair descent can temporarily intensify the discomfort because the muscles are too fatigued to absorb the load effectively.",
+  },
+  {
+    question: "Should I use an infrared knee massager after exercise?",
+    answer: "Many people find that using an infrared knee massager after exercise provides deeper, longer-lasting warmth compared to a standard heating pad. The infrared wavelengths penetrate below the skin surface, supporting blood flow and helping the muscles around the knee relax during the recovery period.",
+  },
 ];
 
 const articleContent = (
