@@ -590,7 +590,7 @@ const Guides = () => {
     <>
       <Helmet>
         <title>Simple Guides for Everyday Knee Comfort | FlexiKnee</title>
-        <meta name="description" content="These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines — without medical advice or treatment claims." />
+        <meta name="description" content="Explore 100+ guides on knee pain after exercise, knee clicking when walking, stair discomfort, and daily comfort routines. Practical, non-medical knee care tips." />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
