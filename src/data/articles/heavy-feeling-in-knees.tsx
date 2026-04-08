@@ -210,7 +210,7 @@ const article = {
 
       <h3>After Intense Exercise</h3>
       <p>
-        Vigorous exercise that heavily engages the leg muscles can leave the knees feeling heavy during recovery. This is a normal response to muscle exertion and typically resolves with adequate rest and hydration. For more on post-exercise sensations, explore our guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee discomfort after exercise</Link>.
+        Vigorous exercise that heavily engages the leg muscles can leave the knees feeling heavy during recovery. This is a normal response to muscle exertion and typically resolves with adequate rest and hydration. For more on post-exercise sensations, explore our guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee discomfort after exercise</Link>. If the heaviness is accompanied by clicking or popping sounds, our guide on <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking when walking</Link> explains why these sounds occur.
       </p>
 
       <h3>At the End of a Long Day</h3>
