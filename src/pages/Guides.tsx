@@ -232,6 +232,21 @@ const featuredSlugs = [
   "daily-knee-comfort-routine",
 ];
 
+// Priority Guides (high-impact SEO articles)
+const prioritySlugs = [
+  "knee-pain-after-exercise",
+  "knee-clicking-when-walking",
+  "knee-pain-going-down-stairs",
+  "infrared-knee-massager-guide-2026",
+];
+
+const priorityDescriptions: Record<string, string> = {
+  "knee-pain-after-exercise": "Understand why knee soreness appears hours after exercise, the difference between normal fatigue and warning signs, and recovery strategies that work.",
+  "knee-clicking-when-walking": "Learn why your knee clicks during walking, bending, and stairs, what different sounds mean, and when clicking deserves attention.",
+  "knee-pain-going-down-stairs": "Discover why descending stairs creates more knee pressure than climbing, the biomechanics involved, and daily habits for comfortable stair use.",
+  "infrared-knee-massager-guide-2026": "Compare the best infrared knee massagers of 2026, understand how infrared therapy works, and find the right device for your daily routine.",
+};
+
 // Category 1: Knee Discomfort by Location
 const locationSlugs = [
   // Top 4 (shown in grid)
