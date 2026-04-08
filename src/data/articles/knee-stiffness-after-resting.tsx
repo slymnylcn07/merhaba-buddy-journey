@@ -507,6 +507,8 @@ export const kneeStiffnessAfterResting: ArticleExport = {
           <li><Link to="/guides/knee-pain-after-sitting-cross-legged" className="text-primary hover:underline">Knee Pain After Sitting Cross-Legged</Link></li>
           <li><Link to="/guides/why-do-my-knees-crack-or-pop" className="text-primary hover:underline">Why Do My Knees Crack or Pop?</Link></li>
           <li><Link to="/guides/side-knee-pain-comfort-guide" className="text-primary hover:underline">Side Knee Pain Comfort Guide</Link></li>
+          <li><Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">Knee Pain After Exercise: Why It Happens and What Helps</Link></li>
+          <li><Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">Knee Clicking When Walking: What It Means</Link></li>
         </ul>
       </>
     ),
