@@ -759,20 +759,38 @@ const Guides = () => {
               bgWhite
             />
 
+            {/* Contextual bridge */}
+            <section className="py-6">
+              <div className="container px-4 max-w-4xl mx-auto">
+                <p className="text-[#6B6B6B] text-sm leading-relaxed text-center">
+                  Many people experience knee discomfort during specific movements rather than at rest. Whether you notice <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link>, hear <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">clicking sounds while walking</Link>, or feel aching when <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">going down stairs</Link>, understanding activity-related patterns can help you make better daily choices.
+                </p>
+              </div>
+            </section>
+
             {/* Category 2: By Activity */}
             <CategorySection
               id="by-activity"
               title="Knee Discomfort by Activity"
-              subtitle="Guides for runners, walkers, and anyone who notices knee sensations during movement."
+              subtitle="Guides for runners, walkers, and anyone who notices knee sensations during movement. Learn why exercises, stairs, and daily activities affect your knees differently."
               allSlugs={activitySlugs}
               isLoading={isLoading}
             />
+
+            {/* Contextual bridge */}
+            <section className="py-6">
+              <div className="container px-4 max-w-4xl mx-auto">
+                <p className="text-[#6B6B6B] text-sm leading-relaxed text-center">
+                  Alongside movement, your daily habits and at-home routines play a significant role in knee comfort. From warmth application and gentle stretching to <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massagers</Link>, there are many approaches to support your joints throughout the day.
+                </p>
+              </div>
+            </section>
 
             {/* Category 3: At-Home Methods */}
             <CategorySection
               id="by-methods"
               title="At-Home Methods & Daily Comfort"
-              subtitle="Explore different approaches people use at home to support daily knee comfort."
+              subtitle="Explore different approaches people use at home to support daily knee comfort, from heat and cold therapy to red light and daily routines."
               allSlugs={methodsSlugs}
               isLoading={isLoading}
               bgWhite
@@ -782,7 +800,7 @@ const Guides = () => {
             <CategorySection
               id="by-devices"
               title="Device Comparisons & Buying Guides"
-              subtitle="Compare popular knee comfort devices and find the right option for your needs."
+              subtitle="Compare popular knee comfort devices including infrared massagers, heated braces, and red light therapy options. Find the right device for your daily routine."
               allSlugs={deviceSlugs}
               isLoading={isLoading}
             />
