@@ -440,6 +440,7 @@ const CategorySection = ({
   id,
   title,
   subtitle,
+  contextText,
   allSlugs,
   isLoading,
   bgWhite = false,
@@ -447,6 +448,7 @@ const CategorySection = ({
   id: string;
   title: string;
   subtitle: string;
+  contextText?: React.ReactNode;
   allSlugs: string[];
   isLoading: boolean;
   bgWhite?: boolean;
@@ -460,6 +462,11 @@ const CategorySection = ({
     <section className={`py-12 md:py-16 ${bgWhite ? 'bg-white' : ''}`}>
       <div className="container px-4 max-w-6xl mx-auto">
         <SectionHeader id={id} title={title} subtitle={subtitle} />
+        {contextText && (
+          <p className="text-sm text-[#6B6B6B] leading-relaxed max-w-3xl mb-6 -mt-4">
+            {contextText}
+          </p>
+        )}
         {isLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[1, 2, 3, 4].map((i) => <CardSkeleton key={i} />)}
@@ -727,6 +734,15 @@ const Guides = () => {
               </div>
             </section>
 
+            {/* Micro text under Featured Guides */}
+            <section className="pb-8 bg-white -mt-6">
+              <div className="container px-4 max-w-4xl mx-auto">
+                <p className="text-sm text-[#6B6B6B] leading-relaxed text-center">
+                  These featured guides address some of the most common knee discomfort situations adults face every day. Whether you are dealing with knee pain during movement, noticing new sensations after activity, or simply looking for better daily habits, these articles are a great starting point for understanding common knee issues and building a comfortable routine.
+                </p>
+              </div>
+            </section>
+
             {/* Start Here */}
             <section className="py-12 md:py-16">
               <div className="container px-4 max-w-6xl mx-auto">
@@ -735,6 +751,9 @@ const Guides = () => {
                   title="Start Here"
                   subtitle="Our most comprehensive guides on understanding and supporting everyday knee comfort."
                 />
+                <p className="text-sm text-[#6B6B6B] leading-relaxed max-w-3xl mb-6 -mt-4">
+                  If you're unsure where to start, these guides introduce some of the most common knee discomfort patterns people experience in daily life. They cover topics like <Link to="/guides/cause-of-knee-pain-patterns" className="text-primary hover:underline">understanding what causes knee pain</Link>, building a <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily comfort routine</Link>, and learning <Link to="/guides/why-knee-pain-doesnt-go-away" className="text-primary hover:underline">why knee pain sometimes persists</Link>.
+                </p>
                 {isLoading ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[1, 2, 3, 4].map((i) => <FeaturedCardSkeleton key={i} />)}
@@ -754,6 +773,7 @@ const Guides = () => {
               id="by-location"
               title="Knee Discomfort by Location"
               subtitle="Understand what different areas of knee discomfort often indicate and how daily patterns vary."
+              contextText={<>Many people feel discomfort in specific areas of the knee, such as the <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back of the knee</Link> or the <Link to="/guides/side-knee-pain-comfort-guide" className="text-primary hover:underline">inner and outer sides</Link>. Identifying where your discomfort occurs can help you understand the underlying patterns and find the most relevant guides.</>}
               allSlugs={locationSlugs}
               isLoading={isLoading}
               bgWhite
@@ -773,6 +793,7 @@ const Guides = () => {
               id="by-activity"
               title="Knee Discomfort by Activity"
               subtitle="Guides for runners, walkers, and anyone who notices knee sensations during movement. Learn why exercises, stairs, and daily activities affect your knees differently."
+              contextText={<>Activities like <Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">climbing stairs</Link>, <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">squatting</Link>, and <Link to="/guides/knee-pain-when-hiking" className="text-primary hover:underline">hiking</Link> each place different types of stress on your knees. Understanding how your body responds to specific movements is key to managing knee discomfort after activity and maintaining an active lifestyle.</>}
               allSlugs={activitySlugs}
               isLoading={isLoading}
             />
@@ -781,7 +802,7 @@ const Guides = () => {
             <section className="py-6">
               <div className="container px-4 max-w-4xl mx-auto">
                 <p className="text-[#6B6B6B] text-sm leading-relaxed text-center">
-                  Alongside movement, your daily habits and at-home routines play a significant role in knee comfort. From warmth application and gentle stretching to <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massagers</Link>, there are many approaches to support your joints throughout the day.
+                  Alongside movement, your daily habits and at-home routines play a significant role in knee comfort. From warmth application and gentle stretching to <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massagers</Link>, there are many approaches to support your joints throughout the day. Post-activity stiffness and <Link to="/guides/knee-stiffness-after-resting" className="text-primary hover:underline">tightness after resting</Link> often respond well to consistent at-home care.
                 </p>
               </div>
             </section>
@@ -791,16 +812,27 @@ const Guides = () => {
               id="by-methods"
               title="At-Home Methods & Daily Comfort"
               subtitle="Explore different approaches people use at home to support daily knee comfort, from heat and cold therapy to red light and daily routines."
+              contextText={<>Whether you prefer <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice therapy</Link>, are curious about <Link to="/guides/red-light-therapy-for-knees" className="text-primary hover:underline">red light therapy for knees</Link>, or want to build a <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee care routine</Link>, these guides help you explore practical options you can try at home.</>}
               allSlugs={methodsSlugs}
               isLoading={isLoading}
               bgWhite
             />
+
+            {/* Contextual bridge between Methods and Devices */}
+            <section className="py-6">
+              <div className="container px-4 max-w-4xl mx-auto">
+                <p className="text-[#6B6B6B] text-sm leading-relaxed text-center">
+                  Once you understand which at-home methods work best for your routine, choosing the right device can make a real difference. Many people who experience <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">discomfort after workouts</Link> or <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning stiffness</Link> find that dedicated knee comfort devices offer consistent daily support.
+                </p>
+              </div>
+            </section>
 
             {/* Category 4: Device Comparisons */}
             <CategorySection
               id="by-devices"
               title="Device Comparisons & Buying Guides"
               subtitle="Compare popular knee comfort devices including infrared massagers, heated braces, and red light therapy options. Find the right device for your daily routine."
+              contextText={<>Not sure which device fits your needs? Our comparison guides break down the differences between <Link to="/guides/infrared-vs-heating-pads" className="text-primary hover:underline">infrared massagers and heating pads</Link>, review <Link to="/guides/flexiknee-review-2026" className="text-primary hover:underline">popular models</Link>, and help you make an informed decision based on your daily knee discomfort patterns.</>}
               allSlugs={deviceSlugs}
               isLoading={isLoading}
             />
