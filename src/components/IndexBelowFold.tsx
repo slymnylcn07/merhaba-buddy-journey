@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Check, Flame, Zap, Activity, Battery, Shield, Truck, Star } from "lucide-react";
+import { Check, Flame, Zap, Activity, Battery, Shield, Truck, Star, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ShopifyProduct } from "@/lib/shopify";
 import { ProductGuidesSection } from "@/components/ProductGuidesSection";
@@ -438,6 +438,80 @@ export default function IndexBelowFold({
                 {isSubscribing ? "Subscribing..." : "Subscribe"}
               </Button>
             </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Learn More About Knee Comfort - SEO Hub Section */}
+      <section className="py-16">
+        <div className="container px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Learn More About Knee Comfort</h2>
+            <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-10">
+              Explore our guides on daily knee discomfort, recovery tips, and what actually helps. Understanding your knees is the first step to feeling better.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <Link to="/guides/post-exercise-knee-pain-guide" className="group">
+                <Card className="h-full border-2 hover:border-primary transition-all">
+                  <CardContent className="pt-6">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                      <Activity className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-bold text-base mb-1 group-hover:text-primary transition-colors">Knee Pain After Exercise</h3>
+                    <p className="text-sm text-muted-foreground">Why your knees ache after workouts and how to manage it.</p>
+                  </CardContent>
+                </Card>
+              </Link>
+
+              <Link to="/guides/knee-clicking-when-walking" className="group">
+                <Card className="h-full border-2 hover:border-primary transition-all">
+                  <CardContent className="pt-6">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                      <Zap className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-bold text-base mb-1 group-hover:text-primary transition-colors">Knee Clicking When Walking</h3>
+                    <p className="text-sm text-muted-foreground">What causes clicking sounds and when to take action.</p>
+                  </CardContent>
+                </Card>
+              </Link>
+
+              <Link to="/guides/knee-pain-going-down-stairs" className="group">
+                <Card className="h-full border-2 hover:border-primary transition-all">
+                  <CardContent className="pt-6">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                      <Flame className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-bold text-base mb-1 group-hover:text-primary transition-colors">Knee Pain Going Down Stairs</h3>
+                    <p className="text-sm text-muted-foreground">Common reasons for stair-related knee discomfort.</p>
+                  </CardContent>
+                </Card>
+              </Link>
+
+              <Link to="/guides/infrared-knee-massager-guide-2026" className="group">
+                <Card className="h-full border-2 hover:border-primary transition-all">
+                  <CardContent className="pt-6">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                      <BookOpen className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-bold text-base mb-1 group-hover:text-primary transition-colors">Best Infrared Knee Massagers</h3>
+                    <p className="text-sm text-muted-foreground">Compare top devices for infrared knee therapy in 2026.</p>
+                  </CardContent>
+                </Card>
+              </Link>
+            </div>
+
+            <p className="text-sm text-muted-foreground text-center max-w-2xl mx-auto mb-8">
+              Whether you experience <Link to="/guides/post-exercise-knee-pain-guide" className="text-primary hover:underline">knee pain during movement</Link> or notice <Link to="/guides/knee-stiffness-after-resting" className="text-primary hover:underline">stiffness after resting</Link>, our guides cover practical steps you can take at home.
+            </p>
+
+            <div className="text-center">
+              <Link to="/guides">
+                <Button variant="outline" size="lg">
+                  Explore All Knee Guides
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
