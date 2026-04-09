@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "Is knee pain walking down stairs normal?",
-    answer: "Occasional mild discomfort when descending stairs can be a common experience, especially after prolonged sitting or intense activity. However, persistent or worsening pain that occurs every time you go downstairs, particularly with swelling, instability, or locking — should be evaluated by a healthcare professional.",
+    answer: "Occasional mild discomfort when descending stairs can be a common experience, especially after prolonged sitting or intense activity. However, persistent or worsening pain that occurs every time you go downstairs, particularly with swelling, instability, or locking, should be evaluated by a healthcare professional.",
   },
   {
     question: "Can meniscus problems cause pain when going downstairs?",
@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     question: "Why does my kneecap hurt when I go downstairs?",
-    answer: "When you descend stairs, the kneecap is pressed against the thigh bone (femur) with significantly more force than during flat walking. At the deep bend angles required for stair descent (60–90°), pressure behind the kneecap can reach 5–8 times your body weight. This patellofemoral compression is the most common reason for kneecap-specific pain on stairs.",
+    answer: "When you descend stairs, the kneecap is pressed against the thigh bone (femur) with significantly more force than during flat walking. At the deep bend angles required for stair descent (60-90°), pressure behind the kneecap can reach 5–8 times your body weight. This patellofemoral compression is the most common reason for kneecap-specific pain on stairs.",
   },
   {
     question: "Can weak muscles cause knee pain when descending stairs?",
@@ -68,21 +68,21 @@ const articleContent = (
     </p>
 
     <StatHighlight
-      stat="5–8x"
+      stat="5-8x"
       label="your body weight in knee pressure per step when descending stairs"
-      description="Compared to 3–4x when climbing — making descent significantly harder on the kneecap"
+      description="Compared to 3-4x when climbing, making descent significantly harder on the kneecap"
     />
 
     {/* SECTION 1 */}
     <h2>Why Descending Stairs Puts More Pressure on the Knee Joint</h2>
     <p>
-      When you walk down stairs, your lead leg must absorb and control your entire body weight with each step. Unlike flat walking, where forces are distributed relatively evenly — stair descent concentrates compressive force directly onto the <strong>patellofemoral joint</strong> (the area where the kneecap meets the thigh bone).
+      When you walk down stairs, your lead leg must absorb and control your entire body weight with each step. Unlike flat walking, where forces are distributed relatively evenly, stair descent concentrates compressive force directly onto the <strong>patellofemoral joint</strong> (the area where the kneecap meets the thigh bone).
     </p>
     <p>
       Research consistently shows that the patellofemoral joint experiences 5–8 times body weight during stair descent, compared to roughly 3–4 times during ascent and only 1–1.5 times during flat walking. This dramatic increase explains why many people feel <strong>knee pain walking down stairs</strong> but feel comfortable on level ground.
     </p>
     <p>
-      The deeper knee bend angle required to lower yourself down each step (typically 60–90°) further compresses the cartilage behind the kneecap. For anyone with even mild cartilage wear or muscle weakness, this combination of deep flexion and high load can trigger noticeable discomfort.
+      The deeper knee bend angle required to lower yourself down each step (typically 60-90°) further compresses the cartilage behind the kneecap. For anyone with even mild cartilage wear or muscle weakness, this combination of deep flexion and high load can trigger noticeable discomfort.
     </p>
 
     {/* SVG 1: Knee Pressure Comparison */}
@@ -142,7 +142,7 @@ const articleContent = (
       This is why going up stairs may feel more physically tiring but going down stairs typically produces more <em>joint discomfort</em>. The eccentric braking action during descent forces the kneecap harder against the femoral groove with every step.
     </p>
     <p>
-      People who experience <strong>knee hurts going down stairs</strong> but not going up often have early patellofemoral changes — the cartilage behind the kneecap is more sensitive to the compression that specifically occurs during descent.
+      People who experience <strong>knee hurts going down stairs</strong> but not going up often have early patellofemoral changes: the cartilage behind the kneecap is more sensitive to the compression that specifically occurs during descent.
     </p>
 
     {/* SVG 2: Up vs Down Biomechanics */}
@@ -210,7 +210,7 @@ const articleContent = (
 
     <h3>Patellofemoral Stress</h3>
     <p>
-      The most common cause of knee pain on stairs is patellofemoral stress — irritation of the cartilage behind the kneecap. During descent, the kneecap is compressed against the femur with each step. If the cartilage is worn, softened, or if the kneecap doesn't track properly in its groove, this compression can cause a dull ache or sharp sensation behind or around the kneecap.
+      The most common cause of knee pain on stairs is patellofemoral stress, specifically irritation of the cartilage behind the kneecap. During descent, the kneecap is compressed against the femur with each step. If the cartilage is worn, softened, or if the kneecap doesn't track properly in its groove, this compression can cause a dull ache or sharp sensation behind or around the kneecap.
     </p>
 
     <h3>Meniscus Irritation</h3>
@@ -230,7 +230,7 @@ const articleContent = (
 
     <h3>Knee Osteoarthritis</h3>
     <p>
-      Osteoarthritis involves the gradual breakdown of joint cartilage throughout the knee. Stair descent is often one of the first activities to become uncomfortable because of the high compressive forces involved. People with early osteoarthritis frequently report that going down stairs is more bothersome than going up — a hallmark pattern of this condition.
+      Osteoarthritis involves the gradual breakdown of joint cartilage throughout the knee. Stair descent is often one of the first activities to become uncomfortable because of the high compressive forces involved. People with early osteoarthritis frequently report that going down stairs is more bothersome than going up, a hallmark pattern of this condition.
     </p>
 
     {/* SVG 3: Patellofemoral Stress Diagram */}
@@ -305,7 +305,7 @@ const articleContent = (
       The kneecap sits in a groove on the front of the femur and acts as a lever that amplifies the force of the quadriceps muscle. During stair descent, two things happen simultaneously that dramatically increase kneecap load:
     </p>
     <p>
-      First, the knee bends to a deeper angle than during flat walking (60–90° vs 15–20°). At deeper angles, the contact area between the kneecap and femur increases — but so does the compressive force. Second, your quadriceps must eccentrically contract to slow your descent. This pulling force on the kneecap presses it harder into the femoral groove.
+      First, the knee bends to a deeper angle than during flat walking (60-90° vs 15-20°). At deeper angles, the contact area between the kneecap and femur increases, but so does the compressive force. Second, your quadriceps must eccentrically contract to slow your descent. This pulling force on the kneecap presses it harder into the femoral groove.
     </p>
     <p>
       The combined effect is that the pressure behind the kneecap during a single stair-descent step can exceed the pressure generated during jogging or cycling. This explains why stairs are often the "canary in the coal mine": the first activity that reveals early cartilage changes or tracking problems in the patellofemoral joint.
