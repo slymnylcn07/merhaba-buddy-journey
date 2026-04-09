@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Check, Flame, Zap, Activity, Battery, Shield, Truck, Star } from "lucide-react";
+import { Check, Flame, Zap, Activity, Battery, Shield, Truck, Star, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ShopifyProduct } from "@/lib/shopify";
 import { ProductGuidesSection } from "@/components/ProductGuidesSection";
