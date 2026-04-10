@@ -9142,6 +9142,30 @@ const GuideArticle = () => {
                     text={articleCTAs[slug].text}
                   />
                 )}
+                {/* FAQ Section */}
+                {article.faqs && article.faqs.length > 0 && (
+                  <div className="mt-12 mb-8">
+                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-6 pb-3 border-b border-border/30">
+                      Frequently Asked Questions
+                    </h2>
+                    <div className="space-y-4">
+                      {article.faqs.map((faq, index) => (
+                        <details key={index} className="group border border-border/40 rounded-lg overflow-hidden">
+                          <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer text-foreground font-medium hover:bg-muted/30 transition-colors list-none [&::-webkit-details-marker]:hidden">
+                            <span>{faq.question}</span>
+                            <svg className="w-5 h-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </summary>
+                          <div className="px-5 pb-4 text-muted-foreground font-light leading-relaxed">
+                            {faq.answer}
+                          </div>
+                        </details>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
               </article>
             </div>
           </div>
