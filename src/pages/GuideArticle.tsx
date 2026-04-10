@@ -5119,6 +5119,11 @@ const articles: Record<string, ArticleData> = {
           If you want to try contrast therapy, a typical approach involves 3 to 4 minutes of heat followed by 1 minute of cold, repeated 3 to 4 times. Adjust based on your comfort and what seems to help your specific situation.
         </p>
 
+        <PremiumCTA
+          headline="Looking for convenient daily warmth support?"
+          text="FlexiKnee combines adjustable heat, red light therapy, and gentle vibration in one wrap-around device for effortless daily knee comfort."
+        />
+
         <hr className="my-8 border-t border-border/60" />
 
         <h2>A Simple Daily Knee Comfort Routine</h2>
