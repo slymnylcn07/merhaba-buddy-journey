@@ -10,177 +10,132 @@ interface ArticleSlideInCTAProps {
 
 const STORAGE_KEY = "flexiknee_article_cta_dismissed";
 
-/**
- * Generate a contextual pain hook + support text based on article topic.
- */
-function getContextualContent(slug: string, title: string): { hook: string; support: string } {
-  const lower = slug.toLowerCase();
-  const titleLower = title.toLowerCase();
+function getContextualContent(slug: string): { hook: string; support: string } {
+  const s = slug.toLowerCase();
 
-  // Stairs
-  if (lower.includes("stairs") || lower.includes("going-down")) {
+  if (s.includes("stairs") || s.includes("going-down"))
     return {
-      hook: "Feeling knee discomfort on stairs?",
-      support: "Some people use simple heat-based routines to support daily knee comfort.",
+      hook: "Does your knee hurt when going downstairs?",
+      support: "Some people use heat-based support to ease pressure during descent.",
     };
-  }
 
-  // Exercise / workout / gym
-  if (lower.includes("exercise") || lower.includes("workout") || lower.includes("leg-workouts") || lower.includes("post-exercise")) {
+  if (s.includes("exercise") || s.includes("workout") || s.includes("leg-workouts") || s.includes("post-exercise"))
     return {
       hook: "Knee discomfort after activity?",
-      support: "Gentle warmth routines can help support recovery and daily comfort.",
+      support: "Gentle heat support may help ease post-activity tension in your knee.",
     };
-  }
 
-  // Stiffness / resting / getting up / sitting
-  if (lower.includes("stiffness") || lower.includes("resting") || lower.includes("getting-up") || lower.includes("sitting")) {
+  if (s.includes("stiffness") || s.includes("resting") || s.includes("getting-up") || s.includes("sitting"))
     return {
-      hook: "Does your knee feel stiff after resting?",
-      support: "Many people find that consistent warmth routines help ease everyday stiffness.",
+      hook: "Feeling stiffness in your knee?",
+      support: "Consistent warmth support may help loosen tight knee joints after rest.",
     };
-  }
 
-  // Walking / long walks / hiking
-  if (lower.includes("walk") || lower.includes("hiking")) {
+  if (s.includes("walk") || s.includes("hiking"))
     return {
       hook: "Knee discomfort when walking?",
-      support: "Simple daily routines can help support comfort during everyday movement.",
+      support: "Some people use heat-based support to ease movement discomfort.",
     };
-  }
 
-  // Night / sleeping
-  if (lower.includes("night") || lower.includes("sleep")) {
+  if (s.includes("night") || s.includes("sleep"))
     return {
-      hook: "Knee discomfort keeping you up at night?",
+      hook: "Knee discomfort keeping you up?",
       support: "An evening warmth routine may help support more restful nights.",
     };
-  }
 
-  // Morning stiffness
-  if (lower.includes("morning")) {
+  if (s.includes("morning"))
     return {
       hook: "Morning knee stiffness slowing you down?",
-      support: "A simple morning warmth routine can help support comfortable starts to your day.",
+      support: "A quick warmth session before your day may help loosen stiff joints.",
     };
-  }
 
-  // Heat / ice / therapy / infrared / red light
-  if (lower.includes("heat") || lower.includes("ice") || lower.includes("infrared") || lower.includes("red-light") || lower.includes("therapy") || lower.includes("warmth")) {
+  if (s.includes("heat") || s.includes("ice") || s.includes("infrared") || s.includes("red-light") || s.includes("therapy") || s.includes("warmth"))
     return {
       hook: "Not sure which therapy works best for you?",
       support: "FlexiKnee combines heat and red light in one simple routine.",
     };
-  }
 
-  // Sharp pain / stabbing
-  if (lower.includes("sharp") || lower.includes("stabbing")) {
+  if (s.includes("sharp") || s.includes("stabbing"))
     return {
       hook: "Dealing with sharp knee discomfort?",
-      support: "Consistent comfort routines can help support your daily movement.",
+      support: "Targeted warmth support may help reduce sharp sensations during movement.",
     };
-  }
 
-  // Clicking / cracking / popping
-  if (lower.includes("click") || lower.includes("crack") || lower.includes("pop")) {
+  if (s.includes("click") || s.includes("crack") || s.includes("pop"))
     return {
       hook: "Noticing clicking or popping in your knee?",
-      support: "Warmth-based routines can help support smoother daily movement.",
+      support: "Some people use heat-based support to ease movement discomfort.",
     };
-  }
 
-  // Weakness / heavy feeling
-  if (lower.includes("weakness") || lower.includes("heavy")) {
+  if (s.includes("weakness") || s.includes("heavy"))
     return {
       hook: "Knee feeling weak or heavy?",
-      support: "Supporting your knee with gentle warmth routines may help with everyday comfort.",
+      support: "Gentle warmth support may help improve comfort and confidence in movement.",
     };
-  }
 
-  // Burning / warm feeling
-  if (lower.includes("burning") || lower.includes("warm-feeling")) {
+  if (s.includes("burning") || s.includes("warm-feeling"))
     return {
       hook: "Experiencing a burning sensation in your knee?",
-      support: "Some people use targeted warmth routines to support daily knee comfort.",
+      support: "Targeted support routines may help ease uncomfortable warmth in the joint.",
     };
-  }
 
-  // Squatting / kneeling / yoga
-  if (lower.includes("squat") || lower.includes("kneel") || lower.includes("yoga")) {
+  if (s.includes("squat") || s.includes("kneel") || s.includes("yoga"))
     return {
-      hook: "Knee discomfort during movement?",
-      support: "Simple warmth routines can help support comfort during bending activities.",
+      hook: "Knee discomfort during bending?",
+      support: "Simple warmth support can help ease pressure during bending activities.",
     };
-  }
 
-  // Cold weather
-  if (lower.includes("cold-weather") || lower.includes("cold")) {
+  if (s.includes("cold-weather") || s.includes("cold"))
     return {
       hook: "Cold weather making your knees ache?",
-      support: "Consistent warmth routines can help support comfort during colder months.",
+      support: "Consistent warmth support can help counter cold-related knee stiffness.",
     };
-  }
 
-  // Car rides / flights / travel
-  if (lower.includes("car") || lower.includes("flight")) {
+  if (s.includes("car") || s.includes("flight"))
     return {
       hook: "Knee stiffness after travel?",
-      support: "A quick warmth routine before and after travel can support comfort.",
+      support: "A quick warmth session before and after travel can support comfort.",
     };
-  }
 
-  // Age-related (40, 50, age)
-  if (lower.includes("after-40") || lower.includes("after-50") || lower.includes("age") || lower.includes("mobility")) {
+  if (s.includes("after-40") || s.includes("after-50") || s.includes("age") || s.includes("mobility"))
     return {
       hook: "Looking for simple ways to support your knees?",
-      support: "Daily warmth routines can help maintain comfort as part of your lifestyle.",
+      support: "Gentle warmth support can help maintain joint comfort as you stay active.",
     };
-  }
 
-  // Location-based pain (side, back, front, behind, below, top, IT band, runners knee)
-  if (lower.includes("location") || lower.includes("side") || lower.includes("back-of") || lower.includes("front") || lower.includes("behind") || lower.includes("it-band") || lower.includes("runner") || lower.includes("below") || lower.includes("top-of") || lower.includes("patello") || lower.includes("plica") || lower.includes("bursitis")) {
+  if (s.includes("location") || s.includes("side") || s.includes("back-of") || s.includes("front") || s.includes("behind") || s.includes("it-band") || s.includes("runner") || s.includes("patello") || s.includes("plica") || s.includes("bursitis"))
     return {
       hook: "Understanding where your knee discomfort comes from?",
-      support: "Targeted warmth and light routines can help support daily knee comfort.",
+      support: "Targeted warmth and light support can help ease area-specific discomfort.",
     };
-  }
 
-  // Massager / device reviews / comparisons
-  if (lower.includes("massager") || lower.includes("flexiknee") || lower.includes("competitor") || lower.includes("brace") || lower.includes("device")) {
+  if (s.includes("massager") || s.includes("flexiknee") || s.includes("competitor") || s.includes("brace") || s.includes("device"))
     return {
       hook: "Looking for the right knee comfort solution?",
       support: "See how FlexiKnee combines heat and red light therapy in one device.",
     };
-  }
 
-  // Home remedies / what makes worse / weight
-  if (lower.includes("remedies") || lower.includes("worse") || lower.includes("weight")) {
+  if (s.includes("remedies") || s.includes("worse") || s.includes("weight"))
     return {
       hook: "Searching for everyday knee comfort tips?",
-      support: "Simple routines with gentle warmth can support your daily comfort.",
+      support: "Simple support methods can help reduce pressure during daily movement.",
     };
-  }
 
-  // Shoes / running shoes
-  if (lower.includes("shoe") || lower.includes("running")) {
+  if (s.includes("shoe") || s.includes("running"))
     return {
       hook: "Knee discomfort affecting your activity?",
-      support: "Pairing the right support with a warmth routine can help daily comfort.",
+      support: "Pairing the right support with a warmth routine can ease daily discomfort.",
     };
-  }
 
-  // Swelling
-  if (lower.includes("swelling")) {
+  if (s.includes("swelling"))
     return {
       hook: "Dealing with knee swelling after activity?",
-      support: "Gentle heat-based routines can support post-activity knee comfort.",
+      support: "Gentle heat-based support may help ease post-activity swelling discomfort.",
     };
-  }
 
-  // Default / general
   return {
     hook: "Looking for daily knee comfort support?",
-    support: "Some people use simple heat-based routines to support everyday comfort.",
+    support: "Simple support methods can help reduce pressure during daily movement.",
   };
 }
 
@@ -188,17 +143,14 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
 
-  const { hook, support } = getContextualContent(slug, title);
+  const { hook, support } = getContextualContent(slug);
 
-  // Check localStorage on mount
   useEffect(() => {
-    const dismissed = localStorage.getItem(STORAGE_KEY);
-    if (dismissed) {
+    if (localStorage.getItem(STORAGE_KEY)) {
       setIsDismissed(true);
     }
   }, []);
 
-  // Scroll listener for 50% trigger
   const handleScroll = useCallback(() => {
     if (isDismissed) return;
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -232,35 +184,50 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   return (
     <div
       className={`fixed z-40 transition-all duration-500 ease-out
-        bottom-0 left-0 right-0 md:bottom-6 md:left-auto md:right-6 md:max-w-sm
+        bottom-0 left-0 right-0
+        md:bottom-6 md:left-auto md:right-6 md:max-w-sm
         ${isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"}
       `}
     >
-      <div className="bg-background border border-border/60 shadow-lg md:rounded-xl p-4 md:p-5 relative">
-        {/* Close button */}
+      {/* Mobile: full-width bar with tinted bg */}
+      {/* Desktop: floating card with elevation */}
+      <div
+        className="
+          relative
+          bg-secondary text-secondary-foreground
+          md:bg-background md:text-foreground
+          md:border md:border-border
+          md:rounded-xl
+          shadow-[0_-4px_24px_rgba(0,0,0,0.12)]
+          md:shadow-[0_8px_32px_rgba(0,0,0,0.16)]
+          px-4 py-4
+          md:px-5 md:py-5
+        "
+      >
+        {/* Close */}
         <button
           onClick={handleDismiss}
-          className="absolute top-3 right-3 p-1 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+          className="absolute top-3 right-3 p-1.5 rounded-full text-secondary-foreground/70 hover:text-secondary-foreground md:text-muted-foreground md:hover:text-foreground hover:bg-white/10 md:hover:bg-muted/50 transition-colors"
           aria-label="Close"
         >
           <X className="h-4 w-4" />
         </button>
 
         {/* Content */}
-        <div className="pr-6">
-          <p className="text-sm font-semibold text-foreground leading-snug">
+        <div className="pr-8">
+          <p className="text-sm font-semibold leading-snug">
             {hook}
           </p>
-          <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+          <p className="text-xs mt-1 leading-relaxed opacity-80">
             {support}
           </p>
         </div>
 
-        {/* CTA Button */}
+        {/* CTA */}
         <Link
           to="/product/flexiknee"
           onClick={handleCTAClick}
-          className="mt-3 inline-block text-xs font-semibold text-primary-foreground bg-primary hover:bg-primary/90 px-4 py-2 rounded-md transition-colors"
+          className="mt-3 inline-block text-xs font-bold text-primary-foreground bg-primary hover:bg-primary/90 px-5 py-2.5 rounded-md transition-colors shadow-sm"
         >
           Explore FlexiKnee
         </Link>
