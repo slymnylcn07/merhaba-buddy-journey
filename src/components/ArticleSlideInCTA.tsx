@@ -192,12 +192,12 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       <div
         className="
           relative
-          bg-card text-card-foreground
-          md:bg-card md:text-card-foreground
-          border border-border
+          bg-gradient-to-b from-card to-card/95 text-card-foreground
+          md:bg-card md:text-card-foreground md:bg-none
+          border border-border/80
           md:rounded-xl
-          shadow-[0_-6px_30px_rgba(0,0,0,0.15)]
-          md:shadow-[0_10px_40px_rgba(0,0,0,0.2)]
+          shadow-[0_-6px_30px_rgba(0,0,0,0.18)]
+          md:shadow-[0_10px_40px_rgba(0,0,0,0.22)]
           px-5 py-5
           md:px-6 md:py-6
         "
@@ -225,7 +225,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
         <Link
           to="/product/flexiknee"
           onClick={handleCTAClick}
-          className="mt-4 inline-block text-xs font-bold text-primary-foreground bg-primary hover:bg-primary/90 px-6 py-3 rounded-md transition-colors shadow-sm"
+          className="mt-4 inline-block text-xs font-bold text-primary-foreground bg-primary hover:bg-primary/90 brightness-110 px-6 py-3 rounded-md transition-all shadow-[0_2px_8px_rgba(0,0,0,0.12)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.18)]"
         >
           Explore FlexiKnee
         </Link>
