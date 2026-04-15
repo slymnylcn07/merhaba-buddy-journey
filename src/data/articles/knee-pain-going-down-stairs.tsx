@@ -168,7 +168,7 @@ const articleContent = (
       This is why going up stairs may feel more physically tiring but going down stairs typically produces more <em>joint discomfort</em>. The eccentric braking action during descent forces the kneecap harder against the femoral groove with every step.
     </p>
     <p>
-      People who experience <strong>knee hurts going down stairs</strong> but not going up often have early patellofemoral changes: the cartilage behind the kneecap is more sensitive to the compression that specifically occurs during descent.
+      People who experience <strong>knee hurts going down stairs</strong> but not going up often have early patellofemoral changes: the cartilage behind the kneecap is more sensitive to the compression that specifically occurs during descent. Some people notice pain only when going downstairs but not upstairs, and this one-directional pattern is actually one of the most reliable indicators of kneecap-related sensitivity.
     </p>
 
     {/* SVG 2: Up vs Down Biomechanics */}
