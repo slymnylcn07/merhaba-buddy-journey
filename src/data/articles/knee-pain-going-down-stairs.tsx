@@ -93,6 +93,12 @@ const articleContent = (
       description="Compared to 3-4x when climbing, making descent significantly harder on the kneecap"
     />
 
+    {/* FEATURED SNIPPET: Direct Answer Block */}
+    <h2>Why Does Knee Pain Feel Worse Going Downstairs?</h2>
+    <p>
+      <strong>Knee pain feels worse when going downstairs</strong> because your knee joint absorbs 5 to 8 times your body weight with each descending step. During descent, your quadriceps muscles must work eccentrically, lengthening while resisting gravity to control your body's downward movement. This braking action presses the kneecap harder against the thigh bone compared to climbing or flat walking. The deeper knee bend angle required (60-90 degrees) further increases the contact pressure behind the kneecap. This combination of increased joint pressure and demanding muscle engagement is why many people feel discomfort specifically when going down stairs, even when climbing up feels comfortable.
+    </p>
+
     {/* SECTION 1 */}
     <h2>Why Descending Stairs Puts More Pressure on the Knee Joint</h2>
     <p>
