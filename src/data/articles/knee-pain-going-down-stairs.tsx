@@ -532,7 +532,7 @@ const articleContent = (
       For those who find even gentle stair descent uncomfortable, consider descending sideways while holding the handrail. This technique reduces the knee bend angle and shifts some of the load to the hip muscles instead of concentrating it on the kneecap. If your discomfort extends beyond stairs to <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">knee pain when bending</Link> in general, the underlying cause may require broader attention.
     </p>
 
-    {/* ── NEW: Real-Life Stair Scenarios ── */}
+    {/* ── Real-Life Stair Scenarios ── */}
     <h2>Real-Life Stair Scenarios and What They Mean for Your Knees</h2>
     <p>
       Understanding how different stair situations affect your knees can help you make practical adjustments throughout your day.
@@ -545,6 +545,65 @@ const articleContent = (
     </p>
     <p>
       <strong>Cold morning stair stiffness:</strong> Many people report that their knees feel stiffest and most uncomfortable on stairs first thing in the morning, particularly during colder months. This is because overnight rest allows synovial fluid to thicken and muscles to stiffen. A brief warm-up before tackling stairs, even just a minute of gentle knee bends, helps redistribute joint fluid and reduce that initial discomfort.
+    </p>
+
+    {/* ── Micro Scenarios ── */}
+    <h2>When Stairs Hurt More: Everyday Trigger Situations</h2>
+    <p>
+      Some people notice <strong>knee pain only when going downstairs but not upstairs</strong>, while others find that certain daily situations make stair descent noticeably harder. Here are the most common triggers and what they mean:
+    </p>
+    <p>
+      <strong>After a gym session:</strong> Following a workout that involves squats, lunges, or leg presses, your quadriceps are already fatigued. Since these muscles are responsible for controlling your descent on stairs, post-gym stair use places extra stress on the knee joint. If you regularly experience <Link to="/guides/sore-knees-after-workout" className="text-primary hover:underline">sore knees after a workout</Link>, consider avoiding stairs for the first hour after exercise.
+    </p>
+    <p>
+      <strong>After a long walk:</strong> Walking for extended periods gradually tires the muscles that stabilize your knee. By the time you encounter stairs after a 30-60 minute walk, your quadriceps and hip stabilizers may not absorb the braking forces of descent as effectively. This is especially common among people who also notice <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">knee pain after long walks</Link>.
+    </p>
+    <p>
+      <strong>When carrying weight:</strong> Holding groceries, a backpack, or a child while descending stairs dramatically increases the load on your knee joint. Even an extra 5 kg adds 25-40 kg of effective force at the kneecap during each step down. Using handrails and distributing weight evenly helps reduce this impact.
+    </p>
+    <p>
+      <strong>After sitting for a long time:</strong> Prolonged sitting allows the knee joint fluid to thicken and the muscles around the knee to stiffen. The first few steps down stairs after a long sitting period often feel the most uncomfortable. People who experience <Link to="/guides/knee-stiffness-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link> frequently notice this pattern. A few gentle knee bends before tackling stairs can help.
+    </p>
+
+    {/* ── Common Questions Section ── */}
+    <h2>Common Questions People Ask About Knee Pain When Going Down Stairs</h2>
+    <p>
+      These are some of the most frequently searched questions about <strong>knee pain going down stairs</strong>, answered clearly and directly.
+    </p>
+
+    <h3>Why does it hurt more going down stairs than going up?</h3>
+    <p>
+      Going down stairs requires your muscles to lengthen while resisting gravity (eccentric contraction), which generates higher peak forces at the kneecap than the shortening contraction used when climbing up. The patellofemoral joint experiences roughly twice the compressive load during descent compared to ascent, making it the more demanding direction for the kneecap and surrounding cartilage.
+    </p>
+
+    <h3>Is knee pain when descending stairs serious?</h3>
+    <p>
+      Occasional mild discomfort is common and often related to muscle fatigue or minor cartilage sensitivity. However, if your knee pain on stairs is persistent, getting worse over time, or accompanied by swelling, locking, or a feeling that your knee might give way, it is worth having it evaluated. Early attention often leads to simpler solutions.
+    </p>
+
+    <h3>Which part of the knee hurts when going downstairs?</h3>
+    <p>
+      Most people feel stair-related pain around, behind, or underneath the kneecap. This reflects patellofemoral compression. Pain on the inner side of the knee may point to medial meniscus involvement, while pain on the outer side could suggest IT band irritation. The <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee pain location guide</Link> can help you identify what your specific pattern might mean.
+    </p>
+
+    <h3>Why does only one knee hurt on stairs?</h3>
+    <p>
+      Single-knee pain during stair descent is very common. People naturally lead with one leg when going downstairs, placing more braking force on that knee over time. Differences in leg strength, prior injuries, or subtle alignment variations between your two legs can all contribute. Alternating your lead leg when possible helps distribute the load more evenly.
+    </p>
+
+    <h3>Why does knee pain happen after climbing stairs, not during?</h3>
+    <p>
+      Delayed onset discomfort after stairs typically reflects inflammation or muscle fatigue that builds during the activity but becomes noticeable once you stop moving. The joint may stiffen as inflammation peaks 15-30 minutes after stair use. This pattern is similar to what many people experience with <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">post-exercise knee discomfort</Link>.
+    </p>
+
+    <h3>Why does my knee pain on stairs feel sharp or sudden?</h3>
+    <p>
+      A sharp, catching sensation during stair descent often suggests that the kneecap is not tracking smoothly in its groove, or that a small area of cartilage is irritated. Meniscus issues can also cause sudden, localized pain with specific movements. If you experience <Link to="/guides/sharp-knee-pain-causes" className="text-primary hover:underline">sharp knee pain</Link> consistently on stairs, it deserves professional evaluation.
+    </p>
+
+    <h3>Can knee weakness make stairs harder?</h3>
+    <p>
+      Yes. When the quadriceps or hip muscles are weak, they cannot effectively control your descent, allowing more force to transfer directly to the knee joint. Many people describe a feeling of instability or "not trusting" their knee on stairs. Building strength through targeted exercises is one of the most effective ways to address this. Our guide on <Link to="/guides/knee-weakness-without-pain" className="text-primary hover:underline">knee weakness</Link> covers this topic in detail.
     </p>
 
     <h2>How Stair Discomfort Connects to Other Knee Patterns</h2>
