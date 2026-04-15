@@ -262,6 +262,7 @@ import sharpKneeSideStress from "@/assets/article-sharp-knee-side-stress.jpg";
 import sharpKneePainCycle from "@/assets/article-sharp-knee-pain-cycle.jpg";
 
 import PremiumCTA from "@/components/PremiumCTA";
+import { ArticleSlideInCTA } from "@/components/ArticleSlideInCTA";
 
 // Import new articles from separate files
 import {
