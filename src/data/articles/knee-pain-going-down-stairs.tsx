@@ -9,7 +9,7 @@ import heroImage from "@/assets/article-hero-knee-pain-going-down-stairs.jpg";
 const faqs = [
   {
     question: "Why do my knees hurt when going down stairs?",
-    answer: "When you descend stairs, your knee must control your full body weight against gravity while bending deeply. This creates a braking force that increases pressure on the kneecap (patella) and the cartilage behind it, often 5–8 times your body weight per step. This is significantly more than flat walking, which is why many people feel discomfort specifically when going downstairs.",
+    answer: "When you descend stairs, your knee must control your full body weight against gravity while bending deeply. This creates a braking force that increases pressure on the kneecap (patella) and the cartilage behind it, often 5-8 times your body weight per step. This is significantly more than flat walking, which is why many people feel discomfort specifically when going downstairs.",
   },
   {
     question: "Why does descending stairs hurt more than climbing them?",
@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     question: "Why does my kneecap hurt when I go downstairs?",
-    answer: "When you descend stairs, the kneecap is pressed against the thigh bone (femur) with significantly more force than during flat walking. At the deep bend angles required for stair descent (60-90°), pressure behind the kneecap can reach 5–8 times your body weight. This patellofemoral compression is the most common reason for kneecap-specific pain on stairs.",
+    answer: "When you descend stairs, the kneecap is pressed against the thigh bone (femur) with significantly more force than during flat walking. At the deep bend angles required for stair descent (60-90 degrees), pressure behind the kneecap can reach 5-8 times your body weight. This patellofemoral compression is the most common reason for kneecap-specific pain on stairs.",
   },
   {
     question: "Can weak muscles cause knee pain when descending stairs?",
@@ -50,6 +50,26 @@ const faqs = [
   {
     question: "Is an infrared knee massager helpful for stair-related knee discomfort?",
     answer: "Many people find that applying infrared warmth after stair-intensive days helps support blood flow and relaxes the muscles around the knee. The deeper warmth penetration compared to surface-level heat pads may provide more effective comfort during the recovery period.",
+  },
+  {
+    question: "Why does only one knee hurt when going down stairs?",
+    answer: "Single-knee pain during stair descent is very common. It usually happens because of differences in leg strength, alignment, or prior injury history between your two legs. Most people naturally favor one leg when descending, placing more braking force on the dominant or lead leg. Over time, this asymmetry can cause one knee to experience more wear than the other.",
+  },
+  {
+    question: "Why do my knees hurt going downstairs but not upstairs?",
+    answer: "This pattern is a hallmark of patellofemoral stress. Going downstairs requires eccentric muscle control that presses the kneecap against the thigh bone with 5-8 times your body weight, compared to only 3-4 times when climbing. The deeper knee bend angle and braking action during descent create significantly more compression on the kneecap cartilage.",
+  },
+  {
+    question: "Can knee pain on stairs get worse over time?",
+    answer: "Without changes to daily habits or strengthening routines, stair-related knee discomfort can gradually increase. Cartilage continues to experience wear under repeated high-load conditions, and muscle weakness tends to progress if not addressed. Starting a gentle strengthening program early can help slow or reverse this pattern.",
+  },
+  {
+    question: "Is sharp knee pain when going down stairs serious?",
+    answer: "Sharp, sudden pain during stair descent can indicate cartilage irritation, a meniscus issue, or patellar tracking problems. While a single episode may not be concerning, repeated sharp pain with each step warrants evaluation by a healthcare professional to rule out structural causes.",
+  },
+  {
+    question: "Does body weight affect knee pain on stairs?",
+    answer: "Yes, significantly. Because stair descent multiplies your body weight by 5-8 times at the knee joint, even modest weight changes can have a noticeable impact. For example, losing just 5 kg reduces the effective load on your kneecap by 25-40 kg per step during descent.",
   },
 ];
 
