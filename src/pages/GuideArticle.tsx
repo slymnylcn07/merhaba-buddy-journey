@@ -9442,6 +9442,7 @@ const GuideArticle = () => {
         </section>
       </main>
 
+      <ArticleSlideInCTA slug={slug} title={article.title} />
       <Footer />
     </>
   );
