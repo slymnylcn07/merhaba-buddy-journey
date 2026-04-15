@@ -634,6 +634,7 @@ export const kneePainGoingDownStairs: ArticleExport = {
     metaDescription: "Discover why knee pain is often worse going down stairs than climbing them. Learn about eccentric loading, patellofemoral stress, and home fixes for daily comfort.",
     heroImage: heroImage,
     publishedDate: "March 4, 2026",
+    lastUpdated: "April 15, 2026",
     content: articleContent,
     nextSlug: "knee-pain-climbing-stairs",
     nextTitle: "Knee Pain When Climbing Stairs: Causes & Tips",
