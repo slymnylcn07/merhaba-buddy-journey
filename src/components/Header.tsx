@@ -119,7 +119,7 @@ export const Header = () => {
           <a href="/" className="text-sm font-medium hover:text-primary transition-colors">
             Home
           </a>
-          <a href="/product/flexiknee" className="text-sm font-medium hover:text-primary transition-colors">
+          <a href="/product/knee-massager-smart-red-light-and-massage-therapy" className="text-sm font-medium hover:text-primary transition-colors">
             Products
           </a>
           <a href="/#benefits" className="text-sm font-medium hover:text-primary transition-colors" onClick={(e) => handleAnchorClick(e, "#benefits")}>

@@ -65,7 +65,7 @@ export const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  to="/product/flexiknee"
+                  to="/product/knee-massager-smart-red-light-and-massage-therapy"
                   className="text-muted-foreground hover:text-primary hover:underline transition-colors"
                 >
                   Products

@@ -223,7 +223,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
 
         {/* CTA */}
         <Link
-          to="/product/flexiknee"
+          to="/product/knee-massager-smart-red-light-and-massage-therapy"
           onClick={handleCTAClick}
           className="mt-4 inline-block text-xs font-bold text-primary-foreground bg-primary hover:bg-primary/90 brightness-110 px-6 py-3 rounded-md transition-all shadow-[0_2px_8px_rgba(0,0,0,0.12)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.18)]"
         >
