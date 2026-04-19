@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
-import { execSync } from "child_process";
 
 // Converts render-blocking CSS <link> tags to non-blocking preloads in production HTML
 function cssPreloadPlugin(): Plugin {
