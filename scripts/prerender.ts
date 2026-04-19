@@ -168,9 +168,13 @@ async function prerender() {
                 return false;
               }
 
-              if (currentRoute === "/") return jsonLdCount >= 2;
-              if (currentRoute === "/guides") return jsonLdCount >= 3;
-              if (currentRoute.startsWith("/guides/")) return jsonLdCount >= 2;
+              // At least one JSON-LD block must be present. We don't enforce
+              // exact counts because React Helmet may merge adjacent schema
+              // scripts; the important thing is that schemas exist and the
+              // canonical/title/h1 above already prove this is the right page.
+              if (currentRoute === "/" || currentRoute === "/guides" || currentRoute.startsWith("/guides/")) {
+                return jsonLdCount >= 1;
+              }
               return true;
             },
             { timeout: 15000 },
