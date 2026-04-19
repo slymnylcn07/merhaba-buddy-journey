@@ -91,7 +91,6 @@ async function prerender() {
     "/terms-of-service",
     "/refund-policy",
     "/shipping-policy",
-    "/product/flexiknee-natural-knee-pain-massager",
   ];
 
   const allRoutes = [
