@@ -3,7 +3,7 @@ import { Menu, User } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/flexiknee-logo-new.webp";
 
 export const Header = () => {
@@ -47,13 +47,13 @@ export const Header = () => {
                 >
                   Home
                 </a>
-                <a
-                  href="/product/knee-massager-smart-red-light-and-massage-therapy"
+                <Link
+                  to="/product/knee-massager-smart-red-light-and-massage-therapy"
                   className="text-lg font-medium hover:text-primary transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
                   Products
-                </a>
+                </Link>
                 <a
                   href="/#benefits"
                   className="text-lg font-medium hover:text-primary transition-colors"
@@ -119,9 +119,9 @@ export const Header = () => {
           <a href="/" className="text-sm font-medium hover:text-primary transition-colors">
             Home
           </a>
-          <a href="/product/knee-massager-smart-red-light-and-massage-therapy" className="text-sm font-medium hover:text-primary transition-colors">
+          <Link to="/product/knee-massager-smart-red-light-and-massage-therapy" className="text-sm font-medium hover:text-primary transition-colors">
             Products
-          </a>
+          </Link>
           <a href="/#benefits" className="text-sm font-medium hover:text-primary transition-colors" onClick={(e) => handleAnchorClick(e, "#benefits")}>
             Benefits
           </a>
