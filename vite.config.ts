@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
-import { execSync } from "child_process";
 
 // Converts render-blocking CSS <link> tags to non-blocking preloads in production HTML
 function cssPreloadPlugin(): Plugin {
@@ -127,25 +126,6 @@ export default defineConfig(({ mode }) => ({
     sitemapPlugin(),
     cssPreloadPlugin(),
     mode === "development" && componentTagger(),
-    // Prerender guide pages after production build for SEO
-    mode === "production" && {
-      name: "prerender-guides",
-      closeBundle: {
-        sequential: true,
-        async handler() {
-          console.log("\n🚀 Starting prerendering...");
-          try {
-            execSync("npx tsx scripts/prerender.ts", {
-              cwd: path.resolve(__dirname),
-              stdio: "inherit",
-              timeout: 300000,
-            });
-          } catch (e) {
-            console.error("⚠️ Prerendering failed (non-blocking):", (e as Error).message);
-          }
-        },
-      },
-    },
   ].filter(Boolean),
   resolve: {
     alias: {

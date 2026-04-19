@@ -85,6 +85,12 @@ async function prerender() {
     "/",
     "/guides",
     "/why-flexiknee",
+    "/foundation",
+    "/track-order",
+    "/privacy-policy",
+    "/terms-of-service",
+    "/refund-policy",
+    "/shipping-policy",
     "/product/flexiknee-natural-knee-pain-massager",
   ];
 
@@ -134,12 +140,29 @@ async function prerender() {
             timeout: 30000,
           });
 
-          // Wait for Helmet to inject into <head>
-          await page.waitForSelector('script[type="application/ld+json"]', {
-            timeout: 10000,
-          }).catch(() => {
-            // Some pages may not have JSON-LD (that's OK)
-          });
+          await page.waitForFunction(
+            (currentRoute) => {
+              const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute('href');
+              const title = document.title?.trim();
+              const h1 = document.querySelector('h1')?.textContent?.trim();
+              const jsonLdCount = document.querySelectorAll('script[type="application/ld+json"]').length;
+
+              const expectedCanonical = currentRoute === "/"
+                ? "https://flexi-knee.com/"
+                : `https://flexi-knee.com${currentRoute}`;
+
+              if (canonical !== expectedCanonical || !title || !h1) {
+                return false;
+              }
+
+              if (currentRoute === "/") return jsonLdCount >= 2;
+              if (currentRoute === "/guides") return jsonLdCount >= 3;
+              if (currentRoute.startsWith("/guides/")) return jsonLdCount >= 2;
+              return true;
+            },
+            { timeout: 15000 },
+            route
+          );
 
           // Get the full rendered HTML
           const html = await page.content();
