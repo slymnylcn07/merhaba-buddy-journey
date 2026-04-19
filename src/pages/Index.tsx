@@ -169,6 +169,7 @@ export default function Index() {
       </Helmet>
       <div className="min-h-screen">
         <Header />
+        <h1 className="sr-only">FlexiKnee Smart Heated Knee Massager with Red Light Therapy</h1>
       {/* Hero Banner */}
       {/* Hero Banner - Always render immediately */}
       <Link to={mainProduct ? `/product/${mainProduct.node.handle}` : '/product/knee-massager-smart-red-light-and-massage-therapy'} className="block">
