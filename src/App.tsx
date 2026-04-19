@@ -9,6 +9,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import { useShopifyPageView } from "./hooks/use-shopify-analytics";
 import { useGoogleAnalytics } from "./hooks/use-google-analytics";
 import { useMetaTracking } from "./hooks/use-meta-tracking";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Lazy load non-critical routes for code splitting
 const ProductDetail = lazy(() => import("./pages/ProductDetail"));
@@ -49,6 +51,8 @@ const App = () => {
     <TooltipProvider>
       <Toaster />
       <Sonner position="top-center" />
+      <Analytics />
+      <SpeedInsights />
       <BrowserRouter>
         <ScrollToTop />
         <AnalyticsProvider>
