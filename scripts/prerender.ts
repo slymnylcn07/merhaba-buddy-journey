@@ -102,10 +102,24 @@ async function prerender() {
   const server = await startServer();
   console.log(`📦 Static server running on port ${PORT}`);
 
+  // Resolve Chromium executable path:
+  // - Vercel/serverless: use @sparticuz/chromium (downloaded as a dep)
+  // - Local Lovable sandbox: /bin/chromium
+  // - Local dev (Mac/Linux): fall back to PUPPETEER_EXECUTABLE_PATH or system chrome
+  let executablePath = process.env.PUPPETEER_EXECUTABLE_PATH || "/bin/chromium";
+  let extraArgs: string[] = [];
+
+  if (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME) {
+    const chromium = (await import("@sparticuz/chromium")).default;
+    executablePath = await chromium.executablePath();
+    extraArgs = chromium.args;
+  }
+
   const browser = await puppeteer.launch({
-    executablePath: "/bin/chromium",
+    executablePath,
     headless: true,
     args: [
+      ...extraArgs,
       "--no-sandbox",
       "--disable-setuid-sandbox",
       "--disable-dev-shm-usage",
