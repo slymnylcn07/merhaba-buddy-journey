@@ -3,7 +3,7 @@ import { guidesData, staticPages } from "../src/data/guides";
 
 const SITE_URL = "https://flexi-knee.com";
 const HOST = "flexi-knee.com";
-const KEY = "d170df9dfa54eb2a2ad7f17afe059386";
+const KEY = "1a8a4af207e14a32ac8cbdd5d7f6d486";
 const KEY_LOCATION = `${SITE_URL}/${KEY}.txt`;
 
 async function submitToIndexNow() {
