@@ -34,6 +34,7 @@
         "@radix-ui/react-toggle-group": "^1.1.10",
         "@radix-ui/react-tooltip": "^1.2.7",
         "@shopify/hydrogen-react": "^2025.7.0",
+        "@sparticuz/chromium": "^147.0.1",
         "@supabase/supabase-js": "^2.87.1",
         "@swc/core-linux-x64-musl": "^1.13.2",
         "@swc/wasm": "^1.13.2",
@@ -395,6 +396,8 @@
     "@rollup/rollup-win32-x64-msvc": ["@rollup/rollup-win32-x64-msvc@4.24.0", "", { "os": "win32", "cpu": "x64" }, "sha512-fbMkAF7fufku0N2dE5TBXcNlg0pt0cJue4xBRE2Qc5Vqikxr4VCgKj/ht6SMdFcOacVA9rqF70APJ8RN/4vMJw=="],
 
     "@shopify/hydrogen-react": ["@shopify/hydrogen-react@2025.7.0", "", { "dependencies": { "@google/model-viewer": "^4.0.0", "@xstate/fsm": "2.0.0", "@xstate/react": "3.2.1", "graphql": "^16.10.0", "type-fest": "^4.33.0", "use-isomorphic-layout-effect": "1.1.2", "use-sync-external-store": "1.2.0", "worktop": "^0.7.3" }, "peerDependencies": { "react": "18.3.1", "react-dom": "18.3.1", "vite": "^5.1.0 || ^6.2.1" } }, "sha512-rrVUWj9guqnW5ra5Rmp0ITouyU05KIi0n3coAFQbueS8VFL0ODPYpooZQwdhubc40nt/y/V0X6v4EMO9pd5R7g=="],
+
+    "@sparticuz/chromium": ["@sparticuz/chromium@147.0.1", "https://europe-west1-npm.pkg.dev/lovable-core-prod/sandbox-npm-cache/@sparticuz/chromium/-/chromium-147.0.1.tgz", { "dependencies": { "tar-fs": "^3.1.2" } }, "sha512-eYIl4IJomsAxvto7vzugwz4jZD0E8FjQ9RSLkbN9idERMgExdpKgK61YGPy9w9MFbEXrsaAUEoQ77YWTqArshQ=="],
 
     "@supabase/auth-js": ["@supabase/auth-js@2.87.1", "", { "dependencies": { "tslib": "2.8.1" } }, "sha512-6RDeOf5TVoaXFtEstN188ykp3pXLZaU9qoAWfx8dc50FFAAqt+kcFJ96V0IvSmcpb4mDAWcpTJ7BegmVDn/WIw=="],
 
