@@ -48,7 +48,7 @@ export const Header = () => {
                   Home
                 </a>
                 <a
-                  href="/product/flexiknee"
+                  href="/product/knee-massager-smart-red-light-and-massage-therapy"
                   className="text-lg font-medium hover:text-primary transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
