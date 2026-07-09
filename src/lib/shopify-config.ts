@@ -23,6 +23,15 @@ export const SHOPIFY_STOREFRONT_TOKEN =
 export const SHOPIFY_API_VERSION =
   import.meta.env.VITE_SHOPIFY_API_VERSION || '2025-07';
 
+/**
+ * Shopify'ın barındırdığı hazır müşteri hesabı sayfası (yeni müşteri hesapları).
+ * Format: https://shopify.com/{MAGAZA_ID}/account
+ * Mağaza ID'si değişirse VITE_SHOPIFY_CUSTOMER_ACCOUNT_URL env değişkeniyle güncelleyin.
+ */
+export const SHOPIFY_CUSTOMER_ACCOUNT_URL =
+  import.meta.env.VITE_SHOPIFY_CUSTOMER_ACCOUNT_URL ||
+  'https://shopify.com/75703189660/account';
+
 export const SHOPIFY_STOREFRONT_URL = `https://${SHOPIFY_STORE_DOMAIN}/api/${SHOPIFY_API_VERSION}/graphql.json`;
 
 export const isShopifyConfigured = (): boolean =>
