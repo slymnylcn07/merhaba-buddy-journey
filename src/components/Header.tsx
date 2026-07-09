@@ -1,4 +1,5 @@
 import { CartDrawer } from "./CartDrawer";
+import { SHOPIFY_CUSTOMER_ACCOUNT_URL } from "@/lib/shopify-config";
 import { Menu, User } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
@@ -154,14 +155,14 @@ export const Header = () => {
         {/* Right - Account & Cart */}
         <div className="flex items-center gap-2 ml-auto">
           <a
-            href="/account"
+            href={SHOPIFY_CUSTOMER_ACCOUNT_URL} target="_blank" rel="noopener noreferrer"
             className="hidden lg:flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <User className="h-4 w-4" />
             <span>My Account</span>
           </a>
           <a 
-            href="/account" 
+            href={SHOPIFY_CUSTOMER_ACCOUNT_URL} target="_blank" rel="noopener noreferrer" 
             aria-label="My Account"
             className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 w-9 lg:hidden"
           >

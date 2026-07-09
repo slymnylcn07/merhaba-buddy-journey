@@ -16,12 +16,13 @@ import { CURRENCY_CONFIG, CurrencyCode, detectUserCountry, getCurrencyForCountry
 import { trackCartView } from "@/lib/shopify-analytics";
 
 export const CartDrawer = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [userCurrency, setUserCurrency] = useState<CurrencyCode>('GBP');
   const [userCountry, setUserCountry] = useState<string>('GB');
   const { 
     items, 
     isLoading, 
+    isDrawerOpen: isOpen,
+    setDrawerOpen: setIsOpen,
     updateQuantity, 
     removeItem, 
     createCheckout 

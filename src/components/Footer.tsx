@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SHOPIFY_CUSTOMER_ACCOUNT_URL } from "@/lib/shopify-config";
 import { Phone, MapPin } from "lucide-react";
 import flexikneeLogo from "@/assets/flexiknee-logo-new.webp";
 
@@ -111,12 +112,14 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/account"
+                <a
+                  href={SHOPIFY_CUSTOMER_ACCOUNT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary hover:underline transition-colors"
                 >
                   My Account
-                </Link>
+                </a>
               </li>
               <li>
                 <Link
