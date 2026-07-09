@@ -41,8 +41,8 @@ function generateSitemap(): string {
 
 // Generate and write sitemap
 const sitemap = generateSitemap();
-const outputPath = path.resolve(__dirname, "../public/sitemap.xml");
-const distPath = path.resolve(__dirname, "../dist/sitemap.xml");
+const outputPath = path.resolve(process.cwd(), "public/sitemap.xml");
+const distPath = path.resolve(process.cwd(), "dist/sitemap.xml");
 
 fs.writeFileSync(outputPath, sitemap, "utf-8");
 if (fs.existsSync(path.dirname(distPath))) {
