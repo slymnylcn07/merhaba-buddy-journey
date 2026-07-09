@@ -119,10 +119,21 @@ const ProductDetail = () => {
     }
     setIsSubscribing(true);
     try {
-      const { data, error } = await supabase.functions.invoke('subscribe-newsletter', {
-        body: { email: newsletterEmail }
+      // 1) Shopify'a müşteri olarak kaydet (asıl kayıt burası)
+      const resp = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: newsletterEmail }),
       });
-      if (error) throw error;
+      if (!resp.ok) {
+        const body = await resp.json().catch(() => ({}));
+        throw new Error(body.error || "Subscription failed");
+      }
+
+      // 2) Eski Supabase akışı (onay maili) - hata verirse yoksay
+      supabase.functions
+        .invoke('subscribe-newsletter', { body: { email: newsletterEmail } })
+        .catch(() => {});
       toast.success("Thank you! You have successfully subscribed to our newsletter.", {
         duration: 5000,
       });
