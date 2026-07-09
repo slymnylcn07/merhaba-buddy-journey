@@ -3,8 +3,10 @@
  * Sends events to Shopify Analytics via the Storefront API and Web Pixels
  */
 
-const SHOPIFY_STORE_PERMANENT_DOMAIN = 'lovable-project-y7ubq.myshopify.com';
-const SHOPIFY_STOREFRONT_TOKEN = 'b45929b7a3e1e883f117f0f893bdedf2';
+import {
+  SHOPIFY_STORE_DOMAIN as SHOPIFY_STORE_PERMANENT_DOMAIN,
+  SHOPIFY_STOREFRONT_TOKEN,
+} from './shopify-config';
 
 // Get or create unique client ID (persistent across sessions)
 const getUniqueClientId = (): string => {
