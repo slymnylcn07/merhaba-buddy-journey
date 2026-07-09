@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SHOPIFY_STORE_DOMAIN } from "@/lib/shopify-config";
 
 const TrackOrder = () => {
   useEffect(() => {
@@ -166,7 +167,7 @@ const TrackOrder = () => {
           
           {/* Store Domain for External Pages */}
           <div id="pp-tracking-shop" style={{ display: 'none' }}>
-            lovable-project-y7ubq.myshopify.com
+            {SHOPIFY_STORE_DOMAIN}
           </div>
 
           {/* Fallback link if widget doesn't load */}
@@ -176,7 +177,7 @@ const TrackOrder = () => {
             </p>
             <Button asChild variant="outline" size="lg">
               <a 
-                href="https://lovable-project-y7ubq.myshopify.com/apps/parcelpanel"
+                href={`https://${SHOPIFY_STORE_DOMAIN}/apps/parcelpanel`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"

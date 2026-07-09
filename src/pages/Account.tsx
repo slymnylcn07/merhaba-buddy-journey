@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
+import { SHOPIFY_STORE_DOMAIN } from "@/lib/shopify-config";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -471,7 +472,7 @@ const Account = () => {
             </p>
             <Button variant="ghost" size="sm" asChild>
               <a
-                href="https://shopify.com/97343734050/account"
+                href={`https://${SHOPIFY_STORE_DOMAIN}/account`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:underline"
