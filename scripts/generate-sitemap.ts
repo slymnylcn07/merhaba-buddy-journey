@@ -42,6 +42,10 @@ function generateSitemap(): string {
 // Generate and write sitemap
 const sitemap = generateSitemap();
 const outputPath = path.resolve(__dirname, "../public/sitemap.xml");
+const distPath = path.resolve(__dirname, "../dist/sitemap.xml");
 
 fs.writeFileSync(outputPath, sitemap, "utf-8");
+if (fs.existsSync(path.dirname(distPath))) {
+  fs.writeFileSync(distPath, sitemap, "utf-8");
+}
 console.log(`✅ Sitemap generated with ${staticPages.length + guidesData.length} URLs`);
