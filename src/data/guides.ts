@@ -739,7 +739,7 @@ export const staticPages = [
   { path: "/", priority: 1.0, changefreq: "weekly" },
   { path: "/guides", priority: 0.9, changefreq: "weekly" },
   { path: "/why-flexiknee", priority: 0.8, changefreq: "monthly" },
-  { path: "/product", priority: 0.9, changefreq: "weekly" },
+  { path: "/product/knee-massager-smart-red-light-and-massage-therapy", priority: 0.9, changefreq: "weekly" },
   { path: "/foundation", priority: 0.7, changefreq: "monthly" },
   { path: "/track-order", priority: 0.5, changefreq: "monthly" },
   { path: "/privacy-policy", priority: 0.3, changefreq: "yearly" },
