@@ -25,6 +25,7 @@ interface CartStore {
   cartId: string | null;
   checkoutUrl: string | null;
   isLoading: boolean;
+  isDrawerOpen: boolean;
   
   addItem: (item: CartItem) => void;
   updateQuantity: (variantId: string, quantity: number) => void;
@@ -33,6 +34,7 @@ interface CartStore {
   setCartId: (cartId: string) => void;
   setCheckoutUrl: (url: string) => void;
   setLoading: (loading: boolean) => void;
+  setDrawerOpen: (open: boolean) => void;
   createCheckout: () => Promise<void>;
 }
 
@@ -43,6 +45,9 @@ export const useCartStore = create<CartStore>()(
       cartId: null,
       checkoutUrl: null,
       isLoading: false,
+      isDrawerOpen: false,
+
+      setDrawerOpen: (open) => set({ isDrawerOpen: open }),
 
       addItem: (item) => {
         const { items } = get();
@@ -70,6 +75,9 @@ export const useCartStore = create<CartStore>()(
         } else {
           set({ items: [...items, { ...item, quantity: Math.min(item.quantity, 2) }] });
         }
+
+        // Sepete ekleme başarılıysa çekmeceyi otomatik aç
+        set({ isDrawerOpen: true });
 
         // Track add to cart event for Shopify Analytics
         trackShopifyAddToCart({
@@ -199,6 +207,11 @@ export const useCartStore = create<CartStore>()(
     {
       name: 'shopify-cart',
       storage: createJSONStorage(() => localStorage),
+      partialize: (state) => ({
+        items: state.items,
+        cartId: state.cartId,
+        checkoutUrl: state.checkoutUrl,
+      }),
     }
   )
 );
