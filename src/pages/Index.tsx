@@ -173,7 +173,7 @@ export default function Index() {
                 </h1>
 
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-                  FlexiKnee is not just a single product page. It is a premium knee comfort hub — practical guides, daily routines, and smart at-home tools built around how people actually move.
+                  FlexiKnee is a premium knee comfort hub with practical guides, daily routines, and smart at home tools built around how people actually move.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -210,9 +210,9 @@ export default function Index() {
                 <div className="relative rounded-[2.8rem] border border-white/80 bg-white/80 p-4 shadow-[0_50px_140px_-70px_rgba(15,23,42,0.7)] backdrop-blur-xl">
                   <div className="overflow-hidden rounded-[2.3rem] border border-slate-200 bg-white">
                     <img
-                      src="/images/og-image.jpg"
-                      alt="FlexiKnee daily comfort lifestyle"
-                      className="h-[360px] w-full object-cover lg:h-[430px]"
+                      src="/images/flexiknee-home-hero-clean.webp"
+                      alt="FlexiKnee premium knee comfort system"
+                      className="h-[360px] w-full object-cover object-center lg:h-[430px]"
                       fetchPriority="high"
                     />
                     <div className="grid gap-0 border-t border-slate-200 md:grid-cols-3">
@@ -391,10 +391,10 @@ export default function Index() {
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Newsletter</p>
                 <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950">
-                  Join the FlexiKnee comfort list.
+                  Join the FlexiKnee comfort list and get 10% off.
                 </h2>
                 <p className="mt-4 max-w-xl text-slate-600">
-                  Get new guide drops, product updates, and future knee comfort launches.
+                  Get new guide drops, product updates, and a 10% welcome discount when your code is ready.
                 </p>
               </div>
               <form onSubmit={handleSubscribe} className="flex flex-col gap-3 sm:flex-row">

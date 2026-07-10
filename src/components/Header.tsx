@@ -11,8 +11,8 @@ const navItems = [
   { label: "Shop", href: PRIMARY_PRODUCT_PATH, type: "route" },
   { label: "Science", href: "/#why-it-works", type: "anchor" },
   { label: "Guides", href: "/guides", type: "route" },
-  { label: "Support", href: "/track-order", type: "route" },
-  { label: "About", href: "/why-flexiknee", type: "route" },
+  { label: "Track Your Order", href: "/track-order", type: "route" },
+  { label: "Why FlexiKnee", href: "/why-flexiknee", type: "route" },
 ];
 
 export const Header = () => {

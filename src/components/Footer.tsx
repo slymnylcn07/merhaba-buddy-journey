@@ -33,7 +33,7 @@ export const Footer = () => {
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-950">Support</h3>
               <ul className="mt-4 space-y-3 text-sm text-slate-500">
-                <li><Link to="/track-order" className="hover:text-blue-600">Track Order</Link></li>
+                <li><Link to="/track-order" className="hover:text-blue-600">Track Your Order</Link></li>
                 <li><Link to="/shipping-policy" className="hover:text-blue-600">Shipping Policy</Link></li>
                 <li><Link to="/refund-policy" className="hover:text-blue-600">Returns & Refunds</Link></li>
                 <li><Link to="/privacy-policy" className="hover:text-blue-600">Privacy Policy</Link></li>

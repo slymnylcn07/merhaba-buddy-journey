@@ -1,18 +1,34 @@
 /**
- * Newsletter signup → Shopify Customers
- * Server-only Vercel function.
+ * Newsletter signup, Shopify Customers.
  *
- * Vercel env variables:
+ * Server only Vercel function.
+ *
+ * Required Vercel env:
  * SHOPIFY_STORE_DOMAIN
  * SHOPIFY_CLIENT_ID
  * SHOPIFY_CLIENT_SECRET
  *
  * Optional legacy fallback:
  * SHOPIFY_ADMIN_TOKEN
+ *
+ * Never expose Admin API secrets with VITE_.
  */
 
-const API_VERSION = '2026-07';
+const API_VERSION = process.env.SHOPIFY_ADMIN_API_VERSION || '2025-10';
+
 let cachedToken: { token: string; expiresAt: number } | null = null;
+
+async function parseBody(req: any) {
+  if (typeof req.body === 'string') {
+    try {
+      return JSON.parse(req.body);
+    } catch {
+      return {};
+    }
+  }
+
+  return req.body || {};
+}
 
 async function getAdminAccessToken(storeDomain: string) {
   const legacyToken = process.env.SHOPIFY_ADMIN_TOKEN;
@@ -22,7 +38,7 @@ async function getAdminAccessToken(storeDomain: string) {
   const clientSecret = process.env.SHOPIFY_CLIENT_SECRET;
 
   if (!clientId || !clientSecret) {
-    throw new Error('Missing SHOPIFY_CLIENT_ID / SHOPIFY_CLIENT_SECRET');
+    throw new Error('Missing SHOPIFY_CLIENT_ID or SHOPIFY_CLIENT_SECRET');
   }
 
   if (cachedToken && Date.now() < cachedToken.expiresAt) {
@@ -39,13 +55,14 @@ async function getAdminAccessToken(storeDomain: string) {
     }),
   });
 
-  const data = await response.json();
+  const data = await response.json().catch(() => ({}));
 
   if (!response.ok || !data.access_token) {
     throw new Error(data?.error_description || data?.error || 'Could not obtain Shopify Admin access token');
   }
 
   const expiresInSeconds = Number(data.expires_in || 86400);
+
   cachedToken = {
     token: data.access_token,
     expiresAt: Date.now() + Math.max(60, expiresInSeconds - 300) * 1000,
@@ -54,20 +71,189 @@ async function getAdminAccessToken(storeDomain: string) {
   return cachedToken.token;
 }
 
+function mergeTags(existing: string | undefined) {
+  const tags = new Set(
+    String(existing || '')
+      .split(',')
+      .map((tag) => tag.trim())
+      .filter(Boolean)
+  );
+
+  tags.add('newsletter');
+  tags.add('website-signup');
+  tags.add('flexiknee');
+
+  return Array.from(tags).join(', ');
+}
+
+async function shopifyRest(storeDomain: string, adminToken: string, path: string, options: RequestInit = {}) {
+  const response = await fetch(`https://${storeDomain}/admin/api/${API_VERSION}${path}`, {
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Shopify-Access-Token': adminToken,
+      ...(options.headers || {}),
+    },
+  });
+
+  const data = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    const message =
+      data?.errors ||
+      data?.error ||
+      data?.message ||
+      `Shopify REST error ${response.status}`;
+    throw new Error(typeof message === 'string' ? message : JSON.stringify(message));
+  }
+
+  return data;
+}
+
+async function subscribeViaRest(storeDomain: string, adminToken: string, email: string) {
+  const search = await shopifyRest(
+    storeDomain,
+    adminToken,
+    `/customers/search.json?query=${encodeURIComponent(`email:${email}`)}`,
+    { method: 'GET' }
+  );
+
+  const existing = search?.customers?.[0];
+
+  if (existing?.id) {
+    await shopifyRest(storeDomain, adminToken, `/customers/${existing.id}.json`, {
+      method: 'PUT',
+      body: JSON.stringify({
+        customer: {
+          id: existing.id,
+          email,
+          tags: mergeTags(existing.tags),
+          accepts_marketing: true,
+          email_marketing_consent: {
+            state: 'subscribed',
+            opt_in_level: 'single_opt_in',
+          },
+        },
+      }),
+    });
+
+    return { ok: true, existing: true };
+  }
+
+  await shopifyRest(storeDomain, adminToken, '/customers.json', {
+    method: 'POST',
+    body: JSON.stringify({
+      customer: {
+        email,
+        tags: mergeTags(''),
+        accepts_marketing: true,
+        email_marketing_consent: {
+          state: 'subscribed',
+          opt_in_level: 'single_opt_in',
+        },
+      },
+    }),
+  });
+
+  return { ok: true, created: true };
+}
+
+async function subscribeViaGraphql(storeDomain: string, adminToken: string, email: string) {
+  const gql = async (query: string, variables: Record<string, unknown>) => {
+    const response = await fetch(`https://${storeDomain}/admin/api/${API_VERSION}/graphql.json`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Access-Token': adminToken,
+      },
+      body: JSON.stringify({ query, variables }),
+    });
+
+    const json = await response.json().catch(() => ({}));
+
+    if (!response.ok || json.errors) {
+      throw new Error(json?.errors?.[0]?.message || `Shopify GraphQL error ${response.status}`);
+    }
+
+    return json;
+  };
+
+  const createResult = await gql(
+    `mutation createCustomer($input: CustomerInput!) {
+      customerCreate(input: $input) {
+        customer { id email }
+        userErrors { field message }
+      }
+    }`,
+    {
+      input: {
+        email,
+        tags: ['newsletter', 'website-signup', 'flexiknee'],
+        emailMarketingConsent: {
+          marketingState: 'SUBSCRIBED',
+          marketingOptInLevel: 'SINGLE_OPT_IN',
+        },
+      },
+    }
+  );
+
+  const createdCustomer = createResult?.data?.customerCreate?.customer;
+  const createErrors = createResult?.data?.customerCreate?.userErrors || [];
+
+  if (createdCustomer?.id) {
+    return { ok: true, created: true };
+  }
+
+  const alreadyExists = createErrors.some((err: any) =>
+    String(err?.message || '').toLowerCase().includes('has already been taken') ||
+    String(err?.message || '').toLowerCase().includes('already exists')
+  );
+
+  if (!alreadyExists) {
+    throw new Error(createErrors[0]?.message || 'Could not create Shopify customer');
+  }
+
+  const searchResult = await gql(
+    `query findCustomer($query: String!) {
+      customers(first: 1, query: $query) {
+        edges { node { id email } }
+      }
+    }`,
+    { query: `email:${email}` }
+  );
+
+  const customerId = searchResult?.data?.customers?.edges?.[0]?.node?.id;
+
+  if (!customerId) {
+    return { ok: true, existing: true };
+  }
+
+  await gql(
+    `mutation tagsAdd($id: ID!, $tags: [String!]!) {
+      tagsAdd(id: $id, tags: $tags) {
+        node { id }
+        userErrors { field message }
+      }
+    }`,
+    { id: customerId, tags: ['newsletter', 'website-signup', 'flexiknee'] }
+  );
+
+  return { ok: true, existing: true };
+}
+
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const storeDomain =
-    process.env.SHOPIFY_STORE_DOMAIN ||
-    process.env.VITE_SHOPIFY_STORE_DOMAIN;
+  const storeDomain = process.env.SHOPIFY_STORE_DOMAIN || process.env.VITE_SHOPIFY_STORE_DOMAIN;
 
   if (!storeDomain) {
-    return res.status(500).json({ error: 'Server is not configured.' });
+    return res.status(500).json({ error: 'Newsletter is not configured.' });
   }
 
-  const email = String(req.body?.email || '').trim().toLowerCase();
+  const body = await parseBody(req);
+  const email = String(body?.email || '').trim().toLowerCase();
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) && email.length <= 255;
 
   if (!emailOk) {
@@ -77,112 +263,20 @@ export default async function handler(req: any, res: any) {
   try {
     const adminToken = await getAdminAccessToken(storeDomain);
 
-    const gql = async (query: string, variables: Record<string, unknown>) => {
-      const r = await fetch(`https://${storeDomain}/admin/api/${API_VERSION}/graphql.json`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Shopify-Access-Token': adminToken,
-        },
-        body: JSON.stringify({ query, variables }),
-      });
-
-      const json = await r.json();
-
-      if (!r.ok) {
-        throw new Error(json?.errors?.[0]?.message || `Shopify Admin API error: ${r.status}`);
-      }
-
-      return json;
-    };
-
-    const createResult = await gql(
-      `mutation createCustomer($input: CustomerInput!) {
-        customerCreate(input: $input) {
-          customer { id email }
-          userErrors { field message }
-        }
-      }`,
-      {
-        input: {
-          email,
-          tags: ['newsletter', 'website-signup', 'flexiknee'],
-          emailMarketingConsent: {
-            marketingState: 'SUBSCRIBED',
-            marketingOptInLevel: 'SINGLE_OPT_IN',
-          },
-        },
-      }
-    );
-
-    const createdCustomer = createResult?.data?.customerCreate?.customer;
-    const createErrors = createResult?.data?.customerCreate?.userErrors || [];
-
-    if (createdCustomer?.id) {
-      return res.status(200).json({ ok: true, created: true });
+    try {
+      const result = await subscribeViaGraphql(storeDomain, adminToken, email);
+      return res.status(200).json(result);
+    } catch (graphqlError: any) {
+      console.warn('[newsletter] GraphQL path failed, trying REST fallback:', graphqlError?.message || graphqlError);
+      const result = await subscribeViaRest(storeDomain, adminToken, email);
+      return res.status(200).json(result);
     }
-
-    const alreadyExists = createErrors.some((err: any) =>
-      String(err?.message || '').toLowerCase().includes('has already been taken') ||
-      String(err?.message || '').toLowerCase().includes('already exists')
-    );
-
-    if (!alreadyExists) {
-      return res.status(400).json({ error: createErrors[0]?.message || 'Could not subscribe email.' });
-    }
-
-    const searchResult = await gql(
-      `query findCustomer($query: String!) {
-        customers(first: 1, query: $query) {
-          edges { node { id email } }
-        }
-      }`,
-      { query: `email:${email}` }
-    );
-
-    const customerId = searchResult?.data?.customers?.edges?.[0]?.node?.id;
-
-    if (!customerId) {
-      return res.status(200).json({ ok: true, existing: true });
-    }
-
-    const consentResult = await gql(
-      `mutation updateMarketingConsent($input: CustomerEmailMarketingConsentUpdateInput!) {
-        customerEmailMarketingConsentUpdate(input: $input) {
-          customer { id email }
-          userErrors { field message }
-        }
-      }`,
-      {
-        input: {
-          customerId,
-          emailMarketingConsent: {
-            marketingState: 'SUBSCRIBED',
-            marketingOptInLevel: 'SINGLE_OPT_IN',
-          },
-        },
-      }
-    );
-
-    const consentErrors = consentResult?.data?.customerEmailMarketingConsentUpdate?.userErrors || [];
-
-    if (consentErrors.length > 0) {
-      return res.status(400).json({ error: consentErrors[0]?.message || 'Could not update marketing consent.' });
-    }
-
-    await gql(
-      `mutation tagsAdd($id: ID!, $tags: [String!]!) {
-        tagsAdd(id: $id, tags: $tags) {
-          node { id }
-          userErrors { field message }
-        }
-      }`,
-      { id: customerId, tags: ['newsletter', 'website-signup', 'flexiknee'] }
-    );
-
-    return res.status(200).json({ ok: true, existing: true });
   } catch (error: any) {
-    console.error('[newsletter]', error);
-    return res.status(500).json({ error: 'Could not subscribe right now. Please try again.' });
+    console.error('[newsletter]', error?.message || error);
+
+    return res.status(500).json({
+      error: 'Could not subscribe right now. Please try again.',
+      detail: process.env.NODE_ENV === 'development' ? String(error?.message || error) : undefined,
+    });
   }
 }

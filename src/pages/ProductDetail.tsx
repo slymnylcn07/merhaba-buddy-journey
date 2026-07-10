@@ -6,7 +6,6 @@ import {
   ArrowRight,
   Check,
   ChevronRight,
-  Clock,
   RotateCcw,
   Shield,
   Star,
@@ -21,35 +20,38 @@ import { getProducts, ShopifyProduct, createStorefrontCheckout } from "@/lib/sho
 import { useCartStore } from "@/stores/cartStore";
 import { featurePillars, productSystem } from "@/data/product-system";
 
-const displayGallery = [
-  { src: "/images/og-image.jpg", alt: "FlexiKnee in a calm home setting" },
-  { src: "/images/review-photo-2.png", alt: "FlexiKnee device close-up" },
-  { src: "/images/review-photo-1.png", alt: "FlexiKnee control panel close-up" },
-  { src: "/images/flexiknee-lifestyle-work.webp", alt: "FlexiKnee daily use at home" },
-  { src: "/images/flexiknee-lifestyle-home.webp", alt: "FlexiKnee after activity routine" },
+const fallbackGallery = [
+  { src: "/images/shopify-gallery/flexiknee-gallery-01-main.webp", alt: "FlexiKnee knee massager main product image" },
+  { src: "/images/shopify-gallery/flexiknee-gallery-02-lifestyle.webp", alt: "FlexiKnee lifestyle use at home" },
+  { src: "/images/shopify-gallery/flexiknee-gallery-03-controls.webp", alt: "FlexiKnee touch control panel" },
+  { src: "/images/shopify-gallery/flexiknee-gallery-04-heat.webp", alt: "FlexiKnee adjustable warmth feature" },
+  { src: "/images/shopify-gallery/flexiknee-gallery-05-vibration.webp", alt: "FlexiKnee gentle vibration feature" },
+  { src: "/images/shopify-gallery/flexiknee-gallery-06-routine.webp", alt: "FlexiKnee four step routine" },
+  { src: "/images/shopify-gallery/flexiknee-gallery-07-system.webp", alt: "FlexiKnee comfort system features" },
 ];
 
 const relatedGuides = [
   {
     title: "Do Knee Massagers Work? Realistic Expectations",
     href: "/guides/do-knee-massagers-work",
-    image: "/images/og-image.jpg",
+    image: "/images/shopify-gallery/flexiknee-gallery-01-main.webp",
   },
   {
     title: "Daily Knee Care Routine: Simple Habits for Comfort",
     href: "/guides/daily-knee-care-routine",
-    image: "/images/flexiknee-lifestyle-work.webp",
+    image: "/images/shopify-gallery/flexiknee-gallery-02-lifestyle.webp",
   },
   {
     title: "Heat vs. Ice for Knees: What Works Best Daily?",
     href: "/guides/heat-vs-ice-for-knees",
-    image: "/images/flexiknee-lifestyle-home.webp",
+    image: "/images/shopify-gallery/flexiknee-gallery-04-heat.webp",
   },
 ];
 
 function formatMoney(amount?: string, currencyCode?: string) {
   const value = Number(amount || 0);
   const currency = currencyCode || "GBP";
+
   try {
     return new Intl.NumberFormat("en-GB", {
       style: "currency",
@@ -100,14 +102,26 @@ export default function ProductDetail() {
   const displayPrice = formatMoney(String(basePrice * bundleQty), currency);
   const productTitle = "FlexiKnee™ Knee Massager";
 
+  const shopifyImages =
+    product?.node.images.edges.map((edge) => ({
+      src: edge.node.url,
+      alt: edge.node.altText || productTitle,
+    })) || [];
+
+  const gallery = shopifyImages.length >= 2 ? shopifyImages : fallbackGallery;
+
+  useEffect(() => {
+    setSelectedImage(0);
+  }, [handle, shopifyImages.length]);
+
   const productJsonLd = useMemo(() => ({
     "@context": "https://schema.org",
     "@type": "Product",
     name: productTitle,
     brand: { "@type": "Brand", name: "FlexiKnee" },
     description:
-      "A smart knee comfort device with adjustable heat, massage-style vibration, wraparound support, and simple touch controls.",
-    image: "https://flexi-knee.com/images/og-image.jpg",
+      "A smart knee comfort device with adjustable heat, massage style vibration, wraparound support, and simple touch controls.",
+    image: "https://flexi-knee.com/images/shopify-gallery/flexiknee-gallery-01-main.webp",
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/InStock",
@@ -119,6 +133,7 @@ export default function ProductDetail() {
 
   const cartItem = () => {
     if (!product || !variant) return null;
+
     return {
       product,
       variantId: variant.id,
@@ -131,22 +146,26 @@ export default function ProductDetail() {
 
   const handleAddToCart = () => {
     const item = cartItem();
+
     if (!item) {
       toast.error("Product is still loading. Please try again.");
       return;
     }
+
     addItem(item);
     toast.success(`${bundleQty === 2 ? "2 FlexiKnee units" : "FlexiKnee"} added to cart.`);
   };
 
   const handleBuyNow = async () => {
     const item = cartItem();
+
     if (!item) {
       toast.error("Product is still loading. Please try again.");
       return;
     }
 
     setIsBuying(true);
+
     try {
       const checkoutUrl = await createStorefrontCheckout([item]);
       window.location.href = checkoutUrl;
@@ -158,17 +177,17 @@ export default function ProductDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-950">
+    <div className="min-h-screen bg-white pb-24 text-slate-950 lg:pb-0">
       <Helmet>
         <title>{productTitle} | FlexiKnee™</title>
         <meta
           name="description"
-          content="FlexiKnee™ is a smart at-home knee comfort device with adjustable heat, massage-style vibration, wraparound support, and simple touch controls."
+          content="FlexiKnee™ is a smart at home knee comfort device with adjustable heat, massage style vibration, wraparound support, and simple touch controls."
         />
         <link rel="canonical" href={`https://flexi-knee.com/product/${handle || "knee-massager-smart-red-light-and-massage-therapy"}`} />
         <meta property="og:title" content={`${productTitle} | FlexiKnee™`} />
         <meta property="og:description" content="A premium knee comfort device for simple daily recovery routines." />
-        <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
+        <meta property="og:image" content="https://flexi-knee.com/images/shopify-gallery/flexiknee-gallery-01-main.webp" />
         <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>
       </Helmet>
 
@@ -176,7 +195,7 @@ export default function ProductDetail() {
 
       <main>
         <section className="border-b border-slate-200 bg-white">
-          <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
               <Link to="/" className="hover:text-blue-600">Home</Link>
               <ChevronRight className="h-3 w-3" />
@@ -187,15 +206,15 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-[radial-gradient(circle_at_72%_16%,rgba(37,99,235,0.11),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] py-10 lg:py-16">
-          <div className="mx-auto grid max-w-7xl gap-9 px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
-            <div className="grid gap-4 lg:grid-cols-[92px_1fr]">
-              <div className="order-2 flex gap-3 overflow-x-auto lg:order-1 lg:flex-col">
-                {displayGallery.map((image, index) => (
+        <section className="bg-[radial-gradient(circle_at_72%_16%,rgba(37,99,235,0.11),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] py-5 sm:py-8 lg:py-16">
+          <div className="mx-auto grid max-w-7xl gap-5 px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:gap-9 lg:px-8">
+            <div className="grid gap-3 lg:grid-cols-[92px_1fr] lg:gap-4">
+              <div className="order-2 flex gap-2 overflow-x-auto pb-1 lg:order-1 lg:flex-col lg:gap-3 lg:pb-0">
+                {gallery.map((image, index) => (
                   <button
-                    key={image.src}
+                    key={`${image.src}-${index}`}
                     onClick={() => setSelectedImage(index)}
-                    className={`h-22 w-22 flex-shrink-0 overflow-hidden rounded-2xl border bg-white transition ${
+                    className={`h-16 w-16 flex-shrink-0 overflow-hidden rounded-2xl border bg-white transition sm:h-20 sm:w-20 lg:h-22 lg:w-22 ${
                       selectedImage === index ? "border-blue-500 shadow-lg shadow-blue-500/10" : "border-slate-200 hover:border-slate-300"
                     }`}
                     aria-label={`View image ${index + 1}`}
@@ -206,28 +225,28 @@ export default function ProductDetail() {
               </div>
 
               <div className="order-1 lg:order-2">
-                <div className="relative overflow-hidden rounded-[2.6rem] border border-slate-200 bg-white p-4 shadow-[0_50px_140px_-80px_rgba(15,23,42,0.75)]">
+                <div className="relative overflow-hidden rounded-[1.8rem] border border-slate-200 bg-white p-2 shadow-[0_35px_110px_-80px_rgba(15,23,42,0.75)] sm:rounded-[2.2rem] sm:p-3 lg:rounded-[2.6rem] lg:p-4">
                   <img
-                    src={displayGallery[selectedImage].src}
-                    alt={displayGallery[selectedImage].alt}
-                    className="h-[480px] w-full rounded-[2.1rem] object-cover lg:h-[660px]"
+                    src={gallery[selectedImage]?.src || fallbackGallery[0].src}
+                    alt={gallery[selectedImage]?.alt || productTitle}
+                    className="h-[340px] w-full rounded-[1.45rem] object-cover object-center sm:h-[450px] sm:rounded-[1.8rem] lg:h-[660px] lg:rounded-[2.1rem]"
                     fetchPriority="high"
                   />
-                  <div className="absolute left-8 top-8 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-600 shadow-sm backdrop-blur">
+                  <div className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-blue-600 shadow-sm backdrop-blur sm:left-7 sm:top-7 sm:px-4 sm:py-2 sm:text-xs">
                     FlexiKnee system
                   </div>
-                  <div className="absolute bottom-8 left-8 right-8 rounded-[1.6rem] bg-slate-950/88 p-5 text-white backdrop-blur">
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">Routine-first device</p>
-                    <p className="mt-2 text-2xl font-semibold tracking-[-0.03em]">Heat, vibration, and support — without the messy gadget-page look.</p>
+                  <div className="absolute bottom-6 left-6 right-6 hidden rounded-[1.5rem] bg-slate-950/88 p-5 text-white backdrop-blur sm:block">
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">Routine first device</p>
+                    <p className="mt-2 text-2xl font-semibold tracking-[-0.03em]">Heat, vibration, and support without the messy gadget page look.</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <aside className="lg:sticky lg:top-24 lg:self-start">
-              <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.7)] lg:p-8">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Smart daily knee comfort</p>
-                <h1 className="mt-3 text-4xl font-semibold tracking-[-0.05em] text-slate-950 lg:text-5xl">{productTitle}</h1>
+              <div className="rounded-[1.8rem] border border-slate-200 bg-white p-5 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.7)] sm:p-6 lg:rounded-[2rem] lg:p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 sm:text-sm">Smart daily knee comfort</p>
+                <h1 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">{productTitle}</h1>
 
                 <div className="mt-4 flex flex-wrap items-center gap-3">
                   <div className="flex items-center gap-1 text-blue-600">
@@ -241,13 +260,13 @@ export default function ProductDetail() {
                 </div>
 
                 <p className="mt-5 text-base leading-7 text-slate-600">
-                  FlexiKnee combines adjustable warmth, massage-style vibration, and a secure wraparound fit for simple at-home comfort routines.
+                  FlexiKnee combines adjustable warmth, massage style vibration, and a secure wraparound fit for simple at home comfort routines.
                 </p>
 
                 <div className="mt-6 grid gap-3">
                   {[
                     "Adjustable heat levels for a consistent routine",
-                    "Massage-style vibration modes for tired legs",
+                    "Massage style vibration modes for tired legs",
                     "Wraparound fit to keep the device comfortably positioned",
                     "Wireless design for easy use at home, work, or after activity",
                   ].map((item) => (
@@ -286,7 +305,7 @@ export default function ProductDetail() {
                   </div>
                 </div>
 
-                <div className="mt-5 grid gap-3">
+                <div className="mt-5 hidden gap-3 lg:grid">
                   <Button onClick={handleAddToCart} disabled={!variant || isLoading} className="h-13 rounded-full bg-blue-600 text-base font-semibold text-white hover:bg-blue-700">
                     Add to Cart
                   </Button>
@@ -314,16 +333,16 @@ export default function ProductDetail() {
 
         <VideoReviews />
 
-        <section className="bg-white py-20">
+        <section className="bg-white py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Why people choose it</p>
                 <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
-                  Built around short routines, not complicated treatment claims.
+                  Built around short routines, not complicated claims.
                 </h2>
                 <p className="mt-5 text-base leading-8 text-slate-600">
-                  This section intentionally shifts the product page away from aggressive pain-cure language and toward a cleaner, more trustworthy wellness-tech presentation.
+                  This section shifts the product page away from aggressive cure language and toward a cleaner, more trustworthy wellness tech presentation.
                 </p>
               </div>
 
@@ -340,7 +359,7 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-slate-50 py-20">
+        <section className="bg-slate-50 py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10 max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">How it fits your day</p>
@@ -366,7 +385,7 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-white py-20">
+        <section className="bg-white py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div>
@@ -401,7 +420,7 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-slate-50 py-20">
+        <section className="bg-slate-50 py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div>
@@ -432,7 +451,7 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-white py-20">
+        <section className="bg-white py-16 sm:py-20">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">FAQ</p>
@@ -440,7 +459,7 @@ export default function ProductDetail() {
             </div>
             <Accordion type="single" collapsible className="rounded-[2rem] border border-slate-200 bg-white px-6 shadow-sm">
               {[
-                ["Is FlexiKnee wireless?", "Yes. It is rechargeable and designed for simple cord-free daily routines."],
+                ["Is FlexiKnee wireless?", "Yes. It is rechargeable and designed for simple cord free daily routines."],
                 ["How long should I use it?", "Use it according to the included instructions. Many people prefer short calm sessions rather than long complicated routines."],
                 ["Is this a medical treatment?", "No. It is positioned as a comfort and recovery support product, not a medical treatment or diagnosis tool."],
                 ["Can I return it?", "Yes. Keep your return policy visible near checkout to reduce hesitation."],
@@ -454,6 +473,21 @@ export default function ProductDetail() {
           </div>
         </section>
       </main>
+
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/95 p-3 shadow-[0_-18px_60px_-35px_rgba(15,23,42,0.65)] backdrop-blur lg:hidden">
+        <div className="mx-auto flex max-w-xl items-center gap-3">
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-xs font-medium text-slate-500">FlexiKnee™ Massager</p>
+            <p className="text-base font-semibold text-slate-950">{displayPrice}</p>
+          </div>
+          <Button onClick={handleAddToCart} disabled={!variant || isLoading} className="h-11 rounded-full bg-blue-600 px-5 text-sm font-semibold text-white">
+            Add
+          </Button>
+          <Button onClick={handleBuyNow} disabled={!variant || isLoading || isBuying} className="h-11 rounded-full bg-slate-950 px-5 text-sm font-semibold text-white">
+            Buy
+          </Button>
+        </div>
+      </div>
 
       <Footer />
     </div>
