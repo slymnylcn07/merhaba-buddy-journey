@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F0FDF4"/>
+  <circle cx="1060" cy="110" r="170" fill="#DCFCE7" opacity="0.8"/>
+  <g transform="translate(180,90)">
+    <path d="M120 40 C 200 20 260 60 260 150 C 260 230 230 280 220 340 C 214 380 226 410 210 440 C 190 476 120 480 95 440 C 74 406 90 370 84 330 C 74 260 40 210 50 140 C 58 80 80 50 120 40 Z" fill="#34D399" stroke="#059669" stroke-width="5"/>
+    <path d="M120 70 C 175 55 225 90 225 155" stroke="#A7F3D0" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <ellipse cx="150" cy="250" rx="55" ry="26" fill="#059669" opacity="0.35"/>
+    <text x="150" y="258" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#064E3B">arch support</text>
+  </g>
+  <g stroke="#0EA5E9" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="2 22">
+    <path d="M470 380 C 560 330 620 300 700 250"/>
+  </g>
+  <g transform="translate(690,110)">
+    <path d="M70 0 C 120 0 150 30 150 80 L 150 130 C 150 160 130 175 130 205 C 130 235 150 250 150 280 L 150 330 C 150 380 120 410 70 410 C 20 410 -10 380 -10 330 L -10 280 C -10 250 10 235 10 205 C 10 175 -10 160 -10 130 L -10 80 C -10 30 20 0 70 0 Z" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="6"/>
+    <circle cx="70" cy="205" r="42" fill="#BAE6FD"/>
+    <circle cx="70" cy="205" r="20" fill="#0284C7"/>
+    <text x="70" y="470" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0C4A6E">knee alignment</text>
+  </g>
+  <text x="600" y="590" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="bold" fill="#0F172A">How the right insoles change what your knees feel</text>
+</svg>

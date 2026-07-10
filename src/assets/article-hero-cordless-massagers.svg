@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F8FAFC"/>
+  <circle cx="150" cy="100" r="160" fill="#E0E7FF" opacity="0.6"/>
+  <circle cx="1080" cy="540" r="170" fill="#E0E7FF" opacity="0.6"/>
+  <g transform="translate(330,110)">
+    <path d="M270 30 C 400 30 450 120 450 200 C 450 300 380 370 270 370 C 160 370 90 300 90 200 C 90 120 140 30 270 30 Z" fill="#1E293B"/>
+    <ellipse cx="270" cy="200" rx="120" ry="130" fill="#0F172A"/>
+    <circle cx="270" cy="200" r="78" fill="#DC2626" opacity="0.85"/>
+    <circle cx="270" cy="200" r="52" fill="#F87171" opacity="0.9"/>
+    <circle cx="270" cy="200" r="26" fill="#FECACA"/>
+    <rect x="228" y="330" width="84" height="26" rx="13" fill="#334155"/>
+    <circle cx="248" y="343" cy="343" r="6" fill="#4ADE80"/>
+    <circle cx="270" cy="343" r="6" fill="#4ADE80"/>
+    <circle cx="292" cy="343" r="6" fill="#94A3B8"/>
+  </g>
+  <g transform="translate(80,470)">
+    <rect x="0" y="0" width="120" height="52" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="3"/>
+    <rect x="120" y="14" width="12" height="24" rx="4" fill="#CBD5E1"/>
+    <rect x="10" y="10" width="78" height="32" rx="7" fill="#22C55E"/>
+    <text x="150" y="36" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="bold" fill="#0F172A">No cords. No outlets.</text>
+  </g>
+  <text x="600" y="590" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="bold" fill="#0F172A">Cordless &amp; rechargeable heated knee massagers — 2026 guide</text>
+</svg>

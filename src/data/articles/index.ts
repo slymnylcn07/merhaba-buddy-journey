@@ -74,3 +74,6 @@ export { homeRemediesKneePain } from "./home-remedies-knee-pain";
 export { whatMakesKneePainWorse } from "./what-makes-knee-pain-worse";
 export { weightAffectsKneePain } from "./weight-affects-knee-pain";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
+export { kneePainAfterExerciseNotDuring } from "./knee-pain-after-exercise-but-not-during";
+export { cordlessHeatedKneeMassagers2026 } from "./cordless-rechargeable-heated-knee-massagers-2026";
+export { bestInsolesKneePain2026 } from "./best-insoles-for-knee-pain-2026";

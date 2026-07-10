@@ -70,6 +70,46 @@
       ],
       "destination": "https://flexi-knee.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/guides/running-shoes-knee-pain-causes-fixes",
+      "destination": "/guides/best-running-shoes-knee-pain",
+      "permanent": true
+    },
+    {
+      "source": "/guides/running-shoes-knee-pain-discomfort",
+      "destination": "/guides/best-running-shoes-knee-pain",
+      "permanent": true
+    },
+    {
+      "source": "/guides/post-exercise-knee-pain-guide",
+      "destination": "/guides/knee-pain-after-exercise",
+      "permanent": true
+    },
+    {
+      "source": "/guides/sore-knees-after-workout",
+      "destination": "/guides/knee-pain-after-exercise",
+      "permanent": true
+    },
+    {
+      "source": "/guides/knee-pain-location-map-2026",
+      "destination": "/guides/knee-pain-locations-visual-guide",
+      "permanent": true
+    },
+    {
+      "source": "/guides/pain-in-the-knee-causes-locations",
+      "destination": "/guides/knee-pain-locations-visual-guide",
+      "permanent": true
+    },
+    {
+      "source": "/guides/daily-knee-comfort-routine",
+      "destination": "/guides/daily-knee-care-routine",
+      "permanent": true
+    },
+    {
+      "source": "/guides/heat-or-ice-knee-pain-situations",
+      "destination": "/guides/heat-vs-ice-for-knees",
+      "permanent": true
     }
   ]
 }

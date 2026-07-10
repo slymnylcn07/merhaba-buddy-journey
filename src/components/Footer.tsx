@@ -25,7 +25,9 @@ export const Footer = () => {
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-950">Shop</h3>
               <ul className="mt-4 space-y-3 text-sm text-slate-500">
+                <li><Link to="/shop" className="hover:text-blue-600">All Devices</Link></li>
                 <li><Link to={PRIMARY_PRODUCT_PATH} className="hover:text-blue-600">FlexiKnee Massager</Link></li>
+                <li><Link to="/knee-quiz" className="hover:text-blue-600">Knee Comfort Quiz</Link></li>
                 <li><Link to="/guides" className="hover:text-blue-600">Recovery Guides</Link></li>
                 <li><Link to="/why-flexiknee" className="hover:text-blue-600">Why FlexiKnee</Link></li>
               </ul>

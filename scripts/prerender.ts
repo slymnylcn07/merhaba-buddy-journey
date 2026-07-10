@@ -84,6 +84,8 @@ async function prerender() {
   const staticRoutes = [
     "/",
     "/guides",
+    "/shop",
+    "/knee-quiz",
     "/why-flexiknee",
     "/foundation",
     "/track-order",

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F0F7FF"/>
+  <circle cx="1050" cy="90" r="180" fill="#DBEAFE" opacity="0.7"/>
+  <circle cx="120" cy="560" r="140" fill="#DBEAFE" opacity="0.5"/>
+  <g transform="translate(120,120)">
+    <rect x="0" y="0" width="440" height="390" rx="28" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="3"/>
+    <text x="40" y="64" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="bold" fill="#1E3A8A">During exercise</text>
+    <path d="M60 300 Q140 290 220 285 T380 275" stroke="#22C55E" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <text x="40" y="360" font-family="Arial,Helvetica,sans-serif" font-size="24" fill="#166534">Feels fine — warm joints, flowing fluid</text>
+    <circle cx="90" cy="160" r="46" fill="#DCFCE7"/>
+    <path d="M78 160 l10 10 l22 -24" stroke="#16A34A" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(640,120)">
+    <rect x="0" y="0" width="440" height="390" rx="28" fill="#FFFFFF" stroke="#FECACA" stroke-width="3"/>
+    <text x="40" y="64" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="bold" fill="#7F1D1D">Hours after</text>
+    <path d="M60 270 Q140 275 200 300 T380 345" stroke="#EF4444" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <text x="40" y="360" font-family="Arial,Helvetica,sans-serif" font-size="24" fill="#991B1B">Ache appears — cooling tissue, settling fluid</text>
+    <circle cx="90" cy="160" r="46" fill="#FEE2E2"/>
+    <path d="M90 134 v32 M90 182 v4" stroke="#DC2626" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <text x="600" y="580" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="bold" fill="#0F172A">Why knees hurt after exercise — but not during it</text>
+</svg>

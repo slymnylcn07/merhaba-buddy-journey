@@ -25,6 +25,8 @@ const AdminAuth = lazy(() => import("./pages/AdminAuth"));
 const AdminReturns = lazy(() => import("./pages/AdminReturns"));
 const WhyFlexiKnee = lazy(() => import("./pages/WhyFlexiKnee"));
 const Guides = lazy(() => import("./pages/Guides"));
+const Shop = lazy(() => import("./pages/Shop"));
+const KneeQuiz = lazy(() => import("./pages/KneeQuiz"));
 const GuideArticle = lazy(() => import("./pages/GuideArticle"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -70,6 +72,16 @@ const App = () => {
                 <Route path="/refund-policy" element={<RefundPolicy />} />
                 <Route path="/foundation" element={<Foundation />} />
                 <Route path="/why-flexiknee" element={<WhyFlexiKnee />} />
+                <Route path="/shop" element={<Shop />} />
+                <Route path="/knee-quiz" element={<KneeQuiz />} />
+                <Route path="/guides/running-shoes-knee-pain-causes-fixes" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
+                <Route path="/guides/running-shoes-knee-pain-discomfort" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
+                <Route path="/guides/post-exercise-knee-pain-guide" element={<Navigate to="/guides/knee-pain-after-exercise" replace />} />
+                <Route path="/guides/sore-knees-after-workout" element={<Navigate to="/guides/knee-pain-after-exercise" replace />} />
+                <Route path="/guides/knee-pain-location-map-2026" element={<Navigate to="/guides/knee-pain-locations-visual-guide" replace />} />
+                <Route path="/guides/pain-in-the-knee-causes-locations" element={<Navigate to="/guides/knee-pain-locations-visual-guide" replace />} />
+                <Route path="/guides/daily-knee-comfort-routine" element={<Navigate to="/guides/daily-knee-care-routine" replace />} />
+                <Route path="/guides/heat-or-ice-knee-pain-situations" element={<Navigate to="/guides/heat-vs-ice-for-knees" replace />} />
                 <Route path="/guides" element={<Guides />} />
                 <Route path="/guides/:slug" element={<GuideArticle />} />
                 <Route path="/admin" element={<AdminAuth />} />

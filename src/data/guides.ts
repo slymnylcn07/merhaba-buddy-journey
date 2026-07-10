@@ -30,20 +30,6 @@ export const guidesData: GuideData[] = [
     lastModified: "2025-03-05",
   },
   {
-    slug: "daily-knee-comfort-routine",
-    title: "How to Build a Daily Knee Comfort Routine",
-    description: "Practical tips for creating sustainable morning and evening habits that support long-term knee comfort.",
-    readTime: 7,
-    lastModified: "2025-07-14",
-  },
-  {
-    slug: "pain-in-the-knee-causes-locations",
-    title: "Pain in the Knee: Common Causes, Locations & Relief",
-    description: "Explore the most common knee pain causes, from sharp knee pain to pain when bending knee, and discover practical relief options for your knee joint.",
-    readTime: 12,
-    lastModified: "2025-12-15",
-  },
-  {
     slug: "back-of-knee-pain-explained",
     title: "Back of Knee Pain: Causes, Symptoms & Relief Options",
     description: "Learn about behind knee pain including Baker's cyst, pain when straightening leg, and effective bakers cyst treatment options.",
@@ -277,13 +263,6 @@ export const guidesData: GuideData[] = [
     lastModified: "2026-02-24",
   },
   {
-    slug: "running-shoes-knee-pain-causes-fixes",
-    title: "Running Shoes & Knee Pain: Causes, Fixes & Tips",
-    description: "Running shoes and knee pain: understand the connection, common fit mistakes, and when a heat therapy device helps with post-run recovery.",
-    readTime: 12,
-    lastModified: "2026-02-24",
-  },
-  {
     slug: "sharp-knee-pain-causes-relief",
     title: "Sharp Knee Pain: Causes, Relief & Home Treatments",
     description: "Sharp knee pain that comes and goes? Learn common causes, relief options, and home treatments including heat therapy for daily comfort.",
@@ -298,24 +277,10 @@ export const guidesData: GuideData[] = [
     lastModified: "2026-02-24",
   },
   {
-    slug: "heat-or-ice-knee-pain-situations",
-    title: "Heat or Ice for Knee Pain? Best Choice by Situation",
-    description: "Not sure whether to use heat or ice for knee pain? This guide breaks down which approach works best in common everyday situations for daily knee comfort.",
-    readTime: 10,
-    lastModified: "2026-02-24",
-  },
-  {
     slug: "sharp-stabbing-knee-pain-comfort",
     title: "Sharp Stabbing Knee Pain: Causes & At-Home Comfort",
     description: "Experiencing sharp stabbing pain in the knee? Learn common causes, daily patterns, and at-home comfort strategies to support your everyday knee comfort.",
     readTime: 11,
-    lastModified: "2026-02-24",
-  },
-  {
-    slug: "running-shoes-knee-pain-discomfort",
-    title: "Can Wrong Running Shoes Cause Knee Discomfort?",
-    description: "Can wrong running shoes cause knee pain? Learn how footwear affects knee comfort, common shoe mistakes, and how to support your knees during and after runs.",
-    readTime: 10,
     lastModified: "2026-02-24",
   },
   {
@@ -366,13 +331,6 @@ export const guidesData: GuideData[] = [
     title: "Knee Pain Locations: A Visual Discomfort Zone Guide",
     description: "A visual guide to common knee discomfort zones: front, inner, outer, back, above and below the kneecap, IT band, and joint line. Daily comfort tips for each area.",
     readTime: 14,
-    lastModified: "2026-02-25",
-  },
-  {
-    slug: "knee-pain-location-map-2026",
-    title: "Knee Pain Location Map: 2026 Ultimate Visual Guide",
-    description: "Ultimate knee pain location chart and map for 2026. Visual guide to 10+ discomfort zones with daily comfort tips, interactive breakdown, and knee pain location and meaning explained.",
-    readTime: 15,
     lastModified: "2026-02-25",
   },
   {
@@ -671,25 +629,11 @@ export const guidesData: GuideData[] = [
     lastModified: "2026-03-11",
   },
   {
-    slug: "post-exercise-knee-pain-guide",
-    title: "Knee Pain After Exercise: When It's Normal and When It Isn't",
-    description: "Learn to tell the difference between normal post-workout knee soreness and warning signs that may need attention.",
-    readTime: 14,
-    lastModified: "2026-03-12",
-  },
-  {
     slug: "knee-swelling-after-exercise",
     title: "Knee Swelling After Exercise: What Your Body Is Telling You",
     description: "Learn why your knee may swell after exercise, when post-workout swelling is a normal recovery response, and when knee swelling may need closer attention.",
     readTime: 15,
     lastModified: "2026-03-13",
-  },
-  {
-    slug: "sore-knees-after-workout",
-    title: "Why Knees Feel Sore After a Workout: Normal Fatigue or Warning Sign",
-    description: "Learn why your knees feel sore after working out, the difference between normal muscle fatigue and warning signs, and simple recovery tips for sore knees.",
-    readTime: 14,
-    lastModified: "2026-03-18",
   },
   {
     slug: "knee-recovery-exercises-after-workout",
@@ -733,11 +677,34 @@ export const guidesData: GuideData[] = [
     readTime: 14,
     lastModified: "2026-03-30",
   },
+  {
+    slug: "knee-pain-after-exercise-but-not-during",
+    title: "Knee Pain After Exercise But Not During: Why It Happens",
+    description: "Why knees feel fine during a workout but ache hours later — the delayed-discomfort pattern explained with practical recovery habits.",
+    readTime: 8,
+    lastModified: "2026-07-10",
+  },
+  {
+    slug: "cordless-rechargeable-heated-knee-massagers-2026",
+    title: "Cordless & Rechargeable Heated Knee Massagers: 2026 Buyer's Guide",
+    description: "Real battery life, heat levels, red light, and the features that matter when choosing a wireless heated knee massager in 2026.",
+    readTime: 9,
+    lastModified: "2026-07-10",
+  },
+  {
+    slug: "best-insoles-for-knee-pain-2026",
+    title: "Best Insoles for Knee Pain 2026: How Foot Support Changes Your Knees",
+    description: "The foot-to-knee connection explained: which insole types help arch collapse, overpronation, and impact-related knee discomfort.",
+    readTime: 8,
+    lastModified: "2026-07-10",
+  },
 ];
 
 export const staticPages = [
   { path: "/", priority: 1.0, changefreq: "weekly" },
   { path: "/guides", priority: 0.9, changefreq: "weekly" },
+  { path: "/shop", priority: 0.9, changefreq: "weekly" },
+  { path: "/knee-quiz", priority: 0.7, changefreq: "monthly" },
   { path: "/why-flexiknee", priority: 0.8, changefreq: "monthly" },
   { path: "/product/knee-massager-smart-red-light-and-massage-therapy", priority: 0.9, changefreq: "weekly" },
   { path: "/foundation", priority: 0.7, changefreq: "monthly" },
