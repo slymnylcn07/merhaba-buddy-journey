@@ -202,7 +202,7 @@ export const CartDrawer = () => {
           </SheetDescription>
         </SheetHeader>
 
-        <div className="flex min-h-0 flex-1 flex-col pt-6">
+        <div className="flex min-h-0 flex-1 flex-col overflow-hidden pt-6">
           {items.length === 0 ? (
             <div className="flex flex-1 items-center justify-center">
               <div className="text-center">
@@ -212,7 +212,7 @@ export const CartDrawer = () => {
             </div>
           ) : (
             <>
-              <div className="min-h-0 flex-1 overflow-y-auto pr-1">
+              <div className="min-h-0 flex-1 overflow-y-auto pb-5 pr-2">
                 <div className="space-y-4">
                   {items.map((item) => {
                     const unitPrice = getConvertedUnitPrice(item.price.amount);
@@ -294,12 +294,12 @@ export const CartDrawer = () => {
 
                 {totalItems === 1 && (
                   <div className="mt-4 rounded-[1.35rem] border border-amber-200 bg-amber-50 px-4 py-3">
-                    <div className="flex items-center justify-between gap-3">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                       <div>
                         <p className="text-sm font-semibold text-amber-900">Support both knees with a second device</p>
                         <p className="mt-1 text-xs text-amber-700">A simple add-on for balanced daily routines.</p>
                       </div>
-                      <Button onClick={addSecondDevice} size="sm" className="rounded-full bg-slate-950 px-4 text-white hover:bg-blue-600">
+                      <Button onClick={addSecondDevice} size="sm" className="w-full rounded-full bg-slate-950 px-4 text-white hover:bg-blue-600 sm:w-auto">
                         Add one more
                       </Button>
                     </div>
@@ -368,21 +368,27 @@ export const CartDrawer = () => {
                     )}
                   </Button>
 
-                  <div className="flex flex-wrap items-center justify-center gap-2 pb-1 pt-1">
-                    {[
-                      { type: "img", label: "Shop Pay", src: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Shop_Pay_logo.svg", className: "h-4.5 w-auto" },
-                      { type: "img", label: "Visa", src: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg", className: "h-4.5 w-auto" },
-                      { type: "img", label: "Mastercard", src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg", className: "h-5 w-auto" },
-                      { type: "img", label: "American Express", src: "https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg", className: "h-4.5 w-auto" },
-                      { type: "img", label: "Google Pay", src: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg", className: "h-4.5 w-auto" },
-                      { type: "img", label: "PayPal", src: "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg", className: "h-4.5 w-auto" },
-                    ].map((logo) => (
-                      <div key={logo.label} className="flex h-9 min-w-[78px] items-center justify-center rounded-xl border border-slate-200 bg-white px-3 shadow-sm">
-                        <img className={logo.className} src={logo.src} alt={logo.label} />
-                      </div>
-                    ))}
-                    <div className="flex h-9 min-w-[90px] items-center justify-center rounded-xl border border-slate-200 bg-black px-3 text-sm font-semibold text-white shadow-sm">
-                      Apple Pay
+                  <div className="pb-1 pt-1">
+                    <p className="mb-2 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                      We accept
+                    </p>
+                    <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
+                      {[
+                        { label: "shop Pay", className: "bg-[#5A31F4] text-white" },
+                        { label: "VISA", className: "bg-white text-[#1434CB]" },
+                        { label: "Mastercard", className: "bg-white text-slate-900" },
+                        { label: "AMEX", className: "bg-white text-[#2E77BB]" },
+                        { label: "G Pay", className: "bg-white text-slate-900" },
+                        { label: "PayPal", className: "bg-white text-[#003087]" },
+                        { label: "Apple Pay", className: "bg-black text-white" },
+                      ].map((method) => (
+                        <div
+                          key={method.label}
+                          className={`flex h-10 min-w-0 items-center justify-center rounded-xl border border-slate-200 px-2 text-sm font-bold shadow-sm ${method.className}`}
+                        >
+                          <span className="truncate">{method.label}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
