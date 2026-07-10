@@ -7,10 +7,7 @@ import kneeLongWalks from "@/assets/article-hero-knee-pain-long-walks.jpg";
 import walkingMechanics from "@/assets/article-section-walking-knee-mechanics.jpg";
 import stairsDown from "@/assets/article-hero-knee-pain-going-down-stairs.jpg";
 import restWalkRelief from "@/assets/article-section-rest-stiff-walk-relief.jpg";
-import deviceEvening from "@/assets/article-device-evening.jpg";
 import deviceHomeUse from "@/assets/article-device-home-use.jpg";
-import heatVsRedlight from "@/assets/article-heat-vs-redlight-knee.jpg";
-import deviceMorning from "@/assets/article-device-morning.jpg";
 import circulationLowerLimbs from "@/assets/article-circulation-lower-limbs.jpg";
 import delayedSorenessRecovery from "@/assets/article-delayed-soreness-recovery.jpg";
 import deviceRoutine from "@/assets/article-device-routine.jpg";
@@ -346,28 +343,28 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
     ],
     visuals: [
       {
-        title: "A cleaner evening routine",
-        text: "Simple warmth products work best when they reduce friction and slot naturally into your evening routine.",
-        image: deviceEvening,
-        alt: "Evening knee comfort routine with a warming device",
+        title: "A soft, premium lounge moment",
+        text: "This lead image makes the heated wrap feel aspirational and easy to imagine in a calm at-home routine, which is exactly what a shopper should feel after scrolling below the product gallery.",
+        image: "/images/product-stories/heated-wrap-home-lounge.png",
+        alt: "Woman sitting on a sofa while using the FlexiKnee USB Heated Knee Wrap",
       },
       {
-        title: "Relaxed home use",
-        text: "A wrap format keeps the warmth close to the knee, making sofa or desk sessions easier than a loose heating pad.",
-        image: deviceHomeUse,
-        alt: "Heated knee wrap used in a relaxed home setting",
+        title: "Close-up fit and everyday simplicity",
+        text: "A tighter product-in-use image helps reinforce the wraparound fit, the soft material and the low-friction setup without relying on stock-looking feature graphics.",
+        image: "/images/product-stories/heated-wrap-closeup-fit.png",
+        alt: "Close-up of the FlexiKnee USB Heated Knee Wrap connected to a power bank",
       },
       {
-        title: "Targeted warmth, not general heat",
-        text: "The appeal is targeted comfort around the knee rather than simply warming the whole area around you.",
-        image: heatVsRedlight,
-        alt: "Comparison visual about targeted heat for the knee",
+        title: "Easy to use during the workday",
+        text: "Showing the wrap during laptop time supports the idea that it can slot naturally into desk routines, remote work and short comfort breaks.",
+        image: "/images/product-stories/heated-wrap-workday.png",
+        alt: "Woman working at a desk while wearing the FlexiKnee USB Heated Knee Wrap",
       },
       {
-        title: "Useful for quick resets",
-        text: "A short morning or mid-day warm-up can be easier to repeat than a long or complicated recovery session.",
-        image: deviceMorning,
-        alt: "Morning knee warmth routine before the day starts",
+        title: "A natural fit after movement",
+        text: "The final image connects the wrap to a post-exercise cool-down moment, giving the page a more complete story and a stronger reason to buy.",
+        image: "/images/product-stories/heated-wrap-post-exercise.png",
+        alt: "Woman using the FlexiKnee USB Heated Knee Wrap after exercise on a yoga mat",
       },
     ],
     comparison: {

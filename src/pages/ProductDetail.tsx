@@ -37,28 +37,28 @@ const fallbackGallery = [
 
 const massagerStoryVisuals = [
   {
-    title: "A premium reset at home",
-    text: "FlexiKnee is designed to make a short comfort routine feel considered, calm and easy to repeat after busy days.",
-    image: "/images/flexiknee-lifestyle-home.webp",
-    alt: "Premium at-home FlexiKnee knee comfort routine",
+    title: "A calmer evening routine",
+    text: "The main FlexiKnee massager is shown in a warm, premium home setting so shoppers can immediately picture it as part of a relaxing end-of-day routine.",
+    image: "/images/product-stories/massager-evening-reading.png",
+    alt: "Woman relaxing on a sofa while using the FlexiKnee knee massager in the evening",
   },
   {
-    title: "Built around real schedules",
-    text: "The wireless format helps the routine fit around work, reading, television or a quiet moment after activity.",
-    image: "/images/flexiknee-lifestyle-work.webp",
-    alt: "FlexiKnee used as part of a practical daily routine",
+    title: "Comfort that feels easy to set up",
+    text: "This close-up lifestyle image reinforces that the device is simple to position, secure and use without making the setup feel technical or intimidating.",
+    image: "/images/product-stories/massager-closeup-comfort.png",
+    alt: "Close-up of the FlexiKnee knee massager strapped around the knee in a premium home environment",
   },
   {
-    title: "Simple controls, clear choices",
-    text: "A clean touch interface keeps warmth and vibration settings easy to understand without turning recovery into another task.",
-    image: "/images/flexiknee-touch-control.webp",
-    alt: "FlexiKnee smart touch control panel",
+    title: "Made to fit around work-from-home days",
+    text: "A workday scene helps the product feel useful beyond short recovery moments, supporting the idea of comfort during reading, laptop time or focused desk work.",
+    image: "/images/product-stories/massager-workday-routine.png",
+    alt: "Woman working at a laptop while wearing the FlexiKnee knee massager",
   },
   {
-    title: "A fuller comfort experience",
-    text: "Wraparound support, adjustable warmth and massage-style vibration work together in one dedicated product experience.",
-    image: "/images/flexiknee-feature-overview.webp",
-    alt: "Overview of the FlexiKnee comfort system features",
+    title: "A premium reset after activity",
+    text: "The final story panel ties the product to post-workout comfort, showing the massager as part of a healthy routine rather than just a static device photo.",
+    image: "/images/product-stories/massager-post-workout.png",
+    alt: "Woman using the FlexiKnee knee massager after exercise in a bright fitness-inspired room",
   },
 ];
 
