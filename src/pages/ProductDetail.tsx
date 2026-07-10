@@ -18,7 +18,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { VideoReviews } from "@/components/VideoReviews";
 import { getProducts, ShopifyProduct, createStorefrontCheckout } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
-import { featurePillars, productSystem } from "@/data/product-system";
+import { featurePillars } from "@/data/product-system";
 import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
 import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
@@ -325,14 +325,12 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <VideoReviews />
-
-        <section className="bg-white py-16 sm:py-20">
+        <section className="bg-white py-14 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <div className="grid gap-7 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Why people choose it</p>
-                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+                <h2 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl md:text-5xl">
                   Built around short routines, not complicated claims.
                 </h2>
                 <p className="mt-5 text-base leading-8 text-slate-600">
@@ -342,7 +340,7 @@ export default function ProductDetail() {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 {featurePillars.map((feature) => (
-                  <div key={feature.title} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
+                  <div key={feature.title} className="rounded-[1.6rem] border border-slate-200 bg-white p-5 shadow-sm sm:rounded-[2rem] sm:p-6">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-2xl font-semibold text-blue-600">{feature.icon}</div>
                     <h3 className="mt-5 text-xl font-semibold text-slate-950">{feature.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-slate-500">{feature.text}</p>
@@ -353,23 +351,23 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-slate-50 py-16 sm:py-20">
+        <section className="bg-slate-50 py-14 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-10 max-w-3xl">
+            <div className="mb-8 max-w-3xl sm:mb-10">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">How it fits your day</p>
-              <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl md:text-5xl">
                 A simple routine flow.
               </h2>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-4">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 ["01", "Position", "Wrap FlexiKnee around your knee and adjust the straps."],
                 ["02", "Select", "Choose warmth and vibration settings from the touch panel."],
                 ["03", "Relax", "Use it during a short calm routine at home or after activity."],
                 ["04", "Repeat", "Keep the routine consistent when your knees need support."],
               ].map(([step, title, text]) => (
-                <div key={step} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
+                <div key={step} className="rounded-[1.6rem] border border-slate-200 bg-white p-5 shadow-sm sm:rounded-[2rem] sm:p-6">
                   <span className="text-sm font-semibold text-blue-600">{step}</span>
                   <h3 className="mt-4 text-xl font-semibold text-slate-950">{title}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-500">{text}</p>
@@ -379,47 +377,14 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-white py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Explore the system</p>
-                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
-                  Future products can sit here naturally.
-                </h2>
-              </div>
-              <Link to="/guides" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
-                Visit knee comfort hub <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
+        <VideoReviews />
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {productSystem.map((item) => (
-                <Link key={item.name} to={item.href} className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-                  <div className={`flex aspect-[4/3] items-center justify-center bg-gradient-to-br ${item.accent}`}>
-                    {item.image ? (
-                      <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
-                    ) : (
-                      <span className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-400">Coming soon</span>
-                    )}
-                  </div>
-                  <div className="p-5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">{item.status}</p>
-                    <h3 className="mt-2 text-lg font-semibold text-slate-950">{item.name}</h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-500">{item.description}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-slate-50 py-16 sm:py-20">
+        <section className="bg-slate-50 py-14 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div className="mb-8 flex flex-col justify-between gap-4 md:mb-10 md:flex-row md:items-end">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Learn before you buy</p>
-                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+                <h2 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl md:text-5xl">
                   Related guides for smarter choices.
                 </h2>
               </div>
@@ -428,14 +393,14 @@ export default function ProductDetail() {
               </Link>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {relatedGuides.map((guide) => (
-                <Link key={guide.title} to={guide.href} className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-                  <img src={guide.image} alt={guide.title} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
-                  <div className="p-6">
+                <Link key={guide.title} to={guide.href} className="group overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl sm:rounded-[2rem]">
+                  <img src={guide.image} alt={guide.title} className="aspect-[16/8] w-full object-cover transition duration-500 group-hover:scale-105 sm:aspect-[16/10]" loading="lazy" />
+                  <div className="p-4 sm:p-6">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">Guide</p>
-                    <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-950">{guide.title}</h3>
-                    <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">
+                    <h3 className="mt-2 text-base font-semibold tracking-tight text-slate-950 sm:text-xl">{guide.title}</h3>
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 sm:mt-5">
                       Read guide <ArrowRight className="h-4 w-4" />
                     </span>
                   </div>
@@ -445,11 +410,11 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-white py-16 sm:py-20">
-          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+        <section className="bg-white py-14 sm:py-16 lg:py-20">
+          <div className="mx-auto grid max-w-7xl gap-7 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10 lg:px-8">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">FAQ</p>
-              <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950">Product questions.</h2>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl">Product questions.</h2>
             </div>
             <Accordion type="single" collapsible className="rounded-[2rem] border border-slate-200 bg-white px-6 shadow-sm">
               {[
