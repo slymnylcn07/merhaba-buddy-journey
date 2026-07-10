@@ -17,7 +17,6 @@ import {
   Trash2,
   Lock,
   Loader2,
-  Star,
   Truck,
   RotateCcw,
 } from "lucide-react";
@@ -164,13 +163,6 @@ export const CartDrawer = () => {
     }
   };
 
-  const addSecondDevice = () => {
-    if (items.length === 0) return;
-    const item = items[0];
-    if (totalItems >= 2) return;
-    updateQuantity(item.variantId, item.quantity + 1);
-  };
-
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
@@ -184,24 +176,12 @@ export const CartDrawer = () => {
         </Button>
       </SheetTrigger>
 
-      <SheetContent className="flex h-full w-full flex-col bg-[#F7F8FC] px-5 pt-5 sm:max-w-lg">
-        <SheetHeader className="flex-shrink-0 space-y-2">
-          <SheetTitle className="text-[2rem] font-bold tracking-tight text-slate-950">Your Cart</SheetTitle>
-          <SheetDescription asChild>
-            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700">
-              <span className="flex items-center gap-0.5 text-blue-600">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="h-3.5 w-3.5 fill-blue-600" />
-                ))}
-              </span>
-              <span className="font-semibold text-slate-900">4.8 rating</span>
-              <span className="text-slate-400">•</span>
-              <span className="font-medium">Verified customer feedback</span>
-            </div>
-          </SheetDescription>
+      <SheetContent className="flex h-full w-full flex-col bg-[#F7F8FC] px-5 pt-4 sm:max-w-lg">
+        <SheetHeader className="flex-shrink-0">
+          <SheetTitle className="text-[1.95rem] font-bold tracking-tight text-slate-950">Your Cart</SheetTitle>
         </SheetHeader>
 
-        <div className="flex min-h-0 flex-1 flex-col pt-3">
+        <div className="flex min-h-0 flex-1 flex-col pt-2">
           {items.length === 0 ? (
             <div className="flex flex-1 items-center justify-center">
               <div className="text-center">
@@ -212,16 +192,16 @@ export const CartDrawer = () => {
           ) : (
             <>
               <div className="min-h-0 flex-1 overflow-y-auto pr-1">
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {items.map((item) => {
                     const unitPrice = getConvertedUnitPrice(item.price.amount);
                     const lineTotal = unitPrice * item.quantity;
                     const visibleOptions = item.selectedOptions.filter((option) => option.value.toLowerCase() !== "default title");
 
                     return (
-                      <div key={item.variantId} className="rounded-[1.6rem] border border-slate-200 bg-white p-4 shadow-sm">
+                      <div key={item.variantId} className="rounded-[1.2rem] border border-slate-200 bg-white px-4 py-2.5 shadow-sm">
                         <div className="flex gap-4">
-                          <div className="flex h-24 w-24 flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-slate-50">
+                          <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center overflow-hidden rounded-[1.1rem] border border-slate-100 bg-slate-50">
                             {item.product.node.images?.edges?.[0]?.node && (
                               <img
                                 src={item.product.node.images.edges[0].node.url}
@@ -245,7 +225,7 @@ export const CartDrawer = () => {
                           </div>
                         </div>
 
-                        <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
+                        <div className="mt-3 flex items-center justify-between border-t border-slate-100 pt-3">
                           <div className="flex items-center gap-2">
                             <Button
                               variant="outline"
@@ -291,20 +271,6 @@ export const CartDrawer = () => {
                   })}
                 </div>
 
-                {totalItems === 1 && (
-                  <div className="mt-3 rounded-[1.35rem] border border-amber-200 bg-amber-50 px-4 py-3">
-                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                      <div>
-                        <p className="text-sm font-semibold text-amber-900">Support both knees with a second device</p>
-                        <p className="mt-1 text-xs text-amber-700">A simple add-on for balanced daily routines.</p>
-                      </div>
-                      <Button onClick={addSecondDevice} size="sm" className="w-full rounded-full bg-slate-950 px-4 text-white hover:bg-blue-600 sm:w-auto">
-                        Add one more
-                      </Button>
-                    </div>
-                  </div>
-                )}
-
                 <div className="mt-4 rounded-[1.5rem] border border-blue-200 bg-gradient-to-br from-white to-blue-50 p-4">
                   <div className="flex items-start gap-3">
                     <div className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-2xl bg-blue-100 text-blue-700">
@@ -319,17 +285,10 @@ export const CartDrawer = () => {
                     </div>
                   </div>
                 </div>
-
-                <div className="mt-4 flex">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm">
-                    <RotateCcw className="h-4 w-4 text-blue-600" />
-                    <span>30-Day Returns</span>
-                  </div>
-                </div>
               </div>
 
-              <div className="flex-shrink-0 border-t border-slate-200 bg-[#F7F8FC] pt-3">
-                <div className="space-y-3 px-1">
+              <div className="flex-shrink-0 border-t border-slate-200 bg-[#F7F8FC] pt-2">
+                <div className="space-y-2.5 px-1">
                   <div className="rounded-[1.35rem] border border-slate-200 bg-white px-4 py-3 shadow-sm">
                     <div className="flex items-center justify-between">
                       <span className="text-base font-semibold text-slate-950">Total</span>
@@ -339,7 +298,7 @@ export const CartDrawer = () => {
 
                   <Button
                     onClick={handleCheckout}
-                    className="h-14 w-full rounded-full bg-slate-950 text-base font-semibold text-white hover:bg-blue-600"
+                    className="h-13 w-full rounded-full bg-slate-950 text-base font-semibold text-white hover:bg-blue-600"
                     disabled={items.length === 0 || isLoading}
                   >
                     {isLoading ? (
@@ -355,21 +314,28 @@ export const CartDrawer = () => {
                     )}
                   </Button>
 
-                  <div className="grid grid-cols-4 gap-2 pb-1 pt-1">
+                  <div className="grid grid-cols-7 gap-1 pb-0.5 pt-1">
                     {[
-                      { label: "Shop Pay", src: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Shop_Pay_logo.svg", className: "h-4 w-auto max-w-[62px]" },
-                      { label: "Visa", src: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg", className: "h-3.5 w-auto max-w-[54px]" },
-                      { label: "Mastercard", src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg", className: "h-5 w-auto max-w-[46px]" },
-                      { label: "American Express", src: "https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg", className: "h-3.5 w-auto max-w-[58px]" },
-                      { label: "Google Pay", src: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg", className: "h-3.5 w-auto max-w-[58px]" },
-                      { label: "PayPal", src: "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg", className: "h-4 w-auto max-w-[54px]" },
+                      { label: "Shop Pay", src: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Shop_Pay_logo.svg", className: "h-3 w-auto max-w-[34px]" },
+                      { label: "Visa", src: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg", className: "h-2.5 w-auto max-w-[28px]" },
+                      { label: "Mastercard", src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg", className: "h-3.5 w-auto max-w-[24px]" },
+                      { label: "American Express", src: "https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg", className: "h-2.5 w-auto max-w-[30px]" },
+                      { label: "Google Pay", src: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg", className: "h-2.5 w-auto max-w-[31px]" },
+                      { label: "PayPal", src: "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg", className: "h-3 w-auto max-w-[29px]" },
                     ].map((logo) => (
-                      <div key={logo.label} className="flex h-11 items-center justify-center rounded-xl border border-slate-200 bg-white px-2 shadow-sm">
+                      <div key={logo.label} className="flex h-9 items-center justify-center rounded-lg border border-slate-200 bg-white px-1 shadow-sm">
                         <img className={logo.className} src={logo.src} alt={logo.label} />
                       </div>
                     ))}
-                    <div className="flex h-11 items-center justify-center rounded-xl border border-slate-200 bg-black px-2 shadow-sm">
-                      <span className="text-[15px] font-semibold tracking-tight text-white">Apple Pay</span>
+                    <div className="flex h-9 items-center justify-center rounded-lg border border-slate-200 bg-black px-1 shadow-sm">
+                      <span className="text-[10px] font-semibold tracking-tight text-white">Apple Pay</span>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-center pt-2">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-900 shadow-sm">
+                      <RotateCcw className="h-3.5 w-3.5 text-blue-600" />
+                      <span>30-Day Returns</span>
                     </div>
                   </div>
                 </div>
