@@ -21,6 +21,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { createStorefrontCheckout, getProductByHandle, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { getProductProfile } from "@/data/product-profiles";
+import { PremiumProductStory } from "@/components/PremiumProductStory";
 
 function formatMoney(amount?: string, currencyCode?: string) {
   const value = Number(amount || 0);
@@ -416,26 +417,15 @@ export default function SecondaryProductDetail() {
           </div>
         </section>
 
-        <section className="border-y border-slate-200 bg-slate-50 py-14 lg:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">See the routine around it</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950">Extra visuals to explain where this product fits.</h2>
-              <p className="mt-4 text-base leading-8 text-slate-600">These visuals help each product page feel more specific, more useful and more persuasive than relying on pack shots alone.</p>
-            </div>
-            <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-              {profile.visuals.map((visual) => (
-                <article key={visual.title} className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm">
-                  <img src={visual.image} alt={visual.alt} className="aspect-[4/3] w-full object-cover" loading="lazy" />
-                  <div className="p-5">
-                    <h3 className="text-lg font-semibold text-slate-950">{visual.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-slate-600">{visual.text}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <PremiumProductStory
+          productName={node.title}
+          productKey={profile.key}
+          eyebrow={profile.eyebrow}
+          headline={`See how ${node.title.replace("FlexiKnee™ ", "")} fits into real life.`}
+          intro={profile.summary}
+          visuals={profile.visuals}
+          highlights={profile.highlights}
+        />
 
         <section className="bg-white py-14 lg:py-20">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">

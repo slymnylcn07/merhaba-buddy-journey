@@ -20,6 +20,7 @@ import { getProducts, ShopifyProduct, createStorefrontCheckout } from "@/lib/sho
 import { useCartStore } from "@/stores/cartStore";
 import { featurePillars } from "@/data/product-system";
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
+import { PremiumProductStory } from "@/components/PremiumProductStory";
 import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
 import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
@@ -32,6 +33,33 @@ const fallbackGallery = [
   { src: "/images/shopify-gallery/flexiknee-gallery-05-vibration.webp", alt: "FlexiKnee gentle vibration feature" },
   { src: "/images/shopify-gallery/flexiknee-gallery-06-routine.webp", alt: "FlexiKnee four step routine" },
   { src: "/images/shopify-gallery/flexiknee-gallery-07-system.webp", alt: "FlexiKnee comfort system features" },
+];
+
+const massagerStoryVisuals = [
+  {
+    title: "A premium reset at home",
+    text: "FlexiKnee is designed to make a short comfort routine feel considered, calm and easy to repeat after busy days.",
+    image: "/images/flexiknee-lifestyle-home.webp",
+    alt: "Premium at-home FlexiKnee knee comfort routine",
+  },
+  {
+    title: "Built around real schedules",
+    text: "The wireless format helps the routine fit around work, reading, television or a quiet moment after activity.",
+    image: "/images/flexiknee-lifestyle-work.webp",
+    alt: "FlexiKnee used as part of a practical daily routine",
+  },
+  {
+    title: "Simple controls, clear choices",
+    text: "A clean touch interface keeps warmth and vibration settings easy to understand without turning recovery into another task.",
+    image: "/images/flexiknee-touch-control.webp",
+    alt: "FlexiKnee smart touch control panel",
+  },
+  {
+    title: "A fuller comfort experience",
+    text: "Wraparound support, adjustable warmth and massage-style vibration work together in one dedicated product experience.",
+    image: "/images/flexiknee-feature-overview.webp",
+    alt: "Overview of the FlexiKnee comfort system features",
+  },
 ];
 
 const relatedGuides = [
@@ -379,6 +407,16 @@ export default function ProductDetail() {
             </div>
           </div>
         </section>
+
+        <PremiumProductStory
+          productName="FlexiKnee™ Smart Heated Knee Massager"
+          productKey="massager"
+          eyebrow="The flagship FlexiKnee experience"
+          headline="More than a product image — a routine people can picture themselves using."
+          intro="These sections give the flagship product page a more premium, lifestyle-led story once the visitor scrolls past the purchase area."
+          visuals={massagerStoryVisuals}
+          highlights={["Adjustable warmth", "Massage-style vibration", "Wireless wraparound design", "Simple touch control"]}
+        />
 
         <section className="bg-white py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
