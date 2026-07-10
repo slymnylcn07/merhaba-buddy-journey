@@ -18,6 +18,15 @@ const API_VERSION = process.env.SHOPIFY_ADMIN_API_VERSION || '2025-10';
 
 let cachedToken: { token: string; expiresAt: number } | null = null;
 
+function normalizeShopDomain(value: string) {
+  return String(value || '')
+    .trim()
+    .replace(/^https?:\/\//i, '')
+    .replace(/\/.*$/, '')
+    .replace(/\s+/g, '');
+}
+
+
 async function parseBody(req: any) {
   if (typeof req.body === 'string') {
     try {
@@ -246,10 +255,16 @@ export default async function handler(req: any, res: any) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const storeDomain = process.env.SHOPIFY_STORE_DOMAIN || process.env.VITE_SHOPIFY_STORE_DOMAIN;
+  const storeDomain = normalizeShopDomain(process.env.SHOPIFY_STORE_DOMAIN || process.env.VITE_SHOPIFY_STORE_DOMAIN || '');
 
   if (!storeDomain) {
-    return res.status(500).json({ error: 'Newsletter is not configured.' });
+    return res.status(500).json({ error: 'Newsletter is not configured. SHOPIFY_STORE_DOMAIN is missing.' });
+  }
+
+  if (!storeDomain.endsWith('.myshopify.com')) {
+    return res.status(500).json({
+      error: 'Newsletter Shopify Admin domain must be the permanent .myshopify.com domain, not the public website domain.',
+    });
   }
 
   const body = await parseBody(req);

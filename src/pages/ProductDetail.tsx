@@ -229,17 +229,10 @@ export default function ProductDetail() {
                   <img
                     src={gallery[selectedImage]?.src || fallbackGallery[0].src}
                     alt={gallery[selectedImage]?.alt || productTitle}
-                    className="h-[340px] w-full rounded-[1.45rem] object-cover object-center sm:h-[450px] sm:rounded-[1.8rem] lg:h-[660px] lg:rounded-[2.1rem]"
+                    className="h-[330px] w-full rounded-[1.45rem] object-contain object-center sm:h-[450px] sm:rounded-[1.8rem] lg:h-[660px] lg:rounded-[2.1rem]"
                     fetchPriority="high"
                   />
-                  <div className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-blue-600 shadow-sm backdrop-blur sm:left-7 sm:top-7 sm:px-4 sm:py-2 sm:text-xs">
-                    FlexiKnee system
-                  </div>
-                  <div className="absolute bottom-6 left-6 right-6 hidden rounded-[1.5rem] bg-slate-950/88 p-5 text-white backdrop-blur sm:block">
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">Routine first device</p>
-                    <p className="mt-2 text-2xl font-semibold tracking-[-0.03em]">Heat, vibration, and support without the messy gadget page look.</p>
-                  </div>
-                </div>
+</div>
               </div>
             </div>
 

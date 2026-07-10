@@ -6,7 +6,6 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ArticleShareBlock } from "@/components/ArticleShareSidebar";
 import { ArticleTableOfContents } from "@/components/ArticleTableOfContents";
-import { productSystem } from "@/data/product-system";
 
 
 import {
@@ -9095,7 +9094,7 @@ const GuideArticle = () => {
         {/* Editorial article layout: TOC follows content until CTA without shifting the article */}
         <section className="pb-6 md:pb-8 md:pt-2">
           <div className="container mx-auto max-w-7xl px-4">
-            <div className="lg:grid lg:grid-cols-[12rem_minmax(0,52rem)_18rem] lg:gap-x-8 xl:gap-x-10">
+            <div className="lg:grid lg:grid-cols-[12rem_minmax(0,52rem)] lg:gap-x-10 xl:gap-x-12">
               <div className="hidden lg:block">
                 <ArticleTableOfContents variant="desktop" initialCount={6} />
               </div>
@@ -9147,38 +9146,7 @@ const GuideArticle = () => {
 
 
               </article>
-
-              <aside className="mt-8 hidden lg:block">
-                <div className="sticky top-24 space-y-4">
-                  <div className="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm">
-                    <p className="text-sm font-semibold text-slate-950">Support your daily comfort</p>
-                    <p className="mt-2 text-sm leading-6 text-slate-500">
-                      Soft product discovery, not a popup. Match future articles to the right knee comfort product.
-                    </p>
-                    <div className="mt-4 grid gap-3">
-                      {productSystem.slice(0, 2).map((item) => (
-                        <Link key={item.name} to={item.href} className="group flex gap-3 rounded-2xl border border-slate-200 p-3 transition hover:border-blue-300 hover:bg-blue-50/40">
-                          <img src={item.image} alt={item.name} className="h-16 w-16 rounded-xl bg-slate-50 object-cover" />
-                          <div>
-                            <p className="text-sm font-semibold leading-5 text-slate-950">{item.name}</p>
-                            <p className="mt-1 text-xs text-slate-500">{item.price}</p>
-                            <span className="mt-2 inline-flex text-xs font-semibold text-blue-600">Shop now</span>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="rounded-[1.5rem] border border-blue-100 bg-blue-50/70 p-5">
-                    <p className="text-sm font-semibold text-blue-700">Key idea</p>
-                    <p className="mt-2 text-sm leading-6 text-slate-600">
-                      Content stays educational. Product suggestions become contextual later by article topic.
-                    </p>
-                  </div>
-                </div>
-              </aside>
-
-            </div>
+</div>
           </div>
         </section>
 

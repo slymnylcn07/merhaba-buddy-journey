@@ -1,6 +1,6 @@
 import deviceImage from '@/assets/flexiknee-device-main.jpg';
 
-const PRODUCT_URL = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
+const PRODUCT_URL = "https://flexi-knee.com/product/knee-massager-smart-red-light-and-massage-therapy";
 
 interface PremiumCTAProps {
   headline: string;

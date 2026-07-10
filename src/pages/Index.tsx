@@ -161,42 +161,42 @@ export default function Index() {
         <Header />
 
         <main>
-          <section className="relative overflow-hidden border-b border-slate-200 bg-[radial-gradient(circle_at_72%_18%,rgba(37,99,235,0.12),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fbff_70%,#ffffff_100%)]">
-            <div className="mx-auto grid min-h-[760px] max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:py-20">
+          <section className="relative overflow-hidden border-b border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f7fbff_100%)]">
+            <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:px-6 md:py-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 lg:px-8 lg:py-18">
               <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-700 shadow-sm">
-                  <Sparkles className="h-3.5 w-3.5" /> Knee comfort intelligence
+                <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-700 shadow-sm">
+                  <Sparkles className="h-3.5 w-3.5" /> Smart knee comfort
                 </div>
 
-                <h1 className="mt-7 max-w-3xl text-5xl font-semibold leading-[0.96] tracking-[-0.065em] text-slate-950 sm:text-6xl lg:text-7xl">
-                  Understand your knees. Support them better.
+                <h1 className="mt-6 max-w-3xl text-5xl font-semibold leading-[0.94] tracking-[-0.065em] text-slate-950 sm:text-6xl lg:text-7xl">
+                  Move easier, recover smarter.
                 </h1>
 
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-                  FlexiKnee is a premium knee comfort hub with practical guides, daily routines, and smart at home tools built around how people actually move.
+                  Explore practical knee comfort guides and FlexiKnee products designed for short daily routines at home, work, and after activity.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
-                    to="/guides"
-                    className="inline-flex h-13 items-center justify-center rounded-full bg-slate-950 px-7 text-sm font-semibold text-white shadow-xl shadow-slate-900/15 transition hover:bg-blue-600"
-                  >
-                    Start with the guides
-                  </Link>
-                  <Link
                     to={PRIMARY_PRODUCT_PATH}
-                    className="inline-flex h-13 items-center justify-center rounded-full border border-slate-300 bg-white px-7 text-sm font-semibold text-slate-900 transition hover:border-blue-300 hover:text-blue-700"
+                    className="inline-flex h-13 items-center justify-center rounded-full bg-blue-600 px-7 text-sm font-semibold text-white shadow-xl shadow-blue-600/20 transition hover:bg-blue-700"
                   >
                     Shop FlexiKnee
                   </Link>
+                  <Link
+                    to="/guides"
+                    className="inline-flex h-13 items-center justify-center rounded-full border border-slate-300 bg-white px-7 text-sm font-semibold text-slate-900 transition hover:border-blue-300 hover:text-blue-700"
+                  >
+                    Explore guides
+                  </Link>
                 </div>
 
-                <div className="mt-9 grid max-w-2xl gap-3 sm:grid-cols-3">
+                <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-3">
                   {heroGuides.map((guide) => (
                     <Link
                       key={guide.title}
                       to={guide.href}
-                      className="group rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
+                      className="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
                     >
                       <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-600">{guide.tag}</p>
                       <p className="mt-2 text-sm font-semibold leading-5 text-slate-950 group-hover:text-blue-700">{guide.title}</p>
@@ -206,36 +206,16 @@ export default function Index() {
               </div>
 
               <div className="relative">
-                <div className="absolute inset-x-10 bottom-10 h-28 rounded-full bg-blue-500/20 blur-3xl" />
-                <div className="relative rounded-[2.8rem] border border-white/80 bg-white/80 p-4 shadow-[0_50px_140px_-70px_rgba(15,23,42,0.7)] backdrop-blur-xl">
-                  <div className="overflow-hidden rounded-[2.3rem] border border-slate-200 bg-white">
-                    <img
-                      src="/images/flexiknee-home-hero-clean.webp"
-                      alt="FlexiKnee premium knee comfort system"
-                      className="h-[360px] w-full object-cover object-center lg:h-[430px]"
-                      fetchPriority="high"
-                    />
-                    <div className="grid gap-0 border-t border-slate-200 md:grid-cols-3">
-                      {[
-                        ["01", "Learn", "Find the pattern behind your discomfort."],
-                        ["02", "Build", "Create a routine that fits your day."],
-                        ["03", "Support", "Use the right tool at the right moment."],
-                      ].map(([number, title, text]) => (
-                        <div key={number} className="border-slate-200 p-5 md:border-r md:last:border-r-0">
-                          <p className="text-xs font-semibold text-blue-600">{number}</p>
-                          <h2 className="mt-2 text-lg font-semibold text-slate-950">{title}</h2>
-                          <p className="mt-1 text-sm leading-6 text-slate-500">{text}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="absolute -bottom-8 -left-6 hidden w-64 rounded-[1.6rem] border border-slate-200 bg-white p-5 shadow-2xl lg:block">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">Featured product</p>
-                    <p className="mt-2 text-lg font-semibold text-slate-950">FlexiKnee™ Massager</p>
-                    <p className="mt-2 text-sm leading-6 text-slate-500">Heat, vibration, and wraparound support in one routine-focused device.</p>
-                  </div>
-                </div>
+                <div className="absolute inset-x-8 bottom-8 h-28 rounded-full bg-blue-500/20 blur-3xl" />
+                <picture>
+                  <source media="(max-width: 767px)" srcSet="/images/flexiknee-hero-mobile-premium.webp" />
+                  <img
+                    src="/images/flexiknee-hero-desktop-premium.webp"
+                    alt="FlexiKnee smart knee comfort system"
+                    className="relative w-full rounded-[2rem] border border-slate-200 bg-white shadow-[0_45px_120px_-70px_rgba(15,23,42,0.65)] md:rounded-[2.6rem]"
+                    fetchPriority="high"
+                  />
+                </picture>
               </div>
             </div>
           </section>
@@ -386,31 +366,45 @@ export default function Index() {
             </div>
           </section>
 
-          <section className="bg-white py-16">
-            <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_0.8fr] lg:items-center lg:px-8">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Newsletter</p>
-                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950">
-                  Join the FlexiKnee comfort list and get 10% off.
-                </h2>
-                <p className="mt-4 max-w-xl text-slate-600">
-                  Get new guide drops, product updates, and a 10% welcome discount when your code is ready.
-                </p>
+          <section className="bg-white py-16 md:py-20">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="overflow-hidden rounded-[2.2rem] border border-slate-200 bg-[radial-gradient(circle_at_85%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(135deg,#f8fbff_0%,#ffffff_58%,#eef6ff_100%)] p-6 shadow-[0_35px_100px_-80px_rgba(15,23,42,0.75)] md:p-10">
+                <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Newsletter</p>
+                    <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+                      Get 10% off your first FlexiKnee order.
+                    </h2>
+                    <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+                      Join the comfort list for guide drops, launch updates, and your welcome discount.
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleSubscribe} className="rounded-[1.7rem] border border-slate-200 bg-white p-3 shadow-xl shadow-slate-200/60">
+                    <div className="flex flex-col gap-3 sm:flex-row">
+                      <input
+                        value={newsletterEmail}
+                        onChange={(e) => setNewsletterEmail(e.target.value)}
+                        type="email"
+                        placeholder="Enter your email address"
+                        className="h-14 flex-1 rounded-full border border-slate-200 bg-slate-50 px-5 text-base text-slate-950 outline-none placeholder:text-slate-400 focus:border-blue-300 focus:bg-white"
+                      />
+                      <button
+                        disabled={isSubscribing}
+                        className="h-14 rounded-full bg-slate-950 px-8 text-sm font-semibold text-white transition hover:bg-blue-600 disabled:opacity-60"
+                      >
+                        {isSubscribing ? "Joining..." : "Get 10% off"}
+                      </button>
+                    </div>
+                    <p className="px-2 pt-3 text-xs leading-5 text-slate-500">
+                      No spam. Product updates, helpful guides, and launch offers only.
+                    </p>
+                  </form>
+                </div>
               </div>
-              <form onSubmit={handleSubscribe} className="flex flex-col gap-3 sm:flex-row">
-                <input
-                  value={newsletterEmail}
-                  onChange={(e) => setNewsletterEmail(e.target.value)}
-                  type="email"
-                  placeholder="Enter your email"
-                  className="h-13 flex-1 rounded-full border border-slate-200 bg-white px-5 text-slate-950 shadow-sm outline-none placeholder:text-slate-400 focus:border-blue-300"
-                />
-                <button disabled={isSubscribing} className="h-13 rounded-full bg-slate-950 px-7 text-sm font-semibold text-white transition hover:bg-blue-600 disabled:opacity-60">
-                  {isSubscribing ? "Joining..." : "Join"}
-                </button>
-              </form>
             </div>
           </section>
+
         </main>
 
         <Footer />
