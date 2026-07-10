@@ -20,6 +20,8 @@ import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { VideoReviews } from "@/components/VideoReviews";
 import { featurePillars, trustBadges } from "@/data/product-system";
 import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
+import flexikneeHeroDesktop from "@/assets/flexiknee-hero-final-desktop.png";
+import flexikneeHeroMobile from "@/assets/flexiknee-hero-final-mobile.png";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 
@@ -168,7 +170,7 @@ export default function Index() {
                   <source media="(max-width: 767px)" srcSet="/images/flexiknee-hero-integrated-mobile.webp" />
                   <img
                     src="/images/flexiknee-hero-integrated-desktop.webp"
-                    alt="FlexiKnee comfort hero"
+                    alt="FlexiKnee smart knee comfort for daily home routines"
                     className="block w-full"
                     fetchPriority="high"
                   />
@@ -394,9 +396,9 @@ export default function Index() {
             <div className="mx-auto max-w-[1800px] px-0 py-0 sm:px-4 sm:py-5 lg:px-8 lg:py-8">
               <div className="relative overflow-hidden bg-white shadow-[0_35px_120px_-90px_rgba(15,23,42,0.65)] sm:rounded-[2rem]">
                 <picture>
-                  <source media="(max-width: 767px)" srcSet="/images/flexiknee-hero-final-mobile.png" />
+                  <source media="(max-width: 767px)" srcSet={flexikneeHeroMobile} />
                   <img
-                    src="/images/flexiknee-hero-final-desktop.png"
+                    src={flexikneeHeroDesktop}
                     alt="FlexiKnee smart knee comfort for daily home routines"
                     className="block w-full"
                     fetchPriority="high"
