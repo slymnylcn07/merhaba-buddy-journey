@@ -164,13 +164,13 @@ export default function Index() {
         <Header />
 
         <main>
-          <section className="border-b border-slate-200 bg-white">
-            <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
-              <div className="relative overflow-hidden rounded-[1.9rem] border border-slate-200 bg-white shadow-[0_40px_120px_-90px_rgba(15,23,42,0.55)] sm:rounded-[2.4rem]">
+          <section className="bg-white">
+            <div className="mx-auto max-w-[1800px] px-0 py-0 sm:px-4 sm:py-5 lg:px-8 lg:py-8">
+              <div className="relative overflow-hidden bg-white shadow-[0_35px_120px_-90px_rgba(15,23,42,0.65)] sm:rounded-[2rem]">
                 <picture>
-                  <source media="(max-width: 767px)" srcSet="/images/flexiknee-hero-integrated-mobile.webp" />
+                  <source media="(max-width: 767px)" srcSet={HERO_MOBILE_IMAGE} />
                   <img
-                    src="/images/flexiknee-hero-integrated-desktop.webp"
+                    src={HERO_DESKTOP_IMAGE}
                     alt="FlexiKnee smart knee comfort for daily home routines"
                     className="block w-full"
                     fetchPriority="high"
@@ -180,23 +180,13 @@ export default function Index() {
                 <Link
                   to={PRIMARY_PRODUCT_PATH}
                   aria-label="Shop FlexiKnee"
-                  className="absolute left-[4.5%] top-[63.8%] hidden h-[6.2%] w-[17.2%] rounded-full lg:block"
-                />
-                <Link
-                  to="/science"
-                  aria-label="How FlexiKnee works"
-                  className="absolute left-[20.6%] top-[63.8%] hidden h-[6.2%] w-[15.4%] rounded-full lg:block"
+                  className="absolute left-[8%] bottom-[9.2%] h-[5.4%] w-[84%] rounded-full md:left-[5.2%] md:top-[62%] md:h-[7%] md:w-[16%]"
                 />
 
                 <Link
-                  to={PRIMARY_PRODUCT_PATH}
-                  aria-label="Shop FlexiKnee"
-                  className="absolute left-[8%] top-[83.8%] block h-[5.5%] w-[84%] rounded-full md:hidden"
-                />
-                <Link
-                  to="/science"
+                  to="/guides/do-knee-massagers-work"
                   aria-label="How FlexiKnee works"
-                  className="absolute left-[8%] top-[91.2%] block h-[5.1%] w-[84%] rounded-full md:hidden"
+                  className="absolute left-[8%] bottom-[2.6%] h-[5.4%] w-[84%] rounded-full md:left-[22.1%] md:top-[62%] md:h-[7%] md:w-[14.5%]"
                 />
               </div>
             </div>
@@ -393,32 +383,4 @@ export default function Index() {
       </div>
     </>
   );
-}          <section className="bg-white">
-            <div className="mx-auto max-w-[1800px] px-0 py-0 sm:px-4 sm:py-5 lg:px-8 lg:py-8">
-              <div className="relative overflow-hidden bg-white shadow-[0_35px_120px_-90px_rgba(15,23,42,0.65)] sm:rounded-[2rem]">
-                <picture>
-                  <source media="(max-width: 767px)" srcSet={HERO_MOBILE_IMAGE} />
-                  <img
-                    src={HERO_DESKTOP_IMAGE}
-                    alt="FlexiKnee smart knee comfort for daily home routines"
-                    className="block w-full"
-                    fetchPriority="high"
-                  />
-                </picture>
-
-                <Link
-                  to={PRIMARY_PRODUCT_PATH}
-                  aria-label="Shop FlexiKnee"
-                  className="absolute left-[8%] bottom-[9.2%] h-[5.4%] w-[84%] rounded-full md:left-[5.2%] md:top-[62%] md:h-[7%] md:w-[16%]"
-                />
-
-                <Link
-                  to="/guides/do-knee-massagers-work"
-                  aria-label="How FlexiKnee works"
-                  className="absolute left-[8%] bottom-[2.6%] h-[5.4%] w-[84%] rounded-full md:left-[22.1%] md:top-[62%] md:h-[7%] md:w-[14.5%]"
-                />
-              </div>
-            </div>
-          </section>
-
-
+}
