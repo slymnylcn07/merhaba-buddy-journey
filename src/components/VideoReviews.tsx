@@ -11,12 +11,12 @@ const videoReviews = [
 
 export const VideoReviews = () => {
   return (
-    <section className="bg-slate-950 py-14 text-white sm:py-16 lg:py-20">
+    <section className="bg-slate-950 py-12 text-white sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-7 flex flex-col justify-between gap-4 md:mb-9 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-300">Real routines</p>
-            <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-[-0.045em] sm:text-4xl md:text-5xl">
+            <h2 className="mt-3 max-w-2xl text-3xl font-semibold leading-tight tracking-[-0.045em] sm:text-4xl md:text-5xl">
               See FlexiKnee in everyday use.
             </h2>
           </div>
@@ -58,11 +58,11 @@ const VideoCard = ({ video }: { video: typeof videoReviews[0] }) => {
   };
 
   return (
-    <article className="w-[205px] flex-none sm:w-[230px] md:w-[245px] lg:w-[270px]">
+    <article className="w-[190px] flex-none sm:w-[220px] md:w-[235px] lg:w-[260px] xl:w-[270px]">
       <button
         type="button"
         onClick={handleVideoClick}
-        className="group relative aspect-[9/16] w-full overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-900 shadow-2xl shadow-black/30 sm:rounded-[2rem]"
+        className="group relative aspect-[9/16] w-full overflow-hidden rounded-[1.4rem] border border-white/10 bg-slate-900 shadow-2xl shadow-black/30 sm:rounded-[2rem]"
       >
         <video
           ref={videoRef}

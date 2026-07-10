@@ -180,7 +180,7 @@ export default function ProductDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-white pb-24 text-slate-950 lg:pb-0">
+    <div className="min-h-screen overflow-x-hidden bg-white pb-24 text-slate-950 xl:pb-0">
       <Helmet>
         <title>{productTitle} | FlexiKnee™</title>
         <meta
@@ -210,13 +210,13 @@ export default function ProductDetail() {
         </section>
 
         <section className="bg-[radial-gradient(circle_at_72%_16%,rgba(37,99,235,0.11),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] py-5 sm:py-8 lg:py-14">
-          <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[1.12fr_0.88fr] lg:gap-9 lg:px-8">
+          <div className="mx-auto grid max-w-6xl gap-5 px-4 sm:px-6 lg:gap-7 lg:px-8 xl:max-w-7xl xl:grid-cols-[1.08fr_0.92fr] xl:gap-9">
             <div>
-              <div className="overflow-hidden rounded-[1.8rem] border border-slate-200 bg-white p-2 shadow-[0_35px_110px_-80px_rgba(15,23,42,0.75)] sm:rounded-[2.2rem] sm:p-3 lg:rounded-[2.6rem] lg:p-4">
+              <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-2 shadow-[0_28px_90px_-70px_rgba(15,23,42,0.75)] sm:rounded-[2rem] sm:p-3 xl:rounded-[2.5rem] xl:p-4">
                 <img
                   src={gallery[selectedImage]?.src || fallbackGallery[0].src}
                   alt={gallery[selectedImage]?.alt || productTitle}
-                  className="h-[360px] w-full rounded-[1.45rem] object-contain object-center sm:h-[500px] sm:rounded-[1.8rem] lg:h-[710px] lg:rounded-[2.1rem]"
+                  className="h-[300px] w-full rounded-[1.2rem] object-contain object-center sm:h-[430px] sm:rounded-[1.7rem] lg:h-[520px] xl:h-[650px] xl:rounded-[2rem]"
                   fetchPriority="high"
                 />
               </div>
@@ -226,7 +226,7 @@ export default function ProductDetail() {
                   <button
                     key={`${image.src}-${index}`}
                     onClick={() => setSelectedImage(index)}
-                    className={`h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl border bg-white p-1 transition sm:h-24 sm:w-24 ${
+                    className={`h-16 w-16 flex-shrink-0 overflow-hidden rounded-2xl border bg-white p-1 transition sm:h-20 sm:w-20 lg:h-22 lg:w-22 ${
                       selectedImage === index ? "border-blue-500 shadow-lg shadow-blue-500/10" : "border-slate-200 hover:border-slate-300"
                     }`}
                     aria-label={`View image ${index + 1}`}
@@ -237,10 +237,10 @@ export default function ProductDetail() {
               </div>
             </div>
 
-            <aside className="lg:sticky lg:top-24 lg:self-start">
-              <div className="rounded-[1.8rem] border border-slate-200 bg-white p-5 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.7)] sm:p-6 lg:rounded-[2rem] lg:p-8">
+            <aside className="xl:sticky xl:top-24 xl:self-start">
+              <div className="rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-[0_28px_90px_-75px_rgba(15,23,42,0.7)] sm:rounded-[1.8rem] sm:p-6 xl:rounded-[2rem] xl:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 sm:text-sm">Smart daily knee comfort</p>
-                <h1 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">{productTitle}</h1>
+                <h1 className="mt-3 text-2xl font-semibold leading-tight tracking-[-0.04em] text-slate-950 sm:text-4xl xl:text-5xl">{productTitle}</h1>
 
                 <div className="mt-4 flex flex-wrap items-center gap-3">
                   <div className="flex items-center gap-1 text-blue-600">
@@ -299,7 +299,7 @@ export default function ProductDetail() {
                   </div>
                 </div>
 
-                <div className="mt-5 hidden gap-3 lg:grid">
+                <div className="mt-5 hidden gap-3 xl:grid">
                   <Button onClick={handleAddToCart} disabled={!variant || isLoading} className="h-13 rounded-full bg-blue-600 text-base font-semibold text-white hover:bg-blue-700">
                     Add to Cart
                   </Button>
@@ -325,22 +325,22 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-white py-14 sm:py-16 lg:py-20">
+        <section className="bg-white py-12 sm:py-16 lg:py-18">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-7 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <div className="grid gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Why people choose it</p>
-                <h2 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl md:text-5xl">
+                <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.045em] text-slate-950 sm:text-4xl md:text-5xl">
                   Built around short routines, not complicated claims.
                 </h2>
-                <p className="mt-5 text-base leading-8 text-slate-600">
-                  This section shifts the product page away from aggressive cure language and toward a cleaner, more trustworthy wellness tech presentation.
+                <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
+                  A cleaner comfort focused presentation with the key benefits shown before reviews and deeper content.
                 </p>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2 lg:gap-4">
                 {featurePillars.map((feature) => (
-                  <div key={feature.title} className="rounded-[1.6rem] border border-slate-200 bg-white p-5 shadow-sm sm:rounded-[2rem] sm:p-6">
+                  <div key={feature.title} className="rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-sm sm:rounded-[2rem] sm:p-6">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-2xl font-semibold text-blue-600">{feature.icon}</div>
                     <h3 className="mt-5 text-xl font-semibold text-slate-950">{feature.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-slate-500">{feature.text}</p>
@@ -351,23 +351,23 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-slate-50 py-14 sm:py-16 lg:py-20">
+        <section className="bg-slate-50 py-12 sm:py-16 lg:py-18">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-8 max-w-3xl sm:mb-10">
+            <div className="mb-7 max-w-3xl sm:mb-9">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">How it fits your day</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl md:text-5xl">
+              <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.045em] text-slate-950 sm:text-4xl md:text-5xl">
                 A simple routine flow.
               </h2>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
               {[
                 ["01", "Position", "Wrap FlexiKnee around your knee and adjust the straps."],
                 ["02", "Select", "Choose warmth and vibration settings from the touch panel."],
                 ["03", "Relax", "Use it during a short calm routine at home or after activity."],
                 ["04", "Repeat", "Keep the routine consistent when your knees need support."],
               ].map(([step, title, text]) => (
-                <div key={step} className="rounded-[1.6rem] border border-slate-200 bg-white p-5 shadow-sm sm:rounded-[2rem] sm:p-6">
+                <div key={step} className="rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-sm sm:rounded-[2rem] sm:p-6">
                   <span className="text-sm font-semibold text-blue-600">{step}</span>
                   <h3 className="mt-4 text-xl font-semibold text-slate-950">{title}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-500">{text}</p>
@@ -379,12 +379,12 @@ export default function ProductDetail() {
 
         <VideoReviews />
 
-        <section className="bg-slate-50 py-14 sm:py-16 lg:py-20">
+        <section className="bg-slate-50 py-12 sm:py-16 lg:py-18">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-8 flex flex-col justify-between gap-4 md:mb-10 md:flex-row md:items-end">
+            <div className="mb-7 flex flex-col justify-between gap-4 md:mb-9 md:flex-row md:items-end">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Learn before you buy</p>
-                <h2 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl md:text-5xl">
+                <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.045em] text-slate-950 sm:text-4xl md:text-5xl">
                   Related guides for smarter choices.
                 </h2>
               </div>
@@ -393,9 +393,9 @@ export default function ProductDetail() {
               </Link>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
               {relatedGuides.map((guide) => (
-                <Link key={guide.title} to={guide.href} className="group overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl sm:rounded-[2rem]">
+                <Link key={guide.title} to={guide.href} className="group overflow-hidden rounded-[1.4rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl sm:rounded-[2rem]">
                   <img src={guide.image} alt={guide.title} className="aspect-[16/8] w-full object-cover transition duration-500 group-hover:scale-105 sm:aspect-[16/10]" loading="lazy" />
                   <div className="p-4 sm:p-6">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">Guide</p>
@@ -410,7 +410,7 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-white py-14 sm:py-16 lg:py-20">
+        <section className="bg-white py-12 sm:py-16 lg:py-18">
           <div className="mx-auto grid max-w-7xl gap-7 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10 lg:px-8">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">FAQ</p>
