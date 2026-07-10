@@ -2,12 +2,22 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
-import { ArrowRight, Check, Shield, Sparkles, Star } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  Check,
+  ChevronRight,
+  Clock,
+  Shield,
+  Sparkles,
+  Star,
+} from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
+import { VideoReviews } from "@/components/VideoReviews";
 import { featurePillars, trustBadges } from "@/data/product-system";
 import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
@@ -19,25 +29,53 @@ const organizationJsonLd = {
   name: "FlexiKnee",
   url: "https://flexi-knee.com",
   logo: "https://flexi-knee.com/logo.png",
-  description: "FlexiKnee creates smart knee comfort products for daily recovery routines and at-home support.",
+  description: "FlexiKnee is a knee comfort and recovery education brand with smart at-home support products.",
 };
 
-const guides = [
+const heroGuides = [
+  {
+    title: "Knee clicking when walking",
+    href: "/guides/knee-clicking-when-walking",
+    tag: "Movement",
+  },
+  {
+    title: "Knee pain going down stairs",
+    href: "/guides/knee-pain-going-down-stairs",
+    tag: "Stairs",
+  },
+  {
+    title: "Heat vs. ice for knees",
+    href: "/guides/heat-vs-ice-for-knees",
+    tag: "Daily routine",
+  },
+];
+
+const featuredGuides = [
   {
     title: "Knee Clicking When Walking Explained",
     href: "/guides/knee-clicking-when-walking",
-    image: "/images/flexiknee-how-it-works.webp",
+    image: "/images/flexiknee-lifestyle-home.webp",
+    tag: "Movement",
   },
   {
-    title: "Heat vs. Ice for Knees: What’s Best Daily?",
+    title: "Heat vs. Ice for Knees: What Works Best Daily?",
     href: "/guides/heat-vs-ice-for-knees",
-    image: "/images/flexiknee-rapid-warming.webp",
+    image: "/images/og-image.jpg",
+    tag: "Routine",
   },
   {
-    title: "Daily Habits for Stronger Knee Comfort",
+    title: "Daily Knee Care Routine: Simple Habits for Comfort",
     href: "/guides/daily-knee-care-routine",
     image: "/images/flexiknee-lifestyle-work.webp",
+    tag: "Comfort",
   },
+];
+
+const problemPaths = [
+  ["After exercise", "Knee soreness after activity or workouts", "/guides/knee-pain-after-exercise"],
+  ["Going down stairs", "Pressure and discomfort during descents", "/guides/knee-pain-going-down-stairs"],
+  ["Clicking or popping", "Understand sounds during walking or bending", "/guides/knee-clicking-when-walking"],
+  ["Stiff after sitting", "Daily patterns after work, travel, or rest", "/guides/knee-stiffness-after-resting"],
 ];
 
 export default function Index() {
@@ -57,8 +95,13 @@ export default function Index() {
       window.location.href = PRIMARY_PRODUCT_PATH;
       return;
     }
+
     const variant = product.node.variants.edges[0]?.node;
-    if (!variant) return;
+    if (!variant) {
+      window.location.href = PRIMARY_PRODUCT_PATH;
+      return;
+    }
+
     addItem({
       product,
       variantId: variant.id,
@@ -67,6 +110,7 @@ export default function Index() {
       quantity: 1,
       selectedOptions: variant.selectedOptions,
     });
+
     toast.success("FlexiKnee added to cart.");
   };
 
@@ -77,7 +121,9 @@ export default function Index() {
       toast.error("Please enter a valid email address");
       return;
     }
+
     setIsSubscribing(true);
+
     try {
       const resp = await fetch("/api/newsletter", {
         method: "POST",
@@ -97,14 +143,17 @@ export default function Index() {
   return (
     <>
       <Helmet>
-        <title>FlexiKnee™ | Smart Knee Comfort & Recovery Products</title>
-        <meta name="description" content="FlexiKnee™ builds smart knee comfort products for heat, vibration, compression support, and simple at-home recovery routines." />
+        <title>FlexiKnee™ | Knee Comfort Guides & Smart Recovery Products</title>
+        <meta
+          name="description"
+          content="FlexiKnee™ combines practical knee comfort education with smart at-home support products for heat, vibration, wraparound positioning, and daily routines."
+        />
         <link rel="canonical" href="https://flexi-knee.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/" />
-        <meta property="og:title" content="FlexiKnee™ | Smart Knee Comfort & Recovery Products" />
-        <meta property="og:description" content="A premium knee comfort system built around smart heat, gentle vibration, compression support, and recovery education." />
-        <meta property="og:image" content="https://flexi-knee.com/images/flexiknee-product-main.webp" />
+        <meta property="og:title" content="FlexiKnee™ | Knee Comfort Guides & Smart Recovery Products" />
+        <meta property="og:description" content="A premium knee comfort hub with practical guides and smart at-home recovery products." />
+        <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(organizationJsonLd)}</script>
       </Helmet>
 
@@ -112,57 +161,86 @@ export default function Index() {
         <Header />
 
         <main>
-          <section className="relative overflow-hidden bg-[radial-gradient(circle_at_60%_20%,rgba(59,130,246,0.14),transparent_34%),linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)]">
-            <div className="mx-auto grid min-h-[760px] max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:py-20">
+          <section className="relative overflow-hidden border-b border-slate-200 bg-[radial-gradient(circle_at_72%_18%,rgba(37,99,235,0.12),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fbff_70%,#ffffff_100%)]">
+            <div className="mx-auto grid min-h-[760px] max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:py-20">
               <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-blue-700 shadow-sm">
-                  <Sparkles className="h-3.5 w-3.5" /> Smart recovery solutions
+                <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-700 shadow-sm">
+                  <Sparkles className="h-3.5 w-3.5" /> Knee comfort intelligence
                 </div>
-                <h1 className="mt-7 max-w-2xl text-5xl font-semibold tracking-[-0.055em] text-slate-950 sm:text-6xl lg:text-7xl">
-                  Knee recovery, reimagined.
+
+                <h1 className="mt-7 max-w-3xl text-5xl font-semibold leading-[0.96] tracking-[-0.065em] text-slate-950 sm:text-6xl lg:text-7xl">
+                  Understand your knees. Support them better.
                 </h1>
-                <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
-                  A premium knee comfort system built around adjustable heat, gentle vibration, compression support, and simple daily recovery education.
+
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+                  FlexiKnee is not just a single product page. It is a premium knee comfort hub — practical guides, daily routines, and smart at-home tools built around how people actually move.
                 </p>
+
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <Link to={PRIMARY_PRODUCT_PATH} className="inline-flex h-12 items-center justify-center rounded-full bg-blue-600 px-7 text-sm font-semibold text-white shadow-xl shadow-blue-600/20 transition hover:bg-blue-700">
+                  <Link
+                    to="/guides"
+                    className="inline-flex h-13 items-center justify-center rounded-full bg-slate-950 px-7 text-sm font-semibold text-white shadow-xl shadow-slate-900/15 transition hover:bg-blue-600"
+                  >
+                    Start with the guides
+                  </Link>
+                  <Link
+                    to={PRIMARY_PRODUCT_PATH}
+                    className="inline-flex h-13 items-center justify-center rounded-full border border-slate-300 bg-white px-7 text-sm font-semibold text-slate-900 transition hover:border-blue-300 hover:text-blue-700"
+                  >
                     Shop FlexiKnee
                   </Link>
-                  <a href="#system" className="inline-flex h-12 items-center justify-center rounded-full border border-slate-300 bg-white px-7 text-sm font-semibold text-slate-900 transition hover:border-blue-300 hover:text-blue-700">
-                    Explore the system
-                  </a>
                 </div>
-                <div className="mt-8 flex flex-wrap items-center gap-5 text-sm text-slate-500">
-                  <span className="flex items-center gap-1.5 font-medium text-slate-700"><Star className="h-4 w-4 fill-blue-600 text-blue-600" /> 4.8/5 customer rating</span>
-                  <span>30-day returns</span>
-                  <span>Secure checkout</span>
+
+                <div className="mt-9 grid max-w-2xl gap-3 sm:grid-cols-3">
+                  {heroGuides.map((guide) => (
+                    <Link
+                      key={guide.title}
+                      to={guide.href}
+                      className="group rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
+                    >
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-600">{guide.tag}</p>
+                      <p className="mt-2 text-sm font-semibold leading-5 text-slate-950 group-hover:text-blue-700">{guide.title}</p>
+                    </Link>
+                  ))}
                 </div>
               </div>
 
               <div className="relative">
-                <div className="absolute inset-x-16 bottom-12 h-28 rounded-full bg-blue-500/20 blur-3xl" />
-                <div className="relative rounded-[2.5rem] border border-white/70 bg-white/70 p-5 shadow-[0_50px_120px_-60px_rgba(15,23,42,0.55)] backdrop-blur-xl">
-                  <div className="grid gap-4 lg:grid-cols-[1fr_0.82fr]">
-                    <div className="relative flex min-h-[520px] items-center justify-center overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-50 via-white to-blue-50">
-                      <img src="/images/flexiknee-product-main.webp" alt="FlexiKnee white knee massager" className="relative z-10 w-[88%] max-w-[560px] object-contain drop-shadow-2xl" fetchPriority="high" />
-                      <div className="absolute left-8 top-8 rounded-2xl bg-white/90 px-4 py-3 text-sm font-semibold text-slate-900 shadow-lg">
-                        Heat · Vibration · Compression
-                      </div>
+                <div className="absolute inset-x-10 bottom-10 h-28 rounded-full bg-blue-500/20 blur-3xl" />
+                <div className="relative rounded-[2.8rem] border border-white/80 bg-white/80 p-4 shadow-[0_50px_140px_-70px_rgba(15,23,42,0.7)] backdrop-blur-xl">
+                  <div className="overflow-hidden rounded-[2.3rem] border border-slate-200 bg-white">
+                    <img
+                      src="/images/og-image.jpg"
+                      alt="FlexiKnee daily comfort lifestyle"
+                      className="h-[360px] w-full object-cover lg:h-[430px]"
+                      fetchPriority="high"
+                    />
+                    <div className="grid gap-0 border-t border-slate-200 md:grid-cols-3">
+                      {[
+                        ["01", "Learn", "Find the pattern behind your discomfort."],
+                        ["02", "Build", "Create a routine that fits your day."],
+                        ["03", "Support", "Use the right tool at the right moment."],
+                      ].map(([number, title, text]) => (
+                        <div key={number} className="border-slate-200 p-5 md:border-r md:last:border-r-0">
+                          <p className="text-xs font-semibold text-blue-600">{number}</p>
+                          <h2 className="mt-2 text-lg font-semibold text-slate-950">{title}</h2>
+                          <p className="mt-1 text-sm leading-6 text-slate-500">{text}</p>
+                        </div>
+                      ))}
                     </div>
-                    <div className="grid gap-4">
-                      <img src="/images/flexiknee-lifestyle-home.webp" alt="FlexiKnee used at home" className="h-full min-h-[250px] rounded-[2rem] object-cover shadow-sm" />
-                      <div className="rounded-[2rem] bg-slate-950 p-6 text-white shadow-2xl">
-                        <p className="text-sm uppercase tracking-[0.2em] text-blue-300">Daily comfort</p>
-                        <p className="mt-3 text-3xl font-semibold tracking-tight">15-minute routines that fit your day.</p>
-                      </div>
-                    </div>
+                  </div>
+
+                  <div className="absolute -bottom-8 -left-6 hidden w-64 rounded-[1.6rem] border border-slate-200 bg-white p-5 shadow-2xl lg:block">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">Featured product</p>
+                    <p className="mt-2 text-lg font-semibold text-slate-950">FlexiKnee™ Massager</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-500">Heat, vibration, and wraparound support in one routine-focused device.</p>
                   </div>
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="border-y border-slate-200 bg-white">
+          <section className="border-b border-slate-200 bg-white">
             <div className="mx-auto grid max-w-7xl gap-0 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
               {trustBadges.map((badge) => (
                 <div key={badge} className="flex items-center gap-3 border-slate-200 py-5 lg:border-r lg:last:border-r-0">
@@ -173,86 +251,107 @@ export default function Index() {
             </div>
           </section>
 
-          <section id="system" className="bg-white py-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Explore the FlexiKnee system</p>
-                  <h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-slate-950">More ways to support your knees.</h2>
-                </div>
-                <p className="max-w-xl text-base leading-7 text-slate-500">
-                  The homepage is now built like a product ecosystem, so future knee products can be added without rebuilding the brand from zero.
-                </p>
-              </div>
-              <FlexiKneeSystem />
-            </div>
-          </section>
-
-          <section id="why-it-works" className="bg-slate-50 py-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Why it works</p>
-                  <h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-slate-950">Designed for comfort, built for daily use.</h2>
-                  <p className="mt-5 text-base leading-8 text-slate-600">
-                    FlexiKnee combines focused warmth, massage-style vibration, wraparound support, and clear touch controls into one simple device.
-                  </p>
-                  <Button onClick={handleQuickAdd} className="mt-8 rounded-full bg-slate-950 px-7 text-white hover:bg-slate-800">
-                    Quick add to cart
-                  </Button>
-                </div>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {featurePillars.map((feature) => (
-                    <div key={feature.title} className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-2xl font-semibold text-blue-600">{feature.icon}</div>
-                      <h3 className="mt-5 text-lg font-semibold text-slate-950">{feature.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-slate-500">{feature.text}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="bg-white py-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-stretch">
-                <div className="rounded-[2rem] bg-slate-950 p-8 text-white lg:p-10">
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-300">Everyday scenarios</p>
-                  <h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em]">Comfort, designed for real life.</h2>
-                  <p className="mt-5 text-base leading-8 text-slate-300">
-                    Use it after walks, while working from home, during evening wind-down, or as part of a simple post-activity routine.
-                  </p>
-                  <Link to="/guides" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950">
-                    Read the guides <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-                <div className="grid gap-4 sm:grid-cols-3">
-                  {["/images/flexiknee-lifestyle-home.webp", "/images/flexiknee-lifestyle-work.webp", "/images/flexiknee-feature-overview.webp"].map((image, index) => (
-                    <img key={image} src={image} alt={`FlexiKnee lifestyle ${index + 1}`} className="h-full min-h-[300px] rounded-[2rem] object-cover shadow-sm" loading="lazy" />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
           <section className="bg-slate-50 py-20">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Guides & recovery education</p>
-                  <h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-slate-950">Learn before you buy.</h2>
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Start by situation</p>
+                  <h2 className="mt-3 max-w-2xl text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+                    The homepage now works like an authority hub.
+                  </h2>
                 </div>
-                <Link to="/guides" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">View all guides <ArrowRight className="h-4 w-4" /></Link>
+                <p className="max-w-xl text-base leading-7 text-slate-600">
+                  Visitors can enter through their problem first, then discover the product naturally. This is the Concept 3 direction.
+                </p>
               </div>
+
+              <div className="grid gap-4 md:grid-cols-4">
+                {problemPaths.map(([title, text, href], index) => (
+                  <Link
+                    key={title}
+                    to={href}
+                    className="group rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
+                  >
+                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-sm font-semibold text-blue-600">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="mt-5 text-xl font-semibold tracking-tight text-slate-950">{title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-500">{text}</p>
+                    <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">
+                      Read guide <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="system" className="bg-white py-20">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">FlexiKnee system</p>
+                  <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+                    One product now. A full knee comfort system later.
+                  </h2>
+                  <p className="mt-5 text-base leading-8 text-slate-600">
+                    This structure is ready for the extra knee products you said you will add later. The page feels like a brand ecosystem instead of a one-off dropshipping page.
+                  </p>
+                  <Button onClick={handleQuickAdd} className="mt-8 rounded-full bg-blue-600 px-7 text-white hover:bg-blue-700">
+                    Quick add FlexiKnee
+                  </Button>
+                </div>
+                <FlexiKneeSystem />
+              </div>
+            </div>
+          </section>
+
+          <section id="why-it-works" className="bg-slate-950 py-20 text-white">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="mb-10 max-w-3xl">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-300">Routine-first product story</p>
+                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] md:text-5xl">
+                  What it supports in a daily comfort routine.
+                </h2>
+              </div>
+              <div className="grid gap-4 md:grid-cols-4">
+                {featurePillars.map((feature) => (
+                  <div key={feature.title} className="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-2xl font-semibold text-blue-600">{feature.icon}</div>
+                    <h3 className="mt-5 text-lg font-semibold text-white">{feature.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-300">{feature.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <VideoReviews />
+
+          <section className="bg-white py-20">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Guides & recovery education</p>
+                  <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+                    Content that sells without shouting.
+                  </h2>
+                </div>
+                <Link to="/guides" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
+                  View all guides <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+
               <div className="grid gap-4 md:grid-cols-3">
-                {guides.map((guide) => (
-                  <Link key={guide.title} to={guide.href} className="group overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                {featuredGuides.map((guide) => (
+                  <Link key={guide.title} to={guide.href} className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
                     <img src={guide.image} alt={guide.title} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
-                    <div className="p-5">
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">Guide</p>
-                      <h3 className="mt-2 text-lg font-semibold tracking-tight text-slate-950">{guide.title}</h3>
-                      <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">Read guide <ArrowRight className="h-4 w-4" /></span>
+                    <div className="p-6">
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">{guide.tag}</p>
+                      <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-950">{guide.title}</h3>
+                      <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">
+                        Read guide <ArrowRight className="h-4 w-4" />
+                      </span>
                     </div>
                   </Link>
                 ))}
@@ -260,36 +359,53 @@ export default function Index() {
             </div>
           </section>
 
-          <section id="faq" className="bg-white py-20">
-            <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+          <section id="faq" className="bg-slate-50 py-20">
+            <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:px-8">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">FAQ</p>
-                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-slate-950">Quick answers before checkout.</h2>
+                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950">
+                  Quick answers before checkout.
+                </h2>
+                <p className="mt-4 max-w-md text-base leading-7 text-slate-600">
+                  Cleaner claims, calmer language, and more trust before the user hits the cart.
+                </p>
               </div>
-              <Accordion type="single" collapsible className="rounded-[1.75rem] border border-slate-200 bg-white px-6 shadow-sm">
+              <Accordion type="single" collapsible className="rounded-[2rem] border border-slate-200 bg-white px-6 shadow-sm">
                 {[
-                  ["How often should I use FlexiKnee?", "Most customers use it in short daily sessions as part of a relaxed comfort routine. Always follow the included user instructions."],
+                  ["How often should I use FlexiKnee?", "Most people use it in short routine sessions. Follow the included instructions and stop if something feels uncomfortable."],
                   ["Is it wireless?", "Yes. FlexiKnee is rechargeable and designed for cord-free daily use."],
-                  ["Can I return it?", "Yes. The site keeps a 30-day return promise and secure checkout experience."],
+                  ["Is this a medical treatment?", "No. FlexiKnee is positioned as an at-home comfort and recovery support product, not a medical treatment or diagnosis tool."],
+                  ["Can I return it?", "Yes. Keep the 30-day return promise visible so the purchase feels lower risk."],
                 ].map(([q, a]) => (
                   <AccordionItem key={q} value={q} className="border-slate-200">
                     <AccordionTrigger className="text-left text-base font-semibold text-slate-950">{q}</AccordionTrigger>
-                    <AccordionContent className="text-slate-500">{a}</AccordionContent>
+                    <AccordionContent className="text-slate-600">{a}</AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
             </div>
           </section>
 
-          <section className="bg-slate-950 py-16 text-white">
-            <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_0.8fr] lg:px-8 lg:items-center">
+          <section className="bg-white py-16">
+            <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_0.8fr] lg:items-center lg:px-8">
               <div>
-                <h2 className="text-4xl font-semibold tracking-[-0.04em]">Join the FlexiKnee comfort list.</h2>
-                <p className="mt-4 max-w-xl text-slate-300">Get new guide drops, product updates, and future knee comfort launches.</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Newsletter</p>
+                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950">
+                  Join the FlexiKnee comfort list.
+                </h2>
+                <p className="mt-4 max-w-xl text-slate-600">
+                  Get new guide drops, product updates, and future knee comfort launches.
+                </p>
               </div>
               <form onSubmit={handleSubscribe} className="flex flex-col gap-3 sm:flex-row">
-                <input value={newsletterEmail} onChange={(e) => setNewsletterEmail(e.target.value)} type="email" placeholder="Enter your email" className="h-12 flex-1 rounded-full border border-white/10 bg-white/10 px-5 text-white placeholder:text-slate-400 outline-none focus:border-blue-300" />
-                <button disabled={isSubscribing} className="h-12 rounded-full bg-blue-600 px-7 text-sm font-semibold text-white transition hover:bg-blue-500 disabled:opacity-60">
+                <input
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  type="email"
+                  placeholder="Enter your email"
+                  className="h-13 flex-1 rounded-full border border-slate-200 bg-white px-5 text-slate-950 shadow-sm outline-none placeholder:text-slate-400 focus:border-blue-300"
+                />
+                <button disabled={isSubscribing} className="h-13 rounded-full bg-slate-950 px-7 text-sm font-semibold text-white transition hover:bg-blue-600 disabled:opacity-60">
                   {isSubscribing ? "Joining..." : "Join"}
                 </button>
               </form>

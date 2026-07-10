@@ -1,21 +1,17 @@
 /**
  * Newsletter signup → Shopify Customers
+ * Server-only Vercel function.
  *
- * Runs only on Vercel serverless function side.
+ * Vercel env variables:
+ * SHOPIFY_STORE_DOMAIN
+ * SHOPIFY_CLIENT_ID
+ * SHOPIFY_CLIENT_SECRET
  *
- * Supported server-only environment variables:
- *   SHOPIFY_CLIENT_ID       → Shopify Dev Dashboard Client ID
- *   SHOPIFY_CLIENT_SECRET   → Shopify Dev Dashboard Client Secret
- *   SHOPIFY_STORE_DOMAIN    → your permanent myshopify.com domain
- *
- * Fallback for older custom-app setup:
- *   SHOPIFY_ADMIN_TOKEN
- *
- * Never use VITE_ for Admin API secrets.
+ * Optional legacy fallback:
+ * SHOPIFY_ADMIN_TOKEN
  */
 
 const API_VERSION = '2026-07';
-
 let cachedToken: { token: string; expiresAt: number } | null = null;
 
 async function getAdminAccessToken(storeDomain: string) {
@@ -68,13 +64,12 @@ export default async function handler(req: any, res: any) {
     process.env.VITE_SHOPIFY_STORE_DOMAIN;
 
   if (!storeDomain) {
-    return res.status(500).json({
-      error: 'Server is not configured (SHOPIFY_STORE_DOMAIN missing).',
-    });
+    return res.status(500).json({ error: 'Server is not configured.' });
   }
 
   const email = String(req.body?.email || '').trim().toLowerCase();
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) && email.length <= 255;
+
   if (!emailOk) {
     return res.status(400).json({ error: 'Please enter a valid email address.' });
   }
@@ -93,9 +88,11 @@ export default async function handler(req: any, res: any) {
       });
 
       const json = await r.json();
+
       if (!r.ok) {
         throw new Error(json?.errors?.[0]?.message || `Shopify Admin API error: ${r.status}`);
       }
+
       return json;
     };
 
@@ -131,9 +128,7 @@ export default async function handler(req: any, res: any) {
     );
 
     if (!alreadyExists) {
-      return res.status(400).json({
-        error: createErrors[0]?.message || 'Could not subscribe email.',
-      });
+      return res.status(400).json({ error: createErrors[0]?.message || 'Could not subscribe email.' });
     }
 
     const searchResult = await gql(
@@ -170,6 +165,7 @@ export default async function handler(req: any, res: any) {
     );
 
     const consentErrors = consentResult?.data?.customerEmailMarketingConsentUpdate?.userErrors || [];
+
     if (consentErrors.length > 0) {
       return res.status(400).json({ error: consentErrors[0]?.message || 'Could not update marketing consent.' });
     }
@@ -187,8 +183,6 @@ export default async function handler(req: any, res: any) {
     return res.status(200).json({ ok: true, existing: true });
   } catch (error: any) {
     console.error('[newsletter]', error);
-    return res.status(500).json({
-      error: 'Could not subscribe right now. Please try again.',
-    });
+    return res.status(500).json({ error: 'Could not subscribe right now. Please try again.' });
   }
 }

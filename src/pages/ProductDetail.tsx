@@ -11,55 +11,41 @@ import {
   Shield,
   Star,
   Truck,
-  Zap,
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { VideoReviews } from "@/components/VideoReviews";
 import { getProducts, ShopifyProduct, createStorefrontCheckout } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { featurePillars, productSystem } from "@/data/product-system";
 
-const fallbackImages = [
-  "/images/flexiknee-product-main.webp",
-  "/images/flexiknee-lifestyle-home.webp",
-  "/images/flexiknee-lifestyle-work.webp",
-  "/images/flexiknee-how-it-works.webp",
-  "/images/flexiknee-touch-control.webp",
+const displayGallery = [
+  { src: "/images/og-image.jpg", alt: "FlexiKnee in a calm home setting" },
+  { src: "/images/review-photo-2.png", alt: "FlexiKnee device close-up" },
+  { src: "/images/review-photo-1.png", alt: "FlexiKnee control panel close-up" },
+  { src: "/images/flexiknee-lifestyle-work.webp", alt: "FlexiKnee daily use at home" },
+  { src: "/images/flexiknee-lifestyle-home.webp", alt: "FlexiKnee after activity routine" },
 ];
 
-const guideLinks = [
+const relatedGuides = [
   {
     title: "Do Knee Massagers Work? Realistic Expectations",
     href: "/guides/do-knee-massagers-work",
-    image: "/images/flexiknee-how-it-works.webp",
-  },
-  {
-    title: "Heat vs. Ice for Knees: What Works Best Daily?",
-    href: "/guides/heat-vs-ice-for-knees",
-    image: "/images/flexiknee-rapid-warming.webp",
+    image: "/images/og-image.jpg",
   },
   {
     title: "Daily Knee Care Routine: Simple Habits for Comfort",
     href: "/guides/daily-knee-care-routine",
     image: "/images/flexiknee-lifestyle-work.webp",
   },
-];
-
-const productJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  name: "FlexiKnee™ Knee Massager",
-  brand: { "@type": "Brand", name: "FlexiKnee" },
-  description:
-    "A smart knee comfort device with adjustable heat, massage-style vibration, wraparound support, and simple touch controls.",
-  image: "https://flexi-knee.com/images/flexiknee-product-main.webp",
-  offers: {
-    "@type": "Offer",
-    availability: "https://schema.org/InStock",
-    url: "https://flexi-knee.com/product/knee-massager-smart-red-light-and-massage-therapy",
+  {
+    title: "Heat vs. Ice for Knees: What Works Best Daily?",
+    href: "/guides/heat-vs-ice-for-knees",
+    image: "/images/flexiknee-lifestyle-home.webp",
   },
-};
+];
 
 function formatMoney(amount?: string, currencyCode?: string) {
   const value = Number(amount || 0);
@@ -87,6 +73,7 @@ export default function ProductDetail() {
   useEffect(() => {
     let active = true;
     setIsLoading(true);
+
     getProducts(20)
       .then((items) => {
         if (!active) return;
@@ -107,30 +94,28 @@ export default function ProductDetail() {
   }, [handle]);
 
   const variant = product?.node.variants.edges[0]?.node;
-  const shopifyImages = product?.node.images.edges.map((edge) => ({
-    src: edge.node.url,
-    alt: edge.node.altText || product.node.title,
-  })) || [];
-
-  const gallery = useMemo(() => {
-    const merged = [
-      ...shopifyImages,
-      ...fallbackImages.map((src) => ({ src, alt: "FlexiKnee product and lifestyle image" })),
-    ];
-
-    const seen = new Set<string>();
-    return merged.filter((img) => {
-      if (seen.has(img.src)) return false;
-      seen.add(img.src);
-      return true;
-    }).slice(0, 8);
-  }, [shopifyImages]);
-
-  const productTitle = "FlexiKnee™ Knee Massager";
-  const variantPrice = variant?.price.amount || product?.node.priceRange.minVariantPrice.amount || "0";
+  const variantPrice = variant?.price.amount || product?.node.priceRange.minVariantPrice.amount || "59.99";
   const currency = variant?.price.currencyCode || product?.node.priceRange.minVariantPrice.currencyCode || "GBP";
   const basePrice = Number(variantPrice || 0);
   const displayPrice = formatMoney(String(basePrice * bundleQty), currency);
+  const productTitle = "FlexiKnee™ Knee Massager";
+
+  const productJsonLd = useMemo(() => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: productTitle,
+    brand: { "@type": "Brand", name: "FlexiKnee" },
+    description:
+      "A smart knee comfort device with adjustable heat, massage-style vibration, wraparound support, and simple touch controls.",
+    image: "https://flexi-knee.com/images/og-image.jpg",
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      price: String(basePrice || 59.99),
+      priceCurrency: currency,
+      url: `https://flexi-knee.com/product/${handle || "knee-massager-smart-red-light-and-massage-therapy"}`,
+    },
+  }), [basePrice, currency, handle]);
 
   const cartItem = () => {
     if (!product || !variant) return null;
@@ -178,42 +163,39 @@ export default function ProductDetail() {
         <title>{productTitle} | FlexiKnee™</title>
         <meta
           name="description"
-          content="FlexiKnee™ combines adjustable heat, massage-style vibration, wraparound support, and smart touch controls for simple daily knee comfort routines."
+          content="FlexiKnee™ is a smart at-home knee comfort device with adjustable heat, massage-style vibration, wraparound support, and simple touch controls."
         />
         <link rel="canonical" href={`https://flexi-knee.com/product/${handle || "knee-massager-smart-red-light-and-massage-therapy"}`} />
         <meta property="og:title" content={`${productTitle} | FlexiKnee™`} />
-        <meta
-          property="og:description"
-          content="A premium knee comfort device built for everyday recovery routines, simple use, and at-home support."
-        />
-        <meta property="og:image" content="https://flexi-knee.com/images/flexiknee-product-main.webp" />
+        <meta property="og:description" content="A premium knee comfort device for simple daily recovery routines." />
+        <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>
       </Helmet>
 
       <Header />
 
       <main>
-        <section className="border-b border-slate-200 bg-[radial-gradient(circle_at_55%_10%,rgba(37,99,235,0.12),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f7fbff_100%)]">
+        <section className="border-b border-slate-200 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
             <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
               <Link to="/" className="hover:text-blue-600">Home</Link>
               <ChevronRight className="h-3 w-3" />
-              <Link to="/guides" className="hover:text-blue-600">Shop</Link>
+              <Link to="/guides" className="hover:text-blue-600">Knee comfort hub</Link>
               <ChevronRight className="h-3 w-3" />
               <span className="text-slate-900">FlexiKnee</span>
             </div>
           </div>
         </section>
 
-        <section className="bg-white py-10 lg:py-14">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8">
-            <div className="grid gap-4 lg:grid-cols-[88px_1fr]">
+        <section className="bg-[radial-gradient(circle_at_72%_16%,rgba(37,99,235,0.11),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] py-10 lg:py-16">
+          <div className="mx-auto grid max-w-7xl gap-9 px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
+            <div className="grid gap-4 lg:grid-cols-[92px_1fr]">
               <div className="order-2 flex gap-3 overflow-x-auto lg:order-1 lg:flex-col">
-                {gallery.map((image, index) => (
+                {displayGallery.map((image, index) => (
                   <button
                     key={image.src}
                     onClick={() => setSelectedImage(index)}
-                    className={`h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl border bg-white transition ${
+                    className={`h-22 w-22 flex-shrink-0 overflow-hidden rounded-2xl border bg-white transition ${
                       selectedImage === index ? "border-blue-500 shadow-lg shadow-blue-500/10" : "border-slate-200 hover:border-slate-300"
                     }`}
                     aria-label={`View image ${index + 1}`}
@@ -224,27 +206,28 @@ export default function ProductDetail() {
               </div>
 
               <div className="order-1 lg:order-2">
-                <div className="relative flex min-h-[420px] items-center justify-center overflow-hidden rounded-[2.4rem] border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-blue-50 p-6 shadow-[0_40px_120px_-70px_rgba(15,23,42,0.55)] lg:min-h-[620px]">
-                  <div className="absolute left-6 top-6 rounded-full bg-blue-600 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-lg shadow-blue-600/20">
-                    Bestseller
+                <div className="relative overflow-hidden rounded-[2.6rem] border border-slate-200 bg-white p-4 shadow-[0_50px_140px_-80px_rgba(15,23,42,0.75)]">
+                  <img
+                    src={displayGallery[selectedImage].src}
+                    alt={displayGallery[selectedImage].alt}
+                    className="h-[480px] w-full rounded-[2.1rem] object-cover lg:h-[660px]"
+                    fetchPriority="high"
+                  />
+                  <div className="absolute left-8 top-8 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-600 shadow-sm backdrop-blur">
+                    FlexiKnee system
                   </div>
-                  {isLoading ? (
-                    <div className="h-64 w-64 animate-pulse rounded-[2rem] bg-slate-200" />
-                  ) : (
-                    <img
-                      src={gallery[selectedImage]?.src || fallbackImages[0]}
-                      alt={gallery[selectedImage]?.alt || productTitle}
-                      className="max-h-[560px] w-full object-contain drop-shadow-2xl"
-                    />
-                  )}
+                  <div className="absolute bottom-8 left-8 right-8 rounded-[1.6rem] bg-slate-950/88 p-5 text-white backdrop-blur">
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">Routine-first device</p>
+                    <p className="mt-2 text-2xl font-semibold tracking-[-0.03em]">Heat, vibration, and support — without the messy gadget-page look.</p>
+                  </div>
                 </div>
               </div>
             </div>
 
             <aside className="lg:sticky lg:top-24 lg:self-start">
-              <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_30px_100px_-70px_rgba(15,23,42,0.7)] lg:p-8">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Heat · Vibration · Compression</p>
-                <h1 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 lg:text-5xl">{productTitle}</h1>
+              <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.7)] lg:p-8">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Smart daily knee comfort</p>
+                <h1 className="mt-3 text-4xl font-semibold tracking-[-0.05em] text-slate-950 lg:text-5xl">{productTitle}</h1>
 
                 <div className="mt-4 flex flex-wrap items-center gap-3">
                   <div className="flex items-center gap-1 text-blue-600">
@@ -254,11 +237,11 @@ export default function ProductDetail() {
                   </div>
                   <span className="text-sm font-medium text-slate-700">4.8 rating</span>
                   <span className="text-sm text-slate-400">•</span>
-                  <span className="text-sm text-slate-500">Built for daily comfort routines</span>
+                  <span className="text-sm text-slate-500">Short daily routines</span>
                 </div>
 
                 <p className="mt-5 text-base leading-7 text-slate-600">
-                  A premium at-home knee comfort device with adjustable warmth, massage-style vibration, wraparound positioning, and a clean smart-control interface.
+                  FlexiKnee combines adjustable warmth, massage-style vibration, and a secure wraparound fit for simple at-home comfort routines.
                 </p>
 
                 <div className="mt-6 grid gap-3">
@@ -266,7 +249,7 @@ export default function ProductDetail() {
                     "Adjustable heat levels for a consistent routine",
                     "Massage-style vibration modes for tired legs",
                     "Wraparound fit to keep the device comfortably positioned",
-                    "Rechargeable, wireless design for easy daily use",
+                    "Wireless design for easy use at home, work, or after activity",
                   ].map((item) => (
                     <div key={item} className="flex gap-3 text-sm text-slate-700">
                       <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" />
@@ -280,6 +263,7 @@ export default function ProductDetail() {
                     <span className="text-sm font-semibold text-slate-950">Choose your option</span>
                     <span className="text-sm font-semibold text-blue-600">{displayPrice}</span>
                   </div>
+
                   <div className="grid gap-3 sm:grid-cols-2">
                     <button
                       onClick={() => setBundleQty(1)}
@@ -328,39 +312,27 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="border-y border-slate-200 bg-slate-50 py-10">
-          <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 md:grid-cols-4 lg:px-8">
-            {featurePillars.map((feature) => (
-              <div key={feature.title} className="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-xl font-semibold text-blue-600">{feature.icon}</div>
-                <h2 className="mt-4 text-base font-semibold text-slate-950">{feature.title}</h2>
-                <p className="mt-2 text-sm leading-6 text-slate-500">{feature.text}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        <VideoReviews />
 
         <section className="bg-white py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">How it fits your routine</p>
-                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-slate-950">Four simple steps. No complicated setup.</h2>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Why people choose it</p>
+                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+                  Built around short routines, not complicated treatment claims.
+                </h2>
                 <p className="mt-5 text-base leading-8 text-slate-600">
-                  The page now tells a cleaner product story: choose your fit, select your comfort mode, relax for a short session, and return to your day.
+                  This section intentionally shifts the product page away from aggressive pain-cure language and toward a cleaner, more trustworthy wellness-tech presentation.
                 </p>
               </div>
+
               <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  ["01", "Position", "Wrap FlexiKnee around the knee and adjust the straps for a secure fit."],
-                  ["02", "Select", "Choose warmth and vibration settings from the clear touch panel."],
-                  ["03", "Relax", "Use it during a short daily comfort routine at home, work, or after activity."],
-                  ["04", "Repeat", "Make it part of your regular routine when your knees need support."],
-                ].map(([step, title, text]) => (
-                  <div key={step} className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-                    <span className="text-sm font-semibold text-blue-600">{step}</span>
-                    <h3 className="mt-3 text-xl font-semibold text-slate-950">{title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-500">{text}</p>
+                {featurePillars.map((feature) => (
+                  <div key={feature.title} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-2xl font-semibold text-blue-600">{feature.icon}</div>
+                    <h3 className="mt-5 text-xl font-semibold text-slate-950">{feature.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-500">{feature.text}</p>
                   </div>
                 ))}
               </div>
@@ -368,23 +340,27 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-slate-950 py-20 text-white">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8 lg:items-center">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-300">FlexiKnee system</p>
-              <h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em]">Built for more than one product.</h2>
-              <p className="mt-5 text-base leading-8 text-slate-300">
-                This section creates the foundation for future knee-related products, so the brand feels like a premium recovery ecosystem from day one.
-              </p>
+        <section className="bg-slate-50 py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-10 max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">How it fits your day</p>
+              <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+                A simple routine flow.
+              </h2>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {productSystem.map((item) => (
-                <Link key={item.name} to={item.href} className="group rounded-[1.6rem] border border-white/10 bg-white/5 p-4 transition hover:-translate-y-1 hover:bg-white/10">
-                  <img src={item.image} alt={item.name} className="aspect-square rounded-2xl bg-white object-cover" />
-                  <p className="mt-4 text-sm font-semibold text-white">{item.name}</p>
-                  <p className="mt-1 text-xs leading-5 text-slate-400">{item.label}</p>
-                  <p className="mt-3 text-sm font-semibold text-blue-300">{item.price}</p>
-                </Link>
+
+            <div className="grid gap-4 md:grid-cols-4">
+              {[
+                ["01", "Position", "Wrap FlexiKnee around your knee and adjust the straps."],
+                ["02", "Select", "Choose warmth and vibration settings from the touch panel."],
+                ["03", "Relax", "Use it during a short calm routine at home or after activity."],
+                ["04", "Repeat", "Keep the routine consistent when your knees need support."],
+              ].map(([step, title, text]) => (
+                <div key={step} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
+                  <span className="text-sm font-semibold text-blue-600">{step}</span>
+                  <h3 className="mt-4 text-xl font-semibold text-slate-950">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-500">{text}</p>
+                </div>
               ))}
             </div>
           </div>
@@ -394,25 +370,87 @@ export default function ProductDetail() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Expert guides</p>
-                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-slate-950">Learn what fits your routine.</h2>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Explore the system</p>
+                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+                  Future products can sit here naturally.
+                </h2>
+              </div>
+              <Link to="/guides" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
+                Visit knee comfort hub <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {productSystem.map((item) => (
+                <Link key={item.name} to={item.href} className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                  <div className={`flex aspect-[4/3] items-center justify-center bg-gradient-to-br ${item.accent}`}>
+                    {item.image ? (
+                      <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
+                    ) : (
+                      <span className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-400">Coming soon</span>
+                    )}
+                  </div>
+                  <div className="p-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">{item.status}</p>
+                    <h3 className="mt-2 text-lg font-semibold text-slate-950">{item.name}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-500">{item.description}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-slate-50 py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Learn before you buy</p>
+                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+                  Related guides for smarter choices.
+                </h2>
               </div>
               <Link to="/guides" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
                 View all guides <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
+
             <div className="grid gap-4 md:grid-cols-3">
-              {guideLinks.map((guide) => (
-                <Link key={guide.title} to={guide.href} className="group overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-                  <img src={guide.image} alt={guide.title} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" />
-                  <div className="p-5">
+              {relatedGuides.map((guide) => (
+                <Link key={guide.title} to={guide.href} className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                  <img src={guide.image} alt={guide.title} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+                  <div className="p-6">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">Guide</p>
-                    <h3 className="mt-2 text-lg font-semibold tracking-tight text-slate-950">{guide.title}</h3>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">Read guide <ArrowRight className="h-4 w-4" /></span>
+                    <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-950">{guide.title}</h3>
+                    <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">
+                      Read guide <ArrowRight className="h-4 w-4" />
+                    </span>
                   </div>
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-20">
+          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">FAQ</p>
+              <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950">Product questions.</h2>
+            </div>
+            <Accordion type="single" collapsible className="rounded-[2rem] border border-slate-200 bg-white px-6 shadow-sm">
+              {[
+                ["Is FlexiKnee wireless?", "Yes. It is rechargeable and designed for simple cord-free daily routines."],
+                ["How long should I use it?", "Use it according to the included instructions. Many people prefer short calm sessions rather than long complicated routines."],
+                ["Is this a medical treatment?", "No. It is positioned as a comfort and recovery support product, not a medical treatment or diagnosis tool."],
+                ["Can I return it?", "Yes. Keep your return policy visible near checkout to reduce hesitation."],
+              ].map(([q, a]) => (
+                <AccordionItem key={q} value={q} className="border-slate-200">
+                  <AccordionTrigger className="text-left text-base font-semibold text-slate-950">{q}</AccordionTrigger>
+                  <AccordionContent className="text-slate-600">{a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </section>
       </main>
