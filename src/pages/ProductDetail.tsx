@@ -180,7 +180,7 @@ export default function ProductDetail() {
   };
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white pb-24 text-slate-950 xl:pb-0">
+    <div className="min-h-screen max-w-full overflow-x-hidden bg-white pb-24 text-slate-950 xl:pb-0">
       <Helmet>
         <title>{productTitle} | FlexiKnee™</title>
         <meta
@@ -216,24 +216,35 @@ export default function ProductDetail() {
                 <img
                   src={gallery[selectedImage]?.src || fallbackGallery[0].src}
                   alt={gallery[selectedImage]?.alt || productTitle}
-                  className="h-[300px] w-full rounded-[1.2rem] object-contain object-center sm:h-[430px] sm:rounded-[1.7rem] lg:h-[520px] xl:h-[650px] xl:rounded-[2rem]"
+                  className="h-[270px] w-full rounded-[1.2rem] object-contain object-center sm:h-[390px] md:h-[430px] lg:h-[460px] xl:h-[630px] xl:rounded-[2rem]"
                   fetchPriority="high"
                 />
               </div>
 
-              <div className="mt-3 flex gap-3 overflow-x-auto pb-2">
-                {gallery.map((image, index) => (
-                  <button
-                    key={`${image.src}-${index}`}
-                    onClick={() => setSelectedImage(index)}
-                    className={`h-16 w-16 flex-shrink-0 overflow-hidden rounded-2xl border bg-white p-1 transition sm:h-20 sm:w-20 lg:h-22 lg:w-22 ${
-                      selectedImage === index ? "border-blue-500 shadow-lg shadow-blue-500/10" : "border-slate-200 hover:border-slate-300"
-                    }`}
-                    aria-label={`View image ${index + 1}`}
-                  >
-                    <img src={image.src} alt={image.alt} className="h-full w-full rounded-xl object-cover" />
-                  </button>
-                ))}
+              <div className="relative mt-3 max-w-full overflow-hidden">
+                <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-10 bg-gradient-to-l from-[#f8fbff] to-transparent" />
+                <div
+                  className="flex max-w-full snap-x gap-2 overflow-x-auto overscroll-x-contain pb-2 pr-12 [scrollbar-width:thin] sm:gap-3"
+                  style={{ WebkitOverflowScrolling: "touch" }}
+                >
+                  {gallery.map((image, index) => (
+                    <button
+                      key={`${image.src}-${index}`}
+                      onClick={() => setSelectedImage(index)}
+                      className={`h-16 w-16 flex-shrink-0 snap-start overflow-hidden rounded-2xl border bg-white p-1 transition sm:h-20 sm:w-20 lg:h-22 lg:w-22 ${
+                        selectedImage === index ? "border-blue-500 shadow-lg shadow-blue-500/10" : "border-slate-200 hover:border-slate-300"
+                      }`}
+                      aria-label={`View image ${index + 1}`}
+                    >
+                      <img src={image.src} alt={image.alt} className="h-full w-full rounded-xl object-cover" />
+                    </button>
+                  ))}
+                </div>
+                {gallery.length > 5 && (
+                  <p className="mt-1 text-right text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400 sm:hidden">
+                    Swipe for more →
+                  </p>
+                )}
               </div>
             </div>
 
@@ -397,10 +408,10 @@ export default function ProductDetail() {
               {relatedGuides.map((guide) => (
                 <Link key={guide.title} to={guide.href} className="group overflow-hidden rounded-[1.4rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl sm:rounded-[2rem]">
                   <img src={guide.image} alt={guide.title} className="aspect-[16/8] w-full object-cover transition duration-500 group-hover:scale-105 sm:aspect-[16/10]" loading="lazy" />
-                  <div className="p-4 sm:p-6">
+                  <div className="p-6">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">Guide</p>
-                    <h3 className="mt-2 text-base font-semibold tracking-tight text-slate-950 sm:text-xl">{guide.title}</h3>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 sm:mt-5">
+                    <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-950">{guide.title}</h3>
+                    <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">
                       Read guide <ArrowRight className="h-4 w-4" />
                     </span>
                   </div>

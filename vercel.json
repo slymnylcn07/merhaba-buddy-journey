@@ -4,15 +4,35 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "trailingSlash": false,
-  "cleanUrls": true,
+  "cleanUrls": false,
   "rewrites": [
     {
       "source": "/api/:path*",
       "destination": "/api/:path*"
     },
     {
+      "source": "/product/:path*",
+      "destination": "/"
+    },
+    {
+      "source": "/guides/:path*",
+      "destination": "/"
+    },
+    {
+      "source": "/science",
+      "destination": "/"
+    },
+    {
+      "source": "/track-order",
+      "destination": "/"
+    },
+    {
+      "source": "/why-flexiknee",
+      "destination": "/"
+    },
+    {
       "source": "/:path*",
-      "destination": "/index.html"
+      "destination": "/"
     }
   ],
   "headers": [
