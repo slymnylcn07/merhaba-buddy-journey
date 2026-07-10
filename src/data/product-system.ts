@@ -42,10 +42,26 @@ export const productSystem = [
 ];
 
 export const featurePillars = [
-  { title: "Adjustable Heat", text: "Three warmth levels for a simple, consistent routine.", icon: "≈" },
-  { title: "Gentle Vibration", text: "Massage modes designed to help tired legs unwind.", icon: "⌁" },
-  { title: "Compression Support", text: "Wraparound fit that keeps the device comfortably positioned.", icon: "↻" },
-  { title: "Smart Control", text: "Clear touch display with quick, intuitive settings.", icon: "◌" },
+  {
+    title: "Adjustable Heat",
+    text: "Three warmth levels for a simple, consistent routine.",
+    icon: "≈",
+  },
+  {
+    title: "Gentle Vibration",
+    text: "Massage modes designed to help tired legs unwind.",
+    icon: "⌁",
+  },
+  {
+    title: "Compression Support",
+    text: "Wraparound fit that keeps the device comfortably positioned.",
+    icon: "↻",
+  },
+  {
+    title: "Smart Control",
+    text: "Clear touch display with quick, intuitive settings.",
+    icon: "◌",
+  },
 ];
 
 export const trustBadges = [
