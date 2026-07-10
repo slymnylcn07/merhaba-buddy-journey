@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -10,60 +10,75 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { ShoppingCart, Minus, Plus, Trash2, Lock, Loader2 } from "lucide-react";
+import {
+  ShoppingCart,
+  Minus,
+  Plus,
+  Trash2,
+  Lock,
+  Loader2,
+  Star,
+  Truck,
+  ShieldCheck,
+  RotateCcw,
+} from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
-import { CURRENCY_CONFIG, CurrencyCode, detectUserCountry, getCurrencyForCountry, convertPrice, formatPrice, getCountryName } from "@/lib/currency";
+import { CurrencyCode, detectUserCountry, getCurrencyForCountry, convertPrice, getCountryName } from "@/lib/currency";
 import { trackCartView } from "@/lib/shopify-analytics";
 
+const EXTENDED_DELIVERY_COUNTRIES = ["FI", "NL", "SE", "CH", "NO", "NZ", "AT", "BE", "DK"];
+
+type DeliveryInfo = {
+  startDate: string;
+  endDate: string;
+  minDays: number;
+  maxDays: number;
+};
+
+function addBusinessDays(date: Date, days: number) {
+  const result = new Date(date);
+  let added = 0;
+
+  while (added < days) {
+    result.setDate(result.getDate() + 1);
+    const day = result.getDay();
+    if (day !== 0 && day !== 6) added += 1;
+  }
+
+  return result;
+}
+
+function getDeliveryInfo(countryCode: string): DeliveryInfo {
+  const today = new Date();
+  const minDays = EXTENDED_DELIVERY_COUNTRIES.includes(countryCode) ? 7 : 5;
+  const maxDays = EXTENDED_DELIVERY_COUNTRIES.includes(countryCode) ? 10 : 8;
+
+  const start = addBusinessDays(today, minDays);
+  const end = addBusinessDays(today, maxDays);
+  const formatOptions: Intl.DateTimeFormatOptions = { weekday: "short", day: "numeric", month: "short" };
+
+  return {
+    startDate: start.toLocaleDateString("en-GB", formatOptions),
+    endDate: end.toLocaleDateString("en-GB", formatOptions),
+    minDays,
+    maxDays,
+  };
+}
+
 export const CartDrawer = () => {
-  const [userCurrency, setUserCurrency] = useState<CurrencyCode>('GBP');
-  const [userCountry, setUserCountry] = useState<string>('GB');
-  const { 
-    items, 
-    isLoading, 
+  const [userCurrency, setUserCurrency] = useState<CurrencyCode>("GBP");
+  const [userCountry, setUserCountry] = useState<string>("GB");
+  const [deliveryInfo, setDeliveryInfo] = useState<DeliveryInfo>(getDeliveryInfo("GB"));
+  const {
+    items,
+    isLoading,
     isDrawerOpen: isOpen,
     setDrawerOpen: setIsOpen,
-    updateQuantity, 
-    removeItem, 
-    createCheckout 
+    updateQuantity,
+    removeItem,
+    createCheckout,
   } = useCartStore();
 
-  // Countries with extended delivery time (12 days)
-  const EXTENDED_DELIVERY_COUNTRIES = ['FI', 'NL', 'SE', 'CH', 'NO', 'NZ', 'AT', 'BE', 'DK'];
-
-  // Calculate delivery date
-  const getDeliveryInfo = (countryCode: string) => {
-    const now = new Date();
-    const ukTime = new Date(now.toLocaleString("en-US", { timeZone: "Europe/London" }));
-    
-    const midnight = new Date(ukTime);
-    midnight.setHours(24, 0, 0, 0);
-    const diffMs = midnight.getTime() - ukTime.getTime();
-    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
-    const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
-    
-    const deliveryDays = EXTENDED_DELIVERY_COUNTRIES.includes(countryCode) ? 12 : 9;
-    
-    const deliveryDate = new Date(ukTime);
-    deliveryDate.setDate(deliveryDate.getDate() + deliveryDays);
-    
-    const options: Intl.DateTimeFormatOptions = { 
-      weekday: 'long', 
-      day: 'numeric', 
-      month: 'long' 
-    };
-    const formattedDate = deliveryDate.toLocaleDateString('en-GB', options);
-    
-    return {
-      hours: diffHours,
-      minutes: diffMinutes,
-      deliveryDate: formattedDate
-    };
-  };
-
-  const [deliveryInfo, setDeliveryInfo] = useState(getDeliveryInfo('GB'));
-
-  // Detect user's currency and country on mount
   useEffect(() => {
     const detectCurrency = async () => {
       const countryCode = await detectUserCountry();
@@ -72,21 +87,21 @@ export const CartDrawer = () => {
       setUserCountry(countryCode);
       setDeliveryInfo(getDeliveryInfo(countryCode));
     };
+
     detectCurrency();
   }, []);
 
-  // Track cart view when drawer is opened
   useEffect(() => {
     if (isOpen && items.length > 0) {
       const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
-      const totalAmount = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
-      const currency = items[0]?.price.currencyCode || 'GBP';
-      
+      const totalAmount = items.reduce((sum, item) => sum + parseFloat(item.price.amount) * item.quantity, 0);
+      const currency = items[0]?.price.currencyCode || "GBP";
+
       trackCartView({
         totalQuantity,
         totalAmount: totalAmount.toFixed(2),
         currency,
-        lines: items.map(item => ({
+        lines: items.map((item) => ({
           variantId: item.variantId,
           productTitle: item.product.node.title,
           quantity: item.quantity,
@@ -95,62 +110,33 @@ export const CartDrawer = () => {
       });
     }
   }, [isOpen, items]);
-  
+
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
-  
-  // Fixed GBP prices matching ProductDetail.tsx: 1 purchase = £59.99, 2+ purchases = £54.99 each
-  const SINGLE_PRICE_GBP = 59.99;
-  const TWO_PACK_PRICE_EACH_GBP = 54.99;
-  const ORIGINAL_PRICE_GBP = 119.98; // Original price per item (2x single price)
-  
-  // Get discount percentage based on quantity (matching ProductDetail)
-  const getDiscountPercentage = (quantity: number): number => {
-    if (quantity >= 2) return 54; // 2+ items get 54% off
-    return 50; // Single item gets 50% off
-  };
-  
-  const discountPercentage = getDiscountPercentage(totalItems);
-  
-  // Get price per item based on quantity
-  const getPricePerItem = (): number => {
-    if (totalItems >= 2) {
-      return convertPrice(TWO_PACK_PRICE_EACH_GBP, userCurrency);
+
+  const formatDisplayPrice = (price: number) => {
+    try {
+      return new Intl.NumberFormat("en-GB", {
+        style: "currency",
+        currency: userCurrency,
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }).format(price);
+    } catch {
+      return `${userCurrency} ${price.toFixed(2)}`;
     }
-    return convertPrice(SINGLE_PRICE_GBP, userCurrency);
   };
-  
-  // Get original price per item
-  const getOriginalPricePerItem = (): number => {
-    return convertPrice(ORIGINAL_PRICE_GBP, userCurrency);
-  };
-  
-  // Calculate total
-  const calculateTotal = () => {
-    const pricePerItem = getPricePerItem();
-    const originalPricePerItem = getOriginalPricePerItem();
-    
-    const totalOriginalPrice = originalPricePerItem * totalItems;
-    const totalPrice = pricePerItem * totalItems;
-    
-    return { totalOriginalPrice, totalPrice };
-  };
-  
-  const { totalOriginalPrice, totalPrice } = calculateTotal();
-  
-  // Get currency symbol
-  const getCurrencySymbol = (): string => {
-    return CURRENCY_CONFIG[userCurrency].symbol;
-  };
-  
-  // Format price for display - all currencies show decimals
-  const formatDisplayPrice = (price: number): string => {
-    return `${getCurrencySymbol()}${price.toFixed(2)}`;
-  };
+
+  const getConvertedUnitPrice = (rawAmount: string) => convertPrice(Number(rawAmount || 0), userCurrency);
+
+  const subtotal = useMemo(
+    () => items.reduce((sum, item) => sum + getConvertedUnitPrice(item.price.amount) * item.quantity, 0),
+    [items, userCurrency],
+  );
 
   const handleCheckout = async () => {
     if (items.length === 0) {
       toast.error("Cart is empty", {
-        description: "Add some products to your cart first",
+        description: "Add a product before checkout.",
         position: "top-center",
       });
       return;
@@ -158,9 +144,9 @@ export const CartDrawer = () => {
 
     try {
       await createCheckout();
-      
+
       const checkoutUrl = useCartStore.getState().checkoutUrl;
-      
+
       if (!checkoutUrl) {
         toast.error("Checkout failed", {
           description: "Unable to create checkout. Please try again.",
@@ -168,11 +154,9 @@ export const CartDrawer = () => {
         });
         return;
       }
-      
-      // Redirect to checkout - using location.href to avoid popup blockers on mobile
+
       setIsOpen(false);
       window.location.href = checkoutUrl;
-      
     } catch (error) {
       toast.error("Checkout error", {
         description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
@@ -181,99 +165,102 @@ export const CartDrawer = () => {
     }
   };
 
+  const addSecondDevice = () => {
+    if (items.length === 0) return;
+    const item = items[0];
+    if (totalItems >= 2) return;
+    updateQuantity(item.variantId, item.quantity + 1);
+  };
+
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
         <Button variant="outline" size="icon" className="relative" aria-label="Open shopping cart">
           <ShoppingCart className="h-5 w-5" />
           {totalItems > 0 && (
-            <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs">
+            <Badge className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full p-0 text-xs">
               {totalItems}
             </Badge>
           )}
         </Button>
       </SheetTrigger>
-      
-      <SheetContent className="w-full sm:max-w-lg flex flex-col h-full bg-[#F8F7FF]">
+
+      <SheetContent className="flex h-full w-full flex-col bg-[#F7F8FC] sm:max-w-lg">
         <SheetHeader className="flex-shrink-0">
-          <SheetTitle className="text-2xl font-bold">Your Cart 🛒</SheetTitle>
-          <SheetDescription className="text-base font-medium">
-            ⭐ 4.7 · 2,000+ Happy Customers
+          <SheetTitle className="text-[2rem] font-bold tracking-tight text-slate-950">Your Cart</SheetTitle>
+          <SheetDescription asChild>
+            <div className="mt-1 inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700">
+              <span className="flex items-center gap-0.5 text-blue-600">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={star} className="h-3.5 w-3.5 fill-blue-600" />
+                ))}
+              </span>
+              <span className="font-semibold text-slate-900">4.8 rating</span>
+              <span className="text-slate-400">•</span>
+              <span className="font-medium">Verified customer feedback</span>
+            </div>
           </SheetDescription>
         </SheetHeader>
-        
-        <div className="flex flex-col flex-1 pt-6 min-h-0">
+
+        <div className="flex min-h-0 flex-1 flex-col pt-6">
           {items.length === 0 ? (
-            <div className="flex-1 flex items-center justify-center">
+            <div className="flex flex-1 items-center justify-center">
               <div className="text-center">
-                <ShoppingCart className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                <ShoppingCart className="mx-auto mb-4 h-12 w-12 text-muted-foreground" />
                 <p className="text-muted-foreground">Your cart is empty</p>
               </div>
             </div>
           ) : (
             <>
-              <div className="flex-1 overflow-y-auto pr-2 min-h-0">
+              <div className="min-h-0 flex-1 overflow-y-auto pr-1">
                 <div className="space-y-4">
                   {items.map((item) => {
-                    const originalPrice = getOriginalPricePerItem();
-                    const dynamicPrice = getPricePerItem();
-                    const currencySymbol = getCurrencySymbol();
-                    
+                    const unitPrice = getConvertedUnitPrice(item.price.amount);
+                    const lineTotal = unitPrice * item.quantity;
+                    const visibleOptions = item.selectedOptions.filter((option) => option.value.toLowerCase() !== "default title");
+
                     return (
-                      <div key={item.variantId} className="bg-white rounded-lg p-4 shadow-sm">
+                      <div key={item.variantId} className="rounded-[1.6rem] border border-slate-200 bg-white p-4 shadow-sm">
                         <div className="flex gap-4">
-                          <div className="w-20 h-20 bg-secondary/20 rounded-md overflow-hidden flex-shrink-0">
+                          <div className="flex h-24 w-24 flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-slate-50">
                             {item.product.node.images?.edges?.[0]?.node && (
                               <img
                                 src={item.product.node.images.edges[0].node.url}
                                 alt={item.product.node.title}
-                                className="w-full h-full object-cover"
+                                className="h-full w-full object-contain p-2"
                               />
                             )}
                           </div>
-                          
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-start gap-2 mb-1">
-                              <h4 className="font-semibold text-sm flex-1">{item.product.node.title}</h4>
-                              <Badge className="bg-green-500 hover:bg-green-600 text-white text-xs whitespace-nowrap">
-                                SAVE {discountPercentage}% TODAY
-                              </Badge>
-                            </div>
-                            {item.selectedOptions.filter(option => option.value.toLowerCase() !== 'default title').length > 0 && (
-                              <p className="text-xs text-muted-foreground mb-2">
-                                {item.selectedOptions.filter(option => option.value.toLowerCase() !== 'default title').map(option => option.value).join(' • ')}
+
+                          <div className="min-w-0 flex-1">
+                            <h4 className="text-base font-semibold leading-6 text-slate-950">{item.product.node.title}</h4>
+                            {visibleOptions.length > 0 && (
+                              <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-slate-500">
+                                {visibleOptions.map((option) => option.value).join(" • ")}
                               </p>
                             )}
-                            <div className="flex items-center gap-2">
-                              <span className="text-gray-400 line-through text-sm">
-                                {formatDisplayPrice(originalPrice)}
-                              </span>
-                              <span className="text-lg font-bold text-green-600">
-                                {formatDisplayPrice(dynamicPrice)}
-                              </span>
-                              <span className="text-xs font-semibold text-green-600">
-                                (SAVE {discountPercentage}%)
-                              </span>
-                            </div>
+                            <p className="mt-3 text-xl font-bold text-slate-950">{formatDisplayPrice(lineTotal)}</p>
+                            {item.quantity > 1 && (
+                              <p className="text-xs text-slate-500">{formatDisplayPrice(unitPrice)} each</p>
+                            )}
                           </div>
-                      
                         </div>
-                        
-                        <div className="flex items-center justify-between mt-3 pt-3 border-t">
+
+                        <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
                           <div className="flex items-center gap-2">
                             <Button
                               variant="outline"
                               size="icon"
-                              className="h-7 w-7"
+                              className="h-9 w-9 rounded-xl border-slate-200"
                               onClick={() => updateQuantity(item.variantId, item.quantity - 1)}
                             >
-                              <Minus className="h-3 w-3" />
+                              <Minus className="h-3.5 w-3.5" />
                             </Button>
-                            <span className="w-8 text-center text-sm font-medium">{item.quantity}</span>
+                            <span className="w-8 text-center text-sm font-semibold text-slate-900">{item.quantity}</span>
                             <Button
                               variant="outline"
                               size="icon"
-                              className="h-7 w-7"
+                              className="h-9 w-9 rounded-xl border-slate-200"
                               onClick={() => {
                                 if (totalItems >= 2) {
                                   toast.error("Maximum quantity reached", {
@@ -286,17 +273,17 @@ export const CartDrawer = () => {
                               }}
                               disabled={totalItems >= 2}
                             >
-                              <Plus className="h-3 w-3" />
+                              <Plus className="h-3.5 w-3.5" />
                             </Button>
                           </div>
-                          
+
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="text-red-500 hover:text-red-700 hover:bg-red-50"
+                            className="rounded-xl text-red-500 hover:bg-red-50 hover:text-red-700"
                             onClick={() => removeItem(item.variantId)}
                           >
-                            <Trash2 className="h-4 w-4 mr-1" />
+                            <Trash2 className="mr-1.5 h-4 w-4" />
                             Remove
                           </Button>
                         </div>
@@ -304,103 +291,100 @@ export const CartDrawer = () => {
                     );
                   })}
                 </div>
-                
-                {/* Dynamic Incentive Message - Only for 1 item */}
+
                 {totalItems === 1 && (
-                  <div className="mt-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 rounded-lg p-3 text-center animate-pulse">
-                    <p className="text-sm font-semibold text-amber-700">
-                      🔥 Add 1 more for 54% OFF! Limited time offer
-                    </p>
-                  </div>
-                )}
-                {totalItems >= 2 && (
-                  <div className="mt-4 bg-gradient-to-r from-green-100 to-emerald-100 border border-green-400 rounded-lg p-3 text-center">
-                    <p className="text-sm font-bold text-green-700">
-                      🎉 You're saving 54% on your order!
-                    </p>
+                  <div className="mt-4 rounded-[1.35rem] border border-amber-200 bg-amber-50 px-4 py-3">
+                    <div className="flex items-center justify-between gap-3">
+                      <div>
+                        <p className="text-sm font-semibold text-amber-900">Support both knees with a second device</p>
+                        <p className="mt-1 text-xs text-amber-700">A simple add-on for balanced daily routines.</p>
+                      </div>
+                      <Button onClick={addSecondDevice} size="sm" className="rounded-full bg-slate-950 px-4 text-white hover:bg-blue-600">
+                        Add one more
+                      </Button>
+                    </div>
                   </div>
                 )}
 
-                {/* Delivery Information */}
-                <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
-                  <p className="text-sm font-bold text-blue-700">
-                    📦 FREE DELIVERY to <span className="font-black">{getCountryName(userCountry)}</span> <span className="font-black">{deliveryInfo.deliveryDate}</span>
-                  </p>
-                  <p className="text-xs text-blue-600 mt-1">
-                    Order within <span className="text-green-600 font-semibold">{deliveryInfo.hours} hours {deliveryInfo.minutes} minutes</span>
-                  </p>
+                <div className="mt-4 rounded-[1.5rem] border border-blue-200 bg-gradient-to-br from-white to-blue-50 p-4">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-2xl bg-blue-100 text-blue-700">
+                      <Truck className="h-4.5 w-4.5" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold uppercase tracking-[0.14em] text-blue-600">Estimated delivery</p>
+                      <p className="mt-1 text-base font-semibold text-slate-950">
+                        {getCountryName(userCountry)} · {deliveryInfo.startDate} – {deliveryInfo.endDate}
+                      </p>
+                      <p className="mt-1 text-sm text-slate-600">
+                        Most orders arrive in {deliveryInfo.minDays}–{deliveryInfo.maxDays} business days.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  <div className="rounded-[1.25rem] border border-slate-200 bg-white px-4 py-3">
+                    <div className="flex items-center gap-2 text-slate-900">
+                      <ShieldCheck className="h-4 w-4 text-blue-600" />
+                      <span className="text-sm font-semibold">Secure checkout</span>
+                    </div>
+                    <p className="mt-1 text-xs text-slate-500">Protected payment processing</p>
+                  </div>
+                  <div className="rounded-[1.25rem] border border-slate-200 bg-white px-4 py-3">
+                    <div className="flex items-center gap-2 text-slate-900">
+                      <RotateCcw className="h-4 w-4 text-blue-600" />
+                      <span className="text-sm font-semibold">30-day returns</span>
+                    </div>
+                    <p className="mt-1 text-xs text-slate-500">Simple support if plans change</p>
+                  </div>
                 </div>
               </div>
-              
-              <div className="flex-shrink-0 space-y-4 pt-4 border-t bg-[#F8F7FF]">
-                {(() => {
-                  return (
-                    <div className="space-y-2 px-2">
-                      <div className="flex justify-between items-center">
-                        <span className="text-lg font-semibold">Total</span>
-                        <div className="text-right">
-                          <div className="text-sm text-gray-400 line-through">
-                            {formatDisplayPrice(totalOriginalPrice)}
-                          </div>
-                          <div className="text-2xl font-bold text-green-600">
-                            {formatDisplayPrice(totalPrice)}
-                          </div>
-                        </div>
-                      </div>
+
+              <div className="flex-shrink-0 border-t border-slate-200 bg-[#F7F8FC] pt-4">
+                <div className="space-y-4 px-1">
+                  <div className="rounded-[1.5rem] border border-slate-200 bg-white px-4 py-4 shadow-sm">
+                    <div className="flex items-center justify-between">
+                      <span className="text-lg font-semibold text-slate-950">Total</span>
+                      <span className="text-2xl font-bold text-slate-950">{formatDisplayPrice(subtotal)}</span>
                     </div>
-                  );
-                })()}
-                
-                <Button 
-                  onClick={handleCheckout}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold" 
-                  size="lg"
-                  disabled={items.length === 0 || isLoading}
-                >
-                  {isLoading ? (
-                    <>
-                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                      Creating Checkout...
-                    </>
-                  ) : (
-                    <span className="flex items-center text-[105%]">
-                      🔒 Secure Checkout
-                    </span>
-                  )}
-                </Button>
-                
-                {/* Payment Icons - Same as Product Page */}
-                <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
-                  <img
-                    className="h-5 w-auto"
-                    src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Shop_Pay_logo.svg"
-                    alt="Shop Pay"
-                  />
-                  <img
-                    className="h-5 w-auto"
-                    src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg"
-                    alt="Visa"
-                  />
-                  <img
-                    className="h-5 w-auto"
-                    src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
-                    alt="Mastercard"
-                  />
-                  <img
-                    className="h-5 w-auto"
-                    src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg"
-                    alt="American Express"
-                  />
-                  <img
-                    className="h-5 w-auto"
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg"
-                    alt="Google Pay"
-                  />
-                  <img
-                    className="h-5 w-auto"
-                    src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
-                    alt="PayPal"
-                  />
+                  </div>
+
+                  <Button
+                    onClick={handleCheckout}
+                    className="h-14 w-full rounded-full bg-slate-950 text-base font-semibold text-white hover:bg-blue-600"
+                    disabled={items.length === 0 || isLoading}
+                  >
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                        Creating Checkout...
+                      </>
+                    ) : (
+                      <span className="flex items-center gap-2">
+                        <Lock className="h-4 w-4" />
+                        Secure Checkout
+                      </span>
+                    )}
+                  </Button>
+
+                  <div className="flex flex-wrap items-center justify-center gap-2 pb-1 pt-1">
+                    {[
+                      { type: "img", label: "Shop Pay", src: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Shop_Pay_logo.svg", className: "h-4.5 w-auto" },
+                      { type: "img", label: "Visa", src: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg", className: "h-4.5 w-auto" },
+                      { type: "img", label: "Mastercard", src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg", className: "h-5 w-auto" },
+                      { type: "img", label: "American Express", src: "https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg", className: "h-4.5 w-auto" },
+                      { type: "img", label: "Google Pay", src: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg", className: "h-4.5 w-auto" },
+                      { type: "img", label: "PayPal", src: "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg", className: "h-4.5 w-auto" },
+                    ].map((logo) => (
+                      <div key={logo.label} className="flex h-9 min-w-[78px] items-center justify-center rounded-xl border border-slate-200 bg-white px-3 shadow-sm">
+                        <img className={logo.className} src={logo.src} alt={logo.label} />
+                      </div>
+                    ))}
+                    <div className="flex h-9 min-w-[90px] items-center justify-center rounded-xl border border-slate-200 bg-black px-3 text-sm font-semibold text-white shadow-sm">
+                      Apple Pay
+                    </div>
+                  </div>
                 </div>
               </div>
             </>

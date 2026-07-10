@@ -1,11 +1,71 @@
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { productSystem } from "@/data/product-system";
+import { getProducts } from "@/lib/shopify";
+
+function formatMoney(amount?: string, currencyCode?: string) {
+  const value = Number(amount || 0);
+  const currency = currencyCode || "GBP";
+
+  try {
+    return new Intl.NumberFormat("en-GB", {
+      style: "currency",
+      currency,
+      maximumFractionDigits: value % 1 === 0 ? 0 : 2,
+    }).format(value);
+  } catch {
+    return `${currency} ${value.toFixed(2)}`;
+  }
+}
 
 export const FlexiKneeSystem = () => {
+  const [livePrices, setLivePrices] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    let active = true;
+
+    getProducts(12)
+      .then((items) => {
+        if (!active) return;
+
+        const nextPrices: Record<string, string> = {};
+
+        items.forEach((item) => {
+          const handle = item.node.handle;
+          const href = `/product/${handle}`;
+          const variantPrice = item.node.variants.edges[0]?.node.price;
+          const minPrice = item.node.priceRange.minVariantPrice;
+
+          nextPrices[href] = formatMoney(
+            variantPrice?.amount || minPrice.amount,
+            variantPrice?.currencyCode || minPrice.currencyCode,
+          );
+        });
+
+        setLivePrices(nextPrices);
+      })
+      .catch(() => {
+        if (active) setLivePrices({});
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const items = useMemo(
+    () =>
+      productSystem.map((item) => ({
+        ...item,
+        livePrice: item.status === "Available now" ? livePrices[item.href] || item.price : item.price,
+      })),
+    [livePrices],
+  );
+
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {productSystem.map((item, index) => (
+      {items.map((item, index) => (
         <Link
           key={item.name}
           to={item.href}
@@ -34,7 +94,7 @@ export const FlexiKneeSystem = () => {
             <h3 className="mt-2 text-lg font-semibold tracking-tight text-slate-950">{item.name}</h3>
             <p className="mt-2 min-h-[52px] text-sm leading-6 text-slate-500">{item.description}</p>
             <div className="mt-5 flex items-center justify-between">
-              <span className="text-sm font-semibold text-slate-950">{item.price}</span>
+              <span className="text-sm font-semibold text-slate-950">{item.livePrice}</span>
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-950 text-white transition group-hover:bg-blue-600">
                 <ArrowRight className="h-4 w-4" />
               </span>

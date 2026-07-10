@@ -19,6 +19,7 @@ import { VideoReviews } from "@/components/VideoReviews";
 import { getProducts, ShopifyProduct, createStorefrontCheckout } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { featurePillars } from "@/data/product-system";
+import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
 import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
@@ -111,19 +112,11 @@ export default function ProductDetail() {
       alt: edge.node.altText || productTitle,
     })) || [];
 
-  const hasShopifyGallery = shopifyImages.length >= 2;
-  const gallery = isLoading ? [] : hasShopifyGallery ? shopifyImages : fallbackGallery;
-  const activeImage = gallery[selectedImage] || gallery[0] || null;
+  const gallery = shopifyImages.length >= 2 ? shopifyImages : fallbackGallery;
 
   useEffect(() => {
     setSelectedImage(0);
   }, [handle, shopifyImages.length]);
-
-  useEffect(() => {
-    if (selectedImage >= gallery.length) {
-      setSelectedImage(0);
-    }
-  }, [gallery.length, selectedImage]);
 
   const productJsonLd = useMemo(() => ({
     "@context": "https://schema.org",
@@ -188,7 +181,7 @@ export default function ProductDetail() {
   };
 
   return (
-    <div className="min-h-screen max-w-full overflow-x-hidden bg-white pb-24 text-slate-950 xl:pb-0">
+    <div className="min-h-screen bg-white pb-24 text-slate-950 lg:pb-0">
       <Helmet>
         <title>{productTitle} | FlexiKnee™</title>
         <meta
@@ -217,57 +210,38 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-[radial-gradient(circle_at_72%_16%,rgba(37,99,235,0.11),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] py-4 sm:py-8 lg:py-12">
-          <div className="mx-auto grid max-w-6xl gap-5 overflow-hidden px-4 sm:px-6 lg:gap-7 lg:px-8 xl:max-w-7xl xl:grid-cols-[1.08fr_0.92fr] xl:gap-9">
-            <div className="min-w-0">
-              <div className="w-full min-w-0 overflow-hidden rounded-[1.45rem] border border-slate-200 bg-white p-2 shadow-[0_28px_90px_-70px_rgba(15,23,42,0.75)] sm:rounded-[2rem] sm:p-3 xl:rounded-[2.5rem] xl:p-4">
-                <div className="relative aspect-square w-full overflow-hidden rounded-[1.15rem] bg-white sm:rounded-[1.65rem] xl:rounded-[2rem]">
-                  {activeImage ? (
-                    <img
-                      src={activeImage.src}
-                      alt={activeImage.alt || productTitle}
-                      className="absolute inset-0 h-full w-full object-contain object-center"
-                      fetchPriority="high"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 flex items-center justify-center bg-slate-50">
-                      <div className="h-16 w-16 animate-pulse rounded-2xl bg-slate-200" />
-                    </div>
-                  )}
-                </div>
+        <section className="bg-[radial-gradient(circle_at_72%_16%,rgba(37,99,235,0.11),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] py-5 sm:py-8 lg:py-14">
+          <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[1.12fr_0.88fr] lg:gap-9 lg:px-8">
+            <div>
+              <div className="overflow-hidden rounded-[1.8rem] border border-slate-200 bg-white p-2 shadow-[0_35px_110px_-80px_rgba(15,23,42,0.75)] sm:rounded-[2.2rem] sm:p-3 lg:rounded-[2.6rem] lg:p-4">
+                <img
+                  src={gallery[selectedImage]?.src || fallbackGallery[0].src}
+                  alt={gallery[selectedImage]?.alt || productTitle}
+                  className="h-[360px] w-full rounded-[1.45rem] object-contain object-center sm:h-[500px] sm:rounded-[1.8rem] lg:h-[710px] lg:rounded-[2.1rem]"
+                  fetchPriority="high"
+                />
               </div>
 
-              <div className="relative mt-3 max-w-full overflow-hidden">
-                <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-10 bg-gradient-to-l from-[#f8fbff] to-transparent" />
-                <div
-                  className="flex max-w-full snap-x gap-2 overflow-x-auto overscroll-x-contain pb-2 pr-12 [scrollbar-width:thin] sm:gap-3"
-                  style={{ WebkitOverflowScrolling: "touch" }}
-                >
-                  {gallery.map((image, index) => (
-                    <button
-                      key={`${image.src}-${index}`}
-                      onClick={() => setSelectedImage(index)}
-                      className={`h-16 w-16 flex-shrink-0 snap-start overflow-hidden rounded-2xl border bg-white p-1 transition sm:h-20 sm:w-20 lg:h-22 lg:w-22 ${
-                        selectedImage === index ? "border-blue-500 shadow-lg shadow-blue-500/10" : "border-slate-200 hover:border-slate-300"
-                      }`}
-                      aria-label={`View image ${index + 1}`}
-                    >
-                      <img src={image.src} alt={image.alt} className="h-full w-full rounded-xl object-cover" />
-                    </button>
-                  ))}
-                </div>
-                {gallery.length > 5 && (
-                  <p className="mt-1 text-right text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400 sm:hidden">
-                    Swipe for more →
-                  </p>
-                )}
+              <div className="mt-3 flex gap-3 overflow-x-auto pb-2">
+                {gallery.map((image, index) => (
+                  <button
+                    key={`${image.src}-${index}`}
+                    onClick={() => setSelectedImage(index)}
+                    className={`h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl border bg-white p-1 transition sm:h-24 sm:w-24 ${
+                      selectedImage === index ? "border-blue-500 shadow-lg shadow-blue-500/10" : "border-slate-200 hover:border-slate-300"
+                    }`}
+                    aria-label={`View image ${index + 1}`}
+                  >
+                    <img src={image.src} alt={image.alt} className="h-full w-full rounded-xl object-cover" />
+                  </button>
+                ))}
               </div>
             </div>
 
-            <aside className="min-w-0 xl:sticky xl:top-24 xl:self-start">
-              <div className="rounded-[1.45rem] border border-slate-200 bg-white p-4 shadow-[0_28px_90px_-75px_rgba(15,23,42,0.7)] sm:rounded-[1.8rem] sm:p-6 xl:rounded-[2rem] xl:p-8">
+            <aside className="lg:sticky lg:top-24 lg:self-start">
+              <div className="rounded-[1.8rem] border border-slate-200 bg-white p-5 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.7)] sm:p-6 lg:rounded-[2rem] lg:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 sm:text-sm">Smart daily knee comfort</p>
-                <h1 className="mt-3 text-2xl font-semibold leading-tight tracking-[-0.04em] text-slate-950 sm:text-4xl xl:text-5xl">{productTitle}</h1>
+                <h1 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">{productTitle}</h1>
 
                 <div className="mt-4 flex flex-wrap items-center gap-3">
                   <div className="flex items-center gap-1 text-blue-600">
@@ -326,7 +300,7 @@ export default function ProductDetail() {
                   </div>
                 </div>
 
-                <div className="mt-5 hidden gap-3 xl:grid">
+                <div className="mt-5 hidden gap-3 lg:grid">
                   <Button onClick={handleAddToCart} disabled={!variant || isLoading} className="h-13 rounded-full bg-blue-600 text-base font-semibold text-white hover:bg-blue-700">
                     Add to Cart
                   </Button>
@@ -352,12 +326,14 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-white py-12 sm:py-16 lg:py-18">
+        <VideoReviews />
+
+        <section className="bg-white py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Why people choose it</p>
-                <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.045em] text-slate-950 sm:text-4xl md:text-5xl">
+                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
                   Built around short routines, not complicated claims.
                 </h2>
                 <p className="mt-5 text-base leading-8 text-slate-600">
@@ -367,7 +343,7 @@ export default function ProductDetail() {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 {featurePillars.map((feature) => (
-                  <div key={feature.title} className="rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-sm sm:rounded-[2rem] sm:p-6">
+                  <div key={feature.title} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-2xl font-semibold text-blue-600">{feature.icon}</div>
                     <h3 className="mt-5 text-xl font-semibold text-slate-950">{feature.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-slate-500">{feature.text}</p>
@@ -378,23 +354,23 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-slate-50 py-12 sm:py-16 lg:py-18">
+        <section className="bg-slate-50 py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10 max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">How it fits your day</p>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.045em] text-slate-950 sm:text-4xl md:text-5xl">
+              <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
                 A simple routine flow.
               </h2>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+            <div className="grid gap-4 md:grid-cols-4">
               {[
                 ["01", "Position", "Wrap FlexiKnee around your knee and adjust the straps."],
                 ["02", "Select", "Choose warmth and vibration settings from the touch panel."],
                 ["03", "Relax", "Use it during a short calm routine at home or after activity."],
                 ["04", "Repeat", "Keep the routine consistent when your knees need support."],
               ].map(([step, title, text]) => (
-                <div key={step} className="rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-sm sm:rounded-[2rem] sm:p-6">
+                <div key={step} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
                   <span className="text-sm font-semibold text-blue-600">{step}</span>
                   <h3 className="mt-4 text-xl font-semibold text-slate-950">{title}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-500">{text}</p>
@@ -404,14 +380,30 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <VideoReviews />
+        <section className="bg-white py-16 sm:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Explore the system</p>
+                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+                  Future products can sit here naturally.
+                </h2>
+              </div>
+              <Link to="/guides" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
+                Visit knee comfort hub <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+<FlexiKneeSystem />
+          </div>
+        </section>
 
         <section className="bg-slate-50 py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Learn before you buy</p>
-                <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.045em] text-slate-950 sm:text-4xl md:text-5xl">
+                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
                   Related guides for smarter choices.
                 </h2>
               </div>
@@ -420,7 +412,7 @@ export default function ProductDetail() {
               </Link>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+            <div className="grid gap-4 md:grid-cols-3">
               {relatedGuides.map((guide) => (
                 <Link key={guide.title} to={guide.href} className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
                   <img src={guide.image} alt={guide.title} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
@@ -437,8 +429,8 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-white py-12 sm:py-16 lg:py-18">
-          <div className="mx-auto grid max-w-7xl gap-7 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10 lg:px-8">
+        <section className="bg-white py-16 sm:py-20">
+          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">FAQ</p>
               <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950">Product questions.</h2>
