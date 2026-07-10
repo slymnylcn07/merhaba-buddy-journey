@@ -1,11 +1,19 @@
 import { CartDrawer } from "./CartDrawer";
 import { SHOPIFY_CUSTOMER_ACCOUNT_URL } from "@/lib/shopify-config";
-import { Menu, User } from "lucide-react";
+import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
+import { Menu, Search, User } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "@/assets/flexiknee-logo-new.webp";
+
+const navItems = [
+  { label: "Shop", href: PRIMARY_PRODUCT_PATH, type: "route" },
+  { label: "Science", href: "/#why-it-works", type: "anchor" },
+  { label: "Guides", href: "/guides", type: "route" },
+  { label: "Support", href: "/track-order", type: "route" },
+  { label: "About", href: "/why-flexiknee", type: "route" },
+];
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,158 +23,81 @@ export const Header = () => {
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
     e.preventDefault();
     setMenuOpen(false);
-    
     if (location.pathname === "/") {
-      // Already on homepage, just scroll to section
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
     } else {
-      // Navigate to homepage with hash
       navigate("/" + hash);
     }
   };
 
   return (
-    <header className="z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between px-4">
-        {/* Left - Mobile Menu */}
-        <div className="flex items-center">
+    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/70">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3">
           <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Open menu">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-64">
-              <nav className="flex flex-col gap-6 mt-8">
-                <a
-                  href="/"
-                  className="text-lg font-medium hover:text-primary transition-colors"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Home
-                </a>
-                <Link
-                  to="/product/knee-massager-smart-red-light-and-massage-therapy"
-                  className="text-lg font-medium hover:text-primary transition-colors"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Products
+            <SheetContent side="left" className="w-80 bg-white">
+              <Link to="/" onClick={() => setMenuOpen(false)} className="mt-2 inline-flex items-baseline gap-1 text-xl font-semibold tracking-tight text-slate-950">
+                FlexiKnee<span className="text-xs align-super">™</span>
+              </Link>
+              <nav className="mt-10 grid gap-2">
+                {navItems.map((item) =>
+                  item.type === "anchor" ? (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      onClick={(e) => handleAnchorClick(e, item.href.replace("/", ""))}
+                      className="rounded-2xl px-4 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.label}
+                      to={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="rounded-2xl px-4 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                )}
+                <Link to={PRIMARY_PRODUCT_PATH} onClick={() => setMenuOpen(false)} className="mt-4 rounded-full bg-blue-600 px-5 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-blue-600/20">
+                  Shop FlexiKnee
                 </Link>
-                <a
-                  href="/#benefits"
-                  className="text-lg font-medium hover:text-primary transition-colors"
-                  onClick={(e) => handleAnchorClick(e, "#benefits")}
-                >
-                  Benefits
-                </a>
-                <a
-                  href="/#features"
-                  className="text-lg font-medium hover:text-primary transition-colors"
-                  onClick={(e) => handleAnchorClick(e, "#features")}
-                >
-                  Features
-                </a>
-                <a
-                  href="/#faq"
-                  className="text-lg font-medium hover:text-primary transition-colors"
-                  onClick={(e) => handleAnchorClick(e, "#faq")}
-                >
-                  FAQ
-                </a>
-                <a
-                  href="/why-flexiknee"
-                  className="text-lg font-medium hover:text-primary transition-colors"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Why FlexiKnee
-                </a>
-                <a
-                  href="/guides"
-                  className="text-lg font-medium hover:text-primary transition-colors"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Guides
-                </a>
-                <a
-                  href="/track-order"
-                  className="text-lg font-medium hover:text-primary transition-colors"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Track Your Order
-                </a>
               </nav>
             </SheetContent>
           </Sheet>
-        </div>
 
-        {/* Center - Logo */}
-        <div className="absolute left-1/2 -translate-x-1/2">
-          <a href="/" className="flex items-center gap-2">
-            <img
-              src={logo}
-              alt="FlexiKnee™"
-              width={360}
-              height={120}
-              className="w-[280px] max-h-[90px] lg:w-[360px] lg:max-h-[120px] object-contain"
-            />
-          </a>
-        </div>
-
-        {/* Desktop Navigation - Hidden on mobile */}
-        <nav className="hidden lg:flex items-center gap-6 absolute left-4">
-          <a href="/" className="text-sm font-medium hover:text-primary transition-colors">
-            Home
-          </a>
-          <Link to="/product/knee-massager-smart-red-light-and-massage-therapy" className="text-sm font-medium hover:text-primary transition-colors">
-            Products
+          <Link to="/" className="inline-flex items-baseline gap-1 text-xl font-semibold tracking-tight text-slate-950">
+            FlexiKnee<span className="text-xs align-super">™</span>
           </Link>
-          <a href="/#benefits" className="text-sm font-medium hover:text-primary transition-colors" onClick={(e) => handleAnchorClick(e, "#benefits")}>
-            Benefits
-          </a>
-          <a href="/#features" className="text-sm font-medium hover:text-primary transition-colors" onClick={(e) => handleAnchorClick(e, "#features")}>
-            Features
-          </a>
-          <a href="/#faq" className="text-sm font-medium hover:text-primary transition-colors" onClick={(e) => handleAnchorClick(e, "#faq")}>
-            FAQ
-          </a>
-          <a
-            href="/why-flexiknee"
-            className="text-sm font-medium hover:text-primary transition-colors"
-          >
-            Why FlexiKnee
-          </a>
-          <a
-            href="/guides"
-            className="text-sm font-medium hover:text-primary transition-colors"
-          >
-            Guides
-          </a>
-          <a
-            href="/track-order"
-            className="text-sm font-medium hover:text-primary transition-colors"
-          >
-            Track Your Order
-          </a>
+        </div>
+
+        <nav className="hidden items-center gap-8 lg:flex">
+          {navItems.map((item) =>
+            item.type === "anchor" ? (
+              <a key={item.label} href={item.href} onClick={(e) => handleAnchorClick(e, item.href.replace("/", ""))} className="text-sm font-medium text-slate-600 transition hover:text-blue-600">
+                {item.label}
+              </a>
+            ) : (
+              <Link key={item.label} to={item.href} className="text-sm font-medium text-slate-600 transition hover:text-blue-600">
+                {item.label}
+              </Link>
+            )
+          )}
         </nav>
 
-        {/* Right - Account & Cart */}
-        <div className="flex items-center gap-2 ml-auto">
-          <a
-            href={SHOPIFY_CUSTOMER_ACCOUNT_URL} target="_blank" rel="noopener noreferrer"
-            className="hidden lg:flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
-          >
+        <div className="flex items-center gap-1.5">
+          <Link to="/guides" aria-label="Search guides" className="hidden h-9 w-9 items-center justify-center rounded-full text-slate-600 transition hover:bg-slate-100 hover:text-blue-600 sm:inline-flex">
+            <Search className="h-4 w-4" />
+          </Link>
+          <a href={SHOPIFY_CUSTOMER_ACCOUNT_URL} target="_blank" rel="noopener noreferrer" aria-label="My Account" className="hidden h-9 w-9 items-center justify-center rounded-full text-slate-600 transition hover:bg-slate-100 hover:text-blue-600 sm:inline-flex">
             <User className="h-4 w-4" />
-            <span>My Account</span>
-          </a>
-          <a 
-            href={SHOPIFY_CUSTOMER_ACCOUNT_URL} target="_blank" rel="noopener noreferrer" 
-            aria-label="My Account"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 w-9 lg:hidden"
-          >
-            <User className="h-5 w-5" />
           </a>
           <CartDrawer />
         </div>

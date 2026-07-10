@@ -1,185 +1,58 @@
 import { Link } from "react-router-dom";
-import { SHOPIFY_CUSTOMER_ACCOUNT_URL } from "@/lib/shopify-config";
-import { Phone, MapPin } from "lucide-react";
-import flexikneeLogo from "@/assets/flexiknee-logo-new.webp";
+import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-muted/30 border-t">
-      <div className="container px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          {/* Column 1 - Logo */}
-          <div className="flex flex-col items-start">
-            <Link to="/">
-              <img 
-                  src={flexikneeLogo} 
-                  alt="FlexiKnee Logo" 
-                  width={144}
-                  height={144}
-                  className="h-36 w-auto"
-                />
+    <footer className="border-t border-slate-200 bg-white">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[1.25fr_2fr]">
+          <div>
+            <Link to="/" className="inline-flex items-baseline gap-1 text-2xl font-semibold tracking-tight text-slate-950">
+              FlexiKnee<span className="text-xs">™</span>
             </Link>
-          </div>
-
-          {/* Column 2 - Legal */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">Legal</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/terms-of-service"
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/privacy-policy"
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/shipping-policy"
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                >
-                  Shipping Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/refund-policy"
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                >
-                  Refund Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3 - Support */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">Support</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/product/knee-massager-smart-red-light-and-massage-therapy"
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                >
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/why-flexiknee"
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                >
-                  Why FlexiKnee
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/guides"
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                >
-                  Guides
-                </Link>
-              </li>
-            </ul>
-            <ul className="space-y-2">
-              <li>
-                <button
-                  onClick={() => {
-                    const tidio = (window as any).tidioChatApi;
-                    if (tidio) {
-                      tidio.open();
-                    }
-                  }}
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors text-left"
-                >
-                  Chat with us
-                </button>
-              </li>
-              <li>
-                <Link
-                  to="/track-order"
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                >
-                  Track Order
-                </Link>
-              </li>
-              <li>
-                <a
-                  href={SHOPIFY_CUSTOMER_ACCOUNT_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                >
-                  My Account
-                </a>
-              </li>
-              <li>
-                <Link
-                  to="/account#returns"
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                >
-                  Start a Return
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3 - Contact Information */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">Contact Us</h3>
-            
-            {/* UK Address */}
-            <div className="mb-4">
-              <p className="font-semibold text-sm mb-1">UK Office</p>
-              <div className="flex items-start gap-2 text-muted-foreground text-sm">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <div>
-                  <p>Unit 4 651 Thurmaston Village Ct</p>
-                  <p>LE4 8EB Leicester</p>
-                  <p>United Kingdom</p>
-                </div>
-              </div>
+            <p className="mt-4 max-w-sm text-sm leading-7 text-slate-500">
+              Smart knee comfort products for daily movement, recovery routines, and simple at-home support.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2 text-xs font-medium text-slate-600">
+              {['Free shipping', '30-day returns', 'Secure checkout', '2-year warranty'].map((item) => (
+                <span key={item} className="rounded-full border border-slate-200 px-3 py-1.5">{item}</span>
+              ))}
             </div>
+          </div>
 
-            {/* USA Address */}
-            <div className="mb-4">
-              <p className="font-semibold text-sm mb-1">USA Office</p>
-              <div className="flex items-start gap-2 text-muted-foreground text-sm">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <div>
-                  <p>655 Driving Park Ave West Dock</p>
-                  <p>14613 Rochester, New York</p>
-                  <p>United States</p>
-                </div>
-              </div>
+          <div className="grid gap-8 sm:grid-cols-3">
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-950">Shop</h3>
+              <ul className="mt-4 space-y-3 text-sm text-slate-500">
+                <li><Link to={PRIMARY_PRODUCT_PATH} className="hover:text-blue-600">FlexiKnee Massager</Link></li>
+                <li><Link to="/guides" className="hover:text-blue-600">Recovery Guides</Link></li>
+                <li><Link to="/why-flexiknee" className="hover:text-blue-600">Why FlexiKnee</Link></li>
+              </ul>
             </div>
-
-            {/* Phone */}
-            <div className="flex items-center gap-2 text-muted-foreground text-sm">
-              <Phone className="h-4 w-4 shrink-0" />
-              <a href="tel:+13027224637" className="hover:text-primary transition-colors">
-                +1 302-722-4637
-              </a>
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-950">Support</h3>
+              <ul className="mt-4 space-y-3 text-sm text-slate-500">
+                <li><Link to="/track-order" className="hover:text-blue-600">Track Order</Link></li>
+                <li><Link to="/shipping-policy" className="hover:text-blue-600">Shipping Policy</Link></li>
+                <li><Link to="/refund-policy" className="hover:text-blue-600">Returns & Refunds</Link></li>
+                <li><Link to="/privacy-policy" className="hover:text-blue-600">Privacy Policy</Link></li>
+                <li><Link to="/terms-of-service" className="hover:text-blue-600">Terms of Service</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-950">Contact</h3>
+              <div className="mt-4 space-y-4 text-sm text-slate-500">
+                <p className="flex gap-2"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" /> support@flexi-knee.com</p>
+                <p className="flex gap-2"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" /> +1 302-722-4637</p>
+                <p className="flex gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" /> UK & USA fulfillment support</p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Foundation Quote */}
-        <div className="text-center mt-8 pt-8 border-t">
-          <p className="text-sm text-muted-foreground italic max-w-2xl mx-auto mb-4">
-            "FlexiKnee Foundation exists to remind people that helping someone walk again is one of the most meaningful impacts we can have."
-          </p>
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} FlexiKnee™. All rights reserved.
-          </p>
+        <div className="mt-12 border-t border-slate-200 pt-6 text-center text-xs text-slate-400">
+          © {new Date().getFullYear()} FlexiKnee™. All rights reserved. FlexiKnee content is for general wellness education and is not medical advice.
         </div>
       </div>
     </footer>
