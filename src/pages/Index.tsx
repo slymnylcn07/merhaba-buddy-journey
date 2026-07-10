@@ -161,61 +161,40 @@ export default function Index() {
         <Header />
 
         <main>
-          <section className="relative overflow-hidden bg-slate-950 text-white">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(37,99,235,0.24),transparent_34%),linear-gradient(135deg,#020617_0%,#07111f_52%,#0f172a_100%)]" />
-            <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-6 sm:px-6 md:py-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12 lg:px-8 lg:py-16">
-              <div className="order-1 lg:order-2">
+          <section className="border-b border-slate-200 bg-white">
+            <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+              <div className="relative overflow-hidden rounded-[1.9rem] border border-slate-200 bg-white shadow-[0_40px_120px_-90px_rgba(15,23,42,0.55)] sm:rounded-[2.4rem]">
                 <picture>
-                  <source media="(max-width: 767px)" srcSet="/images/flexiknee-hero-performance-mobile.webp" />
+                  <source media="(max-width: 767px)" srcSet="/images/flexiknee-hero-integrated-mobile.webp" />
                   <img
-                    src="/images/flexiknee-hero-performance-desktop.webp"
-                    alt="FlexiKnee performance knee comfort system"
-                    className="w-full rounded-[2rem] border border-white/10 bg-slate-900 shadow-[0_42px_120px_-65px_rgba(37,99,235,0.75)]"
+                    src="/images/flexiknee-hero-integrated-desktop.webp"
+                    alt="FlexiKnee comfort hero"
+                    className="block w-full"
                     fetchPriority="high"
                   />
                 </picture>
-              </div>
 
-              <div className="order-2 pb-4 lg:order-1 lg:pb-0">
-                <div className="inline-flex items-center gap-2 rounded-full border border-blue-300/30 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-200 backdrop-blur">
-                  <Sparkles className="h-3.5 w-3.5" /> Performance knee comfort
-                </div>
+                <Link
+                  to={PRIMARY_PRODUCT_PATH}
+                  aria-label="Shop FlexiKnee"
+                  className="absolute left-[4.5%] top-[63.8%] hidden h-[6.2%] w-[17.2%] rounded-full lg:block"
+                />
+                <Link
+                  to="/science"
+                  aria-label="How FlexiKnee works"
+                  className="absolute left-[20.6%] top-[63.8%] hidden h-[6.2%] w-[15.4%] rounded-full lg:block"
+                />
 
-                <h1 className="mt-6 max-w-3xl text-5xl font-semibold leading-[0.94] tracking-[-0.065em] text-white sm:text-6xl lg:text-7xl">
-                  Recovery power for knees that do more.
-                </h1>
-
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-                  Heat, vibration, and wraparound support in a premium at home routine system built for active days and calm recovery.
-                </p>
-
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <Link
-                    to={PRIMARY_PRODUCT_PATH}
-                    className="inline-flex h-13 items-center justify-center rounded-full bg-blue-600 px-7 text-sm font-semibold text-white shadow-xl shadow-blue-600/30 transition hover:bg-blue-500"
-                  >
-                    Shop FlexiKnee
-                  </Link>
-                  <Link
-                    to="/guides"
-                    className="inline-flex h-13 items-center justify-center rounded-full border border-white/20 bg-white/10 px-7 text-sm font-semibold text-white transition hover:bg-white hover:text-slate-950"
-                  >
-                    Explore guides
-                  </Link>
-                </div>
-
-                <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-3">
-                  {[
-                    ["Heat", "3 warmth levels"],
-                    ["Vibration", "3 comfort modes"],
-                    ["Support", "secure wrap fit"],
-                  ].map(([title, text]) => (
-                    <div key={title} className="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-200">{title}</p>
-                      <p className="mt-2 text-sm font-medium leading-5 text-slate-200">{text}</p>
-                    </div>
-                  ))}
-                </div>
+                <Link
+                  to={PRIMARY_PRODUCT_PATH}
+                  aria-label="Shop FlexiKnee"
+                  className="absolute left-[8%] top-[83.8%] block h-[5.5%] w-[84%] rounded-full md:hidden"
+                />
+                <Link
+                  to="/science"
+                  aria-label="How FlexiKnee works"
+                  className="absolute left-[8%] top-[91.2%] block h-[5.1%] w-[84%] rounded-full md:hidden"
+                />
               </div>
             </div>
           </section>
@@ -411,4 +390,32 @@ export default function Index() {
       </div>
     </>
   );
-}
+}          <section className="bg-white">
+            <div className="mx-auto max-w-[1800px] px-0 py-0 sm:px-4 sm:py-5 lg:px-8 lg:py-8">
+              <div className="relative overflow-hidden bg-white shadow-[0_35px_120px_-90px_rgba(15,23,42,0.65)] sm:rounded-[2rem]">
+                <picture>
+                  <source media="(max-width: 767px)" srcSet="/images/flexiknee-hero-final-mobile.png" />
+                  <img
+                    src="/images/flexiknee-hero-final-desktop.png"
+                    alt="FlexiKnee smart knee comfort for daily home routines"
+                    className="block w-full"
+                    fetchPriority="high"
+                  />
+                </picture>
+
+                <Link
+                  to={PRIMARY_PRODUCT_PATH}
+                  aria-label="Shop FlexiKnee"
+                  className="absolute left-[8%] bottom-[9.2%] h-[5.4%] w-[84%] rounded-full md:left-[5.2%] md:top-[62%] md:h-[7%] md:w-[16%]"
+                />
+
+                <Link
+                  to="/guides/do-knee-massagers-work"
+                  aria-label="How FlexiKnee works"
+                  className="absolute left-[8%] bottom-[2.6%] h-[5.4%] w-[84%] rounded-full md:left-[22.1%] md:top-[62%] md:h-[7%] md:w-[14.5%]"
+                />
+              </div>
+            </div>
+          </section>
+
+
