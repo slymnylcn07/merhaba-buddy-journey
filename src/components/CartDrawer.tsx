@@ -19,7 +19,6 @@ import {
   Loader2,
   Star,
   Truck,
-  ShieldCheck,
   RotateCcw,
 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
@@ -185,11 +184,11 @@ export const CartDrawer = () => {
         </Button>
       </SheetTrigger>
 
-      <SheetContent className="flex h-full w-full flex-col bg-[#F7F8FC] sm:max-w-lg">
-        <SheetHeader className="flex-shrink-0">
+      <SheetContent className="flex h-full w-full flex-col bg-[#F7F8FC] px-5 pt-5 sm:max-w-lg">
+        <SheetHeader className="flex-shrink-0 space-y-2">
           <SheetTitle className="text-[2rem] font-bold tracking-tight text-slate-950">Your Cart</SheetTitle>
           <SheetDescription asChild>
-            <div className="mt-1 inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700">
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700">
               <span className="flex items-center gap-0.5 text-blue-600">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star key={star} className="h-3.5 w-3.5 fill-blue-600" />
@@ -202,7 +201,7 @@ export const CartDrawer = () => {
           </SheetDescription>
         </SheetHeader>
 
-        <div className="flex min-h-0 flex-1 flex-col overflow-hidden pt-6">
+        <div className="flex min-h-0 flex-1 flex-col pt-3">
           {items.length === 0 ? (
             <div className="flex flex-1 items-center justify-center">
               <div className="text-center">
@@ -212,7 +211,7 @@ export const CartDrawer = () => {
             </div>
           ) : (
             <>
-              <div className="min-h-0 flex-1 overflow-y-auto pb-5 pr-2">
+              <div className="min-h-0 flex-1 overflow-y-auto pr-1">
                 <div className="space-y-4">
                   {items.map((item) => {
                     const unitPrice = getConvertedUnitPrice(item.price.amount);
@@ -293,7 +292,7 @@ export const CartDrawer = () => {
                 </div>
 
                 {totalItems === 1 && (
-                  <div className="mt-4 rounded-[1.35rem] border border-amber-200 bg-amber-50 px-4 py-3">
+                  <div className="mt-3 rounded-[1.35rem] border border-amber-200 bg-amber-50 px-4 py-3">
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                       <div>
                         <p className="text-sm font-semibold text-amber-900">Support both knees with a second device</p>
@@ -316,37 +315,25 @@ export const CartDrawer = () => {
                       <p className="mt-1 text-base font-semibold text-slate-950">
                         {getCountryName(userCountry)} · {deliveryInfo.startDate} – {deliveryInfo.endDate}
                       </p>
-                      <p className="mt-1 text-sm text-slate-600">
-                        Most orders arrive in {deliveryInfo.minDays}–{deliveryInfo.maxDays} business days.
-                      </p>
+
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-[1.25rem] border border-slate-200 bg-white px-4 py-3">
-                    <div className="flex items-center gap-2 text-slate-900">
-                      <ShieldCheck className="h-4 w-4 text-blue-600" />
-                      <span className="text-sm font-semibold">Secure checkout</span>
-                    </div>
-                    <p className="mt-1 text-xs text-slate-500">Protected payment processing</p>
-                  </div>
-                  <div className="rounded-[1.25rem] border border-slate-200 bg-white px-4 py-3">
-                    <div className="flex items-center gap-2 text-slate-900">
-                      <RotateCcw className="h-4 w-4 text-blue-600" />
-                      <span className="text-sm font-semibold">30-day returns</span>
-                    </div>
-                    <p className="mt-1 text-xs text-slate-500">Simple support if plans change</p>
+                <div className="mt-4 flex">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm">
+                    <RotateCcw className="h-4 w-4 text-blue-600" />
+                    <span>30-Day Returns</span>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 border-t border-slate-200 bg-[#F7F8FC] pt-4">
-                <div className="space-y-4 px-1">
-                  <div className="rounded-[1.5rem] border border-slate-200 bg-white px-4 py-4 shadow-sm">
+              <div className="flex-shrink-0 border-t border-slate-200 bg-[#F7F8FC] pt-3">
+                <div className="space-y-3 px-1">
+                  <div className="rounded-[1.35rem] border border-slate-200 bg-white px-4 py-3 shadow-sm">
                     <div className="flex items-center justify-between">
-                      <span className="text-lg font-semibold text-slate-950">Total</span>
-                      <span className="text-2xl font-bold text-slate-950">{formatDisplayPrice(subtotal)}</span>
+                      <span className="text-base font-semibold text-slate-950">Total</span>
+                      <span className="text-[1.85rem] font-bold leading-none text-slate-950">{formatDisplayPrice(subtotal)}</span>
                     </div>
                   </div>
 
@@ -368,27 +355,21 @@ export const CartDrawer = () => {
                     )}
                   </Button>
 
-                  <div className="pb-1 pt-1">
-                    <p className="mb-2 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-                      We accept
-                    </p>
-                    <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
-                      {[
-                        { label: "shop Pay", className: "bg-[#5A31F4] text-white" },
-                        { label: "VISA", className: "bg-white text-[#1434CB]" },
-                        { label: "Mastercard", className: "bg-white text-slate-900" },
-                        { label: "AMEX", className: "bg-white text-[#2E77BB]" },
-                        { label: "G Pay", className: "bg-white text-slate-900" },
-                        { label: "PayPal", className: "bg-white text-[#003087]" },
-                        { label: "Apple Pay", className: "bg-black text-white" },
-                      ].map((method) => (
-                        <div
-                          key={method.label}
-                          className={`flex h-10 min-w-0 items-center justify-center rounded-xl border border-slate-200 px-2 text-sm font-bold shadow-sm ${method.className}`}
-                        >
-                          <span className="truncate">{method.label}</span>
-                        </div>
-                      ))}
+                  <div className="grid grid-cols-4 gap-2 pb-1 pt-1">
+                    {[
+                      { label: "Shop Pay", src: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Shop_Pay_logo.svg", className: "h-4 w-auto max-w-[62px]" },
+                      { label: "Visa", src: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg", className: "h-3.5 w-auto max-w-[54px]" },
+                      { label: "Mastercard", src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg", className: "h-5 w-auto max-w-[46px]" },
+                      { label: "American Express", src: "https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg", className: "h-3.5 w-auto max-w-[58px]" },
+                      { label: "Google Pay", src: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg", className: "h-3.5 w-auto max-w-[58px]" },
+                      { label: "PayPal", src: "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg", className: "h-4 w-auto max-w-[54px]" },
+                    ].map((logo) => (
+                      <div key={logo.label} className="flex h-11 items-center justify-center rounded-xl border border-slate-200 bg-white px-2 shadow-sm">
+                        <img className={logo.className} src={logo.src} alt={logo.label} />
+                      </div>
+                    ))}
+                    <div className="flex h-11 items-center justify-center rounded-xl border border-slate-200 bg-black px-2 shadow-sm">
+                      <span className="text-[15px] font-semibold tracking-tight text-white">Apple Pay</span>
                     </div>
                   </div>
                 </div>
