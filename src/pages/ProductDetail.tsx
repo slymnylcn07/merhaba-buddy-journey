@@ -221,7 +221,7 @@ export default function ProductDetail() {
           <div className="mx-auto grid max-w-6xl gap-5 overflow-hidden px-4 sm:px-6 lg:gap-7 lg:px-8 xl:max-w-7xl xl:grid-cols-[1.08fr_0.92fr] xl:gap-9">
             <div className="min-w-0">
               <div className="w-full min-w-0 overflow-hidden rounded-[1.45rem] border border-slate-200 bg-white p-2 shadow-[0_28px_90px_-70px_rgba(15,23,42,0.75)] sm:rounded-[2rem] sm:p-3 xl:rounded-[2.5rem] xl:p-4">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.15rem] bg-white sm:rounded-[1.65rem] xl:aspect-square xl:rounded-[2rem]">
+                <div className="relative aspect-square w-full overflow-hidden rounded-[1.15rem] bg-white sm:rounded-[1.65rem] xl:rounded-[2rem]">
                   {activeImage ? (
                     <img
                       src={activeImage.src}
