@@ -622,73 +622,106 @@ const Guides = () => {
       
       <main className="min-h-screen bg-slate-50">
         {/* Hero Section */}
-        <section className="overflow-hidden border-b border-slate-200 bg-[radial-gradient(circle_at_70%_10%,rgba(37,99,235,0.14),transparent_28%),linear-gradient(180deg,#ffffff_0%,#f7fbff_100%)] pt-10 pb-12 md:pt-16 md:pb-18">
-          <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[0.88fr_1.12fr] lg:px-8">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-600">Expert guides. Real relief routines.</p>
-              <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-[-0.055em] text-slate-950 md:text-6xl">
-                Guides for better knee comfort.
-              </h1>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
-                Practical, easy-to-read articles about stiffness, clicking, daily habits, recovery routines, and at-home knee comfort products — without heavy medical jargon.
-              </p>
+        <section className="overflow-hidden border-b border-slate-200 bg-slate-950 text-white">
+          <div className="relative">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_22%,rgba(37,99,235,0.22),transparent_32%),linear-gradient(135deg,#020617_0%,#07111f_55%,#0f172a_100%)]" />
 
-              <div className="mt-8 max-w-xl">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-blue-600" />
-                  <Input
-                    type="text"
-                    placeholder="Search guides, topics, or keywords..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="h-13 rounded-full border-slate-200 bg-white pl-12 pr-10 text-base shadow-xl shadow-slate-200/60 focus:border-blue-400"
-                  />
-                  {searchQuery && (
+            <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 md:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-20">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-200">
+                  FlexiKnee guide library
+                </p>
+                <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-[-0.055em] text-white md:text-6xl">
+                  Find the right knee comfort routine.
+                </h1>
+                <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+                  Practical guides for stiffness, clicking, stairs, daily habits, warmth, massage, and smarter at home recovery choices.
+                </p>
+
+                <div className="mt-8 max-w-xl">
+                  <div className="relative">
+                    <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-blue-300" />
+                    <Input
+                      type="text"
+                      placeholder="Search guides, topics, or keywords..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="h-14 rounded-full border-white/15 bg-white/95 pl-12 pr-10 text-base text-slate-950 shadow-2xl shadow-blue-950/30 placeholder:text-slate-400 focus:border-blue-300"
+                    />
+                    {searchQuery && (
+                      <button
+                        onClick={() => setSearchQuery("")}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 transition-colors hover:text-slate-900"
+                      >
+                        <X className="h-5 w-5" />
+                      </button>
+                    )}
+                  </div>
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {[
+                    ["By Symptom", "by-location"],
+                    ["By Activity", "by-activity"],
+                    ["Daily Routine", "by-methods"],
+                    ["Device Guides", "by-devices"],
+                    ["Buying Guides", "by-devices"],
+                  ].map(([label, id]) => (
                     <button
-                      onClick={() => setSearchQuery("")}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 transition-colors hover:text-slate-900"
+                      key={label}
+                      onClick={() => scrollToSection(id)}
+                      className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur transition hover:bg-white hover:text-slate-950"
                     >
-                      <X className="h-5 w-5" />
+                      {label}
                     </button>
-                  )}
+                  ))}
                 </div>
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-2">
-                {[
-                  ["By Symptom", "by-location"],
-                  ["By Activity", "by-activity"],
-                  ["Daily Routine", "by-methods"],
-                  ["Device Guides", "by-devices"],
-                  ["Buying Guides", "by-devices"],
-                ].map(([label, id]) => (
-                  <button
-                    key={label}
-                    onClick={() => scrollToSection(id)}
-                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-blue-300 hover:text-blue-600"
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
+              <div className="relative">
+                <div className="absolute inset-x-16 bottom-8 h-28 rounded-full bg-blue-500/30 blur-3xl" />
 
-            <div className="relative hidden lg:block">
-              <div className="absolute inset-x-16 bottom-10 h-24 rounded-full bg-blue-500/20 blur-3xl" />
-              <div className="relative grid gap-4 rounded-[2.4rem] border border-white/80 bg-white/70 p-4 shadow-[0_45px_120px_-70px_rgba(15,23,42,0.7)] backdrop-blur-xl">
-                <img src="/images/flexiknee-lifestyle-work.webp" alt="FlexiKnee knee comfort guide lifestyle" className="h-[360px] w-full rounded-[2rem] object-cover" />
-                <div className="grid grid-cols-3 gap-3">
-                  <div className="rounded-2xl bg-white p-4 shadow-sm">
-                    <p className="text-2xl font-semibold text-slate-950">100+</p>
-                    <p className="mt-1 text-xs font-medium text-slate-500">Guides</p>
+                <div className="relative rounded-[2.4rem] border border-white/10 bg-white/10 p-3 shadow-[0_45px_120px_-70px_rgba(37,99,235,0.75)] backdrop-blur-xl sm:p-4">
+                  <div className="grid gap-3 sm:grid-cols-[1.05fr_0.95fr]">
+                    <Link to="/guides/do-knee-massagers-work" className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white">
+                      <img
+                        src={thumbMassagerExpectations}
+                        alt="Do knee massagers work guide"
+                        className="h-72 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[390px]"
+                      />
+                    </Link>
+
+                    <div className="grid gap-3">
+                      <Link to="/guides/heat-vs-ice-for-knees" className="group overflow-hidden rounded-[1.6rem] border border-white/10 bg-white">
+                        <img
+                          src={thumbHeatVsIce}
+                          alt="Heat vs ice for knees guide"
+                          className="h-36 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[188px]"
+                        />
+                      </Link>
+                      <Link to="/guides/daily-knee-care-routine" className="group overflow-hidden rounded-[1.6rem] border border-white/10 bg-white">
+                        <img
+                          src={thumbDailyRoutineNew}
+                          alt="Daily knee care routine guide"
+                          className="h-36 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[188px]"
+                        />
+                      </Link>
+                    </div>
                   </div>
-                  <div className="rounded-2xl bg-white p-4 shadow-sm">
-                    <p className="text-2xl font-semibold text-slate-950">5</p>
-                    <p className="mt-1 text-xs font-medium text-slate-500">Topic paths</p>
-                  </div>
-                  <div className="rounded-2xl bg-slate-950 p-4 text-white shadow-sm">
-                    <p className="text-2xl font-semibold">New</p>
-                    <p className="mt-1 text-xs font-medium text-slate-300">Product hub</p>
+
+                  <div className="mt-3 grid grid-cols-3 gap-3">
+                    <div className="rounded-2xl bg-white/95 p-4 text-slate-950 shadow-sm">
+                      <p className="text-2xl font-semibold">100+</p>
+                      <p className="mt-1 text-xs font-medium text-slate-500">Guides</p>
+                    </div>
+                    <div className="rounded-2xl bg-white/95 p-4 text-slate-950 shadow-sm">
+                      <p className="text-2xl font-semibold">5</p>
+                      <p className="mt-1 text-xs font-medium text-slate-500">Topic paths</p>
+                    </div>
+                    <div className="rounded-2xl bg-blue-600 p-4 text-white shadow-sm">
+                      <p className="text-2xl font-semibold">New</p>
+                      <p className="mt-1 text-xs font-medium text-blue-100">Comfort hub</p>
+                    </div>
                   </div>
                 </div>
               </div>

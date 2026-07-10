@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { VideoReviews } from "@/components/VideoReviews";
-import { featurePillars, trustBadges } from "@/data/product-system";
+import { featurePillars } from "@/data/product-system";
 import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
@@ -184,7 +184,7 @@ export default function Index() {
                 />
 
                 <Link
-                  to="/guides/do-knee-massagers-work"
+                  to="/science"
                   aria-label="How FlexiKnee works"
                   className="absolute left-[8%] bottom-[2.6%] h-[5.4%] w-[84%] rounded-full md:left-[22.1%] md:top-[62%] md:h-[7%] md:w-[14.5%]"
                 />
@@ -192,14 +192,56 @@ export default function Index() {
             </div>
           </section>
 
-          <section className="border-b border-slate-200 bg-white">
-            <div className="mx-auto grid max-w-7xl gap-0 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
-              {trustBadges.map((badge) => (
-                <div key={badge} className="flex items-center gap-3 border-slate-200 py-5 lg:border-r lg:last:border-r-0">
-                  <Shield className="h-5 w-5 text-blue-600" />
-                  <span className="text-sm font-semibold text-slate-800">{badge}</span>
-                </div>
-              ))}
+          <section className="overflow-hidden border-y border-slate-200 bg-white py-5">
+            <style>{`
+              @keyframes flexiknee-marquee {
+                from { transform: translateX(0); }
+                to { transform: translateX(-50%); }
+              }
+            `}</style>
+
+            <div className="mx-auto mb-3 flex max-w-7xl items-center justify-center px-4 text-center sm:px-6 lg:px-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                Referenced health resources
+              </p>
+            </div>
+
+            <div className="relative">
+              <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-white to-transparent" />
+              <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-white to-transparent" />
+
+              <div className="flex w-max gap-4 px-4" style={{ animation: "flexiknee-marquee 34s linear infinite" }}>
+                {[...[
+                  "Mayo Clinic",
+                  "Cleveland Clinic",
+                  "Johns Hopkins Medicine",
+                  "Harvard Health",
+                  "NHS",
+                  "AAOS",
+                  "Arthritis Foundation",
+                  "NIAMS",
+                  "CDC",
+                ], ...[
+                  "Mayo Clinic",
+                  "Cleveland Clinic",
+                  "Johns Hopkins Medicine",
+                  "Harvard Health",
+                  "NHS",
+                  "AAOS",
+                  "Arthritis Foundation",
+                  "NIAMS",
+                  "CDC",
+                ]].map((name, index) => (
+                  <div
+                    key={`${name}-${index}`}
+                    className="flex min-w-max items-center justify-center rounded-full border border-slate-200 bg-slate-50 px-7 py-3 shadow-sm"
+                  >
+                    <span className="font-serif text-lg italic tracking-tight text-slate-700 sm:text-xl">
+                      {name}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
 
