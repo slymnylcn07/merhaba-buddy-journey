@@ -151,3 +151,20 @@ All colors MUST be HSL.
   right: auto !important;
   left: 0 !important;
 }
+
+
+/* FlexiKnee responsive guardrails */
+html,
+body,
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
