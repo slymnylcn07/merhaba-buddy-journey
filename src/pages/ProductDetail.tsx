@@ -19,6 +19,9 @@ import { VideoReviews } from "@/components/VideoReviews";
 import { getProducts, ShopifyProduct, createStorefrontCheckout } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { featurePillars, productSystem } from "@/data/product-system";
+import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
+import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
+import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
 
 const fallbackGallery = [
   { src: "/images/shopify-gallery/flexiknee-gallery-01-main.webp", alt: "FlexiKnee knee massager main product image" },
@@ -34,17 +37,17 @@ const relatedGuides = [
   {
     title: "Do Knee Massagers Work? Realistic Expectations",
     href: "/guides/do-knee-massagers-work",
-    image: "/images/shopify-gallery/flexiknee-gallery-01-main.webp",
+    image: thumbMassagerExpectations,
   },
   {
     title: "Daily Knee Care Routine: Simple Habits for Comfort",
     href: "/guides/daily-knee-care-routine",
-    image: "/images/shopify-gallery/flexiknee-gallery-02-lifestyle.webp",
+    image: thumbDailyRoutineNew,
   },
   {
     title: "Heat vs. Ice for Knees: What Works Best Daily?",
     href: "/guides/heat-vs-ice-for-knees",
-    image: "/images/shopify-gallery/flexiknee-gallery-04-heat.webp",
+    image: thumbHeatVsIce,
   },
 ];
 
@@ -206,33 +209,31 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        <section className="bg-[radial-gradient(circle_at_72%_16%,rgba(37,99,235,0.11),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] py-5 sm:py-8 lg:py-16">
-          <div className="mx-auto grid max-w-7xl gap-5 px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:gap-9 lg:px-8">
-            <div className="grid gap-3 lg:grid-cols-[92px_1fr] lg:gap-4">
-              <div className="order-2 flex gap-2 overflow-x-auto pb-1 lg:order-1 lg:flex-col lg:gap-3 lg:pb-0">
+        <section className="bg-[radial-gradient(circle_at_72%_16%,rgba(37,99,235,0.11),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] py-5 sm:py-8 lg:py-14">
+          <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[1.12fr_0.88fr] lg:gap-9 lg:px-8">
+            <div>
+              <div className="overflow-hidden rounded-[1.8rem] border border-slate-200 bg-white p-2 shadow-[0_35px_110px_-80px_rgba(15,23,42,0.75)] sm:rounded-[2.2rem] sm:p-3 lg:rounded-[2.6rem] lg:p-4">
+                <img
+                  src={gallery[selectedImage]?.src || fallbackGallery[0].src}
+                  alt={gallery[selectedImage]?.alt || productTitle}
+                  className="h-[360px] w-full rounded-[1.45rem] object-contain object-center sm:h-[500px] sm:rounded-[1.8rem] lg:h-[710px] lg:rounded-[2.1rem]"
+                  fetchPriority="high"
+                />
+              </div>
+
+              <div className="mt-3 flex gap-3 overflow-x-auto pb-2">
                 {gallery.map((image, index) => (
                   <button
                     key={`${image.src}-${index}`}
                     onClick={() => setSelectedImage(index)}
-                    className={`h-16 w-16 flex-shrink-0 overflow-hidden rounded-2xl border bg-white transition sm:h-20 sm:w-20 lg:h-22 lg:w-22 ${
+                    className={`h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl border bg-white p-1 transition sm:h-24 sm:w-24 ${
                       selectedImage === index ? "border-blue-500 shadow-lg shadow-blue-500/10" : "border-slate-200 hover:border-slate-300"
                     }`}
                     aria-label={`View image ${index + 1}`}
                   >
-                    <img src={image.src} alt={image.alt} className="h-full w-full object-cover" />
+                    <img src={image.src} alt={image.alt} className="h-full w-full rounded-xl object-cover" />
                   </button>
                 ))}
-              </div>
-
-              <div className="order-1 lg:order-2">
-                <div className="relative overflow-hidden rounded-[1.8rem] border border-slate-200 bg-white p-2 shadow-[0_35px_110px_-80px_rgba(15,23,42,0.75)] sm:rounded-[2.2rem] sm:p-3 lg:rounded-[2.6rem] lg:p-4">
-                  <img
-                    src={gallery[selectedImage]?.src || fallbackGallery[0].src}
-                    alt={gallery[selectedImage]?.alt || productTitle}
-                    className="h-[330px] w-full rounded-[1.45rem] object-contain object-center sm:h-[450px] sm:rounded-[1.8rem] lg:h-[660px] lg:rounded-[2.1rem]"
-                    fetchPriority="high"
-                  />
-</div>
               </div>
             </div>
 

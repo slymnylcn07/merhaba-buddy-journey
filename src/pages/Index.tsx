@@ -161,61 +161,61 @@ export default function Index() {
         <Header />
 
         <main>
-          <section className="relative overflow-hidden border-b border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f7fbff_100%)]">
-            <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:px-6 md:py-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 lg:px-8 lg:py-18">
-              <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-700 shadow-sm">
-                  <Sparkles className="h-3.5 w-3.5" /> Smart knee comfort
+          <section className="relative overflow-hidden bg-slate-950 text-white">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(37,99,235,0.24),transparent_34%),linear-gradient(135deg,#020617_0%,#07111f_52%,#0f172a_100%)]" />
+            <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-6 sm:px-6 md:py-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12 lg:px-8 lg:py-16">
+              <div className="order-1 lg:order-2">
+                <picture>
+                  <source media="(max-width: 767px)" srcSet="/images/flexiknee-hero-performance-mobile.webp" />
+                  <img
+                    src="/images/flexiknee-hero-performance-desktop.webp"
+                    alt="FlexiKnee performance knee comfort system"
+                    className="w-full rounded-[2rem] border border-white/10 bg-slate-900 shadow-[0_42px_120px_-65px_rgba(37,99,235,0.75)]"
+                    fetchPriority="high"
+                  />
+                </picture>
+              </div>
+
+              <div className="order-2 pb-4 lg:order-1 lg:pb-0">
+                <div className="inline-flex items-center gap-2 rounded-full border border-blue-300/30 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-200 backdrop-blur">
+                  <Sparkles className="h-3.5 w-3.5" /> Performance knee comfort
                 </div>
 
-                <h1 className="mt-6 max-w-3xl text-5xl font-semibold leading-[0.94] tracking-[-0.065em] text-slate-950 sm:text-6xl lg:text-7xl">
-                  Move easier, recover smarter.
+                <h1 className="mt-6 max-w-3xl text-5xl font-semibold leading-[0.94] tracking-[-0.065em] text-white sm:text-6xl lg:text-7xl">
+                  Recovery power for knees that do more.
                 </h1>
 
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-                  Explore practical knee comfort guides and FlexiKnee products designed for short daily routines at home, work, and after activity.
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+                  Heat, vibration, and wraparound support in a premium at home routine system built for active days and calm recovery.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
                     to={PRIMARY_PRODUCT_PATH}
-                    className="inline-flex h-13 items-center justify-center rounded-full bg-blue-600 px-7 text-sm font-semibold text-white shadow-xl shadow-blue-600/20 transition hover:bg-blue-700"
+                    className="inline-flex h-13 items-center justify-center rounded-full bg-blue-600 px-7 text-sm font-semibold text-white shadow-xl shadow-blue-600/30 transition hover:bg-blue-500"
                   >
                     Shop FlexiKnee
                   </Link>
                   <Link
                     to="/guides"
-                    className="inline-flex h-13 items-center justify-center rounded-full border border-slate-300 bg-white px-7 text-sm font-semibold text-slate-900 transition hover:border-blue-300 hover:text-blue-700"
+                    className="inline-flex h-13 items-center justify-center rounded-full border border-white/20 bg-white/10 px-7 text-sm font-semibold text-white transition hover:bg-white hover:text-slate-950"
                   >
                     Explore guides
                   </Link>
                 </div>
 
                 <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-3">
-                  {heroGuides.map((guide) => (
-                    <Link
-                      key={guide.title}
-                      to={guide.href}
-                      className="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
-                    >
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-600">{guide.tag}</p>
-                      <p className="mt-2 text-sm font-semibold leading-5 text-slate-950 group-hover:text-blue-700">{guide.title}</p>
-                    </Link>
+                  {[
+                    ["Heat", "3 warmth levels"],
+                    ["Vibration", "3 comfort modes"],
+                    ["Support", "secure wrap fit"],
+                  ].map(([title, text]) => (
+                    <div key={title} className="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-200">{title}</p>
+                      <p className="mt-2 text-sm font-medium leading-5 text-slate-200">{text}</p>
+                    </div>
                   ))}
                 </div>
-              </div>
-
-              <div className="relative">
-                <div className="absolute inset-x-8 bottom-8 h-28 rounded-full bg-blue-500/20 blur-3xl" />
-                <picture>
-                  <source media="(max-width: 767px)" srcSet="/images/flexiknee-hero-mobile-premium.webp" />
-                  <img
-                    src="/images/flexiknee-hero-desktop-premium.webp"
-                    alt="FlexiKnee smart knee comfort system"
-                    className="relative w-full rounded-[2rem] border border-slate-200 bg-white shadow-[0_45px_120px_-70px_rgba(15,23,42,0.65)] md:rounded-[2.6rem]"
-                    fetchPriority="high"
-                  />
-                </picture>
               </div>
             </div>
           </section>
