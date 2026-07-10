@@ -1,9 +1,32 @@
 import { ShopifyProduct } from "@/lib/shopify";
+import insolesHero from "@/assets/article-hero-insoles-knee.svg";
+import runningShoesLineup from "@/assets/article-running-shoes-lineup.jpg";
+import shoeWearCheck from "@/assets/article-shoe-wear-check.jpg";
+import postWalkRecovery from "@/assets/article-section-post-walk-recovery.jpg";
+import kneeLongWalks from "@/assets/article-hero-knee-pain-long-walks.jpg";
+import walkingMechanics from "@/assets/article-section-walking-knee-mechanics.jpg";
+import stairsDown from "@/assets/article-hero-knee-pain-going-down-stairs.jpg";
+import restWalkRelief from "@/assets/article-section-rest-stiff-walk-relief.jpg";
+import deviceEvening from "@/assets/article-device-evening.jpg";
+import deviceHomeUse from "@/assets/article-device-home-use.jpg";
+import heatVsRedlight from "@/assets/article-heat-vs-redlight-knee.jpg";
+import deviceMorning from "@/assets/article-device-morning.jpg";
+import circulationLowerLimbs from "@/assets/article-circulation-lower-limbs.jpg";
+import delayedSorenessRecovery from "@/assets/article-delayed-soreness-recovery.jpg";
+import deviceRoutine from "@/assets/article-device-routine.jpg";
+import exerciseRecovery from "@/assets/article-exercise-recovery-illustration.jpg";
 
 export interface ProductGuideLink {
   title: string;
   href: string;
   description: string;
+}
+
+export interface ProductVisual {
+  title: string;
+  text: string;
+  image: string;
+  alt: string;
 }
 
 export interface ProductProfile {
@@ -20,6 +43,7 @@ export interface ProductProfile {
   safety: string[];
   faqs: Array<{ question: string; answer: string }>;
   guides: ProductGuideLink[];
+  visuals: ProductVisual[];
   comparison: {
     use: string;
     heat: string;
@@ -104,6 +128,32 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
         description: "Understand load, surfaces and recovery after longer days on your feet.",
       },
     ],
+    visuals: [
+      {
+        title: "Support begins at the foot",
+        text: "Good knee comfort often starts with a more stable footbed and a cleaner line from heel to forefoot.",
+        image: insolesHero,
+        alt: "Illustration of orthopedic insole support for foot-to-knee comfort",
+      },
+      {
+        title: "Better shoe matching",
+        text: "Use insoles in shoes with enough depth and structure so the fit stays secure instead of cramped.",
+        image: runningShoesLineup,
+        alt: "Running shoes lined up to show footwear choice for insoles",
+      },
+      {
+        title: "Watch wear patterns",
+        text: "Looking at the sole and liner wear on older shoes helps you judge when extra support may be useful.",
+        image: shoeWearCheck,
+        alt: "Close-up of shoe wear patterns being checked",
+      },
+      {
+        title: "Stay comfortable after long walks",
+        text: "Pair impact support with simple post-walk recovery habits so the routine feels sustainable day to day.",
+        image: postWalkRecovery,
+        alt: "Simple post-walk recovery routine for knee comfort",
+      },
+    ],
     comparison: {
       use: "Walking & sport",
       heat: "No",
@@ -184,6 +234,32 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
         title: "Daily Knee Care Routine",
         href: "/guides/daily-knee-care-routine",
         description: "Combine lower-leg recovery with simple daily movement habits.",
+      },
+    ],
+    visuals: [
+      {
+        title: "Useful after travel or desk time",
+        text: "Lower-leg compression routines can feel especially useful after long sitting blocks or heavy calf fatigue.",
+        image: circulationLowerLimbs,
+        alt: "Illustration of lower-leg circulation and recovery support",
+      },
+      {
+        title: "A calmer recovery window",
+        text: "Use short sessions when your calves feel tight or heavy after activity rather than waiting until they feel overworked.",
+        image: delayedSorenessRecovery,
+        alt: "Delayed soreness recovery illustration after activity",
+      },
+      {
+        title: "Easy seated setup",
+        text: "A seated routine is often the simplest way to stay consistent and check comfort as the session progresses.",
+        image: deviceRoutine,
+        alt: "Seated lower-leg recovery routine at home",
+      },
+      {
+        title: "Pairs well with active days",
+        text: "It fits best as a companion tool after training, walking or travel rather than as an all-day treatment device.",
+        image: exerciseRecovery,
+        alt: "Exercise recovery routine showing lower-body recovery",
       },
     ],
     comparison: {
@@ -268,6 +344,32 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
         description: "Compare simple wraps with rechargeable multi-feature devices.",
       },
     ],
+    visuals: [
+      {
+        title: "A cleaner evening routine",
+        text: "Simple warmth products work best when they reduce friction and slot naturally into your evening routine.",
+        image: deviceEvening,
+        alt: "Evening knee comfort routine with a warming device",
+      },
+      {
+        title: "Relaxed home use",
+        text: "A wrap format keeps the warmth close to the knee, making sofa or desk sessions easier than a loose heating pad.",
+        image: deviceHomeUse,
+        alt: "Heated knee wrap used in a relaxed home setting",
+      },
+      {
+        title: "Targeted warmth, not general heat",
+        text: "The appeal is targeted comfort around the knee rather than simply warming the whole area around you.",
+        image: heatVsRedlight,
+        alt: "Comparison visual about targeted heat for the knee",
+      },
+      {
+        title: "Useful for quick resets",
+        text: "A short morning or mid-day warm-up can be easier to repeat than a long or complicated recovery session.",
+        image: deviceMorning,
+        alt: "Morning knee warmth routine before the day starts",
+      },
+    ],
     comparison: {
       use: "Simple warmth",
       heat: "Yes",
@@ -350,6 +452,32 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
         description: "Build support into a balanced daily routine rather than relying on one product.",
       },
     ],
+    visuals: [
+      {
+        title: "Built for walking days",
+        text: "A sleeve often makes the most sense when the goal is a simple support layer for errands, commuting and everyday movement.",
+        image: kneeLongWalks,
+        alt: "Walking-related knee comfort visual for support sleeve use",
+      },
+      {
+        title: "Helps you stay consistent",
+        text: "Because it is lightweight and easy to wear, many people find it easier to keep in the routine than powered devices.",
+        image: walkingMechanics,
+        alt: "Walking knee mechanics visual showing everyday movement support",
+      },
+      {
+        title: "Useful on stairs and bends",
+        text: "Movement-friendly fabric matters most when the knee is repeatedly bending during stairs, work tasks or gym sessions.",
+        image: stairsDown,
+        alt: "Going down stairs visual related to knee support sleeve use",
+      },
+      {
+        title: "Combine with recovery habits",
+        text: "A sleeve supports the day best when paired with pacing, rest breaks and simple mobility habits.",
+        image: restWalkRelief,
+        alt: "Rest and walk relief routine visual",
+      },
+    ],
     comparison: {
       use: "Everyday movement",
       heat: "No",
@@ -388,6 +516,26 @@ const genericProfile: ProductProfile = {
   guides: [
     { title: "Daily Knee Care Routine", href: "/guides/daily-knee-care-routine", description: "Build consistent habits around the product you choose." },
     { title: "Knee Comfort Quiz", href: "/knee-quiz", description: "Get a more focused product and guide recommendation." },
+  ],
+  visuals: [
+    {
+      title: "Built around real routines",
+      text: "FlexiKnee products are selected to solve a clear everyday comfort or recovery job.",
+      image: deviceHomeUse,
+      alt: "General at-home knee comfort routine",
+    },
+    {
+      title: "Use the guide library too",
+      text: "The store and the guide hub are designed to work together so users buy with more context.",
+      image: exerciseRecovery,
+      alt: "Guide-backed recovery and knee comfort planning",
+    },
+    {
+      title: "Focus on consistent habits",
+      text: "The best system product is usually the one that fits a routine you will actually repeat.",
+      image: restWalkRelief,
+      alt: "Consistent habit building for knee comfort",
+    },
   ],
   comparison: {
     use: "Daily comfort",

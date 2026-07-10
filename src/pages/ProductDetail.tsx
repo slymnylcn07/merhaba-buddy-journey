@@ -211,8 +211,8 @@ export default function ProductDetail() {
         </section>
 
         <section className="bg-[radial-gradient(circle_at_72%_16%,rgba(37,99,235,0.11),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] py-5 sm:py-8 lg:py-14">
-          <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[1.12fr_0.88fr] lg:gap-9 lg:px-8">
-            <div>
+          <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 xl:grid-cols-[minmax(0,1fr)_minmax(360px,420px)] xl:items-start xl:gap-9 lg:px-8">
+            <div className="min-w-0">
               <div className="overflow-hidden rounded-[1.8rem] border border-slate-200 bg-white p-2 shadow-[0_35px_110px_-80px_rgba(15,23,42,0.75)] sm:rounded-[2.2rem] sm:p-3 lg:rounded-[2.6rem] lg:p-4">
                 <img
                   src={gallery[selectedImage]?.src || fallbackGallery[0].src}
@@ -238,7 +238,7 @@ export default function ProductDetail() {
               </div>
             </div>
 
-            <aside className="lg:sticky lg:top-24 lg:self-start">
+            <aside className="min-w-0 xl:sticky xl:top-24 xl:self-start">
               <div className="rounded-[1.8rem] border border-slate-200 bg-white p-5 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.7)] sm:p-6 lg:rounded-[2rem] lg:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 sm:text-sm">Smart daily knee comfort</p>
                 <h1 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">{productTitle}</h1>
@@ -386,7 +386,7 @@ export default function ProductDetail() {
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Explore the system</p>
                 <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
-                  Future products can sit here naturally.
+                  Explore the full FlexiKnee support lineup.
                 </h2>
               </div>
               <Link to="/guides" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">

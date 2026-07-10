@@ -238,6 +238,57 @@ const WhyFlexiKnee = () => {
         </div>
       </section>
 
+      {/* Visual Story Section */}
+      <section 
+        ref={(el) => (sectionsRef.current[7] = el)}
+        className="py-14 md:py-20 opacity-0 translate-y-8 transition-all duration-700 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
+      >
+        <div className="container px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
+                Built to look premium and feel easy to use
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                A few stronger visuals make the page feel more alive and help explain the product experience before the visitor reaches the CTA.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  image: "/images/flexiknee-lifestyle-home.webp",
+                  title: "Comfortable at home",
+                  text: "A calm at-home setup makes FlexiKnee easier to fit into a short daily routine.",
+                },
+                {
+                  image: "/images/flexiknee-lifestyle-work.webp",
+                  title: "Works around real schedules",
+                  text: "The product is designed for people who want something practical after work, training or long standing days.",
+                },
+                {
+                  image: "/images/shopify-gallery/flexiknee-gallery-07-system.webp",
+                  title: "Part of a wider system",
+                  text: "The main device now sits more clearly inside the wider FlexiKnee product ecosystem.",
+                },
+              ].map((item, index) => (
+                <article 
+                  key={item.title}
+                  className="overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-sm opacity-0 translate-y-6 transition-all duration-500 [.animate-in_&]:opacity-100 [.animate-in_&]:translate-y-0"
+                  style={{ transitionDelay: `${index * 120}ms` }}
+                >
+                  <img src={item.image} alt={item.title} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+                  <div className="p-5">
+                    <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section 
         id="features-section" 

@@ -7,7 +7,7 @@ import { ArrowRight, Search, X, Clock, ChevronDown, ArrowUp } from "lucide-react
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { guidesData } from "@/data/guides";
-import { productSystem } from "@/data/product-system";
+import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 
 // Import images
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
@@ -224,6 +224,13 @@ const guides = guidesData.map(guide => ({
 
 // Helper to get guide by slug
 const getGuide = (slug: string) => guides.find(g => g.slug === slug);
+
+const formatGuideDate = (value?: string) => {
+  if (!value) return "Recently updated";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "Recently updated";
+  return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", year: "numeric" }).format(date);
+};
 
 // ── Section configurations ──
 
@@ -551,6 +558,15 @@ const Guides = () => {
 
   const featuredGuides = featuredSlugs.map(getGuide).filter(Boolean) as typeof guides;
 
+  const latestGuides = useMemo(
+    () =>
+      [...guides]
+        .filter((guide) => guide.lastModified)
+        .sort((a, b) => new Date(b.lastModified || 0).getTime() - new Date(a.lastModified || 0).getTime())
+        .slice(0, 6),
+    []
+  );
+
   const canonicalUrl = "https://flexi-knee.com/guides";
 
   const itemListJsonLd = {
@@ -813,6 +829,49 @@ const Guides = () => {
               </div>
             </section>
 
+            {/* Latest Guides */}
+            <section className="pb-4 pt-2 md:pb-8">
+              <div className="container px-4 max-w-6xl mx-auto">
+                <SectionHeader 
+                  id="latest-guides"
+                  title="Latest Guides"
+                  subtitle="Fresh additions to the library so returning visitors can quickly spot what's new."
+                />
+                <p className="text-sm text-slate-600 leading-relaxed max-w-3xl mb-6 -mt-4">
+                  This new block helps the latest 5–6 articles surface faster and gives the guide hub a more editorial feel.
+                </p>
+                {isLoading ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+                    {[1, 2, 3, 4, 5, 6].map((i) => <CardSkeleton key={i} />)}
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+                    {latestGuides.map((guide) => (
+                      <Link key={guide.slug} to={`/guides/${guide.slug}`} className="group block">
+                        <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg h-full">
+                          <img src={guide.thumbnail} alt={guide.title} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+                          <div className="p-5">
+                            <div className="flex flex-wrap items-center gap-2 text-xs">
+                              <span className="rounded-full bg-blue-50 px-2.5 py-1 font-semibold uppercase tracking-[0.16em] text-blue-700">New</span>
+                              <span className="text-slate-300">•</span>
+                              <span className="font-medium text-slate-500">Updated {formatGuideDate(guide.lastModified)}</span>
+                              <span className="text-slate-300">•</span>
+                              <span className="font-medium text-slate-500">{guide.readTime} min</span>
+                            </div>
+                            <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950 group-hover:text-primary transition-colors">{guide.title}</h3>
+                            <p className="mt-2 text-sm leading-6 text-slate-600 line-clamp-3">{guide.description}</p>
+                            <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">
+                              Read guide <ArrowRight className="h-4 w-4" />
+                            </span>
+                          </div>
+                        </article>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </section>
+
             {/* Start Here */}
             <section className="py-12 md:py-16">
               <div className="container px-4 max-w-6xl mx-auto">
@@ -919,23 +978,11 @@ const Guides = () => {
                       Articles stay educational, but the hub now connects readers to the FlexiKnee system in a calm, premium way.
                     </p>
                   </div>
-                  <Link to="/product/knee-massager-smart-red-light-and-massage-therapy" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
+                  <Link to="/shop" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
                     Shop the system <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                  {productSystem.map((item) => (
-                    <Link key={item.name} to={item.href} className="group overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-                      <img src={item.image} alt={item.name} className="aspect-[4/3] w-full bg-slate-50 object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
-                      <div className="p-4">
-                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">{item.status}</p>
-                        <h3 className="mt-2 text-base font-semibold text-slate-950">{item.name}</h3>
-                        <p className="mt-1 text-sm leading-5 text-slate-500">{item.label}</p>
-                        <p className="mt-3 text-sm font-semibold text-slate-950">{item.price}</p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
+                <FlexiKneeSystem />
               </div>
             </section>
 

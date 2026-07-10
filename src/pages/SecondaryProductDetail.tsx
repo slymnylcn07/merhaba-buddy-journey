@@ -246,8 +246,8 @@ export default function SecondaryProductDetail() {
         </section>
 
         <section className="bg-[radial-gradient(circle_at_80%_10%,rgba(37,99,235,0.10),transparent_32%),linear-gradient(180deg,#fff_0%,#f8fbff_100%)] py-8 lg:py-14">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
-            <div>
+          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 xl:grid-cols-[minmax(0,1fr)_minmax(360px,420px)] xl:items-start lg:px-8">
+            <div className="min-w-0">
               <div className="flex min-h-[360px] items-center justify-center overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-4 shadow-[0_35px_100px_-75px_rgba(15,23,42,0.8)] sm:min-h-[520px]">
                 {mainImage ? (
                   <img
@@ -262,13 +262,13 @@ export default function SecondaryProductDetail() {
               </div>
 
               {images.length > 1 && (
-                <div className="mt-4 flex gap-3 overflow-x-auto pb-2">
+                <div className="mt-4 flex snap-x gap-3 overflow-x-auto pb-2">
                   {images.map((image, index) => (
                     <button
                       key={`${image.url}-${index}`}
                       type="button"
                       onClick={() => setSelectedImage(index)}
-                      className={`h-20 w-20 shrink-0 overflow-hidden rounded-2xl border bg-white p-1 transition sm:h-24 sm:w-24 ${
+                      className={`h-20 w-20 shrink-0 snap-start overflow-hidden rounded-2xl border bg-white p-1 transition sm:h-24 sm:w-24 ${
                         selectedImage === index ? "border-blue-500 shadow-md" : "border-slate-200 hover:border-slate-400"
                       }`}
                       aria-label={`View product image ${index + 1}`}
@@ -280,7 +280,7 @@ export default function SecondaryProductDetail() {
               )}
             </div>
 
-            <aside className="lg:sticky lg:top-24 lg:self-start">
+            <aside className="min-w-0 xl:sticky xl:top-24 xl:self-start">
               <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.75)] lg:p-8">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">{profile.badge}</span>
@@ -412,6 +412,27 @@ export default function SecondaryProductDetail() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-slate-200 bg-slate-50 py-14 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">See the routine around it</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950">Extra visuals to explain where this product fits.</h2>
+              <p className="mt-4 text-base leading-8 text-slate-600">These visuals help each product page feel more specific, more useful and more persuasive than relying on pack shots alone.</p>
+            </div>
+            <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {profile.visuals.map((visual) => (
+                <article key={visual.title} className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm">
+                  <img src={visual.image} alt={visual.alt} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+                  <div className="p-5">
+                    <h3 className="text-lg font-semibold text-slate-950">{visual.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-slate-600">{visual.text}</p>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
