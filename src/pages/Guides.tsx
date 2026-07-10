@@ -7,6 +7,7 @@ import { ArrowRight, Search, X, Clock, ChevronDown, ArrowUp } from "lucide-react
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { guidesData } from "@/data/guides";
+import { productSystem } from "@/data/product-system";
 
 // Import images
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
@@ -358,7 +359,7 @@ const deviceSlugs = [
 // ── Skeleton components ──
 
 const FeaturedCardSkeleton = () => (
-  <div className="rounded-2xl overflow-hidden bg-[#FAF7F2] shadow-sm">
+  <div className="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm">
     <Skeleton className="w-full aspect-[4/3]" />
     <div className="p-5">
       <Skeleton className="h-5 w-full mb-2" />
@@ -368,7 +369,7 @@ const FeaturedCardSkeleton = () => (
 );
 
 const CardSkeleton = () => (
-  <div className="rounded-xl overflow-hidden bg-[#FAF7F2] shadow-sm">
+  <div className="rounded-xl overflow-hidden bg-white border border-slate-200 shadow-sm">
     <Skeleton className="w-full aspect-[16/10]" />
     <div className="p-4">
       <Skeleton className="h-4 w-full mb-2" />
@@ -381,23 +382,23 @@ const CardSkeleton = () => (
 
 const FeaturedGuideCard = ({ guide }: { guide: typeof guides[0] }) => (
   <Link to={`/guides/${guide.slug}`} className="group block">
-    <article className="rounded-2xl overflow-hidden bg-[#FAF7F2] shadow-sm hover:shadow-lg transition-all duration-300 h-full">
+    <article className="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
       <div className="aspect-[4/3] overflow-hidden">
         <img src={guide.thumbnail} alt={guide.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
       </div>
       <div className="p-5 md:p-6">
         <div className="flex items-center gap-2 mb-3">
-          <span className="text-xs font-medium text-[#8B7355] uppercase tracking-wider">Featured</span>
-          <span className="text-[#C4B5A4]">•</span>
-          <span className="inline-flex items-center gap-1 text-xs text-[#8B7355]">
+          <span className="text-xs font-medium text-blue-600 uppercase tracking-wider">Featured</span>
+          <span className="text-slate-300">•</span>
+          <span className="inline-flex items-center gap-1 text-xs text-blue-600">
             <Clock className="h-3 w-3" />
             {guide.readTime} min
           </span>
         </div>
-        <h3 className="text-lg md:text-xl font-semibold text-[#3D3D3D] leading-snug mb-2 group-hover:text-primary transition-colors">
+        <h3 className="text-lg md:text-xl font-semibold text-slate-950 leading-snug mb-2 group-hover:text-primary transition-colors">
           {guide.title}
         </h3>
-        <p className="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2">{guide.description}</p>
+        <p className="text-sm text-slate-600 leading-relaxed line-clamp-2">{guide.description}</p>
       </div>
     </article>
   </Link>
@@ -405,18 +406,18 @@ const FeaturedGuideCard = ({ guide }: { guide: typeof guides[0] }) => (
 
 const GuideCard = ({ guide, compact = false }: { guide: typeof guides[0]; compact?: boolean }) => (
   <Link to={`/guides/${guide.slug}`} className="group block h-full">
-    <article className="rounded-xl overflow-hidden bg-[#FAF7F2] shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
+    <article className="rounded-xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
       <div className={`${compact ? 'aspect-[16/9]' : 'aspect-[16/10]'} overflow-hidden`}>
         <img src={guide.thumbnail} alt={guide.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
       </div>
       <div className="p-4 flex-1 flex flex-col">
         <div className="flex items-center gap-2 mb-2">
-          <span className="inline-flex items-center gap-1 text-xs text-[#8B7355]">
+          <span className="inline-flex items-center gap-1 text-xs text-blue-600">
             <Clock className="h-3 w-3" />
             {guide.readTime} min
           </span>
         </div>
-        <h3 className="text-base font-medium text-[#3D3D3D] leading-snug mb-1.5 group-hover:text-primary transition-colors line-clamp-2 flex-1">
+        <h3 className="text-base font-medium text-slate-950 leading-snug mb-1.5 group-hover:text-primary transition-colors line-clamp-2 flex-1">
           {guide.title}
         </h3>
         <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary mt-2">
@@ -431,8 +432,8 @@ const GuideCard = ({ guide, compact = false }: { guide: typeof guides[0]; compac
 // Section Header Component
 const SectionHeader = ({ id, title, subtitle }: { id: string; title: string; subtitle?: string }) => (
   <div id={id} className="mb-8 scroll-mt-24">
-    <h2 className="text-2xl md:text-3xl font-semibold text-[#3D3D3D] mb-2">{title}</h2>
-    {subtitle && <p className="text-[#6B6B6B] font-light max-w-2xl">{subtitle}</p>}
+    <h2 className="text-2xl md:text-3xl font-semibold text-slate-950 mb-2">{title}</h2>
+    {subtitle && <p className="text-slate-600 font-light max-w-2xl">{subtitle}</p>}
   </div>
 );
 
@@ -464,7 +465,7 @@ const CategorySection = ({
       <div className="container px-4 max-w-6xl mx-auto">
         <SectionHeader id={id} title={title} subtitle={subtitle} />
         {contextText && (
-          <p className="text-sm text-[#6B6B6B] leading-relaxed max-w-3xl mb-6 -mt-4">
+          <p className="text-sm text-slate-600 leading-relaxed max-w-3xl mb-6 -mt-4">
             {contextText}
           </p>
         )}
@@ -484,7 +485,7 @@ const CategorySection = ({
               <div className="mt-6">
                 <button
                   onClick={() => setExpanded(!expanded)}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-[#8B7355] hover:text-primary transition-colors group"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-primary transition-colors group"
                 >
                   <span>View All Articles in This Category ({allGuides.length})</span>
                   <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`} />
@@ -619,42 +620,77 @@ const Guides = () => {
       
       <Header />
       
-      <main className="min-h-screen bg-[#F9F6F3]">
+      <main className="min-h-screen bg-slate-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-[#EDE8E3] via-[#F5F1ED] to-[#F9F6F3] pt-12 pb-16 md:pt-20 md:pb-24">
-          <div className="container px-4 max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3D3D3D] mb-6 leading-tight tracking-tight">
-              Simple Guides for Everyday Knee Comfort
-            </h1>
-            <p className="text-base md:text-lg text-[#6B6B6B] font-light leading-relaxed max-w-3xl mx-auto mb-4">
-              These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines. Whether you experience knee pain after exercise, notice your knees clicking when walking, or feel stiffness after sitting, our library covers the topics that matter most.
-            </p>
-            <p className="text-base md:text-lg text-[#6B6B6B] font-light leading-relaxed max-w-3xl mx-auto mb-4">
-              Knee discomfort is one of the most common concerns for adults over 30. From movement-related soreness and stair discomfort to age-related stiffness and daily comfort routines, each guide is designed to help you make informed decisions about your knee health without medical jargon or treatment claims.
-            </p>
-            <p className="text-base md:text-lg text-[#6B6B6B] font-light leading-relaxed max-w-3xl mx-auto mb-10">
-              Explore guides organized by location, activity, at-home methods, and device comparisons to find the information most relevant to your situation.
-            </p>
-            
-            {/* Search */}
-            <div className="max-w-xl mx-auto">
-              <div className="relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#8B7355]" />
-                <Input
-                  type="text"
-                  placeholder="Search guides..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-12 pr-10 h-12 text-base bg-white border-[#E5DDD4] focus:border-primary rounded-full shadow-sm"
-                />
-                {searchQuery && (
+        <section className="overflow-hidden border-b border-slate-200 bg-[radial-gradient(circle_at_70%_10%,rgba(37,99,235,0.14),transparent_28%),linear-gradient(180deg,#ffffff_0%,#f7fbff_100%)] pt-10 pb-12 md:pt-16 md:pb-18">
+          <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[0.88fr_1.12fr] lg:px-8">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-600">Expert guides. Real relief routines.</p>
+              <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-[-0.055em] text-slate-950 md:text-6xl">
+                Guides for better knee comfort.
+              </h1>
+              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
+                Practical, easy-to-read articles about stiffness, clicking, daily habits, recovery routines, and at-home knee comfort products — without heavy medical jargon.
+              </p>
+
+              <div className="mt-8 max-w-xl">
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-blue-600" />
+                  <Input
+                    type="text"
+                    placeholder="Search guides, topics, or keywords..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="h-13 rounded-full border-slate-200 bg-white pl-12 pr-10 text-base shadow-xl shadow-slate-200/60 focus:border-blue-400"
+                  />
+                  {searchQuery && (
+                    <button
+                      onClick={() => setSearchQuery("")}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 transition-colors hover:text-slate-900"
+                    >
+                      <X className="h-5 w-5" />
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {[
+                  ["By Symptom", "by-location"],
+                  ["By Activity", "by-activity"],
+                  ["Daily Routine", "by-methods"],
+                  ["Device Guides", "by-devices"],
+                  ["Buying Guides", "by-devices"],
+                ].map(([label, id]) => (
                   <button
-                    onClick={() => setSearchQuery("")}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-[#8B7355] hover:text-[#3D3D3D] transition-colors"
+                    key={label}
+                    onClick={() => scrollToSection(id)}
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-blue-300 hover:text-blue-600"
                   >
-                    <X className="h-5 w-5" />
+                    {label}
                   </button>
-                )}
+                ))}
+              </div>
+            </div>
+
+            <div className="relative hidden lg:block">
+              <div className="absolute inset-x-16 bottom-10 h-24 rounded-full bg-blue-500/20 blur-3xl" />
+              <div className="relative grid gap-4 rounded-[2.4rem] border border-white/80 bg-white/70 p-4 shadow-[0_45px_120px_-70px_rgba(15,23,42,0.7)] backdrop-blur-xl">
+                <img src="/images/flexiknee-lifestyle-work.webp" alt="FlexiKnee knee comfort guide lifestyle" className="h-[360px] w-full rounded-[2rem] object-cover" />
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="rounded-2xl bg-white p-4 shadow-sm">
+                    <p className="text-2xl font-semibold text-slate-950">100+</p>
+                    <p className="mt-1 text-xs font-medium text-slate-500">Guides</p>
+                  </div>
+                  <div className="rounded-2xl bg-white p-4 shadow-sm">
+                    <p className="text-2xl font-semibold text-slate-950">5</p>
+                    <p className="mt-1 text-xs font-medium text-slate-500">Topic paths</p>
+                  </div>
+                  <div className="rounded-2xl bg-slate-950 p-4 text-white shadow-sm">
+                    <p className="text-2xl font-semibold">New</p>
+                    <p className="mt-1 text-xs font-medium text-slate-300">Product hub</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -662,10 +698,10 @@ const Guides = () => {
 
         {/* Search Results */}
         {showSearchResults && (
-          <section ref={searchResultsRef} className="py-12 bg-white border-y border-[#E5DDD4]">
+          <section ref={searchResultsRef} className="py-12 bg-white border-y border-slate-200">
             <div className="container px-4 max-w-6xl mx-auto">
               <div className="mb-6">
-                <h2 className="text-xl font-semibold text-[#3D3D3D]">
+                <h2 className="text-xl font-semibold text-slate-950">
                   {filteredGuides.length} {filteredGuides.length === 1 ? "guide" : "guides"} found
                 </h2>
               </div>
@@ -677,9 +713,9 @@ const Guides = () => {
                 </div>
               ) : (
                 <div className="text-center py-12">
-                  <Search className="h-10 w-10 text-[#C4B5A4] mx-auto mb-4" />
-                  <h3 className="text-lg font-medium text-[#3D3D3D] mb-2">No guides found</h3>
-                  <p className="text-[#6B6B6B]">Try adjusting your search terms</p>
+                  <Search className="h-10 w-10 text-slate-300 mx-auto mb-4" />
+                  <h3 className="text-lg font-medium text-slate-950 mb-2">No guides found</h3>
+                  <p className="text-slate-600">Try adjusting your search terms</p>
                 </div>
               )}
             </div>
@@ -708,23 +744,23 @@ const Guides = () => {
                       if (!guide) return null;
                       return (
                         <Link key={slug} to={`/guides/${slug}`} className="group block">
-                          <article className="rounded-2xl overflow-hidden bg-[#FAF7F2] shadow-sm hover:shadow-lg transition-all duration-300 h-full border-2 border-primary/10">
+                          <article className="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 h-full border-2 border-primary/10">
                             <div className="aspect-[4/3] overflow-hidden">
                               <img src={guide.thumbnail} alt={guide.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                             </div>
                             <div className="p-5 md:p-6">
                               <div className="flex items-center gap-2 mb-3">
                                 <span className="text-xs font-medium text-primary uppercase tracking-wider">Featured</span>
-                                <span className="text-[#C4B5A4]">•</span>
-                                <span className="inline-flex items-center gap-1 text-xs text-[#8B7355]">
+                                <span className="text-slate-300">•</span>
+                                <span className="inline-flex items-center gap-1 text-xs text-blue-600">
                                   <Clock className="h-3 w-3" />
                                   {guide.readTime} min
                                 </span>
                               </div>
-                              <h3 className="text-lg md:text-xl font-semibold text-[#3D3D3D] leading-snug mb-2 group-hover:text-primary transition-colors">
+                              <h3 className="text-lg md:text-xl font-semibold text-slate-950 leading-snug mb-2 group-hover:text-primary transition-colors">
                                 {guide.title}
                               </h3>
-                              <p className="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2">{priorityDescriptions[slug] || guide.description}</p>
+                              <p className="text-sm text-slate-600 leading-relaxed line-clamp-2">{priorityDescriptions[slug] || guide.description}</p>
                             </div>
                           </article>
                         </Link>
@@ -738,7 +774,7 @@ const Guides = () => {
             {/* Micro text under Featured Guides */}
             <section className="pb-8 bg-white -mt-6">
               <div className="container px-4 max-w-4xl mx-auto">
-                <p className="text-sm text-[#6B6B6B] leading-relaxed text-center">
+                <p className="text-sm text-slate-600 leading-relaxed text-center">
                   These guides cover the most common knee discomfort situations, from knee pain during movement to post-activity soreness. A practical starting point for understanding common knee issues.
                 </p>
               </div>
@@ -752,7 +788,7 @@ const Guides = () => {
                   title="Start Here"
                   subtitle="Comprehensive guides for understanding and supporting everyday knee comfort."
                 />
-                <p className="text-sm text-[#6B6B6B] leading-relaxed max-w-3xl mb-6 -mt-4">
+                <p className="text-sm text-slate-600 leading-relaxed max-w-3xl mb-6 -mt-4">
                   New here? Start with <Link to="/guides/cause-of-knee-pain-patterns" className="text-primary hover:underline">what causes knee pain</Link>, build a <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily comfort routine</Link>, or learn <Link to="/guides/why-knee-pain-doesnt-go-away" className="text-primary hover:underline">why knee pain sometimes persists</Link>.
                 </p>
                 {isLoading ? (
@@ -783,7 +819,7 @@ const Guides = () => {
             {/* Contextual bridge */}
             <section className="py-6">
               <div className="container px-4 max-w-4xl mx-auto">
-                <p className="text-[#6B6B6B] text-sm leading-relaxed text-center">
+                <p className="text-slate-600 text-sm leading-relaxed text-center">
                   Knee discomfort often shows up during movement. Whether you notice <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link>, hear <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">clicking while walking</Link>, or feel aching when <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">going down stairs</Link>, activity-related guides can help.
                 </p>
               </div>
@@ -802,7 +838,7 @@ const Guides = () => {
             {/* Contextual bridge */}
             <section className="py-6">
               <div className="container px-4 max-w-4xl mx-auto">
-                <p className="text-[#6B6B6B] text-sm leading-relaxed text-center">
+                <p className="text-slate-600 text-sm leading-relaxed text-center">
                   Daily habits matter as much as movement. From <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massagers</Link> to managing <Link to="/guides/knee-stiffness-after-resting" className="text-primary hover:underline">stiffness after resting</Link>, consistent at-home care supports long-term comfort.
                 </p>
               </div>
@@ -822,7 +858,7 @@ const Guides = () => {
             {/* Contextual bridge between Methods and Devices */}
             <section className="py-6">
               <div className="container px-4 max-w-4xl mx-auto">
-                <p className="text-[#6B6B6B] text-sm leading-relaxed text-center">
+                <p className="text-slate-600 text-sm leading-relaxed text-center">
                   Ready to choose a device? People dealing with <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">post-exercise discomfort</Link> or <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning stiffness</Link> often benefit from dedicated knee comfort devices.
                 </p>
               </div>
@@ -838,6 +874,38 @@ const Guides = () => {
               isLoading={isLoading}
             />
 
+
+            {/* Product Ecosystem Module */}
+            <section className="bg-white py-12 md:py-16">
+              <div className="container mx-auto max-w-6xl px-4">
+                <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Explore products</p>
+                    <h2 className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-slate-950 md:text-3xl">Daily knee comfort tools.</h2>
+                    <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+                      Articles stay educational, but the hub now connects readers to the FlexiKnee system in a calm, premium way.
+                    </p>
+                  </div>
+                  <Link to="/product/knee-massager-smart-red-light-and-massage-therapy" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
+                    Shop the system <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  {productSystem.map((item) => (
+                    <Link key={item.name} to={item.href} className="group overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                      <img src={item.image} alt={item.name} className="aspect-[4/3] w-full bg-slate-50 object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+                      <div className="p-4">
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">{item.status}</p>
+                        <h3 className="mt-2 text-base font-semibold text-slate-950">{item.name}</h3>
+                        <p className="mt-1 text-sm leading-5 text-slate-500">{item.label}</p>
+                        <p className="mt-3 text-sm font-semibold text-slate-950">{item.price}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+
             {/* Browse All Guides - Collapsed */}
             <section className="py-12 md:py-16 bg-white">
               <div className="container px-4 max-w-6xl mx-auto">
@@ -846,15 +914,15 @@ const Guides = () => {
                   className="w-full flex items-center justify-between gap-4 group"
                 >
                   <div className="text-left">
-                    <h2 className="text-2xl md:text-3xl font-semibold text-[#3D3D3D] mb-1 group-hover:text-primary transition-colors">
+                    <h2 className="text-2xl md:text-3xl font-semibold text-slate-950 mb-1 group-hover:text-primary transition-colors">
                       Browse All Guides
                     </h2>
-                    <p className="text-[#6B6B6B] font-light">
+                    <p className="text-slate-600 font-light">
                       {guides.length} guides available
                     </p>
                   </div>
-                  <div className={`flex-shrink-0 w-10 h-10 rounded-full bg-[#F5F1ED] flex items-center justify-center transition-transform duration-300 ${showAllGuides ? 'rotate-180' : ''}`}>
-                    <ChevronDown className="h-5 w-5 text-[#8B7355]" />
+                  <div className={`flex-shrink-0 w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center transition-transform duration-300 ${showAllGuides ? 'rotate-180' : ''}`}>
+                    <ChevronDown className="h-5 w-5 text-blue-600" />
                   </div>
                 </button>
                 
@@ -875,7 +943,7 @@ const Guides = () => {
             {/* FAQ Section */}
             <section className="py-12 md:py-16 bg-white">
               <div className="container px-4 max-w-4xl mx-auto">
-                <h2 className="text-2xl md:text-3xl font-semibold text-[#3D3D3D] mb-8">Frequently Asked Questions About Knee Comfort</h2>
+                <h2 className="text-2xl md:text-3xl font-semibold text-slate-950 mb-8">Frequently Asked Questions About Knee Comfort</h2>
                 <div className="space-y-6">
                   {[
                     { q: "What are the most common causes of knee pain?", a: "Knee pain is most commonly caused by overuse, muscle imbalances, age-related cartilage changes, and repetitive loading during activities like walking, running, and climbing stairs. Understanding the specific pattern of your discomfort helps identify the most effective daily habits for comfort." },
@@ -885,9 +953,9 @@ const Guides = () => {
                     { q: "What home methods help with daily knee discomfort?", a: "Simple daily habits that support knee comfort include gentle movement and stretching, applying warmth to stiff joints, maintaining balanced leg strength, wearing supportive footwear, staying hydrated, and taking regular movement breaks during prolonged sitting." },
                     { q: "How do infrared knee massagers differ from regular heating pads?", a: "Infrared knee massagers use light wavelengths that penetrate deeper into tissue compared to surface-level heat pads. This deeper warmth supports blood flow and helps relax muscles below the skin's surface. Many devices also include vibration massage for additional comfort support." },
                   ].map((faq, i) => (
-                    <div key={i} className="border-b border-[#E5DDD4] pb-5">
-                      <h3 className="text-base font-semibold text-[#3D3D3D] mb-2">{faq.q}</h3>
-                      <p className="text-sm text-[#6B6B6B] leading-relaxed">{faq.a}</p>
+                    <div key={i} className="border-b border-slate-200 pb-5">
+                      <h3 className="text-base font-semibold text-slate-950 mb-2">{faq.q}</h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">{faq.a}</p>
                     </div>
                   ))}
                 </div>
@@ -897,29 +965,29 @@ const Guides = () => {
             {/* SEO Text Block */}
             <section className="py-12 md:py-16">
               <div className="container px-4 max-w-4xl mx-auto">
-                <h2 className="text-2xl md:text-3xl font-semibold text-[#3D3D3D] mb-6">Understanding Knee Discomfort Patterns</h2>
-                <p className="text-[#6B6B6B] leading-relaxed mb-4">
+                <h2 className="text-2xl md:text-3xl font-semibold text-slate-950 mb-6">Understanding Knee Discomfort Patterns</h2>
+                <p className="text-slate-600 leading-relaxed mb-4">
                   Knee discomfort affects millions of adults worldwide, and understanding the patterns behind it is the first step toward building effective daily comfort habits. Whether you experience knee pain when walking, notice stiffness after sitting, or feel soreness after physical activity, each pattern has specific causes rooted in how the knee joint functions during everyday movement.
                 </p>
-                <p className="text-[#6B6B6B] leading-relaxed mb-4">
+                <p className="text-slate-600 leading-relaxed mb-4">
                   Daily habits play a significant role in how your knees feel over time. Simple practices like maintaining balanced leg strength, applying warmth to stiff joints, staying gently active throughout the day, and wearing supportive footwear can meaningfully improve your daily knee comfort. The guides in this library are designed to help you understand these patterns and build sustainable routines that support your joints.
                 </p>
-                <p className="text-[#6B6B6B] leading-relaxed">
+                <p className="text-slate-600 leading-relaxed">
                   Explore our guides to learn about <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link>, <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking during walking</Link>, <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">stair-related knee discomfort</Link>, and <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">at-home comfort devices</Link>. Each guide provides practical, educational information to help you make informed decisions about your knee health.
                 </p>
               </div>
             </section>
 
             {/* Footer Mini Navigation */}
-            <section className="py-8 border-t border-[#E5DDD4]">
+            <section className="py-8 border-t border-slate-200">
               <div className="container px-4 max-w-6xl mx-auto">
                 <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-                  <span className="text-sm text-[#8B7355] font-medium">Browse by:</span>
-                  <button onClick={() => scrollToSection('priority-guides')} className="text-sm text-[#6B6B6B] hover:text-primary transition-colors">Featured</button>
-                  <button onClick={() => scrollToSection('by-location')} className="text-sm text-[#6B6B6B] hover:text-primary transition-colors">By Location</button>
-                  <button onClick={() => scrollToSection('by-activity')} className="text-sm text-[#6B6B6B] hover:text-primary transition-colors">By Activity</button>
-                  <button onClick={() => scrollToSection('by-methods')} className="text-sm text-[#6B6B6B] hover:text-primary transition-colors">Methods & Comfort</button>
-                  <button onClick={() => scrollToSection('by-devices')} className="text-sm text-[#6B6B6B] hover:text-primary transition-colors">Device Guides</button>
+                  <span className="text-sm text-blue-600 font-medium">Browse by:</span>
+                  <button onClick={() => scrollToSection('priority-guides')} className="text-sm text-slate-600 hover:text-primary transition-colors">Featured</button>
+                  <button onClick={() => scrollToSection('by-location')} className="text-sm text-slate-600 hover:text-primary transition-colors">By Location</button>
+                  <button onClick={() => scrollToSection('by-activity')} className="text-sm text-slate-600 hover:text-primary transition-colors">By Activity</button>
+                  <button onClick={() => scrollToSection('by-methods')} className="text-sm text-slate-600 hover:text-primary transition-colors">Methods & Comfort</button>
+                  <button onClick={() => scrollToSection('by-devices')} className="text-sm text-slate-600 hover:text-primary transition-colors">Device Guides</button>
                 </nav>
               </div>
             </section>

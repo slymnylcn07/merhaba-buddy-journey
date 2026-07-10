@@ -6,6 +6,7 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ArticleShareBlock } from "@/components/ArticleShareSidebar";
 import { ArticleTableOfContents } from "@/components/ArticleTableOfContents";
+import { productSystem } from "@/data/product-system";
 
 
 import {
@@ -9053,20 +9054,20 @@ const GuideArticle = () => {
         />
       </div>
       
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_24%,#ffffff_100%)]">
         {/* Article Hero */}
         <section className="relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-background z-10" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-b from-slate-950/55 via-slate-950/25 to-white" />
           <div 
-            className="h-[40vh] md:h-[50vh] bg-cover bg-center bg-no-repeat"
+            className="h-[34vh] bg-cover bg-center bg-no-repeat md:h-[44vh]"
             style={{ backgroundImage: `url(${article.heroImage})` }}
           />
         </section>
 
         {/* Article Header */}
-        <section className="pt-8 md:pt-12">
-          <div className="container mx-auto max-w-6xl px-4">
-            <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
+        <section className="-mt-20 relative z-20 pb-2">
+          <div className="container mx-auto max-w-7xl px-4">
+            <div className="rounded-[2rem] border border-white/80 bg-white/90 p-6 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.75)] backdrop-blur-xl lg:grid lg:grid-cols-[12rem_minmax(0,52rem)] lg:gap-x-10 lg:p-8">
               <div className="hidden lg:block" />
 
               <div className="min-w-0 max-w-3xl">
@@ -9093,8 +9094,8 @@ const GuideArticle = () => {
 
         {/* Editorial article layout: TOC follows content until CTA without shifting the article */}
         <section className="pb-6 md:pb-8 md:pt-2">
-          <div className="container mx-auto max-w-6xl px-4">
-            <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
+          <div className="container mx-auto max-w-7xl px-4">
+            <div className="lg:grid lg:grid-cols-[12rem_minmax(0,52rem)_18rem] lg:gap-x-8 xl:gap-x-10">
               <div className="hidden lg:block">
                 <ArticleTableOfContents variant="desktop" initialCount={6} />
               </div>
@@ -9110,21 +9111,21 @@ const GuideArticle = () => {
                   <ArticleTableOfContents variant="mobile" initialCount={5} />
                 </div>
 
-                <p className="text-lg font-light leading-relaxed text-muted-foreground">
+                <p className="rounded-[1.5rem] border border-slate-200 bg-white p-5 text-lg font-normal leading-8 text-slate-600 shadow-sm">
                   {article.intro}
                 </p>
 
                 <hr className="my-6 border-t border-border/30" />
 
                 <div className="article-content max-w-none
-                  [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-foreground [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:pb-3 [&_h2]:border-b [&_h2]:border-border/30
-                  [&_h3]:text-lg [&_h3]:md:text-xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-foreground [&_h3]:mt-8 [&_h3]:mb-3
-                  [&_p]:text-muted-foreground [&_p]:font-light [&_p]:leading-relaxed [&_p]:mb-5
-                  [&_a]:text-primary [&_a]:no-underline hover:[&_a]:underline
-                  [&_strong]:text-foreground [&_strong]:font-semibold
-                  [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-5
-                  [&_li]:text-muted-foreground [&_li]:font-light [&_li]:leading-relaxed [&_li]:mb-1
-                  [&_img]:w-full [&_img]:rounded-xl [&_img]:my-6 [&_img]:max-h-96 [&_img]:object-contain
+                  [&_h2]:mt-14 [&_h2]:mb-5 [&_h2]:border-b [&_h2]:border-slate-200 [&_h2]:pb-4 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-[-0.035em] [&_h2]:text-slate-950 [&_h2]:md:text-3xl
+                  [&_h3]:mt-9 [&_h3]:mb-3 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:tracking-[-0.02em] [&_h3]:text-slate-950
+                  [&_p]:mb-5 [&_p]:text-base [&_p]:font-normal [&_p]:leading-8 [&_p]:text-slate-600
+                  [&_a]:font-medium [&_a]:text-blue-600 [&_a]:no-underline hover:[&_a]:underline
+                  [&_strong]:font-semibold [&_strong]:text-slate-950
+                  [&_ul]:mb-6 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:mb-6 [&_ol]:list-decimal [&_ol]:pl-6
+                  [&_li]:mb-2 [&_li]:text-base [&_li]:leading-7 [&_li]:text-slate-600
+                  [&_img]:my-8 [&_img]:w-full [&_img]:rounded-[1.5rem] [&_img]:border [&_img]:border-slate-200 [&_img]:bg-white [&_img]:object-contain [&_img]:shadow-sm
                 ">
                   {article.content}
 
@@ -9146,13 +9147,44 @@ const GuideArticle = () => {
 
 
               </article>
+
+              <aside className="mt-8 hidden lg:block">
+                <div className="sticky top-24 space-y-4">
+                  <div className="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm">
+                    <p className="text-sm font-semibold text-slate-950">Support your daily comfort</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-500">
+                      Soft product discovery, not a popup. Match future articles to the right knee comfort product.
+                    </p>
+                    <div className="mt-4 grid gap-3">
+                      {productSystem.slice(0, 2).map((item) => (
+                        <Link key={item.name} to={item.href} className="group flex gap-3 rounded-2xl border border-slate-200 p-3 transition hover:border-blue-300 hover:bg-blue-50/40">
+                          <img src={item.image} alt={item.name} className="h-16 w-16 rounded-xl bg-slate-50 object-cover" />
+                          <div>
+                            <p className="text-sm font-semibold leading-5 text-slate-950">{item.name}</p>
+                            <p className="mt-1 text-xs text-slate-500">{item.price}</p>
+                            <span className="mt-2 inline-flex text-xs font-semibold text-blue-600">Shop now</span>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="rounded-[1.5rem] border border-blue-100 bg-blue-50/70 p-5">
+                    <p className="text-sm font-semibold text-blue-700">Key idea</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                      Content stays educational. Product suggestions become contextual later by article topic.
+                    </p>
+                  </div>
+                </div>
+              </aside>
+
             </div>
           </div>
         </section>
 
         {/* Share Block */}
         <section>
-          <div className="container mx-auto max-w-6xl px-4">
+          <div className="container mx-auto max-w-7xl px-4">
             <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
               <div className="hidden lg:block" />
               <div className="min-w-0 max-w-3xl">
