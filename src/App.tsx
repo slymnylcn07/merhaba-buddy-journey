@@ -13,7 +13,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Lazy load non-critical routes for code splitting
-const ProductDetail = lazy(() => import("./pages/ProductDetail"));
+const ProductRoute = lazy(() => import("./pages/ProductRoute"));
 const TrackOrder = lazy(() => import("./pages/TrackOrder"));
 const Account = lazy(() => import("./pages/Account"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
@@ -63,7 +63,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/product/knee-massager-smart-heated-red-light-and-massage-therapy" element={<Navigate to="/product/knee-massager-smart-red-light-and-massage-therapy" replace />} />
-                <Route path="/product/:handle" element={<ProductDetail />} />
+                <Route path="/product/:handle" element={<ProductRoute />} />
                 <Route path="/track-order" element={<TrackOrder />} />
                 <Route path="/account" element={<Account />} />
                 <Route path="/terms-of-service" element={<TermsOfService />} />

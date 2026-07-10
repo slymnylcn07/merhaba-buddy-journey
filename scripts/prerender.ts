@@ -10,6 +10,7 @@ import puppeteer from "puppeteer-core";
 import { createServer } from "http";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSync } from "fs";
 import { resolve, join, extname } from "path";
+import { getShopifyProductHandles } from "./shopify-build-products";
 
 const DIST = resolve(process.cwd(), "dist");
 const PORT = 4173;
@@ -36,8 +37,8 @@ const MIME: Record<string, string> = {
 function startServer(): Promise<ReturnType<typeof createServer>> {
   return new Promise((ok) => {
     const srv = createServer((req, res) => {
-      let url = (req.url || "/").split("?")[0];
-      let filePath = join(DIST, url);
+      const url = (req.url || "/").split("?")[0];
+      const filePath = join(DIST, url);
 
       // Try exact file first
       if (existsSync(filePath) && statSync(filePath).isFile()) {
@@ -78,7 +79,10 @@ async function prerender() {
   }
 
   const slugs = getGuideSlugs();
-  console.log(`🔍 Found ${slugs.length} guide routes to prerender`);
+  const productHandles = await getShopifyProductHandles();
+  const primaryProductHandle = "knee-massager-smart-red-light-and-massage-therapy";
+  const uniqueProductHandles = [...new Set([primaryProductHandle, ...productHandles])];
+  console.log(`🔍 Found ${slugs.length} guide routes and ${uniqueProductHandles.length} product routes to prerender`);
 
   // Also prerender static pages
   const staticRoutes = [
@@ -98,6 +102,7 @@ async function prerender() {
   const allRoutes = [
     ...staticRoutes,
     ...slugs.map((s) => `/guides/${s}`),
+    ...uniqueProductHandles.map((handle) => `/product/${handle}`),
   ];
 
   const server = await startServer();

@@ -1,24 +1,75 @@
 /**
- * Newsletter signup, Shopify Customers.
+ * FlexiKnee newsletter + knee quiz capture endpoint.
  *
- * Server only Vercel function.
+ * The browser only calls /api/newsletter. Shopify Admin credentials stay on Vercel.
  *
- * Required Vercel env:
- * SHOPIFY_STORE_DOMAIN
- * SHOPIFY_CLIENT_ID
- * SHOPIFY_CLIENT_SECRET
+ * Required Vercel environment variables:
+ *   SHOPIFY_STORE_DOMAIN      permanent *.myshopify.com domain
+ *   SHOPIFY_CLIENT_ID         FlexiKnee Newsletter API client ID
+ *   SHOPIFY_CLIENT_SECRET     FlexiKnee Newsletter API client secret
  *
  * Optional legacy fallback:
- * SHOPIFY_ADMIN_TOKEN
+ *   SHOPIFY_ADMIN_TOKEN
  *
- * Never expose Admin API secrets with VITE_.
+ * Required app scopes:
+ *   read_customers, write_customers
  */
 
-const API_VERSION = process.env.SHOPIFY_ADMIN_API_VERSION || '2025-10';
+const API_VERSION = process.env.SHOPIFY_ADMIN_API_VERSION || '2026-07';
+const QUIZ_TRIGGER_TAG = 'quiz-plan-requested';
+
+type JsonObject = Record<string, unknown>;
+
+interface ApiRequest {
+  method?: string;
+  body?: unknown;
+}
+
+interface ApiResponse {
+  status: (statusCode: number) => ApiResponse;
+  json: (payload: unknown) => unknown;
+}
+
+interface ShopifyUserError {
+  field?: string[] | null;
+  message: string;
+  code?: string;
+}
+
+interface ShopifyCustomer {
+  id: string;
+  email?: string | null;
+  tags: string[];
+}
+
+interface QuizPayload {
+  resultKey?: unknown;
+  productKey?: unknown;
+  sourceArticle?: unknown;
+}
+
+interface NewsletterBody {
+  email?: unknown;
+  consent?: unknown;
+  source?: unknown;
+  quiz?: QuizPayload | null;
+}
+
+interface TokenResponse {
+  access_token?: string;
+  expires_in?: number;
+  error?: string;
+  error_description?: string;
+}
+
+interface GraphqlEnvelope<T> {
+  data?: T;
+  errors?: Array<{ message: string }>;
+}
 
 let cachedToken: { token: string; expiresAt: number } | null = null;
 
-function normalizeShopDomain(value: string) {
+function normalizeShopDomain(value: string): string {
   return String(value || '')
     .trim()
     .replace(/^https?:\/\//i, '')
@@ -26,20 +77,45 @@ function normalizeShopDomain(value: string) {
     .replace(/\s+/g, '');
 }
 
-
-async function parseBody(req: any) {
+async function parseBody(req: ApiRequest): Promise<NewsletterBody> {
   if (typeof req.body === 'string') {
     try {
-      return JSON.parse(req.body);
+      return JSON.parse(req.body) as NewsletterBody;
     } catch {
       return {};
     }
   }
 
-  return req.body || {};
+  if (req.body && typeof req.body === 'object') {
+    return req.body as NewsletterBody;
+  }
+
+  return {};
 }
 
-async function getAdminAccessToken(storeDomain: string) {
+function safeToken(value: unknown, fallback: string): string {
+  const cleaned = String(value || '')
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9-]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 60);
+  return cleaned || fallback;
+}
+
+function normalizeEmail(value: unknown): string {
+  return String(value || '').trim().toLowerCase();
+}
+
+function validEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) && email.length <= 255;
+}
+
+function errorMessage(error: unknown): string {
+  return error instanceof Error ? error.message : String(error);
+}
+
+async function getAdminAccessToken(storeDomain: string): Promise<string> {
   const legacyToken = process.env.SHOPIFY_ADMIN_TOKEN;
   if (legacyToken) return legacyToken;
 
@@ -64,14 +140,13 @@ async function getAdminAccessToken(storeDomain: string) {
     }),
   });
 
-  const data = await response.json().catch(() => ({}));
+  const data = await response.json().catch(() => ({})) as TokenResponse;
 
   if (!response.ok || !data.access_token) {
-    throw new Error(data?.error_description || data?.error || 'Could not obtain Shopify Admin access token');
+    throw new Error(data.error_description || data.error || 'Could not obtain Shopify Admin access token');
   }
 
   const expiresInSeconds = Number(data.expires_in || 86400);
-
   cachedToken = {
     token: data.access_token,
     expiresAt: Date.now() + Math.max(60, expiresInSeconds - 300) * 1000,
@@ -80,182 +155,216 @@ async function getAdminAccessToken(storeDomain: string) {
   return cachedToken.token;
 }
 
-function mergeTags(existing: string | undefined) {
-  const tags = new Set(
-    String(existing || '')
-      .split(',')
-      .map((tag) => tag.trim())
-      .filter(Boolean)
-  );
-
-  tags.add('newsletter');
-  tags.add('website-signup');
-  tags.add('flexiknee');
-
-  return Array.from(tags).join(', ');
-}
-
-async function shopifyRest(storeDomain: string, adminToken: string, path: string, options: RequestInit = {}) {
-  const response = await fetch(`https://${storeDomain}/admin/api/${API_VERSION}${path}`, {
-    ...options,
+async function shopifyGraphql<T>(
+  storeDomain: string,
+  adminToken: string,
+  query: string,
+  variables: JsonObject
+): Promise<T> {
+  const response = await fetch(`https://${storeDomain}/admin/api/${API_VERSION}/graphql.json`, {
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'X-Shopify-Access-Token': adminToken,
-      ...(options.headers || {}),
     },
+    body: JSON.stringify({ query, variables }),
   });
 
-  const data = await response.json().catch(() => ({}));
-
-  if (!response.ok) {
-    const message =
-      data?.errors ||
-      data?.error ||
-      data?.message ||
-      `Shopify REST error ${response.status}`;
-    throw new Error(typeof message === 'string' ? message : JSON.stringify(message));
+  const json = await response.json().catch(() => ({})) as GraphqlEnvelope<T>;
+  if (!response.ok || json.errors?.length) {
+    throw new Error(json.errors?.[0]?.message || `Shopify GraphQL error ${response.status}`);
   }
-
-  return data;
+  if (!json.data) throw new Error('Shopify returned an empty GraphQL response');
+  return json.data;
 }
 
-async function subscribeViaRest(storeDomain: string, adminToken: string, email: string) {
-  const search = await shopifyRest(
+async function findCustomer(
+  storeDomain: string,
+  adminToken: string,
+  email: string
+): Promise<ShopifyCustomer | null> {
+  const data = await shopifyGraphql<{
+    customers: { edges: Array<{ node: ShopifyCustomer }> };
+  }>(
     storeDomain,
     adminToken,
-    `/customers/search.json?query=${encodeURIComponent(`email:${email}`)}`,
-    { method: 'GET' }
+    `query findCustomer($query: String!) {
+      customers(first: 1, query: $query) {
+        edges {
+          node {
+            id
+            email
+            tags
+          }
+        }
+      }
+    }`,
+    { query: `email:${email}` }
   );
 
-  const existing = search?.customers?.[0];
-
-  if (existing?.id) {
-    await shopifyRest(storeDomain, adminToken, `/customers/${existing.id}.json`, {
-      method: 'PUT',
-      body: JSON.stringify({
-        customer: {
-          id: existing.id,
-          email,
-          tags: mergeTags(existing.tags),
-          accepts_marketing: true,
-          email_marketing_consent: {
-            state: 'subscribed',
-            opt_in_level: 'single_opt_in',
-          },
-        },
-      }),
-    });
-
-    return { ok: true, existing: true };
-  }
-
-  await shopifyRest(storeDomain, adminToken, '/customers.json', {
-    method: 'POST',
-    body: JSON.stringify({
-      customer: {
-        email,
-        tags: mergeTags(''),
-        accepts_marketing: true,
-        email_marketing_consent: {
-          state: 'subscribed',
-          opt_in_level: 'single_opt_in',
-        },
-      },
-    }),
-  });
-
-  return { ok: true, created: true };
+  return data.customers.edges[0]?.node || null;
 }
 
-async function subscribeViaGraphql(storeDomain: string, adminToken: string, email: string) {
-  const gql = async (query: string, variables: Record<string, unknown>) => {
-    const response = await fetch(`https://${storeDomain}/admin/api/${API_VERSION}/graphql.json`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Shopify-Access-Token': adminToken,
-      },
-      body: JSON.stringify({ query, variables }),
-    });
-
-    const json = await response.json().catch(() => ({}));
-
-    if (!response.ok || json.errors) {
-      throw new Error(json?.errors?.[0]?.message || `Shopify GraphQL error ${response.status}`);
-    }
-
-    return json;
-  };
-
-  const createResult = await gql(
+async function createCustomer(
+  storeDomain: string,
+  adminToken: string,
+  email: string
+): Promise<ShopifyCustomer | null> {
+  const data = await shopifyGraphql<{
+    customerCreate: {
+      customer: ShopifyCustomer | null;
+      userErrors: ShopifyUserError[];
+    };
+  }>(
+    storeDomain,
+    adminToken,
     `mutation createCustomer($input: CustomerInput!) {
       customerCreate(input: $input) {
-        customer { id email }
+        customer { id email tags }
         userErrors { field message }
       }
     }`,
     {
       input: {
         email,
-        tags: ['newsletter', 'website-signup', 'flexiknee'],
+        tags: ['newsletter', 'website-signup', 'flexiknee', 'flexiknee-newsletter-api'],
+      },
+    }
+  );
+
+  const { customer, userErrors } = data.customerCreate;
+  if (customer?.id) return customer;
+
+  const duplicate = userErrors.some((error) => {
+    const message = error.message.toLowerCase();
+    return message.includes('already') || message.includes('taken');
+  });
+
+  if (duplicate) return findCustomer(storeDomain, adminToken, email);
+  throw new Error(userErrors[0]?.message || 'Could not create Shopify customer');
+}
+
+async function updateEmailConsent(
+  storeDomain: string,
+  adminToken: string,
+  customerId: string
+): Promise<void> {
+  const data = await shopifyGraphql<{
+    customerEmailMarketingConsentUpdate: { userErrors: ShopifyUserError[] };
+  }>(
+    storeDomain,
+    adminToken,
+    `mutation updateConsent($input: CustomerEmailMarketingConsentUpdateInput!) {
+      customerEmailMarketingConsentUpdate(input: $input) {
+        customer { id }
+        userErrors { field message }
+      }
+    }`,
+    {
+      input: {
+        customerId,
         emailMarketingConsent: {
           marketingState: 'SUBSCRIBED',
           marketingOptInLevel: 'SINGLE_OPT_IN',
+          consentUpdatedAt: new Date().toISOString(),
         },
       },
     }
   );
 
-  const createdCustomer = createResult?.data?.customerCreate?.customer;
-  const createErrors = createResult?.data?.customerCreate?.userErrors || [];
+  const errors = data.customerEmailMarketingConsentUpdate.userErrors;
+  if (errors.length) throw new Error(errors[0]?.message || 'Could not update email consent');
+}
 
-  if (createdCustomer?.id) {
-    return { ok: true, created: true };
-  }
-
-  const alreadyExists = createErrors.some((err: any) =>
-    String(err?.message || '').toLowerCase().includes('has already been taken') ||
-    String(err?.message || '').toLowerCase().includes('already exists')
-  );
-
-  if (!alreadyExists) {
-    throw new Error(createErrors[0]?.message || 'Could not create Shopify customer');
-  }
-
-  const searchResult = await gql(
-    `query findCustomer($query: String!) {
-      customers(first: 1, query: $query) {
-        edges { node { id email } }
+async function removeTags(
+  storeDomain: string,
+  adminToken: string,
+  customerId: string,
+  tags: string[]
+): Promise<void> {
+  if (!tags.length) return;
+  const data = await shopifyGraphql<{
+    tagsRemove: { userErrors: ShopifyUserError[] };
+  }>(
+    storeDomain,
+    adminToken,
+    `mutation removeTags($id: ID!, $tags: [String!]!) {
+      tagsRemove(id: $id, tags: $tags) {
+        node { id }
+        userErrors { field message }
       }
     }`,
-    { query: `email:${email}` }
+    { id: customerId, tags }
   );
+  const errors = data.tagsRemove.userErrors;
+  if (errors.length) throw new Error(errors[0]?.message || 'Could not refresh customer tags');
+}
 
-  const customerId = searchResult?.data?.customers?.edges?.[0]?.node?.id;
-
-  if (!customerId) {
-    return { ok: true, existing: true };
-  }
-
-  await gql(
-    `mutation tagsAdd($id: ID!, $tags: [String!]!) {
+async function addTags(
+  storeDomain: string,
+  adminToken: string,
+  customerId: string,
+  tags: string[]
+): Promise<void> {
+  const data = await shopifyGraphql<{
+    tagsAdd: { userErrors: ShopifyUserError[] };
+  }>(
+    storeDomain,
+    adminToken,
+    `mutation addTags($id: ID!, $tags: [String!]!) {
       tagsAdd(id: $id, tags: $tags) {
         node { id }
         userErrors { field message }
       }
     }`,
-    { id: customerId, tags: ['newsletter', 'website-signup', 'flexiknee'] }
+    { id: customerId, tags }
   );
-
-  return { ok: true, existing: true };
+  const errors = data.tagsAdd.userErrors;
+  if (errors.length) throw new Error(errors[0]?.message || 'Could not add customer tags');
 }
 
-export default async function handler(req: any, res: any) {
+async function saveQuizMetafield(
+  storeDomain: string,
+  adminToken: string,
+  customerId: string,
+  value: JsonObject
+): Promise<void> {
+  const data = await shopifyGraphql<{
+    metafieldsSet: { userErrors: ShopifyUserError[] };
+  }>(
+    storeDomain,
+    adminToken,
+    `mutation saveQuizProfile($metafields: [MetafieldsSetInput!]!) {
+      metafieldsSet(metafields: $metafields) {
+        metafields { id namespace key }
+        userErrors { field message code }
+      }
+    }`,
+    {
+      metafields: [
+        {
+          ownerId: customerId,
+          namespace: 'flexiknee',
+          key: 'knee_quiz_profile',
+          type: 'json',
+          value: JSON.stringify(value),
+        },
+      ],
+    }
+  );
+
+  const errors = data.metafieldsSet.userErrors;
+  if (errors.length) throw new Error(errors[0]?.message || 'Could not save quiz profile');
+}
+
+export default async function handler(req: ApiRequest, res: ApiResponse): Promise<unknown> {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const storeDomain = normalizeShopDomain(process.env.SHOPIFY_STORE_DOMAIN || process.env.VITE_SHOPIFY_STORE_DOMAIN || '');
+  const storeDomain = normalizeShopDomain(
+    process.env.SHOPIFY_STORE_DOMAIN || process.env.VITE_SHOPIFY_STORE_DOMAIN || ''
+  );
 
   if (!storeDomain) {
     return res.status(500).json({ error: 'Newsletter is not configured. SHOPIFY_STORE_DOMAIN is missing.' });
@@ -263,35 +372,89 @@ export default async function handler(req: any, res: any) {
 
   if (!storeDomain.endsWith('.myshopify.com')) {
     return res.status(500).json({
-      error: 'Newsletter Shopify Admin domain must be the permanent .myshopify.com domain, not the public website domain.',
+      error: 'Shopify Admin requests must use the permanent .myshopify.com domain.',
     });
   }
 
   const body = await parseBody(req);
-  const email = String(body?.email || '').trim().toLowerCase();
-  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) && email.length <= 255;
+  const email = normalizeEmail(body.email);
+  const consent = body.consent === true;
+  const source = safeToken(body.source, 'website');
+  const quiz = body.quiz && typeof body.quiz === 'object' ? body.quiz : null;
 
-  if (!emailOk) {
+  if (!validEmail(email)) {
     return res.status(400).json({ error: 'Please enter a valid email address.' });
+  }
+
+  if (!consent) {
+    return res.status(400).json({ error: 'Please confirm that you want to receive the routine by email.' });
   }
 
   try {
     const adminToken = await getAdminAccessToken(storeDomain);
+    let customer = await findCustomer(storeDomain, adminToken, email);
+    if (!customer) customer = await createCustomer(storeDomain, adminToken, email);
+    if (!customer?.id) throw new Error('Shopify customer could not be resolved');
 
-    try {
-      const result = await subscribeViaGraphql(storeDomain, adminToken, email);
-      return res.status(200).json(result);
-    } catch (graphqlError: any) {
-      console.warn('[newsletter] GraphQL path failed, trying REST fallback:', graphqlError?.message || graphqlError);
-      const result = await subscribeViaRest(storeDomain, adminToken, email);
-      return res.status(200).json(result);
+    await updateEmailConsent(storeDomain, adminToken, customer.id);
+
+    const resultKey = safeToken(quiz?.resultKey, 'general-comfort');
+    const productKey = safeToken(quiz?.productKey, 'smart-knee-massager');
+    const sourceArticle = safeToken(quiz?.sourceArticle, 'direct');
+
+    const oldDynamicTags = customer.tags.filter((tag) =>
+      tag.startsWith('quiz-result-') || tag.startsWith('quiz-product-') || tag === QUIZ_TRIGGER_TAG
+    );
+    await removeTags(storeDomain, adminToken, customer.id, oldDynamicTags);
+
+    const tags = [
+      'newsletter',
+      'website-signup',
+      'flexiknee',
+      'flexiknee-newsletter-api',
+      `signup-source-${source}`,
+    ];
+
+    if (quiz) {
+      tags.push(
+        'knee-quiz',
+        `quiz-result-${resultKey}`,
+        `quiz-product-${productKey}`,
+        QUIZ_TRIGGER_TAG
+      );
     }
-  } catch (error: any) {
-    console.error('[newsletter]', error?.message || error);
 
+    await addTags(storeDomain, adminToken, customer.id, tags);
+
+    let profileSaved = false;
+    if (quiz) {
+      try {
+        await saveQuizMetafield(storeDomain, adminToken, customer.id, {
+          resultKey,
+          productKey,
+          sourceArticle,
+          source,
+          completedAt: new Date().toISOString(),
+        });
+        profileSaved = true;
+      } catch (metafieldError: unknown) {
+        // Tagging and consent are the core workflow. A missing metafield permission
+        // should not block the signup or the Shopify Flow trigger.
+        console.warn('[newsletter] quiz metafield was not saved:', errorMessage(metafieldError));
+      }
+    }
+
+    return res.status(200).json({
+      ok: true,
+      customerStored: true,
+      profileSaved,
+      automationTrigger: quiz ? QUIZ_TRIGGER_TAG : null,
+    });
+  } catch (error: unknown) {
+    console.error('[newsletter]', errorMessage(error));
     return res.status(500).json({
-      error: 'Could not subscribe right now. Please try again.',
-      detail: process.env.NODE_ENV === 'development' ? String(error?.message || error) : undefined,
+      error: 'Could not save your email right now. Please try again.',
+      detail: process.env.NODE_ENV === 'development' ? errorMessage(error) : undefined,
     });
   }
 }

@@ -263,7 +263,7 @@ import sharpKneePainCycle from "@/assets/article-sharp-knee-pain-cycle.jpg";
 
 import PremiumCTA from "@/components/PremiumCTA";
 import { ArticleSlideInCTA } from "@/components/ArticleSlideInCTA";
-import { ArticleNextSteps } from "@/components/ArticleNextSteps";
+import { ArticleQuizCard } from "@/components/ArticleQuizCard";
 
 // Import new articles from separate files
 import {
@@ -9132,12 +9132,7 @@ const GuideArticle = () => {
                 ">
                   {article.content}
 
-                  {/* SEO Tags */}
-                  {article.seoTags && (
-                    <div className="my-6">
-                      <p className="text-sm text-muted-foreground"><strong>SEO Tags:</strong> {article.seoTags}</p>
-                    </div>
-                  )}
+                  <ArticleQuizCard articleSlug={article.slug} articleTitle={article.title} />
                 </div>
                 
                 {/* Premium CTA Highlight Box */}
@@ -9164,6 +9159,13 @@ const GuideArticle = () => {
                   url={`https://flexi-knee.com/guides/${slug}`}
                   title={article.title}
                 />
+                {article.seoTags && (
+                  <div className="-mt-2 mb-8 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4">
+                    <p className="text-xs leading-6 text-slate-500">
+                      <strong className="font-semibold text-slate-700">SEO Tags:</strong> {article.seoTags}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -9419,9 +9421,6 @@ const GuideArticle = () => {
             })()}
           </div>
         </section>
-
-        {/* Bottom Navigation */}
-        <ArticleNextSteps nextSlug={article.nextSlug} nextTitle={article.nextTitle} />
 
         <section className="py-10 border-t border-border/30">
           <div className="container px-4 max-w-3xl mx-auto">
