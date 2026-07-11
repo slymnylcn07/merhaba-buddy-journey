@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+<rect width="900" height="420" fill="#FFFFFF"/>
+<text x="450" y="42" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#0F172A">Roll zones: green = yes, red = avoid</text>
+<g transform="translate(230,80)">
+<path d="M120 10 C 180 10 200 60 195 130 L 183 250 C 180 280 186 300 184 330 L 178 300 L 178 330 C 176 340 130 340 128 330 L 84 330 C 82 300 74 280 78 250 L 88 130 C 92 60 60 10 120 10 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+<rect x="76" y="40" width="120" height="150" rx="24" fill="#22C55E" opacity=".45"/>
+<text x="215" y="110" font-family="Arial" font-size="20" font-weight="bold" fill="#166534">Upper + mid outer thigh</text>
+<text x="215" y="134" font-family="Arial" font-size="18" fill="#166534">30-60 seconds, slow passes</text>
+<rect x="86" y="240" width="100" height="80" rx="20" fill="#EF4444" opacity=".45"/>
+<text x="215" y="272" font-family="Arial" font-size="20" font-weight="bold" fill="#991B1B">Last 5-8 cm above the knee</text>
+<text x="215" y="296" font-family="Arial" font-size="18" fill="#991B1B">and the bony outer knee itself</text>
+</g>
+</svg>

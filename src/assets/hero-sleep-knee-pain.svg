@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#0F172A"/>
+<circle cx="1010" cy="120" r="70" fill="#FDE68A"/><circle cx="985" cy="105" r="58" fill="#0F172A"/>
+<circle cx="200" cy="90" r="3" fill="#E2E8F0"/><circle cx="320" cy="150" r="2.5" fill="#E2E8F0"/><circle cx="820" cy="80" r="3" fill="#E2E8F0"/><circle cx="720" cy="180" r="2" fill="#E2E8F0"/>
+<g transform="translate(180,250)">
+<rect x="0" y="140" width="840" height="46" rx="20" fill="#334155"/>
+<rect x="0" y="186" width="840" height="24" rx="8" fill="#1E293B"/>
+<rect x="30" y="86" width="150" height="60" rx="18" fill="#E2E8F0"/>
+<circle cx="180" cy="112" r="34" fill="#FCD34D"/>
+<path d="M214 120 C 300 96 380 100 450 122 C 470 128 486 122 520 108 C 560 92 600 96 640 118 C 700 150 760 148 810 140" stroke="#93C5FD" stroke-width="42" stroke-linecap="round" fill="none"/>
+<rect x="470" y="92" width="96" height="42" rx="14" fill="#3B82F6"/>
+<text x="518" y="80" text-anchor="middle" font-family="Arial" font-size="19" fill="#93C5FD">pillow between knees</text>
+</g>
+<text x="600" y="560" text-anchor="middle" font-family="Arial" font-size="40" font-weight="bold" fill="#F8FAFC">How to Sleep With Knee Pain</text>
+<text x="600" y="600" text-anchor="middle" font-family="Arial" font-size="22" fill="#94A3B8">Best positions and exact pillow placement</text>
+</svg>

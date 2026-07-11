@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#FFFFFF"/>
+  <text x="500" y="46" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="bold" fill="#0F172A">Why the calf is called the "second heart"</text>
+  <g transform="translate(180,80)">
+    <path d="M60 0 C 110 0 130 40 125 110 C 121 165 105 210 105 270 C 105 320 118 350 110 385 L 40 385 C 30 350 45 320 45 270 C 45 210 25 165 22 110 C 18 40 25 0 60 0 Z" fill="#FDE68A" stroke="#D97706" stroke-width="4"/>
+    <ellipse cx="72" cy="180" rx="34" ry="70" fill="#F59E0B" opacity="0.55"/>
+    <text x="72" y="185" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#7C2D12">calf</text>
+    <text x="72" y="206" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#7C2D12">muscle</text>
+    <text x="75" y="430" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#475569">Sitting still: pump idle,</text>
+    <text x="75" y="452" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#475569">fluid pools in lower leg</text>
+    <circle cx="72" cy="330" r="7" fill="#3B82F6" opacity="0.8"/>
+    <circle cx="58" cy="352" r="7" fill="#3B82F6" opacity="0.8"/>
+    <circle cx="88" cy="350" r="7" fill="#3B82F6" opacity="0.8"/>
+  </g>
+  <g transform="translate(640,80)">
+    <path d="M60 0 C 110 0 130 40 125 110 C 121 165 105 210 105 270 C 105 320 118 350 110 385 L 40 385 C 30 350 45 320 45 270 C 45 210 25 165 22 110 C 18 40 25 0 60 0 Z" fill="#BBF7D0" stroke="#16A34A" stroke-width="4"/>
+    <ellipse cx="72" cy="180" rx="34" ry="70" fill="#22C55E" opacity="0.6"/>
+    <g stroke="#2563EB" stroke-width="7" fill="none" stroke-linecap="round">
+      <path d="M72 300 C 68 250 76 210 70 150"/>
+      <path d="M72 150 l-12 18 M72 150 l12 18" />
+      <path d="M72 130 C 70 100 74 70 72 40"/>
+      <path d="M72 40 l-12 18 M72 40 l12 18" />
+    </g>
+    <text x="75" y="430" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#475569">Squeeze and release:</text>
+    <text x="75" y="452" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#475569">fluid pushed back upward</text>
+  </g>
+  <path d="M420 270 C 470 250 530 250 580 270" stroke="#94A3B8" stroke-width="5" fill="none" stroke-dasharray="4 14" stroke-linecap="round"/>
+  <text x="500" y="250" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#334155">compression mimics this</text>
+</svg>

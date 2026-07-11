@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+<rect width="900" height="420" fill="#FFFFFF"/>
+<text x="450" y="42" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#0F172A">Correct foam rolling position for the outer thigh</text>
+<g transform="translate(120,110)">
+<rect x="0" y="220" width="660" height="16" rx="8" fill="#CBD5E1"/>
+<ellipse cx="330" cy="205" rx="52" ry="30" fill="#334155"/>
+<path d="M90 150 C 160 120 260 130 330 165 L 470 185 C 540 192 590 170 640 130" stroke="#F59E0B" stroke-width="38" stroke-linecap="round" fill="none"/>
+<circle cx="655" cy="105" r="34" fill="#FCD34D"/>
+<path d="M92 152 L 60 220" stroke="#F59E0B" stroke-width="26" stroke-linecap="round"/>
+<path d="M470 188 L 470 236" stroke="#F59E0B" stroke-width="22" stroke-linecap="round"/>
+<text x="300" y="60" font-family="Arial" font-size="19" fill="#1D4ED8">Bodyweight on roller, outer thigh</text>
+<line x1="330" y1="70" x2="330" y2="170" stroke="#1D4ED8" stroke-width="2"/>
+<text x="20" y="300" font-family="Arial" font-size="19" fill="#475569">Bottom leg supports and controls pressure</text>
+<text x="430" y="300" font-family="Arial" font-size="19" fill="#475569">Top foot planted for stability</text>
+</g>
+</svg>

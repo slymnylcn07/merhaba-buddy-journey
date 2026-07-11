@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#EFF6FF"/>
+<circle cx="1070" cy="100" r="170" fill="#DBEAFE" opacity=".7"/><circle cx="110" cy="560" r="130" fill="#DBEAFE" opacity=".5"/>
+<g transform="translate(180,150)">
+<rect x="0" y="230" width="560" height="26" rx="13" fill="#94A3B8"/>
+<ellipse cx="280" cy="243" rx="60" ry="34" fill="#475569"/>
+<path d="M60 210 C 140 150 240 140 330 165 C 420 190 470 175 520 130" stroke="#F59E0B" stroke-width="46" stroke-linecap="round" fill="none"/>
+<circle cx="520" cy="110" r="42" fill="#FCD34D"/>
+<path d="M120 196 L 300 176" stroke="#DC2626" stroke-width="14" stroke-linecap="round"/>
+<text x="210" y="150" font-family="Arial" font-size="24" font-weight="bold" fill="#991B1B">IT band</text>
+</g>
+<text x="600" y="560" text-anchor="middle" font-family="Arial" font-size="40" font-weight="bold" fill="#0F172A">IT Band Foam Rolling: Step by Step</text>
+<text x="600" y="600" text-anchor="middle" font-family="Arial" font-size="22" fill="#475569">The right way to release tight outer thighs</text>
+</svg>

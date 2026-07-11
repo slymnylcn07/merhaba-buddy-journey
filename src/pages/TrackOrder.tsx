@@ -2,226 +2,115 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, PackageSearch, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SHOPIFY_STORE_DOMAIN } from "@/lib/shopify-config";
+
+/**
+ * Kargo takibi: ParcelWILL'in (eski adiyla ParcelPanel) takip sayfasina,
+ * vercel.json'daki rewrite tuneli uzerinden kendi domainimizde ulasiriz.
+ * (Embed widget'i ParcelPanel sunucusunda 404 verdigi, sayfa da
+ * frame-ancestors CSP'si nedeniyle iframe'e izin vermedigi icin
+ * en saglam yol: markali form + ayni domainde tam sayfa takip.)
+ */
+
+const TRACKING_PATH = "/apps/parcelpanel";
 
 const TrackOrder = () => {
+  const [trackingInput, setTrackingInput] = useState("");
+
+  // Eski linklerle gelen ?nums= parametresini dogrudan takip sayfasina tasi
   useEffect(() => {
-    // Add custom styles for ParcelPanel widget
-    const style = document.createElement('style');
-    style.textContent = `
-      #pp-tracking-page-app input[type="text"],
-      #pp-tracking-page-app input[type="email"] {
-        border: 2px solid hsl(var(--input)) !important;
-        border-radius: 0.5rem !important;
-        padding: 0.75rem !important;
-        background: hsl(var(--background)) !important;
-        color: hsl(var(--foreground)) !important;
-        font-size: 1rem !important;
-        transition: all 0.2s !important;
-      }
-      
-      #pp-tracking-page-app input[type="text"]:focus,
-      #pp-tracking-page-app input[type="email"]:focus {
-        border-color: hsl(var(--primary)) !important;
-        outline: none !important;
-        box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1) !important;
-      }
-      
-      #pp-tracking-page-app button {
-        background: hsl(var(--primary)) !important;
-        color: hsl(var(--primary-foreground)) !important;
-        border-radius: 0.5rem !important;
-        padding: 0.75rem 1.5rem !important;
-        font-weight: 600 !important;
-        transition: all 0.2s !important;
-      }
-      
-      #pp-tracking-page-app button:hover {
-        opacity: 0.9 !important;
-      }
-      
-      #pp-tracking-page-app label {
-        color: hsl(var(--foreground)) !important;
-        font-weight: 500 !important;
-        margin-bottom: 0.5rem !important;
-        display: block !important;
-      }
-    `;
-    document.head.appendChild(style);
-    
-    return () => {
-      if (document.head.contains(style)) {
-        document.head.removeChild(style);
-      }
-    };
-  }, []);
-
-  const [widgetLoaded, setWidgetLoaded] = useState(false);
-  const [useIframeFallback, setUseIframeFallback] = useState(false);
-
-  useEffect(() => {
-    // Prerender aninda donmus widget kalintisi varsa temizle -
-    // script temiz konteynere yeniden kurulum yapsin
-    const container = document.getElementById('pp-tracking-page-app');
-    if (container) container.innerHTML = '';
-
-    // Prerender kalintisi ParcelPanel script etiketlerini kaldir ki
-    // asagida eklenen script temiz bir baslangic yapabilsin
-    document
-      .querySelectorAll('script[src*="parcelpanel"]')
-      .forEach((el) => el.remove());
-
-    // Load ParcelPanel tracking script
-    const script = document.createElement('script');
-    script.src = 'https://pp-proxy.parcelpanel.com/assets/tracking/track-page.js';
-    script.type = 'text/javascript';
-    script.async = true;
-    
-    script.onload = () => {
-      console.log('ParcelPanel widget loaded');
-      setWidgetLoaded(true);
-    };
-    
-    script.onerror = () => {
-      console.error('ParcelPanel widget failed to load');
-      setWidgetLoaded(false);
-    };
-    
-    document.body.appendChild(script);
-
-    // Guvence katmani: widget 4 sn icinde konteynere kurulum yapmazsa,
-    // ayni alanda Vercel tuneli uzerinden ParcelWILL sayfasini gomulu ac.
-    const fallbackTimer = window.setTimeout(() => {
-      const el = document.getElementById('pp-tracking-page-app');
-      if (!el || el.childElementCount === 0) {
-        setUseIframeFallback(true);
-      }
-    }, 4000);
-
-    return () => {
-      window.clearTimeout(fallbackTimer);
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
-
-  // Auto-fill tracking number from URL query parameter
-  useEffect(() => {
-    function getQueryParam(name: string) {
-      return new URLSearchParams(window.location.search).get(name);
+    const nums = new URLSearchParams(window.location.search).get("nums");
+    if (nums) {
+      window.location.replace(`${TRACKING_PATH}?nums=${encodeURIComponent(nums)}`);
     }
-
-    function setVueInputValue(input: HTMLInputElement, value: string) {
-      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-        window.HTMLInputElement.prototype,
-        "value"
-      )?.set;
-      if (nativeInputValueSetter) {
-        nativeInputValueSetter.call(input, value);
-      }
-      input.dispatchEvent(new Event("input", { bubbles: true }));
-      input.dispatchEvent(new Event("change", { bubbles: true }));
-    }
-
-    const tracking = getQueryParam("tracking");
-    if (!tracking) return;
-
-    let attempts = 0;
-    const timer = setInterval(() => {
-      attempts++;
-      const input = document.querySelector('input[name="nums"]') as HTMLInputElement;
-      if (input) {
-        setVueInputValue(input, tracking);
-        // Auto-click Track button
-        const btn = document.querySelector(
-          ".pp_tracking_button button, button[type='submit']"
-        ) as HTMLButtonElement;
-        if (btn) btn.click();
-        clearInterval(timer);
-      }
-      if (attempts > 80) clearInterval(timer); // ~24 seconds
-    }, 300);
-
-    return () => {
-      clearInterval(timer);
-    };
   }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const value = trackingInput.trim();
+    if (!value) return;
+    window.location.href = `${TRACKING_PATH}?nums=${encodeURIComponent(value)}`;
+  };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
       <Helmet>
         <title>Track Your Order | FlexiKnee™</title>
-        <meta name="description" content="Track your FlexiKnee order shipment. Enter your order details to see real-time delivery updates and tracking information." />
+        <meta name="description" content="Track your FlexiKnee order shipment. Enter your tracking number to see real-time delivery updates and shipping information." />
         <link rel="canonical" href="https://flexi-knee.com/track-order" />
-        
-        {/* Open Graph Meta Tags */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/track-order" />
         <meta property="og:title" content="Track Your Order | FlexiKnee™" />
         <meta property="og:description" content="Track your FlexiKnee order shipment with real-time delivery updates." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
-        
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@FlexiKnee" />
-        <meta name="twitter:title" content="Track Your Order | FlexiKnee™" />
       </Helmet>
-      
-      <Header />
-      
-      <main className="flex-1 container mx-auto px-4 py-8 md:py-12">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Track Your Order</h1>
-            <p className="text-muted-foreground text-base md:text-lg">
-              Enter your order details below to track your shipment
-            </p>
-          </div>
 
-          {/* ParcelPanel Widget Container */}
-          <div className="bg-card rounded-lg shadow-sm border p-6 md:p-8 mb-8">
-            {useIframeFallback ? (
-              <iframe
-                src="/apps/parcelpanel"
-                title="Order tracking"
-                className="h-[900px] w-full rounded-2xl border-0"
-              />
-            ) : (
-              <div id="pp-tracking-page-app" className="min-h-[500px]"></div>
-            )}
-          </div>
-          
-          {/* Store Domain for External Pages */}
-          <div id="pp-tracking-shop" style={{ display: 'none' }}>
-            {SHOPIFY_STORE_DOMAIN}
-          </div>
+      <div className="min-h-screen bg-white text-slate-950">
+        <Header />
 
-          {/* Fallback link if widget doesn't load */}
-          <div className="text-center border-t pt-8">
-            <p className="text-sm text-muted-foreground mb-4">
-              Having trouble with the tracking widget?
-            </p>
-            <Button asChild variant="outline" size="lg">
-              <a 
-                href="/apps/parcelpanel"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                Open Tracking Page
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </main>
+        <main>
+          <section className="bg-white py-14 md:py-20">
+            <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Order tracking</p>
+              <h1 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+                Where's my order?
+              </h1>
+              <p className="mt-4 text-base leading-8 text-slate-600">
+                Enter the tracking number from your shipping confirmation email. You can also look up your order with your order number and email on the tracking page.
+              </p>
 
-      <Footer />
-    </div>
+              <form onSubmit={handleSubmit} className="mt-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+                <label htmlFor="tracking-input" className="mb-2 block text-sm font-medium text-slate-800">
+                  Tracking number
+                </label>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <div className="relative flex-1">
+                    <PackageSearch className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <input
+                      id="tracking-input"
+                      type="text"
+                      value={trackingInput}
+                      onChange={(e) => setTrackingInput(e.target.value)}
+                      placeholder="e.g. YT2519921272086330"
+                      className="w-full rounded-full border border-slate-300 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-blue-500"
+                    />
+                  </div>
+                  <Button type="submit" disabled={!trackingInput.trim()} className="h-11 shrink-0 rounded-full bg-blue-600 px-6 text-sm font-semibold text-white hover:bg-blue-700">
+                    <Search className="mr-1.5 h-4 w-4" />
+                    Track
+                  </Button>
+                </div>
+                <p className="mt-3 text-xs text-slate-500">
+                  Tip: your tracking number is in the shipping confirmation email we sent when your order left the warehouse.
+                </p>
+              </form>
+
+              <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm text-slate-600">
+                <p className="font-medium text-slate-900">Don't have your tracking number handy?</p>
+                <p className="mt-1">
+                  Open the full tracking page and search with your order number and email instead.
+                </p>
+                <a
+                  href={TRACKING_PATH}
+                  className="mt-4 inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
+                >
+                  Open tracking page
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </div>
+
+              <p className="mt-8 text-sm leading-7 text-slate-500">
+                Orders are usually delivered within 7-12 business days to the US and UK, and 8-14 business days to most other regions. If your tracking hasn't updated in a while, reach out via our contact page with your order number and we'll look into it right away.
+              </p>
+            </div>
+          </section>
+        </main>
+
+        <Footer />
+      </div>
+    </>
   );
 };
 

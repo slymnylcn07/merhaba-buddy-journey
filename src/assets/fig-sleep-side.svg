@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430">
+<rect width="900" height="430" fill="#FFFFFF"/>
+<text x="450" y="42" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#0F172A">Side sleeper setup: pillow between the knees</text>
+<g transform="translate(90,110)">
+<rect x="0" y="200" width="720" height="34" rx="14" fill="#CBD5E1"/>
+<rect x="18" y="120" width="130" height="58" rx="16" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2"/>
+<circle cx="150" cy="150" r="32" fill="#FCD34D"/>
+<path d="M182 158 C 260 138 330 142 390 160 C 412 166 428 160 458 148 C 494 134 530 138 566 156 C 620 184 668 182 706 176" stroke="#60A5FA" stroke-width="36" stroke-linecap="round" fill="none"/>
+<rect x="416" y="130" width="86" height="40" rx="12" fill="#2563EB"/>
+<text x="459" y="118" text-anchor="middle" font-family="Arial" font-size="18" fill="#1D4ED8">firm pillow here</text>
+<text x="180" y="290" font-family="Arial" font-size="19" fill="#166534">Knees stacked, hips level, top leg supported</text>
+<text x="180" y="316" font-family="Arial" font-size="19" fill="#991B1B">Avoid: top knee dropping forward and twisting the hip</text>
+</g>
+</svg>

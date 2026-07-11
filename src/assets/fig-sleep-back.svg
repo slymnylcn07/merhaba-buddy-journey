@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430">
+<rect width="900" height="430" fill="#FFFFFF"/>
+<text x="450" y="42" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#0F172A">Back sleeper setup: small lift under the knees</text>
+<g transform="translate(90,110)">
+<rect x="0" y="200" width="720" height="34" rx="14" fill="#CBD5E1"/>
+<rect x="18" y="132" width="130" height="52" rx="16" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2"/>
+<circle cx="150" cy="158" r="30" fill="#FCD34D"/>
+<path d="M182 170 L 420 170 C 452 170 470 158 492 146 C 516 134 540 140 560 158 L 566 170 L 706 182" stroke="#60A5FA" stroke-width="34" stroke-linecap="round" fill="none"/>
+<path d="M470 200 C 470 170 540 170 540 200 Z" fill="#2563EB"/>
+<text x="505" y="118" text-anchor="middle" font-family="Arial" font-size="18" fill="#1D4ED8">thin pillow or rolled towel</text>
+<line x1="505" y1="126" x2="505" y2="168" stroke="#1D4ED8" stroke-width="2"/>
+<text x="180" y="290" font-family="Arial" font-size="19" fill="#166534">Knees rest slightly bent, thighs relaxed</text>
+<text x="180" y="316" font-family="Arial" font-size="19" fill="#991B1B">Avoid: big pillows that keep knees deeply bent all night</text>
+</g>
+</svg>

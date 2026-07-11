@@ -77,3 +77,7 @@ export type { ArticleExport, ArticleData, FAQItem } from "./types";
 export { kneePainAfterExerciseNotDuring } from "./knee-pain-after-exercise-but-not-during";
 export { cordlessHeatedKneeMassagers2026 } from "./cordless-rechargeable-heated-knee-massagers-2026";
 export { bestInsolesKneePain2026 } from "./best-insoles-for-knee-pain-2026";
+export { itBandFoamRollingGuide } from "./it-band-foam-rolling-step-by-step";
+export { howToSleepWithKneePain } from "./how-to-sleep-with-knee-pain";
+export { airCompressionLegMassagers } from "./air-compression-leg-massagers-do-they-work";
+export { kneeSleeveSizingGuide } from "./knee-compression-sleeve-sizing-guide";

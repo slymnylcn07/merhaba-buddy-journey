@@ -68,7 +68,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
 const RULES: { keywords: string[]; product: keyof typeof PRODUCT_RECS }[] = [
   {
     // Seyahat / dolaşım / alt bacak
-    keywords: ["flight", "car-ride", "travel", "swelling", "circulation", "heavy-feeling"],
+    keywords: ["flight", "car-ride", "travel", "swelling", "circulation", "heavy-feeling", "leg-massager", "air-compression"],
     product: "calf",
   },
   {

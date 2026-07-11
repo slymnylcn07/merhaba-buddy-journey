@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470">
+<rect width="900" height="470" fill="#FFFFFF"/>
+<text x="450" y="44" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#0F172A">Sleeping positions ranked for knee comfort</text>
+<g font-family="Arial" font-size="19">
+<rect x="90" y="80" width="720" height="70" rx="14" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+<text x="115" y="112" font-weight="bold" fill="#166534">1. Side, pillow between knees</text>
+<text x="115" y="136" fill="#166534">Keeps knee and hip stacked and neutral</text>
+<rect x="90" y="166" width="720" height="70" rx="14" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
+<text x="115" y="198" font-weight="bold" fill="#166534">2. Back, small lift under knees</text>
+<text x="115" y="222" fill="#166534">Relaxes the joint with a gentle bend</text>
+<rect x="90" y="252" width="720" height="70" rx="14" fill="#FEF9C3" stroke="#FACC15" stroke-width="2"/>
+<text x="115" y="284" font-weight="bold" fill="#854D0E">3. Side without a pillow</text>
+<text x="115" y="308" fill="#854D0E">Top knee drops and twists; workable short term</text>
+<rect x="90" y="338" width="720" height="70" rx="14" fill="#FEE2E2" stroke="#EF4444" stroke-width="2"/>
+<text x="115" y="370" font-weight="bold" fill="#991B1B">4. Stomach sleeping</text>
+<text x="115" y="394" fill="#991B1B">Rotates hips and strains knees and lower back</text>
+</g>
+</svg>

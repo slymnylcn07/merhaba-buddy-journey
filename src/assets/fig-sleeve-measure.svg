@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470">
+<rect width="900" height="470" fill="#FFFFFF"/>
+<text x="450" y="42" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#0F172A">Where to measure for the right sleeve size</text>
+<g transform="translate(250,70)">
+<path d="M110 10 C 160 10 180 50 176 110 L 168 180 C 165 210 174 228 172 260 L 166 350 C 164 390 150 410 110 410 C 70 410 56 390 54 350 L 48 260 C 46 228 55 210 52 180 L 44 110 C 40 50 60 10 110 10 Z" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+<circle cx="110" cy="215" r="30" fill="#FFF" stroke="#D97706" stroke-width="3"/>
+<line x1="30" y1="130" x2="190" y2="130" stroke="#0EA5E9" stroke-width="8" stroke-linecap="round"/>
+<text x="210" y="120" font-family="Arial" font-size="20" font-weight="bold" fill="#0369A1">Thigh: 15 cm (6 in)</text>
+<text x="210" y="146" font-family="Arial" font-size="20" font-weight="bold" fill="#0369A1">above kneecap center</text>
+<line x1="38" y1="215" x2="182" y2="215" stroke="#16A34A" stroke-width="8" stroke-linecap="round" stroke-dasharray="10 8"/>
+<text x="210" y="212" font-family="Arial" font-size="19" fill="#166534">Kneecap center</text>
+<text x="210" y="236" font-family="Arial" font-size="19" fill="#166534">(reference point only)</text>
+<line x1="42" y1="300" x2="178" y2="300" stroke="#7C3AED" stroke-width="8" stroke-linecap="round"/>
+<text x="210" y="292" font-family="Arial" font-size="20" font-weight="bold" fill="#5B21B6">Calf: 15 cm (6 in)</text>
+<text x="210" y="318" font-family="Arial" font-size="20" font-weight="bold" fill="#5B21B6">below kneecap center</text>
+<text x="-190" y="200" font-family="Arial" font-size="18" fill="#475569">Stand relaxed,</text>
+<text x="-190" y="224" font-family="Arial" font-size="18" fill="#475569">leg straight, tape</text>
+<text x="-190" y="248" font-family="Arial" font-size="18" fill="#475569">snug but not tight</text>
+</g>
+</svg>

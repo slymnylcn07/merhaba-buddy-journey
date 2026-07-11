@@ -698,6 +698,34 @@ export const guidesData: GuideData[] = [
     readTime: 16,
     lastModified: "2026-07-10",
   },
+  {
+    slug: "it-band-foam-rolling-step-by-step",
+    title: "IT Band Foam Rolling: Step-by-Step Guide With Diagrams",
+    description: "Exactly where to foam roll a tight IT band, where to avoid, how long each zone takes, and the five mistakes that make outer knee pain worse.",
+    readTime: 12,
+    lastModified: "2026-07-12",
+  },
+  {
+    slug: "how-to-sleep-with-knee-pain",
+    title: "How to Sleep With Knee Pain: Best Positions and Pillow Placement",
+    description: "The best sleeping positions for aching knees, exact pillow placement for side and back sleepers, and an evening routine that calms knees before bed.",
+    readTime: 12,
+    lastModified: "2026-07-12",
+  },
+  {
+    slug: "air-compression-leg-massagers-do-they-work",
+    title: "Air Compression Leg Massagers: Do They Actually Work?",
+    description: "The science behind sequential compression therapy, what the evidence supports, who benefits most, and how to choose a leg massager in 2026.",
+    readTime: 12,
+    lastModified: "2026-07-12",
+  },
+  {
+    slug: "knee-compression-sleeve-sizing-guide",
+    title: "Knee Compression Sleeve Sizing Guide: Measure Right, Choose Right",
+    description: "How to measure your knee for a compression sleeve, read any size chart, handle in-between sizes, and confirm the fit with a four-point check.",
+    readTime: 12,
+    lastModified: "2026-07-12",
+  },
 ];
 
 export const staticPages = [

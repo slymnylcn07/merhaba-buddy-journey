@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+<rect width="900" height="520" fill="#FFFFFF"/>
+<text x="450" y="46" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#0F172A">Where the IT band runs (outside of the leg)</text>
+<g transform="translate(330,70)">
+<path d="M110 10 C 170 10 190 60 185 130 L 175 240 C 172 268 178 285 176 315 L 170 400 C 168 425 150 440 120 440 C 90 440 74 425 74 400 L 76 315 C 76 285 66 268 70 240 L 78 130 C 82 60 60 10 110 10 Z" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+<path d="M158 40 C 178 110 172 190 160 250 C 154 280 150 300 148 330" stroke="#DC2626" stroke-width="16" fill="none" stroke-linecap="round"/>
+<circle cx="150" cy="255" r="26" fill="#FFF" stroke="#DC2626" stroke-width="4"/>
+<text x="210" y="70" font-family="Arial" font-size="20" fill="#7C2D12">Hip (TFL muscle)</text>
+<line x1="205" y1="62" x2="168" y2="48" stroke="#7C2D12" stroke-width="2"/>
+<text x="215" y="200" font-family="Arial" font-size="20" font-weight="bold" fill="#991B1B">IT band (thick tissue,</text>
+<text x="215" y="224" font-family="Arial" font-size="20" font-weight="bold" fill="#991B1B">not a muscle)</text>
+<line x1="210" y1="196" x2="172" y2="170" stroke="#991B1B" stroke-width="2"/>
+<text x="215" y="330" font-family="Arial" font-size="20" fill="#1D4ED8">Common pain point:</text>
+<text x="215" y="354" font-family="Arial" font-size="20" fill="#1D4ED8">outer knee</text>
+<line x1="210" y1="326" x2="178" y2="270" stroke="#1D4ED8" stroke-width="2"/>
+<text x="-160" y="120" font-family="Arial" font-size="20" fill="#475569">Roll HERE:</text>
+<text x="-160" y="146" font-family="Arial" font-size="20" fill="#475569">outer thigh muscles</text>
+<line x1="-20" y1="128" x2="86" y2="140" stroke="#475569" stroke-width="2"/>
+<text x="-160" y="300" font-family="Arial" font-size="20" fill="#475569">NOT here:</text>
+<text x="-160" y="326" font-family="Arial" font-size="20" fill="#475569">directly on sore knee</text>
+<line x1="-20" y1="308" x2="120" y2="290" stroke="#475569" stroke-width="2" stroke-dasharray="6 5"/>
+</g>
+</svg>

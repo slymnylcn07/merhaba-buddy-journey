@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440">
+<rect width="900" height="440" fill="#FFFFFF"/>
+<text x="450" y="42" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#0F172A">The 4-point fit check after putting it on</text>
+<g font-family="Arial" font-size="18">
+<rect x="90" y="80" width="330" height="140" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+<text x="115" y="118" font-size="22" font-weight="bold" fill="#0F172A">1. Center check</text>
+<text x="115" y="150" fill="#475569">Kneecap opening or center pad sits</text>
+<text x="115" y="174" fill="#475569">directly over your kneecap</text>
+<rect x="480" y="80" width="330" height="140" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+<text x="505" y="118" font-size="22" font-weight="bold" fill="#0F172A">2. Bend check</text>
+<text x="505" y="150" fill="#475569">Squat once: no pinching behind</text>
+<text x="505" y="174" fill="#475569">the knee, no sliding down</text>
+<rect x="90" y="250" width="330" height="140" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+<text x="115" y="288" font-size="22" font-weight="bold" fill="#0F172A">3. Color check</text>
+<text x="115" y="320" fill="#475569">After 10 minutes: skin below the</text>
+<text x="115" y="344" fill="#475569">sleeve looks normal, no numbness</text>
+<rect x="480" y="250" width="330" height="140" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+<text x="505" y="288" font-size="22" font-weight="bold" fill="#0F172A">4. Walk check</text>
+<text x="505" y="320" fill="#475569">Walk 2 minutes: sleeve stays in</text>
+<text x="505" y="344" fill="#475569">place without constant adjusting</text>
+</g>
+</svg>
