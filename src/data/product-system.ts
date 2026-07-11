@@ -71,7 +71,7 @@ export const featurePillars = [
 
 export const trustBadges = [
   "Free shipping",
-  "30-day returns",
+  "30-day returns from delivery",
   "Secure checkout",
   "Support team",
 ];

@@ -110,6 +110,36 @@
       "source": "/guides/heat-or-ice-knee-pain-situations",
       "destination": "/guides/heat-vs-ice-for-knees",
       "permanent": true
+    },
+    {
+      "source": "/collections/:path*",
+      "destination": "/shop",
+      "permanent": true
+    },
+    {
+      "source": "/products/:handle",
+      "destination": "/product/:handle",
+      "permanent": true
+    },
+    {
+      "source": "/pages/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/:path*",
+      "destination": "/guides",
+      "permanent": true
+    },
+    {
+      "source": "/cart",
+      "destination": "/shop",
+      "permanent": true
+    },
+    {
+      "source": "/product/flexiknee",
+      "destination": "/product/knee-massager-smart-red-light-and-massage-therapy",
+      "permanent": true
     }
   ]
 }

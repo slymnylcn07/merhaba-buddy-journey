@@ -131,11 +131,11 @@ const WhyFlexiKnee = () => {
     },
     {
       question: "How do returns work?",
-      answer: "We offer a 30-day easy return policy. If you're not satisfied, simply start a return through your account — you'll need your order number and email. We'll guide you through the process."
+      answer: "We offer a 30-day easy return policy, counted from the day your order is delivered. If you're not satisfied, simply start a return through your account — you'll need your order number and email. We'll guide you through the process."
     },
     {
-      question: "What does the warranty cover?",
-      answer: "Our 2-year warranty covers manufacturing defects and functional issues. If your FlexiKnee stops working as expected, we'll replace it or refund you — no hassle."
+      question: "What if my device arrives damaged or stops working?",
+      answer: "If your FlexiKnee arrives damaged or develops a fault, contact us with your order number and a short description — we'll arrange a replacement or refund. We stand behind every device we ship."
     }
   ];
 
@@ -431,7 +431,7 @@ const WhyFlexiKnee = () => {
                   <AccordionContent className="text-muted-foreground pb-4">
                     {faq.question === "How do returns work?" ? (
                       <>
-                        We offer a 30-day easy return policy. If you're not satisfied, simply{" "}
+                        We offer a 30-day easy return policy, counted from the day your order is delivered. If you're not satisfied, simply{" "}
                         <Link to="/account#returns" className="text-primary hover:underline">
                           start a return through your account
                         </Link>

@@ -14,11 +14,6 @@ export const Footer = () => {
             <p className="mt-4 max-w-sm text-sm leading-7 text-slate-500">
               Smart knee comfort products for daily movement, recovery routines, and simple at-home support.
             </p>
-            <div className="mt-6 flex flex-wrap gap-2 text-xs font-medium text-slate-600">
-              {['Free shipping', '30-day returns', 'Secure checkout', '2-year warranty'].map((item) => (
-                <span key={item} className="rounded-full border border-slate-200 px-3 py-1.5">{item}</span>
-              ))}
-            </div>
           </div>
 
           <div className="grid gap-8 sm:grid-cols-3">

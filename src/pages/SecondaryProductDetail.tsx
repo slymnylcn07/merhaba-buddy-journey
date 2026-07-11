@@ -359,7 +359,7 @@ export default function SecondaryProductDetail() {
 
                 <div className="mt-6 grid grid-cols-2 gap-3 text-xs text-slate-600">
                   <div className="flex items-center gap-2 rounded-2xl bg-slate-50 p-3"><Truck className="h-4 w-4 text-blue-600" /> Free shipping</div>
-                  <div className="flex items-center gap-2 rounded-2xl bg-slate-50 p-3"><RotateCcw className="h-4 w-4 text-blue-600" /> 30-day returns</div>
+                  <div className="flex items-center gap-2 rounded-2xl bg-slate-50 p-3"><RotateCcw className="h-4 w-4 text-blue-600" /> 30-day returns from delivery</div>
                   <div className="flex items-center gap-2 rounded-2xl bg-slate-50 p-3"><ShieldCheck className="h-4 w-4 text-blue-600" /> Secure checkout</div>
                   <div className="flex items-center gap-2 rounded-2xl bg-slate-50 p-3"><PackageCheck className="h-4 w-4 text-blue-600" /> Tracked delivery</div>
                 </div>

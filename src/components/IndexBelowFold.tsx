@@ -554,7 +554,7 @@ export default function IndexBelowFold({
                   What's your return policy?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  We offer a 30-day money-back guarantee. If you're not completely satisfied, return it for a full refund, no questions asked.
+                  We offer a 30-day money-back guarantee, counted from the day your order is delivered. If you're not completely satisfied, return it for a full refund, no questions asked.
                 </AccordionContent>
               </AccordionItem>
 

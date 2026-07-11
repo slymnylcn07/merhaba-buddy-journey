@@ -510,7 +510,7 @@ const genericProfile: ProductProfile = {
   safety: ["This is a general wellness product, not a diagnosis or treatment.", "Do not use on broken skin or when sensation is reduced.", "Seek professional guidance for persistent or severe symptoms."],
   faqs: [
     { question: "Where do the product details come from?", answer: "The title, images, variants, availability and price are loaded directly from the connected Shopify store." },
-    { question: "Can I return it?", answer: "Eligible orders are covered by the current FlexiKnee 30-day return policy. Review the refund policy for conditions and exclusions." },
+    { question: "Can I return it?", answer: "Eligible orders are covered by the FlexiKnee 30-day return policy, counted from delivery. Review the refund policy for conditions and exclusions." },
   ],
   guides: [
     { title: "Daily Knee Care Routine", href: "/guides/daily-knee-care-routine", description: "Build consistent habits around the product you choose." },

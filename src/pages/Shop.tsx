@@ -119,7 +119,7 @@ export default function Shop() {
                   </div>
                   <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm backdrop-blur">
                     <CircleHelp className="mx-auto h-5 w-5 text-blue-600" />
-                    <p className="mt-2 text-xs font-semibold text-slate-800">30-day returns</p>
+                    <p className="mt-2 text-xs font-semibold text-slate-800">30-day returns from delivery</p>
                   </div>
                 </div>
               </div>

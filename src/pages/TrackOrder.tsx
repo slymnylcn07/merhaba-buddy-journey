@@ -61,6 +61,11 @@ const TrackOrder = () => {
   const [widgetLoaded, setWidgetLoaded] = useState(false);
 
   useEffect(() => {
+    // Prerender aninda donmus widget kalintisi varsa temizle -
+    // script temiz konteynere yeniden kurulum yapsin
+    const container = document.getElementById('pp-tracking-page-app');
+    if (container) container.innerHTML = '';
+
     // Load ParcelPanel tracking script
     const script = document.createElement('script');
     script.src = 'https://pp-proxy.parcelpanel.com/assets/tracking/track-page.js';
