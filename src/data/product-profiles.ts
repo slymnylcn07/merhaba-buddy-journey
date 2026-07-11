@@ -1,8 +1,4 @@
 import { ShopifyProduct } from "@/lib/shopify";
-import insolesHero from "@/assets/article-hero-insoles-knee.svg";
-import runningShoesLineup from "@/assets/article-running-shoes-lineup.jpg";
-import shoeWearCheck from "@/assets/article-shoe-wear-check.jpg";
-import postWalkRecovery from "@/assets/article-section-post-walk-recovery.jpg";
 import kneeLongWalks from "@/assets/article-hero-knee-pain-long-walks.jpg";
 import walkingMechanics from "@/assets/article-section-walking-knee-mechanics.jpg";
 import stairsDown from "@/assets/article-hero-knee-pain-going-down-stairs.jpg";
@@ -127,28 +123,34 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
     ],
     visuals: [
       {
-        title: "Support begins at the foot",
-        text: "Good knee comfort often starts with a more stable footbed and a cleaner line from heel to forefoot.",
-        image: insolesHero,
-        alt: "Illustration of orthopedic insole support for foot-to-knee comfort",
+        title: "Upgrade the shoes you already reach for",
+        text: "This opening scene shows how easily the FlexiKnee™ Sport Orthopedic Insoles can become part of a normal training or walking routine—without changing the shoes you already like.",
+        image: "/images/product-stories/insoles-home-setup.webp",
+        alt: "Woman placing a FlexiKnee Sport Orthopedic Insole into a white athletic shoe at home",
       },
       {
-        title: "Better shoe matching",
-        text: "Use insoles in shoes with enough depth and structure so the fit stays secure instead of cramped.",
-        image: runningShoesLineup,
-        alt: "Running shoes lined up to show footwear choice for insoles",
+        title: "A closer look at the fit",
+        text: "The close-up view helps shoppers understand the full-length shape, cushioned surface and simple insert-and-go setup before they ever open the box.",
+        image: "/images/product-stories/insoles-closeup-fit.webp",
+        alt: "Close-up of a FlexiKnee Sport Orthopedic Insole being placed inside a running shoe",
       },
       {
-        title: "Watch wear patterns",
-        text: "Looking at the sole and liner wear on older shoes helps you judge when extra support may be useful.",
-        image: shoeWearCheck,
-        alt: "Close-up of shoe wear patterns being checked",
+        title: "Comfort that stays with the workday",
+        text: "A home-office setting reinforces that the insoles are not only for workouts—they are designed for long periods of standing, walking and everyday movement too.",
+        image: "/images/product-stories/insoles-workday.webp",
+        alt: "Woman working at a desk while wearing athletic shoes fitted with FlexiKnee Sport Orthopedic Insoles",
       },
       {
-        title: "Stay comfortable after long walks",
-        text: "Pair impact support with simple post-walk recovery habits so the routine feels sustainable day to day.",
-        image: postWalkRecovery,
-        alt: "Simple post-walk recovery routine for knee comfort",
+        title: "Ready before the first step",
+        text: "This getting-ready moment turns the product into part of an active lifestyle story, helping the customer picture better-supported walks, errands and training sessions.",
+        image: "/images/product-stories/insoles-ready-to-move.webp",
+        alt: "Woman tying athletic shoes fitted with FlexiKnee Sport Orthopedic Insoles before going outside",
+      },
+      {
+        title: "Support the routine from start to finish",
+        text: "The final scene connects the insoles to the complete movement cycle—from putting shoes on to winding down after activity—so the page ends with a strong, realistic reason to buy.",
+        image: "/images/product-stories/insoles-post-activity.webp",
+        alt: "Woman resting after activity beside athletic shoes and a FlexiKnee Sport Orthopedic Insole",
       },
     ],
     comparison: {

@@ -57,7 +57,7 @@ export const PremiumProductStory = ({
   highlights = [],
 }: PremiumProductStoryProps) => {
   const theme = themeMap[productKey] || themeMap.generic;
-  const [hero, second, third, fourth] = visuals;
+  const [hero, second, third, fourth, fifth] = visuals;
 
   if (!hero) return null;
 
@@ -159,6 +159,31 @@ export const PremiumProductStory = ({
                     Find the right FlexiKnee product <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
+              </div>
+            </div>
+          </article>
+        )}
+
+        {fifth && (
+          <article className="mt-6 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_30px_90px_-65px_rgba(15,23,42,0.75)] sm:rounded-[2.5rem]">
+            <div className="grid lg:grid-cols-[0.86fr_1.14fr] lg:items-stretch">
+              <div className="order-2 flex flex-col justify-center p-7 sm:p-10 lg:order-1 lg:p-12">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-600">Built for the complete routine</p>
+                <h3 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl">{fifth.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">{fifth.text}</p>
+                <div className="mt-7 flex flex-wrap gap-2">
+                  {["Daily movement", "Workday comfort", "Post-activity reset"].map((item) => (
+                    <span key={item} className="rounded-full border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs font-semibold text-slate-700">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <Link to="/shop" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition hover:text-blue-700">
+                  Explore the FlexiKnee system <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+              <div className="order-1 min-h-[320px] overflow-hidden sm:min-h-[430px] lg:order-2">
+                <img src={fifth.image} alt={fifth.alt} className="h-full w-full object-cover" loading="lazy" />
               </div>
             </div>
           </article>
