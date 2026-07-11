@@ -7,6 +7,14 @@
   "cleanUrls": false,
   "rewrites": [
     {
+      "source": "/apps/parcelpanel",
+      "destination": "https://flexi-knee-store.myshopify.com/apps/parcelpanel"
+    },
+    {
+      "source": "/apps/parcelpanel/:path*",
+      "destination": "https://flexi-knee-store.myshopify.com/apps/parcelpanel/:path*"
+    },
+    {
       "source": "/api/:path*",
       "destination": "/api/:path*"
     },

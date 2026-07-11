@@ -123,7 +123,7 @@ export const OfferSelector = ({
                 ))}
               </span>
               {row.note && (
-                <span className="mt-0.5 block text-[11px] text-slate-400">{row.note}</span>
+                <span className="mt-0.5 hidden text-[11px] text-slate-400 sm:block">{row.note}</span>
               )}
             </span>
             <span className="flex flex-col items-end">
@@ -144,29 +144,30 @@ export const OfferSelector = ({
 /* ------------------------------------------------------------------ */
 
 const PAYMENT_LOGOS = [
-  { label: "Shop Pay", src: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Shop_Pay_logo.svg", className: "h-3 w-auto max-w-[34px]" },
-  { label: "Visa", src: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg", className: "h-2.5 w-auto max-w-[28px]" },
-  { label: "Mastercard", src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg", className: "h-3.5 w-auto max-w-[24px]" },
-  { label: "American Express", src: "https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg", className: "h-2.5 w-auto max-w-[30px]" },
-  { label: "Google Pay", src: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg", className: "h-2.5 w-auto max-w-[31px]" },
-  { label: "PayPal", src: "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg", className: "h-3 w-auto max-w-[29px]" },
+  { label: "Shop Pay", src: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Shop_Pay_logo.svg", className: "h-4 w-auto" },
+  { label: "Visa", src: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg", className: "h-3 w-auto" },
+  { label: "Mastercard", src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg", className: "h-5 w-auto" },
+  { label: "American Express", src: "https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg", className: "h-3 w-auto" },
+  { label: "Google Pay", src: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg", className: "h-3.5 w-auto" },
+  { label: "PayPal", src: "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg", className: "h-4 w-auto" },
 ];
 
 export const PaymentOptionsRow = () => (
   <div className="mt-5">
     <p className="text-center text-xs font-medium text-slate-500">More payment options</p>
-    <div className="mt-2 grid grid-cols-7 gap-1">
+    <div className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2.5">
       {PAYMENT_LOGOS.map((logo) => (
-        <div
+        <img
           key={logo.label}
-          className="flex h-9 items-center justify-center rounded-lg border border-slate-200 bg-white px-1 shadow-sm"
-        >
-          <img className={logo.className} src={logo.src} alt={logo.label} loading="lazy" />
-        </div>
+          className={`${logo.className} opacity-80 transition hover:opacity-100`}
+          src={logo.src}
+          alt={logo.label}
+          loading="lazy"
+        />
       ))}
-      <div className="flex h-9 items-center justify-center rounded-lg border border-slate-200 bg-black px-1 shadow-sm">
-        <span className="text-[10px] font-semibold tracking-tight text-white">Apple Pay</span>
-      </div>
+      <span className="rounded-[5px] bg-black px-2 py-[3px] text-[10px] font-semibold leading-none tracking-tight text-white">
+        Apple Pay
+      </span>
     </div>
   </div>
 );
