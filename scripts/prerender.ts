@@ -90,6 +90,7 @@ async function prerender() {
     "/guides",
     "/shop",
     "/knee-quiz",
+    "/contact",
     "/why-flexiknee",
     "/foundation",
     "/track-order",
@@ -189,7 +190,12 @@ async function prerender() {
           );
 
           // Get the full rendered HTML
-          const html = await page.content();
+          let html = await page.content();
+
+          // ParcelPanel gibi calisma zamani eklenen ucuncu parti scriptleri
+          // snapshot'tan ayikla - statik kopyada erken calisip canli kurulumu
+          // engelliyorlar. Widget script'ini React kendisi ekler.
+          html = html.replace(/<script[^>]*parcelpanel[^>]*>\s*<\/script>/gi, "");
           
           // Determine output path
           let outPath: string;

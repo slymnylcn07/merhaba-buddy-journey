@@ -108,7 +108,7 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
               </span>
             )}
             <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
-              Free shipping
+              Free shipping $24.99+
             </span>
             <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
               30-day returns from delivery

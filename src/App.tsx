@@ -27,6 +27,7 @@ const WhyFlexiKnee = lazy(() => import("./pages/WhyFlexiKnee"));
 const Guides = lazy(() => import("./pages/Guides"));
 const Shop = lazy(() => import("./pages/Shop"));
 const KneeQuiz = lazy(() => import("./pages/KneeQuiz"));
+const Contact = lazy(() => import("./pages/Contact"));
 const GuideArticle = lazy(() => import("./pages/GuideArticle"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -74,6 +75,7 @@ const App = () => {
                 <Route path="/why-flexiknee" element={<WhyFlexiKnee />} />
                 <Route path="/shop" element={<Shop />} />
                 <Route path="/knee-quiz" element={<KneeQuiz />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="/guides/running-shoes-knee-pain-causes-fixes" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
                 <Route path="/guides/running-shoes-knee-pain-discomfort" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
                 <Route path="/guides/post-exercise-knee-pain-guide" element={<Navigate to="/guides/knee-pain-after-exercise" replace />} />

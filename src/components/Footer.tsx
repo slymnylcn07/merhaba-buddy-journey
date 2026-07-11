@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SUPPORT_EMAIL } from "@/lib/support-config";
 import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
 import { Mail, MapPin, Phone } from "lucide-react";
 
@@ -30,6 +31,7 @@ export const Footer = () => {
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-950">Support</h3>
               <ul className="mt-4 space-y-3 text-sm text-slate-500">
+                <li><Link to="/contact" className="hover:text-blue-600">Contact Us</Link></li>
                 <li><Link to="/track-order" className="hover:text-blue-600">Track Your Order</Link></li>
                 <li><Link to="/shipping-policy" className="hover:text-blue-600">Shipping Policy</Link></li>
                 <li><Link to="/refund-policy" className="hover:text-blue-600">Returns & Refunds</Link></li>
@@ -40,7 +42,7 @@ export const Footer = () => {
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-950">Contact</h3>
               <div className="mt-4 space-y-4 text-sm text-slate-500">
-                <p className="flex gap-2"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" /> support@flexi-knee.com</p>
+                <p className="flex gap-2"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" /> {SUPPORT_EMAIL}</p>
                 <p className="flex gap-2"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" /> +1 302-722-4637</p>
                 <p className="flex gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" /> UK & USA fulfillment support</p>
               </div>

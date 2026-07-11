@@ -339,7 +339,7 @@ export default function ProductDetail() {
 
                 <div className="mt-6 grid gap-3 text-sm text-slate-600 sm:grid-cols-3">
                   {[
-                    [Truck, "Free shipping"],
+                    [Truck, "Free shipping over $24.99"],
                     [RotateCcw, "30-day returns from delivery"],
                     [Shield, "Secure checkout"],
                   ].map(([Icon, text]) => (

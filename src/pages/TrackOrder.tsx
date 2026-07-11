@@ -66,6 +66,12 @@ const TrackOrder = () => {
     const container = document.getElementById('pp-tracking-page-app');
     if (container) container.innerHTML = '';
 
+    // Prerender kalintisi ParcelPanel script etiketlerini kaldir ki
+    // asagida eklenen script temiz bir baslangic yapabilsin
+    document
+      .querySelectorAll('script[src*="parcelpanel"]')
+      .forEach((el) => el.remove());
+
     // Load ParcelPanel tracking script
     const script = document.createElement('script');
     script.src = 'https://pp-proxy.parcelpanel.com/assets/tracking/track-page.js';

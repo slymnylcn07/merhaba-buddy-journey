@@ -13,6 +13,7 @@ const navItems = [
   { label: "Guides", href: "/guides", type: "route" },
   { label: "Track Your Order", href: "/track-order", type: "route" },
   { label: "Why FlexiKnee", href: "/why-flexiknee", type: "route" },
+  { label: "Contact", href: "/contact", type: "route" },
 ];
 
 export const Header = () => {

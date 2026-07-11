@@ -705,6 +705,7 @@ export const staticPages = [
   { path: "/guides", priority: 0.9, changefreq: "weekly" },
   { path: "/shop", priority: 0.9, changefreq: "weekly" },
   { path: "/knee-quiz", priority: 0.7, changefreq: "monthly" },
+  { path: "/contact", priority: 0.5, changefreq: "yearly" },
   { path: "/why-flexiknee", priority: 0.8, changefreq: "monthly" },
   { path: "/product/knee-massager-smart-red-light-and-massage-therapy", priority: 0.9, changefreq: "weekly" },
   { path: "/foundation", priority: 0.7, changefreq: "monthly" },

@@ -70,7 +70,7 @@ export const featurePillars = [
 ];
 
 export const trustBadges = [
-  "Free shipping",
+  "Free shipping over $24.99",
   "30-day returns from delivery",
   "Secure checkout",
   "Support team",

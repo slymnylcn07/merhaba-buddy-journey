@@ -111,7 +111,7 @@ export default function Shop() {
                 <div className="grid grid-cols-3 gap-3 text-center">
                   <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm backdrop-blur">
                     <Truck className="mx-auto h-5 w-5 text-blue-600" />
-                    <p className="mt-2 text-xs font-semibold text-slate-800">Free shipping</p>
+                    <p className="mt-2 text-xs font-semibold text-slate-800">Free shipping over $24.99</p>
                   </div>
                   <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm backdrop-blur">
                     <ShieldCheck className="mx-auto h-5 w-5 text-blue-600" />
