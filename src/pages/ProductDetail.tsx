@@ -16,6 +16,8 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { DeliveryEstimate } from "@/components/DeliveryEstimate";
+import { BenefitIconsRow, OfferSelector, PaymentOptionsRow, TrustStrip, ProductInfoAccordion } from "@/components/product-page-blocks";
+import { getProductPageConfig } from "@/data/product-page-config";
 import { VideoReviews } from "@/components/VideoReviews";
 import { getProducts, ShopifyProduct, createStorefrontCheckout } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
@@ -61,6 +63,13 @@ const massagerStoryVisuals = [
     image: "/images/product-stories/massager-post-workout.png",
     alt: "Woman using the FlexiKnee knee massager after exercise in a bright fitness-inspired room",
   },
+];
+
+const productFaqs = [
+  { question: "Is FlexiKnee wireless?", answer: "Yes. It is rechargeable and designed for simple, cord-free daily routines — use it on the couch, at your desk, or anywhere at home." },
+  { question: "How long should I use it per session?", answer: "A 15-minute session is the sweet spot for most people, 1-3 times daily. Consistency over weeks matters more than long single sessions." },
+  { question: "Is this a medical treatment?", answer: "No. FlexiKnee is a comfort and recovery support product, not a medical device. If you have a diagnosed condition, check with your healthcare provider first." },
+  { question: "Can I return it?", answer: "Yes — every order is covered by our 30-day return policy, counted from the day your order is delivered. Contact us with your order number and we will guide you through it." },
 ];
 
 const relatedGuides = [
@@ -132,6 +141,7 @@ export default function ProductDetail() {
   const variantPrice = variant?.price.amount || product?.node.priceRange.minVariantPrice.amount || "59.99";
   const currency = variant?.price.currencyCode || product?.node.priceRange.minVariantPrice.currencyCode || "GBP";
   const basePrice = Number(variantPrice || 0);
+  const pageConfig = getProductPageConfig("main");
   const displayPrice = formatMoney(String(basePrice * bundleQty), currency);
   const compareAtAmount = variant?.compareAtPrice?.amount
     ? Number(variant.compareAtPrice.amount)
@@ -247,7 +257,7 @@ export default function ProductDetail() {
         </section>
 
         <section className="bg-[radial-gradient(circle_at_72%_16%,rgba(37,99,235,0.11),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] py-5 sm:py-8 lg:py-14">
-          <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 xl:grid-cols-[minmax(0,1fr)_minmax(360px,420px)] xl:items-start xl:gap-9 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 xl:grid-cols-[minmax(0,1fr)_minmax(420px,540px)] xl:items-start xl:gap-10 lg:px-8">
             <div className="min-w-0">
               <div className="overflow-hidden rounded-[1.8rem] border border-slate-200 bg-white p-2 shadow-[0_35px_110px_-80px_rgba(15,23,42,0.75)] sm:rounded-[2.2rem] sm:p-3 lg:rounded-[2.6rem] lg:p-4">
                 <img
@@ -282,69 +292,34 @@ export default function ProductDetail() {
                       <Star key={star} className="h-4 w-4 fill-blue-600" />
                     ))}
                   </div>
-                  <span className="text-sm font-medium text-slate-700">4.8 rating</span>
+                  <span className="text-sm font-medium text-slate-700">
+                    {pageConfig.rating}
+                    {pageConfig.reviewCount ? ` out of 5 (${pageConfig.reviewCount} reviews)` : " rating"}
+                  </span>
                 </div>
-                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 sm:text-sm">Smart daily knee comfort</p>
-                <h1 className="mt-2 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">{productTitle}</h1>
+                <h1 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">{productTitle}</h1>
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">Smart daily knee comfort</p>
 
                 <p className="mt-5 text-base leading-7 text-slate-600">
                   FlexiKnee combines adjustable warmth, massage style vibration, and a secure wraparound fit for simple at home comfort routines.
                 </p>
 
-                <div className="mt-6 grid gap-3">
-                  {[
-                    "Adjustable heat levels for a consistent routine",
-                    "Massage style vibration modes for tired legs",
-                    "Wraparound fit to keep the device comfortably positioned",
-                    "Wireless design for easy use at home, work, or after activity",
-                  ].map((item) => (
-                    <div key={item} className="flex gap-3 text-sm text-slate-700">
-                      <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
+                <BenefitIconsRow benefits={pageConfig.benefits} />
 
-                <div className="mt-7 rounded-[1.4rem] border border-slate-200 bg-slate-50 p-4">
-                  <div className="mb-3 flex items-center justify-between">
-                    <span className="text-sm font-semibold text-slate-950">Choose your option</span>
-                    <span className="flex items-baseline gap-2">
-                      {compareAtDisplay && (
-                        <s className="text-sm text-slate-400">{compareAtDisplay}</s>
-                      )}
-                      <span className="text-sm font-semibold text-blue-600">{displayPrice}</span>
-                    </span>
-                  </div>
-
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <button
-                      onClick={() => setBundleQty(1)}
-                      className={`rounded-2xl border p-4 text-left transition ${
-                        bundleQty === 1 ? "border-blue-500 bg-white shadow-lg shadow-blue-500/10" : "border-slate-200 bg-white hover:border-slate-300"
-                      }`}
-                    >
-                      <span className="block text-sm font-semibold text-slate-950">Single</span>
-                      <span className="mt-1 block text-sm text-slate-500">1x FlexiKnee device</span>
-                    </button>
-                    <button
-                      onClick={() => setBundleQty(2)}
-                      className={`rounded-2xl border p-4 text-left transition ${
-                        bundleQty === 2 ? "border-blue-500 bg-white shadow-lg shadow-blue-500/10" : "border-slate-200 bg-white hover:border-slate-300"
-                      }`}
-                    >
-                      <span className="flex items-center gap-2 text-sm font-semibold text-slate-950">
-                        Duo
-                        <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] font-semibold text-emerald-700">SAVE 15%</span>
-                      </span>
-                      <span className="mt-1 block text-sm text-slate-500">2x devices for both knees</span>
-                      <span className="mt-1 block text-xs text-slate-400">Discount applied automatically at checkout</span>
-                    </button>
-                  </div>
-                </div>
+                <OfferSelector
+                  qty={bundleQty as 1 | 2}
+                  onSelect={(q) => setBundleQty(q)}
+                  unitPrice={basePrice}
+                  unitCompareAt={compareAtAmount}
+                  currencyCode={currency}
+                  freeShipOnSingle={pageConfig.freeShipOnSingle}
+                  duoDiscountPct={pageConfig.duoDiscountPct}
+                  formatMoney={formatMoney}
+                />
 
                 <div className="mt-5 hidden gap-3 lg:grid">
                   <Button onClick={handleAddToCart} disabled={!variant || isLoading} className="h-13 rounded-full bg-blue-600 text-base font-semibold text-white hover:bg-blue-700">
-                    Add to Cart
+                    Add to Cart — {bundleQty === 2 ? formatMoney(String(basePrice * 2 * (1 - pageConfig.duoDiscountPct / 100)), currency) : displayPrice}
                   </Button>
                   <Button onClick={handleBuyNow} disabled={!variant || isLoading || isBuying} variant="outline" className="h-13 rounded-full border-slate-300 text-base font-semibold text-slate-950 hover:bg-slate-950 hover:text-white">
                     {isBuying ? "Opening checkout..." : "Buy Now"}
@@ -353,18 +328,11 @@ export default function ProductDetail() {
 
                 <DeliveryEstimate className="mt-4 justify-center" />
 
-                <div className="mt-6 grid gap-3 text-sm text-slate-600 sm:grid-cols-3">
-                  {[
-                    [Truck, "Free shipping over $24.99"],
-                    [RotateCcw, "30-day returns from delivery"],
-                    [Shield, "Secure checkout"],
-                  ].map(([Icon, text]) => (
-                    <div key={String(text)} className="flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-3">
-                      <Icon className="h-4 w-4 text-blue-600" />
-                      <span className="font-medium">{String(text)}</span>
-                    </div>
-                  ))}
-                </div>
+                <PaymentOptionsRow />
+
+                <TrustStrip />
+
+                <ProductInfoAccordion howToUse={pageConfig.howToUse} faqs={productFaqs} />
               </div>
             </aside>
           </div>
@@ -490,12 +458,7 @@ export default function ProductDetail() {
               <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950">Product questions.</h2>
             </div>
             <Accordion type="single" collapsible className="rounded-[2rem] border border-slate-200 bg-white px-6 shadow-sm">
-              {[
-                ["Is FlexiKnee wireless?", "Yes. It is rechargeable and designed for simple cord free daily routines."],
-                ["How long should I use it?", "Use it according to the included instructions. Many people prefer short calm sessions rather than long complicated routines."],
-                ["Is this a medical treatment?", "No. It is positioned as a comfort and recovery support product, not a medical treatment or diagnosis tool."],
-                ["Can I return it?", "Yes. Keep your return policy visible near checkout to reduce hesitation."],
-              ].map(([q, a]) => (
+              {productFaqs.map(({ question: q, answer: a }) => (
                 <AccordionItem key={q} value={q} className="border-slate-200">
                   <AccordionTrigger className="text-left text-base font-semibold text-slate-950">{q}</AccordionTrigger>
                   <AccordionContent className="text-slate-600">{a}</AccordionContent>

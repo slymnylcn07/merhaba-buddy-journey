@@ -19,6 +19,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { DeliveryEstimate } from "@/components/DeliveryEstimate";
+import { BenefitIconsRow, OfferSelector, PaymentOptionsRow, TrustStrip, ProductInfoAccordion } from "@/components/product-page-blocks";
+import { getProductPageConfig } from "@/data/product-page-config";
 import { createStorefrontCheckout, getProductByHandle, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { getProductProfile } from "@/data/product-profiles";
@@ -87,6 +89,8 @@ export default function SecondaryProductDetail() {
       ? selectedVariant.compareAtPrice
       : null;
   const isPairable = profile.key === "compression-sleeve" || profile.key === "heated-wrap";
+  const pageConfig = getProductPageConfig(profile.key);
+  const unitPriceNum = price ? Number(price.amount) : 0;
   const canonical = `https://flexi-knee.com/product/${handle}`;
 
   useEffect(() => {
@@ -254,7 +258,7 @@ export default function SecondaryProductDetail() {
         </section>
 
         <section className="bg-[radial-gradient(circle_at_80%_10%,rgba(37,99,235,0.10),transparent_32%),linear-gradient(180deg,#fff_0%,#f8fbff_100%)] py-8 lg:py-14">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 xl:grid-cols-[minmax(0,1fr)_minmax(360px,420px)] xl:items-start lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 xl:grid-cols-[minmax(0,1fr)_minmax(420px,540px)] xl:items-start lg:px-8">
             <div className="min-w-0">
               <div className="flex min-h-[360px] items-center justify-center overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-4 shadow-[0_35px_100px_-75px_rgba(15,23,42,0.8)] sm:min-h-[520px]">
                 {mainImage ? (
@@ -292,12 +296,19 @@ export default function SecondaryProductDetail() {
               <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.75)] lg:p-8">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">{profile.badge}</span>
-                  <span className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">{profile.eyebrow}</span>
+                  {pageConfig.reviewCount && (
+                    <span className="flex items-center gap-1.5 text-sm font-medium text-slate-700">
+                      <span className="text-blue-600">★★★★★</span>
+                      {pageConfig.rating} out of 5 ({pageConfig.reviewCount} reviews)
+                    </span>
+                  )}
                 </div>
 
                 <h1 className="mt-4 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl">{node.title}</h1>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">{profile.eyebrow}</p>
                 <p className="mt-3 text-sm font-medium text-blue-700">Best for: {profile.bestFor}</p>
                 <p className="mt-4 text-base leading-7 text-slate-600">{profile.summary}</p>
+                <BenefitIconsRow benefits={pageConfig.benefits} />
 
                 {price && (
                   <p className="mt-6 flex items-baseline gap-3">
@@ -337,24 +348,16 @@ export default function SecondaryProductDetail() {
                   );
                 })}
 
-                <div className="mt-6 flex items-center justify-between gap-4">
-                  <span className="text-sm font-semibold text-slate-900">Quantity</span>
-                  <div className="inline-flex items-center rounded-full border border-slate-300 bg-white p-1">
-                    <button type="button" onClick={() => setQuantity((value) => Math.max(1, value - 1))} className="rounded-full p-2 hover:bg-slate-100" aria-label="Decrease quantity">
-                      <Minus className="h-4 w-4" />
-                    </button>
-                    <span className="w-9 text-center text-sm font-semibold">{quantity}</span>
-                    <button type="button" onClick={() => setQuantity((value) => Math.min(2, value + 1))} className="rounded-full p-2 hover:bg-slate-100" aria-label="Increase quantity">
-                      <Plus className="h-4 w-4" />
-                    </button>
-                  </div>
-                </div>
-
-                {isPairable && quantity === 2 && (
-                  <p className="mt-2 rounded-xl bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-700">
-                    Both Knees bundle: 15% off applied automatically at checkout.
-                  </p>
-                )}
+                <OfferSelector
+                  qty={quantity as 1 | 2}
+                  onSelect={(q) => setQuantity(q)}
+                  unitPrice={unitPriceNum}
+                  unitCompareAt={compareAt ? Number(compareAt.amount) : null}
+                  currencyCode={price?.currencyCode}
+                  freeShipOnSingle={pageConfig.freeShipOnSingle}
+                  duoDiscountPct={pageConfig.duoDiscountPct}
+                  formatMoney={formatMoney}
+                />
 
                 <div className="mt-6 grid gap-3">
                   <button
@@ -364,7 +367,9 @@ export default function SecondaryProductDetail() {
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-slate-300"
                   >
                     <ShoppingBag className="h-4 w-4" />
-                    {selectedVariant?.availableForSale ? "Add to cart" : "Currently unavailable"}
+                    {selectedVariant?.availableForSale
+                      ? `Add to cart — ${formatMoney(String(quantity === 2 ? unitPriceNum * 2 * (1 - pageConfig.duoDiscountPct / 100) : unitPriceNum), price?.currencyCode)}`
+                      : "Currently unavailable"}
                   </button>
                   <button
                     type="button"
@@ -379,12 +384,11 @@ export default function SecondaryProductDetail() {
 
                 <DeliveryEstimate className="mt-4 justify-center" />
 
-                <div className="mt-6 grid grid-cols-2 gap-3 text-xs text-slate-600">
-                  <div className="flex items-center gap-2 rounded-2xl bg-slate-50 p-3"><Truck className="h-4 w-4 text-blue-600" /> Free shipping over $24.99</div>
-                  <div className="flex items-center gap-2 rounded-2xl bg-slate-50 p-3"><RotateCcw className="h-4 w-4 text-blue-600" /> 30-day returns from delivery</div>
-                  <div className="flex items-center gap-2 rounded-2xl bg-slate-50 p-3"><ShieldCheck className="h-4 w-4 text-blue-600" /> Secure checkout</div>
-                  <div className="flex items-center gap-2 rounded-2xl bg-slate-50 p-3"><PackageCheck className="h-4 w-4 text-blue-600" /> Tracked delivery</div>
-                </div>
+                <PaymentOptionsRow />
+
+                <TrustStrip />
+
+                <ProductInfoAccordion howToUse={pageConfig.howToUse} faqs={profile.faqs} />
               </div>
             </aside>
           </div>
