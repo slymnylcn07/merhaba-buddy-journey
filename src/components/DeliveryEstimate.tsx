@@ -42,10 +42,10 @@ export const DeliveryEstimate = ({ className = "" }: { className?: string }) => 
 
   return (
     <p
-      className={`flex items-start gap-2 text-sm text-slate-600 sm:items-center ${className}`}
+      className={`flex flex-col items-center gap-1 text-center text-sm text-slate-600 sm:flex-row sm:items-center sm:gap-2 sm:text-left ${className}`}
       aria-live="polite"
     >
-      <Truck className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600 sm:mt-0" />
+      <Truck className="h-4 w-4 flex-shrink-0 text-blue-600" />
       {!resolved ? (
         <span>Checking delivery time...</span>
       ) : country ? (

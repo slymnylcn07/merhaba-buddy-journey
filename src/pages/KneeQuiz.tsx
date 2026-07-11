@@ -36,7 +36,7 @@ const QUESTIONS: QuizQuestion[] = [
     question: "When do your knees bother you most?",
     options: [
       { key: "activity", label: "During or after exercise and workouts" },
-      { key: "daily", label: "Everyday moments — stairs, kneeling or walking" },
+      { key: "daily", label: "Everyday moments, stairs, kneeling or walking" },
       {
         key: "rest",
         label: "After sitting, resting or first thing in the morning",
@@ -494,7 +494,7 @@ export default function KneeQuiz() {
   return (
     <>
       <Helmet>
-        <title>Free Knee Comfort Quiz — Find Your Routine | FlexiKnee™</title>
+        <title>Free Knee Comfort Quiz. Find Your Routine | FlexiKnee™</title>
         <meta
           name="description"
           content="Answer four practical questions and get a matched product category, useful guides and a seven-day knee comfort starter plan."

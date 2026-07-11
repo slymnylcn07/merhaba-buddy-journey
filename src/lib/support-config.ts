@@ -1,6 +1,6 @@
 /**
  * Merkezi destek iletişim bilgileri.
- * E-posta değişirse SADECE burayı güncelleyin — footer, contact sayfası
+ * E-posta değişirse SADECE burayı güncelleyin, footer, contact sayfası
  * ve form yönlendirmesi buradan beslenir.
  */
 

@@ -130,7 +130,7 @@ export default function ShippingPolicy() {
               If you entered an incorrect address, contact us within 12 hours. Once dispatched, address changes are not possible.
             </p>
             <p className="text-muted-foreground">
-              If your tracking shows "Delivered" but you haven't received your parcel, contact us — we will assist you immediately and arrange a solution.
+              If your tracking shows "Delivered" but you haven't received your parcel, contact us, we will assist you immediately and arrange a solution.
             </p>
           </section>
 

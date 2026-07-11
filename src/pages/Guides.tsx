@@ -611,7 +611,7 @@ const Guides = () => {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Simple Guides for Everyday Knee Comfort",
-    "description": "Simple guides for everyday knee comfort: understand daily patterns, habits, and supportive at-home routines — without medical advice or treatment claims.",
+    "description": "Simple guides for everyday knee comfort: understand daily patterns, habits, and supportive at-home routines, without medical advice or treatment claims.",
     "url": canonicalUrl,
     "numberOfItems": guides.length,
     "itemListElement": guides.map((guide, index) => ({
@@ -635,7 +635,7 @@ const Guides = () => {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Simple Guides for Everyday Knee Comfort",
-    "description": "These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines — without medical advice or treatment claims.",
+    "description": "These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines, without medical advice or treatment claims.",
     "url": canonicalUrl,
     "isPartOf": { "@type": "WebSite", "name": "FlexiKnee", "url": "https://flexi-knee.com" },
     "publisher": {
@@ -659,13 +659,13 @@ const Guides = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content="Simple Guides for Everyday Knee Comfort | FlexiKnee" />
-        <meta property="og:description" content="These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines — without medical advice or treatment claims." />
+        <meta property="og:description" content="These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines, without medical advice or treatment claims." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@FlexiKnee" />
         <meta name="twitter:title" content="Simple Guides for Everyday Knee Comfort | FlexiKnee" />
-        <meta name="twitter:description" content="These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines — without medical advice or treatment claims." />
+        <meta name="twitter:description" content="These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines, without medical advice or treatment claims." />
         <meta name="twitter:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(webPageJsonLd)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListJsonLd)}</script>

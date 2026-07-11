@@ -368,7 +368,7 @@ export default function SecondaryProductDetail() {
                   >
                     <ShoppingBag className="h-4 w-4" />
                     {selectedVariant?.availableForSale
-                      ? `Add to cart — ${formatMoney(String(quantity === 2 ? unitPriceNum * 2 * (1 - pageConfig.duoDiscountPct / 100) : unitPriceNum), price?.currencyCode)}`
+                      ? `Add to cart - ${formatMoney(String(quantity === 2 ? unitPriceNum * 2 * (1 - pageConfig.duoDiscountPct / 100) : unitPriceNum), price?.currencyCode)}`
                       : "Currently unavailable"}
                   </button>
                   <button

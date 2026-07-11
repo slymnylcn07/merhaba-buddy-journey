@@ -46,8 +46,7 @@ const Foundation = () => {
             </h1>
           </div>
           <p className="text-lg md:text-xl text-teal-100 leading-relaxed max-w-3xl mx-auto">
-            At FlexiKnee, we believe <span className="font-semibold text-white">mobility is freedom</span> —
-            and everyone deserves the chance to move without pain.
+            At FlexiKnee, we believe <span className="font-semibold text-white">mobility is freedom</span>, and everyone deserves the chance to move without pain.
           </p>
         </div>
       </div>
@@ -62,7 +61,7 @@ const Foundation = () => {
               That's why a portion of every order you make contributes to <strong>joint health</strong>, <strong>mobility awareness</strong>, and <strong>pain research initiatives</strong>.
             </p>
             <p className="text-lg text-foreground leading-relaxed mt-4">
-              Because your purchase shouldn't just help you —<br />
+              Because your purchase shouldn't just help you.<br />
               <span className="text-teal-600 dark:text-teal-400 font-semibold">it should help someone else stand, walk, and move again.</span>
             </p>
           </div>
@@ -79,7 +78,7 @@ const Foundation = () => {
                 Millions of people struggle daily with joint pain, stiffness, reduced mobility, and the loss of independence that follows.
               </p>
               <p>
-                These issues don't only affect the elderly —<br />
+                These issues don't only affect the elderly.<br />
                 they impact <strong className="text-foreground">working adults, athletes, parents, and families worldwide</strong>.
               </p>
               <div className="bg-muted/50 rounded-xl p-6 my-6 border-l-4 border-teal-500">
@@ -129,7 +128,7 @@ const Foundation = () => {
                 <li>• Recovery and prevention projects</li>
               </ul>
               <p className="mt-6 text-foreground italic">
-                It's a small percentage —<br />
+                It's a small percentage.<br />
                 <strong>but multiplied by people like you, it becomes meaningful.</strong>
               </p>
             </div>
@@ -144,7 +143,7 @@ const Foundation = () => {
             
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p className="text-lg">
-                <strong className="text-foreground">Yes</strong> — your order contributes to our growing mobility initiative.
+                <strong className="text-foreground">Yes</strong>, your order contributes to our growing mobility initiative.
               </p>
               <p>Each purchase:</p>
               <ul className="space-y-2 ml-4">
@@ -184,13 +183,13 @@ const Foundation = () => {
             
             <div className="bg-gradient-to-br from-teal-600 to-teal-700 rounded-2xl p-8 md:p-10 text-white">
               <p className="text-lg leading-relaxed mb-4">
-                FlexiKnee isn't just a product —<br />
+                FlexiKnee isn't just a product.<br />
                 <span className="font-semibold">it's a step toward better mobility for many.</span>
               </p>
               <p className="text-2xl font-bold mb-6">Together, we move.</p>
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3">
                 <span className="text-amber-300">💛</span>
-                <span className="text-sm">Stay tuned — we'll continue sharing initiative updates right here.</span>
+                <span className="text-sm">Stay tuned, we'll continue sharing initiative updates right here.</span>
               </div>
             </div>
           </section>

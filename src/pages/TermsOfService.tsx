@@ -37,7 +37,7 @@ export default function TermsOfService() {
           Back to Home
         </Link>
         
-        <h1 className="text-4xl font-bold mb-8">TERMS OF SERVICE — FlexiKnee™</h1>
+        <h1 className="text-4xl font-bold mb-8">TERMS OF SERVICE. FlexiKnee™</h1>
         
         <div className="prose prose-slate max-w-none">
           <section className="mb-8">

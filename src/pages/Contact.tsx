@@ -22,7 +22,7 @@ export default function Contact() {
     orderNumber: "",
     topic: TOPICS[0],
     message: "",
-    website: "", // honeypot — gerçek kullanıcılar görmez/doldurmaz
+    website: "", // honeypot, gerçek kullanıcılar görmez/doldurmaz
   });
   const [isSending, setIsSending] = useState(false);
   const [sent, setSent] = useState(false);
@@ -64,7 +64,7 @@ export default function Contact() {
         <title>Contact Us | FlexiKnee™</title>
         <meta
           name="description"
-          content="Questions about your FlexiKnee order, shipping, returns, or products? Send us a message — we reply within one business day."
+          content="Questions about your FlexiKnee order, shipping, returns, or products? Send us a message, we reply within one business day."
         />
         <link rel="canonical" href="https://flexi-knee.com/contact" />
         <meta property="og:type" content="website" />
@@ -102,7 +102,7 @@ export default function Contact() {
                         Message sent
                       </h2>
                       <p className="mx-auto mt-2 max-w-md text-slate-600">
-                        Thanks, {form.name.split(" ")[0]} — we've received your message and will reply to {form.email} within one business day.
+                        Thanks, {form.name.split(" ")[0]}, we've received your message and will reply to {form.email} within one business day.
                       </p>
                       <Link
                         to="/"

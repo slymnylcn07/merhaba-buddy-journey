@@ -1,5 +1,5 @@
 /**
- * Ürün sayfası satın alma paneli yapılandırması — ÜRÜN BAŞINA.
+ * Ürün sayfası satın alma paneli yapılandırması. ÜRÜN BAŞINA.
  *
  * Her ürünün: 4 fayda ikonu, kullanım adımları, teklif kuralları
  * (24.99$ eşiğine göre kargo rozetleri) ve yorum sayısı alanı burada.
@@ -7,7 +7,7 @@
  * reviewCount: Gerçek yorum sayınızı buraya girin (örn. Judge.me kurup ilk
  * gerçek yorumlar geldiğinde). null bırakılırsa sayı gösterilmez. Sitede
  * henüz var olmayan yorum sayıları yayınlamak ABD'de FTC'nin sahte yorum
- * kuralı kapsamında para cezası riskidir — bu alan o yüzden boş geliyor.
+ * kuralı kapsamında para cezası riskidir, bu alan o yüzden boş geliyor.
  */
 
 import type { LucideIcon } from "lucide-react";
@@ -62,7 +62,7 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
     howToUse: [
       "Wrap the device around your knee and secure the straps for a snug, comfortable fit.",
       "Press power and choose your heat level, red light, and vibration mode from the control panel.",
-      "Relax for a 15-minute session — reading, watching TV, or winding down.",
+      "Relax for a 15-minute session, reading, watching TV, or winding down.",
       "Repeat 1–3 times daily. Most people build it into a morning or evening routine.",
     ],
     freeShipOnSingle: true,
@@ -81,7 +81,7 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
       "Slip the sleeve over your calf and fasten it so it feels snug but not tight.",
       "Choose one of the 3 compression modes and your preferred intensity.",
       "Run a 15-minute session after flights, long drives, or active days.",
-      "Use on each leg as needed — the battery covers multiple sessions per charge.",
+      "Use on each leg as needed, the battery covers multiple sessions per charge.",
     ],
     freeShipOnSingle: true,
     duoDiscountPct: 15,
@@ -99,7 +99,7 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
       "Strap the wrap around your knee with the heating panel centered.",
       "Connect the USB cable to a power bank, laptop, or USB adapter.",
       "Select your heat level and warm up for 15–20 minutes.",
-      "Ideal for desk sessions — pair it with a power bank for full mobility.",
+      "Ideal for desk sessions, pair it with a power bank for full mobility.",
     ],
     freeShipOnSingle: true,
     duoDiscountPct: 15,

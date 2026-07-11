@@ -66,10 +66,10 @@ const massagerStoryVisuals = [
 ];
 
 const productFaqs = [
-  { question: "Is FlexiKnee wireless?", answer: "Yes. It is rechargeable and designed for simple, cord-free daily routines — use it on the couch, at your desk, or anywhere at home." },
+  { question: "Is FlexiKnee wireless?", answer: "Yes. It is rechargeable and designed for simple, cord-free daily routines, use it on the couch, at your desk, or anywhere at home." },
   { question: "How long should I use it per session?", answer: "A 15-minute session is the sweet spot for most people, 1-3 times daily. Consistency over weeks matters more than long single sessions." },
   { question: "Is this a medical treatment?", answer: "No. FlexiKnee is a comfort and recovery support product, not a medical device. If you have a diagnosed condition, check with your healthcare provider first." },
-  { question: "Can I return it?", answer: "Yes — every order is covered by our 30-day return policy, counted from the day your order is delivered. Contact us with your order number and we will guide you through it." },
+  { question: "Can I return it?", answer: "Yes, every order is covered by our 30-day return policy, counted from the day your order is delivered. Contact us with your order number and we will guide you through it." },
 ];
 
 const relatedGuides = [
@@ -319,7 +319,7 @@ export default function ProductDetail() {
 
                 <div className="mt-5 hidden gap-3 lg:grid">
                   <Button onClick={handleAddToCart} disabled={!variant || isLoading} className="h-13 rounded-full bg-blue-600 text-base font-semibold text-white hover:bg-blue-700">
-                    Add to Cart — {bundleQty === 2 ? formatMoney(String(basePrice * 2 * (1 - pageConfig.duoDiscountPct / 100)), currency) : displayPrice}
+                    Add to Cart - {bundleQty === 2 ? formatMoney(String(basePrice * 2 * (1 - pageConfig.duoDiscountPct / 100)), currency) : displayPrice}
                   </Button>
                   <Button onClick={handleBuyNow} disabled={!variant || isLoading || isBuying} variant="outline" className="h-13 rounded-full border-slate-300 text-base font-semibold text-slate-950 hover:bg-slate-950 hover:text-white">
                     {isBuying ? "Opening checkout..." : "Buy Now"}
@@ -396,7 +396,7 @@ export default function ProductDetail() {
           productName="FlexiKnee™ Smart Heated Knee Massager"
           productKey="massager"
           eyebrow="The flagship FlexiKnee experience"
-          headline="More than a product image — a routine people can picture themselves using."
+          headline="More than a product image, a routine people can picture themselves using."
           intro="These sections give the flagship product page a more premium, lifestyle-led story once the visitor scrolls past the purchase area."
           visuals={massagerStoryVisuals}
           highlights={["Adjustable warmth", "Massage-style vibration", "Wireless wraparound design", "Simple touch control"]}

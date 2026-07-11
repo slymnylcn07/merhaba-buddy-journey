@@ -114,7 +114,7 @@ export default function Index() {
 
         <main>
           <h1 className="sr-only">
-            FlexiKnee Smart Heated Knee Massager with Red Light Therapy — Knee Comfort Guides and Recovery Products
+            FlexiKnee Smart Heated Knee Massager with Red Light Therapy. Knee Comfort Guides and Recovery Products
           </h1>
           <section className="bg-white">
             <div className="mx-auto max-w-[1800px] px-0 py-0 sm:px-4 sm:py-5 lg:px-8 lg:py-8">
@@ -166,7 +166,7 @@ export default function Index() {
                   </h2>
                 </div>
                 <p className="max-w-2xl text-base leading-8 text-slate-600 lg:pt-12">
-                  Start with your situation — stairs, workouts, stiffness, or clicking — and get a practical, science-informed guide for it.
+                  Start with your situation, stairs, workouts, stiffness, or clicking, and get a practical, science-informed guide for it.
                 </p>
               </div>
 

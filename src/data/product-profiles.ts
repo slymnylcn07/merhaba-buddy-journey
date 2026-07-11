@@ -124,7 +124,7 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
     visuals: [
       {
         title: "Upgrade the shoes you already reach for",
-        text: "This opening scene shows how easily the FlexiKnee™ Sport Orthopedic Insoles can become part of a normal training or walking routine—without changing the shoes you already like.",
+        text: "This opening scene shows how easily the FlexiKnee™ Sport Orthopedic Insoles can become part of a normal training or walking routine, without changing the shoes you already like.",
         image: "/images/product-stories/insoles-home-setup.webp",
         alt: "Woman placing a FlexiKnee Sport Orthopedic Insole into a white athletic shoe at home",
       },
@@ -136,7 +136,7 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
       },
       {
         title: "Comfort that stays with the workday",
-        text: "A home-office setting reinforces that the insoles are not only for workouts—they are designed for long periods of standing, walking and everyday movement too.",
+        text: "A home-office setting reinforces that the insoles are not only for workouts, they are designed for long periods of standing, walking and everyday movement too.",
         image: "/images/product-stories/insoles-workday.webp",
         alt: "Woman working at a desk while wearing athletic shoes fitted with FlexiKnee Sport Orthopedic Insoles",
       },
@@ -148,7 +148,7 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
       },
       {
         title: "Support the routine from start to finish",
-        text: "The final scene connects the insoles to the complete movement cycle—from putting shoes on to winding down after activity—so the page ends with a strong, realistic reason to buy.",
+        text: "The final scene connects the insoles to the complete movement cycle, from putting shoes on to winding down after activity, so the page ends with a strong, realistic reason to buy.",
         image: "/images/product-stories/insoles-post-activity.webp",
         alt: "Woman resting after activity beside athletic shoes and a FlexiKnee Sport Orthopedic Insole",
       },

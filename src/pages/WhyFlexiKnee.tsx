@@ -78,12 +78,12 @@ const WhyFlexiKnee = () => {
     {
       icon: BatteryCharging,
       title: "Wireless & Rechargeable",
-      description: "No cords during sessions — use it where you're comfortable."
+      description: "No cords during sessions, use it where you're comfortable."
     },
     {
       icon: Zap,
       title: "Easy Daily Routine",
-      description: "Simple controls and a straightforward setup — no learning curve."
+      description: "Simple controls and a straightforward setup, no learning curve."
     }
   ];
 
@@ -115,7 +115,7 @@ const WhyFlexiKnee = () => {
   const faqs = [
     {
       question: "How do I use FlexiKnee?",
-      answer: "Simply wrap FlexiKnee around your knee, secure the adjustable straps, and use the simple controls to select your preferred heat and vibration settings. It's designed to be intuitive — most users are comfortable within seconds."
+      answer: "Simply wrap FlexiKnee around your knee, secure the adjustable straps, and use the simple controls to select your preferred heat and vibration settings. It's designed to be intuitive, most users are comfortable within seconds."
     },
     {
       question: "How long is a typical session?",
@@ -131,11 +131,11 @@ const WhyFlexiKnee = () => {
     },
     {
       question: "How do returns work?",
-      answer: "We offer a 30-day easy return policy, counted from the day your order is delivered. If you're not satisfied, simply start a return through your account — you'll need your order number and email. We'll guide you through the process."
+      answer: "We offer a 30-day easy return policy, counted from the day your order is delivered. If you're not satisfied, simply start a return through your account, you'll need your order number and email. We'll guide you through the process."
     },
     {
       question: "What if my device arrives damaged or stops working?",
-      answer: "If your FlexiKnee arrives damaged or develops a fault, contact us with your order number and a short description — we'll arrange a replacement or refund. We stand behind every device we ship."
+      answer: "If your FlexiKnee arrives damaged or develops a fault, contact us with your order number and a short description, we'll arrange a replacement or refund. We stand behind every device we ship."
     }
   ];
 
@@ -143,14 +143,14 @@ const WhyFlexiKnee = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Why FlexiKnee | Smarter Knee Relief Designed for Real Life</title>
-        <meta name="description" content="Discover what makes FlexiKnee different — a premium knee therapy device combining comfort-focused design with targeted heat and light support for at-home relief." />
+        <meta name="description" content="Discover what makes FlexiKnee different, a premium knee therapy device combining comfort-focused design with targeted heat and light support for at-home relief." />
         <link rel="canonical" href="https://flexi-knee.com/why-flexiknee" />
         
         {/* Open Graph Meta Tags */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/why-flexiknee" />
         <meta property="og:title" content="Why FlexiKnee | Smarter Knee Relief Designed for Real Life" />
-        <meta property="og:description" content="Discover what makes FlexiKnee different — a premium knee therapy device combining comfort-focused design with targeted heat and light support for at-home relief." />
+        <meta property="og:description" content="Discover what makes FlexiKnee different, a premium knee therapy device combining comfort-focused design with targeted heat and light support for at-home relief." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
         
@@ -158,7 +158,7 @@ const WhyFlexiKnee = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@FlexiKnee" />
         <meta name="twitter:title" content="Why FlexiKnee | Smarter Knee Relief Designed for Real Life" />
-        <meta name="twitter:description" content="Discover what makes FlexiKnee different — a premium knee therapy device for at-home relief." />
+        <meta name="twitter:description" content="Discover what makes FlexiKnee different, a premium knee therapy device for at-home relief." />
         <meta name="twitter:image" content="https://flexi-knee.com/images/og-image.jpg" />
       </Helmet>
       
@@ -199,7 +199,7 @@ const WhyFlexiKnee = () => {
               Smarter Knee Relief, Designed for Real Life
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              A premium knee therapy device combining comfort-focused design with targeted heat and light support — easy to use at home, whenever you need it.
+              A premium knee therapy device combining comfort-focused design with targeted heat and light support, easy to use at home, whenever you need it.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild size="lg" className="text-lg px-8 h-14 font-semibold">
@@ -302,7 +302,7 @@ const WhyFlexiKnee = () => {
                 What makes FlexiKnee different
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Designed with real users in mind — simple, effective, and built to fit into your daily life.
+                Designed with real users in mind, simple, effective, and built to fit into your daily life.
               </p>
             </div>
             
@@ -435,7 +435,7 @@ const WhyFlexiKnee = () => {
                         <Link to="/account#returns" className="text-primary hover:underline">
                           start a return through your account
                         </Link>
-                        {" "}— you'll need your order number and email. We'll guide you through the process.
+                        , you'll need your order number and email. We'll guide you through the process.
                       </>
                     ) : (
                       faq.answer

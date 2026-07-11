@@ -59,6 +59,7 @@ const TrackOrder = () => {
   }, []);
 
   const [widgetLoaded, setWidgetLoaded] = useState(false);
+  const [useIframeFallback, setUseIframeFallback] = useState(false);
 
   useEffect(() => {
     // Prerender aninda donmus widget kalintisi varsa temizle -
@@ -90,7 +91,17 @@ const TrackOrder = () => {
     
     document.body.appendChild(script);
 
+    // Guvence katmani: widget 4 sn icinde konteynere kurulum yapmazsa,
+    // ayni alanda Vercel tuneli uzerinden ParcelWILL sayfasini gomulu ac.
+    const fallbackTimer = window.setTimeout(() => {
+      const el = document.getElementById('pp-tracking-page-app');
+      if (!el || el.childElementCount === 0) {
+        setUseIframeFallback(true);
+      }
+    }, 4000);
+
     return () => {
+      window.clearTimeout(fallbackTimer);
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
@@ -173,7 +184,15 @@ const TrackOrder = () => {
 
           {/* ParcelPanel Widget Container */}
           <div className="bg-card rounded-lg shadow-sm border p-6 md:p-8 mb-8">
-            <div id="pp-tracking-page-app" className="min-h-[500px]"></div>
+            {useIframeFallback ? (
+              <iframe
+                src="/apps/parcelpanel"
+                title="Order tracking"
+                className="h-[900px] w-full rounded-2xl border-0"
+              />
+            ) : (
+              <div id="pp-tracking-page-app" className="min-h-[500px]"></div>
+            )}
           </div>
           
           {/* Store Domain for External Pages */}
@@ -188,7 +207,7 @@ const TrackOrder = () => {
             </p>
             <Button asChild variant="outline" size="lg">
               <a 
-                href={`https://${SHOPIFY_STORE_DOMAIN}/apps/parcelpanel`}
+                href="/apps/parcelpanel"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"

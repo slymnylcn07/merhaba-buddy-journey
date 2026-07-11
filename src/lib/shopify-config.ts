@@ -1,7 +1,7 @@
 /**
  * Merkezi Shopify yapılandırması.
  *
- * Mağaza değiştiğinde KODA DOKUNMAYIN — sadece ortam değişkenlerini güncelleyin:
+ * Mağaza değiştiğinde KODA DOKUNMAYIN, sadece ortam değişkenlerini güncelleyin:
  *   VITE_SHOPIFY_STORE_DOMAIN     → yeni-magazaniz.myshopify.com (kalıcı domain)
  *   VITE_SHOPIFY_STOREFRONT_TOKEN → Storefront API "Genel Erişim Belirteci"
  *   VITE_SHOPIFY_API_VERSION      → örn. 2025-07 (opsiyonel)
@@ -11,7 +11,7 @@
  *
  * NOT: Buradaki token istemci tarafında görünmesi tasarım gereği normal olan
  * "genel" (public) Storefront token'ıdır. "Özel Erişim Belirteci"ni (shpat_...)
- * ASLA bu projeye eklemeyin — bu bir Vite/SPA projesidir, tüm kod tarayıcıya gider.
+ * ASLA bu projeye eklemeyin, bu bir Vite/SPA projesidir, tüm kod tarayıcıya gider.
  */
 
 export const SHOPIFY_STORE_DOMAIN =

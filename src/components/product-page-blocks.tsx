@@ -8,7 +8,7 @@ import {
 import type { ProductBenefit } from "@/data/product-page-config";
 
 /* ------------------------------------------------------------------ */
-/* 1) Fayda ikonları — açıklamanın altında 4'lü, Thrive stili          */
+/* 1) Fayda ikonları, açıklamanın altında 4'lü, Thrive stili          */
 /* ------------------------------------------------------------------ */
 
 export const BenefitIconsRow = ({ benefits }: { benefits: ProductBenefit[] }) => (
@@ -27,7 +27,7 @@ export const BenefitIconsRow = ({ benefits }: { benefits: ProductBenefit[] }) =>
 );
 
 /* ------------------------------------------------------------------ */
-/* 2) Teklif seçici — Buy 1 / Buy 2 satırları, Thrive stili            */
+/* 2) Teklif seçici. Buy 1 / Buy 2 satırları, Thrive stili            */
 /* ------------------------------------------------------------------ */
 
 interface OfferSelectorProps {
@@ -140,7 +140,7 @@ export const OfferSelector = ({
 };
 
 /* ------------------------------------------------------------------ */
-/* 3) Ödeme seçenekleri — sepettekiyle birebir aynı logolar            */
+/* 3) Ödeme seçenekleri, sepettekiyle birebir aynı logolar            */
 /* ------------------------------------------------------------------ */
 
 const PAYMENT_LOGOS = [
@@ -173,7 +173,7 @@ export const PaymentOptionsRow = () => (
 );
 
 /* ------------------------------------------------------------------ */
-/* 4) Güven şeridi — tek satır, üç hücre, Thrive stili                 */
+/* 4) Güven şeridi, tek satır, üç hücre, Thrive stili                 */
 /* ------------------------------------------------------------------ */
 
 export const TrustStrip = () => (
@@ -193,7 +193,7 @@ export const TrustStrip = () => (
 );
 
 /* ------------------------------------------------------------------ */
-/* 5) Bilgi accordion'u — How to Use / FAQ / Shipping & Returns        */
+/* 5) Bilgi accordion'u. How to Use / FAQ / Shipping & Returns        */
 /* ------------------------------------------------------------------ */
 
 interface ProductInfoAccordionProps {

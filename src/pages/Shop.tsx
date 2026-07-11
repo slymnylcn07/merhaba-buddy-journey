@@ -19,7 +19,7 @@ import { getProductProfile } from "@/data/product-profiles";
 const collectionJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "FlexiKnee Shop — Knee Comfort & Recovery Products",
+  name: "FlexiKnee Shop. Knee Comfort & Recovery Products",
   url: "https://flexi-knee.com/shop",
 };
 
@@ -81,7 +81,7 @@ export default function Shop() {
         <title>Shop Knee Comfort & Recovery Products | FlexiKnee™</title>
         <meta
           name="description"
-          content="Explore FlexiKnee products for warming routines, compression support, lower-leg recovery and foot-to-knee comfort — including the FlexiKnee Sport Orthopedic Insoles."
+          content="Explore FlexiKnee products for warming routines, compression support, lower-leg recovery and foot-to-knee comfort, including the FlexiKnee Sport Orthopedic Insoles."
         />
         <link rel="canonical" href="https://flexi-knee.com/shop" />
         <meta property="og:type" content="website" />

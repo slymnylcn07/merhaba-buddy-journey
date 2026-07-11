@@ -10,7 +10,7 @@
  *   4. Redeploy
  *
  * Not: Resend'de alan adı doğrulamadan yalnızca kayıt olduğun adrese
- * gönderim yapılabilir — bu kurulumda hedef adres zaten kayıt adresi
+ * gönderim yapılabilir, bu kurulumda hedef adres zaten kayıt adresi
  * olduğundan alan adı doğrulaması GEREKMEZ.
  */
 
@@ -63,7 +63,7 @@ export default async function handler(req: any, res: any) {
         from: "FlexiKnee Contact <onboarding@resend.dev>",
         to: [SUPPORT_EMAIL],
         reply_to: email,
-        subject: `[Contact] ${topic}${orderNumber ? ` — Order ${orderNumber}` : ""} — ${name}`,
+        subject: `[Contact] ${topic}${orderNumber ? `. Order ${orderNumber}` : ""} - ${name}`,
         html: `
           <h2>New contact form message</h2>
           <p><strong>Name:</strong> ${esc(name)}</p>
