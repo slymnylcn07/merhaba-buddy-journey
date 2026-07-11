@@ -7,7 +7,7 @@ import { ArrowRight, Search, X, Clock, ChevronDown, ArrowUp } from "lucide-react
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { guidesData } from "@/data/guides";
-import { productSystem } from "@/data/product-system";
+import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 
 // Import images
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
@@ -256,6 +256,19 @@ const guides = guidesData.map(guide => ({
 
 // Helper to get guide by slug
 const getGuide = (slug: string) => guides.find(g => g.slug === slug);
+
+const latestPrioritySlugs = [
+  "knee-pain-after-exercise-but-not-during",
+  "cordless-rechargeable-heated-knee-massagers-2026",
+  "best-insoles-for-knee-pain-2026",
+];
+
+const formatGuideDate = (value?: string) => {
+  if (!value) return "Recently updated";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "Recently updated";
+  return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", year: "numeric" }).format(date);
+};
 
 // ── Section configurations ──
 
@@ -583,6 +596,15 @@ const Guides = () => {
 
   const featuredGuides = featuredSlugs.map(getGuide).filter(Boolean) as typeof guides;
 
+  const latestGuides = useMemo(() => {
+    const priority = latestPrioritySlugs.map(getGuide).filter(Boolean) as typeof guides;
+    const prioritySet = new Set(priority.map((guide) => guide.slug));
+    const remaining = [...guides]
+      .filter((guide) => !prioritySet.has(guide.slug))
+      .sort((a, b) => new Date(b.lastModified || 0).getTime() - new Date(a.lastModified || 0).getTime());
+    return [...priority, ...remaining].slice(0, 6);
+  }, []);
+
   const canonicalUrl = "https://flexi-knee.com/guides";
 
   const itemListJsonLd = {
@@ -631,7 +653,7 @@ const Guides = () => {
     <>
       <Helmet>
         <title>Simple Guides for Everyday Knee Comfort | FlexiKnee</title>
-        <meta name="description" content="Explore 100+ guides on knee pain after exercise, knee clicking when walking, stair discomfort, and daily comfort routines. Practical, non-medical knee care tips." />
+        <meta name="description" content={`Explore ${guides.length} practical guides on knee pain after exercise, knee clicking when walking, stair discomfort, and daily comfort routines.`} />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
@@ -743,7 +765,7 @@ const Guides = () => {
 
                   <div className="mt-3 grid grid-cols-3 gap-3">
                     <div className="rounded-2xl bg-white/95 p-4 text-slate-950 shadow-sm">
-                      <p className="text-2xl font-semibold">100+</p>
+                      <p className="text-2xl font-semibold">{guides.length}</p>
                       <p className="mt-1 text-xs font-medium text-slate-500">Guides</p>
                     </div>
                     <div className="rounded-2xl bg-white/95 p-4 text-slate-950 shadow-sm">
@@ -842,6 +864,66 @@ const Guides = () => {
                 <p className="text-sm text-slate-600 leading-relaxed text-center">
                   These guides cover the most common knee discomfort situations, from knee pain during movement to post-activity soreness. A practical starting point for understanding common knee issues.
                 </p>
+              </div>
+            </section>
+
+            {/* Latest Guides */}
+            <section className="border-y border-slate-200 bg-slate-50 py-12 md:py-16">
+              <div className="container mx-auto max-w-6xl px-4">
+                <div className="mb-7 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">New & recently updated</p>
+                    <h2 className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-slate-950 md:text-3xl">Latest Guides</h2>
+                    <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+                      The newest research-led additions, including our three latest guides on delayed exercise discomfort, cordless massagers and orthopedic insoles.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setShowAllGuides(true)}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600"
+                  >
+                    Browse all guides <ArrowRight className="h-4 w-4" />
+                  </button>
+                </div>
+
+                {isLoading ? (
+                  <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                    {[1, 2, 3, 4, 5, 6].map((item) => <CardSkeleton key={item} />)}
+                  </div>
+                ) : (
+                  <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                    {latestGuides.map((guide, index) => (
+                      <Link key={guide.slug} to={`/guides/${guide.slug}`} className="group block min-w-0">
+                        <article className="h-full overflow-hidden rounded-[1.6rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                          <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                            <img
+                              src={guide.thumbnail}
+                              alt={guide.title}
+                              className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                              loading={index < 3 ? "eager" : "lazy"}
+                            />
+                            {index < 3 && (
+                              <span className="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white shadow-sm">
+                                New guide
+                              </span>
+                            )}
+                          </div>
+                          <div className="p-5">
+                            <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
+                              <span>Updated {formatGuideDate(guide.lastModified)}</span>
+                              <span className="text-slate-300">•</span>
+                              <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" />{guide.readTime} min</span>
+                            </div>
+                            <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950 transition-colors group-hover:text-blue-600">{guide.title}</h3>
+                            <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">{guide.description}</p>
+                            <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">Read guide <ArrowRight className="h-4 w-4" /></span>
+                          </div>
+                        </article>
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             </section>
 
@@ -951,23 +1033,11 @@ const Guides = () => {
                       Articles stay educational, but the hub now connects readers to the FlexiKnee system in a calm, premium way.
                     </p>
                   </div>
-                  <Link to="/product/knee-massager-smart-red-light-and-massage-therapy" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
+                  <Link to="/shop" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
                     Shop the system <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                  {productSystem.map((item) => (
-                    <Link key={item.name} to={item.href} className="group overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-                      <img src={item.image} alt={item.name} className="aspect-[4/3] w-full bg-slate-50 object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
-                      <div className="p-4">
-                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">{item.status}</p>
-                        <h3 className="mt-2 text-base font-semibold text-slate-950">{item.name}</h3>
-                        <p className="mt-1 text-sm leading-5 text-slate-500">{item.label}</p>
-                        <p className="mt-3 text-sm font-semibold text-slate-950">{item.price}</p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
+                <FlexiKneeSystem />
               </div>
             </section>
 

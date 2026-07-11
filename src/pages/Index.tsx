@@ -80,7 +80,7 @@ export default function Index() {
       const resp = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: newsletterEmail, consent: true, source: "homepage-newsletter" }),
+        body: JSON.stringify({ email: newsletterEmail }),
       });
       if (!resp.ok) throw new Error("Subscription failed");
       toast.success("You are on the FlexiKnee list.");
@@ -146,7 +146,7 @@ export default function Index() {
 
           <section className="border-y border-slate-200 bg-slate-50 py-4">
             <div className="mx-auto max-w-7xl overflow-hidden px-4 sm:px-6 lg:px-8">
-              <div className="flex min-w-max animate-[marquee_28s_linear_infinite] items-center gap-10 text-sm italic text-slate-500 [@keyframes_marquee]{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}">
+              <div className="animate-scroll flex w-max min-w-max items-center gap-10 pr-10 text-sm italic text-slate-500 will-change-transform">
                 {[...healthSources, ...healthSources].map((source, index) => (
                   <span key={`${source}-${index}`} className="whitespace-nowrap font-medium tracking-wide">
                     {source}
@@ -319,7 +319,7 @@ export default function Index() {
                       </button>
                     </div>
                     <p className="px-2 pt-3 text-xs leading-5 text-slate-500">
-                      By joining, you agree to receive your welcome offer and occasional FlexiKnee emails. Unsubscribe at any time.
+                      No spam. Product updates, helpful guides, and launch offers only.
                     </p>
                   </form>
                 </div>

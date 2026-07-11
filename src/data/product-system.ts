@@ -1,64 +1,64 @@
 import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
-import supportSleeveImage from "@/assets/article-hero-knee-pain-long-walks.jpg";
-import heatedWrapImage from "@/assets/article-device-evening.jpg";
-import calfRecoveryImage from "@/assets/article-delayed-soreness-recovery.jpg";
-import insolesImage from "@/assets/article-hero-insoles-knee.svg";
+import sleeveFallback from "@/assets/article-hero-knee-pain-long-walks.jpg";
+import calfFallback from "@/assets/article-delayed-soreness-recovery.jpg";
+import insolesFallback from "@/assets/article-hero-insoles-knee.svg";
+import wrapFallback from "@/assets/article-device-evening.jpg";
 
 export const productSystem = [
   {
-    key: "massager",
+    kind: "massager",
     name: "FlexiKnee™ Smart Heated Knee Massager",
-    label: "Flagship device",
-    description: "The main FlexiKnee routine device for warmth, massage-style vibration and premium daily use.",
+    label: "Heat · vibration · red light",
+    description: "The flagship all-in-one device for short, repeatable knee comfort routines.",
     price: "$79.99",
-    image: "/images/og-image.jpg",
+    image: "/images/flexiknee-product-main.webp",
     href: PRIMARY_PRODUCT_PATH,
     status: "Best seller",
     accent: "from-blue-50 via-white to-slate-50",
   },
   {
-    key: "compression-sleeve",
+    kind: "sleeve",
     name: "FlexiKnee™ Compression Support Sleeve",
     label: "Flexible compression",
-    description: "A simple everyday support layer for walking, work, training and movement-heavy days.",
-    price: "Available now",
-    image: supportSleeveImage,
-    href: "/shop",
+    description: "Breathable support for walking, work, training and everyday movement.",
+    price: "$19.99",
+    image: sleeveFallback,
+    href: "/product/knee-massager-smart-red-light-and-massage-therapyyy",
     status: "Daily support",
     accent: "from-slate-50 via-white to-indigo-50",
   },
   {
-    key: "heated-wrap",
-    name: "FlexiKnee™ Heated Knee Wrap",
-    label: "Targeted warmth",
-    description: "A lightweight wrap for people who want focused warmth without a full device setup.",
-    price: "Available now",
-    image: heatedWrapImage,
-    href: "/shop",
-    status: "Simple warmth",
-    accent: "from-orange-50 via-white to-amber-50",
-  },
-  {
-    key: "calf-massager",
-    name: "FlexiKnee™ Calf Recovery Massager",
+    kind: "calf",
+    name: "FlexiKnee™ Rechargeable Calf Recovery Massager",
     label: "Lower-leg recovery",
-    description: "Portable recovery support for travel, desk days and tired calves after activity.",
-    price: "Available now",
-    image: calfRecoveryImage,
-    href: "/shop",
+    description: "Rechargeable compression and warmth for tired calves and lower legs.",
+    price: "$49.99",
+    image: calfFallback,
+    href: "/product/360-electric-calf-massager-rechargeable-3-modes-air-compression-leg-massager-hot-compress-leg-massage-blood-circulation",
     status: "Recovery",
     accent: "from-cyan-50 via-white to-blue-50",
   },
   {
-    key: "insoles",
+    kind: "insoles",
     name: "FlexiKnee™ Sport Orthopedic Insoles",
     label: "Foot-to-knee support",
-    description: "Supportive insoles designed to improve comfort from the ground up inside everyday footwear.",
-    price: "Available now",
-    image: insolesImage,
-    href: "/shop",
+    description: "Structured support designed to improve comfort from the ground up.",
+    price: "$14.99",
+    image: insolesFallback,
+    href: "/product/sport-orthopedic-insoles-for-feet-men-women-eva-breathable-shock-absorption-shoes-insole-for-running-basketball-sport-care-pads",
     status: "New",
     accent: "from-emerald-50 via-white to-blue-50",
+  },
+  {
+    kind: "wrap",
+    name: "FlexiKnee™ USB Heated Knee Wrap",
+    label: "Targeted knee warmth",
+    description: "A lightweight USB-powered wrap for simple, focused warming sessions.",
+    price: "$34.99",
+    image: wrapFallback,
+    href: "/product/electric-knee-heating-pad-a-usb-powered-warming-knee-strap-suitable-for-joints-with-adjustable-heating-band-ideal-for-daily",
+    status: "Simple warmth",
+    accent: "from-orange-50 via-white to-amber-50",
   },
 ];
 
