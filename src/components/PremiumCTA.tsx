@@ -78,7 +78,7 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
   return (
     <div
       data-cta="product-card"
-      className="my-10 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md [&_p]:!my-0 [&_img]:!my-0"
+      className="my-10 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md [&_p]:!my-0 [&_p]:!leading-normal [&_img]:!my-0 [&_img]:!w-24 [&_img]:sm:!w-28 [&_img]:!h-24 [&_img]:sm:!h-28 [&_img]:!max-h-28 [&_img]:!rounded-xl [&_img]:!border-0 [&_img]:!shadow-none [&_img]:!object-cover [&_a]:!no-underline"
     >
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
         {imageSrc && (
@@ -90,13 +90,13 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
           />
         )}
         <div className="min-w-0 flex-1">
-          <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+          <p className="!text-xs !font-medium uppercase tracking-wide !text-slate-400">
             Recommended for this guide
           </p>
-          <p className="mt-1 text-base font-semibold leading-snug text-slate-950">
+          <p className="!mt-1 !text-base !font-semibold !leading-snug !text-slate-950">
             {rec.title}
           </p>
-          <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{rec.benefit}</p>
+          <p className="!mt-1.5 !text-sm !leading-relaxed !text-slate-600">{rec.benefit}</p>
           <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5">
             {price && (
               <span className="text-base font-semibold text-slate-950">{price}</span>
