@@ -18,6 +18,7 @@ import {
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { DeliveryEstimate } from "@/components/DeliveryEstimate";
 import { createStorefrontCheckout, getProductByHandle, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { getProductProfile } from "@/data/product-profiles";
@@ -80,6 +81,12 @@ export default function SecondaryProductDetail() {
   const options = node?.options.filter((option) => option.name.toLowerCase() !== "title") || [];
   const images = useMemo(() => node?.images.edges.map((edge) => edge.node) || [], [node]);
   const price = selectedVariant?.price || node?.priceRange.minVariantPrice;
+  const compareAt =
+    selectedVariant?.compareAtPrice &&
+    Number(selectedVariant.compareAtPrice.amount) > Number(selectedVariant.price.amount)
+      ? selectedVariant.compareAtPrice
+      : null;
+  const isPairable = profile.key === "compression-sleeve" || profile.key === "heated-wrap";
   const canonical = `https://flexi-knee.com/product/${handle}`;
 
   useEffect(() => {
@@ -292,7 +299,14 @@ export default function SecondaryProductDetail() {
                 <p className="mt-3 text-sm font-medium text-blue-700">Best for: {profile.bestFor}</p>
                 <p className="mt-4 text-base leading-7 text-slate-600">{profile.summary}</p>
 
-                {price && <p className="mt-6 text-3xl font-semibold tracking-tight text-slate-950">{formatMoney(price.amount, price.currencyCode)}</p>}
+                {price && (
+                  <p className="mt-6 flex items-baseline gap-3">
+                    {compareAt && (
+                      <s className="text-lg font-medium text-slate-400">{formatMoney(compareAt.amount, compareAt.currencyCode)}</s>
+                    )}
+                    <span className="text-3xl font-semibold tracking-tight text-slate-950">{formatMoney(price.amount, price.currencyCode)}</span>
+                  </p>
+                )}
                 <p className="mt-1 text-xs text-slate-500">Taxes and shipping calculated at checkout where applicable.</p>
 
                 {options.map((option) => {
@@ -336,6 +350,12 @@ export default function SecondaryProductDetail() {
                   </div>
                 </div>
 
+                {isPairable && quantity === 2 && (
+                  <p className="mt-2 rounded-xl bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-700">
+                    Both Knees bundle: 15% off applied automatically at checkout.
+                  </p>
+                )}
+
                 <div className="mt-6 grid gap-3">
                   <button
                     type="button"
@@ -356,6 +376,8 @@ export default function SecondaryProductDetail() {
                     {!isBuying && <ArrowRight className="h-4 w-4" />}
                   </button>
                 </div>
+
+                <DeliveryEstimate className="mt-4 justify-center" />
 
                 <div className="mt-6 grid grid-cols-2 gap-3 text-xs text-slate-600">
                   <div className="flex items-center gap-2 rounded-2xl bg-slate-50 p-3"><Truck className="h-4 w-4 text-blue-600" /> Free shipping over $24.99</div>
@@ -495,7 +517,12 @@ export default function SecondaryProductDetail() {
         <div className="mx-auto flex max-w-xl items-center gap-3">
           <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-semibold text-slate-950">{node.title}</p>
-            {price && <p className="text-xs text-slate-500">{formatMoney(price.amount, price.currencyCode)}</p>}
+            {price && (
+              <p className="flex items-baseline gap-1.5 text-xs text-slate-500">
+                {compareAt && <s className="text-[11px] text-slate-400">{formatMoney(compareAt.amount, compareAt.currencyCode)}</s>}
+                <span className="font-semibold text-slate-900">{formatMoney(price.amount, price.currencyCode)}</span>
+              </p>
+            )}
           </div>
           <button type="button" onClick={handleAddToCart} disabled={!selectedVariant?.availableForSale} className="rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white disabled:bg-slate-300">
             Add to cart

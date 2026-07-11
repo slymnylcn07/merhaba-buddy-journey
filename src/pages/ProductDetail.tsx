@@ -15,6 +15,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { DeliveryEstimate } from "@/components/DeliveryEstimate";
 import { VideoReviews } from "@/components/VideoReviews";
 import { getProducts, ShopifyProduct, createStorefrontCheckout } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
@@ -132,6 +133,13 @@ export default function ProductDetail() {
   const currency = variant?.price.currencyCode || product?.node.priceRange.minVariantPrice.currencyCode || "GBP";
   const basePrice = Number(variantPrice || 0);
   const displayPrice = formatMoney(String(basePrice * bundleQty), currency);
+  const compareAtAmount = variant?.compareAtPrice?.amount
+    ? Number(variant.compareAtPrice.amount)
+    : null;
+  const compareAtDisplay =
+    compareAtAmount && compareAtAmount > basePrice
+      ? formatMoney(String(compareAtAmount * bundleQty), currency)
+      : null;
   const productTitle = "FlexiKnee™ Knee Massager";
 
   const shopifyImages =
@@ -268,19 +276,16 @@ export default function ProductDetail() {
 
             <aside className="min-w-0 xl:sticky xl:top-24 xl:self-start">
               <div className="rounded-[1.8rem] border border-slate-200 bg-white p-5 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.7)] sm:p-6 lg:rounded-[2rem] lg:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 sm:text-sm">Smart daily knee comfort</p>
-                <h1 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">{productTitle}</h1>
-
-                <div className="mt-4 flex flex-wrap items-center gap-3">
+                <div className="flex flex-wrap items-center gap-2">
                   <div className="flex items-center gap-1 text-blue-600">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Star key={star} className="h-4 w-4 fill-blue-600" />
                     ))}
                   </div>
                   <span className="text-sm font-medium text-slate-700">4.8 rating</span>
-                  <span className="text-sm text-slate-400">•</span>
-                  <span className="text-sm text-slate-500">Short daily routines</span>
                 </div>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 sm:text-sm">Smart daily knee comfort</p>
+                <h1 className="mt-2 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">{productTitle}</h1>
 
                 <p className="mt-5 text-base leading-7 text-slate-600">
                   FlexiKnee combines adjustable warmth, massage style vibration, and a secure wraparound fit for simple at home comfort routines.
@@ -303,7 +308,12 @@ export default function ProductDetail() {
                 <div className="mt-7 rounded-[1.4rem] border border-slate-200 bg-slate-50 p-4">
                   <div className="mb-3 flex items-center justify-between">
                     <span className="text-sm font-semibold text-slate-950">Choose your option</span>
-                    <span className="text-sm font-semibold text-blue-600">{displayPrice}</span>
+                    <span className="flex items-baseline gap-2">
+                      {compareAtDisplay && (
+                        <s className="text-sm text-slate-400">{compareAtDisplay}</s>
+                      )}
+                      <span className="text-sm font-semibold text-blue-600">{displayPrice}</span>
+                    </span>
                   </div>
 
                   <div className="grid gap-3 sm:grid-cols-2">
@@ -322,8 +332,12 @@ export default function ProductDetail() {
                         bundleQty === 2 ? "border-blue-500 bg-white shadow-lg shadow-blue-500/10" : "border-slate-200 bg-white hover:border-slate-300"
                       }`}
                     >
-                      <span className="block text-sm font-semibold text-slate-950">Duo</span>
+                      <span className="flex items-center gap-2 text-sm font-semibold text-slate-950">
+                        Duo
+                        <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] font-semibold text-emerald-700">SAVE 15%</span>
+                      </span>
                       <span className="mt-1 block text-sm text-slate-500">2x devices for both knees</span>
+                      <span className="mt-1 block text-xs text-slate-400">Discount applied automatically at checkout</span>
                     </button>
                   </div>
                 </div>
@@ -336,6 +350,8 @@ export default function ProductDetail() {
                     {isBuying ? "Opening checkout..." : "Buy Now"}
                   </Button>
                 </div>
+
+                <DeliveryEstimate className="mt-4 justify-center" />
 
                 <div className="mt-6 grid gap-3 text-sm text-slate-600 sm:grid-cols-3">
                   {[
@@ -494,7 +510,10 @@ export default function ProductDetail() {
         <div className="mx-auto flex max-w-xl items-center gap-3">
           <div className="min-w-0 flex-1">
             <p className="truncate text-xs font-medium text-slate-500">FlexiKnee™ Massager</p>
-            <p className="text-base font-semibold text-slate-950">{displayPrice}</p>
+            <p className="flex items-baseline gap-1.5 text-base font-semibold text-slate-950">
+              {compareAtDisplay && <s className="text-xs font-normal text-slate-400">{compareAtDisplay}</s>}
+              {displayPrice}
+            </p>
           </div>
           <Button onClick={handleAddToCart} disabled={!variant || isLoading} className="h-11 rounded-full bg-blue-600 px-5 text-sm font-semibold text-white">
             Add
