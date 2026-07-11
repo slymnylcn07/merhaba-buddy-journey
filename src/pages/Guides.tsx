@@ -7,7 +7,7 @@ import { ArrowRight, Search, X, Clock, ChevronDown, ArrowUp } from "lucide-react
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { guidesData } from "@/data/guides";
-import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
+import { productSystem } from "@/data/product-system";
 
 // Import images
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
@@ -110,9 +110,29 @@ import thumbKneeAcheLegWorkouts from "@/assets/guide-thumb-knee-ache-leg-workout
 import thumbHomeRemediesKneePain from "@/assets/guide-thumb-home-remedies-knee-pain-v2.jpg";
 import thumbWhatMakesKneePainWorse from "@/assets/guide-thumb-what-makes-knee-pain-worse.jpg";
 import thumbWeightKneePain from "@/assets/guide-thumb-weight-knee-pain.jpg";
+import thumbBatch1WhyKneePainDoesntGoAway from "@/assets/guide-thumbnails/batch-1/why-knee-pain-doesnt-go-away.png";
+import thumbBatch1BurningKneesAfterExercise from "@/assets/guide-thumbnails/batch-1/burning-knees-after-exercise.png";
+import thumbBatch1KneePainAfterExerciseButNotDuring from "@/assets/guide-thumbnails/batch-1/knee-pain-after-exercise-but-not-during.png";
+import thumbBatch1KneePainGoingDownStairs from "@/assets/guide-thumbnails/batch-1/knee-pain-going-down-stairs.png";
+import thumbBatch1WhyKneePainFeelsWorseAtNight from "@/assets/guide-thumbnails/batch-1/why-knee-pain-feels-worse-at-night.png";
+import thumbBatch1WhyKneesHurtWhenSleeping from "@/assets/guide-thumbnails/batch-1/why-knees-hurt-when-sleeping.png";
+import thumbBatch1DoKneeMassagersWork from "@/assets/guide-thumbnails/batch-1/do-knee-massagers-work.png";
+import thumbBatch1SmartHeatedKneeBraces2026 from "@/assets/guide-thumbnails/batch-1/smart-heated-knee-braces-2026.png";
+import thumbBatch1BestInsolesForKneePain2026 from "@/assets/guide-thumbnails/batch-1/best-insoles-for-knee-pain-2026.png";
+import thumbBatch1CordlessRechargeableHeatedKneeMassagers2026 from "@/assets/guide-thumbnails/batch-1/cordless-rechargeable-heated-knee-massagers-2026.png";
+import thumbBatch2BackOfKneePainCommon from "@/assets/guide-thumbnails/batch-2/back-of-knee-pain-common.png";
+import thumbBatch2KneeWarmthDailyComfort from "@/assets/guide-thumbnails/batch-2/knee-warmth-daily-comfort.png";
+import thumbBatch2KneePainGettingUpAfterSitting from "@/assets/guide-thumbnails/batch-2/knee-pain-getting-up-after-sitting.png";
+import thumbBatch2WhyDoMyKneesCrackOrPop from "@/assets/guide-thumbnails/batch-2/why-do-my-knees-crack-or-pop.png";
+import thumbBatch2KneePainAfterSittingCrossLegged from "@/assets/guide-thumbnails/batch-2/knee-pain-after-sitting-cross-legged.png";
+import thumbBatch2BestRedLightTherapyKnee from "@/assets/guide-thumbnails/batch-2/best-red-light-therapy-knee.png";
+import thumbBatch2KneePainLocationMap2026 from "@/assets/guide-thumbnails/batch-2/knee-pain-location-map-2026.png";
+import thumbBatch2SuddenKneePainGuide from "@/assets/guide-thumbnails/batch-2/sudden-knee-pain-guide.png";
+import thumbBatch2ItBandPainLocationDiagram from "@/assets/guide-thumbnails/batch-2/it-band-pain-location-diagram.png";
+import thumbBatch2HomeRemediesKneePain from "@/assets/guide-thumbnails/batch-2/home-remedies-knee-pain.png";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
-  "why-knee-pain-doesnt-go-away": thumbKneePain,
+  "why-knee-pain-doesnt-go-away": thumbBatch1WhyKneePainDoesntGoAway,
   "heat-vs-red-light-therapy": thumbHeatTherapy,
   "who-benefits-from-knee-therapy-devices": thumbWhoBenefits,
   "daily-knee-comfort-routine": thumbDailyRoutine,
@@ -131,10 +151,10 @@ const thumbnailMap: Record<string, string> = {
   "back-of-knee-pain-daily-habits": thumbBackKneeDetailed,
   "daily-knee-care-routine": thumbDailyRoutineNew,
   "heat-vs-ice-for-knees": thumbHeatVsIce,
-  "do-knee-massagers-work": thumbMassagerExpectations,
+  "do-knee-massagers-work": thumbBatch1DoKneeMassagersWork,
   "is-infrared-safe-for-knees": thumbInfraredSafety,
   "warmth-vs-infrared-knee-routines": thumbWarmthVsInfrared,
-  "knee-pain-worse-at-night": thumbNightKneePain,
+  "knee-pain-worse-at-night": thumbBatch1WhyKneePainFeelsWorseAtNight,
   "how-to-fix-knee-pain": thumbFixKneePain,
   "women-men-knee-comfort-patterns": thumbWomenMenKneeComfort,
   "top-of-knee-pain-patterns": thumbTopKneePain,
@@ -148,7 +168,7 @@ const thumbnailMap: Record<string, string> = {
   "flexiknee-vs-competitors-2026": thumbCompetitorsComparison,
   "best-heated-knee-massager-arthritis": thumbArthritisMassager,
   "heat-or-ice-knee-pain-science": thumbHeatIceScience,
-  "smart-heated-knee-braces-2026": thumbMassagerExpectations,
+  "smart-heated-knee-braces-2026": thumbBatch1SmartHeatedKneeBraces2026,
   "heat-red-light-therapy-benefits-2026": thumbHeatRedlightBenefits,
   "running-shoes-knee-pain-causes-fixes": thumbRunningShoesCauses,
   "sharp-knee-pain-causes-relief": thumbSharpPainRelief,
@@ -159,36 +179,40 @@ const thumbnailMap: Record<string, string> = {
   "infrared-vs-heating-pads": thumbInfraredVsHeatingPads,
   "intermittent-knee-pain-guide": thumbIntermittentPain,
   "side-of-knee-pain-explained": thumbSidePainExplained,
-  "back-of-knee-pain-common": thumbBackKneeCommon,
+  "back-of-knee-pain-common": thumbBatch2BackOfKneePainCommon,
   "smart-knee-massagers-breakdown": thumbSmartMassagersBreakdown,
-  "knee-warmth-daily-comfort": thumbKneeWarmthDaily,
+  "knee-warmth-daily-comfort": thumbBatch2KneeWarmthDailyComfort,
   "knee-pain-locations-visual-guide": thumbKneePainLocations,
-  "knee-pain-location-map-2026": thumbKneeLocationMap,
+  "knee-pain-location-map-2026": thumbBatch2KneePainLocationMap2026,
   "runners-knee-pain-location": thumbRunnersKneeLocation,
   "it-band-syndrome-explained": thumbItBandSyndrome,
-  "it-band-pain-location-diagram": thumbItBandDiagram,
-  "why-do-my-knees-hurt-when-sleeping": thumbNightKneePain,
-  "why-do-my-knees-crack-or-pop": thumbKneeCrackingCrepitus,
-  "knee-pain-after-sitting-cross-legged": thumbKneePainSittingCrossLegged,
+  "it-band-pain-location-diagram": thumbBatch2ItBandPainLocationDiagram,
+  "why-do-my-knees-hurt-when-sleeping": thumbBatch1WhyKneesHurtWhenSleeping,
+  "why-do-my-knees-crack-or-pop": thumbBatch2WhyDoMyKneesCrackOrPop,
+  "knee-pain-after-sitting-cross-legged": thumbBatch2KneePainAfterSittingCrossLegged,
   "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
   "knee-pain-after-standing": thumbKneePainStanding,
-  "best-red-light-therapy-knee": thumbBestRedLightKnee,
+  "best-red-light-therapy-knee": thumbBatch2BestRedLightTherapyKnee,
   "knee-pain-exercises-guide": thumbKneeExercises,
   "what-causes-knee-pain-guide": thumbCauseKneePainNew,
   "knee-pain-after-40": thumbKneePainAfter40,
   "why-knee-pain-gets-worse-with-age": thumbJointAgingChanges,
   "morning-knee-stiffness-after-40": thumbMorningStiffness40s,
-  "knee-pain-getting-up-after-sitting": thumbKneePainGettingUpSitting,
+  "knee-pain-getting-up-after-sitting": thumbBatch2KneePainGettingUpAfterSitting,
   "knee-pain-after-long-walks": thumbKneePainLongWalks,
   "knee-mobility-after-50": thumbKneeMobilityAfter50,
-  "sudden-knee-pain-guide": thumbSuddenKneePain,
+  "sudden-knee-pain-guide": thumbBatch2SuddenKneePainGuide,
   "knee-pain-at-night-after-40": thumbNightKneePain40,
   "knee-clicking-when-walking": thumbKneeClickingWalking,
   "knees-hurt-after-resting": thumbKneesHurtAfterResting,
   "cold-weather-knee-pain": thumbColdWeatherKneePain,
   "knee-pain-after-exercise": thumbKneePainAfterExercise,
+  "burning-knees-after-exercise": thumbBatch1BurningKneesAfterExercise,
+  "knee-pain-after-exercise-but-not-during": thumbBatch1KneePainAfterExerciseButNotDuring,
+  "best-insoles-for-knee-pain-2026": thumbBatch1BestInsolesForKneePain2026,
+  "cordless-rechargeable-heated-knee-massagers-2026": thumbBatch1CordlessRechargeableHeatedKneeMassagers2026,
   "knee-pain-climbing-stairs": thumbKneePainClimbingStairs,
-  "knee-pain-going-down-stairs": thumbKneePainGoingDownStairs,
+  "knee-pain-going-down-stairs": thumbBatch1KneePainGoingDownStairs,
   "knee-pain-when-squatting": thumbKneePainSquatting,
   "knee-pain-during-yoga": thumbKneePainYoga,
   "knee-pain-when-hiking": thumbKneePainHiking,
@@ -211,7 +235,7 @@ const thumbnailMap: Record<string, string> = {
   "sore-knees-after-workout": thumbSoreKneesWorkout,
   "knee-recovery-exercises-after-workout": thumbKneeRecoveryExercises,
   "knee-ache-after-leg-workouts": thumbKneeAcheLegWorkouts,
-  "home-remedies-knee-pain": thumbHomeRemediesKneePain,
+  "home-remedies-knee-pain": thumbBatch2HomeRemediesKneePain,
   "what-makes-knee-pain-worse": thumbWhatMakesKneePainWorse,
   "weight-affects-knee-pain": thumbWeightKneePain,
 };
@@ -224,13 +248,6 @@ const guides = guidesData.map(guide => ({
 
 // Helper to get guide by slug
 const getGuide = (slug: string) => guides.find(g => g.slug === slug);
-
-const formatGuideDate = (value?: string) => {
-  if (!value) return "Recently updated";
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return "Recently updated";
-  return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", year: "numeric" }).format(date);
-};
 
 // ── Section configurations ──
 
@@ -558,15 +575,6 @@ const Guides = () => {
 
   const featuredGuides = featuredSlugs.map(getGuide).filter(Boolean) as typeof guides;
 
-  const latestGuides = useMemo(
-    () =>
-      [...guides]
-        .filter((guide) => guide.lastModified)
-        .sort((a, b) => new Date(b.lastModified || 0).getTime() - new Date(a.lastModified || 0).getTime())
-        .slice(0, 6),
-    []
-  );
-
   const canonicalUrl = "https://flexi-knee.com/guides";
 
   const itemListJsonLd = {
@@ -829,49 +837,6 @@ const Guides = () => {
               </div>
             </section>
 
-            {/* Latest Guides */}
-            <section className="pb-4 pt-2 md:pb-8">
-              <div className="container px-4 max-w-6xl mx-auto">
-                <SectionHeader 
-                  id="latest-guides"
-                  title="Latest Guides"
-                  subtitle="Fresh additions to the library so returning visitors can quickly spot what's new."
-                />
-                <p className="text-sm text-slate-600 leading-relaxed max-w-3xl mb-6 -mt-4">
-                  This new block helps the latest 5–6 articles surface faster and gives the guide hub a more editorial feel.
-                </p>
-                {isLoading ? (
-                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-                    {[1, 2, 3, 4, 5, 6].map((i) => <CardSkeleton key={i} />)}
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-                    {latestGuides.map((guide) => (
-                      <Link key={guide.slug} to={`/guides/${guide.slug}`} className="group block">
-                        <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg h-full">
-                          <img src={guide.thumbnail} alt={guide.title} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
-                          <div className="p-5">
-                            <div className="flex flex-wrap items-center gap-2 text-xs">
-                              <span className="rounded-full bg-blue-50 px-2.5 py-1 font-semibold uppercase tracking-[0.16em] text-blue-700">New</span>
-                              <span className="text-slate-300">•</span>
-                              <span className="font-medium text-slate-500">Updated {formatGuideDate(guide.lastModified)}</span>
-                              <span className="text-slate-300">•</span>
-                              <span className="font-medium text-slate-500">{guide.readTime} min</span>
-                            </div>
-                            <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950 group-hover:text-primary transition-colors">{guide.title}</h3>
-                            <p className="mt-2 text-sm leading-6 text-slate-600 line-clamp-3">{guide.description}</p>
-                            <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">
-                              Read guide <ArrowRight className="h-4 w-4" />
-                            </span>
-                          </div>
-                        </article>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </section>
-
             {/* Start Here */}
             <section className="py-12 md:py-16">
               <div className="container px-4 max-w-6xl mx-auto">
@@ -978,11 +943,23 @@ const Guides = () => {
                       Articles stay educational, but the hub now connects readers to the FlexiKnee system in a calm, premium way.
                     </p>
                   </div>
-                  <Link to="/shop" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
+                  <Link to="/product/knee-massager-smart-red-light-and-massage-therapy" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
                     Shop the system <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
-                <FlexiKneeSystem />
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  {productSystem.map((item) => (
+                    <Link key={item.name} to={item.href} className="group overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                      <img src={item.image} alt={item.name} className="aspect-[4/3] w-full bg-slate-50 object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+                      <div className="p-4">
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">{item.status}</p>
+                        <h3 className="mt-2 text-base font-semibold text-slate-950">{item.name}</h3>
+                        <p className="mt-1 text-sm leading-5 text-slate-500">{item.label}</p>
+                        <p className="mt-3 text-sm font-semibold text-slate-950">{item.price}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </section>
 
