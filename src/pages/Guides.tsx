@@ -110,16 +110,6 @@ import thumbKneeAcheLegWorkouts from "@/assets/guide-thumb-knee-ache-leg-workout
 import thumbHomeRemediesKneePain from "@/assets/guide-thumb-home-remedies-knee-pain-v2.jpg";
 import thumbWhatMakesKneePainWorse from "@/assets/guide-thumb-what-makes-knee-pain-worse.jpg";
 import thumbWeightKneePain from "@/assets/guide-thumb-weight-knee-pain.jpg";
-import thumbBatch1WhyKneePainDoesntGoAway from "@/assets/guide-thumbnails/batch-1/why-knee-pain-doesnt-go-away.png";
-import thumbBatch1BurningKneesAfterExercise from "@/assets/guide-thumbnails/batch-1/burning-knees-after-exercise.png";
-import thumbBatch1KneePainAfterExerciseButNotDuring from "@/assets/guide-thumbnails/batch-1/knee-pain-after-exercise-but-not-during.png";
-import thumbBatch1KneePainGoingDownStairs from "@/assets/guide-thumbnails/batch-1/knee-pain-going-down-stairs.png";
-import thumbBatch1WhyKneePainFeelsWorseAtNight from "@/assets/guide-thumbnails/batch-1/why-knee-pain-feels-worse-at-night.png";
-import thumbBatch1WhyKneesHurtWhenSleeping from "@/assets/guide-thumbnails/batch-1/why-knees-hurt-when-sleeping.png";
-import thumbBatch1DoKneeMassagersWork from "@/assets/guide-thumbnails/batch-1/do-knee-massagers-work.png";
-import thumbBatch1SmartHeatedKneeBraces2026 from "@/assets/guide-thumbnails/batch-1/smart-heated-knee-braces-2026.png";
-import thumbBatch1BestInsolesForKneePain2026 from "@/assets/guide-thumbnails/batch-1/best-insoles-for-knee-pain-2026.png";
-import thumbBatch1CordlessRechargeableHeatedKneeMassagers2026 from "@/assets/guide-thumbnails/batch-1/cordless-rechargeable-heated-knee-massagers-2026.png";
 import thumbBatch2BackOfKneePainCommon from "@/assets/guide-thumbnails/batch-2/back-of-knee-pain-common.png";
 import thumbBatch2KneeWarmthDailyComfort from "@/assets/guide-thumbnails/batch-2/knee-warmth-daily-comfort.png";
 import thumbBatch2KneePainGettingUpAfterSitting from "@/assets/guide-thumbnails/batch-2/knee-pain-getting-up-after-sitting.png";
@@ -132,7 +122,7 @@ import thumbBatch2ItBandPainLocationDiagram from "@/assets/guide-thumbnails/batc
 import thumbBatch2HomeRemediesKneePain from "@/assets/guide-thumbnails/batch-2/home-remedies-knee-pain.png";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
-  "why-knee-pain-doesnt-go-away": thumbBatch1WhyKneePainDoesntGoAway,
+  "why-knee-pain-doesnt-go-away": thumbKneePain,
   "heat-vs-red-light-therapy": thumbHeatTherapy,
   "who-benefits-from-knee-therapy-devices": thumbWhoBenefits,
   "daily-knee-comfort-routine": thumbDailyRoutine,
@@ -151,10 +141,10 @@ const thumbnailMap: Record<string, string> = {
   "back-of-knee-pain-daily-habits": thumbBackKneeDetailed,
   "daily-knee-care-routine": thumbDailyRoutineNew,
   "heat-vs-ice-for-knees": thumbHeatVsIce,
-  "do-knee-massagers-work": thumbBatch1DoKneeMassagersWork,
+  "do-knee-massagers-work": thumbMassagerExpectations,
   "is-infrared-safe-for-knees": thumbInfraredSafety,
   "warmth-vs-infrared-knee-routines": thumbWarmthVsInfrared,
-  "knee-pain-worse-at-night": thumbBatch1WhyKneePainFeelsWorseAtNight,
+  "knee-pain-worse-at-night": thumbNightKneePain,
   "how-to-fix-knee-pain": thumbFixKneePain,
   "women-men-knee-comfort-patterns": thumbWomenMenKneeComfort,
   "top-of-knee-pain-patterns": thumbTopKneePain,
@@ -168,7 +158,7 @@ const thumbnailMap: Record<string, string> = {
   "flexiknee-vs-competitors-2026": thumbCompetitorsComparison,
   "best-heated-knee-massager-arthritis": thumbArthritisMassager,
   "heat-or-ice-knee-pain-science": thumbHeatIceScience,
-  "smart-heated-knee-braces-2026": thumbBatch1SmartHeatedKneeBraces2026,
+  "smart-heated-knee-braces-2026": thumbMassagerExpectations,
   "heat-red-light-therapy-benefits-2026": thumbHeatRedlightBenefits,
   "running-shoes-knee-pain-causes-fixes": thumbRunningShoesCauses,
   "sharp-knee-pain-causes-relief": thumbSharpPainRelief,
@@ -187,7 +177,7 @@ const thumbnailMap: Record<string, string> = {
   "runners-knee-pain-location": thumbRunnersKneeLocation,
   "it-band-syndrome-explained": thumbItBandSyndrome,
   "it-band-pain-location-diagram": thumbBatch2ItBandPainLocationDiagram,
-  "why-do-my-knees-hurt-when-sleeping": thumbBatch1WhyKneesHurtWhenSleeping,
+  "why-do-my-knees-hurt-when-sleeping": thumbNightKneePain,
   "why-do-my-knees-crack-or-pop": thumbBatch2WhyDoMyKneesCrackOrPop,
   "knee-pain-after-sitting-cross-legged": thumbBatch2KneePainAfterSittingCrossLegged,
   "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
@@ -207,12 +197,8 @@ const thumbnailMap: Record<string, string> = {
   "knees-hurt-after-resting": thumbKneesHurtAfterResting,
   "cold-weather-knee-pain": thumbColdWeatherKneePain,
   "knee-pain-after-exercise": thumbKneePainAfterExercise,
-  "burning-knees-after-exercise": thumbBatch1BurningKneesAfterExercise,
-  "knee-pain-after-exercise-but-not-during": thumbBatch1KneePainAfterExerciseButNotDuring,
-  "best-insoles-for-knee-pain-2026": thumbBatch1BestInsolesForKneePain2026,
-  "cordless-rechargeable-heated-knee-massagers-2026": thumbBatch1CordlessRechargeableHeatedKneeMassagers2026,
   "knee-pain-climbing-stairs": thumbKneePainClimbingStairs,
-  "knee-pain-going-down-stairs": thumbBatch1KneePainGoingDownStairs,
+  "knee-pain-going-down-stairs": thumbKneePainGoingDownStairs,
   "knee-pain-when-squatting": thumbKneePainSquatting,
   "knee-pain-during-yoga": thumbKneePainYoga,
   "knee-pain-when-hiking": thumbKneePainHiking,
