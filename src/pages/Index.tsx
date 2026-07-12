@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { Header } from "@/components/Header";
+import { DiscountCodeModal } from "@/components/DiscountCodeModal";
 import { Footer } from "@/components/Footer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
@@ -66,6 +67,8 @@ export default function Index() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [isSubscribing, setIsSubscribing] = useState(false);
 
+  const [showCodeModal, setShowCodeModal] = useState(false);
+
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -83,8 +86,8 @@ export default function Index() {
         body: JSON.stringify({ email: newsletterEmail }),
       });
       if (!resp.ok) throw new Error("Subscription failed");
-      toast.success("You are on the FlexiKnee list.");
       setNewsletterEmail("");
+      setShowCodeModal(true);
     } catch {
       toast.error("Failed to subscribe. Please try again.");
     } finally {
@@ -277,7 +280,7 @@ export default function Index() {
                   ["How often should I use FlexiKnee?", "Most people use it in short routine sessions. Follow the included instructions and stop if something feels uncomfortable."],
                   ["Is it wireless?", "Yes. FlexiKnee is rechargeable and designed for cord-free daily use."],
                   ["Is this a medical treatment?", "No. FlexiKnee is positioned as an at-home comfort and recovery support product, not a medical treatment or diagnosis tool."],
-                  ["Can I return it?", "Yes. Keep the 30-day return promise visible so the purchase feels lower risk."],
+                  ["Can I return it?", "Yes. Every order is covered by our 30-day return policy, counted from the day it is delivered. Contact us with your order number and we will guide you through it."],
                 ].map(([q, a]) => (
                   <AccordionItem key={q} value={q} className="border-slate-200">
                     <AccordionTrigger className="text-left text-base font-semibold text-slate-950">{q}</AccordionTrigger>
@@ -327,6 +330,8 @@ export default function Index() {
             </div>
           </section>
         </main>
+
+        <DiscountCodeModal open={showCodeModal} onOpenChange={setShowCodeModal} />
 
         <Footer />
       </div>

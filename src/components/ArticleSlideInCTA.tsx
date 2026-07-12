@@ -7,10 +7,8 @@ import { pickProductForSlug, PRODUCT_RECS } from "@/lib/article-product-map";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { toast } from "sonner";
 import { Mail } from "lucide-react";
-
-// Bulten kaydinda gosterilecek indirim kodu - Shopify'da ayni adla
-// %10'luk bir indirim kodu OLUSTURULMALI (Indirimler > Indirim kodu).
-const NEWSLETTER_DISCOUNT_CODE = "GUIDE10";
+import { DiscountCodeModal } from "@/components/DiscountCodeModal";
+import { NEWSLETTER_DISCOUNT_CODE } from "@/lib/newsletter-config";
 
 // Urun gorselleri icin oturum ici tek istek (PremiumCTA ile ayni desen)
 let slideInProductsPromise: Promise<ShopifyProduct[]> | null = null;
@@ -168,6 +166,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   const [email, setEmail] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
+  const [showCodeModal, setShowCodeModal] = useState(false);
 
   const { hook, support } = getContextualContent(slug);
 
@@ -257,6 +256,8 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       });
       if (!resp.ok) throw new Error();
       setSubscribed(true);
+      setIsVisible(false);
+      setShowCodeModal(true);
       localStorage.setItem(SUBSCRIBED_KEY, "true");
       trackEvent("article_cta_newsletter_signup", { slug });
     } catch {
@@ -273,6 +274,8 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   const productImage = liveImage || (isMain ? deviceImage : null);
 
   return (
+    <>
+      <DiscountCodeModal open={showCodeModal} onOpenChange={setShowCodeModal} />
     <div
       className={`fixed z-40 transition-all duration-500 ease-out
         bottom-0 left-0 right-0
@@ -293,17 +296,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
 
         {stage === 2 ? (
           <div className="pr-7">
-            {subscribed ? (
-              <div>
-                <p className="text-sm font-bold leading-snug text-slate-950">You're in! Here is your code:</p>
-                <p className="mt-2 inline-block rounded-xl border-2 border-dashed border-blue-300 bg-blue-50 px-4 py-2 text-base font-black tracking-widest text-blue-700">
-                  {NEWSLETTER_DISCOUNT_CODE}
-                </p>
-                <p className="mt-2 text-xs leading-relaxed text-slate-500">
-                  10% off your first order, applied at checkout. We'll also email you when new guides go live.
-                </p>
-              </div>
-            ) : (
+            {subscribed ? null : (
               <div>
                 <div className="flex items-start gap-3">
                   <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-blue-50">
@@ -384,5 +377,6 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
         )}
       </div>
     </div>
+    </>
   );
 };

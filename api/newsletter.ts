@@ -444,6 +444,13 @@ export default async function handler(req: ApiRequest, res: ApiResponse): Promis
       }
     }
 
+    // Hos geldin e-postasi: kupon kodunu kutusuna gonder.
+    // Resend'de flexi-knee.com dogrulanana kadar keyfi alicilara gonderim
+    // BASARISIZ olabilir - bu yuzden kayit akisini asla bozmuyoruz.
+    sendWelcomeEmail(email).catch((err) =>
+      console.error('Welcome email failed (signup still OK):', err)
+    );
+
     return res.status(200).json({
       ok: true,
       customerStored: true,
@@ -456,5 +463,60 @@ export default async function handler(req: ApiRequest, res: ApiResponse): Promis
       error: 'Could not save your email right now. Please try again.',
       detail: process.env.NODE_ENV === 'development' ? errorMessage(error) : undefined,
     });
+  }
+}
+
+/**
+ * Hos geldin e-postasi (GUIDE10 kodu) - Resend uzerinden.
+ * Gereksinim: Vercel'de RESEND_API_KEY ve (alan adi dogrulaninca)
+ * RESEND_FROM ornegi "FlexiKnee <hello@flexi-knee.com>".
+ */
+const WELCOME_DISCOUNT_CODE = 'GUIDE10';
+
+async function sendWelcomeEmail(toEmail: string): Promise<void> {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return;
+  const from = process.env.RESEND_FROM || 'FlexiKnee <onboarding@resend.dev>';
+
+  const r = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from,
+      to: [toEmail],
+      subject: 'Your 10% welcome code is inside',
+      html: `
+        <div style="font-family:Arial,Helvetica,sans-serif;max-width:520px;margin:0 auto;padding:28px 20px;color:#0f172a;">
+          <h1 style="font-size:22px;margin:0 0 8px;">Welcome to FlexiKnee</h1>
+          <p style="font-size:14px;line-height:22px;color:#475569;margin:0 0 20px;">
+            Thanks for joining the comfort list. New guides will land in your inbox first,
+            and here is your welcome discount for any FlexiKnee device:
+          </p>
+          <div style="text-align:center;margin:24px 0;">
+            <span style="display:inline-block;border:2px dashed #93c5fd;background:#eff6ff;color:#1d4ed8;font-size:22px;font-weight:800;letter-spacing:4px;padding:12px 28px;border-radius:14px;">
+              ${WELCOME_DISCOUNT_CODE}
+            </span>
+            <p style="font-size:12px;color:#94a3b8;margin:8px 0 0;">10% off, applied at checkout</p>
+          </div>
+          <div style="text-align:center;margin:26px 0;">
+            <a href="https://flexi-knee.com/shop" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;font-size:14px;font-weight:700;padding:13px 30px;border-radius:999px;">
+              Shop with 10% off
+            </a>
+          </div>
+          <p style="font-size:12px;line-height:18px;color:#94a3b8;margin:20px 0 0;">
+            You are receiving this because you signed up at flexi-knee.com.
+            Reply to this email any time - a real person reads it.
+          </p>
+        </div>
+      `,
+    }),
+  });
+
+  if (!r.ok) {
+    const body = await r.text().catch(() => '');
+    throw new Error(`Resend ${r.status}: ${body.slice(0, 200)}`);
   }
 }

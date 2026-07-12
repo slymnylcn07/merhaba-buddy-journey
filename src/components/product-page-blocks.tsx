@@ -74,14 +74,14 @@ export const OfferSelector = ({
     {
       value: 1,
       title: "Buy 1",
-      badges: freeShipOnSingle ? ["+ Free Shipping"] : [],
+      badges: freeShipOnSingle ? ["Free Shipping"] : [],
       price: unitPrice,
       strike: unitCompareAt && unitCompareAt > unitPrice ? unitCompareAt : null,
     },
     {
       value: 2,
       title: "Buy 2",
-      badges: [`Get Extra ${duoDiscountPct}%`, "+ Free Shipping"],
+      badges: [`Get Extra ${duoDiscountPct}%`, "Free Shipping"],
       price: duoDiscounted,
       strike: duoFull,
       note: "Discount applied automatically at checkout",
@@ -115,6 +115,9 @@ export const OfferSelector = ({
             <span className="min-w-0 flex-1">
               <span className="flex items-center gap-2 sm:gap-2.5">
                 <span className="whitespace-nowrap text-base font-bold text-slate-950">{row.title}</span>
+                {row.badges.length > 0 && (
+                  <span className="text-base font-bold text-emerald-600">+</span>
+                )}
                 {row.badges.length > 0 && (
                   <span className="flex min-w-0 flex-col items-start gap-0.5">
                     {row.badges.map((b) => (
