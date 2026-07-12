@@ -128,6 +128,10 @@ import thumbBatch1DoKneeMassagersWork from "@/assets/guide-thumbnails/batch-1/do
 import thumbBatch1SmartHeatedKneeBraces2026 from "@/assets/guide-thumbnails/batch-1/smart-heated-knee-braces-2026.png";
 import thumbBatch1BestInsolesForKneePain2026 from "@/assets/guide-thumbnails/batch-1/best-insoles-for-knee-pain-2026.png";
 import thumbBatch1CordlessRechargeableHeatedKneeMassagers2026 from "@/assets/guide-thumbnails/batch-1/cordless-rechargeable-heated-knee-massagers-2026.png";
+import thumbItBandFoamRollingList from "@/assets/hero-itband-foam-rolling.svg";
+import thumbSleepKneePainList from "@/assets/hero-sleep-knee-pain.svg";
+import thumbAirCompressionLegList from "@/assets/hero-air-compression-leg.svg";
+import thumbSleeveSizingList from "@/assets/hero-sleeve-sizing.svg";
 import thumbBatch2BackOfKneePainCommon from "@/assets/guide-thumbnails/batch-2/back-of-knee-pain-common.png";
 import thumbBatch2KneeWarmthDailyComfort from "@/assets/guide-thumbnails/batch-2/knee-warmth-daily-comfort.png";
 import thumbBatch2KneePainGettingUpAfterSitting from "@/assets/guide-thumbnails/batch-2/knee-pain-getting-up-after-sitting.png";
@@ -219,6 +223,10 @@ const thumbnailMap: Record<string, string> = {
   "knee-pain-after-exercise-but-not-during": thumbBatch1KneePainAfterExerciseButNotDuring,
   "best-insoles-for-knee-pain-2026": thumbBatch1BestInsolesForKneePain2026,
   "cordless-rechargeable-heated-knee-massagers-2026": thumbBatch1CordlessRechargeableHeatedKneeMassagers2026,
+  "it-band-foam-rolling-step-by-step": thumbItBandFoamRollingList,
+  "how-to-sleep-with-knee-pain": thumbSleepKneePainList,
+  "air-compression-leg-massagers-do-they-work": thumbAirCompressionLegList,
+  "compression-knee-sleeve-sizing-guide": thumbSleeveSizingList,
   "knee-pain-climbing-stairs": thumbKneePainClimbingStairs,
   "knee-pain-going-down-stairs": thumbBatch1KneePainGoingDownStairs,
   "knee-pain-when-squatting": thumbKneePainSquatting,

@@ -263,6 +263,13 @@ import sharpKneePainCycle from "@/assets/article-sharp-knee-pain-cycle.jpg";
 
 import PremiumCTA from "@/components/PremiumCTA";
 import { ArticleSlideInCTA } from "@/components/ArticleSlideInCTA";
+import thumbItBandFoamRolling from "@/assets/hero-itband-foam-rolling.svg";
+import thumbSleepKneePain from "@/assets/hero-sleep-knee-pain.svg";
+import thumbAirCompressionLeg from "@/assets/hero-air-compression-leg.svg";
+import thumbSleeveSizing from "@/assets/hero-sleeve-sizing.svg";
+import thumbExerciseNotDuring from "@/assets/article-hero-exercise-not-during.svg";
+import thumbCordlessMassagers from "@/assets/article-hero-cordless-massagers.svg";
+import thumbInsolesKnee from "@/assets/article-hero-insoles-knee.svg";
 import { ArticleQuizCard } from "@/components/ArticleQuizCard";
 
 // Import new articles from separate files
@@ -9153,28 +9160,6 @@ const GuideArticle = () => {
           </div>
         </section>
 
-        {/* Share Block */}
-        <section>
-          <div className="container mx-auto max-w-7xl px-4">
-            <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
-              <div className="hidden lg:block" />
-              <div className="min-w-0 max-w-3xl">
-                <ArticleShareBlock
-                  url={`https://flexi-knee.com/guides/${slug}`}
-                  title={article.title}
-                />
-                {article.seoTags && (
-                  <div className="-mt-2 mb-8 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4">
-                    <p className="text-xs leading-6 text-slate-500">
-                      <strong className="font-semibold text-slate-700">SEO Tags:</strong> {article.seoTags}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Related Guides Section */}
         <section className="py-8 md:py-10 bg-muted/20">
           <div className="container px-4 max-w-4xl mx-auto">
@@ -9281,129 +9266,44 @@ const GuideArticle = () => {
                 "home-remedies-knee-pain": thumbHomeRemediesKneePain,
                 "what-makes-knee-pain-worse": thumbWhatMakesKneePainWorse,
                 "weight-affects-knee-pain": thumbWeightKneePain,
+                "it-band-foam-rolling-step-by-step": thumbItBandFoamRolling,
+                "how-to-sleep-with-knee-pain": thumbSleepKneePain,
+                "air-compression-leg-massagers-do-they-work": thumbAirCompressionLeg,
+                "compression-knee-sleeve-sizing-guide": thumbSleeveSizing,
+                "knee-pain-after-exercise-but-not-during": thumbExerciseNotDuring,
+                "cordless-rechargeable-heated-knee-massagers-2026": thumbCordlessMassagers,
+                "best-insoles-for-knee-pain-2026": thumbInsolesKnee,
               };
 
-              // Topic clusters for relevant recommendations
-              const topicClusters: Record<string, string[]> = {
-                // Heat vs Ice cluster
-                "heat-vs-red-light-therapy": ["heat-or-ice-knee-pain-science", "heat-or-ice-knee-pain-situations", "heat-red-light-therapy-benefits-2026"],
-                "heat-vs-ice-for-knees": ["heat-or-ice-knee-pain-science", "heat-or-ice-knee-pain-situations", "heat-vs-red-light-therapy"],
-                "heat-or-ice-knee-pain-science": ["heat-vs-ice-for-knees", "heat-or-ice-knee-pain-situations", "heat-vs-red-light-therapy"],
-                "heat-or-ice-knee-pain-situations": ["heat-or-ice-knee-pain-science", "heat-vs-ice-for-knees", "heat-red-light-therapy-benefits-2026"],
-                // Infrared & device cluster
-                "best-infrared-knee-massagers": ["infrared-knee-massager-guide-2026", "infrared-vs-heating-pads", "is-infrared-safe-for-knees"],
-                "infrared-knee-massager-guide-2026": ["best-infrared-knee-massagers", "infrared-vs-heating-pads", "warmth-vs-infrared-knee-routines"],
-                "infrared-vs-heating-pads": ["best-infrared-knee-massagers", "warmth-vs-infrared-knee-routines", "infrared-knee-massager-guide-2026"],
-                "is-infrared-safe-for-knees": ["best-infrared-knee-massagers", "infrared-knee-massager-guide-2026", "warmth-vs-infrared-knee-routines"],
-                "warmth-vs-infrared-knee-routines": ["infrared-vs-heating-pads", "is-infrared-safe-for-knees", "heat-vs-red-light-therapy"],
-                // Massager & device reviews cluster
-                "do-knee-massagers-work": ["best-infrared-knee-massagers", "flexiknee-review-2026", "flexiknee-vs-competitors-2026"],
-                "flexiknee-review-2026": ["flexiknee-vs-competitors-2026", "best-heated-knee-massager-arthritis", "do-knee-massagers-work"],
-                "flexiknee-vs-competitors-2026": ["flexiknee-review-2026", "smart-heated-knee-braces-2026", "best-heated-knee-massager-arthritis"],
-                "best-heated-knee-massager-arthritis": ["flexiknee-review-2026", "knee-arthritis-pain-guide", "smart-heated-knee-braces-2026"],
-                "smart-heated-knee-braces-2026": ["flexiknee-vs-competitors-2026", "best-heated-knee-massager-arthritis", "infrared-knee-massager-guide-2026"],
-                "who-benefits-from-knee-therapy-devices": ["do-knee-massagers-work", "flexiknee-review-2026", "best-infrared-knee-massagers"],
-                // Red light therapy cluster
-                "red-light-therapy-for-knees": ["heat-red-light-therapy-benefits-2026", "heat-vs-red-light-therapy", "warmth-vs-infrared-knee-routines"],
-                "heat-red-light-therapy-benefits-2026": ["red-light-therapy-for-knees", "heat-vs-red-light-therapy", "best-infrared-knee-massagers"],
-                // Sharp knee pain cluster
-                "sharp-knee-pain-guide": ["sharp-knee-pain-comes-and-goes", "sharp-knee-pain-causes-relief", "sharp-stabbing-knee-pain-comfort"],
-                "sharp-knee-pain-comes-and-goes": ["sharp-knee-pain-guide", "sharp-stabbing-knee-pain-comfort", "intermittent-knee-pain-guide"],
-                "sharp-knee-pain-causes-relief": ["sharp-knee-pain-guide", "sharp-stabbing-knee-pain-comfort", "sharp-knee-pain-comes-and-goes"],
-                "sharp-stabbing-knee-pain-comfort": ["sharp-knee-pain-causes-relief", "sharp-knee-pain-comes-and-goes", "intermittent-knee-pain-guide"],
-                "intermittent-knee-pain-guide": ["sharp-knee-pain-comes-and-goes", "sharp-stabbing-knee-pain-comfort", "knee-pain-worse-at-night"],
-                // Side knee pain cluster
-                "side-knee-pain-comfort-guide": ["side-knee-pain-inner-outer", "side-of-knee-pain-explained", "pain-in-the-knee-causes-locations"],
-                "side-knee-pain-inner-outer": ["side-knee-pain-comfort-guide", "side-of-knee-pain-explained", "pain-in-the-knee-causes-locations"],
-                "side-of-knee-pain-explained": ["side-knee-pain-inner-outer", "side-knee-pain-comfort-guide", "best-running-shoes-knee-pain"],
-                // Back of knee cluster
-                "back-of-knee-pain-explained": ["back-of-knee-pain-daily-habits", "pain-in-the-knee-causes-locations", "knee-pain-worse-at-night"],
-                "back-of-knee-pain-daily-habits": ["back-of-knee-pain-explained", "daily-knee-care-routine", "knee-pain-worse-at-night"],
-                // Running & shoes cluster
-                "running-knee-pain-guide": ["best-running-shoes-knee-pain", "running-shoes-knee-pain-causes-fixes", "running-shoes-knee-pain-discomfort"],
-                "best-running-shoes-knee-pain": ["running-shoes-knee-pain-causes-fixes", "running-shoes-knee-pain-discomfort", "running-knee-pain-guide"],
-                "running-shoes-knee-pain-causes-fixes": ["best-running-shoes-knee-pain", "running-shoes-knee-pain-discomfort", "running-knee-pain-guide"],
-                "running-shoes-knee-pain-discomfort": ["running-shoes-knee-pain-causes-fixes", "best-running-shoes-knee-pain", "running-knee-pain-guide"],
-                // Daily routine & habits cluster
-                "daily-knee-comfort-routine": ["daily-knee-care-routine", "how-to-fix-knee-pain", "knee-pain-treatment-daily-habits"],
-                "daily-knee-care-routine": ["daily-knee-comfort-routine", "knee-pain-treatment-daily-habits", "how-to-strengthen-knees"],
-                "knee-pain-treatment-daily-habits": ["daily-knee-care-routine", "daily-knee-comfort-routine", "how-to-fix-knee-pain"],
-                "how-to-fix-knee-pain": ["knee-pain-treatment-daily-habits", "daily-knee-care-routine", "how-to-strengthen-knees"],
-                // General knee pain cluster
-                "why-knee-pain-doesnt-go-away": ["pain-in-the-knee-causes-locations", "cause-of-knee-pain-patterns", "knee-pain-treatment-daily-habits"],
-                "pain-in-the-knee-causes-locations": ["cause-of-knee-pain-patterns", "why-knee-pain-doesnt-go-away", "sharp-knee-pain-guide"],
-                "cause-of-knee-pain-patterns": ["pain-in-the-knee-causes-locations", "why-knee-pain-doesnt-go-away", "knee-pain-treatment-daily-habits"],
-                // Arthritis cluster
-                "knee-arthritis-pain-guide": ["best-heated-knee-massager-arthritis", "how-to-strengthen-knees", "heat-red-light-therapy-benefits-2026"],
-                // Strengthen & injuries cluster
-                "how-to-strengthen-knees": ["daily-knee-care-routine", "understanding-knee-injuries", "knee-arthritis-pain-guide"],
-                "understanding-knee-injuries": ["how-to-strengthen-knees", "running-knee-pain-guide", "sharp-knee-pain-guide"],
-                // Night & gender patterns
-                "knee-pain-worse-at-night": ["intermittent-knee-pain-guide", "daily-knee-care-routine", "back-of-knee-pain-daily-habits"],
-                "women-men-knee-comfort-patterns": ["cause-of-knee-pain-patterns", "knee-pain-treatment-daily-habits", "daily-knee-care-routine"],
-                // Location-specific
-                "top-of-knee-pain-patterns": ["front-knee-tightness-after-activity", "pain-in-the-knee-causes-locations", "how-to-strengthen-knees"],
-                "front-knee-tightness-after-activity": ["top-of-knee-pain-patterns", "running-knee-pain-guide", "how-to-strengthen-knees"],
-                "knee-discomfort-lower-back-hips": ["cause-of-knee-pain-patterns", "how-to-strengthen-knees", "women-men-knee-comfort-patterns"],
-                "below-knee-discomfort-teens-adults": ["front-knee-tightness-after-activity", "running-knee-pain-guide", "how-to-strengthen-knees"],
-                // New articles - Feb 25
-                "back-of-knee-pain-common": ["back-of-knee-pain-explained", "back-of-knee-pain-daily-habits", "daily-knee-care-routine"],
-                "smart-knee-massagers-breakdown": ["do-knee-massagers-work", "infrared-knee-massager-guide-2026", "heat-vs-red-light-therapy"],
-                "knee-warmth-daily-comfort": ["heat-vs-ice-for-knees", "heat-or-ice-knee-pain-situations", "warmth-vs-infrared-knee-routines"],
-                "knee-pain-locations-visual-guide": ["pain-in-the-knee-causes-locations", "back-of-knee-pain-explained", "side-knee-pain-comfort-guide"],
-                "knee-pain-location-map-2026": ["knee-pain-locations-visual-guide", "pain-in-the-knee-causes-locations", "side-knee-pain-comfort-guide"],
-                "runners-knee-pain-location": ["running-knee-pain-guide", "best-running-shoes-knee-pain", "it-band-syndrome-explained"],
-                "it-band-syndrome-explained": ["it-band-pain-location-diagram", "side-knee-pain-comfort-guide", "runners-knee-pain-location"],
-                "it-band-pain-location-diagram": ["it-band-syndrome-explained", "side-knee-pain-comfort-guide", "running-knee-pain-guide"],
-                "why-do-my-knees-crack-or-pop": ["how-to-strengthen-knees", "front-knee-tightness-after-activity", "knee-warmth-daily-comfort"],
-                "knee-pain-after-sitting-cross-legged": ["back-of-knee-pain-common", "front-knee-tightness-after-activity", "how-to-strengthen-knees"],
-                "why-do-my-knees-feel-tight-after-resting": ["knee-pain-after-sitting-cross-legged", "why-do-my-knees-hurt-when-sleeping", "back-of-knee-pain-common"],
-                "knee-pain-after-standing": ["front-knee-tightness-after-activity", "daily-knee-care-routine", "how-to-strengthen-knees"],
-                "best-red-light-therapy-knee": ["heat-red-light-therapy-benefits-2026", "red-light-therapy-for-knees", "heat-vs-red-light-therapy"],
-                "knee-pain-exercises-guide": ["how-to-strengthen-knees", "daily-knee-care-routine", "what-causes-knee-pain-guide"],
-                "what-causes-knee-pain-guide": ["pain-in-the-knee-causes-locations", "cause-of-knee-pain-patterns", "knee-pain-locations-visual-guide"],
-                "knee-pain-after-40": ["what-causes-knee-pain-guide", "why-do-my-knees-feel-tight-after-resting", "knee-arthritis-pain-guide"],
-                "why-knee-pain-gets-worse-with-age": ["knee-pain-after-40", "why-do-my-knees-crack-or-pop", "how-to-strengthen-knees"],
-                "morning-knee-stiffness-after-40": ["knee-pain-after-40", "why-do-my-knees-feel-tight-after-resting", "knee-pain-getting-up-after-sitting"],
-                "knee-pain-getting-up-after-sitting": ["why-do-my-knees-feel-tight-after-resting", "knee-pain-after-sitting-cross-legged", "knee-pain-after-40"],
-                "knee-pain-after-long-walks": ["running-knee-pain-guide", "it-band-syndrome-explained", "knee-pain-after-40"],
-                "knee-mobility-after-50": ["how-to-strengthen-knees", "knee-pain-after-40", "why-knee-pain-gets-worse-with-age"],
-                "sudden-knee-pain-guide": ["sharp-knee-pain-comes-and-goes", "intermittent-knee-pain-guide", "back-of-knee-pain-common"],
-                "knee-pain-at-night-after-40": ["why-do-my-knees-hurt-when-sleeping", "knee-pain-after-40", "morning-knee-stiffness-after-40"],
-                "knee-clicking-when-walking": ["why-do-my-knees-crack-or-pop", "knee-pain-exercises-guide", "it-band-syndrome-explained"],
-                "knees-hurt-after-resting": ["why-do-my-knees-feel-tight-after-resting", "knee-pain-getting-up-after-sitting", "morning-knee-stiffness-after-40"],
-                "cold-weather-knee-pain": ["knee-warmth-daily-comfort", "heat-vs-ice-for-knees", "knee-pain-after-40"],
-                "knee-pain-after-exercise": ["knee-pain-exercises-guide", "running-knee-pain-guide", "how-to-strengthen-knees"],
-                "knee-pain-climbing-stairs": ["knee-pain-going-down-stairs", "knee-pain-after-exercise", "how-to-strengthen-knees"],
-                "knee-pain-going-down-stairs": ["knee-pain-climbing-stairs", "knee-pain-when-squatting", "knee-pain-after-exercise"],
-                "knee-pain-when-squatting": ["knee-pain-after-exercise", "knee-pain-exercises-guide", "how-to-strengthen-knees"],
-                "knee-pain-during-yoga": ["knee-pain-after-sitting-cross-legged", "knee-pain-when-squatting", "knee-mobility-after-50"],
-                "knee-pain-when-hiking": ["knee-pain-after-long-walks", "knee-pain-climbing-stairs", "knee-pain-after-exercise"],
-                "knee-tightness-without-pain": ["why-do-my-knees-feel-tight-after-resting", "knee-pain-after-sitting-cross-legged", "knee-warmth-daily-comfort"],
-                "burning-sensation-in-knee": ["warm-feeling-in-knee", "knee-pain-after-exercise", "knee-warmth-daily-comfort"],
-                "knee-weakness-without-pain": ["how-to-strengthen-knees", "knee-pain-exercises-guide", "heavy-feeling-in-knees"],
-                "plica-syndrome-knee-pain": ["patellofemoral-pain-syndrome", "knee-bursitis-guide", "front-knee-tightness-after-activity"],
-                "knee-bursitis-guide": ["plica-syndrome-knee-pain", "patellofemoral-pain-syndrome", "knee-pain-after-exercise"],
-                "patellofemoral-pain-syndrome": ["plica-syndrome-knee-pain", "front-knee-tightness-after-activity", "knee-pain-climbing-stairs"],
-                "knee-pain-after-car-rides": ["knee-pain-after-flights", "why-do-my-knees-feel-tight-after-resting", "knee-pain-after-sitting-cross-legged"],
-                "warm-feeling-in-knee": ["burning-sensation-in-knee", "knee-warmth-daily-comfort", "heavy-feeling-in-knees"],
-                "heavy-feeling-in-knees": ["knee-weakness-without-pain", "knee-tightness-without-pain", "knee-pain-after-flights"],
-                "knee-pain-after-flights": ["knee-pain-after-car-rides", "why-do-my-knees-feel-tight-after-resting", "knee-tightness-without-pain"],
-                "knee-pain-when-kneeling": ["knee-bursitis-guide", "knee-pain-when-squatting", "patellofemoral-pain-syndrome"],
-                "pain-behind-kneecap": ["patellofemoral-pain-syndrome", "knee-pain-climbing-stairs", "knee-pain-when-squatting"],
-                "clicking-knee-without-pain": ["why-do-my-knees-crack-or-pop", "knee-tightness-without-pain", "patellofemoral-pain-syndrome"],
-                "exercises-to-relieve-knee-pain-at-home": ["knee-pain-exercises-guide", "knee-mobility-after-50", "knee-pain-when-squatting"],
-                "home-remedies-knee-pain": ["exercises-to-relieve-knee-pain-at-home", "knee-warmth-daily-comfort", "daily-knee-care-routine"],
-                "what-makes-knee-pain-worse": ["home-remedies-knee-pain", "knee-pain-getting-up-after-sitting", "why-knee-pain-gets-worse-with-age"],
-                "weight-affects-knee-pain": ["what-makes-knee-pain-worse", "knee-pain-climbing-stairs", "knee-pain-after-long-walks"],
+              // Dinamik benzerlik: slug + baslik kelimelerinden ortak konu puani.
+              // Yeni makaleler otomatik olarak en yakin konularla eslesir,
+              // elle kume tanimi gerekmez.
+              const STOP_WORDS = new Set(["knee","knees","pain","guide","guides","for","the","and","your","with","how","what","why","when","after","before","from","that","this","does","2026","step","best"]);
+              const tokensOf = (slugStr: string, titleStr: string): Set<string> => {
+                const raw = [
+                  ...slugStr.split("-"),
+                  ...titleStr.toLowerCase().replace(/[^a-z0-9\s-]/g, " ").split(/[\s-]+/),
+                ];
+                return new Set(raw.filter((t) => t.length > 2 && !STOP_WORDS.has(t)));
               };
-
-              // Get topic-relevant articles (max 3)
-              const clusterSlugs = topicClusters[slug] || [];
-              const relatedArticles = clusterSlugs
-                .filter((s) => s !== slug && articles[s])
-                .map((s) => articles[s])
-                .slice(0, 3);
+              const currentArticle = articles[slug];
+              const currentTokens = currentArticle
+                ? tokensOf(currentArticle.slug, currentArticle.title)
+                : new Set<string>();
+              const scored = Object.values(articles)
+                .filter((a) => a.slug !== slug)
+                .map((a) => {
+                  let score = 0;
+                  tokensOf(a.slug, a.title).forEach((t) => {
+                    if (currentTokens.has(t)) score += 1;
+                  });
+                  return { article: a, score };
+                })
+                .sort((x, y) => y.score - x.score);
+              const relatedArticles = scored
+                .filter((entry) => entry.score > 0)
+                .slice(0, 3)
+                .map((entry) => entry.article);
 
               // Fallback: if no cluster defined, pick first 3 other articles
               const finalArticles = relatedArticles.length > 0
@@ -9423,6 +9323,26 @@ const GuideArticle = () => {
                 </div>
               );
             })()}
+          </div>
+        </section>
+
+        {/* Share Block */}
+        <section>
+          <div className="container mx-auto max-w-7xl px-4">
+            <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
+              <div className="hidden lg:block" />
+              <div className="min-w-0 max-w-3xl">
+                <ArticleShareBlock
+                  url={`https://flexi-knee.com/guides/${slug}`}
+                  title={article.title}
+                />
+                {article.seoTags && (
+                  <p className="-mt-2 mb-8 text-[11px] leading-5 text-slate-400">
+                    Topics: {article.seoTags}
+                  </p>
+                )}
+              </div>
+            </div>
           </div>
         </section>
 

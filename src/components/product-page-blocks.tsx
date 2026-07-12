@@ -44,7 +44,7 @@ interface OfferSelectorProps {
 }
 
 const Badge = ({ children }: { children: React.ReactNode }) => (
-  <span className="rounded-md bg-emerald-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-700">
+  <span className="rounded-md bg-emerald-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-emerald-700 sm:px-2 sm:text-[10px]">
     {children}
   </span>
 );
@@ -81,10 +81,7 @@ export const OfferSelector = ({
     {
       value: 2,
       title: "Buy 2",
-      badges: [
-        `Get Extra ${duoDiscountPct}%`,
-        ...(!freeShipOnSingle ? ["+ Free Shipping"] : []),
-      ],
+      badges: [`Get Extra ${duoDiscountPct}%`, "+ Free Shipping"],
       price: duoDiscounted,
       strike: duoFull,
       note: "Discount applied automatically at checkout",
@@ -116,14 +113,16 @@ export const OfferSelector = ({
               {selected && <span className="h-2.5 w-2.5 rounded-full bg-slate-950" />}
             </span>
             <span className="min-w-0 flex-1">
-              <span className="flex flex-wrap items-center gap-2">
-                <span className="text-base font-bold text-slate-950">{row.title}</span>
-                {row.badges.map((b) => (
-                  <Badge key={b}>{b}</Badge>
-                ))}
-              </span>
+              <span className="block text-base font-bold text-slate-950">{row.title}</span>
+              {row.badges.length > 0 && (
+                <span className="mt-1 flex flex-wrap items-center gap-1 sm:gap-1.5">
+                  {row.badges.map((b) => (
+                    <Badge key={b}>{b}</Badge>
+                  ))}
+                </span>
+              )}
               {row.note && (
-                <span className="mt-0.5 hidden text-[11px] text-slate-400 sm:block">{row.note}</span>
+                <span className="mt-1 hidden text-[11px] text-slate-400 sm:block">{row.note}</span>
               )}
             </span>
             <span className="flex flex-col items-end">

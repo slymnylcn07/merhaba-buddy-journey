@@ -20,6 +20,8 @@ import { Footer } from "@/components/Footer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { DeliveryEstimate } from "@/components/DeliveryEstimate";
 import { BenefitIconsRow, OfferSelector, PaymentOptionsRow, TrustStrip, ProductInfoAccordion } from "@/components/product-page-blocks";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { getProductPageConfig } from "@/data/product-page-config";
 import { createStorefrontCheckout, getProductByHandle, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
@@ -310,18 +312,31 @@ export default function SecondaryProductDetail() {
                 <p className="mt-4 text-base leading-7 text-slate-600">{profile.summary}</p>
                 <BenefitIconsRow benefits={pageConfig.benefits} />
 
-                {price && (
-                  <p className="mt-6 flex items-baseline gap-3">
-                    {compareAt && (
-                      <s className="text-lg font-medium text-slate-400">{formatMoney(compareAt.amount, compareAt.currencyCode)}</s>
-                    )}
-                    <span className="text-3xl font-semibold tracking-tight text-slate-950">{formatMoney(price.amount, price.currencyCode)}</span>
-                  </p>
-                )}
+
                 <p className="mt-1 text-xs text-slate-500">Taxes and shipping calculated at checkout where applicable.</p>
 
                 {options.map((option) => {
                   const chosen = selectedVariant?.selectedOptions.find((selected) => selected.name === option.name)?.value;
+                  // 3'e kadar secenek: pill; fazlasi: sik acilir menu
+                  if (option.values.length > 3) {
+                    return (
+                      <div key={option.name} className="mt-6">
+                        <p className="mb-2 text-sm font-semibold text-slate-900">{option.name}</p>
+                        <Select value={chosen} onValueChange={(value) => selectOption(option.name, value)}>
+                          <SelectTrigger className="h-12 w-full rounded-2xl border-slate-300 bg-white px-4 text-sm font-medium text-slate-900 focus:ring-2 focus:ring-blue-500">
+                            <SelectValue placeholder={`Select ${option.name.toLowerCase()}`} />
+                          </SelectTrigger>
+                          <SelectContent className="max-h-72 rounded-2xl border-slate-200 bg-white shadow-xl">
+                            {option.values.map((value) => (
+                              <SelectItem key={value} value={value} className="rounded-xl py-2.5 text-sm">
+                                {value}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    );
+                  }
                   return (
                     <div key={option.name} className="mt-6">
                       <div className="flex items-center justify-between">
@@ -515,6 +530,25 @@ export default function SecondaryProductDetail() {
             </Accordion>
           </div>
         </section>
+
+        <section className="bg-white py-16 sm:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Explore the system</p>
+                <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+                  Explore the full FlexiKnee support lineup.
+                </h2>
+              </div>
+              <Link to="/guides" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
+                Visit knee comfort hub <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            <FlexiKneeSystem />
+          </div>
+        </section>
+
       </main>
 
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 p-3 shadow-[0_-15px_40px_-25px_rgba(15,23,42,0.45)] backdrop-blur lg:hidden">

@@ -249,9 +249,9 @@ export default function ProductDetail() {
             <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
               <Link to="/" className="hover:text-blue-600">Home</Link>
               <ChevronRight className="h-3 w-3" />
-              <Link to="/guides" className="hover:text-blue-600">Knee comfort hub</Link>
+              <Link to="/shop" className="hover:text-blue-600">Shop</Link>
               <ChevronRight className="h-3 w-3" />
-              <span className="text-slate-900">FlexiKnee</span>
+              <span className="max-w-[16rem] truncate text-slate-900">{productTitle}</span>
             </div>
           </div>
         </section>
@@ -317,7 +317,7 @@ export default function ProductDetail() {
                   formatMoney={formatMoney}
                 />
 
-                <div className="mt-5 hidden gap-3 lg:grid">
+                <div className="mt-5 grid gap-3">
                   <Button onClick={handleAddToCart} disabled={!variant || isLoading} className="h-13 rounded-full bg-blue-600 text-base font-semibold text-white hover:bg-blue-700">
                     Add to Cart - {bundleQty === 2 ? formatMoney(String(basePrice * 2 * (1 - pageConfig.duoDiscountPct / 100)), currency) : displayPrice}
                   </Button>

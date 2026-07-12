@@ -1,14 +1,16 @@
 import { useState, useEffect, useCallback } from "react";
-import { X } from "lucide-react";
+import { X, ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { trackEvent } from "@/hooks/use-google-analytics";
+import deviceImage from "@/assets/flexiknee-device-main.jpg";
+import { pickProductForSlug, PRODUCT_RECS } from "@/lib/article-product-map";
 
 interface ArticleSlideInCTAProps {
   slug: string;
   title: string;
 }
 
-const STORAGE_KEY = "flexiknee_article_cta_dismissed";
+const STORAGE_KEY = "flexiknee_article_cta_session";
 
 function getContextualContent(slug: string): { hook: string; support: string } {
   const s = slug.toLowerCase();
@@ -146,7 +148,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   const { hook, support } = getContextualContent(slug);
 
   useEffect(() => {
-    if (localStorage.getItem(STORAGE_KEY)) {
+    if (sessionStorage.getItem(STORAGE_KEY)) {
       setIsDismissed(true);
     }
   }, []);
@@ -155,7 +157,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
     if (isDismissed) return;
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollPercent = (window.scrollY / scrollHeight) * 100;
-    if (scrollPercent >= 50) {
+    if (scrollPercent >= 38) {
       setIsVisible(true);
       window.removeEventListener("scroll", handleScroll);
     }
@@ -170,65 +172,81 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   const handleDismiss = () => {
     setIsVisible(false);
     setIsDismissed(true);
-    localStorage.setItem(STORAGE_KEY, "true");
+    sessionStorage.setItem(STORAGE_KEY, "true");
     trackEvent("article_cta_dismissed", { slug });
   };
 
   const handleCTAClick = () => {
     trackEvent("article_cta_clicked", { slug });
-    localStorage.setItem(STORAGE_KEY, "true");
+    sessionStorage.setItem(STORAGE_KEY, "true");
   };
 
   if (isDismissed) return null;
+
+  const rec = pickProductForSlug(slug);
+  const isMain = rec.handle === PRODUCT_RECS.main.handle;
+  const productShortName = rec.title.replace("FlexiKnee™ ", "");
 
   return (
     <div
       className={`fixed z-40 transition-all duration-500 ease-out
         bottom-0 left-0 right-0
-        md:bottom-6 md:left-auto md:right-6 md:max-w-sm
+        md:bottom-6 md:left-auto md:right-6 md:w-[400px]
         ${isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"}
       `}
     >
-      <div
-        className="
-          relative
-          bg-gradient-to-b from-card to-card/95 text-card-foreground
-          md:bg-card md:text-card-foreground md:bg-none
-          border border-border/80
-          md:rounded-xl
-          shadow-[0_-6px_30px_rgba(0,0,0,0.18)]
-          md:shadow-[0_10px_40px_rgba(0,0,0,0.22)]
-          px-5 py-5
-          md:px-6 md:py-6
-        "
-      >
-        {/* Close */}
+      <div className="relative overflow-hidden border border-slate-200 bg-white px-5 pb-5 pt-4 shadow-[0_-10px_40px_rgba(15,23,42,0.16)] md:rounded-3xl md:shadow-[0_24px_70px_-20px_rgba(15,23,42,0.35)]">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-emerald-400" />
+
         <button
           onClick={handleDismiss}
-          className="absolute top-3 right-3 p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors"
+          className="absolute right-3 top-3 rounded-full p-1.5 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
           aria-label="Close"
         >
           <X className="h-4 w-4" />
         </button>
 
-        {/* Content */}
-        <div className="pr-8">
-          <p className="text-sm font-bold leading-snug text-foreground">
-            {hook}
-          </p>
-          <p className="text-xs mt-1.5 leading-relaxed text-muted-foreground">
-            {support}
-          </p>
+        <div className="flex items-start gap-3 pr-7">
+          {isMain ? (
+            <img
+              src={deviceImage}
+              alt={rec.title}
+              className="h-14 w-14 flex-shrink-0 rounded-2xl border border-slate-100 bg-slate-50 object-cover"
+            />
+          ) : (
+            <span className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-blue-50">
+              <Sparkles className="h-6 w-6 text-blue-600" />
+            </span>
+          )}
+          <div className="min-w-0">
+            <p className="text-sm font-bold leading-snug text-slate-950">{hook}</p>
+            <p className="mt-1 text-xs leading-relaxed text-slate-500">{support}</p>
+          </div>
         </div>
 
-        {/* CTA */}
-        <Link
-          to="/product/knee-massager-smart-red-light-and-massage-therapy"
-          onClick={handleCTAClick}
-          className="mt-4 inline-block text-xs font-bold text-primary-foreground bg-primary hover:bg-primary/90 brightness-110 px-6 py-3 rounded-md transition-all shadow-[0_2px_8px_rgba(0,0,0,0.12)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.18)]"
-        >
-          Explore FlexiKnee
-        </Link>
+        <div className="mt-3 flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-2xl bg-slate-50 px-3.5 py-2.5">
+          <span className="min-w-0 flex-1 truncate text-xs font-semibold text-slate-800">{productShortName}</span>
+          <span className="text-sm font-bold text-slate-950">{rec.fallbackPrice}</span>
+          <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-semibold text-blue-700">30-day returns</span>
+        </div>
+
+        <div className="mt-3.5 flex items-center gap-3">
+          <Link
+            to={`/product/${rec.handle}`}
+            onClick={handleCTAClick}
+            className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-slate-950 px-5 py-3 text-xs font-bold text-white transition hover:bg-slate-800"
+          >
+            See the {isMain ? "FlexiKnee" : productShortName.split(" ").slice(-2).join(" ").toLowerCase()}
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+          <Link
+            to="/knee-quiz"
+            onClick={() => trackEvent("article_cta_quiz_clicked", { slug })}
+            className="whitespace-nowrap text-xs font-semibold text-blue-600 hover:underline"
+          >
+            60-sec quiz
+          </Link>
+        </div>
       </div>
     </div>
   );
