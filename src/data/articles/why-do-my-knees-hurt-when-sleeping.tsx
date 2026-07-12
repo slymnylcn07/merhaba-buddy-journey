@@ -238,7 +238,7 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
           <li>Use breathable bedding materials that do not trap heat</li>
         </ul>
         <p>
-          To understand when warmth might be beneficial versus when cooling is more appropriate, our guide on <Link to="/guides/heat-or-ice-knee-pain-situations" className="text-primary hover:underline">heat or ice for different knee situations</Link> provides detailed guidance.
+          To understand when warmth might be beneficial versus when cooling is more appropriate, our guide on <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice for different knee situations</Link> provides detailed guidance.
         </p>
 
         <figure className="my-8">

@@ -74,6 +74,7 @@ function generateSitemap() {
     { path: "/why-flexiknee", priority: 0.8, changefreq: "monthly" },
     { path: "/product", priority: 0.9, changefreq: "weekly" },
     { path: "/foundation", priority: 0.7, changefreq: "monthly" },
+    { path: "/editorial-policy", priority: 0.5, changefreq: "yearly" },
     { path: "/track-order", priority: 0.5, changefreq: "monthly" },
     { path: "/privacy-policy", priority: 0.3, changefreq: "yearly" },
     { path: "/terms-of-service", priority: 0.3, changefreq: "yearly" },

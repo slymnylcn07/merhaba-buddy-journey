@@ -212,7 +212,7 @@ export const infraredVsHeatingPads: ArticleExport = {
           The best approach is to think about how you currently use warmth and whether a more targeted, feature-rich option would make your daily comfort routine simpler. For many people, the switch from a general heating pad to a dedicated knee device feels like a meaningful upgrade in their everyday quality of life. Our guide on <Link to="/guides/heat-vs-red-light-therapy" className="text-primary hover:underline">heat vs. red light therapy</Link> explores why adding red light to your warmth routine can deepen the benefits.
         </p>
         <p>
-          If you're still deciding between heat and cold for your needs, our <Link to="/guides/heat-or-ice-knee-pain-situations" className="text-primary hover:underline">heat or ice situations guide</Link> helps you choose the right approach for each scenario.
+          If you're still deciding between heat and cold for your needs, our <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice situations guide</Link> helps you choose the right approach for each scenario.
         </p>
 
         <PremiumCTA

@@ -46,8 +46,6 @@ import thumbBelowKneeDiscomfort from "@/assets/guide-thumb-below-knee-discomfort
 import thumbFlexikneeReview from "@/assets/guide-thumb-flexiknee-review-new.jpg";
 import thumbCompetitorsComparison from "@/assets/guide-thumb-competitors-comparison-new.jpg";
 import thumbInfraredGuide2026 from "@/assets/guide-thumb-infrared-guide-2026.jpg";
-import thumbHeatIceScience from "@/assets/guide-thumb-heat-ice-science.jpg";
-import thumbHeatIceSituations from "@/assets/guide-thumb-heat-ice-situations.jpg";
 import thumbSharpPainRelief from "@/assets/guide-thumb-sharp-pain-relief.jpg";
 import thumbIntermittentPain from "@/assets/guide-thumb-intermittent-pain.jpg";
 import thumbRunningShoesCauses from "@/assets/guide-thumb-running-shoes-causes.jpg";
@@ -179,13 +177,11 @@ const thumbnailMap: Record<string, string> = {
   "flexiknee-review-2026": thumbFlexikneeReview,
   "flexiknee-vs-competitors-2026": thumbCompetitorsComparison,
   "best-heated-knee-massager-arthritis": thumbArthritisMassager,
-  "heat-or-ice-knee-pain-science": thumbHeatIceScience,
   "smart-heated-knee-braces-2026": thumbBatch1SmartHeatedKneeBraces2026,
   "heat-red-light-therapy-benefits-2026": thumbHeatRedlightBenefits,
   "running-shoes-knee-pain-causes-fixes": thumbRunningShoesCauses,
   "sharp-knee-pain-causes-relief": thumbSharpPainRelief,
   "infrared-knee-massager-guide-2026": thumbInfraredGuide2026,
-  "heat-or-ice-knee-pain-situations": thumbHeatIceSituations,
   "sharp-stabbing-knee-pain-comfort": thumbSharpStabbingComfort,
   "running-shoes-knee-pain-discomfort": thumbRunningShoesDiscomfort,
   "infrared-vs-heating-pads": thumbInfraredVsHeatingPads,
@@ -387,9 +383,7 @@ const methodsSlugs = [
   "warmth-vs-infrared-knee-routines",
   "is-infrared-safe-for-knees",
   "who-benefits-from-knee-therapy-devices",
-  "heat-or-ice-knee-pain-science",
   "heat-red-light-therapy-benefits-2026",
-  "heat-or-ice-knee-pain-situations",
   "knee-warmth-daily-comfort",
   "best-red-light-therapy-knee",
 ];

@@ -97,7 +97,7 @@ export const kneeWarmthDailyComfort: ArticleExport = {
 
         <h3>Immediately After Acute Injury</h3>
          <p>
-           In the first 24 to 48 hours after a sudden knee injury (such as a twist, fall, or impact), most wellness guidelines suggest cold rather than warmth. Heat can increase blood flow to an already inflamed area, potentially increasing swelling and discomfort during the acute phase. After the initial inflammatory phase subsides (typically after 48 to 72 hours), warmth can become a supportive part of the comfort routine. For help deciding between heat and ice, see our <Link to="/guides/heat-or-ice-knee-pain-situations" className="text-primary hover:underline">heat or ice situations guide</Link>.
+           In the first 24 to 48 hours after a sudden knee injury (such as a twist, fall, or impact), most wellness guidelines suggest cold rather than warmth. Heat can increase blood flow to an already inflamed area, potentially increasing swelling and discomfort during the acute phase. After the initial inflammatory phase subsides (typically after 48 to 72 hours), warmth can become a supportive part of the comfort routine. For help deciding between heat and ice, see our <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice situations guide</Link>.
          </p>
 
         <h3>During Active Inflammation</h3>

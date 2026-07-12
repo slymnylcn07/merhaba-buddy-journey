@@ -186,7 +186,7 @@ export const homeRemediesKneePain: ArticleExport = {
 
         <h2>Warm vs. Cold: Which Approach Works for What</h2>
         <p>
-          One of the most common questions about how to relieve knee pain at home is whether to use heat or cold. Both have their place, and understanding when each may be most helpful can make your home care more effective. For a more detailed exploration, see our guide on <Link to="/guides/heat-or-ice-knee-pain-science" className="text-primary hover:underline">heat or ice for knee pain</Link>.
+          One of the most common questions about how to relieve knee pain at home is whether to use heat or cold. Both have their place, and understanding when each may be most helpful can make your home care more effective. For a more detailed exploration, see our guide on <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice for knee pain</Link>.
         </p>
 
         <figure className="my-8">

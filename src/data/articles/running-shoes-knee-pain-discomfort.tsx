@@ -18,7 +18,7 @@ export const runningShoesKneePainDiscomfort: ArticleExport = {
     heroImage: heroImage,
     publishedDate: "February 24, 2026",
     lastUpdated: "March 31, 2026",
-    nextSlug: "heat-or-ice-knee-pain-situations",
+    nextSlug: "heat-vs-ice-for-knees",
     nextTitle: "Heat or Ice for Knee Pain? What Works Best in Each Situation",
     faqs: [
       { question: "Can the wrong running shoes cause knee pain?", answer: "Yes, shoes that don't provide proper support, cushioning, or fit for your foot type and running style can contribute to knee discomfort over time by affecting how forces travel up through your legs." },

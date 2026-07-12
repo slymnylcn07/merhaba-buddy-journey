@@ -174,8 +174,6 @@ import thumbBelowKneeDiscomfort from "@/assets/guide-thumb-below-knee-discomfort
 import thumbFlexikneeReview from "@/assets/guide-thumb-flexiknee-review-new.jpg";
 import thumbCompetitorsComparison from "@/assets/guide-thumb-competitors-comparison-new.jpg";
 import thumbInfraredGuide2026 from "@/assets/guide-thumb-infrared-guide-2026.jpg";
-import thumbHeatIceScience from "@/assets/guide-thumb-heat-ice-science.jpg";
-import thumbHeatIceSituations from "@/assets/guide-thumb-heat-ice-situations.jpg";
 import thumbSharpPainRelief from "@/assets/guide-thumb-sharp-pain-relief.jpg";
 import thumbIntermittentPain from "@/assets/guide-thumb-intermittent-pain.jpg";
 import thumbRunningShoesCauses from "@/assets/guide-thumb-running-shoes-causes.jpg";
@@ -277,14 +275,12 @@ import {
   flexikneeReview2026,
   flexikneeVsCompetitors2026,
   bestHeatedKneeMassagerArthritis,
-  heatOrIceKneePain,
   smartHeatedKneeBraces2026,
   heatRedLightTherapyBenefits2026,
   doKneeMassagersWork,
   runningShoesKneePain,
   sharpKneePainCauses,
   infraredKneeMassagerGuide2026,
-  heatOrIceKneePainSituations,
   sharpStabbingKneePainComfort,
   runningShoesKneePainDiscomfort,
   infraredVsHeatingPads,
@@ -353,6 +349,7 @@ import {
   howToSleepWithKneePain,
   airCompressionLegMassagers,
   kneeSleeveSizingGuide,
+  heatVsIceForKneesAuthoritative,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -762,7 +759,7 @@ const articles: Record<string, ArticleData> = {
           The most important factor is consistency. Whatever approach you choose, regular use as part of a daily routine tends to be more beneficial than occasional application. Building a sustainable habit matters more than choosing the "perfect" method.
         </p>
         <p>
-          For more on who these devices work best for, see our guide on <Link to="/guides/who-benefits-from-knee-therapy-devices" className="text-primary hover:underline">who benefits most from at-home knee therapy devices</Link>. If you're specifically comparing heat and ice, our detailed breakdown on <Link to="/guides/heat-or-ice-knee-pain-science" className="text-primary hover:underline">heat or ice for knee pain</Link> covers when each is appropriate. You can also explore how <Link to="/guides/infrared-vs-heating-pads" className="text-primary hover:underline">infrared compares to traditional heating pads</Link> for a deeper look at modern heat-based options. For building these therapies into your daily routine, check out our <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link>. And if warmth is your preferred approach, learn more about <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">when warmth helps and when it doesn't</Link>.
+          For more on who these devices work best for, see our guide on <Link to="/guides/who-benefits-from-knee-therapy-devices" className="text-primary hover:underline">who benefits most from at-home knee therapy devices</Link>. If you're specifically comparing heat and ice, our detailed breakdown on <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice for knee pain</Link> covers when each is appropriate. You can also explore how <Link to="/guides/infrared-vs-heating-pads" className="text-primary hover:underline">infrared compares to traditional heating pads</Link> for a deeper look at modern heat-based options. For building these therapies into your daily routine, check out our <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link>. And if warmth is your preferred approach, learn more about <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">when warmth helps and when it doesn't</Link>.
         </p>
       </>
     ),
@@ -5231,7 +5228,7 @@ const articles: Record<string, ArticleData> = {
           The <strong>heat vs ice for knee pain</strong> question does not have to be complicated. For most everyday knee comfort needs, warmth is the more practical and effective choice. Ice has its place for acute swelling, but for the kind of daily stiffness and achiness most people experience, a consistent warmth-based routine tends to offer the most noticeable difference over time.
         </p>
         <p>
-          Whether you are managing <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee discomfort after exercise</Link>, dealing with <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">clicking when walking</Link>, or simply looking for a way to keep your knees comfortable throughout the day, understanding <strong>when to use ice vs heat</strong> puts you in control of your own comfort routine. For science-backed comparisons, check out our guide on <Link to="/guides/heat-or-ice-knee-pain-science" className="text-primary hover:underline">heat or ice for knee pain: the science breakdown</Link>.
+          Whether you are managing <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee discomfort after exercise</Link>, dealing with <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">clicking when walking</Link>, or simply looking for a way to keep your knees comfortable throughout the day, understanding <strong>when to use ice vs heat</strong> puts you in control of your own comfort routine. For science-backed comparisons, check out our guide on <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice for knee pain: the science breakdown</Link>.
         </p>
       </>
     ),
@@ -6333,7 +6330,7 @@ const articles: Record<string, ArticleData> = {
            Rather than looking for a single solution, consider developing a collection of supportive habits: movement throughout the day, appropriate rest, comfortable environments, and perhaps some at-home tools that feel right for you.
          </p>
          <p>
-           For structured daily habit ideas, see our <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link>. If you're experiencing sharp or intermittent pain, our <Link to="/guides/sharp-knee-pain-causes" className="text-primary hover:underline">sharp knee pain causes guide</Link> explores common patterns. And for understanding which approach—heat or cold—works best for your situation, see our <Link to="/guides/heat-or-ice-knee-pain-science" className="text-primary hover:underline">heat or ice science breakdown</Link>. Strengthening exercises also play a key role—explore <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen your knees</Link>.
+           For structured daily habit ideas, see our <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link>. If you're experiencing sharp or intermittent pain, our <Link to="/guides/sharp-knee-pain-causes" className="text-primary hover:underline">sharp knee pain causes guide</Link> explores common patterns. And for understanding which approach—heat or cold—works best for your situation, see our <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice science breakdown</Link>. Strengthening exercises also play a key role—explore <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen your knees</Link>.
          </p>
 
         <p>
@@ -7546,7 +7543,7 @@ const articles: Record<string, ArticleData> = {
            Focus on understanding your personal patterns, developing consistent supportive habits, and creating environments that promote comfort. Small, sustainable daily practices often produce better long-term results than searching for single solutions.
          </p>
          <p>
-           For a practical guide to building daily habits, see our <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link>. To explore specific discomfort locations, our <Link to="/guides/knee-pain-location-map-2026" className="text-primary hover:underline">knee pain location map</Link> helps identify patterns. For understanding the heat vs ice question, see our <Link to="/guides/heat-or-ice-knee-pain-situations" className="text-primary hover:underline">heat or ice by situation guide</Link>. And for strengthening approaches, explore <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen your knees</Link>.
+           For a practical guide to building daily habits, see our <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link>. To explore specific discomfort locations, our <Link to="/guides/knee-pain-location-map-2026" className="text-primary hover:underline">knee pain location map</Link> helps identify patterns. For understanding the heat vs ice question, see our <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice by situation guide</Link>. And for strengthening approaches, explore <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen your knees</Link>.
          </p>
 
         <p>
@@ -8552,7 +8549,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, heatOrIceKneePain, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, heatOrIceKneePainSituations, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, clickingKneeWithoutPain, exercisesToRelieveKneePainAtHome, postExerciseKneePainGuide, kneeSwellingAfterExercise, soreKneesAfterWorkout, kneeRecoveryExercisesAfterWorkout, kneeAcheAfterLegWorkouts, burningKneesAfterExercise, homeRemediesKneePain, whatMakesKneePainWorse, weightAffectsKneePain, kneePainAfterExerciseNotDuring, cordlessHeatedKneeMassagers2026, bestInsolesKneePain2026, itBandFoamRollingGuide, howToSleepWithKneePain, airCompressionLegMassagers, kneeSleeveSizingGuide];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, clickingKneeWithoutPain, exercisesToRelieveKneePainAtHome, postExerciseKneePainGuide, kneeSwellingAfterExercise, soreKneesAfterWorkout, kneeRecoveryExercisesAfterWorkout, kneeAcheAfterLegWorkouts, burningKneesAfterExercise, homeRemediesKneePain, whatMakesKneePainWorse, weightAffectsKneePain, kneePainAfterExerciseNotDuring, cordlessHeatedKneeMassagers2026, bestInsolesKneePain2026, itBandFoamRollingGuide, howToSleepWithKneePain, airCompressionLegMassagers, kneeSleeveSizingGuide, heatVsIceForKneesAuthoritative];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -8636,17 +8633,15 @@ const GuideArticle = () => {
     "dateModified": getISODate(article.lastUpdated || article.publishedDate),
     "author": {
       "@type": "Organization",
-      "name": "FlexiKnee",
-      "url": "https://flexi-knee.com"
+      "name": "FlexiKnee Editorial Team",
+      "url": "https://flexi-knee.com/editorial-policy"
     },
     "publisher": {
       "@type": "Organization",
       "name": "FlexiKnee",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://flexi-knee.com/flexiknee-logo.png",
-        "width": 200,
-        "height": 60
+        "url": "https://flexi-knee.com/favicon-32.png"
       }
     },
     "inLanguage": "en",
@@ -9040,7 +9035,7 @@ const GuideArticle = () => {
         <meta property="og:site_name" content="FlexiKnee" />
         <meta property="article:published_time" content={getISODate(article.publishedDate)} />
         <meta property="article:modified_time" content={getISODate(article.lastUpdated || article.publishedDate)} />
-        <meta property="article:author" content="FlexiKnee" />
+        <meta property="article:author" content="FlexiKnee Editorial Team" />
         <meta property="article:section" content="Guides" />
         
         {/* Twitter Card Meta Tags */}
@@ -9101,6 +9096,14 @@ const GuideArticle = () => {
                 <h1 className="mb-4 text-2xl font-bold leading-tight tracking-tight text-foreground md:text-3xl lg:text-4xl">
                   {article.title}
                 </h1>
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500">
+                  <span>Prepared and edited by</span>
+                  <Link to="/editorial-policy" className="font-semibold text-blue-600 hover:underline">
+                    FlexiKnee Editorial Team
+                  </Link>
+                  <span aria-hidden="true">•</span>
+                  <span>General wellness education, not medical advice</span>
+                </div>
               </div>
             </div>
           </div>
@@ -9203,13 +9206,11 @@ const GuideArticle = () => {
                 "flexiknee-review-2026": thumbFlexikneeReview,
                 "flexiknee-vs-competitors-2026": thumbCompetitorsComparison,
                 "best-heated-knee-massager-arthritis": thumbArthritisMassager,
-                "heat-or-ice-knee-pain-science": thumbHeatIceScience,
                 "smart-heated-knee-braces-2026": thumbMassagerExpectations,
                 "heat-red-light-therapy-benefits-2026": thumbHeatRedlightBenefits,
                 "running-shoes-knee-pain-causes-fixes": thumbRunningShoesCauses,
                 "sharp-knee-pain-causes-relief": thumbSharpPainRelief,
                 "infrared-knee-massager-guide-2026": thumbInfraredGuide2026,
-                "heat-or-ice-knee-pain-situations": thumbHeatIceSituations,
                 "sharp-stabbing-knee-pain-comfort": thumbSharpStabbingComfort,
                 "running-shoes-knee-pain-discomfort": thumbRunningShoesDiscomfort,
                 "infrared-vs-heating-pads": thumbInfraredVsHeatingPads,

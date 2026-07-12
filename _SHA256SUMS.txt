@@ -1,0 +1,21 @@
+FlexiKnee Patch 01 file manifest
+
+6355c6d0d63300f690a2d3704aa638f828412c4db60376a3cad09aa390bdf4ae  ./PATCH_NOTES.md
+d7bcc0673765ef3f4f59c546834cf93e465aeda48098225b4db916324a718cfa  ./public/sitemap.xml
+ff5af5c3d895a9690ab65cbb43252a5d1713eb055af856b907bab056cb62605c  ./scripts/prerender.ts
+ba463f8a87f3800979e0cc12269bb820717695d9f448bbc40e31eeddd1fdbc65  ./src/App.tsx
+8a00a12a8d0f4f256341c55522c4d74b44d7b0ee2e0e9a78eb02581afabcd5e7  ./src/components/Footer.tsx
+13672cbfe3e10ba7423d007b3e0749ff3b06620583ef71e75b3472879e4748be  ./src/data/articles/heat-vs-ice-for-knees-authoritative.tsx
+67c1d735f600d27488e1882d6d01d5d7f06e09411fd5a0457fb427a1e6adea18  ./src/data/articles/home-remedies-knee-pain.tsx
+2e04e5ba4aff8eafe01a07c304a09e1b30933acf825e8cc2f27e18d94f55624b  ./src/data/articles/index.ts
+af208a9b28ec4452c66fe1991eb99f68cf321d24c973f53d860880f88282b375  ./src/data/articles/infrared-vs-heating-pads.tsx
+00b61431bd407fd6b48d4987579efaa4324b96a429598fd2b9b6d2b6c95976f9  ./src/data/articles/knee-pain-location-map-2026.tsx
+6939e0ee71875dba66516fac340ab53aae558b61310afa16f599f8f217215b36  ./src/data/articles/knee-warmth-daily-comfort.tsx
+d7555d4d861fe8cef9ff631b2f1f7f68406945d8e53788ee56954cdb92694ab3  ./src/data/articles/running-shoes-knee-pain-discomfort.tsx
+761c26b547eb587ed67087cac624ee085638ee4ca4a8b943480f260aaed89d6a  ./src/data/articles/why-do-my-knees-hurt-when-sleeping.tsx
+1ce4a29913b54b4795a6e5c77fabb608c30377630929149d956caaf4174f5f99  ./src/data/guides.ts
+72e1f415146c8619dea2021c74ee117832185d91dbf74c16ff803b05c1e173a4  ./src/pages/EditorialPolicy.tsx
+23928ce2f9e2454a3cdbdbe13fc03783a66992d6fffce3075767ee2e32001973  ./src/pages/GuideArticle.tsx
+0100283df1a133ba0dc8ddb4d86c2861412b8ce83342c260593244411d457288  ./src/pages/Guides.tsx
+51ac02972768bc43cb9e196c16efc60c57e219e64230044442063677905bd484  ./vercel.json
+6d823b883998f8170b538af471925d30829a7c4caf7a735cb65f87b7c9fa40e4  ./vite.config.ts

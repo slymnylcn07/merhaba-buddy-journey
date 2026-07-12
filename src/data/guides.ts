@@ -123,10 +123,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "heat-vs-ice-for-knees",
-    title: "Heat vs Ice for Knees: What Works Best Daily?",
-    description: "Compare heat and ice for knee comfort, understand when each approach may help, and learn how to incorporate them into daily life.",
-    readTime: 9,
-    lastModified: "2026-01-19",
+    title: "Heat or Ice for Knee Pain: A Practical Decision Guide",
+    description: "Use ice for recent swelling or injury and heat for stiffness without swelling. Compare timing, safety limits, common situations, and warning signs.",
+    readTime: 11,
+    lastModified: "2026-07-12",
   },
   {
     slug: "do-knee-massagers-work",
@@ -239,13 +239,6 @@ export const guidesData: GuideData[] = [
     title: "Best Heated Knee Massager for Arthritis (2026)",
     description: "Discover the best heated knee massagers for arthritis comfort in 2026. Learn why FlexiKnee ranks #1 with heat, red light, and vibration therapy combined.",
     readTime: 13,
-    lastModified: "2026-02-24",
-  },
-  {
-    slug: "heat-or-ice-knee-pain-science",
-    title: "Heat or Ice for Knee Pain? Science-Based Breakdown",
-    description: "Should you use heat or ice for knee pain? Complete science breakdown comparing both methods, plus why heat combined with red light therapy works better for lasting comfort.",
-    readTime: 12,
     lastModified: "2026-02-24",
   },
   {
@@ -719,7 +712,14 @@ export const guidesData: GuideData[] = [
     readTime: 12,
     lastModified: "2026-07-12",
   },
+
   {
+    slug: "compression-knee-sleeve-sizing-guide",
+    title: "Compression Knee Sleeves: Do They Work, and How to Size One Correctly",
+    description: "The science of knee compression, a measure-at-home sizing walkthrough, and the two-minute fit test that tells you whether your sleeve helps or hurts.",
+    readTime: 12,
+    lastModified: "2026-07-12",
+  },  {
     slug: "knee-compression-sleeve-sizing-guide",
     title: "Knee Compression Sleeve Sizing Guide: Measure Right, Choose Right",
     description: "How to measure your knee for a compression sleeve, read any size chart, handle in-between sizes, and confirm the fit with a four-point check.",
@@ -734,6 +734,7 @@ export const staticPages = [
   { path: "/shop", priority: 0.9, changefreq: "weekly" },
   { path: "/knee-quiz", priority: 0.7, changefreq: "monthly" },
   { path: "/contact", priority: 0.5, changefreq: "yearly" },
+  { path: "/editorial-policy", priority: 0.5, changefreq: "yearly" },
   { path: "/why-flexiknee", priority: 0.8, changefreq: "monthly" },
   { path: "/product/knee-massager-smart-red-light-and-massage-therapy", priority: 0.9, changefreq: "weekly" },
   { path: "/foundation", priority: 0.7, changefreq: "monthly" },

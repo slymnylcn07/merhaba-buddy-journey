@@ -120,6 +120,11 @@
       "permanent": true
     },
     {
+      "source": "/guides/heat-or-ice-knee-pain-science",
+      "destination": "/guides/heat-vs-ice-for-knees",
+      "permanent": true
+    },
+    {
       "source": "/collections/:path*",
       "destination": "/shop",
       "permanent": true
