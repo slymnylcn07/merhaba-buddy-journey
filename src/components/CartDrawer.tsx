@@ -20,8 +20,8 @@ import {
   Truck,
   RotateCcw, Sparkles } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
-import { getCountryName, getDeliveryWindow } from "@/lib/delivery-estimates";
 import { PaymentLogosRow } from "@/components/product-page-blocks";
+import { DeliveryEstimate } from "@/components/DeliveryEstimate";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { PRODUCT_RECS } from "@/lib/article-product-map";
 
@@ -38,47 +38,7 @@ const MAIN_HANDLE = PRODUCT_RECS.main.handle;
 const SLEEVE_HANDLE = PRODUCT_RECS.sleeve.handle;
 import { trackCartView } from "@/lib/shopify-analytics";
 
-const EXTENDED_DELIVERY_COUNTRIES = ["FI", "NL", "SE", "CH", "NO", "NZ", "AT", "BE", "DK"];
-
-type DeliveryInfo = {
-  startDate: string;
-  endDate: string;
-  minDays: number;
-  maxDays: number;
-};
-
-function addBusinessDays(date: Date, days: number) {
-  const result = new Date(date);
-  let added = 0;
-
-  while (added < days) {
-    result.setDate(result.getDate() + 1);
-    const day = result.getDay();
-    if (day !== 0 && day !== 6) added += 1;
-  }
-
-  return result;
-}
-
-function getDeliveryInfo(countryCode: string): DeliveryInfo {
-  const today = new Date();
-  const { min: minDays, max: maxDays } = getDeliveryWindow(countryCode);
-
-  const start = addBusinessDays(today, minDays);
-  const end = addBusinessDays(today, maxDays);
-  const formatOptions: Intl.DateTimeFormatOptions = { weekday: "short", day: "numeric", month: "short" };
-
-  return {
-    startDate: start.toLocaleDateString("en-GB", formatOptions),
-    endDate: end.toLocaleDateString("en-GB", formatOptions),
-    minDays,
-    maxDays,
-  };
-}
-
 export const CartDrawer = () => {
-  const [userCountry, setUserCountry] = useState<string>("US");
-  const [deliveryInfo, setDeliveryInfo] = useState<DeliveryInfo>(getDeliveryInfo("US"));
   const {
     items,
     isLoading,
@@ -88,19 +48,6 @@ export const CartDrawer = () => {
     removeItem,
     createCheckout,
   } = useCartStore();
-
-  useEffect(() => {
-    fetch("/api/geo")
-      .then((r) => (r.ok ? r.json() : { country: null }))
-      .then((d) => {
-        const countryCode = String(d.country || "US").toUpperCase();
-        setUserCountry(countryCode);
-        setDeliveryInfo(getDeliveryInfo(countryCode));
-      })
-      .catch(() => {
-        /* varsayilan US ile devam */
-      });
-  }, []);
 
   useEffect(() => {
     if (isOpen && items.length > 0) {
@@ -396,20 +343,11 @@ export const CartDrawer = () => {
                   )}
                 </div>
 
-                <div className="mt-4 rounded-[1.5rem] border border-blue-200 bg-gradient-to-br from-white to-blue-50 p-4">
-                  <div className="flex items-start gap-3">
-                    <div className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-2xl bg-blue-100 text-blue-700">
-                      <Truck className="h-4.5 w-4.5" />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-sm font-semibold uppercase tracking-[0.14em] text-blue-600">Estimated delivery</p>
-                      <p className="mt-1 text-base font-semibold text-slate-950">
-                        {getCountryName(userCountry)} · {deliveryInfo.startDate} – {deliveryInfo.endDate}
-                      </p>
-
-                    </div>
-                  </div>
-                </div>
+                <DeliveryEstimate
+                  compact
+                  freeShipping={cartQty >= 2 || subtotal >= 24.99}
+                  className="mt-3"
+                />
               </div>
 
               <div className="flex-shrink-0 border-t border-slate-200 bg-[#F7F8FC] pt-2">
