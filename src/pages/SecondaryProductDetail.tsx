@@ -14,12 +14,13 @@ import {
   ShoppingBag,
   Sparkles,
   Truck,
+  Star,
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { DeliveryEstimate } from "@/components/DeliveryEstimate";
-import { BenefitIconsRow, OfferSelector, PaymentOptionsRow, TrustStrip, ProductInfoAccordion } from "@/components/product-page-blocks";
+import { BenefitIconsRow, OfferSelector, PaymentOptionsRow, TrustStrip, ProductInfoAccordion, SizeChartTrigger } from "@/components/product-page-blocks";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { getProductPageConfig } from "@/data/product-page-config";
@@ -300,7 +301,11 @@ export default function SecondaryProductDetail() {
                   <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">{profile.badge}</span>
                   {pageConfig.reviewCount && (
                     <span className="flex items-center gap-1.5 text-sm font-medium text-slate-700">
-                      <span className="text-blue-600">★★★★★</span>
+                      <span className="flex items-center gap-0.5">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <Star key={star} className="h-4 w-4 fill-blue-600 text-blue-600" />
+                        ))}
+                      </span>
                       {pageConfig.rating} out of 5 ({pageConfig.reviewCount} reviews)
                     </span>
                   )}
@@ -321,7 +326,10 @@ export default function SecondaryProductDetail() {
                   if (option.values.length > 3) {
                     return (
                       <div key={option.name} className="mt-6">
-                        <p className="mb-2 text-sm font-semibold text-slate-900">{option.name}</p>
+                        <div className="mb-2 flex items-center justify-between">
+                          <p className="text-sm font-semibold text-slate-900">{option.name}</p>
+                          {option.name.toLowerCase() === "size" && <SizeChartTrigger profileKey={profile.key} />}
+                        </div>
                         <Select value={chosen} onValueChange={(value) => selectOption(option.name, value)}>
                           <SelectTrigger className="h-12 w-full rounded-2xl border-slate-300 bg-white px-4 text-sm font-medium text-slate-900 focus:ring-2 focus:ring-blue-500">
                             <SelectValue placeholder={`Select ${option.name.toLowerCase()}`} />
@@ -339,9 +347,12 @@ export default function SecondaryProductDetail() {
                   }
                   return (
                     <div key={option.name} className="mt-6">
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between gap-3">
                         <p className="text-sm font-semibold text-slate-900">{option.name}</p>
-                        <p className="text-xs text-slate-500">{chosen}</p>
+                        <span className="flex items-center gap-3">
+                          {option.name.toLowerCase() === "size" && <SizeChartTrigger profileKey={profile.key} />}
+                          <span className="text-xs text-slate-500">{chosen}</span>
+                        </span>
                       </div>
                       <div className="mt-3 flex flex-wrap gap-2">
                         {option.values.map((value) => (

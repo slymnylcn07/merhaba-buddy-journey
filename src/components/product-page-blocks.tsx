@@ -44,7 +44,7 @@ interface OfferSelectorProps {
 }
 
 const Badge = ({ children }: { children: React.ReactNode }) => (
-  <span className="rounded-md bg-emerald-100 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-emerald-700 sm:px-2 sm:text-[10px]">
+  <span className="whitespace-nowrap rounded-md bg-emerald-100 px-1.5 py-[3px] text-[8px] font-bold uppercase tracking-wide text-emerald-700 sm:px-2 sm:text-[10px]">
     {children}
   </span>
 );
@@ -113,14 +113,16 @@ export const OfferSelector = ({
               {selected && <span className="h-2.5 w-2.5 rounded-full bg-slate-950" />}
             </span>
             <span className="min-w-0 flex-1">
-              <span className="block text-base font-bold text-slate-950">{row.title}</span>
-              {row.badges.length > 0 && (
-                <span className="mt-1 flex flex-wrap items-center gap-1 sm:gap-1.5">
-                  {row.badges.map((b) => (
-                    <Badge key={b}>{b}</Badge>
-                  ))}
-                </span>
-              )}
+              <span className="flex items-center gap-2 sm:gap-2.5">
+                <span className="whitespace-nowrap text-base font-bold text-slate-950">{row.title}</span>
+                {row.badges.length > 0 && (
+                  <span className="flex min-w-0 flex-col items-start gap-0.5">
+                    {row.badges.map((b) => (
+                      <Badge key={b}>{b}</Badge>
+                    ))}
+                  </span>
+                )}
+              </span>
               {row.note && (
                 <span className="mt-1 hidden text-[11px] text-slate-400 sm:block">{row.note}</span>
               )}
@@ -241,3 +243,115 @@ export const ProductInfoAccordion = ({ howToUse, faqs }: ProductInfoAccordionPro
     </AccordionItem>
   </Accordion>
 );
+
+/* ------------------------------------------------------------------ */
+/* 6) Beden tablosu — yalnizca Size varyasyonu olan urunlerde          */
+/* ------------------------------------------------------------------ */
+
+import { Ruler } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Link as RouterLink } from "react-router-dom";
+
+interface SizeChartData {
+  title: string;
+  columns: string[];
+  rows: string[][];
+  note: string;
+  guideSlug?: string;
+  guideLabel?: string;
+}
+
+const SIZE_CHARTS: Record<string, SizeChartData> = {
+  "compression-sleeve": {
+    title: "Knee sleeve size chart",
+    columns: ["Size", "Thigh circumference", "Inches"],
+    rows: [
+      ["S", "30-36 cm", "12-14 in"],
+      ["M", "36-41 cm", "14-16 in"],
+      ["L", "41-46 cm", "16-18 in"],
+      ["XL", "46-51 cm", "18-20 in"],
+      ["XXL", "51-56 cm", "20-22 in"],
+    ],
+    note: "Measure around your thigh about 15 cm (6 in) above the center of your kneecap, with your leg straight and relaxed. Between sizes? Size down for sport, up for all-day comfort.",
+    guideSlug: "compression-knee-sleeve-sizing-guide",
+    guideLabel: "Read the full sizing guide",
+  },
+  insoles: {
+    title: "Insole size chart",
+    columns: ["Insole size", "EU", "US Men", "US Women", "Foot length"],
+    rows: [
+      ["35-36", "35-36", "3.5-4.5", "5-6", "22.5-23 cm"],
+      ["37-38", "37-38", "5-6", "6.5-7.5", "23.5-24 cm"],
+      ["39-40", "39-40", "6.5-7.5", "8-9", "24.5-25.5 cm"],
+      ["41-42", "41-42", "8-9", "9.5-10.5", "26-26.5 cm"],
+      ["43-44", "43-44", "9.5-10.5", "11-12", "27-28 cm"],
+      ["45-46", "45-46", "11-12", "12.5-13.5", "28.5-29 cm"],
+    ],
+    note: "Insoles are trim-to-fit: if you are between sizes, choose the larger size and trim along the printed guide lines using your shoe's original insole as a template.",
+  },
+};
+
+export const SizeChartTrigger = ({ profileKey }: { profileKey: string }) => {
+  const chart = SIZE_CHARTS[profileKey];
+  if (!chart) return null;
+
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <button
+          type="button"
+          className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 transition hover:text-blue-800 hover:underline"
+        >
+          <Ruler className="h-3.5 w-3.5" />
+          Size chart
+        </button>
+      </DialogTrigger>
+      <DialogContent className="max-w-md rounded-3xl border-slate-200 bg-white p-6">
+        <DialogHeader>
+          <DialogTitle className="text-lg font-semibold tracking-tight text-slate-950">
+            {chart.title}
+          </DialogTitle>
+        </DialogHeader>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b-2 border-slate-200 text-left">
+                {chart.columns.map((col) => (
+                  <th key={col} className="py-2 pr-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    {col}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {chart.rows.map((row) => (
+                <tr key={row[0]} className="border-b border-slate-100 last:border-0">
+                  {row.map((cell, i) => (
+                    <td key={i} className={`py-2.5 pr-3 ${i === 0 ? "font-bold text-slate-950" : "text-slate-600"}`}>
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-1 rounded-2xl bg-slate-50 px-4 py-3 text-xs leading-5 text-slate-600">{chart.note}</p>
+        {chart.guideSlug && (
+          <RouterLink
+            to={`/guides/${chart.guideSlug}`}
+            className="text-xs font-semibold text-blue-600 hover:underline"
+          >
+            {chart.guideLabel} →
+          </RouterLink>
+        )}
+      </DialogContent>
+    </Dialog>
+  );
+};

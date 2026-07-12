@@ -4,6 +4,22 @@ import { Link } from "react-router-dom";
 import { trackEvent } from "@/hooks/use-google-analytics";
 import deviceImage from "@/assets/flexiknee-device-main.jpg";
 import { pickProductForSlug, PRODUCT_RECS } from "@/lib/article-product-map";
+import { getProducts, ShopifyProduct } from "@/lib/shopify";
+import { toast } from "sonner";
+import { Mail } from "lucide-react";
+
+// Bulten kaydinda gosterilecek indirim kodu - Shopify'da ayni adla
+// %10'luk bir indirim kodu OLUSTURULMALI (Indirimler > Indirim kodu).
+const NEWSLETTER_DISCOUNT_CODE = "GUIDE10";
+
+// Urun gorselleri icin oturum ici tek istek (PremiumCTA ile ayni desen)
+let slideInProductsPromise: Promise<ShopifyProduct[]> | null = null;
+function getSlideInProducts() {
+  if (!slideInProductsPromise) {
+    slideInProductsPromise = getProducts(20).catch(() => []);
+  }
+  return slideInProductsPromise;
+}
 
 interface ArticleSlideInCTAProps {
   slug: string;
@@ -11,6 +27,8 @@ interface ArticleSlideInCTAProps {
 }
 
 const STORAGE_KEY = "flexiknee_article_cta_session";
+const STAGE2_KEY = "flexiknee_article_cta_stage2_session";
+const SUBSCRIBED_KEY = "flexiknee_newsletter_subscribed";
 
 function getContextualContent(slug: string): { hook: string; support: string } {
   const s = slug.toLowerCase();
@@ -143,49 +161,116 @@ function getContextualContent(slug: string): { hook: string; support: string } {
 
 export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isDismissed, setIsDismissed] = useState(false);
+  // stage 1: urun karti (%40) - stage 2: bulten + %10 kod (%68, yalnizca 1. asama kapatildiysa)
+  const [stage, setStage] = useState<1 | 2>(1);
+  const [stage1Done, setStage1Done] = useState(false);
+  const [stage2Done, setStage2Done] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
 
   const { hook, support } = getContextualContent(slug);
 
+  const [liveImage, setLiveImage] = useState<string | null>(null);
+
   useEffect(() => {
-    if (sessionStorage.getItem(STORAGE_KEY)) {
-      setIsDismissed(true);
-    }
+    if (sessionStorage.getItem(STORAGE_KEY)) setStage1Done(true);
+    if (
+      sessionStorage.getItem(STAGE2_KEY) ||
+      localStorage.getItem(SUBSCRIBED_KEY)
+    )
+      setStage2Done(true);
   }, []);
 
   const handleScroll = useCallback(() => {
-    if (isDismissed) return;
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollPercent = (window.scrollY / scrollHeight) * 100;
-    if (scrollPercent >= 38) {
+
+    if (!stage1Done && scrollPercent >= 40) {
+      setStage(1);
       setIsVisible(true);
-      window.removeEventListener("scroll", handleScroll);
+      return;
     }
-  }, [isDismissed]);
+    // 1. asama kapatildiysa, %68'de bulten asamasi (oturumda bir kez)
+    if (stage1Done && !stage2Done && !isVisible && scrollPercent >= 68) {
+      setStage(2);
+      setIsVisible(true);
+    }
+  }, [stage1Done, stage2Done, isVisible]);
 
   useEffect(() => {
-    if (isDismissed) return;
+    if (stage1Done && stage2Done) return;
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll, isDismissed]);
+  }, [handleScroll, stage1Done, stage2Done]);
+
+  const rec = pickProductForSlug(slug);
+
+  useEffect(() => {
+    let active = true;
+    getSlideInProducts().then((list) => {
+      if (!active) return;
+      const match = list.find(
+        (p) => decodeURIComponent(p.node.handle) === decodeURIComponent(rec.handle)
+      );
+      if (match) setLiveImage(match.node.images?.edges?.[0]?.node?.url || null);
+    });
+    return () => {
+      active = false;
+    };
+  }, [rec.handle]);
 
   const handleDismiss = () => {
     setIsVisible(false);
-    setIsDismissed(true);
-    sessionStorage.setItem(STORAGE_KEY, "true");
-    trackEvent("article_cta_dismissed", { slug });
+    if (stage === 1) {
+      setStage1Done(true);
+      sessionStorage.setItem(STORAGE_KEY, "true");
+      trackEvent("article_cta_dismissed", { slug });
+    } else {
+      setStage2Done(true);
+      sessionStorage.setItem(STAGE2_KEY, "true");
+      trackEvent("article_cta_stage2_dismissed", { slug });
+    }
   };
 
   const handleCTAClick = () => {
     trackEvent("article_cta_clicked", { slug });
+    setStage1Done(true);
+    setStage2Done(true);
     sessionStorage.setItem(STORAGE_KEY, "true");
+    sessionStorage.setItem(STAGE2_KEY, "true");
   };
 
-  if (isDismissed) return null;
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!emailOk) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+    setIsSending(true);
+    try {
+      const resp = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!resp.ok) throw new Error();
+      setSubscribed(true);
+      localStorage.setItem(SUBSCRIBED_KEY, "true");
+      trackEvent("article_cta_newsletter_signup", { slug });
+    } catch {
+      toast.error("Could not sign you up right now. Please try again.");
+    } finally {
+      setIsSending(false);
+    }
+  };
 
-  const rec = pickProductForSlug(slug);
+  if (stage1Done && stage2Done && !isVisible) return null;
+
   const isMain = rec.handle === PRODUCT_RECS.main.handle;
   const productShortName = rec.title.replace("FlexiKnee™ ", "");
+  const productImage = liveImage || (isMain ? deviceImage : null);
 
   return (
     <div
@@ -206,10 +291,58 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
           <X className="h-4 w-4" />
         </button>
 
+        {stage === 2 ? (
+          <div className="pr-7">
+            {subscribed ? (
+              <div>
+                <p className="text-sm font-bold leading-snug text-slate-950">You're in! Here is your code:</p>
+                <p className="mt-2 inline-block rounded-xl border-2 border-dashed border-blue-300 bg-blue-50 px-4 py-2 text-base font-black tracking-widest text-blue-700">
+                  {NEWSLETTER_DISCOUNT_CODE}
+                </p>
+                <p className="mt-2 text-xs leading-relaxed text-slate-500">
+                  10% off your first order, applied at checkout. We'll also email you when new guides go live.
+                </p>
+              </div>
+            ) : (
+              <div>
+                <div className="flex items-start gap-3">
+                  <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-blue-50">
+                    <Mail className="h-5 w-5 text-blue-600" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-sm font-bold leading-snug text-slate-950">
+                      Enjoying this guide? Get the next one first.
+                    </p>
+                    <p className="mt-1 text-xs leading-relaxed text-slate-500">
+                      Join the FlexiKnee list: new guides in your inbox, plus an extra 10% off any device.
+                    </p>
+                  </div>
+                </div>
+                <form onSubmit={handleNewsletterSubmit} className="mt-3 flex gap-2">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@example.com"
+                    className="min-w-0 flex-1 rounded-full border border-slate-300 px-4 py-2.5 text-xs outline-none transition focus:border-blue-500"
+                  />
+                  <button
+                    type="submit"
+                    disabled={isSending}
+                    className="whitespace-nowrap rounded-full bg-blue-600 px-4 py-2.5 text-xs font-bold text-white transition hover:bg-blue-700 disabled:opacity-60"
+                  >
+                    {isSending ? "..." : "Get 10% off"}
+                  </button>
+                </form>
+              </div>
+            )}
+          </div>
+        ) : (
+          <>
         <div className="flex items-start gap-3 pr-7">
-          {isMain ? (
+          {productImage ? (
             <img
-              src={deviceImage}
+              src={productImage}
               alt={rec.title}
               className="h-14 w-14 flex-shrink-0 rounded-2xl border border-slate-100 bg-slate-50 object-cover"
             />
@@ -247,6 +380,8 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
             60-sec quiz
           </Link>
         </div>
+          </>
+        )}
       </div>
     </div>
   );
