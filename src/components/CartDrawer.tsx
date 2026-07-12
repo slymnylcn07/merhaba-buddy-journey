@@ -462,14 +462,11 @@ export const CartDrawer = () => {
 
                   <PaymentLogosRow className="pb-0.5 pt-2" />
 
-                  <div className="mt-2 flex flex-col items-center rounded-2xl bg-emerald-50 px-4 py-3.5 text-center">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 shadow-sm">
-                      <ShieldCheck className="h-4.5 w-4.5 text-white" />
+                  <div className="mt-2 flex items-center justify-center gap-2 rounded-2xl bg-emerald-50 px-4 py-2.5">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-600">
+                      <ShieldCheck className="h-3.5 w-3.5 text-white" />
                     </span>
-                    <p className="mt-1.5 text-sm font-bold text-slate-950">Try It Risk-Free for 30 Days</p>
-                    <p className="mt-0.5 max-w-[300px] text-[11px] leading-4 text-slate-600">
-                      Use it daily for a full 30 days from delivery. If your knees don't feel the difference, we'll refund every penny.
-                    </p>
+                    <p className="text-xs font-bold text-slate-950">Try It Risk-Free for 30 Days</p>
                   </div>
                 </div>
               </div>
