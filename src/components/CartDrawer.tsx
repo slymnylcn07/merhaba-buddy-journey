@@ -18,8 +18,7 @@ import {
   Lock,
   Loader2,
   Truck,
-  RotateCcw,
-} from "lucide-react";
+  RotateCcw, Sparkles } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { getCountryName, getDeliveryWindow } from "@/lib/delivery-estimates";
 import { PaymentLogosRow } from "@/components/product-page-blocks";
@@ -146,6 +145,13 @@ export const CartDrawer = () => {
     [items],
   );
 
+  // Shopify'daki otomatik indirimlerin aynasi:
+  // 2 adet -> siparise %15, 3+ adet -> %20 (checkout'ta otomatik uygulanir)
+  const cartQty = items.reduce((sum, item) => sum + item.quantity, 0);
+  const bundlePct = cartQty >= 3 ? 20 : cartQty === 2 ? 15 : 0;
+  const bundleDiscount = (subtotal * bundlePct) / 100;
+  const totalAfterDiscount = subtotal - bundleDiscount;
+
   // ---- Cross-sell: sepettekine gore eslesen urun oner ----
   const [suggestion, setSuggestion] = useState<ShopifyProduct | null>(null);
   const { addItem } = useCartStore();
@@ -255,45 +261,7 @@ export const CartDrawer = () => {
           ) : (
             <>
               <div className="min-h-0 flex-1 overflow-y-auto pr-1">
-                {suggestion && (
-                    <div className="mb-3 rounded-[1.2rem] border border-blue-100 bg-blue-50/60 px-4 py-3">
-                      <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-blue-700">Pairs well with</p>
-                      <div className="mt-2 flex items-center gap-3">
-                        <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-100 bg-white">
-                          {suggestion.node.images?.edges?.[0]?.node && (
-                            <img
-                              src={suggestion.node.images.edges[0].node.url}
-                              alt={suggestion.node.title}
-                              className="h-full w-full object-contain p-1.5"
-                            />
-                          )}
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <p className="truncate text-sm font-semibold text-slate-950">{suggestion.node.title}</p>
-                          <p className="mt-0.5 text-xs leading-4 text-slate-500">
-                            {suggestionIsMain
-                              ? "Add the FlexiKnee device and unlock 20% off this accessory at checkout."
-                              : "Complete the routine: 20% off with your FlexiKnee, applied at checkout."}
-                          </p>
-                          <p className="mt-1 text-sm font-bold text-slate-950">
-                            {formatDisplayPrice(
-                              Number(suggestion.node.variants?.edges?.[0]?.node?.price?.amount || suggestion.node.priceRange.minVariantPrice.amount),
-                              suggestion.node.variants?.edges?.[0]?.node?.price?.currencyCode || suggestion.node.priceRange.minVariantPrice.currencyCode
-                            )}
-                          </p>
-                        </div>
-                        <button
-                          type="button"
-                          onClick={handleAddSuggestion}
-                          className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-slate-950 text-white transition hover:bg-blue-600"
-                          aria-label="Add to cart"
-                        >
-                          <Plus className="h-4 w-4" />
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                  <div className="space-y-3">
+                <div className="space-y-3">
                   {items.map((item) => {
                     const unitPrice = Number(item.price.amount || 0);
                     const lineTotal = unitPrice * item.quantity;
@@ -377,6 +345,55 @@ export const CartDrawer = () => {
                       </div>
                     );
                   })}
+                
+                  {suggestion && (
+                    <div className="rounded-[1.35rem] bg-gradient-to-br from-blue-500 via-blue-400 to-emerald-400 p-[1.5px] shadow-[0_18px_45px_-28px_rgba(37,99,235,0.55)]">
+                      <div className="rounded-[calc(1.35rem-1.5px)] bg-white px-4 py-3.5">
+                        <div className="flex items-center justify-between">
+                          <p className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-blue-700">
+                            <Sparkles className="h-3.5 w-3.5" />
+                            Bundle &amp; Save
+                          </p>
+                          <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-700">
+                            15% off order
+                          </span>
+                        </div>
+                        <div className="mt-3 flex items-center gap-3.5">
+                          <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-slate-50 ring-1 ring-slate-200">
+                            {suggestion.node.images?.edges?.[0]?.node && (
+                              <img
+                                src={suggestion.node.images.edges[0].node.url}
+                                alt={suggestion.node.title}
+                                className="h-full w-full object-contain p-1.5"
+                              />
+                            )}
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <p className="truncate text-sm font-semibold text-slate-950">{suggestion.node.title}</p>
+                            <p className="mt-0.5 text-xs leading-4 text-slate-500">
+                              {suggestionIsMain
+                                ? "Add the FlexiKnee device and your whole order gets 15% off at checkout."
+                                : "Complete the routine and unlock 15% off your entire order."}
+                            </p>
+                            <p className="mt-1.5 text-sm font-bold text-slate-950">
+                              {formatDisplayPrice(
+                                Number(suggestion.node.variants?.edges?.[0]?.node?.price?.amount || suggestion.node.priceRange.minVariantPrice.amount),
+                                suggestion.node.variants?.edges?.[0]?.node?.price?.currencyCode || suggestion.node.priceRange.minVariantPrice.currencyCode
+                              )}
+                            </p>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={handleAddSuggestion}
+                            className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-slate-950 text-white shadow-lg shadow-slate-950/25 transition hover:scale-105 hover:bg-blue-600"
+                            aria-label="Add to cart"
+                          >
+                            <Plus className="h-4 w-4" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="mt-4 rounded-[1.5rem] border border-blue-200 bg-gradient-to-br from-white to-blue-50 p-4">
@@ -398,9 +415,22 @@ export const CartDrawer = () => {
               <div className="flex-shrink-0 border-t border-slate-200 bg-[#F7F8FC] pt-2">
                 <div className="space-y-2.5 px-1">
                   <div className="rounded-[1.35rem] border border-slate-200 bg-white px-4 py-3 shadow-sm">
-                    <div className="flex items-center justify-between">
+                    {bundlePct > 0 && (
+                      <div className="mb-2 flex items-center justify-between rounded-2xl bg-emerald-50 px-4 py-2.5">
+                        <span className="text-xs font-semibold text-emerald-700">
+                          Bundle discount ({bundlePct}%) · applied automatically at checkout
+                        </span>
+                        <span className="text-sm font-bold text-emerald-700">-{formatDisplayPrice(bundleDiscount)}</span>
+                      </div>
+                    )}
+                                        <div className="flex items-center justify-between">
                       <span className="text-base font-semibold text-slate-950">Total</span>
-                      <span className="text-[1.85rem] font-bold leading-none text-slate-950">{formatDisplayPrice(subtotal)}</span>
+                      <span className="flex items-baseline gap-2.5">
+                        {bundlePct > 0 && (
+                          <s className="text-sm font-medium text-slate-400">{formatDisplayPrice(subtotal)}</s>
+                        )}
+                        <span className="text-[1.85rem] font-bold leading-none text-slate-950">{formatDisplayPrice(totalAfterDiscount)}</span>
+                      </span>
                     </div>
                   </div>
 
