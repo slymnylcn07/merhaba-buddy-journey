@@ -91,7 +91,7 @@ async function prerender() {
     "/shop",
     "/knee-quiz",
     "/contact",
-    "/editorial-policy",
+    "/editorial-team",
     "/why-flexiknee",
     "/foundation",
     "/track-order",

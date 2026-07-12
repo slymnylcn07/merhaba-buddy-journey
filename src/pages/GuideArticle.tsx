@@ -8634,7 +8634,7 @@ const GuideArticle = () => {
     "author": {
       "@type": "Organization",
       "name": "FlexiKnee Editorial Team",
-      "url": "https://flexi-knee.com/editorial-policy"
+      "url": "https://flexi-knee.com/editorial-team"
     },
     "publisher": {
       "@type": "Organization",
@@ -9096,13 +9096,11 @@ const GuideArticle = () => {
                 <h1 className="mb-4 text-2xl font-bold leading-tight tracking-tight text-foreground md:text-3xl lg:text-4xl">
                   {article.title}
                 </h1>
-                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500">
-                  <span>Prepared and edited by</span>
-                  <Link to="/editorial-policy" className="font-semibold text-blue-600 hover:underline">
+                <div className="mt-4 flex justify-center text-center text-sm text-slate-500">
+                  <span>By&nbsp;</span>
+                  <Link to="/editorial-team" className="font-semibold text-blue-600 hover:underline">
                     FlexiKnee Editorial Team
                   </Link>
-                  <span aria-hidden="true">•</span>
-                  <span>General wellness education, not medical advice</span>
                 </div>
               </div>
             </div>

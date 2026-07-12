@@ -80,6 +80,11 @@
       "permanent": true
     },
     {
+      "source": "/editorial-policy",
+      "destination": "/editorial-team",
+      "permanent": true
+    },
+    {
       "source": "/guides/running-shoes-knee-pain-causes-fixes",
       "destination": "/guides/best-running-shoes-knee-pain",
       "permanent": true

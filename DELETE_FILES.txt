@@ -1,0 +1,5 @@
+If Patch 01 was already applied, delete this obsolete file after copying Patch 01A:
+
+src/pages/EditorialPolicy.tsx
+
+If Patch 01 was never applied, there is nothing to delete.

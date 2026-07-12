@@ -51,8 +51,3 @@ Deployment tamamlandıktan sonra yalnızca şu URL için yeniden indeksleme iste
 `https://flexi-knee.com/guides/heat-vs-ice-for-knees`
 
 Eski redirect URL'leri için indeksleme isteği gönderme.
-
-## Duzeltme eki (inceleme sonrasi)
-- guides.ts: compression-knee-sleeve-sizing-guide listesi girdisi geri eklendi (onceki pakette dusen kayit).
-- heat-vs-ice-authoritative + EditorialPolicy: 10 adet em-dash site kuralina gore temizlendi.
-- sitemap.xml yeniden uretildi (120 URL: +editorial-policy, +sleeve-sizing, -2 duplicate).
