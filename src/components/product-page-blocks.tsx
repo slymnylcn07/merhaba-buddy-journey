@@ -156,23 +156,27 @@ const PAYMENT_LOGOS = [
   { label: "PayPal", src: "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg", className: "h-4 w-auto" },
 ];
 
+export const PaymentLogosRow = ({ className = "" }: { className?: string }) => (
+  <div className={`flex flex-wrap items-center justify-center gap-x-5 gap-y-2.5 ${className}`}>
+    {PAYMENT_LOGOS.map((logo) => (
+      <img
+        key={logo.label}
+        className={`${logo.className} opacity-80 transition hover:opacity-100`}
+        src={logo.src}
+        alt={logo.label}
+        loading="lazy"
+      />
+    ))}
+    <span className="rounded-[5px] bg-black px-2 py-[3px] text-[10px] font-semibold leading-none tracking-tight text-white">
+      Apple Pay
+    </span>
+  </div>
+);
+
 export const PaymentOptionsRow = () => (
   <div className="mt-5">
     <p className="text-center text-xs font-medium text-slate-500">More payment options</p>
-    <div className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2.5">
-      {PAYMENT_LOGOS.map((logo) => (
-        <img
-          key={logo.label}
-          className={`${logo.className} opacity-80 transition hover:opacity-100`}
-          src={logo.src}
-          alt={logo.label}
-          loading="lazy"
-        />
-      ))}
-      <span className="rounded-[5px] bg-black px-2 py-[3px] text-[10px] font-semibold leading-none tracking-tight text-white">
-        Apple Pay
-      </span>
-    </div>
+    <PaymentLogosRow className="mt-3" />
   </div>
 );
 
@@ -240,7 +244,7 @@ export const ProductInfoAccordion = ({ howToUse, faqs }: ProductInfoAccordionPro
       </AccordionTrigger>
       <AccordionContent className="text-sm text-slate-600">
         <p>
-          Free shipping on orders over $24.99. Delivery typically takes 7–12 business days to the US and UK, 8–14 to most other regions. Every order is covered by our 30-day return policy, counted from the day your order is delivered.
+          Free shipping on orders over $24.99. Delivery typically takes 6-7 business days to the US, UK, Europe, Australia and New Zealand, 7-8 to Canada, and 5-6 to Singapore; other regions take 10-18 business days. Every order is covered by our 30-day return policy, counted from the day your order is delivered.
         </p>
       </AccordionContent>
     </AccordionItem>
@@ -273,15 +277,13 @@ interface SizeChartData {
 const SIZE_CHARTS: Record<string, SizeChartData> = {
   "compression-sleeve": {
     title: "Knee sleeve size chart",
-    columns: ["Size", "Thigh circumference", "Inches"],
+    columns: ["Size", "Length", "Upper width", "Bottom width"],
     rows: [
-      ["S", "30-36 cm", "12-14 in"],
-      ["M", "36-41 cm", "14-16 in"],
-      ["L", "41-46 cm", "16-18 in"],
-      ["XL", "46-51 cm", "18-20 in"],
-      ["XXL", "51-56 cm", "20-22 in"],
+      ["M", "26.5 cm / 10.43 in", "15 cm / 5.91 in", "13 cm / 5.12 in"],
+      ["L", "27 cm / 10.63 in", "16.5 cm / 6.5 in", "14.5 cm / 5.71 in"],
+      ["XL", "27 cm / 10.63 in", "18 cm / 7.09 in", "15.5 cm / 6.1 in"],
     ],
-    note: "Measure around your thigh about 15 cm (6 in) above the center of your kneecap, with your leg straight and relaxed. Between sizes? Size down for sport, up for all-day comfort.",
+    note: "Widths are measured with the sleeve laid flat; the knit stretches to fit. To choose, measure your leg circumference about 10 cm (4 in) above the knee and compare it to roughly twice the upper width. If you land between sizes, the manufacturer recommends the smaller size for a secure fit. A 1-3 cm variance from manual measurement is normal.",
     guideSlug: "compression-knee-sleeve-sizing-guide",
     guideLabel: "Read the full sizing guide",
   },

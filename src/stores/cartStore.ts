@@ -13,6 +13,10 @@ export interface CartItem {
     amount: string;
     currencyCode: string;
   };
+  compareAtPrice?: {
+    amount: string;
+    currencyCode: string;
+  } | null;
   quantity: number;
   selectedOptions: Array<{
     name: string;
@@ -51,18 +55,17 @@ export const useCartStore = create<CartStore>()(
 
       addItem: (item) => {
         const { items } = get();
-        const currentTotal = items.reduce((sum, i) => sum + i.quantity, 0);
         const existingItem = items.find(i => i.variantId === item.variantId);
-        
-        // Enforce max 2 items total
-        const newQuantity = existingItem 
-          ? existingItem.quantity + item.quantity 
-          : item.quantity;
-        const newTotal = currentTotal - (existingItem?.quantity || 0) + newQuantity;
-        
-        if (newTotal > 2) {
-          return; // Don't add if it exceeds limit
+
+        // Varyant basina en fazla 2 adet (farkli urunler birlikte eklenebilir)
+        const newQuantity = Math.min(
+          2,
+          (existingItem?.quantity || 0) + item.quantity
+        );
+        if (existingItem && existingItem.quantity >= 2) {
+          return;
         }
+        item = { ...item, quantity: existingItem ? newQuantity - existingItem.quantity : newQuantity };
         
         if (existingItem) {
           set({

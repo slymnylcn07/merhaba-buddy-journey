@@ -21,7 +21,22 @@ import {
   RotateCcw,
 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
-import { CurrencyCode, detectUserCountry, getCurrencyForCountry, convertPrice, getCountryName } from "@/lib/currency";
+import { getCountryName, getDeliveryWindow } from "@/lib/delivery-estimates";
+import { PaymentLogosRow } from "@/components/product-page-blocks";
+import { getProducts, ShopifyProduct } from "@/lib/shopify";
+import { PRODUCT_RECS } from "@/lib/article-product-map";
+
+// Sepet onerisi icin urunleri oturumda bir kez cek
+let cartProductsPromise: Promise<ShopifyProduct[]> | null = null;
+function getCartSuggestionProducts() {
+  if (!cartProductsPromise) {
+    cartProductsPromise = getProducts(20).catch(() => []);
+  }
+  return cartProductsPromise;
+}
+
+const MAIN_HANDLE = PRODUCT_RECS.main.handle;
+const SLEEVE_HANDLE = PRODUCT_RECS.sleeve.handle;
 import { trackCartView } from "@/lib/shopify-analytics";
 
 const EXTENDED_DELIVERY_COUNTRIES = ["FI", "NL", "SE", "CH", "NO", "NZ", "AT", "BE", "DK"];
@@ -48,8 +63,7 @@ function addBusinessDays(date: Date, days: number) {
 
 function getDeliveryInfo(countryCode: string): DeliveryInfo {
   const today = new Date();
-  const minDays = EXTENDED_DELIVERY_COUNTRIES.includes(countryCode) ? 7 : 5;
-  const maxDays = EXTENDED_DELIVERY_COUNTRIES.includes(countryCode) ? 10 : 8;
+  const { min: minDays, max: maxDays } = getDeliveryWindow(countryCode);
 
   const start = addBusinessDays(today, minDays);
   const end = addBusinessDays(today, maxDays);
@@ -64,9 +78,8 @@ function getDeliveryInfo(countryCode: string): DeliveryInfo {
 }
 
 export const CartDrawer = () => {
-  const [userCurrency, setUserCurrency] = useState<CurrencyCode>("GBP");
-  const [userCountry, setUserCountry] = useState<string>("GB");
-  const [deliveryInfo, setDeliveryInfo] = useState<DeliveryInfo>(getDeliveryInfo("GB"));
+  const [userCountry, setUserCountry] = useState<string>("US");
+  const [deliveryInfo, setDeliveryInfo] = useState<DeliveryInfo>(getDeliveryInfo("US"));
   const {
     items,
     isLoading,
@@ -78,15 +91,16 @@ export const CartDrawer = () => {
   } = useCartStore();
 
   useEffect(() => {
-    const detectCurrency = async () => {
-      const countryCode = await detectUserCountry();
-      const detectedCurrency = getCurrencyForCountry(countryCode);
-      setUserCurrency(detectedCurrency);
-      setUserCountry(countryCode);
-      setDeliveryInfo(getDeliveryInfo(countryCode));
-    };
-
-    detectCurrency();
+    fetch("/api/geo")
+      .then((r) => (r.ok ? r.json() : { country: null }))
+      .then((d) => {
+        const countryCode = String(d.country || "US").toUpperCase();
+        setUserCountry(countryCode);
+        setDeliveryInfo(getDeliveryInfo(countryCode));
+      })
+      .catch(() => {
+        /* varsayilan US ile devam */
+      });
   }, []);
 
   useEffect(() => {
@@ -111,25 +125,74 @@ export const CartDrawer = () => {
 
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
 
-  const formatDisplayPrice = (price: number) => {
+  const cartCurrency = items[0]?.price.currencyCode || "USD";
+
+  const formatDisplayPrice = (price: number, currencyCode?: string) => {
+    const code = currencyCode || cartCurrency;
     try {
-      return new Intl.NumberFormat("en-GB", {
+      return new Intl.NumberFormat("en-US", {
         style: "currency",
-        currency: userCurrency,
+        currency: code,
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
       }).format(price);
     } catch {
-      return `${userCurrency} ${price.toFixed(2)}`;
+      return `${code} ${price.toFixed(2)}`;
     }
   };
 
-  const getConvertedUnitPrice = (rawAmount: string) => convertPrice(Number(rawAmount || 0), userCurrency);
-
   const subtotal = useMemo(
-    () => items.reduce((sum, item) => sum + getConvertedUnitPrice(item.price.amount) * item.quantity, 0),
-    [items, userCurrency],
+    () => items.reduce((sum, item) => sum + Number(item.price.amount || 0) * item.quantity, 0),
+    [items],
   );
+
+  // ---- Cross-sell: sepettekine gore eslesen urun oner ----
+  const [suggestion, setSuggestion] = useState<ShopifyProduct | null>(null);
+  const { addItem } = useCartStore();
+
+  useEffect(() => {
+    if (!isOpen || items.length === 0) {
+      setSuggestion(null);
+      return;
+    }
+    const handlesInCart = items.map((i) => decodeURIComponent(i.product.node.handle));
+    const hasMain = handlesInCart.includes(decodeURIComponent(MAIN_HANDLE));
+    // Ana cihaz sepette -> sleeve oner; degilse -> ana cihazi oner
+    const targetHandle = hasMain ? SLEEVE_HANDLE : MAIN_HANDLE;
+    if (handlesInCart.includes(decodeURIComponent(targetHandle))) {
+      setSuggestion(null);
+      return;
+    }
+    let active = true;
+    getCartSuggestionProducts().then((list) => {
+      if (!active) return;
+      const match = list.find(
+        (p) => decodeURIComponent(p.node.handle) === decodeURIComponent(targetHandle)
+      );
+      setSuggestion(match || null);
+    });
+    return () => {
+      active = false;
+    };
+  }, [isOpen, items]);
+
+  const handleAddSuggestion = () => {
+    if (!suggestion) return;
+    const variant = suggestion.node.variants?.edges?.[0]?.node;
+    if (!variant) return;
+    addItem({
+      product: suggestion,
+      variantId: variant.id,
+      variantTitle: variant.title,
+      price: variant.price,
+      compareAtPrice: variant.compareAtPrice || null,
+      quantity: 1,
+      selectedOptions: variant.selectedOptions || [],
+    });
+  };
+
+  const suggestionIsMain =
+    suggestion && decodeURIComponent(suggestion.node.handle) === decodeURIComponent(MAIN_HANDLE);
 
   const handleCheckout = async () => {
     if (items.length === 0) {
@@ -192,10 +255,50 @@ export const CartDrawer = () => {
           ) : (
             <>
               <div className="min-h-0 flex-1 overflow-y-auto pr-1">
-                <div className="space-y-3">
+                {suggestion && (
+                    <div className="mb-3 rounded-[1.2rem] border border-blue-100 bg-blue-50/60 px-4 py-3">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-blue-700">Pairs well with</p>
+                      <div className="mt-2 flex items-center gap-3">
+                        <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-100 bg-white">
+                          {suggestion.node.images?.edges?.[0]?.node && (
+                            <img
+                              src={suggestion.node.images.edges[0].node.url}
+                              alt={suggestion.node.title}
+                              className="h-full w-full object-contain p-1.5"
+                            />
+                          )}
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate text-sm font-semibold text-slate-950">{suggestion.node.title}</p>
+                          <p className="mt-0.5 text-xs leading-4 text-slate-500">
+                            {suggestionIsMain
+                              ? "Add the FlexiKnee device and unlock 20% off this accessory at checkout."
+                              : "Complete the routine: 20% off with your FlexiKnee, applied at checkout."}
+                          </p>
+                          <p className="mt-1 text-sm font-bold text-slate-950">
+                            {formatDisplayPrice(
+                              Number(suggestion.node.variants?.edges?.[0]?.node?.price?.amount || suggestion.node.priceRange.minVariantPrice.amount),
+                              suggestion.node.variants?.edges?.[0]?.node?.price?.currencyCode || suggestion.node.priceRange.minVariantPrice.currencyCode
+                            )}
+                          </p>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={handleAddSuggestion}
+                          className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-slate-950 text-white transition hover:bg-blue-600"
+                          aria-label="Add to cart"
+                        >
+                          <Plus className="h-4 w-4" />
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  <div className="space-y-3">
                   {items.map((item) => {
-                    const unitPrice = getConvertedUnitPrice(item.price.amount);
+                    const unitPrice = Number(item.price.amount || 0);
                     const lineTotal = unitPrice * item.quantity;
+                    const compareUnit = item.compareAtPrice?.amount ? Number(item.compareAtPrice.amount) : null;
+                    const compareTotal = compareUnit && compareUnit > unitPrice ? compareUnit * item.quantity : null;
                     const visibleOptions = item.selectedOptions.filter((option) => option.value.toLowerCase() !== "default title");
 
                     return (
@@ -218,9 +321,14 @@ export const CartDrawer = () => {
                                 {visibleOptions.map((option) => option.value).join(" • ")}
                               </p>
                             )}
-                            <p className="mt-3 text-xl font-bold text-slate-950">{formatDisplayPrice(lineTotal)}</p>
+                            <p className="mt-3 flex items-baseline gap-2">
+                              {compareTotal && (
+                                <s className="text-sm font-medium text-slate-400">{formatDisplayPrice(compareTotal, item.price.currencyCode)}</s>
+                              )}
+                              <span className="text-xl font-bold text-slate-950">{formatDisplayPrice(lineTotal, item.price.currencyCode)}</span>
+                            </p>
                             {item.quantity > 1 && (
-                              <p className="text-xs text-slate-500">{formatDisplayPrice(unitPrice)} each</p>
+                              <p className="text-xs text-slate-500">{formatDisplayPrice(unitPrice, item.price.currencyCode)} each</p>
                             )}
                           </div>
                         </div>
@@ -314,23 +422,7 @@ export const CartDrawer = () => {
                     )}
                   </Button>
 
-                  <div className="grid grid-cols-7 gap-1 pb-0.5 pt-1">
-                    {[
-                      { label: "Shop Pay", src: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Shop_Pay_logo.svg", className: "h-3 w-auto max-w-[34px]" },
-                      { label: "Visa", src: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg", className: "h-2.5 w-auto max-w-[28px]" },
-                      { label: "Mastercard", src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg", className: "h-3.5 w-auto max-w-[24px]" },
-                      { label: "American Express", src: "https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg", className: "h-2.5 w-auto max-w-[30px]" },
-                      { label: "Google Pay", src: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg", className: "h-2.5 w-auto max-w-[31px]" },
-                      { label: "PayPal", src: "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg", className: "h-3 w-auto max-w-[29px]" },
-                    ].map((logo) => (
-                      <div key={logo.label} className="flex h-9 items-center justify-center rounded-lg border border-slate-200 bg-white px-1 shadow-sm">
-                        <img className={logo.className} src={logo.src} alt={logo.label} />
-                      </div>
-                    ))}
-                    <div className="flex h-9 items-center justify-center rounded-lg border border-slate-200 bg-black px-1 shadow-sm">
-                      <span className="text-[10px] font-semibold tracking-tight text-white">Apple Pay</span>
-                    </div>
-                  </div>
+                  <PaymentLogosRow className="pb-0.5 pt-2" />
 
                   <div className="flex justify-center pt-2">
                     <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-900 shadow-sm">

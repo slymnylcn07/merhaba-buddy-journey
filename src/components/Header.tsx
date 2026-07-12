@@ -1,4 +1,5 @@
 import { CartDrawer } from "./CartDrawer";
+import { MarketSelector } from "./MarketSelector";
 import { SHOPIFY_CUSTOMER_ACCOUNT_URL } from "@/lib/shopify-config";
 import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
 import { Menu, Search, User } from "lucide-react";
@@ -100,6 +101,9 @@ export const Header = () => {
           <a href={SHOPIFY_CUSTOMER_ACCOUNT_URL} target="_blank" rel="noopener noreferrer" aria-label="My Account" className="hidden h-9 w-9 items-center justify-center rounded-full text-slate-600 transition hover:bg-slate-100 hover:text-blue-600 sm:inline-flex">
             <User className="h-4 w-4" />
           </a>
+          <span className="hidden sm:block">
+            <MarketSelector compact />
+          </span>
           <CartDrawer />
         </div>
       </div>

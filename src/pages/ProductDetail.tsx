@@ -189,6 +189,7 @@ export default function ProductDetail() {
       variantId: variant.id,
       variantTitle: variant.title,
       price: variant.price,
+      compareAtPrice: variant.compareAtPrice || null,
       quantity: bundleQty,
       selectedOptions: variant.selectedOptions,
     };
@@ -326,7 +327,7 @@ export default function ProductDetail() {
                   </Button>
                 </div>
 
-                <DeliveryEstimate className="mt-4 justify-center" />
+                <DeliveryEstimate className="mt-4" freeShipping={pageConfig.freeShipOnSingle || bundleQty === 2} />
 
                 <PaymentOptionsRow />
 

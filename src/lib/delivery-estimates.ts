@@ -1,34 +1,78 @@
 /**
- * Ulkeye gore tahmini teslimat suresi (is gunu).
- * Kaynak: Shipping Policy sayfasindaki taahhutlerle uyumlu tutuldu
- * (US/UK: 7-12 is gunu). Sureler degisirse SADECE burayi guncelleyin.
+ * Ulkeye gore tahmini teslimat suresi (is gunu) + saat dilimi.
+ * Sureler degisirse SADECE burayi guncelleyin.
  */
 
-interface DeliveryWindow {
+export interface DeliveryWindow {
   min: number;
   max: number;
 }
 
-const FAST: DeliveryWindow = { min: 7, max: 12 };
-const STANDARD: DeliveryWindow = { min: 8, max: 14 };
+const D_5_6: DeliveryWindow = { min: 5, max: 6 };
+const D_6_7: DeliveryWindow = { min: 6, max: 7 };
+const D_7_8: DeliveryWindow = { min: 7, max: 8 };
 export const DEFAULT_WINDOW: DeliveryWindow = { min: 10, max: 18 };
 
 const COUNTRY_WINDOWS: Record<string, DeliveryWindow> = {
-  US: FAST,
-  GB: FAST,
-  CA: STANDARD,
-  AU: STANDARD,
-  NZ: STANDARD,
-  DE: STANDARD,
-  FR: STANDARD,
-  NL: STANDARD,
-  BE: STANDARD,
-  IE: STANDARD,
-  ES: STANDARD,
-  IT: STANDARD,
-  AT: STANDARD,
-  SE: STANDARD,
-  DK: STANDARD,
+  US: D_6_7,
+  GB: D_6_7,
+  CA: D_7_8,
+  AU: D_6_7,
+  NZ: D_6_7,
+  SG: D_5_6,
+  // Avrupa ulkeleri (ayri ayri, hepsi 6-7 is gunu)
+  DE: D_6_7,
+  FR: D_6_7,
+  ES: D_6_7,
+  IT: D_6_7,
+  NL: D_6_7,
+  BE: D_6_7,
+  IE: D_6_7,
+  AT: D_6_7,
+  SE: D_6_7,
+  DK: D_6_7,
+  FI: D_6_7,
+  PT: D_6_7,
+  PL: D_6_7,
+  CZ: D_6_7,
+  GR: D_6_7,
+  HU: D_6_7,
+  RO: D_6_7,
+  LU: D_6_7,
+  SI: D_6_7,
+  SK: D_6_7,
+  HR: D_6_7,
+  EE: D_6_7,
+  LV: D_6_7,
+  LT: D_6_7,
+};
+
+/** Geri sayim icin ulke -> temsilci saat dilimi */
+const COUNTRY_TIMEZONES: Record<string, string> = {
+  US: "America/New_York",
+  GB: "Europe/London",
+  CA: "America/Toronto",
+  AU: "Australia/Sydney",
+  NZ: "Pacific/Auckland",
+  SG: "Asia/Singapore",
+  TR: "Europe/Istanbul",
+  DE: "Europe/Berlin",
+  FR: "Europe/Paris",
+  ES: "Europe/Madrid",
+  IT: "Europe/Rome",
+  NL: "Europe/Amsterdam",
+  BE: "Europe/Brussels",
+  IE: "Europe/Dublin",
+  AT: "Europe/Vienna",
+  SE: "Europe/Stockholm",
+  DK: "Europe/Copenhagen",
+  FI: "Europe/Helsinki",
+  PT: "Europe/Lisbon",
+  PL: "Europe/Warsaw",
+  CZ: "Europe/Prague",
+  GR: "Europe/Athens",
+  HU: "Europe/Budapest",
+  RO: "Europe/Bucharest",
 };
 
 export function getDeliveryWindow(countryCode: string | null): DeliveryWindow {
@@ -43,4 +87,41 @@ export function getCountryName(countryCode: string): string {
   } catch {
     return countryCode;
   }
+}
+
+/** Bugunden itibaren n is gunu sonrasi (hafta sonlari atlanir) */
+export function addBusinessDays(start: Date, days: number): Date {
+  const date = new Date(start);
+  let added = 0;
+  while (added < days) {
+    date.setDate(date.getDate() + 1);
+    const dow = date.getDay();
+    if (dow !== 0 && dow !== 6) added += 1;
+  }
+  return date;
+}
+
+export function formatDeliveryDate(date: Date): string {
+  return date.toLocaleDateString("en-GB", {
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+  });
+}
+
+/**
+ * Hedef ulkenin YEREL gece yarisina kalan sure.
+ * Saat dilimi bilinmiyorsa ziyaretcinin kendi yerel gece yarisi kullanilir.
+ */
+export function hoursUntilMidnight(countryCode: string | null): { hours: number; minutes: number } {
+  const tz = countryCode ? COUNTRY_TIMEZONES[countryCode.toUpperCase()] : undefined;
+  let now: Date;
+  try {
+    now = tz ? new Date(new Date().toLocaleString("en-US", { timeZone: tz })) : new Date();
+  } catch {
+    now = new Date();
+  }
+  const minutesPassed = now.getHours() * 60 + now.getMinutes();
+  const remaining = 24 * 60 - minutesPassed;
+  return { hours: Math.floor(remaining / 60), minutes: remaining % 60 };
 }

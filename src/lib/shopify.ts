@@ -1,3 +1,4 @@
+import { getMarketCountry } from "@/lib/market";
 import {
   SHOPIFY_STORE_DOMAIN as SHOPIFY_STORE_PERMANENT_DOMAIN,
   SHOPIFY_STOREFRONT_URL,
@@ -80,7 +81,7 @@ interface CartCreateData {
 }
 
 const STOREFRONT_QUERY = `
-  query GetProducts($first: Int!) {
+  query GetProducts($first: Int!, $country: CountryCode!) @inContext(country: $country) {
     products(first: $first) {
       edges {
         node {
@@ -138,7 +139,7 @@ const STOREFRONT_QUERY = `
 
 
 const PRODUCT_BY_HANDLE_QUERY = `
-  query GetProductByHandle($handle: String!) {
+  query GetProductByHandle($handle: String!, $country: CountryCode!) @inContext(country: $country) {
     product(handle: $handle) {
       id
       title
@@ -190,7 +191,7 @@ const PRODUCT_BY_HANDLE_QUERY = `
 `;
 
 const CART_CREATE_MUTATION = `
-  mutation cartCreate($input: CartInput!) {
+  mutation cartCreate($input: CartInput!, $country: CountryCode!) @inContext(country: $country) {
     cartCreate(input: $input) {
       cart {
         id
@@ -271,10 +272,10 @@ export async function storefrontApiRequest<T>(
   return data;
 }
 
-export async function getProducts(first: number = 10): Promise<ShopifyProduct[]> {
+export async function getProducts(first: number = 10, country?: string): Promise<ShopifyProduct[]> {
   const response = await storefrontApiRequest<{ products: { edges: ShopifyProduct[] } }>(
     STOREFRONT_QUERY,
-    { first }
+    { first, country: country || getMarketCountry() }
   );
   return response.data.products.edges;
 }
@@ -284,7 +285,7 @@ export async function getProductByHandle(handle: string): Promise<ShopifyProduct
 
   const response = await storefrontApiRequest<{ product: ShopifyProduct['node'] | null }>(
     PRODUCT_BY_HANDLE_QUERY,
-    { handle }
+    { handle, country: getMarketCountry() }
   );
   const node = response.data.product;
 
@@ -298,8 +299,10 @@ export async function createStorefrontCheckout(items: CheckoutLineItem[]): Promi
       merchandiseId: item.variantId,
     }));
 
+    const country = getMarketCountry();
     const cartData = await storefrontApiRequest<CartCreateData>(CART_CREATE_MUTATION, {
-      input: { lines },
+      input: { lines, buyerIdentity: { countryCode: country } },
+      country,
     });
 
     if (cartData.data.cartCreate.userErrors.length > 0) {

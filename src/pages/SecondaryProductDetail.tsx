@@ -126,6 +126,7 @@ export default function SecondaryProductDetail() {
       variantId: selectedVariant.id,
       variantTitle: selectedVariant.title,
       price: selectedVariant.price,
+      compareAtPrice: selectedVariant.compareAtPrice || null,
       quantity,
       selectedOptions: selectedVariant.selectedOptions,
     };
@@ -408,7 +409,7 @@ export default function SecondaryProductDetail() {
                   </button>
                 </div>
 
-                <DeliveryEstimate className="mt-4 justify-center" />
+                <DeliveryEstimate className="mt-4" freeShipping={pageConfig.freeShipOnSingle || quantity === 2} />
 
                 <PaymentOptionsRow />
 

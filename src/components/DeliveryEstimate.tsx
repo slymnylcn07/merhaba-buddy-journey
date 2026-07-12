@@ -3,6 +3,9 @@ import { Truck } from "lucide-react";
 import {
   getDeliveryWindow,
   getCountryName,
+  addBusinessDays,
+  formatDeliveryDate,
+  hoursUntilMidnight,
   DEFAULT_WINDOW,
 } from "@/lib/delivery-estimates";
 
@@ -18,13 +21,20 @@ function fetchCountry(): Promise<string | null> {
   return geoPromise;
 }
 
+interface DeliveryEstimateProps {
+  className?: string;
+  /** Kart basligi "Free Standard Delivery" mi "Standard Delivery" mi olsun */
+  freeShipping?: boolean;
+}
+
 /**
- * "Estimated delivery to United States: 7-12 business days" satiri.
- * Ulke tespit edilemezse (lokal gelistirme, VPN vb.) genel araligi gosterir.
+ * Teslimat karti: baslik + hedef ulke + tarih araligi +
+ * hedef ulkenin gece yarisina geri sayim ("Order in the next Xh Ym").
  */
-export const DeliveryEstimate = ({ className = "" }: { className?: string }) => {
+export const DeliveryEstimate = ({ className = "", freeShipping = true }: DeliveryEstimateProps) => {
   const [country, setCountry] = useState<string | null>(null);
   const [resolved, setResolved] = useState(false);
+  const [countdown, setCountdown] = useState<{ hours: number; minutes: number } | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -32,40 +42,58 @@ export const DeliveryEstimate = ({ className = "" }: { className?: string }) => 
       if (!active) return;
       setCountry(c);
       setResolved(true);
+      setCountdown(hoursUntilMidnight(c));
     });
     return () => {
       active = false;
     };
   }, []);
 
-  const window = country ? getDeliveryWindow(country) : DEFAULT_WINDOW;
+  // Geri sayimi dakikada bir tazele
+  useEffect(() => {
+    if (!resolved) return;
+    const id = window.setInterval(() => setCountdown(hoursUntilMidnight(country)), 60_000);
+    return () => window.clearInterval(id);
+  }, [resolved, country]);
+
+  const window_ = country ? getDeliveryWindow(country) : DEFAULT_WINDOW;
+  const now = new Date();
+  const startDate = formatDeliveryDate(addBusinessDays(now, window_.min));
+  const endDate = formatDeliveryDate(addBusinessDays(now, window_.max));
 
   return (
-    <p
-      className={`flex flex-col items-center gap-1 text-center text-sm text-slate-600 sm:flex-row sm:items-center sm:gap-2 sm:text-left ${className}`}
+    <div
+      className={`flex items-center gap-3 rounded-2xl border border-blue-100 bg-blue-50/70 px-4 py-3 ${className}`}
       aria-live="polite"
     >
-      <Truck className="h-4 w-4 flex-shrink-0 text-blue-600" />
-      {!resolved ? (
-        <span>Checking delivery time...</span>
-      ) : country ? (
-        <span className="min-w-0">
-          <span className="block sm:inline">
-            Estimated delivery to <span className="font-medium text-slate-800">{getCountryName(country)}</span>
-            <span className="hidden sm:inline">:</span>
-          </span>{" "}
-          <span className="block font-medium text-slate-800 sm:inline sm:font-normal sm:text-slate-600">
-            {window.min}–{window.max} business days
-          </span>
-        </span>
-      ) : (
-        <span className="min-w-0">
-          <span className="block sm:inline">Estimated delivery<span className="hidden sm:inline">:</span></span>{" "}
-          <span className="block font-medium text-slate-800 sm:inline sm:font-normal sm:text-slate-600">
-            {DEFAULT_WINDOW.min}–{DEFAULT_WINDOW.max} business days worldwide
-          </span>
-        </span>
-      )}
-    </p>
+      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white shadow-sm">
+        <Truck className="h-5 w-5 text-blue-600" />
+      </span>
+      <div className="min-w-0 text-left">
+        <p className="text-sm font-bold leading-5 text-slate-950">
+          {freeShipping ? "Free Standard Delivery" : "Standard Delivery"}
+        </p>
+        {!resolved ? (
+          <p className="text-xs text-slate-500">Checking delivery dates...</p>
+        ) : (
+          <>
+            <p className="text-xs leading-5 text-slate-600">
+              {country ? (
+                <>
+                  To <span className="font-semibold text-slate-800">{getCountryName(country)}</span> · {startDate} – {endDate}
+                </>
+              ) : (
+                <>Estimated {startDate} – {endDate}</>
+              )}
+            </p>
+            {countdown && (
+              <p className="text-[11px] leading-4 text-blue-700">
+                Order in the next {countdown.hours}h {countdown.minutes}m for these dates
+              </p>
+            )}
+          </>
+        )}
+      </div>
+    </div>
   );
 };

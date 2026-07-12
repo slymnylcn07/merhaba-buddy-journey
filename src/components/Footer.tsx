@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { MarketSelector } from "@/components/MarketSelector";
 import { SUPPORT_EMAIL } from "@/lib/support-config";
 import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
 import { Mail, MapPin, Phone } from "lucide-react";
@@ -51,6 +52,10 @@ export const Footer = () => {
         </div>
 
         <div className="mt-12 border-t border-slate-200 pt-6 text-center text-xs text-slate-400">
+        <div className="mb-4 flex justify-center md:justify-start">
+          <MarketSelector />
+        </div>
+
           © {new Date().getFullYear()} FlexiKnee™. All rights reserved. FlexiKnee content is for general wellness education and is not medical advice.
         </div>
       </div>
