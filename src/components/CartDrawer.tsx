@@ -18,7 +18,7 @@ import {
   Lock,
   Loader2,
   Truck,
-  RotateCcw, Sparkles } from "lucide-react";
+  RotateCcw, Sparkles, ShieldCheck } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { PaymentLogosRow } from "@/components/product-page-blocks";
 import { DeliveryEstimate } from "@/components/DeliveryEstimate";
@@ -129,9 +129,57 @@ export const CartDrawer = () => {
     };
   }, [isOpen, items]);
 
+  // Onerilen urunun secenek gruplari (Color, Size...) - varyantlardan turetilir
+  const [suggestionOpts, setSuggestionOpts] = useState<Record<string, string>>({});
+
+  const suggestionOptionGroups = useMemo(() => {
+    if (!suggestion) return [] as Array<{ name: string; values: string[] }>;
+    const groups = new Map<string, Set<string>>();
+    suggestion.node.variants?.edges?.forEach(({ node }) => {
+      node.selectedOptions?.forEach((opt) => {
+        if (opt.name.toLowerCase() === "title") return; // tek varyantli urunler
+        if (!groups.has(opt.name)) groups.set(opt.name, new Set());
+        groups.get(opt.name)!.add(opt.value);
+      });
+    });
+    return Array.from(groups.entries()).map(([name, values]) => ({
+      name,
+      values: Array.from(values),
+    }));
+  }, [suggestion]);
+
+  // Varsayilan secimler: ilk satilabilir varyantin secenekleri
+  useEffect(() => {
+    if (!suggestion || suggestionOptionGroups.length === 0) {
+      setSuggestionOpts({});
+      return;
+    }
+    const firstAvailable =
+      suggestion.node.variants?.edges?.find((e) => e.node.availableForSale)?.node ||
+      suggestion.node.variants?.edges?.[0]?.node;
+    const defaults: Record<string, string> = {};
+    firstAvailable?.selectedOptions?.forEach((opt) => {
+      if (opt.name.toLowerCase() !== "title") defaults[opt.name] = opt.value;
+    });
+    setSuggestionOpts(defaults);
+  }, [suggestion, suggestionOptionGroups.length]);
+
+  const suggestionVariant = useMemo(() => {
+    if (!suggestion) return null;
+    const edges = suggestion.node.variants?.edges || [];
+    if (suggestionOptionGroups.length === 0) return edges[0]?.node || null;
+    return (
+      edges.find(({ node }) =>
+        node.selectedOptions?.every(
+          (opt) => opt.name.toLowerCase() === "title" || suggestionOpts[opt.name] === opt.value
+        )
+      )?.node || null
+    );
+  }, [suggestion, suggestionOpts, suggestionOptionGroups.length]);
+
   const handleAddSuggestion = () => {
     if (!suggestion) return;
-    const variant = suggestion.node.variants?.edges?.[0]?.node;
+    const variant = suggestionVariant;
     if (!variant) return;
     addItem({
       product: suggestion,
@@ -264,16 +312,16 @@ export const CartDrawer = () => {
                               size="icon"
                               className="h-9 w-9 rounded-xl border-slate-200"
                               onClick={() => {
-                                if (totalItems >= 2) {
+                                if (item.quantity >= 2) {
                                   toast.error("Maximum quantity reached", {
-                                    description: "A customer can purchase a maximum of 2 items.",
+                                    description: "You can purchase up to 2 of each item.",
                                     position: "top-center",
                                   });
                                   return;
                                 }
                                 updateQuantity(item.variantId, item.quantity + 1);
                               }}
-                              disabled={totalItems >= 2}
+                              disabled={item.quantity >= 2}
                             >
                               <Plus className="h-3.5 w-3.5" />
                             </Button>
@@ -322,17 +370,39 @@ export const CartDrawer = () => {
                                 ? "Add the FlexiKnee device and your whole order gets 15% off at checkout."
                                 : "Complete the routine and unlock 15% off your entire order."}
                             </p>
+                            {suggestionOptionGroups.length > 0 && (
+                              <div className="mt-2 flex flex-wrap gap-1.5">
+                                {suggestionOptionGroups.map((group) => (
+                                  <select
+                                    key={group.name}
+                                    value={suggestionOpts[group.name] || ""}
+                                    onChange={(e) =>
+                                      setSuggestionOpts((prev) => ({ ...prev, [group.name]: e.target.value }))
+                                    }
+                                    className="h-7 rounded-lg border border-slate-200 bg-white px-1.5 text-[11px] font-medium text-slate-700 outline-none focus:border-blue-500"
+                                    aria-label={group.name}
+                                  >
+                                    {group.values.map((value) => (
+                                      <option key={value} value={value}>
+                                        {value}
+                                      </option>
+                                    ))}
+                                  </select>
+                                ))}
+                              </div>
+                            )}
                             <p className="mt-1.5 text-sm font-bold text-slate-950">
                               {formatDisplayPrice(
-                                Number(suggestion.node.variants?.edges?.[0]?.node?.price?.amount || suggestion.node.priceRange.minVariantPrice.amount),
-                                suggestion.node.variants?.edges?.[0]?.node?.price?.currencyCode || suggestion.node.priceRange.minVariantPrice.currencyCode
+                                Number(suggestionVariant?.price?.amount || suggestion.node.priceRange.minVariantPrice.amount),
+                                suggestionVariant?.price?.currencyCode || suggestion.node.priceRange.minVariantPrice.currencyCode
                               )}
                             </p>
                           </div>
                           <button
                             type="button"
                             onClick={handleAddSuggestion}
-                            className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-slate-950 text-white shadow-lg shadow-slate-950/25 transition hover:scale-105 hover:bg-blue-600"
+                            disabled={!suggestionVariant || !suggestionVariant.availableForSale}
+                            className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-slate-950 text-white shadow-lg shadow-slate-950/25 transition hover:scale-105 hover:bg-blue-600 disabled:opacity-40 disabled:hover:scale-100"
                             aria-label="Add to cart"
                           >
                             <Plus className="h-4 w-4" />
@@ -392,11 +462,14 @@ export const CartDrawer = () => {
 
                   <PaymentLogosRow className="pb-0.5 pt-2" />
 
-                  <div className="flex justify-center pt-2">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-900 shadow-sm">
-                      <RotateCcw className="h-3.5 w-3.5 text-blue-600" />
-                      <span>30-Day Returns</span>
-                    </div>
+                  <div className="mt-2 flex flex-col items-center rounded-2xl bg-emerald-50 px-4 py-3.5 text-center">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 shadow-sm">
+                      <ShieldCheck className="h-4.5 w-4.5 text-white" />
+                    </span>
+                    <p className="mt-1.5 text-sm font-bold text-slate-950">Try It Risk-Free for 30 Days</p>
+                    <p className="mt-0.5 max-w-[300px] text-[11px] leading-4 text-slate-600">
+                      Use it daily for a full 30 days from delivery. If your knees don't feel the difference, we'll refund every penny.
+                    </p>
                   </div>
                 </div>
               </div>

@@ -131,9 +131,9 @@ export const OfferSelector = ({
               )}
             </span>
             <span className="flex flex-col items-end">
-              <span className="text-lg font-bold text-slate-950">{fm(row.price)}</span>
+              <span className="text-base font-bold text-slate-950">{fm(row.price)}</span>
               {row.strike && (
-                <s className="text-sm text-slate-400">{fm(row.strike)}</s>
+                <s className="text-xs text-slate-400">{fm(row.strike)}</s>
               )}
             </span>
           </button>
@@ -188,7 +188,7 @@ export const TrustStrip = () => (
   <div className="mt-5 grid grid-cols-3 divide-x divide-slate-200 rounded-2xl border border-slate-200 bg-slate-50">
     {[
       { icon: Truck, top: "FREE SHIPPING", bottom: "On orders over $24.99" },
-      { icon: RotateCcw, top: "30-DAY RETURNS", bottom: "From delivery day" },
+      { icon: RotateCcw, top: "30-DAY RETURNS", bottom: "Try it risk free" },
       { icon: Lock, top: "SECURE CHECKOUT", bottom: "SSL encrypted" },
     ].map(({ icon: Icon, top, bottom }) => (
       <div key={top} className="flex flex-col items-center gap-1 px-2 py-4 text-center">

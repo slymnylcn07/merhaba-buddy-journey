@@ -122,16 +122,9 @@ export const useCartStore = create<CartStore>()(
           return;
         }
         
-        // Check total cart quantity with new value
+        // Varyant basina max 2 (validQuantity zaten 0-2 araliginda)
         const { items } = get();
-        const otherItemsTotal = items
-          .filter(item => item.variantId !== variantId)
-          .reduce((sum, item) => sum + item.quantity, 0);
-        
-        if (otherItemsTotal + validQuantity > 2) {
-          return; // Don't update if it exceeds limit
-        }
-        
+
         set({
           items: items.map(item =>
             item.variantId === variantId ? { ...item, quantity: validQuantity } : item
