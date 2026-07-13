@@ -6616,12 +6616,6 @@ const articles: Record<string, ArticleData> = {
           This guide focuses on helping you understand what runners commonly consider when choosing footwear, the characteristics that tend to influence comfort, how different brands approach shoe design, and the running habits that matter just as much as the shoes themselves.
         </p>
 
-        <StatHighlight 
-          stat="78%" 
-          label="of runners consider shoe feel important for knee comfort" 
-          description="Making footwear choice a key factor in running experience"
-        />
-
         <p>
           Remember that finding the right shoe is highly individual. What feels perfect for one runner may not suit another. The goal is to understand your options so you can make informed choices for your own comfort. If you're also dealing with <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">stiffness after resting</Link>, footwear is just one piece of a larger comfort puzzle.
         </p>
@@ -6751,6 +6745,55 @@ const articles: Record<string, ArticleData> = {
           <img src={shoeBrandsFlatlay} alt="Various running shoes from different brands showing the range of cushioning styles and designs available" loading="lazy" width={1200} height={720} className="w-full h-auto rounded-xl shadow-sm" />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">Different brands approach cushioning, support, and fit in distinct ways, giving runners a wide range of options to explore.</figcaption>
         </figure>
+
+        <h2>Quick Comparison: Matching Shoe Type to Your Knees</h2>
+        <p>
+          Use this table as a starting point, then confirm comfort and fit by trying shoes on and, ideally, testing them on your usual running surface. It is general comfort guidance, not medical advice, and brand examples are illustrative rather than endorsements.
+        </p>
+        <div className="my-6 overflow-x-auto">
+          <table className="w-full border-collapse text-left text-sm">
+            <thead>
+              <tr className="border-b-2 border-slate-300">
+                <th className="py-3 pr-4 font-semibold text-slate-950">If your knees…</th>
+                <th className="py-3 pr-4 font-semibold text-slate-950">Prioritise this shoe type</th>
+                <th className="py-3 pr-4 font-semibold text-slate-950">Look for</th>
+                <th className="py-3 font-semibold text-slate-950">Brands known for it</th>
+              </tr>
+            </thead>
+            <tbody className="align-top">
+              <tr className="border-b border-slate-200">
+                <td className="py-3 pr-4 text-slate-600">Feel jarred by impact or hard surfaces</td>
+                <td className="py-3 pr-4 text-slate-600">Maximum cushioning</td>
+                <td className="py-3 pr-4 text-slate-600">Thick, soft midsole; smooth rocker shape</td>
+                <td className="py-3 text-slate-600">Hoka, New Balance Fresh Foam, adidas soft-foam models</td>
+              </tr>
+              <tr className="border-b border-slate-200">
+                <td className="py-3 pr-4 text-slate-600">Roll inward (overpronate) or want more support</td>
+                <td className="py-3 pr-4 text-slate-600">Stability / support</td>
+                <td className="py-3 pr-4 text-slate-600">Guided midsole, firmer inner (medial) side</td>
+                <td className="py-3 text-slate-600">Brooks (Adrenaline), Asics (GT, Kayano)</td>
+              </tr>
+              <tr className="border-b border-slate-200">
+                <td className="py-3 pr-4 text-slate-600">Prefer a responsive but comfortable ride</td>
+                <td className="py-3 pr-4 text-slate-600">Balanced cushioning</td>
+                <td className="py-3 pr-4 text-slate-600">Moderate, responsive midsole</td>
+                <td className="py-3 text-slate-600">Saucony, Nike daily trainers</td>
+              </tr>
+              <tr className="border-b border-slate-200">
+                <td className="py-3 pr-4 text-slate-600">Need a roomier or wider fit</td>
+                <td className="py-3 pr-4 text-slate-600">Wide-fit options</td>
+                <td className="py-3 pr-4 text-slate-600">Multiple width sizes, roomy toe box</td>
+                <td className="py-3 text-slate-600">New Balance, Brooks</td>
+              </tr>
+              <tr>
+                <td className="py-3 pr-4 text-slate-600">Feel worse after switching shoes</td>
+                <td className="py-3 pr-4 text-slate-600">Gradual transition</td>
+                <td className="py-3 pr-4 text-slate-600">A heel-to-toe drop similar to your current shoes</td>
+                <td className="py-3 text-slate-600">Any brand — change over several weeks</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <div className="my-8">
           <h3 className="text-lg font-semibold mb-4">Running Shoe Brand Comparison at a Glance</h3>
@@ -7038,7 +7081,10 @@ const articles: Record<string, ArticleData> = {
       { question: "Can changing running shoes help with knee comfort?", answer: "Footwear is one factor that can influence running comfort. For some runners, finding better-suited shoes makes a noticeable difference. However, shoes work alongside running form, training habits, and other factors. Changing shoes alone may or may not address comfort concerns; a holistic approach considering multiple factors is often most effective." },
       { question: "Which running shoe brand is best for knee comfort?", answer: "There is no single best brand for knee comfort. Nike, Adidas, Asics, Brooks, Hoka, New Balance, Saucony, and On Running each approach shoe design differently. The right choice depends on your individual foot shape, gait pattern, cushioning preference, and the surfaces you run on. Personal fit matters more than brand name." },
       { question: "Should I buy running shoes based on what other runners recommend?", answer: "Other runners' recommendations are a helpful starting point for research, but they shouldn't be the sole basis for your decision. Every runner has a unique combination of foot shape, gait, weight, and preferences. What works perfectly for one runner may not work for you. Use recommendations as research input and make your final choice based on your own testing." },
-      { question: "How do I know if my running shoes are causing knee discomfort?", answer: "Watch for patterns: discomfort that started around the time you got new shoes, gradually worsened as shoes aged, or improves when wearing different footwear. Uneven wear on the sole can also indicate alignment issues. If discomfort persists across different shoes, other factors like running form, training volume, or muscle strength may be involved." }
+      { question: "How do I know if my running shoes are causing knee discomfort?", answer: "Watch for patterns: discomfort that started around the time you got new shoes, gradually worsened as shoes aged, or improves when wearing different footwear. Uneven wear on the sole can also indicate alignment issues. If discomfort persists across different shoes, other factors like running form, training volume, or muscle strength may be involved." },
+      { question: "What are the best running shoes for bad knees?", answer: "For most people with sensitive or 'bad' knees, the best running shoes combine generous, shock-absorbing cushioning with a stable platform and a secure, comfortable fit. Maximum-cushion models (a category Hoka is known for) suit runners who want more impact absorption, while stability shoes from Brooks or Asics help runners whose knees feel better with extra support. The best shoe is still the one that fits your foot and feels comfortable on your usual runs, so try before you buy and change to new shoes gradually." },
+      { question: "Are cushioned or stability running shoes better for knee pain?", answer: "It depends on why your knees feel uncomfortable. Extra cushioning tends to help runners who feel jarred by impact, especially on hard surfaces or over longer distances. Stability shoes help runners whose feet roll inward (overpronate) or who simply feel more supported by a firmer, guided midsole. Many runners try one type, notice how their knees respond, and adjust from there. Neither is universally better for knee pain." },
+      { question: "What are the best running shoes for runner's knee?", answer: "Runner's knee (pain around the kneecap) is shaped by training load and movement patterns as much as by footwear, so shoes are only part of the picture. Runners often look for well-cushioned, stable shoes that feel comfortable and reduce the sense of impact, then pair them with gradual mileage increases, strength work for the hips and thighs, and adequate recovery. Persistent kneecap pain deserves an assessment from a clinician or physiotherapist." }
     ],
     seoTags: "best running shoes for knee pain, running shoes knee comfort, shoes for knee pain running, cushioned running shoes knee, running shoe brands knee, shoe fit knee impact, cushioning knee support, runner footwear choices, knee-friendly running shoes, shoe replacement knee, running form knee comfort, stride shoe connection, running shoe comparison, running shoe fit mistakes, knee impact running shoes, post-run knee comfort",
   },
