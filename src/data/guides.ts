@@ -448,10 +448,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "sudden-knee-pain-guide",
-    title: "Sudden Knee Pain: Hidden Causes & When to Act",
-    description: "Why does sudden knee pain happen without injury? Explore hidden causes by location, sensation patterns, situational triggers, and when to pay attention.",
-    readTime: 15,
-    lastModified: "2026-03-02",
+    title: "Sudden Knee Pain: Causes, Warning Signs, and What to Do",
+    description: "Compare sudden knee pain patterns with or without injury, learn safe first steps, and recognize swelling, locking, fever, and other urgent warning signs.",
+    readTime: 16,
+    lastModified: "2026-07-13",
   },
   {
     slug: "knee-pain-at-night-after-40",
@@ -498,8 +498,8 @@ export const guidesData: GuideData[] = [
   {
     slug: "knee-pain-going-down-stairs",
     title: "Knee Pain Going Down Stairs: Causes and What Helps",
-    description: "Learn why stair descent may provoke the front of the knee, how symptom patterns differ, what adjustments may help, and when to seek care.",
-    readTime: 9,
+    description: "Learn why stair descent may provoke knee pain, how location and next-day response guide decisions, and how to rebuild stair capacity safely.",
+    readTime: 11,
     lastModified: "2026-07-13",
   },
   {
@@ -581,10 +581,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "heavy-feeling-in-knees",
-    title: "Heavy Feeling in the Knees: Why It Happens",
-    description: "Learn why your knees feel heavy, common causes including muscle fatigue and circulation, and simple everyday strategies to support lighter, more comfortable knee movement.",
-    readTime: 14,
-    lastModified: "2026-03-08",
+    title: "Heavy Feeling in the Knees: Causes and Warning Signs",
+    description: "Compare fatigue, stiffness, swelling, and weakness when your knees feel heavy, with practical next steps and urgent one-sided leg warning signs.",
+    readTime: 16,
+    lastModified: "2026-07-13",
   },
   {
     slug: "knee-pain-after-flights",
