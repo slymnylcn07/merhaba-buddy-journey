@@ -291,7 +291,7 @@ const prioritySlugs = [
 const priorityDescriptions: Record<string, string> = {
   "knee-pain-after-exercise": "Understand why knee soreness appears hours after exercise, the difference between normal fatigue and warning signs, and recovery strategies that work.",
   "knee-clicking-when-walking": "Learn why your knee clicks during walking, bending, and stairs, what different sounds mean, and when clicking deserves attention.",
-  "knee-pain-going-down-stairs": "Discover why descending stairs creates more knee pressure than climbing, the biomechanics involved, and daily habits for comfortable stair use.",
+  "knee-pain-going-down-stairs": "Learn why stair descent may provoke the front of the knee, how symptom patterns differ, what adjustments may help, and when to seek care.",
   "infrared-knee-massager-guide-2026": "Compare the best infrared knee massagers of 2026, understand how infrared therapy works, and find the right device for your daily routine.",
 };
 

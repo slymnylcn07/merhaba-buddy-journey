@@ -497,10 +497,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "knee-pain-going-down-stairs",
-    title: "Knee Pain Going Down Stairs: Why It Hurts & Fixes",
-    description: "Discover why knee pain is often worse going down stairs. Learn about eccentric loading, patellofemoral stress, and daily habits for knee comfort.",
-    readTime: 14,
-    lastModified: "2026-03-04",
+    title: "Knee Pain Going Down Stairs: Causes and What Helps",
+    description: "Learn why stair descent may provoke the front of the knee, how symptom patterns differ, what adjustments may help, and when to seek care.",
+    readTime: 9,
+    lastModified: "2026-07-13",
   },
   {
     slug: "knee-pain-when-squatting",

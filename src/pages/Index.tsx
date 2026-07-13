@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight, Check, ChevronRight, Flame, Play, Sparkles, Waves } from "lucide-react";
 import { Header } from "@/components/Header";
 import { DiscountCodeModal } from "@/components/DiscountCodeModal";
 import { Footer } from "@/components/Footer";
@@ -12,7 +12,7 @@ import { VideoReviews } from "@/components/VideoReviews";
 import { featurePillars } from "@/data/product-system";
 import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
 
-const HERO_DESKTOP_IMAGE = "/images/flexiknee-hero-final-desktop.png";
+const HERO_DESKTOP_IMAGE = "/images/flexiknee-hero-desktop-premium-v2.webp";
 const HERO_MOBILE_IMAGE = "/images/flexiknee-hero-final-mobile.png";
 
 const featuredGuides = [
@@ -98,15 +98,15 @@ export default function Index() {
   return (
     <>
       <Helmet>
-        <title>FlexiKnee™ | Knee Comfort Guides & Smart Recovery Products</title>
+        <title>FlexiKnee? | Knee Comfort Guides & Smart Recovery Products</title>
         <meta
           name="description"
-          content="FlexiKnee™ combines practical knee comfort education with smart at-home support products for heat, vibration, wraparound positioning, and daily routines."
+          content="FlexiKnee? combines practical knee comfort education with smart at-home support products for heat, vibration, wraparound positioning, and daily routines."
         />
         <link rel="canonical" href="https://flexi-knee.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/" />
-        <meta property="og:title" content="FlexiKnee™ | Knee Comfort Guides & Smart Recovery Products" />
+        <meta property="og:title" content="FlexiKnee? | Knee Comfort Guides & Smart Recovery Products" />
         <meta property="og:description" content="A premium knee comfort hub with practical guides and smart at-home recovery products." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(organizationJsonLd)}</script>
@@ -135,14 +135,56 @@ export default function Index() {
                 <Link
                   to={PRIMARY_PRODUCT_PATH}
                   aria-label="Shop FlexiKnee"
-                  className="absolute left-[8%] bottom-[9.2%] h-[5.4%] w-[84%] rounded-full md:left-[5.2%] md:top-[62%] md:h-[7%] md:w-[16%]"
+                  className="absolute bottom-[9.2%] left-[8%] h-[5.4%] w-[84%] rounded-full md:hidden"
                 />
 
                 <Link
                   to="/guides/do-knee-massagers-work"
                   aria-label="How FlexiKnee works"
-                  className="absolute left-[8%] bottom-[2.6%] h-[5.4%] w-[84%] rounded-full md:left-[22.1%] md:top-[62%] md:h-[7%] md:w-[14.5%]"
+                  className="absolute bottom-[2.6%] left-[8%] h-[5.4%] w-[84%] rounded-full md:hidden"
                 />
+
+                <div className="absolute inset-y-0 left-0 hidden w-[53%] flex-col justify-center px-[5.3%] md:flex">
+                  <div className="inline-flex w-fit items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-blue-600 shadow-sm backdrop-blur lg:px-4 lg:text-xs">
+                    <Sparkles className="h-3.5 w-3.5" /> Smart knee comfort
+                  </div>
+                  <h2 className="mt-[4%] max-w-[760px] text-[clamp(2.35rem,4.2vw,5rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-slate-950">
+                    Comfort that keeps you moving.
+                  </h2>
+                  <p className="mt-[4%] max-w-xl text-[clamp(0.9rem,1.35vw,1.35rem)] leading-relaxed text-slate-600">
+                    Heat, vibration, and wraparound support for simple daily comfort at home.
+                  </p>
+
+                  <div className="mt-[5%] flex items-center gap-3">
+                    <Link
+                      to={PRIMARY_PRODUCT_PATH}
+                      className="inline-flex h-11 items-center gap-2 rounded-full bg-blue-600 px-5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700 lg:h-14 lg:px-7 lg:text-base"
+                    >
+                      Shop FlexiKnee <ArrowRight className="h-4 w-4" />
+                    </Link>
+                    <Link
+                      to="/guides/do-knee-massagers-work"
+                      className="inline-flex h-11 items-center gap-2 rounded-full border border-slate-200 bg-white/85 px-5 text-sm font-semibold text-slate-900 shadow-sm backdrop-blur transition hover:border-blue-200 hover:text-blue-600 lg:h-14 lg:px-7 lg:text-base"
+                    >
+                      How It Works <Play className="h-4 w-4" />
+                    </Link>
+                  </div>
+
+                  <div className="mt-[6%] grid max-w-[650px] grid-cols-3 gap-2 lg:gap-3">
+                    {[
+                      { label: "Heat Therapy", icon: Flame, tone: "text-orange-500" },
+                      { label: "Vibration", icon: Waves, tone: "text-blue-600" },
+                      { label: "Daily Support", icon: Check, tone: "text-emerald-600" },
+                    ].map(({ label, icon: Icon, tone }) => (
+                      <div key={label} className="flex min-h-14 items-center gap-2 rounded-2xl border border-white/80 bg-white/85 px-3 py-2 text-[11px] font-semibold leading-tight text-slate-800 shadow-md shadow-slate-300/20 backdrop-blur lg:min-h-20 lg:gap-3 lg:px-4 lg:text-sm">
+                        <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-current bg-white ${tone} lg:h-10 lg:w-10`}>
+                          <Icon className="h-4 w-4 lg:h-5 lg:w-5" strokeWidth={2.4} />
+                        </span>
+                        {label}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </section>

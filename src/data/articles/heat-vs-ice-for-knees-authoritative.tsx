@@ -67,7 +67,7 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
         </div>
 
         <p>
-          The heat-or-ice question is common because both approaches can change how a sore knee feels, but they do so in different ways. Cold can temporarily numb an area and help limit swelling. Warmth can relax tight muscles and make a stiff joint feel easier to move. The useful question is not “Which one is best?” but “Which one fits the symptoms I have right now?”
+          The heat-or-ice question is common because both approaches can change how a sore knee feels, but they do so in different ways. Cold can temporarily numb an area and help limit swelling. Warmth can relax tight muscles and make a stiff joint feel easier to move. The useful question is not ?Which one is best?? but ?Which one fits the symptoms I have right now??
         </p>
         <p>
           This guide focuses on everyday self-care. It does not replace an examination, especially after a fall, twist, impact, or sudden loss of function.
@@ -195,6 +195,11 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
           First check the knee rather than automatically reaching for one method. If it is visibly swollen or unusually warm, cold may be the more appropriate short-term option. If the knee is not swollen and the feeling is mainly muscular tightness, gentle warmth later may be more comfortable. Our <Link to="/guides/knee-pain-after-exercise">knee pain after exercise guide</Link> explains the wider recovery pattern.
         </p>
 
+        <h3>After Repeated Stair Use</h3>
+        <p>
+          Soreness after stairs should be judged by the same symptom pattern. New puffiness or unusual warmth points toward a different short-term choice than stiffness without swelling. Temperature can provide comfort, but repeated pain during descent is better addressed by reviewing stair load, movement control, and progressive strengthening. See our <Link to="/guides/knee-pain-going-down-stairs">knee pain going down stairs guide</Link> for that broader plan.
+        </p>
+
         <h3>Morning Stiffness</h3>
         <p>
           A warm shower, warm compress, or temperature-controlled device may make gentle movement more comfortable. Persistent morning stiffness, recurrent swelling, or a steady loss of motion should be discussed with a healthcare professional.
@@ -207,7 +212,7 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
 
         <h3>Ongoing Arthritis-Related Stiffness</h3>
         <p>
-          Some people find warmth soothing for stiff joints, while cold may feel better during a swollen flare. Arthritis symptoms vary, so your clinician’s advice and your own response matter more than a universal rule.
+          Some people find warmth soothing for stiff joints, while cold may feel better during a swollen flare. Arthritis symptoms vary, so your clinician?s advice and your own response matter more than a universal rule.
         </p>
 
         <h2>How to Use Heat or Ice More Safely</h2>
