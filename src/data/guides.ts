@@ -123,7 +123,7 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "heat-vs-ice-for-knees",
-    title: "Heat vs Ice for Knee Discomfort: What Works Best for Daily Life?",
+    title: "Heat or Ice for Knee Pain: A Practical Decision Guide",
     description: "Compare cold for recent swelling with gentle heat for stiffness, including post-exercise examples, timing, skin safety, and warning signs.",
     readTime: 14,
     lastModified: "2026-07-13",
