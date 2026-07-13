@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { InfoBox } from "@/components/ArticleCharts";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-knee-pain-going-down-stairs.jpg";
+import stairDescentImage from "@/assets/article-stair-descent-control-v1.svg";
 
 const sourceLinkClass = "font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700";
 
@@ -75,8 +76,20 @@ export const kneePainGoingDownStairs: ArticleExport = {
           During descent, the supporting leg controls your downward movement. The quadriceps produce an eccentric contraction, meaning they generate force while lengthening. At the same time, the knee bends and the kneecap remains in contact with the groove at the end of the thigh bone.
         </p>
         <p>
-          This is a demanding combination when the front of the knee is already sensitive or when the movement exceeds your current capacity. Research confirms that stair negotiation changes patellofemoral contact mechanics, but published load estimates vary with the model, stair height, speed, knee angle, and population. A universal claim such as ?every step equals a fixed multiple of body weight? is therefore not a reliable way to explain an individual person's pain.
+          This is a demanding combination when the front of the knee is already sensitive or when the movement exceeds your current capacity. Research confirms that stair negotiation changes patellofemoral contact mechanics, but published load estimates vary with the model, stair height, speed, knee angle, and population. A universal claim that every step equals a fixed multiple of body weight is therefore not a reliable way to explain an individual person's pain.
         </p>
+
+        <figure className="my-8">
+          <img
+            src={stairDescentImage}
+            alt="Adult descending a home staircase slowly while using the handrail"
+            className="h-auto w-full rounded-xl shadow-sm"
+            loading="lazy"
+          />
+          <figcaption className="mt-3 text-center text-sm text-muted-foreground">
+            A handrail, a slower pace, and secure whole-foot placement can make stair descent more controlled while a knee is sensitive.
+          </figcaption>
+        </figure>
 
         <h2>Use Pain Location and Symptoms as Clues</h2>
         <div className="my-6 overflow-x-auto">
@@ -126,7 +139,7 @@ export const kneePainGoingDownStairs: ArticleExport = {
           Patellofemoral pain describes pain around or behind the kneecap. The American Academy of Orthopaedic Surgeons lists activities that repeatedly bend the knee, including stairs, running, jumping, and squatting, among common triggers. Long periods of sitting with the knee bent may also be uncomfortable.
         </p>
         <p>
-          Patellofemoral pain is not simply proof that cartilage is ?wearing away,? and it is not caused by one universal alignment fault. Activity changes, current physical capacity, movement strategy, sleep, recovery, and sensitivity can all influence symptoms. A useful plan is therefore based on what you can currently tolerate and how the knee responds over time.
+          Patellofemoral pain is not simply proof that cartilage is “wearing away,” and it is not caused by one universal alignment fault. Activity changes, current physical capacity, movement strategy, sleep, recovery, and sensitivity can all influence symptoms. A useful plan is therefore based on what you can currently tolerate and how the knee responds over time.
         </p>
 
         <h2>How to Go Down Stairs With Less Irritation</h2>
@@ -140,6 +153,28 @@ export const kneePainGoingDownStairs: ArticleExport = {
         </ol>
         <p>
           These are short-term ways to make the task manageable. They are not a requirement to move perfectly, and they do not replace rehabilitation when symptoms keep returning.
+        </p>
+
+        <h2>What to Notice During the Next 24 Hours</h2>
+        <p>
+          The response after the stairs can be as useful as the pain during them. Note whether the discomfort settles within a few minutes, lingers for the rest of the day, or is followed by swelling the next morning. A brief, mild symptom that returns to baseline is different from pain that causes a limp, progressively increases with every trip, or leaves the knee visibly swollen. This timeline gives a clinician more useful information than a pain score alone.
+        </p>
+        <p>
+          Also record the exact point in the task where symptoms appear. Pain when the supporting knee first bends may fit a different load pattern from pain as the trailing foot leaves the upper step. If only one knee hurts going down stairs, compare recent changes on that side: a new training routine, a long walk, a minor twist, different footwear, or a previous injury. One-sided symptoms do not automatically mean structural damage, but persistent asymmetry deserves more attention than a short-lived ache after an unusually active day.
+        </p>
+        <p>
+          Avoid repeatedly testing the painful step just to see whether it still hurts. Use the information from normal daily movement, reduce unnecessary repetitions for a short period, and watch the overall direction. Improvement means ordinary tasks are becoming easier and the knee returns to baseline more quickly. Worsening means pain arrives earlier, lasts longer, or is joined by swelling, locking, instability, or reduced movement.
+        </p>
+
+        <h2>A Practical Return-to-Stairs Progression</h2>
+        <p>
+          When symptoms are settling and there are no warning signs, rebuild the task in stages instead of jumping from avoidance to repeated flights. Begin with a low step or the bottom stair while holding a stable rail. Practice a small, slow lowering movement within a tolerable range, keeping the foot secure and the knee generally aligned with the toes. The goal is control, not depth or speed.
+        </p>
+        <p>
+          Next, add a few ordinary steps with a step-to pattern, placing both feet on each stair. If that is comfortable during the task and later the same day, return to alternating feet for a short flight. Increase only one variable at a time: the number of steps, the speed, or the load you carry. Carrying bags, rushing, and turning while descending all make the task more complex, so add those last.
+        </p>
+        <p>
+          There is no universal acceptable pain number for every person. A useful rule is that the exercise should remain controlled, should not produce sharp or escalating pain, and should not cause a meaningful flare that persists into the following day. If even a shallow supported step is difficult, or if the knee repeatedly gives way, a physiotherapist can assess strength, movement strategy, and an appropriate starting level. This graded approach supports capacity without pretending that one technique treats every cause of knee pain going down stairs.
         </p>
 
         <h2>What Helps Over the Longer Term</h2>
