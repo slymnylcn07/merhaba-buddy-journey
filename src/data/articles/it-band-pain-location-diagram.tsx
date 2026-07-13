@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
+import { InfoBox } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-it-band-diagram.jpg";
 import diagramFullPath from "@/assets/diagram-it-band-full-path.jpg";
 import diagramKneeZone from "@/assets/diagram-it-band-knee-zone.jpg";
@@ -32,8 +33,36 @@ export const itBandPainLocationDiagram = {
       { question: "Why do runners often look for IT band pain outer thigh diagrams?", answer: "Runners frequently experience tightness and discomfort along the outer thigh where the IT band runs. Visual diagrams help them identify whether their sensations match typical IT band patterns, especially the outer thigh to outer knee pathway." },
     ],
     seoTags: "it band pain location diagram, iliotibial band syndrome knee pain location diagram, iliotibial band syndrome knee lateral pain diagram, iliotibial band syndrome outer knee pain diagram, iliotibial band syndrome lateral knee pain location diagram, it band syndrome outside knee pain diagram, it band pain outer thigh diagram, outer knee discomfort, it band diagram, side knee pain running, lateral knee soreness, runners knee outer pain, knee discomfort guide, it band awareness, lateral thigh tightness, it band visual guide, outer knee zone diagram, running knee discomfort zones, it band knee map",
+    sources: [
+      {
+        title: "Iliotibial Band Syndrome",
+        publisher: "StatPearls — NCBI Bookshelf (National Library of Medicine)",
+        url: "https://www.ncbi.nlm.nih.gov/books/NBK542185/",
+      },
+      {
+        title: "Knee pain: causes, self-care and when to get help",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/conditions/knee-pain/",
+      },
+      {
+        title: "Knee Pain: What It Is, Causes, Treatment & Relief",
+        publisher: "Cleveland Clinic",
+        url: "https://my.clevelandclinic.org/health/symptoms/21207-knee-pain",
+      },
+    ],
     content: (
       <>
+        <InfoBox title="Quick answer">
+          <p>
+            IT band discomfort is usually felt on the <strong>outer (lateral) side of the knee</strong>{" "}
+            or along the outer thigh, where the iliotibial band runs from hip to shinbone. It is common
+            in runners and cyclists and often relates to training load and movement patterns rather than
+            a single injury. Reducing aggravating activity, gradual loading, and hip and glute
+            strengthening are typical starting points. Outer knee pain with swelling, locking, or that
+            follows a specific injury should be assessed by a clinician.
+          </p>
+        </InfoBox>
+
         <SectionDivider />
 
         {/* --- SECTION 1: IT Band Path --- */}

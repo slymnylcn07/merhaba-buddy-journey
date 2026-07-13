@@ -5,6 +5,12 @@ export interface FAQItem {
   answer: string;
 }
 
+export interface ArticleSource {
+  title: string;
+  publisher: string;
+  url: string;
+}
+
 export interface ArticleData {
   slug: string;
   title: string;
@@ -20,6 +26,7 @@ export interface ArticleData {
   faqs?: FAQItem[];
   seoTags?: string;
   lastUpdated?: string;
+  sources?: ArticleSource[];
 }
 
 export interface ArticleExport {

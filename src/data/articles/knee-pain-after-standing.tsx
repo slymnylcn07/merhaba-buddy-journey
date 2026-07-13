@@ -29,8 +29,36 @@ export const kneePainAfterStanding: ArticleExport = {
       { question: "How can I reduce knee pain from standing all day?", answer: "Practical strategies include wearing supportive footwear, using anti-fatigue mats on hard floors, shifting your weight between legs regularly, taking seated breaks every 30 to 45 minutes, applying warmth after long standing periods, and doing gentle stretches for the quadriceps, hamstrings, and calves at the end of the day." },
     ],
     seoTags: "knee pain standing, knee pain after standing, pain behind knee, knee pain standing up, standing all day knee, patellofemoral pain, inner knee pain, arthritis knee standing, knee comfort standing, back of knee pain, standing posture knee, knee pain causes, knee stiffness standing",
+    sources: [
+      {
+        title: "Patellofemoral Pain Syndrome",
+        publisher: "OrthoInfo — American Academy of Orthopaedic Surgeons (AAOS)",
+        url: "https://www.orthoinfo.org/en/diseases--conditions/patellofemoral-pain-syndrome/",
+      },
+      {
+        title: "Knee pain: causes, self-care and when to get help",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/conditions/knee-pain/",
+      },
+      {
+        title: "Knee Pain: What It Is, Causes, Treatment & Relief",
+        publisher: "Cleveland Clinic",
+        url: "https://my.clevelandclinic.org/health/symptoms/21207-knee-pain",
+      },
+    ],
     content: (
       <>
+        <InfoBox title="Quick answer">
+          <p>
+            Knee pain when standing or after being on your feet a while often comes from{" "}
+            <strong>sustained load on the kneecap and joint</strong>, sometimes with tired or tight
+            muscles around the hip and knee. Frequent position changes, supportive footwear, a
+            softer standing surface, and short movement breaks usually help. Pain that is sharp,
+            comes with swelling or a sense of giving way, or steadily worsens should be assessed by
+            a clinician.
+          </p>
+        </InfoBox>
+
         <h2>Why Knee Pain Happens When Standing</h2>
         <p>
           Standing is one of the most fundamental human postures, yet it places significant and continuous demands on the knee joint. Unlike walking or running, where the load on each knee alternates with every step, standing requires both knees to bear your full body weight simultaneously and without interruption. This sustained load is one of the primary reasons why so many people experience <strong>knee pain when standing</strong>.

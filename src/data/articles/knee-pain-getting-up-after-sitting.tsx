@@ -32,8 +32,36 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
       { question: "Does sitting on soft surfaces make knee pain worse?", answer: "Soft surfaces like low couches and deep armchairs can increase knee discomfort when standing because they position the knees below hip level, creating a deeper bend angle. This increases compression on the joint and requires more muscular effort to stand up. Firmer, higher seats that keep the knees at or near 90 degrees are generally more knee-friendly." },
       { question: "Does activity level affect knee stiffness after sitting?", answer: "Yes, regular physical activity helps maintain synovial fluid production, muscle strength, and joint flexibility. People who are more active generally experience less pronounced stiffness after sitting compared to sedentary individuals. Even gentle daily walking, stretching, and strengthening exercises can significantly reduce the severity of stand-up knee discomfort over time." },
     ],
+    sources: [
+      {
+        title: "Patellofemoral Pain Syndrome",
+        publisher: "OrthoInfo — American Academy of Orthopaedic Surgeons (AAOS)",
+        url: "https://www.orthoinfo.org/en/diseases--conditions/patellofemoral-pain-syndrome/",
+      },
+      {
+        title: "Knee pain: causes, self-care and when to get help",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/conditions/knee-pain/",
+      },
+      {
+        title: "Knee Pain: What It Is, Causes, Treatment & Relief",
+        publisher: "Cleveland Clinic",
+        url: "https://my.clevelandclinic.org/health/symptoms/21207-knee-pain",
+      },
+    ],
     content: (
       <>
+        <InfoBox title="Quick answer">
+          <p>
+            Knees often feel <strong>stiff or sore for the first steps after sitting</strong> because
+            the joint has been held still, so the fluid that lubricates it settles and it takes a few
+            movements to glide smoothly again. Stiffness that eases within a minute or two of walking
+            is usually normal. Stand up in stages, change position during long periods of sitting, and
+            keep the knees gently moving. Persistent stiffness, locking, giving way, or swelling should
+            be assessed by a clinician.
+          </p>
+        </InfoBox>
+
         <h2>Why Standing Up Triggers Knee Pain After 40</h2>
         <p>
           The moment you begin to stand after sitting for a while, your knee joint undergoes a rapid and complex transition. It shifts from a resting, bent position where minimal forces are at play to a fully loaded, weight-bearing position that demands immediate engagement from muscles, tendons, ligaments, and joint surfaces. For younger joints with abundant synovial fluid and thick cartilage, this transition happens smoothly and almost unnoticed. But as we age past 40 and into our 50s, 60s, and beyond, this same transition becomes increasingly noticeable and sometimes uncomfortable.

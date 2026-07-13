@@ -6582,11 +6582,11 @@ const articles: Record<string, ArticleData> = {
 
   "best-running-shoes-knee-pain": {
     slug: "best-running-shoes-knee-pain",
-    title: "Best Running Shoes for Knee Pain: What Runners Look For & Common Fit Mistakes",
+    title: "Best Running Shoes for Bad Knees & Knee Pain",
     subtitle: "Understanding shoe comfort, brand differences, and running habits",
     intro: "When runners search for the best running shoes for knee pain, they're usually looking for guidance on finding footwear that supports comfortable running. This guide explores what runners commonly consider when choosing shoes, how popular brands differ in their approach, typical fit mistakes to avoid, and the running habits that influence knee comfort alongside footwear choices.",
-    metaTitle: "Best Running Shoes for Knee Pain: What Runners Look For & Fit Mistakes | 2026 Guide",
-    metaDescription: "Discover what runners look for in knee-friendly shoes, popular brand comparisons, common fit mistakes, and habits that support comfortable running in 2026.",
+    metaTitle: "Best Running Shoes for Bad Knees & Knee Pain (2026 Guide)",
+    metaDescription: "The best running shoes for bad knees balance cushioning, support, and fit. See the shoe features and brand types to prioritize for knee pain and runner's knee, plus the fit mistakes to avoid in 2026.",
     heroImage: heroRunningShoesKnee,
     publishedDate: "January 19, 2026",
     lastUpdated: "March 31, 2026",
@@ -6594,6 +6594,20 @@ const articles: Record<string, ArticleData> = {
     nextTitle: "Running Knee Pain: Common Injuries & What Runners Can Do",
     content: (
       <>
+        <InfoBox title="Quick answer">
+          <p>
+            For <strong>bad knees</strong>, the most knee-friendly running shoes usually combine
+            generous <strong>shock-absorbing cushioning</strong>, a <strong>stable platform</strong> that
+            controls excess motion, and a <strong>secure, comfortable fit</strong>. Maximum-cushion
+            models (a category Hoka helped popularise) suit runners who want more impact absorption,
+            while stability shoes (Brooks and Asics are well known here) tend to help runners whose
+            knees feel better with extra support; New Balance is a common pick for wider feet. There is
+            no single shoe that is best for everyone, so match cushioning and support to your stride,
+            change to new shoes gradually, and pair good footwear with sensible mileage. Persistent,
+            sharp, or swelling knee pain deserves a professional assessment rather than only a shoe change.
+          </p>
+        </InfoBox>
+
         <p>
           The search for <strong>best running shoes for knee pain</strong> is one of the most common queries among runners. Whether you're new to running or have been at it for years, understanding how footwear influences your running experience is valuable knowledge. Choosing <strong>cushioned running shoes for knee</strong> comfort involves more than just picking a popular brand or following a trend.
         </p>
@@ -8346,7 +8360,17 @@ const GuideArticle = () => {
     },
     "inLanguage": "en",
     "articleSection": "Guides",
-    "keywords": getKeywords(article.title)
+    "keywords": getKeywords(article.title),
+    ...(article.sources && article.sources.length > 0
+      ? {
+          citation: article.sources.map((source) => ({
+            "@type": "CreativeWork",
+            name: source.title,
+            publisher: { "@type": "Organization", name: source.publisher },
+            url: source.url,
+          })),
+        }
+      : {}),
   };
 
   const breadcrumbJsonLd = {
@@ -8836,7 +8860,41 @@ const GuideArticle = () => {
 
                   <ArticleQuizCard articleSlug={article.slug} articleTitle={article.title} />
                 </div>
-                
+
+                {/* Sources and Further Reading */}
+                {article.sources && article.sources.length > 0 && (
+                  <section
+                    aria-labelledby="sources-heading"
+                    className="mt-10 rounded-[1.5rem] border border-slate-200 bg-slate-50/70 p-6 shadow-sm"
+                  >
+                    <h2
+                      id="sources-heading"
+                      className="mb-4 text-xl font-semibold tracking-[-0.02em] text-slate-950"
+                    >
+                      Sources and Further Reading
+                    </h2>
+                    <ul className="space-y-3">
+                      {article.sources.map((source, i) => (
+                        <li key={i} className="text-base leading-7 text-slate-600">
+                          <a
+                            href={source.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700"
+                          >
+                            {source.title}
+                          </a>
+                          <span className="text-slate-500"> — {source.publisher}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-4 text-sm leading-6 text-slate-500">
+                      This guide is educational and is not a substitute for personalized medical
+                      advice. Always follow guidance from a qualified clinician for your situation.
+                    </p>
+                  </section>
+                )}
+
                 {/* Premium CTA Highlight Box */}
                 {articleCTAs[slug] && (
                   <PremiumCTA

@@ -58,8 +58,26 @@ const article = {
   nextTitle: undefined,
   faqs: faqs,
   seoTags: "knee pain after long flights,knee stiffness after flight,knees hurt after flying,knee pain after sitting long time,stiff knees after travel,knee discomfort after flying,prolonged sitting knee pain,reduced circulation during travel,knee compression sitting,joint stiffness after sitting,long travel knee stiffness,travel knee comfort,flight knee tips,airplane knee stiffness",
+  sources: [
+    {
+      title: "Knee pain: causes, self-care and when to get help",
+      publisher: "NHS",
+      url: "https://www.nhs.uk/conditions/knee-pain/",
+    },
+    {
+      title: "Knee Pain: What It Is, Causes, Treatment & Relief",
+      publisher: "Cleveland Clinic",
+      url: "https://my.clevelandclinic.org/health/symptoms/21207-knee-pain",
+    },
+  ],
   content: (
     <>
+      <InfoBox title="Quick answer">
+        <p>
+          Knees often feel <strong>stiff after a long flight</strong> because the joint stays bent for hours with little movement, which temporarily reduces circulation and the fluid that keeps it gliding smoothly. Stiffness that eases within a few hours of walking is usually normal. During the flight, move your ankles and straighten your knees regularly; after landing, walk for 10-15 minutes, stay hydrated, and consider gentle warmth. Seek medical advice if you notice significant swelling, warmth, or calf pain, or if the discomfort does not settle.
+        </p>
+      </InfoBox>
+
       <p>
         Long flights are one of the most common situations where people notice unexpected knee stiffness. Whether you are traveling for business, visiting family, or heading on vacation, the hours spent in a cramped airplane seat can leave your knees feeling tight, heavy, and reluctant to bend or straighten smoothly.
       </p>
