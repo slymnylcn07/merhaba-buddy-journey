@@ -562,7 +562,7 @@ const articleContent = (
       <strong>When carrying weight:</strong> Holding groceries, a backpack, or a child while descending stairs dramatically increases the load on your knee joint. Even an extra 5 kg adds 25-40 kg of effective force at the kneecap during each step down. Using handrails and distributing weight evenly helps reduce this impact.
     </p>
     <p>
-      <strong>After sitting for a long time:</strong> Prolonged sitting allows the knee joint fluid to thicken and the muscles around the knee to stiffen. The first few steps down stairs after a long sitting period often feel the most uncomfortable. People who experience <Link to="/guides/knee-stiffness-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link> frequently notice this pattern. A few gentle knee bends before tackling stairs can help.
+      <strong>After sitting for a long time:</strong> Prolonged sitting allows the knee joint fluid to thicken and the muscles around the knee to stiffen. The first few steps down stairs after a long sitting period often feel the most uncomfortable. People who experience <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link> frequently notice this pattern. A few gentle knee bends before tackling stairs can help.
     </p>
 
     {/* ── Common Questions Section ── */}
@@ -598,7 +598,7 @@ const articleContent = (
 
     <h3>Why does my knee pain on stairs feel sharp or sudden?</h3>
     <p>
-      A sharp, catching sensation during stair descent often suggests that the kneecap is not tracking smoothly in its groove, or that a small area of cartilage is irritated. Meniscus issues can also cause sudden, localized pain with specific movements. If you experience <Link to="/guides/sharp-knee-pain-causes" className="text-primary hover:underline">sharp knee pain</Link> consistently on stairs, it deserves professional evaluation.
+      A sharp, catching sensation during stair descent often suggests that the kneecap is not tracking smoothly in its groove, or that a small area of cartilage is irritated. Meniscus issues can also cause sudden, localized pain with specific movements. If you experience <Link to="/guides/sharp-knee-pain-causes-relief" className="text-primary hover:underline">sharp knee pain</Link> consistently on stairs, it deserves professional evaluation.
     </p>
 
     <h3>Can knee weakness make stairs harder?</h3>

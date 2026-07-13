@@ -85,6 +85,46 @@
       "permanent": true
     },
     {
+      "source": "/guides/do-knee-massagers-actually-work-guide",
+      "destination": "/guides/do-knee-massagers-work",
+      "permanent": true
+    },
+    {
+      "source": "/guides/heat-or-ice-knee-pain",
+      "destination": "/guides/heat-vs-ice-for-knees",
+      "permanent": true
+    },
+    {
+      "source": "/guides/knee-pain-hiking",
+      "destination": "/guides/knee-pain-when-hiking",
+      "permanent": true
+    },
+    {
+      "source": "/guides/knee-pain-squatting",
+      "destination": "/guides/knee-pain-when-squatting",
+      "permanent": true
+    },
+    {
+      "source": "/guides/knee-stiffness-after-resting",
+      "destination": "/guides/why-do-my-knees-feel-tight-after-resting",
+      "permanent": true
+    },
+    {
+      "source": "/guides/running-shoes-knee-pain",
+      "destination": "/guides/best-running-shoes-knee-pain",
+      "permanent": true
+    },
+    {
+      "source": "/guides/sharp-knee-pain-causes",
+      "destination": "/guides/sharp-knee-pain-causes-relief",
+      "permanent": true
+    },
+    {
+      "source": "/guides/what-causes-knee-pain",
+      "destination": "/guides/what-causes-knee-pain-guide",
+      "permanent": true
+    },
+    {
       "source": "/guides/running-shoes-knee-pain-causes-fixes",
       "destination": "/guides/best-running-shoes-knee-pain",
       "permanent": true

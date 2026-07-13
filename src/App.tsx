@@ -80,6 +80,14 @@ const App = () => {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/editorial-team" element={<EditorialTeam />} />
                 <Route path="/editorial-policy" element={<Navigate to="/editorial-team" replace />} />
+                <Route path="/guides/do-knee-massagers-actually-work-guide" element={<Navigate to="/guides/do-knee-massagers-work" replace />} />
+                <Route path="/guides/heat-or-ice-knee-pain" element={<Navigate to="/guides/heat-vs-ice-for-knees" replace />} />
+                <Route path="/guides/knee-pain-hiking" element={<Navigate to="/guides/knee-pain-when-hiking" replace />} />
+                <Route path="/guides/knee-pain-squatting" element={<Navigate to="/guides/knee-pain-when-squatting" replace />} />
+                <Route path="/guides/knee-stiffness-after-resting" element={<Navigate to="/guides/why-do-my-knees-feel-tight-after-resting" replace />} />
+                <Route path="/guides/running-shoes-knee-pain" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
+                <Route path="/guides/sharp-knee-pain-causes" element={<Navigate to="/guides/sharp-knee-pain-causes-relief" replace />} />
+                <Route path="/guides/what-causes-knee-pain" element={<Navigate to="/guides/what-causes-knee-pain-guide" replace />} />
                 <Route path="/guides/running-shoes-knee-pain-causes-fixes" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
                 <Route path="/guides/running-shoes-knee-pain-discomfort" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
                 <Route path="/guides/post-exercise-knee-pain-guide" element={<Navigate to="/guides/knee-pain-after-exercise" replace />} />

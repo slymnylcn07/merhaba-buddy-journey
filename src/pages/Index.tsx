@@ -40,7 +40,7 @@ const problemPaths = [
   ["After exercise", "Knee soreness after activity or workouts", "/guides/knee-pain-after-exercise"],
   ["Going down stairs", "Pressure and discomfort during descents", "/guides/knee-pain-going-down-stairs"],
   ["Clicking or popping", "Understand sounds during walking or bending", "/guides/knee-clicking-when-walking"],
-  ["Stiff after sitting", "Daily patterns after work, travel, or rest", "/guides/knee-stiffness-after-resting"],
+  ["Stiff after sitting", "Daily patterns after work, travel, or rest", "/guides/why-do-my-knees-feel-tight-after-resting"],
 ] as const;
 
 const healthSources = [

@@ -164,7 +164,7 @@ export const infraredKneeMassagerGuide2026: ArticleExport = {
         </p>
         <ul className="list-disc pl-6 space-y-2 my-4">
           <li><strong>People with daily knee stiffness:</strong> Those who notice stiffness first thing in the morning or after sitting for extended periods.</li>
-          <li><strong>Active adults and runners:</strong> Athletes looking for post-activity recovery support beyond stretching and ice. See our <Link to="/guides/running-shoes-knee-pain-causes-fixes" className="text-primary hover:underline">running and knee pain guide</Link> for more context.</li>
+          <li><strong>Active adults and runners:</strong> Athletes looking for post-activity recovery support beyond stretching and ice. See our <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running and knee pain guide</Link> for more context.</li>
           <li><strong>Individuals exploring arthritis comfort options:</strong> People managing ongoing joint discomfort who want to add gentle at-home support to their routine.</li>
           <li><strong>Anyone transitioning from basic heating pads:</strong> Those who have used heating pads but want deeper, more targeted warmth.</li>
           <li><strong>People with nighttime knee discomfort:</strong> Those who notice increased stiffness or discomfort in the evening. Our <Link to="/guides/knee-pain-worse-at-night" className="text-primary hover:underline">nighttime knee discomfort guide</Link> explores this pattern.</li>

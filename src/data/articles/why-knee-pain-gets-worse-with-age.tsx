@@ -212,7 +212,7 @@ export const whyKneePainGetsWorseWithAge: ArticleExport = {
 
         <h3>Choose Supportive Footwear</h3>
         <p>
-          Your shoes affect how impact forces travel from the ground through your legs to your knees. Supportive shoes with adequate cushioning and proper arch support help distribute these forces more evenly, reducing concentrated stress on the knee joint. Learn more about <Link to="/guides/running-shoes-knee-pain-causes-fixes" className="text-primary hover:underline">how footwear choices affect knee comfort</Link>.
+          Your shoes affect how impact forces travel from the ground through your legs to your knees. Supportive shoes with adequate cushioning and proper arch support help distribute these forces more evenly, reducing concentrated stress on the knee joint. Learn more about <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">how footwear choices affect knee comfort</Link>.
         </p>
 
         <figure className="my-8">
