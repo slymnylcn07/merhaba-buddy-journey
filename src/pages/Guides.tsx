@@ -988,7 +988,7 @@ const Guides = () => {
             <section className="py-6">
               <div className="container px-4 max-w-4xl mx-auto">
                 <p className="text-slate-600 text-sm leading-relaxed text-center">
-                  Daily habits matter as much as movement. From <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massagers</Link> to managing <Link to="/guides/knee-stiffness-after-resting" className="text-primary hover:underline">stiffness after resting</Link>, consistent at-home care supports long-term comfort.
+                  Daily habits matter as much as movement. From <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massagers</Link> to managing <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">stiffness after resting</Link>, consistent at-home care supports long-term comfort.
                 </p>
               </div>
             </section>

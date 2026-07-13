@@ -5,7 +5,9 @@ import { Footer } from "@/components/Footer";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ArticleShareBlock } from "@/components/ArticleShareSidebar";
+import { ArticleHeaderMeta } from "@/components/ArticleHeaderMeta";
 import { ArticleTableOfContents } from "@/components/ArticleTableOfContents";
+import { guidesData } from "@/data/guides";
 
 
 import {
@@ -2282,7 +2284,7 @@ const articles: Record<string, ArticleData> = {
           Inner knee pain running, also called medial knee discomfort, is less talked about than lateral pain but equally important to understand. Pain on the inside of the knee during or after running can originate from several structures, including the medial meniscus, the medial collateral ligament (MCL), or the pes anserine tendons.
         </p>
         <p>
-          Runners who overpronate (where the foot rolls inward excessively during the stride) are more likely to experience inner knee pain because this movement pattern places additional rotational stress on the medial structures of the knee. This is one reason why proper footwear matters. Our guide on <Link to="/guides/running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee pain</Link> explores how shoe selection affects knee alignment.
+          Runners who overpronate (where the foot rolls inward excessively during the stride) are more likely to experience inner knee pain because this movement pattern places additional rotational stress on the medial structures of the knee. This is one reason why proper footwear matters. Our guide on <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee pain</Link> explores how shoe selection affects knee alignment.
         </p>
         <p>
           If you notice inner knee pain that worsens with longer runs or appears specifically when running on uneven surfaces, it may be helpful to assess your running form and consider a gait analysis. Strengthening the muscles that control hip and ankle stability can also reduce the rotational forces that contribute to medial knee stress.
@@ -2324,7 +2326,7 @@ const articles: Record<string, ArticleData> = {
           Loose bodies, small fragments of cartilage or bone floating in the joint, can cause sudden sharp pain when they temporarily catch between joint surfaces. Plica syndrome, where a fold of joint lining becomes irritated, can also cause intermittent sharp pain with certain movements.
         </p>
         <p>
-         IT band syndrome, while typically causing outer knee pain, can sometimes create sharp sensations that come and go depending on your running position and stride. The pain often appears at a consistent point during your run, typically after a certain distance. For a detailed breakdown of IT band patterns, see our <Link to="/guides/it-band-syndrome-explained" className="text-primary underline hover:text-primary/80">IT band syndrome guide</Link>. If you are interested in how footwear affects running knee pain, our guide on <Link to="/guides/running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee pain</Link> explores the connection. Building stronger supporting muscles through <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">targeted knee-strengthening habits</Link> can also help prevent recurring issues. For detailed location-based patterns, see our <Link to="/guides/runners-knee-pain-location" className="text-primary hover:underline">runner's knee pain location guide</Link>.
+         IT band syndrome, while typically causing outer knee pain, can sometimes create sharp sensations that come and go depending on your running position and stride. The pain often appears at a consistent point during your run, typically after a certain distance. For a detailed breakdown of IT band patterns, see our <Link to="/guides/it-band-syndrome-explained" className="text-primary underline hover:text-primary/80">IT band syndrome guide</Link>. If you are interested in how footwear affects running knee pain, our guide on <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee pain</Link> explores the connection. Building stronger supporting muscles through <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">targeted knee-strengthening habits</Link> can also help prevent recurring issues. For detailed location-based patterns, see our <Link to="/guides/runners-knee-pain-location" className="text-primary hover:underline">runner's knee pain location guide</Link>.
         </p>
 
         <h2>Knee Soreness After Running: Common Scenarios</h2>
@@ -3023,7 +3025,7 @@ const articles: Record<string, ArticleData> = {
           <strong>Physical therapy:</strong> A physical therapist can identify contributing factors and develop a targeted treatment plan.
         </p>
         <p>
-          For a deeper exploration of intermittent sharp patterns, see our guide on <Link to="/guides/sharp-knee-pain-causes" className="text-primary hover:underline">sharp knee pain causes</Link>. If you experience sharp sensations specifically while running, our <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">running knee pain guide</Link> covers sport-specific triggers. Understanding <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">where your knee hurts and what it means</Link> can also help narrow down the source. Building consistent daily habits through a <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine</Link> can help manage episodes between flare-ups.
+          For a deeper exploration of intermittent sharp patterns, see our guide on <Link to="/guides/sharp-knee-pain-causes-relief" className="text-primary hover:underline">sharp knee pain causes</Link>. If you experience sharp sensations specifically while running, our <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">running knee pain guide</Link> covers sport-specific triggers. Understanding <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">where your knee hurts and what it means</Link> can also help narrow down the source. Building consistent daily habits through a <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee comfort routine</Link> can help manage episodes between flare-ups.
         </p>
 
         <h2>Why Does Sharp Knee Pain Come and Go?</h2>
@@ -3371,7 +3373,7 @@ const articles: Record<string, ArticleData> = {
         />
 
         <p>
-          This guide offers general, educational information about knee injuries without providing medical advice or treatment recommendations. If you're experiencing significant <strong>knee pain</strong> or believe you may have a <strong>knee injury</strong>, consulting with a healthcare professional is the appropriate first step. For a broader overview of what leads to knee discomfort in general, our guide on <Link to="/guides/what-causes-knee-pain" className="text-primary hover:underline">what causes knee pain</Link> provides helpful context.
+          This guide offers general, educational information about knee injuries without providing medical advice or treatment recommendations. If you're experiencing significant <strong>knee pain</strong> or believe you may have a <strong>knee injury</strong>, consulting with a healthcare professional is the appropriate first step. For a broader overview of what leads to knee discomfort in general, our guide on <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">what causes knee pain</Link> provides helpful context.
         </p>
 
         <SectionDivider />
@@ -3398,7 +3400,7 @@ const articles: Record<string, ArticleData> = {
 
         <h3>Poor Movement Habits</h3>
         <p>
-          The way you move throughout the day matters more than many people realize. Improper form during exercises like squats, lunges, or even stepping off curbs can place uneven stress across the knee joint. Over time, these subtle misalignments accumulate and may lead to discomfort. Our guide on <Link to="/guides/knee-pain-squatting" className="text-primary hover:underline">knee discomfort during squatting</Link> explores this topic in detail.
+          The way you move throughout the day matters more than many people realize. Improper form during exercises like squats, lunges, or even stepping off curbs can place uneven stress across the knee joint. Over time, these subtle misalignments accumulate and may lead to discomfort. Our guide on <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">knee discomfort during squatting</Link> explores this topic in detail.
         </p>
 
         <h3>Long-Term Strain and Age-Related Changes</h3>
@@ -3555,7 +3557,7 @@ const articles: Record<string, ArticleData> = {
 
         <h3>Hiking</h3>
         <p>
-          Hiking combines prolonged walking with uneven terrain, elevation changes, and often heavy packs. The combination of impact, instability, and sustained effort makes the knee particularly vulnerable during long hikes, especially on downhill sections. Our guide on <Link to="/guides/knee-pain-hiking" className="text-primary hover:underline">knee comfort while hiking</Link> covers practical considerations.
+          Hiking combines prolonged walking with uneven terrain, elevation changes, and often heavy packs. The combination of impact, instability, and sustained effort makes the knee particularly vulnerable during long hikes, especially on downhill sections. Our guide on <Link to="/guides/knee-pain-when-hiking" className="text-primary hover:underline">knee comfort while hiking</Link> covers practical considerations.
         </p>
 
         <PremiumCTA
@@ -3582,7 +3584,7 @@ const articles: Record<string, ArticleData> = {
 
         <h3>Stiffness and Limited Movement</h3>
         <p>
-          After a <strong>knee injury</strong>, the joint may feel stiff and difficult to fully bend or straighten. This restriction can result from swelling, pain, or mechanical problems like a torn meniscus interfering with normal movement. Some people describe feeling like their knee is "locked" in a position. Those who experience persistent stiffness may find our guide on <Link to="/guides/knee-stiffness-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link> helpful.
+          After a <strong>knee injury</strong>, the joint may feel stiff and difficult to fully bend or straighten. This restriction can result from swelling, pain, or mechanical problems like a torn meniscus interfering with normal movement. Some people describe feeling like their knee is "locked" in a position. Those who experience persistent stiffness may find our guide on <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link> helpful.
         </p>
 
         <h3>Instability</h3>
@@ -3693,7 +3695,7 @@ const articles: Record<string, ArticleData> = {
 
         <h3>Warmth Application</h3>
         <p>
-          Gentle warmth is one of the most commonly used comfort approaches for knee stiffness and general discomfort. Whether through warm compresses, heated wraps, or infrared-based devices, warmth can help promote a sense of ease around the joint. Our guide on <Link to="/guides/heat-or-ice-knee-pain" className="text-primary hover:underline">when to use heat or ice</Link> discusses how people approach this choice.
+          Gentle warmth is one of the most commonly used comfort approaches for knee stiffness and general discomfort. Whether through warm compresses, heated wraps, or infrared-based devices, warmth can help promote a sense of ease around the joint. Our guide on <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">when to use heat or ice</Link> discusses how people approach this choice.
         </p>
 
         <h3>Light Support Devices</h3>
@@ -3806,7 +3808,7 @@ const articles: Record<string, ArticleData> = {
           Many people find that incorporating supportive habits into their daily routine, from gentle movement to appropriate rest, becomes second nature over time. The goal isn't perfection but consistent attention to the practices that help your knees feel and function their best.
         </p>
         <p>
-          For practical strengthening exercises to protect your knees, see our guide on <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen knees for better stability</Link>. If your injury involves the back of the knee, our <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back of knee pain guide</Link> provides more detail on posterior knee structures. Runners recovering from injury may benefit from our <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">running knee pain guide</Link>, and those experiencing sharp sensations during recovery should explore our <Link to="/guides/sharp-knee-pain-causes" className="text-primary hover:underline">sharp knee pain causes guide</Link>.
+          For practical strengthening exercises to protect your knees, see our guide on <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen knees for better stability</Link>. If your injury involves the back of the knee, our <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back of knee pain guide</Link> provides more detail on posterior knee structures. Runners recovering from injury may benefit from our <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">running knee pain guide</Link>, and those experiencing sharp sensations during recovery should explore our <Link to="/guides/sharp-knee-pain-causes-relief" className="text-primary hover:underline">sharp knee pain causes guide</Link>.
         </p>
 
       </>
@@ -4149,7 +4151,7 @@ const articles: Record<string, ArticleData> = {
            Consistency matters more than intensity. Small daily habits, maintained over weeks and months, tend to produce better results than occasional intensive interventions. The goal is sustainable comfort through sustainable habits.
          </p>
          <p>
-           For a step-by-step approach to building supportive habits, see our guide on <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">building a daily knee care routine</Link>. If warmth helps ease your patterns, explore how <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat compares to ice for knee comfort</Link>. For understanding the deeper causes of sharp intermittent pain, our <Link to="/guides/sharp-knee-pain-causes" className="text-primary hover:underline">sharp knee pain causes guide</Link> provides detailed insights.
+           For a step-by-step approach to building supportive habits, see our guide on <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">building a daily knee care routine</Link>. If warmth helps ease your patterns, explore how <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat compares to ice for knee comfort</Link>. For understanding the deeper causes of sharp intermittent pain, our <Link to="/guides/sharp-knee-pain-causes-relief" className="text-primary hover:underline">sharp knee pain causes guide</Link> provides detailed insights.
          </p>
 
         <h2>When Patterns Change Significantly</h2>
@@ -5113,7 +5115,7 @@ const articles: Record<string, ArticleData> = {
 
         <h3>After a Long Car Ride or Flight</h3>
         <p>
-          Sitting in a cramped position for hours often leads to <Link to="/guides/knee-stiffness-after-resting" className="text-primary hover:underline">stiffness after resting</Link>. Heat is the clear winner here, as cold would only tighten things further. A warm session combined with gentle movement helps restore comfortable mobility.
+          Sitting in a cramped position for hours often leads to <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">stiffness after resting</Link>. Heat is the clear winner here, as cold would only tighten things further. A warm session combined with gentle movement helps restore comfortable mobility.
         </p>
 
         <hr className="my-8 border-t border-border/60" />
@@ -6127,7 +6129,7 @@ const articles: Record<string, ArticleData> = {
         />
 
         <p>
-          This guide reframes the concept of "fixing" knee discomfort toward something more realistic and sustainable: understanding your daily patterns, developing supportive habits, and creating an environment that promotes everyday comfort. For simple, practical home-based approaches you can start today, see our guide on <Link to="/guides/home-remedies-knee-pain" className="text-primary hover:underline">home remedies for knee pain</Link>. To understand what causes knee discomfort in the first place, see our <Link to="/guides/what-causes-knee-pain" className="text-primary hover:underline">complete guide to knee pain causes</Link>.
+          This guide reframes the concept of "fixing" knee discomfort toward something more realistic and sustainable: understanding your daily patterns, developing supportive habits, and creating an environment that promotes everyday comfort. For simple, practical home-based approaches you can start today, see our guide on <Link to="/guides/home-remedies-knee-pain" className="text-primary hover:underline">home remedies for knee pain</Link>. To understand what causes knee discomfort in the first place, see our <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">complete guide to knee pain causes</Link>.
         </p>
 
         <h2>Why People Search "How to Fix Knee Pain"</h2>
@@ -6330,7 +6332,7 @@ const articles: Record<string, ArticleData> = {
            Rather than looking for a single solution, consider developing a collection of supportive habits: movement throughout the day, appropriate rest, comfortable environments, and perhaps some at-home tools that feel right for you.
          </p>
          <p>
-           For structured daily habit ideas, see our <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link>. If you're experiencing sharp or intermittent pain, our <Link to="/guides/sharp-knee-pain-causes" className="text-primary hover:underline">sharp knee pain causes guide</Link> explores common patterns. And for understanding which approach—heat or cold—works best for your situation, see our <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice science breakdown</Link>. Strengthening exercises also play a key role—explore <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen your knees</Link>.
+           For structured daily habit ideas, see our <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link>. If you're experiencing sharp or intermittent pain, our <Link to="/guides/sharp-knee-pain-causes-relief" className="text-primary hover:underline">sharp knee pain causes guide</Link> explores common patterns. And for understanding which approach—heat or cold—works best for your situation, see our <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice science breakdown</Link>. Strengthening exercises also play a key role—explore <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen your knees</Link>.
          </p>
 
         <p>
@@ -6610,7 +6612,7 @@ const articles: Record<string, ArticleData> = {
            Understanding your own patterns, whether they align with common gender-based observations or not, provides valuable insight for supporting your daily comfort. Pay attention to which activities, positions, environments, and times of day seem to influence how your knees feel.
          </p>
          <p>
-           For practical daily habit ideas, see our <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee care routine guide</Link>. If footwear is a factor, our guide on <Link to="/guides/running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee pain</Link> explores the shoe-comfort connection. For warmth-based approaches, explore our <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">warmth for daily knee comfort guide</Link>.
+           For practical daily habit ideas, see our <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee care routine guide</Link>. If footwear is a factor, our guide on <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee pain</Link> explores the shoe-comfort connection. For warmth-based approaches, explore our <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">warmth for daily knee comfort guide</Link>.
          </p>
 
         <p>
@@ -6910,7 +6912,7 @@ const articles: Record<string, ArticleData> = {
         />
 
         <p>
-          Remember that finding the right shoe is highly individual. What feels perfect for one runner may not suit another. The goal is to understand your options so you can make informed choices for your own comfort. If you're also dealing with <Link to="/guides/knee-stiffness-after-resting" className="text-primary hover:underline">stiffness after resting</Link>, footwear is just one piece of a larger comfort puzzle.
+          Remember that finding the right shoe is highly individual. What feels perfect for one runner may not suit another. The goal is to understand your options so you can make informed choices for your own comfort. If you're also dealing with <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">stiffness after resting</Link>, footwear is just one piece of a larger comfort puzzle.
         </p>
 
         <h2>Why Runners Look for "Knee-Friendly" Shoes</h2>
@@ -7127,7 +7129,7 @@ const articles: Record<string, ArticleData> = {
 
         <h3>Stride Patterns</h3>
         <p>
-          How you land and push off with each step affects how your knees experience running. Many runners notice that their stride naturally adjusts somewhat depending on the shoes they wear, their speed, and the surface they're running on. Runners dealing with <Link to="/guides/knee-pain-squatting" className="text-primary hover:underline">discomfort during squatting movements</Link> may find that their stride mechanics share common contributing factors.
+          How you land and push off with each step affects how your knees experience running. Many runners notice that their stride naturally adjusts somewhat depending on the shoes they wear, their speed, and the surface they're running on. Runners dealing with <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">discomfort during squatting movements</Link> may find that their stride mechanics share common contributing factors.
         </p>
 
         <h3>Cadence Considerations</h3>
@@ -7144,7 +7146,7 @@ const articles: Record<string, ArticleData> = {
 
         <h3>Uphill vs. Downhill Running</h3>
         <p>
-          Running uphill and downhill places different demands on your body. Many runners notice that their knee comfort varies depending on the terrain. Some shoes feel better for hills than others, and running habits on varied terrain can influence overall comfort. Our guide on <Link to="/guides/knee-pain-hiking" className="text-primary hover:underline">knee comfort during hiking and inclines</Link> covers terrain-specific considerations in more detail.
+          Running uphill and downhill places different demands on your body. Many runners notice that their knee comfort varies depending on the terrain. Some shoes feel better for hills than others, and running habits on varied terrain can influence overall comfort. Our guide on <Link to="/guides/knee-pain-when-hiking" className="text-primary hover:underline">knee comfort during hiking and inclines</Link> covers terrain-specific considerations in more detail.
         </p>
 
         <h3>Warm-Up Habits</h3>
@@ -7307,7 +7309,7 @@ const articles: Record<string, ArticleData> = {
            Focus on understanding the features that influence shoe feel, explore multiple brands with an open mind, avoid common fit mistakes, and pay attention to your running habits alongside your footwear choices. Shoes and habits work together as a system.
          </p>
          <p>
-           For more on how footwear affects knee comfort, see our detailed guide on <Link to="/guides/running-shoes-knee-pain-discomfort" className="text-primary hover:underline">running shoes and knee discomfort</Link>. Runners dealing with knee pain can also benefit from our <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">comprehensive running knee pain guide</Link>. For post-run warmth routines, explore <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">warmth for daily knee comfort</Link>. And if you're looking for strengthening options, our <Link to="/guides/exercises-to-relieve-knee-pain-at-home" className="text-primary hover:underline">at-home knee exercise guide</Link> provides practical options you can start today.
+           For more on how footwear affects knee comfort, see our detailed guide on <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee discomfort</Link>. Runners dealing with knee pain can also benefit from our <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">comprehensive running knee pain guide</Link>. For post-run warmth routines, explore <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">warmth for daily knee comfort</Link>. And if you're looking for strengthening options, our <Link to="/guides/exercises-to-relieve-knee-pain-at-home" className="text-primary hover:underline">at-home knee exercise guide</Link> provides practical options you can start today.
          </p>
 
         <p>
@@ -8597,6 +8599,7 @@ const GuideArticle = () => {
   }
 
   const article = articles[slug];
+  const readingTime = guidesData.find((guide) => guide.slug === article.slug)?.readTime ?? 8;
 
   // Convert readable date to ISO format for JSON-LD
   const getISODate = (dateString: string) => {
@@ -9074,35 +9077,25 @@ const GuideArticle = () => {
         </section>
 
         {/* Article Header */}
-        <section className="-mt-20 relative z-20 pb-2">
-          <div className="container mx-auto max-w-7xl px-4">
-            <div className="rounded-[2rem] border border-white/80 bg-white/90 p-6 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.75)] backdrop-blur-xl lg:grid lg:grid-cols-[12rem_minmax(0,52rem)] lg:gap-x-10 lg:p-8">
-              <div className="hidden lg:block" />
+        <section className="relative z-20 bg-white py-8 md:py-10">
+          <div className="container mx-auto max-w-6xl px-4">
+            <div className="mx-auto max-w-5xl">
+              <Link
+                to="/guides"
+                className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Back to Guides
+              </Link>
 
-              <div className="min-w-0 max-w-3xl">
-                <div className="mb-6 flex items-center justify-between">
-                  <Link 
-                    to="/guides" 
-                    className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <ArrowLeft className="h-4 w-4" />
-                    Back to Guides
-                  </Link>
-                  <span className="text-sm text-muted-foreground">
-                    {article.lastUpdated ? `Updated ${article.lastUpdated}` : article.publishedDate}
-                  </span>
-                </div>
-                
-                <h1 className="mb-4 text-2xl font-bold leading-tight tracking-tight text-foreground md:text-3xl lg:text-4xl">
-                  {article.title}
-                </h1>
-                <div className="mt-4 flex justify-start text-left text-sm text-slate-500">
-                  <span>Author By&nbsp;</span>
-                  <Link to="/editorial-team" className="font-semibold text-blue-600 hover:underline">
-                    FlexiKnee Editorial Team
-                  </Link>
-                </div>
-              </div>
+              <h1 className="max-w-5xl text-3xl font-bold leading-[1.08] tracking-tight text-slate-950 md:text-4xl lg:text-5xl">
+                {article.title}
+              </h1>
+              <ArticleHeaderMeta
+                dateIso={getISODate(article.lastUpdated || article.publishedDate)}
+                dateLabel={article.lastUpdated ? `Updated ${article.lastUpdated}` : article.publishedDate}
+                readingTime={readingTime}
+              />
             </div>
           </div>
         </section>

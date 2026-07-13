@@ -502,7 +502,7 @@ export default function IndexBelowFold({
             </div>
 
             <p className="text-sm text-muted-foreground text-center max-w-2xl mx-auto mb-8">
-              Whether you experience <Link to="/guides/post-exercise-knee-pain-guide" className="text-primary hover:underline">knee pain during movement</Link> or notice <Link to="/guides/knee-stiffness-after-resting" className="text-primary hover:underline">stiffness after resting</Link>, our guides cover practical steps you can take at home.
+              Whether you experience <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain during movement</Link> or notice <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">stiffness after resting</Link>, our guides cover practical steps you can take at home.
             </p>
 
             <div className="text-center">

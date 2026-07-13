@@ -385,7 +385,7 @@ export const kneeClickingWhenWalking = {
 
         <h3>6. Choose Supportive Footwear</h3>
         <p>
-          Worn-out shoes alter your gait mechanics, which can change how your knee tracks during walking. Shoes with proper arch support and cushioning help maintain optimal knee alignment. See our <Link to="/guides/running-shoes-knee-pain-causes-fixes" className="text-primary hover:underline">running shoes and knee pain guide</Link> for footwear recommendations.
+          Worn-out shoes alter your gait mechanics, which can change how your knee tracks during walking. Shoes with proper arch support and cushioning help maintain optimal knee alignment. See our <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee pain guide</Link> for footwear recommendations.
         </p>
 
         {/* ── Knee Clicking When Bending and Straightening ── */}
