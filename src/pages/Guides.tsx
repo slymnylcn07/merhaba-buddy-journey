@@ -118,7 +118,6 @@ import thumbBatch3PatellofemoralPainSyndrome from "@/assets/guide-thumbnails/bat
 import thumbBatch3WarmFeelingInKnee from "@/assets/guide-thumbnails/batch-3/warm-feeling-in-knee.webp";
 import thumbBatch1WhyKneePainDoesntGoAway from "@/assets/guide-thumbnails/batch-1/why-knee-pain-doesnt-go-away.png";
 import thumbBatch1BurningKneesAfterExercise from "@/assets/guide-thumbnails/batch-1/burning-knees-after-exercise.png";
-import thumbBatch1KneePainAfterExerciseButNotDuring from "@/assets/guide-thumbnails/batch-1/knee-pain-after-exercise-but-not-during.png";
 import thumbBatch1KneePainGoingDownStairs from "@/assets/guide-thumbnails/batch-1/knee-pain-going-down-stairs.png";
 import thumbBatch1WhyKneePainFeelsWorseAtNight from "@/assets/guide-thumbnails/batch-1/why-knee-pain-feels-worse-at-night.png";
 import thumbBatch1WhyKneesHurtWhenSleeping from "@/assets/guide-thumbnails/batch-1/why-knees-hurt-when-sleeping.png";
@@ -216,7 +215,6 @@ const thumbnailMap: Record<string, string> = {
   "cold-weather-knee-pain": thumbColdWeatherKneePain,
   "knee-pain-after-exercise": thumbKneePainAfterExercise,
   "burning-knees-after-exercise": thumbBatch1BurningKneesAfterExercise,
-  "knee-pain-after-exercise-but-not-during": thumbBatch1KneePainAfterExerciseButNotDuring,
   "best-insoles-for-knee-pain-2026": thumbBatch1BestInsolesForKneePain2026,
   "cordless-rechargeable-heated-knee-massagers-2026": thumbBatch1CordlessRechargeableHeatedKneeMassagers2026,
   "it-band-foam-rolling-step-by-step": thumbItBandFoamRollingList,
@@ -262,7 +260,6 @@ const guides = guidesData.map(guide => ({
 const getGuide = (slug: string) => guides.find(g => g.slug === slug);
 
 const latestPrioritySlugs = [
-  "knee-pain-after-exercise-but-not-during",
   "cordless-rechargeable-heated-knee-massagers-2026",
   "best-insoles-for-knee-pain-2026",
 ];
@@ -274,7 +271,7 @@ const formatGuideDate = (value?: string) => {
   return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", year: "numeric" }).format(date);
 };
 
-// ── Section configurations ──
+// ?? Section configurations ??
 
 const featuredSlugs = [
   "cause-of-knee-pain-patterns",
@@ -403,7 +400,7 @@ const deviceSlugs = [
   "smart-knee-massagers-breakdown",
 ];
 
-// ── Skeleton components ──
+// ?? Skeleton components ??
 
 const FeaturedCardSkeleton = () => (
   <div className="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm">
@@ -425,7 +422,7 @@ const CardSkeleton = () => (
   </div>
 );
 
-// ── Card components ──
+// ?? Card components ??
 
 const FeaturedGuideCard = ({ guide }: { guide: typeof guides[0] }) => (
   <Link to={`/guides/${guide.slug}`} className="group block">
@@ -436,7 +433,7 @@ const FeaturedGuideCard = ({ guide }: { guide: typeof guides[0] }) => (
       <div className="p-5 md:p-6">
         <div className="flex items-center gap-2 mb-3">
           <span className="text-xs font-medium text-blue-600 uppercase tracking-wider">Featured</span>
-          <span className="text-slate-300">•</span>
+          <span className="text-slate-300">?</span>
           <span className="inline-flex items-center gap-1 text-xs text-blue-600">
             <Clock className="h-3 w-3" />
             {guide.readTime} min
@@ -840,7 +837,7 @@ const Guides = () => {
                             <div className="p-5 md:p-6">
                               <div className="flex items-center gap-2 mb-3">
                                 <span className="text-xs font-medium text-primary uppercase tracking-wider">Featured</span>
-                                <span className="text-slate-300">•</span>
+                                <span className="text-slate-300">?</span>
                                 <span className="inline-flex items-center gap-1 text-xs text-blue-600">
                                   <Clock className="h-3 w-3" />
                                   {guide.readTime} min
@@ -914,7 +911,7 @@ const Guides = () => {
                           <div className="p-5">
                             <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
                               <span>Updated {formatGuideDate(guide.lastModified)}</span>
-                              <span className="text-slate-300">•</span>
+                              <span className="text-slate-300">?</span>
                               <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" />{guide.readTime} min</span>
                             </div>
                             <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950 transition-colors group-hover:text-blue-600">{guide.title}</h3>

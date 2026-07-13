@@ -145,6 +145,11 @@
       "permanent": true
     },
     {
+      "source": "/guides/knee-pain-after-exercise-but-not-during",
+      "destination": "/guides/knee-pain-after-exercise",
+      "permanent": true
+    },
+    {
       "source": "/guides/knee-pain-location-map-2026",
       "destination": "/guides/knee-pain-locations-visual-guide",
       "permanent": true

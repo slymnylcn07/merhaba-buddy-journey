@@ -263,7 +263,6 @@ import thumbItBandFoamRolling from "@/assets/hero-itband-foam-rolling.svg";
 import thumbSleepKneePain from "@/assets/hero-sleep-knee-pain.svg";
 import thumbAirCompressionLeg from "@/assets/hero-air-compression-leg.svg";
 import thumbSleeveSizing from "@/assets/hero-sleeve-sizing.svg";
-import thumbExerciseNotDuring from "@/assets/article-hero-exercise-not-during.svg";
 import thumbCordlessMassagers from "@/assets/article-hero-cordless-massagers.svg";
 import thumbInsolesKnee from "@/assets/article-hero-insoles-knee.svg";
 import { ArticleQuizCard } from "@/components/ArticleQuizCard";
@@ -340,7 +339,6 @@ import {
   homeRemediesKneePain,
   whatMakesKneePainWorse,
   weightAffectsKneePain,
-  kneePainAfterExerciseNotDuring,
   cordlessHeatedKneeMassagers2026,
   bestInsolesKneePain2026,
   itBandFoamRollingGuide,
@@ -410,8 +408,8 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "smart-knee-massagers-breakdown": { headline: "Curious about a quality smart knee massager?", text: "FlexiKnee combines adjustable heat, red light, and vibration massage in one wireless device designed for daily knee comfort." },
   "knee-warmth-daily-comfort": { headline: "Want effortless daily warmth for your knees?", text: "FlexiKnee provides adjustable, consistent warmth along with red light and vibration, making your daily comfort routine simple and effective." },
   "knee-pain-locations-visual-guide": { headline: "Want location-specific comfort support for your knee?", text: "FlexiKnee wraps around the entire knee area, delivering soothing warmth, red light, and gentle vibration to support comfort in all zones." },
-  "knee-pain-location-map-2026": { headline: "Support every zone on your knee pain location map", text: "FlexiKnee delivers soothing warmth, red light, and gentle vibration to the entire knee area — designed for daily comfort across all discomfort zones." },
-  "runners-knee-pain-location": { headline: "Support your knees after every run", text: "FlexiKnee wraps around the full knee area, delivering soothing warmth, red light, and gentle vibration — designed for runners who want daily comfort support." },
+  "knee-pain-location-map-2026": { headline: "Support every zone on your knee pain location map", text: "FlexiKnee delivers soothing warmth, red light, and gentle vibration to the entire knee area ? designed for daily comfort across all discomfort zones." },
+  "runners-knee-pain-location": { headline: "Support your knees after every run", text: "FlexiKnee wraps around the full knee area, delivering soothing warmth, red light, and gentle vibration ? designed for runners who want daily comfort support." },
   "it-band-syndrome-explained": { headline: "Need outer knee comfort support after runs?", text: "FlexiKnee wraps around the full knee area, delivering soothing warmth, red light, and gentle vibration to the outer knee zone where IT band sensations are most common." },
   "it-band-pain-location-diagram": { headline: "Want soothing support for the outer knee zone?", text: "FlexiKnee delivers warmth, red light, and gentle vibration to the exact area where IT band discomfort is most commonly felt." },
   "why-do-my-knees-hurt-when-sleeping": { headline: "Need soothing nighttime knee comfort support?", text: "FlexiKnee provides gentle warmth, red light, and vibration before bed, helping your knees feel relaxed and comfortable through the night." },
@@ -420,16 +418,16 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "why-do-my-knees-feel-tight-after-resting": { headline: "Want to ease post-rest knee stiffness at home?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration to help your knees transition from rest to movement more comfortably." },
   "knee-pain-after-standing": { headline: "Need knee comfort support after standing all day?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover after long periods on your feet." },
   "best-red-light-therapy-knee": { headline: "Looking for the best red light therapy for your knees?", text: "FlexiKnee combines red light wavelengths with adjustable warmth and gentle vibration in one wireless knee wrap for convenient daily comfort support." },
-  "knee-pain-exercises-guide": { headline: "Want to complement your exercises with daily comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration after workouts — helping your knees recover and stay comfortable as you build strength." },
-  "what-causes-knee-pain-guide": { headline: "Understanding your knee pain causes? Support your knees daily", text: "FlexiKnee delivers soothing warmth, red light, and gentle vibration to the entire knee area — designed for daily comfort support no matter the cause of your discomfort." },
-  "knee-pain-after-40": { headline: "Want daily comfort support for aging knees?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device — designed for adults over 40 who want consistent daily knee comfort support." },
+  "knee-pain-exercises-guide": { headline: "Want to complement your exercises with daily comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration after workouts ? helping your knees recover and stay comfortable as you build strength." },
+  "what-causes-knee-pain-guide": { headline: "Understanding your knee pain causes? Support your knees daily", text: "FlexiKnee delivers soothing warmth, red light, and gentle vibration to the entire knee area ? designed for daily comfort support no matter the cause of your discomfort." },
+  "knee-pain-after-40": { headline: "Want daily comfort support for aging knees?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device ? designed for adults over 40 who want consistent daily knee comfort support." },
   "why-knee-pain-gets-worse-with-age": { headline: "Support your aging joints with daily comfort", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device, helping you manage age-related knee changes with a simple daily routine." },
   "morning-knee-stiffness-after-40": { headline: "Start your mornings with comfortable knees", text: "FlexiKnee provides adjustable warmth, red light, and gentle vibration to help your knees warm up before your first step of the day." },
   "knee-pain-getting-up-after-sitting": { headline: "Make standing up comfortable again", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees transition smoothly from sitting to standing every day." },
   "knee-pain-after-long-walks": { headline: "Support your knees after every walk", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long walks, making your daily walking routine sustainable." },
   "knee-mobility-after-50": { headline: "Support your daily knee mobility routine", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees warm up for daily mobility exercises and feel more comfortable through every movement." },
   "sudden-knee-pain-guide": { headline: "Need comfort support for sudden knee episodes?", text: "FlexiKnee delivers soothing warmth, red light, and gentle vibration to help your knees feel comfortable between unexpected pain episodes." },
-  "knee-pain-at-night-after-40": { headline: "Want a soothing evening knee comfort routine?", text: "FlexiKnee provides adjustable warmth, red light, and gentle vibration before bed — helping your knees relax and feel more comfortable through the night." },
+  "knee-pain-at-night-after-40": { headline: "Want a soothing evening knee comfort routine?", text: "FlexiKnee provides adjustable warmth, red light, and gentle vibration before bed ? helping your knees relax and feel more comfortable through the night." },
   "knee-clicking-when-walking": { headline: "Want daily comfort support for clicking knees?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help keep your knee joints comfortable and supported through everyday movements." },
   "knees-hurt-after-resting": { headline: "Want to ease rest-related knee stiffness at home?", text: "FlexiKnee combines soothing warmth, red light, and gentle vibration to help your knees transition from rest to movement more comfortably." },
   "cold-weather-knee-pain": { headline: "Need warmth support for cold-weather knee comfort?", text: "FlexiKnee provides adjustable soothing warmth, red light, and gentle vibration to help your knees stay comfortable during cold weather." },
@@ -446,7 +444,7 @@ const articleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-bursitis-guide": { headline: "Want gentle warmth for irritated knee bursae?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help support knee comfort during your daily routine." },
   "patellofemoral-pain-syndrome": { headline: "Need front-of-knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help support kneecap comfort during your daily routine." },
   "knee-pain-after-car-rides": { headline: "Need post-travel knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long drives." },
-  "warm-feeling-in-knee": { headline: "Want soothing warmth support for your knees?", text: "FlexiKnee provides adjustable heat, red light, and gentle vibration in one wireless device — designed for daily knee comfort support." },
+  "warm-feeling-in-knee": { headline: "Want soothing warmth support for your knees?", text: "FlexiKnee provides adjustable heat, red light, and gentle vibration in one wireless device ? designed for daily knee comfort support." },
   "heavy-feeling-in-knees": { headline: "Support your knees with daily warmth and comfort", text: "FlexiKnee provides adjustable warmth, red light, and gentle vibration in one wireless device, designed for daily knee comfort support." },
   "knee-pain-after-flights": { headline: "Want post-travel knee comfort support?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long flights and travel days." },
   "knee-pain-when-kneeling": { headline: "Need comfort support for kneeling activities?", text: "FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after gardening, cleaning, or any kneeling work." },
@@ -1357,7 +1355,7 @@ const articles: Record<string, ArticleData> = {
           <strong>Overuse and repetitive stress:</strong> Many people develop pain in the knee from repetitive activities. Whether it's running, cycling, climbing stairs, or simply walking long distances, repeated stress on the knee joint can lead to discomfort. This is particularly common in people who've recently increased their activity level.
         </p>
         <p>
-          <strong>Age-related changes:</strong> As we age, the cartilage in our knee joint naturally wears down. This gradual change can lead to stiffness, reduced flexibility, and eventually discomfort. While this is a normal part of aging, it doesn't mean pain is inevitable—many strategies can help maintain comfort.
+          <strong>Age-related changes:</strong> As we age, the cartilage in our knee joint naturally wears down. This gradual change can lead to stiffness, reduced flexibility, and eventually discomfort. While this is a normal part of aging, it doesn't mean pain is inevitable?many strategies can help maintain comfort.
         </p>
         <p>
           <strong>Muscle imbalances:</strong> Weak or tight muscles around the knee can alter how forces are distributed across the joint. When the quadriceps, hamstrings, or calf muscles aren't properly balanced, it can lead to uneven wear and pain in the knee.
@@ -1439,7 +1437,7 @@ const articles: Record<string, ArticleData> = {
           Understanding how daily activities affect your knee joint can help you make informed choices about managing discomfort. Some activities place more stress on the knees than others.
         </p>
         <p>
-          <strong>Stair climbing:</strong> Going up and down stairs creates significant forces through the knee joint—up to four times your body weight on the way down. If stairs trigger your pain in the knee, this might indicate issues with the kneecap or the cartilage behind it.
+          <strong>Stair climbing:</strong> Going up and down stairs creates significant forces through the knee joint?up to four times your body weight on the way down. If stairs trigger your pain in the knee, this might indicate issues with the kneecap or the cartilage behind it.
         </p>
         <p>
           <strong>Prolonged sitting:</strong> Staying in one position for too long can lead to stiffness and discomfort when you finally move. This is often called "theater knee" or "movie sign" because it commonly occurs after sitting still for extended periods.
@@ -1470,7 +1468,7 @@ const articles: Record<string, ArticleData> = {
           <strong>Flexibility counts:</strong> Tight muscles can pull unevenly on the knee joint, contributing to discomfort. Regular stretching of the muscles around the knee, hip, and ankle can help maintain proper alignment and reduce stress on the joint.
         </p>
         <p>
-          If you're noticing discomfort in a specific area, our <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee pain locations visual guide</Link> can help you identify what might be involved. For sharp, intermittent sensations, see our <Link to="/guides/sharp-knee-pain-guide" className="text-primary hover:underline">sharp knee pain guide</Link>. And if your discomfort is behind the knee, our <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back of knee pain guide</Link> covers the posterior structures in detail. Building strength is also key—explore our guide on <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen knees</Link>.
+          If you're noticing discomfort in a specific area, our <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee pain locations visual guide</Link> can help you identify what might be involved. For sharp, intermittent sensations, see our <Link to="/guides/sharp-knee-pain-guide" className="text-primary hover:underline">sharp knee pain guide</Link>. And if your discomfort is behind the knee, our <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back of knee pain guide</Link> covers the posterior structures in detail. Building strength is also key?explore our guide on <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen knees</Link>.
         </p>
 
         <JournalQuote
@@ -1520,7 +1518,7 @@ const articles: Record<string, ArticleData> = {
           Whether you're dealing with occasional pain when bending knee or more persistent knee joint discomfort, consistency in your self-care approach matters more than intensity. Daily gentle attention to your knees typically yields better results than sporadic intense interventions.
         </p>
         <p>
-          Building sustainable habits—morning stretches, regular movement breaks, evening warmth sessions—creates a foundation for long-term comfort. It's not about doing everything perfectly; it's about doing something helpful regularly.
+          Building sustainable habits?morning stretches, regular movement breaks, evening warmth sessions?creates a foundation for long-term comfort. It's not about doing everything perfectly; it's about doing something helpful regularly.
         </p>
 
         <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
@@ -1980,7 +1978,7 @@ const articles: Record<string, ArticleData> = {
           <strong>Driving considerations:</strong> If you drive frequently, your right knee pain might be influenced by the repetitive motion of operating the accelerator and brake pedals. The extended position of the right leg while driving can also contribute to stiffness.
         </p>
         <p>
-          <strong>Sports and activities:</strong> Certain sports favor one side—for example, soccer players might experience more left knee pain or right knee pain depending on which leg they predominantly kick with.
+          <strong>Sports and activities:</strong> Certain sports favor one side?for example, soccer players might experience more left knee pain or right knee pain depending on which leg they predominantly kick with.
         </p>
 
         <LeftVsRightKneePainChart />
@@ -2013,7 +2011,7 @@ const articles: Record<string, ArticleData> = {
           All side knee pain ultimately involves the knee joint in some way. Understanding how this joint functions helps explain why certain activities trigger discomfort and why certain approaches to relief work.
         </p>
         <p>
-          The knee joint must balance two seemingly contradictory demands: it needs to be stable enough to support your body weight and the forces of movement, yet flexible enough to allow a wide range of motion. The structures on the sides of the knee—ligaments, tendons, and menisci—play crucial roles in meeting both demands.
+          The knee joint must balance two seemingly contradictory demands: it needs to be stable enough to support your body weight and the forces of movement, yet flexible enough to allow a wide range of motion. The structures on the sides of the knee?ligaments, tendons, and menisci?play crucial roles in meeting both demands.
         </p>
         <p>
           When any of these structures become irritated, whether from overuse, injury, or other factors, the result is often pain inside knee or on the lateral side that limits normal function.
@@ -2033,14 +2031,14 @@ const articles: Record<string, ArticleData> = {
           <strong>Proper footwear:</strong> The foot and ankle directly influence knee mechanics. Wearing supportive shoes appropriate for your activities can help reduce stress on the sides of the knee.
         </p>
         <p>
-          <strong>Activity modification:</strong> Temporarily reducing activities that aggravate your pain on side of knee allows irritated tissues to calm down. This doesn't mean stopping all movement—low-impact activities are usually beneficial.
+          <strong>Activity modification:</strong> Temporarily reducing activities that aggravate your pain on side of knee allows irritated tissues to calm down. This doesn't mean stopping all movement?low-impact activities are usually beneficial.
         </p>
 
         <TipsList tips={[
           "Foam roll your IT band and outer thigh regularly",
           "Strengthen your hip muscles, especially the gluteus medius",
           "Stretch your quadriceps, hamstrings, and hip flexors",
-          "Check your footwear—old or inappropriate shoes can contribute to knee pain",
+          "Check your footwear?old or inappropriate shoes can contribute to knee pain",
           "Gradually increase activity levels rather than making sudden jumps",
           "Pay attention to form during exercises like squats and lunges"
         ]} />
@@ -2108,7 +2106,7 @@ const articles: Record<string, ArticleData> = {
 
         <div className="bg-muted/30 rounded-xl p-6 my-8 border border-border/30">
           <p className="text-muted-foreground font-light italic mb-0">
-            Understanding your side knee pain—whether it's pain inside knee, lateral discomfort, or knee cap pain—is the foundation for finding relief. With the right combination of stretching, strengthening, and daily attention, many people find significant improvement in their comfort and function.
+            Understanding your side knee pain?whether it's pain inside knee, lateral discomfort, or knee cap pain?is the foundation for finding relief. With the right combination of stretching, strengthening, and daily attention, many people find significant improvement in their comfort and function.
           </p>
         </div>
       </>
@@ -2481,7 +2479,7 @@ const articles: Record<string, ArticleData> = {
           In a healthy knee, smooth cartilage allows the bones to glide smoothly against each other. In knee arthritis, this cartilage wears away, sometimes exposing bone. This leads to increased friction, inflammation, and the characteristic arthritis knee pain that many people experience.
         </p>
         <p>
-          The progression of arthritis varies widely. Some people experience slow, gradual changes over decades, while others see more rapid deterioration. Understanding that arthritis is a spectrum—from mild to severe—helps in selecting appropriate management strategies.
+          The progression of arthritis varies widely. Some people experience slow, gradual changes over decades, while others see more rapid deterioration. Understanding that arthritis is a spectrum?from mild to severe?helps in selecting appropriate management strategies.
         </p>
 
         <ArthritisTypesChart />
@@ -2600,7 +2598,7 @@ const articles: Record<string, ArticleData> = {
 
         <h2>When to Consider Knee Replacement</h2>
         <p>
-          Knee replacement surgery is a significant decision that's appropriate when conservative treatments no longer provide adequate relief. Understanding when to consider this option—and what to expect—helps in making informed decisions about your care.
+          Knee replacement surgery is a significant decision that's appropriate when conservative treatments no longer provide adequate relief. Understanding when to consider this option?and what to expect?helps in making informed decisions about your care.
         </p>
         <p>
           Most healthcare providers recommend exhausting conservative options before considering knee replacement. This includes exercise therapy, weight management, medications, injections, and various support devices. Surgery is typically considered when these measures no longer provide acceptable pain relief or function.
@@ -2770,7 +2768,7 @@ const articles: Record<string, ArticleData> = {
           When you experience sharp stabbing pain in knee that comes and goes, several conditions may be responsible. Understanding these possibilities helps you communicate effectively with healthcare providers and know when to seek evaluation.
         </p>
         <p>
-          <strong>Loose bodies:</strong> Small fragments of cartilage or bone can break off within the joint and float freely. When these fragments catch between the joint surfaces, they cause sudden, sharp pain. The pain disappears when the fragment moves to a less obstructive position—explaining the "comes and goes" nature.
+          <strong>Loose bodies:</strong> Small fragments of cartilage or bone can break off within the joint and float freely. When these fragments catch between the joint surfaces, they cause sudden, sharp pain. The pain disappears when the fragment moves to a less obstructive position?explaining the "comes and goes" nature.
         </p>
         <p>
           <strong>Meniscus tears:</strong> Tears in the meniscus (the cartilage that cushions the knee) can cause intermittent sharp pain, especially when a torn flap catches during movement. You might notice pain with specific movements like twisting or squatting.
@@ -3866,7 +3864,7 @@ const articles: Record<string, ArticleData> = {
         </p>
 
         <p>
-          This guide aims to provide clear, practical information about <strong>infrared knee devices</strong>: what they typically include, what features matter most, and how to think about incorporating one into your daily life. Whether you're new to knee comfort devices or looking to upgrade from a basic heating pad, understanding these tools—including options like the <strong>FlexiKnee</strong>—can help you make a more informed choice.
+          This guide aims to provide clear, practical information about <strong>infrared knee devices</strong>: what they typically include, what features matter most, and how to think about incorporating one into your daily life. Whether you're new to knee comfort devices or looking to upgrade from a basic heating pad, understanding these tools?including options like the <strong>FlexiKnee</strong>?can help you make a more informed choice.
         </p>
 
         <StatHighlight 
@@ -3877,7 +3875,7 @@ const articles: Record<string, ArticleData> = {
 
         <h2>Understanding Infrared Knee Massagers</h2>
         <p>
-          An <strong>infrared knee massager</strong> is a wearable device designed to wrap around the knee area and deliver a combination of warmth, often through infrared technology, along with other comfort features. Devices like the <strong>FlexiKnee</strong> combine multiple approaches—infrared heat, red light therapy, and vibration massage—in a single, convenient unit that you can use while going about your daily activities.
+          An <strong>infrared knee massager</strong> is a wearable device designed to wrap around the knee area and deliver a combination of warmth, often through infrared technology, along with other comfort features. Devices like the <strong>FlexiKnee</strong> combine multiple approaches?infrared heat, red light therapy, and vibration massage?in a single, convenient unit that you can use while going about your daily activities.
         </p>
 
         <p>
@@ -6031,7 +6029,7 @@ const articles: Record<string, ArticleData> = {
            Rather than looking for a single solution, consider developing a collection of supportive habits: movement throughout the day, appropriate rest, comfortable environments, and perhaps some at-home tools that feel right for you.
          </p>
          <p>
-           For structured daily habit ideas, see our <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link>. If you're experiencing sharp or intermittent pain, our <Link to="/guides/sharp-knee-pain-causes-relief" className="text-primary hover:underline">sharp knee pain causes guide</Link> explores common patterns. And for understanding which approach—heat or cold—works best for your situation, see our <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice science breakdown</Link>. Strengthening exercises also play a key role—explore <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen your knees</Link>.
+           For structured daily habit ideas, see our <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link>. If you're experiencing sharp or intermittent pain, our <Link to="/guides/sharp-knee-pain-causes-relief" className="text-primary hover:underline">sharp knee pain causes guide</Link> explores common patterns. And for understanding which approach?heat or cold?works best for your situation, see our <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice science breakdown</Link>. Strengthening exercises also play a key role?explore <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen your knees</Link>.
          </p>
 
         <p>
@@ -8250,7 +8248,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, clickingKneeWithoutPain, exercisesToRelieveKneePainAtHome, postExerciseKneePainGuide, kneeSwellingAfterExercise, soreKneesAfterWorkout, kneeRecoveryExercisesAfterWorkout, kneeAcheAfterLegWorkouts, burningKneesAfterExercise, homeRemediesKneePain, whatMakesKneePainWorse, weightAffectsKneePain, kneePainAfterExerciseNotDuring, cordlessHeatedKneeMassagers2026, bestInsolesKneePain2026, itBandFoamRollingGuide, howToSleepWithKneePain, airCompressionLegMassagers, kneeSleeveSizingGuide, heatVsIceForKneesAuthoritative];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, clickingKneeWithoutPain, exercisesToRelieveKneePainAtHome, postExerciseKneePainGuide, kneeSwellingAfterExercise, soreKneesAfterWorkout, kneeRecoveryExercisesAfterWorkout, kneeAcheAfterLegWorkouts, burningKneesAfterExercise, homeRemediesKneePain, whatMakesKneePainWorse, weightAffectsKneePain, cordlessHeatedKneeMassagers2026, bestInsolesKneePain2026, itBandFoamRollingGuide, howToSleepWithKneePain, airCompressionLegMassagers, kneeSleeveSizingGuide, heatVsIceForKneesAuthoritative];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -8434,7 +8432,7 @@ const GuideArticle = () => {
       name: "How to Manage Knee Pain After Standing All Day",
       description: "Step-by-step comfort strategies for reducing knee discomfort caused by prolonged standing.",
       steps: [
-        { name: "Assess Your Standing Posture", text: "Check your weight distribution — avoid locking knees or leaning to one side. Keep a slight bend in the knees and distribute weight evenly between both feet." },
+        { name: "Assess Your Standing Posture", text: "Check your weight distribution ? avoid locking knees or leaning to one side. Keep a slight bend in the knees and distribute weight evenly between both feet." },
         { name: "Take Micro-Breaks", text: "Shift your weight, march in place, or do gentle calf raises every 20-30 minutes to reduce sustained pressure on the knee joint." },
         { name: "Use Supportive Footwear", text: "Wear cushioned, supportive shoes with arch support. Avoid flat or hard-soled shoes when standing for extended periods." },
         { name: "Apply Warmth After Standing", text: "Use a heat therapy device or warm compress on the knees for 15-20 minutes after a long standing session to ease stiffness and promote circulation." },
@@ -8445,7 +8443,7 @@ const GuideArticle = () => {
       description: "A step-by-step approach to managing front or top knee tightness that occurs after physical activity.",
       steps: [
         { name: "Cool Down Gradually", text: "After activity, walk slowly for 3-5 minutes instead of stopping abruptly. This helps reduce sudden muscle tightness around the kneecap." },
-        { name: "Stretch the Quadriceps", text: "Perform a gentle standing quad stretch — hold each leg for 20-30 seconds. This targets the muscles that pull on the front of the knee." },
+        { name: "Stretch the Quadriceps", text: "Perform a gentle standing quad stretch ? hold each leg for 20-30 seconds. This targets the muscles that pull on the front of the knee." },
         { name: "Apply Warmth to the Front Knee", text: "Use a warm compress or heat therapy device over the front of the knee for 10-15 minutes to relax tight tissues and improve comfort." },
         { name: "Strengthen Gradually", text: "Add gentle wall sits and straight-leg raises to your routine over time to build quad and patellar tendon resilience." },
       ],
@@ -8961,7 +8959,6 @@ const GuideArticle = () => {
                 "how-to-sleep-with-knee-pain": thumbSleepKneePain,
                 "air-compression-leg-massagers-do-they-work": thumbAirCompressionLeg,
                 "compression-knee-sleeve-sizing-guide": thumbSleeveSizing,
-                "knee-pain-after-exercise-but-not-during": thumbExerciseNotDuring,
                 "cordless-rechargeable-heated-knee-massagers-2026": thumbCordlessMassagers,
                 "best-insoles-for-knee-pain-2026": thumbInsolesKnee,
               };

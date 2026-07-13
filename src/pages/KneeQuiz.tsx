@@ -162,8 +162,8 @@ function buildRecommendations(answers: Record<string, OptionKey>): QuizResult {
   if (when === "activity") {
     guides.push(
       {
-        slug: "knee-pain-after-exercise-but-not-during",
-        title: "Knee Pain After Exercise But Not During",
+        slug: "knee-pain-after-exercise",
+        title: "Knee Pain After Exercise",
         reason: "Explains the delayed post-workout pattern",
       },
       {
@@ -494,7 +494,7 @@ export default function KneeQuiz() {
   return (
     <>
       <Helmet>
-        <title>Free Knee Comfort Quiz. Find Your Routine | FlexiKnee™</title>
+        <title>Free Knee Comfort Quiz. Find Your Routine | FlexiKnee?</title>
         <meta
           name="description"
           content="Answer four practical questions and get a matched product category, useful guides and a seven-day knee comfort starter plan."
@@ -721,7 +721,7 @@ export default function KneeQuiz() {
                                 Email me this result and starter plan
                               </h2>
                               <p className="mt-1 text-sm leading-6 text-slate-600">
-                                We’ll save this result and use it to send the
+                                We?ll save this result and use it to send the
                                 version of the routine that matches your
                                 recommendation.
                               </p>

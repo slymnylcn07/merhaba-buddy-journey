@@ -41,7 +41,7 @@ export const howToSleepWithKneePain: ArticleExport = {
           Understanding the "why" makes the fixes make sense. Four things change when you lie down. First, movement stops. During the day, every step circulates synovial fluid, the joint's natural lubricant, through the knee. At rest, that circulation slows dramatically, tissues cool, and the joint stiffens. This is the same mechanism behind the rusty-gate feeling we cover in our guide on <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning knee stiffness</Link>, just starting at 11 p.m. instead of 7 a.m.
         </p>
         <p>
-          Second, the day's inflammation catches up. If you overloaded the knee earlier, whether through a workout, yardwork, or simply an unusually long day on your feet, the low-grade inflammatory response tends to peak hours later, often right around bedtime. This delayed pattern is so common that we wrote a whole guide about <Link to="/guides/knee-pain-after-exercise-but-not-during" className="text-primary hover:underline">knee pain that appears after exercise but not during it</Link>. Third, distraction disappears. During the day your brain filters out a remarkable amount of low-level discomfort because it is busy. In a dark, quiet room, the filter drops and signals that were background noise become the main event. Fourth, position pressure. Lying still for hours concentrates pressure on whichever knee surfaces are loaded, and lets fluid pool unevenly around tissues.
+          Second, the day's inflammation catches up. If you overloaded the knee earlier, whether through a workout, yardwork, or simply an unusually long day on your feet, the low-grade inflammatory response tends to peak hours later, often right around bedtime. This delayed pattern is so common that we wrote a whole guide about <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain that appears after exercise but not during it</Link>. Third, distraction disappears. During the day your brain filters out a remarkable amount of low-level discomfort because it is busy. In a dark, quiet room, the filter drops and signals that were background noise become the main event. Fourth, position pressure. Lying still for hours concentrates pressure on whichever knee surfaces are loaded, and lets fluid pool unevenly around tissues.
         </p>
         <p>
           None of these four factors means your knee is getting worse at night. But together they explain why the same knee that let you grocery shop all afternoon suddenly demands negotiation at bedtime, and each factor points to a fix.
@@ -109,13 +109,13 @@ export const howToSleepWithKneePain: ArticleExport = {
                 <td className="border border-slate-200 p-3">On your side</td>
                 <td className="border border-slate-200 p-3">Between the knees, mid-thigh to mid-calf</td>
                 <td className="border border-slate-200 p-3">Firm, holds shape</td>
-                <td className="border border-slate-200 p-3">Slight bend, 20-30°</td>
+                <td className="border border-slate-200 p-3">Slight bend, 20-30?</td>
               </tr>
               <tr>
                 <td className="border border-slate-200 p-3">On your back</td>
                 <td className="border border-slate-200 p-3">Under the knees</td>
                 <td className="border border-slate-200 p-3">Thin pillow or rolled towel</td>
-                <td className="border border-slate-200 p-3">Gentle bend, 10-20°</td>
+                <td className="border border-slate-200 p-3">Gentle bend, 10-20?</td>
               </tr>
               <tr>
                 <td className="border border-slate-200 p-3">On your stomach</td>

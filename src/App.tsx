@@ -92,6 +92,7 @@ const App = () => {
                 <Route path="/guides/running-shoes-knee-pain-discomfort" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
                 <Route path="/guides/post-exercise-knee-pain-guide" element={<Navigate to="/guides/knee-pain-after-exercise" replace />} />
                 <Route path="/guides/sore-knees-after-workout" element={<Navigate to="/guides/knee-pain-after-exercise" replace />} />
+                <Route path="/guides/knee-pain-after-exercise-but-not-during" element={<Navigate to="/guides/knee-pain-after-exercise" replace />} />
                 <Route path="/guides/knee-pain-location-map-2026" element={<Navigate to="/guides/knee-pain-locations-visual-guide" replace />} />
                 <Route path="/guides/pain-in-the-knee-causes-locations" element={<Navigate to="/guides/knee-pain-locations-visual-guide" replace />} />
                 <Route path="/guides/daily-knee-comfort-routine" element={<Navigate to="/guides/daily-knee-care-routine" replace />} />

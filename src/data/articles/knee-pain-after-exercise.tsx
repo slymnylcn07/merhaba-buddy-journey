@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -14,6 +14,8 @@ import imgDuringVsAfter from "@/assets/diagram-knee-during-vs-after-exercise.jpg
 import imgKneecapPressure from "@/assets/diagram-kneecap-pressure-exercise.jpg";
 import imgMuscleFatigue from "@/assets/diagram-muscle-fatigue-knee-exercise.jpg";
 import imgInflammation from "@/assets/diagram-knee-inflammation-after-exercise.jpg";
+
+const sourceLinkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
 const faqs = [
   {
@@ -73,7 +75,7 @@ const faqs = [
 const articleContent = (
   <>
 
-    {/* ── Introduction ── */}
+    {/* ?? Introduction ?? */}
     <p>
       You just finished a great workout, you felt strong, energized, and your knees were perfectly fine. But a few hours later, or maybe the next morning, your <strong>knees hurt after exercise</strong> in a way they never did during the activity itself. Sound familiar?
     </p>
@@ -84,13 +86,7 @@ const articleContent = (
       In this guide, we will explain the science behind <strong>delayed knee pain after exercise</strong>, help you tell the difference between normal <strong>knee soreness after workout</strong> activity and warning signs, and share practical recovery strategies that support long-term knee comfort. We will also explore why some people feel <strong>knee weakness after workouts</strong> and what you can do about it.
     </p>
 
-    <StatHighlight
-      stat="62%"
-      label="of recreational exercisers report post-workout knee discomfort"
-      description="Making delayed knee soreness one of the most common reasons people reduce or stop exercising"
-    />
-
-    {/* ── Section 1: Why Knees Hurt After But Not During ── */}
+    {/* ?? Section 1: Why Knees Hurt After But Not During ?? */}
     <h2>Why Do Knees Hurt After a Workout But Not During?</h2>
     <p>
       It seems counterintuitive: if exercise is causing knee stress, why don't you feel it <em>while</em> you are exercising? The answer lies in your body's built-in pain management system.
@@ -134,7 +130,7 @@ const articleContent = (
       <p>Your body's natural painkilling chemicals can remain elevated for 30 to 90 minutes after exercise ends. This is why many people feel great immediately after a workout but start noticing knee stiffness only later in the day. Understanding this "endorphin window" helps explain the delayed nature of post-exercise knee soreness.</p>
     </InfoBox>
 
-    {/* ── NEW: Sore Knees After Exercise vs Sharp Pain ── */}
+    {/* ?? NEW: Sore Knees After Exercise vs Sharp Pain ?? */}
     <h2>Sore Knees After Exercise vs Sharp Pain: What Is the Difference?</h2>
     <p>
       Understanding the difference between general <strong>sore knees after exercise</strong> and sharp, localized pain is important for knowing how to respond. Normal <strong>knee aches after exercise</strong> tend to feel diffuse, dull, and spread across the general knee area. This type of soreness usually affects both knees similarly and improves with gentle movement.
@@ -156,7 +152,7 @@ const articleContent = (
       Sharp pain, on the other hand, tends to be specific to one spot, may feel sudden or stabbing, and often worsens with particular movements. While <strong>knee soreness after exercise</strong> is usually a sign that your body is recovering normally, sharp or pinpointed <strong>painful knees after exercise</strong> may warrant closer attention or professional guidance.
     </p>
 
-    {/* ── NEW: Where Does Knee Pain Appear After Exercise? ── */}
+    {/* ?? NEW: Where Does Knee Pain Appear After Exercise? ?? */}
     <h3>Where Does Knee Pain Appear After Exercise?</h3>
     <p>
       <strong>Kneecap pain after exercise</strong> is one of the most frequently reported locations, often caused by repetitive compression of the patella against the femur during activities like squats, running, or stair climbing. People who experience <strong>sore kneecaps after exercise</strong> often notice it most when sitting for a period after their workout.
@@ -178,13 +174,13 @@ const articleContent = (
       <strong>Back of the knee pain after exercise</strong> is another common pattern. <strong>Pain behind knee after working out</strong> is often related to tightness in the hamstrings or calf muscles, or to the way fluid accumulates in the popliteal space behind the joint. This area can feel particularly tight or full after intense activity. For a deeper look at all knee discomfort zones, our <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee pain locations visual guide</Link> maps out each area and its comfort strategies.
     </p>
 
-    {/* ── NEW: Stiff Knee Without Pain ── */}
+    {/* ?? NEW: Stiff Knee Without Pain ?? */}
     <h3>Why Does My Knee Feel Tight Even Without Pain?</h3>
     <p>
       Many people notice a <strong>stiff knee no pain</strong> pattern after workouts. The knee feels tight, restricted, or hard to bend fully, but there is no actual pain involved. This is common and usually related to temporary fluid changes within the joint and muscle tightness from the recovery process. A few minutes of gentle movement typically resolves this sensation. If the sensation feels more like warmth or a burning feeling rather than stiffness, our guide on <Link to="/guides/burning-knees-after-exercise" className="text-primary hover:underline">burning knees after exercise</Link> explains what that may indicate.
     </p>
 
-    {/* ── Section 2: Common Causes ── */}
+    {/* ?? Section 2: Common Causes ?? */}
     <h2>Common Causes of Delayed Knee Pain After Workouts</h2>
     <p>
       Not all post-exercise knee discomfort has the same cause. Understanding <em>why</em> your <strong>knees hurt after working out</strong> can help you make smarter decisions about your routine. Whether you experience <strong>sore knees after workout</strong> sessions or a dull ache that lingers, here are the most common factors:
@@ -244,7 +240,7 @@ const articleContent = (
       text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after every workout session."
     />
 
-    {/* ── NEW: Swelling + Stiffness Section ── */}
+    {/* ?? NEW: Swelling + Stiffness Section ?? */}
     <h2>Knee Swelling, Stiffness, and Inflammation After Exercise</h2>
     <p>
       <strong>Knee swelling after exercise</strong> and <strong>stiff knees after exercise</strong> often go hand in hand. When the body's recovery process sends extra blood flow and fluid to the knee area, the joint can feel puffy, tight, or difficult to bend. Mild post-exercise swelling that resolves within 24 to 48 hours is generally a normal response.
@@ -257,7 +253,7 @@ const articleContent = (
       <p>After sitting for long periods following a workout, the knee joint may temporarily feel stiff due to reduced movement and muscle inactivity. This is a normal response. Gentle movement usually resolves the stiffness within minutes. If knee pain and stiffness after sitting following a workout persists, consider incorporating brief movement breaks.</p>
     </InfoBox>
 
-    {/* ── Section 3: Activities That Trigger Soreness ── */}
+    {/* ?? Section 3: Activities That Trigger Soreness ?? */}
     <h2>Why Running, Squats, and Stairs Trigger Next-Day Knee Soreness</h2>
     <p>
       Not all exercises are equal when it comes to delayed knee discomfort. Certain activities are more likely to cause <strong>knee soreness after running</strong> or working out because of how they load the joint:
@@ -290,7 +286,7 @@ const articleContent = (
       Going up and down stairs, or doing step-up exercises, combines the impact of running with the deep bending of squats. The knee joint handles both compressive forces and shearing forces simultaneously, making stair-based activities particularly demanding on the joint structures.
     </p>
 
-    {/* ── NEW: Leg Day Section ── */}
+    {/* ?? NEW: Leg Day Section ?? */}
     <h3>Why Do Knees Hurt After Leg Day?</h3>
     <p>
       <strong>Knee pain after leg day</strong> is among the most searched concerns for gym-goers. Leg day exercises like squats, leg presses, lunges, and leg extensions place significant load directly through the knee joint. The combination of heavy resistance and deep bending angles creates substantial compression on the kneecap and stress on the surrounding tendons.
@@ -306,13 +302,13 @@ const articleContent = (
       "Include a proper cool-down period with gentle walking and stretching after each session",
     ]} />
 
-    {/* ── NEW: One Knee Hurts Section ── */}
+    {/* ?? NEW: One Knee Hurts Section ?? */}
     <h3>When One Knee Hurts After Exercise</h3>
     <p>
       Noticing that <strong>one knee hurts after exercise</strong> while the other feels fine is a common concern. This asymmetry is often related to differences in muscle strength, flexibility, or movement patterns between your two legs. It can also result from favoring one leg during certain exercises or from a previous minor strain. While one-sided soreness is not automatically a warning sign, consistent pain in the same knee after every workout is worth monitoring.
     </p>
 
-    {/* ── Section 4: Normal vs Warning Signs ── */}
+    {/* ?? Section 4: Normal vs Warning Signs ?? */}
     <h2>Normal Soreness vs. Warning Signs After Exercise</h2>
     <p>
       One of the most important things to understand about <strong>knee pain after exercise</strong> is the difference between normal post-exercise soreness and signs that something may need attention. Here is how to tell them apart:
@@ -344,7 +340,7 @@ const articleContent = (
       <p>Consult a healthcare provider if you experience: sharp, localized pain at a specific point on your knee; visible <strong>knee swelling after exercise</strong> that does not resolve within 48 hours; a feeling of the knee "giving way" or locking during movement; pain that gets worse with each workout rather than better; inability to fully straighten or bend your knee; or any knee pain accompanied by a popping sensation during exercise.</p>
     </InfoBox>
 
-    {/* ── NEW: Weakness Signal Section ── */}
+    {/* ?? NEW: Weakness Signal Section ?? */}
     <h2>Why Some People Feel Knee Weakness After Exercise</h2>
     <p>
       Beyond soreness, many people report a distinct sensation of <strong>knee weakness after workouts</strong>. This feeling, where the knee seems unsteady, less supportive, or slightly "wobbly," is different from pain and can be just as concerning. If you have wondered <strong>why do my knees feel weak after workout</strong> sessions, the answer usually comes down to muscle exhaustion rather than a structural problem.
@@ -363,7 +359,7 @@ const articleContent = (
       <p>Knee weakness and knee pain after a workout are related but distinct sensations. Pain signals tissue stress or irritation, while weakness reflects muscle fatigue and reduced joint stabilization. Both are common after exercise, but persistent weakness that does not improve with rest deserves attention from a healthcare professional.</p>
     </InfoBox>
 
-    {/* ── Section 5: Beginners ── */}
+    {/* ?? Section 5: Beginners ?? */}
     <h2>Why Beginners and Returning Exercisers Experience This More</h2>
     <p>
       If you are new to exercise or returning after a long break, you are significantly more likely to experience <strong>delayed knee pain after exercise</strong>. This is not a sign that you are doing something wrong, it is a sign that your body is adapting to new demands.
@@ -372,19 +368,13 @@ const articleContent = (
       When you have not been regularly active, the muscles around your knee joint are weaker and less conditioned. They fatigue faster during exercise, which means more stress gets transferred directly to the joint. Additionally, your cartilage, tendons, and ligaments need time to strengthen and adapt to new loads.
     </p>
     <p>
-      This adaptation process typically takes 4 to 8 weeks of consistent, progressive exercise. During this period, it is completely normal to experience some post-workout knee soreness, as long as it follows the "normal soreness" pattern described above.
+      The adaptation period varies with training history, activity type, recovery, and the amount of load added. Mild symptoms that settle can be a cue to progress more gradually, while worsening or persistent symptoms deserve closer attention.
     </p>
     <p>
       People over 40 may notice this adaptation period takes slightly longer, as the <Link to="/guides/knee-pain-after-40" className="text-primary hover:underline">age-related changes in joint tissues</Link> mean the body needs more recovery time between sessions. This does not mean you should avoid exercise, quite the opposite. It simply means progressing more gradually.
     </p>
 
-    <StatHighlight
-      stat="4 to 8 weeks"
-      label="typical adaptation period for knee joints to adjust to new exercise routines"
-      description="Gradual progression during this window significantly reduces post-exercise knee discomfort"
-    />
-
-    {/* ── Section 6: Daily Habits ── */}
+    {/* ?? Section 6: Daily Habits ?? */}
     <h2>Daily Habits That Reduce Knee Discomfort After Workouts</h2>
     <p>
       Many people focus on what they do <em>during</em> exercise to protect their knees, but what you do <em>before and after</em> your workout matters just as much. These daily habits can significantly reduce <strong>knee pain after a workout</strong>:
@@ -419,7 +409,7 @@ const articleContent = (
       text="FlexiKnee combines soothing warmth, red light, and gentle vibration to help your knees recover after exercise, making your fitness routine more sustainable."
     />
 
-    {/* ── Section 7: Recovery Strategies ── */}
+    {/* ?? Section 7: Recovery Strategies ?? */}
     <h2>Recovery Strategies That Support Knee Comfort</h2>
     <p>
       Recovery is not just about resting. It is about giving your body the right conditions to repair and adapt. Here are evidence-informed strategies that support <strong>knee comfort after exercise</strong>:
@@ -463,11 +453,11 @@ const articleContent = (
       For those who experience <Link to="/guides/sudden-knee-pain-guide" className="text-primary hover:underline">sudden knee pain episodes</Link> during or after exercise, understanding the pattern and triggers can help you modify your routine to stay active while supporting long-term joint comfort.
     </p>
 
-    <InfoBox title="The 10% Rule">
-      <p>Increase your exercise volume (distance, weight, or duration) by no more than 10% per week. This is one of the most well-established guidelines for preventing overuse-related knee discomfort. For example, if you ran 20 km this week, aim for no more than 22 km next week. Small, consistent progressions lead to big results with less risk.</p>
+    <InfoBox title="Progress gradually">
+      <p>There is no universal weekly percentage that suits every activity or every knee. Change one training variable at a time, such as distance, load, depth, or frequency, and use your evening and next-morning response to decide whether the progression was manageable.</p>
     </InfoBox>
 
-    {/* ── NEW: Real-World Scenarios ── */}
+    {/* ?? NEW: Real-World Scenarios ?? */}
     <h2>Real-World Scenarios: When Post-Exercise Knee Soreness Catches People Off Guard</h2>
     <p>
       Understanding delayed knee soreness becomes easier when you see it in everyday contexts. Consider these common scenarios that active adults experience regularly.
@@ -490,26 +480,37 @@ const articleContent = (
       Paying attention to how your feet, knees, and hips align during exercise can significantly reduce post-workout soreness over time. If you notice that one knee consistently hurts more than the other after workouts, it may point to an imbalance in your movement patterns rather than a structural issue with the joint itself. People who use <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massagers</Link> as part of their post-workout routine often report that warmth application helps them identify which areas feel tightest and most in need of attention.
     </p>
 
-    {/* ── Featured Snippet Blocks ── */}
-    <h2>Why Do Knees Hurt After Exercise but Not During?</h2>
+    <h2>Use a 24-Hour Response Check</h2>
     <p>
-      During exercise, endorphins and increased blood flow mask discomfort while active muscles stabilize the knee joint. After you stop, the body shifts into recovery mode, sending inflammatory cells and fluid to repair stressed tissues. This delayed response is why <strong>knees hurting after exercise</strong> is typically felt hours later rather than during the activity itself.
+      A pain-free workout does not always mean the session matched your current capacity. Record the activity, duration, surface, footwear, effort, when discomfort began, its location, whether swelling appeared, and how the knee felt the next morning. A repeatable pattern is more useful than one isolated bad day.
+    </p>
+    <p>
+      If walking and stairs are close to normal and the response settles, a lighter or different session may be reasonable. Reduce the next session and consider professional advice when symptoms are getting stronger each week, affecting everyday movement, or accompanied by swelling, locking, instability, redness, or a specific injury event.
     </p>
 
-    <h2>Is It Normal to Have Knee Pain After a Workout?</h2>
-    <p>
-      Mild, generalized <strong>knee pain after workout</strong> sessions is a common and usually normal response to physical activity. This type of soreness tends to be dull, affects the general knee area, appears within 24 hours, and resolves within 2 to 3 days. <strong>Sore knees after exercise</strong> that follows this pattern is typically part of the body's healthy adaptation process.
-    </p>
-
-    <h2>Why Do My Knees Feel Sore After Exercise?</h2>
-    <p>
-      <strong>Knee soreness after workout</strong> activity happens because exercise places temporary stress on the muscles, tendons, and cartilage around the knee. As these structures recover, the body sends extra blood flow and mild inflammation to support repair. This natural process creates the feeling of <strong>knee aches after exercise</strong> that typically peaks within 24 to 48 hours.
-    </p>
-
-    <h2>Why Does My Knee Hurt After Leg Day?</h2>
-    <p>
-      <strong>Knee pain after leg day</strong> results from the high cumulative loading that exercises like squats, lunges, and leg presses place on the knee joint. The combination of deep bending angles and heavy resistance compresses the kneecap and stresses surrounding structures. Proper form, gradual progression, and adequate recovery between leg sessions help reduce this type of discomfort.
-    </p>
+    <h2>Sources and Further Reading</h2>
+    <ul className="my-4 list-disc space-y-3 pl-6">
+      <li>
+        <a className={sourceLinkClass} href="https://pubmed.ncbi.nlm.nih.gov/27518487/" target="_blank" rel="noreferrer noopener">
+          Exercise-induced hypoalgesia in people with knee osteoarthritis
+        </a>
+      </li>
+      <li>
+        <a className={sourceLinkClass} href="https://pubmed.ncbi.nlm.nih.gov/33771419/" target="_blank" rel="noreferrer noopener">
+          Review of exercise-induced hypoalgesia in healthy adults
+        </a>
+      </li>
+      <li>
+        <a className={sourceLinkClass} href="https://pubmed.ncbi.nlm.nih.gov/25155475/" target="_blank" rel="noreferrer noopener">
+          Running-distance progression and injury risk in novice runners
+        </a>
+      </li>
+      <li>
+        <a className={sourceLinkClass} href="https://www.nhs.uk/symptoms/knee-pain/" target="_blank" rel="noreferrer noopener">
+          NHS guidance on knee pain, self-care, and warning signs
+        </a>
+      </li>
+    </ul>
   </>
 );
 
@@ -523,7 +524,7 @@ export const kneePainAfterExercise: ArticleExport = {
     metaDescription: "Why do knees hurt after exercise but not during? Learn about sore knees after workouts, knee pain after leg day, swelling, stiffness, and recovery tips.",
     heroImage: heroImage,
     publishedDate: "March 4, 2026",
-    lastUpdated: "April 8, 2026",
+    lastUpdated: "July 13, 2026",
     content: articleContent,
     nextSlug: "cold-weather-knee-pain",
     nextTitle: "Cold Weather Knee Pain",

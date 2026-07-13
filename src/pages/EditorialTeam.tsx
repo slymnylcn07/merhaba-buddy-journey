@@ -8,31 +8,31 @@ const teamProfiles = [
   {
     name: "Ethan Walker",
     role: "Research & Sources Editor",
-    image: "/images/editorial-team/ethan-walker.png",
+    image: "/images/editorial-team/ethan-walker.jpg",
     text: "Organizes source reviews and checks that factual statements are matched with relevant, trustworthy references.",
   },
   {
     name: "Marcus Bennett",
     role: "Movement Content Editor",
-    image: "/images/editorial-team/marcus-bennett.png",
+    image: "/images/editorial-team/marcus-bennett.jpg",
     text: "Shapes practical movement and daily-routine sections so they remain clear, balanced, and easy to follow.",
   },
   {
     name: "Daniel Reyes",
     role: "Visual Content Editor",
-    image: "/images/editorial-team/daniel-reyes.png",
+    image: "/images/editorial-team/daniel-reyes.jpg",
     text: "Plans diagrams, comparison visuals, tables, and page structure to make longer guides easier to understand.",
   },
   {
     name: "Oliver Grant",
     role: "Product Content Reviewer",
-    image: "/images/editorial-team/oliver-grant.png",
+    image: "/images/editorial-team/oliver-grant.jpg",
     text: "Reviews product-related sections for clarity, limitations, accurate feature descriptions, and commercial disclosure.",
   },
   {
     name: "Maya Collins",
     role: "Copy & Clarity Editor",
-    image: "/images/editorial-team/maya-collins.png",
+    image: "/images/editorial-team/maya-collins.jpg",
     text: "Edits language for readability, removes unnecessary claims, and keeps the tone useful rather than promotional.",
   },
 ];
@@ -41,7 +41,7 @@ const principles = [
   {
     icon: BookOpenCheck,
     title: "Source-led research",
-    text: "For health and safety topics, we prioritize recognized medical organizations, hospital patient guidance, professional associations, and relevant peer-reviewed research. Sources must support the specific statement being made—not merely discuss a similar topic.",
+    text: "For health and safety topics, we prioritize recognized medical organizations, hospital patient guidance, professional associations, and relevant peer-reviewed research. Sources must support the specific statement being made, rather than merely discuss a similar topic.",
   },
   {
     icon: CheckCircle2,
@@ -125,8 +125,8 @@ const EditorialTeam = () => {
                 <img
                   src={member.image}
                   alt={`Illustrated avatar for ${member.name}, ${member.role}`}
-                  width={160}
-                  height={160}
+                  width={800}
+                  height={800}
                   loading="lazy"
                   className="mx-auto h-32 w-32 rounded-full border border-slate-200 bg-slate-100 object-cover shadow-sm"
                 />

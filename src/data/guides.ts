@@ -329,7 +329,7 @@ export const guidesData: GuideData[] = [
   {
     slug: "runners-knee-pain-location",
     title: "Runner's Knee Pain Location: Causes & Patterns",
-    description: "Explore where runners commonly feel knee discomfort — front, inner, outer, and back of knee. Learn what each location means and everyday comfort approaches.",
+    description: "Explore where runners commonly feel knee discomfort ? front, inner, outer, and back of knee. Learn what each location means and everyday comfort approaches.",
     readTime: 12,
     lastModified: "2026-02-25",
   },
@@ -669,13 +669,6 @@ export const guidesData: GuideData[] = [
     description: "Discover how your weight affects knee pain, joint pressure during daily activities, and simple habits that may support better knee comfort over time.",
     readTime: 14,
     lastModified: "2026-03-30",
-  },
-  {
-    slug: "knee-pain-after-exercise-but-not-during",
-    title: "Knee Pain After Exercise But Not During: Why It Happens",
-    description: "Why knees feel fine during a workout but ache hours later — the delayed-discomfort pattern explained with practical recovery habits.",
-    readTime: 15,
-    lastModified: "2026-07-10",
   },
   {
     slug: "cordless-rechargeable-heated-knee-massagers-2026",
