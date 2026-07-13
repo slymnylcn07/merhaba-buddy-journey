@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-heavy-knees.jpg";
@@ -9,70 +8,133 @@ import imgKneeSupportMuscles from "@/assets/article-knee-support-muscles.jpg";
 import imgCirculationLimbs from "@/assets/article-circulation-lower-limbs.jpg";
 import imgJointLoad from "@/assets/article-knee-joint-load.jpg";
 import imgMovementStiffness from "@/assets/article-movement-vs-stiffness.jpg";
+import imgHeavyKneePatterns from "@/assets/article-heavy-knees-patterns-v1.svg";
 
 const faqs = [
   {
     question: "Why do my knees feel heavy?",
-    answer: "Knees can feel heavy due to muscle fatigue in the quadriceps, hamstrings, and calves that support the joint. Reduced blood circulation, prolonged sitting or standing, dehydration, and general physical tiredness can all contribute to a sensation of heaviness around the knees.",
+    answer: "A heavy feeling is a symptom description, not a diagnosis. It may follow muscle fatigue, unaccustomed activity, stiffness after sitting, or visible leg swelling. The timing, whether one or both legs are affected, and symptoms such as pain, weakness, warmth, redness, or breathlessness determine how urgently it should be assessed.",
   },
   {
     question: "Is knee heaviness normal after activity?",
-    answer: "Yes, feeling heaviness in the knees after physical activity is quite common. When the muscles around the knee become fatigued from exercise or prolonged use, they may feel heavy and sluggish until they recover. This typically improves with rest and gentle movement.",
+    answer: "Temporary heaviness after more activity than usual can reflect muscle fatigue, especially when both legs feel similar and the sensation improves with recovery. New swelling, inability to bear weight, or symptoms that repeatedly worsen are not something to dismiss as ordinary fatigue.",
   },
   {
     question: "Can fatigue cause heavy knees?",
-    answer: "Absolutely. General body fatigue and specifically muscle fatigue in the legs directly affect how your knees feel. When the muscles that support the knee joint become tired, they are less efficient at absorbing impact and supporting movement, which can create a heavy, sluggish sensation.",
+    answer: "Yes. Tired quadriceps, hamstrings, and calf muscles can make walking, stairs, and standing up feel more effortful. Fatigue is only one possibility, so persistent or unexplained heaviness should be considered in the context of swelling, pain, weakness, and general health.",
   },
   {
     question: "Why do my knees feel heavy when walking?",
-    answer: "Heavy knees during walking can result from muscle fatigue, reduced circulation in the lower limbs, deconditioning from inactivity, or walking longer distances than your muscles are accustomed to. The supporting muscles may struggle to keep up with the demands of sustained walking.",
+    answer: "Heaviness during walking may appear when distance or pace exceeds current capacity, but it can also occur with joint pain, swelling, weakness, or problems elsewhere in the leg. Stop and seek assessment if walking becomes unsafe, the knee gives way, or one leg is newly swollen, warm, or discolored.",
   },
   {
     question: "Does sitting too long cause heavy knees?",
-    answer: "Yes, prolonged sitting can contribute to heavy-feeling knees. When you sit for extended periods, blood circulation in the legs slows down, muscles become inactive, and joint fluid circulation decreases. This combination can create a heavy, stiff sensation when you first stand and begin moving.",
+    answer: "Long sitting can leave the knees and legs feeling stiff or sluggish when you first stand. Gentle movement may help a simple stiffness pattern. One-sided calf or leg swelling and pain after prolonged immobility needs urgent medical advice because a blood clot must be considered.",
   },
   {
     question: "How can I relieve heavy knees?",
-    answer: "Regular gentle movement, staying hydrated, taking frequent breaks from prolonged sitting, strengthening the muscles around the knee, performing light stretches throughout the day, and maintaining consistent physical activity can all help reduce the sensation of heaviness in the knees.",
+    answer: "If there are no warning signs, try changing position, a short easy walk, and a gradual return to normal activity. Longer-term strengthening may help when low capacity is part of the pattern. Treatment for visible swelling or a medical condition depends on its cause and should not be replaced by a generic exercise routine.",
   },
   {
-    question: "Can circulation affect knee sensation?",
-    answer: "Yes, blood circulation plays an important role in how your knees feel. Good circulation delivers oxygen and nutrients to the muscles and joint structures while removing metabolic waste. When circulation is reduced from inactivity or prolonged static positions, the knees may feel heavy, stiff, or sluggish.",
+    question: "Can leg swelling make the knees feel heavy?",
+    answer: "Yes. Fluid buildup in the lower leg can feel heavy or tight and may affect one or both sides. Recurrent swelling, unexplained one-sided swelling, or swelling that is sudden, painful, red, or warm needs medical assessment rather than self-diagnosis.",
   },
   {
     question: "When should heavy knees be checked?",
-    answer: "Consider seeking evaluation if knee heaviness is persistent, worsening over time, accompanied by swelling, pain, numbness, or visible changes in the leg. Also seek attention if the heaviness significantly limits your ability to walk or perform daily activities.",
+    answer: "Arrange an assessment when heaviness persists, worsens, limits walking, or comes with pain, weakness, numbness, or recurrent swelling. Seek urgent care for unexplained swelling in one leg, especially with pain, warmth, or discoloration. Chest pain, sudden breathlessness, coughing blood, fainting, or severe illness requires emergency help.",
   },
 ];
 
 const article = {
   slug: "heavy-feeling-in-knees",
-  title: "Heavy Feeling in the Knees: Why It Happens & What Helps",
-  subtitle: "Understanding everyday causes of knee heaviness and how to support lighter movement",
-  intro: "Do your knees sometimes feel unusually heavy, as if they are carrying extra weight even during simple activities? This sensation of heaviness around the knees is surprisingly common and can affect how you walk, climb stairs, or move through your day. Understanding what causes this feeling can help you take practical steps to support more comfortable, lighter knee movement.",
-  metaTitle: "Heavy Feeling in Knees: Causes & Relief Tips",
-  metaDescription: "Learn why your knees feel heavy, common causes including muscle fatigue and circulation, and simple everyday strategies to support lighter, more comfortable knee movement.",
+  title: "Heavy Feeling in the Knees: Causes, Clues, and When to Act",
+  subtitle: "Compare fatigue, stiffness, swelling, and warning patterns without guessing the diagnosis",
+  intro: "A heavy feeling in the knees can describe tired muscles, stiffness after sitting, effortful walking, or swelling in the lower leg. Because the word heavy means different things to different people, the safest approach is to compare the timing, visible changes, one-sided versus two-sided symptoms, and what happens with movement. This guide explains practical next steps and the signs that need medical care.",
+  metaTitle: "Heavy Feeling in Knees: Causes and Warning Signs",
+  metaDescription: "Compare fatigue, stiffness, swelling, and weakness when your knees feel heavy. Learn practical steps and when one-sided leg symptoms need urgent care.",
   heroImage,
   publishedDate: "March 8, 2026",
+  lastUpdated: "July 13, 2026",
   nextSlug: "knee-pain-after-flights",
   nextTitle: "Knee Pain After Long Flights",
   faqs,
-  seoTags: "heavy feeling in knees, knees feel heavy, heavy knees walking, knee heaviness sensation, leg muscle fatigue knee, knee joint fatigue, reduced circulation knees, muscle tiredness knee, knee support muscles, everyday knee comfort",
+  seoTags: "heavy feeling in knees, knees feel heavy, heavy knees walking, legs feel heavy, knee heaviness and swelling, heavy knees after sitting, one leg feels heavy, knee fatigue, when heavy legs are serious",
   content: (
     <>
+      <InfoBox title="Quick answer">
+        <p>
+          Heavy-feeling knees are not one condition. If both legs feel tired after unusual activity and improve with recovery, muscle fatigue may be contributing. If the feeling appears after sitting and eases after a few gentle steps, stiffness may be more relevant. Visible swelling, progressive weakness, or a new change on only one side shifts the decision toward medical assessment. <strong>Unexplained one-sided swelling with pain, warmth, or color change needs urgent advice. Chest pain or sudden breathlessness requires emergency help.</strong>
+        </p>
+      </InfoBox>
+
       <p>
         A heavy feeling in the knees is one of those sensations that can be difficult to describe but easy to recognize. Your knees may feel weighed down, sluggish, or resistant to movement, even though there is no visible swelling or sharp discomfort. This type of sensation is often linked to how the muscles, circulation, and joint structures around the knee are functioning during daily life.
       </p>
 
-      <StatHighlight
-        stat="65%"
-        label="of adults report occasional leg heaviness after prolonged activity"
-        description="Making it one of the most common lower limb sensations"
-      />
-
       <p>
         In this guide, we will explore the everyday reasons why knees may feel heavy, how muscle fatigue and circulation play a role, and practical strategies that may help your knees feel lighter and more comfortable throughout the day.
       </p>
+
+      <figure className="my-8">
+        <img
+          src={imgHeavyKneePatterns}
+          alt="Three everyday patterns associated with heavy-feeling knees: walking fatigue, stiffness after sitting, and one-sided leg swelling"
+          className="h-auto w-full rounded-xl shadow-sm"
+          loading="lazy"
+        />
+        <figcaption className="mt-3 text-center text-sm text-muted-foreground">
+          The same word, heavy, can describe very different patterns. Timing, symmetry, and visible swelling change the next step.
+        </figcaption>
+      </figure>
+
+      <h2>Heavy Knees Cause Comparison</h2>
+      <p>
+        Use this comparison as a way to describe the symptom, not to diagnose yourself. More than one pattern can be present at the same time, and an examination may be needed when the cause is unclear.
+      </p>
+      <div className="my-6 overflow-x-auto">
+        <table className="w-full min-w-[760px] border-collapse text-sm">
+          <thead>
+            <tr className="border-b border-border">
+              <th className="p-3 text-left font-semibold">Pattern</th>
+              <th className="p-3 text-left font-semibold">Clues that may fit</th>
+              <th className="p-3 text-left font-semibold">Reasonable next step</th>
+              <th className="p-3 text-left font-semibold">What raises concern</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-border align-top">
+              <td className="p-3 font-medium">Activity-related muscle fatigue</td>
+              <td className="p-3">Both legs feel tired after a longer walk, workout, or stair-heavy day; no major swelling; improves with recovery</td>
+              <td className="p-3">Temporarily reduce the dose, keep easy movement, and rebuild distance or resistance gradually</td>
+              <td className="p-3">Marked weakness, repeated giving way, severe pain, or failure to return toward baseline</td>
+            </tr>
+            <tr className="border-b border-border align-top">
+              <td className="p-3 font-medium">Stiffness after inactivity</td>
+              <td className="p-3">Heaviness on the first steps after sitting; movement becomes easier after a short warm-up</td>
+              <td className="p-3">Change position regularly and use a gentle, comfortable movement break</td>
+              <td className="p-3">A locked knee, persistent loss of motion, hot swelling, or worsening night symptoms</td>
+            </tr>
+            <tr className="border-b border-border align-top">
+              <td className="p-3 font-medium">Knee or lower-leg swelling</td>
+              <td className="p-3">Visible puffiness, tighter socks, skin that looks stretched, or a feeling of pressure</td>
+              <td className="p-3">Compare sides, note onset and medicines, and arrange assessment if unexplained, recurrent, or worsening</td>
+              <td className="p-3">Sudden, severe, painful, red, or hot swelling; fever; or swelling after significant injury</td>
+            </tr>
+            <tr className="border-b border-border align-top">
+              <td className="p-3 font-medium">One-sided vascular warning pattern</td>
+              <td className="p-3">One leg becomes swollen with pain or tenderness, warmth, redness, or discoloration</td>
+              <td className="p-3">Seek urgent medical advice because a deep vein thrombosis must be considered</td>
+              <td className="p-3">Breathlessness, chest pain, coughing blood, fainting, or feeling acutely unwell is an emergency</td>
+            </tr>
+            <tr className="align-top">
+              <td className="p-3 font-medium">Weakness or nerve-related symptoms</td>
+              <td className="p-3">The leg feels difficult to control, gives way, drags, or is accompanied by numbness or tingling</td>
+              <td className="p-3">Arrange a clinical assessment rather than treating the sensation as simple fatigue</td>
+              <td className="p-3">Sudden major weakness, new loss of bladder or bowel control, or rapidly spreading numbness needs urgent care</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h2>What Causes Heaviness in the Knees</h2>
 
@@ -97,14 +159,14 @@ const article = {
         The muscles around the knee, including the quadriceps, hamstrings, and calves, work continuously to support the joint during standing, walking, and movement. When these muscles become fatigued from overuse, prolonged activity, or insufficient recovery, the knee can feel heavy and sluggish. The muscles simply become less efficient at supporting and moving the joint.
       </p>
 
-      <h3>Reduced Circulation</h3>
+      <h3>Swelling and Fluid Buildup</h3>
       <p>
-        Blood flow plays a crucial role in how the legs feel. When circulation to the lower limbs is reduced, whether from prolonged sitting, standing in one position, or general inactivity, the muscles and joint structures receive less oxygen and nutrients. This can create a heavy, tired feeling around the knees and throughout the legs.
+        Swelling in the knee, ankle, foot, or lower leg can create pressure, tightness, and heaviness. Long periods in one position are one possible contributor, but swelling can also relate to an injury, medicines, vein problems, infection, or conditions affecting the heart, kidneys, liver, or thyroid. The appearance, timing, and whether one or both legs are affected matter. It is not safe to label unexplained swelling as poor circulation without an assessment.
       </p>
 
-      <h3>Joint Fluid Changes</h3>
+      <h3>Stiffness After Rest</h3>
       <p>
-        The knee joint relies on synovial fluid for lubrication and smooth movement. During periods of inactivity, the circulation of this fluid slows down, which can make the joint feel stiff and heavy when you begin moving again. Regular movement helps keep this fluid circulating effectively.
+        A bent knee can feel stiff after sitting, driving, or sleeping. The first few steps may feel effortful even when the leg is not visibly swollen. A stiffness pattern that eases with gentle movement is different from a knee that is truly locked and cannot straighten. A locked knee, major loss of movement, or repeated giving way should be assessed promptly.
       </p>
 
       <h3>Deconditioning</h3>
@@ -113,7 +175,7 @@ const article = {
       </p>
 
       <InfoBox title="Understanding Knee Heaviness">
-        <p>Knee heaviness is typically a symptom of how well the supporting systems around the joint are functioning, rather than a sign of structural damage. Muscles, circulation, hydration, and activity levels all contribute to how light or heavy your knees feel during the day.</p>
+        <p>Knee heaviness does not prove structural damage, but it also should not automatically be dismissed as fatigue. Describe whether the feeling is in the joint or the whole leg, whether it is one-sided, what triggers it, and whether swelling, pain, weakness, numbness, warmth, or skin-color change is present.</p>
       </InfoBox>
 
       <h2>Muscle Fatigue and Knee Support</h2>
@@ -150,47 +212,45 @@ const article = {
       </p>
 
       <TipsList tips={[
-        "Muscle fatigue is the most common cause of knee heaviness",
+        "Muscle fatigue is one possible cause of activity-related heaviness",
         "The quadriceps bear the greatest load in supporting the knee",
         "Heaviness often increases throughout the day as muscles tire",
         "Regular strengthening helps muscles resist fatigue longer",
         "Recovery between activities is essential for reducing heaviness",
       ]} />
 
-      <h2>How Circulation Affects Knee Sensation</h2>
+      <h2>When the Whole Leg Feels Heavy</h2>
 
       <figure className="my-8">
         <img
           src={imgCirculationLimbs}
-          alt="Illustration of blood circulation in the lower limbs and knee area"
+          alt="Illustration of major blood vessels in the lower limbs"
           className="w-full h-auto rounded-xl shadow-sm"
           loading="lazy"
         />
         <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-          Healthy circulation supports lighter, more comfortable knee movement
+          A whole-leg symptom needs a broader check than a knee-only symptom.
         </figcaption>
       </figure>
 
       <p>
-        Blood circulation is a key factor in how your legs and knees feel throughout the day. The lower limbs rely on consistent blood flow to deliver oxygen, nutrients, and energy to the working muscles and joint structures.
+        People sometimes say their knees feel heavy when the sensation actually extends through the calf, ankle, or entire leg. Look for visible swelling, sock marks, skin that appears stretched, and a difference between the two sides. Also consider recent travel, prolonged immobility, surgery, pregnancy, cancer treatment, hormone medicines, and a previous blood clot when discussing symptoms with a clinician.
       </p>
 
       <h3>The Role of the Muscle Pump</h3>
       <p>
-        The calf muscles act as a natural pump that helps push blood back up from the lower legs toward the heart. When you walk or move your legs, this pump activates and keeps circulation flowing. During prolonged sitting or standing, the pump is less active, which can lead to blood pooling in the lower legs and a sensation of heaviness.
+        Calf-muscle contractions help venous blood return toward the heart, which is one reason changing position and walking may feel useful after sitting. That does not make movement a treatment for every heavy-leg symptom. If a leg is newly swollen, painful, warm, or discolored, seek urgent advice before massaging it or assuming a short walk will solve it.
       </p>
 
       <h3>How Inactivity Reduces Circulation</h3>
       <p>
-        Extended periods of sitting at a desk, in a car, or on a couch reduce the natural pumping action of the leg muscles. Without this movement, circulation slows and the legs can feel increasingly heavy and tired. This is one reason why your knees may feel particularly heavy after long periods of sitting. For related insights, see our guide on <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link>.
+        Extended sitting can leave the legs stiff and sluggish. For a simple, symmetrical stiffness pattern without warning signs, changing position and taking a comfortable movement break may help. For related context, see our guide on <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link>. Long travel or immobility also increases the importance of recognizing one-sided DVT symptoms rather than treating every sensation as ordinary stiffness.
       </p>
 
-      <h3>Temperature and Circulation</h3>
+      <h3>Medicines and General Health</h3>
       <p>
-        Warm environments can cause blood vessels to dilate, which may increase fluid retention in the legs and contribute to heaviness. Conversely, cold environments can reduce circulation. Finding a comfortable temperature and staying active regardless of conditions helps maintain healthy blood flow to the knees.
+        Some medicines can contribute to lower-leg swelling, and swelling may also occur with medical conditions outside the knee. Do not stop a prescribed medicine on your own. Note when the symptom began, any recent dose changes, and whether swelling affects the feet, ankles, face, or abdomen, then discuss those details with a healthcare professional.
       </p>
-
-      <PremiumCTA headline="Support your knees with daily warmth and comfort" text="FlexiKnee provides adjustable warmth, red light, and gentle vibration in one wireless device, designed for daily knee comfort support." />
 
       <h2>Situations When Knees Feel Heavy</h2>
 
@@ -210,7 +270,7 @@ const article = {
 
       <h3>After Intense Exercise</h3>
       <p>
-        Vigorous exercise that heavily engages the leg muscles can leave the knees feeling heavy during recovery. This is a normal response to muscle exertion and typically resolves with adequate rest and hydration. For more on post-exercise sensations, explore our guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee discomfort after exercise</Link>. If the heaviness is accompanied by clicking or popping sounds, our guide on <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking when walking</Link> explains why these sounds occur.
+        Vigorous exercise that heavily engages the leg muscles can leave both legs feeling tired during recovery. A fatigue pattern should trend back toward baseline and should not include rapid swelling, severe pain, instability, or loss of function. For more on post-exercise sensations, explore our guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee discomfort after exercise</Link>. If the heaviness is accompanied by clicking or popping sounds, our guide on <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking when walking</Link> explains why these sounds occur.
       </p>
 
       <h3>At the End of a Long Day</h3>
@@ -238,12 +298,12 @@ const article = {
       </figure>
 
       <p>
-        One of the most effective ways to address knee heaviness is through regular, consistent movement. Movement activates the muscle pump, improves circulation, lubricates the joint, and builds the muscle endurance that keeps knees feeling lighter throughout the day.
+        Regular, consistent movement may help when the pattern is stiffness after inactivity or muscle fatigue. Movement activates the leg muscles and, over time, progressive exercise can build the capacity needed for walking, stairs, and standing. It is not a treatment for unexplained swelling, a blood clot, infection, or sudden weakness.
       </p>
 
       <h3>Why Movement Breaks Matter</h3>
       <p>
-        Taking short movement breaks every 30 to 45 minutes during prolonged sitting can dramatically reduce knee heaviness. Even simple actions like standing, walking a short distance, or performing a few leg movements can reactivate the muscle pump and improve blood flow to the lower limbs.
+        During prolonged sitting, change position regularly rather than waiting until the knees feel very stiff. If there are no warning signs and walking is safe, stand or take a short comfortable walk at an interval that fits your day. The aim is to interrupt a sustained position, not to meet a rigid timer.
       </p>
 
       <h3>Gentle Walking as a Reset</h3>
@@ -262,7 +322,7 @@ const article = {
       </p>
 
       <TipsList tips={[
-        "Take movement breaks every 30 to 45 minutes during prolonged sitting",
+        "Change position regularly during prolonged sitting",
         "Walk for 5 to 10 minutes to reset circulation and muscle activity",
         "Stretch quadriceps, hamstrings, and calves daily",
         "Build leg strength gradually with low-impact exercises",
@@ -286,7 +346,7 @@ const article = {
       </figure>
 
       <p>
-        Building consistent daily habits is the most effective long-term approach to reducing knee heaviness. These habits focus on maintaining the strength, circulation, and flexibility that keep the knees feeling responsive and light.
+        Consistent daily habits can help an activity-related fatigue or stiffness pattern. The most useful plan is one you can progress gradually and adjust according to the knee's response, while obtaining an assessment when symptoms are persistent, swollen, one-sided, or worsening.
       </p>
 
       <h3>Stay Active Throughout the Day</h3>
@@ -296,12 +356,12 @@ const article = {
 
       <h3>Strengthen Your Leg Muscles</h3>
       <p>
-        Strong quadriceps, hamstrings, and calves provide better support for the knee joint and resist fatigue more effectively. Even 10 to 15 minutes of targeted strengthening exercises three to four times per week can make a meaningful difference in how heavy your knees feel during daily activities.
+        Strong quadriceps, hamstrings, and calves can improve capacity for walking, stairs, and standing up. Start with a tolerable exercise, range, and resistance, then progress gradually. A physiotherapist can help select a starting level if ordinary exercises provoke pain, swelling, or instability.
       </p>
 
       <h3>Stay Hydrated</h3>
       <p>
-        Proper hydration supports healthy blood viscosity, muscle function, and joint fluid production. When the body is well-hydrated, circulation is more efficient and muscles function more effectively, both of which help reduce the sensation of heaviness in the knees.
+        Drink according to thirst and any medical guidance you have been given. Hydration is important for general health and exercise, but drinking extra water is not a specific treatment for knee heaviness or lower-leg swelling. People with heart, kidney, or other conditions may have individualized fluid advice.
       </p>
 
       <h3>Maintain a Healthy Activity Balance</h3>
@@ -322,7 +382,7 @@ const article = {
       <h2>When Knee Heaviness Should Be Evaluated</h2>
 
       <p>
-        While occasional knee heaviness related to fatigue and inactivity is typically normal, there are situations where the sensation may warrant professional evaluation.
+        A short-lived, symmetrical tired feeling after unusual activity may settle as the muscles recover. The following patterns need a different response because heaviness can be the first word someone uses for swelling, weakness, or a whole-leg problem.
       </p>
 
       <h3>Persistent Heaviness Without Clear Cause</h3>
@@ -332,12 +392,12 @@ const article = {
 
       <h3>Heaviness Accompanied by Swelling</h3>
       <p>
-        When knee heaviness appears alongside visible swelling in the legs or around the knee, it may indicate fluid retention or other factors that need professional attention.
+        Recurrent swelling in both legs, or swelling that does not improve, should be discussed with a healthcare professional. Unexplained swelling in one leg needs urgent advice, particularly when it is painful, tender, warm, red, or discolored. These symptoms can occur with a deep vein thrombosis, although only a medical assessment can determine the cause.
       </p>
 
       <h3>Numbness or Tingling</h3>
       <p>
-        If the heavy sensation is accompanied by numbness, tingling, or changes in skin color in the legs, it may suggest circulation-related concerns that should be evaluated.
+        Numbness, tingling, foot drag, or difficulty controlling the leg may involve a nerve or another problem outside the knee. New or progressive weakness should be assessed. Sudden major weakness or neurological symptoms affecting more than the knee require urgent care.
       </p>
 
       <h3>Progressive Worsening</h3>
@@ -345,13 +405,21 @@ const article = {
         Knee heaviness that progressively worsens over time despite maintaining regular activity and healthy habits should be discussed with a healthcare provider to rule out any contributing factors.
       </p>
 
-      <InfoBox title="When to Seek Evaluation">
-        <p>Consider professional evaluation if knee heaviness is persistent despite rest, accompanied by swelling, numbness, or skin color changes, progressively worsening, or significantly limiting your daily activities. These signs do not necessarily indicate a serious problem, but a professional assessment can provide clarity and guidance.</p>
+      <InfoBox title="Urgent and Emergency Warning Signs">
+        <p><strong>Seek urgent medical advice</strong> for unexplained one-sided leg swelling, especially with pain, tenderness, warmth, redness, or discoloration; sudden severe swelling; a hot red knee with fever; inability to bear weight; or a knee that is badly swollen or misshapen. <strong>Call emergency services</strong> for sudden breathlessness, chest pain, coughing up blood, fainting, confusion, or feeling acutely unwell. These combinations should not be managed with heat, massage, or exercise while waiting to see whether they pass.</p>
       </InfoBox>
 
       <p>
-        Understanding why your knees feel heavy is the first step toward finding relief. In most cases, knee heaviness reflects muscle fatigue, circulation patterns, and activity levels rather than structural joint problems. By building consistent habits around movement, strengthening, hydration, and posture, you can support your knees in feeling lighter and more comfortable throughout the day.
+        Understanding why your knees feel heavy starts with describing the pattern accurately. Fatigue, stiffness, swelling, and weakness are not interchangeable, and the right response depends on which clues are present. For an uncomplicated activity-related pattern, gradual capacity building can be useful. For persistent, one-sided, swollen, or progressive symptoms, an assessment is the safer next step.
       </p>
+
+      <h2>Sources and Further Reading</h2>
+      <ul>
+        <li><a href="https://www.nhs.uk/conditions/oedema/" target="_blank" rel="noreferrer" className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700">NHS: Swollen ankles, feet and legs (oedema)</a></li>
+        <li><a href="https://www.nhs.uk/conditions/deep-vein-thrombosis-dvt/" target="_blank" rel="noreferrer" className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700">NHS: Deep vein thrombosis (DVT)</a></li>
+        <li><a href="https://www.cdc.gov/blood-clots/about/" target="_blank" rel="noreferrer" className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700">CDC: About venous thromboembolism</a></li>
+        <li><a href="https://www.nhs.uk/symptoms/knee-pain/" target="_blank" rel="noreferrer" className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700">NHS: Knee pain and urgent warning signs</a></li>
+      </ul>
     </>
   ),
 };
