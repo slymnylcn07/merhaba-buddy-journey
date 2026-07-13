@@ -9096,8 +9096,8 @@ const GuideArticle = () => {
                 <h1 className="mb-4 text-2xl font-bold leading-tight tracking-tight text-foreground md:text-3xl lg:text-4xl">
                   {article.title}
                 </h1>
-                <div className="mt-4 flex justify-center text-center text-sm text-slate-500">
-                  <span>By&nbsp;</span>
+                <div className="mt-4 flex justify-start text-left text-sm text-slate-500">
+                  <span>Author By&nbsp;</span>
                   <Link to="/editorial-team" className="font-semibold text-blue-600 hover:underline">
                     FlexiKnee Editorial Team
                   </Link>
