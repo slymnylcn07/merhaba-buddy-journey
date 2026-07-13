@@ -173,7 +173,7 @@ export const runningShoesKneePainDiscomfort: ArticleExport = {
         <ul className="list-disc pl-6 space-y-2 my-4">
           <li><strong>Reduced knee pressure:</strong> Some runners report feeling less pressure on their knees during and after runs when they switch to shoes with better cushioning. This is particularly common among runners who were previously using shoes well past their recommended mileage</li>
           <li><strong>Improved alignment feel:</strong> Runners who move from a neutral shoe to one with appropriate stability features sometimes notice that their knees feel more "centered" during runs. This is especially common among those who overpronate</li>
-          <li><strong>No immediate change:</strong> Some runners feel little to no difference after switching shoes, particularly if their knee discomfort is related to other factors like muscle weakness, training volume, or <Link to="/guides/knee-stiffness-after-resting" className="text-primary hover:underline">stiffness patterns after resting</Link></li>
+          <li><strong>No immediate change:</strong> Some runners feel little to no difference after switching shoes, particularly if their knee discomfort is related to other factors like muscle weakness, training volume, or <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">stiffness patterns after resting</Link></li>
           <li><strong>Adjustment period:</strong> It's common to experience a brief adjustment period when switching shoe types. Your legs and feet need time to adapt to different cushioning levels, drop heights, and support structures</li>
         </ul>
         <p>
