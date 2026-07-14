@@ -215,9 +215,11 @@ export const TrustStrip = () => (
 interface ProductInfoAccordionProps {
   howToUse: string[];
   faqs: Array<{ question: string; answer: string }>;
+  /** Dogrulanmis teknik veriler. Yalnizca ana cihazda dolu gelir. */
+  specs?: Array<{ label: string; value: string }>;
 }
 
-export const ProductInfoAccordion = ({ howToUse, faqs }: ProductInfoAccordionProps) => (
+export const ProductInfoAccordion = ({ howToUse, faqs, specs }: ProductInfoAccordionProps) => (
   <Accordion type="single" collapsible className="mt-5 rounded-2xl border border-slate-200 bg-white px-4">
     <AccordionItem value="how-to-use" className="border-slate-200">
       <AccordionTrigger className="text-left text-sm font-semibold text-slate-950">
@@ -231,6 +233,26 @@ export const ProductInfoAccordion = ({ howToUse, faqs }: ProductInfoAccordionPro
         </ol>
       </AccordionContent>
     </AccordionItem>
+    {specs && specs.length > 0 && (
+      <AccordionItem value="specs" className="border-slate-200">
+        <AccordionTrigger className="text-left text-sm font-semibold text-slate-950">
+          Specifications
+        </AccordionTrigger>
+        <AccordionContent className="text-sm text-slate-600">
+          <dl className="grid gap-0 sm:grid-cols-2 sm:gap-x-6">
+            {specs.map((row) => (
+              <div
+                key={row.label}
+                className="flex items-baseline justify-between gap-4 border-b border-slate-100 py-2 last:border-b-0 sm:last:border-b"
+              >
+                <dt className="text-slate-500">{row.label}</dt>
+                <dd className="text-right font-medium text-slate-900">{row.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </AccordionContent>
+      </AccordionItem>
+    )}
     <AccordionItem value="faq" className="border-slate-200">
       <AccordionTrigger className="text-left text-sm font-semibold text-slate-950">
         Frequently asked questions

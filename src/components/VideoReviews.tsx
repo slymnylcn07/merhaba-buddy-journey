@@ -21,7 +21,7 @@ export const VideoReviews = () => {
             </h2>
           </div>
           <p className="max-w-md text-sm leading-7 text-slate-300">
-            Short vertical videos show the device in motion after the key benefits and routine flow, so the page keeps a cleaner buying path.
+            See how FlexiKnee fits into simple evening, after-walk and at-home comfort routines.
           </p>
         </div>
 

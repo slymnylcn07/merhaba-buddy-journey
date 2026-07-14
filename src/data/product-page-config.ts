@@ -45,6 +45,8 @@ export interface ProductPageConfig {
   freeShipOnSingle: boolean;
   /** Buy 2 satırındaki ekstra indirim yüzdesi */
   duoDiscountPct: number;
+  /** Dogrulanmis teknik ozellikler (yalnizca ana cihaz). */
+  specs?: Array<{ label: string; value: string }>;
 }
 
 const SHARED_RATING = 4.8;
@@ -56,16 +58,30 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
     reviewCount: 238,
     rating: 4.7,
     benefits: [
-      { icon: Flame, label: "Deep soothing warmth" },
-      { icon: Sun, label: "Red light therapy" },
-      { icon: Waves, label: "Massage vibration" },
-      { icon: BatteryCharging, label: "Cordless & rechargeable" },
+      { icon: Flame, label: "Adjustable warmth" },
+      { icon: Sun, label: "Integrated red light" },
+      { icon: Waves, label: "3 massage modes" },
+      { icon: BatteryCharging, label: "3000 mAh cordless" },
     ],
     howToUse: [
       "Wrap the device around your knee and secure the straps for a snug, comfortable fit.",
       "Press power and choose your heat level, red light, and vibration mode from the control panel.",
       "Relax for a 15-minute session, reading, watching TV, or winding down.",
       "Repeat 1–3 times daily. Most people build it into a morning or evening routine.",
+    ],
+    specs: [
+      { label: "Battery", value: "3000 mAh rechargeable" },
+      { label: "Charging time", value: "3-4 hours (USB, 5V/2A)" },
+      { label: "Cordless use", value: "1-2 hours per charge" },
+      { label: "Massage modes", value: "3 vibration modes" },
+      { label: "Warmth", value: "Adjustable heat settings" },
+      { label: "Red light", value: "Built-in red light mode" },
+      { label: "Controls", value: "LED touch panel" },
+      { label: "Weight", value: "About 830 g" },
+      { label: "Materials", value: "ABS and TPR" },
+      { label: "Certifications", value: "CE, FCC, RoHS" },
+      { label: "Fit", value: "Wraparound straps, either knee" },
+      { label: "In the box", value: "Device, USB cable, user manual" },
     ],
     freeShipOnSingle: true,
     duoDiscountPct: 15,

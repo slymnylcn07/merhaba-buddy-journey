@@ -20,6 +20,7 @@ import { BenefitIconsRow, OfferSelector, PaymentOptionsRow, TrustStrip, ProductI
 import { getProductPageConfig } from "@/data/product-page-config";
 import { VideoReviews } from "@/components/VideoReviews";
 import { ProductReviews } from "@/components/ProductReviews";
+import { KnowBeforeYouBuy } from "@/components/KnowBeforeYouBuy";
 import { getProducts, ShopifyProduct, createStorefrontCheckout } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { featurePillars } from "@/data/product-system";
@@ -151,7 +152,7 @@ export default function ProductDetail() {
     compareAtAmount && compareAtAmount > basePrice
       ? formatMoney(String(compareAtAmount * bundleQty), currency)
       : null;
-  const productTitle = "FlexiKnee™ Knee Massager";
+  const productTitle = "FlexiKnee™ Smart Heated Knee Massager";
 
   const shopifyImages =
     product?.node.images.edges.map((edge) => ({
@@ -170,9 +171,25 @@ export default function ProductDetail() {
     "@type": "Product",
     name: productTitle,
     brand: { "@type": "Brand", name: "FlexiKnee" },
+    category: "Knee massager",
     description:
-      "A smart knee comfort device with adjustable heat, massage style vibration, wraparound support, and simple touch controls.",
+      "A cordless knee comfort device with adjustable warmth, an integrated red light mode, three massage vibration modes, and a wraparound fit with simple touch controls.",
     image: "https://flexi-knee.com/images/shopify-gallery/flexiknee-gallery-01-main.webp",
+    // Dogrulanmis teknik veriler (tedarikci teknik sayfasi). Tahmin edilen deger yok.
+    additionalProperty: (pageConfig.specs || []).map((row) => ({
+      "@type": "PropertyValue",
+      name: row.label,
+      value: row.value,
+    })),
+    weight: { "@type": "QuantitativeValue", value: 830, unitCode: "GRM" },
+    // Urun duzeyinde dogrulanmis alici yorumlari (magaza siparis hacmi degil).
+    aggregateRating: pageConfig.reviewCount
+      ? {
+          "@type": "AggregateRating",
+          ratingValue: String(pageConfig.rating),
+          reviewCount: String(pageConfig.reviewCount),
+        }
+      : undefined,
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/InStock",
@@ -180,7 +197,7 @@ export default function ProductDetail() {
       priceCurrency: currency,
       url: `https://flexi-knee.com/product/${handle || "knee-massager-smart-red-light-and-massage-therapy"}`,
     },
-  }), [basePrice, currency, handle]);
+  }), [basePrice, currency, handle, pageConfig]);
 
   const cartItem = () => {
     if (!product || !variant) return null;
@@ -339,7 +356,7 @@ export default function ProductDetail() {
 
                 <TrustStrip />
 
-                <ProductInfoAccordion howToUse={pageConfig.howToUse} faqs={productFaqs} />
+                <ProductInfoAccordion howToUse={pageConfig.howToUse} faqs={productFaqs} specs={pageConfig.specs} />
               </div>
             </aside>
           </div>
@@ -356,7 +373,7 @@ export default function ProductDetail() {
                   Built around short routines, not complicated claims.
                 </h2>
                 <p className="mt-5 text-base leading-8 text-slate-600">
-                  This section shifts the product page away from aggressive cure language and toward a cleaner, more trustworthy wellness tech presentation.
+                  Adjustable warmth, massage-style vibration and simple controls make it easy to build a repeatable comfort routine.
                 </p>
               </div>
 
@@ -404,10 +421,12 @@ export default function ProductDetail() {
           productKey="massager"
           eyebrow="The flagship FlexiKnee experience"
           headline="More than a product image, a routine people can picture themselves using."
-          intro="These sections give the flagship product page a more premium, lifestyle-led story once the visitor scrolls past the purchase area."
+          intro="Designed to feel easy at home, whether you are relaxing, reading or winding down after activity."
           visuals={massagerStoryVisuals}
           highlights={["Adjustable warmth", "Massage-style vibration", "Wireless wraparound design", "Simple touch control"]}
         />
+
+        <KnowBeforeYouBuy />
 
         <ProductReviews />
 

@@ -71,7 +71,8 @@ const REVIEWS: Review[] = [
   },
 ];
 
-const HIGHLIGHTS = ["Pain relief", "Works well", "Comfortable fit", "Easy to use"];
+// Musteri yorumlarinda one cikan temalar. Marka iddiasi degil, alicilarin sozleri.
+const HIGHLIGHTS = ["Comfortable warmth", "Easy to use", "Secure fit", "Simple controls"];
 
 function Stars({ value, className = "" }: { value: number; className?: string }) {
   return (
@@ -117,12 +118,17 @@ export function ProductReviews() {
             </div>
           </div>
           <div className="hidden h-12 w-px bg-slate-200 sm:block" />
-          <div className="flex flex-wrap justify-center gap-2">
-            {HIGHLIGHTS.map((h) => (
-              <span key={h} className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
-                {h}
-              </span>
-            ))}
+          <div className="flex flex-col items-center gap-1.5">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-400">
+              What customers mention
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {HIGHLIGHTS.map((h) => (
+                <span key={h} className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
+                  {h}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
         <p className="mx-auto mt-3 max-w-2xl text-center text-xs leading-5 text-slate-400">
