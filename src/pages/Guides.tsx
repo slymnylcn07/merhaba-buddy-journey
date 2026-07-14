@@ -30,7 +30,7 @@ import thumbRedLightResearch from "@/assets/guide-thumb-red-light-research.jpg";
 import thumbBackKneeDetailed from "@/assets/guide-thumb-back-knee-detailed.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
 import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
-import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
+import thumbMassagerExpectations from "@/assets/thumb-do-massagers-work-v2.svg";
 import thumbInfraredSafety from "@/assets/guide-thumb-infrared-safety-v2.jpg";
 import thumbWarmthVsInfrared from "@/assets/guide-thumb-warmth-vs-infrared-v2.jpg";
 import thumbNightKneePain from "@/assets/guide-thumb-night-knee-pain-v3.jpg";

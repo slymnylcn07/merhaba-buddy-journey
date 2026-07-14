@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bgM" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#E0F2FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bgM)"/>
+
+  <text x="600" y="110" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="46" font-weight="bold" fill="#0F172A">Do knee massagers</text>
+  <text x="600" y="168" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="46" font-weight="bold" fill="#0F172A">actually work?</text>
+  <text x="600" y="218" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" fill="#64748B">What heat, light and vibration can and cannot do</text>
+
+  <!-- knee with wrap device -->
+  <g transform="translate(600,540)">
+    <!-- leg -->
+    <path d="M-70 -200 C 10 -206 60 -180 64 -120 L 70 -20 C 74 30 64 60 60 100 C 56 160 64 200 60 250 L -70 250 C -74 200 -66 160 -70 100 C -74 60 -84 30 -80 -20 L -74 -120 C -74 -180 -70 -200 -70 -200 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="4"/>
+    <!-- wrap -->
+    <path d="M-96 -60 C -20 -76 26 -76 88 -60 L 92 70 C 26 88 -20 88 -100 70 Z" fill="#1E293B" opacity="0.92"/>
+    <rect x="-46" y="-34" width="92" height="72" rx="12" fill="#0F172A"/>
+    <!-- control lights -->
+    <circle cx="-22" cy="0" r="8" fill="#F97316"/>
+    <circle cx="0" cy="0" r="8" fill="#EF4444"/>
+    <circle cx="22" cy="0" r="8" fill="#3B82F6"/>
+    <!-- straps -->
+    <path d="M-96 -20 L -128 -14 L -128 24 L -100 30" fill="#334155"/>
+    <path d="M88 -20 L 120 -14 L 120 24 L 92 30" fill="#334155"/>
+    <!-- warmth waves -->
+    <g stroke="#F97316" stroke-width="5" fill="none" opacity="0.8" stroke-linecap="round">
+      <path d="M-150 -90 q 14 -18 28 0 q 14 18 28 0"/>
+      <path d="M96 -90 q 14 -18 28 0 q 14 18 28 0"/>
+    </g>
+  </g>
+
+  <!-- three claim chips -->
+  <g font-family="Arial,Helvetica,sans-serif">
+    <rect x="120" y="770" width="300" height="70" rx="35" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="270" y="814" text-anchor="middle" font-size="21" font-weight="bold" fill="#B45309">Warmth: yes</text>
+
+    <rect x="450" y="770" width="300" height="70" rx="35" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="600" y="814" text-anchor="middle" font-size="21" font-weight="bold" fill="#1D4ED8">Comfort: often</text>
+
+    <rect x="780" y="770" width="300" height="70" rx="35" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="930" y="814" text-anchor="middle" font-size="21" font-weight="bold" fill="#B91C1C">A cure: no</text>
+  </g>
+</svg>

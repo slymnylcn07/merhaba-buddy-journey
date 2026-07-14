@@ -2,7 +2,7 @@ import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-morning-stiffness-40s-v2.jpg";
-import diagramFluidSleep from "@/assets/diagram-knee-fluid-sleep.jpg";
+import diagramFluidSleep from "@/assets/fig-morning-fluid-cycle-v2.svg";
 import sectionMorningStiffness from "@/assets/article-section-morning-stiffness-40s.jpg";
 import sectionDailyComfort from "@/assets/article-section-daily-comfort-routine-40s.jpg";
 import sectionStandingUp from "@/assets/article-section-standing-up-transition.jpg";

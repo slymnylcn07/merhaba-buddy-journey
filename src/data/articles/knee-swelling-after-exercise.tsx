@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { StatHighlight, InfoBox, JournalQuote } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-knee-swelling-exercise.jpg";
-import kneeAnatomyImg from "@/assets/article-knee-anatomy-swelling.jpg";
+import kneeAnatomyImg from "@/assets/fig-knee-swelling-anatomy-v2.svg";
 import kneeFluidImg from "@/assets/article-knee-swelling-fluid.jpg";
 import kneeCompressionImg from "@/assets/article-knee-compression-exercise.jpg";
 import kneeRecoveryImg from "@/assets/article-knee-recovery-swelling.jpg";
