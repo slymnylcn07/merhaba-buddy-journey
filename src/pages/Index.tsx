@@ -120,13 +120,18 @@ export default function Index() {
       const resp = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: newsletterEmail }),
+        body: JSON.stringify({
+          email: newsletterEmail,
+          consent: true,
+          source: "homepage-newsletter",
+        }),
       });
-      if (!resp.ok) throw new Error("Subscription failed");
+      const payload = await resp.json().catch(() => ({}));
+      if (!resp.ok) throw new Error(payload?.error || "Subscription failed");
       setNewsletterEmail("");
       setShowCodeModal(true);
-    } catch {
-      toast.error("Failed to subscribe. Please try again.");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Failed to subscribe. Please try again.");
     } finally {
       setIsSubscribing(false);
     }
@@ -392,7 +397,7 @@ export default function Index() {
                       </button>
                     </div>
                     <p className="px-2 pt-3 text-xs leading-5 text-slate-500">
-                      No spam. Product updates, helpful guides, and launch offers only.
+                      By joining, you agree to receive FlexiKnee product updates, helpful guides, and offers. Unsubscribe any time.
                     </p>
                   </form>
                 </div>

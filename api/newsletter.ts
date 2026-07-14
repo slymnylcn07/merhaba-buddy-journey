@@ -13,6 +13,10 @@
  *
  * Required app scopes:
  *   read_customers, write_customers
+ *
+ * Welcome email variables:
+ *   RESEND_API_KEY        server-side Resend API key
+ *   RESEND_FROM           e.g. FlexiKnee Support <support@flexi-knee.com>
  */
 
 const API_VERSION = process.env.SHOPIFY_ADMIN_API_VERSION || '2026-07';
@@ -444,17 +448,20 @@ export default async function handler(req: ApiRequest, res: ApiResponse): Promis
       }
     }
 
-    // Hos geldin e-postasi: kupon kodunu kutusuna gonder.
-    // Resend'de flexi-knee.com dogrulanana kadar keyfi alicilara gonderim
-    // BASARISIZ olabilir - bu yuzden kayit akisini asla bozmuyoruz.
-    sendWelcomeEmail(email).catch((err) =>
-      console.error('Welcome email failed (signup still OK):', err)
-    );
+    // Hos geldin e-postasini serverless yanit bitmeden tamamla. E-posta
+    // gonderimi basarisiz olsa bile Shopify kaydi ve abonelik basarili kalir.
+    let welcomeEmailSent = false;
+    try {
+      welcomeEmailSent = await sendWelcomeEmail(email);
+    } catch (welcomeEmailError: unknown) {
+      console.error('[newsletter] welcome email failed:', errorMessage(welcomeEmailError));
+    }
 
     return res.status(200).json({
       ok: true,
       customerStored: true,
       profileSaved,
+      welcomeEmailSent,
       automationTrigger: quiz ? QUIZ_TRIGGER_TAG : null,
     });
   } catch (error: unknown) {
@@ -474,22 +481,32 @@ export default async function handler(req: ApiRequest, res: ApiResponse): Promis
 const WELCOME_DISCOUNT_CODE = 'GUIDE10';
 const SUPPORT_EMAIL = 'support@flexi-knee.com';
 
-async function sendWelcomeEmail(toEmail: string): Promise<void> {
+async function sendWelcomeEmail(toEmail: string): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return;
+  if (!apiKey) {
+    console.warn('[newsletter] RESEND_API_KEY is missing; welcome email skipped.');
+    return false;
+  }
   const from = process.env.RESEND_FROM || `FlexiKnee Support <${SUPPORT_EMAIL}>`;
+  const idempotencyKey = `welcome-${Buffer.from(toEmail).toString('base64url').slice(0, 80)}-${WELCOME_DISCOUNT_CODE}`;
 
   const r = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
+      'Idempotency-Key': idempotencyKey,
     },
     body: JSON.stringify({
       from,
       to: [toEmail],
       reply_to: SUPPORT_EMAIL,
       subject: 'Your 10% welcome code is inside',
+      text: `Welcome to FlexiKnee. Your 10% welcome code is ${WELCOME_DISCOUNT_CODE}. Shop at https://flexi-knee.com/shop. Reply to this email for support.`,
+      tags: [
+        { name: 'message_type', value: 'welcome_discount' },
+        { name: 'brand', value: 'flexiknee' },
+      ],
       html: `
         <div style="font-family:Arial,Helvetica,sans-serif;max-width:520px;margin:0 auto;padding:28px 20px;color:#0f172a;">
           <h1 style="font-size:22px;margin:0 0 8px;">Welcome to FlexiKnee</h1>
@@ -519,6 +536,8 @@ async function sendWelcomeEmail(toEmail: string): Promise<void> {
 
   if (!r.ok) {
     const body = await r.text().catch(() => '');
-    throw new Error(`Resend ${r.status}: ${body.slice(0, 200)}`);
+    throw new Error(`Resend ${r.status}: ${body.slice(0, 300)}`);
   }
+
+  return true;
 }

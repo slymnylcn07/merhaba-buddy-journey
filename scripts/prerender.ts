@@ -15,6 +15,13 @@ import { getShopifyProductHandles } from "./shopify-build-products";
 const DIST = resolve(process.cwd(), "dist");
 const PORT = 4173;
 const SITE = `http://localhost:${PORT}`;
+const GENERATED_AT = new Date().toISOString();
+const rawBuildId =
+  process.env.VERCEL_GIT_COMMIT_SHA ||
+  process.env.GITHUB_SHA ||
+  process.env.COMMIT_REF ||
+  `local-${GENERATED_AT}`;
+const BUILD_ID = rawBuildId.replace(/[^a-zA-Z0-9._-]/g, "-").slice(0, 48);
 
 // MIME types for the static file server
 const MIME: Record<string, string> = {
@@ -197,6 +204,14 @@ async function prerender() {
           // snapshot'tan ayikla - statik kopyada erken calisip canli kurulumu
           // engelliyorlar. Widget script'ini React kendisi ekler.
           html = html.replace(/<script[^>]*parcelpanel[^>]*>\s*<\/script>/gi, "");
+
+          // Add the same deployment identifier to every prerendered page.
+          if (!html.includes('name="flexiknee-build"')) {
+            html = html.replace(
+              "</head>",
+              `  <meta name="flexiknee-build" content="${BUILD_ID}" />\n</head>`
+            );
+          }
           
           // Determine output path
           let outPath: string;
@@ -223,10 +238,28 @@ async function prerender() {
     process.stdout.write(`\r  ✅ Prerendered ${done}/${allRoutes.length} pages`);
   }
 
+  const buildVersion = {
+    buildId: BUILD_ID,
+    generatedAt: GENERATED_AT,
+    totalRoutes: allRoutes.length,
+    successfulRoutes: success,
+    failedRoutes: failed,
+  };
+  writeFileSync(
+    join(DIST, "build-version.json"),
+    `${JSON.stringify(buildVersion, null, 2)}\n`,
+    "utf-8"
+  );
+
   console.log(`\n🎉 Prerendering complete: ${success} succeeded, ${failed} failed`);
+  console.log(`🏷️  Build ID: ${BUILD_ID}`);
 
   await browser.close();
   server.close();
+
+  if (failed > 0) {
+    throw new Error(`${failed} route(s) failed to prerender. Deployment cancelled.`);
+  }
 }
 
 prerender().catch((err) => {

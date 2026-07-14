@@ -252,16 +252,21 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       const resp = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          email,
+          consent: true,
+          source: "article-slide-in",
+        }),
       });
-      if (!resp.ok) throw new Error();
+      const payload = await resp.json().catch(() => ({}));
+      if (!resp.ok) throw new Error(payload?.error || "Could not sign you up right now.");
       setSubscribed(true);
       setIsVisible(false);
       setShowCodeModal(true);
       localStorage.setItem(SUBSCRIBED_KEY, "true");
       trackEvent("article_cta_newsletter_signup", { slug });
-    } catch {
-      toast.error("Could not sign you up right now. Please try again.");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Could not sign you up right now. Please try again.");
     } finally {
       setIsSending(false);
     }

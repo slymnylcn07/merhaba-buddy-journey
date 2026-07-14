@@ -1,0 +1,108 @@
+import { existsSync, readFileSync, statSync } from "fs";
+import { join, resolve } from "path";
+
+const DIST = resolve(process.cwd(), "dist");
+const ORIGIN = "https://flexi-knee.com";
+
+const criticalRoutes = [
+  { route: "/", requiredText: ["FlexiKnee Smart Heated Knee Massager", "support@flexi-knee.com"] },
+  { route: "/product/knee-massager-smart-red-light-and-massage-therapy", requiredText: ["FlexiKnee Smart Heated Knee Massager"] },
+  { route: "/guides/flexiknee-review-2026", requiredText: ["FlexiKnee Massager Review 2026", "Sources and Further Reading"] },
+  { route: "/why-flexiknee", requiredText: ["About FlexiKnee", "support@flexi-knee.com"] },
+  { route: "/contact", requiredText: ["support@flexi-knee.com"] },
+];
+
+const forbidden = [
+  "flexikneeofficial@gmail.com",
+  "FlexiKnee™",
+  "FlexiKnee�",
+  "FlexiKneeÂ",
+  "FlexiKnee Review 2026: Does It Really Work? Full Breakdown + Pros & Cons",
+  "lovable-project-y7ubq.myshopify.com",
+  "Official FlexiKnee brand source",
+];
+
+const routeFile = (route: string) => route === "/" ? join(DIST, "index.html") : join(DIST, route, "index.html");
+const canonicalFor = (route: string) => route === "/" ? `${ORIGIN}/` : `${ORIGIN}${route}`;
+
+function extractLocalAssets(html: string, attribute: "href" | "src"): string[] {
+  const pattern = new RegExp(`${attribute}=["'](\\/assets\\/[^"'#?]+)`, "g");
+  return [...html.matchAll(pattern)].map((match) => match[1]);
+}
+
+const failures: string[] = [];
+
+if (!existsSync(DIST)) {
+  failures.push("dist directory does not exist");
+} else {
+  for (const item of criticalRoutes) {
+    const file = routeFile(item.route);
+    if (!existsSync(file)) {
+      failures.push(`${item.route}: prerendered HTML is missing`);
+      continue;
+    }
+
+    const html = readFileSync(file, "utf8");
+    if (html.length < 2_000) failures.push(`${item.route}: HTML is unexpectedly small`);
+    if (!/<title>[^<]+<\/title>/i.test(html)) failures.push(`${item.route}: title is missing`);
+
+    const canonical = canonicalFor(item.route);
+    const canonicalTag = [...html.matchAll(/<link\b[^>]*>/gi)]
+      .map((match) => match[0])
+      .find((tag) => /rel=["']canonical["']/i.test(tag));
+    if (!canonicalTag || !canonicalTag.includes(`href="${canonical}"`)) {
+      failures.push(`${item.route}: canonical is missing or incorrect`);
+    }
+    if (!html.includes('name="flexiknee-build"')) failures.push(`${item.route}: build-version meta tag is missing`);
+
+    for (const text of item.requiredText) if (!html.includes(text)) failures.push(`${item.route}: required text is missing: ${text}`);
+    for (const text of forbidden) if (html.includes(text)) failures.push(`${item.route}: forbidden stale text found: ${text}`);
+
+    const stylesheets = extractLocalAssets(html, "href").filter((asset) => asset.endsWith(".css"));
+    const scripts = extractLocalAssets(html, "src").filter((asset) => asset.endsWith(".js"));
+    if (!stylesheets.length) failures.push(`${item.route}: no local CSS asset is referenced`);
+    if (!scripts.length) failures.push(`${item.route}: no local JavaScript asset is referenced`);
+
+    for (const asset of [...stylesheets, ...scripts]) {
+      const assetFile = join(DIST, asset);
+      if (!existsSync(assetFile) || !statSync(assetFile).isFile()) failures.push(`${item.route}: referenced asset is missing: ${asset}`);
+    }
+  }
+
+  const versionFile = join(DIST, "build-version.json");
+  if (!existsSync(versionFile)) {
+    failures.push("build-version.json is missing");
+  } else {
+    try {
+      const version = JSON.parse(readFileSync(versionFile, "utf8"));
+      if (!version.buildId || !version.generatedAt || version.failedRoutes !== 0) failures.push("build-version.json is incomplete or reports failed routes");
+    } catch {
+      failures.push("build-version.json is not valid JSON");
+    }
+  }
+
+  const sitemap = join(DIST, "sitemap.xml");
+  if (!existsSync(sitemap)) {
+    failures.push("sitemap.xml is missing");
+  } else {
+    const xml = readFileSync(sitemap, "utf8");
+    for (const item of criticalRoutes) if (!xml.includes(canonicalFor(item.route))) failures.push(`sitemap.xml is missing ${canonicalFor(item.route)}`);
+  }
+
+  const robots = join(DIST, "robots.txt");
+  if (!existsSync(robots)) {
+    failures.push("robots.txt is missing");
+  } else {
+    const text = readFileSync(robots, "utf8");
+    if (!text.includes("User-agent: OAI-SearchBot") || !text.includes("User-agent: Googlebot")) failures.push("robots.txt is missing required crawler access rules");
+  }
+}
+
+if (failures.length) {
+  console.error("\n❌ FlexiKnee production-build validation failed:\n");
+  for (const failure of failures) console.error(`  - ${failure}`);
+  console.error("\nDeployment stopped. The broken build will not be promoted.\n");
+  process.exit(1);
+}
+
+console.log(`✅ Production-build validation passed (${criticalRoutes.length} critical routes checked)`);
