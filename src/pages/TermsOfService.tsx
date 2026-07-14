@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { SUPPORT_EMAIL } from "@/lib/support-config";
 
 export default function TermsOfService() {
   return (
@@ -287,8 +288,8 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-semibold mb-4">SECTION 24 - CONTACT INFORMATION</h2>
             <p className="text-muted-foreground mb-4">
               Questions about the Terms of Service should be sent to us at{" "}
-              <a href="mailto:flexikneeofficial@gmail.com" className="text-primary hover:underline">
-                flexikneeofficial@gmail.com
+              <a href={`mailto:${SUPPORT_EMAIL}`} className="text-primary hover:underline">
+                {SUPPORT_EMAIL}
               </a>.
             </p>
             <p className="text-muted-foreground mb-2">Our contact information is posted below:</p>
@@ -302,8 +303,8 @@ export default function TermsOfService() {
                   LE4 8EB Leicester<br />
                   United Kingdom<br />
                   +1 302-722-4637<br />
-                  <a href="mailto:flexikneeofficial@gmail.com" className="text-primary hover:underline">
-                    flexikneeofficial@gmail.com
+                  <a href={`mailto:${SUPPORT_EMAIL}`} className="text-primary hover:underline">
+                    {SUPPORT_EMAIL}
                   </a>
                 </p>
               </div>
@@ -316,8 +317,8 @@ export default function TermsOfService() {
                   14613 Rochester, New York<br />
                   United States<br />
                   +1 302-722-4637<br />
-                  <a href="mailto:flexikneeofficial@gmail.com" className="text-primary hover:underline">
-                    flexikneeofficial@gmail.com
+                  <a href={`mailto:${SUPPORT_EMAIL}`} className="text-primary hover:underline">
+                    {SUPPORT_EMAIL}
                   </a>
                 </p>
               </div>

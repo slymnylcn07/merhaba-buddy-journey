@@ -111,7 +111,7 @@ export const whatCausesKneePain: ArticleExport = {
 
         <PremiumCTA
           headline="Support every knee comfort zone at home"
-          text="FlexiKnee wraps around the entire knee area, delivering soothing warmth, red light, and gentle vibration — designed for daily comfort support no matter where you feel discomfort."
+          text="FlexiKnee wraps around the entire knee area, delivering soothing warmth, red light, and gentle vibration designed for daily comfort support no matter where you feel discomfort."
         />
 
         <h2>Sudden Knee Pain Without Injury: Why It Happens</h2>

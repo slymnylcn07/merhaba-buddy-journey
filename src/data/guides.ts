@@ -222,8 +222,8 @@ export const guidesData: GuideData[] = [
   // New commercial articles - February 2026
   {
     slug: "flexiknee-review-2026",
-    title: "FlexiKnee Review 2026: Testing, Pros, Cons & Verdict",
-    description: "Updated FlexiKnee review with a transparent testing method, verified specifications, practical pros and cons, evidence limits, and a consistent 4.7 product rating.",
+    title: "FlexiKnee Massager Review 2026: Does It Really Work? Full Breakdown + Pros & Cons",
+    description: "Updated FlexiKnee Massager review with a transparent testing method, verified specifications, practical pros and cons, evidence limits, and a consistent 4.7 product rating.",
     readTime: 15,
     lastModified: "2026-07-14",
   },

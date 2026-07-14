@@ -145,7 +145,7 @@ export const runnersKneePainLocation = {
         {/* Mid-article CTA */}
         <PremiumCTA
           headline="Support your knees after every run"
-          text="FlexiKnee wraps around the full knee area, delivering soothing warmth, red light, and gentle vibration — designed for runners who want daily comfort support."
+          text="FlexiKnee wraps around the full knee area, delivering soothing warmth, red light, and gentle vibration designed for runners who want daily comfort support."
         />
 
         <SectionDivider />

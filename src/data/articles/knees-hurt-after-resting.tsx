@@ -234,7 +234,7 @@ const articleContent = (
 
     <PremiumCTA
       headline="Want to ease rest-related knee stiffness at home?"
-      text="FlexiKnee combines soothing warmth, red light, and gentle vibration to help your knees transition from rest to movement more comfortably — perfect for use before standing up."
+      text="FlexiKnee combines soothing warmth, red light, and gentle vibration to help your knees transition from rest to movement more comfortably, perfect for use before standing up."
     />
 
     <h2>When Resting Stiffness Is Normal vs. a Warning Sign</h2>

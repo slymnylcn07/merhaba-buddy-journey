@@ -26,7 +26,7 @@ export const bestHeatedKneeMassagerArthritis: ArticleExport = {
     heroImage: heroKneeArthritis,
     publishedDate: "February 24, 2026",
     nextSlug: "flexiknee-review-2026",
-    nextTitle: "FlexiKnee Review 2026",
+    nextTitle: "FlexiKnee Massager Review 2026",
     faqs: [
       {
         question: "What is the best heated knee massager for arthritis in 2026?",

@@ -107,7 +107,7 @@ export const kneePainAfterLongWalks: ArticleExport = {
 
         <PremiumCTA
           headline="Want post-walk comfort support for your knees?"
-          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long walks — making your daily walking routine sustainable."
+          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long walks, making your daily walking routine sustainable."
         />
 
         <h2>Inner vs Outer Knee Pain After Long Walks</h2>

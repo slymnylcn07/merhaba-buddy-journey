@@ -169,7 +169,7 @@ const articleContent = (
 
     <PremiumCTA
       headline="Need warmth support for cold-weather knee comfort?"
-      text="FlexiKnee provides adjustable soothing warmth, red light, and gentle vibration to help your knees stay comfortable during cold weather — perfect for warming up joints before heading outside."
+      text="FlexiKnee provides adjustable soothing warmth, red light, and gentle vibration to help your knees stay comfortable during cold weather, perfect for warming up joints before heading outside."
     />
 
     <h2>Why People Over 40 Notice Cold-Weather Pain More</h2>

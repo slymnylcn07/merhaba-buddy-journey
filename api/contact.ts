@@ -1,20 +1,21 @@
 /**
- * İletişim formu → flexikneeofficial@gmail.com
+ * İletişim formu → support@flexi-knee.com
  *
  * Resend (resend.com) üzerinden e-posta gönderir.
  *
  * KURULUM (tek seferlik, ~5 dk):
- *   1. resend.com'a flexikneeofficial@gmail.com ile ücretsiz kayıt ol
+ *   1. resend.com'a support@flexi-knee.com ile ücretsiz kayıt ol
  *   2. API Keys → Create API Key → kopyala (re_... ile başlar)
  *   3. Vercel → Settings → Environment Variables → RESEND_API_KEY olarak ekle
  *   4. Redeploy
  *
- * Not: Resend'de alan adı doğrulamadan yalnızca kayıt olduğun adrese
- * gönderim yapılabilir, bu kurulumda hedef adres zaten kayıt adresi
- * olduğundan alan adı doğrulaması GEREKMEZ.
+ * Not: support@flexi-knee.com adresinden gönderim yapmak için
+ * flexi-knee.com alan adını Resend içinde doğrula ve Vercel'de
+ * RESEND_FROM değerini "FlexiKnee Support <support@flexi-knee.com>" olarak ayarla.
  */
 
-const SUPPORT_EMAIL = "flexikneeofficial@gmail.com";
+const SUPPORT_EMAIL = "support@flexi-knee.com";
+const FROM_EMAIL = process.env.RESEND_FROM || "FlexiKnee Support <support@flexi-knee.com>";
 
 export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
@@ -60,7 +61,7 @@ export default async function handler(req: any, res: any) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "FlexiKnee Contact <onboarding@resend.dev>",
+        from: FROM_EMAIL,
         to: [SUPPORT_EMAIL],
         reply_to: email,
         subject: `[Contact] ${topic}${orderNumber ? `. Order ${orderNumber}` : ""} - ${name}`,

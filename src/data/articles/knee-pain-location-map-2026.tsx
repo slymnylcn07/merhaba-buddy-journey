@@ -348,7 +348,7 @@ export const kneePainLocationMap2026: ArticleExport = {
         </ul>
 
         <PremiumCTA
-          headline="Map your comfort — support every zone with one device"
+          headline="Map your comfort and support every zone with one device"
           text="FlexiKnee wraps around the entire knee, delivering warmth, red light, and gentle vibration to support comfort across all 10 discomfort zones."
         />
 

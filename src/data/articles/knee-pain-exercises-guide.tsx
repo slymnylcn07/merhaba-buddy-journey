@@ -167,7 +167,7 @@ const article: ArticleData = {
 
       <PremiumCTA
         headline="Want to complement your exercises with daily comfort support?"
-        text="FlexiKnee provides soothing warmth, red light, and gentle vibration after workouts — helping your knees recover and stay comfortable as you build strength."
+        text="FlexiKnee provides soothing warmth, red light, and gentle vibration after workouts, helping your knees recover and stay comfortable as you build strength."
       />
 
       <h2>Mobility Exercises for Knee Pain</h2>

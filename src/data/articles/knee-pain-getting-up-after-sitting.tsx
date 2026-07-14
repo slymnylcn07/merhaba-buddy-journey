@@ -134,7 +134,7 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
 
         <PremiumCTA
           headline="Want to ease the sitting-to-standing transition?"
-          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help prepare your knees before standing — making the first steps of the day more comfortable."
+          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help prepare your knees before standing, making the first steps of the day more comfortable."
         />
 
         <h2>Why 40+ and 50+ Adults Experience Stronger First-Step Pain</h2>

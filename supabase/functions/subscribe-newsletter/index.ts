@@ -109,9 +109,10 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send welcome email
     const emailResponse = await resend.emails.send({
-      from: "FlexiKnee <noreply@flexi-knee.com>",
+      from: "FlexiKnee Support <support@flexi-knee.com>",
+      replyTo: "support@flexi-knee.com",
       to: [email],
-      subject: "Welcome to FlexiKnee™ Newsletter!",
+      subject: "Welcome to the FlexiKnee Newsletter!",
       html: `
         <!DOCTYPE html>
         <html>
@@ -128,7 +129,7 @@ const handler = async (req: Request): Promise<Response> => {
         <body>
           <div class="container">
             <div class="header">
-              <h1>Welcome to FlexiKnee™!</h1>
+              <h1>Welcome to FlexiKnee!</h1>
             </div>
             <div class="content">
               <h2>Thank you for subscribing!</h2>

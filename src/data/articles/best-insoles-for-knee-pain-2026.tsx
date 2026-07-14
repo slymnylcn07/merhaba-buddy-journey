@@ -201,7 +201,7 @@ export const bestInsolesKneePain2026: ArticleExport = {
         </div>
 
         <PremiumCTA
-          headline="Support the day — then build a calmer evening routine"
+          headline="Support the day, then build a calmer evening routine"
           text="A well-fitted insole can change how load reaches the knee during movement. FlexiKnee is designed for a separate role: a convenient warmth, red-light, and vibration routine after the day is done."
         />
 

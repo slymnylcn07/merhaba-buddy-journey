@@ -196,7 +196,7 @@ export const cordlessHeatedKneeMassagers2026: ArticleExport = {
 
         <PremiumCTA
           headline="A cordless routine built around convenience"
-          text="FlexiKnee combines adjustable warmth, red light, and gentle vibration in a rechargeable wrap designed for simple home sessions — without presenting higher heat as the goal."
+          text="FlexiKnee combines adjustable warmth, red light, and gentle vibration in a rechargeable wrap designed for simple home sessions without presenting higher heat as the goal."
         />
 
         <h2>Safe Use: A Practical Routine</h2>

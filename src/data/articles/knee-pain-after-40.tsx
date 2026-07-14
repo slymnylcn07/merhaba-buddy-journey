@@ -188,7 +188,7 @@ export const kneePainAfter40: ArticleExport = {
 
         <PremiumCTA
           headline="Want daily comfort support for aging knees?"
-          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device — designed for adults who want consistent daily knee comfort support."
+          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device designed for adults who want consistent daily knee comfort support."
         />
 
         <h2>Daily Habits That Worsen Age-Related Knee Pain</h2>

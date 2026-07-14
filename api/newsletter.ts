@@ -469,14 +469,15 @@ export default async function handler(req: ApiRequest, res: ApiResponse): Promis
 /**
  * Hos geldin e-postasi (GUIDE10 kodu) - Resend uzerinden.
  * Gereksinim: Vercel'de RESEND_API_KEY ve (alan adi dogrulaninca)
- * RESEND_FROM ornegi "FlexiKnee <hello@flexi-knee.com>".
+ * RESEND_FROM ornegi "FlexiKnee Support <support@flexi-knee.com>".
  */
 const WELCOME_DISCOUNT_CODE = 'GUIDE10';
+const SUPPORT_EMAIL = 'support@flexi-knee.com';
 
 async function sendWelcomeEmail(toEmail: string): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return;
-  const from = process.env.RESEND_FROM || 'FlexiKnee <onboarding@resend.dev>';
+  const from = process.env.RESEND_FROM || `FlexiKnee Support <${SUPPORT_EMAIL}>`;
 
   const r = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -487,6 +488,7 @@ async function sendWelcomeEmail(toEmail: string): Promise<void> {
     body: JSON.stringify({
       from,
       to: [toEmail],
+      reply_to: SUPPORT_EMAIL,
       subject: 'Your 10% welcome code is inside',
       html: `
         <div style="font-family:Arial,Helvetica,sans-serif;max-width:520px;margin:0 auto;padding:28px 20px;color:#0f172a;">

@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link, useParams, Navigate } from "react-router-dom";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpenCheck } from "lucide-react";
 import { ArticleShareBlock } from "@/components/ArticleShareSidebar";
 import { ArticleHeaderMeta } from "@/components/ArticleHeaderMeta";
 import { ArticleTableOfContents } from "@/components/ArticleTableOfContents";
@@ -8915,12 +8915,17 @@ const GuideArticle = () => {
                     aria-labelledby="sources-heading"
                     className="mt-10 rounded-[1.5rem] border border-slate-200 bg-slate-50/70 p-6 shadow-sm"
                   >
-                    <h2
-                      id="sources-heading"
-                      className="mb-4 text-xl font-semibold tracking-[-0.02em] text-slate-950"
-                    >
-                      Sources and Further Reading
-                    </h2>
+                    <div className="mb-5 flex items-center gap-3">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
+                        <BookOpenCheck className="h-5 w-5" />
+                      </span>
+                      <h2
+                        id="sources-heading"
+                        className="m-0 text-xl font-semibold tracking-[-0.02em] text-slate-950"
+                      >
+                        Sources and Further Reading
+                      </h2>
+                    </div>
                     <ul className="space-y-3">
                       {article.sources.map((source, i) => (
                         <li key={i} className="text-base leading-7 text-slate-600">

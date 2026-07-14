@@ -4,6 +4,7 @@ import { ArrowRight, Star } from "lucide-react";
 import deviceImage from "@/assets/flexiknee-device-main.jpg";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { PRODUCT_RECS, pickProductForSlug, ProductRec } from "@/lib/article-product-map";
+import { FREE_SHIPPING_THRESHOLD } from "@/lib/policy-config";
 import { MAIN_PRODUCT_RATING } from "@/lib/main-product-rating";
 
 /**
@@ -50,6 +51,7 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
 
   const [liveImage, setLiveImage] = useState<string | null>(null);
   const [livePrice, setLivePrice] = useState<string | null>(null);
+  const [livePriceAmount, setLivePriceAmount] = useState<number | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -60,12 +62,15 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
       );
       if (match) {
         setLiveImage(match.node.images?.edges?.[0]?.node?.url || null);
+        const amount = match.node.priceRange?.minVariantPrice?.amount;
         setLivePrice(
           formatPrice(
-            match.node.priceRange?.minVariantPrice?.amount,
+            amount,
             match.node.priceRange?.minVariantPrice?.currencyCode
           )
         );
+        const numericAmount = Number(amount);
+        setLivePriceAmount(Number.isFinite(numericAmount) ? numericAmount : null);
       }
     });
     return () => {
@@ -75,6 +80,12 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
 
   const imageSrc = liveImage || (isMain ? deviceImage : null);
   const price = livePrice || rec.fallbackPrice;
+  const fallbackPriceAmount = Number(rec.fallbackPrice.replace(/[^0-9.]/g, ""));
+  const currentPriceAmount = livePriceAmount ?? fallbackPriceAmount;
+  const shippingLabel =
+    Number.isFinite(currentPriceAmount) && currentPriceAmount > FREE_SHIPPING_THRESHOLD
+      ? "Free Shipping"
+      : `Free shipping $${FREE_SHIPPING_THRESHOLD}+`;
 
   return (
     <div
@@ -109,7 +120,7 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
               </span>
             )}
             <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
-              Free shipping $24.99+
+              {shippingLabel}
             </span>
             <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
               30-day returns from delivery

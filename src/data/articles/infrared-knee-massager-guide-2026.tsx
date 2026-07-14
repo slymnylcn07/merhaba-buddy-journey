@@ -17,7 +17,7 @@ export const infraredKneeMassagerGuide2026: ArticleExport = {
     heroImage: heroInfraredMassager,
     publishedDate: "February 24, 2026",
     nextSlug: "flexiknee-review-2026",
-    nextTitle: "FlexiKnee Review 2026: Full Breakdown",
+    nextTitle: "FlexiKnee Massager Review 2026: Full Breakdown",
     faqs: [
       {
         question: "How does an infrared knee massager work?",
