@@ -18,7 +18,7 @@ export const cordlessHeatedKneeMassagers2026: ArticleExport = {
     metaDescription: "Our 2026 picks for cordless, rechargeable knee massagers — compared on battery life, heat levels, auto shut-off, fit, and safety, so you can choose with confidence.",
     heroImage,
     publishedDate: "July 10, 2026",
-    lastUpdated: "July 10, 2026",
+    lastUpdated: "July 13, 2026",
     nextSlug: "smart-heated-knee-braces-2026",
     nextTitle: "Smart Heated Knee Braces 2026",
     seoTags: "best cordless knee massager 2026, rechargeable heated knee massager, wireless knee brace heat, battery heated knee wrap, cordless knee heat device, portable knee massager, heated knee wrap buyer guide",

@@ -18,6 +18,7 @@ export const kneePainAfterStanding: ArticleExport = {
     metaDescription: "Why does knee pain when standing happen? Explore causes of knee pain after standing all day, standing posture tips, and patellofemoral pain syndrome comfort strategies.",
     heroImage: heroImage,
     publishedDate: "February 26, 2026",
+    lastUpdated: "July 13, 2026",
     faqs: [
       { question: "Why do my knees hurt when standing?", answer: "Knee discomfort during standing is usually related to the continuous compressive load that upright posture places on the joint. When you stand, the cartilage, muscles, and tendons around the knee must support your body weight without the load-sharing that occurs during walking. Over hours, this sustained pressure fatigues the muscles and compresses the cartilage, leading to aching or stiffness." },
       { question: "What causes knee pain after standing all day?", answer: "Standing for extended periods creates cumulative stress on the knee. Cartilage gradually compresses, synovial fluid circulation slows, and the surrounding muscles tire. By the end of a long day on your feet, these combined factors often produce noticeable soreness, tightness, or a heavy feeling around the knee joint." },

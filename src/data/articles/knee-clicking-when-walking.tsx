@@ -21,10 +21,22 @@ export const kneeClickingWhenWalking = {
     metaDescription: "Why does your knee click when walking or bending? Learn about knee popping when walking, clicking on stairs, clicking without pain, and when to pay attention.",
     heroImage: heroImage,
     publishedDate: "March 3, 2026",
+    lastUpdated: "July 13, 2026",
     nextSlug: "why-do-my-knees-crack-or-pop",
     nextTitle: "Why Do My Knees Crack or Pop?",
     content: (
       <>
+        <InfoBox title="Quick answer">
+          <p>
+            <strong>Clicking, popping, or crackling in the knee</strong> while walking or bending is
+            very common and, on its own, is usually harmless. The sound often comes from tiny gas
+            bubbles in the joint fluid, tendons gliding over bony edges, or the kneecap tracking as the
+            knee moves. Painless clicking rarely needs treatment. Pay closer attention if the noise
+            comes with <strong>pain, swelling, locking, catching, or a feeling that the knee gives
+            way</strong> — those combinations deserve a professional assessment.
+          </p>
+        </InfoBox>
+
         <p>
           Knee clicking during everyday movement is one of the most common joint concerns, and also one of the most misunderstood. Many people assume clicking means something is damaged or worn out, but in most cases, movement-based knee sounds are completely harmless and don't indicate a problem. If your knee clicks without any accompanying discomfort, our guide on <Link to="/guides/clicking-knee-without-pain" className="text-primary hover:underline">clicking knee without pain</Link> covers why painless joint sounds are typically normal.
         </p>
@@ -504,6 +516,23 @@ export const kneeClickingWhenWalking = {
       },
     ],
     seoTags: "knee clicking when walking,knee clicking when bending,knee clicking when straightening leg,knee popping when walking,knees click when walking,knee popping when extending,knee clicks when walking up stairs,knee pops when bending,knee pain clicking,why does my knee pop when i walk,why does my knee pop when i bend it,knee clicking when i walk,why does my knee click when i walk up stairs,why is my knee clicking when i walk,knee clicking when bending and straightening,clicking sound in knee when walking,knee clicking squatting,knee popping sound,movement-related knee sounds",
+    sources: [
+      {
+        title: "Patellofemoral Pain Syndrome",
+        publisher: "OrthoInfo — American Academy of Orthopaedic Surgeons (AAOS)",
+        url: "https://www.orthoinfo.org/en/diseases--conditions/patellofemoral-pain-syndrome/",
+      },
+      {
+        title: "Knee pain: causes, self-care and when to get help",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/conditions/knee-pain/",
+      },
+      {
+        title: "Knee Pain: What It Is, Causes, Treatment & Relief",
+        publisher: "Cleveland Clinic",
+        url: "https://my.clevelandclinic.org/health/symptoms/21207-knee-pain",
+      },
+    ],
   },
   cta: "knee-clicking-when-walking",
 };

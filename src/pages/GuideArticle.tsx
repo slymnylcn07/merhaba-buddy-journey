@@ -6589,7 +6589,7 @@ const articles: Record<string, ArticleData> = {
     metaDescription: "The best running shoes for bad knees balance cushioning, support, and fit. See the shoe features and brand types to prioritize for knee pain and runner's knee, plus the fit mistakes to avoid in 2026.",
     heroImage: heroRunningShoesKnee,
     publishedDate: "January 19, 2026",
-    lastUpdated: "March 31, 2026",
+    lastUpdated: "July 13, 2026",
     nextSlug: "running-knee-pain-guide",
     nextTitle: "Running Knee Pain: Common Injuries & What Runners Can Do",
     content: (

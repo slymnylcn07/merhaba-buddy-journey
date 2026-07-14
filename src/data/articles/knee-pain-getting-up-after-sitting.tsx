@@ -21,6 +21,7 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
     metaDescription: "Why do knees hurt when standing up after sitting? Learn age-related causes of knee stiffness after sitting, first-movement pain, and daily relief strategies.",
     heroImage: heroImage,
     publishedDate: "March 2, 2026",
+    lastUpdated: "July 13, 2026",
     seoTags: "knee pain standing up, knee stiffness sitting, getting up knee pain, first movement pain, age-related knee stiffness, knees hurt after resting, sitting knee discomfort, knee pain after 40, stand-up pain causes, morning stiffness vs sitting stiffness, knee joint fluid, cartilage compression sitting, daily knee micro-movements, knee comfort over 40",
     faqs: [
       { question: "Why do my knees hurt when getting up after sitting?", answer: "When you sit for extended periods, synovial fluid in the knee joint settles and thickens, cartilage absorbs compressive load without movement to redistribute it, and the muscles and tendons around the knee shorten in the bent position. Standing up forces these adapted structures to rapidly change state, producing the stiffness and discomfort you feel during those first few steps." },

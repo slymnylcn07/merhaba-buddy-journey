@@ -54,6 +54,7 @@ const article = {
   metaDescription: "Learn why knees feel stiff after long flights. Discover causes of knee pain from prolonged sitting during travel and simple strategies to support comfort.",
   heroImage: heroImage,
   publishedDate: "March 8, 2026",
+  lastUpdated: "July 13, 2026",
   nextSlug: undefined,
   nextTitle: undefined,
   faqs: faqs,
