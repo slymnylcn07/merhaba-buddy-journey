@@ -26,7 +26,7 @@ export interface ProductRec {
 export const PRODUCT_RECS: Record<string, ProductRec> = {
   main: {
     handle: PRIMARY_PRODUCT_HANDLE,
-    title: "FlexiKnee™ Smart Heated Knee Massager",
+    title: "FlexiKnee Smart Heated Knee Massager",
     benefit:
       "Adjustable warmth, red light, and gentle vibration in one wireless wrap — a complete 15-minute daily knee routine.",
     fallbackPrice: "$79.99",
@@ -34,7 +34,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
   calf: {
     handle:
       "360-electric-calf-massager-rechargeable-3-modes-air-compression-leg-massager-hot-compress-leg-massage-blood-circulation",
-    title: "FlexiKnee™ Rechargeable Calf Recovery Massager",
+    title: "FlexiKnee Rechargeable Calf Recovery Massager",
     benefit:
       "Air compression and warmth for lower-leg circulation after flights, long drives, and desk-heavy days.",
     fallbackPrice: "$49.99",
@@ -42,14 +42,14 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
   insoles: {
     handle:
       "sport-orthopedic-insoles-for-feet-men-women-eva-breathable-shock-absorption-shoes-insole-for-running-basketball-sport-care-pads",
-    title: "FlexiKnee™ Sport Orthopedic Insoles",
+    title: "FlexiKnee Sport Orthopedic Insoles",
     benefit:
       "Structured arch support that improves how load travels from your feet to your knees — from the ground up.",
     fallbackPrice: "$14.99",
   },
   sleeve: {
     handle: "flexiknee™-compression-support-sleeve",
-    title: "FlexiKnee™ Compression Support Sleeve",
+    title: "FlexiKnee Compression Support Sleeve",
     benefit:
       "Breathable compression for a supported, stable feel during walking, work, and training.",
     fallbackPrice: "$19.99",
@@ -57,7 +57,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
   wrap: {
     handle:
       "electric-knee-heating-pad-a-usb-powered-warming-knee-strap-suitable-for-joints-with-adjustable-heating-band-ideal-for-daily",
-    title: "FlexiKnee™ USB Heated Knee Wrap",
+    title: "FlexiKnee USB Heated Knee Wrap",
     benefit:
       "Simple, focused warmth for desk sessions and low-effort daily warming routines.",
     fallbackPrice: "$34.99",

@@ -22,7 +22,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
       { question: "Is combining heat and red light therapy better than using either alone?", answer: "Research suggests the combination may offer synergistic benefits: heat prepares tissue by increasing blood flow, while red light works at the cellular level to support mitochondrial function and tissue comfort." },
       { question: "How often should I use heat and red light therapy on my knees?", answer: "Most people benefit from 15-20 minute sessions once or twice daily. Consistency over weeks and months tends to produce the best outcomes." },
       { question: "Is red light therapy safe for knee use?", answer: "Red light therapy is generally considered safe when used as directed. Quality devices include appropriate safety features and are designed for regular home use." },
-      { question: "What device combines heat and red light for knees?", answer: "The FlexiKnee™ Smart Heated Knee Massager combines heat therapy, red light therapy, and vibration massage in a single knee-specific device designed for daily use." },
+      { question: "What device combines heat and red light for knees?", answer: "The FlexiKnee Smart Heated Knee Massager combines heat therapy, red light therapy, and vibration massage in a single knee-specific device designed for daily use." },
     ],
     content: (
       <>

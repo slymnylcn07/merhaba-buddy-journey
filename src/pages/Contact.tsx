@@ -61,7 +61,7 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact Us | FlexiKnee™</title>
+        <title>Contact Us | FlexiKnee</title>
         <meta
           name="description"
           content="Questions about your FlexiKnee order, shipping, returns, or products? Send us a message, we reply within one business day."
@@ -69,7 +69,7 @@ export default function Contact() {
         <link rel="canonical" href="https://flexi-knee.com/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/contact" />
-        <meta property="og:title" content="Contact Us | FlexiKnee™" />
+        <meta property="og:title" content="Contact Us | FlexiKnee" />
         <meta property="og:description" content="Questions about your order, shipping, returns, or products? We reply within one business day." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

@@ -3,6 +3,7 @@ import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-heat-vs-ice.jpg";
 import comparisonImage from "@/assets/illustration-heat-vs-ice-comparison.jpg";
 import mistakesImage from "@/assets/illustration-heat-ice-mistakes.jpg";
+import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
 const sourceLinkClass = "font-medium text-blue-600 hover:underline";
 
@@ -257,7 +258,7 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
           <li><strong>Are symptoms severe, unexplained, or worsening?</strong> Skip the home experiment and seek an assessment.</li>
         </ol>
 
-        <h2>Sources and Further Reading</h2>
+        <ArticleSourcesBox>
         <p>
           This guide was updated using patient information from orthopedic and hospital sources. The links below provide the full context and should be read alongside advice from your own clinician.
         </p>
@@ -292,6 +293,7 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
         <div className="my-8 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm leading-7 text-slate-600">
           <strong className="text-slate-900">Medical note:</strong> This article provides general educational information. It does not diagnose knee pain and is not a substitute for care from a doctor, physiotherapist, or other qualified professional.
         </div>
+      </ArticleSourcesBox>
       </>
     ),
   },

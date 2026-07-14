@@ -124,7 +124,7 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
     visuals: [
       {
         title: "Upgrade the shoes you already reach for",
-        text: "This opening scene shows how easily the FlexiKnee™ Sport Orthopedic Insoles can become part of a normal training or walking routine, without changing the shoes you already like.",
+        text: "This opening scene shows how easily the FlexiKnee Sport Orthopedic Insoles can become part of a normal training or walking routine, without changing the shoes you already like.",
         image: "/images/product-stories/insoles-home-setup.webp",
         alt: "Woman placing a FlexiKnee Sport Orthopedic Insole into a white athletic shoe at home",
       },

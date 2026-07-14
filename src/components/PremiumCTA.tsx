@@ -4,6 +4,7 @@ import { ArrowRight, Star } from "lucide-react";
 import deviceImage from "@/assets/flexiknee-device-main.jpg";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { PRODUCT_RECS, pickProductForSlug, ProductRec } from "@/lib/article-product-map";
+import { MAIN_PRODUCT_RATING } from "@/lib/main-product-rating";
 
 /**
  * Makale içi ürün kartı (eski yeşil banner'ın yerini alır).
@@ -104,7 +105,7 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
             {isMain && (
               <span className="inline-flex items-center gap-1 text-xs text-slate-500">
                 <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                4.8 rated
+                {MAIN_PRODUCT_RATING.toFixed(1)} rated
               </span>
             )}
             <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">

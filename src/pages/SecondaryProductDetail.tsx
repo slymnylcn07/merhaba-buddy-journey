@@ -211,7 +211,7 @@ export default function SecondaryProductDetail() {
     return (
       <div className="min-h-screen bg-white text-slate-950">
         <Helmet>
-          <title>Product not found | FlexiKnee™</title>
+          <title>Product not found | FlexiKnee</title>
           <meta name="robots" content="noindex, follow" />
           <link rel="canonical" href={canonical} />
         </Helmet>
@@ -236,11 +236,11 @@ export default function SecondaryProductDetail() {
   return (
     <div className="min-h-screen bg-white pb-24 text-slate-950 lg:pb-0">
       <Helmet>
-        <title>{node.title} | FlexiKnee™</title>
+        <title>{node.title} | FlexiKnee</title>
         <meta name="description" content={(node.description || profile.summary).slice(0, 158)} />
         <link rel="canonical" href={canonical} />
         <meta property="og:type" content="product" />
-        <meta property="og:title" content={`${node.title} | FlexiKnee™`} />
+        <meta property="og:title" content={`${node.title} | FlexiKnee`} />
         <meta property="og:description" content={profile.summary} />
         {images[0] && <meta property="og:image" content={images[0].url} />}
         {productJsonLd && <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>}
@@ -473,7 +473,7 @@ export default function SecondaryProductDetail() {
           productName={node.title}
           productKey={profile.key}
           eyebrow={profile.eyebrow}
-          headline={`See how ${node.title.replace("FlexiKnee™ ", "")} fits into real life.`}
+          headline={`See how ${node.title.replace("FlexiKnee ", "")} fits into real life.`}
           intro={profile.summary}
           visuals={profile.visuals}
           highlights={profile.highlights}

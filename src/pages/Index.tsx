@@ -98,15 +98,15 @@ export default function Index() {
   return (
     <>
       <Helmet>
-        <title>FlexiKnee? | Knee Comfort Guides & Smart Recovery Products</title>
+        <title>FlexiKnee | Knee Comfort Guides & Smart Recovery Products</title>
         <meta
           name="description"
-          content="FlexiKnee? combines practical knee comfort education with smart at-home support products for heat, vibration, wraparound positioning, and daily routines."
+          content="FlexiKnee combines practical knee comfort education with smart at-home support products for heat, vibration, wraparound positioning, and daily routines."
         />
         <link rel="canonical" href="https://flexi-knee.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/" />
-        <meta property="og:title" content="FlexiKnee? | Knee Comfort Guides & Smart Recovery Products" />
+        <meta property="og:title" content="FlexiKnee | Knee Comfort Guides & Smart Recovery Products" />
         <meta property="og:description" content="A premium knee comfort hub with practical guides and smart at-home recovery products." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(organizationJsonLd)}</script>
@@ -319,7 +319,7 @@ export default function Index() {
               </div>
               <Accordion type="single" collapsible className="rounded-[2rem] border border-slate-200 bg-white px-6 shadow-sm">
                 {[
-                  ["How often should I use FlexiKnee?", "Most people use it in short routine sessions. Follow the included instructions and stop if something feels uncomfortable."],
+                  ["How often should I use FlexiKnee", "Most people use it in short routine sessions. Follow the included instructions and stop if something feels uncomfortable."],
                   ["Is it wireless?", "Yes. FlexiKnee is rechargeable and designed for cord-free daily use."],
                   ["Is this a medical treatment?", "No. FlexiKnee is positioned as an at-home comfort and recovery support product, not a medical treatment or diagnosis tool."],
                   ["Can I return it?", "Yes. Eligible orders are covered by our 30-day return policy, counted from the day they are delivered. Contact us with your order number and we will guide you through it."],

@@ -154,7 +154,7 @@ export default function ProductDetail() {
     compareAtAmount && compareAtAmount > basePrice
       ? formatMoney(String(compareAtAmount * bundleQty), currency)
       : null;
-  const productTitle = "FlexiKnee™ Smart Heated Knee Massager";
+  const productTitle = "FlexiKnee Smart Heated Knee Massager";
 
   const shopifyImages =
     product?.node.images.edges.map((edge) => ({
@@ -250,13 +250,13 @@ export default function ProductDetail() {
   return (
     <div className="min-h-screen bg-white pb-24 text-slate-950 lg:pb-0">
       <Helmet>
-        <title>{productTitle} | FlexiKnee™</title>
+        <title>{productTitle} | FlexiKnee</title>
         <meta
           name="description"
-          content="FlexiKnee™ is a smart at home knee comfort device with adjustable heat, massage style vibration, wraparound support, and simple touch controls."
+          content="FlexiKnee is a smart at home knee comfort device with adjustable heat, massage style vibration, wraparound support, and simple touch controls."
         />
         <link rel="canonical" href={`https://flexi-knee.com/product/${handle || "knee-massager-smart-red-light-and-massage-therapy"}`} />
-        <meta property="og:title" content={`${productTitle} | FlexiKnee™`} />
+        <meta property="og:title" content={`${productTitle} | FlexiKnee`} />
         <meta property="og:description" content="A premium knee comfort device for simple daily recovery routines." />
         <meta property="og:image" content="https://flexi-knee.com/images/shopify-gallery/flexiknee-gallery-01-main.webp" />
         <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>
@@ -419,7 +419,7 @@ export default function ProductDetail() {
         </section>
 
         <PremiumProductStory
-          productName="FlexiKnee™ Smart Heated Knee Massager"
+          productName="FlexiKnee Smart Heated Knee Massager"
           productKey="massager"
           eyebrow="The flagship FlexiKnee experience"
           headline="More than a product image, a routine people can picture themselves using."
@@ -502,7 +502,7 @@ export default function ProductDetail() {
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/95 p-3 shadow-[0_-18px_60px_-35px_rgba(15,23,42,0.65)] backdrop-blur lg:hidden">
         <div className="mx-auto flex max-w-xl items-center gap-3">
           <div className="min-w-0 flex-1">
-            <p className="truncate text-xs font-medium text-slate-500">FlexiKnee™ Massager</p>
+            <p className="truncate text-xs font-medium text-slate-500">FlexiKnee Massager</p>
             <p className="flex items-baseline gap-1.5 text-base font-semibold text-slate-950">
               {compareAtDisplay && <s className="text-xs font-normal text-slate-400">{compareAtDisplay}</s>}
               {displayPrice}

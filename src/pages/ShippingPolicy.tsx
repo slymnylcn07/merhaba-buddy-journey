@@ -10,18 +10,18 @@ export default function ShippingPolicy() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Shipping Policy | FlexiKnee™</title>
+        <title>Shipping Policy | FlexiKnee</title>
         <meta name="description" content="Review FlexiKnee tracked shipping, regional delivery estimates, shipping fees and order-support information." />
         <link rel="canonical" href="https://flexi-knee.com/shipping-policy" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/shipping-policy" />
-        <meta property="og:title" content="Shipping Policy | FlexiKnee™" />
+        <meta property="og:title" content="Shipping Policy | FlexiKnee" />
         <meta property="og:description" content="Tracked FlexiKnee delivery estimates and shipping information by region." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@FlexiKnee" />
-        <meta name="twitter:title" content="Shipping Policy | FlexiKnee™" />
+        <meta name="twitter:title" content="Shipping Policy | FlexiKnee" />
       </Helmet>
 
       <Header />

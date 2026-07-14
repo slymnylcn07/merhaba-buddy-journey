@@ -494,7 +494,7 @@ export default function KneeQuiz() {
   return (
     <>
       <Helmet>
-        <title>Free Knee Comfort Quiz. Find Your Routine | FlexiKnee?</title>
+        <title>Free Knee Comfort Quiz. Find Your Routine | FlexiKnee</title>
         <meta
           name="description"
           content="Answer four practical questions and get a matched product category, useful guides and a seven-day knee comfort starter plan."

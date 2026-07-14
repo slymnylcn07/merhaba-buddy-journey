@@ -3,6 +3,7 @@ import { InfoBox } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-smart-knee-braces.jpg";
+import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
 const sourceLinkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
@@ -253,7 +254,7 @@ export const smartHeatedKneeBraces2026: ArticleExport = {
           <li>Read the return policy and warranty before purchasing.</li>
         </ol>
 
-        <h2>Sources and Further Reading</h2>
+        <ArticleSourcesBox>
         <ul className="my-4 list-disc space-y-3 pl-6">
           <li>
             <a className={sourceLinkClass} href="https://orthoinfo.aaos.org/globalassets/pdfs/heat-or-ice-for-your-pain-infographic_final.pdf" target="_blank" rel="noreferrer noopener">
@@ -276,6 +277,7 @@ export const smartHeatedKneeBraces2026: ArticleExport = {
             </a>
           </li>
         </ul>
+      </ArticleSourcesBox>
       </>
     ),
   },

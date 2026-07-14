@@ -3,6 +3,7 @@ import { InfoBox } from "@/components/ArticleCharts";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-knee-pain-going-down-stairs.jpg";
 import stairDescentImage from "@/assets/article-stair-descent-control-v1.svg";
+import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
 const sourceLinkClass = "font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700";
 
@@ -213,7 +214,7 @@ export const kneePainGoingDownStairs: ArticleExport = {
           </ul>
         </div>
 
-        <h2>Sources and Further Reading</h2>
+        <ArticleSourcesBox>
         <ul className="my-4 list-disc space-y-3 pl-6">
           <li>
             <a className={sourceLinkClass} href="https://orthoinfo.aaos.org/en/diseases--conditions/patellofemoral-pain-syndrome/" target="_blank" rel="noreferrer noopener">
@@ -245,6 +246,7 @@ export const kneePainGoingDownStairs: ArticleExport = {
         <div className="my-8 rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm leading-6 text-slate-600">
           <strong className="text-slate-900">Medical note:</strong> This guide provides general education and cannot diagnose the cause of knee pain. A qualified healthcare professional can assess your history, movement, strength, and need for testing.
         </div>
+      </ArticleSourcesBox>
       </>
     ),
   },

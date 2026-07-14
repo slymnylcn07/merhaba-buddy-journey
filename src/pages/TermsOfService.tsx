@@ -8,14 +8,14 @@ export default function TermsOfService() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Terms of Service | FlexiKnee™</title>
+        <title>Terms of Service | FlexiKnee</title>
         <meta name="description" content="Read FlexiKnee's Terms of Service to understand your rights and responsibilities when using our products and services." />
         <link rel="canonical" href="https://flexi-knee.com/terms-of-service" />
         
         {/* Open Graph Meta Tags */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/terms-of-service" />
-        <meta property="og:title" content="Terms of Service | FlexiKnee™" />
+        <meta property="og:title" content="Terms of Service | FlexiKnee" />
         <meta property="og:description" content="Read FlexiKnee's Terms of Service to understand your rights and responsibilities." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
@@ -23,7 +23,7 @@ export default function TermsOfService() {
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@FlexiKnee" />
-        <meta name="twitter:title" content="Terms of Service | FlexiKnee™" />
+        <meta name="twitter:title" content="Terms of Service | FlexiKnee" />
         <meta name="twitter:description" content="Read FlexiKnee's Terms of Service." />
       </Helmet>
       
@@ -37,13 +37,13 @@ export default function TermsOfService() {
           Back to Home
         </Link>
         
-        <h1 className="text-4xl font-bold mb-8">TERMS OF SERVICE. FlexiKnee™</h1>
+        <h1 className="text-4xl font-bold mb-8">TERMS OF SERVICE. FlexiKnee</h1>
         
         <div className="prose prose-slate max-w-none">
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">OVERVIEW</h2>
             <p className="text-muted-foreground mb-4">
-              Welcome to FlexiKnee™! The terms "we", "us" and "our" refer to FlexiKnee™. FlexiKnee™ operates this store and website, including all related information, content, features, tools, products and services in order to provide you, the customer, with a curated shopping experience (the "Services"). The public FlexiKnee™ storefront is hosted through Vercel. Shopify provides selected commerce functions, including product data, cart, checkout, payment processing and order services.
+              Welcome to FlexiKnee! The terms "we", "us" and "our" refer to FlexiKnee. FlexiKnee operates this store and website, including all related information, content, features, tools, products and services in order to provide you, the customer, with a curated shopping experience (the "Services"). The public FlexiKnee storefront is hosted through Vercel. Shopify provides selected commerce functions, including product data, cart, checkout, payment processing and order services.
             </p>
             <p className="text-muted-foreground mb-4">
               The below terms and conditions, together with any policies referenced herein (these "Terms of Service" or "Terms") describe your rights and responsibilities when you use the Services. Please read these Terms of Service carefully, as they include important information about your legal rights and cover areas such as warranty disclaimers and limitations of liability.
@@ -82,7 +82,7 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">SECTION 3 - ORDERS</h2>
             <p className="text-muted-foreground mb-4">
-              When you place an order, you are making an offer to purchase. FlexiKnee™ reserves the right to accept or decline your order for any reason at its discretion. Your order is not accepted until FlexiKnee™ confirms acceptance. We must receive and process your payment before your order is accepted. Please review your order carefully before submitting, as FlexiKnee™ may be unable to accommodate cancellation requests after an order is accepted. In the event that we do not accept, make a change to, or cancel an order, we will attempt to notify you by contacting the e-mail, billing address, and/or phone number provided at the time the order was made.
+              When you place an order, you are making an offer to purchase. FlexiKnee reserves the right to accept or decline your order for any reason at its discretion. Your order is not accepted until FlexiKnee confirms acceptance. We must receive and process your payment before your order is accepted. Please review your order carefully before submitting, as FlexiKnee may be unable to accommodate cancellation requests after an order is accepted. In the event that we do not accept, make a change to, or cancel an order, we will attempt to notify you by contacting the e-mail, billing address, and/or phone number provided at the time the order was made.
             </p>
             <p className="text-muted-foreground">
               Eligible purchases are covered by the return, refund and warranty terms in our <Link to="/refund-policy" className="text-primary hover:underline">Returns, Refunds & Warranty Policy</Link>. The voluntary return window is 30 days from delivery, and the main FlexiKnee device includes a 2-year limited warranty for eligible manufacturing faults. You represent and warrant that your purchases are for your own personal or household use and not for commercial resale or export.
@@ -115,10 +115,10 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">SECTION 6 - INTELLECTUAL PROPERTY</h2>
             <p className="text-muted-foreground mb-4">
-              Our Services, including but not limited to all trademarks, brands, text, displays, images, graphics, product reviews, video, and audio, and the design, selection, and arrangement thereof, are owned by FlexiKnee™, its affiliates or licensors and are protected by U.S. and foreign patent, copyright and other intellectual property laws.
+              Our Services, including but not limited to all trademarks, brands, text, displays, images, graphics, product reviews, video, and audio, and the design, selection, and arrangement thereof, are owned by FlexiKnee, its affiliates or licensors and are protected by U.S. and foreign patent, copyright and other intellectual property laws.
             </p>
             <p className="text-muted-foreground">
-              These Terms permit you to use the Services for your personal, non-commercial use only. You must not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on the Services without our prior written consent. Except as expressly provided herein, nothing in these Terms grants or shall be construed as granting a license or other rights to you under any patent, trademark, copyright, or other intellectual property of FlexiKnee™, Shopify or any third party. Unauthorized use of the Services may be a violation of applicable laws.
+              These Terms permit you to use the Services for your personal, non-commercial use only. You must not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on the Services without our prior written consent. Except as expressly provided herein, nothing in these Terms grants or shall be construed as granting a license or other rights to you under any patent, trademark, copyright, or other intellectual property of FlexiKnee, Shopify or any third party. Unauthorized use of the Services may be a violation of applicable laws.
             </p>
           </section>
 
@@ -139,7 +139,7 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">SECTION 9 - RELATIONSHIP WITH SHOPIFY</h2>
             <p className="text-muted-foreground">
-              The public FlexiKnee™ storefront is hosted through Vercel. Shopify provides selected commerce functions, including product data, cart, checkout, payment processing and order services. However, any sales and purchases you make in our Store are made directly with FlexiKnee™. By using the Services, you acknowledge and agree that Shopify is not responsible for any aspect of any sales between you and FlexiKnee™, including any injury, damage, or loss resulting from purchased products and services. You hereby expressly release Shopify and its affiliates from all claims, damages, and liabilities arising from or related to your purchases and transactions with FlexiKnee™.
+              The public FlexiKnee storefront is hosted through Vercel. Shopify provides selected commerce functions, including product data, cart, checkout, payment processing and order services. However, any sales and purchases you make in our Store are made directly with FlexiKnee. By using the Services, you acknowledge and agree that Shopify is not responsible for any aspect of any sales between you and FlexiKnee, including any injury, damage, or loss resulting from purchased products and services. You hereby expressly release Shopify and its affiliates from all claims, damages, and liabilities arising from or related to your purchases and transactions with FlexiKnee.
             </p>
           </section>
 
@@ -190,7 +190,7 @@ export default function TermsOfService() {
               <li>to send, knowingly receive, upload, download, use, or re-use any material that does not comply with these Terms;</li>
               <li>to transmit, or procure the sending of, any advertising or promotional material, including any "junk mail," "chain letter," "spam," or any other similar solicitation;</li>
               <li>to impersonate or attempt to impersonate any other person or entity; or</li>
-              <li>to engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Services, or which, as determined by us, may harm FlexiKnee™, Shopify or users of the Services, or expose them to liability.</li>
+              <li>to engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Services, or which, as determined by us, may harm FlexiKnee, Shopify or users of the Services, or expose them to liability.</li>
             </ul>
             <p className="text-muted-foreground mb-4">
               In addition, you agree not to:
@@ -223,21 +223,21 @@ export default function TermsOfService() {
               The information presented on or through the Services is made available solely for general information purposes. We do not warrant the accuracy, completeness, or usefulness of this information. Any reliance you place on such information is strictly at your own risk. We disclaim all liability and responsibility arising from any reliance placed on such materials by you or any other visitor to the Services, or by anyone who may be informed of any of its contents.
             </p>
             <p className="text-muted-foreground uppercase text-sm">
-              EXCEPT AS EXPRESSLY STATED BY FlexiKnee™, THE SERVICES AND ALL PRODUCTS OFFERED THROUGH THE SERVICES ARE PROVIDED 'AS IS' AND 'AS AVAILABLE' FOR YOUR USE, WITHOUT ANY REPRESENTATION, WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ALL IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, MERCHANTABLE QUALITY, FITNESS FOR A PARTICULAR PURPOSE, DURABILITY, TITLE, AND NON-INFRINGEMENT. WE DO NOT GUARANTEE, REPRESENT OR WARRANT THAT YOUR USE OF THE SERVICES WILL BE UNINTERRUPTED, TIMELY, SECURE OR ERROR-FREE.
+              EXCEPT AS EXPRESSLY STATED BY FlexiKnee, THE SERVICES AND ALL PRODUCTS OFFERED THROUGH THE SERVICES ARE PROVIDED 'AS IS' AND 'AS AVAILABLE' FOR YOUR USE, WITHOUT ANY REPRESENTATION, WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ALL IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, MERCHANTABLE QUALITY, FITNESS FOR A PARTICULAR PURPOSE, DURABILITY, TITLE, AND NON-INFRINGEMENT. WE DO NOT GUARANTEE, REPRESENT OR WARRANT THAT YOUR USE OF THE SERVICES WILL BE UNINTERRUPTED, TIMELY, SECURE OR ERROR-FREE.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">SECTION 16 - LIMITATION OF LIABILITY</h2>
             <p className="text-muted-foreground uppercase text-sm">
-              TO THE FULLEST EXTENT PROVIDED BY LAW, IN NO CASE SHALL FlexiKnee™, OUR PARTNERS, DIRECTORS, OFFICERS, EMPLOYEES, AFFILIATES, AGENTS, CONTRACTORS, SERVICE PROVIDERS OR LICENSORS, OR THOSE OF SHOPIFY AND ITS AFFILIATES, BE LIABLE FOR ANY INJURY, LOSS, CLAIM, OR ANY DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, SPECIAL, OR CONSEQUENTIAL DAMAGES OF ANY KIND, INCLUDING, WITHOUT LIMITATION, LOST PROFITS, LOST REVENUE, LOST SAVINGS, LOSS OF DATA, REPLACEMENT COSTS, OR ANY SIMILAR DAMAGES, WHETHER BASED IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, ARISING FROM YOUR USE OF ANY OF THE SERVICES OR ANY PRODUCTS PROCURED USING THE SERVICES, OR FOR ANY OTHER CLAIM RELATED IN ANY WAY TO YOUR USE OF THE SERVICES OR ANY PRODUCT, INCLUDING, BUT NOT LIMITED TO, ANY ERRORS OR OMISSIONS IN ANY CONTENT, OR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF THE SERVICES OR ANY CONTENT (OR PRODUCT) POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SERVICES, EVEN IF ADVISED OF THEIR POSSIBILITY.
+              TO THE FULLEST EXTENT PROVIDED BY LAW, IN NO CASE SHALL FlexiKnee, OUR PARTNERS, DIRECTORS, OFFICERS, EMPLOYEES, AFFILIATES, AGENTS, CONTRACTORS, SERVICE PROVIDERS OR LICENSORS, OR THOSE OF SHOPIFY AND ITS AFFILIATES, BE LIABLE FOR ANY INJURY, LOSS, CLAIM, OR ANY DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, SPECIAL, OR CONSEQUENTIAL DAMAGES OF ANY KIND, INCLUDING, WITHOUT LIMITATION, LOST PROFITS, LOST REVENUE, LOST SAVINGS, LOSS OF DATA, REPLACEMENT COSTS, OR ANY SIMILAR DAMAGES, WHETHER BASED IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, ARISING FROM YOUR USE OF ANY OF THE SERVICES OR ANY PRODUCTS PROCURED USING THE SERVICES, OR FOR ANY OTHER CLAIM RELATED IN ANY WAY TO YOUR USE OF THE SERVICES OR ANY PRODUCT, INCLUDING, BUT NOT LIMITED TO, ANY ERRORS OR OMISSIONS IN ANY CONTENT, OR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF THE SERVICES OR ANY CONTENT (OR PRODUCT) POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SERVICES, EVEN IF ADVISED OF THEIR POSSIBILITY.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">SECTION 17 - INDEMNIFICATION</h2>
             <p className="text-muted-foreground">
-              You agree to indemnify, defend and hold harmless FlexiKnee™, Shopify, and our affiliates, partners, officers, directors, employees, agents, contractors, licensors, and service providers from any losses, damages, liabilities or claims, including reasonable attorneys' fees, payable to any third party due to or arising out of (1) your breach of these Terms of Service or the documents they incorporate by reference, (2) your violation of any law or the rights of a third party, or (3) your access to and use of the Services. We will notify you of any indemnifiable claim, provided that a failure to promptly notify will not relieve you of your obligations unless you are materially prejudiced. We may control the defense and settlement of such claim at your expense, including choice of counsel, but will not settle any claim requiring non-monetary obligations from you without your consent (not to be unreasonably withheld). You will cooperate in the defense of indemnified claims, including by providing relevant documents.
+              You agree to indemnify, defend and hold harmless FlexiKnee, Shopify, and our affiliates, partners, officers, directors, employees, agents, contractors, licensors, and service providers from any losses, damages, liabilities or claims, including reasonable attorneys' fees, payable to any third party due to or arising out of (1) your breach of these Terms of Service or the documents they incorporate by reference, (2) your violation of any law or the rights of a third party, or (3) your access to and use of the Services. We will notify you of any indemnifiable claim, provided that a failure to promptly notify will not relieve you of your obligations unless you are materially prejudiced. We may control the defense and settlement of such claim at your expense, including choice of counsel, but will not settle any claim requiring non-monetary obligations from you without your consent (not to be unreasonably withheld). You will cooperate in the defense of indemnified claims, including by providing relevant documents.
             </p>
           </section>
 
@@ -265,7 +265,7 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">SECTION 21 - GOVERNING LAW</h2>
             <p className="text-muted-foreground">
-              These Terms of Service and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the federal and state or territorial courts in the jurisdiction where FlexiKnee™ is headquartered. You and FlexiKnee™ consent to venue and personal jurisdiction in such courts.
+              These Terms of Service and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the federal and state or territorial courts in the jurisdiction where FlexiKnee is headquartered. You and FlexiKnee consent to venue and personal jurisdiction in such courts.
             </p>
           </section>
 

@@ -143,14 +143,14 @@ const Account = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
-        <title>My Account | FlexiKnee™</title>
+        <title>My Account | FlexiKnee</title>
         <meta name="description" content="Manage your FlexiKnee orders, track shipments, and submit return requests from your personal dashboard." />
         <link rel="canonical" href="https://flexi-knee.com/account" />
         
         {/* Open Graph Meta Tags */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/account" />
-        <meta property="og:title" content="My Account | FlexiKnee™" />
+        <meta property="og:title" content="My Account | FlexiKnee" />
         <meta property="og:description" content="Manage your FlexiKnee orders and track shipments." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
@@ -158,7 +158,7 @@ const Account = () => {
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@FlexiKnee" />
-        <meta name="twitter:title" content="My Account | FlexiKnee™" />
+        <meta name="twitter:title" content="My Account | FlexiKnee" />
       </Helmet>
       
       <Header />

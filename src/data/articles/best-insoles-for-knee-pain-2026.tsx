@@ -5,6 +5,7 @@ import heroImage from "@/assets/article-hero-insoles-knee.svg";
 import alignmentImage from "@/assets/article-hip-knee-alignment.jpg";
 import shoeWearImage from "@/assets/article-shoe-wear-check.jpg";
 import runningShoesImage from "@/assets/article-running-shoes-lineup.jpg";
+import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
 export const bestInsolesKneePain2026: ArticleExport = {
   cta: "",
@@ -228,7 +229,7 @@ export const bestInsolesKneePain2026: ArticleExport = {
           Evidence supports foot orthoses as a useful option for selected knee-pain presentations, but not as a universal cure. The strongest plan still combines sensible footwear, progressive activity, and the muscle capacity to control the knee over time.
         </p>
 
-        <h2>Sources and Further Reading</h2>
+        <ArticleSourcesBox>
         <ul>
           <li>
             <a href="https://pubmed.ncbi.nlm.nih.gov/39401870/" target="_blank" rel="noreferrer">Best practice guide for patellofemoral pain, British Journal of Sports Medicine (2024)</a>
@@ -243,6 +244,7 @@ export const bestInsolesKneePain2026: ArticleExport = {
         <p className="!text-sm !leading-6 !text-slate-500">
           This guide is educational and does not diagnose the cause of knee pain. Product selection should be individualized, particularly when symptoms are persistent, severe, or associated with swelling, instability, or injury.
         </p>
+      </ArticleSourcesBox>
       </>
     ),
   },

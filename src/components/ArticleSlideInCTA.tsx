@@ -270,7 +270,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   if (stage1Done && stage2Done && !isVisible) return null;
 
   const isMain = rec.handle === PRODUCT_RECS.main.handle;
-  const productShortName = rec.title.replace("FlexiKnee™ ", "");
+  const productShortName = rec.title.replace("FlexiKnee ", "");
   const productImage = liveImage || (isMain ? deviceImage : null);
 
   return (

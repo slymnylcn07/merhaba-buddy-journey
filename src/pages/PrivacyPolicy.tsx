@@ -8,14 +8,14 @@ export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Privacy Policy | FlexiKnee™</title>
+        <title>Privacy Policy | FlexiKnee</title>
         <meta name="description" content="Read FlexiKnee's Privacy Policy to understand how we collect, use, and protect your personal information when you use our services." />
         <link rel="canonical" href="https://flexi-knee.com/privacy-policy" />
         
         {/* Open Graph Meta Tags */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/privacy-policy" />
-        <meta property="og:title" content="Privacy Policy | FlexiKnee™" />
+        <meta property="og:title" content="Privacy Policy | FlexiKnee" />
         <meta property="og:description" content="Read FlexiKnee's Privacy Policy to understand how we collect, use, and protect your personal information." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@FlexiKnee" />
-        <meta name="twitter:title" content="Privacy Policy | FlexiKnee™" />
+        <meta name="twitter:title" content="Privacy Policy | FlexiKnee" />
         <meta name="twitter:description" content="Read FlexiKnee's Privacy Policy." />
       </Helmet>
       
@@ -45,7 +45,7 @@ export default function PrivacyPolicy() {
           </p>
 
           <p className="text-muted-foreground mb-6">
-            FlexiKnee™ operates this store and website, including all related information, content, features, tools, products and services, in order to provide you, the customer, with a curated shopping experience (the "Services"). The public FlexiKnee™ storefront is hosted through Vercel, while Shopify provides selected commerce functions such as product data, cart, checkout, payment processing and order services. This Privacy Policy describes how we collect, use, and disclose your personal information when you visit, use, or make a purchase or other transaction using the Services or otherwise communicate with us. If there is a conflict between our Terms of Service and this Privacy Policy, this Privacy Policy controls with respect to the collection, processing, and disclosure of your personal information.
+            FlexiKnee operates this store and website, including all related information, content, features, tools, products and services, in order to provide you, the customer, with a curated shopping experience (the "Services"). The public FlexiKnee storefront is hosted through Vercel, while Shopify provides selected commerce functions such as product data, cart, checkout, payment processing and order services. This Privacy Policy describes how we collect, use, and disclose your personal information when you visit, use, or make a purchase or other transaction using the Services or otherwise communicate with us. If there is a conflict between our Terms of Service and this Privacy Policy, this Privacy Policy controls with respect to the collection, processing, and disclosure of your personal information.
           </p>
 
           <p className="text-muted-foreground mb-8">

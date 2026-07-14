@@ -222,10 +222,10 @@ export const guidesData: GuideData[] = [
   // New commercial articles - February 2026
   {
     slug: "flexiknee-review-2026",
-    title: "FlexiKnee Review 2026: Full Breakdown & Pros/Cons",
-    description: "Honest FlexiKnee review for 2026. Full breakdown of features, pros, cons, and who benefits most from this smart heated knee massager with red light therapy.",
-    readTime: 12,
-    lastModified: "2026-02-24",
+    title: "FlexiKnee Review 2026: Testing, Pros, Cons & Verdict",
+    description: "Updated FlexiKnee review with a transparent testing method, verified specifications, practical pros and cons, evidence limits, and a consistent 4.7 product rating.",
+    readTime: 15,
+    lastModified: "2026-07-14",
   },
   {
     slug: "flexiknee-vs-competitors-2026",

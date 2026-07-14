@@ -30,6 +30,14 @@ Allow: /
 User-agent: Pinterestbot
 Allow: /
 
+
+# OpenAI search and user-requested browsing
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 # Allow all other crawlers
 User-agent: *
 Allow: /
@@ -38,5 +46,3 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-# Crawl-delay for polite crawling (optional)
-Crawl-delay: 1

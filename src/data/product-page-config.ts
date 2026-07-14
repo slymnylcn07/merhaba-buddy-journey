@@ -11,6 +11,7 @@
  */
 
 import type { LucideIcon } from "lucide-react";
+import { MAIN_PRODUCT_RATING, MAIN_PRODUCT_REVIEW_COUNT } from "@/lib/main-product-rating";
 import {
   Flame,
   Sun,
@@ -55,8 +56,8 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
   main: {
     // Verified-purchase reviews for this exact product (aggregated at product
     // level via ProductReviews.tsx). Not presented as flexi-knee.com order volume.
-    reviewCount: 238,
-    rating: 4.7,
+    reviewCount: MAIN_PRODUCT_REVIEW_COUNT,
+    rating: MAIN_PRODUCT_RATING,
     benefits: [
       { icon: Flame, label: "Adjustable warmth" },
       { icon: Sun, label: "Integrated red light" },

@@ -9,6 +9,7 @@ import imgCirculationLimbs from "@/assets/fig-leg-circulation-v2.svg";
 import imgJointLoad from "@/assets/article-knee-joint-load.jpg";
 import imgMovementStiffness from "@/assets/article-movement-vs-stiffness.jpg";
 import imgHeavyKneePatterns from "@/assets/article-heavy-knees-patterns-v1.svg";
+import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
 const faqs = [
   {
@@ -413,13 +414,14 @@ const article = {
         Understanding why your knees feel heavy starts with describing the pattern accurately. Fatigue, stiffness, swelling, and weakness are not interchangeable, and the right response depends on which clues are present. For an uncomplicated activity-related pattern, gradual capacity building can be useful. For persistent, one-sided, swollen, or progressive symptoms, an assessment is the safer next step.
       </p>
 
-      <h2>Sources and Further Reading</h2>
+      <ArticleSourcesBox>
       <ul>
         <li><a href="https://www.nhs.uk/conditions/oedema/" target="_blank" rel="noreferrer" className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700">NHS: Swollen ankles, feet and legs (oedema)</a></li>
         <li><a href="https://www.nhs.uk/conditions/deep-vein-thrombosis-dvt/" target="_blank" rel="noreferrer" className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700">NHS: Deep vein thrombosis (DVT)</a></li>
         <li><a href="https://www.cdc.gov/blood-clots/about/" target="_blank" rel="noreferrer" className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700">CDC: About venous thromboembolism</a></li>
         <li><a href="https://www.nhs.uk/symptoms/knee-pain/" target="_blank" rel="noreferrer" className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700">NHS: Knee pain and urgent warning signs</a></li>
       </ul>
+    </ArticleSourcesBox>
     </>
   ),
 };

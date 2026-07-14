@@ -54,7 +54,7 @@ export default function IndexBelowFold({
                       <div>
                         <h3 className="text-2xl font-bold mb-4 text-primary">Step 1: Strap the Device</h3>
                         <p className="text-muted-foreground">
-                          Secure the FlexiKnee™ massager around your knee using the adjustable 
+                          Secure the FlexiKnee massager around your knee using the adjustable 
                           Velcro straps for a comfortable, customized fit.
                         </p>
                       </div>
@@ -524,10 +524,10 @@ export default function IndexBelowFold({
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="item-1" className="bg-card px-6 rounded-lg border-2">
                 <AccordionTrigger className="text-left font-semibold">
-                  How does FlexiKnee™ help with knee pain?
+                  How does FlexiKnee help with knee pain?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  FlexiKnee™ combines three therapeutic technologies: heat therapy improves circulation and reduces stiffness, vibration massage loosens tight muscles, and red-light therapy supports cellular recovery and joint health.
+                  FlexiKnee combines three therapeutic technologies: heat therapy improves circulation and reduces stiffness, vibration massage loosens tight muscles, and red-light therapy supports cellular recovery and joint health.
                 </AccordionContent>
               </AccordionItem>
 
@@ -536,7 +536,7 @@ export default function IndexBelowFold({
                   Is it safe to use every day?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Yes, FlexiKnee™ is designed for daily use. We recommend 15-30 minute sessions, 1-2 times per day for optimal results.
+                  Yes, FlexiKnee is designed for daily use. We recommend 15-30 minute sessions, 1-2 times per day for optimal results.
                 </AccordionContent>
               </AccordionItem>
 
@@ -563,7 +563,7 @@ export default function IndexBelowFold({
                   Will it fit my knee size?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Yes! FlexiKnee™ features adjustable Velcro straps that comfortably fit all knee sizes, from petite to extra-large.
+                  Yes! FlexiKnee features adjustable Velcro straps that comfortably fit all knee sizes, from petite to extra-large.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -579,11 +579,11 @@ export default function IndexBelowFold({
               Start Your Pain-Free Journey Today
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              Join thousands who have found relief with FlexiKnee™
+              Join thousands who have found relief with FlexiKnee
             </p>
             <Link to={`/product/${mainProduct.node.handle}`}>
               <Button size="lg" variant="secondary" className="text-lg px-12">
-                Shop FlexiKnee™ Now
+                Shop FlexiKnee Now
               </Button>
             </Link>
             <div className="flex justify-center gap-8 mt-8 text-sm opacity-90">
@@ -600,7 +600,7 @@ export default function IndexBelowFold({
               Start Your Pain-Free Journey Today
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              Join thousands who have found relief with FlexiKnee™
+              Join thousands who have found relief with FlexiKnee
             </p>
             <Button size="lg" variant="secondary" className="text-lg px-12" disabled>
               No Products Available

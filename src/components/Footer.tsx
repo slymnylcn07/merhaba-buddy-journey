@@ -12,7 +12,7 @@ export const Footer = () => {
         <div className="grid gap-10 lg:grid-cols-[1.25fr_2fr]">
           <div>
             <Link to="/" className="inline-flex items-baseline gap-1 text-2xl font-semibold tracking-tight text-slate-950">
-              FlexiKnee<span className="text-xs">™</span>
+              FlexiKnee
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-7 text-slate-500">
               Smart knee comfort products for daily movement, recovery routines, and simple at-home support.
@@ -60,7 +60,7 @@ export const Footer = () => {
                 <MarketSelector />
               </div>
               <p className="text-xs text-slate-400">
-                © {new Date().getFullYear()} FlexiKnee™. All rights reserved. FlexiKnee content is for general wellness education and is not medical advice.
+                © {new Date().getFullYear()} FlexiKnee. All rights reserved. FlexiKnee content is for general wellness education and is not medical advice.
               </p>
             </div>
             <PaymentOptionsRow className="mt-0 shrink-0" />

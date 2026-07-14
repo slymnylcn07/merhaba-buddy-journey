@@ -44,7 +44,7 @@ export const Header = () => {
             </SheetTrigger>
             <SheetContent side="left" className="w-80 bg-white">
               <Link to="/" onClick={() => setMenuOpen(false)} className="mt-2 inline-flex items-baseline gap-1 text-xl font-semibold tracking-tight text-slate-950">
-                FlexiKnee<span className="text-xs align-super">™</span>
+                FlexiKnee
               </Link>
               <nav className="mt-10 grid gap-2">
                 {navItems.map((item) =>
@@ -76,7 +76,7 @@ export const Header = () => {
           </Sheet>
 
           <Link to="/" className="inline-flex items-baseline gap-1 text-xl font-semibold tracking-tight text-slate-950">
-            FlexiKnee<span className="text-xs align-super">™</span>
+            FlexiKnee
           </Link>
         </div>
 

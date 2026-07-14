@@ -6,6 +6,7 @@ import heroImage from "@/assets/article-hero-sudden-knee-pain.jpg";
 import sectionPainZones from "@/assets/fig-sudden-pain-zones-v2.svg";
 import sectionTriggers from "@/assets/article-section-sudden-pain-triggers.jpg";
 import sectionInnerOuter from "@/assets/article-section-inner-outer-sudden.jpg";
+import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
 export const suddenKneePainGuide: ArticleExport = {
   cta: "sudden-knee-pain-guide",
@@ -395,7 +396,7 @@ export const suddenKneePainGuide: ArticleExport = {
           For a structured approach to daily knee maintenance, explore our guides on <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen knees</Link> and <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">building a daily knee care routine</Link>.
         </p>
 
-        <h2>Sources and Further Reading</h2>
+        <ArticleSourcesBox>
         <ul>
           <li><a href="https://www.nhs.uk/symptoms/knee-pain/" target="_blank" rel="noreferrer" className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700">NHS: Knee pain and urgent warning signs</a></li>
           <li><a href="https://orthoinfo.aaos.org/en/diseases--conditions/meniscus-tears/" target="_blank" rel="noreferrer" className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700">American Academy of Orthopaedic Surgeons: Meniscus tears</a></li>
@@ -406,6 +407,7 @@ export const suddenKneePainGuide: ArticleExport = {
         <p>
           <em>This content is not medical advice. It is based on general information about common knee discomfort patterns. If you experience severe, persistent, or worsening knee pain, please consult a qualified healthcare professional.</em>
         </p>
+      </ArticleSourcesBox>
       </>
     ),
   },

@@ -6,6 +6,7 @@ import homeUseImage from "@/assets/article-device-home-use.jpg";
 import eveningImage from "@/assets/article-device-evening.jpg";
 import heatRedLightImage from "@/assets/article-heat-vs-redlight-knee.jpg";
 import routineImage from "@/assets/article-device-routine.jpg";
+import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
 export const cordlessHeatedKneeMassagers2026: ArticleExport = {
   cta: "",
@@ -243,7 +244,7 @@ export const cordlessHeatedKneeMassagers2026: ArticleExport = {
           Compare the device as a complete system: wrap geometry, active coverage, power, controls, materials, cleaning, instructions, and seller support. That approach is more dependable than choosing by maximum temperature or a single headline runtime.
         </p>
 
-        <h2>Sources and Further Reading</h2>
+        <ArticleSourcesBox>
         <ul>
           <li>
             <a href="https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/biovanta-recalls-heating-pads-due-risk-fire-and-burn-hazards" target="_blank" rel="noreferrer">FDA heating-product recall notice describing overheating and burn hazards (2026)</a>
@@ -258,6 +259,7 @@ export const cordlessHeatedKneeMassagers2026: ArticleExport = {
         <p className="!text-sm !leading-6 !text-slate-500">
           This guide is educational and is not a medical-device prescription. Always follow the instructions supplied with the specific product and seek professional advice when symptoms are severe, unexplained, or associated with injury, swelling, redness, or loss of function.
         </p>
+      </ArticleSourcesBox>
       </>
     ),
   },

@@ -10,18 +10,18 @@ export default function RefundPolicy() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Returns, Refunds & Warranty | FlexiKnee™</title>
+        <title>Returns, Refunds & Warranty | FlexiKnee</title>
         <meta name="description" content={`FlexiKnee offers eligible orders a ${RETURN_WINDOW_DAYS}-day return window and the main device a ${LIMITED_WARRANTY_YEARS}-year limited warranty.`} />
         <link rel="canonical" href="https://flexi-knee.com/refund-policy" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/refund-policy" />
-        <meta property="og:title" content="Returns, Refunds & Warranty | FlexiKnee™" />
+        <meta property="og:title" content="Returns, Refunds & Warranty | FlexiKnee" />
         <meta property="og:description" content={`Review the FlexiKnee ${RETURN_WINDOW_DAYS}-day return process, refund timing and limited warranty coverage.`} />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@FlexiKnee" />
-        <meta name="twitter:title" content="Returns, Refunds & Warranty | FlexiKnee™" />
+        <meta name="twitter:title" content="Returns, Refunds & Warranty | FlexiKnee" />
       </Helmet>
 
       <Header />

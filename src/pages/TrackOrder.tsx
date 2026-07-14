@@ -36,12 +36,12 @@ const TrackOrder = () => {
   return (
     <>
       <Helmet>
-        <title>Track Your Order | FlexiKnee™</title>
+        <title>Track Your Order | FlexiKnee</title>
         <meta name="description" content="Track your FlexiKnee order shipment. Enter your tracking number to see real-time delivery updates and shipping information." />
         <link rel="canonical" href="https://flexi-knee.com/track-order" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/track-order" />
-        <meta property="og:title" content="Track Your Order | FlexiKnee™" />
+        <meta property="og:title" content="Track Your Order | FlexiKnee" />
         <meta property="og:description" content="Track your FlexiKnee order shipment with real-time delivery updates." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />

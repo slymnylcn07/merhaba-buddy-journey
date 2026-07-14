@@ -14,6 +14,7 @@ import imgDuringVsAfter from "@/assets/diagram-knee-during-vs-after-exercise.jpg
 import imgKneecapPressure from "@/assets/fig-kneecap-pressure-v2.svg";
 import imgMuscleFatigue from "@/assets/fig-muscle-fatigue-knee-v2.svg";
 import imgInflammation from "@/assets/diagram-knee-inflammation-after-exercise.jpg";
+import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
 const sourceLinkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
@@ -488,7 +489,7 @@ const articleContent = (
       If walking and stairs are close to normal and the response settles, a lighter or different session may be reasonable. Reduce the next session and consider professional advice when symptoms are getting stronger each week, affecting everyday movement, or accompanied by swelling, locking, instability, redness, or a specific injury event.
     </p>
 
-    <h2>Sources and Further Reading</h2>
+    <ArticleSourcesBox>
     <ul className="my-4 list-disc space-y-3 pl-6">
       <li>
         <a className={sourceLinkClass} href="https://pubmed.ncbi.nlm.nih.gov/27518487/" target="_blank" rel="noreferrer noopener">
@@ -511,6 +512,7 @@ const articleContent = (
         </a>
       </li>
     </ul>
+  </ArticleSourcesBox>
   </>
 );
 

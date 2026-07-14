@@ -124,7 +124,7 @@ const WhyFlexiKnee = () => {
 
   const faqs = [
     {
-      question: "How do I use FlexiKnee?",
+      question: "How do I use FlexiKnee",
       answer: "Simply wrap FlexiKnee around your knee, secure the adjustable straps, and use the simple controls to select your preferred heat and vibration settings. It's designed to be intuitive, most users are comfortable within seconds."
     },
     {

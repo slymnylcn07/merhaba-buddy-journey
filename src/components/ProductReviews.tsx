@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Star, ShieldCheck, BadgeCheck, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import { MAIN_PRODUCT_RATING, MAIN_PRODUCT_REVIEW_COUNT } from "@/lib/main-product-rating";
 
 /**
  * Verified product reviews for the flagship device.
@@ -11,8 +12,6 @@ import { Link } from "react-router-dom";
  * count as flexi-knee.com order volume — that is an FTC fake-review risk.
  */
 
-const RATING = 4.7;
-const REVIEW_COUNT = 238;
 
 interface Review {
   name: string;
@@ -111,10 +110,10 @@ export function ProductReviews() {
         {/* Summary */}
         <div className="mx-auto mt-8 flex max-w-2xl flex-col items-center gap-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:flex-row sm:justify-center sm:gap-6">
           <div className="flex items-center gap-3">
-            <span className="text-4xl font-bold text-slate-950">{RATING.toFixed(1)}</span>
+            <span className="text-4xl font-bold text-slate-950">{MAIN_PRODUCT_RATING.toFixed(1)}</span>
             <div>
-              <Stars value={RATING} />
-              <p className="mt-1 text-sm text-slate-500">{REVIEW_COUNT} verified buyer reviews</p>
+              <Stars value={MAIN_PRODUCT_RATING} />
+              <p className="mt-1 text-sm text-slate-500">{MAIN_PRODUCT_REVIEW_COUNT} verified buyer reviews</p>
             </div>
           </div>
           <div className="hidden h-12 w-px bg-slate-200 sm:block" />

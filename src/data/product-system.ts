@@ -7,7 +7,7 @@ import wrapFallback from "@/assets/article-device-evening.jpg";
 export const productSystem = [
   {
     kind: "massager",
-    name: "FlexiKnee™ Smart Heated Knee Massager",
+    name: "FlexiKnee Smart Heated Knee Massager",
     label: "Heat · vibration · red light",
     description: "The flagship all-in-one device for short, repeatable knee comfort routines.",
     price: "$79.99",
@@ -18,7 +18,7 @@ export const productSystem = [
   },
   {
     kind: "sleeve",
-    name: "FlexiKnee™ Compression Support Sleeve",
+    name: "FlexiKnee Compression Support Sleeve",
     label: "Flexible compression",
     description: "Breathable support for walking, work, training and everyday movement.",
     price: "$19.99",
@@ -29,7 +29,7 @@ export const productSystem = [
   },
   {
     kind: "calf",
-    name: "FlexiKnee™ Rechargeable Calf Recovery Massager",
+    name: "FlexiKnee Rechargeable Calf Recovery Massager",
     label: "Lower-leg recovery",
     description: "Rechargeable compression and warmth for tired calves and lower legs.",
     price: "$49.99",
@@ -40,7 +40,7 @@ export const productSystem = [
   },
   {
     kind: "insoles",
-    name: "FlexiKnee™ Sport Orthopedic Insoles",
+    name: "FlexiKnee Sport Orthopedic Insoles",
     label: "Foot-to-knee support",
     description: "Structured support designed to improve comfort from the ground up.",
     price: "$14.99",
@@ -51,7 +51,7 @@ export const productSystem = [
   },
   {
     kind: "wrap",
-    name: "FlexiKnee™ USB Heated Knee Wrap",
+    name: "FlexiKnee USB Heated Knee Wrap",
     label: "Targeted knee warmth",
     description: "A lightweight USB-powered wrap for simple, focused warming sessions.",
     price: "$34.99",
