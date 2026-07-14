@@ -6,6 +6,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import type { ProductBenefit } from "@/data/product-page-config";
+import { DELIVERY_ESTIMATES, FREE_SHIPPING_THRESHOLD, RETURN_WINDOW_DAYS } from "@/lib/policy-config";
+
+export { PaymentLogosRow, PaymentOptionsRow } from "@/components/PaymentLogos";
 
 /* ------------------------------------------------------------------ */
 /* 1) Fayda ikonları, açıklamanın altında 4'lü, Thrive stili          */
@@ -152,51 +155,14 @@ export const OfferSelector = ({
 };
 
 /* ------------------------------------------------------------------ */
-/* 3) Ödeme seçenekleri, sepettekiyle birebir aynı logolar            */
-/* ------------------------------------------------------------------ */
-
-const PAYMENT_LOGOS = [
-  { label: "Shop Pay", src: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Shop_Pay_logo.svg", className: "h-4 w-auto" },
-  { label: "Visa", src: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg", className: "h-3 w-auto" },
-  { label: "Mastercard", src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg", className: "h-5 w-auto" },
-  { label: "American Express", src: "https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg", className: "h-3 w-auto" },
-  { label: "Google Pay", src: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg", className: "h-3.5 w-auto" },
-  { label: "PayPal", src: "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg", className: "h-4 w-auto" },
-];
-
-export const PaymentLogosRow = ({ className = "" }: { className?: string }) => (
-  <div className={`flex flex-wrap items-center justify-center gap-x-5 gap-y-2.5 ${className}`}>
-    {PAYMENT_LOGOS.map((logo) => (
-      <img
-        key={logo.label}
-        className={`${logo.className} opacity-80 transition hover:opacity-100`}
-        src={logo.src}
-        alt={logo.label}
-        loading="lazy"
-      />
-    ))}
-    <span className="rounded-[5px] bg-black px-2 py-[3px] text-[10px] font-semibold leading-none tracking-tight text-white">
-      Apple Pay
-    </span>
-  </div>
-);
-
-export const PaymentOptionsRow = () => (
-  <div className="mt-5">
-    <p className="text-center text-xs font-medium text-slate-500">More payment options</p>
-    <PaymentLogosRow className="mt-3" />
-  </div>
-);
-
-/* ------------------------------------------------------------------ */
 /* 4) Güven şeridi, tek satır, üç hücre, Thrive stili                 */
 /* ------------------------------------------------------------------ */
 
 export const TrustStrip = () => (
   <div className="mt-5 grid grid-cols-3 divide-x divide-slate-200 rounded-2xl border border-slate-200 bg-slate-50">
     {[
-      { icon: Truck, top: "FREE SHIPPING", bottom: "On orders over $24.99" },
-      { icon: RotateCcw, top: "30-DAY RETURNS", bottom: "Try it risk free" },
+      { icon: Truck, top: "FREE SHIPPING", bottom: `On orders over $${FREE_SHIPPING_THRESHOLD}` },
+      { icon: RotateCcw, top: "30-DAY RETURNS", bottom: "From delivery" },
       { icon: Lock, top: "SECURE CHECKOUT", bottom: "SSL encrypted" },
     ].map(({ icon: Icon, top, bottom }) => (
       <div key={top} className="flex flex-col items-center gap-1 px-2 py-4 text-center">
@@ -274,7 +240,7 @@ export const ProductInfoAccordion = ({ howToUse, faqs, specs }: ProductInfoAccor
       </AccordionTrigger>
       <AccordionContent className="text-sm text-slate-600">
         <p>
-          Free shipping on orders over $24.99. Delivery typically takes 6-7 business days to the US, UK, Europe, Australia and New Zealand, 7-8 to Canada, and 5-6 to Singapore; other regions take 10-18 business days. Every order is covered by our 30-day return policy, counted from the day your order is delivered.
+          {`Free shipping on orders over $${FREE_SHIPPING_THRESHOLD}. Delivery typically takes ${DELIVERY_ESTIMATES.primary} to the US, UK, Europe, Australia and New Zealand, ${DELIVERY_ESTIMATES.canada} to Canada, and ${DELIVERY_ESTIMATES.singapore} to Singapore; other regions take ${DELIVERY_ESTIMATES.other}. Eligible orders are covered by our ${RETURN_WINDOW_DAYS}-day return policy, counted from the day your order is delivered.`}
         </p>
       </AccordionContent>
     </AccordionItem>

@@ -22,6 +22,7 @@ import {
   Users
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { LIMITED_WARRANTY_YEARS, RETURN_WINDOW_DAYS, SUPPORT_RESPONSE_TIME } from "@/lib/policy-config";
 
 const WhyFlexiKnee = () => {
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
@@ -67,8 +68,8 @@ const WhyFlexiKnee = () => {
     },
     {
       icon: Lightbulb,
-      title: "Light Therapy Integration",
-      description: "Built-in light support for a modern at-home therapy experience."
+      title: "Integrated Red Light",
+      description: "Built-in red light mode with simple touch controls for an easy at-home routine."
     },
     {
       icon: Heart,
@@ -90,18 +91,18 @@ const WhyFlexiKnee = () => {
   const trustItems = [
     {
       icon: RotateCcw,
-      title: "30-Day Easy Returns",
-      description: "Not satisfied? Return it hassle-free."
+      title: `${RETURN_WINDOW_DAYS}-Day Easy Returns`,
+      description: `Eligible returns accepted within ${RETURN_WINDOW_DAYS} days of delivery.`
     },
     {
       icon: Shield,
-      title: "2-Year Warranty Included",
-      description: "Full coverage for peace of mind."
+      title: `${LIMITED_WARRANTY_YEARS}-Year Limited Warranty`,
+      description: "Coverage for eligible manufacturing faults."
     },
     {
       icon: Headphones,
-      title: "24–48 Hour Support",
-      description: "Our team responds quickly to help."
+      title: "Responsive Customer Support",
+      description: `We normally reply ${SUPPORT_RESPONSE_TIME}.`
     }
   ];
 
@@ -130,35 +131,31 @@ const WhyFlexiKnee = () => {
       answer: "Each FlexiKnee package includes the knee massager device, a USB charging cable, a user manual, and a bonus digital e-guide with tips for daily use."
     },
     {
-      question: "How do returns work?",
-      answer: "We offer a 30-day easy return policy, counted from the day your order is delivered. If you're not satisfied, simply start a return through your account, you'll need your order number and email. We'll guide you through the process."
-    },
-    {
-      question: "What if my device arrives damaged or stops working?",
-      answer: "If your FlexiKnee arrives damaged or develops a fault, contact us with your order number and a short description, we'll arrange a replacement or refund. We stand behind every device we ship."
+      question: "What if my device arrives damaged or develops a fault?",
+      answer: "Contact us with your order number and a short description. Eligible manufacturing faults are covered by our 2-year limited warranty, while delivery damage and incorrect items are handled under our returns policy."
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Why FlexiKnee | Smarter Knee Relief Designed for Real Life</title>
-        <meta name="description" content="Discover what makes FlexiKnee different, a premium knee therapy device combining comfort-focused design with targeted heat and light support for at-home relief." />
+        <title>Why FlexiKnee | Premium Knee Comfort for Real Life</title>
+        <meta name="description" content="Discover FlexiKnee, a premium cordless knee comfort device combining adjustable warmth, integrated red light and massage-style vibration for simple at-home routines." />
         <link rel="canonical" href="https://flexi-knee.com/why-flexiknee" />
         
         {/* Open Graph Meta Tags */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/why-flexiknee" />
-        <meta property="og:title" content="Why FlexiKnee | Smarter Knee Relief Designed for Real Life" />
-        <meta property="og:description" content="Discover what makes FlexiKnee different, a premium knee therapy device combining comfort-focused design with targeted heat and light support for at-home relief." />
+        <meta property="og:title" content="Why FlexiKnee | Premium Knee Comfort for Real Life" />
+        <meta property="og:description" content="Discover FlexiKnee, a premium cordless knee comfort device combining adjustable warmth, integrated red light and massage-style vibration for simple at-home routines." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@FlexiKnee" />
-        <meta name="twitter:title" content="Why FlexiKnee | Smarter Knee Relief Designed for Real Life" />
-        <meta name="twitter:description" content="Discover what makes FlexiKnee different, a premium knee therapy device for at-home relief." />
+        <meta name="twitter:title" content="Why FlexiKnee | Premium Knee Comfort for Real Life" />
+        <meta name="twitter:description" content="Discover FlexiKnee, a premium cordless knee comfort device designed for simple at-home routines." />
         <meta name="twitter:image" content="https://flexi-knee.com/images/og-image.jpg" />
       </Helmet>
       
@@ -167,11 +164,11 @@ const WhyFlexiKnee = () => {
       {/* Hero Section */}
       <section 
         ref={(el) => (sectionsRef.current[0] = el)}
-        className="relative py-16 md:py-24 overflow-hidden opacity-0 translate-y-8 transition-all duration-700 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
+        className="relative overflow-hidden bg-slate-950 py-16 text-white opacity-0 translate-y-8 transition-all duration-700 ease-out md:py-24 [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
       >
         {/* Parallax Background Elements */}
         <div 
-          className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(59,130,246,0.28),transparent_34%),linear-gradient(135deg,#020617_0%,#0f172a_58%,#172554_100%)]"
           style={{ transform: `translateY(${scrollY * 0.1}px)` }}
         />
         <div 
@@ -190,18 +187,19 @@ const WhyFlexiKnee = () => {
           className="absolute top-1/3 right-1/4 w-48 h-48 bg-primary/4 rounded-full blur-2xl"
           style={{ transform: `translateY(${scrollY * -0.12}px)` }}
         />
-        <div className="container px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs uppercase tracking-wider animate-fade-in">
+        <div className="container relative z-10 px-4">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
+            <div className="text-center lg:text-left">
+            <Badge className="mb-5 border-white/15 bg-white/10 text-blue-200 text-xs uppercase tracking-[0.18em] animate-fade-in">
               Why FlexiKnee
             </Badge>
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-foreground leading-tight">
-              Smarter Knee Relief, Designed for Real Life
+            <h1 className="mb-6 text-4xl font-semibold leading-tight tracking-[-0.045em] text-white md:text-6xl">
+              Premium Knee Comfort, Designed for Real Life
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              A premium knee therapy device combining comfort-focused design with targeted heat and light support, easy to use at home, whenever you need it.
+            <p className="mb-8 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl lg:mx-0">
+              Adjustable warmth, integrated red light and massage-style vibration in a cordless design made for calm, simple routines at home.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
               <Button asChild size="lg" className="text-lg px-8 h-14 font-semibold">
                 <Link to="/product/knee-massager-smart-red-light-and-massage-therapy">
                   Shop FlexiKnee
@@ -210,12 +208,30 @@ const WhyFlexiKnee = () => {
               <Button 
                 variant="ghost" 
                 size="lg" 
-                className="text-muted-foreground hover:text-primary"
+                className="text-slate-300 hover:bg-white/10 hover:text-white"
                 onClick={scrollToFeatures}
               >
                 See how it works
                 <ChevronDown className="ml-1 h-4 w-4" />
               </Button>
+            </div>
+            </div>
+
+            <div className="relative mx-auto w-full max-w-xl">
+              <div className="absolute -inset-5 rounded-[2.75rem] bg-blue-500/20 blur-3xl" />
+              <div className="relative overflow-hidden rounded-[2.5rem] border border-white/15 bg-white/10 p-3 shadow-2xl shadow-blue-950/40 backdrop-blur">
+                <img
+                  src="/images/flexiknee-lifestyle-home.webp"
+                  alt="FlexiKnee smart heated knee massager used during a calm at-home routine"
+                  className="aspect-[4/3] w-full rounded-[2rem] object-cover"
+                  fetchPriority="high"
+                />
+                <div className="grid grid-cols-3 gap-2 p-3 text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-200 sm:text-xs">
+                  <span className="rounded-xl bg-white/10 px-2 py-3">Cordless</span>
+                  <span className="rounded-xl bg-white/10 px-2 py-3">Easy controls</span>
+                  <span className="rounded-xl bg-white/10 px-2 py-3">Adjustable fit</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -228,11 +244,11 @@ const WhyFlexiKnee = () => {
       >
         <div className="container px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-              Knee discomfort shouldn't slow you down
+            <h2 className="mb-4 text-3xl font-semibold tracking-[-0.035em] text-slate-950 md:text-4xl">
+              Comfort that fits around real life
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Whether it's after work, training, or daily movement, knee discomfort can disrupt your routine. FlexiKnee is built to support recovery moments with simple, consistent at-home sessions.
+              From long workdays to post-activity wind-downs, FlexiKnee is designed to make a short comfort routine feel easy to repeat.
             </p>
           </div>
         </div>
@@ -241,16 +257,16 @@ const WhyFlexiKnee = () => {
       {/* Visual Story Section */}
       <section 
         ref={(el) => (sectionsRef.current[7] = el)}
-        className="py-14 md:py-20 opacity-0 translate-y-8 transition-all duration-700 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
+        className="bg-slate-950 py-16 text-white opacity-0 translate-y-8 transition-all duration-700 ease-out md:py-24 [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
       >
         <div className="container px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-                Built to look premium and feel easy to use
+              <h2 className="mb-4 text-3xl font-semibold tracking-[-0.035em] text-white md:text-4xl">
+                Designed to feel considered in every detail
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                A few stronger visuals make the page feel more alive and help explain the product experience before the visitor reaches the CTA.
+              <p className="mx-auto max-w-2xl text-slate-300">
+                A cordless form, simple touch controls and an adjustable wraparound fit come together in a device that feels at home in your routine.
               </p>
             </div>
 
@@ -269,18 +285,18 @@ const WhyFlexiKnee = () => {
                 {
                   image: "/images/shopify-gallery/flexiknee-gallery-07-system.webp",
                   title: "Part of a wider system",
-                  text: "The main device now sits more clearly inside the wider FlexiKnee product ecosystem.",
+                  text: "Use the main device on its own or explore complementary FlexiKnee products for movement and everyday support.",
                 },
               ].map((item, index) => (
                 <article 
                   key={item.title}
-                  className="overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-sm opacity-0 translate-y-6 transition-all duration-500 [.animate-in_&]:opacity-100 [.animate-in_&]:translate-y-0"
+                  className="group overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 shadow-xl shadow-black/10 opacity-0 translate-y-6 transition-all duration-500 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.07] [.animate-in_&]:opacity-100 [.animate-in_&]:translate-y-0"
                   style={{ transitionDelay: `${index * 120}ms` }}
                 >
-                  <img src={item.image} alt={item.title} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+                  <img src={item.image} alt={item.title} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
                   <div className="p-5">
-                    <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.text}</p>
+                    <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-slate-300">{item.text}</p>
                   </div>
                 </article>
               ))}
@@ -293,7 +309,7 @@ const WhyFlexiKnee = () => {
       <section 
         id="features-section" 
         ref={(el) => (sectionsRef.current[2] = el)}
-        className="py-16 md:py-24 opacity-0 translate-y-8 transition-all duration-700 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
+        className="bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.16),transparent_42%)] py-16 opacity-0 translate-y-8 transition-all duration-700 ease-out md:py-24 [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
       >
         <div className="container px-4">
           <div className="max-w-5xl mx-auto">
@@ -302,7 +318,7 @@ const WhyFlexiKnee = () => {
                 What makes FlexiKnee different
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Designed with real users in mind, simple, effective, and built to fit into your daily life.
+                Thoughtful controls, cordless use and a comfort-first fit, without unnecessary complexity.
               </p>
             </div>
             
@@ -374,7 +390,7 @@ const WhyFlexiKnee = () => {
                 Confidence built in
               </h2>
               <p className="text-muted-foreground">
-                We stand behind every FlexiKnee with guarantees that matter.
+                Clear returns, limited warranty coverage and responsive support after your purchase.
               </p>
             </div>
             
@@ -382,7 +398,7 @@ const WhyFlexiKnee = () => {
               {trustItems.map((item, index) => (
                 <div 
                   key={index} 
-                  className="text-center p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/10 opacity-0 scale-95 transition-all duration-500 [.animate-in_&]:opacity-100 [.animate-in_&]:scale-100 hover:shadow-lg hover:border-primary/20"
+                  className="relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-7 text-center shadow-sm opacity-0 scale-95 transition-all duration-500 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl [.animate-in_&]:opacity-100 [.animate-in_&]:scale-100"
                   style={{ transitionDelay: `${index * 150}ms` }}
                 >
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 transition-transform duration-300 hover:scale-110 hover:bg-primary/20">
@@ -393,13 +409,6 @@ const WhyFlexiKnee = () => {
                 </div>
               ))}
             </div>
-            
-            <p className="text-center text-sm text-muted-foreground mt-8">
-              Start a return easily with your order number and email.{" "}
-              <Link to="/account#returns" className="text-primary hover:underline">
-                Go to returns
-              </Link>
-            </p>
           </div>
         </div>
       </section>
@@ -429,17 +438,7 @@ const WhyFlexiKnee = () => {
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground pb-4">
-                    {faq.question === "How do returns work?" ? (
-                      <>
-                        We offer a 30-day easy return policy, counted from the day your order is delivered. If you're not satisfied, simply{" "}
-                        <Link to="/account#returns" className="text-primary hover:underline">
-                          start a return through your account
-                        </Link>
-                        , you'll need your order number and email. We'll guide you through the process.
-                      </>
-                    ) : (
-                      faq.answer
-                    )}
+                    {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -451,15 +450,15 @@ const WhyFlexiKnee = () => {
       {/* Final CTA Section */}
       <section 
         ref={(el) => (sectionsRef.current[6] = el)}
-        className="py-16 md:py-24 opacity-0 translate-y-8 transition-all duration-700 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
+        className="bg-slate-950 py-16 text-white opacity-0 translate-y-8 transition-all duration-700 ease-out md:py-24 [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
       >
         <div className="container px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-foreground">
-              Ready to feel the FlexiKnee difference?
+          <div className="mx-auto max-w-3xl rounded-[2.5rem] border border-white/10 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.28),transparent_52%)] px-6 py-14 text-center shadow-2xl shadow-blue-950/30 md:px-12">
+            <h2 className="mb-4 text-3xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
+              Bring a calmer routine home.
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Explore the device and start your at-home routine today.
+            <p className="mb-8 text-lg leading-8 text-slate-300">
+              See the product, compare the details and choose the routine that fits your day.
             </p>
             <Button asChild size="lg" className="text-lg px-10 h-14 font-semibold transition-transform duration-300 hover:scale-105">
               <Link to="/product/knee-massager-smart-red-light-and-massage-therapy">

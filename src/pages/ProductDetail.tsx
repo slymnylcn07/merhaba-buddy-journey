@@ -18,6 +18,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { DeliveryEstimate } from "@/components/DeliveryEstimate";
 import { BenefitIconsRow, OfferSelector, PaymentOptionsRow, TrustStrip, ProductInfoAccordion } from "@/components/product-page-blocks";
 import { getProductPageConfig } from "@/data/product-page-config";
+import { LIMITED_WARRANTY_YEARS, RETURN_WINDOW_DAYS } from "@/lib/policy-config";
 import { VideoReviews } from "@/components/VideoReviews";
 import { ProductReviews } from "@/components/ProductReviews";
 import { KnowBeforeYouBuy } from "@/components/KnowBeforeYouBuy";
@@ -43,25 +44,25 @@ const fallbackGallery = [
 const massagerStoryVisuals = [
   {
     title: "A calmer evening routine",
-    text: "The main FlexiKnee massager is shown in a warm, premium home setting so shoppers can immediately picture it as part of a relaxing end-of-day routine.",
+    text: "Settle in with adjustable warmth and massage-style vibration during a calm evening routine at home.",
     image: "/images/product-stories/massager-evening-reading.png",
     alt: "Woman relaxing on a sofa while using the FlexiKnee knee massager in the evening",
   },
   {
     title: "Comfort that feels easy to set up",
-    text: "This close-up lifestyle image reinforces that the device is simple to position, secure and use without making the setup feel technical or intimidating.",
+    text: "Adjustable wraparound straps help keep the device comfortably positioned while the touch controls stay easy to reach.",
     image: "/images/product-stories/massager-closeup-comfort.png",
     alt: "Close-up of the FlexiKnee knee massager strapped around the knee in a premium home environment",
   },
   {
     title: "Made to fit around work-from-home days",
-    text: "A workday scene helps the product feel useful beyond short recovery moments, supporting the idea of comfort during reading, laptop time or focused desk work.",
+    text: "Cordless use makes it easy to include FlexiKnee during reading, laptop time or a quiet break at home.",
     image: "/images/product-stories/massager-workday-routine.png",
     alt: "Woman working at a laptop while wearing the FlexiKnee knee massager",
   },
   {
     title: "A premium reset after activity",
-    text: "The final story panel ties the product to post-workout comfort, showing the massager as part of a healthy routine rather than just a static device photo.",
+    text: "Add a short FlexiKnee session to your wind-down routine after exercise or a busy day on your feet.",
     image: "/images/product-stories/massager-post-workout.png",
     alt: "Woman using the FlexiKnee knee massager after exercise in a bright fitness-inspired room",
   },
@@ -70,8 +71,9 @@ const massagerStoryVisuals = [
 const productFaqs = [
   { question: "Is FlexiKnee wireless?", answer: "Yes. It is rechargeable and designed for simple, cord-free daily routines, use it on the couch, at your desk, or anywhere at home." },
   { question: "How long should I use it per session?", answer: "A 15-minute session is the sweet spot for most people, 1-3 times daily. Consistency over weeks matters more than long single sessions." },
+  { question: "What warranty is included?", answer: `The main FlexiKnee device includes a ${LIMITED_WARRANTY_YEARS}-year limited warranty covering eligible manufacturing faults. Accidental damage, misuse and normal wear are not covered.` },
+  { question: "Can I return it?", answer: `Yes. Eligible orders are covered by our ${RETURN_WINDOW_DAYS}-day return policy, counted from the day your order is delivered. Contact us with your order number and we will guide you through it.` },
   { question: "Is this a medical treatment?", answer: "No. FlexiKnee is a comfort and recovery support product, not a medical device. If you have a diagnosed condition, check with your healthcare provider first." },
-  { question: "Can I return it?", answer: "Yes, every order is covered by our 30-day return policy, counted from the day your order is delivered. Contact us with your order number and we will guide you through it." },
 ];
 
 const relatedGuides = [

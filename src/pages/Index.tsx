@@ -264,7 +264,7 @@ export default function Index() {
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Guides & recovery education</p>
                   <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
-                    Content that sells without shouting.
+                    Practical guides for everyday knee comfort.
                   </h2>
                 </div>
                 <Link to="/guides" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
@@ -295,11 +295,11 @@ export default function Index() {
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">FlexiKnee system</p>
                   <h2 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
-                    A cleaner brand ecosystem before the FAQ.
+                    One connected system for everyday knee support.
                   </h2>
                 </div>
                 <p className="max-w-2xl text-base leading-8 text-slate-600">
-                  Active product pricing can update dynamically from Shopify, while future products still have a natural place in the system.
+                  Explore FlexiKnee products designed to work together across movement, recovery and simple at-home comfort routines.
                 </p>
               </div>
               <FlexiKneeSystem />
@@ -314,7 +314,7 @@ export default function Index() {
                   Quick answers before checkout.
                 </h2>
                 <p className="mt-4 max-w-md text-base leading-7 text-slate-600">
-                  Cleaner claims, calmer language, and more trust before the user hits the cart.
+                  Straightforward answers about use, comfort, returns and what to expect before checkout.
                 </p>
               </div>
               <Accordion type="single" collapsible className="rounded-[2rem] border border-slate-200 bg-white px-6 shadow-sm">
@@ -322,7 +322,7 @@ export default function Index() {
                   ["How often should I use FlexiKnee?", "Most people use it in short routine sessions. Follow the included instructions and stop if something feels uncomfortable."],
                   ["Is it wireless?", "Yes. FlexiKnee is rechargeable and designed for cord-free daily use."],
                   ["Is this a medical treatment?", "No. FlexiKnee is positioned as an at-home comfort and recovery support product, not a medical treatment or diagnosis tool."],
-                  ["Can I return it?", "Yes. Every order is covered by our 30-day return policy, counted from the day it is delivered. Contact us with your order number and we will guide you through it."],
+                  ["Can I return it?", "Yes. Eligible orders are covered by our 30-day return policy, counted from the day they are delivered. Contact us with your order number and we will guide you through it."],
                 ].map(([q, a]) => (
                   <AccordionItem key={q} value={q} className="border-slate-200">
                     <AccordionTrigger className="text-left text-base font-semibold text-slate-950">{q}</AccordionTrigger>

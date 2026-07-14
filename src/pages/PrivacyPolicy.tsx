@@ -45,7 +45,7 @@ export default function PrivacyPolicy() {
           </p>
 
           <p className="text-muted-foreground mb-6">
-            FlexiKnee™ operates this store and website, including all related information, content, features, tools, products and services, in order to provide you, the customer, with a curated shopping experience (the "Services"). FlexiKnee™ is powered by Shopify, which enables us to provide the Services to you. This Privacy Policy describes how we collect, use, and disclose your personal information when you visit, use, or make a purchase or other transaction using the Services or otherwise communicate with us. If there is a conflict between our Terms of Service and this Privacy Policy, this Privacy Policy controls with respect to the collection, processing, and disclosure of your personal information.
+            FlexiKnee™ operates this store and website, including all related information, content, features, tools, products and services, in order to provide you, the customer, with a curated shopping experience (the "Services"). The public FlexiKnee™ storefront is hosted through Vercel, while Shopify provides selected commerce functions such as product data, cart, checkout, payment processing and order services. This Privacy Policy describes how we collect, use, and disclose your personal information when you visit, use, or make a purchase or other transaction using the Services or otherwise communicate with us. If there is a conflict between our Terms of Service and this Privacy Policy, this Privacy Policy controls with respect to the collection, processing, and disclosure of your personal information.
           </p>
 
           <p className="text-muted-foreground mb-8">
@@ -124,7 +124,7 @@ export default function PrivacyPolicy() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Relationship with Shopify</h2>
             <p className="text-muted-foreground mb-4">
-              The Services are hosted by Shopify, which collects and processes personal information about your access to and use of the Services in order to provide and improve the Services for you. Information you submit to the Services will be transmitted to and shared with Shopify as well as third parties that may be located in countries other than where you reside, in order to provide and improve the Services for you.
+              The public storefront is hosted separately through Vercel. When you interact with product, cart, checkout, payment or order features, relevant personal information may be transmitted to and processed by Shopify and its service providers, including providers located in countries other than where you reside.
             </p>
             <p className="text-muted-foreground mb-4">
               In addition, to help protect, grow, and improve our business, we use certain Shopify enhanced features that incorporate data and information obtained from your interactions with our Store, along with other merchants and with Shopify. To provide these enhanced features, Shopify may make use of personal information collected about your interactions with our store, along with other merchants, and with Shopify.

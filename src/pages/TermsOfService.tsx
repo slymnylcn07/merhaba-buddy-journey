@@ -43,7 +43,7 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">OVERVIEW</h2>
             <p className="text-muted-foreground mb-4">
-              Welcome to FlexiKnee™! The terms "we", "us" and "our" refer to FlexiKnee™. FlexiKnee™ operates this store and website, including all related information, content, features, tools, products and services in order to provide you, the customer, with a curated shopping experience (the "Services"). FlexiKnee™ is powered by Shopify, which enables us to provide the Services to you.
+              Welcome to FlexiKnee™! The terms "we", "us" and "our" refer to FlexiKnee™. FlexiKnee™ operates this store and website, including all related information, content, features, tools, products and services in order to provide you, the customer, with a curated shopping experience (the "Services"). The public FlexiKnee™ storefront is hosted through Vercel. Shopify provides selected commerce functions, including product data, cart, checkout, payment processing and order services.
             </p>
             <p className="text-muted-foreground mb-4">
               The below terms and conditions, together with any policies referenced herein (these "Terms of Service" or "Terms") describe your rights and responsibilities when you use the Services. Please read these Terms of Service carefully, as they include important information about your legal rights and cover areas such as warranty disclaimers and limitations of liability.
@@ -85,7 +85,7 @@ export default function TermsOfService() {
               When you place an order, you are making an offer to purchase. FlexiKnee™ reserves the right to accept or decline your order for any reason at its discretion. Your order is not accepted until FlexiKnee™ confirms acceptance. We must receive and process your payment before your order is accepted. Please review your order carefully before submitting, as FlexiKnee™ may be unable to accommodate cancellation requests after an order is accepted. In the event that we do not accept, make a change to, or cancel an order, we will attempt to notify you by contacting the e-mail, billing address, and/or phone number provided at the time the order was made.
             </p>
             <p className="text-muted-foreground">
-              Your purchases are subject to return or exchange solely in accordance with our <Link to="/refund-policy" className="text-primary hover:underline">Refund Policy</Link>. You represent and warrant that your purchases are for your own personal or household use and not for commercial resale or export.
+              Eligible purchases are covered by the return, refund and warranty terms in our <Link to="/refund-policy" className="text-primary hover:underline">Returns, Refunds & Warranty Policy</Link>. The voluntary return window is 30 days from delivery, and the main FlexiKnee device includes a 2-year limited warranty for eligible manufacturing faults. You represent and warrant that your purchases are for your own personal or household use and not for commercial resale or export.
             </p>
           </section>
 
@@ -108,7 +108,7 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">SECTION 5 - SHIPPING AND DELIVERY</h2>
             <p className="text-muted-foreground">
-              We are not liable for shipping and delivery delays. All delivery times are estimates only and are not guaranteed. We are not responsible for delays caused by shipping carriers, customs processing, or events outside our control. Once we transfer products to the carrier, title and risk of loss passes to you.
+              Delivery windows shown on the product page and Shipping Policy are estimates and may be affected by carriers, customs, weather or events outside our reasonable control. If an order is outside the published maximum estimate, contact us so we can investigate and determine an appropriate solution. Shipping fees, tracking and regional estimates are described in our <Link to="/shipping-policy" className="text-primary hover:underline">Shipping Policy</Link>.
             </p>
           </section>
 
@@ -139,7 +139,7 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">SECTION 9 - RELATIONSHIP WITH SHOPIFY</h2>
             <p className="text-muted-foreground">
-              FlexiKnee™ is powered by Shopify, which enables us to provide the Services to you. However, any sales and purchases you make in our Store are made directly with FlexiKnee™. By using the Services, you acknowledge and agree that Shopify is not responsible for any aspect of any sales between you and FlexiKnee™, including any injury, damage, or loss resulting from purchased products and services. You hereby expressly release Shopify and its affiliates from all claims, damages, and liabilities arising from or related to your purchases and transactions with FlexiKnee™.
+              The public FlexiKnee™ storefront is hosted through Vercel. Shopify provides selected commerce functions, including product data, cart, checkout, payment processing and order services. However, any sales and purchases you make in our Store are made directly with FlexiKnee™. By using the Services, you acknowledge and agree that Shopify is not responsible for any aspect of any sales between you and FlexiKnee™, including any injury, damage, or loss resulting from purchased products and services. You hereby expressly release Shopify and its affiliates from all claims, damages, and liabilities arising from or related to your purchases and transactions with FlexiKnee™.
             </p>
           </section>
 
@@ -149,7 +149,7 @@ export default function TermsOfService() {
               All personal information we collect through the Services is subject to our <Link to="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link>, and certain personal information may be subject to Shopify's Privacy Policy. By using the Services, you acknowledge that you have read these privacy policies.
             </p>
             <p className="text-muted-foreground">
-              Because the Services are hosted by Shopify, Shopify collects and processes personal information about your access to and use of the Services in order to provide and improve the Services for you. Information you submit to the Services will be transmitted to and shared with Shopify as well as third parties that may be located in other countries than where you reside, in order to provide services to you. Review our <Link to="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link> for more details on how we, Shopify, and our partners use your personal information.
+              When you use cart, checkout, payment or order features, relevant information is transmitted to and processed by Shopify and other service providers that may operate in other countries. The public storefront itself is hosted separately through Vercel. Review our <Link to="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link> for more information.
             </p>
           </section>
 

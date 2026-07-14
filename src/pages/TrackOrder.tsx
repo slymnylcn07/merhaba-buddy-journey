@@ -102,7 +102,7 @@ const TrackOrder = () => {
               </div>
 
               <p className="mt-8 text-sm leading-7 text-slate-500">
-                Orders are usually delivered within 7-12 business days to the US and UK, and 8-14 business days to most other regions. If your tracking hasn't updated in a while, reach out via our contact page with your order number and we'll look into it right away.
+                Delivery typically takes 6-7 business days to the US, UK, Europe, Australia and New Zealand, 7-8 business days to Canada, 5-6 business days to Singapore, and 10-18 business days to other supported regions. If tracking is outside the expected window, contact us with your order number and we'll investigate.
               </p>
             </div>
           </section>

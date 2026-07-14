@@ -3,6 +3,7 @@ import { MarketSelector } from "@/components/MarketSelector";
 import { SUPPORT_EMAIL } from "@/lib/support-config";
 import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { PaymentOptionsRow } from "@/components/PaymentLogos";
 
 export const Footer = () => {
   return (
@@ -52,12 +53,18 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-slate-200 pt-6 text-center text-xs text-slate-400">
-        <div className="mb-4 flex justify-center md:justify-start">
-          <MarketSelector />
-        </div>
-
-          © {new Date().getFullYear()} FlexiKnee™. All rights reserved. FlexiKnee content is for general wellness education and is not medical advice.
+        <div className="mt-12 border-t border-slate-200 pt-6">
+          <div className="flex flex-col items-center justify-between gap-6 md:flex-row md:items-end">
+            <div className="text-center md:text-left">
+              <div className="mb-4 flex justify-center md:justify-start">
+                <MarketSelector />
+              </div>
+              <p className="text-xs text-slate-400">
+                © {new Date().getFullYear()} FlexiKnee™. All rights reserved. FlexiKnee content is for general wellness education and is not medical advice.
+              </p>
+            </div>
+            <PaymentOptionsRow className="mt-0 shrink-0" />
+          </div>
         </div>
       </div>
     </footer>

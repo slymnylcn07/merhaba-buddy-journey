@@ -245,7 +245,7 @@ const Account = () => {
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold text-foreground mb-2">Start a Return Request</h2>
               <p className="text-muted-foreground text-sm max-w-xl mx-auto">
-                No account creation required. Enter your order details and we'll review your request within 24–48 hours.
+                No account creation required. Enter your order details and we'll review your request within one business day.
               </p>
             </div>
 
@@ -263,7 +263,7 @@ const Account = () => {
                       Return Request ID: {returnRequestId}
                     </p>
                     <p className="text-muted-foreground">
-                      We'll review and contact you within 24–48 hours.
+                      We'll review and contact you within one business day.
                     </p>
                     <Button
                       variant="outline"
