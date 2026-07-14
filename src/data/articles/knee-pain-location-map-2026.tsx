@@ -8,10 +8,10 @@ import mapFrontKnee from "@/assets/fig-zone-front-v2.svg";
 import mapInnerKnee from "@/assets/fig-zone-inner-v2.svg";
 import mapOuterKnee from "@/assets/fig-zone-outer-v2.svg";
 import mapBackKnee from "@/assets/fig-zone-back-v2.svg";
-import mapBelowKneecap from "@/assets/fig-zone-above-below-v2.svg";
-import mapAboveKneecap from "@/assets/fig-zone-above-below-v2.svg";
-import mapITBand from "@/assets/fig-zone-outer-v2.svg";
-import mapJointLine from "@/assets/fig-zone-above-below-v2.svg";
+import mapBelowKneecap from "@/assets/fig-zone-below-kneecap-v2.svg";
+import mapAboveKneecap from "@/assets/fig-zone-above-kneecap-v2.svg";
+import mapITBand from "@/assets/fig-zone-itband-v2.svg";
+import mapJointLine from "@/assets/fig-zone-joint-line-v2.svg";
 
 const SectionDivider = () => (
   <hr className="my-10 border-t border-border/40" />

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#F8FAFC"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">Inner vs outer: telling the two sides apart</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">Both knees, seen from the front</text>
+
+  <!-- LEFT LEG -->
+  <path d="M250 110 C 310 106 352 124 356 178 L 360 280 C 362 320 356 348 356 386 C 356 444 362 482 358 512 L 240 512 C 236 482 244 444 244 386 C 244 348 238 320 240 280 L 244 178 C 244 124 250 110 250 110 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="3"/>
+  <ellipse cx="300" cy="286" rx="30" ry="38" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <!-- inner side faces center -->
+  <ellipse cx="356" cy="300" rx="22" ry="42" fill="#22C55E" opacity="0.6"/>
+  <!-- outer side faces away -->
+  <ellipse cx="244" cy="300" rx="22" ry="42" fill="#F97316" opacity="0.6"/>
+  <text x="300" y="546" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" fill="#475569">Left knee</text>
+
+  <!-- RIGHT LEG -->
+  <path d="M600 110 C 660 106 702 124 706 178 L 710 280 C 712 320 706 348 706 386 C 706 444 712 482 708 512 L 590 512 C 586 482 594 444 594 386 C 594 348 588 320 590 280 L 594 178 C 594 124 600 110 600 110 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="3"/>
+  <ellipse cx="650" cy="286" rx="30" ry="38" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <ellipse cx="594" cy="300" rx="22" ry="42" fill="#22C55E" opacity="0.6"/>
+  <ellipse cx="706" cy="300" rx="22" ry="42" fill="#F97316" opacity="0.6"/>
+  <text x="650" y="546" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" fill="#475569">Right knee</text>
+
+  <!-- center marker -->
+  <line x1="475" y1="120" x2="475" y2="500" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="6 10"/>
+  <rect x="392" y="236" width="166" height="52" rx="12" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
+  <text x="475" y="258" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" fill="#166534">INNER sides</text>
+  <text x="475" y="278" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#166534">face each other</text>
+
+  <text x="110" y="200" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#9A3412">OUTER side</text>
+  <text x="110" y="222" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">faces away from the body.</text>
+  <text x="110" y="242" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">IT band and LCL live here.</text>
+  <line x1="222" y1="240" x2="234" y2="284" stroke="#FDBA74" stroke-width="2"/>
+
+  <text x="762" y="200" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#9A3412">OUTER side</text>
+  <text x="762" y="222" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">same on this leg,</text>
+  <text x="762" y="242" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">mirrored.</text>
+  <line x1="756" y1="240" x2="722" y2="284" stroke="#FDBA74" stroke-width="2"/>
+
+  <text x="450" y="440" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">Quick check: the side nearer your other leg is the INNER (medial) side.</text>
+</svg>

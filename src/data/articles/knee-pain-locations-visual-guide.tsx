@@ -6,16 +6,16 @@ import diagramFrontKnee from "@/assets/fig-zone-front-v2.svg";
 import diagramInnerKnee from "@/assets/fig-zone-inner-v2.svg";
 import diagramOuterKnee from "@/assets/fig-zone-outer-v2.svg";
 import diagramBackKnee from "@/assets/fig-zone-back-v2.svg";
-import diagramBelowKneecap from "@/assets/fig-zone-above-below-v2.svg";
-import diagramAboveKneecap from "@/assets/fig-zone-above-below-v2.svg";
-import diagramITBand from "@/assets/fig-zone-outer-v2.svg";
-import diagramJointLine from "@/assets/fig-zone-above-below-v2.svg";
+import diagramBelowKneecap from "@/assets/fig-zone-below-kneecap-v2.svg";
+import diagramAboveKneecap from "@/assets/fig-zone-above-kneecap-v2.svg";
+import diagramITBand from "@/assets/fig-zone-itband-v2.svg";
+import diagramJointLine from "@/assets/fig-zone-joint-line-v2.svg";
 import diagramLocationChartFront from "@/assets/diagram-knee-pain-location-chart-front.jpg";
 import diagramPainMapZones from "@/assets/fig-knee-zones-map-v2.svg";
 import diagramAnatomyBonesLigaments from "@/assets/fig-knee-anatomy-v2.svg";
-import diagramSideKneePain from "@/assets/fig-zone-outer-v2.svg";
-import diagramBackKneePainViz from "@/assets/fig-zone-back-v2.svg";
-import diagramBelowKneecapPressure from "@/assets/fig-zone-above-below-v2.svg";
+import diagramSideKneePain from "@/assets/fig-zone-side-overview-v2.svg";
+import diagramBackKneePainViz from "@/assets/fig-zone-back-detail-v2.svg";
+import diagramBelowKneecapPressure from "@/assets/fig-zone-below-kneecap-v2.svg";
 
 const SectionDivider = () => (
   <hr className="my-10 border-t border-border/40" />

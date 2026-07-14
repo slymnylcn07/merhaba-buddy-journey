@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#FFFFFF"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">IT band pain at the outer knee</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">A friction pattern, not a joint problem</text>
+
+  <!-- side view leg -->
+  <path d="M360 100 C 430 96 476 118 480 175 L 486 280 C 490 320 480 344 476 372 C 472 420 480 448 476 490 C 472 516 476 530 472 540 L 356 540 C 352 530 356 516 354 490 C 350 448 358 420 354 372 C 350 344 340 320 344 280 L 350 175 C 350 118 360 100 360 100 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="3"/>
+
+  <!-- IT band down the OUTER edge -->
+  <path d="M366 116 C 350 190 348 260 354 320 C 358 356 358 372 356 392" stroke="#059669" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.9"/>
+  <text x="110" y="180" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#065F46">IT band</text>
+  <text x="110" y="202" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">a thick strap of tissue,</text>
+  <text x="110" y="222" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">not a muscle, so it does</text>
+  <text x="110" y="242" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">not really stretch</text>
+  <line x1="230" y1="174" x2="350" y2="200" stroke="#6EE7B7" stroke-width="2"/>
+
+  <!-- bony bump it rubs over -->
+  <circle cx="368" cy="352" r="18" fill="#E7E5E4" stroke="#A8A29E" stroke-width="3"/>
+  <text x="560" y="330" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#334155">Bony bump on the femur</text>
+  <text x="560" y="352" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">the band glides over it with</text>
+  <text x="560" y="372" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">every bend and straighten</text>
+  <line x1="552" y1="324" x2="390" y2="344" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- pain hotspot -->
+  <circle cx="352" cy="368" r="26" fill="#DC2626" opacity="0.65"/>
+  <circle cx="352" cy="368" r="40" fill="#DC2626" opacity="0.2"/>
+  <text x="110" y="400" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#B91C1C">Pain lands HERE</text>
+  <text x="110" y="422" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">outer knee, often after a</text>
+  <text x="110" y="442" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">predictable distance or time</text>
+  <line x1="248" y1="394" x2="322" y2="374" stroke="#FCA5A5" stroke-width="2"/>
+
+  <!-- do not roll marker -->
+  <g transform="translate(560,430)">
+    <rect x="0" y="-28" width="300" height="76" rx="14" fill="#FEF2F2" stroke="#FECACA" stroke-width="2"/>
+    <text x="18" y="0" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" fill="#B91C1C">Do not roll this sore spot</text>
+    <text x="18" y="24" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">Work the hip and upper thigh instead.</text>
+  </g>
+
+  <text x="450" y="552" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B" font-style="italic">Common in runners and cyclists, and usually settles with load management plus hip strength.</text>
+</svg>

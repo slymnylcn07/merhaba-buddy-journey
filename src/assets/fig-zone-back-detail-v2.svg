@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#FFFFFF"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">What sits behind the knee</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">A closer look at the hollow at the back</text>
+
+  <!-- zoomed back of knee -->
+  <path d="M330 110 L 570 110 C 590 200 590 360 570 500 L 330 500 C 310 360 310 200 330 110 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="3"/>
+
+  <!-- hamstring tendons coming down each side -->
+  <path d="M368 130 C 380 200 386 240 384 268" stroke="#F97316" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <path d="M532 130 C 520 200 514 240 516 268" stroke="#F97316" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <text x="120" y="170" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#9A3412">Hamstring tendons</text>
+  <text x="120" y="192" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">you can feel these two cords</text>
+  <text x="120" y="212" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">tighten when you bend</text>
+  <line x1="260" y1="176" x2="360" y2="190" stroke="#FDBA74" stroke-width="2"/>
+
+  <!-- the hollow -->
+  <ellipse cx="450" cy="300" rx="66" ry="58" fill="#8B5CF6" opacity="0.42"/>
+  <ellipse cx="450" cy="300" rx="88" ry="76" fill="#8B5CF6" opacity="0.14"/>
+  <text x="450" y="296" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">the hollow</text>
+  <text x="450" y="318" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#EDE9FE">popliteal fossa</text>
+
+  <!-- nerve + vessels through it -->
+  <path d="M450 130 L 450 470" stroke="#DC2626" stroke-width="6" opacity="0.6" stroke-linecap="round"/>
+  <path d="M470 130 L 470 470" stroke="#2563EB" stroke-width="6" opacity="0.6" stroke-linecap="round"/>
+  <text x="640" y="250" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#334155">Vessels and nerves</text>
+  <text x="640" y="272" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">pass straight through here,</text>
+  <text x="640" y="292" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">which is why this area is</text>
+  <text x="640" y="312" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">sensitive and never massaged hard.</text>
+  <line x1="632" y1="244" x2="486" y2="260" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- calf below -->
+  <path d="M400 380 C 412 420 414 450 410 480" stroke="#22C55E" stroke-width="18" fill="none" stroke-linecap="round" opacity="0.65"/>
+  <path d="M500 380 C 488 420 486 450 490 480" stroke="#22C55E" stroke-width="18" fill="none" stroke-linecap="round" opacity="0.65"/>
+  <text x="120" y="430" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#166534">Calf muscles</text>
+  <text x="120" y="452" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">begin just below the hollow</text>
+  <line x1="250" y1="436" x2="390" y2="430" stroke="#86EFAC" stroke-width="2"/>
+
+  <rect x="620" y="380" width="250" height="96" rx="14" fill="#FEF2F2" stroke="#FECACA" stroke-width="2"/>
+  <text x="640" y="410" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" fill="#B91C1C">Get this checked</text>
+  <text x="640" y="434" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">A visible bulge, or calf pain</text>
+  <text x="640" y="454" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">with swelling, warmth or redness.</text>
+
+  <text x="450" y="546" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B" font-style="italic">Tightness here is common. Sudden swelling behind one knee is not, and needs prompt assessment.</text>
+</svg>
