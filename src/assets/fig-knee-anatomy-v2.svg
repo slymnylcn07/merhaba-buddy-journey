@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+  <rect width="1000" height="700" fill="#FFFFFF"/>
+  <text x="500" y="44" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="bold" fill="#0F172A">Knee anatomy: the parts that matter</text>
+  <text x="500" y="72" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#64748B">Front view of the right knee</text>
+
+  <!-- FEMUR -->
+  <path d="M440 100 C 500 96 552 112 558 175 L 566 300 L 434 300 L 434 175 C 434 112 440 100 440 100 Z" fill="#F5F5F4" stroke="#A8A29E" stroke-width="3"/>
+  <text x="700" y="150" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#44403C">Femur</text>
+  <text x="700" y="172" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#78716C">thigh bone</text>
+  <line x1="692" y1="144" x2="562" y2="180" stroke="#A8A29E" stroke-width="2"/>
+
+  <!-- CONDYLES -->
+  <ellipse cx="466" cy="330" rx="48" ry="44" fill="#E7E5E4" stroke="#A8A29E" stroke-width="3"/>
+  <ellipse cx="536" cy="330" rx="46" ry="44" fill="#E7E5E4" stroke="#A8A29E" stroke-width="3"/>
+
+  <!-- MENISCUS (between femur and tibia) -->
+  <path d="M418 372 C 460 358 540 358 582 372" stroke="#38BDF8" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <text x="700" y="374" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#0369A1">Meniscus</text>
+  <text x="700" y="396" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#0284C7">shock-absorbing pads</text>
+  <line x1="692" y1="368" x2="584" y2="372" stroke="#7DD3FC" stroke-width="2"/>
+
+  <!-- PATELLA -->
+  <ellipse cx="500" cy="318" rx="40" ry="50" fill="#FEF3C7" stroke="#D97706" stroke-width="4"/>
+  <text x="500" y="324" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#92400E">patella</text>
+  <text x="180" y="250" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#92400E">Patella</text>
+  <text x="180" y="272" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#B45309">kneecap</text>
+  <line x1="276" y1="256" x2="464" y2="300" stroke="#FBBF24" stroke-width="2"/>
+
+  <!-- ACL (crosses inside, drawn behind patella) -->
+  <path d="M470 372 L 528 300" stroke="#EF4444" stroke-width="7" stroke-linecap="round" opacity="0.9"/>
+  <text x="180" y="420" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#B91C1C">ACL</text>
+  <text x="180" y="442" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#DC2626">front cruciate ligament</text>
+  <line x1="276" y1="414" x2="474" y2="360" stroke="#FCA5A5" stroke-width="2"/>
+
+  <!-- PCL (the other cross) -->
+  <path d="M534 372 L 476 300" stroke="#7C3AED" stroke-width="7" stroke-linecap="round" opacity="0.9"/>
+  <text x="700" y="248" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#5B21B6">PCL</text>
+  <text x="700" y="270" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#6D28D9">back cruciate ligament</text>
+  <line x1="692" y1="242" x2="536" y2="304" stroke="#C4B5FD" stroke-width="2"/>
+
+  <!-- MCL: INNER side ligament -->
+  <path d="M566 300 C 578 340 578 380 570 414" stroke="#16A34A" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <text x="700" y="470" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#166534">MCL</text>
+  <text x="700" y="492" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#15803D">inner side ligament</text>
+  <line x1="692" y1="464" x2="576" y2="400" stroke="#86EFAC" stroke-width="2"/>
+
+  <!-- LCL: OUTER side ligament -->
+  <path d="M434 300 C 422 340 422 380 430 414" stroke="#EA580C" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <text x="180" y="500" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#9A3412">LCL</text>
+  <text x="180" y="522" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#C2410C">outer side ligament</text>
+  <line x1="276" y1="494" x2="426" y2="404" stroke="#FDBA74" stroke-width="2"/>
+
+  <!-- TIBIA: thick, inner -->
+  <path d="M444 414 C 490 406 536 414 542 448 L 538 660 L 452 660 Z" fill="#F5F5F4" stroke="#A8A29E" stroke-width="3"/>
+  <text x="700" y="580" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#44403C">Tibia</text>
+  <text x="700" y="602" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#78716C">shin bone, the larger one</text>
+  <line x1="692" y1="574" x2="540" y2="540" stroke="#A8A29E" stroke-width="2"/>
+
+  <!-- FIBULA: thin, outer -->
+  <path d="M420 430 C 434 428 442 442 440 462 L 436 660 L 410 660 L 410 462 C 408 442 412 430 420 430 Z" fill="#E7E5E4" stroke="#A8A29E" stroke-width="3"/>
+  <text x="150" y="600" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#44403C">Fibula</text>
+  <text x="150" y="622" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#78716C">thin outer bone</text>
+  <line x1="252" y1="594" x2="414" y2="560" stroke="#A8A29E" stroke-width="2"/>
+
+  <text x="500" y="686" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B" font-style="italic">Where discomfort sits usually points to which of these structures is under load.</text>
+</svg>

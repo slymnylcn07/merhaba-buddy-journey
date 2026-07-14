@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620">
+  <rect width="1000" height="620" fill="#F8FAFC"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="bold" fill="#0F172A">Knee pain location map</text>
+  <text x="500" y="70" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#64748B">Right knee, shown from the front and from behind</text>
+
+  <!-- FRONT VIEW -->
+  <text x="290" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#1E40AF">Front</text>
+  <path d="M234 130 C 300 126 346 144 350 200 L 354 290 C 356 330 350 360 350 400 C 350 460 356 500 354 550 L 226 550 C 224 500 230 460 230 400 C 230 360 224 330 226 290 L 226 200 C 226 144 234 130 234 130 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+
+  <!-- above kneecap -->
+  <ellipse cx="290" cy="250" rx="46" ry="26" fill="#A855F7" opacity="0.55"/>
+  <text x="80" y="230" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#6B21A8">Above kneecap</text>
+  <text x="80" y="250" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">quad tendon</text>
+  <line x1="196" y1="238" x2="248" y2="248" stroke="#C084FC" stroke-width="2"/>
+
+  <!-- front / kneecap -->
+  <ellipse cx="290" cy="320" rx="38" ry="46" fill="#3B82F6" opacity="0.6"/>
+  <text x="290" y="326" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">FRONT</text>
+  <text x="80" y="320" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#1D4ED8">Front (kneecap)</text>
+  <text x="80" y="340" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">stairs, squats, sitting</text>
+  <line x1="196" y1="314" x2="254" y2="318" stroke="#93C5FD" stroke-width="2"/>
+
+  <!-- inner -->
+  <ellipse cx="350" cy="340" rx="24" ry="40" fill="#22C55E" opacity="0.6"/>
+  <text x="410" y="330" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#166534">Inner side</text>
+  <text x="410" y="350" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">medial, faces other knee</text>
+  <line x1="402" y1="324" x2="372" y2="336" stroke="#86EFAC" stroke-width="2"/>
+
+  <!-- outer / IT band -->
+  <ellipse cx="230" cy="340" rx="24" ry="40" fill="#F97316" opacity="0.6"/>
+  <text x="80" y="404" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#9A3412">Outer side / IT band</text>
+  <text x="80" y="424" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">lateral, runners and cyclists</text>
+  <line x1="196" y1="398" x2="216" y2="366" stroke="#FDBA74" stroke-width="2"/>
+
+  <!-- below kneecap -->
+  <ellipse cx="290" cy="398" rx="34" ry="24" fill="#EF4444" opacity="0.55"/>
+  <text x="410" y="410" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#B91C1C">Below kneecap</text>
+  <text x="410" y="430" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">patellar tendon, jumping</text>
+  <line x1="402" y1="404" x2="326" y2="400" stroke="#FCA5A5" stroke-width="2"/>
+
+  <!-- joint line -->
+  <path d="M240 366 L 342 366" stroke="#0EA5E9" stroke-width="6" stroke-linecap="round" opacity="0.85"/>
+  <text x="410" y="480" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#0369A1">Joint line</text>
+  <text x="410" y="500" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">where meniscus sits</text>
+  <line x1="402" y1="474" x2="340" y2="372" stroke="#7DD3FC" stroke-width="2"/>
+
+  <!-- BACK VIEW -->
+  <text x="760" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#1E40AF">Behind</text>
+  <path d="M704 130 C 770 126 816 144 820 200 L 824 290 C 826 330 820 360 820 400 C 820 460 826 500 824 550 L 696 550 C 694 500 700 460 700 400 C 700 360 694 330 696 290 L 696 200 C 696 144 704 130 704 130 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <ellipse cx="760" cy="336" rx="44" ry="52" fill="#8B5CF6" opacity="0.55"/>
+  <text x="760" y="342" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">BEHIND</text>
+  <text x="760" y="440" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#5B21B6">Back of the knee</text>
+  <text x="760" y="462" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">tightness, swelling, Baker's cyst</text>
+  <text x="760" y="486" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">only visible from this side</text>
+
+  <text x="500" y="592" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B" font-style="italic">Point to where it hurts, then match the zone. Swelling, locking or giving way needs assessment.</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620">
+  <rect width="1000" height="620" fill="#FFFFFF"/>
+  <text x="500" y="44" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="bold" fill="#0F172A">The IT band runs down the OUTSIDE of the thigh</text>
+  <text x="500" y="72" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#64748B">Side view of the right leg</text>
+
+  <!-- leg outline, side view -->
+  <path d="M420 110 C 500 104 548 130 552 190 L 560 300 C 566 350 556 370 552 400 C 548 450 556 470 552 520 C 548 560 552 580 548 600 L 430 600 C 426 580 430 560 428 520 C 424 470 432 450 428 400 C 424 370 414 350 420 300 L 424 190 C 424 130 420 110 420 110 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="3"/>
+
+  <!-- hip / gluteal + TFL origin -->
+  <ellipse cx="470" cy="150" rx="54" ry="38" fill="#FEF3C7" stroke="#D97706" stroke-width="3"/>
+  <text x="470" y="156" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" fill="#92400E">TFL + glutes</text>
+  <text x="700" y="140" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="bold" fill="#92400E">Starts at the hip</text>
+  <text x="700" y="162" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">These muscles control its tension</text>
+  <line x1="692" y1="134" x2="524" y2="146" stroke="#FBBF24" stroke-width="2"/>
+
+  <!-- IT BAND along the OUTER edge -->
+  <path d="M498 188 C 546 240 552 320 544 400 C 540 448 538 470 536 496" stroke="#059669" stroke-width="20" fill="none" stroke-linecap="round" opacity="0.85"/>
+  <text x="700" y="330" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#065F46">Iliotibial (IT) band</text>
+  <text x="700" y="354" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">Thick connective tissue, not a muscle.</text>
+  <text x="700" y="376" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">It does not stretch, so rolling calms</text>
+  <text x="700" y="398" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">the tissue around it instead.</text>
+  <line x1="692" y1="324" x2="552" y2="320" stroke="#6EE7B7" stroke-width="2"/>
+
+  <!-- knee joint -->
+  <circle cx="524" cy="470" r="30" fill="#E2E8F0" stroke="#94A3B8" stroke-width="3"/>
+  <text x="524" y="476" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#475569">knee</text>
+
+  <!-- pain hotspot at outer knee -->
+  <circle cx="546" cy="486" r="22" fill="#DC2626" opacity="0.75"/>
+  <circle cx="546" cy="486" r="34" fill="#DC2626" opacity="0.2"/>
+  <text x="700" y="484" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="bold" fill="#B91C1C">Pain shows up HERE</text>
+  <text x="700" y="506" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">Outer knee, where the band crosses bone.</text>
+  <text x="700" y="528" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">Do not roll directly on this sore spot.</text>
+  <line x1="692" y1="478" x2="576" y2="486" stroke="#FCA5A5" stroke-width="2"/>
+
+  <!-- attaches below knee -->
+  <path d="M536 496 L 532 528" stroke="#059669" stroke-width="12" stroke-linecap="round" opacity="0.7"/>
+  <text x="150" y="540" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="bold" fill="#065F46">Attaches just below the knee</text>
+  <line x1="380" y1="534" x2="518" y2="524" stroke="#6EE7B7" stroke-width="2"/>
+
+  <text x="500" y="596" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B" font-style="italic">Roll the hip and upper thigh, never the painful spot at the outer knee.</text>
+</svg>

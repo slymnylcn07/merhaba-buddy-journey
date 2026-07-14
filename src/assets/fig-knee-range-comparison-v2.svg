@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560">
+  <rect width="1000" height="560" fill="#F8FAFC"/>
+  <text x="500" y="44" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="bold" fill="#0F172A">Full range vs restricted range</text>
+  <text x="500" y="72" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#64748B">Same knee, same side view, different bend</text>
+
+  <!-- LEFT: full range -->
+  <text x="260" y="118" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#166534">Full bend (about 135°)</text>
+  <!-- thigh -->
+  <path d="M170 160 L 254 160 L 268 300 L 184 300 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <!-- knee joint -->
+  <circle cx="226" cy="318" r="30" fill="#E2E8F0" stroke="#94A3B8" stroke-width="3"/>
+  <!-- shin folded back -->
+  <path d="M226 348 L 300 348 L 372 430 L 300 470 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <!-- arc -->
+  <path d="M196 250 A 96 96 0 0 0 300 400" stroke="#16A34A" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M300 400 l-16 -6 l4 18 Z" fill="#16A34A"/>
+  <text x="260" y="510" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#475569">Heel comes close to the back of the thigh.</text>
+  <text x="260" y="532" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#475569">Stairs, squatting and kneeling feel easy.</text>
+
+  <line x1="500" y1="110" x2="500" y2="480" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="6 10"/>
+
+  <!-- RIGHT: restricted range -->
+  <text x="740" y="118" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#B91C1C">Restricted bend (about 90°)</text>
+  <path d="M650 160 L 734 160 L 748 300 L 664 300 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <circle cx="706" cy="318" r="30" fill="#E2E8F0" stroke="#94A3B8" stroke-width="3"/>
+  <!-- swollen / tight tissue markers -->
+  <ellipse cx="676" cy="318" rx="14" ry="26" fill="#F97316" opacity="0.7"/>
+  <ellipse cx="736" cy="318" rx="14" ry="26" fill="#F97316" opacity="0.7"/>
+  <!-- shin only to 90 -->
+  <path d="M706 348 L 786 348 L 792 470 L 712 470 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <!-- arc stops early -->
+  <path d="M676 250 A 96 96 0 0 0 736 388" stroke="#DC2626" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M736 388 l-16 -4 l2 18 Z" fill="#DC2626"/>
+  <!-- blocked marker -->
+  <g stroke="#DC2626" stroke-width="5" stroke-linecap="round">
+    <path d="M804 392 l30 30 M834 392 l-30 30"/>
+  </g>
+  <text x="860" y="416" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#B91C1C">blocked</text>
+  <text x="740" y="510" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#475569">Tight or swollen tissue stops the bend early.</text>
+  <text x="740" y="532" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#475569">The knee feels stiff even without sharp pain.</text>
+</svg>

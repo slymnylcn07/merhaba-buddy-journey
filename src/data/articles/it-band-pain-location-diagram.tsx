@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import { InfoBox } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-it-band-diagram.jpg";
-import diagramFullPath from "@/assets/diagram-it-band-full-path.jpg";
+import diagramFullPath from "@/assets/fig-itband-path-v2.svg";
 import diagramKneeZone from "@/assets/diagram-it-band-knee-zone.jpg";
 import diagramComparisonZones from "@/assets/diagram-it-band-comparison-zones.jpg";
 import diagramOuterThighPain from "@/assets/diagram-it-band-outer-thigh-pain.jpg";

@@ -3,7 +3,7 @@ import PremiumCTA from "@/components/PremiumCTA";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import heroImage from "@/assets/article-hero-knee-location-map.jpg";
-import kneePainChartZones from "@/assets/knee-pain-chart-zones.jpg";
+import kneePainChartZones from "@/assets/fig-knee-zones-map-v2.svg";
 import mapFrontKnee from "@/assets/map-zone-front-knee.jpg";
 import mapInnerKnee from "@/assets/map-zone-inner-knee.jpg";
 import mapOuterKnee from "@/assets/map-zone-outer-knee.jpg";

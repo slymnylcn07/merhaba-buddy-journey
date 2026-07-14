@@ -7,7 +7,7 @@ import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-knee-tightness-no-pain.jpg";
 import imgJointStiffness from "@/assets/article-knee-joint-stiffness-diagram.jpg";
 import imgMuscleTightness from "@/assets/article-muscle-tightness-knee.jpg";
-import imgMobilityComparison from "@/assets/article-joint-mobility-comparison.jpg";
+import imgMobilityComparison from "@/assets/fig-knee-range-comparison-v2.svg";
 import imgFlexionRange from "@/assets/article-knee-flexion-range.jpg";
 import imgInactivityStiffness from "@/assets/article-stiffness-after-inactivity.jpg";
 
