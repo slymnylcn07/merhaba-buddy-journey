@@ -67,6 +67,7 @@ export const OfferSelector = ({
     value: 1 | 2;
     title: string;
     badges: string[];
+    corner: string | null;
     price: number;
     strike: number | null;
     note?: string;
@@ -74,14 +75,16 @@ export const OfferSelector = ({
     {
       value: 1,
       title: "Buy 1",
-      badges: freeShipOnSingle ? ["Free Shipping"] : [],
+      badges: [] as string[],
+      corner: freeShipOnSingle ? "Free Shipping" : null,
       price: unitPrice,
       strike: unitCompareAt && unitCompareAt > unitPrice ? unitCompareAt : null,
     },
     {
       value: 2,
       title: "Buy 2",
-      badges: [`Get Extra ${duoDiscountPct}%`, "Free Shipping"],
+      badges: [`Get Extra ${duoDiscountPct}%`],
+      corner: "Free Shipping",
       price: duoDiscounted,
       strike: duoFull,
       note: "Discount applied automatically at checkout",
@@ -99,12 +102,17 @@ export const OfferSelector = ({
             role="radio"
             aria-checked={selected}
             onClick={() => onSelect(row.value)}
-            className={`flex w-full items-center gap-3 rounded-2xl border-2 bg-white px-4 py-4 text-left transition ${
+            className={`relative flex w-full items-center gap-3 overflow-hidden rounded-2xl border-2 bg-white px-4 py-4 pr-4 text-left transition ${
               selected
                 ? "border-slate-950 shadow-[0_12px_35px_-20px_rgba(15,23,42,0.5)]"
                 : "border-slate-200 hover:border-slate-400"
             }`}
           >
+            {row.corner && (
+              <span className="absolute right-0 top-0 rounded-bl-xl bg-emerald-500 px-2 py-1 text-[9px] font-bold uppercase tracking-wide text-white sm:px-2.5 sm:text-[10px]">
+                {row.corner}
+              </span>
+            )}
             <span
               className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border-2 ${
                 selected ? "border-slate-950" : "border-slate-300"
@@ -130,7 +138,7 @@ export const OfferSelector = ({
                 <span className="mt-1 hidden text-[11px] text-slate-400 sm:block">{row.note}</span>
               )}
             </span>
-            <span className="flex flex-col items-end">
+            <span className="flex flex-col items-end pt-3">
               <span className="text-base font-bold text-slate-950">{fm(row.price)}</span>
               {row.strike && (
                 <s className="text-xs text-slate-400">{fm(row.strike)}</s>

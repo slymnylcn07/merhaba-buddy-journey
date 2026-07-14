@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { ArrowRight, Search, X, Clock, ChevronDown, ArrowUp } from "lucide-react";
+import { ArrowRight, Search, X, Clock, ChevronDown, ArrowUp, Sparkles, Check } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { guidesData } from "@/data/guides";
@@ -762,7 +762,7 @@ const Guides = () => {
                     </div>
                   </div>
 
-                  <div className="mt-3 grid grid-cols-3 gap-3">
+                  <div className="mt-3 grid grid-cols-2 gap-3">
                     <div className="rounded-2xl bg-white/95 p-4 text-slate-950 shadow-sm">
                       <p className="text-2xl font-semibold">{guides.length}</p>
                       <p className="mt-1 text-xs font-medium text-slate-500">Guides</p>
@@ -770,10 +770,6 @@ const Guides = () => {
                     <div className="rounded-2xl bg-white/95 p-4 text-slate-950 shadow-sm">
                       <p className="text-2xl font-semibold">5</p>
                       <p className="mt-1 text-xs font-medium text-slate-500">Topic paths</p>
-                    </div>
-                    <div className="rounded-2xl bg-blue-600 p-4 text-white shadow-sm">
-                      <p className="text-2xl font-semibold">New</p>
-                      <p className="mt-1 text-xs font-medium text-blue-100">Comfort hub</p>
                     </div>
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Star, ShieldCheck, BadgeCheck } from "lucide-react";
+import { Star, ShieldCheck, BadgeCheck, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 /**
@@ -23,47 +23,47 @@ interface Review {
 
 const REVIEWS: Review[] = [
   {
-    name: "Verified Buyer",
+    name: "Daniel R.",
     date: "19 May 2026",
     color: "White",
     text: "I will use it well. It's very good.",
   },
   {
-    name: "Verified Buyer",
+    name: "Carmen L.",
     date: "31 Mar 2026",
     color: "White",
     text:
       "Two close relatives who already have it recommended it to me. It perfectly matches the entire description and the images shown. Personally, this is the most highly valued model. I received it earlier than expected, very good service through the postal service. Excellent quality-price ratio. Highly recommended.",
   },
   {
-    name: "Verified Buyer",
+    name: "Marta S.",
     date: "10 Mar 2026",
     color: "White",
     text:
       "After the first use it works smoothly and feels like real pain relief. Really good product, I recommend it to anyone who suffers, it helps.",
   },
   {
-    name: "J.",
+    name: "Javier M.",
     date: "09 Jan 2026",
     color: "White",
     text:
       "Everything is fine. It was marked as delivered before it reached me; it was tracked with the carrier, had gone to the wrong address, was retrieved and I finally received it. I repeat, everything is okay.",
   },
   {
-    name: "Verified Buyer",
+    name: "Andrew P.",
     date: "01 Jan 2026",
     color: "White",
     text:
       "The knee massager is fantastic. I've used it each day since delivery and it's working well. One day I used it on bare skin, which wasn't a good idea as my skin got extremely hot, so keep the sleeve between. The manual says not to run the unit flat, so every couple of days I recharge it.",
   },
   {
-    name: "T.",
+    name: "Thomas R.",
     date: "27 Sep 2025",
     color: "White",
     text: "My knee feels better after using it.",
   },
   {
-    name: "J.",
+    name: "Jason N.",
     date: "16 Jul 2025",
     color: "White",
     text:
@@ -90,6 +90,9 @@ function Stars({ value, className = "" }: { value: number; className?: string })
 
 export function ProductReviews() {
   const [showNotice, setShowNotice] = useState(false);
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleReviews = showAll ? REVIEWS : REVIEWS.slice(0, 3);
 
   return (
     <section id="product-reviews" className="scroll-mt-24 bg-slate-50 py-16 sm:py-20" aria-labelledby="reviews-heading">
@@ -127,12 +130,15 @@ export function ProductReviews() {
           comfort.
         </p>
 
-        {/* Review cards */}
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          {REVIEWS.map((r, i) => (
-            <div key={i} className="flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        {/* Review cards: mobilde yatay kaydirma, masaustunde 3'lu grid */}
+        <div className="mt-8 -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0">
+          {visibleReviews.map((r, i) => (
+            <div
+              key={i}
+              className="flex w-[80vw] max-w-[300px] flex-shrink-0 snap-center flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:w-auto sm:max-w-none"
+            >
               <div className="flex items-center gap-2.5">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white">
+                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white">
                   {r.name.charAt(0)}
                 </span>
                 <div className="min-w-0">
@@ -150,6 +156,19 @@ export function ProductReviews() {
             </div>
           ))}
         </div>
+
+        {REVIEWS.length > 3 && (
+          <div className="mt-5 text-center">
+            <button
+              type="button"
+              onClick={() => setShowAll((v) => !v)}
+              className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-slate-500 hover:bg-slate-50"
+            >
+              {showAll ? "Show fewer reviews" : `More reviews (${REVIEWS.length - 3})`}
+              <ChevronDown className={`h-4 w-4 transition-transform ${showAll ? "rotate-180" : ""}`} />
+            </button>
+          </div>
+        )}
 
         {/* Write a review (verified buyers only) */}
         <div className="mt-8 text-center">
