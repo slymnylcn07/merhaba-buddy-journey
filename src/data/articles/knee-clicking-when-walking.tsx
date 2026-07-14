@@ -5,7 +5,6 @@ import { InfoBox, TipsList, JournalQuote, StatHighlight } from "@/components/Art
 import heroImage from "@/assets/article-hero-knee-clicking-walking.jpg";
 import sectionWalkingMechanics from "@/assets/article-section-walking-knee-mechanics.jpg";
 import sectionBendingSquatting from "@/assets/article-section-bending-squatting-motion.jpg";
-import sectionClickingVsPopping from "@/assets/article-section-clicking-vs-popping.jpg";
 import sectionCartilageTracking from "@/assets/article-section-cartilage-tracking.jpg";
 import sectionReduceClickingTips from "@/assets/article-section-reduce-clicking-tips.jpg";
 
@@ -169,12 +168,52 @@ export const kneeClickingWhenWalking = {
         </p>
 
         <figure className="my-8">
-          <img
-            src={sectionClickingVsPopping}
-            alt="Diagram comparing clicking, popping, and snapping knee sounds with descriptions"
+          <svg
+            viewBox="0 0 720 250"
             className="w-full h-auto rounded-xl shadow-sm"
-            loading="lazy"
-          />
+            role="img"
+            aria-label="Comparison of three types of knee sounds: clicking is quiet, repetitive and rhythmic; popping is louder and usually a single event; snapping is a snapping sensation, often a tendon gliding over bone."
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" }}
+          >
+            <rect x="0.5" y="0.5" width="719" height="249" rx="16" fill="#F8FAFC" stroke="#E2E8F0" />
+            <text x="360" y="42" textAnchor="middle" fontSize="22" fontWeight="700" fill="#0F172A">
+              Three Types of Knee Sounds
+            </text>
+            <line x1="90" y1="60" x2="630" y2="60" stroke="#E2E8F0" strokeWidth="1" />
+
+            {/* CLICKING */}
+            <circle cx="116" cy="100" r="7" fill="#F97316" />
+            <circle cx="140" cy="100" r="7" fill="#F97316" />
+            <circle cx="164" cy="100" r="7" fill="#F97316" />
+            <text x="140" y="150" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">CLICKING</text>
+            <text x="140" y="176" textAnchor="middle" fontSize="13" fill="#64748B">Quiet, repetitive and</text>
+            <text x="140" y="194" textAnchor="middle" fontSize="13" fill="#64748B">rhythmic — often with</text>
+            <text x="140" y="212" textAnchor="middle" fontSize="13" fill="#64748B">each step or bend</text>
+
+            {/* POPPING */}
+            <g stroke="#F97316" strokeWidth="3.5" strokeLinecap="round">
+              <line x1="360" y1="77" x2="360" y2="89" />
+              <line x1="360" y1="111" x2="360" y2="123" />
+              <line x1="337" y1="100" x2="349" y2="100" />
+              <line x1="371" y1="100" x2="383" y2="100" />
+              <line x1="343.6" y1="83.6" x2="352.1" y2="92.1" />
+              <line x1="367.9" y1="107.9" x2="376.4" y2="116.4" />
+              <line x1="376.4" y1="83.6" x2="367.9" y2="92.1" />
+              <line x1="352.1" y1="107.9" x2="343.6" y2="116.4" />
+            </g>
+            <circle cx="360" cy="100" r="5" fill="#F97316" />
+            <text x="360" y="150" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">POPPING</text>
+            <text x="360" y="176" textAnchor="middle" fontSize="13" fill="#64748B">Louder, usually a</text>
+            <text x="360" y="194" textAnchor="middle" fontSize="13" fill="#64748B">single one-off “pop”</text>
+
+            {/* SNAPPING */}
+            <polygon points="585,80 569,103 580,103 575,120 593,95 582,95" fill="#F97316" />
+            <text x="580" y="150" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">SNAPPING</text>
+            <text x="580" y="176" textAnchor="middle" fontSize="13" fill="#64748B">A snapping feeling —</text>
+            <text x="580" y="194" textAnchor="middle" fontSize="13" fill="#64748B">often a tendon</text>
+            <text x="580" y="212" textAnchor="middle" fontSize="13" fill="#64748B">gliding over bone</text>
+          </svg>
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
             Three distinct types of knee sounds and their typical characteristics
           </figcaption>
@@ -473,6 +512,10 @@ export const kneeClickingWhenWalking = {
       {
         question: "Why does my knee click when walking up stairs?",
         answer: "Stair climbing places 3-4 times your body weight in force through the kneecap joint. This increased load presses the kneecap more firmly into its groove, amplifying normal clicking sounds from tracking variations, cartilage contact, or tendon movement.",
+      },
+      {
+        question: "Why does my knee click when I squat?",
+        answer: "Squatting bends the knee deeply under load, which presses the kneecap firmly into its groove and can make normal clicking or grinding sounds more noticeable, especially near the bottom of the movement. On its own, painless clicking when you squat is usually harmless and often relates to kneecap tracking or tendons gliding over bone. Squat within a comfortable range, keep the movement slow and controlled, and pay closer attention if the clicking comes with pain, catching, swelling, or a feeling that the knee gives way.",
       },
       {
         question: "Is knee clicking when bending down something to worry about?",
