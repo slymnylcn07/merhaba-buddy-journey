@@ -433,7 +433,6 @@ const FeaturedGuideCard = ({ guide }: { guide: typeof guides[0] }) => (
       <div className="p-5 md:p-6">
         <div className="flex items-center gap-2 mb-3">
           <span className="text-xs font-medium text-blue-600 uppercase tracking-wider">Featured</span>
-          <span className="text-slate-300">?</span>
           <span className="inline-flex items-center gap-1 text-xs text-blue-600">
             <Clock className="h-3 w-3" />
             {guide.readTime} min
@@ -735,32 +734,40 @@ const Guides = () => {
                 <div className="absolute inset-x-16 bottom-8 h-28 rounded-full bg-blue-500/30 blur-3xl" />
 
                 <div className="relative rounded-[2.4rem] border border-white/10 bg-white/10 p-3 shadow-[0_45px_120px_-70px_rgba(37,99,235,0.75)] backdrop-blur-xl sm:p-4">
-                  <div className="grid gap-3 sm:grid-cols-[1.05fr_0.95fr]">
-                    <Link to="/guides/do-knee-massagers-work" className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white">
-                      <img
-                        src={thumbMassagerExpectations}
-                        alt="Do knee massagers work guide"
-                        className="h-72 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[390px]"
-                      />
-                    </Link>
+                  <Link
+                    to="/knee-quiz"
+                    className="group block overflow-hidden rounded-[2rem] bg-white p-6 shadow-lg transition hover:shadow-xl sm:p-8"
+                  >
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-blue-700">
+                      <Sparkles className="h-3.5 w-3.5" />
+                      60-second quiz
+                    </span>
 
-                    <div className="grid gap-3">
-                      <Link to="/guides/heat-vs-ice-for-knees" className="group overflow-hidden rounded-[1.6rem] border border-white/10 bg-white">
-                        <img
-                          src={thumbHeatVsIce}
-                          alt="Heat vs ice for knees guide"
-                          className="h-36 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[188px]"
-                        />
-                      </Link>
-                      <Link to="/guides/daily-knee-care-routine" className="group overflow-hidden rounded-[1.6rem] border border-white/10 bg-white">
-                        <img
-                          src={thumbDailyRoutineNew}
-                          alt="Daily knee care routine guide"
-                          className="h-36 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[188px]"
-                        />
-                      </Link>
+                    <h3 className="mt-4 text-2xl font-semibold leading-snug tracking-[-0.02em] text-slate-950 sm:text-3xl">
+                      Not sure where to start?
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-600 sm:text-base">
+                      Answer a few quick questions about your knees and we will point you to the guides and routine that fit your situation.
+                    </p>
+
+                    <div className="mt-5 grid gap-2">
+                      {[
+                        "Where your pain shows up",
+                        "When it bothers you most",
+                        "What you have already tried",
+                      ].map((item) => (
+                        <span key={item} className="flex items-center gap-2 text-sm text-slate-600">
+                          <Check className="h-4 w-4 flex-shrink-0 text-blue-600" />
+                          {item}
+                        </span>
+                      ))}
                     </div>
-                  </div>
+
+                    <span className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white transition group-hover:bg-blue-700 sm:w-auto sm:px-8">
+                      Take the knee quiz
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                    </span>
+                  </Link>
 
                   <div className="mt-3 grid grid-cols-2 gap-3">
                     <div className="rounded-2xl bg-white/95 p-4 text-slate-950 shadow-sm">
@@ -833,7 +840,6 @@ const Guides = () => {
                             <div className="p-5 md:p-6">
                               <div className="flex items-center gap-2 mb-3">
                                 <span className="text-xs font-medium text-primary uppercase tracking-wider">Featured</span>
-                                <span className="text-slate-300">?</span>
                                 <span className="inline-flex items-center gap-1 text-xs text-blue-600">
                                   <Clock className="h-3 w-3" />
                                   {guide.readTime} min
@@ -907,7 +913,6 @@ const Guides = () => {
                           <div className="p-5">
                             <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
                               <span>Updated {formatGuideDate(guide.lastModified)}</span>
-                              <span className="text-slate-300">?</span>
                               <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" />{guide.readTime} min</span>
                             </div>
                             <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950 transition-colors group-hover:text-blue-600">{guide.title}</h3>
