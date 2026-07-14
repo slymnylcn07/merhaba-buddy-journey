@@ -2,20 +2,20 @@ import { ArticleExport } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/article-hero-knee-pain-locations.jpg";
-import diagramFrontKnee from "@/assets/diagram-front-knee-zone.jpg";
-import diagramInnerKnee from "@/assets/diagram-inner-knee-zone.jpg";
-import diagramOuterKnee from "@/assets/diagram-outer-knee-zone.jpg";
-import diagramBackKnee from "@/assets/diagram-back-knee-zone.jpg";
-import diagramBelowKneecap from "@/assets/diagram-below-kneecap-zone.jpg";
-import diagramAboveKneecap from "@/assets/diagram-above-kneecap-zone.jpg";
-import diagramITBand from "@/assets/diagram-it-band-zone.jpg";
-import diagramJointLine from "@/assets/diagram-joint-line-zone.jpg";
+import diagramFrontKnee from "@/assets/fig-zone-front-v2.svg";
+import diagramInnerKnee from "@/assets/fig-zone-inner-v2.svg";
+import diagramOuterKnee from "@/assets/fig-zone-outer-v2.svg";
+import diagramBackKnee from "@/assets/fig-zone-back-v2.svg";
+import diagramBelowKneecap from "@/assets/fig-zone-above-below-v2.svg";
+import diagramAboveKneecap from "@/assets/fig-zone-above-below-v2.svg";
+import diagramITBand from "@/assets/fig-zone-outer-v2.svg";
+import diagramJointLine from "@/assets/fig-zone-above-below-v2.svg";
 import diagramLocationChartFront from "@/assets/diagram-knee-pain-location-chart-front.jpg";
 import diagramPainMapZones from "@/assets/fig-knee-zones-map-v2.svg";
 import diagramAnatomyBonesLigaments from "@/assets/fig-knee-anatomy-v2.svg";
-import diagramSideKneePain from "@/assets/diagram-side-knee-pain-locations.jpg";
-import diagramBackKneePainViz from "@/assets/diagram-back-knee-pain-visualization.jpg";
-import diagramBelowKneecapPressure from "@/assets/diagram-below-kneecap-pressure.jpg";
+import diagramSideKneePain from "@/assets/fig-zone-outer-v2.svg";
+import diagramBackKneePainViz from "@/assets/fig-zone-back-v2.svg";
+import diagramBelowKneecapPressure from "@/assets/fig-zone-above-below-v2.svg";
 
 const SectionDivider = () => (
   <hr className="my-10 border-t border-border/40" />

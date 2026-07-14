@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import heroImage from "@/assets/article-hero-knee-location-map.jpg";
 import kneePainChartZones from "@/assets/fig-knee-zones-map-v2.svg";
-import mapFrontKnee from "@/assets/map-zone-front-knee.jpg";
-import mapInnerKnee from "@/assets/map-zone-inner-knee.jpg";
-import mapOuterKnee from "@/assets/map-zone-outer-knee.jpg";
-import mapBackKnee from "@/assets/map-zone-back-knee.jpg";
-import mapBelowKneecap from "@/assets/map-zone-below-kneecap.jpg";
-import mapAboveKneecap from "@/assets/map-zone-above-kneecap.jpg";
-import mapITBand from "@/assets/map-zone-it-band.jpg";
-import mapJointLine from "@/assets/map-zone-joint-line.jpg";
+import mapFrontKnee from "@/assets/fig-zone-front-v2.svg";
+import mapInnerKnee from "@/assets/fig-zone-inner-v2.svg";
+import mapOuterKnee from "@/assets/fig-zone-outer-v2.svg";
+import mapBackKnee from "@/assets/fig-zone-back-v2.svg";
+import mapBelowKneecap from "@/assets/fig-zone-above-below-v2.svg";
+import mapAboveKneecap from "@/assets/fig-zone-above-below-v2.svg";
+import mapITBand from "@/assets/fig-zone-outer-v2.svg";
+import mapJointLine from "@/assets/fig-zone-above-below-v2.svg";
 
 const SectionDivider = () => (
   <hr className="my-10 border-t border-border/40" />

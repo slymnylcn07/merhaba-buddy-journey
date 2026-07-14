@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#FFFFFF"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">Inner side of the knee</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">Medial side: the edge that faces your other knee</text>
+  <path d="M390 100 C 460 96 508 116 512 175 L 518 290 C 520 330 512 360 512 400 C 512 460 520 500 516 530 L 384 530 C 380 500 388 460 388 400 C 388 360 380 330 382 290 L 388 175 C 388 116 390 100 390 100 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="3"/>
+  <ellipse cx="450" cy="280" rx="34" ry="42" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <path d="M514 240 C 526 280 526 320 518 360" stroke="#16A34A" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <ellipse cx="518" cy="300" rx="30" ry="56" fill="#22C55E" opacity="0.35"/>
+  <text x="640" y="272" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#166534">MCL</text>
+  <text x="640" y="294" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">inner side ligament, resists</text>
+  <text x="640" y="314" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">the knee buckling inward</text>
+  <line x1="632" y1="266" x2="536" y2="286" stroke="#86EFAC" stroke-width="2"/>
+  <path d="M492 330 L 522 330" stroke="#0EA5E9" stroke-width="8" stroke-linecap="round"/>
+  <text x="640" y="392" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#0369A1">Inner joint line</text>
+  <text x="640" y="414" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">where the medial meniscus sits</text>
+  <line x1="632" y1="386" x2="528" y2="336" stroke="#7DD3FC" stroke-width="2"/>
+  <text x="130" y="300" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#334155">Most common site</text>
+  <text x="130" y="322" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">Inner knee pain is the most</text>
+  <text x="130" y="342" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">frequent location overall</text>
+  <text x="450" y="556" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B" font-style="italic">Sharp inner pain with twisting, locking or giving way deserves assessment.</text>
+</svg>

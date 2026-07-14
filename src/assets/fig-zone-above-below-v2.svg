@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#FFFFFF"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">Above and below the kneecap</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">Two different tendons, two different patterns</text>
+
+  <path d="M390 100 C 460 96 508 116 512 175 L 518 290 C 520 330 512 360 512 400 C 512 460 520 500 516 530 L 384 530 C 380 500 388 460 388 400 C 388 360 380 330 382 290 L 388 175 C 388 116 390 100 390 100 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="3"/>
+
+  <!-- ABOVE: quad tendon -->
+  <path d="M418 168 C 440 200 462 200 482 168" stroke="#A855F7" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <ellipse cx="450" cy="184" rx="52" ry="26" fill="#A855F7" opacity="0.28"/>
+  <text x="620" y="176" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#6B21A8">ABOVE: quadriceps tendon</text>
+  <text x="620" y="198" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">Aches after squats and lunges.</text>
+  <text x="620" y="218" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">Often a load or volume jump.</text>
+  <line x1="612" y1="170" x2="498" y2="180" stroke="#C084FC" stroke-width="2"/>
+
+  <!-- kneecap -->
+  <ellipse cx="450" cy="268" rx="40" ry="50" fill="#FEF3C7" stroke="#D97706" stroke-width="4"/>
+  <text x="450" y="274" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" fill="#92400E">kneecap</text>
+
+  <!-- BELOW: patellar tendon -->
+  <path d="M448 322 L 452 402" stroke="#0EA5E9" stroke-width="16" stroke-linecap="round"/>
+  <ellipse cx="450" cy="362" rx="34" ry="42" fill="#0EA5E9" opacity="0.28"/>
+  <text x="620" y="374" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#0369A1">BELOW: patellar tendon</text>
+  <text x="620" y="396" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">Jumper's knee. Sore with jumping,</text>
+  <text x="620" y="416" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">landing and downhill walking.</text>
+  <line x1="612" y1="368" x2="486" y2="364" stroke="#7DD3FC" stroke-width="2"/>
+
+  <!-- joint line -->
+  <path d="M396 320 L 504 320" stroke="#16A34A" stroke-width="7" stroke-linecap="round"/>
+  <text x="130" y="332" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#166534">Joint line</text>
+  <text x="130" y="354" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">the gap where meniscus sits.</text>
+  <text x="130" y="374" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">Tenderness right on this line</text>
+  <text x="130" y="394" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">points to the joint itself.</text>
+  <line x1="300" y1="326" x2="390" y2="322" stroke="#86EFAC" stroke-width="2"/>
+
+  <text x="450" y="556" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B" font-style="italic">Press gently: the spot that reproduces your pain usually names the structure.</text>
+</svg>

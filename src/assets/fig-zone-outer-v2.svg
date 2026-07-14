@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#FFFFFF"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">Outer side of the knee</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">Lateral side: the edge that faces away from your body</text>
+  <path d="M390 100 C 460 96 508 116 512 175 L 518 290 C 520 330 512 360 512 400 C 512 460 520 500 516 530 L 384 530 C 380 500 388 460 388 400 C 388 360 380 330 382 290 L 388 175 C 388 116 390 100 390 100 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="3"/>
+  <ellipse cx="450" cy="280" rx="34" ry="42" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <path d="M392 120 C 378 180 376 240 382 290" stroke="#059669" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.85"/>
+  <text x="130" y="180" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#065F46">IT band</text>
+  <text x="130" y="202" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">runs down from the hip</text>
+  <line x1="248" y1="174" x2="378" y2="200" stroke="#6EE7B7" stroke-width="2"/>
+  <ellipse cx="384" cy="300" rx="28" ry="34" fill="#DC2626" opacity="0.6"/>
+  <ellipse cx="384" cy="300" rx="42" ry="50" fill="#DC2626" opacity="0.2"/>
+  <text x="130" y="316" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#B91C1C">Classic IT band spot</text>
+  <text x="130" y="338" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">runners and cyclists feel it here,</text>
+  <text x="130" y="358" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">often at a predictable distance</text>
+  <line x1="300" y1="310" x2="356" y2="304" stroke="#FCA5A5" stroke-width="2"/>
+  <path d="M386 240 C 372 280 372 320 380 360" stroke="#EA580C" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <text x="640" y="330" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#9A3412">LCL</text>
+  <text x="640" y="352" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">outer side ligament</text>
+  <line x1="632" y1="324" x2="394" y2="320" stroke="#FDBA74" stroke-width="2"/>
+  <text x="450" y="556" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B" font-style="italic">Do not roll directly on the sore outer spot. Work the hip and upper thigh instead.</text>
+</svg>

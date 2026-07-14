@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#FFFFFF"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">Back of the knee</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">Behind the joint, viewed from the back</text>
+  <path d="M390 100 C 460 96 508 116 512 175 L 518 290 C 520 330 512 360 512 400 C 512 460 520 500 516 530 L 384 530 C 380 500 388 460 388 400 C 388 360 380 330 382 290 L 388 175 C 388 116 390 100 390 100 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="3"/>
+  <path d="M404 130 C 414 200 418 240 416 268" stroke="#F97316" stroke-width="15" fill="none" stroke-linecap="round" opacity="0.75"/>
+  <path d="M496 130 C 486 200 482 240 484 268" stroke="#F97316" stroke-width="15" fill="none" stroke-linecap="round" opacity="0.75"/>
+  <text x="640" y="180" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#9A3412">Hamstring tendons</text>
+  <text x="640" y="202" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">come down each side from behind</text>
+  <line x1="632" y1="174" x2="494" y2="200" stroke="#FDBA74" stroke-width="2"/>
+  <ellipse cx="450" cy="300" rx="52" ry="46" fill="#8B5CF6" opacity="0.5"/>
+  <ellipse cx="450" cy="300" rx="72" ry="64" fill="#8B5CF6" opacity="0.18"/>
+  <text x="450" y="306" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">popliteal fossa</text>
+  <text x="130" y="292" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#5B21B6">Popliteal fossa</text>
+  <text x="130" y="314" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">the hollow BEHIND the knee</text>
+  <text x="130" y="334" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">tightness, swelling, Baker's cyst</text>
+  <line x1="300" y1="286" x2="400" y2="296" stroke="#C4B5FD" stroke-width="2"/>
+  <path d="M424 352 C 432 400 434 440 430 480" stroke="#22C55E" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M476 352 C 468 400 466 440 470 480" stroke="#22C55E" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <text x="640" y="430" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#166534">Calf muscles</text>
+  <text x="640" y="452" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B">start just below the joint</text>
+  <line x1="632" y1="424" x2="482" y2="420" stroke="#86EFAC" stroke-width="2"/>
+  <text x="450" y="556" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B" font-style="italic">A visible bulge behind the knee, or calf pain with swelling, needs prompt assessment.</text>
+</svg>
