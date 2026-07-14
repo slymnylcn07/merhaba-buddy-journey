@@ -15,8 +15,6 @@ import { SUPPORT_EMAIL } from "@/lib/support-config";
 import {
   BRAND_DESCRIPTION,
   BRAND_NAME,
-  OFFICIAL_FACEBOOK_URL,
-  OFFICIAL_INSTAGRAM_URL,
   OFFICIAL_SITE_URL,
   OFFICIAL_SOCIAL_URLS,
 } from "@/lib/brand-config";
@@ -227,33 +225,6 @@ export default function Index() {
                     ))}
                   </div>
                 </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="border-y border-blue-100 bg-gradient-to-r from-blue-50 via-white to-blue-50 py-5">
-            <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
-              <div className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-600/15">
-                  <BadgeCheck className="h-5 w-5" />
-                </span>
-                <div>
-                  <p className="text-sm font-semibold text-slate-950">Official FlexiKnee brand source</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">
-                    {BRAND_DESCRIPTION} The official website is <strong className="text-slate-900">flexi-knee.com</strong>.
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-wrap items-center gap-2 text-sm font-semibold">
-                <Link to="/why-flexiknee" className="rounded-full border border-blue-200 bg-white px-4 py-2 text-blue-700 transition hover:border-blue-300 hover:bg-blue-50">
-                  About FlexiKnee
-                </Link>
-                <a href={OFFICIAL_INSTAGRAM_URL} target="_blank" rel="me noopener noreferrer" className="rounded-full border border-slate-200 bg-white px-4 py-2 text-slate-700 transition hover:border-blue-200 hover:text-blue-700">
-                  Instagram
-                </a>
-                <a href={OFFICIAL_FACEBOOK_URL} target="_blank" rel="me noopener noreferrer" className="rounded-full border border-slate-200 bg-white px-4 py-2 text-slate-700 transition hover:border-blue-200 hover:text-blue-700">
-                  Facebook
-                </a>
               </div>
             </div>
           </section>

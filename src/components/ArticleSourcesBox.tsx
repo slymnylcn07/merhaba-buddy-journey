@@ -12,11 +12,11 @@ interface ArticleSourcesBoxProps extends PropsWithChildren {
 export function ArticleSourcesBox({ children, note }: ArticleSourcesBoxProps) {
   return (
     <section className="not-prose my-10 rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-sm sm:p-8">
-      <div className="flex items-center gap-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
-          <BookOpenCheck className="h-5 w-5" />
+      <div className="flex items-center gap-2">
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
+          <BookOpenCheck className="h-4 w-4" />
         </span>
-        <h2 className="m-0 text-2xl font-semibold tracking-[-0.025em] text-slate-950 sm:text-3xl">
+        <h2 className="m-0 leading-tight text-2xl font-semibold tracking-[-0.025em] text-slate-950 sm:text-3xl">
           Sources and Further Reading
         </h2>
       </div>
