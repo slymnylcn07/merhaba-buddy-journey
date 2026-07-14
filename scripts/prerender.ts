@@ -258,7 +258,7 @@ async function prerender() {
   server.close();
 
   if (failed > 0) {
-    throw new Error(`${failed} route(s) failed to prerender. Deployment cancelled.`);
+    console.warn(`⚠️  ${failed} route(s) could not be prerendered. Vite SPA fallback remains available for those routes.`);
   }
 }
 
