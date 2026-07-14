@@ -19,7 +19,10 @@ import {
   Briefcase,
   Dumbbell,
   Sofa,
-  Users
+  Users,
+  Sparkles,
+  ArrowRight,
+  CheckCircle2
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { LIMITED_WARRANTY_YEARS, RETURN_WINDOW_DAYS, SUPPORT_RESPONSE_TIME } from "@/lib/policy-config";
@@ -111,6 +114,12 @@ const WhyFlexiKnee = () => {
     { icon: Dumbbell, text: "Post-workout recovery routines" },
     { icon: Sofa, text: "At-home relaxation and comfort sessions" },
     { icon: Users, text: "Anyone who wants a simple, consistent knee-care habit" }
+  ];
+
+  const differenceHighlights = [
+    "Cordless daily use",
+    "Clean touch controls",
+    "Secure comfort-first fit"
   ];
 
   const faqs = [
@@ -262,39 +271,48 @@ const WhyFlexiKnee = () => {
         <div className="container px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-10">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-blue-200">Refined around the routine</p>
               <h2 className="mb-4 text-3xl font-semibold tracking-[-0.035em] text-white md:text-4xl">
                 Designed to feel considered in every detail
               </h2>
               <p className="mx-auto max-w-2xl text-slate-300">
-                A cordless form, simple touch controls and an adjustable wraparound fit come together in a device that feels at home in your routine.
+                Each view below shows the same idea from a different angle: a calmer evening setup, a practical daytime rhythm and a fit that feels simple to adjust.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {[
                 {
-                  image: "/images/flexiknee-lifestyle-home.webp",
-                  title: "Comfortable at home",
-                  text: "A calm at-home setup makes FlexiKnee easier to fit into a short daily routine.",
+                  image: "/images/product-stories/massager-evening-reading.png",
+                  alt: "FlexiKnee used during a calm evening reading routine",
+                  title: "A calmer evening setup",
+                  text: "Soft lighting, a quiet seat and an easy session length make the product feel natural in a wind-down routine.",
                 },
                 {
-                  image: "/images/flexiknee-lifestyle-work.webp",
-                  title: "Works around real schedules",
-                  text: "The product is designed for people who want something practical after work, training or long standing days.",
+                  image: "/images/product-stories/massager-workday-routine.png",
+                  alt: "FlexiKnee worn while working from home",
+                  title: "Fits around the day",
+                  text: "The cordless format supports flexible use around work, breaks and the moments when your schedule is already full.",
                 },
                 {
-                  image: "/images/shopify-gallery/flexiknee-gallery-07-system.webp",
-                  title: "Part of a wider system",
-                  text: "Use the main device on its own or explore complementary FlexiKnee products for movement and everyday support.",
+                  image: "/images/product-stories/massager-closeup-comfort.png",
+                  alt: "Close-up of FlexiKnee wraparound fit and controls",
+                  title: "Comfort-first in the details",
+                  text: "The wraparound shape, adjustable straps and clean control layout help the device feel straightforward from the first use.",
                 },
               ].map((item, index) => (
                 <article 
                   key={item.title}
-                  className="group overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 shadow-xl shadow-black/10 opacity-0 translate-y-6 transition-all duration-500 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.07] [.animate-in_&]:opacity-100 [.animate-in_&]:translate-y-0"
+                  className="group overflow-hidden rounded-[1.9rem] border border-white/10 bg-white/5 shadow-xl shadow-black/10 opacity-0 translate-y-6 transition-all duration-500 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.07] [.animate-in_&]:opacity-100 [.animate-in_&]:translate-y-0"
                   style={{ transitionDelay: `${index * 120}ms` }}
                 >
-                  <img src={item.image} alt={item.title} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+                  <div className="overflow-hidden">
+                    <img src={item.image} alt={item.alt} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+                  </div>
                   <div className="p-5">
+                    <div className="mb-3 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-200">
+                      Detail {index + 1}
+                    </div>
                     <h3 className="text-lg font-semibold text-white">{item.title}</h3>
                     <p className="mt-2 text-sm leading-7 text-slate-300">{item.text}</p>
                   </div>
@@ -312,29 +330,47 @@ const WhyFlexiKnee = () => {
         className="bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.16),transparent_42%)] py-16 opacity-0 translate-y-8 transition-all duration-700 ease-out md:py-24 [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
       >
         <div className="container px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-                What makes FlexiKnee different
-              </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">
-                Thoughtful controls, cordless use and a comfort-first fit, without unnecessary complexity.
-              </p>
+          <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200/70 bg-white/85 p-6 shadow-[0_30px_90px_-45px_rgba(15,23,42,0.32)] backdrop-blur md:p-10">
+            <div className="mb-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+              <div>
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  Premium details
+                </div>
+                <h2 className="text-3xl font-semibold tracking-[-0.04em] text-slate-950 md:text-4xl">
+                  What makes FlexiKnee different
+                </h2>
+                <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 md:text-lg">
+                  A cleaner, more elevated take on an at-home knee routine: cordless use, intuitive controls and a fit designed to feel easy from the first session.
+                </p>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-3">
+                {differenceHighlights.map((item) => (
+                  <div key={item} className="rounded-2xl border border-slate-200 bg-slate-50/80 px-4 py-4 text-sm font-medium text-slate-700 shadow-sm">
+                    <div className="mb-2 flex items-center gap-2 text-blue-600">
+                      <CheckCircle2 className="h-4 w-4" />
+                      <span className="text-xs font-semibold uppercase tracking-[0.18em]">Included</span>
+                    </div>
+                    <p>{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {features.map((feature, index) => (
                 <Card 
                   key={index} 
-                  className="border-border/50 bg-card hover:shadow-lg transition-all duration-500 opacity-0 translate-y-6 [.animate-in_&]:opacity-100 [.animate-in_&]:translate-y-0"
+                  className="border-slate-200/80 bg-white hover:-translate-y-1 hover:shadow-xl transition-all duration-500 opacity-0 translate-y-6 [.animate-in_&]:opacity-100 [.animate-in_&]:translate-y-0"
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 transition-transform duration-300 hover:scale-110">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 transition-transform duration-300 hover:scale-110">
                       <feature.icon className="h-6 w-6 text-primary" />
                     </div>
-                    <h3 className="font-semibold text-lg mb-2 text-foreground">{feature.title}</h3>
-                    <p className="text-muted-foreground text-sm">{feature.description}</p>
+                    <h3 className="mb-2 text-lg font-semibold text-slate-950">{feature.title}</h3>
+                    <p className="text-sm leading-7 text-slate-600">{feature.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -453,18 +489,41 @@ const WhyFlexiKnee = () => {
         className="bg-slate-950 py-16 text-white opacity-0 translate-y-8 transition-all duration-700 ease-out md:py-24 [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0"
       >
         <div className="container px-4">
-          <div className="mx-auto max-w-3xl rounded-[2.5rem] border border-white/10 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.28),transparent_52%)] px-6 py-14 text-center shadow-2xl shadow-blue-950/30 md:px-12">
+          <div className="mx-auto max-w-4xl rounded-[2.5rem] border border-white/10 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.28),transparent_52%)] px-6 py-14 text-center shadow-2xl shadow-blue-950/30 md:px-12">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-200">
+              <Sparkles className="h-4 w-4" />
+              Knee comfort quiz
+            </div>
             <h2 className="mb-4 text-3xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
-              Bring a calmer routine home.
+              Not sure where to start? Take the 60-second quiz.
             </h2>
-            <p className="mb-8 text-lg leading-8 text-slate-300">
-              See the product, compare the details and choose the routine that fits your day.
+            <p className="mx-auto mb-8 max-w-2xl text-lg leading-8 text-slate-300">
+              Answer a few quick questions and we will point you to the routine, guide and FlexiKnee option that best fits your day.
             </p>
-            <Button asChild size="lg" className="text-lg px-10 h-14 font-semibold transition-transform duration-300 hover:scale-105">
-              <Link to="/product/knee-massager-smart-red-light-and-massage-therapy">
-                Go to Product Page
-              </Link>
-            </Button>
+            <div className="mb-8 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-200">
+              {[
+                "3 quick questions",
+                "Routine matched to your answers",
+                "Product and guide recommendations",
+              ].map((item) => (
+                <span key={item} className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
+                  {item}
+                </span>
+              ))}
+            </div>
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button asChild size="lg" className="h-14 px-10 text-lg font-semibold transition-transform duration-300 hover:scale-105">
+                <Link to="/knee-quiz">
+                  Start the Quiz
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="ghost" size="lg" className="h-14 px-8 text-base font-semibold text-slate-200 hover:bg-white/10 hover:text-white">
+                <Link to="/product/knee-massager-smart-red-light-and-massage-therapy">
+                  View the Product
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
