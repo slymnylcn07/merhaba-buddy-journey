@@ -3,9 +3,7 @@ import PremiumCTA from "@/components/PremiumCTA";
 import { InfoBox, TipsList, JournalQuote, StatHighlight } from "@/components/ArticleCharts";
 
 import heroImage from "@/assets/article-hero-knee-clicking-walking.jpg";
-import sectionWalkingMechanics from "@/assets/article-section-walking-knee-mechanics.jpg";
 import sectionBendingSquatting from "@/assets/article-section-bending-squatting-motion.jpg";
-import sectionCartilageTracking from "@/assets/article-section-cartilage-tracking.jpg";
 import sectionReduceClickingTips from "@/assets/article-section-reduce-clicking-tips.jpg";
 
 const PRODUCT_URL = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
@@ -65,12 +63,32 @@ export const kneeClickingWhenWalking = {
         </ul>
 
         <figure className="my-8">
-          <img
-            src={sectionWalkingMechanics}
-            alt="Illustration showing knee joint mechanics during walking with labeled cartilage, kneecap, and synovial fluid"
+          <svg
+            viewBox="0 0 720 250"
             className="w-full h-auto rounded-xl shadow-sm"
-            loading="lazy"
-          />
+            role="img"
+            aria-label="Parts of the knee that can make sounds: the kneecap glides in a groove, cartilage surfaces can catch slightly, and synovial fluid can release tiny bubbles."
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" }}
+          >
+            <rect x="0.5" y="0.5" width="719" height="249" rx="16" fill="#F8FAFC" stroke="#E2E8F0" />
+            <text x="360" y="42" textAnchor="middle" fontSize="21" fontWeight="700" fill="#0F172A">
+              Parts of the Knee That Can Make Sounds
+            </text>
+            <line x1="70" y1="60" x2="650" y2="60" stroke="#E2E8F0" strokeWidth="1" />
+            <ellipse cx="140" cy="100" rx="17" ry="23" fill="#FDBA74" stroke="#F97316" strokeWidth="2.5" />
+            <text x="140" y="150" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">KNEECAP</text>
+            <text x="140" y="176" textAnchor="middle" fontSize="13" fill="#64748B">Glides in a groove</text>
+            <text x="140" y="194" textAnchor="middle" fontSize="13" fill="#64748B">as the knee bends</text>
+            <path d="M335 104 Q360 84 385 104 Q360 116 335 104 Z" fill="#FDBA74" stroke="#F97316" strokeWidth="2.5" />
+            <text x="360" y="150" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">CARTILAGE</text>
+            <text x="360" y="176" textAnchor="middle" fontSize="13" fill="#64748B">Smooth surfaces that</text>
+            <text x="360" y="194" textAnchor="middle" fontSize="13" fill="#64748B">can catch slightly</text>
+            <path d="M580 76 Q596 104 580 118 Q564 104 580 76 Z" fill="#F97316" />
+            <text x="580" y="150" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">SYNOVIAL FLUID</text>
+            <text x="580" y="176" textAnchor="middle" fontSize="13" fill="#64748B">Lubricates; tiny</text>
+            <text x="580" y="194" textAnchor="middle" fontSize="13" fill="#64748B">bubbles can pop</text>
+          </svg>
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
             The knee joint involves multiple moving parts that can create sounds during everyday movement
           </figcaption>
@@ -347,12 +365,34 @@ export const kneeClickingWhenWalking = {
         </ul>
 
         <figure className="my-8">
-          <img
-            src={sectionCartilageTracking}
-            alt="Anatomical diagram showing normal vs misaligned kneecap tracking and cartilage surface"
+          <svg
+            viewBox="0 0 720 275"
             className="w-full h-auto rounded-xl shadow-sm"
-            loading="lazy"
-          />
+            role="img"
+            aria-label="Kneecap tracking and clicking: with normal tracking the kneecap stays centered in its groove and moves quietly; with misaligned tracking it pulls off-center and is more likely to click."
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" }}
+          >
+            <rect x="0.5" y="0.5" width="719" height="274" rx="16" fill="#F8FAFC" stroke="#E2E8F0" />
+            <text x="360" y="40" textAnchor="middle" fontSize="21" fontWeight="700" fill="#0F172A">
+              Kneecap Tracking and Clicking
+            </text>
+            <line x1="360" y1="60" x2="360" y2="230" stroke="#E2E8F0" strokeWidth="1" />
+            <rect x="156" y="86" width="8" height="92" rx="4" fill="#CBD5E1" />
+            <rect x="236" y="86" width="8" height="92" rx="4" fill="#CBD5E1" />
+            <ellipse cx="200" cy="132" rx="26" ry="21" fill="#FDBA74" stroke="#F97316" strokeWidth="2.5" />
+            <path d="M200 66 L200 82 M194 76 L200 82 L206 76" fill="none" stroke="#22C55E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <text x="200" y="208" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">NORMAL TRACKING</text>
+            <text x="200" y="232" textAnchor="middle" fontSize="13" fill="#64748B">Kneecap stays centered —</text>
+            <text x="200" y="250" textAnchor="middle" fontSize="13" fill="#64748B">quiet and smooth</text>
+            <rect x="476" y="86" width="8" height="92" rx="4" fill="#CBD5E1" />
+            <rect x="556" y="86" width="8" height="92" rx="4" fill="#CBD5E1" />
+            <ellipse cx="542" cy="132" rx="26" ry="21" fill="#FDBA74" stroke="#F97316" strokeWidth="2.5" />
+            <path d="M520 66 L532 80 M524 68 L532 80 L522 78" fill="none" stroke="#F97316" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <text x="520" y="208" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">MISALIGNED TRACKING</text>
+            <text x="520" y="232" textAnchor="middle" fontSize="13" fill="#64748B">Kneecap pulls off-center —</text>
+            <text x="520" y="250" textAnchor="middle" fontSize="13" fill="#64748B">more likely to click</text>
+          </svg>
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
             How kneecap tracking affects clicking: normal alignment vs misaligned tracking patterns
           </figcaption>
