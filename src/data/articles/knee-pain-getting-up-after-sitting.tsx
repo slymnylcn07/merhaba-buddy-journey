@@ -4,7 +4,6 @@ import PremiumCTA from "@/components/PremiumCTA";
 import { JournalQuote, StatHighlight, InfoBox, TipsList } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-pain-getting-up-sitting.jpg";
 import sectionJointCompression from "@/assets/article-section-joint-compression-sitting.jpg";
-import sectionSoftVsFirm from "@/assets/article-section-soft-vs-firm-sitting.jpg";
 import sectionMicroMovements from "@/assets/article-section-micro-movements-over-40.jpg";
 import sectionStandupSequence from "@/assets/article-section-standup-sequence.jpg";
 import sectionStiffnessPattern from "@/assets/article-section-stiffness-pattern-knee.jpg";
@@ -180,7 +179,36 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
         </p>
 
         <figure className="my-8">
-          <img src={sectionSoftVsFirm} alt="Comparison of seated postures on soft couch versus firm office chair showing different knee angles" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
+          <svg
+            viewBox="0 0 720 250"
+            className="w-full h-auto rounded-xl shadow-sm"
+            role="img"
+            aria-label="Soft, low seats let the knees drop below hip level, creating a deeper bend that is harder to rise from; firm, higher seats keep the knees near hip level and are easier to stand up from."
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" }}
+          >
+            <rect x="0.5" y="0.5" width="719" height="249" rx="16" fill="#F8FAFC" stroke="#E2E8F0" />
+            <text x="360" y="40" textAnchor="middle" fontSize="21" fontWeight="700" fill="#0F172A">
+              Soft, Low Seats vs Firm, Higher Seats
+            </text>
+            <line x1="360" y1="60" x2="360" y2="205" stroke="#E2E8F0" strokeWidth="1" />
+            {/* Couch (low) */}
+            <rect x="138" y="98" width="84" height="24" rx="6" fill="#FDE4C8" stroke="#F97316" strokeWidth="2" />
+            <rect x="132" y="116" width="96" height="18" rx="6" fill="#FDBA74" stroke="#F97316" strokeWidth="2" />
+            <rect x="128" y="108" width="10" height="26" rx="4" fill="#FDBA74" stroke="#F97316" strokeWidth="2" />
+            <rect x="222" y="108" width="10" height="26" rx="4" fill="#FDBA74" stroke="#F97316" strokeWidth="2" />
+            <text x="180" y="168" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">SOFT, LOW SEATS</text>
+            <text x="180" y="192" textAnchor="middle" fontSize="13" fill="#64748B">Knees drop below hip level</text>
+            <text x="180" y="210" textAnchor="middle" fontSize="13" fill="#64748B">— deeper bend, harder to rise</text>
+            {/* Chair (higher) */}
+            <rect x="514" y="80" width="12" height="42" rx="3" fill="#FDBA74" stroke="#F97316" strokeWidth="2" />
+            <rect x="506" y="116" width="48" height="12" rx="3" fill="#FDBA74" stroke="#F97316" strokeWidth="2" />
+            <line x1="510" y1="128" x2="510" y2="150" stroke="#F97316" strokeWidth="2.5" strokeLinecap="round" />
+            <line x1="550" y1="128" x2="550" y2="150" stroke="#F97316" strokeWidth="2.5" strokeLinecap="round" />
+            <text x="540" y="168" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">FIRM, HIGHER SEATS</text>
+            <text x="540" y="192" textAnchor="middle" fontSize="13" fill="#64748B">Knees near hip level</text>
+            <text x="540" y="210" textAnchor="middle" fontSize="13" fill="#64748B">— easier, less strain to stand</text>
+          </svg>
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">Soft, low seating creates deeper knee bend angles compared to firm, height-appropriate chairs</figcaption>
         </figure>
 

@@ -9,7 +9,6 @@ import sectionBarometricPressure from "@/assets/article-section-barometric-press
 import sectionColdStiffness from "@/assets/article-section-cold-stiffness-mechanism.jpg";
 import sectionFluidThickening from "@/assets/article-section-cold-fluid-thickening.jpg";
 import sectionColdTypes from "@/assets/article-section-cold-types-comparison.jpg";
-import sectionWarmthStrategies from "@/assets/article-section-warmth-strategies-cold.jpg";
 
 const articleContent = (
   <>
@@ -228,11 +227,39 @@ const articleContent = (
     </p>
 
     <figure className="my-8">
-      <img
-        src={sectionWarmthStrategies}
-        alt="Infographic showing four warmth-based comfort strategies for cold weather knee pain: apply warmth, layer up, warm up indoors, and stay hydrated"
+      <svg
+        viewBox="0 0 720 290"
         className="w-full h-auto rounded-xl shadow-sm"
-      />
+        role="img"
+        aria-label="Four warmth strategies for cold-weather knee pain: apply warmth for 15 to 20 minutes before going out, layer up with thermal knee sleeves, warm up indoors with 5 minutes of gentle movement, and stay hydrated with warm fluids to aid circulation."
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" }}
+      >
+        <rect x="0.5" y="0.5" width="719" height="289" rx="16" fill="#F8FAFC" stroke="#E2E8F0" />
+        <text x="360" y="40" textAnchor="middle" fontSize="21" fontWeight="700" fill="#0F172A">
+          Warmth Strategies for Cold-Weather Knee Pain
+        </text>
+        <line x1="70" y1="58" x2="650" y2="58" stroke="#E2E8F0" strokeWidth="1" />
+        {/* Apply warmth */}
+        <path d="M200 68 C212 84 209 97 200 105 C191 97 188 84 200 68 Z" fill="#F97316" />
+        <text x="200" y="134" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">APPLY WARMTH</text>
+        <text x="200" y="156" textAnchor="middle" fontSize="13" fill="#64748B">15–20 min before going out</text>
+        {/* Layer up */}
+        <ellipse cx="520" cy="90" rx="16" ry="20" fill="none" stroke="#F97316" strokeWidth="4" />
+        <text x="520" y="134" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">LAYER UP</text>
+        <text x="520" y="156" textAnchor="middle" fontSize="13" fill="#64748B">Thermal knee sleeves</text>
+        {/* Warm up indoors */}
+        <circle cx="200" cy="182" r="6" fill="#F97316" />
+        <path d="M200 189 L200 207 M191 196 L209 193 M200 207 L191 220 M200 207 L210 218" fill="none" stroke="#F97316" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        <text x="200" y="244" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">WARM UP INDOORS</text>
+        <text x="200" y="266" textAnchor="middle" fontSize="13" fill="#64748B">5 min gentle movement</text>
+        {/* Stay hydrated */}
+        <rect x="508" y="190" width="24" height="24" rx="3" fill="none" stroke="#F97316" strokeWidth="3" />
+        <path d="M532 196 q9 2 9 9 q0 7 -9 8" fill="none" stroke="#F97316" strokeWidth="3" strokeLinecap="round" />
+        <path d="M515 184 q4 -4 0 -9 M525 184 q4 -4 0 -9" fill="none" stroke="#F97316" strokeWidth="2" strokeLinecap="round" />
+        <text x="520" y="244" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">STAY HYDRATED</text>
+        <text x="520" y="266" textAnchor="middle" fontSize="13" fill="#64748B">Warm fluids aid circulation</text>
+      </svg>
       <figcaption className="text-sm text-muted-foreground mt-3 text-center">
         Simple warmth-based strategies to reduce cold-weather knee discomfort
       </figcaption>
