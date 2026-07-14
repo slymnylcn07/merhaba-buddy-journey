@@ -6,13 +6,13 @@ import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-knee-pain-after-exercise.jpg";
 import sectionKneeLoad from "@/assets/article-section-knee-load-exercise.jpg";
-import sectionMuscleVsJoint from "@/assets/article-section-muscle-vs-joint-pain.jpg";
+import sectionMuscleVsJoint from "@/assets/fig-muscle-vs-joint-pain-v2.svg";
 import sectionRunningImpact from "@/assets/article-section-running-impact-knee.jpg";
 import sectionRecoveryCycle from "@/assets/article-section-recovery-cycle.jpg";
-import imgDelayedPain from "@/assets/diagram-delayed-knee-pain-after-exercise.jpg";
+import imgDelayedPain from "@/assets/fig-delayed-soreness-v2.svg";
 import imgDuringVsAfter from "@/assets/diagram-knee-during-vs-after-exercise.jpg";
-import imgKneecapPressure from "@/assets/diagram-kneecap-pressure-exercise.jpg";
-import imgMuscleFatigue from "@/assets/diagram-muscle-fatigue-knee-exercise.jpg";
+import imgKneecapPressure from "@/assets/fig-kneecap-pressure-v2.svg";
+import imgMuscleFatigue from "@/assets/fig-muscle-fatigue-knee-v2.svg";
 import imgInflammation from "@/assets/diagram-knee-inflammation-after-exercise.jpg";
 
 const sourceLinkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";

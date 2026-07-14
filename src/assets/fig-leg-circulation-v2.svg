@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620">
+  <rect width="1000" height="620" fill="#FFFFFF"/>
+  <text x="500" y="44" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="bold" fill="#0F172A">Circulation in the lower leg</text>
+
+  <!-- leg outline -->
+  <path d="M430 80 C 560 76 600 130 590 230 L 570 400 C 560 470 566 520 560 570 L 440 570 C 434 520 440 470 430 400 L 410 230 C 400 130 430 80 430 80 Z" fill="#FEF2F2" stroke="#E5E7EB" stroke-width="3"/>
+
+  <!-- ARTERY: red, flows DOWN (away from heart) -->
+  <path d="M470 90 C 462 200 470 320 466 470 L 464 550" stroke="#DC2626" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <g fill="#DC2626">
+    <path d="M468 180 l-11 -16 l22 0 Z" transform="rotate(180 468 172)"/>
+    <path d="M468 320 l-11 -16 l22 0 Z" transform="rotate(180 468 312)"/>
+    <path d="M466 460 l-11 -16 l22 0 Z" transform="rotate(180 466 452)"/>
+  </g>
+  <text x="150" y="200" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#B91C1C">Arteries</text>
+  <text x="150" y="226" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#B91C1C">carry blood DOWN</text>
+  <text x="150" y="248" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#B91C1C">into the leg</text>
+  <line x1="300" y1="215" x2="452" y2="230" stroke="#F87171" stroke-width="2"/>
+
+  <!-- VEIN: blue, flows UP (back to heart) -->
+  <path d="M534 550 C 540 440 530 300 536 170 L 538 90" stroke="#2563EB" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <g fill="#2563EB">
+    <path d="M535 460 l-11 16 l22 0 Z" transform="rotate(180 535 468)"/>
+    <path d="M533 320 l-11 16 l22 0 Z" transform="rotate(180 533 328)"/>
+    <path d="M537 180 l-11 16 l22 0 Z" transform="rotate(180 537 188)"/>
+  </g>
+  <text x="660" y="200" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#1D4ED8">Veins</text>
+  <text x="660" y="226" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#1D4ED8">carry blood UP,</text>
+  <text x="660" y="248" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#1D4ED8">back toward the heart</text>
+  <line x1="652" y1="215" x2="552" y2="230" stroke="#93C5FD" stroke-width="2"/>
+
+  <!-- calf pump -->
+  <ellipse cx="500" cy="420" rx="62" ry="78" fill="#BBF7D0" stroke="#16A34A" stroke-width="3" opacity="0.6"/>
+  <text x="500" y="415" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#166534">calf muscle</text>
+  <text x="500" y="438" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#166534">pump</text>
+  <text x="660" y="430" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#166534">Each calf contraction squeezes</text>
+  <text x="660" y="452" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#166534">the veins and pushes blood upward</text>
+  <line x1="652" y1="424" x2="566" y2="418" stroke="#86EFAC" stroke-width="2"/>
+
+  <text x="500" y="602" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B" font-style="italic">Sitting still leaves the pump idle, so fluid tends to pool in the lower leg.</text>
+</svg>

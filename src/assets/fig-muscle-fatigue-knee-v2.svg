@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620">
+  <rect width="1000" height="620" fill="#F8FAFC"/>
+  <text x="500" y="44" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="bold" fill="#0F172A">When thigh muscles tire, the joint takes more load</text>
+
+  <!-- FRONT VIEW (left) -->
+  <text x="250" y="86" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#1E40AF">Front view</text>
+  <path d="M200 110 C 250 106 300 118 306 170 L 312 300 L 190 300 L 194 170 C 196 118 200 110 200 110 Z" fill="#FECACA" stroke="#DC2626" stroke-width="3"/>
+  <text x="250" y="200" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="bold" fill="#7F1D1D">Quadriceps</text>
+  <text x="250" y="224" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#7F1D1D">(fatigued)</text>
+  <ellipse cx="250" cy="330" rx="44" ry="34" fill="#FEF3C7" stroke="#D97706" stroke-width="3"/>
+  <text x="250" y="337" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#92400E">knee joint</text>
+  <path d="M210 370 L 216 560 L 288 560 L 292 370 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <g stroke="#DC2626" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M226 250 L 236 300"/><path d="M236 300 l-9 -6 M236 300 l9 -8"/>
+    <path d="M274 250 L 264 300"/><path d="M264 300 l9 -6 M264 300 l-9 -8"/>
+  </g>
+  <text x="250" y="600" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#475569">Tired quads absorb less shock</text>
+
+  <!-- BACK VIEW (right) - hamstrings correctly labeled here -->
+  <text x="750" y="86" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#1E40AF">Back view</text>
+  <path d="M700 110 C 750 106 800 118 806 170 L 812 300 L 690 300 L 694 170 C 696 118 700 110 700 110 Z" fill="#FED7AA" stroke="#EA580C" stroke-width="3"/>
+  <text x="750" y="200" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="bold" fill="#7C2D12">Hamstrings</text>
+  <text x="750" y="224" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#7C2D12">(fatigued)</text>
+  <ellipse cx="750" cy="330" rx="44" ry="34" fill="#FEF3C7" stroke="#D97706" stroke-width="3"/>
+  <text x="750" y="337" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#92400E">knee joint</text>
+  <path d="M710 370 L 716 560 L 788 560 L 792 370 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <ellipse cx="750" cy="430" rx="40" ry="52" fill="#FED7AA" stroke="#EA580C" stroke-width="3" opacity="0.65"/>
+  <text x="750" y="436" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#7C2D12">calf</text>
+  <g stroke="#EA580C" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M726 250 L 736 300"/><path d="M736 300 l-9 -6 M736 300 l9 -8"/>
+    <path d="M774 250 L 764 300"/><path d="M764 300 l9 -6 M764 300 l-9 -8"/>
+  </g>
+  <text x="750" y="600" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#475569">Hamstrings sit behind the thigh</text>
+
+  <line x1="500" y1="100" x2="500" y2="580" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="6 10"/>
+</svg>

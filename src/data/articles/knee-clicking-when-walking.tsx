@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import { InfoBox, TipsList, JournalQuote, StatHighlight } from "@/components/ArticleCharts";
 
-import heroImage from "@/assets/article-hero-knee-clicking-walking.jpg";
+import heroImage from "@/assets/hero-knee-clicking-v2.svg";
 import sectionBendingSquatting from "@/assets/article-section-bending-squatting-motion.jpg";
 import sectionReduceClickingTips from "@/assets/article-section-reduce-clicking-tips.jpg";
 

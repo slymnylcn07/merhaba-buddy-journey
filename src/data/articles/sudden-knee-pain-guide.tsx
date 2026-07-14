@@ -3,7 +3,7 @@ import { ArticleExport } from "./types";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
 
 import heroImage from "@/assets/article-hero-sudden-knee-pain.jpg";
-import sectionPainZones from "@/assets/article-section-sudden-pain-zones.jpg";
+import sectionPainZones from "@/assets/fig-sudden-pain-zones-v2.svg";
 import sectionTriggers from "@/assets/article-section-sudden-pain-triggers.jpg";
 import sectionInnerOuter from "@/assets/article-section-inner-outer-sudden.jpg";
 

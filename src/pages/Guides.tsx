@@ -734,40 +734,54 @@ const Guides = () => {
                 <div className="absolute inset-x-16 bottom-8 h-28 rounded-full bg-blue-500/30 blur-3xl" />
 
                 <div className="relative rounded-[2.4rem] border border-white/10 bg-white/10 p-3 shadow-[0_45px_120px_-70px_rgba(37,99,235,0.75)] backdrop-blur-xl sm:p-4">
-                  <Link
-                    to="/knee-quiz"
-                    className="group block overflow-hidden rounded-[2rem] bg-white p-6 shadow-lg transition hover:shadow-xl sm:p-8"
-                  >
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-blue-700">
-                      <Sparkles className="h-3.5 w-3.5" />
-                      60-second quiz
-                    </span>
+                  <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 p-7 shadow-2xl ring-1 ring-white/10 sm:p-9">
+                    {/* dekoratif isik halkalari */}
+                    <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-blue-500/20 blur-3xl" />
+                    <div className="pointer-events-none absolute -bottom-20 -left-10 h-48 w-48 rounded-full bg-emerald-400/10 blur-3xl" />
 
-                    <h3 className="mt-4 text-2xl font-semibold leading-snug tracking-[-0.02em] text-slate-950 sm:text-3xl">
-                      Not sure where to start?
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-600 sm:text-base">
-                      Answer a few quick questions about your knees and we will point you to the guides and routine that fit your situation.
-                    </p>
+                    <div className="relative">
+                      <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-blue-100 backdrop-blur">
+                        <Sparkles className="h-3.5 w-3.5 text-blue-300" />
+                        60-second quiz
+                      </span>
 
-                    <div className="mt-5 grid gap-2">
-                      {[
-                        "Where your pain shows up",
-                        "When it bothers you most",
-                        "What you have already tried",
-                      ].map((item) => (
-                        <span key={item} className="flex items-center gap-2 text-sm text-slate-600">
-                          <Check className="h-4 w-4 flex-shrink-0 text-blue-600" />
-                          {item}
-                        </span>
-                      ))}
+                      <h3 className="mt-5 text-3xl font-semibold leading-[1.15] tracking-[-0.03em] text-white sm:text-[2.6rem]">
+                        Not sure which guide
+                        <br className="hidden sm:block" /> you actually need?
+                      </h3>
+                      <p className="mt-3 max-w-md text-sm leading-6 text-slate-300 sm:text-base">
+                        Answer three quick questions and we will point you to the guides, routine and support that match your knees.
+                      </p>
+
+                      <div className="mt-6 grid gap-2.5">
+                        {[
+                          "Where your discomfort shows up",
+                          "When it bothers you most",
+                          "What you have already tried",
+                        ].map((item, i) => (
+                          <span key={item} className="flex items-center gap-3 text-sm text-slate-200">
+                            <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-500/20 text-[11px] font-bold text-blue-200 ring-1 ring-inset ring-blue-400/30">
+                              {i + 1}
+                            </span>
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+
+                      <Link
+                        to="/knee-quiz"
+                        className="group mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-blue-950/40 transition hover:bg-blue-50"
+                      >
+                        Take the knee quiz
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                      </Link>
+
+                      <p className="mt-3.5 flex items-center gap-1.5 text-[11px] text-slate-400">
+                        <Check className="h-3.5 w-3.5 text-emerald-400" />
+                        Free · no email required · instant result
+                      </p>
                     </div>
-
-                    <span className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white transition group-hover:bg-blue-700 sm:w-auto sm:px-8">
-                      Take the knee quiz
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                    </span>
-                  </Link>
+                  </div>
 
                   <div className="mt-3 grid grid-cols-2 gap-3">
                     <div className="rounded-2xl bg-white/95 p-4 text-slate-950 shadow-sm">

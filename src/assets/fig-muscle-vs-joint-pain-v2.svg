@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560">
+  <rect width="1000" height="560" fill="#FFFFFF"/>
+  <text x="500" y="44" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="bold" fill="#0F172A">Muscle soreness vs joint pain</text>
+
+  <!-- LEFT: diffuse muscle soreness -->
+  <text x="260" y="88" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#B91C1C">Diffuse muscle soreness</text>
+  <path d="M210 110 C 270 106 316 120 320 175 L 326 300 C 328 340 322 370 322 410 L 322 500 L 198 500 L 198 410 C 198 370 192 340 194 300 L 200 175 C 200 120 210 110 210 110 Z" fill="#FEE2E2" stroke="#F87171" stroke-width="3"/>
+  <ellipse cx="260" cy="220" rx="52" ry="70" fill="#FCA5A5" opacity="0.65"/>
+  <ellipse cx="260" cy="430" rx="46" ry="58" fill="#FCA5A5" opacity="0.65"/>
+  <ellipse cx="260" cy="330" rx="30" ry="26" fill="#F1F5F9" stroke="#94A3B8" stroke-width="2"/>
+  <text x="260" y="336" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#64748B">joint OK</text>
+  <text x="260" y="528" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#475569">Spread across the muscle, both legs,</text>
+  <text x="260" y="550" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#475569">eases as you warm up</text>
+
+  <line x1="500" y1="100" x2="500" y2="500" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="6 10"/>
+
+  <!-- RIGHT: localized joint pain -->
+  <text x="740" y="88" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#1D4ED8">Localized joint pain</text>
+  <path d="M690 110 C 750 106 796 120 800 175 L 806 300 C 808 340 802 370 802 410 L 802 500 L 678 500 L 678 410 C 678 370 672 340 674 300 L 680 175 C 680 120 690 110 690 110 Z" fill="#EFF6FF" stroke="#93C5FD" stroke-width="3"/>
+  <ellipse cx="740" cy="330" rx="44" ry="40" fill="#DC2626" opacity="0.75"/>
+  <ellipse cx="740" cy="330" rx="62" ry="56" fill="#DC2626" opacity="0.2"/>
+  <text x="740" y="336" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">joint line</text>
+  <text x="740" y="528" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#475569">Pinpoint at the joint, often one knee,</text>
+  <text x="740" y="550" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#475569">worse with stairs and squats</text>
+</svg>

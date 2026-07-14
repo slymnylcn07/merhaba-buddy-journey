@@ -5,7 +5,7 @@ import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-heavy-knees.jpg";
 import imgMuscleFatigue from "@/assets/article-leg-muscle-fatigue.jpg";
 import imgKneeSupportMuscles from "@/assets/article-knee-support-muscles.jpg";
-import imgCirculationLimbs from "@/assets/article-circulation-lower-limbs.jpg";
+import imgCirculationLimbs from "@/assets/fig-leg-circulation-v2.svg";
 import imgJointLoad from "@/assets/article-knee-joint-load.jpg";
 import imgMovementStiffness from "@/assets/article-movement-vs-stiffness.jpg";
 import imgHeavyKneePatterns from "@/assets/article-heavy-knees-patterns-v1.svg";
