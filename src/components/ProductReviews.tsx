@@ -23,6 +23,40 @@ interface Review {
 
 const REVIEWS: Review[] = [
   {
+    name: "Verified Buyer",
+    date: "19 May 2026",
+    color: "White",
+    text: "I will use it well. It's very good.",
+  },
+  {
+    name: "Verified Buyer",
+    date: "31 Mar 2026",
+    color: "White",
+    text:
+      "Two close relatives who already have it recommended it to me. It perfectly matches the entire description and the images shown. Personally, this is the most highly valued model. I received it earlier than expected, very good service through the postal service. Excellent quality-price ratio. Highly recommended.",
+  },
+  {
+    name: "Verified Buyer",
+    date: "10 Mar 2026",
+    color: "White",
+    text:
+      "After the first use it works smoothly and feels like real pain relief. Really good product, I recommend it to anyone who suffers, it helps.",
+  },
+  {
+    name: "J.",
+    date: "09 Jan 2026",
+    color: "White",
+    text:
+      "Everything is fine. It was marked as delivered before it reached me; it was tracked with the carrier, had gone to the wrong address, was retrieved and I finally received it. I repeat, everything is okay.",
+  },
+  {
+    name: "Verified Buyer",
+    date: "01 Jan 2026",
+    color: "White",
+    text:
+      "The knee massager is fantastic. I've used it each day since delivery and it's working well. One day I used it on bare skin, which wasn't a good idea as my skin got extremely hot, so keep the sleeve between. The manual says not to run the unit flat, so every couple of days I recharge it.",
+  },
+  {
     name: "T.",
     date: "27 Sep 2025",
     color: "White",
@@ -34,13 +68,6 @@ const REVIEWS: Review[] = [
     color: "White",
     text:
       "I'm not sure yet if it's working on my knee, but I've used it on my achilles and it's fantastic. For the price, I would definitely recommend it for chronic issues like tendinitis and degenerative joints.",
-  },
-  {
-    name: "Verified Buyer",
-    date: "10 Mar 2026",
-    color: "White",
-    text:
-      "After the first use it works smoothly and feels like real pain relief. Really good product — I recommend it to anyone who suffers, it helps.",
   },
 ];
 
@@ -65,7 +92,7 @@ export function ProductReviews() {
   const [showNotice, setShowNotice] = useState(false);
 
   return (
-    <section className="bg-slate-50 py-16 sm:py-20" aria-labelledby="reviews-heading">
+    <section id="product-reviews" className="scroll-mt-24 bg-slate-50 py-16 sm:py-20" aria-labelledby="reviews-heading">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="mb-2 flex items-center justify-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
           <BadgeCheck className="h-4 w-4" /> Verified product reviews
@@ -97,7 +124,7 @@ export function ProductReviews() {
         </div>
         <p className="mx-auto mt-3 max-w-2xl text-center text-xs leading-5 text-slate-400">
           Verified-purchase reviews for this product. Individual results vary; this device supports everyday
-          comfort and is not a medical treatment.
+          comfort.
         </p>
 
         {/* Review cards */}

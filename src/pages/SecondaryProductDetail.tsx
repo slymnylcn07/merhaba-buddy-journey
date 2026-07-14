@@ -319,7 +319,6 @@ export default function SecondaryProductDetail() {
                 <BenefitIconsRow benefits={pageConfig.benefits} />
 
 
-                <p className="mt-1 text-xs text-slate-500">Taxes and shipping calculated at checkout where applicable.</p>
 
                 {options.map((option) => {
                   const chosen = selectedVariant?.selectedOptions.find((selected) => selected.name === option.name)?.value;

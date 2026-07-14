@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ArticleSource as ModularArticleSource } from "@/data/articles/types";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -368,6 +369,7 @@ interface ArticleData {
   faqs?: FAQItem[];
   seoTags?: string;
   lastUpdated?: string;
+  sources?: ModularArticleSource[];
 }
 
 // Context-aware CTA data for each article (headline + text)
