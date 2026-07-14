@@ -72,7 +72,7 @@ export const flexikneeReview2026: ArticleExport = {
         </p>
         <p>
           Unlike clinical or professional-grade equipment, FlexiKnee is positioned as a convenient, daily-use device that integrates into existing morning or evening routines. You can learn more about the full specifications on the{" "}
-          <a href="https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy" className="text-primary hover:underline font-medium">
+          <a href="https://flexi-knee.com/product/knee-massager-smart-red-light-and-massage-therapy" className="text-primary hover:underline font-medium">
             FlexiKnee product page
           </a>.
         </p>

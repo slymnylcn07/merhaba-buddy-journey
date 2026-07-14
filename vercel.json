@@ -203,6 +203,11 @@
       "source": "/product/flexiknee",
       "destination": "/product/knee-massager-smart-red-light-and-massage-therapy",
       "permanent": true
+    },
+    {
+      "source": "/product/knee-massager-smart-heated-red-light-and-massage-therapy",
+      "destination": "/product/knee-massager-smart-red-light-and-massage-therapy",
+      "permanent": true
     }
   ]
 }

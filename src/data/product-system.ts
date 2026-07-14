@@ -23,7 +23,7 @@ export const productSystem = [
     description: "Breathable support for walking, work, training and everyday movement.",
     price: "$19.99",
     image: sleeveFallback,
-    href: "/product/knee-massager-smart-red-light-and-massage-therapyyy",
+    href: "/product/knee-massager-smart-red-light-and-massage-therapy",
     status: "Daily support",
     accent: "from-slate-50 via-white to-indigo-50",
   },

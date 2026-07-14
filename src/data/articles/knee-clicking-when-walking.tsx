@@ -6,7 +6,7 @@ import heroImage from "@/assets/article-hero-knee-clicking-walking.jpg";
 import sectionBendingSquatting from "@/assets/article-section-bending-squatting-motion.jpg";
 import sectionReduceClickingTips from "@/assets/article-section-reduce-clicking-tips.jpg";
 
-const PRODUCT_URL = "https://flexi-knee.com/product/knee-massager-smart-heated-red-light-and-massage-therapy";
+const PRODUCT_URL = "https://flexi-knee.com/product/knee-massager-smart-red-light-and-massage-therapy";
 
 export const kneeClickingWhenWalking = {
   article: {
