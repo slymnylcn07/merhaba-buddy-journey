@@ -19,6 +19,7 @@ import { DeliveryEstimate } from "@/components/DeliveryEstimate";
 import { BenefitIconsRow, OfferSelector, PaymentOptionsRow, TrustStrip, ProductInfoAccordion } from "@/components/product-page-blocks";
 import { getProductPageConfig } from "@/data/product-page-config";
 import { LIMITED_WARRANTY_YEARS, RETURN_WINDOW_DAYS } from "@/lib/policy-config";
+import { OFFICIAL_SITE_URL } from "@/lib/brand-config";
 import { VideoReviews } from "@/components/VideoReviews";
 import { ProductReviews } from "@/components/ProductReviews";
 import { KnowBeforeYouBuy } from "@/components/KnowBeforeYouBuy";
@@ -172,7 +173,11 @@ export default function ProductDetail() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: productTitle,
-    brand: { "@type": "Brand", name: "FlexiKnee" },
+    brand: { "@type": "Brand", "@id": `${OFFICIAL_SITE_URL}/#brand`, name: "FlexiKnee", url: `${OFFICIAL_SITE_URL}/` },
+    manufacturer: { "@id": `${OFFICIAL_SITE_URL}/#organization` },
+    seller: { "@id": `${OFFICIAL_SITE_URL}/#organization` },
+    mainEntityOfPage: `https://flexi-knee.com/product/${handle || "knee-massager-smart-red-light-and-massage-therapy"}`,
+    isPartOf: { "@id": `${OFFICIAL_SITE_URL}/#website` },
     category: "Knee massager",
     description:
       "A cordless knee comfort device with adjustable warmth, an integrated red light mode, three massage vibration modes, and a wraparound fit with simple touch controls.",

@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import { MarketSelector } from "@/components/MarketSelector";
 import { SUPPORT_EMAIL } from "@/lib/support-config";
 import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { BadgeCheck, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { PaymentOptionsRow } from "@/components/PaymentLogos";
+import { OFFICIAL_FACEBOOK_URL, OFFICIAL_INSTAGRAM_URL } from "@/lib/brand-config";
 
 export const Footer = () => {
   return (
@@ -17,6 +18,17 @@ export const Footer = () => {
             <p className="mt-4 max-w-sm text-sm leading-7 text-slate-500">
               Smart knee comfort products for daily movement, recovery routines, and simple at-home support.
             </p>
+            <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-2 text-xs font-semibold text-blue-700">
+              <BadgeCheck className="h-4 w-4" /> Official FlexiKnee website: flexi-knee.com
+            </div>
+            <div className="mt-5 flex items-center gap-3">
+              <a href={OFFICIAL_INSTAGRAM_URL} target="_blank" rel="me noopener noreferrer" aria-label="FlexiKnee on Instagram" className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700">
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a href={OFFICIAL_FACEBOOK_URL} target="_blank" rel="me noopener noreferrer" aria-label="FlexiKnee on Facebook" className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700">
+                <Facebook className="h-4 w-4" />
+              </a>
+            </div>
           </div>
 
           <div className="grid gap-8 sm:grid-cols-3">
@@ -27,7 +39,7 @@ export const Footer = () => {
                 <li><Link to={PRIMARY_PRODUCT_PATH} className="hover:text-blue-600">FlexiKnee Massager</Link></li>
                 <li><Link to="/knee-quiz" className="hover:text-blue-600">Knee Comfort Quiz</Link></li>
                 <li><Link to="/guides" className="hover:text-blue-600">Recovery Guides</Link></li>
-                <li><Link to="/why-flexiknee" className="hover:text-blue-600">Why FlexiKnee</Link></li>
+                <li><Link to="/why-flexiknee" className="hover:text-blue-600">About FlexiKnee</Link></li>
               </ul>
             </div>
             <div>
@@ -45,7 +57,7 @@ export const Footer = () => {
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-950">Contact</h3>
               <div className="mt-4 space-y-4 text-sm text-slate-500">
-                <p className="flex gap-2"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" /> {SUPPORT_EMAIL}</p>
+                <a href={`mailto:${SUPPORT_EMAIL}`} className="flex gap-2 hover:text-blue-600"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" /> {SUPPORT_EMAIL}</a>
                 <p className="flex gap-2"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" /> +1 302-722-4637</p>
                 <p className="flex gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" /> UK & USA fulfillment support</p>
               </div>

@@ -22,10 +22,19 @@ import {
   Users,
   Sparkles,
   ArrowRight,
-  CheckCircle2
+  CheckCircle2,
+  BadgeCheck,
+  Facebook,
+  Instagram
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { LIMITED_WARRANTY_YEARS, RETURN_WINDOW_DAYS, SUPPORT_RESPONSE_TIME } from "@/lib/policy-config";
+import {
+  BRAND_DESCRIPTION,
+  OFFICIAL_FACEBOOK_URL,
+  OFFICIAL_INSTAGRAM_URL,
+  OFFICIAL_SITE_URL,
+} from "@/lib/brand-config";
 
 const WhyFlexiKnee = () => {
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
@@ -124,7 +133,11 @@ const WhyFlexiKnee = () => {
 
   const faqs = [
     {
-      question: "How do I use FlexiKnee",
+      question: "What is the official FlexiKnee website?",
+      answer: "The official FlexiKnee website is flexi-knee.com. Product details, customer support, shipping and return information published on this domain are the official FlexiKnee store resources."
+    },
+    {
+      question: "How do I use FlexiKnee?",
       answer: "Simply wrap FlexiKnee around your knee, secure the adjustable straps, and use the simple controls to select your preferred heat and vibration settings. It's designed to be intuitive, most users are comfortable within seconds."
     },
     {
@@ -145,27 +158,57 @@ const WhyFlexiKnee = () => {
     }
   ];
 
+  const aboutPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": `${OFFICIAL_SITE_URL}/why-flexiknee#about`,
+    url: `${OFFICIAL_SITE_URL}/why-flexiknee`,
+    name: "About FlexiKnee",
+    description: BRAND_DESCRIPTION,
+    isPartOf: { "@id": `${OFFICIAL_SITE_URL}/#website` },
+    about: { "@id": `${OFFICIAL_SITE_URL}/#organization` },
+    mainEntity: {
+      "@type": "Organization",
+      "@id": `${OFFICIAL_SITE_URL}/#organization`,
+      name: "FlexiKnee",
+      url: `${OFFICIAL_SITE_URL}/`,
+      sameAs: [OFFICIAL_INSTAGRAM_URL, OFFICIAL_FACEBOOK_URL],
+    },
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Why FlexiKnee | Premium Knee Comfort for Real Life</title>
-        <meta name="description" content="Discover FlexiKnee, a premium cordless knee comfort device combining adjustable warmth, integrated red light and massage-style vibration for simple at-home routines." />
+        <title>About FlexiKnee | Official Brand, Products & Support</title>
+        <meta name="description" content="Learn about the official FlexiKnee brand, its Smart Heated Knee Massager, product standards, customer support, returns, warranty, and verified social profiles." />
         <link rel="canonical" href="https://flexi-knee.com/why-flexiknee" />
         
         {/* Open Graph Meta Tags */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/why-flexiknee" />
-        <meta property="og:title" content="Why FlexiKnee | Premium Knee Comfort for Real Life" />
-        <meta property="og:description" content="Discover FlexiKnee, a premium cordless knee comfort device combining adjustable warmth, integrated red light and massage-style vibration for simple at-home routines." />
+        <meta property="og:title" content="About FlexiKnee | Official Brand, Products & Support" />
+        <meta property="og:description" content="Learn about the official FlexiKnee brand, its Smart Heated Knee Massager, product standards, customer support, returns, warranty, and verified social profiles." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@FlexiKnee" />
-        <meta name="twitter:title" content="Why FlexiKnee | Premium Knee Comfort for Real Life" />
-        <meta name="twitter:description" content="Discover FlexiKnee, a premium cordless knee comfort device designed for simple at-home routines." />
+        <meta name="twitter:site" content="@flexikneeofficial" />
+        <meta name="twitter:title" content="About FlexiKnee | Official Brand" />
+        <meta name="twitter:description" content="The official FlexiKnee brand page for products, standards, support, and verified profiles." />
         <meta name="twitter:image" content="https://flexi-knee.com/images/og-image.jpg" />
+        <script type="application/ld+json">{JSON.stringify(aboutPageJsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
       </Helmet>
       
       <Header />
@@ -200,13 +243,16 @@ const WhyFlexiKnee = () => {
           <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
             <div className="text-center lg:text-left">
             <Badge className="mb-5 border-white/15 bg-white/10 text-blue-200 text-xs uppercase tracking-[0.18em] animate-fade-in">
-              Why FlexiKnee
+              <BadgeCheck className="mr-2 h-4 w-4" /> Official FlexiKnee brand
             </Badge>
-            <h1 className="mb-6 text-4xl font-semibold leading-tight tracking-[-0.045em] text-white md:text-6xl">
-              Premium Knee Comfort, Designed for Real Life
+            <h1 className="mb-5 text-4xl font-semibold leading-tight tracking-[-0.045em] text-white md:text-6xl">
+              About FlexiKnee
             </h1>
-            <p className="mb-8 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl lg:mx-0">
-              Adjustable warmth, integrated red light and massage-style vibration in a cordless design made for calm, simple routines at home.
+            <p className="max-w-2xl text-xl font-semibold leading-8 text-white md:text-2xl lg:mx-0">
+              Premium knee comfort, designed for real life.
+            </p>
+            <p className="mb-7 mt-4 max-w-2xl text-lg leading-8 text-slate-300 lg:mx-0">
+              {BRAND_DESCRIPTION} Adjustable warmth, integrated red light and massage-style vibration come together in a cordless design for calm, simple routines at home.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
               <Button asChild size="lg" className="text-lg px-8 h-14 font-semibold">
@@ -223,6 +269,17 @@ const WhyFlexiKnee = () => {
                 See how it works
                 <ChevronDown className="ml-1 h-4 w-4" />
               </Button>
+            </div>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-sm lg:justify-start">
+              <a href={`${OFFICIAL_SITE_URL}/`} className="rounded-full border border-white/15 bg-white/10 px-4 py-2 font-semibold text-white hover:bg-white/15">
+                Official site: flexi-knee.com
+              </a>
+              <a href={OFFICIAL_INSTAGRAM_URL} target="_blank" rel="me noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-slate-200 hover:bg-white/10 hover:text-white">
+                <Instagram className="h-4 w-4" /> Instagram
+              </a>
+              <a href={OFFICIAL_FACEBOOK_URL} target="_blank" rel="me noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-slate-200 hover:bg-white/10 hover:text-white">
+                <Facebook className="h-4 w-4" /> Facebook
+              </a>
             </div>
             </div>
 
@@ -254,10 +311,10 @@ const WhyFlexiKnee = () => {
         <div className="container px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="mb-4 text-3xl font-semibold tracking-[-0.035em] text-slate-950 md:text-4xl">
-              Comfort that fits around real life
+              The official FlexiKnee brand
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              From long workdays to post-activity wind-downs, FlexiKnee is designed to make a short comfort routine feel easy to repeat.
+              FlexiKnee develops knee-comfort products and practical educational guides around simple at-home routines. The official FlexiKnee website is <strong className="text-slate-900">flexi-knee.com</strong>, supported by the verified Instagram and Facebook profiles linked on this page.
             </p>
           </div>
         </div>

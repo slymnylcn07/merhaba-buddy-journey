@@ -21,6 +21,8 @@ const collectionJsonLd = {
   "@type": "CollectionPage",
   name: "FlexiKnee Shop. Knee Comfort & Recovery Products",
   url: "https://flexi-knee.com/shop",
+  isPartOf: { "@id": "https://flexi-knee.com/#website" },
+  provider: { "@id": "https://flexi-knee.com/#organization" },
 };
 
 function formatMoney(amount?: string, currencyCode?: string) {
@@ -78,7 +80,7 @@ export default function Shop() {
   return (
     <>
       <Helmet>
-        <title>Shop Knee Comfort & Recovery Products | FlexiKnee</title>
+        <title>Shop FlexiKnee | Official Knee Comfort Products</title>
         <meta
           name="description"
           content="Explore FlexiKnee products for warming routines, compression support, lower-leg recovery and foot-to-knee comfort, including the FlexiKnee Sport Orthopedic Insoles."
@@ -86,7 +88,7 @@ export default function Shop() {
         <link rel="canonical" href="https://flexi-knee.com/shop" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/shop" />
-        <meta property="og:title" content="Shop Knee Comfort & Recovery Products | FlexiKnee" />
+        <meta property="og:title" content="Shop FlexiKnee | Official Knee Comfort Products" />
         <meta property="og:description" content="One premium knee device, plus focused products for warmth, compression, travel recovery and foot support." />
         <script type="application/ld+json">{JSON.stringify(collectionJsonLd)}</script>
         {products.length > 0 && <script type="application/ld+json">{JSON.stringify(itemListJsonLd)}</script>}

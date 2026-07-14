@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
-import { ArrowRight, Check, ChevronRight, Flame, Play, Sparkles, Waves } from "lucide-react";
+import { ArrowRight, BadgeCheck, Check, ChevronRight, Flame, Play, Sparkles, Waves } from "lucide-react";
 import { Header } from "@/components/Header";
 import { DiscountCodeModal } from "@/components/DiscountCodeModal";
 import { Footer } from "@/components/Footer";
@@ -11,6 +11,15 @@ import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { VideoReviews } from "@/components/VideoReviews";
 import { featurePillars } from "@/data/product-system";
 import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
+import { SUPPORT_EMAIL } from "@/lib/support-config";
+import {
+  BRAND_DESCRIPTION,
+  BRAND_NAME,
+  OFFICIAL_FACEBOOK_URL,
+  OFFICIAL_INSTAGRAM_URL,
+  OFFICIAL_SITE_URL,
+  OFFICIAL_SOCIAL_URLS,
+} from "@/lib/brand-config";
 
 const HERO_DESKTOP_IMAGE = "/images/flexiknee-hero-desktop-premium-v2.webp";
 const HERO_MOBILE_IMAGE = "/images/flexiknee-hero-final-mobile.png";
@@ -43,24 +52,54 @@ const problemPaths = [
   ["Stiff after sitting", "Daily patterns after work, travel, or rest", "/guides/why-do-my-knees-feel-tight-after-resting"],
 ] as const;
 
-const healthSources = [
-  "Mayo Clinic",
-  "Cleveland Clinic",
-  "Johns Hopkins Medicine",
-  "NHS",
-  "Arthritis Foundation",
-  "Harvard Health",
-  "NIH",
-  "WebMD",
-  "Healthline",
-];
-
-const organizationJsonLd = {
+const homePageJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "FlexiKnee",
-  url: "https://flexi-knee.com",
-  logo: "https://flexi-knee.com/images/og-image.jpg",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${OFFICIAL_SITE_URL}/#website`,
+      url: `${OFFICIAL_SITE_URL}/`,
+      name: BRAND_NAME,
+      alternateName: ["Flexi Knee", "FlexiKnee Official"],
+      description: BRAND_DESCRIPTION,
+      publisher: { "@id": `${OFFICIAL_SITE_URL}/#organization` },
+      inLanguage: "en",
+    },
+    {
+      "@type": "Brand",
+      "@id": `${OFFICIAL_SITE_URL}/#brand`,
+      name: BRAND_NAME,
+      alternateName: "Flexi Knee",
+      url: `${OFFICIAL_SITE_URL}/`,
+      logo: `${OFFICIAL_SITE_URL}/images/flexiknee-logo.svg`,
+      sameAs: OFFICIAL_SOCIAL_URLS,
+    },
+    {
+      "@type": "Organization",
+      "@id": `${OFFICIAL_SITE_URL}/#organization`,
+      name: BRAND_NAME,
+      alternateName: "Flexi Knee",
+      url: `${OFFICIAL_SITE_URL}/`,
+      description: BRAND_DESCRIPTION,
+      logo: {
+        "@type": "ImageObject",
+        url: `${OFFICIAL_SITE_URL}/images/flexiknee-logo.svg`,
+        width: 640,
+        height: 160,
+      },
+      image: `${OFFICIAL_SITE_URL}/images/og-image.jpg`,
+      email: SUPPORT_EMAIL,
+      telephone: "+1-302-722-4637",
+      sameAs: OFFICIAL_SOCIAL_URLS,
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        email: SUPPORT_EMAIL,
+        telephone: "+1-302-722-4637",
+        availableLanguage: ["English"],
+      },
+    },
+  ],
 };
 
 export default function Index() {
@@ -98,27 +137,27 @@ export default function Index() {
   return (
     <>
       <Helmet>
-        <title>FlexiKnee | Knee Comfort Guides & Smart Recovery Products</title>
+        <title>FlexiKnee | Official Smart Heated Knee Massager & Guides</title>
         <meta
           name="description"
-          content="FlexiKnee combines practical knee comfort education with smart at-home support products for heat, vibration, wraparound positioning, and daily routines."
+          content="Official FlexiKnee website. Explore the FlexiKnee Smart Heated Knee Massager, practical knee-comfort guides, product details, customer support, and secure checkout."
         />
         <link rel="canonical" href="https://flexi-knee.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/" />
-        <meta property="og:title" content="FlexiKnee | Knee Comfort Guides & Smart Recovery Products" />
-        <meta property="og:description" content="A premium knee comfort hub with practical guides and smart at-home recovery products." />
+        <meta property="og:title" content="FlexiKnee | Official Smart Heated Knee Massager & Guides" />
+        <meta property="og:description" content="The official FlexiKnee website for the Smart Heated Knee Massager, practical guides, product details, and customer support." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
-        <script type="application/ld+json">{JSON.stringify(organizationJsonLd)}</script>
+        <meta property="og:site_name" content="FlexiKnee" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@flexikneeofficial" />
+        <script type="application/ld+json">{JSON.stringify(homePageJsonLd)}</script>
       </Helmet>
 
       <div className="min-h-screen bg-white text-slate-950">
         <Header />
 
         <main>
-          <h1 className="sr-only">
-            FlexiKnee Smart Heated Knee Massager with Red Light Therapy. Knee Comfort Guides and Recovery Products
-          </h1>
           <section className="bg-white">
             <div className="mx-auto max-w-[1800px] px-0 py-0 sm:px-4 sm:py-5 lg:px-8 lg:py-8">
               <div className="relative overflow-hidden bg-white shadow-[0_35px_120px_-90px_rgba(15,23,42,0.65)] sm:rounded-[2rem]">
@@ -146,13 +185,16 @@ export default function Index() {
 
                 <div className="absolute inset-y-0 left-0 hidden w-[53%] flex-col justify-center px-[5.3%] md:flex">
                   <div className="inline-flex w-fit items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-blue-600 shadow-sm backdrop-blur lg:px-4 lg:text-xs">
-                    <Sparkles className="h-3.5 w-3.5" /> Smart knee comfort
+                    <BadgeCheck className="h-3.5 w-3.5" /> Official FlexiKnee website
                   </div>
-                  <h2 className="mt-[4%] max-w-[760px] text-[clamp(2.35rem,4.2vw,5rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-slate-950">
+                  <h1 className="mt-[4%] max-w-[780px] text-[clamp(2.35rem,4.2vw,5rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-slate-950">
+                    FlexiKnee Smart Heated Knee Massager
+                  </h1>
+                  <p className="mt-[3%] max-w-xl text-[clamp(1rem,1.55vw,1.5rem)] font-semibold tracking-[-0.02em] text-slate-800">
                     Comfort that keeps you moving.
-                  </h2>
-                  <p className="mt-[4%] max-w-xl text-[clamp(0.9rem,1.35vw,1.35rem)] leading-relaxed text-slate-600">
-                    Heat, vibration, and wraparound support for simple daily comfort at home.
+                  </p>
+                  <p className="mt-[2%] max-w-xl text-[clamp(0.9rem,1.2vw,1.2rem)] leading-relaxed text-slate-600">
+                    Adjustable warmth, massage-style vibration and wraparound support for simple daily comfort at home.
                   </p>
 
                   <div className="mt-[5%] flex items-center gap-3">
@@ -172,7 +214,7 @@ export default function Index() {
 
                   <div className="mt-[6%] grid max-w-[650px] grid-cols-3 gap-2 lg:gap-3">
                     {[
-                      { label: "Heat Therapy", icon: Flame, tone: "text-orange-500" },
+                      { label: "Adjustable Warmth", icon: Flame, tone: "text-orange-500" },
                       { label: "Vibration", icon: Waves, tone: "text-blue-600" },
                       { label: "Daily Support", icon: Check, tone: "text-emerald-600" },
                     ].map(({ label, icon: Icon, tone }) => (
@@ -189,14 +231,29 @@ export default function Index() {
             </div>
           </section>
 
-          <section className="border-y border-slate-200 bg-slate-50 py-4">
-            <div className="mx-auto max-w-7xl overflow-hidden px-4 sm:px-6 lg:px-8">
-              <div className="animate-scroll flex w-max min-w-max items-center gap-10 pr-10 text-sm italic text-slate-500 will-change-transform">
-                {[...healthSources, ...healthSources].map((source, index) => (
-                  <span key={`${source}-${index}`} className="whitespace-nowrap font-medium tracking-wide">
-                    {source}
-                  </span>
-                ))}
+          <section className="border-y border-blue-100 bg-gradient-to-r from-blue-50 via-white to-blue-50 py-5">
+            <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+              <div className="flex items-start gap-3">
+                <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-600/15">
+                  <BadgeCheck className="h-5 w-5" />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-950">Official FlexiKnee brand source</p>
+                  <p className="mt-1 text-sm leading-6 text-slate-600">
+                    {BRAND_DESCRIPTION} The official website is <strong className="text-slate-900">flexi-knee.com</strong>.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 text-sm font-semibold">
+                <Link to="/why-flexiknee" className="rounded-full border border-blue-200 bg-white px-4 py-2 text-blue-700 transition hover:border-blue-300 hover:bg-blue-50">
+                  About FlexiKnee
+                </Link>
+                <a href={OFFICIAL_INSTAGRAM_URL} target="_blank" rel="me noopener noreferrer" className="rounded-full border border-slate-200 bg-white px-4 py-2 text-slate-700 transition hover:border-blue-200 hover:text-blue-700">
+                  Instagram
+                </a>
+                <a href={OFFICIAL_FACEBOOK_URL} target="_blank" rel="me noopener noreferrer" className="rounded-full border border-slate-200 bg-white px-4 py-2 text-slate-700 transition hover:border-blue-200 hover:text-blue-700">
+                  Facebook
+                </a>
               </div>
             </div>
           </section>

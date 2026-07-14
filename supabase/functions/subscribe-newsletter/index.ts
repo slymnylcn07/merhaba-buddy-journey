@@ -133,18 +133,18 @@ const handler = async (req: Request): Promise<Response> => {
             </div>
             <div class="content">
               <h2>Thank you for subscribing!</h2>
-              <p>You're now part of our community of 50,000+ people committed to better knee health.</p>
+              <p>You're now part of the FlexiKnee community for practical knee-comfort education, product updates, and occasional offers.</p>
               <p>Here's what you can expect:</p>
               <ul>
                 <li>🎁 Exclusive discounts and early access to sales</li>
-                <li>📚 Expert tips for knee health and pain management</li>
+                <li>📚 Practical knee-comfort guides and routine ideas</li>
                 <li>🆕 First look at new products and features</li>
               </ul>
               <p>Stay tuned for amazing content coming your way!</p>
-              <p>Best regards,<br>The FlexiKnee™ Team</p>
+              <p>Best regards,<br>The FlexiKnee Team</p>
             </div>
             <div class="footer">
-              <p>© 2024 FlexiKnee™. All rights reserved.</p>
+              <p>© ${new Date().getFullYear()} FlexiKnee. All rights reserved.</p>
             </div>
           </div>
         </body>

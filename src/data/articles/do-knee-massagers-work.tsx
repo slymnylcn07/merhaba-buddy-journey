@@ -108,8 +108,8 @@ export const doKneeMassagersWork: ArticleExport = {
         </div>
 
         <PremiumCTA
-          headline="Looking for a device backed by real results?"
-          text="FlexiKnee combines heat, red light, and vibration therapy, all three science-backed approaches in one device. Thousands of users report improved daily knee comfort."
+          headline="Looking for a simpler at-home knee routine?"
+          text="FlexiKnee combines adjustable warmth, integrated red light, and massage-style vibration in one rechargeable device designed for short daily comfort routines."
         />
 
         <h2>How Red Light Therapy Supports Knee Comfort</h2>
