@@ -19,6 +19,7 @@ import { DeliveryEstimate } from "@/components/DeliveryEstimate";
 import { BenefitIconsRow, OfferSelector, PaymentOptionsRow, TrustStrip, ProductInfoAccordion } from "@/components/product-page-blocks";
 import { getProductPageConfig } from "@/data/product-page-config";
 import { VideoReviews } from "@/components/VideoReviews";
+import { ProductReviews } from "@/components/ProductReviews";
 import { getProducts, ShopifyProduct, createStorefrontCheckout } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { featurePillars } from "@/data/product-system";
@@ -402,6 +403,8 @@ export default function ProductDetail() {
           visuals={massagerStoryVisuals}
           highlights={["Adjustable warmth", "Massage-style vibration", "Wireless wraparound design", "Simple touch control"]}
         />
+
+        <ProductReviews />
 
         <section className="bg-white py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

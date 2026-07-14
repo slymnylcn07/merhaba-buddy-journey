@@ -51,8 +51,10 @@ const SHARED_RATING = 4.8;
 
 export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
   main: {
-    reviewCount: null,
-    rating: SHARED_RATING,
+    // Verified-purchase reviews for this exact product (aggregated at product
+    // level via ProductReviews.tsx). Not presented as flexi-knee.com order volume.
+    reviewCount: 238,
+    rating: 4.7,
     benefits: [
       { icon: Flame, label: "Deep soothing warmth" },
       { icon: Sun, label: "Red light therapy" },
