@@ -1,15 +1,11 @@
-FlexiKnee Batch 1 - Remaining 10 Visual Replacements
+FlexiKnee Batch 1 Final Visual Replacements
 
-Upload the src folder to the repository root and overwrite existing files.
+Replace these files in the repository root:
 
-Files:
-- src/assets/article-hero-cordless-massagers.svg
-- src/assets/article-hero-smart-massagers-breakdown-v3.jpg
-- src/assets/flexiknee-product-main.webp
-- src/assets/guide-thumb-heat-redlight-benefits.jpg
-- src/assets/guide-thumb-home-remedies-knee-pain-v2.jpg
-- src/assets/guide-thumb-infrared-guide-2026.jpg
-- src/assets/guide-thumb-knee-ache-leg-workouts.jpg
-- src/assets/guide-thumb-weight-knee-pain.jpg
-- src/assets/guide-thumb-what-makes-knee-pain-worse.jpg
-- src/assets/product-main.webp
+- src/assets/product-pain-relief.webp
+- src/assets/product-temperature.webp
+- src/assets/product-vibration.webp
+- src/assets/laser-therapy.webp
+
+All filenames and paths are preserved. No code changes are required.
+The new visuals remove unsupported medical claims, unverified temperature figures, old product imagery, and unsafe laser-treatment language.
