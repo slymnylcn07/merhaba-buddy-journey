@@ -1,4 +1,1 @@
-1) Open your FlexiKnee repository locally.
-2) Drag the included src folder into the project root and replace existing files.
-3) Commit and push.
-4) If GitHub web upload is used, upload the files preserving the same relative paths shown in MANIFEST.json.
+ZIPi açın ve içindeki src klasörünü GitHub reposunun ana dizinine yükleyin. Mevcut dosyaların üzerine yazılmasına izin verin.
