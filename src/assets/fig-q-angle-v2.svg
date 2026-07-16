@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <rect width="900" height="600" fill="#FFFFFF"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">The Q-angle: why alignment differs</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">A wider hip-to-knee angle changes how force tracks through the kneecap</text>
+
+  <!-- LEFT: wider Q-angle -->
+  <text x="250" y="108" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="bold" fill="#B45309">Wider Q-angle</text>
+  <!-- hip point -->
+  <circle cx="300" cy="150" r="8" fill="#334155"/>
+  <text x="316" y="146" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">hip</text>
+  <!-- femur line angled -->
+  <line x1="300" y1="150" x2="230" y2="360" stroke="#F59E0B" stroke-width="5" stroke-linecap="round"/>
+  <!-- kneecap -->
+  <circle cx="230" cy="360" r="26" fill="#FEF3C7" stroke="#D97706" stroke-width="3"/>
+  <text x="230" y="365" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#92400E">kneecap</text>
+  <!-- tibia line -->
+  <line x1="230" y1="360" x2="240" y2="520" stroke="#94A3B8" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="240" cy="520" r="7" fill="#334155"/>
+  <text x="256" y="524" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">ankle</text>
+  <!-- angle arc -->
+  <path d="M230 320 A 40 40 0 0 1 262 350" stroke="#DC2626" stroke-width="3" fill="none"/>
+  <text x="285" y="326" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#B91C1C">larger angle</text>
+  <text x="250" y="566" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">More common with wider hips.</text>
+  <text x="250" y="586" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Pulls the kneecap outward a little more.</text>
+
+  <line x1="470" y1="120" x2="470" y2="540" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="6 10"/>
+
+  <!-- RIGHT: narrower Q-angle -->
+  <text x="660" y="108" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="bold" fill="#1D4ED8">Narrower Q-angle</text>
+  <circle cx="660" cy="150" r="8" fill="#334155"/>
+  <text x="676" y="146" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">hip</text>
+  <line x1="660" y1="150" x2="640" y2="360" stroke="#3B82F6" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="640" cy="360" r="26" fill="#FEF3C7" stroke="#D97706" stroke-width="3"/>
+  <text x="640" y="365" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#92400E">kneecap</text>
+  <line x1="640" y1="360" x2="644" y2="520" stroke="#94A3B8" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="644" cy="520" r="7" fill="#334155"/>
+  <text x="660" y="524" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">ankle</text>
+  <path d="M640 322 A 38 38 0 0 1 662 352" stroke="#16A34A" stroke-width="3" fill="none"/>
+  <text x="690" y="328" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#166534">smaller angle</text>
+  <text x="660" y="566" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">A more vertical line from hip to ankle.</text>
+  <text x="660" y="586" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Force tracks more evenly.</text>
+</svg>

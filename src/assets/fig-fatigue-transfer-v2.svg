@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#F8FAFC"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">Muscle fatigue and knee stress</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">When the muscles tire, more load reaches the joint itself</text>
+
+  <!-- LEFT: fresh muscles -->
+  <text x="240" y="106" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="bold" fill="#166534">Fresh muscles</text>
+  <path d="M190 130 C 250 126 296 144 300 195 L 306 300 L 184 300 L 188 195 C 188 144 190 130 190 130 Z" fill="#BBF7D0" stroke="#16A34A" stroke-width="3"/>
+  <text x="240" y="220" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#166534">Quadriceps</text>
+  <text x="240" y="242" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#166534">+ hamstrings</text>
+  <ellipse cx="240" cy="330" rx="42" ry="34" fill="#FEF3C7" stroke="#D97706" stroke-width="3"/>
+  <text x="240" y="335" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" fill="#92400E">joint</text>
+  <path d="M198 372 L 204 500 L 276 500 L 282 372 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <!-- small arrows: muscles take the load -->
+  <g stroke="#16A34A" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M214 280 l0 26 M214 306 l-6 -7 M214 306 l6 -7"/>
+    <path d="M266 280 l0 26 M266 306 l-6 -7 M266 306 l6 -7"/>
+  </g>
+  <text x="240" y="536" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Strong muscles absorb the impact.</text>
+
+  <line x1="450" y1="120" x2="450" y2="500" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="6 10"/>
+
+  <!-- RIGHT: fatigued muscles -->
+  <text x="660" y="106" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="bold" fill="#B91C1C">Fatigued muscles</text>
+  <path d="M610 130 C 670 126 716 144 720 195 L 726 300 L 604 300 L 608 195 C 608 144 610 130 610 130 Z" fill="#FED7AA" stroke="#EA580C" stroke-width="3" opacity="0.8"/>
+  <text x="660" y="220" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#9A3412">Quadriceps</text>
+  <text x="660" y="242" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#9A3412">+ hamstrings</text>
+  <ellipse cx="660" cy="330" rx="42" ry="34" fill="#FECACA" stroke="#DC2626" stroke-width="3"/>
+  <ellipse cx="660" cy="330" rx="58" ry="48" fill="#DC2626" opacity="0.2"/>
+  <text x="660" y="335" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="bold" fill="#B91C1C">joint</text>
+  <path d="M618 372 L 624 500 L 696 500 L 702 372 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <!-- big arrows converging on joint -->
+  <g stroke="#DC2626" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M612 300 L 640 326 M640 326 l-13 0 M640 326 l0 -13"/>
+    <path d="M708 300 L 680 326 M680 326 l13 0 M680 326 l0 -13"/>
+  </g>
+  <text x="660" y="536" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Tired muscles transfer stress to the joint.</text>
+</svg>

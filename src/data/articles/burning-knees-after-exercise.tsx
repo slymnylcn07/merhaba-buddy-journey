@@ -8,7 +8,7 @@ import heroImage from "@/assets/article-hero-burning-knees-after-exercise.jpg";
 import imgStressZones from "@/assets/diagram-knee-stress-zones-burning.jpg";
 import imgHeatmap from "@/assets/diagram-burning-sensation-heatmap.jpg";
 import imgRunningImpact from "@/assets/diagram-knee-running-impact-burning.jpg";
-import imgMuscleFatigue from "@/assets/diagram-muscle-fatigue-burning-knee.jpg";
+import imgMuscleFatigue from "@/assets/fig-fatigue-transfer-v2.svg";
 import imgJointStress from "@/assets/diagram-joint-stress-after-exercise.jpg";
 import imgRecoveryCycle from "@/assets/diagram-knee-recovery-cycle-burning.jpg";
 

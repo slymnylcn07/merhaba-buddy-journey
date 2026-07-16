@@ -2,12 +2,12 @@ import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-cause-knee-pain-new.jpg";
-import diagramFront from "@/assets/diagram-front-knee-zone.jpg";
-import diagramBack from "@/assets/diagram-back-knee-zone.jpg";
+import diagramFront from "@/assets/fig-zone-front-v2.svg";
+import diagramBack from "@/assets/fig-zone-back-v2.svg";
 import diagramInner from "@/assets/diagram-inner-knee-zone.jpg";
 import diagramOuter from "@/assets/diagram-outer-knee-zone.jpg";
-import diagramFemaleAlignment from "@/assets/diagram-female-knee-alignment.jpg";
-import diagramWearProgression from "@/assets/diagram-knee-wear-progression.jpg";
+import diagramFemaleAlignment from "@/assets/fig-q-angle-v2.svg";
+import diagramWearProgression from "@/assets/fig-cartilage-wear-v2.svg";
 import sectionSuddenPain from "@/assets/article-section-sudden-knee-pain.jpg";
 import sectionDailyHabits from "@/assets/article-section-knee-daily-habits.jpg";
 
@@ -111,7 +111,7 @@ export const whatCausesKneePain: ArticleExport = {
 
         <PremiumCTA
           headline="Support every knee comfort zone at home"
-          text="FlexiKnee wraps around the entire knee area, delivering soothing warmth, red light, and gentle vibration designed for daily comfort support no matter where you feel discomfort."
+          text="FlexiKnee wraps around the entire knee area, delivering soothing warmth, red light, and gentle vibration — designed for daily comfort support no matter where you feel discomfort."
         />
 
         <h2>Sudden Knee Pain Without Injury: Why It Happens</h2>
