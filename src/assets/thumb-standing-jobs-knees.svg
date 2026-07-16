@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs><linearGradient id="stBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFF7ED"/><stop offset="100%" stop-color="#FFEDD5"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#stBg)"/>
+  <text x="600" y="130" text-anchor="middle" font-family="Georgia,serif" font-size="52" font-weight="bold" fill="#7C2D12">Knees &amp; Standing</text>
+  <text x="600" y="196" text-anchor="middle" font-family="Georgia,serif" font-size="52" font-weight="bold" fill="#7C2D12">Jobs</text>
+  <text x="600" y="248" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" fill="#9A3412">Surviving 8+ hours on your feet</text>
+  <g transform="translate(600,570)">
+    <ellipse cx="0" cy="210" rx="200" ry="26" fill="#C2410C" opacity="0.12"/>
+    <!-- simple standing figure -->
+    <circle cx="0" cy="-150" r="42" fill="#FDBA74"/>
+    <path d="M-40 -100 C -46 -40 -46 20 -40 60 L 40 60 C 46 20 46 -40 40 -100 Z" fill="#FB923C"/>
+    <!-- legs -->
+    <path d="M-28 60 L -30 180" stroke="#EA580C" stroke-width="26" stroke-linecap="round"/>
+    <path d="M28 60 L 30 180" stroke="#EA580C" stroke-width="26" stroke-linecap="round"/>
+    <!-- knee stress markers -->
+    <circle cx="-30" cy="120" r="20" fill="#DC2626" opacity="0.55"/>
+    <circle cx="30" cy="120" r="20" fill="#DC2626" opacity="0.55"/>
+    <!-- clock -->
+    <g transform="translate(180,-120)"><circle cx="0" cy="0" r="48" fill="#FFFFFF" stroke="#EA580C" stroke-width="4"/><line x1="0" y1="0" x2="0" y2="-28" stroke="#7C2D12" stroke-width="5" stroke-linecap="round"/><line x1="0" y1="0" x2="22" y2="10" stroke="#7C2D12" stroke-width="5" stroke-linecap="round"/></g>
+  </g>
+  <rect x="360" y="810" width="480" height="56" rx="28" fill="#7C2D12"/>
+  <text x="600" y="847" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">Practical relief that fits a shift</text>
+</svg>

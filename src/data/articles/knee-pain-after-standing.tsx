@@ -2,10 +2,10 @@ import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import { StatHighlight, InfoBox, TipsList } from "@/components/ArticleCharts";
-import heroImage from "@/assets/article-hero-knee-pain-standing.jpg";
-import sectionFatigue from "@/assets/article-section-standing-knee-fatigue.jpg";
-import sectionTransition from "@/assets/article-section-standing-up-transition.jpg";
-import sectionStretch from "@/assets/article-section-standing-knee-stretch.jpg";
+import heroImage from "@/assets/thumb-standing-jobs-knees.svg";
+import sectionFatigue from "@/assets/fig-standing-load-v1.svg";
+import sectionTransition from "@/assets/fig-standing-shift-v1.svg";
+import sectionStretch from "@/assets/fig-standing-setup-v1.svg";
 
 export const kneePainAfterStanding: ArticleExport = {
   cta: "",
@@ -13,7 +13,7 @@ export const kneePainAfterStanding: ArticleExport = {
     slug: "knee-pain-after-standing",
     title: "Knee Pain After Standing: Why It Happens & Comfort Strategies That Help",
     subtitle: "Understanding standing-related knee discomfort and daily support habits",
-    intro: "If you experience knee pain when standing, you are far from alone. Millions of people notice discomfort in their knees after standing for extended periods, whether at work, during household chores, or while waiting in line. Knee pain after standing is one of the most commonly reported joint concerns, and it can range from a dull ache across the front of the knee to a sharper sensation behind the knee or along the inner side. Many people wonder: why does my knee hurt when I stand up? Why does knee pain after standing all day seem to get worse over time? And what can I do about pain in knee when standing up from a chair? Whether you notice pain behind knee, pain back of knee, or general knee pain when standing up after sitting, this comprehensive guide explores the most common reasons behind standing-related knee discomfort. You will learn about patellofemoral pain, how arthritis and osteoarthritis relate to standing pain, what role inner knee pain and back of knee pain play, and practical everyday comfort strategies you can use at home. This is not medical advice — it is a supportive, educational resource designed to help you understand your body and make informed daily choices.",
+    intro: "If you experience knee pain when standing, you are far from alone. Millions of people notice discomfort in their knees after standing for extended periods, whether at work, during household chores, or while waiting in line. Knee pain after standing is one of the most commonly reported joint concerns, and it can range from a dull ache across the front of the knee to a sharper sensation behind the knee or along the inner side. Many people wonder: why does my knee hurt when I stand up? Why does knee pain after standing all day seem to get worse over time? And what can I do about pain in knee when standing up from a chair? Whether you notice pain behind knee, pain back of knee, or general knee pain when standing up after sitting, this comprehensive guide explores the most common reasons behind standing-related knee discomfort. You will learn about patellofemoral pain, how arthritis and osteoarthritis relate to standing pain, what role inner knee pain and back of knee pain play, and practical everyday comfort strategies you can use at home. This is not medical advice, it is a supportive, educational resource designed to help you understand your body and make informed daily choices.",
     metaTitle: "Knee Pain After Standing Up: Why It Happens & Comfort Tips",
     metaDescription: "Why does knee pain when standing happen? Explore causes of knee pain after standing all day, standing posture tips, and patellofemoral pain syndrome comfort strategies.",
     heroImage: heroImage,
@@ -33,7 +33,7 @@ export const kneePainAfterStanding: ArticleExport = {
     sources: [
       {
         title: "Patellofemoral Pain Syndrome",
-        publisher: "OrthoInfo — American Academy of Orthopaedic Surgeons (AAOS)",
+        publisher: "OrthoInfo, American Academy of Orthopaedic Surgeons (AAOS)",
         url: "https://www.orthoinfo.org/en/diseases--conditions/patellofemoral-pain-syndrome/",
       },
       {
@@ -67,7 +67,7 @@ export const kneePainAfterStanding: ArticleExport = {
 
         <h3>The Weight-Bearing Reality</h3>
         <p>
-          When you stand upright, each knee joint supports roughly half your body weight. For a person weighing 160 pounds, that means each knee is continuously managing approximately 80 pounds of compressive force — and this number increases significantly on uneven surfaces or when carrying items. Over the course of a day spent mostly standing, this adds up to hours of unrelenting pressure on the cartilage, menisci, and surrounding soft tissues.
+          When you stand upright, each knee joint supports roughly half your body weight. For a person weighing 160 pounds, that means each knee is continuously managing approximately 80 pounds of compressive force, and this number increases significantly on uneven surfaces or when carrying items. Over the course of a day spent mostly standing, this adds up to hours of unrelenting pressure on the cartilage, menisci, and surrounding soft tissues.
         </p>
 
         <StatHighlight
@@ -78,7 +78,7 @@ export const kneePainAfterStanding: ArticleExport = {
 
         <h3>Muscle Fatigue and Joint Stress</h3>
         <p>
-          The muscles around the knee — particularly the quadriceps, hamstrings, and calf muscles — work constantly during standing to maintain your upright posture. Over time, these muscles fatigue, and when they tire, the knee joint itself absorbs more of the load. This shift from muscular support to joint compression is a key reason why <strong>knee pain after standing all day</strong> tends to feel worse in the evening than in the morning.
+          The muscles around the knee, particularly the quadriceps, hamstrings, and calf muscles, work constantly during standing to maintain your upright posture. Over time, these muscles fatigue, and when they tire, the knee joint itself absorbs more of the load. This shift from muscular support to joint compression is a key reason why <strong>knee pain after standing all day</strong> tends to feel worse in the evening than in the morning.
         </p>
 
         <h3>Fluid Dynamics in the Knee</h3>
@@ -99,7 +99,7 @@ export const kneePainAfterStanding: ArticleExport = {
 
         <h2>Knee Pain After Standing All Day – What's Going On?</h2>
         <p>
-          Many people who work on their feet — healthcare workers, retail employees, teachers, factory workers — report that their knees feel progressively more uncomfortable as the day goes on. Understanding what happens inside the knee during extended standing can help explain this common pattern.
+          Many people who work on their feet, healthcare workers, retail employees, teachers, factory workers, report that their knees feel progressively more uncomfortable as the day goes on. Understanding what happens inside the knee during extended standing can help explain this common pattern.
         </p>
 
         <h3>Cumulative Load Over Hours</h3>
@@ -141,7 +141,7 @@ export const kneePainAfterStanding: ArticleExport = {
 
         <h3>Baker's Cyst and Standing Sensitivity</h3>
         <p>
-          Some people who experience <strong>back of knee pain</strong> during standing may have a Baker's cyst — a fluid-filled pouch behind the knee. While not inherently dangerous, these cysts can become more noticeable during prolonged weight-bearing because the standing position increases pressure in the knee joint, which can push fluid into the cyst area.
+          Some people who experience <strong>back of knee pain</strong> during standing may have a Baker's cyst, a fluid-filled pouch behind the knee. While not inherently dangerous, these cysts can become more noticeable during prolonged weight-bearing because the standing position increases pressure in the knee joint, which can push fluid into the cyst area.
         </p>
 
         <h3>Calf Tension and Referred Sensations</h3>
@@ -151,7 +151,7 @@ export const kneePainAfterStanding: ArticleExport = {
 
         <h2>Knee Pain When Standing Up After Sitting</h2>
         <p>
-          The moment of transition — moving from a seated position to standing — is one of the most commonly reported triggers for <strong>knee pain when standing up after sitting</strong>. This transition places unique demands on the knee joint that differ from both sitting and standing.
+          The moment of transition, moving from a seated position to standing, is one of the most commonly reported triggers for <strong>knee pain when standing up after sitting</strong>. This transition places unique demands on the knee joint that differ from both sitting and standing.
         </p>
 
         <figure className="my-8">
@@ -187,12 +187,12 @@ export const kneePainAfterStanding: ArticleExport = {
 
         <h3>Static Load vs Dynamic Load</h3>
         <p>
-          Standing creates a <strong>static load</strong> — constant, unchanging pressure on the joint. Bending creates a <strong>dynamic load</strong> — pressure that changes as the knee moves through its range of motion. Both can trigger discomfort, but they stress different structures. Static standing primarily fatigues the muscles and compresses cartilage, while <strong>knee pain when bending</strong> often involves the patella, menisci, or ligaments.
+          Standing creates a <strong>static load</strong>, constant, unchanging pressure on the joint. Bending creates a <strong>dynamic load</strong>, pressure that changes as the knee moves through its range of motion. Both can trigger discomfort, but they stress different structures. Static standing primarily fatigues the muscles and compresses cartilage, while <strong>knee pain when bending</strong> often involves the patella, menisci, or ligaments.
         </p>
 
         <h3>Combined Stress Patterns</h3>
         <p>
-          Many daily activities combine standing and bending — cooking, cleaning, gardening, shopping. These combined patterns can be particularly challenging for the knees because the joint alternates between different types of stress without adequate recovery time.
+          Many daily activities combine standing and bending, cooking, cleaning, gardening, shopping. These combined patterns can be particularly challenging for the knees because the joint alternates between different types of stress without adequate recovery time.
         </p>
 
         <h3>Finding Your Comfort Balance</h3>
@@ -212,7 +212,7 @@ export const kneePainAfterStanding: ArticleExport = {
 
         <h3>How Standing Posture Influences Patella Stress</h3>
         <p>
-          Your standing posture directly affects how much pressure the patella experiences. Standing with locked knees, rotated feet, or uneven weight distribution can increase patellofemoral contact pressure. Small adjustments — like keeping a slight bend in the knees and distributing weight evenly — can meaningfully reduce this stress.
+          Your standing posture directly affects how much pressure the patella experiences. Standing with locked knees, rotated feet, or uneven weight distribution can increase patellofemoral contact pressure. Small adjustments, like keeping a slight bend in the knees and distributing weight evenly, can meaningfully reduce this stress.
         </p>
 
         <h3>Muscle Imbalances and Tracking</h3>
@@ -280,7 +280,7 @@ export const kneePainAfterStanding: ArticleExport = {
 
         <h3>Overuse and Repetitive Stress</h3>
         <p>
-          People who combine long standing hours with other knee-demanding activities — running, climbing stairs frequently, heavy lifting — may experience overuse-related discomfort. The knee joint handles a remarkable amount of stress, but cumulative loading without adequate recovery can lead to persistent achiness. If you also run regularly, understanding <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">running knee pain patterns</Link> can provide additional context.
+          People who combine long standing hours with other knee-demanding activities, running, climbing stairs frequently, heavy lifting, may experience overuse-related discomfort. The knee joint handles a remarkable amount of stress, but cumulative loading without adequate recovery can lead to persistent achiness. If you also run regularly, understanding <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">running knee pain patterns</Link> can provide additional context.
         </p>
 
         <h3>Meniscus Tear Sensitivity and Standing</h3>

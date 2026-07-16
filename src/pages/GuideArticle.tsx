@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link, useParams, Navigate } from "react-router-dom";
-import { ArrowLeft, ArrowRight, BookOpenCheck } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ArticleShareBlock } from "@/components/ArticleShareSidebar";
 import { ArticleHeaderMeta } from "@/components/ArticleHeaderMeta";
 import { ArticleTableOfContents } from "@/components/ArticleTableOfContents";
@@ -157,6 +157,9 @@ import thumbBackKneeDetailed from "@/assets/guide-thumb-back-knee-detailed.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
 import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
 import thumbMassagerExpectations from "@/assets/thumb-do-massagers-work-v2.svg";
+import thumbKneeSupplements from "@/assets/thumb-knee-supplements.svg";
+import thumbStandingJobs from "@/assets/thumb-standing-jobs-knees.svg";
+import thumbColdWeatherKnees from "@/assets/thumb-cold-weather-knees.svg";
 import thumbInfraredSafety from "@/assets/guide-thumb-infrared-safety-v2.jpg";
 import thumbWarmthVsInfrared from "@/assets/guide-thumb-warmth-vs-infrared-v2.jpg";
 import thumbNightKneePain from "@/assets/guide-thumb-night-knee-pain-v3.jpg";
@@ -311,6 +314,7 @@ import {
   kneeClickingWhenWalking,
   kneesHurtAfterResting,
   coldWeatherKneePain,
+  bestSupplementsForKneePain,
   kneePainAfterExercise,
   kneePainClimbingStairs,
   kneePainGoingDownStairs,
@@ -8310,7 +8314,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, clickingKneeWithoutPain, exercisesToRelieveKneePainAtHome, postExerciseKneePainGuide, kneeSwellingAfterExercise, soreKneesAfterWorkout, kneeRecoveryExercisesAfterWorkout, kneeAcheAfterLegWorkouts, burningKneesAfterExercise, homeRemediesKneePain, whatMakesKneePainWorse, weightAffectsKneePain, cordlessHeatedKneeMassagers2026, bestInsolesKneePain2026, itBandFoamRollingGuide, howToSleepWithKneePain, airCompressionLegMassagers, kneeSleeveSizingGuide, heatVsIceForKneesAuthoritative];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, clickingKneeWithoutPain, exercisesToRelieveKneePainAtHome, postExerciseKneePainGuide, kneeSwellingAfterExercise, soreKneesAfterWorkout, kneeRecoveryExercisesAfterWorkout, kneeAcheAfterLegWorkouts, burningKneesAfterExercise, homeRemediesKneePain, whatMakesKneePainWorse, weightAffectsKneePain, cordlessHeatedKneeMassagers2026, bestInsolesKneePain2026, itBandFoamRollingGuide, howToSleepWithKneePain, airCompressionLegMassagers, kneeSleeveSizingGuide, heatVsIceForKneesAuthoritative, bestSupplementsForKneePain];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -8462,6 +8466,17 @@ const GuideArticle = () => {
 
   // Generate HowTo JSON-LD for routine/exercise/posture guides
   const howToSchemas: Record<string, { name: string; description: string; steps: { name: string; text: string }[] }> = {
+    "best-supplements-for-knee-pain": {
+      name: "How to Run a Fair Knee Supplement Trial",
+      description: "A step-by-step method to test a knee supplement honestly over eight to twelve weeks without wasting money.",
+      steps: [
+        { name: "Write down your baseline", text: "Before starting, record how your knees feel now: morning stiffness, how stairs feel, and any sleep disruption. Without a baseline you cannot judge change later." },
+        { name: "Choose one supplement at a time", text: "Pick a single ingredient with reasonable evidence, such as omega-3, curcumin, or vitamin D if you are deficient. Taking several at once means you cannot tell which one did anything." },
+        { name: "Take the researched dose consistently", text: "Use the dose used in studies, every day, for the full trial. Inconsistent dosing is the most common reason a trial gives no clear answer." },
+        { name: "Reassess at eight to twelve weeks", text: "Most trials that show benefit see it within this window. Compare honestly against your written baseline." },
+        { name: "Decide and adjust", text: "If there is a clear, worthwhile improvement, continue. If nothing has genuinely changed, stop and save the money." },
+      ],
+    },
     "daily-knee-comfort-routine": {
       name: "How to Build a Daily Knee Comfort Routine",
       description: "A step-by-step guide to building sustainable morning, midday, and evening habits that support long-term knee comfort.",
@@ -8915,17 +8930,12 @@ const GuideArticle = () => {
                     aria-labelledby="sources-heading"
                     className="mt-10 rounded-[1.5rem] border border-slate-200 bg-slate-50/70 p-6 shadow-sm"
                   >
-                    <div className="mb-5 flex items-center gap-3">
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
-                        <BookOpenCheck className="h-5 w-5" />
-                      </span>
-                      <h2
-                        id="sources-heading"
-                        className="m-0 text-xl font-semibold tracking-[-0.02em] text-slate-950"
-                      >
-                        Sources and Further Reading
-                      </h2>
-                    </div>
+                    <h2
+                      id="sources-heading"
+                      className="mb-4 text-xl font-semibold tracking-[-0.02em] text-slate-950"
+                    >
+                      Sources and Further Reading
+                    </h2>
                     <ul className="space-y-3">
                       {article.sources.map((source, i) => (
                         <li key={i} className="text-base leading-7 text-slate-600">
@@ -8970,6 +8980,7 @@ const GuideArticle = () => {
             </h2>
             {(() => {
               const thumbnails: Record<string, string> = {
+                "best-supplements-for-knee-pain": thumbKneeSupplements,
                 "why-knee-pain-doesnt-go-away": thumbKneePain,
                 "heat-vs-red-light-therapy": thumbHeatTherapy,
                 "who-benefits-from-knee-therapy-devices": thumbWhoBenefits,
@@ -9027,7 +9038,7 @@ const GuideArticle = () => {
                 "why-do-my-knees-crack-or-pop": thumbKneePainCauses,
                 "knee-pain-after-sitting-cross-legged": thumbKneePainSittingCrossLegged,
                 "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
-                "knee-pain-after-standing": thumbKneePainStanding,
+                "knee-pain-after-standing": thumbStandingJobs,
                 "best-red-light-therapy-knee": thumbBestRedLightKnee,
                 "knee-pain-exercises-guide": thumbKneeExercises,
                 "what-causes-knee-pain-guide": thumbCauseKneePainNew,
@@ -9041,7 +9052,7 @@ const GuideArticle = () => {
                 "knee-pain-at-night-after-40": thumbNightKneePain40,
                 "knee-clicking-when-walking": thumbKneeClickingWalking,
                 "knees-hurt-after-resting": thumbKneesHurtAfterResting,
-                "cold-weather-knee-pain": thumbColdWeatherKneePain,
+                "cold-weather-knee-pain": thumbColdWeatherKnees,
                 "knee-pain-after-exercise": thumbKneePainAfterExercise,
                 "knee-pain-climbing-stairs": thumbKneePainClimbingStairs,
                 "knee-pain-going-down-stairs": thumbKneePainGoingDownStairs,

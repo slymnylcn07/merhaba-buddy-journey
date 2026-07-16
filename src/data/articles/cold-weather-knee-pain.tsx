@@ -4,19 +4,28 @@ import { ArticleExport } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
 import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
 
-import heroImage from "@/assets/article-hero-cold-weather-knee-pain.jpg";
-import sectionBarometricPressure from "@/assets/article-section-barometric-pressure-joints.jpg";
-import sectionColdStiffness from "@/assets/article-section-cold-stiffness-mechanism.jpg";
-import sectionFluidThickening from "@/assets/article-section-cold-fluid-thickening.jpg";
-import sectionColdTypes from "@/assets/article-section-cold-types-comparison.jpg";
+import heroImage from "@/assets/thumb-cold-weather-knees.svg";
+import sectionBarometricPressure from "@/assets/fig-cold-barometric-v1.svg";
+import sectionColdStiffness from "@/assets/fig-cold-stiffness-v1.svg";
+import sectionFluidThickening from "@/assets/fig-cold-warmup-v1.svg";
+import sectionColdTypes from "@/assets/fig-cold-types-v1.svg";
 
 const articleContent = (
   <>
+    <div className="my-8 rounded-2xl border border-blue-200 bg-blue-50 p-6">
+      <p className="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-blue-800">
+        Quick answer
+      </p>
+      <p className="mb-0 text-base leading-7 text-slate-700">
+        <strong>Cold weather changes how a knee feels, not usually the knee itself.</strong> Lower temperatures thicken the joint fluid, tighten the surrounding muscles, and lead people to move less, so a knee feels stiffer and achier in winter. Falling barometric pressure may add to this for some people, though the evidence is mixed. The most reliable response is <strong>gentle warmth followed by easy movement</strong>, plus staying active through the season rather than resting the joint.
+      </p>
+    </div>
+
     <p>
-      Every winter, millions of people notice the same thing: their <strong>knees hurt in cold weather</strong>. The temperature drops, and suddenly your joints feel stiffer, achier, and harder to move. You're not imagining it — and you're certainly not alone. Weather-related knee discomfort is one of the most commonly reported joint complaints worldwide, especially among adults over 35.
+      Every winter, millions of people notice the same thing: their <strong>knees hurt in cold weather</strong>. The temperature drops, and suddenly your joints feel stiffer, achier, and harder to move. You're not imagining it, and you're certainly not alone. Weather-related knee discomfort is one of the most commonly reported joint complaints worldwide, especially among adults over 35.
     </p>
     <p>
-      But why exactly does <strong>knee pain in cold weather</strong> happen? What role do temperature, humidity, and barometric pressure play? And most importantly — what can you do about it? This guide breaks it all down in simple, clear terms.
+      But why exactly does <strong>knee pain in cold weather</strong> happen? What role do temperature, humidity, and barometric pressure play? And most importantly, what can you do about it? This guide breaks it all down in simple, clear terms.
     </p>
 
     <StatHighlight
@@ -27,7 +36,7 @@ const articleContent = (
 
     <h2>Why Cold Weather Affects Knee Joints</h2>
     <p>
-      Your knee joint is a remarkably sensitive structure. It contains cartilage, synovial fluid, ligaments, tendons, and a dense network of nerve endings — all of which respond to changes in temperature and atmospheric conditions.
+      Your knee joint is a remarkably sensitive structure. It contains cartilage, synovial fluid, ligaments, tendons, and a dense network of nerve endings, all of which respond to changes in temperature and atmospheric conditions.
     </p>
     <p>
       When temperatures drop, several things happen simultaneously inside and around your knee:
@@ -51,7 +60,7 @@ const articleContent = (
     </figure>
 
     <p>
-      The combined effect of all these changes is that familiar <strong>cold-induced stiffness</strong> — your knees feel tight, achy, and slow to respond when you first start moving in cold conditions.
+      The combined effect of all these changes is that familiar <strong>cold-induced stiffness</strong>, your knees feel tight, achy, and slow to respond when you first start moving in cold conditions.
     </p>
 
     <h2>Temperature Drops vs. Humidity vs. Barometric Pressure</h2>
@@ -61,7 +70,7 @@ const articleContent = (
 
     <h3>Temperature Drops</h3>
     <p>
-      When the thermometer falls, your body's natural response is vasoconstriction — narrowing of blood vessels to preserve core heat. This directly reduces blood flow to your extremities, including your knees. The result is less warmth, less oxygen, and less nutrient delivery to the joint tissues. For most people, this is the most straightforward connection between cold and <strong>knee stiffness in cold weather</strong>.
+      When the thermometer falls, your body's natural response is vasoconstriction, narrowing of blood vessels to preserve core heat. This directly reduces blood flow to your extremities, including your knees. The result is less warmth, less oxygen, and less nutrient delivery to the joint tissues. For most people, this is the most straightforward connection between cold and <strong>knee stiffness in cold weather</strong>.
     </p>
 
     <h3>Humidity & Dampness</h3>
@@ -71,7 +80,7 @@ const articleContent = (
 
     <h3>Barometric Pressure Changes</h3>
     <p>
-      This is perhaps the most fascinating — and most debated — factor. Barometric pressure is the weight of the atmosphere pressing down on everything, including your body. When the pressure drops (as it does before storms and weather fronts), the external pressure on your joint tissues decreases slightly.
+      This is perhaps the most fascinating, and most debated, factor. Barometric pressure is the weight of the atmosphere pressing down on everything, including your body. When the pressure drops (as it does before storms and weather fronts), the external pressure on your joint tissues decreases slightly.
     </p>
 
     <figure className="my-8">
@@ -86,7 +95,7 @@ const articleContent = (
     </figure>
 
     <p>
-      Think of it this way: normally, atmospheric pressure helps keep your joint tissues compressed and stable. When that pressure drops, the tissues can expand slightly — even microscopically. In joints that already have some wear, inflammation, or sensitivity, this tiny expansion can press on nerve endings and create a noticeable ache. This is why many people say they can "feel the weather coming" in their knees.
+      Think of it this way: normally, atmospheric pressure helps keep your joint tissues compressed and stable. When that pressure drops, the tissues can expand slightly, even microscopically. In joints that already have some wear, inflammation, or sensitivity, this tiny expansion can press on nerve endings and create a noticeable ache. This is why many people say they can "feel the weather coming" in their knees.
     </p>
 
     <InfoBox title="The Weather Prediction Connection">
@@ -95,10 +104,10 @@ const articleContent = (
 
     <h2>Why Knees Feel Stiff in Cold Weather</h2>
     <p>
-      <strong>Knee stiffness in cold weather</strong> follows a predictable pattern. When you step outside into cold air — or even when your home gets chilly — the tissues around your knee joint respond almost immediately.
+      <strong>Knee stiffness in cold weather</strong> follows a predictable pattern. When you step outside into cold air, or even when your home gets chilly, the tissues around your knee joint respond almost immediately.
     </p>
     <p>
-      The synovial fluid that normally keeps your cartilage surfaces gliding smoothly becomes thicker and less efficient. Imagine trying to pour cold honey versus warm honey — the principle is similar. Your joint's natural lubrication becomes sluggish.
+      The synovial fluid that normally keeps your cartilage surfaces gliding smoothly becomes thicker and less efficient. Imagine trying to pour cold honey versus warm honey, the principle is similar. Your joint's natural lubrication becomes sluggish.
     </p>
 
     <figure className="my-8">
@@ -116,7 +125,7 @@ const articleContent = (
       At the same time, the quadriceps, hamstrings, and calf muscles that support your knee all tighten in response to cold. This muscle contraction reduces your range of motion and makes bending and straightening your knee feel more effortful. The combination of thicker fluid and tighter muscles is what creates that characteristic "cold morning stiffness" that can last until your body warms up.
     </p>
     <p>
-      For a deeper look at how <Link to="/guides/knees-hurt-after-resting">inactivity and rest affect knee stiffness</Link>, check our dedicated guide — the mechanisms overlap with cold-weather patterns.
+      For a deeper look at how <Link to="/guides/knees-hurt-after-resting">inactivity and rest affect knee stiffness</Link>, check our dedicated guide, the mechanisms overlap with cold-weather patterns.
     </p>
 
     <h2>Why Knees Ache More in Damp or Rainy Weather</h2>
@@ -136,9 +145,9 @@ const articleContent = (
       The key takeaway? Damp weather hits joints from multiple angles simultaneously, which is why many people with <strong>weather-sensitive joints</strong> rank wet, cold days as their worst for knee comfort.
     </p>
 
-    <h2>Dry Cold vs. Damp Cold vs. Wind Chill — Pain Patterns</h2>
+    <h2>Dry Cold vs. Damp Cold vs. Wind Chill, Pain Patterns</h2>
     <p>
-      Not all cold weather affects your knees the same way. Understanding the differences can help you prepare for — and manage — each type of <strong>winter joint ache</strong>.
+      Not all cold weather affects your knees the same way. Understanding the differences can help you prepare for, and manage, each type of <strong>winter joint ache</strong>.
     </p>
 
     <figure className="my-8">
@@ -154,17 +163,17 @@ const articleContent = (
 
     <h3>Dry Cold</h3>
     <p>
-      Creates primarily muscle tightness and reduced flexibility. Your knees may feel stiff and resistant to bending, but the discomfort usually responds well to warming up — a few minutes of gentle movement indoors often brings significant improvement. Dry cold is the most "manageable" type for most people.
+      Creates primarily muscle tightness and reduced flexibility. Your knees may feel stiff and resistant to bending, but the discomfort usually responds well to warming up, a few minutes of gentle movement indoors often brings significant improvement. Dry cold is the most "manageable" type for most people.
     </p>
 
     <h3>Damp Cold</h3>
     <p>
-      Produces a deeper, more persistent ache that can feel like it's coming from inside the joint itself. This type of discomfort is harder to shake off and may require sustained warmth application — like a <Link to="/guides/knee-warmth-daily-comfort">warm therapy routine</Link> — rather than just movement alone. Many people describe damp cold knee pain as "bone-deep."
+      Produces a deeper, more persistent ache that can feel like it's coming from inside the joint itself. This type of discomfort is harder to shake off and may require sustained warmth application, like a <Link to="/guides/knee-warmth-daily-comfort">warm therapy routine</Link>, rather than just movement alone. Many people describe damp cold knee pain as "bone-deep."
     </p>
 
     <h3>Wind Chill</h3>
     <p>
-      Wind strips heat from exposed skin and tissues rapidly. If your knees aren't covered, wind chill can cool the joint area much faster than still cold air. The discomfort tends to be more surface-level — affecting the skin and superficial tissues first — but can deepen with prolonged exposure.
+      Wind strips heat from exposed skin and tissues rapidly. If your knees aren't covered, wind chill can cool the joint area much faster than still cold air. The discomfort tends to be more surface-level, affecting the skin and superficial tissues first, but can deepen with prolonged exposure.
     </p>
 
     <PremiumCTA
@@ -192,7 +201,7 @@ const articleContent = (
 
     <h2>Why Old Injuries Flare Up in Winter</h2>
     <p>
-      One of the most frustrating aspects of <strong>knee pain in winter</strong> is when an old injury — perhaps from years or even decades ago — suddenly starts aching again when the weather turns cold.
+      One of the most frustrating aspects of <strong>knee pain in winter</strong> is when an old injury, perhaps from years or even decades ago, suddenly starts aching again when the weather turns cold.
     </p>
     <p>
       This happens because injured tissues, even after healing, are never quite the same as uninjured tissues. Scar tissue is less elastic and has a different density than normal tissue. It responds differently to temperature and pressure changes.
@@ -202,7 +211,7 @@ const articleContent = (
     </p>
 
     <InfoBox title="The Old Injury Pattern">
-      <p>If your old knee injury aches predictably when weather changes, it's likely because the healed tissues respond differently to barometric and temperature changes than surrounding healthy tissue. This is normal and doesn't usually indicate re-injury — it's simply your body's heightened sensitivity in that area.</p>
+      <p>If your old knee injury aches predictably when weather changes, it's likely because the healed tissues respond differently to barometric and temperature changes than surrounding healthy tissue. This is normal and doesn't usually indicate re-injury, it's simply your body's heightened sensitivity in that area.</p>
     </InfoBox>
 
     <h2>Daily Habits That Increase Cold-Weather Knee Discomfort</h2>
@@ -215,7 +224,7 @@ const articleContent = (
       <li><strong>Reducing activity in winter:</strong> Many people become more sedentary during cold months, which compounds stiffness with inactivity.</li>
       <li><strong>Dehydration:</strong> People tend to drink less water in cold weather, but hydration is essential for healthy synovial fluid production.</li>
       <li><strong>Sitting near cold drafts:</strong> Positioning yourself near windows or doors where cold air enters can continuously cool your knee joints.</li>
-      <li><strong>Skipping warm-up routines:</strong> The gentle movement and warmth routines that keep joints comfortable in summer are even more important in winter — yet people often skip them.</li>
+      <li><strong>Skipping warm-up routines:</strong> The gentle movement and warmth routines that keep joints comfortable in summer are even more important in winter, yet people often skip them.</li>
     </ul>
     <p>
       For a structured approach to daily joint care that works year-round, see our <Link to="/guides/daily-knee-care-routine">daily knee care routine guide</Link>.
@@ -223,7 +232,7 @@ const articleContent = (
 
     <h2>Warmth-Based Comfort Strategies for Cold Weather</h2>
     <p>
-      The most effective approach to managing <strong>knee pain in cold weather</strong> centers on maintaining warmth — both externally and through movement.
+      The most effective approach to managing <strong>knee pain in cold weather</strong> centers on maintaining warmth, both externally and through movement.
     </p>
 
     <figure className="my-8">
@@ -269,10 +278,10 @@ const articleContent = (
       "Apply warmth to your knees for 15-20 minutes before heading outside in cold weather",
       "Wear thermal knee sleeves or insulated leggings to maintain joint warmth outdoors",
       "Do 5 minutes of gentle indoor movement before stepping into the cold",
-      "Stay well-hydrated — warm drinks like herbal tea support both hydration and circulation",
+      "Stay well-hydrated, warm drinks like herbal tea support both hydration and circulation",
       "Keep your home warm enough to prevent joint cooling, especially in sitting areas",
       "Use a heated knee device or warm compress in the evening to recover from cold exposure",
-      "Layer clothing over the knees — even a thin thermal layer under trousers makes a significant difference",
+      "Layer clothing over the knees, even a thin thermal layer under trousers makes a significant difference",
       "Consider gentle indoor exercises during the coldest days to keep joints active"
     ]} />
 
@@ -289,17 +298,17 @@ const articleContent = (
 
     <h3>Does cold weather cause joint inflammation?</h3>
     <p>
-      Cold weather doesn't directly cause inflammation in the medical sense, but it can amplify existing sensitivity. Reduced blood flow and thicker synovial fluid make joints feel achier, and barometric pressure changes can cause subtle tissue expansion that presses on nerve endings — creating a sensation similar to inflammation.
+      Cold weather doesn't directly cause inflammation in the medical sense, but it can amplify existing sensitivity. Reduced blood flow and thicker synovial fluid make joints feel achier, and barometric pressure changes can cause subtle tissue expansion that presses on nerve endings, creating a sensation similar to inflammation.
     </p>
 
     <h3>How does barometric pressure affect joint pain?</h3>
     <p>
-      When barometric pressure drops (typically before storms), the reduced external pressure allows joint tissues to expand slightly. In sensitive joints — especially those with previous wear or injury — this micro-expansion can press on nerve endings and create noticeable aching or throbbing sensations.
+      When barometric pressure drops (typically before storms), the reduced external pressure allows joint tissues to expand slightly. In sensitive joints, especially those with previous wear or injury, this micro-expansion can press on nerve endings and create noticeable aching or throbbing sensations.
     </p>
 
     <h3>Why do old knee injuries hurt in winter?</h3>
     <p>
-      Healed scar tissue from old injuries responds differently to temperature and pressure changes than healthy tissue. It's less elastic and more sensitive to micro-changes in the environment. This is why old injury sites often ache predictably when weather changes — it's heightened sensitivity, not re-injury.
+      Healed scar tissue from old injuries responds differently to temperature and pressure changes than healthy tissue. It's less elastic and more sensitive to micro-changes in the environment. This is why old injury sites often ache predictably when weather changes, it's heightened sensitivity, not re-injury.
     </p>
 
     <h3>Why do knees stiffen when temperature drops?</h3>
@@ -338,11 +347,29 @@ export const coldWeatherKneePain: ArticleExport = {
     slug: "cold-weather-knee-pain",
     title: "Why Do Knees Hurt in Cold Weather? Weather-Related Knee Pain Explained",
     subtitle: "Understanding weather-sensitive knee joints",
-    intro: "When the temperature drops, your knees start aching. You're not imagining it — cold weather genuinely affects your joints. This guide explains exactly why cold, damp, and stormy weather triggers knee stiffness and what you can do to stay comfortable.",
+    intro: "When the temperature drops, your knees start aching. You're not imagining it. Cold weather genuinely affects your joints. This guide explains exactly why cold, damp, and stormy weather triggers knee stiffness and what you can do to stay comfortable.",
     metaTitle: "Knees Hurt in Cold Weather? Causes Explained",
     metaDescription: "Why do knees hurt in cold weather? Learn how temperature drops, barometric pressure, and humidity cause knee stiffness, and discover warmth-based comfort strategies.",
     heroImage: heroImage,
     publishedDate: "March 3, 2026",
+    lastUpdated: "July 16, 2026",
+    sources: [
+      {
+        title: "Weather and Osteoarthritis Symptoms",
+        publisher: "Arthritis Foundation",
+        url: "https://www.arthritis.org/health-wellness/healthy-living/managing-pain/understanding-pain/weather-and-joint-pain",
+      },
+      {
+        title: "Osteoarthritis: Symptoms and Management",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/conditions/osteoarthritis/",
+      },
+      {
+        title: "Does Cold Weather Make Arthritis Worse?",
+        publisher: "Cleveland Clinic",
+        url: "https://health.clevelandclinic.org/does-cold-weather-make-arthritis-worse",
+      },
+    ],
     faqs: [
       {
         question: "Why do knees hurt in cold weather?",

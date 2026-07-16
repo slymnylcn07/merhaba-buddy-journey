@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <rect width="900" height="520" fill="#F8FAFC"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">Why cold makes a knee feel stiffer</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">Three everyday effects that stack up in winter</text>
+
+  <g transform="translate(70,110)">
+    <rect x="0" y="0" width="240" height="300" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <circle cx="120" cy="70" r="34" fill="#DBEAFE"/><path d="M120 52 q -14 18 0 36 q 14 -18 0 -36" fill="#3B82F6"/>
+    <text x="120" y="140" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#1D4ED8">Thicker fluid</text>
+    <text x="120" y="176" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Joint fluid moves less</text>
+    <text x="120" y="198" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">freely when it is cold,</text>
+    <text x="120" y="220" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">so the joint feels stiff</text>
+    <text x="120" y="242" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">at first movement.</text>
+  </g>
+  <g transform="translate(330,110)">
+    <rect x="0" y="0" width="240" height="300" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <circle cx="120" cy="70" r="34" fill="#FEE2E2"/><path d="M104 70 q 16 -20 32 0 M104 82 q 16 -20 32 0" stroke="#DC2626" stroke-width="4" fill="none"/>
+    <text x="120" y="140" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#B91C1C">Tighter muscles</text>
+    <text x="120" y="176" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Cold muscles tense and</text>
+    <text x="120" y="198" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">shorten to hold heat,</text>
+    <text x="120" y="220" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">pulling on the joint and</text>
+    <text x="120" y="242" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">limiting easy motion.</text>
+  </g>
+  <g transform="translate(590,110)">
+    <rect x="0" y="0" width="240" height="300" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <circle cx="120" cy="70" r="34" fill="#FEF3C7"/><path d="M120 44 l0 52 M94 70 l52 0" stroke="#D97706" stroke-width="4"/>
+    <text x="120" y="140" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#B45309">Less activity</text>
+    <text x="120" y="176" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">People move less in</text>
+    <text x="120" y="198" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">winter. Joints that sit</text>
+    <text x="120" y="220" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">still get stiffer and</text>
+    <text x="120" y="242" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">feel it more.</text>
+  </g>
+  <text x="450" y="470" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B" font-style="italic">The cold rarely damages the joint. It changes how the joint feels and moves in the moment.</text>
+</svg>

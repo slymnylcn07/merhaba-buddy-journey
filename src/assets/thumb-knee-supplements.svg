@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs><linearGradient id="suBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0FDF4"/><stop offset="100%" stop-color="#DCFCE7"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#suBg)"/>
+  <text x="600" y="130" text-anchor="middle" font-family="Georgia,serif" font-size="52" font-weight="bold" fill="#14532D">Supplements for</text>
+  <text x="600" y="196" text-anchor="middle" font-family="Georgia,serif" font-size="52" font-weight="bold" fill="#14532D">Knee Pain</text>
+  <text x="600" y="248" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" fill="#15803D">What the evidence actually supports</text>
+  <g transform="translate(600,540)">
+    <ellipse cx="0" cy="150" rx="240" ry="28" fill="#16A34A" opacity="0.1"/>
+    <!-- capsule 1 -->
+    <g transform="translate(-200,0) rotate(-20)"><rect x="-34" y="-70" width="68" height="140" rx="34" fill="#FFFFFF" stroke="#86EFAC" stroke-width="3"/><path d="M-34 0 a 34 34 0 0 1 68 0 l 0 36 a 34 34 0 0 1 -68 0 Z" fill="#22C55E"/></g>
+    <!-- capsule 2 (amber = omega) -->
+    <g transform="translate(-40,20) rotate(12)"><ellipse cx="0" cy="0" rx="46" ry="60" fill="#FBBF24" opacity="0.9" stroke="#F59E0B" stroke-width="3"/><ellipse cx="-14" cy="-18" rx="10" ry="16" fill="#FEF3C7" opacity="0.8"/></g>
+    <!-- tablet -->
+    <g transform="translate(130,10)"><circle cx="0" cy="0" r="56" fill="#FFFFFF" stroke="#86EFAC" stroke-width="3"/><line x1="0" y1="-40" x2="0" y2="40" stroke="#BBF7D0" stroke-width="4"/></g>
+    <!-- checkmark badge -->
+    <g transform="translate(210,-70)"><circle cx="0" cy="0" r="34" fill="#16A34A"/><path d="M-15 0 l10 12 l22 -26" stroke="#FFFFFF" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </g>
+  <rect x="360" y="810" width="480" height="56" rx="28" fill="#14532D"/>
+  <text x="600" y="847" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">What works, what does not</text>
+</svg>

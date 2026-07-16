@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <rect width="900" height="500" fill="#FFFFFF"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">Where supplements sit in the bigger picture</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">The base of the pyramid does the heavy lifting</text>
+
+  <!-- pyramid -->
+  <path d="M450 110 L 560 200 L 340 200 Z" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="2"/>
+  <text x="450" y="180" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#B91C1C">Supplements</text>
+
+  <path d="M340 205 L 560 205 L 620 285 L 280 285 Z" fill="#FEF3C7" stroke="#FDE68A" stroke-width="2"/>
+  <text x="450" y="252" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="bold" fill="#92400E">Weight management</text>
+
+  <path d="M280 290 L 620 290 L 690 380 L 210 380 Z" fill="#DBEAFE" stroke="#93C5FD" stroke-width="2"/>
+  <text x="450" y="342" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="bold" fill="#1D4ED8">Strength &amp; movement</text>
+
+  <path d="M210 385 L 690 385 L 760 470 L 140 470 Z" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
+  <text x="450" y="435" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="bold" fill="#166534">Daily activity &amp; good footwear</text>
+
+  <text x="800" y="170" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">smallest effect</text>
+  <text x="800" y="450" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">biggest effect</text>
+</svg>

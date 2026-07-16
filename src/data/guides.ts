@@ -222,10 +222,10 @@ export const guidesData: GuideData[] = [
   // New commercial articles - February 2026
   {
     slug: "flexiknee-review-2026",
-    title: "FlexiKnee Massager Review 2026: Does It Really Work? Full Breakdown + Pros & Cons",
-    description: "Updated FlexiKnee Massager review with a transparent testing method, verified specifications, practical pros and cons, evidence limits, and a consistent 4.7 product rating.",
-    readTime: 15,
-    lastModified: "2026-07-14",
+    title: "FlexiKnee Review 2026: Full Breakdown & Pros/Cons",
+    description: "Honest FlexiKnee review for 2026. Full breakdown of features, pros, cons, and who benefits most from this smart heated knee massager with red light therapy.",
+    readTime: 12,
+    lastModified: "2026-02-24",
   },
   {
     slug: "flexiknee-vs-competitors-2026",
@@ -480,6 +480,13 @@ export const guidesData: GuideData[] = [
     description: "Why do knees hurt in cold weather? Learn how temperature drops, barometric pressure, and humidity cause knee stiffness and discover warmth-based comfort strategies.",
     readTime: 15,
     lastModified: "2026-03-03",
+  },
+  {
+    slug: "best-supplements-for-knee-pain",
+    title: "Best Supplements for Knee Pain: What the Evidence Says",
+    description: "An honest, evidence-based guide to supplements for knee pain. Which have support, which are mixed, and how to test them safely without wasting money.",
+    readTime: 11,
+    lastModified: "2026-07-16",
   },
   {
     slug: "knee-pain-after-exercise",

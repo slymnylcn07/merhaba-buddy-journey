@@ -79,3 +79,4 @@ export { itBandFoamRollingGuide } from "./it-band-foam-rolling-step-by-step";
 export { howToSleepWithKneePain } from "./how-to-sleep-with-knee-pain";
 export { airCompressionLegMassagers } from "./air-compression-leg-massagers-do-they-work";
 export { kneeSleeveSizingGuide } from "./knee-compression-sleeve-sizing-guide";
+export { bestSupplementsForKneePain } from "./best-supplements-for-knee-pain";

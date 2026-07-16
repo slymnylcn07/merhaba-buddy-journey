@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620">
+  <rect width="900" height="620" fill="#FFFFFF"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">Knee supplements by strength of evidence</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">A simplified map. Evidence changes and individual response varies.</text>
+
+  <!-- column headers -->
+  <g font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="bold">
+    <rect x="60" y="100" width="250" height="46" rx="10" fill="#DCFCE7"/><text x="185" y="130" text-anchor="middle" fill="#166534">Some support</text>
+    <rect x="325" y="100" width="250" height="46" rx="10" fill="#FEF3C7"/><text x="450" y="130" text-anchor="middle" fill="#92400E">Mixed / modest</text>
+    <rect x="590" y="100" width="250" height="46" rx="10" fill="#FEE2E2"/><text x="715" y="130" text-anchor="middle" fill="#B91C1C">Weak / unclear</text>
+  </g>
+
+  <g font-family="Arial,Helvetica,sans-serif" font-size="15">
+    <!-- col 1 -->
+    <g fill="#14532D">
+      <rect x="60" y="164" width="250" height="52" rx="10" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="2"/><text x="76" y="188" font-weight="bold">Omega-3 (fish oil)</text><text x="76" y="207" font-size="12" fill="#475569">may ease stiffness for some</text>
+      <rect x="60" y="226" width="250" height="52" rx="10" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="2"/><text x="76" y="250" font-weight="bold">Curcumin (turmeric)</text><text x="76" y="269" font-size="12" fill="#475569">anti-inflammatory signal in trials</text>
+      <rect x="60" y="288" width="250" height="52" rx="10" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="2"/><text x="76" y="312" font-weight="bold">Vitamin D (if low)</text><text x="76" y="331" font-size="12" fill="#475569">helps mainly when deficient</text>
+    </g>
+    <!-- col 2 -->
+    <g fill="#92400E">
+      <rect x="325" y="164" width="250" height="52" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/><text x="341" y="188" font-weight="bold">Glucosamine</text><text x="341" y="207" font-size="12" fill="#475569">mixed trials, modest at best</text>
+      <rect x="325" y="226" width="250" height="52" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/><text x="341" y="250" font-weight="bold">Chondroitin</text><text x="341" y="269" font-size="12" fill="#475569">small effect in some studies</text>
+      <rect x="325" y="288" width="250" height="52" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="2"/><text x="341" y="312" font-weight="bold">Collagen peptides</text><text x="341" y="331" font-size="12" fill="#475569">early, inconsistent evidence</text>
+    </g>
+    <!-- col 3 -->
+    <g fill="#7F1D1D">
+      <rect x="590" y="164" width="250" height="52" rx="10" fill="#FEF2F2" stroke="#FECACA" stroke-width="2"/><text x="606" y="188" font-weight="bold">MSM alone</text><text x="606" y="207" font-size="12" fill="#475569">limited quality evidence</text>
+      <rect x="590" y="226" width="250" height="52" rx="10" fill="#FEF2F2" stroke="#FECACA" stroke-width="2"/><text x="606" y="250" font-weight="bold">Proprietary blends</text><text x="606" y="269" font-size="12" fill="#475569">hard to verify, often underdosed</text>
+      <rect x="590" y="288" width="250" height="52" rx="10" fill="#FEF2F2" stroke="#FECACA" stroke-width="2"/><text x="606" y="312" font-weight="bold">Miracle cures</text><text x="606" y="331" font-size="12" fill="#475569">no product regrows cartilage</text>
+    </g>
+  </g>
+
+  <rect x="60" y="380" width="780" height="180" rx="16" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="80" y="414" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#0F172A">Before you spend money</text>
+  <g font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">
+    <text x="80" y="446">Supplements are not regulated like medicines, so quality and dose vary widely.</text>
+    <text x="80" y="472">Effects, when they exist, are usually small and take weeks to notice.</text>
+    <text x="80" y="498">They work best alongside movement, strength and weight management, not instead of them.</text>
+    <text x="80" y="524">Check with a pharmacist or doctor for interactions, especially with blood thinners.</text>
+  </g>
+  <text x="450" y="596" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B" font-style="italic">This is general education, not medical or dosing advice.</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#FFFFFF"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">How falling pressure may affect a joint</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">One leading theory: tissues expand slightly as the air presses less</text>
+
+  <!-- HIGH PRESSURE -->
+  <text x="240" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="bold" fill="#1D4ED8">Higher pressure</text>
+  <g stroke="#2563EB" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8">
+    <path d="M150 150 l0 30 M135 165 l30 0 M155 150 l30 30" />
+    <path d="M300 150 l0 30 M315 150 l-30 30"/>
+    <path d="M225 135 l0 26"/>
+  </g>
+  <ellipse cx="240" cy="300" rx="70" ry="80" fill="#EFF6FF" stroke="#93C5FD" stroke-width="3"/>
+  <ellipse cx="240" cy="300" rx="40" ry="48" fill="#DBEAFE"/>
+  <text x="240" y="305" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#1D4ED8">tissue settled</text>
+  <text x="240" y="420" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Air presses evenly on the joint.</text>
+  <text x="240" y="440" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Tissues sit at their normal size.</text>
+
+  <line x1="450" y1="130" x2="450" y2="460" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="6 10"/>
+
+  <!-- LOW PRESSURE -->
+  <text x="660" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="bold" fill="#B91C1C">Lower pressure (storm front)</text>
+  <g stroke="#DC2626" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6">
+    <path d="M560 160 l0 -22 M545 148 l30 0"/>
+    <path d="M760 160 l0 -22 M745 148 l30 0"/>
+  </g>
+  <ellipse cx="660" cy="300" rx="86" ry="96" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="3"/>
+  <ellipse cx="660" cy="300" rx="52" ry="60" fill="#FEE2E2"/>
+  <circle cx="660" cy="300" r="30" fill="#DC2626" opacity="0.3"/>
+  <text x="660" y="305" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#B91C1C">tissue expands</text>
+  <text x="660" y="424" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Less push from the air may let</text>
+  <text x="660" y="444" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">sensitive tissue swell a little.</text>
+
+  <text x="450" y="512" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B" font-style="italic">This is a working theory, not settled fact. Studies show mixed results across individuals.</text>
+</svg>

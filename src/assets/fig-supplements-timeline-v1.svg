@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480">
+  <rect width="900" height="480" fill="#F8FAFC"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">What a fair supplement trial looks like</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">Give it a real chance, then judge honestly</text>
+
+  <line x1="110" y1="240" x2="790" y2="240" stroke="#CBD5E1" stroke-width="6" stroke-linecap="round"/>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <circle cx="150" cy="240" r="16" fill="#3B82F6"/>
+    <text x="150" y="196" text-anchor="middle" font-size="17" font-weight="bold" fill="#1D4ED8">Week 0</text>
+    <text x="150" y="290" text-anchor="middle" font-size="14" fill="#475569">Note your baseline:</text>
+    <text x="150" y="310" text-anchor="middle" font-size="14" fill="#475569">stiffness, stairs, sleep.</text>
+
+    <circle cx="370" cy="240" r="16" fill="#8B5CF6"/>
+    <text x="370" y="196" text-anchor="middle" font-size="17" font-weight="bold" fill="#6D28D9">Weeks 1-4</text>
+    <text x="370" y="290" text-anchor="middle" font-size="14" fill="#475569">Take the right dose</text>
+    <text x="370" y="310" text-anchor="middle" font-size="14" fill="#475569">daily, consistently.</text>
+
+    <circle cx="590" cy="240" r="16" fill="#F59E0B"/>
+    <text x="590" y="196" text-anchor="middle" font-size="17" font-weight="bold" fill="#B45309">Weeks 8-12</text>
+    <text x="590" y="290" text-anchor="middle" font-size="14" fill="#475569">Most trials that help</text>
+    <text x="590" y="310" text-anchor="middle" font-size="14" fill="#475569">show it by this point.</text>
+
+    <circle cx="770" cy="240" r="16" fill="#16A34A"/>
+    <text x="770" y="196" text-anchor="middle" font-size="17" font-weight="bold" fill="#166534">Decide</text>
+    <text x="770" y="290" text-anchor="middle" font-size="14" fill="#475569">No real change?</text>
+    <text x="770" y="310" text-anchor="middle" font-size="14" fill="#475569">Stop and save money.</text>
+  </g>
+  <text x="450" y="430" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B" font-style="italic">If a product promises results in days, treat that as a warning sign, not a benefit.</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540">
+  <rect width="900" height="540" fill="#FFFFFF"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">What long standing does to the knee</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">Static load is different from the load of walking</text>
+
+  <!-- MOVING -->
+  <text x="240" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="bold" fill="#166534">Walking</text>
+  <path d="M200 140 C 250 136 290 150 294 195 L 300 300 L 184 300 L 190 195 C 190 150 200 140 200 140 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <ellipse cx="242" cy="330" rx="40" ry="32" fill="#DCFCE7" stroke="#16A34A" stroke-width="3"/>
+  <path d="M204 366 L 210 470 L 278 470 L 284 366 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <!-- pump arrows -->
+  <g stroke="#16A34A" stroke-width="4" fill="none" stroke-linecap="round"><path d="M226 400 l0 -30 M226 370 l-6 8 M226 370 l6 8"/><path d="M258 370 l0 30 M258 400 l-6 -8 M258 400 l6 -8"/></g>
+  <text x="242" y="510" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Muscles pump, fluid moves,</text>
+  <text x="242" y="530" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">load keeps shifting.</text>
+
+  <line x1="450" y1="130" x2="450" y2="480" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="6 10"/>
+
+  <!-- STANDING STILL -->
+  <text x="660" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="bold" fill="#B91C1C">Standing still</text>
+  <path d="M620 140 C 670 136 710 150 714 195 L 720 300 L 604 300 L 610 195 C 610 150 620 140 620 140 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <ellipse cx="662" cy="330" rx="40" ry="32" fill="#FECACA" stroke="#DC2626" stroke-width="3"/>
+  <ellipse cx="662" cy="330" rx="56" ry="46" fill="#DC2626" opacity="0.15"/>
+  <path d="M624 366 L 630 470 L 698 470 L 704 366 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <!-- constant down arrows -->
+  <g stroke="#DC2626" stroke-width="5" fill="none" stroke-linecap="round"><path d="M646 300 l0 20 M646 320 l-6 -8 M646 320 l6 -8"/><path d="M678 300 l0 20 M678 320 l-6 -8 M678 320 l6 -8"/></g>
+  <text x="662" y="510" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Same spot loaded for hours,</text>
+  <text x="662" y="530" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">little pumping, blood pools.</text>
+</svg>

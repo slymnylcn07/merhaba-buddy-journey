@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <rect width="900" height="500" fill="#F8FAFC"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="bold" fill="#0F172A">Dry cold, damp cold, and wind chill</text>
+  <text x="450" y="68" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B">People often notice the three feel different on the knees</text>
+
+  <g transform="translate(70,110)">
+    <rect x="0" y="0" width="240" height="300" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <circle cx="120" cy="72" r="36" fill="#DBEAFE"/>
+    <g stroke="#2563EB" stroke-width="4" fill="none" stroke-linecap="round"><path d="M120 52 l0 40 M100 72 l40 0 M106 58 l28 28 M134 58 l-28 28"/></g>
+    <text x="120" y="144" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#1D4ED8">Dry cold</text>
+    <text x="120" y="180" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Stiffness is the main</text>
+    <text x="120" y="200" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">complaint. Warming and</text>
+    <text x="120" y="220" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">moving usually helps</text>
+    <text x="120" y="240" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">quickly.</text>
+  </g>
+  <g transform="translate(330,110)">
+    <rect x="0" y="0" width="240" height="300" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <circle cx="120" cy="72" r="36" fill="#E0E7FF"/>
+    <g stroke="#6366F1" stroke-width="4" fill="none" stroke-linecap="round"><path d="M100 64 q 20 -22 40 0 M100 80 q 20 -22 40 0"/><path d="M108 96 l0 8 M120 98 l0 8 M132 96 l0 8"/></g>
+    <text x="120" y="144" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#4338CA">Damp cold</text>
+    <text x="120" y="180" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Often reported as a</text>
+    <text x="120" y="200" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">deeper ache. Keeping the</text>
+    <text x="120" y="220" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">joint dry and warm</text>
+    <text x="120" y="240" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">matters most.</text>
+  </g>
+  <g transform="translate(590,110)">
+    <rect x="0" y="0" width="240" height="300" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <circle cx="120" cy="72" r="36" fill="#CFFAFE"/>
+    <g stroke="#0891B2" stroke-width="4" fill="none" stroke-linecap="round"><path d="M96 60 q 30 -6 48 4 M96 76 q 30 -6 48 4 M96 92 q 30 -6 48 4"/></g>
+    <text x="120" y="144" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold" fill="#0E7490">Wind chill</text>
+    <text x="120" y="180" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Pulls heat from an</text>
+    <text x="120" y="200" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">exposed knee fast.</text>
+    <text x="120" y="220" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">Covering the joint is</text>
+    <text x="120" y="240" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#475569">the simplest fix.</text>
+  </g>
+  <text x="450" y="460" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64748B" font-style="italic">These are patterns people describe, not strict medical categories. Comfort steps overlap for all three.</text>
+</svg>
