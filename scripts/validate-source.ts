@@ -13,6 +13,8 @@ const forbidden = [
   { label: "old review article title", value: "FlexiKnee Review 2026: Does It Really Work? Full Breakdown + Pros & Cons" },
   { label: "old Shopify development store", value: "lovable-project-y7ubq.myshopify.com" },
   { label: "removed homepage brand-source block", value: "Official FlexiKnee brand source" },
+  { label: "developer-facing homepage copy", value: "Active product pricing can update dynamically" },
+  { label: "developer-facing video copy", value: "Short vertical videos show the device" },
 ];
 
 function collectFiles(target: string): string[] {

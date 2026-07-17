@@ -2,6 +2,7 @@ import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-heat-redlight-benefits.jpg";
+import EvidenceScopeNotice from "@/components/EvidenceScopeNotice";
 
 export const heatRedLightTherapyBenefits2026: ArticleExport = {
   cta: "",
@@ -19,8 +20,8 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
     faqs: [
       { question: "What is red light therapy for knees?", answer: "Red light therapy (photobiomodulation) uses specific wavelengths of light (typically 630-850nm) that penetrate skin and tissue to support cellular energy production and comfort at a deeper level." },
       { question: "How does heat therapy help knee pain?", answer: "Heat therapy increases blood flow through vasodilation, relaxes muscles around the knee joint, improves flexibility, and helps reduce stiffness, especially beneficial for chronic knee concerns." },
-      { question: "Is combining heat and red light therapy better than using either alone?", answer: "Research suggests the combination may offer synergistic benefits: heat prepares tissue by increasing blood flow, while red light works at the cellular level to support mitochondrial function and tissue comfort." },
-      { question: "How often should I use heat and red light therapy on my knees?", answer: "Most people benefit from 15-20 minute sessions once or twice daily. Consistency over weeks and months tends to produce the best outcomes." },
+      { question: "Is combining heat and red light therapy better than using either alone?", answer: "There is limited direct evidence comparing combined use with either modality alone: heat prepares tissue by increasing blood flow, while red light works at the cellular level to support mitochondrial function and tissue comfort." },
+      { question: "How often should I use heat and red light therapy on my knees?", answer: "Most people benefit from 15-20 minute sessions once or twice daily. Consistency over weeks and months tends to may be more useful than inconsistent use for some people." },
       { question: "Is red light therapy safe for knee use?", answer: "Red light therapy is generally considered safe when used as directed. Quality devices include appropriate safety features and are designed for regular home use." },
       { question: "What device combines heat and red light for knees?", answer: "The FlexiKnee Smart Heated Knee Massager combines heat therapy, red light therapy, and vibration massage in a single knee-specific device designed for daily use." },
     ],
@@ -32,6 +33,8 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
         <p>
           This guide provides an updated summary of the research behind both therapies, explains why their combined effect may be greater than either alone, and explores how you can incorporate this dual-therapy approach into your daily routine.
         </p>
+
+        <EvidenceScopeNotice />
 
         <h2>Heat Therapy: What the Research Shows</h2>
         <p>
@@ -59,11 +62,11 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
           <strong>Updated 2026 research highlights:</strong>
         </p>
         <ul className="list-disc pl-6 space-y-2 my-4">
-          <li>A 2025 meta-analysis of 47 studies found that photobiomodulation showed positive effects on knee comfort in 78% of trials reviewed</li>
+          <li>Systematic reviews report mixed but potentially useful findings for some knee-pain populations; protocols and study quality vary.</li>
           <li>Wavelengths between 630-850nm demonstrated the strongest evidence for tissue penetration and cellular interaction</li>
           <li>Studies show that red light therapy may support collagen production, which is relevant for cartilage and connective tissue health</li>
           <li>Research indicates cumulative benefits, meaning consistent use over weeks yields better outcomes than sporadic application</li>
-          <li>New 2026 studies suggest that combining red light with heat may enhance photon absorption by pre-warming tissue</li>
+          <li>Direct research on combining heat with red light remains limited, so claims of added benefit should be treated cautiously.</li>
         </ul>
 
         <PremiumCTA
@@ -73,7 +76,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
 
         <h2>The Synergy Effect: Why Combining Heat + Red Light Works Better</h2>
         <p>
-          Perhaps the most compelling finding in recent research is that heat and red light therapy appear to produce <strong>synergistic effects</strong>, meaning their combined benefit is greater than simply adding the individual benefits together.
+          Perhaps the most compelling finding in recent research is that heat and red light therapy may feel complementary in the same routine, meaning their combined benefit is potentially complementary, but not yet proven to outperform either approach alone.
         </p>
         <p>
           Here's why this synergy occurs:
@@ -107,7 +110,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
           <li><strong>Lymphatic support:</strong> Rhythmic vibration may help support natural fluid movement around the joint</li>
         </ul>
         <p>
-          The combination of all three: heat, red light, and vibration, represents the most comprehensive at-home knee therapy approach available in 2026.
+          The combination of all three: heat, red light, and vibration, represents the multi-feature at-home knee therapy approach available in 2026.
         </p>
 
         <h2>Real-World Applications: Who Benefits Most?</h2>
@@ -150,7 +153,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
 
         <h3>Post-Activity Recovery (15-20 minutes)</h3>
         <ul className="list-disc pl-6 space-y-2 my-4">
-          <li>Apply within 30 minutes of finishing exercise for best results</li>
+          <li>Apply within 30 minutes of finishing exercise for more consistent observations</li>
           <li>Use alongside gentle foam rolling or stretching of surrounding muscles</li>
           <li>Stay hydrated: heat therapy increases local circulation, and hydration supports this process</li>
         </ul>
@@ -180,8 +183,8 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
 
         <h2>Key Takeaways</h2>
         <ul className="list-disc pl-6 space-y-2 my-4">
-          <li>Heat therapy and red light therapy each have strong evidence supporting their use for knee comfort</li>
-          <li>Combining both therapies creates synergistic effects that neither can achieve alone</li>
+          <li>Heat therapy and red light therapy each have research suggesting possible benefits for knee comfort</li>
+          <li>Combining both therapies may offer a complementary experience, although direct evidence on the combination is limited</li>
           <li>Adding vibration massage provides a third complementary modality for comprehensive support</li>
           <li>Consistency matters: daily use over weeks and months produces the best outcomes</li>
           <li>Quality matters: look for devices with specified wavelengths, adjustable heat, and safety features</li>

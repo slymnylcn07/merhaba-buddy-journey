@@ -4,6 +4,7 @@ import blogDeviceRedlight from "@/assets/blog-device-redlight.jpg";
 import blogDeviceWarmth from "@/assets/blog-device-warmth.jpg";
 import type { ArticleExport } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
+import EvidenceScopeNotice from "@/components/EvidenceScopeNotice";
 
 export const infraredKneeMassagerGuide2026: ArticleExport = {
   cta: "",
@@ -17,7 +18,7 @@ export const infraredKneeMassagerGuide2026: ArticleExport = {
     heroImage: heroInfraredMassager,
     publishedDate: "February 24, 2026",
     nextSlug: "flexiknee-review-2026",
-    nextTitle: "FlexiKnee Massager Review 2026: Full Breakdown",
+    nextTitle: "FlexiKnee Review 2026: Full Breakdown",
     faqs: [
       {
         question: "How does an infrared knee massager work?",
@@ -60,6 +61,8 @@ export const infraredKneeMassagerGuide2026: ArticleExport = {
         <p>
           But with dozens of products available, it can be hard to know what actually matters. This guide covers how infrared knee massagers work, what the research suggests, key features to evaluate, and which devices are worth your consideration in 2026. If you want to see specific product comparisons side by side, our <Link to="/guides/best-infrared-knee-massagers" className="text-primary hover:underline">best infrared knee massagers buyer's guide</Link> ranks the top options.
         </p>
+
+        <EvidenceScopeNotice />
 
         <h2>What Is Infrared Therapy and How Does It Apply to Knees?</h2>
         <p>

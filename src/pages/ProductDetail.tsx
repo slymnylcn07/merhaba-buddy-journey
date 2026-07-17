@@ -19,7 +19,6 @@ import { DeliveryEstimate } from "@/components/DeliveryEstimate";
 import { BenefitIconsRow, OfferSelector, PaymentOptionsRow, TrustStrip, ProductInfoAccordion } from "@/components/product-page-blocks";
 import { getProductPageConfig } from "@/data/product-page-config";
 import { LIMITED_WARRANTY_YEARS, RETURN_WINDOW_DAYS } from "@/lib/policy-config";
-import { OFFICIAL_SITE_URL } from "@/lib/brand-config";
 import { VideoReviews } from "@/components/VideoReviews";
 import { ProductReviews } from "@/components/ProductReviews";
 import { KnowBeforeYouBuy } from "@/components/KnowBeforeYouBuy";
@@ -173,11 +172,7 @@ export default function ProductDetail() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: productTitle,
-    brand: { "@type": "Brand", "@id": `${OFFICIAL_SITE_URL}/#brand`, name: "FlexiKnee", url: `${OFFICIAL_SITE_URL}/` },
-    manufacturer: { "@id": `${OFFICIAL_SITE_URL}/#organization` },
-    seller: { "@id": `${OFFICIAL_SITE_URL}/#organization` },
-    mainEntityOfPage: `https://flexi-knee.com/product/${handle || "knee-massager-smart-red-light-and-massage-therapy"}`,
-    isPartOf: { "@id": `${OFFICIAL_SITE_URL}/#website` },
+    brand: { "@type": "Brand", name: "FlexiKnee" },
     category: "Knee massager",
     description:
       "A cordless knee comfort device with adjustable warmth, an integrated red light mode, three massage vibration modes, and a wraparound fit with simple touch controls.",
@@ -199,12 +194,14 @@ export default function ProductDetail() {
       : undefined,
     offers: {
       "@type": "Offer",
-      availability: "https://schema.org/InStock",
+      availability: variant?.availableForSale
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
       price: String(basePrice || 59.99),
       priceCurrency: currency,
       url: `https://flexi-knee.com/product/${handle || "knee-massager-smart-red-light-and-massage-therapy"}`,
     },
-  }), [basePrice, currency, handle, pageConfig]);
+  }), [basePrice, currency, handle, pageConfig, variant?.availableForSale]);
 
   const cartItem = () => {
     if (!product || !variant) return null;
@@ -371,17 +368,6 @@ export default function ProductDetail() {
 
         <VideoReviews />
 
-        <PremiumProductStory
-          productName="FlexiKnee Smart Heated Knee Massager"
-          productKey="massager"
-          eyebrow="The flagship FlexiKnee experience"
-          headline="More than a product image, a routine people can picture themselves using."
-          intro="Designed to feel easy at home, whether you are relaxing, reading or winding down after activity."
-          visuals={massagerStoryVisuals}
-          highlights={["Adjustable warmth", "Massage-style vibration", "Wireless wraparound design", "Simple touch control"]}
-        />
-
-
         <section className="bg-white py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
@@ -434,6 +420,15 @@ export default function ProductDetail() {
           </div>
         </section>
 
+        <PremiumProductStory
+          productName="FlexiKnee Smart Heated Knee Massager"
+          productKey="massager"
+          eyebrow="The flagship FlexiKnee experience"
+          headline="More than a product image, a routine people can picture themselves using."
+          intro="Designed to feel easy at home, whether you are relaxing, reading or winding down after activity."
+          visuals={massagerStoryVisuals}
+          highlights={["Adjustable warmth", "Massage-style vibration", "Wireless wraparound design", "Simple touch control"]}
+        />
 
         <KnowBeforeYouBuy />
 

@@ -6,6 +6,7 @@ import infraredPenetrationImg from "@/assets/article-infrared-penetration-knee.j
 import heatingPadSurfaceImg from "@/assets/article-heating-pad-surface-heat.jpg";
 import comparisonImg from "@/assets/article-infrared-vs-heating-comparison.jpg";
 import kneeJointWarmthImg from "@/assets/article-knee-joint-warmth-diagram.jpg";
+import EvidenceScopeNotice from "@/components/EvidenceScopeNotice";
 
 export const infraredVsHeatingPads: ArticleExport = {
   cta: "",
@@ -35,6 +36,8 @@ export const infraredVsHeatingPads: ArticleExport = {
         <p>
           If you've ever draped a heating pad over your knee and wished it would stay in place, you already understand one of the key limitations of traditional warmth options. Infrared knee massagers are designed to address exactly this kind of everyday frustration, but are they genuinely better? Let's look at how both approaches compare. For a more detailed look at how smart devices stack up against one another, our <Link to="/guides/smart-knee-massagers-breakdown" className="text-primary hover:underline">smart knee massager breakdown</Link> and <Link to="/guides/best-infrared-knee-massagers" className="text-primary hover:underline">best infrared knee massagers guide</Link> offer side-by-side comparisons.
         </p>
+
+        <EvidenceScopeNotice />
 
         <h2>How Infrared Therapy Works</h2>
         <p>
@@ -82,7 +85,7 @@ export const infraredVsHeatingPads: ArticleExport = {
           When comparing infrared devices and heating pads specifically for knee comfort, several important differences stand out:
         </p>
         <ul className="list-disc pl-6 space-y-2 my-4">
-          <li><strong>Heat depth:</strong> Infrared wavelengths penetrate deeper into tissue, while heating pads provide surface-level warmth only.</li>
+          <li><strong>Heat depth:</strong> Infrared wavelengths interact with tissue differently from surface heat, while heating pads provide surface-level warmth only.</li>
           <li><strong>Comfort experience:</strong> Infrared wraps deliver even warmth around the full joint. Heating pads often leave gaps due to the knee's curved shape.</li>
           <li><strong>Portability:</strong> Most infrared knee devices are wireless and rechargeable. Heating pads typically require a wall outlet.</li>
           <li><strong>Additional features:</strong> Infrared devices often combine warmth with vibration and red light. Heating pads offer heat alone.</li>

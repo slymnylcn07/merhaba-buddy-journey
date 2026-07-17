@@ -5,6 +5,7 @@ import heroImage from "@/assets/article-hero-best-red-light-knee.jpg";
 import sectionDevices from "@/assets/article-section-red-light-devices.jpg";
 import sectionUsers from "@/assets/article-section-red-light-users.jpg";
 import sectionComparison from "@/assets/article-section-red-light-comparison.jpg";
+import EvidenceScopeNotice from "@/components/EvidenceScopeNotice";
 
 export const bestRedLightTherapyKnee: ArticleExport = {
   cta: "",
@@ -20,7 +21,7 @@ export const bestRedLightTherapyKnee: ArticleExport = {
     nextSlug: "heat-red-light-therapy-benefits-2026",
     nextTitle: "Heat + Red Light Therapy Benefits: 2026 Research",
     faqs: [
-      { question: "What is the best red light therapy for knee pain?", answer: "The best red light therapy for knee pain uses wavelengths between 630–850nm delivered through a knee-specific wrap or device. Combination devices that include heat and vibration alongside red light tend to offer the most comprehensive daily support." },
+      { question: "What is the best red light therapy for knee pain?", answer: "The best red light therapy for knee pain uses wavelengths between 630–850nm delivered through a knee-specific wrap or device. Combination devices that include heat and vibration alongside red light tend to offer the multi-feature daily support." },
       { question: "Does red light therapy actually work for joint pain?", answer: "Research suggests that red light therapy (photobiomodulation) can support cellular energy production and circulation in joint tissues. Multiple studies show promising results for knee comfort, particularly with consistent daily use over several weeks." },
       { question: "What are the main benefits of red light therapy for knees?", answer: "Key benefits include supporting cellular repair, promoting circulation, reducing stiffness, and complementing other comfort approaches like heat therapy. It works at the cellular level through interaction with mitochondria." },
       { question: "How does red light therapy work on knee pain?", answer: "Red light therapy uses specific wavelengths of light that penetrate skin and tissue. These photons interact with cytochrome c oxidase in mitochondria, supporting ATP (cellular energy) production and promoting natural cellular processes." },
@@ -41,6 +42,8 @@ export const bestRedLightTherapyKnee: ArticleExport = {
         <p>
           This guide covers everything you need to know about <strong>red light therapy for pain</strong>, specifically focused on knee joint health and daily comfort support.
         </p>
+
+        <EvidenceScopeNotice />
 
         <h2>What Is Red Light Therapy? The Science Explained</h2>
         <p>
@@ -241,7 +244,7 @@ export const bestRedLightTherapyKnee: ArticleExport = {
         <ul className="list-disc pl-6 space-y-2 my-4">
           <li><strong>Weeks 1–2:</strong> Most people notice subtle improvements in stiffness and morning comfort</li>
           <li><strong>Weeks 3–4:</strong> More noticeable improvements in daily comfort, especially with consistent use</li>
-          <li><strong>Months 2–3:</strong> Cumulative benefits become more apparent; many users report their best results after 8–12 weeks of daily use</li>
+          <li><strong>Months 2–3:</strong> Cumulative benefits become more apparent; many users report their more consistent observations after 8–12 weeks of daily use</li>
           <li><strong>Long-term:</strong> Continued daily use supports ongoing comfort; benefits tend to decrease if use is stopped</li>
         </ul>
         <p>

@@ -4,6 +4,7 @@ import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-smart-knee-braces.jpg";
 import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
+import EvidenceScopeNotice from "@/components/EvidenceScopeNotice";
 
 const sourceLinkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
@@ -62,6 +63,8 @@ export const smartHeatedKneeBraces2026: ArticleExport = {
         <p>
           A useful comparison starts with the basics: does the wrap fit securely, warm the intended area evenly, provide understandable controls, and explain its safety limits? Those details usually matter more than the number of icons printed on the control panel.
         </p>
+
+        <EvidenceScopeNotice />
 
         <h2>Heated Comfort Wrap or Structural Knee Brace?</h2>
         <p>

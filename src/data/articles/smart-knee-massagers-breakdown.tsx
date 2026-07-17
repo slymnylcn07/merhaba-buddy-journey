@@ -2,6 +2,7 @@ import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-smart-massagers-breakdown-v3.jpg";
+import EvidenceScopeNotice from "@/components/EvidenceScopeNotice";
 
 export const smartKneeMassagersBreakdown: ArticleExport = {
   cta: "",
@@ -29,6 +30,8 @@ export const smartKneeMassagersBreakdown: ArticleExport = {
         <p>
           This guide takes a practical, non-medical look at what smart knee massagers really offer, what the research landscape looks like, what real users consistently report, and how to set expectations that match reality. No hype, no medical claims, just a clear and honest breakdown.
         </p>
+
+        <EvidenceScopeNotice />
 
         <h2>What Exactly Is a "Smart" Knee Massager?</h2>
         <p>
@@ -76,7 +79,7 @@ export const smartKneeMassagersBreakdown: ArticleExport = {
 
         <h3>Red Light and Infrared: The Newer, Deeper Approach</h3>
         <p>
-          Red light and near-infrared wavelengths represent the newest and most technologically advanced feature in smart knee massagers. Unlike surface heat, these wavelengths can penetrate deeper into tissue, potentially supporting comfort at levels that warmth alone cannot reach.
+          Red light and near-infrared wavelengths represent the newest and most technologically advanced feature in smart knee massagers. Unlike surface heat, these wavelengths can interact with tissue differently from surface heat, potentially supporting comfort at levels that warmth alone cannot reach.
         </p>
          <p>
            While the research landscape around red light therapy continues to evolve, the existing body of evidence is encouraging. Many peer-reviewed studies have explored the effects of specific light wavelengths on tissue comfort and recovery. For more on what the science says, see our <Link to="/guides/heat-vs-red-light-therapy" className="text-primary hover:underline">heat vs. red light therapy guide</Link>.

@@ -12,6 +12,7 @@ import heroKneeArthritis from "@/assets/article-hero-knee-arthritis.jpg";
 import blogDeviceWarmth from "@/assets/blog-device-warmth.jpg";
 import blogDeviceComfortRoutine from "@/assets/blog-device-comfort-routine.jpg";
 import blogDeviceMorning from "@/assets/blog-device-morning.jpg";
+import EvidenceScopeNotice from "@/components/EvidenceScopeNotice";
 
 
 export const bestHeatedKneeMassagerArthritis: ArticleExport = {
@@ -63,6 +64,8 @@ export const bestHeatedKneeMassagerArthritis: ArticleExport = {
           label="Adults in the US alone experience joint stiffness"
           description="Making at-home comfort support more relevant than ever"
         />
+
+        <EvidenceScopeNotice />
 
         <h2>Why Heat Matters for Knee Joint Comfort</h2>
         <p>
@@ -127,7 +130,7 @@ export const bestHeatedKneeMassagerArthritis: ArticleExport = {
         </InfoBox>
 
         <PremiumCTA
-          headline="Looking for the most comprehensive heated knee device?"
+          headline="Looking for the multi-feature heated knee device?"
           text="FlexiKnee combines adjustable heat with red light and vibration in one wireless wrap, designed for daily joint comfort support."
         />
 
@@ -233,7 +236,7 @@ export const bestHeatedKneeMassagerArthritis: ArticleExport = {
           "Pre-activity warmth (10 min): Use before walking, gardening, or exercise to prepare the joint",
           "Evening wind-down (15 min): End the day with a comfort session while reading or watching TV",
           "Start with lower heat settings and increase gradually as you become familiar with the device",
-          "Pair device use with gentle range-of-motion movements for best results",
+          "Pair device use with gentle range-of-motion movements for more consistent observations",
         ]} />
 
         <p>
@@ -348,7 +351,7 @@ export const bestHeatedKneeMassagerArthritis: ArticleExport = {
         <ul>
           <li><strong>Traditional heating pads</strong> provide basic surface warmth but lack targeted delivery. They heat one side of the knee only, slide out of position, and do not include vibration or light therapy. They remain a budget-friendly option for occasional use but fall short for daily joint comfort routines.</li>
           <li><strong>Heated knee massagers</strong> improve on heating pads by wrapping around the entire joint and combining warmth with vibration massage. The ergonomic fit and wireless design make them far more practical for consistent daily use, and most users report better results compared to flat pads.</li>
-          <li><strong>Infrared knee massagers</strong> represent the most comprehensive category. By combining adjustable heat, infrared light wavelengths, and vibration in a single device, they address knee comfort from multiple angles simultaneously. FlexiKnee falls into this top tier, which is why it consistently appears in discussions around the <strong>best knee massager for knee pain</strong> support.</li>
+          <li><strong>Infrared knee massagers</strong> represent the multi-feature category. By combining adjustable heat, infrared light wavelengths, and vibration in a single device, they address knee comfort from multiple angles simultaneously. FlexiKnee falls into this top tier, which is why it consistently appears in discussions around the <strong>best knee massager for knee pain</strong> support.</li>
         </ul>
         <p>
           For a detailed look at how infrared compares to standard heat, our guide on{" "}

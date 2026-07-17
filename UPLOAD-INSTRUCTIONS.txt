@@ -1,1 +1,12 @@
-ZIPi açın ve içindeki src klasörünü GitHub reposunun ana dizinine yükleyin. Mevcut dosyaların üzerine yazılmasına izin verin.
+FLEXIKNEE PHASE 1–2 CLEANUP — NO NEW REDIRECTS
+
+1. Extract this ZIP.
+2. Upload every included file and folder to the root of the GitHub repository.
+3. Allow existing files to be replaced.
+4. Commit the changes.
+
+This package does not add, hide, consolidate, or redirect any guide URL.
+The site's previously existing historical redirects in vercel.json remain unchanged.
+
+Suggested commit message:
+fix: apply phase 1 and phase 2 cleanup without new redirects
