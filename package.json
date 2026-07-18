@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && tsx scripts/generate-sitemap.ts && tsx scripts/prerender.ts && tsx scripts/submit-indexnow.ts",
+    "build": "vite build && tsx scripts/generate-sitemap.ts && tsx scripts/prerender.ts",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
     "validate:source": "tsx scripts/validate-source.ts",
-    "validate:build": "tsx scripts/validate-build.ts"
+    "validate:build": "tsx scripts/validate-build.ts",
+    "indexnow": "tsx scripts/submit-indexnow.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -55,7 +56,7 @@
     "cmdk": "^1.1.1",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.6.0",
-    "input-otp": "^1.4.2",
+    "input-otp": "^1.4.1",
     "lucide-react": "^0.462.0",
     "next-themes": "^0.3.0",
     "puppeteer-core": "^24.40.0",
