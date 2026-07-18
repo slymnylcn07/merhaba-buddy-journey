@@ -1,34 +1,23 @@
 {
-  "title": "FlexiKnee Phase 1–2 Cleanup Without New Redirects",
-  "includes": [
-    "Phase 1 technical cleanup",
-    "Phase 2 article and FAQ cleanup",
-    "Dynamic main-product schema availability",
-    "All current guide URLs retained"
+  "name": "FlexiKnee New Articles Batch 1 — First 3",
+  "created": "2026-07-18",
+  "articles": [
+    {
+      "slug": "glucosamine-chondroitin-knee-pain",
+      "file": "src/data/articles/glucosamine-chondroitin-knee-pain.tsx",
+      "visuals": 3
+    },
+    {
+      "slug": "menopause-knee-pain",
+      "file": "src/data/articles/menopause-knee-pain.tsx",
+      "visuals": 3
+    },
+    {
+      "slug": "red-light-therapy-dose-knees",
+      "file": "src/data/articles/red-light-therapy-dose-knees.tsx",
+      "visuals": 3
+    }
   ],
-  "excludes": [
-    "New guide redirects",
-    "Guide consolidation and hiding",
-    "Sitemap removal of guide URLs"
-  ],
-  "files": [
-    "CONTENT-CLEANUP-PHASE-1-2.md",
-    "UPLOAD-INSTRUCTIONS.txt",
-    "scripts/generate-sitemap.ts",
-    "scripts/validate-source.ts",
-    "src/components/EvidenceScopeNotice.tsx",
-    "src/data/articles/best-heated-knee-massager-arthritis.tsx",
-    "src/data/articles/best-red-light-therapy-knee.tsx",
-    "src/data/articles/flexiknee-vs-competitors-2026.tsx",
-    "src/data/articles/heat-red-light-therapy-benefits-2026.tsx",
-    "src/data/articles/infrared-knee-massager-guide-2026.tsx",
-    "src/data/articles/infrared-vs-heating-pads.tsx",
-    "src/data/articles/smart-heated-knee-braces-2026.tsx",
-    "src/data/articles/smart-knee-massagers-breakdown.tsx",
-    "src/pages/Guides.tsx",
-    "src/pages/PrivacyPolicy.tsx",
-    "src/pages/ProductDetail.tsx",
-    "src/pages/TermsOfService.tsx",
-    "vercel.json"
-  ]
+  "integration": "scripts/apply-flexiknee-new-articles-batch-1.mjs",
+  "preserves_existing_article_content": true
 }

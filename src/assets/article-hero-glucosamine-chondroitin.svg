@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Glucosamine and chondroitin evidence overview</title>
+  <desc id="desc">A supplement bottle, a stylized knee joint, and a balance scale showing mixed research evidence.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eef6ff"/><stop offset="1" stop-color="#f8fbff"/></linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-opacity=".13"/></filter>
+  </defs>
+  <rect width="1600" height="900" rx="48" fill="url(#bg)"/>
+  <circle cx="1290" cy="145" r="125" fill="#dbeafe" opacity=".65"/><circle cx="220" cy="760" r="170" fill="#e0f2fe" opacity=".7"/>
+  <g filter="url(#shadow)">
+    <rect x="140" y="185" width="390" height="520" rx="44" fill="#fff"/>
+    <rect x="235" y="115" width="200" height="100" rx="28" fill="#1e3a8a"/>
+    <rect x="190" y="300" width="290" height="210" rx="26" fill="#eff6ff" stroke="#bfdbfe" stroke-width="4"/>
+    <text x="335" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="38" fill="#0f172a">GLUCOSAMINE</text>
+    <text x="335" y="423" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="34" fill="#0f172a">+</text>
+    <text x="335" y="474" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="34" fill="#0f172a">CHONDROITIN</text>
+    <text x="335" y="585" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#475569">Evidence is mixed</text>
+  </g>
+  <g transform="translate(650 170)" filter="url(#shadow)">
+    <rect width="390" height="520" rx="44" fill="#fff"/>
+    <path d="M160 75c-65 92-62 170-22 226 24 34 34 65 31 113" fill="none" stroke="#93c5fd" stroke-width="54" stroke-linecap="round"/>
+    <path d="M230 85c51 78 48 154 9 216-24 38-32 74-28 119" fill="none" stroke="#60a5fa" stroke-width="58" stroke-linecap="round"/>
+    <ellipse cx="197" cy="284" rx="78" ry="52" fill="#dbeafe" stroke="#2563eb" stroke-width="8"/>
+    <path d="M119 286c47 28 111 28 157 0" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round"/>
+    <text x="195" y="468" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="32" fill="#0f172a">Knee osteoarthritis</text>
+  </g>
+  <g transform="translate(1130 220)" filter="url(#shadow)">
+    <rect width="330" height="410" rx="44" fill="#fff"/>
+    <line x1="165" y1="80" x2="165" y2="290" stroke="#0f172a" stroke-width="12"/>
+    <line x1="65" y1="140" x2="265" y2="140" stroke="#0f172a" stroke-width="12" stroke-linecap="round"/>
+    <line x1="95" y1="140" x2="55" y2="220" stroke="#64748b" stroke-width="5"/><line x1="235" y1="140" x2="275" y2="220" stroke="#64748b" stroke-width="5"/>
+    <path d="M20 220h105c-7 50-98 50-105 0Z" fill="#bfdbfe" stroke="#2563eb" stroke-width="5"/>
+    <path d="M205 220h105c-7 50-98 50-105 0Z" fill="#fde68a" stroke="#d97706" stroke-width="5"/>
+    <path d="M100 310h130" stroke="#0f172a" stroke-width="16" stroke-linecap="round"/>
+    <text x="165" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="30" fill="#0f172a">BENEFIT?</text>
+  </g>
+  <text x="800" y="820" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="54" fill="#0f172a">What the evidence really says</text>
+</svg>

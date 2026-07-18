@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+<title id="title">Red light dose formula</title><desc id="desc">An educational formula showing energy density equals irradiance times time, with a worked example.</desc>
+<rect width="1400" height="900" rx="44" fill="#fff8f8"/>
+<text x="700" y="90" text-anchor="middle" font-family="Arial" font-size="48" font-weight="700" fill="#0f172a">The dose equation behind every session</text>
+<g font-family="Arial" text-anchor="middle">
+ <g transform="translate(75 205)"><rect width="340" height="300" rx="35" fill="#fee2e2" stroke="#ef4444" stroke-width="5"/><text x="170" y="90" font-size="36" font-weight="700" fill="#991b1b">IRRADIANCE</text><text x="170" y="160" font-size="54" font-weight="700" fill="#0f172a">mW/cm²</text><text x="170" y="220" font-size="25" fill="#475569">How much optical power</text><text x="170" y="255" font-size="25" fill="#475569">reaches each area</text></g>
+ <text x="475" y="380" font-size="80" font-weight="700" fill="#64748b">×</text>
+ <g transform="translate(530 205)"><rect width="340" height="300" rx="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"/><text x="170" y="90" font-size="36" font-weight="700" fill="#92400e">TIME</text><text x="170" y="160" font-size="54" font-weight="700" fill="#0f172a">seconds</text><text x="170" y="220" font-size="25" fill="#475569">How long the same area</text><text x="170" y="255" font-size="25" fill="#475569">is illuminated</text></g>
+ <text x="930" y="380" font-size="80" font-weight="700" fill="#64748b">=</text>
+ <g transform="translate(985 205)"><rect width="340" height="300" rx="35" fill="#dbeafe" stroke="#2563eb" stroke-width="5"/><text x="170" y="90" font-size="36" font-weight="700" fill="#1e40af">ENERGY DENSITY</text><text x="170" y="160" font-size="54" font-weight="700" fill="#0f172a">J/cm²</text><text x="170" y="220" font-size="25" fill="#475569">A fuller description</text><text x="170" y="255" font-size="25" fill="#475569">of delivered energy</text></g>
+ <rect x="180" y="620" width="1040" height="170" rx="32" fill="#fff" stroke="#e2e8f0" stroke-width="4"/>
+ <text x="700" y="680" font-size="31" font-weight="700" fill="#0f172a">Worked example: 20 mW/cm² × 600 seconds ÷ 1000 = 12 J/cm²</text>
+ <text x="700" y="735" font-size="26" fill="#475569">This only works when irradiance at the skin is known and measured reliably.</text>
+</g>
+</svg>

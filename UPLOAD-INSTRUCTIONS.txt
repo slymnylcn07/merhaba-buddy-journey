@@ -1,4 +1,54 @@
-ZIP'i açın ve package.json ile scripts klasörünü GitHub reposunun ana dizinine yükleyin.
-Mevcut dosyaların üzerine yazılmasına izin verin.
-Bu paket otomatik tam-site IndexNow gönderimini build zincirinden kaldırır.
-Yükledikten sonra 72 saat boyunca yeni deployment yapmayın.
+FLEXIKNEE — NEW ARTICLES BATCH 1 (FIRST 3)
+Date: July 18, 2026
+
+CONTENTS
+- 3 complete English health/SEO articles (2,500+ words each)
+- 9 original SVG visuals (3 per article, including each article's hero/thumbnail)
+- Quick Answer boxes
+- Visible Sources and Further Reading data
+- FAQ data; the current GuideArticle page automatically generates FAQPage schema
+- Article source citations; the current GuideArticle page automatically includes them in BlogPosting schema
+- An idempotent integration script that preserves existing articles
+
+ARTICLES
+1. /guides/glucosamine-chondroitin-knee-pain
+2. /guides/menopause-knee-pain
+3. /guides/red-light-therapy-dose-knees
+
+IMPORTANT
+This package intentionally does NOT overwrite src/pages/GuideArticle.tsx, src/pages/Guides.tsx,
+src/data/guides.ts, or src/data/articles/index.ts with an older snapshot. The script patches the
+CURRENT versions in your repository, so previously published guides remain untouched.
+
+INSTALL
+1. Extract this ZIP into the project root. Allow it to add the new files/folders.
+2. Open a terminal in the project root.
+3. Run:
+
+   node scripts/apply-flexiknee-new-articles-batch-1.mjs
+
+4. Validate:
+
+   npm run build
+
+5. Commit and push the new files plus the four registry files changed by the script.
+
+FILES THE SCRIPT UPDATES (REGISTRY ONLY)
+- src/data/articles/index.ts
+- src/data/guides.ts
+- src/pages/GuideArticle.tsx
+- src/pages/Guides.tsx
+
+FILES IT DOES NOT EDIT
+- Any existing article content file
+- Existing slugs, titles, body copy, FAQs, sources, or images
+- Redirects
+- Product pages
+
+IDEMPOTENT
+The script can be run again safely. It checks for existing article symbols/slugs before inserting.
+
+RED-LIGHT POSITIONING NOTE
+The red-light article is intentionally a dosing/protocol companion page. It links to the existing
+research overview and distinguishes clinical point-dose laser studies from broad consumer LED devices.
+It does not invent wavelength, irradiance, or J/cm² specifications for FlexiKnee.
