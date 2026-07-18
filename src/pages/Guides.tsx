@@ -139,8 +139,16 @@ import thumbBatch2KneePainLocationMap2026 from "@/assets/guide-thumbnails/batch-
 import thumbBatch2SuddenKneePainGuide from "@/assets/guide-thumbnails/batch-2/sudden-knee-pain-guide.png";
 import thumbBatch2ItBandPainLocationDiagram from "@/assets/guide-thumbnails/batch-2/it-band-pain-location-diagram.png";
 import thumbBatch2HomeRemediesKneePain from "@/assets/guide-thumbnails/batch-2/home-remedies-knee-pain.png";
+import thumbGlucosamineChondroitin from "@/assets/article-hero-glucosamine-chondroitin.svg";
+import thumbMenopauseKneePain from "@/assets/article-hero-menopause-knee-pain.svg";
+import thumbRedLightDoseKnees from "@/assets/article-hero-red-light-dose-knees.svg";
+import thumbPickleballKneeRecovery from "@/assets/guide-thumb-pickleball-knee-recovery.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
+  "glucosamine-chondroitin-knee-pain": thumbGlucosamineChondroitin,
+  "menopause-knee-pain": thumbMenopauseKneePain,
+  "red-light-therapy-dose-knees": thumbRedLightDoseKnees,
+  "pickleball-knee-recovery-routine": thumbPickleballKneeRecovery,
   "why-knee-pain-doesnt-go-away": thumbBatch1WhyKneePainDoesntGoAway,
   "heat-vs-red-light-therapy": thumbHeatTherapy,
   "who-benefits-from-knee-therapy-devices": thumbWhoBenefits,

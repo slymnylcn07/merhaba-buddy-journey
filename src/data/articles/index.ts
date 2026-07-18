@@ -72,6 +72,12 @@ export { burningKneesAfterExercise } from "./burning-knees-after-exercise";
 export { homeRemediesKneePain } from "./home-remedies-knee-pain";
 export { whatMakesKneePainWorse } from "./what-makes-knee-pain-worse";
 export { weightAffectsKneePain } from "./weight-affects-knee-pain";
+
+// FlexiKnee new guides — July 18, 2026
+export { glucosamineChondroitinKneePain } from "./glucosamine-chondroitin-knee-pain";
+export { menopauseKneePain } from "./menopause-knee-pain";
+export { redLightTherapyDoseKnees } from "./red-light-therapy-dose-knees";
+export { pickleballKneeRecoveryRoutine } from "./pickleball-knee-recovery-routine";
 export type { ArticleExport, ArticleData, FAQItem } from "./types";
 export { cordlessHeatedKneeMassagers2026 } from "./cordless-rechargeable-heated-knee-massagers-2026";
 export { bestInsolesKneePain2026 } from "./best-insoles-for-knee-pain-2026";

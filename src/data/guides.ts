@@ -719,6 +719,36 @@ export const guidesData: GuideData[] = [
     readTime: 12,
     lastModified: "2026-07-12",
   },
+
+  // FlexiKnee new health and activity guides
+  {
+    slug: "glucosamine-chondroitin-knee-pain",
+    title: "Glucosamine & Chondroitin for Knee Pain: Do They Work?",
+    description: "A balanced guide to glucosamine and chondroitin forms, research, doses, safety, interactions, product quality, and a structured trial plan.",
+    readTime: 18,
+    lastModified: "2026-07-18",
+  },
+  {
+    slug: "menopause-knee-pain",
+    title: "Menopause and Knee Pain: The Hormone Connection",
+    description: "How estrogen changes, sleep, muscle, body composition, osteoarthritis, HRT evidence, exercise, and red flags fit together in midlife knee pain.",
+    readTime: 18,
+    lastModified: "2026-07-18",
+  },
+  {
+    slug: "red-light-therapy-dose-knees",
+    title: "Red Light for Knees: How Long, How Often?",
+    description: "A practical guide to red-light session length, frequency, irradiance, energy density, device differences, safety, and a four-to-eight-week routine.",
+    readTime: 20,
+    lastModified: "2026-07-18",
+  },
+  {
+    slug: "pickleball-knee-recovery-routine",
+    title: "Pickleball Knees: A Recovery Routine That Gets You Back on the Court",
+    description: "A court-specific recovery plan covering cool-down, mobility, strength, workload, shoes, return to play, and warning signs after pickleball.",
+    readTime: 20,
+    lastModified: "2026-07-18",
+  },
 ];
 
 export const staticPages = [
