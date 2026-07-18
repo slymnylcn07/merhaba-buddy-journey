@@ -59,7 +59,7 @@ export const glucosamineChondroitinKneePain: ArticleExport = {
     ],
     sources: [
       { title: "Glucosamine and Chondroitin for Osteoarthritis: What You Need To Know", publisher: "National Center for Complementary and Integrative Health", url: "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know" },
-      { title: "Osteoarthritis in over 16s: diagnosis and management — Recommendations", publisher: "National Institute for Health and Care Excellence", url: "https://www.nice.org.uk/guidance/NG226/chapter/recommendations" },
+      { title: "Osteoarthritis in over 16s: diagnosis and management - Recommendations", publisher: "National Institute for Health and Care Excellence", url: "https://www.nice.org.uk/guidance/NG226/chapter/recommendations" },
       { title: "2019 ACR/Arthritis Foundation Guideline for Osteoarthritis", publisher: "American College of Rheumatology", url: "https://rheumatology.org/osteoarthritis-guideline" },
       { title: "Glucosamine, chondroitin sulfate, and the two in combination for painful knee osteoarthritis", publisher: "New England Journal of Medicine / PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/16495392/" },
       { title: "The effect of glucosamine and/or chondroitin sulfate on progression of knee osteoarthritis: GAIT", publisher: "Arthritis & Rheumatism / PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/20525840/" },
@@ -159,12 +159,12 @@ export const glucosamineChondroitinKneePain: ArticleExport = {
           No credible evidence supports the common claim that these supplements rebuild a worn knee. Cartilage is a living tissue, but advanced osteoarthritis is a whole-joint condition involving cartilage, bone, synovium, meniscus, ligaments, muscles, and pain processing. Swallowing a cartilage-related molecule does not deliver it like a patch to a damaged surface.
         </p>
         <p>
-          Researchers have studied joint-space narrowing and imaging markers because slowing structural change would be valuable. Results have been inconsistent, effects—when reported—are small, and imaging changes do not always track with symptoms. A person should not delay effective care or a surgical evaluation because a bottle promises “cartilage regeneration.” If you have been told your knee is severely narrowed, use our <Link to="/guides/knee-arthritis-pain-guide">knee arthritis guide</Link> to understand the broader treatment pathway rather than looking for a supplement to reverse the X-ray.
+          Researchers have studied joint-space narrowing and imaging markers because slowing structural change would be valuable. Results have been inconsistent, effects-when reported-are small, and imaging changes do not always track with symptoms. A person should not delay effective care or a surgical evaluation because a bottle promises “cartilage regeneration.” If you have been told your knee is severely narrowed, use our <Link to="/guides/knee-arthritis-pain-guide">knee arthritis guide</Link> to understand the broader treatment pathway rather than looking for a supplement to reverse the X-ray.
         </p>
 
         <h2>Who Might Still Consider a Time-Limited Trial?</h2>
         <p>
-          A reasonable candidate is someone with a clinician-supported diagnosis of knee osteoarthritis who understands the uncertainty, has reviewed interactions, is already using core treatments, and prefers to test a relatively low-risk option. The goal should be symptom or function improvement—not cartilage regrowth. Someone with unexplained knee pain should first clarify the cause because meniscus injury, gout, inflammatory arthritis, infection, referred pain, and other conditions need different care.
+          A reasonable candidate is someone with a clinician-supported diagnosis of knee osteoarthritis who understands the uncertainty, has reviewed interactions, is already using core treatments, and prefers to test a relatively low-risk option. The goal should be symptom or function improvement-not cartilage regrowth. Someone with unexplained knee pain should first clarify the cause because meniscus injury, gout, inflammatory arthritis, infection, referred pain, and other conditions need different care.
         </p>
         <p>
           A trial is less reasonable when the product is being used instead of strengthening or medical assessment, when the price creates financial strain, when the label hides ingredient forms, or when the person takes warfarin or has another important interaction risk. It is also unhelpful to start three supplements, change shoes, begin a workout, and add a device on the same day. If symptoms improve, you will not know what helped.
@@ -201,7 +201,7 @@ export const glucosamineChondroitinKneePain: ArticleExport = {
 
         <h2>How to Choose a Better-Quality Product</h2>
         <p>
-          No certification proves that a supplement treats knee pain, but independent quality testing can reduce uncertainty about identity, contamination, and dose. Look for transparent ingredient forms and quantities rather than a proprietary blend. Third-party seals from recognized testing organizations can be useful, while remembering that the seal evaluates quality standards—not clinical effectiveness.
+          No certification proves that a supplement treats knee pain, but independent quality testing can reduce uncertainty about identity, contamination, and dose. Look for transparent ingredient forms and quantities rather than a proprietary blend. Third-party seals from recognized testing organizations can be useful, while remembering that the seal evaluates quality standards-not clinical effectiveness.
         </p>
         <ul>
           <li>Choose one or two active ingredients rather than a crowded “joint complex.”</li>
@@ -243,12 +243,12 @@ export const glucosamineChondroitinKneePain: ArticleExport = {
           Supplements and comfort devices answer different questions. Glucosamine is taken with the hope of a gradual systemic effect; heat and gentle massage can offer short-term sensory comfort or help someone prepare for movement. Neither should be described as rebuilding cartilage. A home routine can be useful when it supports exercise, sleep, and daily activity rather than replacing them.
         </p>
         <p>
-          If a knee is newly swollen, red, unusually hot, or injured, do not cover the warning signs with prolonged heat or massage. Use our <Link to="/guides/heat-vs-ice-for-knees">heat versus ice guide</Link> for timing and safety, and seek assessment when symptoms are severe or unexplained. People exploring a convenient warmth, red-light, and vibration routine can review the <Link to="/product/knee-massager-smart-red-light-and-massage-therapy">FlexiKnee knee massager</Link>, but the device should be presented as a comfort tool—not as proof that a supplement or device treats the underlying disease.
+          If a knee is newly swollen, red, unusually hot, or injured, do not cover the warning signs with prolonged heat or massage. Use our <Link to="/guides/heat-vs-ice-for-knees">heat versus ice guide</Link> for timing and safety, and seek assessment when symptoms are severe or unexplained. People exploring a convenient warmth, red-light, and vibration routine can review the <Link to="/product/knee-massager-smart-red-light-and-massage-therapy">FlexiKnee knee massager</Link>, but the device should be presented as a comfort tool-not as proof that a supplement or device treats the underlying disease.
         </p>
 
         <h2>Bottom Line</h2>
         <p>
-          Glucosamine and chondroitin occupy an unusual middle ground: biologically plausible, widely used, generally tolerated by many people, and supported by some positive studies—but not reliably effective in the strongest overall evidence. That is why a careful answer is more useful than “yes” or “no.” They are not essential osteoarthritis treatments and should not be sold as cartilage rebuilders. A well-informed person who has checked interactions may still choose a time-limited, measurable trial of a clearly identified product.
+          Glucosamine and chondroitin occupy an unusual middle ground: biologically plausible, widely used, generally tolerated by many people, and supported by some positive studies-but not reliably effective in the strongest overall evidence. That is why a careful answer is more useful than “yes” or “no.” They are not essential osteoarthritis treatments and should not be sold as cartilage rebuilders. A well-informed person who has checked interactions may still choose a time-limited, measurable trial of a clearly identified product.
         </p>
         <p>
           The decision should be judged by meaningful function, not by hope, label language, or the fact that a bottle has already been purchased. Keep exercise and evidence-based care at the center, stop an unhelpful trial, and bring the exact product to your clinician whenever safety is uncertain.

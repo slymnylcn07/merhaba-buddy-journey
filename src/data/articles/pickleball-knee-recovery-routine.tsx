@@ -1,10 +1,10 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/article-hero-pickleball-knee-recovery.jpg";
-import lateralMovement from "@/assets/article-pickleball-lateral-movement.jpg";
-import cooldownStretch from "@/assets/article-pickleball-cooldown-stretch.jpg";
-import warningSigns from "@/assets/article-pickleball-knee-warning-signs.jpg";
-import postPlayKneeCheck from "@/assets/article-pickleball-post-play-knee-check.jpg";
+import heroImage from "@/assets/article-hero-pickleball-knee-recovery-v2.png";
+import lateralMovement from "@/assets/article-pickleball-lateral-movement-v2.png";
+import cooldownStretch from "@/assets/article-pickleball-cooldown-stretch-v2.png";
+import warningSigns from "@/assets/article-pickleball-knee-warning-signs-v2.png";
+import postPlayKneeCheck from "@/assets/article-pickleball-post-play-knee-check-v2.png";
 
 export const pickleballKneeRecoveryRoutine: ArticleExport = {
   cta: "",
@@ -118,7 +118,7 @@ export const pickleballKneeRecoveryRoutine: ArticleExport = {
         <h2>Soreness, Overload, or Injury?</h2>
         <figure>
           <img src={warningSigns} alt="Pickleball player kneeling on court and holding a painful knee" loading="lazy" />
-          <figcaption>A recovery routine is appropriate for mild, improving symptoms—not for every painful knee.</figcaption>
+          <figcaption>A recovery routine is appropriate for mild, improving symptoms-not for every painful knee.</figcaption>
         </figure>
         <p>
           Recovery advice is safest when you first decide which category the problem resembles. This is not a self-diagnosis test. It is a practical screen for deciding whether to reduce load, stop the session, or seek assessment.
@@ -183,27 +183,27 @@ export const pickleballKneeRecoveryRoutine: ArticleExport = {
         <p>
           Use this routine after an ordinary session or later the same day when symptoms are mild. It should feel easy. Skip any movement that causes sharp pain, catching, instability, or increasing discomfort.
         </p>
-        <h3>1. Ankle pumps — 30 repetitions</h3>
+        <h3>1. Ankle pumps - 30 repetitions</h3>
         <p>
           Sit with both feet supported. Slowly point and flex the ankles through a comfortable range. The ankle matters because limited calf and ankle motion can push more demand toward the knee during low reaches and stopping.
         </p>
-        <h3>2. Seated heel slides — 10 per side</h3>
+        <h3>2. Seated heel slides - 10 per side</h3>
         <p>
           Sit near the edge of a chair. Slide one foot backward to bend the knee, then forward to straighten it. Keep the heel in contact with the floor and stop before pinching or sharp pain. This is a movement drill, not a stretch contest.
         </p>
-        <h3>3. Calf stretch — 2 gentle holds per side</h3>
+        <h3>3. Calf stretch - 2 gentle holds per side</h3>
         <p>
           Face a wall, step one foot back, and keep the heel down. Hold 20–30 seconds without bouncing. Repeat with a slight bend in the back knee to change the emphasis. Flexible, strong calves help control forward movement and support balance.
         </p>
-        <h3>4. Supported hip-flexor stretch — 2 holds per side</h3>
+        <h3>4. Supported hip-flexor stretch - 2 holds per side</h3>
         <p>
           Use a split stance while holding a fence, wall, or chair. Gently tuck the pelvis and shift forward until the front of the back hip feels a mild stretch. Avoid a deep lunge. A player who sits for much of the day may arrive at the court with stiff hips and compensate through the knees.
         </p>
-        <h3>5. Sit-to-stand rehearsal — 8 slow repetitions</h3>
+        <h3>5. Sit-to-stand rehearsal - 8 slow repetitions</h3>
         <p>
           From a firm chair, place the feet about hip-width apart and stand without dropping the knees inward. Sit back under control. Use the hands if needed. This is not a hard strength set immediately after play; it is a quick check that both legs can share load normally.
         </p>
-        <h3>6. Easy lateral steps — 2 rounds of 20 seconds</h3>
+        <h3>6. Easy lateral steps - 2 rounds of 20 seconds</h3>
         <p>
           Stand tall with a slight bend in the hips and knees. Take small side steps without crossing the feet. Keep the toes generally forward and the knees aligned over the feet. Stop if the movement reproduces the exact court pain.
         </p>
@@ -347,7 +347,7 @@ export const pickleballKneeRecoveryRoutine: ArticleExport = {
           Pickleball knee recovery is less about one perfect stretch and more about matching load to capacity. Cool down instead of stopping abruptly, use cold or warmth for the right situation, check the next-morning response, and build strength in the hips, thighs, calves, and balance system. Warm up for the movements you will actually use and increase only one part of the workload at a time.
         </p>
         <p>
-          Most mild soreness can be managed without abandoning the sport. The important skill is knowing when a knee is asking for a smaller next session and when it is warning you not to play. Respect that distinction and the recovery routine becomes part of playing longer—not merely recovering from playing too much.
+          Most mild soreness can be managed without abandoning the sport. The important skill is knowing when a knee is asking for a smaller next session and when it is warning you not to play. Respect that distinction and the recovery routine becomes part of playing longer-not merely recovering from playing too much.
         </p>
       </>
     )

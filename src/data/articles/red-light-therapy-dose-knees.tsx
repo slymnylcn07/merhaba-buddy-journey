@@ -66,7 +66,7 @@ export const redLightTherapyDoseKnees: ArticleExport = {
       { title: "Efficacy of low-level laser therapy on pain and disability in knee osteoarthritis", publisher: "BMJ Open / PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/31662383/" },
       { title: "Effectiveness of Photobiomodulation in Reducing Pain and Disability in Knee Osteoarthritis", publisher: "Physical Therapy / PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/38775202/" },
       { title: "Photobiomodulation plus exercise in knee osteoarthritis: systematic review", publisher: "Lasers in Medical Science / PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/33392780/" },
-      { title: "Biphasic dose response in low level light therapy — an update", publisher: "Dose-Response / PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/22461763/" },
+      { title: "Biphasic dose response in low level light therapy - an update", publisher: "Dose-Response / PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/22461763/" },
       { title: "Biphasic dose response in low level light therapy", publisher: "Dose-Response / PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/20011653/" },
       { title: "Frequently Asked Questions About Home Use Devices", publisher: "U.S. Food and Drug Administration", url: "https://www.fda.gov/medical-devices/home-use-devices/frequently-asked-questions-about-home-use-devices" },
       { title: "Home Healthcare Medical Devices: A Checklist", publisher: "U.S. Food and Drug Administration", url: "https://www.fda.gov/medical-devices/home-health-and-consumer-devices/brochure-home-healthcare-medical-devices-checklist" },
@@ -82,7 +82,7 @@ export const redLightTherapyDoseKnees: ArticleExport = {
         </div>
 
         <p>
-          “How many minutes?” is the first question most people ask about red light therapy, and it is the question product pages are most willing to answer. Unfortunately, minutes are only one piece of the dose. Asking for time without knowing output is like asking how long it takes to fill a glass without knowing how fast the tap runs. A weak light used for twenty minutes and a stronger light used for five minutes may deliver similar energy—or they may not, because beam shape, distance, contact, and coverage also change what reaches the skin.
+          “How many minutes?” is the first question most people ask about red light therapy, and it is the question product pages are most willing to answer. Unfortunately, minutes are only one piece of the dose. Asking for time without knowing output is like asking how long it takes to fill a glass without knowing how fast the tap runs. A weak light used for twenty minutes and a stronger light used for five minutes may deliver similar energy-or they may not, because beam shape, distance, contact, and coverage also change what reaches the skin.
         </p>
         <p>
           This matters especially for knees. Clinical studies have used point-by-point lasers, clusters of probes, broad LED arrays, different wavelengths, and different treatment schedules. Consumer products include panels held at a distance, flexible wraps pressed against the skin, handheld wands, and heated massagers with small red LEDs. These are not dose-equivalent merely because they glow red.
@@ -121,10 +121,10 @@ export const redLightTherapyDoseKnees: ArticleExport = {
           Even this formula is an estimate. The published irradiance may have been measured at the center rather than across the whole array, at zero distance rather than the recommended distance, before passing through fabric, or with a meter that responds differently to wavelength. Flexible wraps can create gaps around a curved knee. Skin tone, tissue depth, reflection, and movement influence absorption. Pulsed devices require duty-cycle information. If heat causes the device to reduce output, average delivery may change during the session.
         </p>
         <p>
-          The formula is therefore a tool for understanding—not permission to invent your own clinical protocol. Transparent specifications make comparison possible; they do not prove that a dose is therapeutic.
+          The formula is therefore a tool for understanding-not permission to invent your own clinical protocol. Transparent specifications make comparison possible; they do not prove that a dose is therapeutic.
         </p>
 
-        <h2>What Wavelength Tells You — and What It Does Not</h2>
+        <h2>What Wavelength Tells You - and What It Does Not</h2>
         <p>
           Wavelength helps determine how light interacts with tissue. Visible red is absorbed more superficially, while near-infrared generally penetrates farther before being scattered and absorbed. “Deeper” does not automatically mean “better.” A knee treatment may aim at skin, superficial tendon, synovial region, or deeper joint structures, and actual energy falls with depth.
         </p>

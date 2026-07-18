@@ -1,0 +1,16 @@
+FLEXIKNEE - FINAL 4 GUIDE FIX PACKAGE
+
+This package includes all requested corrections:
+1. Em dashes removed from the 4 new articles.
+2. Article CTA moved directly after article content and immediately before the quiz.
+3. Pickleball images replaced with higher-resolution PNG files.
+4. The incorrect three-legged player image has been replaced.
+5. Source separators changed from em dash to a vertical bar.
+
+UPLOAD STEPS
+1. Open this ZIP.
+2. Upload the included src folder to the root of your GitHub repository.
+3. Choose overwrite/replace for matching files.
+4. Commit the upload. Vercel should deploy automatically.
+
+Do not upload the outer folder itself into src. Upload the included src folder at repository root, next to package.json.

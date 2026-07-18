@@ -274,7 +274,7 @@ import { ArticleQuizCard } from "@/components/ArticleQuizCard";
 import thumbGlucosamineChondroitin from "@/assets/article-hero-glucosamine-chondroitin.svg";
 import thumbMenopauseKneePain from "@/assets/article-hero-menopause-knee-pain.svg";
 import thumbRedLightDoseKnees from "@/assets/article-hero-red-light-dose-knees.svg";
-import thumbPickleballKneeRecovery from "@/assets/guide-thumb-pickleball-knee-recovery.jpg";
+import thumbPickleballKneeRecovery from "@/assets/guide-thumb-pickleball-knee-recovery-v2.png";
 
 // Import new articles from separate files
 import {
@@ -8933,7 +8933,16 @@ const GuideArticle = () => {
                   [&_img]:my-8 [&_img]:w-full [&_img]:rounded-[1.5rem] [&_img]:border [&_img]:border-slate-200 [&_img]:bg-white [&_img]:object-contain [&_img]:shadow-sm
                 ">
                   {article.content}
+                </div>
 
+                {articleCTAs[slug] && (
+                  <PremiumCTA
+                    headline={articleCTAs[slug].headline}
+                    text={articleCTAs[slug].text}
+                  />
+                )}
+
+                <div className="article-content max-w-none">
                   <ArticleQuizCard articleSlug={article.slug} articleTitle={article.title} />
                 </div>
 
@@ -8960,7 +8969,7 @@ const GuideArticle = () => {
                           >
                             {source.title}
                           </a>
-                          <span className="text-slate-500"> — {source.publisher}</span>
+                          <span className="text-slate-500"> | {source.publisher}</span>
                         </li>
                       ))}
                     </ul>
@@ -8970,15 +8979,6 @@ const GuideArticle = () => {
                     </p>
                   </section>
                 )}
-
-                {/* Premium CTA Highlight Box */}
-                {articleCTAs[slug] && (
-                  <PremiumCTA
-                    headline={articleCTAs[slug].headline}
-                    text={articleCTAs[slug].text}
-                  />
-                )}
-
 
               </article>
 </div>

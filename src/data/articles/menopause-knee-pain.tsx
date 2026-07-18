@@ -87,7 +87,7 @@ export const menopauseKneePain: ArticleExport = {
           This article focuses on that system. It does not assume every midlife knee symptom is hormonal, and it does not treat menopause as a disease. The goal is to help you recognize patterns, understand the evidence, and choose actions that improve function while important diagnoses are not missed.
         </p>
 
-        <h2>What Menopause Means — and Why Perimenopause Matters</h2>
+        <h2>What Menopause Means - and Why Perimenopause Matters</h2>
         <p>
           Menopause is confirmed after 12 consecutive months without a menstrual period when there is no other cause. The years leading up to that point are called perimenopause or the menopausal transition. During perimenopause, ovarian hormone production becomes less predictable. Estrogen does not simply fall in a straight line; it can fluctuate substantially before settling at lower postmenopausal levels. Progesterone patterns also change as ovulation becomes less regular.
         </p>
@@ -121,7 +121,7 @@ export const menopauseKneePain: ArticleExport = {
           This creates a loop. Knee discomfort interrupts sleep; poor sleep amplifies pain the next day; fatigue reduces movement and strength training; reduced capacity makes normal activity more demanding. Treating only the knee can miss the most modifiable driver. If hot flashes or insomnia are prominent, discuss them as clinical problems rather than accepting them as a stage you must simply endure.
         </p>
         <p>
-          A practical sleep plan includes a consistent wake time, a cool bedroom, reduced late alcohol, morning daylight, regular activity, and evidence-based insomnia care when needed. Menopausal hormone therapy or nonhormonal medicines may be appropriate for some women with significant vasomotor symptoms, but that decision should be made for the full symptom picture and personal risk profile—not prescribed as a knee treatment.
+          A practical sleep plan includes a consistent wake time, a cool bedroom, reduced late alcohol, morning daylight, regular activity, and evidence-based insomnia care when needed. Menopausal hormone therapy or nonhormonal medicines may be appropriate for some women with significant vasomotor symptoms, but that decision should be made for the full symptom picture and personal risk profile-not prescribed as a knee treatment.
         </p>
 
         <h2>Muscle Loss and Load Capacity</h2>
@@ -137,7 +137,7 @@ export const menopauseKneePain: ArticleExport = {
 
         <h2>Body Composition, Weight, and Metabolic Change</h2>
         <p>
-          Many women notice that fat distribution changes during menopause, often toward the abdomen, even without a dramatic change on the scale. Energy expenditure, sleep, appetite, stress, and activity can all shift. Body weight affects knee loading, but the conversation should avoid blame. Weight is one factor among many, and rapid restriction can reduce muscle—the tissue the knee needs for support.
+          Many women notice that fat distribution changes during menopause, often toward the abdomen, even without a dramatic change on the scale. Energy expenditure, sleep, appetite, stress, and activity can all shift. Body weight affects knee loading, but the conversation should avoid blame. Weight is one factor among many, and rapid restriction can reduce muscle-the tissue the knee needs for support.
         </p>
         <p>
           For someone with overweight or obesity and knee osteoarthritis, gradual weight loss can improve symptoms. The best strategy protects muscle through resistance training and adequate protein, builds sustainable eating habits, and considers medical support when appropriate. A person at a stable weight can still have severe knee pain, while a larger person can have strong, capable knees. The aim is better function and metabolic health, not a moral judgment.
@@ -218,7 +218,7 @@ export const menopauseKneePain: ArticleExport = {
         </p>
         <h3>5. Use comfort tools strategically</h3>
         <p>
-          Gentle heat can make a stiff knee feel easier before movement when there is no new injury or marked swelling. Cold may feel better after an activity-related flare. A short massage or vibration session can provide temporary sensory comfort. These tools should help you move, sleep, or recover—not become the entire plan. See our <Link to="/guides/heat-vs-ice-for-knees">heat versus ice guide</Link> for practical timing.
+          Gentle heat can make a stiff knee feel easier before movement when there is no new injury or marked swelling. Cold may feel better after an activity-related flare. A short massage or vibration session can provide temporary sensory comfort. These tools should help you move, sleep, or recover-not become the entire plan. See our <Link to="/guides/heat-vs-ice-for-knees">heat versus ice guide</Link> for practical timing.
         </p>
         <h3>6. Review persistent symptoms</h3>
         <p>
@@ -227,7 +227,7 @@ export const menopauseKneePain: ArticleExport = {
 
         <h2>How to Exercise Without Making a Flare Worse</h2>
         <p>
-          Use a traffic-light approach. Green means discomfort is absent or mild, movement remains controlled, and symptoms return to baseline by the next day. Yellow means the knee is more irritable, so reduce range, resistance, speed, or total volume rather than abandoning the session. Red means sharp escalating pain, giving way, locking, significant swelling, or loss of function—stop and assess.
+          Use a traffic-light approach. Green means discomfort is absent or mild, movement remains controlled, and symptoms return to baseline by the next day. Yellow means the knee is more irritable, so reduce range, resistance, speed, or total volume rather than abandoning the session. Red means sharp escalating pain, giving way, locking, significant swelling, or loss of function-stop and assess.
         </p>
         <p>
           Warm up with five to ten minutes of easy movement. Strengthen in ranges you can control. Avoid changing several variables at once; do not add heavy squats, a long hike, and pickleball three days in a row after months of inactivity. Recovery capacity may be temporarily lower during a period of poor sleep, but capacity can be rebuilt.
