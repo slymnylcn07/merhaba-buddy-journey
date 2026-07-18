@@ -1,23 +1,42 @@
 {
-  "name": "FlexiKnee New Articles Batch 1 — First 3",
-  "created": "2026-07-18",
-  "articles": [
+  "package": "FlexiKnee-4-Guides-Direct-Install",
+  "date": "2026-07-18",
+  "guides": [
     {
-      "slug": "glucosamine-chondroitin-knee-pain",
-      "file": "src/data/articles/glucosamine-chondroitin-knee-pain.tsx",
-      "visuals": 3
+      "title": "Glucosamine & Chondroitin",
+      "approx_words": 2963,
+      "faqs": 9,
+      "sources": 9,
+      "visuals_including_hero": 3
     },
     {
-      "slug": "menopause-knee-pain",
-      "file": "src/data/articles/menopause-knee-pain.tsx",
-      "visuals": 3
+      "title": "Menopause and Knee Pain",
+      "approx_words": 2907,
+      "faqs": 9,
+      "sources": 9,
+      "visuals_including_hero": 3
     },
     {
-      "slug": "red-light-therapy-dose-knees",
-      "file": "src/data/articles/red-light-therapy-dose-knees.tsx",
-      "visuals": 3
+      "title": "Red Light for Knees",
+      "approx_words": 3267,
+      "faqs": 10,
+      "sources": 8,
+      "visuals_including_hero": 3
+    },
+    {
+      "title": "Pickleball Knees",
+      "approx_words": 3272,
+      "faqs": 10,
+      "sources": 9,
+      "visuals_including_hero": 5
     }
   ],
-  "integration": "scripts/apply-flexiknee-new-articles-batch-1.mjs",
-  "preserves_existing_article_content": true
+  "installer": "scripts/install-flexiknee-four-guides.mjs",
+  "one_click_windows": "RUN-THIS-WINDOWS.bat",
+  "one_click_codex": "RUN-THIS-CODEX.sh",
+  "validated": [
+    "installer idempotency",
+    "vite production compile",
+    "sitemap unique URLs"
+  ]
 }
