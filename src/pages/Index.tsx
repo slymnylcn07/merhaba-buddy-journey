@@ -12,6 +12,7 @@ import { VideoReviews } from "@/components/VideoReviews";
 import { featurePillars } from "@/data/product-system";
 import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
 import { SUPPORT_EMAIL } from "@/lib/support-config";
+import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
 import {
   BRAND_DESCRIPTION,
   BRAND_NAME,
@@ -32,7 +33,7 @@ const featuredGuides = [
   {
     title: "Heat vs. Ice for Knees: What Works Best Daily?",
     href: "/guides/heat-vs-ice-for-knees",
-    image: "/images/og-image.jpg",
+    image: thumbHeatVsIce,
     tag: "Routine",
   },
   {

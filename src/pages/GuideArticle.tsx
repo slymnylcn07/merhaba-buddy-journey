@@ -6453,8 +6453,6 @@ const GuideArticle = () => {
                   [&_img]:my-8 [&_img]:w-full [&_img]:rounded-[1.5rem] [&_img]:border [&_img]:border-slate-200 [&_img]:bg-white [&_img]:object-contain [&_img]:shadow-sm
                 ">
                   {article.content}
-
-                  <ArticleQuizCard articleSlug={article.slug} articleTitle={article.title} />
                 </div>
 
                 {/* Sources and Further Reading */}
@@ -6491,7 +6489,7 @@ const GuideArticle = () => {
                   </section>
                 )}
 
-                {/* Premium CTA Highlight Box */}
+                {/* Final article order: sources, product recommendation, then quiz. */}
                 {articleCTAs[slug] && (
                   <PremiumCTA
                     headline={articleCTAs[slug].headline}
@@ -6499,6 +6497,7 @@ const GuideArticle = () => {
                   />
                 )}
 
+                <ArticleQuizCard articleSlug={article.slug} articleTitle={article.title} />
 
               </article>
 </div>

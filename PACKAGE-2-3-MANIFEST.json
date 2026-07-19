@@ -1,0 +1,38 @@
+{
+  "generated": "2026-07-19",
+  "changed_files": [
+    "src/assets/article-hero-back-knee-pain.jpg",
+    "src/assets/article-hero-best-red-light-knee.jpg",
+    "src/assets/article-hero-do-massagers-work.jpg",
+    "src/assets/article-hero-knee-tightness-no-pain.jpg",
+    "src/assets/article-hero-smart-massagers-breakdown-v3.jpg",
+    "src/assets/article-hero-strengthen-knees.jpg",
+    "src/assets/article-hero-warmth-vs-infrared.jpg",
+    "src/assets/article-hero-women-men-knee-comfort.jpg",
+    "src/assets/guide-thumb-joint-aging-changes.jpg",
+    "src/assets/guide-thumb-knee-cracking-crepitus.jpg",
+    "src/assets/guide-thumb-knee-pain-car-rides.jpg",
+    "src/assets/guide-thumb-knee-pain-flights.jpg",
+    "src/assets/guide-thumb-knee-pain-sitting-cross-legged.jpg",
+    "src/assets/guide-thumb-knee-pain-standing.jpg",
+    "src/assets/guide-thumb-knee-recovery-exercises.jpg",
+    "src/assets/guide-thumb-knee-swelling-exercise.jpg",
+    "src/assets/guide-thumb-knee-weakness-no-pain.jpg",
+    "src/assets/guide-thumb-massager-expectations.jpg",
+    "src/assets/guide-thumb-side-knee-pain.jpg",
+    "src/assets/guide-thumb-strengthen-knees.jpg",
+    "src/assets/guide-thumb-warmth-vs-infrared-v2.jpg",
+    "src/pages/GuideArticle.tsx",
+    "src/pages/Index.tsx",
+    "src/assets/guide-thumbnails/batch-1/do-knee-massagers-work.png",
+    "src/assets/guide-thumbnails/batch-1/why-knees-hurt-when-sleeping.png",
+    "src/assets/guide-thumbnails/batch-2/knee-warmth-daily-comfort.png",
+    "src/assets/guide-thumbnails/batch-2/why-do-my-knees-crack-or-pop.png",
+    "public/images/product-stories/insoles-closeup-fit.webp",
+    "public/images/product-stories/insoles-home-setup.webp"
+  ],
+  "delete_files": [
+    "src/assets/article-hero-knee-clicking-walking.jpg"
+  ],
+  "changed_count": 29
+}
