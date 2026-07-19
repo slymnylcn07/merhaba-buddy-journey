@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { hasAnalyticsConsent, useAnalyticsConsent } from '@/lib/cookie-consent';
-import { supabase } from '@/integrations/supabase/client';
 import {
   initMetaPixel,
   trackMetaPageView,
@@ -16,8 +15,10 @@ import {
 
 // Initialize Meta Pixel on load
 const META_PIXEL_ID = import.meta.env.VITE_META_PIXEL_ID || '';
+const SUPABASE_URL = (import.meta.env.VITE_SUPABASE_URL || '').replace(/\/$/, '');
+const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || '';
 
-// Send event to Conversions API via Edge Function
+// Send event directly to the Edge Function without loading the Supabase browser SDK.
 const sendToConversionsAPI = async (
   eventName: string,
   eventId: string,
@@ -28,8 +29,16 @@ const sendToConversionsAPI = async (
     if (!hasAnalyticsConsent()) return;
     const metaUserData = getMetaUserData();
     
-    const { data, error } = await supabase.functions.invoke('meta-conversions-api', {
-      body: {
+    if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) return;
+
+    const response = await fetch(`${SUPABASE_URL}/functions/v1/meta-conversions-api`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        apikey: SUPABASE_PUBLISHABLE_KEY,
+        Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+      },
+      body: JSON.stringify({
         event_name: eventName,
         event_id: eventId,
         event_source_url: window.location.href,
@@ -39,13 +48,12 @@ const sendToConversionsAPI = async (
           ...userData,
         },
         custom_data: customData,
-      },
+      }),
+      keepalive: true,
     });
 
-    if (error) {
-      console.error('CAPI Error:', error);
-    } else {
-      console.log('CAPI Success:', eventName, data);
+    if (!response.ok) {
+      throw new Error(`CAPI request failed with status ${response.status}`);
     }
   } catch (err) {
     console.error('Failed to send to CAPI:', err);

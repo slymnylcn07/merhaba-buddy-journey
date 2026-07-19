@@ -1,0 +1,108 @@
+{
+  "project_file_count": 18,
+  "text_file_count": 6,
+  "poster_file_count": 5,
+  "payment_asset_count": 7,
+  "files": [
+    {
+      "path": "PACKAGE-5.2-QA.md",
+      "bytes": 1279,
+      "sha256": "f50b5c9004ded16f8fe05c5e1b8f7a1e420a4a0ab4ee77dabd21afa731a2779d"
+    },
+    {
+      "path": "PACKAGE-5.2-README.md",
+      "bytes": 886,
+      "sha256": "97ea4e0b2eddd227a7adf1365671d82971bc5c2e4dac35ce87adb071f402bcd4"
+    },
+    {
+      "path": "index.html",
+      "bytes": 2684,
+      "sha256": "a0b6122b41f1de4e32e19df9e61e4e451689e8d4fb4d06afddf635a10896f6fb"
+    },
+    {
+      "path": "public/images/video-posters/customer-review-1.webp",
+      "bytes": 8970,
+      "sha256": "2565bcc938c1c3aefddb22ed1e112a1ea46e95d97fa3f30094fd137507684c9e"
+    },
+    {
+      "path": "public/images/video-posters/customer-review-2.webp",
+      "bytes": 19436,
+      "sha256": "76682282cce80091469806e64eff8144d58178e40f50f2fe929b011bd23a703f"
+    },
+    {
+      "path": "public/images/video-posters/customer-review-3.webp",
+      "bytes": 16602,
+      "sha256": "f502724a7f28d60bec07eed554cd3e6ae990f5ece615ee01a93b5c648e9b455b"
+    },
+    {
+      "path": "public/images/video-posters/customer-review-4.webp",
+      "bytes": 20084,
+      "sha256": "69f37cf4a183efe9cc0a48f6ed09f553da09c8ad1599d499c3f63df4e00f87a4"
+    },
+    {
+      "path": "public/images/video-posters/customer-review-5.webp",
+      "bytes": 19592,
+      "sha256": "086846f13344b73e43776ee792f0f32503aea5b6eaeb498dc02c06ff5ec4fec4"
+    },
+    {
+      "path": "src/assets/payment-amex.svg",
+      "bytes": 368,
+      "sha256": "eaabe34a81b4b910dc9887cab15afc835ce7ee275e45f9ba0de44184178ea17b"
+    },
+    {
+      "path": "src/assets/payment-apple-pay.svg",
+      "bytes": 973,
+      "sha256": "679b94d7272bbf1544de374cde73f17c6b83fb468713a804b8a7520a0d3ca937"
+    },
+    {
+      "path": "src/assets/payment-google-pay.svg",
+      "bytes": 1313,
+      "sha256": "7b99e415f5cf47d078d53ed8daa8a09a2d4330316e3b182493ffe4e22029481f"
+    },
+    {
+      "path": "src/assets/payment-mastercard.svg",
+      "bytes": 1249,
+      "sha256": "c821a479ca1fcef18c19c3bdd36dbec2d36c7d03ff9b46ba1d6325ed1d2ff545"
+    },
+    {
+      "path": "src/assets/payment-paypal.svg",
+      "bytes": 895,
+      "sha256": "34199b19a6946e6041d7fda331a8caeb27ecc94ad3812c8091a44f8b9999ac99"
+    },
+    {
+      "path": "src/assets/payment-shop-pay.svg",
+      "bytes": 1330,
+      "sha256": "166d79444194d1937e51cac13b17e96c66c4003ea9a3d2aefca9ab835fce0cd2"
+    },
+    {
+      "path": "src/assets/payment-visa.svg",
+      "bytes": 1783,
+      "sha256": "c5d309a00979fde9320c9940e00a0fd15b975820b82f1c016029d9aa36df84f4"
+    },
+    {
+      "path": "src/components/Footer.tsx",
+      "bytes": 5575,
+      "sha256": "6ad5d5d86d368f068feff5bc14436a41b953261eba861b7c312e19b4eacea237"
+    },
+    {
+      "path": "src/components/PaymentLogos.tsx",
+      "bytes": 1647,
+      "sha256": "88bbac178feaea30b27d3aa4be5d3970ecaa9991f4d344b91cd999eeb08a7156"
+    },
+    {
+      "path": "src/components/VideoReviews.tsx",
+      "bytes": 7067,
+      "sha256": "ab46f22a895802d966186329d0526e4dac84b9b0f45e048b63b438fd0e2b5e5b"
+    },
+    {
+      "path": "src/hooks/use-meta-tracking.ts",
+      "bytes": 6015,
+      "sha256": "e8a95941c874c9bb4e7e233497f12fefb7fecfbf3e2e64a5b150fcd9d1f9360c"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 4903,
+      "sha256": "4085da007c731d5ed3a41192bce4d37cc0692ce2d2deb7b48d9b8abba0548da0"
+    }
+  ]
+}

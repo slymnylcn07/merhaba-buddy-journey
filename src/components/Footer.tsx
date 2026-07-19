@@ -73,7 +73,7 @@ export const Footer = () => {
               <div className="mb-4 flex justify-center md:justify-start">
                 <MarketSelector />
               </div>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-600">
                 © {new Date().getFullYear()} FlexiKnee. All rights reserved. FlexiKnee content is for general wellness education and is not medical advice.
               </p>
             </div>

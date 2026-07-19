@@ -1,13 +1,43 @@
-import { useRef, useState } from "react";
-import { Play, Volume2, VolumeX } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Pause, Play, Volume2, VolumeX } from "lucide-react";
 
 const videoReviews = [
-  { id: 1, src: "/videos/customer-review-1.mp4", title: "Evening comfort routine", tag: "Home use" },
-  { id: 2, src: "/videos/customer-review-2.mp4", title: "After-walk wind down", tag: "Daily routine" },
-  { id: 3, src: "/videos/customer-review-3.mp4", title: "Simple touch controls", tag: "Product demo" },
-  { id: 4, src: "/videos/customer-review-4.mp4", title: "Wireless use at home", tag: "Real routine" },
-  { id: 5, src: "/videos/customer-review-5.mp4", title: "Short comfort session", tag: "UGC" },
-];
+  {
+    id: 1,
+    src: "/videos/customer-review-1.mp4",
+    poster: "/images/video-posters/customer-review-1.webp",
+    title: "Evening comfort routine",
+    tag: "Home use",
+  },
+  {
+    id: 2,
+    src: "/videos/customer-review-2.mp4",
+    poster: "/images/video-posters/customer-review-2.webp",
+    title: "After-walk wind down",
+    tag: "Daily routine",
+  },
+  {
+    id: 3,
+    src: "/videos/customer-review-3.mp4",
+    poster: "/images/video-posters/customer-review-3.webp",
+    title: "Simple touch controls",
+    tag: "Product demo",
+  },
+  {
+    id: 4,
+    src: "/videos/customer-review-4.mp4",
+    poster: "/images/video-posters/customer-review-4.webp",
+    title: "Wireless use at home",
+    tag: "Real routine",
+  },
+  {
+    id: 5,
+    src: "/videos/customer-review-5.mp4",
+    poster: "/images/video-posters/customer-review-5.webp",
+    title: "Short comfort session",
+    tag: "UGC",
+  },
+] as const;
 
 export const VideoReviews = () => {
   return (
@@ -21,7 +51,7 @@ export const VideoReviews = () => {
             </h2>
           </div>
           <p className="max-w-md text-sm leading-7 text-slate-300">
-            See how FlexiKnee fits into simple evening, after-walk and at-home comfort routines.
+            Videos stay unloaded until you choose one, keeping the first visit fast and data-light.
           </p>
         </div>
 
@@ -35,23 +65,38 @@ export const VideoReviews = () => {
   );
 };
 
-const VideoCard = ({ video }: { video: typeof videoReviews[0] }) => {
+const VideoCard = ({ video }: { video: (typeof videoReviews)[number] }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isActivated, setIsActivated] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const handleVideoClick = () => {
-    if (!videoRef.current) return;
-    if (videoRef.current.paused) {
-      videoRef.current.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
+  useEffect(() => {
+    if (!isActivated || !videoRef.current) return;
+
+    videoRef.current
+      .play()
+      .then(() => setIsPlaying(true))
+      .catch(() => setIsPlaying(false));
+  }, [isActivated]);
+
+  const activateVideo = () => {
+    setIsActivated(true);
+  };
+
+  const togglePlayback = () => {
+    const element = videoRef.current;
+    if (!element) return;
+
+    if (element.paused) {
+      element.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
     } else {
-      videoRef.current.pause();
+      element.pause();
       setIsPlaying(false);
     }
   };
 
-  const toggleMute = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const toggleMute = () => {
     const next = !isMuted;
     setIsMuted(next);
     if (videoRef.current) videoRef.current.muted = next;
@@ -59,47 +104,91 @@ const VideoCard = ({ video }: { video: typeof videoReviews[0] }) => {
 
   return (
     <article className="w-[176px] flex-none sm:w-[210px] md:w-[225px] lg:w-[250px] xl:w-[270px]">
-      <button
-        type="button"
-        onClick={handleVideoClick}
-        className="group relative aspect-[9/16] w-full overflow-hidden rounded-[1.3rem] border border-white/10 bg-slate-900 shadow-2xl shadow-black/30 sm:rounded-[2rem]"
-      >
-        <video
-          ref={videoRef}
-          src={video.src}
-          className="h-full w-full object-cover"
-          loop
-          muted={isMuted}
-          playsInline
-          preload="metadata"
-          onLoadedMetadata={(e) => {
-            e.currentTarget.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
-          }}
-        />
-
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 text-left">
-          <span className="rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur">
-            {video.tag}
-          </span>
-          <h3 className="mt-2 text-sm font-semibold leading-tight text-white sm:mt-3 sm:text-base">{video.title}</h3>
-        </div>
-
-        {!isPlaying && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-slate-950 shadow-xl">
-              <Play className="ml-0.5 h-5 w-5 fill-current" />
+      <div className="group relative aspect-[9/16] w-full overflow-hidden rounded-[1.3rem] border border-white/10 bg-slate-900 shadow-2xl shadow-black/30 sm:rounded-[2rem]">
+        {!isActivated ? (
+          <button
+            type="button"
+            onClick={activateVideo}
+            className="relative h-full w-full text-left"
+            aria-label={`Play video: ${video.title}`}
+          >
+            <img
+              src={video.poster}
+              alt=""
+              className="h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/5 to-black/10" />
+            <span className="absolute inset-0 flex items-center justify-center">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-slate-950 shadow-xl transition group-hover:scale-105">
+                <Play className="ml-0.5 h-5 w-5 fill-current" />
+              </span>
             </span>
-          </div>
-        )}
+            <VideoCaption tag={video.tag} title={video.title} />
+          </button>
+        ) : (
+          <>
+            <video
+              ref={videoRef}
+              className="h-full w-full cursor-pointer object-cover"
+              loop
+              muted={isMuted}
+              playsInline
+              preload="none"
+              poster={video.poster}
+              onClick={togglePlayback}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+              aria-label={video.title}
+            >
+              <source src={video.src} type="video/mp4" />
+            </video>
 
-        <span
-          onClick={toggleMute}
-          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-slate-950 opacity-100 shadow-lg transition md:opacity-0 md:group-hover:opacity-100"
-          aria-label={isMuted ? "Unmute video" : "Mute video"}
-        >
-          {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
-        </span>
-      </button>
+            <VideoCaption tag={video.tag} title={video.title} />
+
+            {!isPlaying && (
+              <button
+                type="button"
+                onClick={togglePlayback}
+                className="absolute inset-0 flex items-center justify-center bg-black/20"
+                aria-label={`Resume video: ${video.title}`}
+              >
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-slate-950 shadow-xl">
+                  <Play className="ml-0.5 h-5 w-5 fill-current" />
+                </span>
+              </button>
+            )}
+
+            <button
+              type="button"
+              onClick={toggleMute}
+              className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-slate-950 shadow-lg transition hover:bg-white"
+              aria-label={isMuted ? "Unmute video" : "Mute video"}
+            >
+              {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+            </button>
+
+            <button
+              type="button"
+              onClick={togglePlayback}
+              className="absolute left-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white shadow-lg transition hover:bg-black/75"
+              aria-label={isPlaying ? "Pause video" : "Play video"}
+            >
+              {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="ml-0.5 h-4 w-4 fill-current" />}
+            </button>
+          </>
+        )}
+      </div>
     </article>
   );
 };
+
+const VideoCaption = ({ tag, title }: { tag: string; title: string }) => (
+  <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/90 via-black/35 to-transparent p-4 text-left">
+    <span className="rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur">
+      {tag}
+    </span>
+    <h3 className="mt-2 text-sm font-semibold leading-tight text-white sm:mt-3 sm:text-base">{title}</h3>
+  </div>
+);
