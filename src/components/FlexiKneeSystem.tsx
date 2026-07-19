@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ImageOff } from "lucide-react";
 import { productSystem } from "@/data/product-system";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
+import { getProductPath } from "@/lib/product-config";
 
 type ProductKind = "massager" | "sleeve" | "calf" | "insoles" | "wrap" | "other";
 
@@ -108,7 +109,7 @@ function toLiveCard(product: ShopifyProduct): SystemCard {
       firstAvailablePrice?.currencyCode || minPrice.currencyCode,
     ),
     image: product.node.images.edges[0]?.node.url || "",
-    href: `/product/${product.node.handle}`,
+    href: getProductPath(product.node.handle),
     isLive: true,
   };
 }

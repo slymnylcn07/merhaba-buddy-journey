@@ -13,7 +13,7 @@ import {
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
-import { PRIMARY_PRODUCT_HANDLE } from "@/lib/product-config";
+import { getProductPath, PRIMARY_PRODUCT_HANDLE } from "@/lib/product-config";
 import { getProductProfile } from "@/data/product-profiles";
 
 const collectionJsonLd = {
@@ -72,7 +72,7 @@ export default function Shop() {
     itemListElement: products.map((product, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: `https://flexi-knee.com/product/${product.node.handle}`,
+      url: `https://flexi-knee.com${getProductPath(product.node.handle)}`,
       name: product.node.title,
     })),
   }), [products]);
@@ -154,7 +154,7 @@ export default function Shop() {
                     return (
                       <article className="overflow-hidden rounded-[2.4rem] border border-slate-200 bg-slate-950 text-white shadow-[0_35px_110px_-70px_rgba(15,23,42,0.9)]">
                         <div className="grid lg:grid-cols-[1.06fr_0.94fr]">
-                          <Link to={`/product/${node.handle}`} className="group relative flex min-h-[360px] items-center justify-center overflow-hidden bg-white p-5 sm:min-h-[480px]">
+                          <Link to={getProductPath(node.handle)} className="group relative flex min-h-[360px] items-center justify-center overflow-hidden bg-white p-5 sm:min-h-[480px]">
                             {image && (
                               <img
                                 src={image.url}
@@ -179,7 +179,7 @@ export default function Shop() {
                               ))}
                             </div>
                             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-                              <Link to={`/product/${node.handle}`} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-blue-50">
+                              <Link to={getProductPath(node.handle)} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-blue-50">
                                 Explore the main FlexiKnee <ArrowRight className="h-4 w-4" />
                               </Link>
                               <p className="text-lg font-semibold text-white">From {formatMoney(price.amount, price.currencyCode)}</p>
@@ -209,7 +209,7 @@ export default function Shop() {
 
                       return (
                         <article key={node.id} className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                          <Link to={`/product/${node.handle}`} className="grid h-full sm:grid-cols-[0.9fr_1.1fr]">
+                          <Link to={getProductPath(node.handle)} className="grid h-full sm:grid-cols-[0.9fr_1.1fr]">
                             <div className="relative flex min-h-[270px] items-center justify-center overflow-hidden bg-slate-50 p-4">
                               {image ? (
                                 <img src={image.url} alt={image.altText || node.title} loading="lazy" className="h-full max-h-[330px] w-full object-contain transition duration-500 group-hover:scale-105" />
@@ -277,7 +277,7 @@ export default function Shop() {
                         return (
                           <tr key={product.node.id} className="border-b border-slate-100 last:border-b-0">
                             <td className="px-5 py-4">
-                              <Link to={`/product/${product.node.handle}`} className="font-semibold text-slate-950 hover:text-blue-600">{product.node.title}</Link>
+                              <Link to={getProductPath(product.node.handle)} className="font-semibold text-slate-950 hover:text-blue-600">{product.node.title}</Link>
                             </td>
                             <td className="px-5 py-4 text-sm text-slate-600">{comparison.use}</td>
                             <td className="px-5 py-4 text-sm text-slate-600">{comparison.heat}</td>

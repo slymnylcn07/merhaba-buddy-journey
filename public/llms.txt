@@ -1,0 +1,45 @@
+# FlexiKnee
+
+> FlexiKnee is the official website for FlexiKnee knee comfort products, practical educational guides, product information, customer support, shipping, and return policies.
+
+FlexiKnee publishes evidence-informed general wellness content about everyday knee comfort, mobility, warmth, exercise recovery, and at-home routines. This content is educational and does not replace professional medical advice.
+
+## Main Pages
+
+- [FlexiKnee Home](https://flexi-knee.com/): Official homepage and product overview.
+- [Shop FlexiKnee](https://flexi-knee.com/shop): Browse available FlexiKnee products.
+- [FlexiKnee Guides](https://flexi-knee.com/guides): Educational knee comfort and mobility guides.
+- [Why FlexiKnee](https://flexi-knee.com/why-flexiknee): Brand and product philosophy.
+- [Editorial Team](https://flexi-knee.com/editorial-team): Editorial standards and content information.
+
+## Main Product
+
+- [FlexiKnee Smart Heated Knee Massager](https://flexi-knee.com/product/knee-massager-smart-red-light-and-massage-therapy): Product features, use information, and purchasing options.
+
+## Focused Products
+
+- [FlexiKnee Compression Support Sleeve](https://flexi-knee.com/product/flexiknee-compression-support-sleeve): Flexible compression support for daily movement.
+- [FlexiKnee Rechargeable Calf Recovery Massager](https://flexi-knee.com/product/360-electric-calf-massager-rechargeable-3-modes-air-compression-leg-massager-hot-compress-leg-massage-blood-circulation): Lower-leg compression and warmth routines.
+- [FlexiKnee Sport Orthopedic Insoles](https://flexi-knee.com/product/sport-orthopedic-insoles-for-feet-men-women-eva-breathable-shock-absorption-shoes-insole-for-running-basketball-sport-care-pads): Foot-to-knee support for walking and activity.
+- [FlexiKnee USB Heated Knee Wrap](https://flexi-knee.com/product/electric-knee-heating-pad-a-usb-powered-warming-knee-strap-suitable-for-joints-with-adjustable-heating-band-ideal-for-daily): Focused warming sessions.
+
+## Featured Guides
+
+- [Heat vs. Ice for Knees](https://flexi-knee.com/guides/heat-vs-ice-for-knees): Practical guidance for choosing warmth or cold.
+- [Do Knee Massagers Work?](https://flexi-knee.com/guides/do-knee-massagers-work): Realistic expectations for knee massagers.
+- [Knee Clicking When Walking](https://flexi-knee.com/guides/knee-clicking-when-walking): Common clicking and popping patterns.
+- [Knee Tightness After Resting](https://flexi-knee.com/guides/why-do-my-knees-feel-tight-after-resting): Post-rest stiffness and first-movement patterns.
+- [Knee Pain After Exercise](https://flexi-knee.com/guides/knee-pain-after-exercise): Post-workout knee discomfort and warning signs.
+
+## Support and Policies
+
+- [Contact FlexiKnee](https://flexi-knee.com/contact): Customer support and contact details.
+- [Track Your Order](https://flexi-knee.com/track-order): Order tracking.
+- [Shipping Policy](https://flexi-knee.com/shipping-policy): Shipping terms.
+- [Refund Policy](https://flexi-knee.com/refund-policy): Return and refund information.
+- [Privacy Policy](https://flexi-knee.com/privacy-policy): Privacy information.
+
+## Machine-Readable Resources
+
+- [XML Sitemap](https://flexi-knee.com/sitemap.xml): Index of public pages and guides.
+- [Robots File](https://flexi-knee.com/robots.txt): Crawler directives.

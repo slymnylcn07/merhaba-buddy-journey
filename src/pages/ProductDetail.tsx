@@ -22,7 +22,8 @@ import { LIMITED_WARRANTY_YEARS, RETURN_WINDOW_DAYS } from "@/lib/policy-config"
 import { VideoReviews } from "@/components/VideoReviews";
 import { ProductReviews } from "@/components/ProductReviews";
 import { KnowBeforeYouBuy } from "@/components/KnowBeforeYouBuy";
-import { getProducts, ShopifyProduct, createStorefrontCheckout } from "@/lib/shopify";
+import { getProductByHandle, ShopifyProduct, createStorefrontCheckout } from "@/lib/shopify";
+import { PRIMARY_PRODUCT_HANDLE } from "@/lib/product-config";
 import { useCartStore } from "@/stores/cartStore";
 import { featurePillars } from "@/data/product-system";
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
@@ -122,15 +123,29 @@ export default function ProductDetail() {
     let active = true;
     setIsLoading(true);
 
-    getProducts(20)
-      .then((items) => {
+    setProduct(null);
+    setSelectedImage(0);
+
+    const requestedHandle = handle || PRIMARY_PRODUCT_HANDLE;
+
+    getProductByHandle(requestedHandle)
+      .then(async (item) => {
         if (!active) return;
-        const matched = items.find((item) => item.node.handle === handle) || items[0] || null;
-        setProduct(matched);
+
+        const firstImageUrl = item?.node.images.edges[0]?.node.url;
+        if (firstImageUrl) {
+          await new Promise<void>((resolve) => {
+            const image = new Image();
+            image.onload = () => resolve();
+            image.onerror = () => resolve();
+            image.src = firstImageUrl;
+          });
+        }
+
+        if (active) setProduct(item);
       })
       .catch(() => {
-        if (!active) return;
-        setProduct(null);
+        if (active) setProduct(null);
       })
       .finally(() => {
         if (active) setIsLoading(false);
@@ -162,7 +177,7 @@ export default function ProductDetail() {
       alt: edge.node.altText || productTitle,
     })) || [];
 
-  const gallery = shopifyImages.length >= 2 ? shopifyImages : fallbackGallery;
+  const gallery = shopifyImages.length > 0 ? shopifyImages : fallbackGallery;
 
   useEffect(() => {
     setSelectedImage(0);
@@ -202,6 +217,47 @@ export default function ProductDetail() {
       url: `https://flexi-knee.com/product/${handle || "knee-massager-smart-red-light-and-massage-therapy"}`,
     },
   }), [basePrice, currency, handle, pageConfig, variant?.availableForSale]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white text-slate-950">
+        <Header />
+        <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="grid animate-pulse gap-8 xl:grid-cols-[minmax(0,1fr)_minmax(420px,540px)]">
+            <div className="h-[420px] rounded-[2rem] bg-slate-100 sm:h-[560px] lg:h-[710px]" />
+            <div className="space-y-5 rounded-[2rem] border border-slate-100 p-6 lg:p-8">
+              <div className="h-4 w-40 rounded bg-slate-100" />
+              <div className="h-14 w-4/5 rounded bg-slate-100" />
+              <div className="h-24 rounded-3xl bg-slate-100" />
+              <div className="h-40 rounded-3xl bg-slate-100" />
+            </div>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (!product || !variant) {
+    return (
+      <div className="min-h-screen bg-white text-slate-950">
+        <Helmet>
+          <title>Product unavailable | FlexiKnee</title>
+          <meta name="robots" content="noindex, follow" />
+        </Helmet>
+        <Header />
+        <main className="mx-auto max-w-3xl px-4 py-24 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Product unavailable</p>
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight">The product could not be loaded.</h1>
+          <p className="mt-4 text-slate-600">Please return to the shop and try again.</p>
+          <Link to="/shop" className="mt-8 inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white">
+            Return to shop <ArrowRight className="h-4 w-4" />
+          </Link>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   const cartItem = () => {
     if (!product || !variant) return null;

@@ -6,6 +6,7 @@ import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { PRODUCT_RECS, pickProductForSlug, ProductRec } from "@/lib/article-product-map";
 import { FREE_SHIPPING_THRESHOLD } from "@/lib/policy-config";
 import { MAIN_PRODUCT_RATING } from "@/lib/main-product-rating";
+import { getProductPath } from "@/lib/product-config";
 
 /**
  * Makale içi ürün kartı (eski yeşil banner'ın yerini alır).
@@ -128,7 +129,7 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
           </div>
         </div>
         <Link
-          to={`/product/${rec.handle}`}
+          to={getProductPath(rec.handle)}
           className="inline-flex flex-shrink-0 items-center justify-center gap-1.5 self-start rounded-full bg-slate-950 px-5 py-2.5 text-sm font-medium !text-white !no-underline transition hover:bg-slate-800 sm:self-center"
         >
           View product

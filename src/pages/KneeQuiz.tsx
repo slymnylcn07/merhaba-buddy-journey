@@ -409,7 +409,7 @@ export default function KneeQuiz() {
   );
 
   const productHref = recommendedProduct
-    ? `/product/${recommendedProduct.node.handle}`
+    ? getProductPath(recommendedProduct.node.handle)
     : result?.productKey === "smart-knee-massager"
       ? PRIMARY_PRODUCT_PATH
       : "/shop";

@@ -25,6 +25,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { getProductPageConfig } from "@/data/product-page-config";
 import { createStorefrontCheckout, getProductByHandle, ShopifyProduct } from "@/lib/shopify";
+import { getProductPath, resolveShopifyProductHandle } from "@/lib/product-config";
 import { useCartStore } from "@/stores/cartStore";
 import { getProductProfile } from "@/data/product-profiles";
 import { PremiumProductStory } from "@/components/PremiumProductStory";
@@ -46,6 +47,7 @@ function formatMoney(amount?: string, currencyCode?: string) {
 
 export default function SecondaryProductDetail() {
   const { handle = "" } = useParams();
+  const shopifyHandle = resolveShopifyProductHandle(handle);
   const [product, setProduct] = useState<ShopifyProduct | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
@@ -59,8 +61,20 @@ export default function SecondaryProductDetail() {
     setIsLoading(true);
     setProduct(null);
 
-    getProductByHandle(handle)
-      .then((item) => {
+    getProductByHandle(shopifyHandle)
+      .then(async (item) => {
+        if (!active) return;
+
+        const firstImageUrl = item?.node.images.edges[0]?.node.url;
+        if (firstImageUrl) {
+          await new Promise<void>((resolve) => {
+            const image = new Image();
+            image.onload = () => resolve();
+            image.onerror = () => resolve();
+            image.src = firstImageUrl;
+          });
+        }
+
         if (!active) return;
         setProduct(item);
         const firstAvailable = item?.node.variants.edges.find((edge) => edge.node.availableForSale)?.node;
@@ -77,7 +91,7 @@ export default function SecondaryProductDetail() {
     return () => {
       active = false;
     };
-  }, [handle]);
+  }, [handle, shopifyHandle]);
 
   const node = product?.node;
   const profile = useMemo(() => getProductProfile(product || handle), [product, handle]);
@@ -94,7 +108,7 @@ export default function SecondaryProductDetail() {
   const isPairable = profile.key === "compression-sleeve" || profile.key === "heated-wrap";
   const pageConfig = getProductPageConfig(profile.key);
   const unitPriceNum = price ? Number(price.amount) : 0;
-  const canonical = `https://flexi-knee.com/product/${handle}`;
+  const canonical = `https://flexi-knee.com${getProductPath(handle)}`;
 
   useEffect(() => {
     setSelectedImage(0);

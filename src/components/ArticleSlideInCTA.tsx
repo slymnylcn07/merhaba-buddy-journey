@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { Mail } from "lucide-react";
 import { DiscountCodeModal } from "@/components/DiscountCodeModal";
 import { NEWSLETTER_DISCOUNT_CODE } from "@/lib/newsletter-config";
+import { getProductPath } from "@/lib/product-config";
 
 // Urun gorselleri icin oturum ici tek istek (PremiumCTA ile ayni desen)
 let slideInProductsPromise: Promise<ShopifyProduct[]> | null = null;
@@ -363,7 +364,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
 
         <div className="mt-3.5 flex items-center gap-3">
           <Link
-            to={`/product/${rec.handle}`}
+            to={getProductPath(rec.handle)}
             onClick={handleCTAClick}
             className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-slate-950 px-5 py-3 text-xs font-bold text-white transition hover:bg-slate-800"
           >

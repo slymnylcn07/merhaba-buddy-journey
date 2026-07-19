@@ -1,0 +1,79 @@
+{
+  "files": [
+    {
+      "path": "PACKAGE-5.1-QA.md",
+      "bytes": 673,
+      "sha256": "a9c913bde80da5f6d17dea6715f9ffa46efb449d3c39e2520f6352a7dca0e81d"
+    },
+    {
+      "path": "PACKAGE-5.1-README.md",
+      "bytes": 1109,
+      "sha256": "c22e02d0250f0696adb06d5d797cf0c0ea98ded2f406f75f82df448285f053cd"
+    },
+    {
+      "path": "public/llms.txt",
+      "bytes": 3309,
+      "sha256": "80671751f6f955db5b174c1497daf5212c3a4e16d4e7fd3be7220611dfb2968d"
+    },
+    {
+      "path": "src/components/ArticleSlideInCTA.tsx",
+      "bytes": 15876,
+      "sha256": "f58ec3f86e7361c4cecc53de6120e63ae36b3638a248006e40ca3982c70a99dd"
+    },
+    {
+      "path": "src/components/FlexiKneeSystem.tsx",
+      "bytes": 8361,
+      "sha256": "8879beed0966d0240907bb472a46120e05dd95a7e8c2cee2258b5799a6b7e71e"
+    },
+    {
+      "path": "src/components/PremiumCTA.tsx",
+      "bytes": 5824,
+      "sha256": "dcc408831dc5390ce2c3e2e9e071325ac96463fadf9188fe81e323e16ec5773d"
+    },
+    {
+      "path": "src/data/product-system.ts",
+      "bytes": 3209,
+      "sha256": "11ac7bc2c8114bf170ac1e3f5ec03b2fc787f9e2ea7380ea3460ae5687c2a79b"
+    },
+    {
+      "path": "src/lib/product-config.ts",
+      "bytes": 925,
+      "sha256": "48cea7699100a71b37f656436dd84d5015bf9a6633970ea5aa28275902eceed9"
+    },
+    {
+      "path": "src/lib/shopify.ts",
+      "bytes": 8380,
+      "sha256": "395c57e42452d06ff9554d9e28e21f8bfd9937e0cdc15640de1b416befba5b51"
+    },
+    {
+      "path": "src/pages/KneeQuiz.tsx",
+      "bytes": 32325,
+      "sha256": "a4dca00b328a82eca1f85212ec26bc93c3e2006ca9da92ad32b0c6b9b2391dff"
+    },
+    {
+      "path": "src/pages/ProductDetail.tsx",
+      "bytes": 27763,
+      "sha256": "ce35d6a0f903554621fd5a2e386ce844590c29a24fb1205e04996af88652ce33"
+    },
+    {
+      "path": "src/pages/ProductRoute.tsx",
+      "bytes": 765,
+      "sha256": "95e91ea2464257d5fc92172b9243982ba9387ead0c0c6679206ad1ed8e00c56e"
+    },
+    {
+      "path": "src/pages/SecondaryProductDetail.tsx",
+      "bytes": 28538,
+      "sha256": "942f1d61e9055a7bfc6e8c57aa6a12c844c8c8878fe8df2eeecf4c692cca7116"
+    },
+    {
+      "path": "src/pages/Shop.tsx",
+      "bytes": 19268,
+      "sha256": "928412f0b8aaefc0df133eb73b06f97d77c9c5e34487c0e19a6b7cf4c16f9c65"
+    },
+    {
+      "path": "vercel.json",
+      "bytes": 9892,
+      "sha256": "982cb9add0cd94bff73d2c110b7e1396a016080ff059f2de928c6d4f822ee5b7"
+    }
+  ]
+}

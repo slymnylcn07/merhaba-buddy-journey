@@ -66,7 +66,7 @@ interface StorefrontResponse<T> {
   errors?: StorefrontGraphqlError[];
 }
 
-const LEGACY_FLEXIKNEE_MARK = /(FlexiKnee)(?:\u2122|\u00AE|&trade;|&#8482;|&#x2122;)/gi;
+const LEGACY_FLEXIKNEE_MARK = /(FlexiKnee)\s*(?:\u2122|\u00AE|&trade;|&#8482;|&#x2122;)/gi;
 
 function normalizeStorefrontPayload<T>(value: T): T {
   if (typeof value === "string") {
