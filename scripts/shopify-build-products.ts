@@ -20,9 +20,17 @@ function loadLocalEnv(): void {
   }
 }
 
+const SHOPIFY_TO_PUBLIC_PRODUCT_HANDLES: Record<string, string> = {
+  "flexiknee™-compression-support-sleeve": "flexiknee-compression-support-sleeve",
+};
+
+export function getPublicBuildProductHandle(handle: string): string {
+  return SHOPIFY_TO_PUBLIC_PRODUCT_HANDLES[handle] || handle;
+}
+
 const FALLBACK_PRODUCT_HANDLES = [
   "knee-massager-smart-red-light-and-massage-therapy",
-  "knee-massager-smart-red-light-and-massage-therapyyy",
+  "flexiknee-compression-support-sleeve",
   "360-electric-calf-massager-rechargeable-3-modes-air-compression-leg-massager-hot-compress-leg-massage-blood-circulation",
   "electric-knee-heating-pad-a-usb-powered-warming-knee-strap-suitable-for-joints-with-adjustable-heating-band-ideal-for-daily",
   "flexiknee-sport-orthopedic-insoles",
@@ -116,5 +124,5 @@ export async function getShopifyProductHandles(): Promise<string[]> {
     return FALLBACK_PRODUCT_HANDLES;
   }
 
-  return [...new Set(handles)];
+  return [...new Set(handles.map(getPublicBuildProductHandle))];
 }
