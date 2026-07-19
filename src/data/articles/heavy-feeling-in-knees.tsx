@@ -3,7 +3,7 @@ import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-heavy-knees.jpg";
-import imgMuscleFatigue from "@/assets/article-leg-muscle-fatigue.jpg";
+import imgMuscleFatigue from "@/assets/package-4/knee-control-factors.svg";
 import imgKneeSupportMuscles from "@/assets/article-knee-support-muscles.jpg";
 import imgCirculationLimbs from "@/assets/fig-leg-circulation-v2.svg";
 import imgJointLoad from "@/assets/article-knee-joint-load.jpg";
@@ -184,12 +184,12 @@ const article = {
       <figure className="my-8">
         <img
           src={imgMuscleFatigue}
-          alt="Diagram showing leg muscle fatigue affecting knee support"
+          alt="Diagram showing several factors that contribute to knee control"
           className="w-full h-auto rounded-xl shadow-sm"
           loading="lazy"
         />
         <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-          Fatigued leg muscles provide less efficient support for the knee joint
+          Muscle capacity is one of several factors that can influence how controlled or effortful the knee feels
         </figcaption>
       </figure>
 

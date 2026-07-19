@@ -1,0 +1,508 @@
+{
+  "package": "FlexiKnee Package 5 \u2014 Performance and Architecture",
+  "project_file_count": 97,
+  "optimized_asset_count": 74,
+  "delete_file_count": 43,
+  "files": [
+    {
+      "path": "DELETE_FILES-PACKAGE-5.txt",
+      "bytes": 2543,
+      "sha256": "1bec0a3d21cce5768d1ae20592d954932c9bd2f4be4e0201a2c4e639c82c45e0"
+    },
+    {
+      "path": "PACKAGE-5-QA-REPORT.md",
+      "bytes": 1488,
+      "sha256": "f1993811d3cd3dba64c355cab8272b33db8456a1dc42e8d6b124b67a88208e8c"
+    },
+    {
+      "path": "PACKAGE-5-README.md",
+      "bytes": 1100,
+      "sha256": "1927a41e178360012a407f511ff141380c5d58db9fc0f8b36dda2c7454eea714"
+    },
+    {
+      "path": "index.html",
+      "bytes": 2802,
+      "sha256": "235269dccdb1175841b3f0c932be93d4752881ea2afcd5f4bfbdacc90ce0334a"
+    },
+    {
+      "path": "package.json",
+      "bytes": 3604,
+      "sha256": "c83cf35ac4c35da96e8532ce5fd9126d8d6a6c2024d711f0316bc52f664120da"
+    },
+    {
+      "path": "public/images/flexiknee-hero-desktop-premium-v2.avif",
+      "bytes": 18505,
+      "sha256": "529833641e25cd5ed5995380a299b4a3871cbd1b5d12a8509e2b298846a161ec"
+    },
+    {
+      "path": "public/images/flexiknee-hero-final-mobile.avif",
+      "bytes": 48990,
+      "sha256": "e110f6a85b1e7e8123058712cec65a77dad68bfb71e39409fee23f5a6ac3d7d8"
+    },
+    {
+      "path": "public/images/flexiknee-hero-final-mobile.webp",
+      "bytes": 105136,
+      "sha256": "54c89213aed00b0e0a01691d4c6884d694a83a90e8d6cddc41759fcba3cf2a9a"
+    },
+    {
+      "path": "public/images/product-stories/calf-massager-closeup.avif",
+      "bytes": 36821,
+      "sha256": "13cebdcc55b0008a83ddbc7265d58a5d18241deac2461fa37fa6dd4e3e02a9a1"
+    },
+    {
+      "path": "public/images/product-stories/calf-massager-closeup.webp",
+      "bytes": 75014,
+      "sha256": "219a4a584c83d6fb5ef65621d4b5e9f7374a0587bb5d4eaa5bad4b6b8f839096"
+    },
+    {
+      "path": "public/images/product-stories/calf-massager-lounge.avif",
+      "bytes": 51767,
+      "sha256": "bf40625f3f990f6648d5d36cb08a1f691aab7ec0c427e84cad0584341ab42e24"
+    },
+    {
+      "path": "public/images/product-stories/calf-massager-lounge.webp",
+      "bytes": 103560,
+      "sha256": "67e52f4bb3c3d1745a54f64082ab2eb24c40055277f7d072a4615cc14a636dcc"
+    },
+    {
+      "path": "public/images/product-stories/calf-massager-post-workout.avif",
+      "bytes": 39538,
+      "sha256": "3163755984fdda06b5bb99b2fa5b04dcf1560bb357222390b24033bea46d06a6"
+    },
+    {
+      "path": "public/images/product-stories/calf-massager-post-workout.webp",
+      "bytes": 78622,
+      "sha256": "2d55f12420b993b4b6aec5117c5a4dc281a62e1c1a3290c7d4c931cd48ba76ff"
+    },
+    {
+      "path": "public/images/product-stories/calf-massager-workday.avif",
+      "bytes": 58243,
+      "sha256": "fd75ff6b216a9ad82ed42617dc62168137b443e36e642ee7fa2aa14815f128fd"
+    },
+    {
+      "path": "public/images/product-stories/calf-massager-workday.webp",
+      "bytes": 113454,
+      "sha256": "e7fce6fc438150ebebedef48ef24519eb4b80f4c0ffc57e15e55afc3f5cf2303"
+    },
+    {
+      "path": "public/images/product-stories/compression-sleeve-closeup.avif",
+      "bytes": 33272,
+      "sha256": "7632d6dbf776e5fccc361883b2c2d3cd991232a2a806df6cb27308c7de646dcf"
+    },
+    {
+      "path": "public/images/product-stories/compression-sleeve-closeup.webp",
+      "bytes": 75302,
+      "sha256": "8fbc78fe9283d1034c7e34f0faab127af671264eeb009edc75d8ad35ee055686"
+    },
+    {
+      "path": "public/images/product-stories/compression-sleeve-lounge.avif",
+      "bytes": 53391,
+      "sha256": "985bbffb99d6d60ac1676076f26e71468dc36a189415443ef6fe921ebf879b19"
+    },
+    {
+      "path": "public/images/product-stories/compression-sleeve-lounge.webp",
+      "bytes": 103850,
+      "sha256": "056268ce2774ec8a629155afa9d1d8f6b4396ec4fc8d6a55849226211f463478"
+    },
+    {
+      "path": "public/images/product-stories/compression-sleeve-stairs.avif",
+      "bytes": 38584,
+      "sha256": "1a3d3aaccab08d1ee894b609485737fd00575eee5be89dad413922c04a63f392"
+    },
+    {
+      "path": "public/images/product-stories/compression-sleeve-stairs.webp",
+      "bytes": 71834,
+      "sha256": "2ff1e0a599db4194286d3563b71cf210a6dd0bf9c293a20ebf8d8fbad8ac5912"
+    },
+    {
+      "path": "public/images/product-stories/compression-sleeve-workday.avif",
+      "bytes": 53350,
+      "sha256": "6eab78753d19b87aebaeb6c5fecfa0e0165f436b93811f156248c46f3401367c"
+    },
+    {
+      "path": "public/images/product-stories/compression-sleeve-workday.webp",
+      "bytes": 103936,
+      "sha256": "73bb5b4f776622b7963a4b01f426fa0867a8f92e482fbe506b94b316b1c5fd42"
+    },
+    {
+      "path": "public/images/product-stories/heated-wrap-closeup-fit.avif",
+      "bytes": 53353,
+      "sha256": "8403a11a4aac66e48cf29448585afb3314dae328e5fda7107924e58b3e948411"
+    },
+    {
+      "path": "public/images/product-stories/heated-wrap-closeup-fit.webp",
+      "bytes": 115380,
+      "sha256": "be27bb651b6c9e4b86ef565a9c5d48bf296e2bb9510c5e8ae9662fa17bcaf371"
+    },
+    {
+      "path": "public/images/product-stories/heated-wrap-home-lounge.avif",
+      "bytes": 65706,
+      "sha256": "1f3f436f2735d353225f40cc866780357b686ca249bc93432a474988b1eb0e9a"
+    },
+    {
+      "path": "public/images/product-stories/heated-wrap-home-lounge.webp",
+      "bytes": 135334,
+      "sha256": "2c8a03ebe28358f8c150f8b68c31c99b555d94423f1a7d8fe1a5ba0395cc643c"
+    },
+    {
+      "path": "public/images/product-stories/heated-wrap-post-exercise.avif",
+      "bytes": 38564,
+      "sha256": "101dd13a67f137791d437415a3e2f3b012e3ea8c5f342638ba6d19e5de2622d6"
+    },
+    {
+      "path": "public/images/product-stories/heated-wrap-post-exercise.webp",
+      "bytes": 77574,
+      "sha256": "a6a681f9fc5058232e76c20ad32e31f38eacc96dacaac226c7dd547c654796bb"
+    },
+    {
+      "path": "public/images/product-stories/heated-wrap-workday.avif",
+      "bytes": 43092,
+      "sha256": "d37924c3b7a8cef6f3380f98bd18bbf1d6b64b40cdc504aa618c1fa2dbcdb5fb"
+    },
+    {
+      "path": "public/images/product-stories/heated-wrap-workday.webp",
+      "bytes": 85238,
+      "sha256": "e7495bb1241b7e4d43ee7aa089d488eedd7e3690e9079462cdfa3937b9d8811a"
+    },
+    {
+      "path": "public/images/product-stories/insoles-closeup-fit.avif",
+      "bytes": 104226,
+      "sha256": "682f478b5317853ebd3e54161170f94cb787078b652f971d324a1d1aee77ee15"
+    },
+    {
+      "path": "public/images/product-stories/insoles-home-setup.avif",
+      "bytes": 30483,
+      "sha256": "bc0ce5178b6cb6a80e0435a0c5673b133c85837ff5f65fad310f0e0dd1f12022"
+    },
+    {
+      "path": "public/images/product-stories/insoles-post-activity.avif",
+      "bytes": 36279,
+      "sha256": "31f430337c45a988653ebe0a331a8b9237a219deceed0d16ac2cb8223dfbadfe"
+    },
+    {
+      "path": "public/images/product-stories/insoles-ready-to-move.avif",
+      "bytes": 42784,
+      "sha256": "5da1b65dca65453be02ef335029942d872a1420483ff03179c0262eb65abcec8"
+    },
+    {
+      "path": "public/images/product-stories/insoles-workday.avif",
+      "bytes": 51129,
+      "sha256": "7bd59eff877cddff4627a84c60a9eae42f54bb52a6ecd3713317201cc4edcb35"
+    },
+    {
+      "path": "public/images/product-stories/massager-closeup-comfort.avif",
+      "bytes": 27766,
+      "sha256": "d9888c6a3dcc0b85fb6d5aaf886c7b9deb6908964decc2828210c1d96cb85d86"
+    },
+    {
+      "path": "public/images/product-stories/massager-closeup-comfort.webp",
+      "bytes": 61166,
+      "sha256": "7f6cf9a69f7669cfc597d720901234c51e5d6facacca4d567ceeeb30462fef25"
+    },
+    {
+      "path": "public/images/product-stories/massager-evening-reading.avif",
+      "bytes": 32567,
+      "sha256": "7b95287581739b979827f96caa44111b3ac435349016ee0d8da4eb5db39793e9"
+    },
+    {
+      "path": "public/images/product-stories/massager-evening-reading.webp",
+      "bytes": 66990,
+      "sha256": "27e9de167c8467c871e8e83b2a8f2a4b3a196c12675f997ad72ad040fab6df46"
+    },
+    {
+      "path": "public/images/product-stories/massager-post-workout.avif",
+      "bytes": 30108,
+      "sha256": "7bd4bef82c963246dbe9b6ed3fa12b0fc3f031895d5efc6b0aa1f37c88c184a0"
+    },
+    {
+      "path": "public/images/product-stories/massager-post-workout.webp",
+      "bytes": 58362,
+      "sha256": "0572b9a3c1bfca23c45aea4ec64b775b009bf02d9ed0f1c572dcb09a79e8554f"
+    },
+    {
+      "path": "public/images/product-stories/massager-workday-routine.avif",
+      "bytes": 45890,
+      "sha256": "4d74a291376a1ef1f0eee01d07ab58206dd3242563941bf72f0761220e9e1c53"
+    },
+    {
+      "path": "public/images/product-stories/massager-workday-routine.webp",
+      "bytes": 89674,
+      "sha256": "0990bc9acc2b734aceef87f480b77821728132dbc131014aa132fc22c0be0843"
+    },
+    {
+      "path": "public/sitemap.xml",
+      "bytes": 21371,
+      "sha256": "7023544b63dc04b951c29cde3a80375a28fef1f0c6e3f9cd52a3af3b1a4d91ac"
+    },
+    {
+      "path": "scripts/validate-content-registry.ts",
+      "bytes": 4055,
+      "sha256": "aa0dcff7711d1b22eed399c925985d69b1959bab147a4632c06079150186afaa"
+    },
+    {
+      "path": "scripts/validate-performance-assets.mjs",
+      "bytes": 3024,
+      "sha256": "d15ef7ef36314525154df5ea1202429413b783d1f48ce08cc5e5e98c5294ffc5"
+    },
+    {
+      "path": "src/assets/guide-thumb-heat-vs-ice.avif",
+      "bytes": 21076,
+      "sha256": "d9ccbf37f6a16a28fd9c3e89790e948f526a80d322b2cb56a7a7cd829bb0cd3e"
+    },
+    {
+      "path": "src/assets/guide-thumb-heat-vs-ice.webp",
+      "bytes": 31516,
+      "sha256": "23e7bb9d2eb806e2fa0d8df6004f080120b548c5c7de554bca91271453f172d7"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/best-insoles-for-knee-pain-2026.avif",
+      "bytes": 87309,
+      "sha256": "18b680ca2ee04c3c262983c8cab48b0eb0d6956bff37b629a60978fa5b32d386"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/best-insoles-for-knee-pain-2026.webp",
+      "bytes": 141562,
+      "sha256": "3423a40de1969e5694a4d435d7a33c05f2c82b5ede44722dd03a5572d8fcb7c2"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/burning-knees-after-exercise.avif",
+      "bytes": 31726,
+      "sha256": "9de1b57612107ac572181555858e0c79e39399bfc575c56683712353162b04a0"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/burning-knees-after-exercise.webp",
+      "bytes": 66968,
+      "sha256": "8624fbf2e99527c5e3d76d9a95f7198f9940f2aec950562469b58cd2c58a6b8e"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/cordless-rechargeable-heated-knee-massagers-2026.avif",
+      "bytes": 37494,
+      "sha256": "0e629546e99786dab7f000698cdd0c2e4e648db0a7d1f37c9b5970263377ab74"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/cordless-rechargeable-heated-knee-massagers-2026.webp",
+      "bytes": 56326,
+      "sha256": "0077cb88bc4b69df29de0f83a51be0bfaeb3105a46073123507c65279771d624"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/do-knee-massagers-work.avif",
+      "bytes": 26444,
+      "sha256": "f18b9baf5f9ffa17e3e980ef08262abec14d254dd9e68209eb9453a9b23ed265"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/do-knee-massagers-work.webp",
+      "bytes": 56988,
+      "sha256": "98c743b27043e83498c916a4da892633327e4e382c8018ad1ec36204f2f423c2"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/knee-pain-going-down-stairs.avif",
+      "bytes": 114534,
+      "sha256": "4ac84b940a8a960f86e4a0a2bc871139ce8a7749ce2b7dce9b716fbee0609504"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/knee-pain-going-down-stairs.webp",
+      "bytes": 194880,
+      "sha256": "64b2c433ed4d3d9449ed3beb749ad5c6f82c7a7060eb1439355e380dbed71572"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/smart-heated-knee-braces-2026.avif",
+      "bytes": 36133,
+      "sha256": "c1152963b8a444f65e33f3493ebae93081cf898b81f29d1c3d36ce618ff5781b"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/smart-heated-knee-braces-2026.webp",
+      "bytes": 64548,
+      "sha256": "41628f71ca6298abcfef4c44d757765d5a116fbaf747868ae8f1b4a3263478de"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/why-knee-pain-doesnt-go-away.avif",
+      "bytes": 41280,
+      "sha256": "d76b5f37edbcc84ccb89a57bab7b42f62e987f51b4736b195482f097ed311b62"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/why-knee-pain-doesnt-go-away.webp",
+      "bytes": 80770,
+      "sha256": "0f49297e841ab68ea7a64c78ff92bbb97fb4528b2fa5ceccfc77820f9ca48289"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/why-knees-hurt-when-sleeping.avif",
+      "bytes": 7789,
+      "sha256": "932e637011656aaf307cec0b8e89c0e3e1f31cbe516f23cf811a979f308aa93e"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-1/why-knees-hurt-when-sleeping.webp",
+      "bytes": 14126,
+      "sha256": "f7506ecb277f82153250fa22607c961dde8ba9a5e3231137b4af68e881dccb66"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/best-red-light-therapy-knee.avif",
+      "bytes": 45069,
+      "sha256": "ca1989a896921dae04d63cabd50b0d39df50252e848783e683d62cd92af7a9e9"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/best-red-light-therapy-knee.webp",
+      "bytes": 66514,
+      "sha256": "c4d53e1fd7f3a04867644d70f7000aa7234edc4a2341992756d68f681a305d3e"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/home-remedies-knee-pain.avif",
+      "bytes": 64013,
+      "sha256": "d03b21fe05101e4e30320c8ee0af04f3fda03e46e21ad64266408c20a6949aba"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/home-remedies-knee-pain.webp",
+      "bytes": 93536,
+      "sha256": "0436bf6f82b189b24c46e25597e693907fe8273754e775bbcac584e90c926494"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/it-band-pain-location-diagram.avif",
+      "bytes": 35740,
+      "sha256": "74b28528355565116e8cbeaabdfa196b692fff65a012b366b0cd2def86f17522"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/it-band-pain-location-diagram.webp",
+      "bytes": 61258,
+      "sha256": "f868b936dabe76449c9766ac5de4a7f5fd4da056f02d58aff2b2fa668de14fb2"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/knee-pain-after-sitting-cross-legged.avif",
+      "bytes": 46322,
+      "sha256": "e773461a12a70b0d0ad7e570baece7e657078fe36d1ad67cccdcecfeaf44b9f5"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/knee-pain-after-sitting-cross-legged.webp",
+      "bytes": 71328,
+      "sha256": "dd303ae405685b4a9cd7119c08873dd9b63a6f184cce7ad4b1800f9a859eaf48"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/knee-pain-getting-up-after-sitting.avif",
+      "bytes": 74889,
+      "sha256": "bd7e1c6ca8aed9f5468efb8bf353e3dbda29e26984aa71438807ab91cce10c0f"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/knee-pain-getting-up-after-sitting.webp",
+      "bytes": 114812,
+      "sha256": "01d0f6d8beb6a18372d5b3a01377aa4560cf46b226ec42a8bbda7d993adea2fa"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/knee-warmth-daily-comfort.avif",
+      "bytes": 40157,
+      "sha256": "131239b4a5a71ced3c5105dcd711116b8c3a2649f616e9067f7c6cb28874eb17"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/knee-warmth-daily-comfort.webp",
+      "bytes": 59666,
+      "sha256": "e55f8731b1efa8b696906021f8faf4552775c026fc4e76d06f91b4197e60b577"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/sudden-knee-pain-guide.avif",
+      "bytes": 103211,
+      "sha256": "55178ce536a90b76e44567dd05b09ad5757876a8a328318968ec48f059d53e82"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/sudden-knee-pain-guide.webp",
+      "bytes": 176568,
+      "sha256": "652fcdd3d95aabafdccba78c2a39b275954ef001bc9d1e9571bac735d5856048"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/why-do-my-knees-crack-or-pop.avif",
+      "bytes": 16903,
+      "sha256": "82675144c4159e692fdd5a59505b7b8110327cc3d08d61a192ec70f968c219b7"
+    },
+    {
+      "path": "src/assets/guide-thumbnails/batch-2/why-do-my-knees-crack-or-pop.webp",
+      "bytes": 27870,
+      "sha256": "f1494fa52761e5c14cc30f2b32b56ed80ba833b1205e261ce04472e1445c7fc0"
+    },
+    {
+      "path": "src/components/LazyRelatedGuideCard.tsx",
+      "bytes": 759,
+      "sha256": "0febe60099eab076860cbcaf06d98281fcf98729885b6ab4bb828d2fb16bde1f"
+    },
+    {
+      "path": "src/components/PremiumProductStory.tsx",
+      "bytes": 10701,
+      "sha256": "585546cc6c1e3cf6565ea3b4b1741abeabd18f15697d3d919396740a4c902ad1"
+    },
+    {
+      "path": "src/components/ResponsiveImage.tsx",
+      "bytes": 1938,
+      "sha256": "96f1d353b41fa1bc33bd7db89846aeba05426466430eb4c44c62b26c76a150bf"
+    },
+    {
+      "path": "src/data/article-ctas.ts",
+      "bytes": 18157,
+      "sha256": "942141e3c56121b6c871fc585040b9300e947c267400d4d80eed351f55f9d9b1"
+    },
+    {
+      "path": "src/data/article-howto-schemas.ts",
+      "bytes": 32008,
+      "sha256": "e310a55d37d58046256f75f9eccf81ea9674235e7f4681ca093e2b0a142ec7c8"
+    },
+    {
+      "path": "src/data/article-loaders.ts",
+      "bytes": 14692,
+      "sha256": "14c1b045b896b98fb5ebde1f7745e854d8268c6c963bbc8d5ba22b150e5b54de"
+    },
+    {
+      "path": "src/data/articles/heavy-feeling-in-knees.tsx",
+      "bytes": 31107,
+      "sha256": "7179b2b20b243346a392520cfbf531d259a719ace98dfd1c31e3e87d6d6c64ab"
+    },
+    {
+      "path": "src/data/articles/index.ts",
+      "bytes": 238,
+      "sha256": "74b8ad12becd8e4a3a10a2abd52c1ec774f4e20914ecbcad2407513e15132a0e"
+    },
+    {
+      "path": "src/data/articles/knee-stiffness-after-resting.tsx",
+      "bytes": 16836,
+      "sha256": "057bc9a46f27fa112321014b4ca29bee94064c1240adda13a29e4670dab45770"
+    },
+    {
+      "path": "src/data/articles/legacy-inline-articles.tsx",
+      "bytes": 434695,
+      "sha256": "b8adbf0397b511a88fcd9678ddc0179b0064ed38713af4442fd51e12a63ad8c3"
+    },
+    {
+      "path": "src/data/guide-thumbnail-loaders.ts",
+      "bytes": 13158,
+      "sha256": "316d5d68f9a6afe2ce032b21acc24ed431858321c9f5b991ec0b2567756ab14d"
+    },
+    {
+      "path": "src/data/product-profiles.ts",
+      "bytes": 27325,
+      "sha256": "22b88d392c0a315a808acd26f94dcb784fc64b15c3d5010c5e27831d561e08f2"
+    },
+    {
+      "path": "src/data/related-guides.ts",
+      "bytes": 1404,
+      "sha256": "a4a67e875043fc291e74e15d9515648a677aa5657aee4ae6ac1e65a5c81aad70"
+    },
+    {
+      "path": "src/pages/GuideArticle.tsx",
+      "bytes": 18694,
+      "sha256": "ded60495148dd8a2eb1a99e645569ec891e54a25b342843bf5ccd8089e5ef2c6"
+    },
+    {
+      "path": "src/pages/Guides.tsx",
+      "bytes": 67240,
+      "sha256": "7cff65549124f2e605904e3f0ef7a130ab76e8d68691c57605337fa93dbd0778"
+    },
+    {
+      "path": "src/pages/Index.tsx",
+      "bytes": 22798,
+      "sha256": "77de094f0257c2fde720f293f211cf77ff2b075d71f2cbbb30bcb118f229beef"
+    },
+    {
+      "path": "src/pages/ProductDetail.tsx",
+      "bytes": 25560,
+      "sha256": "d74f74e9f77e591e3986f836bb84c07d4696faf11e0546d8ac7811e3ba081e4b"
+    },
+    {
+      "path": "src/pages/WhyFlexiKnee.tsx",
+      "bytes": 29542,
+      "sha256": "91402447b1b8a06e7e05d79100e29ae8a0fe11b85bc946f6684b2e84d5763017"
+    }
+  ]
+}

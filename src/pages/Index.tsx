@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -7,12 +7,12 @@ import { Header } from "@/components/Header";
 import { DiscountCodeModal } from "@/components/DiscountCodeModal";
 import { Footer } from "@/components/Footer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
-import { VideoReviews } from "@/components/VideoReviews";
 import { featurePillars } from "@/data/product-system";
 import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
 import { SUPPORT_EMAIL } from "@/lib/support-config";
-import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
+import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.webp";
+import thumbHeatVsIceAvif from "@/assets/guide-thumb-heat-vs-ice.avif";
 import {
   BRAND_DESCRIPTION,
   BRAND_NAME,
@@ -20,26 +20,46 @@ import {
   OFFICIAL_SOCIAL_URLS,
 } from "@/lib/brand-config";
 
+const FlexiKneeSystem = lazy(() =>
+  import("@/components/FlexiKneeSystem").then((module) => ({ default: module.FlexiKneeSystem })),
+);
+const VideoReviews = lazy(() =>
+  import("@/components/VideoReviews").then((module) => ({ default: module.VideoReviews })),
+);
+
+const DeferredSectionFallback = ({ minHeight = 320 }: { minHeight?: number }) => (
+  <div
+    aria-hidden="true"
+    className="w-full animate-pulse bg-slate-50"
+    style={{ minHeight }}
+  />
+);
+
 const HERO_DESKTOP_IMAGE = "/images/flexiknee-hero-desktop-premium-v2.webp";
-const HERO_MOBILE_IMAGE = "/images/flexiknee-hero-final-mobile.png";
+const HERO_DESKTOP_AVIF = "/images/flexiknee-hero-desktop-premium-v2.avif";
+const HERO_MOBILE_IMAGE = "/images/flexiknee-hero-final-mobile.webp";
+const HERO_MOBILE_AVIF = "/images/flexiknee-hero-final-mobile.avif";
 
 const featuredGuides = [
   {
     title: "Knee Clicking When Walking Explained",
     href: "/guides/knee-clicking-when-walking",
     image: "/images/flexiknee-lifestyle-home.webp",
+    avifImage: undefined,
     tag: "Movement",
   },
   {
     title: "Heat vs. Ice for Knees: What Works Best Daily?",
     href: "/guides/heat-vs-ice-for-knees",
     image: thumbHeatVsIce,
+    avifImage: thumbHeatVsIceAvif,
     tag: "Routine",
   },
   {
     title: "Daily Knee Care Routine: Simple Habits for Comfort",
     href: "/guides/daily-knee-care-routine",
     image: "/images/flexiknee-lifestyle-work.webp",
+    avifImage: undefined,
     tag: "Comfort",
   },
 ];
@@ -165,15 +185,18 @@ export default function Index() {
           <section className="bg-white">
             <div className="mx-auto max-w-[1800px] px-0 py-0 sm:px-4 sm:py-5 lg:px-8 lg:py-8">
               <div className="relative overflow-hidden bg-white shadow-[0_35px_120px_-90px_rgba(15,23,42,0.65)] sm:rounded-[2rem]">
-                <picture>
-                  <source media="(max-width: 767px)" srcSet={HERO_MOBILE_IMAGE} />
-                  <img
-                    src={HERO_DESKTOP_IMAGE}
-                    alt="FlexiKnee smart knee comfort for daily home routines"
-                    className="block w-full"
-                    fetchPriority="high"
-                  />
-                </picture>
+                <ResponsiveImage
+                  src={HERO_DESKTOP_IMAGE}
+                  sources={[
+                    { srcSet: HERO_MOBILE_AVIF, type: "image/avif", media: "(max-width: 767px)" },
+                    { srcSet: HERO_MOBILE_IMAGE, type: "image/webp", media: "(max-width: 767px)" },
+                    { srcSet: HERO_DESKTOP_AVIF, type: "image/avif", media: "(min-width: 768px)" },
+                  ]}
+                  alt="FlexiKnee smart knee comfort for daily home routines"
+                  className="h-full w-full object-cover"
+                  pictureClassName="block aspect-[941/1672] md:aspect-[1672/941]"
+                  priority
+                />
 
                 <Link
                   to={PRIMARY_PRODUCT_PATH}
@@ -290,7 +313,9 @@ export default function Index() {
             </div>
           </section>
 
-          <VideoReviews />
+          <Suspense fallback={<DeferredSectionFallback minHeight={520} />}>
+            <VideoReviews />
+          </Suspense>
 
           <section className="bg-white py-20">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -309,7 +334,16 @@ export default function Index() {
               <div className="grid gap-4 md:grid-cols-3">
                 {featuredGuides.map((guide) => (
                   <Link key={guide.title} to={guide.href} className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-                    <img src={guide.image} alt={guide.title} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+                    <ResponsiveImage
+                      src={guide.image}
+                      avifSrc={guide.avifImage}
+                      alt={guide.title}
+                      className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105"
+                      pictureClassName="block overflow-hidden"
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      width={1200}
+                      height={750}
+                    />
                     <div className="p-6">
                       <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">{guide.tag}</p>
                       <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-950">{guide.title}</h3>
@@ -336,7 +370,9 @@ export default function Index() {
                   Explore FlexiKnee products designed to work together across movement, recovery and simple at-home comfort routines.
                 </p>
               </div>
-              <FlexiKneeSystem />
+              <Suspense fallback={<DeferredSectionFallback minHeight={420} />}>
+                <FlexiKneeSystem />
+              </Suspense>
             </div>
           </section>
 

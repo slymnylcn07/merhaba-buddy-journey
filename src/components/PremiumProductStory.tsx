@@ -1,6 +1,7 @@
 import { ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { ProductProfile, ProductVisual } from "@/data/product-profiles";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 type StoryKey = ProductProfile["key"] | "massager";
 
@@ -13,6 +14,9 @@ interface PremiumProductStoryProps {
   visuals: ProductVisual[];
   highlights?: string[];
 }
+
+
+const storyAvif = (src: string) => src.replace(/\.(?:png|jpe?g|webp)$/i, ".avif");
 
 const themeMap: Record<StoryKey, { soft: string; glow: string; accent: string }> = {
   massager: {
@@ -73,11 +77,15 @@ export const PremiumProductStory = ({
         </div>
 
         <article className="relative mt-10 overflow-hidden rounded-[2rem] border border-white/70 bg-slate-950 shadow-[0_40px_120px_-65px_rgba(15,23,42,0.95)] sm:rounded-[2.5rem]">
-          <img
+          <ResponsiveImage
             src={hero.image}
+            avifSrc={storyAvif(hero.image)}
             alt={hero.alt}
             className="h-[420px] w-full object-cover sm:h-[520px] lg:h-[610px]"
-            loading="lazy"
+            pictureClassName="block"
+            sizes="100vw"
+            width={1600}
+            height={1000}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
           <div className={`absolute -right-24 -top-24 h-80 w-80 rounded-full blur-3xl ${theme.glow}`} />
@@ -95,11 +103,15 @@ export const PremiumProductStory = ({
             {second && (
               <article className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
                 <div className="overflow-hidden">
-                  <img
+                  <ResponsiveImage
                     src={second.image}
+                    avifSrc={storyAvif(second.image)}
                     alt={second.alt}
                     className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-[1.025]"
-                    loading="lazy"
+                    pictureClassName="block"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    width={1600}
+                    height={1000}
                   />
                 </div>
                 <div className="p-6 sm:p-8">
@@ -113,11 +125,15 @@ export const PremiumProductStory = ({
             {third && (
               <article className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
                 <div className="overflow-hidden">
-                  <img
+                  <ResponsiveImage
                     src={third.image}
+                    avifSrc={storyAvif(third.image)}
                     alt={third.alt}
                     className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-[1.025]"
-                    loading="lazy"
+                    pictureClassName="block"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    width={1600}
+                    height={1000}
                   />
                 </div>
                 <div className="p-6 sm:p-8">
@@ -134,7 +150,16 @@ export const PremiumProductStory = ({
           <article className="relative mt-6 overflow-hidden rounded-[2rem] bg-slate-950 text-white shadow-[0_35px_100px_-70px_rgba(15,23,42,0.95)] sm:rounded-[2.5rem]">
             <div className="grid lg:grid-cols-[1.04fr_0.96fr] lg:items-stretch">
               <div className="relative min-h-[340px] overflow-hidden sm:min-h-[420px]">
-                <img src={fourth.image} alt={fourth.alt} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                <ResponsiveImage
+                  src={fourth.image}
+                  avifSrc={storyAvif(fourth.image)}
+                  alt={fourth.alt}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  pictureClassName="block h-full w-full"
+                  sizes="(min-width: 1024px) 52vw, 100vw"
+                  width={1600}
+                  height={1000}
+                />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-950/20 lg:bg-gradient-to-r lg:from-transparent lg:to-slate-950/70" />
               </div>
               <div className="relative flex flex-col justify-center p-7 sm:p-10 lg:p-12">
@@ -183,7 +208,16 @@ export const PremiumProductStory = ({
                 </Link>
               </div>
               <div className="order-1 min-h-[320px] overflow-hidden sm:min-h-[430px] lg:order-2">
-                <img src={fifth.image} alt={fifth.alt} className="h-full w-full object-cover" loading="lazy" />
+                <ResponsiveImage
+                  src={fifth.image}
+                  avifSrc={storyAvif(fifth.image)}
+                  alt={fifth.alt}
+                  className="h-full w-full object-cover"
+                  pictureClassName="block h-full w-full"
+                  sizes="(min-width: 1024px) 55vw, 100vw"
+                  width={1600}
+                  height={1000}
+                />
               </div>
             </div>
           </article>

@@ -2,67 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://flexi-knee.com/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
   </url>
   <url>
     <loc>https://flexi-knee.com/guides</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://flexi-knee.com/shop</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/knee-quiz</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/contact</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/editorial-team</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://flexi-knee.com/why-flexiknee</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/product</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://flexi-knee.com/product/knee-massager-smart-red-light-and-massage-therapy</loc>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://flexi-knee.com/foundation</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/editorial-team</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://flexi-knee.com/track-order</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://flexi-knee.com/privacy-policy</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://flexi-knee.com/terms-of-service</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://flexi-knee.com/refund-policy</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://flexi-knee.com/shipping-policy</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -86,13 +104,13 @@
   </url>
   <url>
     <loc>https://flexi-knee.com/guides/back-of-knee-pain-explained</loc>
-    <lastmod>2025-12-16</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flexi-knee.com/guides/side-knee-pain-comfort-guide</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -170,7 +188,7 @@
   </url>
   <url>
     <loc>https://flexi-knee.com/guides/how-to-fix-knee-pain</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -212,7 +230,7 @@
   </url>
   <url>
     <loc>https://flexi-knee.com/guides/flexiknee-review-2026</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-02-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -266,7 +284,7 @@
   </url>
   <url>
     <loc>https://flexi-knee.com/guides/intermittent-knee-pain-guide</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -296,19 +314,19 @@
   </url>
   <url>
     <loc>https://flexi-knee.com/guides/it-band-pain-location-diagram</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flexi-knee.com/guides/why-do-my-knees-hurt-when-sleeping</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flexi-knee.com/guides/why-do-my-knees-crack-or-pop</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -344,7 +362,7 @@
   </url>
   <url>
     <loc>https://flexi-knee.com/guides/what-causes-knee-pain-guide</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -411,6 +429,12 @@
   <url>
     <loc>https://flexi-knee.com/guides/cold-weather-knee-pain</loc>
     <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/best-supplements-for-knee-pain</loc>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -599,5 +623,53 @@
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/glucosamine-chondroitin-knee-pain</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/menopause-knee-pain</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/red-light-therapy-dose-knees</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/pickleball-knee-recovery-routine</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/product/knee-massager-smart-red-light-and-massage-therapyyy</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/product/360-electric-calf-massager-rechargeable-3-modes-air-compression-leg-massager-hot-compress-leg-massage-blood-circulation</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/product/electric-knee-heating-pad-a-usb-powered-warming-knee-strap-suitable-for-joints-with-adjustable-heating-band-ideal-for-daily</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/product/flexiknee-sport-orthopedic-insoles</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

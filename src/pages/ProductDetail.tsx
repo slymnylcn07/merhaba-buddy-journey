@@ -29,7 +29,7 @@ import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { PremiumProductStory } from "@/components/PremiumProductStory";
 import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
-import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
+import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.webp";
 
 const fallbackGallery = [
   { src: "/images/shopify-gallery/flexiknee-gallery-01-main.webp", alt: "FlexiKnee knee massager main product image" },
@@ -45,25 +45,25 @@ const massagerStoryVisuals = [
   {
     title: "A calmer evening routine",
     text: "Settle in with adjustable warmth and massage-style vibration during a calm evening routine at home.",
-    image: "/images/product-stories/massager-evening-reading.png",
+    image: "/images/product-stories/massager-evening-reading.webp",
     alt: "Woman relaxing on a sofa while using the FlexiKnee knee massager in the evening",
   },
   {
     title: "Comfort that feels easy to set up",
     text: "Adjustable wraparound straps help keep the device comfortably positioned while the touch controls stay easy to reach.",
-    image: "/images/product-stories/massager-closeup-comfort.png",
+    image: "/images/product-stories/massager-closeup-comfort.webp",
     alt: "Close-up of the FlexiKnee knee massager strapped around the knee in a premium home environment",
   },
   {
     title: "Made to fit around work-from-home days",
     text: "Cordless use makes it easy to include FlexiKnee during reading, laptop time or a quiet break at home.",
-    image: "/images/product-stories/massager-workday-routine.png",
+    image: "/images/product-stories/massager-workday-routine.webp",
     alt: "Woman working at a laptop while wearing the FlexiKnee knee massager",
   },
   {
     title: "A premium reset after activity",
     text: "Add a short FlexiKnee session to your wind-down routine after exercise or a busy day on your feet.",
-    image: "/images/product-stories/massager-post-workout.png",
+    image: "/images/product-stories/massager-post-workout.webp",
     alt: "Woman using the FlexiKnee knee massager after exercise in a bright fitness-inspired room",
   },
 ];

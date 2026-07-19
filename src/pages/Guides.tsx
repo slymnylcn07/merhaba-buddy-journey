@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { guidesData } from "@/data/guides";
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 // Import images
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
@@ -24,7 +25,8 @@ import thumbInfraredMassager from "@/assets/guide-thumb-infrared-massager.jpg";
 import thumbInfraredVsHeatingPads from "@/assets/guide-thumb-infrared-vs-heating-pads.jpg";
 import thumbRedLightResearch from "@/assets/guide-thumb-red-light-research.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
-import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
+import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.webp";
+import thumbHeatVsIceAvif from "@/assets/guide-thumb-heat-vs-ice.avif";
 import thumbInfraredSafety from "@/assets/guide-thumb-infrared-safety-v2.jpg";
 import thumbWarmthVsInfrared from "@/assets/guide-thumb-warmth-vs-infrared-v2.jpg";
 import thumbFixKneePain from "@/assets/guide-thumb-fix-knee-pain.jpg";
@@ -80,28 +82,54 @@ import thumbBatch3PlicaSyndromeKneePain from "@/assets/guide-thumbnails/batch-3/
 import thumbBatch3KneeBursitisGuide from "@/assets/guide-thumbnails/batch-3/knee-bursitis-guide.webp";
 import thumbBatch3PatellofemoralPainSyndrome from "@/assets/guide-thumbnails/batch-3/patellofemoral-pain-syndrome.webp";
 import thumbBatch3WarmFeelingInKnee from "@/assets/guide-thumbnails/batch-3/warm-feeling-in-knee.webp";
-import thumbBatch1WhyKneePainDoesntGoAway from "@/assets/guide-thumbnails/batch-1/why-knee-pain-doesnt-go-away.png";
-import thumbBatch1BurningKneesAfterExercise from "@/assets/guide-thumbnails/batch-1/burning-knees-after-exercise.png";
-import thumbBatch1KneePainGoingDownStairs from "@/assets/guide-thumbnails/batch-1/knee-pain-going-down-stairs.png";
-import thumbBatch1WhyKneesHurtWhenSleeping from "@/assets/guide-thumbnails/batch-1/why-knees-hurt-when-sleeping.png";
-import thumbBatch1DoKneeMassagersWork from "@/assets/guide-thumbnails/batch-1/do-knee-massagers-work.png";
-import thumbBatch1SmartHeatedKneeBraces2026 from "@/assets/guide-thumbnails/batch-1/smart-heated-knee-braces-2026.png";
-import thumbBatch1BestInsolesForKneePain2026 from "@/assets/guide-thumbnails/batch-1/best-insoles-for-knee-pain-2026.png";
-import thumbBatch1CordlessRechargeableHeatedKneeMassagers2026 from "@/assets/guide-thumbnails/batch-1/cordless-rechargeable-heated-knee-massagers-2026.png";
+import thumbBatch1WhyKneePainDoesntGoAway from "@/assets/guide-thumbnails/batch-1/why-knee-pain-doesnt-go-away.webp";
+import thumbBatch1WhyKneePainDoesntGoAwayAvif from "@/assets/guide-thumbnails/batch-1/why-knee-pain-doesnt-go-away.avif";
+import thumbBatch1BurningKneesAfterExercise from "@/assets/guide-thumbnails/batch-1/burning-knees-after-exercise.webp";
+import thumbBatch1BurningKneesAfterExerciseAvif from "@/assets/guide-thumbnails/batch-1/burning-knees-after-exercise.avif";
+import thumbBatch1KneePainGoingDownStairs from "@/assets/guide-thumbnails/batch-1/knee-pain-going-down-stairs.webp";
+import thumbBatch1KneePainGoingDownStairsAvif from "@/assets/guide-thumbnails/batch-1/knee-pain-going-down-stairs.avif";
+import thumbBatch1WhyKneesHurtWhenSleeping from "@/assets/guide-thumbnails/batch-1/why-knees-hurt-when-sleeping.webp";
+import thumbBatch1WhyKneesHurtWhenSleepingAvif from "@/assets/guide-thumbnails/batch-1/why-knees-hurt-when-sleeping.avif";
+import thumbBatch1DoKneeMassagersWork from "@/assets/guide-thumbnails/batch-1/do-knee-massagers-work.webp";
+import thumbBatch1DoKneeMassagersWorkAvif from "@/assets/guide-thumbnails/batch-1/do-knee-massagers-work.avif";
+import thumbBatch1SmartHeatedKneeBraces2026 from "@/assets/guide-thumbnails/batch-1/smart-heated-knee-braces-2026.webp";
+import thumbBatch1SmartHeatedKneeBraces2026Avif from "@/assets/guide-thumbnails/batch-1/smart-heated-knee-braces-2026.avif";
+import thumbBatch1BestInsolesForKneePain2026 from "@/assets/guide-thumbnails/batch-1/best-insoles-for-knee-pain-2026.webp";
+import thumbBatch1BestInsolesForKneePain2026Avif from "@/assets/guide-thumbnails/batch-1/best-insoles-for-knee-pain-2026.avif";
+import thumbBatch1CordlessRechargeableHeatedKneeMassagers2026 from "@/assets/guide-thumbnails/batch-1/cordless-rechargeable-heated-knee-massagers-2026.webp";
+import thumbBatch1CordlessRechargeableHeatedKneeMassagers2026Avif from "@/assets/guide-thumbnails/batch-1/cordless-rechargeable-heated-knee-massagers-2026.avif";
 import thumbItBandFoamRollingList from "@/assets/hero-itband-foam-rolling.svg";
 import thumbSleepKneePainList from "@/assets/hero-sleep-knee-pain.svg";
 import thumbAirCompressionLegList from "@/assets/hero-air-compression-leg.svg";
 import thumbSleeveSizingList from "@/assets/hero-sleeve-sizing.svg";
-import thumbBatch2KneeWarmthDailyComfort from "@/assets/guide-thumbnails/batch-2/knee-warmth-daily-comfort.png";
-import thumbBatch2KneePainGettingUpAfterSitting from "@/assets/guide-thumbnails/batch-2/knee-pain-getting-up-after-sitting.png";
-import thumbBatch2WhyDoMyKneesCrackOrPop from "@/assets/guide-thumbnails/batch-2/why-do-my-knees-crack-or-pop.png";
-import thumbBatch2KneePainAfterSittingCrossLegged from "@/assets/guide-thumbnails/batch-2/knee-pain-after-sitting-cross-legged.png";
-import thumbBatch2BestRedLightTherapyKnee from "@/assets/guide-thumbnails/batch-2/best-red-light-therapy-knee.png";
-import thumbBatch2SuddenKneePainGuide from "@/assets/guide-thumbnails/batch-2/sudden-knee-pain-guide.png";
-import thumbBatch2ItBandPainLocationDiagram from "@/assets/guide-thumbnails/batch-2/it-band-pain-location-diagram.png";
-import thumbBatch2HomeRemediesKneePain from "@/assets/guide-thumbnails/batch-2/home-remedies-knee-pain.png";
+import thumbSupplements from "@/assets/thumb-knee-supplements.svg";
+import thumbGlucosamine from "@/assets/article-hero-glucosamine-chondroitin.svg";
+import thumbMenopause from "@/assets/article-hero-menopause-knee-pain.svg";
+import thumbRedLightDose from "@/assets/article-hero-red-light-dose-knees.svg";
+import thumbPickleballRecovery from "@/assets/article-hero-pickleball-knee-recovery.jpg";
+import thumbBatch2KneeWarmthDailyComfort from "@/assets/guide-thumbnails/batch-2/knee-warmth-daily-comfort.webp";
+import thumbBatch2KneeWarmthDailyComfortAvif from "@/assets/guide-thumbnails/batch-2/knee-warmth-daily-comfort.avif";
+import thumbBatch2KneePainGettingUpAfterSitting from "@/assets/guide-thumbnails/batch-2/knee-pain-getting-up-after-sitting.webp";
+import thumbBatch2KneePainGettingUpAfterSittingAvif from "@/assets/guide-thumbnails/batch-2/knee-pain-getting-up-after-sitting.avif";
+import thumbBatch2WhyDoMyKneesCrackOrPop from "@/assets/guide-thumbnails/batch-2/why-do-my-knees-crack-or-pop.webp";
+import thumbBatch2WhyDoMyKneesCrackOrPopAvif from "@/assets/guide-thumbnails/batch-2/why-do-my-knees-crack-or-pop.avif";
+import thumbBatch2KneePainAfterSittingCrossLegged from "@/assets/guide-thumbnails/batch-2/knee-pain-after-sitting-cross-legged.webp";
+import thumbBatch2KneePainAfterSittingCrossLeggedAvif from "@/assets/guide-thumbnails/batch-2/knee-pain-after-sitting-cross-legged.avif";
+import thumbBatch2BestRedLightTherapyKnee from "@/assets/guide-thumbnails/batch-2/best-red-light-therapy-knee.webp";
+import thumbBatch2BestRedLightTherapyKneeAvif from "@/assets/guide-thumbnails/batch-2/best-red-light-therapy-knee.avif";
+import thumbBatch2SuddenKneePainGuide from "@/assets/guide-thumbnails/batch-2/sudden-knee-pain-guide.webp";
+import thumbBatch2SuddenKneePainGuideAvif from "@/assets/guide-thumbnails/batch-2/sudden-knee-pain-guide.avif";
+import thumbBatch2ItBandPainLocationDiagram from "@/assets/guide-thumbnails/batch-2/it-band-pain-location-diagram.webp";
+import thumbBatch2ItBandPainLocationDiagramAvif from "@/assets/guide-thumbnails/batch-2/it-band-pain-location-diagram.avif";
+import thumbBatch2HomeRemediesKneePain from "@/assets/guide-thumbnails/batch-2/home-remedies-knee-pain.webp";
+import thumbBatch2HomeRemediesKneePainAvif from "@/assets/guide-thumbnails/batch-2/home-remedies-knee-pain.avif";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
+  "best-supplements-for-knee-pain": thumbSupplements,
+  "glucosamine-chondroitin-knee-pain": thumbGlucosamine,
+  "menopause-knee-pain": thumbMenopause,
+  "red-light-therapy-dose-knees": thumbRedLightDose,
+  "pickleball-knee-recovery-routine": thumbPickleballRecovery,
   "why-knee-pain-doesnt-go-away": thumbBatch1WhyKneePainDoesntGoAway,
   "heat-vs-red-light-therapy": thumbHeatTherapy,
   "who-benefits-from-knee-therapy-devices": thumbWhoBenefits,
@@ -167,7 +195,7 @@ const thumbnailMap: Record<string, string> = {
   "it-band-foam-rolling-step-by-step": thumbItBandFoamRollingList,
   "how-to-sleep-with-knee-pain": thumbSleepKneePainList,
   "air-compression-leg-massagers-do-they-work": thumbAirCompressionLegList,
-  "compression-knee-sleeve-sizing-guide": thumbSleeveSizingList,
+  "knee-compression-sleeve-sizing-guide": thumbSleeveSizingList,
   "knee-pain-climbing-stairs": thumbKneePainClimbingStairs,
   "knee-pain-going-down-stairs": thumbBatch1KneePainGoingDownStairs,
   "knee-pain-when-squatting": thumbKneePainSquatting,
@@ -193,10 +221,31 @@ const thumbnailMap: Record<string, string> = {
   "weight-affects-knee-pain": thumbBatch3WeightAffectsKneePain,
 };
 
+const thumbnailAvifMap: Record<string, string> = {
+  "why-knee-pain-doesnt-go-away": thumbBatch1WhyKneePainDoesntGoAwayAvif,
+  "burning-knees-after-exercise": thumbBatch1BurningKneesAfterExerciseAvif,
+  "knee-pain-going-down-stairs": thumbBatch1KneePainGoingDownStairsAvif,
+  "why-do-my-knees-hurt-when-sleeping": thumbBatch1WhyKneesHurtWhenSleepingAvif,
+  "do-knee-massagers-work": thumbBatch1DoKneeMassagersWorkAvif,
+  "smart-heated-knee-braces-2026": thumbBatch1SmartHeatedKneeBraces2026Avif,
+  "best-insoles-for-knee-pain-2026": thumbBatch1BestInsolesForKneePain2026Avif,
+  "cordless-rechargeable-heated-knee-massagers-2026": thumbBatch1CordlessRechargeableHeatedKneeMassagers2026Avif,
+  "knee-warmth-daily-comfort": thumbBatch2KneeWarmthDailyComfortAvif,
+  "knee-pain-getting-up-after-sitting": thumbBatch2KneePainGettingUpAfterSittingAvif,
+  "why-do-my-knees-crack-or-pop": thumbBatch2WhyDoMyKneesCrackOrPopAvif,
+  "knee-pain-after-sitting-cross-legged": thumbBatch2KneePainAfterSittingCrossLeggedAvif,
+  "best-red-light-therapy-knee": thumbBatch2BestRedLightTherapyKneeAvif,
+  "sudden-knee-pain-guide": thumbBatch2SuddenKneePainGuideAvif,
+  "it-band-pain-location-diagram": thumbBatch2ItBandPainLocationDiagramAvif,
+  "home-remedies-knee-pain": thumbBatch2HomeRemediesKneePainAvif,
+  "heat-vs-ice-for-knees": thumbHeatVsIceAvif,
+};
+
 // Combine data with thumbnails
 const guides = guidesData.map(guide => ({
   ...guide,
   thumbnail: thumbnailMap[guide.slug] || thumbKneePain,
+  thumbnailAvif: thumbnailAvifMap[guide.slug],
 }));
 
 // Helper to get guide by slug
@@ -354,7 +403,16 @@ const FeaturedGuideCard = ({ guide }: { guide: typeof guides[0] }) => (
   <Link to={`/guides/${guide.slug}`} className="group block">
     <article className="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
       <div className="aspect-[4/3] overflow-hidden">
-        <img src={guide.thumbnail} alt={guide.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+        <ResponsiveImage
+          src={guide.thumbnail}
+          avifSrc={guide.thumbnailAvif}
+          alt={guide.title}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          pictureClassName="block h-full w-full"
+          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+          width={1200}
+          height={750}
+        />
       </div>
       <div className="p-5 md:p-6">
         <div className="flex items-center gap-2 mb-3">
@@ -377,7 +435,16 @@ const GuideCard = ({ guide, compact = false }: { guide: typeof guides[0]; compac
   <Link to={`/guides/${guide.slug}`} className="group block h-full">
     <article className="rounded-xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
       <div className={`${compact ? 'aspect-[16/9]' : 'aspect-[16/10]'} overflow-hidden`}>
-        <img src={guide.thumbnail} alt={guide.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+        <ResponsiveImage
+          src={guide.thumbnail}
+          avifSrc={guide.thumbnailAvif}
+          alt={guide.title}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          pictureClassName="block h-full w-full"
+          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+          width={1200}
+          height={750}
+        />
       </div>
       <div className="p-4 flex-1 flex flex-col">
         <div className="flex items-center gap-2 mb-2">
@@ -775,7 +842,16 @@ const Guides = () => {
                         <Link key={slug} to={`/guides/${slug}`} className="group block">
                           <article className="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 h-full border-2 border-primary/10">
                             <div className="aspect-[4/3] overflow-hidden">
-                              <img src={guide.thumbnail} alt={guide.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                              <ResponsiveImage
+                                src={guide.thumbnail}
+                                avifSrc={guide.thumbnailAvif}
+                                alt={guide.title}
+                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                pictureClassName="block h-full w-full"
+                                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                                width={1200}
+                                height={750}
+                              />
                             </div>
                             <div className="p-5 md:p-6">
                               <div className="flex items-center gap-2 mb-3">

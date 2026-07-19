@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -340,19 +341,19 @@ const WhyFlexiKnee = () => {
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {[
                 {
-                  image: "/images/product-stories/massager-evening-reading.png",
+                  image: "/images/product-stories/massager-evening-reading.webp",
                   alt: "FlexiKnee used during a calm evening reading routine",
                   title: "A calmer evening setup",
                   text: "Soft lighting, a quiet seat and an easy session length make the product feel natural in a wind-down routine.",
                 },
                 {
-                  image: "/images/product-stories/massager-workday-routine.png",
+                  image: "/images/product-stories/massager-workday-routine.webp",
                   alt: "FlexiKnee worn while working from home",
                   title: "Fits around the day",
                   text: "The cordless format supports flexible use around work, breaks and the moments when your schedule is already full.",
                 },
                 {
-                  image: "/images/product-stories/massager-closeup-comfort.png",
+                  image: "/images/product-stories/massager-closeup-comfort.webp",
                   alt: "Close-up of FlexiKnee wraparound fit and controls",
                   title: "Comfort-first in the details",
                   text: "The wraparound shape, adjustable straps and clean control layout help the device feel straightforward from the first use.",
@@ -364,7 +365,16 @@ const WhyFlexiKnee = () => {
                   style={{ transitionDelay: `${index * 120}ms` }}
                 >
                   <div className="overflow-hidden">
-                    <img src={item.image} alt={item.alt} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+                    <ResponsiveImage
+                      src={item.image}
+                      avifSrc={item.image.replace(/\.webp$/i, ".avif")}
+                      alt={item.alt}
+                      className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105"
+                      pictureClassName="block"
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      width={1600}
+                      height={1000}
+                    />
                   </div>
                   <div className="p-5">
                     <div className="mb-3 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-200">

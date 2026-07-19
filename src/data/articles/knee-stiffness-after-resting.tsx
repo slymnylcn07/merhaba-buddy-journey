@@ -1,7 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import { InfoBox } from "@/components/ArticleCharts";
-import heroImage from "@/assets/article-hero-knee-stiffness-resting.jpg";
+import heroImage from "@/assets/guide-thumb-knee-stiffness-resting.jpg";
 import stiffnessContributors from "@/assets/package-4/sitting-stiffness-contributors.svg";
 import firstStepsAfterRest from "@/assets/package-4/first-steps-after-rest.svg";
 import seatedPostureOptions from "@/assets/package-4/seated-posture-options.svg";
