@@ -366,6 +366,18 @@ const SectionDivider = () => (
 );
 
 const articles: Record<string, ArticleData> = {
+    "why-do-my-knees-feel-tight-after-resting": {
+    ...kneesHurtAfterResting.article,
+    slug: "why-do-my-knees-feel-tight-after-resting",
+    title: "Why Do My Knees Feel Tight or Stiff After Resting?",
+    subtitle: "Understanding stiffness after sitting, sleeping, and inactivity",
+    intro: "Knees can feel tight or stiff after sitting, sleeping, or staying in one position for a long time. This guide explains common post-rest patterns, how they differ from pain or swelling, practical ways to ease the first few movements, and warning signs that deserve medical attention.",
+    metaTitle: "Knee Tightness & Stiffness After Resting: Causes and Tips",
+    metaDescription: "Why do knees feel tight or stiff after resting? Learn about post-rest stiffness, first-movement patterns, practical comfort tips, and warning signs.",
+    publishedDate: "February 26, 2026",
+    nextSlug: "knee-pain-getting-up-after-sitting",
+    nextTitle: "Knee Pain Getting Up After Sitting",
+  },
   "why-knee-pain-doesnt-go-away": {
     slug: "why-knee-pain-doesnt-go-away",
     title: "Why Knee Pain Often Doesn't Go Away on Its Own",
