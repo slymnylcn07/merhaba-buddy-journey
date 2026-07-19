@@ -4,9 +4,9 @@ import PremiumCTA from "@/components/PremiumCTA";
 import heroImg from "@/assets/article-hero-knee-exercises.jpg";
 import exerciseStraightLegRaise from "@/assets/exercise-straight-leg-raise.jpg";
 import exerciseWallSit from "@/assets/exercise-wall-sit.jpg";
-import exerciseCalfRaise from "@/assets/exercise-calf-raise.jpg";
+import exerciseCalfRaise from "@/assets/package-4/exercise-calf-raise.svg";
 import exerciseGluteBridge from "@/assets/exercise-glute-bridge.jpg";
-import exerciseHamstringCurl from "@/assets/exercise-hamstring-curl.jpg";
+import exerciseHamstringCurl from "@/assets/package-4/exercise-hamstring-curl.svg";
 import exerciseAnkleCircles from "@/assets/exercise-ankle-circles.jpg";
 
 const article: ArticleData = {
@@ -103,9 +103,9 @@ const article: ArticleData = {
           alt="Standing hamstring curl exercise — bending knee behind while holding chair for balance"
           className="w-full h-auto rounded-xl shadow-sm"
           loading="lazy"
-        />
+         decoding="async"  width={1200} height={760} />
         <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-          Standing hamstring curls strengthen the back of the thigh to protect the knee
+          Standing hamstring curls work the muscles at the back of the thigh
         </figcaption>
       </figure>
       <p><strong>How to do it:</strong></p>
@@ -127,9 +127,9 @@ const article: ArticleData = {
           alt="Calf raise exercise — rising up on toes while holding counter for support"
           className="w-full h-auto rounded-xl shadow-sm"
           loading="lazy"
-        />
+         decoding="async"  width={1200} height={760} />
         <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-          Calf raises improve ankle stability and reduce compensatory knee stress
+          Calf raises build calf capacity and ankle control for everyday movement
         </figcaption>
       </figure>
       <p><strong>How to do it:</strong></p>

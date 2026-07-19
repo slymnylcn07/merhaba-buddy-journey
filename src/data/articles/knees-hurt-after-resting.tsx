@@ -6,8 +6,8 @@ import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knees-hurt-after-resting.jpg";
 import sectionInactivityCycle from "@/assets/article-section-inactivity-stiffness-cycle.jpg";
 import sectionFirstMovement from "@/assets/article-section-first-movement-pain.jpg";
-import sectionFluidRedistribution from "@/assets/article-section-fluid-redistribution-rest.jpg";
-import sectionRestToRelief from "@/assets/article-section-rest-stiff-walk-relief.jpg";
+import sectionFluidRedistribution from "@/assets/package-4/sitting-stiffness-contributors.svg";
+import sectionRestToRelief from "@/assets/package-4/gradual-return-to-movement.svg";
 import sectionStiffnessComparison from "@/assets/article-section-stiffness-types-comparison.jpg";
 import sectionInactivitySituations from "@/assets/article-section-inactivity-situations.jpg";
 
@@ -32,41 +32,35 @@ const articleContent = (
     </p>
 
     <InfoBox title="The Key Difference">
-      <p>Rest-related stiffness isn't about how you rest — it's about the fact that you stopped moving. Whether you were lying down, lounging, or simply pausing during a task, the result is the same: your joints slow down, fluid thickens, and your first movement becomes uncomfortable.</p>
+      <p>A stiff or sore feeling after rest can have several contributors. A sustained knee position, reduced muscle activity, osteoarthritis, tendon sensitivity, swelling, and the way you begin moving again may all matter. The pattern is common, but it is not a diagnosis by itself.</p>
     </InfoBox>
 
     <h2>Why Do Knees Hurt After Periods of Inactivity?</h2>
     <p>
-      To understand why your <strong>knees stiff after inactivity</strong>, you need to know a little about what happens inside your knee joint when it's not moving.
+      When a knee stays bent or still, the first movement may feel different from movement later in the day. That experience can reflect a combination of sustained position, temporary changes in muscle activation, tissue sensitivity, joint irritation, or an underlying condition such as osteoarthritis.
     </p>
     <p>
-      Your knee joint is surrounded by a capsule filled with synovial fluid — a thick, egg-white-like substance that lubricates the cartilage surfaces and allows smooth, painless movement. When you're active, this fluid is continuously distributed across the joint surfaces through movement. Think of it like stirring honey — it flows more easily when you keep it moving.
-    </p>
-    <p>
-      But when you rest, that fluid becomes more viscous. It thickens. The cartilage surfaces that were gliding smoothly now have less lubrication between them. At the same time, blood flow to the joint area decreases during inactivity, which means the tissues receive less oxygen and nutrients.
+      Gentle movement often helps some people transition back to activity, but the reason cannot be identified from the symptom alone. A simple illustration should therefore describe possible contributors rather than claim that joint fluid “thickens” or that one mechanism explains every case.
     </p>
 
     <figure className="my-8">
       <img
         src={sectionFluidRedistribution}
-        alt="Diagram showing synovial fluid pooling and thickening in the knee joint during rest periods"
+        alt="Infographic showing possible contributors to stiffness after prolonged sitting or rest"
         className="w-full h-auto rounded-xl shadow-sm"
-      />
+       loading="lazy"  decoding="async"  width={1200} height={760} />
       <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        During rest, synovial fluid becomes more viscous and distributes unevenly
+        Possible contributors after rest include a sustained bend, less muscle activity, tissue sensitivity, and seat or foot support
       </figcaption>
     </figure>
 
     <p>
-      The result? When you finally do move, your joint needs a "warm-up" period. The first few movements force the thickened fluid to spread again, the cartilage surfaces need to re-adjust, and the surrounding muscles and tendons — which may have tightened during rest — need to stretch back to their working length.
-    </p>
-    <p>
-      This entire process is what creates that familiar <strong>first movement knee pain</strong> or <strong>movement-start discomfort</strong> that so many people describe.
+      A gradual transition — small ankle movements, a comfortable knee bend, standing with support, and then a short easy walk — may feel better than moving abruptly. Stop and seek advice if the knee locks, gives way, becomes markedly swollen, or the pain is severe.
     </p>
 
     <h2>The Inactivity Stiffness Cycle Explained</h2>
     <p>
-      Rest-related knee stiffness follows a predictable pattern that researchers call the "inactivity stiffness cycle." Understanding this cycle can help you break it and reduce how much discomfort you experience.
+      Some people notice a repeatable rest-to-movement pattern, while others do not. The following illustration is a practical sequence for returning to movement, not a biological model or diagnostic test.
     </p>
 
     <figure className="my-8">
@@ -206,23 +200,20 @@ const articleContent = (
     <figure className="my-8">
       <img
         src={sectionRestToRelief}
-        alt="Flow diagram showing the four-step pattern from rest through stiffness to walking and relief"
+        alt="Four-step gradual return-to-movement plan after rest, including symptom check, small movements, supported standing, and a short walk"
         className="w-full h-auto rounded-xl shadow-sm"
-      />
+       loading="lazy"  decoding="async"  width={1200} height={760} />
       <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        The predictable rest-to-relief pattern most people experience with inactivity stiffness
+        A gradual return-to-movement sequence that includes checking symptoms, small movements, supported standing, and a short walk
       </figcaption>
     </figure>
 
     <p>
-      For most people, the pattern looks like this: after 30+ minutes of inactivity, stiffness builds. The first 2-5 minutes of walking feel uncomfortable. But by 5-10 minutes of gentle movement, the stiffness has largely resolved. Your <strong>knees ache after resting</strong>, but they feel much better once they've had a chance to warm up.
-    </p>
-    <p>
-      This pattern is a key indicator that your stiffness is related to inactivity rather than an underlying injury. Injury-related stiffness tends to persist or worsen with movement, while inactivity stiffness consistently improves.
+      Symptoms may improve after a few comfortable movements, but there is no reliable minute-by-minute rule. Improvement with movement can be useful information to record, yet it does not rule out osteoarthritis, tendon problems, swelling, or another condition.
     </p>
 
-    <InfoBox title="A Helpful Rule of Thumb">
-      <p>If your knee stiffness eases within 5-10 minutes of gentle walking and doesn't return until your next rest period, it's very likely inactivity-related. If stiffness persists beyond 30 minutes of movement or worsens with activity, it may be worth exploring other factors with a healthcare provider.</p>
+    <InfoBox title="When to Get Advice">
+      <p>Consider professional assessment when stiffness is persistent, worsening, associated with significant swelling, locking, instability, fever, a recent injury, or difficulty bearing weight. A clinician can help distinguish a simple movement-related pattern from a condition that needs targeted care.</p>
     </InfoBox>
 
     <PremiumCTA

@@ -8,6 +8,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ArticleShareBlock } from "@/components/ArticleShareSidebar";
 import { ArticleHeaderMeta } from "@/components/ArticleHeaderMeta";
 import { ArticleTableOfContents } from "@/components/ArticleTableOfContents";
+import { ArticleImageLightbox } from "@/components/ArticleImageLightbox";
 import { guidesData } from "@/data/guides";
 
 
@@ -60,10 +61,10 @@ import heroKneeInjuries from "@/assets/article-hero-knee-injuries.jpg";
 import heroInfraredMassager from "@/assets/article-hero-infrared-massager.jpg";
 import heroRedLightResearch from "@/assets/article-hero-red-light-research.jpg";
 import heroDailyRoutineNew from "@/assets/article-hero-daily-routine-new.jpg";
-import sectionKneeBending from "@/assets/article-section-knee-bending.jpg";
+import sectionKneeBending from "@/assets/package-4/exercise-gentle-knee-flexion.svg";
 import sectionLegStraight from "@/assets/article-section-leg-stretch-fixed.jpg";
 import sectionSideStretch from "@/assets/article-section-side-stretch.jpg";
-import sectionArthritisExercise from "@/assets/article-section-arthritis-exercise.jpg";
+import sectionArthritisExercise from "@/assets/package-4/exercise-low-impact-options.svg";
 import sharpKneeAnatomyDiagram from "@/assets/article-sharp-knee-anatomy-diagram.jpg";
 import sharpKneeNervePathway from "@/assets/article-sharp-knee-nerve-pathway.jpg";
 import sharpKneeKneecapPressure from "@/assets/article-sharp-knee-kneecap-pressure.jpg";
@@ -222,7 +223,6 @@ import {
   kneesHurtAfterResting,
   coldWeatherKneePain,
   bestSupplementsForKneePain,
-  kneeStiffnessAfterResting,
   glucosamineChondroitinKneePain,
   menopauseKneePain,
   redLightTherapyDoseKnees,
@@ -1795,9 +1795,9 @@ const articles: Record<string, ArticleData> = {
             src={sectionArthritisExercise} 
             alt="Gentle knee exercises for arthritis management"
             className="w-full h-auto rounded-xl shadow-lg"
-          />
+           loading="lazy"  decoding="async"  width={1200} height={760} />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Low-impact exercises help maintain knee function while minimizing joint stress
+            Examples of lower-impact movement options that can be adapted to comfort and ability
           </figcaption>
         </figure>
 
@@ -2692,9 +2692,9 @@ const articles: Record<string, ArticleData> = {
             src={sectionKneeBending} 
             alt="Person gently bending knee demonstrating joint movement" 
             className="w-full h-auto rounded-xl shadow-sm"
-          />
+           loading="lazy"  decoding="async"  width={1200} height={760} />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Understanding how the knee moves helps in recognizing injury symptoms
+            A gentle flexion-and-extension illustration showing basic knee movement
           </figcaption>
         </figure>
 <SectionDivider />
@@ -5888,7 +5888,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, sharpKneePainCauses, infraredKneeMassagerGuide2026, sharpStabbingKneePainComfort, infraredVsHeatingPads, intermittentKneePainGuide, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, runnersKneePainLocation, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, exercisesToRelieveKneePainAtHome, kneeSwellingAfterExercise, kneeRecoveryExercisesAfterWorkout, kneeAcheAfterLegWorkouts, burningKneesAfterExercise, homeRemediesKneePain, weightAffectsKneePain, cordlessHeatedKneeMassagers2026, bestInsolesKneePain2026, itBandFoamRollingGuide, howToSleepWithKneePain, airCompressionLegMassagers, kneeSleeveSizingGuide, heatVsIceForKneesAuthoritative, bestSupplementsForKneePain, kneeStiffnessAfterResting, glucosamineChondroitinKneePain, menopauseKneePain, redLightTherapyDoseKnees, pickleballKneeRecoveryRoutine];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, sharpKneePainCauses, infraredKneeMassagerGuide2026, sharpStabbingKneePainComfort, infraredVsHeatingPads, intermittentKneePainGuide, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, runnersKneePainLocation, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, exercisesToRelieveKneePainAtHome, kneeSwellingAfterExercise, kneeRecoveryExercisesAfterWorkout, kneeAcheAfterLegWorkouts, burningKneesAfterExercise, homeRemediesKneePain, weightAffectsKneePain, cordlessHeatedKneeMassagers2026, bestInsolesKneePain2026, itBandFoamRollingGuide, howToSleepWithKneePain, airCompressionLegMassagers, kneeSleeveSizingGuide, heatVsIceForKneesAuthoritative, bestSupplementsForKneePain, glucosamineChondroitinKneePain, menopauseKneePain, redLightTherapyDoseKnees, pickleballKneeRecoveryRoutine];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -6442,7 +6442,7 @@ const GuideArticle = () => {
 
                 <hr className="my-6 border-t border-border/30" />
 
-                <div className="article-content max-w-none
+                <div id="article-content" className="article-content max-w-none
                   [&_h2]:mt-14 [&_h2]:mb-5 [&_h2]:border-b [&_h2]:border-slate-200 [&_h2]:pb-4 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-[-0.035em] [&_h2]:text-slate-950 [&_h2]:md:text-3xl
                   [&_h3]:mt-9 [&_h3]:mb-3 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:tracking-[-0.02em] [&_h3]:text-slate-950
                   [&_p]:mb-5 [&_p]:text-base [&_p]:font-normal [&_p]:leading-8 [&_p]:text-slate-600
@@ -6450,10 +6450,12 @@ const GuideArticle = () => {
                   [&_strong]:font-semibold [&_strong]:text-slate-950
                   [&_ul]:mb-6 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:mb-6 [&_ol]:list-decimal [&_ol]:pl-6
                   [&_li]:mb-2 [&_li]:text-base [&_li]:leading-7 [&_li]:text-slate-600
-                  [&_img]:my-8 [&_img]:w-full [&_img]:rounded-[1.5rem] [&_img]:border [&_img]:border-slate-200 [&_img]:bg-white [&_img]:object-contain [&_img]:shadow-sm
+                  [&_img]:my-8 [&_img]:w-full [&_img]:rounded-[1.5rem] [&_img]:border [&_img]:border-slate-200 [&_img]:bg-white [&_img]:object-contain [&_img]:shadow-sm [&_img]:transition [&_img]:hover:shadow-md [&_img:focus]:outline-none [&_img:focus]:ring-2 [&_img:focus]:ring-blue-500
                 ">
                   {article.content}
                 </div>
+
+                <ArticleImageLightbox articleSlug={article.slug} />
 
                 {/* Sources and Further Reading */}
                 {article.sources && article.sources.length > 0 && (

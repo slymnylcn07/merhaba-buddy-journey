@@ -4,20 +4,20 @@ import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-knee-weakness-no-pain.jpg";
-import imgStabilityMuscles from "@/assets/article-knee-stability-muscles.jpg";
-import imgMusclesSupporting from "@/assets/article-muscles-supporting-knee.jpg";
+import imgStabilityMuscles from "@/assets/package-4/knee-control-factors.svg";
+import imgMusclesSupporting from "@/assets/package-4/knee-support-muscle-groups.svg";
 import imgJointBalance from "@/assets/article-knee-joint-balance.jpg";
-import imgWeakVsStable from "@/assets/article-weak-vs-stable-knee.jpg";
+import imgWeakVsStable from "@/assets/package-4/knee-control-factors.svg";
 import imgHipKneeAlignment from "@/assets/article-hip-knee-alignment.jpg";
 
 const faqs = [
   {
     question: "Why do my knees feel weak but not painful?",
-    answer: "Knees can feel weak without pain when the muscles surrounding the joint are fatigued, underactivated, or not providing enough support. This often happens after prolonged sitting, reduced physical activity, or muscle imbalances between the quadriceps and hamstrings. The weakness is typically a signal that the stabilizing muscles need more consistent engagement rather than a sign of structural damage.",
+    answer: "A weak or unsteady feeling can be related to muscle fatigue, reduced conditioning, balance, or coordination, especially after sitting or a change in activity. The symptom alone cannot confirm the cause, and swelling, nerve symptoms, injury, or true giving-way episodes deserve professional assessment.",
   },
   {
     question: "Is knee weakness without pain normal?",
-    answer: "Temporary knee weakness without pain is relatively common, especially after long periods of inactivity, extended sitting, or muscle fatigue from exercise. Many adults experience occasional episodes where their knees feel less stable or supportive. If the feeling is mild and occasional, it is usually related to muscle conditioning rather than a serious underlying issue.",
+    answer: "Temporary weakness can occur after inactivity or muscle fatigue, but there is no single explanation that applies to everyone. Mild, occasional symptoms may improve with rest and gradual conditioning; repeated buckling, numbness, swelling, or worsening instability should be assessed.",
   },
   {
     question: "Why do my knees feel unstable when walking?",
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     question: "Can weak leg muscles cause knee instability?",
-    answer: "Yes, weak leg muscles are one of the most common contributors to knee instability. The quadriceps, hamstrings, calf muscles, and hip abductors all play important roles in stabilizing the knee joint during movement. When any of these muscle groups are weak or underactivated, the knee may feel less supported, wobbly, or unstable during daily activities.",
+    answer: "Reduced strength can contribute to an unsteady feeling, and the quadriceps, hamstrings, calves, and hip muscles all participate in lower-limb control. Balance, coordination, the hip and ankle, joint irritation, and nerve-related factors can also affect stability.",
   },
   {
     question: "How can I strengthen weak knees?",
@@ -83,23 +83,23 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
         </InfoBox>
 
         <p>
-          The key distinction here is that this type of weakness typically reflects a muscular or conditioning issue rather than joint damage. The knee joint itself may be structurally sound, but the muscles responsible for keeping it stable during walking, climbing, or standing may not be activating as effectively as they should.
+          A weak feeling may reflect fatigue or reduced conditioning, but symptoms alone cannot show whether the joint is structurally normal. Balance, coordination, swelling, previous injury, nerve symptoms, and the way the hip and ankle move can also contribute.
         </p>
 
         <figure className="my-8">
           <img
             src={imgStabilityMuscles}
-            alt="Diagram showing the four key muscle groups that stabilize the knee joint: quadriceps, hamstrings, calf muscles, and hip abductors"
+            alt="Diagram showing several factors that contribute to knee control, including muscle capacity, balance, hip and ankle control, and joint or nerve factors"
             className="w-full h-auto rounded-xl shadow-sm"
             loading="lazy"
-          />
+           decoding="async"  width={1200} height={760} />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            The four major muscle groups responsible for knee joint stability
+            Several muscle groups and movement-control factors contribute to how supported the knee feels
           </figcaption>
         </figure>
 
         <p>
-          Understanding this distinction is important because it means the solution often lies in building strength and improving muscle activation rather than resting the joint. For many people, consistent movement and targeted exercises can significantly reduce feelings of <Link to="/guides/knee-tightness-without-pain" className="text-primary hover:underline">knee tightness</Link> and weakness over time.
+          When exercise is appropriate, gradual strengthening and movement practice may improve confidence and control. The right approach depends on the pattern and cause, so persistent or true giving-way symptoms should not be managed by exercise alone. For many people, consistent movement can support feelings of <Link to="/guides/knee-tightness-without-pain" className="text-primary hover:underline">knee tightness</Link> and weakness over time.
         </p>
 
         {/* Section 2 */}
@@ -126,12 +126,12 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
         <figure className="my-8">
           <img
             src={imgMusclesSupporting}
-            alt="Illustration showing the muscles and tendons that support the knee joint from a side view perspective"
+            alt="Front and back illustration of major muscle groups that contribute to knee movement, including quadriceps, hamstrings, calves, and hip muscles"
             className="w-full h-auto rounded-xl shadow-sm"
             loading="lazy"
-          />
+           decoding="async"  width={1200} height={760} />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Key muscles and tendons supporting the knee joint
+            Major muscle groups that contribute to knee movement and control
           </figcaption>
         </figure>
 
@@ -159,12 +159,12 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
         <figure className="my-8">
           <img
             src={imgWeakVsStable}
-            alt="Comparison illustration showing weak knee mechanics with thin muscle support versus stable knee mechanics with strong muscle engagement"
+            alt="Infographic showing that knee control can be influenced by strength, balance, coordination, hip and ankle control, and joint or nerve factors"
             className="w-full h-auto rounded-xl shadow-sm"
             loading="lazy"
-          />
+           decoding="async"  width={1200} height={760} />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Weak versus stable knee mechanics showing the role of muscle support
+            Knee control depends on strength, balance, coordination, and the condition of the joint and nerves
           </figcaption>
         </figure>
 

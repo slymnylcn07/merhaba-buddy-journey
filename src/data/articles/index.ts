@@ -69,7 +69,6 @@ export { howToSleepWithKneePain } from "./how-to-sleep-with-knee-pain";
 export { airCompressionLegMassagers } from "./air-compression-leg-massagers-do-they-work";
 export { kneeSleeveSizingGuide } from "./knee-compression-sleeve-sizing-guide";
 export { bestSupplementsForKneePain } from "./best-supplements-for-knee-pain";
-export { kneeStiffnessAfterResting } from "./knee-stiffness-after-resting";
 export { glucosamineChondroitinKneePain } from "./glucosamine-chondroitin-knee-pain";
 export { menopauseKneePain } from "./menopause-knee-pain";
 export { redLightTherapyDoseKnees } from "./red-light-therapy-dose-knees";

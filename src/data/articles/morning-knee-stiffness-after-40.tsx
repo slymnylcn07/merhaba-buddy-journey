@@ -2,10 +2,10 @@ import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-morning-stiffness-40s-v2.jpg";
-import diagramFluidSleep from "@/assets/fig-morning-fluid-cycle-v2.svg";
+import diagramFluidSleep from "@/assets/package-4/first-steps-after-rest.svg";
 import sectionMorningStiffness from "@/assets/article-section-morning-stiffness-40s.jpg";
 import sectionDailyComfort from "@/assets/article-section-daily-comfort-routine-40s.jpg";
-import sectionStandingUp from "@/assets/article-section-standing-up-transition.jpg";
+import sectionStandingUp from "@/assets/package-4/sit-to-stand-transition.svg";
 import sectionSittingStretch from "@/assets/article-section-sitting-stretch-relief.jpg";
 
 export const morningKneeStiffnessAfter40: ArticleExport = {
@@ -14,16 +14,16 @@ export const morningKneeStiffnessAfter40: ArticleExport = {
     slug: "morning-knee-stiffness-after-40",
     title: "Morning Knee Stiffness After 40: Causes & Daily Relief",
     subtitle: "Why your knees feel tight every morning and simple habits that help",
-    intro: "Morning knee stiffness after 40 is one of the most common joint complaints among adults. If your knees feel tight, achy, or slow to get moving when you wake up, you are not alone. This guide explains why morning knee stiffness increases with age and shares practical daily habits that can help reduce it over time.",
+    intro: "Morning knee stiffness can become more noticeable after 40, but age is only one possible contributor. Activity, sleep position, osteoarthritis, previous injury, tendons, swelling, and general conditioning can all affect the first movements of the day.",
     metaTitle: "Morning Knee Stiffness After 40: Causes & Relief",
     metaDescription: "Why do knees feel stiff every morning after 40? Learn the causes of morning knee stiffness, what happens during sleep, and simple daily habits for relief.",
     heroImage: heroImage,
     publishedDate: "March 1, 2026",
     faqs: [
-      { question: "Why are my knees stiff every morning after 40?", answer: "After 40, your body produces less synovial fluid (the natural lubricant inside your knee joint), and cartilage gradually becomes thinner. During sleep, your knees are still for hours, allowing fluid to settle and tissues to tighten. This combination makes the first few steps feel stiff and uncomfortable." },
-      { question: "Is morning knee stiffness normal as you get older?", answer: "Yes, some degree of morning stiffness is a normal part of aging. Most adults over 40 experience it to varying degrees. If your stiffness resolves within 15 to 30 minutes of gentle movement, it is generally considered a typical age-related pattern rather than a sign of a specific condition." },
-      { question: "How long should morning knee stiffness last?", answer: "For most people, age-related morning stiffness improves within 10 to 30 minutes of gentle movement and warmth. If stiffness persists for more than an hour or is accompanied by significant swelling, it may be worth discussing with a healthcare professional." },
-      { question: "Why do my knees hurt after resting or sitting?", answer: "When you rest or sit for extended periods, your knee joints receive less movement-driven circulation. Synovial fluid settles, and the tissues around the joint tighten slightly. This is why standing up after a long period of sitting often feels stiff and uncomfortable." },
+      { question: "Why are my knees stiff every morning after 40?", answer: "Morning stiffness can be influenced by time spent still, osteoarthritis, tendon or muscle symptoms, previous injury, sleep position, and activity from the day before. A symptom description cannot determine which factor is responsible." },
+      { question: "Is morning knee stiffness normal as you get older?", answer: "Morning stiffness is common, but it should not automatically be dismissed as “normal aging.” Note how long it lasts and whether there is swelling, warmth, locking, or worsening pain. Persistent or concerning symptoms deserve professional advice." },
+      { question: "How long should morning knee stiffness last?", answer: "Some people improve after gentle movement, while others remain stiff longer. Significant swelling, prolonged stiffness, worsening symptoms, or difficulty bearing weight should be discussed with a healthcare professional." },
+      { question: "Why do my knees hurt after resting or sitting?", answer: "A sustained position and reduced muscle activity can make the first movements feel different. Joint irritation, osteoarthritis, tendon symptoms, and seat or sleep position may also contribute." },
       { question: "How can I loosen stiff knees in the morning?", answer: "Before getting out of bed, try gentle ankle circles, slow knee bends, and quad tightening exercises while lying down. Applying warmth to the knee area for 10 to 15 minutes can also help. These simple steps encourage fluid circulation and help the tissues warm up before weight-bearing." },
       { question: "What is the difference between stiffness and pain?", answer: "Stiffness is a feeling of tightness or reduced range of motion that typically improves with gentle movement. Pain is a sharper, more persistent sensation that may not improve with movement or may worsen. If your morning experience is primarily stiffness that eases as you move, it is likely age-related tightness." },
       { question: "Is morning knee stiffness always age-related?", answer: "While age is the most common factor, morning stiffness can also be influenced by activity levels, weight, sleep position, previous injuries, and overall joint health. Consistent daily habits like gentle morning movement and warmth support can help regardless of the underlying cause." },
@@ -38,66 +38,46 @@ export const morningKneeStiffnessAfter40: ArticleExport = {
           The good news: this pattern is well understood, and there are practical, simple habits that can make a real difference. This guide covers exactly why your knees feel stiff in the morning, what changes happen inside the joint as you age, and a step-by-step approach to reducing that daily tightness over time.
         </p>
 
-        <h2>Why Morning Stiffness Increases After Age 40</h2>
+        <h2>Why Morning Stiffness Can Become More Noticeable After 40</h2>
         <p>
-          <strong>Morning knee stiffness after 40</strong> is not random. It is the result of specific changes that happen gradually inside your knee joints as you age. Understanding these changes helps you take the right steps to support your comfort:
+          Age can be part of the picture, but it is not a diagnosis. Morning stiffness may be influenced by time spent still, osteoarthritis, previous injury, tendon or muscle symptoms, sleep position, activity from the day before, and general conditioning.
         </p>
         <ul>
-          <li><strong>Reduced synovial fluid production</strong>: your knees contain a natural lubricant called synovial fluid. After 40, your body produces less of this fluid, and the fluid becomes slightly less viscous. This means your joints have less natural lubrication, especially first thing in the morning.</li>
-          <li><strong>Cartilage thinning</strong>: the smooth cartilage that cushions the ends of your bones gradually becomes thinner with age. This means there is less cushioning between the bones, and the joint surfaces do not glide as smoothly as they once did.</li>
-          <li><strong>Connective tissue changes</strong>: tendons, ligaments, and the joint capsule itself gradually lose some of their elasticity. After hours of stillness during sleep, these tissues tighten and need time to warm up and stretch back to their comfortable range.</li>
-          <li><strong>Reduced overnight circulation</strong>: during sleep, your heart rate slows, blood flow decreases, and your joints receive less movement-driven nutrient delivery. This means the tissues around your knee have had several hours of reduced support.</li>
-          <li><strong>Muscle tightness</strong>: the muscles surrounding the knee (quadriceps, hamstrings, calves) naturally tighten during sleep. Weaker or less conditioned muscles tighten more and take longer to loosen.</li>
+          <li><strong>Time spent still</strong>: a knee held in one position for hours may feel stiff during the first few movements.</li>
+          <li><strong>Joint health</strong>: osteoarthritis and other joint conditions become more common with age, but they are not inevitable and require individual assessment.</li>
+          <li><strong>Muscle and tendon factors</strong>: fatigue, tension, and reduced flexibility can change how the knee feels when movement begins.</li>
+          <li><strong>Sleep position and pressure</strong>: a prolonged bend, side-lying contact, or an unsupported leg may affect comfort.</li>
+          <li><strong>Daily activity</strong>: a more demanding or unusually inactive day can influence the following morning.</li>
         </ul>
         <p>
-          These factors work together, and their combined effect is why morning stiffness tends to become more noticeable as you move through your 40s and into your 50s. For a broader look at age-related changes, see our guide on <Link to="/guides/why-knee-pain-gets-worse-with-age" className="text-primary hover:underline">why knee pain gets worse with age</Link>.
+          These factors can overlap. For a broader look at age-related patterns, see our guide on <Link to="/guides/why-knee-pain-gets-worse-with-age" className="text-primary hover:underline">why knee pain changes with age</Link>.
         </p>
 
-        <h2>What Happens to Your Knees During Sleep</h2>
+        <h2>Why the First Movements May Feel Stiff</h2>
         <p>
-          To understand morning stiffness, it helps to understand what your knees experience during a full night of sleep:
+          A knee that has been still overnight may feel different when it first returns to weight-bearing. The illustration below shows a practical sequence rather than claiming a single fluid, circulation, or inflammation mechanism.
         </p>
 
         <figure className="my-8">
           <img
             src={diagramFluidSleep}
-            alt="Diagram showing knee joint fluid circulation during rest"
+            alt="Infographic showing a sustained position, the first movement, and a gentle warm-up after rest"
             className="w-full h-auto rounded-xl shadow-sm"
             loading="lazy"
+            decoding="async"
+            width={1200}
+            height={760}
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            During sleep, reduced movement decreases fluid circulation within the knee joint
+            The first steps after rest can feel stiff for several reasons; gentle movement may help some people
           </figcaption>
         </figure>
 
         <p>
-          When you sleep, your knees are essentially parked in one position for 6 to 8 hours. During this time:
-        </p>
-        <ul>
-          <li><strong>Synovial fluid settles</strong>: the lubricating fluid inside your knee is normally distributed by movement. During sleep, it pools and becomes less evenly distributed across the joint surfaces.</li>
-          <li><strong>Inflammatory byproducts accumulate</strong>: normal metabolic processes produce low-level waste products that are usually cleared by movement and circulation. During sleep, these byproducts can accumulate slightly around the joint.</li>
-          <li><strong>Tissue temperature drops</strong>: your body temperature naturally decreases during sleep. Cooler tissues are less pliable and more resistant to movement, contributing to that first-step stiffness.</li>
-          <li><strong>Joint capsule tightens</strong>: the fibrous capsule surrounding your knee joint contracts slightly when stationary for hours, creating a subtle "sealed" feeling that needs movement to release.</li>
-        </ul>
-        <p>
-          This is why the first 5 to 15 minutes after waking often feel the worst, and why gentle movement and warmth can make such a dramatic difference. Your knees are not damaged, they simply need to be "warmed up" after a long period of stillness.
+          Start with small, comfortable movements and notice how the knee responds. There is no universal five- or ten-minute rule, and improvement with movement does not identify the cause. Persistent stiffness, marked swelling, locking, instability, fever, or difficulty bearing weight should be assessed.
         </p>
 
-        <h2>First-Step Sharp Stiffness: Why Those Initial Moments Feel the Worst</h2>
-        <p>
-          That specific moment when you first stand up and take your initial steps is often the most uncomfortable part of the entire day. This is not a coincidence: it is the exact moment when all the overnight changes are at their peak:
-        </p>
-        <ul>
-          <li>Your body weight suddenly loads onto joints that have been unloaded for hours</li>
-          <li>Synovial fluid has not yet redistributed across the joint surfaces</li>
-          <li>Muscles are at their tightest point after hours of inactivity</li>
-          <li>Connective tissues have shortened slightly and resist sudden stretching</li>
-        </ul>
-        <p>
-          The encouraging part is that this "first-step stiffness" typically improves quickly once you begin moving. Most people find that 5 to 15 minutes of gentle activity is enough to redistribute fluid, warm up the tissues, and restore comfortable range of motion. If you experience similar patterns after sitting, our <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">post-rest stiffness guide</Link> covers that in detail.
-        </p>
-
-        <h2>Why Knees Stiffen After Resting or Sitting (Not Just Morning)</h2>
+        <h2>Why Knees May Feel Stiff After Resting or Sitting</h2>
         <p>
           While morning stiffness gets the most attention, the same mechanisms apply whenever your knees are still for extended periods. Many people over 40 notice stiffness after:
         </p>
@@ -112,17 +92,17 @@ export const morningKneeStiffnessAfter40: ArticleExport = {
         <figure className="my-8">
           <img
             src={sectionStandingUp}
-            alt="Person transitioning from sitting to standing, demonstrating the stiffness pattern"
+            alt="Two-step chair-supported sit-to-stand illustration showing a controlled transition from sitting to standing"
             className="w-full h-auto rounded-xl shadow-sm"
             loading="lazy"
-          />
+           decoding="async"  width={1200} height={760} />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            The sit-to-stand transition becomes stiffer as we age
+            A controlled sit-to-stand can be practiced with support when it is comfortable and appropriate
           </figcaption>
         </figure>
 
         <p>
-          The underlying process is the same: prolonged stillness allows fluid to settle, tissues to tighten, and temperature to drop slightly. The solution is also the same: gentle, gradual movement to warm up and lubricate the joint before asking it to perform. For tips specific to sitting-related stiffness, see our <Link to="/guides/knee-pain-after-sitting-cross-legged" className="text-primary hover:underline">knee pain after sitting guide</Link>.
+          The same practical approach can be used after sitting: begin with a comfortable knee bend or ankle movement, use a stable support if needed, and stand gradually. This does not replace assessment when the knee is swollen, unstable, locked, or persistently painful. For tips specific to sitting-related stiffness, see our <Link to="/guides/knee-pain-after-sitting-cross-legged" className="text-primary hover:underline">knee pain after sitting guide</Link>.
         </p>
 
         <h2>A Simple Morning Stretch Routine for Stiff Knees</h2>

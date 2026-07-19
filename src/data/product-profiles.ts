@@ -1,5 +1,5 @@
 import { ShopifyProduct } from "@/lib/shopify";
-import restWalkRelief from "@/assets/article-section-rest-stiff-walk-relief.jpg";
+import restWalkRelief from "@/assets/package-4/gradual-return-to-movement.svg";
 import deviceHomeUse from "@/assets/article-device-home-use.jpg";
 import exerciseRecovery from "@/assets/article-exercise-recovery-illustration.jpg";
 

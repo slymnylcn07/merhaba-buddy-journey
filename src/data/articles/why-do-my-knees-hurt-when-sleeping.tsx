@@ -5,7 +5,7 @@ import { NightKneePainCausesChart, SleepPositionImpactChart } from "@/components
 import heroImage from "@/assets/article-hero-night-knee-pain.jpg";
 import articleSectionStretching from "@/assets/article-section-stretching-relief.jpg";
 import articleSectionWarmth from "@/assets/article-section-warmth.jpg";
-import articleSectionKneeBending from "@/assets/article-section-knee-bending.jpg";
+import articleSectionKneeBending from "@/assets/package-4/exercise-gentle-knee-flexion.svg";
 
 export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
   cta: "",
@@ -100,8 +100,8 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
         </p>
 
         <figure className="my-8">
-          <img src={articleSectionKneeBending} alt="Knee joint movement and flexibility during daily activities" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">Understanding how daily movement patterns affect nighttime knee comfort</figcaption>
+          <img src={articleSectionKneeBending} alt="Two-step illustration of gentle knee flexion and extension through a comfortable range" className="w-full h-auto rounded-xl shadow-sm" loading="lazy"  decoding="async"  width={1200} height={760} />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">A gentle bend-and-straighten movement can be used as a comfort check when it is appropriate and pain-free</figcaption>
         </figure>
 
         <h2>Why Do My Knees Hurt When I Sleep on My Side?</h2>
@@ -227,7 +227,7 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
 
         <figure className="my-8">
           <img src={articleSectionWarmth} alt="Gentle warmth therapy applied to the knee before sleep" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">Applying warmth before bed can help relax knee tissues and ease nighttime stiffness</figcaption>
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">Some people find a brief, skin-safe warmth routine comfortable before bed; avoid heat on a newly injured, swollen, or unusually warm knee</figcaption>
         </figure>
 
         <h2>Knee Stiffness in the Morning and How It Connects to Night Pain</h2>
@@ -311,7 +311,7 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
 
         <figure className="my-8">
           <img src={articleSectionStretching} alt="Gentle stretching routine for knee comfort before sleep" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">A gentle stretching routine before bed can significantly reduce nighttime knee discomfort</figcaption>
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">A gentle, comfortable mobility routine may help some people settle before bed; stop if symptoms increase</figcaption>
         </figure>
 <PremiumCTA
           headline="Support your knees with soothing warmth before bed"
@@ -371,7 +371,7 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
 
         <h2>The Bottom Line</h2>
         <p>
-          Nighttime knee discomfort is one of the most common joint-related sleep concerns, and it affects people across all age groups. The core reasons it feels worse at night are well understood: reduced movement, fluid pooling, heightened awareness, and the body's natural shift toward repair and recovery processes. From meniscus-related changes to simple muscle tightness, from the effects of squatting during the day to the position of your knees while you sleep, each factor contributes to the overall experience.
+          Nighttime knee discomfort can have several possible contributors, including daytime activity, sleep position, reduced movement, osteoarthritis, tendon or bursa irritation, previous injury, and increased awareness of symptoms in a quiet setting. The pattern cannot identify the cause on its own, so note associated swelling, warmth, locking, instability, trauma, and how symptoms change over time.
         </p>
         <p>
           The good news is that small, consistent adjustments to your sleeping position, evening routine, and daily habits can make a meaningful difference in how your knees feel at night. Placing a pillow between or under your knees, incorporating a brief warmth and stretching routine before bed, and paying attention to your daytime activity patterns are simple steps that compound into significant improvements over time.

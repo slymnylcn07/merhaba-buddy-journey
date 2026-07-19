@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-mobility-after-50.jpg";
-import sectionJointChanges from "@/assets/article-section-joint-changes-aging.jpg";
+import sectionJointChanges from "@/assets/package-4/age-knee-comfort-factors.svg";
 import sectionWarningSigns from "@/assets/article-section-mobility-warning-signs.jpg";
 import sectionDailyRoutine from "@/assets/article-section-daily-mobility-routine.jpg";
 import sectionStretching from "@/assets/article-section-stretching-sequence-50.jpg";
@@ -60,20 +60,28 @@ export const kneeMobilityAfter50: ArticleExport = {
           Articular cartilage is the smooth, slippery tissue that covers the ends of the bones in your knee. Throughout your life, this cartilage gradually thins and loses water content. After 50, the rate of cartilage breakdown begins to exceed the body's ability to repair it. Thinner cartilage means less cushioning, more friction between bone surfaces, and reduced smoothness during movement. This does not mean your cartilage is disappearing, but it is becoming less robust at its job. Understanding <Link to="/guides/knee-pain-after-40" className="text-primary hover:underline">how knee changes progress after 40</Link> helps put this timeline in perspective.
         </p>
 
-        <h3>Tendons and Ligaments: Your Stability System</h3>
+        <h3>Several Factors Can Affect Mobility After 50</h3>
         <p>
-          The tendons (connecting muscles to bones) and ligaments (connecting bones to bones) around your knee gradually lose their elasticity after 50. They contain a protein called collagen, which provides structural flexibility. With age, collagen cross-links increase, making these tissues stiffer and less able to stretch. This reduced elasticity is a major contributor to the feeling of tightness and restricted range of motion that many people notice.
+          Mobility can be influenced by osteoarthritis, previous injury, muscle capacity, balance, activity level, sleep, and other health conditions. Age changes risk patterns, but it does not mean every adult has the same cartilage, fluid, or tendon changes.
         </p>
 
         <figure className="my-8">
-          <img src={sectionJointChanges} alt="Side-by-side comparison of healthy knee joint at age 30 versus after age 50, showing thinner cartilage, reduced fluid, and stiffer tendons" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">Age-related changes in the knee joint: cartilage thins, synovial fluid decreases, and tendons become stiffer after 50</figcaption>
+          <img
+            src={sectionJointChanges}
+            alt="Infographic showing joint health, previous injury, muscle capacity, sleep, and daily activity as possible factors affecting knee mobility after 50"
+            className="w-full h-auto rounded-xl shadow-sm"
+            loading="lazy"
+            decoding="async"
+            width={1200}
+            height={760}
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            Mobility after 50 reflects several individual factors rather than one inevitable aging process
+          </figcaption>
         </figure>
 
-        <InfoBox title="The Three Pillars of Joint Change After 50">
-          <p><strong>Fluid:</strong> Synovial fluid production slows, reducing natural joint lubrication and making warm-up times longer.</p>
-          <p><strong>Cartilage:</strong> The smooth gliding surface gradually thins and loses water content, increasing friction and reducing cushioning.</p>
-          <p><strong>Connective Tissue:</strong> Tendons and ligaments stiffen due to collagen changes, limiting stretch capacity and range of motion.</p>
+        <InfoBox title="Age Is Context, Not a Diagnosis">
+          <p>Use symptoms, function, history, and professional assessment to understand a mobility change. New swelling, locking, instability, or a rapid loss of motion deserves medical advice.</p>
         </InfoBox>
 
         <h2>Early Warning Signs of Mobility Loss</h2>

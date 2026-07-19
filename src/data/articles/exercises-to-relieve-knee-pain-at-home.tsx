@@ -5,10 +5,10 @@ import { InfoBox } from "@/components/ArticleCharts";
 
 import heroImage from "@/assets/article-hero-knee-exercises-home.jpg";
 import imgStraightLegRaise from "@/assets/article-straight-leg-raise-exercise.jpg";
-import imgSeatedExtension from "@/assets/article-seated-knee-extension.jpg";
+import imgSeatedExtension from "@/assets/package-4/exercise-seated-knee-extension.svg";
 import imgHeelSlide from "@/assets/article-heel-slide-exercise.jpg";
 import imgWallSquat from "@/assets/article-wall-squat-exercise.jpg";
-import imgCalfRaise from "@/assets/article-calf-raise-exercise.jpg";
+import imgCalfRaise from "@/assets/package-4/exercise-calf-raise.svg";
 import imgHamstringStretch from "@/assets/article-hamstring-stretch-exercise.jpg";
 
 export const exercisesToRelieveKneePainAtHome: ArticleExport = {
@@ -123,7 +123,7 @@ export const exercisesToRelieveKneePainAtHome: ArticleExport = {
           This exercise can be done while sitting in a sturdy chair, making it one of the most accessible <strong>exercises for knee pain at home</strong> for people of all fitness levels.
         </p>
         <figure className="my-8">
-          <img src={imgSeatedExtension} alt="Person performing a seated knee extension exercise while sitting in a chair" className="w-full h-auto rounded-xl shadow-sm" />
+          <img src={imgSeatedExtension} alt="Person performing a seated knee extension exercise while sitting in a chair" className="w-full h-auto rounded-xl shadow-sm"  loading="lazy"  decoding="async"  width={1200} height={760} />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">Seated knee extensions can be done from any sturdy chair at home</figcaption>
         </figure>
         <p><strong>How to do it:</strong></p>
@@ -207,7 +207,7 @@ export const exercisesToRelieveKneePainAtHome: ArticleExport = {
           The calf muscles play an important role in stabilizing the lower leg and supporting comfortable walking. Strengthening them helps distribute force more evenly through the knee during movement.
         </p>
         <figure className="my-8">
-          <img src={imgCalfRaise} alt="Person performing standing calf raises at home while holding a counter for balance" className="w-full h-auto rounded-xl shadow-sm" />
+          <img src={imgCalfRaise} alt="Person performing standing calf raises at home while holding a counter for balance" className="w-full h-auto rounded-xl shadow-sm"  loading="lazy"  decoding="async"  width={1200} height={760} />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">Calf raises support lower leg stability and comfortable walking</figcaption>
         </figure>
         <p><strong>How to do it:</strong></p>

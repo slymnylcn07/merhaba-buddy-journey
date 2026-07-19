@@ -5,35 +5,35 @@ import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-knee-tightness-no-pain.jpg";
 import imgJointStiffness from "@/assets/article-knee-joint-stiffness-diagram.jpg";
-import imgMuscleTightness from "@/assets/article-muscle-tightness-knee.jpg";
+import imgMuscleTightness from "@/assets/package-4/muscle-tension-around-knee.svg";
 import imgMobilityComparison from "@/assets/fig-knee-range-comparison-v2.svg";
 import imgFlexionRange from "@/assets/article-knee-flexion-range.jpg";
-import imgInactivityStiffness from "@/assets/article-stiffness-after-inactivity.jpg";
+import imgInactivityStiffness from "@/assets/package-4/first-steps-after-rest.svg";
 
 const faqs = [
   {
     question: "Why does my knee feel tight but not painful?",
-    answer: "Knee tightness without pain is usually caused by muscle tension around the joint, reduced flexibility, or mild joint capsule stiffness. When the muscles surrounding the knee (quadriceps, hamstrings, calves) become shortened or tense from inactivity or repetitive use, the joint can feel restricted even when there is no actual injury or inflammation present.",
+    answer: "A tight feeling without pain can be associated with muscle tension, reduced flexibility, time spent in one position, joint stiffness, or another cause. The symptom alone cannot confirm that there is no injury or inflammation.",
   },
   {
     question: "Is knee stiffness without pain normal?",
-    answer: "Yes, knee stiffness without pain is quite common, especially after periods of inactivity like sleeping, sitting for long hours, or during weather changes. It often reflects temporary changes in joint lubrication, muscle tension, or reduced circulation rather than an underlying injury. Most people experience this sensation occasionally throughout their lives.",
+    answer: "Knee stiffness without pain is common, especially after sleep or prolonged sitting, but there is no single explanation. Muscle tension, activity level, osteoarthritis, previous injury, and the way the hip and ankle move can all be relevant.",
   },
   {
     question: "Why do my knees feel stiff in the morning?",
-    answer: "Morning knee stiffness typically occurs because the joint has been relatively still for several hours during sleep. Synovial fluid, which lubricates the knee joint, distributes less efficiently without movement. As a result, the joint may feel tight or resistant during the first few minutes of activity until gentle movement helps redistribute that fluid.",
+    answer: "Morning stiffness may be influenced by time spent still, sleep position, osteoarthritis, tendon symptoms, swelling, or activity from the previous day. Gentle movement helps some people, but it does not identify the cause.",
   },
   {
     question: "What causes tight knees after sitting?",
-    answer: "Sitting for extended periods keeps the knee joint bent at roughly 90 degrees, which shortens the hamstrings and hip flexors while reducing blood flow to the area. The synovial fluid in the joint settles, and the surrounding muscles gradually tighten. When you stand up, the knee may feel stiff or resistant until movement restores normal circulation and lubrication.",
+    answer: "Sitting keeps the knee in a sustained position and reduces muscle activity. Seat height, time in a deep bend, tissue sensitivity, and an existing joint or tendon issue may influence how the first movement feels.",
   },
   {
     question: "Can knee stiffness happen without injury?",
-    answer: "Absolutely. Knee stiffness frequently occurs without any injury at all. Common causes include prolonged inactivity, tight surrounding muscles, mild age-related joint changes, reduced hip or ankle mobility, and even weather-related factors. Many people experience occasional knee tightness simply from their daily habits and posture patterns.",
+    answer: "Yes, stiffness can occur without a clear injury, but it should not automatically be assumed harmless. Persistent restriction, swelling, locking, instability, or a worsening pattern should be assessed.",
   },
   {
     question: "How can I loosen a tight knee joint?",
-    answer: "Gentle movement is usually the most effective approach. Try slow knee bends, seated leg extensions, or short walks to encourage synovial fluid distribution. Stretching the quadriceps, hamstrings, and calves can also help. Applying gentle warmth to the knee area before movement may support circulation and help the joint feel more comfortable during initial activity.",
+    answer: "A few slow knee bends, seated leg extensions, or a short walk may help some people transition back to movement. Stop if the knee locks, gives way, swells, or develops sharp pain, and follow individual clinical advice when relevant.",
   },
   {
     question: "When should knee stiffness be checked?",
@@ -106,38 +106,38 @@ export const kneeTightnessWithoutPain: ArticleExport = {
 
         <h3>Long Periods of Sitting</h3>
         <p>
-          Sitting for extended periods is one of the most common triggers for knee stiffness. When the knee remains bent at roughly 90 degrees for hours, the surrounding muscles gradually shorten and the joint receives less circulation. Many office workers, drivers, and people who sit during commutes notice this pattern regularly.
+          Long periods in one position can make the first few movements feel stiff or restricted. A sustained knee bend, reduced muscle activity, seat height, and an existing joint or tendon issue may all influence the experience.
         </p>
 
         <h3>Tight Quadriceps or Hamstrings</h3>
         <p>
-          The quadriceps (front thigh muscles) and hamstrings (back thigh muscles) directly influence knee movement. When either group becomes tight, it can restrict the knee's ability to bend or straighten fully. This tightness often develops gradually from repetitive activity patterns, lack of stretching, or muscle imbalances.
+          The quadriceps and hamstrings contribute to knee movement. Tension, fatigue, or reduced flexibility in these areas can be associated with a tight feeling, although they are not the only possible source.
         </p>
 
         <figure className="my-8">
           <img
             src={imgMuscleTightness}
-            alt="Muscle tightness around the knee showing quadriceps, hamstrings, and IT band tension points"
+            alt="Infographic listing possible contributors to a tight knee feeling, including thigh muscles, calf and ankle stiffness, and joint-related factors"
             className="w-full h-auto rounded-xl shadow-sm"
-          />
+           loading="lazy"  decoding="async"  width={1200} height={760} />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            The quadriceps, hamstrings, and IT band all contribute to knee tightness when they become overly tense
+            Possible contributors to a tight knee feeling include the front and back of the thigh, the calf and ankle, and the joint itself
           </figcaption>
         </figure>
 
         <h3>Reduced Hip Mobility</h3>
         <p>
-          The hip and knee joints work as a connected system. When hip mobility decreases, the knee often compensates by absorbing more rotational and bending stress. Over time, this compensation can create a persistent feeling of tightness in the knee, even though the actual limitation originates at the hip.
+          The hip, knee, and ankle work as a movement chain. Limited hip mobility or control can change how the leg moves, but a diagram or symptom description cannot establish where tightness originates.
         </p>
 
         <h3>Minor Joint Changes</h3>
         <p>
-          As we age, the cartilage surfaces inside the knee may gradually change, and the synovial fluid that lubricates the joint may become slightly less efficient. These natural changes can contribute to a sensation of stiffness without necessarily causing pain, particularly during the first movements after rest.
+          Joint changes become more common with age, but age alone does not explain every tight or stiff knee. Activity level, previous injury, osteoarthritis, tendon symptoms, and time spent in one position may all be relevant.
         </p>
 
         <h3>Lack of Movement During the Day</h3>
         <p>
-          The knee joint relies on regular movement to maintain proper lubrication and circulation. People who have sedentary lifestyles or jobs that require minimal walking may notice more frequent knee tightness simply because their joints do not get enough movement throughout the day.
+          Some people notice that regular, comfortable movement breaks make stiffness less noticeable. The response varies, and new swelling, locking, instability, or persistent restriction should be evaluated.
         </p>
 
         <PremiumCTA
@@ -148,33 +148,37 @@ export const kneeTightnessWithoutPain: ArticleExport = {
         {/* Section 3 */}
         <h2>Why Knees May Feel Tight After Sitting or Resting</h2>
         <p>
-          One of the most common complaints about knee tightness is that it appears after sitting or resting for a while. This pattern has a straightforward explanation rooted in how the knee joint functions.
+          Many people notice tightness after sitting or resting, but the pattern does not have one universal mechanism.
         </p>
 
         <figure className="my-8">
           <img
             src={imgInactivityStiffness}
-            alt="How inactivity causes knee stiffness: reduced blood flow, shortened muscles, and decreased joint lubrication"
+            alt="Infographic showing that a sustained position, the first movement, and a gentle warm-up may influence how the knee feels after rest"
             className="w-full h-auto rounded-xl shadow-sm"
+          loading="lazy"
+            decoding="async"
+            width={1200}
+            height={760}
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Prolonged sitting leads to reduced blood flow, shortened muscles, and decreased joint lubrication
+            A sustained position can make the first steps feel stiff; gentle movement may help some people
           </figcaption>
         </figure>
 
-        <h3>Joint Lubrication Changes</h3>
+        <h3>Sustained Position</h3>
         <p>
-          The knee joint contains synovial fluid, a viscous substance that reduces friction between the cartilage surfaces during movement. When you sit or rest, this fluid is not actively circulated through the joint. As a result, the joint surfaces may feel slightly "sticky" or resistant when you first begin to move again. This effect is temporary and typically resolves within a few minutes of gentle activity.
+          Holding the knee in one angle for a long time can make the first movement feel restricted. Seat height, the depth of the bend, and how much room you have to change position may all matter.
         </p>
 
-        <h3>Reduced Circulation</h3>
+        <h3>Muscle Activity and Coordination</h3>
         <p>
-          Blood flow to the tissues around the knee decreases during prolonged sitting. The muscles, tendons, and ligaments surrounding the joint receive less oxygen and nutrients, which can contribute to a feeling of stiffness. When you stand up and begin moving, circulation gradually returns and the tightness usually subsides.
+          After a quiet period, the first stand or step can feel less coordinated while the thigh, calf, hip, and ankle muscles return to activity. This is a possible contributor, not proof of weakness or poor circulation.
         </p>
 
-        <h3>Muscle Shortening After Inactivity</h3>
+        <h3>Existing Tissue Sensitivity</h3>
         <p>
-          When the knee is held in a bent position for an extended period, the hamstrings and hip flexors gradually shorten while the quadriceps lengthen. This temporary imbalance can create a pulling sensation around the knee when you first straighten the leg. Regular movement breaks help prevent this shortening effect.
+          Osteoarthritis, tendon symptoms, swelling, a previous injury, or another joint issue may become more noticeable after rest. The pattern should be interpreted alongside other symptoms rather than through a single “lubrication” explanation.
         </p>
 
         <p>
@@ -184,22 +188,22 @@ export const kneeTightnessWithoutPain: ArticleExport = {
         {/* Section 4 */}
         <h2>Situations Where Knee Tightness Often Appears</h2>
         <p>
-          Knee tightness without pain tends to follow predictable patterns. Recognizing the situations that commonly trigger this sensation can help you prepare and take preventive steps.
+          Knee tightness without pain often appears in recognizable situations, although the reason can differ between people. Tracking context and associated symptoms is more useful than assuming one mechanism.
         </p>
 
         <h3>Morning Stiffness</h3>
         <p>
-          Many people notice their knees feel tight during the first few minutes after waking up. After 6 to 8 hours of relatively little movement during sleep, the knee joints need time to "warm up." Gentle movements like slow knee bends or a brief walk around the house can help ease morning stiffness quickly. For a deeper look at this pattern, check our guide on <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning knee stiffness after 40</Link>.
+          Many people notice their knees feel tight during the first few minutes after waking up. After a night in one position, the first movements may feel stiff. Slow knee bends or a brief walk help some people transition into activity. For a deeper look at this pattern, check our guide on <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning knee stiffness after 40</Link>.
         </p>
 
         <h3>After Long Car Rides</h3>
         <p>
-          Extended time in a car keeps the knee bent in a fixed position with very limited space to adjust. Combined with reduced circulation from sitting, this often produces noticeable knee stiffness upon arrival. Taking brief stops to walk and stretch during long drives can make a significant difference.
+          Extended time in a car keeps the knee bent in a fixed position with very limited space to adjust. The sustained bend and limited opportunity to change position may produce noticeable stiffness on arrival. Taking brief stops to walk and stretch during long drives can make a significant difference.
         </p>
 
         <h3>After Exercise Recovery</h3>
         <p>
-          It may seem counterintuitive, but some people experience knee tightness during the recovery period after exercise rather than during the activity itself. This typically happens because muscles tighten as they cool down and inflammation subsides. Gentle post-workout stretching can help minimize this effect. Our <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise guide</Link> covers this topic in more detail.
+          It may seem counterintuitive, but some people experience knee tightness during the recovery period after exercise rather than during the activity itself. This may reflect fatigue, changes in activity load, or the way the muscles and tendons respond during recovery. A gentle cooldown helps some people, but worsening symptoms should not be pushed through. Our <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise guide</Link> covers this topic in more detail.
         </p>
 
         <h3>During Weather Changes</h3>

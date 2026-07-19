@@ -5,7 +5,7 @@ import { TipsList, InfoBox } from "@/components/ArticleCharts";
 import { SittingKneePainCausesChart, SittingPositionImpactChart } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-pain-sitting-cross-legged.jpg";
 import sectionBackKneeSitting from "@/assets/article-section-back-knee-sitting.jpg";
-import sectionProperSitting from "@/assets/article-section-proper-sitting-position.jpg";
+import sectionProperSitting from "@/assets/package-4/seated-posture-options.svg";
 import sectionStretchRelief from "@/assets/article-section-sitting-stretch-relief.jpg";
 
 export const kneePainAfterSittingCrossLegged: ArticleExport = {
@@ -174,23 +174,23 @@ export const kneePainAfterSittingCrossLegged: ArticleExport = {
           Choosing the right seated position can significantly reduce knee discomfort and stiffness. The goal is to minimize prolonged deep flexion, avoid rotational stress, and maintain good circulation to the lower legs.
         </p>
 
-        <h3>The 90-Degree Rule</h3>
+        <h3>A Supported Starting Position</h3>
         <p>
-          The most knee-friendly seated position keeps your hips and knees at approximately 90 degrees. Feet should be flat on the floor (or on a footrest), with your thighs roughly parallel to the ground. This position distributes load evenly across the joint and minimizes contact pressure on the kneecap.
+          A useful starting position is one in which the feet are supported, the seat is not excessively low, and the knees are not forced into a deep bend. There is no single perfect angle for everyone, so comfort and the ability to change position matter more than holding an exact number.
         </p>
 
         <h3>Slightly Extended Position</h3>
         <p>
-          If possible, periodically extend one leg straight out in front of you while seated. This reduces patellofemoral contact pressure, allows the hamstrings to lengthen, and promotes blood circulation to the lower leg. Alternating between legs every 10 to 15 minutes provides ongoing relief.
+          If it feels comfortable, periodically extend a leg, stand briefly, or take a short walk. Changing position can reduce the time spent in a deep bend and may make the transition to standing easier.
         </p>
 
         <figure className="my-8">
-          <img src={sectionProperSitting} alt="Proper ergonomic sitting position with knees at 90 degrees for optimal knee comfort" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">The 90-degree seated position minimizes knee joint stress and supports daily comfort</figcaption>
+          <img src={sectionProperSitting} alt="Infographic showing a supported seated position and the option to change position, extend a leg, or stand briefly" className="w-full h-auto rounded-xl shadow-sm" loading="lazy"  decoding="async"  width={1200} height={760} />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">A supported seated position and regular changes can improve comfort for many people</figcaption>
         </figure>
 
-        <InfoBox title="The 20-Minute Rule">
-          <p>Regardless of how good your seated position is, staying in any single position for more than 20 minutes begins to reduce synovial fluid circulation. Set a gentle reminder to adjust your position, stand briefly, or perform a few knee bends every 20 minutes for optimal joint comfort.</p>
+        <InfoBox title="Change Position Regularly">
+          <p>There is no universal timer that suits everyone. If prolonged sitting is a trigger, try a reminder every 20 to 30 minutes as a practical starting point, then adjust it according to comfort, mobility, and any advice from your clinician.</p>
         </InfoBox>
 
         <h2>Stretches That Help After Sitting Too Long</h2>

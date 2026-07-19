@@ -5,7 +5,7 @@ import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-weight-knee-pain.jpg";
 import imgJointLoad from "@/assets/article-weight-knee-joint-load-v2.jpg";
-import imgVsPressure from "@/assets/article-weight-vs-pressure.jpg";
+import imgVsPressure from "@/assets/package-4/joint-load-factors.svg";
 import imgWalkingLoad from "@/assets/article-weight-walking-load.jpg";
 import imgStairsPressure from "@/assets/article-weight-stairs-pressure-v2.jpg";
 import imgDailyActivities from "@/assets/article-weight-daily-activities.jpg";
@@ -68,25 +68,20 @@ export const weightAffectsKneePain: ArticleExport = {
           For a deeper understanding of what causes knee discomfort in different areas, you may find our <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">guide to common knee pain causes</Link> helpful.
         </p>
 
-        <h2>How Extra Weight May Increase Knee Strain</h2>
+        <h2>Factors That Influence Knee Joint Load</h2>
         <p>
-          One of the most important things to understand about knee joint load is that your knees do not simply support your body weight in a one-to-one ratio. During movement, the forces on the knee are multiplied significantly.
+          Knee load changes with body mass, the activity being performed, speed, terrain, movement strategy, strength, and recovery. Body weight is one contributor, but it should not be treated as the only explanation for pain or used to blame the person experiencing it.
         </p>
 
         <img
           src={imgVsPressure}
-          alt="Comparison showing how different body weights create different levels of knee pressure"
+          alt="Infographic showing that body mass, activity, movement strategy, and physical capacity all influence knee joint load"
           className="w-full max-w-2xl mx-auto rounded-xl my-8"
           loading="lazy"
-          width={800}
-          height={600}
-        />
+         decoding="async"  width={1200} height={760} />
 
         <p>
-          During walking, the compressive force on each knee can reach two to three times your body weight. This means that even a modest increase in body weight can translate to a significant increase in the total force your knees absorb with every step. Over the course of a day, this repeated load adds up considerably.
-        </p>
-        <p>
-          The cumulative effect of this daily stress is an important concept. It is not just about one step or one moment of pressure. It is about the thousands of steps and movements your knees handle every single day. When body weight increases, each of those movements places more demand on the joint surfaces, cartilage, and supporting structures.
+          Walking, stairs, running, and jumping place different demands on the knee. A sustainable plan may include activity pacing, strength and balance work, footwear or technique changes, and — when personally appropriate — support for overall health or weight goals.
         </p>
         <p>
           If you are interested in how aging interacts with these factors, our <Link to="/guides/why-knee-pain-gets-worse-with-age" className="text-primary hover:underline">guide on why knee pain changes with age</Link> covers this topic in detail.

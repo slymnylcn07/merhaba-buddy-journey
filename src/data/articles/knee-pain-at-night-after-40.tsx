@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-night-knee-pain-40.jpg";
-import sectionNightStiffnessCycle from "@/assets/article-section-night-stiffness-cycle.jpg";
+import sectionNightStiffnessCycle from "@/assets/package-4/evening-morning-comfort-cycle.svg";
 import sectionSleepingPositionsImpact from "@/assets/article-section-sleeping-positions-impact.jpg";
-import sectionJointChangesAging from "@/assets/article-section-joint-changes-aging.jpg";
-import sectionNightPainLocations from "@/assets/article-section-night-pain-locations.jpg";
+import sectionJointChangesAging from "@/assets/package-4/age-knee-comfort-factors.svg";
+import sectionNightPainLocations from "@/assets/package-4/night-knee-location-guide.svg";
 import sectionEveningComfortRoutine from "@/assets/article-section-evening-comfort-routine-40.jpg";
 import sectionDailyComfortRoutine40s from "@/assets/article-section-daily-comfort-routine-40s.jpg";
 
@@ -15,31 +15,31 @@ const slug = "knee-pain-at-night-after-40";
 const faqs = [
   {
     question: "Why do my knees hurt more at night after 40?",
-    answer: "After 40, cartilage naturally thins and synovial fluid decreases. During the day, movement keeps joints lubricated. At night, when you stop moving, fluid redistributes and joints stiffen, making existing wear-and-tear more noticeable in the quiet of nighttime."
+    answer: "Night knee symptoms after 40 can be influenced by osteoarthritis, tendons, bursae, activity during the day, sleep position, swelling, or another condition. Age alone does not establish the cause."
   },
   {
     question: "Can sudden night knee pain happen without injury?",
-    answer: "Yes. Many people over 40 experience sudden nighttime knee discomfort without any specific injury. This is often related to fluid changes during rest, accumulated daily load, or inflammatory responses that become more noticeable when the body settles down at night."
+    answer: "Yes, discomfort can occur without a clear injury, but a sudden or severe change should not be assumed to be age-related. Swelling, redness, warmth, fever, calf symptoms, or difficulty bearing weight need timely assessment."
   },
   {
     question: "Is night knee stiffness different from daytime stiffness?",
-    answer: "Night stiffness tends to feel deeper and more persistent because the joint has been still for hours. Daytime stiffness usually eases with movement within minutes, while night stiffness may feel more intense because there are fewer distractions and the joint has had extended inactivity."
+    answer: "Night symptoms may feel more noticeable because of prolonged position, sleep disruption, pressure from bedding or side-lying, or symptoms accumulated during the day. The pattern varies and is not diagnostic."
   },
   {
     question: "What are the best sleeping positions for knee pain?",
-    answer: "Side sleeping with a pillow between the knees helps maintain alignment. Back sleeping with a small pillow under the knees reduces extension pressure. Avoid sleeping with legs fully straight or in a twisted position, as these can increase joint compression overnight."
+    answer: "There is no single best position for everyone. Some people prefer side sleeping with a pillow between the knees; others prefer lying on the back with light support under the knees. Use the setup that reduces pressure and does not increase symptoms."
   },
   {
     question: "Why do my knees hurt when lying on my side?",
-    answer: "Side sleeping without support causes the top knee to drop, creating rotational stress on both knees. The inner knee of the bottom leg bears extra pressure from the weight of the upper leg. A firm pillow between the knees eliminates this misalignment."
+    answer: "Side sleeping can place the knees together or allow the top leg to rotate. A pillow between the knees may improve comfort for some people, but it will not address every cause of night pain."
   },
   {
     question: "Can night knee pain wake me up from sleep?",
-    answer: "Yes. Throbbing or aching knee discomfort can disrupt sleep, especially in adults over 40 and 50. This often happens when inflammatory responses peak during rest or when sleeping position puts sustained pressure on sensitized joint areas."
+    answer: "Yes. Knee discomfort can interrupt sleep for many reasons, including position, pressure, osteoarthritis, tendons, bursae, swelling, or another condition. Repeated sleep disruption is worth discussing with a healthcare professional."
   },
   {
     question: "How long does night knee stiffness usually last?",
-    answer: "For most adults over 40, morning stiffness from overnight inactivity typically eases within 15–30 minutes of gentle movement. If stiffness lasts longer than 45 minutes consistently, it may be worth discussing with a healthcare professional."
+    answer: "The duration varies. Record how long stiffness lasts and whether it is accompanied by swelling, warmth, locking, or worsening pain. Persistent or prolonged stiffness should be discussed with a healthcare professional."
   },
   {
     question: "When should I pay attention to night knee pain?",
@@ -51,7 +51,7 @@ const article = {
   slug,
   title: "What Causes Knee Pain at Night for Adults Over 40? Age-Related Night Pain Explained",
   subtitle: "Understanding why knee discomfort intensifies at night with age",
-  intro: "If you're over 40 and notice your knees aching, throbbing, or feeling stiff at night, you're experiencing one of the most common age-related joint patterns. This guide explores why knee pain at night worsens with age and what daily habits support better nighttime comfort.",
+  intro: "Night knee symptoms can become more noticeable after 40, but they should not automatically be attributed to aging. This guide reviews practical patterns, sleep-position considerations, and signs that deserve assessment.",
   metaTitle: "Knee Pain at Night After 40: Causes & Comfort Tips",
   metaDescription: "Why does knee pain get worse at night after 40? Learn age-related causes of night knee stiffness, sleeping position tips, and evening comfort routines for better rest.",
   heroImage,
@@ -65,128 +65,116 @@ const article = {
 
       <h2>Why Knee Pain Commonly Worsens at Night After 40</h2>
       <p>
-        Knee pain at night is one of the most common patterns adults over 40 notice. During the day, regular movement keeps your knee joints lubricated and your muscles engaged. But when you lie down and become still, several age-related factors combine to make your knees feel worse than they did just hours earlier.
+        Adults over 40 may notice knee symptoms at night, but the reason differs from person to person. Activity during the day, a prolonged sleep position, pressure from bedding, osteoarthritis, tendons, bursae, swelling, and other conditions can all be relevant.
       </p>
       <p>
-        This isn't random. There's a clear biological pattern behind why knees hurt at night, and understanding it can help you take simple steps to improve your nighttime comfort.
+        A repeated pattern is useful information, but it does not prove one biological mechanism. Tracking triggers and associated symptoms is more reliable than assuming “wear and tear.”
       </p>
 
       <p>
         Unlike the general guide on <Link to="/guides/why-do-my-knees-hurt-when-sleeping" className="text-primary hover:underline">why knees hurt when sleeping</Link>, this article focuses specifically on how aging affects nighttime knee comfort and what adults 40+ can do differently.
       </p>
 
-      <h2>How Daily Load Leads to Night-Time Stiffness & Discomfort</h2>
+      <h2>Why Knee Symptoms May Feel More Noticeable at Night</h2>
       <p>
-        Every step you take, every staircase you climb, and every time you stand up from a chair, your knee joints absorb significant force. In younger joints, cartilage and synovial fluid efficiently cushion this load. But after 40, these natural shock absorbers begin to thin and become less effective.
+        Symptoms may be more noticeable at night after a busy day, when the knee remains in one position, or when side-lying or bedding places pressure on a sensitive area. Quiet surroundings can also make existing sensations easier to notice.
       </p>
       <p>
-        The result? By evening, your joints have accumulated a full day's worth of micro-stress. When you finally lie down, your body's inflammatory response kicks in to repair this daily wear. This natural healing process can cause swelling, throbbing, and deep aching sensations that seem to appear "out of nowhere" at bedtime.
+        These observations do not prove that inflammation, cartilage wear, or “daily damage” is the cause. The same pattern can occur with several different conditions, so the practical focus is to track triggers, use a comfortable sleep setup, and seek advice when symptoms persist or worsen.
       </p>
 
       <figure className="my-8">
         <img
           src={sectionNightStiffnessCycle}
-          alt="Night stiffness cycle diagram showing how daytime load leads to micro-inflammation, fluid redistribution at night, and morning stiffness"
+          alt="Evening-to-morning comfort plan showing symptom check-in, comfortable sleep setup, gentle first movements, and reassessment"
           className="w-full h-auto rounded-xl shadow-sm"
-        />
+         loading="lazy"  decoding="async"  width={1200} height={760} />
         <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-          The night stiffness cycle: how daily activity leads to nighttime discomfort in aging joints
+          A practical evening-to-morning routine that avoids claiming one biological cause
         </figcaption>
       </figure>
 
-      <InfoBox title="The Inflammation Clock">
-        <p>Research suggests that inflammatory markers in joint tissue naturally peak during evening and nighttime hours. This is part of the body's circadian rhythm — the same system that controls sleep. For adults with age-related joint changes, this natural inflammation peak can feel like sudden knee pain that appears right when you're trying to rest.</p>
+      <InfoBox title="Track the Pattern, Not Just the Clock">
+        <p>Record activity, sleep position, swelling, warmth, and how long symptoms last. A repeated pattern can help a clinician distinguish an activity-related flare from osteoarthritis, a tendon or bursa problem, a nerve-related symptom, or another cause.</p>
       </InfoBox>
 
-      <h2>Age-Related Joint Changes That Affect Night Comfort</h2>
+      <h2>Factors That Can Affect Night Comfort After 40</h2>
       <p>
-        Understanding what changes inside your knee after 40 helps explain why nighttime discomfort becomes more common with age. Three primary changes contribute to knee pain worse at night:
-      </p>
-
-      <h3>Cartilage Thinning</h3>
-      <p>
-        The smooth, rubbery cartilage that cushions your knee joint gradually thins over decades. By age 40–50, many people have measurably less cartilage than they did at 25. This means less cushioning during the day, and at night, bones sit closer together, creating pressure sensations when you're still.
-      </p>
-
-      <h3>Synovial Fluid Changes</h3>
-      <p>
-        Synovial fluid is the natural lubricant inside your knee joint. With age, both the quantity and quality of this fluid decrease. During the day, movement helps distribute what fluid remains. At night, without movement, the joint essentially "dries out," leading to that characteristic stiffness many people feel when they wake up or shift positions in bed.
-      </p>
-
-      <h3>Muscle Imbalance & Weakening</h3>
-      <p>
-        The muscles surrounding your knee — particularly the quadriceps and hamstrings — naturally lose mass and strength with age. Weaker supporting muscles mean your joint absorbs more stress during daily activities, and that accumulated stress becomes more noticeable at night when everything settles.
+        Age changes the likelihood of some conditions, but it does not tell us why one person has night pain. Joint health, previous injury, muscle capacity, activity, sleep position, and symptom sensitivity can overlap.
       </p>
 
       <figure className="my-8">
         <img
           src={sectionJointChangesAging}
-          alt="Comparison diagram showing healthy joint in 20s-30s with thick cartilage and plentiful fluid versus aging joint in 40s-50s with thinning cartilage and reduced fluid"
+          alt="Infographic showing joint health, previous injury, muscle capacity, sleep position, and daily load as possible factors affecting knee comfort after 40"
           className="w-full h-auto rounded-xl shadow-sm"
+          loading="lazy"
+          decoding="async"
+          width={1200}
+          height={760}
         />
         <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-          Age-related joint changes: healthy vs aging knee joint comparison
+          Age can influence risk patterns, but it does not identify the cause of an individual symptom
         </figcaption>
       </figure>
-<p>
-        For a deeper understanding of how age changes your joints, read our guide on <Link to="/guides/why-knee-pain-gets-worse-with-age" className="text-primary hover:underline">why knee pain gets worse with age</Link>.
+      <p>
+        For a broader discussion of age and knee symptoms, read our guide on <Link to="/guides/why-knee-pain-gets-worse-with-age" className="text-primary hover:underline">why knee pain changes with age</Link>.
       </p>
 
-      <h2>Why 40–50+ Adults Feel Throbbing or Deep Ache at Night</h2>
+      <h2>Why Throbbing or a Deep Ache May Feel More Noticeable at Night</h2>
       <p>
-        The nighttime knee throbbing that many adults over 40 describe isn't imagined — it's a real physiological response. Several factors make knee discomfort feel more intense at bedtime:
+        Several practical factors can make an existing sensation more noticeable at bedtime:
       </p>
       <ul>
-        <li><strong>Fewer distractions:</strong> During the day, your brain is busy with tasks, conversations, and movement. At night, with nothing else competing for attention, your brain focuses on body signals more intensely.</li>
-        <li><strong>Fluid redistribution:</strong> When you lie flat, body fluids redistribute. In joints with age-related changes, this can cause temporary swelling and increased pressure inside the knee.</li>
-        <li><strong>Reduced cortisol:</strong> Cortisol, a natural anti-inflammatory hormone, drops to its lowest levels at night. This means your body has less natural inflammation control exactly when joint inflammation may be peaking.</li>
-        <li><strong>Temperature drop:</strong> As your body temperature naturally decreases at night, joints can feel stiffer. Cooler temperatures reduce blood flow to extremities, making existing joint stiffness more pronounced.</li>
+        <li><strong>Fewer distractions:</strong> quiet surroundings can make body sensations easier to notice.</li>
+        <li><strong>Position and pressure:</strong> side-lying, a deep knee bend, or contact between the knees may irritate a sensitive area.</li>
+        <li><strong>Symptoms accumulated during the day:</strong> an unusually active day or a change in routine may be relevant.</li>
+        <li><strong>Sleep disruption:</strong> poor sleep can increase sensitivity to discomfort and make recovery feel harder.</li>
       </ul>
 
       <p>
-        If you also experience <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning knee stiffness after 40</Link>, the same fluid and inflammation patterns are at play — nighttime is the setup, and morning is the consequence.
+        If you also experience <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning knee stiffness after 40</Link>, record both patterns rather than assuming one fluid or inflammation cycle explains them.
       </p>
 
-      <h2>Night Pain Patterns by Knee Location</h2>
+      <h2>Night Symptoms by Knee Location</h2>
       <p>
-        Where you feel knee pain at night can offer clues about what daily patterns contributed to the discomfort. Here's what each location commonly indicates for adults over 40:
+        Location can help organize questions, but the same area can have several causes. History, examination, associated symptoms, and sometimes imaging are needed to identify the problem.
       </p>
 
       <figure className="my-8">
         <img
           src={sectionNightPainLocations}
-          alt="Knee diagram showing night pain zones: front knee quadriceps fatigue, inner knee ligament tension, outer knee IT band tightness, back of knee fluid pooling"
+          alt="Knee location guide showing front, inner, outer, and back areas without assigning a diagnosis"
           className="w-full h-auto rounded-xl shadow-sm"
+          loading="lazy"
+          decoding="async"
+          width={1200}
+          height={760}
         />
         <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-          Common nighttime knee pain locations and their typical associations
+          Use location to describe the symptom, not to diagnose its cause
         </figcaption>
       </figure>
 
-      <h3>Front Knee Night Pain</h3>
+      <h3>Front of the Knee</h3>
       <p>
-        Front-of-knee aching at night often relates to quadriceps fatigue accumulated during the day. Activities like climbing stairs, walking uphill, or repeated standing-and-sitting put extra load on the front of the knee. By nighttime, the stressed tissues around the kneecap can feel tender or throbbing.
+        Front symptoms may involve the kneecap region, quadriceps tendon, patellar tendon, or surrounding tissues. Stairs, squatting, kneeling, and prolonged sitting are useful activity details to record.
       </p>
 
-      <h3>Inner Knee Night Pain</h3>
+      <h3>Inner or Outer Knee</h3>
       <p>
-        Sudden inner knee pain at night is commonly linked to medial ligament tension or early wear on the inner cartilage surface. This area is especially vulnerable to daily stress from activities that involve twisting or lateral movement. Side sleeping without a pillow between the knees often intensifies inner knee discomfort.
+        Joint-line structures, ligaments, tendons, bursae, or the IT-band region can all be relevant. Twisting, side-lying pressure, swelling, locking, or instability provide more information than location alone.
+      </p>
+      <p>
+        Learn more about outer-knee anatomy in our <Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT band location guide</Link>.
       </p>
 
-      <h3>Outer Knee Night Pain</h3>
+      <h3>Back of the Knee</h3>
       <p>
-        Outer knee discomfort at night frequently relates to IT band tightness or lateral joint stress from the day's activities. Runners, walkers, and people who spend long hours standing often notice this pattern. The IT band tends to tighten overnight, creating a pulling sensation on the outer knee.
-      </p>
-      <p>
-        Learn more about outer knee patterns in our <Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT band syndrome guide</Link>.
+        The back of the knee contains hamstring and calf tendons, the popliteal area, and structures that can be affected by swelling. A new lump, marked swelling, calf pain, redness, or warmth should be assessed promptly. See our <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back-of-knee pain guide</Link> for a fuller overview.
       </p>
 
-      <h3>Back of Knee Night Pain</h3>
-      <p>
-        Pain behind the knee at night often relates to fluid pooling in the popliteal area (behind the knee). Adults over 40 may notice a feeling of fullness, pressure, or tightness behind the knee when lying down, as fluid gravitates to this area during rest. This is covered in more detail in our <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back-of-knee pain guide</Link>.
-      </p>
-
-      <h2>Sleeping Positions That Increase Night Knee Pain</h2>
+      <h2>Sleeping Positions That May Increase Night Knee Discomfort</h2>
       <p>
         How you sleep has a direct impact on whether your knees feel comfortable or uncomfortable throughout the night. For adults over 40, sleeping position becomes increasingly important as joint sensitivity increases.
       </p>
