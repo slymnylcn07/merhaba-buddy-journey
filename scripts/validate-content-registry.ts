@@ -37,7 +37,11 @@ function parseRuntimeArticleSlugs(): Set<string> {
   }
 
   const inlineBlock = guideArticle.slice(articlesStart, modularStart);
-  const inlineSlugs = [...inlineBlock.matchAll(/^  "([^"]+)":\s*\{/gm)].map((match) => match[1]);
+  // Read the actual article slug fields rather than relying on indentation
+  // or object-key formatting. This remains stable after Prettier/manual edits.
+  const inlineSlugs = [...inlineBlock.matchAll(/\bslug\s*:\s*"([^"]+)"/g)].map(
+    (match) => match[1],
+  );
 
   const exportArrayMatch = guideArticle.match(/const newArticleExports\s*=\s*\[([\s\S]*?)\];/);
   if (!exportArrayMatch) throw new Error("Could not locate newArticleExports in GuideArticle.tsx");
