@@ -66,6 +66,29 @@ interface StorefrontResponse<T> {
   errors?: StorefrontGraphqlError[];
 }
 
+const LEGACY_FLEXIKNEE_MARK = /(FlexiKnee)(?:\u2122|\u00AE|&trade;|&#8482;|&#x2122;)/gi;
+
+function normalizeStorefrontPayload<T>(value: T): T {
+  if (typeof value === "string") {
+    return value.replace(LEGACY_FLEXIKNEE_MARK, "$1") as unknown as T;
+  }
+
+  if (Array.isArray(value)) {
+    return value.map((item) => normalizeStorefrontPayload(item)) as unknown as T;
+  }
+
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value as Record<string, unknown>).map(([key, nestedValue]) => [
+        key,
+        normalizeStorefrontPayload(nestedValue),
+      ]),
+    ) as unknown as T;
+  }
+
+  return value;
+}
+
 interface CheckoutLineItem {
   variantId: string;
   quantity: number;
@@ -269,7 +292,7 @@ export async function storefrontApiRequest<T>(
     throw new Error(`Error calling Shopify: ${data.errors.map((error) => error.message).join(', ')}`);
   }
 
-  return data;
+  return normalizeStorefrontPayload(data);
 }
 
 export async function getProducts(first: number = 10, country?: string): Promise<ShopifyProduct[]> {
