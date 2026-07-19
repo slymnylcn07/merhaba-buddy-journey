@@ -1,0 +1,28 @@
+{
+  "generated": "2026-07-19",
+  "registered_guides_before": 101,
+  "registered_guides_after": 90,
+  "live_merges": {
+    "clicking-knee-without-pain": "why-do-my-knees-crack-or-pop",
+    "back-of-knee-pain-common": "back-of-knee-pain-explained",
+    "back-of-knee-pain-daily-habits": "back-of-knee-pain-explained",
+    "knee-pain-worse-at-night": "why-do-my-knees-hurt-when-sleeping",
+    "side-of-knee-pain-explained": "side-knee-pain-comfort-guide",
+    "side-knee-pain-inner-outer": "side-knee-pain-comfort-guide",
+    "cause-of-knee-pain-patterns": "what-causes-knee-pain-guide",
+    "what-makes-knee-pain-worse": "what-causes-knee-pain-guide",
+    "knee-pain-treatment-daily-habits": "how-to-fix-knee-pain",
+    "it-band-syndrome-explained": "it-band-pain-location-diagram",
+    "sharp-knee-pain-comes-and-goes": "intermittent-knee-pain-guide"
+  },
+  "ghost_redirects": {
+    "sore-knees-after-workout": "knee-pain-after-exercise",
+    "post-exercise-knee-pain-guide": "knee-pain-after-exercise",
+    "daily-knee-comfort-routine": "daily-knee-care-routine",
+    "heat-or-ice-knee-pain-science": "heat-vs-ice-for-knees",
+    "pain-in-the-knee-causes-locations": "knee-pain-locations-visual-guide",
+    "running-shoes-knee-pain-discomfort": "best-running-shoes-knee-pain",
+    "running-shoes-knee-pain-causes-fixes": "best-running-shoes-knee-pain"
+  },
+  "total_redirects": 18
+}

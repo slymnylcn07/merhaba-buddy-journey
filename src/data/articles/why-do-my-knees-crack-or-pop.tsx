@@ -332,7 +332,14 @@ export const whyDoMyKneesCrackOrPop: ArticleExport = {
           <li><Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">Daily Knee Care Routine: Simple Habits for Long-Term Comfort</Link> — Build sustainable daily habits for knee wellness</li>
           <li><Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT Band Syndrome Explained</Link> — Why outer knee sensations happen and what helps</li>
         </ul>
-      </>
+              <h2>Painless Clicking: What the Sound Usually Means</h2>
+        <p>
+          Clicking without pain is most often linked to gas release, a tendon moving over a nearby structure, or ordinary crepitus. The useful distinction is not how loud the sound is, but whether it arrives with swelling, locking, instability, reduced motion, or a new injury.
+        </p>
+        <p>
+          Track when the sound appears, such as during the first few steps after sitting, deep bending, or stairs. Seek professional assessment when a new click follows trauma or comes with catching, giving way, persistent swelling, or increasing pain.
+        </p>
+</>
     ),
   },
 };

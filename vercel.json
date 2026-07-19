@@ -206,6 +206,61 @@
       "permanent": true
     },
     {
+      "source": "/guides/clicking-knee-without-pain",
+      "destination": "/guides/why-do-my-knees-crack-or-pop",
+      "permanent": true
+    },
+    {
+      "source": "/guides/back-of-knee-pain-common",
+      "destination": "/guides/back-of-knee-pain-explained",
+      "permanent": true
+    },
+    {
+      "source": "/guides/back-of-knee-pain-daily-habits",
+      "destination": "/guides/back-of-knee-pain-explained",
+      "permanent": true
+    },
+    {
+      "source": "/guides/knee-pain-worse-at-night",
+      "destination": "/guides/why-do-my-knees-hurt-when-sleeping",
+      "permanent": true
+    },
+    {
+      "source": "/guides/side-of-knee-pain-explained",
+      "destination": "/guides/side-knee-pain-comfort-guide",
+      "permanent": true
+    },
+    {
+      "source": "/guides/side-knee-pain-inner-outer",
+      "destination": "/guides/side-knee-pain-comfort-guide",
+      "permanent": true
+    },
+    {
+      "source": "/guides/cause-of-knee-pain-patterns",
+      "destination": "/guides/what-causes-knee-pain-guide",
+      "permanent": true
+    },
+    {
+      "source": "/guides/what-makes-knee-pain-worse",
+      "destination": "/guides/what-causes-knee-pain-guide",
+      "permanent": true
+    },
+    {
+      "source": "/guides/knee-pain-treatment-daily-habits",
+      "destination": "/guides/how-to-fix-knee-pain",
+      "permanent": true
+    },
+    {
+      "source": "/guides/it-band-syndrome-explained",
+      "destination": "/guides/it-band-pain-location-diagram",
+      "permanent": true
+    },
+    {
+      "source": "/guides/sharp-knee-pain-comes-and-goes",
+      "destination": "/guides/intermittent-knee-pain-guide",
+      "permanent": true
+    },
+    {
       "source": "/editorial-policy",
       "destination": "/editorial-team",
       "permanent": true

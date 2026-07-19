@@ -22,7 +22,7 @@ export const weightAffectsKneePain: ArticleExport = {
     metaDescription: "Learn how your weight affects knee pain and joint pressure. Understand how daily load, body weight, and simple habit changes may influence knee comfort over time.",
     heroImage: heroImage,
     publishedDate: "March 30, 2026",
-    nextSlug: "what-makes-knee-pain-worse",
+    nextSlug: "what-causes-knee-pain-guide",
     nextTitle: "What Makes Knee Pain Worse? Habits to Avoid",
     faqs: [
       { question: "Does body weight affect knee pain?", answer: "Yes, body weight can influence the amount of pressure placed on the knee joints during everyday activities. Higher body weight typically means more force on the knees with each step, which may contribute to increased discomfort over time." },

@@ -14,7 +14,7 @@ export const sharpStabbingKneePainComfort: ArticleExport = {
     metaDescription: "Experiencing sharp stabbing pain in the knee? Learn common causes, daily patterns, and at-home comfort strategies to support your everyday knee comfort.",
     heroImage: heroImage,
     publishedDate: "February 24, 2026",
-    nextSlug: "running-shoes-knee-pain-discomfort",
+    nextSlug: "best-running-shoes-knee-pain",
     nextTitle: "Running Shoes and Knee Pain: Can the Wrong Shoes Cause Discomfort?",
     faqs: [
       { question: "What causes sharp stabbing pain in the knee?", answer: "Sharp knee pain can be associated with many factors including sudden movements, overuse, muscle imbalances, joint stiffness, or changes in activity levels. The exact cause varies from person to person." },

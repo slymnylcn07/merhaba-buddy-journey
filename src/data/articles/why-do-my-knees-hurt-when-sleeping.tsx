@@ -407,7 +407,14 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
         <div className="mt-10 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground">
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and common experiences. Always consult a healthcare professional for persistent or severe knee discomfort.
         </div>
-      </>
+              <h2>Why Symptoms Can Feel Worse at Night</h2>
+        <p>
+          Nighttime symptoms may feel stronger because the knee has fewer position changes, stiffness builds during rest, and there are fewer daytime distractions. An evening log can help separate discomfort related to the day’s workload from symptoms that appear regardless of activity.
+        </p>
+        <p>
+          A brief wind-down routine, comfortable pillow support, and avoiding a sudden jump in daily load may help. New one-sided swelling, warmth with fever, calf swelling, or severe unrelenting pain should not be managed as a routine sleep-position problem.
+        </p>
+</>
     ),
     seoTags: "knee pain at night, why do my knees hurt, knee throbbing, warm knee sensation, knee cracking, knee squatting pain, knee stiffness morning, side sleeping knee pain, night knee discomfort, meniscus knee pain, knee tendinitis, teenager knee pain, back of knee pain night, sleeping positions knees",
   },

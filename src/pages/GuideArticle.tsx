@@ -271,11 +271,6 @@ import thumbCordlessMassagers from "@/assets/article-hero-cordless-massagers.svg
 import thumbInsolesKnee from "@/assets/article-hero-insoles-knee.svg";
 import { ArticleQuizCard } from "@/components/ArticleQuizCard";
 
-import thumbGlucosamineChondroitin from "@/assets/article-hero-glucosamine-chondroitin.svg";
-import thumbMenopauseKneePain from "@/assets/article-hero-menopause-knee-pain.svg";
-import thumbRedLightDoseKnees from "@/assets/article-hero-red-light-dose-knees.svg";
-import thumbPickleballKneeRecovery from "@/assets/guide-thumb-pickleball-knee-recovery-v2.png";
-
 // Import new articles from separate files
 import {
   flexikneeReview2026,
@@ -356,10 +351,6 @@ import {
   airCompressionLegMassagers,
   kneeSleeveSizingGuide,
   heatVsIceForKneesAuthoritative,
-  glucosamineChondroitinKneePain,
-  menopauseKneePain,
-  redLightTherapyDoseKnees,
-  pickleballKneeRecoveryRoutine,
 } from "@/data/articles";
 
 interface FAQItem {
@@ -387,10 +378,6 @@ interface ArticleData {
 
 // Context-aware CTA data for each article (headline + text)
 const articleCTAs: Record<string, { headline: string; text: string }> = {
-  "glucosamine-chondroitin-knee-pain": { headline: "Building a complete knee comfort routine?", text: "FlexiKnee can provide optional warmth, red light, and gentle vibration alongside movement and evidence-based care; it does not replace treatment or rebuild cartilage." },
-  "menopause-knee-pain": { headline: "Want a consistent midlife knee comfort routine?", text: "FlexiKnee combines optional warmth, red light, and gentle vibration for at-home comfort while strength, sleep, activity, and appropriate medical care remain the foundation." },
-  "red-light-therapy-dose-knees": { headline: "Looking for a simple red-light knee routine?", text: "FlexiKnee combines red light with adjustable warmth and vibration. Follow the device instructions and avoid using it over an unexplained hot, swollen, or newly injured knee." },
-  "pickleball-knee-recovery-routine": { headline: "Want an easy post-pickleball comfort routine?", text: "FlexiKnee offers optional warmth, red light, and gentle vibration for rest days and post-play comfort. It should not be used to hide an injury and continue playing." },
   "why-knee-pain-doesnt-go-away": { headline: "Want an easier way to support your knees every day?", text: "The FlexiKnee Smart Heated Knee Device combines gentle warmth, red light, and vibration massage to help keep your daily comfort routine simple and consistent." },
   "heat-vs-red-light-therapy": { headline: "Curious about combining warmth and red light at home?", text: "FlexiKnee brings heat therapy and red light together in one comfortable, easy-to-use device designed for your daily knee routine." },
   "who-benefits-from-knee-therapy-devices": { headline: "Thinking about an at-home knee comfort device?", text: "FlexiKnee delivers soothing warmth, red light wavelengths, and gentle vibration in a wireless wrap designed for everyday use." },
@@ -811,7 +798,7 @@ const articles: Record<string, ArticleData> = {
     metaDescription: "Discover who at-home knee therapy devices are designed for, common user types, and how to build a practical daily knee comfort routine.",
     heroImage: heroWhoBenefits,
     publishedDate: "May 22, 2025",
-    nextSlug: "daily-knee-comfort-routine",
+    nextSlug: "daily-knee-care-routine",
     nextTitle: "Build a Daily Comfort Routine",
     content: (
       <>
@@ -3874,7 +3861,7 @@ const articles: Record<string, ArticleData> = {
     metaDescription: "Explore infrared knee massagers, key features to consider, and how they support daily knee comfort.",
     heroImage: heroInfraredMassager,
     publishedDate: "January 19, 2026",
-    nextSlug: "sharp-knee-pain-comes-and-goes",
+    nextSlug: "intermittent-knee-pain-guide",
     nextTitle: "Why Sharp Knee Pain Comes and Goes",
     content: (
       <>
@@ -4032,7 +4019,7 @@ const articles: Record<string, ArticleData> = {
     metaDescription: "Understand why sharp knee pain comes and goes, common patterns, and gentle support options for daily comfort.",
     heroImage: heroSharpPainPatterns,
     publishedDate: "January 19, 2026",
-    nextSlug: "side-knee-pain-inner-outer",
+    nextSlug: "side-knee-pain-comfort-guide",
     nextTitle: "Side Knee Pain Explained",
     content: (
       <>
@@ -4378,7 +4365,7 @@ const articles: Record<string, ArticleData> = {
     metaDescription: "A balanced look at what research suggests about red light therapy for knee comfort and daily routines.",
     heroImage: heroRedLightResearch,
     publishedDate: "January 19, 2026",
-    nextSlug: "back-of-knee-pain-daily-habits",
+    nextSlug: "back-of-knee-pain-explained",
     nextTitle: "Back of Knee Pain Daily Habits",
     content: (
       <>
@@ -5826,7 +5813,7 @@ const articles: Record<string, ArticleData> = {
     metaDescription: "Understand what 'fixing' knee pain really means and discover supportive daily habits, knee comfort routines, and gentle approaches that help with everyday comfort.",
     heroImage: heroFixKneePain,
     publishedDate: "January 19, 2026",
-    nextSlug: "daily-knee-comfort-routine",
+    nextSlug: "daily-knee-care-routine",
     nextTitle: "How to Build a Daily Knee Comfort Routine",
     content: (
       <>
@@ -7349,7 +7336,7 @@ const articles: Record<string, ArticleData> = {
     metaDescription: "Explore common daily patterns and lifestyle factors that influence knee discomfort. Understand what causes knee pain in everyday life with practical, non-medical insights.",
     heroImage: heroCauseKneePain,
     publishedDate: "January 19, 2026",
-    nextSlug: "knee-pain-treatment-daily-habits",
+    nextSlug: "how-to-fix-knee-pain",
     nextTitle: "Knee Pain Treatment: Daily Habits",
     content: (
       <>
@@ -8327,7 +8314,7 @@ const articles: Record<string, ArticleData> = {
 };
 
 // Merge new articles from separate files
-const newArticleExports = [pickleballKneeRecoveryRoutine, redLightTherapyDoseKnees, menopauseKneePain, glucosamineChondroitinKneePain, flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, clickingKneeWithoutPain, exercisesToRelieveKneePainAtHome, postExerciseKneePainGuide, kneeSwellingAfterExercise, soreKneesAfterWorkout, kneeRecoveryExercisesAfterWorkout, kneeAcheAfterLegWorkouts, burningKneesAfterExercise, homeRemediesKneePain, whatMakesKneePainWorse, weightAffectsKneePain, cordlessHeatedKneeMassagers2026, bestInsolesKneePain2026, itBandFoamRollingGuide, howToSleepWithKneePain, airCompressionLegMassagers, kneeSleeveSizingGuide, heatVsIceForKneesAuthoritative, bestSupplementsForKneePain];
+const newArticleExports = [flexikneeReview2026, flexikneeVsCompetitors2026, bestHeatedKneeMassagerArthritis, smartHeatedKneeBraces2026, heatRedLightTherapyBenefits2026, doKneeMassagersWork, runningShoesKneePain, sharpKneePainCauses, infraredKneeMassagerGuide2026, sharpStabbingKneePainComfort, runningShoesKneePainDiscomfort, infraredVsHeatingPads, intermittentKneePainGuide, sideOfKneePainExplained, backOfKneePainCommon, smartKneeMassagersBreakdown, kneeWarmthDailyComfort, kneePainLocationsVisualGuide, kneePainLocationMap2026, runnersKneePainLocation, itBandSyndromeExplained, itBandPainLocationDiagram, whyDoMyKneesHurtWhenSleeping, whyDoMyKneesCrackOrPop, kneePainAfterSittingCrossLegged, kneeStiffnessAfterResting, kneePainAfterStanding, bestRedLightTherapyKnee, kneePainExercisesGuide, whatCausesKneePain, kneePainAfter40, whyKneePainGetsWorseWithAge, morningKneeStiffnessAfter40, kneePainGettingUpAfterSitting, kneePainAfterLongWalks, kneeMobilityAfter50, suddenKneePainGuide, kneePainAtNightAfter40, kneeClickingWhenWalking, kneesHurtAfterResting, coldWeatherKneePain, kneePainAfterExercise, kneePainClimbingStairs, kneePainGoingDownStairs, kneePainSquatting, kneePainDuringYoga, kneePainHiking, kneeTightnessWithoutPain, burningKneeSensation, kneeWeaknessWithoutPain, plicaSyndromeKneePain, kneeBursitisGuide, patellofemoralPainSyndrome, kneePainAfterCarRides, warmFeelingInKnee, heavyFeelingInKnees, kneePainAfterFlights, kneePainWhenKneeling, painBehindKneecap, clickingKneeWithoutPain, exercisesToRelieveKneePainAtHome, postExerciseKneePainGuide, kneeSwellingAfterExercise, soreKneesAfterWorkout, kneeRecoveryExercisesAfterWorkout, kneeAcheAfterLegWorkouts, burningKneesAfterExercise, homeRemediesKneePain, whatMakesKneePainWorse, weightAffectsKneePain, cordlessHeatedKneeMassagers2026, bestInsolesKneePain2026, itBandFoamRollingGuide, howToSleepWithKneePain, airCompressionLegMassagers, kneeSleeveSizingGuide, heatVsIceForKneesAuthoritative, bestSupplementsForKneePain];
 for (const exp of newArticleExports) {
   articles[exp.article.slug] = exp.article;
   // Modular articles handle their own CTAs inline
@@ -8933,16 +8920,7 @@ const GuideArticle = () => {
                   [&_img]:my-8 [&_img]:w-full [&_img]:rounded-[1.5rem] [&_img]:border [&_img]:border-slate-200 [&_img]:bg-white [&_img]:object-contain [&_img]:shadow-sm
                 ">
                   {article.content}
-                </div>
 
-                {articleCTAs[slug] && (
-                  <PremiumCTA
-                    headline={articleCTAs[slug].headline}
-                    text={articleCTAs[slug].text}
-                  />
-                )}
-
-                <div className="article-content max-w-none">
                   <ArticleQuizCard articleSlug={article.slug} articleTitle={article.title} />
                 </div>
 
@@ -8969,7 +8947,7 @@ const GuideArticle = () => {
                           >
                             {source.title}
                           </a>
-                          <span className="text-slate-500"> | {source.publisher}</span>
+                          <span className="text-slate-500"> — {source.publisher}</span>
                         </li>
                       ))}
                     </ul>
@@ -8979,6 +8957,15 @@ const GuideArticle = () => {
                     </p>
                   </section>
                 )}
+
+                {/* Premium CTA Highlight Box */}
+                {articleCTAs[slug] && (
+                  <PremiumCTA
+                    headline={articleCTAs[slug].headline}
+                    text={articleCTAs[slug].text}
+                  />
+                )}
+
 
               </article>
 </div>
@@ -8993,10 +8980,6 @@ const GuideArticle = () => {
             </h2>
             {(() => {
               const thumbnails: Record<string, string> = {
-                "glucosamine-chondroitin-knee-pain": thumbGlucosamineChondroitin,
-                "menopause-knee-pain": thumbMenopauseKneePain,
-                "red-light-therapy-dose-knees": thumbRedLightDoseKnees,
-                "pickleball-knee-recovery-routine": thumbPickleballKneeRecovery,
                 "best-supplements-for-knee-pain": thumbKneeSupplements,
                 "why-knee-pain-doesnt-go-away": thumbKneePain,
                 "heat-vs-red-light-therapy": thumbHeatTherapy,

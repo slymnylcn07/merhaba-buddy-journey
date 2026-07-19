@@ -14,7 +14,7 @@ export const intermittentKneePainGuide: ArticleExport = {
     metaDescription: "Why does knee pain come and go? Understand common patterns behind intermittent knee discomfort and build daily habits that support consistent comfort.",
     heroImage: heroImage,
     publishedDate: "February 24, 2026",
-    nextSlug: "side-of-knee-pain-explained",
+    nextSlug: "side-knee-pain-comfort-guide",
     nextTitle: "Side-of-Knee Pain Explained: Causes, Shoes, and At-Home Comfort Tips",
     faqs: [
       { question: "Why does my knee pain come and go randomly?", answer: "Intermittent knee discomfort is often influenced by daily activity levels, weather changes, sleep quality, and how much time you spend sitting or standing. These fluctuating factors explain why some days feel better than others." },
@@ -113,7 +113,14 @@ export const intermittentKneePainGuide: ArticleExport = {
           headline="Ready to make comfortable days the norm?"
           text="FlexiKnee combines warmth, red light, and vibration in one easy-to-use device, helping you build the consistent routine your knees deserve."
         />
-      </>
+              <h2>When Intermittent Pain Feels Sharp</h2>
+        <p>
+          Pain that comes and goes may occasionally feel sharp, especially during a specific step, turn, squat depth, or transition from sitting to standing. Note the exact movement, location, duration, swelling response, and whether the knee catches or gives way. These details are more useful than the word “sharp” alone.
+        </p>
+        <p>
+          Reduce the provoking load temporarily and rebuild it gradually when symptoms settle. Repeated locking, instability, significant swelling, inability to bear weight, or sharp pain following trauma warrants professional evaluation.
+        </p>
+</>
     ),
     seoTags: "intermittent knee discomfort, knee comes and goes, unpredictable knee comfort, daily knee comfort habits, weather knee connection, consistent knee routine, managing knee discomfort patterns, gentle daily knee support",
   },

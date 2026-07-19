@@ -20,7 +20,7 @@ export const suddenKneePainGuide: ArticleExport = {
     heroImage: heroImage,
     publishedDate: "March 2, 2026",
     lastUpdated: "July 13, 2026",
-    nextSlug: "sharp-knee-pain-comes-and-goes",
+    nextSlug: "intermittent-knee-pain-guide",
     nextTitle: "Sharp Knee Pain Patterns",
     seoTags: "sudden knee pain, sudden knee pain no injury, sharp sudden knee pain, sudden knee pain behind knee, sudden inner knee pain, sudden stabbing knee pain, sudden knee pain walking, sudden knee pain stairs, knee pain flare-ups, activity-triggered knee pain, knee pain that comes and goes suddenly, sudden knee pain causes, sudden pain in one knee, when sudden knee pain is serious",
     faqs: [

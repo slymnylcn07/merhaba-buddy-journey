@@ -24,7 +24,7 @@ export const itBandPainLocationDiagram = {
     heroImage: heroImage,
     publishedDate: "February 25, 2026",
     lastUpdated: "July 13, 2026",
-    nextSlug: "it-band-syndrome-explained",
+    nextSlug: "it-band-pain-location-diagram",
     nextTitle: "IT Band Syndrome Explained: Why Side Knee Discomfort Happens",
     faqs: [
       { question: "Where exactly is IT band discomfort felt?", answer: "IT band discomfort is most commonly felt along the outer side of the knee, where the band inserts just below the joint. Some people also notice tightness along the outer thigh above the knee. An IT band pain location diagram typically highlights the lateral knee and outer thigh as the primary zones." },
@@ -301,7 +301,14 @@ export const itBandPainLocationDiagram = {
         <p>
           <em>This content is not medical advice. It is based on general research and common experiences people report. If your discomfort is severe or persistent, consider consulting a healthcare professional.</em>
         </p>
-      </>
+              <h2>How IT Band Syndrome Fits the Location Pattern</h2>
+        <p>
+          IT band syndrome usually produces a focused ache or sharp sensation near the outer knee, often after a predictable amount of running, cycling, or downhill activity. Common contributors include rapid mileage increases, repeated downhill loading, limited recovery, and reduced hip control.
+        </p>
+        <p>
+          The location diagram is a starting point rather than a diagnosis. Pain directly on the joint line, locking, major swelling, or instability can point to a different problem and deserves an appropriate clinical assessment.
+        </p>
+</>
     ),
   },
   cta: "Explore FlexiKnee for outer knee and IT band comfort support →",
