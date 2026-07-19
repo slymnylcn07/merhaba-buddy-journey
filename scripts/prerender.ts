@@ -244,6 +244,7 @@ async function prerender() {
     totalRoutes: allRoutes.length,
     successfulRoutes: success,
     failedRoutes: failed,
+    registeredGuides: slugs.length,
   };
   writeFileSync(
     join(DIST, "build-version.json"),
@@ -258,7 +259,8 @@ async function prerender() {
   server.close();
 
   if (failed > 0) {
-    console.warn(`⚠️  ${failed} route(s) could not be prerendered. Vite SPA fallback remains available for those routes.`);
+    console.error(`❌ ${failed} route(s) could not be prerendered. Deployment stopped to prevent publishing incomplete SPA shells.`);
+    process.exit(1);
   }
 }
 

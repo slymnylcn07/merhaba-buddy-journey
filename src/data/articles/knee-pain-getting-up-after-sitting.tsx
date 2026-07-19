@@ -1,7 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
-import { JournalQuote, StatHighlight, InfoBox, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-pain-getting-up-sitting.jpg";
 import sectionJointCompression from "@/assets/article-section-joint-compression-sitting.jpg";
 import sectionMicroMovements from "@/assets/article-section-micro-movements-over-40.jpg";
@@ -70,12 +70,6 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
           The reason why knees hurt when standing up is not a single factor but a combination of changes that accumulate over decades. Cartilage gradually thins, reducing the cushioning between bone surfaces. Synovial fluid production decreases, leaving the joint less lubricated during periods of inactivity. Muscles lose some of their elasticity and take longer to engage after rest. And the connective tissues around the knee become less flexible, creating more resistance during sudden position changes.
         </p>
 
-        <StatHighlight
-          stat="76%"
-          label="of adults over 45 report knee stiffness when standing up after sitting"
-          description="Making it one of the most common joint complaints in this age group"
-        />
-
         <figure className="my-8">
           <img src={sectionStiffnessPattern} alt="Anatomical illustration showing knee stiffness patterns and tension areas after prolonged sitting" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">Stiffness patterns in the knee joint after prolonged sitting affect multiple structures around the kneecap and surrounding muscles</figcaption>
@@ -124,15 +118,7 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
           <p><strong>Layer 2 — Cartilage:</strong> Sustained compression squeezes fluid from cartilage, temporarily reducing its cushioning capacity.</p>
           <p><strong>Layer 3 — Muscles:</strong> Surrounding muscles and tendons adapt to the bent position and resist sudden lengthening when you stand.</p>
         </InfoBox>
-
-        <JournalQuote
-          quote="The phenomenon of post-static knee stiffness involves measurable changes in synovial fluid viscosity, cartilage hydration, and periarticular muscle tone. These changes are progressive with age and positively correlated with sitting duration."
-          source="Biomechanics Research Team"
-          publication="Journal of Musculoskeletal Aging"
-          year="2024"
-        />
-
-        <PremiumCTA
+<PremiumCTA
           headline="Want to ease the sitting-to-standing transition?"
           text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help prepare your knees before standing, making the first steps of the day more comfortable."
         />
@@ -156,12 +142,6 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
         <p>
           Age-related muscle loss (sarcopenia) begins as early as the mid-30s and accelerates after 50. The quadriceps, which are the primary muscles responsible for powering you from a seated to standing position, may lose both strength and the speed at which they can contract. This means the standing-up movement requires more effort and places more stress on the joint structures, contributing to discomfort. Learning <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen knees</Link> can help counteract this age-related decline.
         </p>
-
-        <StatHighlight
-          stat="40%"
-          label="reduction in quadriceps strength between ages 40 and 70"
-          description="This muscle loss directly affects the ability to stand up comfortably from seated positions"
-        />
 
         <h2>Pain Differences: Sitting on Soft vs Firm Surfaces</h2>
         <p>
@@ -308,16 +288,7 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
           <img src={sectionStandupSequence} alt="Three-stage sequence showing the transition from seated to half-standing to fully standing with highlighted knee joint" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">The sitting-to-standing transition places significant demands on the knee joint, especially when muscles are cold and fluid has settled</figcaption>
         </figure>
-
-        <JournalQuote
-          quote="Brief seated exercises performed every 20 to 30 minutes during prolonged sitting periods can reduce subjective knee stiffness by up to 40% in adults over 50. The key finding is that movement frequency matters more than movement intensity."
-          source="Rehabilitation Science Team"
-          publication="Clinical Journal of Joint Health"
-          year="2025"
-        />
-
-
-        <h2>When to Consider Professional Guidance</h2>
+<h2>When to Consider Professional Guidance</h2>
         <p>
           While knee stiffness after sitting is common and usually manageable with daily habits, certain patterns warrant attention from a healthcare provider. Consider seeking professional guidance if:
         </p>

@@ -54,12 +54,12 @@ export const sharpKneePainCauses: ArticleExport = {
 
         <h3>4. Inflammatory Flare-Ups</h3>
         <p>
-          Conditions like osteoarthritis or gout can cause intermittent inflammatory flare-ups that produce sharp pain during active periods and then subside. These flare-ups are often triggered by activity levels, <Link to="/guides/cold-weather-knee-pain" className="text-primary hover:underline">weather changes</Link>, dietary factors, or stress. For broader context on what makes discomfort worse, see our guide on <Link to="/guides/what-makes-knee-pain-worse" className="text-primary hover:underline">what makes knee pain worse</Link>.
+          Conditions like osteoarthritis or gout can cause intermittent inflammatory flare-ups that produce sharp pain during active periods and then subside. These flare-ups are often triggered by activity levels, <Link to="/guides/cold-weather-knee-pain" className="text-primary hover:underline">weather changes</Link>, dietary factors, or stress. For broader context on what makes discomfort worse, see our guide on <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">what makes knee pain worse</Link>.
         </p>
 
         <h3>5. IT Band Syndrome</h3>
         <p>
-          The iliotibial (IT) band runs from your hip to your shin along the outside of your thigh. When it becomes tight or inflamed, it can cause sharp pain on the outside of the knee, particularly during activities like running, cycling, or <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">going downstairs</Link>. For more on outer knee patterns, see our <Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT band syndrome guide</Link> and <Link to="/guides/side-of-knee-pain-explained" className="text-primary hover:underline">side knee pain overview</Link>.
+          The iliotibial (IT) band runs from your hip to your shin along the outside of your thigh. When it becomes tight or inflamed, it can cause sharp pain on the outside of the knee, particularly during activities like running, cycling, or <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">going downstairs</Link>. For more on outer knee patterns, see our <Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT band syndrome guide</Link> and <Link to="/guides/side-knee-pain-comfort-guide" className="text-primary hover:underline">side knee pain overview</Link>.
         </p>
 
         <h3>6. Nerve-Related Pain</h3>

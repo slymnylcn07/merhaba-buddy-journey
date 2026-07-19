@@ -56,7 +56,7 @@ export const sharpStabbingKneePainComfort: ArticleExport = {
           <li><strong>Late in the day:</strong> After hours of accumulated activity, the knee may feel more reactive in the evening</li>
         </ul>
         <p>
-          If you notice that your discomfort tends to be <Link to="/guides/knee-pain-worse-at-night" className="text-primary hover:underline">worse at night</Link>, our guide on nighttime knee comfort covers specific evening strategies.
+          If you notice that your discomfort tends to be <Link to="/guides/why-do-my-knees-hurt-when-sleeping" className="text-primary hover:underline">worse at night</Link>, our guide on nighttime knee comfort covers specific evening strategies.
         </p>
 
         <h2>At-Home Comfort Strategies That People Find Helpful</h2>
@@ -121,7 +121,7 @@ export const sharpStabbingKneePainComfort: ArticleExport = {
           <li><strong>Evening wind-down:</strong> A relaxing warmth and vibration session before bed to help your knees settle for the night</li>
         </ol>
         <p>
-          Our guide on <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">building a daily knee comfort routine</Link> covers this framework in more detail.
+          Our guide on <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">building a daily knee comfort routine</Link> covers this framework in more detail.
         </p>
 
         <h2>Final Thoughts</h2>

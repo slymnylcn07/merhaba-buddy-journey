@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -74,12 +73,6 @@ const kneePainDuringYoga: ArticleExport = {
         <p>
           The reality is that several common yoga poses place significant mechanical demands on the knee joint. When flexibility limitations, alignment issues, or insufficient mobility in the hips and ankles are present, the knee often becomes the point where stress accumulates. For anyone exploring <strong>yoga for knee pain</strong> management, understanding why this happens is the first step toward a more comfortable practice.
         </p>
-
-        <StatHighlight
-          stat="62%"
-          label="of yoga practitioners report knee discomfort at some point"
-          description="Making it one of the most common yoga-related joint concerns"
-        />
 
         {/* Section 1: Why yoga can stress the knee */}
         <h2>Why Yoga Can Sometimes Stress the Knee Joint</h2>
@@ -371,12 +364,6 @@ const kneePainDuringYoga: ArticleExport = {
         <p>
           Enthusiasm is wonderful, but overstretching in the first weeks of yoga is one of the most common causes of knee discomfort. The body hasn't yet developed the neuromuscular control needed to protect the joint during deep poses, and forcing depth before this control develops leaves the knee vulnerable to excessive stress. This pattern is similar to what happens with <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link> in general.
         </p>
-
-        <StatHighlight
-          stat="3 to 4×"
-          label="higher knee discomfort rates in first-year yoga practitioners"
-          description="Compared to those with 3+ years of regular practice"
-        />
 
         {/* Section 7: Daily habits for knee comfort */}
         <h2>Daily Habits That Support Knee Comfort During Yoga Practice</h2>

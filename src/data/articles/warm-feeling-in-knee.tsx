@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -63,12 +63,6 @@ const article = {
       <p>
         The knee joint is one of the busiest joints in the body, bending, straightening, and bearing weight thousands of times each day. With all this activity, it's natural for the knee to occasionally feel warm. But when that warmth becomes noticeable or persistent, it's worth understanding what your body may be telling you.
       </p>
-
-      <StatHighlight
-        stat="70%"
-        label="of adults notice occasional knee warmth after activity"
-        description="Making it one of the most common knee sensations reported"
-      />
 
       <p>
         In this guide, we'll explore the everyday reasons why knees may feel warm, what role circulation and joint activity play, and practical strategies that may help support comfortable, healthy knee movement.
@@ -308,7 +302,7 @@ const article = {
 
       <h3>Move Regularly Throughout the Day</h3>
       <p>
-        Avoid prolonged periods of sitting or standing in one position. Taking brief movement breaks every 30-45 minutes helps maintain healthy circulation and joint lubrication, reducing the likelihood of stiffness and warmth when you do move. For insights on what happens inside the knee during long periods of sitting, see our guide on <Link to="/guides/knee-pain-location-map-2026" className="text-primary hover:underline">knee pain location mapping</Link>.
+        Avoid prolonged periods of sitting or standing in one position. Taking brief movement breaks every 30-45 minutes helps maintain healthy circulation and joint lubrication, reducing the likelihood of stiffness and warmth when you do move. For insights on what happens inside the knee during long periods of sitting, see our guide on <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee pain location mapping</Link>.
       </p>
 
       <h3>Choose Joint-Friendly Activities</h3>

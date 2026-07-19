@@ -1,5 +1,4 @@
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
-import { Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 
 // Chart color palette
@@ -270,13 +269,6 @@ export const InfoBox = ({ title, children }: { title: string; children: React.Re
   </div>
 );
 
-export const StatHighlight = ({ stat, label, description }: { stat: string; label: string; description?: string }) => (
-  <div className="bg-muted/30 rounded-xl p-6 my-6 text-center border border-border/30">
-    <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat}</div>
-    <div className="text-foreground font-medium mb-1">{label}</div>
-    {description && <div className="text-sm text-muted-foreground">{description}</div>}
-  </div>
-);
 
 export const TipsList = ({ tips, title, items }: { tips?: string[]; title?: string; items?: string[] }) => {
   const listItems = items || tips || [];
@@ -298,34 +290,6 @@ export const TipsList = ({ tips, title, items }: { tips?: string[]; title?: stri
     </div>
   );
 };
-
-// Journal/Research Quote Component
-export const JournalQuote = ({ 
-  quote, 
-  source, 
-  publication,
-  year 
-}: { 
-  quote: string; 
-  source: string; 
-  publication: string;
-  year?: string;
-}) => (
-  <blockquote className="bg-muted/20 rounded-xl p-6 my-8 border-l-4 border-primary relative">
-    <Quote className="absolute top-4 right-4 h-8 w-8 text-muted-foreground/20" />
-    <p className="text-foreground font-light leading-relaxed italic mb-4 pr-8">
-      "{quote}"
-    </p>
-    <footer className="text-sm">
-      <cite className="not-italic">
-        <span className="text-muted-foreground">{source}</span>
-        <span className="text-primary font-medium block mt-1">
-          {publication}{year && `, ${year}`}
-        </span>
-      </cite>
-    </footer>
-  </blockquote>
-);
 
 // Related Guides Card Component
 export const RelatedGuideCard = ({ 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList, JournalQuote } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-night-knee-pain-40.jpg";
 import sectionNightStiffnessCycle from "@/assets/article-section-night-stiffness-cycle.jpg";
 import sectionSleepingPositionsImpact from "@/assets/article-section-sleeping-positions-impact.jpg";
@@ -71,12 +71,6 @@ const article = {
         This isn't random. There's a clear biological pattern behind why knees hurt at night, and understanding it can help you take simple steps to improve your nighttime comfort.
       </p>
 
-      <StatHighlight
-        stat="65%"
-        label="of adults over 50 report knee discomfort that worsens at night"
-        description="Making nighttime knee pain one of the most common age-related joint concerns"
-      />
-
       <p>
         Unlike the general guide on <Link to="/guides/why-do-my-knees-hurt-when-sleeping" className="text-primary hover:underline">why knees hurt when sleeping</Link>, this article focuses specifically on how aging affects nighttime knee comfort and what adults 40+ can do differently.
       </p>
@@ -134,15 +128,7 @@ const article = {
           Age-related joint changes: healthy vs aging knee joint comparison
         </figcaption>
       </figure>
-
-      <JournalQuote
-        quote="The knee joint experiences cumulative microtrauma throughout adulthood. By the fifth decade, most adults show measurable cartilage thinning, which correlates with increased reports of nocturnal joint discomfort and stiffness."
-        source="Research Team"
-        publication="Journal of Aging and Musculoskeletal Health"
-        year="2024"
-      />
-
-      <p>
+<p>
         For a deeper understanding of how age changes your joints, read our guide on <Link to="/guides/why-knee-pain-gets-worse-with-age" className="text-primary hover:underline">why knee pain gets worse with age</Link>.
       </p>
 
@@ -192,12 +178,12 @@ const article = {
         Outer knee discomfort at night frequently relates to IT band tightness or lateral joint stress from the day's activities. Runners, walkers, and people who spend long hours standing often notice this pattern. The IT band tends to tighten overnight, creating a pulling sensation on the outer knee.
       </p>
       <p>
-        Learn more about outer knee patterns in our <Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT band syndrome guide</Link>.
+        Learn more about outer knee patterns in our <Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT band syndrome guide</Link>.
       </p>
 
       <h3>Back of Knee Night Pain</h3>
       <p>
-        Pain behind the knee at night often relates to fluid pooling in the popliteal area (behind the knee). Adults over 40 may notice a feeling of fullness, pressure, or tightness behind the knee when lying down, as fluid gravitates to this area during rest. This is covered in more detail in our <Link to="/guides/back-of-knee-pain-common" className="text-primary hover:underline">back-of-knee pain guide</Link>.
+        Pain behind the knee at night often relates to fluid pooling in the popliteal area (behind the knee). Adults over 40 may notice a feeling of fullness, pressure, or tightness behind the knee when lying down, as fluid gravitates to this area during rest. This is covered in more detail in our <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back-of-knee pain guide</Link>.
       </p>
 
       <h2>Sleeping Positions That Increase Night Knee Pain</h2>

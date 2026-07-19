@@ -377,7 +377,7 @@ const article = {
 
       <h3>Monitor Your Posture</h3>
       <p>
-        How you sit and stand affects how your leg muscles and circulation function. Sitting with your legs crossed, standing with locked knees, or adopting other sustained positions can restrict circulation and contribute to heaviness. Being mindful of your posture throughout the day helps maintain healthy blood flow. For understanding how different knee sensations map to specific areas, check our <Link to="/guides/knee-pain-location-map-2026" className="text-primary hover:underline">knee pain location guide</Link>.
+        How you sit and stand affects how your leg muscles and circulation function. Sitting with your legs crossed, standing with locked knees, or adopting other sustained positions can restrict circulation and contribute to heaviness. Being mindful of your posture throughout the day helps maintain healthy blood flow. For understanding how different knee sensations map to specific areas, check our <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee pain location guide</Link>.
       </p>
 
       <h2>When Knee Heaviness Should Be Evaluated</h2>

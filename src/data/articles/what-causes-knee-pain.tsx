@@ -82,7 +82,7 @@ export const whatCausesKneePain: ArticleExport = {
           <strong>Pain behind the knee</strong> (also called <strong>back of knee pain</strong>) can feel like tightness, pressure, or a deep ache. It's often influenced by hamstring tension, calf tightness, or fluid accumulation behind the joint (sometimes called a Baker's cyst).
         </p>
         <p>
-          This type of discomfort frequently appears after prolonged sitting or when straightening the leg fully. For a deeper look, see our <a href="/guides/back-of-knee-pain-explained">back of knee pain guide</a> and <a href="/guides/back-of-knee-pain-common">common posterior knee patterns</a>.
+          This type of discomfort frequently appears after prolonged sitting or when straightening the leg fully. For a deeper look, see our <a href="/guides/back-of-knee-pain-explained">back of knee pain guide</a> and <a href="/guides/back-of-knee-pain-explained">common posterior knee patterns</a>.
         </p>
 
         <h3>Inner (Medial) Knee Pain</h3>
@@ -106,7 +106,7 @@ export const whatCausesKneePain: ArticleExport = {
           Outer knee discomfort is frequently linked to the iliotibial (IT) band, which runs along the outside of the thigh and can create friction where it crosses the knee joint. This is especially common in runners and cyclists.
         </p>
         <p>
-          The lateral collateral ligament (LCL) and lateral meniscus can also contribute. Learn more in our <a href="/guides/it-band-syndrome-explained">IT band syndrome guide</a>.
+          The lateral collateral ligament (LCL) and lateral meniscus can also contribute. Learn more in our <a href="/guides/it-band-pain-location-diagram">IT band syndrome guide</a>.
         </p>
 
         <PremiumCTA
@@ -228,7 +228,7 @@ export const whatCausesKneePain: ArticleExport = {
             <tbody>
               <tr><td className="border border-border/50 p-3 font-medium">Stiffness after sitting</td><td className="border border-border/50 p-3">Movement breaks, morning warm-up</td><td className="border border-border/50 p-3"><a href="/guides/why-do-my-knees-feel-tight-after-resting">Stiffness after resting</a></td></tr>
               <tr className="bg-muted/20"><td className="border border-border/50 p-3 font-medium">Pain going up stairs</td><td className="border border-border/50 p-3">Quad strengthening, kneecap mobility</td><td className="border border-border/50 p-3"><a href="/guides/front-knee-tightness-after-activity">Front knee tightness</a></td></tr>
-              <tr><td className="border border-border/50 p-3 font-medium">Nighttime knee discomfort</td><td className="border border-border/50 p-3">Evening warmth routine, pillow support</td><td className="border border-border/50 p-3"><a href="/guides/knee-pain-worse-at-night">Night knee pain guide</a></td></tr>
+              <tr><td className="border border-border/50 p-3 font-medium">Nighttime knee discomfort</td><td className="border border-border/50 p-3">Evening warmth routine, pillow support</td><td className="border border-border/50 p-3"><a href="/guides/why-do-my-knees-hurt-when-sleeping">Night knee pain guide</a></td></tr>
               <tr className="bg-muted/20"><td className="border border-border/50 p-3 font-medium">Pain after standing all day</td><td className="border border-border/50 p-3">Supportive shoes, calf stretches</td><td className="border border-border/50 p-3"><a href="/guides/knee-pain-after-standing">Standing knee pain</a></td></tr>
               <tr><td className="border border-border/50 p-3 font-medium">Running-related discomfort</td><td className="border border-border/50 p-3">Proper shoes, gradual training, recovery</td><td className="border border-border/50 p-3"><a href="/guides/running-knee-pain-guide">Running knee pain</a></td></tr>
               <tr className="bg-muted/20"><td className="border border-border/50 p-3 font-medium">Morning stiffness</td><td className="border border-border/50 p-3">Gentle movement, warmth before activity</td><td className="border border-border/50 p-3"><a href="/guides/daily-knee-care-routine">Daily knee care</a></td></tr>
@@ -268,7 +268,7 @@ export const whatCausesKneePain: ArticleExport = {
 
         <h2>Related Guides</h2>
         <ul>
-          <li><a href="/guides/pain-in-the-knee-causes-locations">Pain in the Knee: Common Causes & Locations</a></li>
+          <li><a href="/guides/knee-pain-locations-visual-guide">Pain in the Knee: Common Causes & Locations</a></li>
           <li><a href="/guides/knee-pain-locations-visual-guide">Knee Pain Locations: A Visual Guide</a></li>
           <li><a href="/guides/knee-pain-exercises-guide">Best Knee Pain Exercises for Strength & Mobility</a></li>
           <li><a href="/guides/how-to-strengthen-knees">How to Strengthen Knees for Daily Support</a></li>

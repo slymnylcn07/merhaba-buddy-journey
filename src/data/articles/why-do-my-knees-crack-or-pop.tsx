@@ -1,7 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
-import { JournalQuote, StatHighlight, TipsList, InfoBox } from "@/components/ArticleCharts";
+import { TipsList, InfoBox } from "@/components/ArticleCharts";
 import { KneeCrackingCausesChart, KneeSoundTypesChart } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-cracking-crepitus.jpg";
 import sectionSquatForm from "@/assets/article-section-knee-squat-form.jpg";
@@ -77,7 +77,7 @@ export const whyDoMyKneesCrackOrPop: ArticleExport = {
           Not all crepitus sounds are the same, and understanding the differences can help you assess your own knee sounds more accurately:
         </p>
         <ul>
-          <li><strong>Painless popping or clicking</strong>: Usually caused by gas bubble release or tendon movement. This is the most common type and is generally not a concern. For more on this pattern, see our guide on <Link to="/guides/clicking-knee-without-pain" className="text-primary hover:underline">clicking knee without pain</Link>.</li>
+          <li><strong>Painless popping or clicking</strong>: Usually caused by gas bubble release or tendon movement. This is the most common type and is generally not a concern. For more on this pattern, see our guide on <Link to="/guides/why-do-my-knees-crack-or-pop" className="text-primary hover:underline">clicking knee without pain</Link>.</li>
           <li><strong>Grinding or crunching sensation</strong>: Often related to cartilage surface changes. This type may feel like sandpaper rubbing within the joint and can be more noticeable during certain movements.</li>
           <li><strong>Catching or locking</strong>: Occasionally, knee sounds may be accompanied by a sensation that the knee briefly catches or locks during movement. This pattern is less common and may warrant professional evaluation.</li>
         </ul>
@@ -86,12 +86,6 @@ export const whyDoMyKneesCrackOrPop: ArticleExport = {
         <p>
           The vast majority of knee crepitus is considered normal and does not require any intervention. Studies suggest that up to 99% of knees produce some form of crepitus during movement, meaning that having completely silent knees is actually the exception rather than the rule. If your knee clicking or popping is not accompanied by discomfort, swelling, instability, or changes in your ability to move normally, it is almost certainly within the range of normal joint behavior.
         </p>
-
-        <StatHighlight 
-          stat="99%" 
-          label="of healthy knees produce some form of crepitus" 
-          description="Making knee sounds one of the most common and normal joint phenomena"
-        />
 
         <figure className="my-8">
           <img src={sectionStandingUp} alt="Person standing up from a chair demonstrating common knee movement patterns" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
@@ -140,15 +134,7 @@ export const whyDoMyKneesCrackOrPop: ArticleExport = {
         <p>
           If your knees crack specifically when you first bend them after waking up or after sitting, the mechanism is closely related to fluid dynamics. During rest, the synovial fluid becomes less actively circulated, and the joint's natural lubrication is at its lowest efficiency. The first bending motion redistributes this fluid and releases accumulated gas, producing sounds that typically diminish after a few repetitions of the movement.
         </p>
-
-        <JournalQuote
-          quote="Crepitus in the absence of pain is a common finding in knee joints across all age groups and does not independently predict the development of symptomatic joint changes. Joint sound production is a normal physiological phenomenon."
-          source="Lo GH, Strayhorn MT, Driban JB, et al."
-          publication="Arthritis Care & Research"
-          year="2018"
-        />
-
-        <PremiumCTA
+<PremiumCTA
           headline="Looking for daily knee comfort support?"
           text="FlexiKnee provides gentle warmth and vibration to help keep your knee joints comfortable and supported through everyday movements."
         />
@@ -185,7 +171,7 @@ export const whyDoMyKneesCrackOrPop: ArticleExport = {
 
         <h3>Knee Clicking</h3>
         <p>
-          Clicking is typically a soft, repetitive sound that occurs consistently at a specific point in the knee's range of motion. It is most often caused by a tendon or ligament sliding over a bony prominence. Knee clicking is very common and is rarely associated with any structural concern. Many people notice it most during walking, stair climbing, or gentle bending motions. Those who experience <Link to="/guides/pain-in-the-knee-causes-locations" className="text-primary hover:underline">knee discomfort in specific locations</Link> sometimes notice clicking in the corresponding area.
+          Clicking is typically a soft, repetitive sound that occurs consistently at a specific point in the knee's range of motion. It is most often caused by a tendon or ligament sliding over a bony prominence. Knee clicking is very common and is rarely associated with any structural concern. Many people notice it most during walking, stair climbing, or gentle bending motions. Those who experience <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee discomfort in specific locations</Link> sometimes notice clicking in the corresponding area.
         </p>
 
         <h3>Knee Popping</h3>
@@ -207,7 +193,7 @@ export const whyDoMyKneesCrackOrPop: ArticleExport = {
 
         <h3>Meniscus-Related Sounds</h3>
         <p>
-          The meniscus is a C-shaped piece of cartilage that sits between the thighbone and shinbone, acting as a shock absorber. When the meniscus undergoes changes from wear or specific incidents, it can sometimes produce a distinct catching or clicking sound during movement. This type of sound often occurs at a specific angle of knee bend and may feel like the knee briefly catches before continuing the movement. People who notice sounds specifically at the <Link to="/guides/side-of-knee-pain-explained" className="text-primary hover:underline">side of the knee</Link> or <Link to="/guides/back-of-knee-pain-common" className="text-primary hover:underline">behind the knee</Link> may want to pay attention to whether the sounds are consistent and predictable.
+          The meniscus is a C-shaped piece of cartilage that sits between the thighbone and shinbone, acting as a shock absorber. When the meniscus undergoes changes from wear or specific incidents, it can sometimes produce a distinct catching or clicking sound during movement. This type of sound often occurs at a specific angle of knee bend and may feel like the knee briefly catches before continuing the movement. People who notice sounds specifically at the <Link to="/guides/side-knee-pain-comfort-guide" className="text-primary hover:underline">side of the knee</Link> or <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">behind the knee</Link> may want to pay attention to whether the sounds are consistent and predictable.
         </p>
 
         <h3>Knee Tendinitis and Joint Sounds</h3>
@@ -245,7 +231,7 @@ export const whyDoMyKneesCrackOrPop: ArticleExport = {
 
         <h3>Post-Sitting Knee Cracking</h3>
         <p>
-          The same principles apply after extended sitting. Whether you work at a desk, drive for long periods, or sit during meals and leisure time, your knees experience the same fluid and gas changes that occur during sleep, just on a smaller scale. This is why your knees may crack when you stand up from your office chair, get out of the car, or rise from the couch. For people who also experience <Link to="/guides/knee-pain-worse-at-night" className="text-primary hover:underline">increased knee awareness at night</Link>, these patterns often overlap.
+          The same principles apply after extended sitting. Whether you work at a desk, drive for long periods, or sit during meals and leisure time, your knees experience the same fluid and gas changes that occur during sleep, just on a smaller scale. This is why your knees may crack when you stand up from your office chair, get out of the car, or rise from the couch. For people who also experience <Link to="/guides/why-do-my-knees-hurt-when-sleeping" className="text-primary hover:underline">increased knee awareness at night</Link>, these patterns often overlap.
         </p>
 
         <TipsList tips={[
@@ -313,24 +299,16 @@ export const whyDoMyKneesCrackOrPop: ArticleExport = {
         <p>
           If you do seek professional guidance for knee cracking, the evaluation typically includes a physical examination of the knee's range of motion, stability tests, and an assessment of how the kneecap tracks during movement. Imaging is usually not necessary for knee cracking alone but may be recommended if other symptoms are present. The purpose of the evaluation is to rule out structural considerations and provide personalized guidance for your specific situation.
         </p>
-
-        <JournalQuote
-          quote="Self-reported joint cracking without pain is not associated with an increased risk of developing knee osteoarthritis. Clinicians should reassure patients that painless crepitus is a common, benign finding."
-          source="Pazzinatto MF, de Oliveira Silva D, Barton C, et al."
-          publication="British Journal of Sports Medicine"
-          year="2022"
-        />
-
-        <h2>Explore More Knee Comfort Guides</h2>
+<h2>Explore More Knee Comfort Guides</h2>
         <p>
           Understanding why your knees crack is just one part of supporting your overall knee comfort. We have created a comprehensive library of guides covering every aspect of daily knee wellness. Here are some that may be particularly relevant:
         </p>
         <ul>
-          <li><Link to="/guides/pain-in-the-knee-causes-locations" className="text-primary hover:underline">Pain in the Knee: Common Causes, Locations, and What Helps</Link> — A complete overview of knee discomfort patterns</li>
+          <li><Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">Pain in the Knee: Common Causes, Locations, and What Helps</Link> — A complete overview of knee discomfort patterns</li>
           <li><Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">Knee Pain Locations Explained: A Visual Guide</Link> — Understand where different types of discomfort originate</li>
           <li><Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">How to Strengthen Knees for Better Daily Support</Link> — Practical exercises for long-term knee resilience</li>
           <li><Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">Daily Knee Care Routine: Simple Habits for Long-Term Comfort</Link> — Build sustainable daily habits for knee wellness</li>
-          <li><Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT Band Syndrome Explained</Link> — Why outer knee sensations happen and what helps</li>
+          <li><Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT Band Syndrome Explained</Link> — Why outer knee sensations happen and what helps</li>
         </ul>
               <h2>Painless Clicking: What the Sound Usually Means</h2>
         <p>

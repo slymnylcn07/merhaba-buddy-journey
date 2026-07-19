@@ -138,11 +138,11 @@ const WhyFlexiKnee = () => {
     },
     {
       question: "How do I use FlexiKnee?",
-      answer: "Simply wrap FlexiKnee around your knee, secure the adjustable straps, and use the simple controls to select your preferred heat and vibration settings. It's designed to be intuitive, most users are comfortable within seconds."
+      answer: "Simply wrap FlexiKnee around your knee, secure the adjustable straps, and use the simple controls to select your preferred heat and vibration settings. The controls are designed to be straightforward. Follow the included manual, begin with a comfortable setting, and stop if the device feels uncomfortable."
     },
     {
       question: "How long is a typical session?",
-      answer: "Most users enjoy sessions of 15–20 minutes. You can use it multiple times a day based on your comfort level and routine."
+      answer: "Use the session length and frequency stated in the included manual. Begin conservatively, check your skin and comfort, and stop if you notice irritation, numbness, or unusual discomfort."
     },
     {
       question: "Is it rechargeable?",

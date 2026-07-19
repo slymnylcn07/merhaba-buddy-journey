@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -71,12 +70,6 @@ const kneePainHiking: ArticleExport = {
         <p>
           Understanding why hiking creates this unique stress, and what you can do about it, is the first step toward enjoying trails with greater comfort and confidence.
         </p>
-
-        <StatHighlight
-          stat="Up to 8x"
-          label="body weight in force can pass through the knee during steep downhill hiking"
-          description="Compared to roughly 3x body weight during level walking"
-        />
 
         {/* Section 1 */}
         <h2>Why Hiking Places Unique Stress on the Knee Joint</h2>

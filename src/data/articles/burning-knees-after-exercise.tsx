@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -207,11 +206,6 @@ export const burningKneesAfterExercise: ArticleExport = {
           Understanding what your knee is telling you starts with recognizing the differences between types of discomfort. Not all post-exercise knee pain is the same, and the character of the sensation can provide useful clues about what is happening inside the joint.
         </p>
 
-        <StatHighlight
-          stat="Burning"
-          label="Typically diffuse, gradual onset, associated with overuse and recovery"
-        />
-
         <h3>Burning vs Sharp Pain</h3>
 
         <p>
@@ -383,7 +377,7 @@ export const burningKneesAfterExercise: ArticleExport = {
             </Link> explores why delayed knee pain occurs and what the body's recovery process involves.
           </li>
           <li>
-            <Link to="/guides/post-exercise-knee-pain-guide" className="text-primary underline hover:no-underline">
+            <Link to="/guides/knee-pain-after-exercise" className="text-primary underline hover:no-underline">
               Knee Pain After Exercise: When It's Normal and When It Isn't
             </Link> helps distinguish between common post-workout soreness and signals that deserve attention.
           </li>

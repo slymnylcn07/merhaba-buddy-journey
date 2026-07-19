@@ -5,6 +5,7 @@ import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
 import { BadgeCheck, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { PaymentOptionsRow } from "@/components/PaymentLogos";
 import { OFFICIAL_FACEBOOK_URL, OFFICIAL_INSTAGRAM_URL } from "@/lib/brand-config";
+import { resetCookieConsent } from "@/lib/cookie-consent";
 
 export const Footer = () => {
   return (
@@ -52,6 +53,7 @@ export const Footer = () => {
                 <li><Link to="/privacy-policy" className="hover:text-blue-600">Privacy Policy</Link></li>
                 <li><Link to="/terms-of-service" className="hover:text-blue-600">Terms of Service</Link></li>
                 <li><Link to="/editorial-team" className="hover:text-blue-600">Editorial Team</Link></li>
+                <li><button type="button" onClick={resetCookieConsent} className="hover:text-blue-600">Cookie Settings</button></li>
               </ul>
             </div>
             <div>

@@ -1,7 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
-import { JournalQuote, StatHighlight, TipsList, InfoBox } from "@/components/ArticleCharts";
+import { TipsList, InfoBox } from "@/components/ArticleCharts";
 import { SittingKneePainCausesChart, SittingPositionImpactChart } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-pain-sitting-cross-legged.jpg";
 import sectionBackKneeSitting from "@/assets/article-section-back-knee-sitting.jpg";
@@ -39,7 +39,7 @@ export const kneePainAfterSittingCrossLegged: ArticleExport = {
 
         <h3>What Happens Inside the Knee During Cross-Legged Sitting</h3>
         <p>
-          When you sit cross-legged, your knee enters a combination of deep flexion (bending) and external rotation. This dual movement compresses the structures at the back of the knee while simultaneously stretching the inner (medial) knee ligaments. The kneecap is pressed more firmly against the femoral groove, and the meniscus experiences asymmetric loading. For people who already experience <Link to="/guides/pain-in-the-knee-causes-locations" className="text-primary hover:underline">knee discomfort in specific locations</Link>, this loading pattern can amplify existing sensitivities.
+          When you sit cross-legged, your knee enters a combination of deep flexion (bending) and external rotation. This dual movement compresses the structures at the back of the knee while simultaneously stretching the inner (medial) knee ligaments. The kneecap is pressed more firmly against the femoral groove, and the meniscus experiences asymmetric loading. For people who already experience <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee discomfort in specific locations</Link>, this loading pattern can amplify existing sensitivities.
         </p>
         <p>
           The key factors that contribute to knee pain when sitting cross-legged include:
@@ -66,7 +66,7 @@ export const kneePainAfterSittingCrossLegged: ArticleExport = {
 
         <h3>Anatomy of the Posterior Knee</h3>
         <p>
-          The back of the knee, known as the popliteal fossa, is a junction where several important structures converge: the hamstring tendons (biceps femoris, semitendinosus, and semimembranosus), the gastrocnemius muscle origins, popliteal blood vessels, and the posterior joint capsule. When the knee is bent during sitting, all of these structures are compressed together. Our detailed guide on <Link to="/guides/back-of-knee-pain-common" className="text-primary hover:underline">back of knee discomfort patterns</Link> explores this anatomy in greater depth.
+          The back of the knee, known as the popliteal fossa, is a junction where several important structures converge: the hamstring tendons (biceps femoris, semitendinosus, and semimembranosus), the gastrocnemius muscle origins, popliteal blood vessels, and the posterior joint capsule. When the knee is bent during sitting, all of these structures are compressed together. Our detailed guide on <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back of knee discomfort patterns</Link> explores this anatomy in greater depth.
         </p>
 
         <h3>Why Pain Behind Knee After Sitting Is So Frequent</h3>
@@ -78,12 +78,6 @@ export const kneePainAfterSittingCrossLegged: ArticleExport = {
           <img src={sectionBackKneeSitting} alt="Anatomical view of the knee joint showing structures affected during seated positions" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">The posterior knee contains multiple structures that are compressed during prolonged sitting</figcaption>
         </figure>
-
-        <StatHighlight 
-          stat="68%" 
-          label="of office workers report knee stiffness after sitting" 
-          description="Making seated knee discomfort one of the most common workplace complaints"
-        />
 
         <h2>Knee Stiffness After Sitting</h2>
         <p>
@@ -129,15 +123,7 @@ export const kneePainAfterSittingCrossLegged: ArticleExport = {
           <li>Strengthen your quadriceps, particularly the vastus medialis (inner quad), to improve kneecap tracking</li>
           <li>Use a footrest if your chair is too high, preventing your knees from hanging in deep flexion</li>
         </ul>
-
-        <JournalQuote
-          quote="Prolonged knee flexion during sitting increases patellofemoral joint stress and is a significant contributor to anterior knee pain in sedentary populations. Regular position changes and quadriceps strengthening are recommended as first-line comfort strategies."
-          source="Crossley KM, van Middelkoop M, Callaghan MJ, et al."
-          publication="British Journal of Sports Medicine"
-          year="2016"
-        />
-
-        <PremiumCTA
+<PremiumCTA
           headline="Looking for daily knee comfort support?"
           text="FlexiKnee provides gentle warmth and vibration to help your knees feel more comfortable and supported, especially after prolonged sitting periods."
         />
@@ -168,7 +154,7 @@ export const kneePainAfterSittingCrossLegged: ArticleExport = {
 
         <h3>Cross-Legged on the Floor</h3>
         <p>
-          This is one of the most stressful positions for the knee joint, combining deep flexion with external rotation. Both the inner and back of knee structures are under sustained load, and the kneecap is pressed firmly against the thighbone. People who experience <Link to="/guides/side-of-knee-pain-explained" className="text-primary hover:underline">inner or outer knee discomfort</Link> may find this position particularly aggravating.
+          This is one of the most stressful positions for the knee joint, combining deep flexion with external rotation. Both the inner and back of knee structures are under sustained load, and the kneecap is pressed firmly against the thighbone. People who experience <Link to="/guides/side-knee-pain-comfort-guide" className="text-primary hover:underline">inner or outer knee discomfort</Link> may find this position particularly aggravating.
         </p>
 
         <h3>Kneeling or Sitting on Your Heels</h3>
@@ -248,17 +234,9 @@ export const kneePainAfterSittingCrossLegged: ArticleExport = {
 
         <h3>Supporting Your Knees Through Habit Changes</h3>
         <p>
-          If you notice any of the patterns above, consider making gradual adjustments to your sitting habits. This might include reducing the total time spent cross-legged, investing in an ergonomic chair, incorporating daily knee-strengthening exercises, or applying warmth to your knees before and after extended sitting periods. People who also experience <Link to="/guides/knee-pain-worse-at-night" className="text-primary hover:underline">increased knee awareness at night</Link> may find that improving their daytime sitting habits has a positive ripple effect on nighttime comfort as well.
+          If you notice any of the patterns above, consider making gradual adjustments to your sitting habits. This might include reducing the total time spent cross-legged, investing in an ergonomic chair, incorporating daily knee-strengthening exercises, or applying warmth to your knees before and after extended sitting periods. People who also experience <Link to="/guides/why-do-my-knees-hurt-when-sleeping" className="text-primary hover:underline">increased knee awareness at night</Link> may find that improving their daytime sitting habits has a positive ripple effect on nighttime comfort as well.
         </p>
-
-        <JournalQuote
-          quote="Sustained knee flexion beyond 90 degrees significantly increases intra-articular pressure and reduces patellar cartilage nutrition. Periodic joint movement during seated work is essential for maintaining long-term knee joint health."
-          source="Powers CM, Bolgla LA, Callaghan MJ"
-          publication="Journal of Orthopaedic & Sports Physical Therapy"
-          year="2012"
-        />
-
-        <h2>Everyday Comfort Approaches You Can Try</h2>
+<h2>Everyday Comfort Approaches You Can Try</h2>
         <p>
           Managing knee discomfort after sitting does not require dramatic lifestyle changes. Small, consistent adjustments to your daily habits can produce meaningful improvements in how your knees feel throughout the day.
         </p>
@@ -293,8 +271,8 @@ export const kneePainAfterSittingCrossLegged: ArticleExport = {
           Understanding how sitting affects your knees is one important piece of the overall knee comfort picture. Our library of comprehensive guides covers every aspect of daily knee wellness to help you build a complete comfort strategy.
         </p>
         <ul>
-          <li><Link to="/guides/back-of-knee-pain-common" className="text-primary hover:underline">Back of Knee Pain: What It Means and When It Is Common</Link></li>
-          <li><Link to="/guides/pain-in-the-knee-causes-locations" className="text-primary hover:underline">Pain in the Knee: Common Causes, Locations, and What Helps</Link></li>
+          <li><Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">Back of Knee Pain: What It Means and When It Is Common</Link></li>
+          <li><Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">Pain in the Knee: Common Causes, Locations, and What Helps</Link></li>
           <li><Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">Knee Pain Locations Explained: A Visual Guide</Link></li>
           <li><Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">How to Strengthen Knees for Better Daily Support</Link></li>
           <li><Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">Daily Knee Care Routine: Simple Habits for Long-Term Comfort</Link></li>

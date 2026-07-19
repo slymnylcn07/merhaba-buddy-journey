@@ -1,3 +1,4 @@
+import { hasAnalyticsConsent } from "@/lib/cookie-consent";
 // Meta Pixel (Facebook Pixel) Client-Side Integration
 // This handles client-side event tracking
 
@@ -13,6 +14,7 @@ const META_PIXEL_ID = import.meta.env.VITE_META_PIXEL_ID || '';
 
 // Initialize Meta Pixel - deferred to improve Speed Index
 export const initMetaPixel = (pixelId?: string) => {
+  if (!hasAnalyticsConsent()) return;
   const id = pixelId || META_PIXEL_ID;
   
   if (!id) {
@@ -24,6 +26,7 @@ export const initMetaPixel = (pixelId?: string) => {
   if (window.fbq) return;
 
   const doInit = () => {
+    if (!hasAnalyticsConsent()) return;
     // Facebook Pixel base code
     (function(f: any, b: any, e: any, v: string, n?: any, t?: any, s?: any) {
       if (f.fbq) return;
@@ -49,7 +52,7 @@ export const initMetaPixel = (pixelId?: string) => {
   // Defer pixel loading until first user interaction to reduce unused JS
   let loaded = false;
   const loadOnce = () => {
-    if (loaded) return;
+    if (loaded || !hasAnalyticsConsent()) return;
     loaded = true;
     doInit();
   };
@@ -62,6 +65,7 @@ export const initMetaPixel = (pixelId?: string) => {
 
 // Track PageView
 export const trackMetaPageView = () => {
+  if (!hasAnalyticsConsent()) return;
   if (typeof window.fbq !== 'undefined') {
     window.fbq('track', 'PageView');
   }
@@ -75,6 +79,7 @@ export const trackMetaViewContent = (product: {
   value: number;
   currency: string;
 }) => {
+  if (!hasAnalyticsConsent()) return;
   if (typeof window.fbq !== 'undefined') {
     window.fbq('track', 'ViewContent', {
       content_ids: [product.contentId],
@@ -95,6 +100,7 @@ export const trackMetaAddToCart = (item: {
   currency: string;
   quantity: number;
 }) => {
+  if (!hasAnalyticsConsent()) return;
   if (typeof window.fbq !== 'undefined') {
     window.fbq('track', 'AddToCart', {
       content_ids: [item.contentId],
@@ -114,6 +120,7 @@ export const trackMetaInitiateCheckout = (checkout: {
   currency: string;
   numItems: number;
 }) => {
+  if (!hasAnalyticsConsent()) return;
   if (typeof window.fbq !== 'undefined') {
     window.fbq('track', 'InitiateCheckout', {
       content_ids: checkout.contentIds,
@@ -133,6 +140,7 @@ export const trackMetaPurchase = (purchase: {
   numItems: number;
   orderId?: string;
 }) => {
+  if (!hasAnalyticsConsent()) return;
   if (typeof window.fbq !== 'undefined') {
     window.fbq('track', 'Purchase', {
       content_ids: purchase.contentIds,
@@ -151,6 +159,7 @@ export const trackMetaLead = (data?: {
   value?: number;
   currency?: string;
 }) => {
+  if (!hasAnalyticsConsent()) return;
   if (typeof window.fbq !== 'undefined') {
     window.fbq('track', 'Lead', data || {});
   }
@@ -158,6 +167,7 @@ export const trackMetaLead = (data?: {
 
 // Track Search
 export const trackMetaSearch = (searchQuery: string) => {
+  if (!hasAnalyticsConsent()) return;
   if (typeof window.fbq !== 'undefined') {
     window.fbq('track', 'Search', {
       search_string: searchQuery,
@@ -167,6 +177,7 @@ export const trackMetaSearch = (searchQuery: string) => {
 
 // Track custom events
 export const trackMetaCustomEvent = (eventName: string, params?: Record<string, any>) => {
+  if (!hasAnalyticsConsent()) return;
   if (typeof window.fbq !== 'undefined') {
     window.fbq('trackCustom', eventName, params);
   }

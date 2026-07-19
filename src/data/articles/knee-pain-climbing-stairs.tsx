@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -51,12 +50,6 @@ const articleContent = (
     <p>
       Whether you notice <strong>pain in knee when climbing stairs</strong> after a long day, during your morning routine, or only when going up (not down), this guide explains the biomechanical reasons behind stair-related knee discomfort and shares practical strengthening habits that can help support long-term comfort.
     </p>
-
-    <StatHighlight
-      stat="3–4×"
-      label="your body weight in knee joint load per step on stairs"
-      description="Compared to just 1.5× during flat walking"
-    />
 
     {/* SECTION 1 */}
     <h2>Why Knee Pain Happens When Climbing Stairs but Not Walking</h2>
@@ -243,12 +236,6 @@ const articleContent = (
     <p>
       The good news: targeted strengthening exercises can significantly offset these age-related changes. Building and maintaining muscle around the knee helps compensate for natural cartilage changes and keeps the joint better supported during demanding activities.
     </p>
-
-    <StatHighlight
-      stat="50%"
-      label="of adults over 40 report some knee discomfort on stairs"
-      description="Making it one of the most common age-related joint concerns"
-    />
 
     <p>
       Our guide on <Link to="/guides/knee-pain-after-40" className="text-primary hover:underline">knee pain after 40</Link> explores age-related joint changes in more detail and offers practical strategies for maintaining comfort as you age.

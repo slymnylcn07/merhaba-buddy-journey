@@ -1,7 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
-import { NightKneePainCausesChart, SleepPositionImpactChart, JournalQuote, StatHighlight } from "@/components/ArticleCharts";
+import { NightKneePainCausesChart, SleepPositionImpactChart } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-night-knee-pain.jpg";
 import articleSectionStretching from "@/assets/article-section-stretching-relief.jpg";
 import articleSectionWarmth from "@/assets/article-section-warmth.jpg";
@@ -62,15 +62,7 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
         <p>
           The body uses sleep as its primary recovery period. During rest, inflammatory responses that were modulated during activity can become more active as the body focuses resources on tissue maintenance and repair. For people whose knees are dealing with accumulated daily stress, this nighttime repair activity can produce warmth, throbbing, or aching sensations that are most noticeable when everything else is quiet.
         </p>
-
-        <JournalQuote
-          quote="Nocturnal pain intensity in patients with knee osteoarthritis was significantly associated with reduced sleep quality, with cortisol diurnal rhythm alterations playing a mediating role in the perception of musculoskeletal discomfort during rest."
-          source="Parmelee PA, Tighe CA, Dautovich ND"
-          publication="Arthritis Care & Research"
-          year="2015"
-        />
-
-        <h2>Most Common Causes of Night Knee Pain</h2>
+<h2>Most Common Causes of Night Knee Pain</h2>
         <p>
           While the mechanisms above explain why knee discomfort feels worse at night, the underlying causes of that discomfort vary widely. Here are the most common factors, ranked by how frequently people report them:
         </p>
@@ -79,7 +71,7 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
 
         <h3>1. Joint Stiffness from Daily Wear</h3>
         <p>
-          This is by far the most common cause of nighttime knee discomfort in adults over 35. Years of walking, climbing stairs, exercising, and simply bearing body weight create cumulative effects on the cartilage, tendons, and ligaments within the knee joint. By the end of the day, these structures are at their most fatigued, and lying down does not immediately relieve the tension they have accumulated. For a broader perspective on everyday knee discomfort patterns, our guide on <Link to="/guides/cause-of-knee-pain-patterns" className="text-primary hover:underline">common causes of knee pain</Link> explores these daily factors in detail.
+          This is by far the most common cause of nighttime knee discomfort in adults over 35. Years of walking, climbing stairs, exercising, and simply bearing body weight create cumulative effects on the cartilage, tendons, and ligaments within the knee joint. By the end of the day, these structures are at their most fatigued, and lying down does not immediately relieve the tension they have accumulated. For a broader perspective on everyday knee discomfort patterns, our guide on <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">common causes of knee pain</Link> explores these daily factors in detail.
         </p>
 
         <h3>2. Muscle Tension and Imbalance</h3>
@@ -135,7 +127,7 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
 
         <h2>Why Do the Back of My Knees Hurt at Night?</h2>
         <p>
-          Posterior knee discomfort (behind the knee) at night is a specific pattern that many people report. The area behind the knee is a complex junction where hamstring tendons, calf muscles, and several stabilizing structures converge. Our detailed guide on <Link to="/guides/back-of-knee-pain-common" className="text-primary hover:underline">back-of-knee discomfort patterns</Link> explores this anatomy more thoroughly.
+          Posterior knee discomfort (behind the knee) at night is a specific pattern that many people report. The area behind the knee is a complex junction where hamstring tendons, calf muscles, and several stabilizing structures converge. Our detailed guide on <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back-of-knee discomfort patterns</Link> explores this anatomy more thoroughly.
         </p>
 
         <h3>Why the Back of the Knee Is Vulnerable at Night</h3>
@@ -153,15 +145,7 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
           <li>Avoid tucking your legs tightly when sleeping in the fetal position</li>
           <li>Apply gentle warmth to the back of the knee for 15 to 20 minutes before lying down</li>
         </ul>
-
-        <JournalQuote
-          quote="Prolonged static joint positioning during sleep significantly increases intra-articular pressure and reduces synovial fluid viscosity, contributing to post-sleep stiffness and pain perception in weight-bearing joints."
-          source="Waldecker U, Rüther W"
-          publication="Journal of Orthopaedic Research"
-          year="2019"
-        />
-
-        <PremiumCTA
+<PremiumCTA
           headline="Looking for soothing nighttime knee comfort support?"
           text="FlexiKnee provides gentle warmth and vibration before bed, helping your knees feel more relaxed and comfortable through the night."
         />
@@ -329,15 +313,7 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
           <img src={articleSectionStretching} alt="Gentle stretching routine for knee comfort before sleep" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">A gentle stretching routine before bed can significantly reduce nighttime knee discomfort</figcaption>
         </figure>
-
-        <JournalQuote
-          quote="Thermal therapy applied prior to sleep onset demonstrated a 28% reduction in self-reported nocturnal joint stiffness and a significant improvement in sleep continuity among adults with chronic knee discomfort."
-          source="Yildirim MA, Uçar D, Öneş K"
-          publication="Clinical Rehabilitation"
-          year="2021"
-        />
-
-        <PremiumCTA
+<PremiumCTA
           headline="Support your knees with soothing warmth before bed"
           text="FlexiKnee combines gentle heat, red light, and vibration in one wireless knee wrap, designed to help your nighttime comfort routine feel effortless."
         />
@@ -401,7 +377,7 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
           The good news is that small, consistent adjustments to your sleeping position, evening routine, and daily habits can make a meaningful difference in how your knees feel at night. Placing a pillow between or under your knees, incorporating a brief warmth and stretching routine before bed, and paying attention to your daytime activity patterns are simple steps that compound into significant improvements over time.
         </p>
         <p>
-          Looking for more guidance? Explore our knee comfort guides to better understand your symptoms and discover simple, effective ways to support knee health. Start with our <Link to="/guides/knee-pain-worse-at-night" className="text-primary hover:underline">nighttime knee discomfort guide</Link>, learn about <Link to="/guides/sharp-stabbing-knee-pain-comfort" className="text-primary hover:underline">sharp knee pain comfort strategies</Link>, or explore our <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">visual guide to knee pain locations</Link> to identify which area of your knee may need the most attention.
+          Looking for more guidance? Explore our knee comfort guides to better understand your symptoms and discover simple, effective ways to support knee health. Start with our <Link to="/guides/why-do-my-knees-hurt-when-sleeping" className="text-primary hover:underline">nighttime knee discomfort guide</Link>, learn about <Link to="/guides/sharp-stabbing-knee-pain-comfort" className="text-primary hover:underline">sharp knee pain comfort strategies</Link>, or explore our <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">visual guide to knee pain locations</Link> to identify which area of your knee may need the most attention.
         </p>
 
         <div className="mt-10 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground">

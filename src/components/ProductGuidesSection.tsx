@@ -3,16 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { guidesData } from "@/data/guides";
 
 // Import thumbnails for the recent guides
-import thumbBackKneeCommon from "@/assets/guide-thumb-back-knee-common.jpg";
 import thumbSmartMassagersBreakdown from "@/assets/guide-thumb-smart-massagers-breakdown-new.jpg";
 import thumbKneeWarmthDaily from "@/assets/guide-thumb-knee-warmth-daily.jpg";
 import thumbKneePainLocations from "@/assets/guide-thumb-knee-pain-locations.jpg";
-import thumbKneeLocationMap from "@/assets/guide-thumb-knee-location-map.jpg";
 import thumbRunnersKneeLocation from "@/assets/guide-thumb-runners-knee-location.jpg";
-import thumbItBandSyndrome from "@/assets/guide-thumb-it-band-syndrome.jpg";
 import thumbItBandDiagram from "@/assets/guide-thumb-it-band-diagram.jpg";
 import thumbNightKneePain from "@/assets/guide-thumb-night-knee-pain-v3.jpg";
-import thumbSidePainExplained from "@/assets/guide-thumb-side-pain-explained.jpg";
 import thumbKneeCrackingCrepitus from "@/assets/guide-thumb-knee-cracking-crepitus.jpg";
 import thumbKneePainSittingCrossLegged from "@/assets/guide-thumb-knee-pain-sitting-cross-legged.jpg";
 import thumbKneeStiffnessResting from "@/assets/guide-thumb-knee-stiffness-resting.jpg";
@@ -50,29 +46,21 @@ import thumbHeavyKnees from "@/assets/guide-thumb-heavy-knees.jpg";
 import thumbKneePainFlights from "@/assets/guide-thumb-knee-pain-flights.jpg";
 import thumbKneePainKneeling from "@/assets/guide-thumb-knee-pain-kneeling.jpg";
 import thumbPainBehindKneecap from "@/assets/guide-thumb-pain-behind-kneecap.jpg";
-import thumbClickingKneeNoPain from "@/assets/guide-thumb-clicking-knee-no-pain.jpg";
 import thumbKneeExercisesHome from "@/assets/guide-thumb-knee-exercises-home.jpg";
-import thumbPostExerciseKneePain from "@/assets/guide-thumb-post-exercise-knee-pain.jpg";
 import thumbKneeSwellingExercise from "@/assets/guide-thumb-knee-swelling-exercise.jpg";
-import thumbSoreKneesWorkout from "@/assets/guide-thumb-sore-knees-workout.jpg";
 import thumbKneeRecoveryExercises from "@/assets/guide-thumb-knee-recovery-exercises.jpg";
 import thumbKneeAcheLegWorkouts from "@/assets/guide-thumb-knee-ache-leg-workouts.jpg";
-import thumbWhatMakesKneePainWorse from "@/assets/guide-thumb-what-makes-knee-pain-worse.jpg";
 import thumbWeightKneePain from "@/assets/guide-thumb-weight-knee-pain.jpg";
 import thumbBurningKneesExercise from "@/assets/guide-thumb-burning-knees-after-exercise.jpg";
 
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
-  "back-of-knee-pain-common": thumbBackKneeCommon,
   "smart-knee-massagers-breakdown": thumbSmartMassagersBreakdown,
   "knee-warmth-daily-comfort": thumbKneeWarmthDaily,
   "knee-pain-locations-visual-guide": thumbKneePainLocations,
-  "knee-pain-location-map-2026": thumbKneeLocationMap,
   "runners-knee-pain-location": thumbRunnersKneeLocation,
-  "it-band-syndrome-explained": thumbItBandSyndrome,
   "it-band-pain-location-diagram": thumbItBandDiagram,
   "why-do-my-knees-hurt-when-sleeping": thumbNightKneePain,
-  "side-of-knee-pain-explained": thumbSidePainExplained,
   "why-do-my-knees-crack-or-pop": thumbKneeCrackingCrepitus,
   "knee-pain-after-sitting-cross-legged": thumbKneePainSittingCrossLegged,
   "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
@@ -109,15 +97,11 @@ const thumbnailMap: Record<string, string> = {
   "knee-pain-after-flights": thumbKneePainFlights,
   "knee-pain-when-kneeling": thumbKneePainKneeling,
   "pain-behind-kneecap": thumbPainBehindKneecap,
-  "clicking-knee-without-pain": thumbClickingKneeNoPain,
   "exercises-to-relieve-knee-pain-at-home": thumbKneeExercisesHome,
-  "post-exercise-knee-pain-guide": thumbPostExerciseKneePain,
   "knee-swelling-after-exercise": thumbKneeSwellingExercise,
-  "sore-knees-after-workout": thumbSoreKneesWorkout,
   "knee-recovery-exercises-after-workout": thumbKneeRecoveryExercises,
   "knee-ache-after-leg-workouts": thumbKneeAcheLegWorkouts,
   "home-remedies-knee-pain": thumbHomeRemediesKneePain,
-  "what-makes-knee-pain-worse": thumbWhatMakesKneePainWorse,
   "weight-affects-knee-pain": thumbWeightKneePain,
   "burning-knees-after-exercise": thumbBurningKneesExercise,
 };

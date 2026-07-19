@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -66,12 +66,6 @@ export const kneePainWhenKneeling: ArticleExport = {
         <p>
           Understanding why this happens is the first step toward making kneeling activities more comfortable. The good news is that most kneeling-related knee discomfort responds well to simple everyday adjustments.
         </p>
-
-        <StatHighlight
-          stat="76%"
-          label="of adults over 40 report some knee sensitivity when kneeling"
-          description="Making it one of the most common activity-related knee complaints"
-        />
 
         <h2>Why Kneeling Places Pressure on the Knee</h2>
         <p>
@@ -231,7 +225,7 @@ export const kneePainWhenKneeling: ArticleExport = {
         <ul className="list-disc pl-6 space-y-2 my-4">
           <li><strong>Balanced leg strength:</strong> Maintaining strength in all the muscle groups around the knee, including quadriceps, hamstrings, calves, and hip muscles, provides better overall joint support and shock absorption</li>
           <li><strong>Avoiding excessive joint pressure:</strong> Being mindful of how often and how long you kneel throughout the day helps prevent cumulative tissue irritation. Spreading kneeling tasks across the day rather than doing them all at once can make a meaningful difference</li>
-          <li><strong>Maintaining mobility around the knee:</strong> Gentle daily stretching and movement through the knee's full range of motion keeps the joint flexible and the surrounding tissues resilient. Our <Link to="/guides/knee-pain-location-map-2026" className="text-primary hover:underline">knee pain location map</Link> shows how different zones of the knee connect to overall mobility.</li>
+          <li><strong>Maintaining mobility around the knee:</strong> Gentle daily stretching and movement through the knee's full range of motion keeps the joint flexible and the surrounding tissues resilient. Our <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee pain location map</Link> shows how different zones of the knee connect to overall mobility.</li>
           <li><strong>Gradual increase in activity:</strong> If you are starting a new activity that involves kneeling, such as gardening season or a home renovation project, building up gradually gives your knee tissues time to adapt to the new demands</li>
         </ul>
 

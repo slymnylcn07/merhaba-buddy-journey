@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -69,12 +68,6 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
         <p>
           When your knee feels weak or unstable without accompanying pain, it is usually a sign that the muscles supporting the joint are not providing enough stability during movement. This is different from a structural injury, where pain is typically the first and most noticeable symptom.
         </p>
-
-        <StatHighlight
-          stat="4"
-          label="major muscle groups work together to stabilize each knee"
-          description="Quadriceps, hamstrings, calf muscles, and hip abductors all contribute to knee joint stability"
-        />
 
         <p>
           Knee weakness without pain often points to one or more of the following factors:

@@ -1,10 +1,10 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-knee-pain-after-exercise.jpg";
+import postExerciseRecoveryVisual from "@/assets/article-hero-post-exercise-knee-pain.jpg";
 import sectionKneeLoad from "@/assets/article-section-knee-load-exercise.jpg";
 import sectionMuscleVsJoint from "@/assets/fig-muscle-vs-joint-pain-v2.svg";
 import sectionRunningImpact from "@/assets/article-section-running-impact-knee.jpg";
@@ -86,6 +86,19 @@ const articleContent = (
     <p>
       In this guide, we will explain the science behind <strong>delayed knee pain after exercise</strong>, help you tell the difference between normal <strong>knee soreness after workout</strong> activity and warning signs, and share practical recovery strategies that support long-term knee comfort. We will also explore why some people feel <strong>knee weakness after workouts</strong> and what you can do about it.
     </p>
+
+    <figure className="my-8">
+      <img
+        src={postExerciseRecoveryVisual}
+        alt="Active adult checking the knee after a workout during a calm recovery period"
+        className="w-full h-auto rounded-xl shadow-sm"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+        A useful post-exercise check focuses on symptom location, swelling, stability, and how the knee responds over the next day.
+      </figcaption>
+    </figure>
 
     {/* ?? Section 1: Why Knees Hurt After But Not During ?? */}
     <h2>Why Do Knees Hurt After a Workout But Not During?</h2>

@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { ArticleExport } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 
 import heroImage from "@/assets/article-hero-knees-hurt-after-resting.jpg";
 import sectionInactivityCycle from "@/assets/article-section-inactivity-stiffness-cycle.jpg";
@@ -20,12 +19,6 @@ const articleContent = (
     <p>
       This guide explains why <strong>inactivity knee stiffness</strong> happens, what's going on inside your joint when you're still, and how to manage that uncomfortable <strong>first-movement knee pain</strong> that catches so many people off guard.
     </p>
-
-    <StatHighlight
-      stat="70%"
-      label="of adults over 40 report stiffness after periods of inactivity"
-      description="Making rest-related stiffness one of the most common joint complaints"
-    />
 
     <h2>What Is Rest-Related Knee Stiffness?</h2>
     <p>

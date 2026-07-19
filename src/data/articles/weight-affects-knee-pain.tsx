@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, JournalQuote } from "@/components/ArticleCharts";
+import { InfoBox } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -81,8 +81,6 @@ export const weightAffectsKneePain: ArticleExport = {
           width={800}
           height={600}
         />
-
-        <StatHighlight stat="2-3x" label="Body weight force on knees during normal walking" />
 
         <p>
           During walking, the compressive force on each knee can reach two to three times your body weight. This means that even a modest increase in body weight can translate to a significant increase in the total force your knees absorb with every step. Over the course of a day, this repeated load adds up considerably.
@@ -179,14 +177,7 @@ export const weightAffectsKneePain: ArticleExport = {
           width={800}
           height={600}
         />
-
-        <JournalQuote
-          quote="Even modest reductions in body weight can lead to meaningful decreases in knee joint loading during daily activities."
-          source="Biomechanics Research"
-          publication="Journal of Orthopedic Studies"
-        />
-
-        <PremiumCTA
+<PremiumCTA
           headline="Looking for daily knee comfort support?"
           text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device designed to support your knee comfort routine alongside healthy daily habits."
         />
@@ -201,7 +192,7 @@ export const weightAffectsKneePain: ArticleExport = {
           How you hold your body affects how weight is distributed across your joints. Poor posture, whether standing or sitting, can shift more load onto certain parts of the knee, increasing strain in those areas. Maintaining balanced posture helps distribute weight more evenly across the joint surfaces.
         </p>
         <p>
-          Our <Link to="/guides/what-makes-knee-pain-worse" className="text-primary hover:underline">guide on what makes knee pain worse</Link> covers posture mistakes in detail.
+          Our <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">guide on what makes knee pain worse</Link> covers posture mistakes in detail.
         </p>
 
         <h3>Movement Habits</h3>

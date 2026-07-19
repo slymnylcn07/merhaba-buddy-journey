@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { ArticleExport } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
-import { StatHighlight, InfoBox, JournalQuote } from "@/components/ArticleCharts";
+import { InfoBox } from "@/components/ArticleCharts";
 
 import heroImage from "@/assets/article-hero-home-remedies-knee-pain.jpg";
 import imgKneeAnatomy from "@/assets/article-home-remedies-knee-anatomy.jpg";
@@ -64,17 +63,11 @@ export const homeRemediesKneePain: ArticleExport = {
     content: (
       <>
         <p>
-          If you have ever searched for ways to help your knees feel better without leaving the house, you are not alone. Home remedies for knee pain are among the most searched health topics, and for good reason. Many people experience everyday knee discomfort that does not require professional intervention but still affects how they move, sleep, and go about their day. For a broader view of building comfort habits into your routine, our guide on <Link to="/guides/knee-pain-treatment-daily-habits" className="text-primary hover:underline">knee pain treatment through daily habits</Link> explores how small, consistent changes add up.
+          If you have ever searched for ways to help your knees feel better without leaving the house, you are not alone. Home remedies for knee pain are among the most searched health topics, and for good reason. Many people experience everyday knee discomfort that does not require professional intervention but still affects how they move, sleep, and go about their day. For a broader view of building comfort habits into your routine, our guide on <Link to="/guides/how-to-fix-knee-pain" className="text-primary hover:underline">knee pain treatment through daily habits</Link> explores how small, consistent changes add up.
         </p>
         <p>
           This guide is not about exercise routines or workout-specific recovery. For those topics, see our guides on <Link to="/guides/exercises-to-relieve-knee-pain-at-home" className="text-primary hover:underline">exercises to relieve knee pain at home</Link> and <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">best knee pain exercises for strength and mobility</Link>. If you want to understand the bigger picture of what "fixing" knee pain means and the daily habits that genuinely help, see our guide on <Link to="/guides/how-to-fix-knee-pain" className="text-primary hover:underline">how to fix knee pain</Link>. This article focuses on the simple, practical things you can do at home right now to support your knee comfort.
         </p>
-
-        <StatHighlight
-          stat="30%"
-          label="of adults over 45 report regular knee discomfort"
-          description="Making home-based knee care one of the most relevant wellness topics"
-        />
 
         <h2>What Causes Knee Discomfort in Everyday Life</h2>
         <p>
@@ -384,14 +377,7 @@ export const homeRemediesKneePain: ArticleExport = {
           <li>Place a pillow between or under your knees while sleeping on your side or back</li>
           <li>Ensure your sleeping position does not place unnecessary pressure on your knees</li>
         </ol>
-
-        <JournalQuote
-          quote="Consistent daily habits, rather than occasional intensive interventions, tend to produce the most sustainable improvements in joint comfort over time."
-          source="Journal of Lifestyle Medicine"
-          publication="2024"
-        />
-
-        <p>
+<p>
           The most important thing about home remedies for knee pain is consistency. No single approach works overnight, but when you combine several of these strategies and practice them regularly, many people notice meaningful improvements in how their knees feel during everyday activities.
         </p>
         <p>

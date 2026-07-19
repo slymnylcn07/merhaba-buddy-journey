@@ -41,7 +41,7 @@ export default function PrivacyPolicy() {
         
         <div className="prose prose-slate max-w-none">
           <p className="text-muted-foreground mb-6">
-            Last updated: November 18, 2025
+            Last updated: July 19, 2026
           </p>
 
           <p className="text-muted-foreground mb-6">
@@ -104,6 +104,22 @@ export default function PrivacyPolicy() {
             <h3 className="text-xl font-semibold mb-2 mt-6">Legal Reasons</h3>
             <p className="text-muted-foreground">
               We use your personal information to comply with applicable law or respond to valid legal process, including requests from law enforcement or government agencies, to investigate or participate in civil discovery, potential or actual litigation, or other adversarial legal proceedings, and to enforce or investigate potential violations of our terms or policies.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Cookies and Analytics Choices</h2>
+            <p className="text-muted-foreground mb-4">
+              We use limited browser storage that is necessary for core website functions, such as remembering your privacy choice and supporting cart or checkout features. These essential technologies may remain active because the Services cannot operate reliably without them.
+            </p>
+            <p className="text-muted-foreground mb-4">
+              Optional analytics, advertising, performance measurement, and customer-chat technologies are not loaded until you select <strong>Accept optional cookies</strong> in our cookie banner. Depending on the features available on the page, these optional services may include Google Analytics, Meta Pixel, Shopify analytics or Shopify Inbox, Vercel Analytics, and Vercel Speed Insights. If you select <strong>Reject non-essential</strong>, we do not intentionally load those optional technologies.
+            </p>
+            <p className="text-muted-foreground mb-4">
+              You can change your selection at any time by choosing <strong>Cookie Settings</strong> in the website footer. Rejecting or withdrawing consent will stop future optional tracking on this website and will attempt to remove known analytics and advertising cookies stored by the services listed above. Your browser, device, or the service provider may retain limited technical records that we cannot directly delete.
+            </p>
+            <p className="text-muted-foreground">
+              Some commerce functions are provided by Shopify. When you choose to open cart, checkout, payment, order, or account features, Shopify may use technologies necessary to provide and secure those services under its own privacy terms.
             </p>
           </section>
 

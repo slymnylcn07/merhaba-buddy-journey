@@ -82,7 +82,7 @@ export const kneeWarmthDailyComfort: ArticleExport = {
           An evening warmth session can help your knees feel more comfortable before bed, potentially supporting better rest and reducing the overnight stiffening that makes mornings uncomfortable. The calming, relaxing nature of warmth also supports the transition from an active day to restful sleep.
         </p>
          <p>
-           Many users pair their evening warmth session with gentle stretching as part of their nighttime routine. The combination of warmth and gentle movement can leave the knees feeling significantly more relaxed going into sleep, which often translates into a more comfortable morning. This evening-to-morning connection is one of the most consistently reported benefits of a daily warmth routine. If your knees tend to be <Link to="/guides/knee-pain-worse-at-night" className="text-primary hover:underline">worse at night</Link>, our nighttime comfort guide offers additional strategies.
+           Many users pair their evening warmth session with gentle stretching as part of their nighttime routine. The combination of warmth and gentle movement can leave the knees feeling significantly more relaxed going into sleep, which often translates into a more comfortable morning. This evening-to-morning connection is one of the most consistently reported benefits of a daily warmth routine. If your knees tend to be <Link to="/guides/why-do-my-knees-hurt-when-sleeping" className="text-primary hover:underline">worse at night</Link>, our nighttime comfort guide offers additional strategies.
          </p>
 
         <h2>When Warmth May Not Be the Best Choice</h2>
@@ -186,7 +186,7 @@ export const kneeWarmthDailyComfort: ArticleExport = {
            Warmth is a simple, accessible, and time-tested way to support daily knee comfort for many people. It works best for stiffness, soreness, and general discomfort, particularly when used consistently as part of a structured daily routine rather than as an occasional response to peak discomfort. For more on combining warmth with red light, see our <Link to="/guides/heat-vs-red-light-therapy" className="text-primary hover:underline">heat vs. red light therapy guide</Link>.
          </p>
          <p>
-           Understanding when warmth helps most (morning stiffness, post-activity recovery, evening relaxation) and when other approaches may be more appropriate (acute injury, active swelling, inflammation) allows you to use this natural comfort strategy effectively and safely. The best warmth routine is the one you will actually follow every day, so choose a method that fits naturally into your lifestyle. Our <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link> can help you structure a complete approach.
+           Understanding when warmth helps most (morning stiffness, post-activity recovery, evening relaxation) and when other approaches may be more appropriate (acute injury, active swelling, inflammation) allows you to use this natural comfort strategy effectively and safely. The best warmth routine is the one you will actually follow every day, so choose a method that fits naturally into your lifestyle. Our <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link> can help you structure a complete approach.
          </p>
 
         <div className="mt-10 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground">

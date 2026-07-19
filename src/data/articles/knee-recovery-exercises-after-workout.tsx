@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { StatHighlight, InfoBox, JournalQuote } from "@/components/ArticleCharts";
+import { InfoBox } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-knee-recovery-exercises.jpg";
 import quadStretchImg from "@/assets/article-knee-recovery-quad-stretch.jpg";
@@ -25,12 +25,6 @@ const articleContent = (
     <p>
       However, not all post workout knee pain follows this pattern. If your knees hurt after exercise with sharp, sudden, or localized pain that appears during activity rather than after, it may be worth paying closer attention. Swelling, instability, or discomfort that persists beyond four days without improvement are also signals that deserve professional evaluation.
     </p>
-
-    <StatHighlight
-      stat="24 to 72 hours"
-      label="is the typical window for normal post-workout knee soreness to peak and resolve"
-      description="Delayed onset muscle soreness usually appears 12 to 24 hours after exercise and gradually improves within a few days"
-    />
 
     <InfoBox title="Normal vs Warning Signs">
       <p>Normal knee soreness after a workout feels like a dull, general ache that improves with gentle movement. Warning signs include sharp pain during exercise, swelling, instability, or discomfort that does not improve with rest over several days. If you notice these patterns, consulting a healthcare professional is recommended.</p>
@@ -63,7 +57,7 @@ const articleContent = (
 
     <h3>Knee Stiffness After Workout</h3>
     <p>
-      Tightness in the muscles surrounding the knee, particularly the quadriceps, hamstrings, and IT band, can restrict joint movement and increase post-exercise stiffness. This knee stiffness after workout is often most noticeable first thing in the morning or after periods of sitting following exercise. Regular stretching and mobility work can help maintain comfortable range of motion. For more on IT band-related issues, see our guide on <Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT band syndrome</Link>.
+      Tightness in the muscles surrounding the knee, particularly the quadriceps, hamstrings, and IT band, can restrict joint movement and increase post-exercise stiffness. This knee stiffness after workout is often most noticeable first thing in the morning or after periods of sitting following exercise. Regular stretching and mobility work can help maintain comfortable range of motion. For more on IT band-related issues, see our guide on <Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT band syndrome</Link>.
     </p>
 
     <h2>Best Exercises for Knee Recovery After Workout</h2>
@@ -171,15 +165,7 @@ const articleContent = (
     <p>
       Gentle mobility work keeps the knee joint lubricated and maintains range of motion. Simple movements like slow knee circles, ankle rotations, and gentle bodyweight squats to a comfortable depth can help reduce stiffness and promote recovery. For additional home-based options, see our guide on <Link to="/guides/exercises-to-relieve-knee-pain-at-home" className="text-primary hover:underline">exercises to relieve knee discomfort at home</Link>.
     </p>
-
-    <JournalQuote
-      quote="Progressive resistance exercise and consistent stretching have been shown to support knee joint function and reduce discomfort in individuals with exercise-related knee concerns when applied over time."
-      source="Fransen et al."
-      publication="Cochrane Database of Systematic Reviews"
-      year="2015"
-    />
-
-    <PremiumCTA
+<PremiumCTA
       headline="Support your knees during post-workout recovery"
       text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable after exercise, making your recovery routine simple and consistent."
     />

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { StatHighlight, InfoBox } from "@/components/ArticleCharts";
+import { InfoBox } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-knee-ache-leg-workouts.jpg";
 import kneeLoadSquat from "@/assets/article-knee-load-squat.jpg";
@@ -57,12 +57,6 @@ const articleContent = (
     <p>
       How you perform each exercise matters as much as how much weight you lift. Small deviations in knee tracking, weight distribution, or range of motion can shift stress from the muscles to the joint itself, increasing the likelihood of post-workout discomfort.
     </p>
-
-    <StatHighlight
-      stat="Muscle Fatigue Factor"
-      label="During intense leg workouts, muscles fatigue faster than stabilizing structures"
-      description="This can temporarily increase stress on the knee joint"
-    />
 
     <h2>Exercises That Commonly Lead to Knee Discomfort</h2>
 
@@ -191,7 +185,7 @@ const articleContent = (
 
     <h3>Stiffness vs Instability</h3>
     <p>
-      Feeling stiff when bending or straightening the knee after leg day is common. Feeling like the knee might buckle, give way, or shift unexpectedly is not typical post-workout soreness. Instability sensations warrant closer monitoring. For more on recognizing post-exercise knee patterns, see our guide on <Link to="/guides/post-exercise-knee-pain-guide" className="text-primary hover:underline">when knee pain after exercise is normal and when it is not</Link>.
+      Feeling stiff when bending or straightening the knee after leg day is common. Feeling like the knee might buckle, give way, or shift unexpectedly is not typical post-workout soreness. Instability sensations warrant closer monitoring. For more on recognizing post-exercise knee patterns, see our guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">when knee pain after exercise is normal and when it is not</Link>.
     </p>
 
     <h2>How Recovery Affects Knee Comfort</h2>
@@ -245,7 +239,7 @@ const articleContent = (
 
     <h3>Balanced Muscle Development</h3>
     <p>
-      Imbalances between the quadriceps and hamstrings, or between the inner and outer thigh muscles, can alter how forces are distributed across the knee. Including exercises that target the hamstrings, glutes, and hip stabilizers alongside quad-dominant movements helps create balanced support for the joint. If outer knee aching is especially noticeable, our <Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT band syndrome guide</Link> explains the connection. For more on strengthening exercises, see our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee pain exercises guide for strength, mobility, and comfort</Link>.
+      Imbalances between the quadriceps and hamstrings, or between the inner and outer thigh muscles, can alter how forces are distributed across the knee. Including exercises that target the hamstrings, glutes, and hip stabilizers alongside quad-dominant movements helps create balanced support for the joint. If outer knee aching is especially noticeable, our <Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT band syndrome guide</Link> explains the connection. For more on strengthening exercises, see our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee pain exercises guide for strength, mobility, and comfort</Link>.
     </p>
 
     <h3>Proper Warm-Up</h3>

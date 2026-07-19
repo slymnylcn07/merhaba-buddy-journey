@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -73,12 +73,6 @@ export const kneePainAfterCarRides: ArticleExport = {
         <InfoBox title="Important Note">
           This guide is for educational purposes only and does not provide medical diagnoses or clinical treatment recommendations. If you have persistent or severe knee pain, please consult a qualified healthcare professional.
         </InfoBox>
-
-        <StatHighlight
-          stat="92%"
-          label="of long-distance drivers report some knee or leg stiffness"
-          description="Making it one of the most universal travel-related comfort concerns"
-        />
 
         <h2>Why Long Car Rides Can Affect Knee Comfort</h2>
 
@@ -313,7 +307,7 @@ export const kneePainAfterCarRides: ArticleExport = {
         />
 
         <p>
-          For a broader understanding of how different knee discomfort patterns relate to each other, our <Link to="/guides/knee-pain-location-map-2026" className="text-primary hover:underline">knee pain location map</Link> provides a comprehensive visual overview. You may also find our guide on <Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">knee pain when climbing stairs</Link> helpful, as stair-related stiffness shares some of the same underlying mechanisms as post-sitting stiffness.
+          For a broader understanding of how different knee discomfort patterns relate to each other, our <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee pain location map</Link> provides a comprehensive visual overview. You may also find our guide on <Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">knee pain when climbing stairs</Link> helpful, as stair-related stiffness shares some of the same underlying mechanisms as post-sitting stiffness.
         </p>
 
         <h2>When Knee Stiffness After Travel Should Be Evaluated</h2>

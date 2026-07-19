@@ -1,12 +1,6 @@
 import { ShopifyProduct } from "@/lib/shopify";
-import kneeLongWalks from "@/assets/article-hero-knee-pain-long-walks.jpg";
-import walkingMechanics from "@/assets/article-section-walking-knee-mechanics.jpg";
-import stairsDown from "@/assets/article-hero-knee-pain-going-down-stairs.jpg";
 import restWalkRelief from "@/assets/article-section-rest-stiff-walk-relief.jpg";
 import deviceHomeUse from "@/assets/article-device-home-use.jpg";
-import circulationLowerLimbs from "@/assets/article-circulation-lower-limbs.jpg";
-import delayedSorenessRecovery from "@/assets/article-delayed-soreness-recovery.jpg";
-import deviceRoutine from "@/assets/article-device-routine.jpg";
 import exerciseRecovery from "@/assets/article-exercise-recovery-illustration.jpg";
 
 export interface ProductGuideLink {

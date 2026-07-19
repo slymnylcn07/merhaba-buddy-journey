@@ -1,8 +1,6 @@
 import {
   InfoBox,
-  StatHighlight,
   TipsList,
-  JournalQuote,
 } from "@/components/ArticleCharts";
 import { Link } from "react-router-dom";
 import type { ArticleExport } from "./types";
@@ -121,12 +119,6 @@ export const flexikneeVsCompetitors2026: ArticleExport = {
           </table>
         </div>
 
-        <StatHighlight
-          stat="3-in-1"
-          label="FlexiKnee's unique modality count"
-          description="The only device in this comparison combining heat, red light, and vibration"
-        />
-
         <h2>FlexiKnee: The Multi-Modal Approach</h2>
         <p>
           FlexiKnee's primary advantage is that it addresses comfort from three angles simultaneously. Instead of relying on heat alone or vibration alone, users get the benefits of all three modalities in every session. This matters because knee comfort is influenced by multiple factors: circulation, muscle tension, and cellular wellness all play a role.
@@ -219,15 +211,7 @@ export const flexikneeVsCompetitors2026: ArticleExport = {
         <p>
           <strong>Long-term value:</strong> Consider the cost of adding missing modalities separately. If you start with a heat-only device and later want vibration and red light, you'll spend more overall than choosing a multi-modal option from the start. For a closer look at how heat-only compares to infrared, see our <Link to="/guides/infrared-vs-heating-pads" className="text-primary hover:underline">infrared vs heating pads comparison</Link>.
         </p>
-
-        <JournalQuote
-          quote="Devices that combine multiple therapeutic modalities show higher adherence rates among home users, likely because they reduce the friction associated with managing multiple separate devices."
-          source="Research Team"
-          publication="Home Health Technology Review"
-          year="2024"
-        />
-
-        <p>
+<p>
           Runners and active individuals should also consider how their footwear choices interact with their recovery routine. Our guide on{" "}
           <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">
             best running shoes for knee comfort

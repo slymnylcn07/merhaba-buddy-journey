@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -72,12 +71,6 @@ export const plicaSyndromeKneePain: ArticleExport = {
         <p>
           The knee joint is lined with a thin membrane called the synovium, which produces fluid that helps lubricate the joint during movement. During early development, this membrane forms several folds, and in many people, some of these folds persist into adulthood. These folds are called plica (pronounced "PLY-kah").
         </p>
-
-        <StatHighlight
-          stat="50-70%"
-          label="of adults have identifiable plica folds in their knees"
-          description="Most of the time, these tissue folds function without causing any noticeable issues"
-        />
 
         <p>
           There are typically three main plica folds in the knee:

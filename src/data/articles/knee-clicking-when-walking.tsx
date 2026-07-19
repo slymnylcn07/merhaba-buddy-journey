@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
-import { InfoBox, TipsList, JournalQuote, StatHighlight } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 
 import heroImage from "@/assets/hero-knee-clicking-v2.svg";
 import sectionBendingSquatting from "@/assets/article-section-bending-squatting-motion.jpg";
@@ -35,17 +35,11 @@ export const kneeClickingWhenWalking = {
         </InfoBox>
 
         <p>
-          Knee clicking during everyday movement is one of the most common joint concerns, and also one of the most misunderstood. Many people assume clicking means something is damaged or worn out, but in most cases, movement-based knee sounds are completely harmless and don't indicate a problem. If your knee clicks without any accompanying discomfort, our guide on <Link to="/guides/clicking-knee-without-pain" className="text-primary hover:underline">clicking knee without pain</Link> covers why painless joint sounds are typically normal.
+          Knee clicking during everyday movement is one of the most common joint concerns, and also one of the most misunderstood. Many people assume clicking means something is damaged or worn out, but in most cases, movement-based knee sounds are completely harmless and don't indicate a problem. If your knee clicks without any accompanying discomfort, our guide on <Link to="/guides/why-do-my-knees-crack-or-pop" className="text-primary hover:underline">clicking knee without pain</Link> covers why painless joint sounds are typically normal.
         </p>
         <p>
           Whether you notice a <strong>clicking sound in knee when walking</strong>, a pop when you bend down, or a snap on the stairs, these sounds usually come from normal joint mechanics. This guide focuses specifically on <strong>knee clicking that happens during movement</strong>: walking, bending, squatting, climbing stairs, and standing up. If you're looking for a broader overview of cracking and popping, our <Link to="/guides/why-do-my-knees-crack-or-pop" className="text-primary hover:underline">complete guide to knee cracking and crepitus</Link> covers the general topic in depth.
         </p>
-
-        <StatHighlight
-          stat="30-40%"
-          label="of adults experience regular knee clicking during movement"
-          description="Most cases are painless and require no intervention"
-        />
 
         {/* ── Section 1: Why Knees Click During Movement ── */}
         <h2>Why Do Knees Click During Movement?</h2>
@@ -167,15 +161,7 @@ export const kneeClickingWhenWalking = {
         <p>
           <strong>Going down stairs:</strong> The knee has to absorb your body weight plus momentum. This increased load can amplify any existing clicking and sometimes makes sounds louder than during flat walking.
         </p>
-
-        <JournalQuote
-          quote="Stair climbing generates patellofemoral joint forces 3-4 times body weight, significantly higher than level walking. This increased loading explains why knee sounds are more commonly noticed during stair activities."
-          source="Research Review"
-          publication="Journal of Orthopaedic Research"
-          year="2024"
-        />
-
-        <p>
+<p>
           If stair-related clicking comes with front-of-knee discomfort, our <Link to="/guides/front-knee-tightness-after-activity" className="text-primary hover:underline">front knee tightness guide</Link> explores kneecap-related patterns in detail.
         </p>
 
@@ -252,7 +238,7 @@ export const kneeClickingWhenWalking = {
           A sharp, sudden sensation (sometimes more felt than heard) where something seems to "catch and release." Snapping is often caused by a tendon or ligament moving over a bony prominence. The IT band snapping over the outer knee is a common example, especially in active people.
         </p>
         <p>
-          For a deeper look at how IT band movement creates outer knee sounds, see our <Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT band syndrome guide</Link>.
+          For a deeper look at how IT band movement creates outer knee sounds, see our <Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT band syndrome guide</Link>.
         </p>
 
         {/* ── NEW Section: Knee Clicking When Bending ── */}

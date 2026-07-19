@@ -1,7 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
-import { JournalQuote, StatHighlight, InfoBox, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-pain-long-walks.jpg";
 import sectionBiomechanics from "@/assets/article-section-walking-biomechanics-age.jpg";
 import sectionMuscleFatigue from "@/assets/article-section-muscle-fatigue-joint-pressure.jpg";
@@ -40,12 +40,6 @@ export const kneePainAfterLongWalks: ArticleExport = {
         <p>
           Every step you take generates a force through your knee joint equal to approximately 1.5 times your body weight during flat walking and up to 3 to 4 times your body weight on stairs or inclines. Over the course of a 5-mile walk, that adds up to millions of pounds of cumulative force passing through the knee. For younger joints with thick cartilage and strong supporting muscles, this loading is well-tolerated. But as we age past 40, several changes make the knee increasingly sensitive to sustained walking loads.
         </p>
-
-        <StatHighlight
-          stat="1.5x"
-          label="your body weight passes through each knee with every walking step"
-          description="On inclines, this force increases to 3–4 times body weight"
-        />
 
         <p>
           The cartilage cushion between bones gradually thins, reducing shock absorption. The muscles that stabilize and protect the joint lose endurance faster. The synovial fluid that lubricates the joint surfaces becomes less effective under prolonged demands. And the connective tissues around the knee become less elastic, reducing the joint's ability to distribute forces evenly. Understanding these changes helps explain why knees hurt after walking long distances and what you can do about it. For a broader look at age-related knee changes, our guide on <Link to="/guides/knee-pain-after-40" className="text-primary hover:underline">knee pain after 40</Link> covers the full picture.
@@ -97,15 +91,7 @@ export const kneePainAfterLongWalks: ArticleExport = {
           <p><strong>Phase 2 — Muscle Fatigue:</strong> After sustained walking, muscles lose contractile efficiency and absorb less shock.</p>
           <p><strong>Phase 3 — Joint Overload:</strong> Unabsorbed forces reach cartilage and bone directly, triggering post-walk pain and stiffness.</p>
         </InfoBox>
-
-        <JournalQuote
-          quote="Quadriceps fatigue during prolonged walking reduces the muscle's ability to absorb ground reaction forces by up to 30%, significantly increasing the compressive load on the tibiofemoral joint. This mechanism is amplified in adults with age-related cartilage thinning."
-          source="Biomechanics Research Group"
-          publication="Journal of Applied Biomechanics"
-          year="2024"
-        />
-
-        <PremiumCTA
+<PremiumCTA
           headline="Want post-walk comfort support for your knees?"
           text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long walks, making your daily walking routine sustainable."
         />
@@ -117,12 +103,12 @@ export const kneePainAfterLongWalks: ArticleExport = {
 
         <h3>Inner (Medial) Knee Pain</h3>
         <p>
-          The inner side of the knee bears a significant portion of your body weight during walking, especially if you have a tendency toward knock-knee alignment or foot pronation (inward rolling). Inner knee pain after long walks commonly involves the medial meniscus (the crescent-shaped cartilage cushion on the inner side), the medial collateral ligament, or the cartilage of the medial compartment. This type of discomfort often presents as a deep, dull ache that worsens with continued walking and may feel stiff after you stop. For more on inner knee patterns, see our guide on <Link to="/guides/side-knee-pain-inner-outer" className="text-primary hover:underline">inner and outer knee pain</Link>.
+          The inner side of the knee bears a significant portion of your body weight during walking, especially if you have a tendency toward knock-knee alignment or foot pronation (inward rolling). Inner knee pain after long walks commonly involves the medial meniscus (the crescent-shaped cartilage cushion on the inner side), the medial collateral ligament, or the cartilage of the medial compartment. This type of discomfort often presents as a deep, dull ache that worsens with continued walking and may feel stiff after you stop. For more on inner knee patterns, see our guide on <Link to="/guides/side-knee-pain-comfort-guide" className="text-primary hover:underline">inner and outer knee pain</Link>.
         </p>
 
         <h3>Outer (Lateral) Knee Pain</h3>
         <p>
-          Outer knee pain after long walks is frequently associated with the iliotibial (IT) band, a thick fibrous band that runs from the hip down the outside of the thigh and attaches just below the outer knee. During walking, the IT band slides over a bony prominence (the lateral femoral condyle) with each stride. Over thousands of repetitions during a long walk, this friction can create irritation and a burning or aching sensation on the outer knee. Our detailed guide on <Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT band syndrome</Link> explains this mechanism in depth.
+          Outer knee pain after long walks is frequently associated with the iliotibial (IT) band, a thick fibrous band that runs from the hip down the outside of the thigh and attaches just below the outer knee. During walking, the IT band slides over a bony prominence (the lateral femoral condyle) with each stride. Over thousands of repetitions during a long walk, this friction can create irritation and a burning or aching sensation on the outer knee. Our detailed guide on <Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT band syndrome</Link> explains this mechanism in depth.
         </p>
 
         <figure className="my-8">
@@ -188,12 +174,6 @@ export const kneePainAfterLongWalks: ArticleExport = {
           Keep your posture upright with your eyes forward, not looking down. Land with your foot beneath your body rather than reaching far forward. Take slightly shorter, quicker steps rather than long, loping strides. Engage your core muscles to stabilize your pelvis, which reduces compensatory stress on the knees.
         </p>
 
-        <StatHighlight
-          stat="10–15%"
-          label="maximum weekly distance increase recommended for knee comfort"
-          description="Gradual progression gives cartilage and muscles time to adapt to increased walking demands"
-        />
-
         <h2>Post-Walk Recovery Routine</h2>
         <p>
           What you do in the 30 minutes after a long walk matters as much as the walk itself. A simple post-walk recovery routine can dramatically reduce next-day stiffness and help your knees adapt to walking over time.
@@ -231,15 +211,7 @@ export const kneePainAfterLongWalks: ArticleExport = {
           <p>✓ Gentle knee bends — 10–15 slow partial squats to circulate synovial fluid</p>
           <p>✓ Hydrate — drink water to support joint fluid replenishment</p>
         </InfoBox>
-
-        <JournalQuote
-          quote="Post-exercise stretching combined with local heat application within 30 minutes of walking reduced subjective knee stiffness by 45% in adults aged 50 to 70 compared to rest alone. The combination of modalities was more effective than either intervention individually."
-          source="Sports Medicine Research Team"
-          publication="Journal of Aging and Physical Activity"
-          year="2025"
-        />
-
-        <h2>When to Modify Your Walking Routine</h2>
+<h2>When to Modify Your Walking Routine</h2>
         <p>
           Walking should enhance your quality of life, not diminish it. While mild post-walk stiffness is normal and manageable, certain patterns suggest you may need to adjust your approach:
         </p>

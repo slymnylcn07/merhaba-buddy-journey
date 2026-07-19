@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -67,12 +67,6 @@ export const painBehindKneecap: ArticleExport = {
         <p>
           The kneecap sits at the front of the knee joint and moves along a groove on the thigh bone every time you bend or straighten your leg. When this movement becomes uneven, or when the pressure behind the kneecap builds beyond what the surrounding tissues can comfortably absorb, discomfort appears. Understanding this relationship is the key to managing kneecap comfort over the long term.
         </p>
-
-        <StatHighlight
-          stat="25%"
-          label="of all knee-related discomfort involves the kneecap area"
-          description="Making it the most common pattern in active adults and runners"
-        />
 
         <h2>Understanding the Role of the Kneecap in Knee Movement</h2>
         <p>
@@ -236,7 +230,7 @@ export const painBehindKneecap: ArticleExport = {
 
         <h2>Simple Daily Habits That Support Kneecap Comfort</h2>
         <p>
-          The most effective approach to managing pain behind the kneecap involves consistent daily habits rather than occasional intensive interventions. Our <Link to="/guides/knee-pain-location-map-2026" className="text-primary hover:underline">knee pain location map</Link> shows how the kneecap zone connects to other areas of the knee.
+          The most effective approach to managing pain behind the kneecap involves consistent daily habits rather than occasional intensive interventions. Our <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee pain location map</Link> shows how the kneecap zone connects to other areas of the knee.
         </p>
 
         <TipsList tips={[

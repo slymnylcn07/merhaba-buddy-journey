@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { ArticleExport } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 
 import heroImage from "@/assets/thumb-cold-weather-knees.svg";
 import sectionBarometricPressure from "@/assets/fig-cold-barometric-v1.svg";
@@ -27,12 +26,6 @@ const articleContent = (
     <p>
       But why exactly does <strong>knee pain in cold weather</strong> happen? What role do temperature, humidity, and barometric pressure play? And most importantly, what can you do about it? This guide breaks it all down in simple, clear terms.
     </p>
-
-    <StatHighlight
-      stat="67%"
-      label="of adults with joint concerns report increased discomfort in cold weather"
-      description="Making weather one of the most commonly cited triggers for knee stiffness"
-    />
 
     <h2>Why Cold Weather Affects Knee Joints</h2>
     <p>

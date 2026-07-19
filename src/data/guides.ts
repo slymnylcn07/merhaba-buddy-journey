@@ -642,6 +642,34 @@ export const guidesData: GuideData[] = [
     readTime: 12,
     lastModified: "2026-07-12",
   },
+  {
+    slug: "glucosamine-chondroitin-knee-pain",
+    title: "Glucosamine & Chondroitin for Knee Pain: Do They Work?",
+    description: "A balanced guide to forms, evidence, doses, safety, interactions, product quality, and how to run a time-limited supplement trial.",
+    readTime: 15,
+    lastModified: "2026-07-18",
+  },
+  {
+    slug: "menopause-knee-pain",
+    title: "Menopause and Knee Pain: The Hormone Connection",
+    description: "Learn how hormones, sleep, muscle, activity, body composition, osteoarthritis, and midlife health can overlap with knee symptoms.",
+    readTime: 14,
+    lastModified: "2026-07-18",
+  },
+  {
+    slug: "red-light-therapy-dose-knees",
+    title: "Red Light for Knees: How Long, How Often?",
+    description: "Understand session time, frequency, irradiance, dose, device differences, safety, and why minutes alone do not define a protocol.",
+    readTime: 16,
+    lastModified: "2026-07-18",
+  },
+  {
+    slug: "pickleball-knee-recovery-routine",
+    title: "Pickleball Knees: A Recovery Routine That Gets You Back on Court",
+    description: "A court-specific plan for cool-down, mobility, strength, workload, return to play, and warning signs after pickleball.",
+    readTime: 15,
+    lastModified: "2026-07-18",
+  },
 ];
 
 export const staticPages = [

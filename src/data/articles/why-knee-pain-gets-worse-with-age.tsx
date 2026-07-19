@@ -5,7 +5,7 @@ import heroImage from "@/assets/article-hero-joint-aging-changes.jpg";
 import sectionProtectionHabits from "@/assets/article-section-joint-protection-habits.jpg";
 import sectionMorningStiffness from "@/assets/article-section-morning-stiffness-40s.jpg";
 import diagramAgingComparison from "@/assets/diagram-knee-aging-comparison.jpg";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 
 export const whyKneePainGetsWorseWithAge: ArticleExport = {
   cta: "",
@@ -39,12 +39,6 @@ export const whyKneePainGetsWorseWithAge: ArticleExport = {
         <p>
           The good news is that understanding <em>why</em> your knees change with age gives you real power to slow the process and manage daily comfort. This guide explains what happens inside your knee joints over the decades and shares practical habits that make a genuine difference.
         </p>
-
-        <StatHighlight
-          stat="60%"
-          label="of adults over 50 experience regular knee discomfort"
-          description="Making age-related knee changes one of the most common joint concerns worldwide"
-        />
 
         <h2>What Aging Does to the Knee Joint</h2>
         <p>
@@ -99,18 +93,12 @@ export const whyKneePainGetsWorseWithAge: ArticleExport = {
           The relationship between muscle strength and knee comfort is one of the most actionable factors in managing age-related discomfort. Unlike cartilage, muscles respond well to exercise at any age, making <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">targeted strengthening exercises</Link> one of the most effective long-term strategies.
         </p>
 
-        <StatHighlight
-          stat="3-8%"
-          label="muscle mass lost per decade after age 30"
-          description="Making consistent exercise essential for maintaining knee joint support"
-        />
-
         <h2>Alignment Changes After 40 and 50</h2>
         <p>
           Your knee alignment, meaning how your thighbone, kneecap, and shinbone line up during movement, can subtly shift over time. Uneven cartilage wear, muscle imbalances, and changes in ligament tension all contribute to these gradual alignment shifts.
         </p>
         <p>
-          Even small alignment changes can concentrate pressure on specific areas of the joint rather than distributing it evenly. This localized stress accelerates wear in those areas, creating patterns where discomfort appears more on one side of the knee than the other. You might notice this as <Link to="/guides/side-of-knee-pain-explained" className="text-primary hover:underline">pain on the inner or outer side of your knee</Link> that was not there before.
+          Even small alignment changes can concentrate pressure on specific areas of the joint rather than distributing it evenly. This localized stress accelerates wear in those areas, creating patterns where discomfort appears more on one side of the knee than the other. You might notice this as <Link to="/guides/side-knee-pain-comfort-guide" className="text-primary hover:underline">pain on the inner or outer side of your knee</Link> that was not there before.
         </p>
         <p>
           Women may experience alignment-related changes earlier due to naturally wider hip angles that affect knee tracking. Hormonal changes during perimenopause and menopause can also influence joint flexibility and tissue elasticity, contributing to shifting comfort patterns.

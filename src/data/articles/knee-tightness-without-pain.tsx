@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -69,12 +68,6 @@ export const kneeTightnessWithoutPain: ArticleExport = {
         <p>
           When your knee feels tight but does not hurt, it typically indicates a change in the soft tissues around the joint rather than structural damage. The sensation often comes from muscle tension, mild joint capsule stiffness, or temporary changes in how the joint moves.
         </p>
-
-        <StatHighlight
-          stat="60%+"
-          label="of adults over 40 report occasional knee stiffness"
-          description="Even without any diagnosed condition or injury"
-        />
 
         <p>
           The knee joint is surrounded by muscles, tendons, ligaments, and a protective capsule filled with synovial fluid. When any of these structures become tense, shortened, or less well-lubricated, the knee can feel restricted, tight, or resistant to bending, even though no pain is present.

@@ -95,7 +95,7 @@ const article: ArticleData = {
 
       <h3>3. Hamstring Curls (Standing)</h3>
       <p>
-        Strong hamstrings balance the quadriceps and help protect the back of the knee. Standing hamstring curls are a gentle way to build strength without equipment. For those experiencing <Link to="/guides/back-of-knee-pain-common" className="text-primary hover:underline">back-of-knee discomfort</Link>, this exercise is particularly beneficial.
+        Strong hamstrings balance the quadriceps and help protect the back of the knee. Standing hamstring curls are a gentle way to build strength without equipment. For those experiencing <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back-of-knee discomfort</Link>, this exercise is particularly beneficial.
       </p>
       <figure className="my-8">
         <img
@@ -273,7 +273,7 @@ const article: ArticleData = {
 
       <h3>Step 4: Evening Cool-Down (5 minutes)</h3>
       <p>
-        End the day with gentle calf raises (15 reps) and heel slides (10 per leg). Follow with 10–15 minutes of warmth application to help the muscles and joints relax before sleep. For those who experience <Link to="/guides/knee-pain-worse-at-night" className="text-primary hover:underline">nighttime knee discomfort</Link>, this evening routine can be particularly helpful.
+        End the day with gentle calf raises (15 reps) and heel slides (10 per leg). Follow with 10–15 minutes of warmth application to help the muscles and joints relax before sleep. For those who experience <Link to="/guides/why-do-my-knees-hurt-when-sleeping" className="text-primary hover:underline">nighttime knee discomfort</Link>, this evening routine can be particularly helpful.
       </p>
 
       <h2>When Exercises Help vs. When to Pause</h2>

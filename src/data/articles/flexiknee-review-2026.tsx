@@ -1,6 +1,5 @@
 import {
   InfoBox,
-  StatHighlight,
   TipsList,
 } from "@/components/ArticleCharts";
 import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
@@ -66,12 +65,6 @@ export const flexikneeReview2026: ArticleExport = {
         <p>
           FlexiKnee combines adjustable warmth, an integrated red-light mode, and massage-style vibration in a rechargeable wraparound device. The current product-level rating shown across the FlexiKnee site is <strong>{MAIN_PRODUCT_RATING.toFixed(1)} out of 5</strong>, based on <strong>{MAIN_PRODUCT_REVIEW_COUNT} product-level reviews</strong>. That rating describes buyer feedback about the product; it is not proof that the device treats a medical condition.
         </p>
-
-        <StatHighlight
-          stat="3-in-1"
-          label="Comfort Features"
-          description="Adjustable warmth, integrated red light, and three vibration modes in one cordless device"
-        />
 
         <h2>What Is FlexiKnee</h2>
         <p>
@@ -250,12 +243,6 @@ export const flexikneeReview2026: ArticleExport = {
         <p>
           What it should not become is a shortcut around proper evaluation. The product can support a comfort routine, but it is not evidence that a knee condition has been diagnosed or treated. With that expectation set correctly, FlexiKnee is a credible option for people who value convenience and are comfortable with the product's weight, charging needs, and general-fit design.
         </p>
-
-        <StatHighlight
-          stat={`${MAIN_PRODUCT_RATING.toFixed(1)}/5`}
-          label="Current Product-Level Rating"
-          description={`The same ${MAIN_PRODUCT_RATING.toFixed(1)} rating used on the main product page and all flagship product CTAs (${MAIN_PRODUCT_REVIEW_COUNT} product-level reviews)`}
-        />
 
         <PremiumCTA
           headline="Compare the details before choosing"

@@ -1,5 +1,4 @@
 import { useState, lazy, Suspense } from "react";
-import { initMarketFromGeo } from "@/lib/market";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,6 +11,9 @@ import { useGoogleAnalytics } from "./hooks/use-google-analytics";
 import { useMetaTracking } from "./hooks/use-meta-tracking";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { CookieConsentBanner } from "@/components/CookieConsentBanner";
+import { ShopifyChatLoader } from "@/components/ShopifyChatLoader";
+import { useAnalyticsConsent } from "@/lib/cookie-consent";
 
 // Lazy load non-critical routes for code splitting
 const ProductRoute = lazy(() => import("./pages/ProductRoute"));
@@ -48,6 +50,15 @@ const AnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 
+const ConsentAwarePlatformAnalytics = () => {
+  const { analyticsAllowed } = useAnalyticsConsent();
+  if (!analyticsAllowed) return null;
+  return (<>
+    <Analytics />
+    <SpeedInsights />
+  </>);
+};
+
 const App = () => {
   const [queryClient] = useState(() => new QueryClient());
   
@@ -56,16 +67,16 @@ const App = () => {
     <TooltipProvider>
       <Toaster />
       <Sonner position="top-center" />
-      <Analytics />
-      <SpeedInsights />
+      <ConsentAwarePlatformAnalytics />
       <BrowserRouter>
         <ScrollToTop />
+        <CookieConsentBanner />
+        <ShopifyChatLoader />
         <AnalyticsProvider>
           <main>
             <Suspense fallback={<PageLoader />}>
               <Routes>
                 <Route path="/" element={<Index />} />
-                <Route path="/product/knee-massager-smart-heated-red-light-and-massage-therapy" element={<Navigate to="/product/knee-massager-smart-red-light-and-massage-therapy" replace />} />
                 <Route path="/product/:handle" element={<ProductRoute />} />
                 <Route path="/track-order" element={<TrackOrder />} />
                 <Route path="/account" element={<Account />} />

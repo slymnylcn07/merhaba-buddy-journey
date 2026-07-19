@@ -13,8 +13,6 @@ import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
 import thumbWhoBenefits from "@/assets/guide-thumb-who-benefits-branded.jpg";
-import thumbDailyRoutine from "@/assets/guide-thumb-daily-routine.jpg";
-import thumbKneePainCauses from "@/assets/guide-thumb-knee-pain-causes.jpg";
 import thumbBackKneePain from "@/assets/guide-thumb-back-knee-pain-new.jpg";
 import thumbSideKneePain from "@/assets/guide-thumb-side-knee-pain.jpg";
 import thumbRunningKneePain from "@/assets/guide-thumb-running-knee-pain.jpg";
@@ -24,22 +22,15 @@ import thumbStrengthenKnees from "@/assets/guide-thumb-strengthen-knees.jpg";
 import thumbKneeInjuries from "@/assets/guide-thumb-knee-injuries.jpg";
 import thumbInfraredMassager from "@/assets/guide-thumb-infrared-massager.jpg";
 import thumbInfraredVsHeatingPads from "@/assets/guide-thumb-infrared-vs-heating-pads.jpg";
-import thumbSharpPainPatterns from "@/assets/guide-thumb-sharp-pain-patterns.jpg";
-import thumbSidePainDetailed from "@/assets/guide-thumb-side-pain-detailed.jpg";
 import thumbRedLightResearch from "@/assets/guide-thumb-red-light-research.jpg";
-import thumbBackKneeDetailed from "@/assets/guide-thumb-back-knee-detailed.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
 import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.jpg";
-import thumbMassagerExpectations from "@/assets/thumb-do-massagers-work-v2.svg";
 import thumbInfraredSafety from "@/assets/guide-thumb-infrared-safety-v2.jpg";
 import thumbWarmthVsInfrared from "@/assets/guide-thumb-warmth-vs-infrared-v2.jpg";
-import thumbNightKneePain from "@/assets/guide-thumb-night-knee-pain-v3.jpg";
 import thumbFixKneePain from "@/assets/guide-thumb-fix-knee-pain.jpg";
 import thumbWomenMenKneeComfort from "@/assets/guide-thumb-women-men-knee-comfort.jpg";
 import thumbTopKneePain from "@/assets/guide-thumb-top-knee-pain.jpg";
 import thumbRunningShoesKnee from "@/assets/guide-thumb-running-shoes-knee.jpg";
-import thumbKneePainTreatment from "@/assets/guide-thumb-knee-pain-treatment.jpg";
-import thumbCauseKneePain from "@/assets/guide-thumb-cause-knee-pain.jpg";
 import thumbFrontKneeTightness from "@/assets/guide-thumb-front-knee-tightness-v2.jpg";
 import thumbKneeLowerBodyConnection from "@/assets/guide-thumb-knee-lower-body-connection-v2.jpg";
 import thumbBelowKneeDiscomfort from "@/assets/guide-thumb-below-knee-discomfort-v2.jpg";
@@ -48,67 +39,40 @@ import thumbCompetitorsComparison from "@/assets/guide-thumb-competitors-compari
 import thumbInfraredGuide2026 from "@/assets/guide-thumb-infrared-guide-2026.jpg";
 import thumbSharpPainRelief from "@/assets/guide-thumb-sharp-pain-relief.jpg";
 import thumbIntermittentPain from "@/assets/guide-thumb-intermittent-pain.jpg";
-import thumbRunningShoesCauses from "@/assets/guide-thumb-running-shoes-causes.jpg";
-import thumbRunningShoesDiscomfort from "@/assets/guide-thumb-running-shoes-discomfort.jpg";
-import thumbSidePainExplained from "@/assets/guide-thumb-side-pain-explained.jpg";
 import thumbArthritisMassager from "@/assets/guide-thumb-arthritis-massager-new.jpg";
 import thumbHeatRedlightBenefits from "@/assets/guide-thumb-heat-redlight-benefits.jpg";
 import thumbSharpStabbingComfort from "@/assets/guide-thumb-sharp-stabbing-comfort.jpg";
-import thumbBackKneeCommon from "@/assets/guide-thumb-back-knee-common.jpg";
 import thumbSmartMassagersBreakdown from "@/assets/guide-thumb-smart-massagers-breakdown-new.jpg";
-import thumbKneeWarmthDaily from "@/assets/guide-thumb-knee-warmth-daily.jpg";
 import thumbKneePainLocations from "@/assets/guide-thumb-knee-pain-locations.jpg";
-import thumbKneeLocationMap from "@/assets/guide-thumb-knee-location-map.jpg";
 import thumbRunnersKneeLocation from "@/assets/guide-thumb-runners-knee-location.jpg";
-import thumbItBandSyndrome from "@/assets/guide-thumb-it-band-syndrome.jpg";
-import thumbItBandDiagram from "@/assets/guide-thumb-it-band-diagram.jpg";
-import thumbKneeCrackingCrepitus from "@/assets/guide-thumb-knee-cracking-crepitus.jpg";
-import thumbKneePainSittingCrossLegged from "@/assets/guide-thumb-knee-pain-sitting-cross-legged.jpg";
 import thumbKneeStiffnessResting from "@/assets/guide-thumb-knee-stiffness-resting.jpg";
 import thumbKneePainStanding from "@/assets/guide-thumb-knee-pain-standing.jpg";
-import thumbBestRedLightKnee from "@/assets/guide-thumb-best-red-light-knee.jpg";
 import thumbKneeExercises from "@/assets/guide-thumb-knee-exercises.jpg";
 import thumbCauseKneePainNew from "@/assets/guide-thumb-cause-knee-pain-new.jpg";
 import thumbKneePainAfter40 from "@/assets/guide-thumb-knee-pain-after-40.jpg";
 import thumbJointAgingChanges from "@/assets/guide-thumb-joint-aging-changes.jpg";
 import thumbMorningStiffness40s from "@/assets/guide-thumb-morning-stiffness-40s.jpg";
-import thumbKneePainGettingUpSitting from "@/assets/guide-thumb-knee-pain-getting-up-sitting.jpg";
 import thumbKneePainLongWalks from "@/assets/guide-thumb-knee-pain-long-walks.jpg";
 import thumbKneeMobilityAfter50 from "@/assets/guide-thumb-knee-mobility-after-50.jpg";
-import thumbSuddenKneePain from "@/assets/guide-thumb-sudden-knee-pain.jpg";
 import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40-v2.jpg";
 import thumbKneeClickingWalking from "@/assets/guide-thumb-knee-clicking-walking.jpg";
 import thumbKneesHurtAfterResting from "@/assets/guide-thumb-knees-hurt-after-resting.jpg";
 import thumbColdWeatherKneePain from "@/assets/guide-thumb-cold-weather-knee-pain.jpg";
 import thumbKneePainAfterExercise from "@/assets/guide-thumb-knee-pain-after-exercise.jpg";
 import thumbKneePainClimbingStairs from "@/assets/guide-thumb-knee-pain-climbing-stairs.jpg";
-import thumbKneePainGoingDownStairs from "@/assets/guide-thumb-knee-pain-going-down-stairs.jpg";
 import thumbKneePainSquatting from "@/assets/guide-thumb-knee-pain-squatting.jpg";
 import thumbKneePainYoga from "@/assets/guide-thumb-knee-pain-yoga.jpg";
 import thumbKneePainHiking from "@/assets/guide-thumb-knee-pain-hiking.jpg";
 import thumbKneeTightnessNoPain from "@/assets/guide-thumb-knee-tightness-no-pain.jpg";
 import thumbBurningKneeSensation from "@/assets/guide-thumb-burning-knee-sensation.jpg";
-import thumbKneeWeaknessNoPain from "@/assets/guide-thumb-knee-weakness-no-pain.jpg";
-import thumbPlicaSyndrome from "@/assets/guide-thumb-plica-syndrome.jpg";
-import thumbKneeBursitis from "@/assets/guide-thumb-knee-bursitis.jpg";
-import thumbPFPS from "@/assets/guide-thumb-pfps.jpg";
 import thumbKneePainCarRides from "@/assets/guide-thumb-knee-pain-car-rides.jpg";
-import thumbWarmFeelingKnee from "@/assets/guide-thumb-warm-feeling-knee.jpg";
 import thumbHeavyKnees from "@/assets/guide-thumb-heavy-knees.jpg";
 import thumbKneePainFlights from "@/assets/guide-thumb-knee-pain-flights.jpg";
 import thumbKneePainKneeling from "@/assets/guide-thumb-knee-pain-kneeling.jpg";
 import thumbPainBehindKneecap from "@/assets/guide-thumb-pain-behind-kneecap.jpg";
-import thumbClickingKneeNoPain from "@/assets/guide-thumb-clicking-knee-no-pain.jpg";
 import thumbKneeExercisesHome from "@/assets/guide-thumb-knee-exercises-home.jpg";
-import thumbPostExerciseKneePain from "@/assets/guide-thumb-post-exercise-knee-pain.jpg";
 import thumbKneeSwellingExercise from "@/assets/guide-thumb-knee-swelling-exercise.jpg";
-import thumbSoreKneesWorkout from "@/assets/guide-thumb-sore-knees-workout.jpg";
 import thumbKneeRecoveryExercises from "@/assets/guide-thumb-knee-recovery-exercises.jpg";
-import thumbKneeAcheLegWorkouts from "@/assets/guide-thumb-knee-ache-leg-workouts.jpg";
-import thumbHomeRemediesKneePain from "@/assets/guide-thumb-home-remedies-knee-pain-v2.jpg";
-import thumbWhatMakesKneePainWorse from "@/assets/guide-thumb-what-makes-knee-pain-worse.jpg";
-import thumbWeightKneePain from "@/assets/guide-thumb-weight-knee-pain.jpg";
-import thumbBatch3WhatMakesKneePainWorse from "@/assets/guide-thumbnails/batch-3/what-makes-knee-pain-worse.webp";
 import thumbBatch3KneeAcheAfterLegWorkouts from "@/assets/guide-thumbnails/batch-3/knee-ache-after-leg-workouts.webp";
 import thumbBatch3WeightAffectsKneePain from "@/assets/guide-thumbnails/batch-3/weight-affects-knee-pain.webp";
 import thumbBatch3KneeWeaknessWithoutPain from "@/assets/guide-thumbnails/batch-3/knee-weakness-without-pain.webp";
@@ -119,7 +83,6 @@ import thumbBatch3WarmFeelingInKnee from "@/assets/guide-thumbnails/batch-3/warm
 import thumbBatch1WhyKneePainDoesntGoAway from "@/assets/guide-thumbnails/batch-1/why-knee-pain-doesnt-go-away.png";
 import thumbBatch1BurningKneesAfterExercise from "@/assets/guide-thumbnails/batch-1/burning-knees-after-exercise.png";
 import thumbBatch1KneePainGoingDownStairs from "@/assets/guide-thumbnails/batch-1/knee-pain-going-down-stairs.png";
-import thumbBatch1WhyKneePainFeelsWorseAtNight from "@/assets/guide-thumbnails/batch-1/why-knee-pain-feels-worse-at-night.png";
 import thumbBatch1WhyKneesHurtWhenSleeping from "@/assets/guide-thumbnails/batch-1/why-knees-hurt-when-sleeping.png";
 import thumbBatch1DoKneeMassagersWork from "@/assets/guide-thumbnails/batch-1/do-knee-massagers-work.png";
 import thumbBatch1SmartHeatedKneeBraces2026 from "@/assets/guide-thumbnails/batch-1/smart-heated-knee-braces-2026.png";
@@ -129,31 +92,19 @@ import thumbItBandFoamRollingList from "@/assets/hero-itband-foam-rolling.svg";
 import thumbSleepKneePainList from "@/assets/hero-sleep-knee-pain.svg";
 import thumbAirCompressionLegList from "@/assets/hero-air-compression-leg.svg";
 import thumbSleeveSizingList from "@/assets/hero-sleeve-sizing.svg";
-import thumbBatch2BackOfKneePainCommon from "@/assets/guide-thumbnails/batch-2/back-of-knee-pain-common.png";
 import thumbBatch2KneeWarmthDailyComfort from "@/assets/guide-thumbnails/batch-2/knee-warmth-daily-comfort.png";
 import thumbBatch2KneePainGettingUpAfterSitting from "@/assets/guide-thumbnails/batch-2/knee-pain-getting-up-after-sitting.png";
 import thumbBatch2WhyDoMyKneesCrackOrPop from "@/assets/guide-thumbnails/batch-2/why-do-my-knees-crack-or-pop.png";
 import thumbBatch2KneePainAfterSittingCrossLegged from "@/assets/guide-thumbnails/batch-2/knee-pain-after-sitting-cross-legged.png";
 import thumbBatch2BestRedLightTherapyKnee from "@/assets/guide-thumbnails/batch-2/best-red-light-therapy-knee.png";
-import thumbBatch2KneePainLocationMap2026 from "@/assets/guide-thumbnails/batch-2/knee-pain-location-map-2026.png";
 import thumbBatch2SuddenKneePainGuide from "@/assets/guide-thumbnails/batch-2/sudden-knee-pain-guide.png";
 import thumbBatch2ItBandPainLocationDiagram from "@/assets/guide-thumbnails/batch-2/it-band-pain-location-diagram.png";
 import thumbBatch2HomeRemediesKneePain from "@/assets/guide-thumbnails/batch-2/home-remedies-knee-pain.png";
-import thumbGlucosamineChondroitin from "@/assets/article-hero-glucosamine-chondroitin.svg";
-import thumbMenopauseKneePain from "@/assets/article-hero-menopause-knee-pain.svg";
-import thumbRedLightDoseKnees from "@/assets/article-hero-red-light-dose-knees.svg";
-import thumbPickleballKneeRecovery from "@/assets/guide-thumb-pickleball-knee-recovery.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
-  "glucosamine-chondroitin-knee-pain": thumbGlucosamineChondroitin,
-  "menopause-knee-pain": thumbMenopauseKneePain,
-  "red-light-therapy-dose-knees": thumbRedLightDoseKnees,
-  "pickleball-knee-recovery-routine": thumbPickleballKneeRecovery,
   "why-knee-pain-doesnt-go-away": thumbBatch1WhyKneePainDoesntGoAway,
   "heat-vs-red-light-therapy": thumbHeatTherapy,
   "who-benefits-from-knee-therapy-devices": thumbWhoBenefits,
-  "daily-knee-comfort-routine": thumbDailyRoutine,
-  "pain-in-the-knee-causes-locations": thumbKneePainCauses,
   "back-of-knee-pain-explained": thumbBackKneePain,
   "side-knee-pain-comfort-guide": thumbSideKneePain,
   "running-knee-pain-guide": thumbRunningKneePain,
@@ -162,22 +113,16 @@ const thumbnailMap: Record<string, string> = {
   "how-to-strengthen-knees": thumbStrengthenKnees,
   "understanding-knee-injuries": thumbKneeInjuries,
   "best-infrared-knee-massagers": thumbInfraredMassager,
-  "sharp-knee-pain-comes-and-goes": thumbSharpPainPatterns,
-  "side-knee-pain-inner-outer": thumbSidePainDetailed,
   "red-light-therapy-for-knees": thumbRedLightResearch,
-  "back-of-knee-pain-daily-habits": thumbBackKneeDetailed,
   "daily-knee-care-routine": thumbDailyRoutineNew,
   "heat-vs-ice-for-knees": thumbHeatVsIce,
   "do-knee-massagers-work": thumbBatch1DoKneeMassagersWork,
   "is-infrared-safe-for-knees": thumbInfraredSafety,
   "warmth-vs-infrared-knee-routines": thumbWarmthVsInfrared,
-  "knee-pain-worse-at-night": thumbBatch1WhyKneePainFeelsWorseAtNight,
   "how-to-fix-knee-pain": thumbFixKneePain,
   "women-men-knee-comfort-patterns": thumbWomenMenKneeComfort,
   "top-of-knee-pain-patterns": thumbTopKneePain,
   "best-running-shoes-knee-pain": thumbRunningShoesKnee,
-  "knee-pain-treatment-daily-habits": thumbKneePainTreatment,
-  "cause-of-knee-pain-patterns": thumbCauseKneePain,
   "front-knee-tightness-after-activity": thumbFrontKneeTightness,
   "knee-discomfort-lower-back-hips": thumbKneeLowerBodyConnection,
   "below-knee-discomfort-teens-adults": thumbBelowKneeDiscomfort,
@@ -186,21 +131,15 @@ const thumbnailMap: Record<string, string> = {
   "best-heated-knee-massager-arthritis": thumbArthritisMassager,
   "smart-heated-knee-braces-2026": thumbBatch1SmartHeatedKneeBraces2026,
   "heat-red-light-therapy-benefits-2026": thumbHeatRedlightBenefits,
-  "running-shoes-knee-pain-causes-fixes": thumbRunningShoesCauses,
   "sharp-knee-pain-causes-relief": thumbSharpPainRelief,
   "infrared-knee-massager-guide-2026": thumbInfraredGuide2026,
   "sharp-stabbing-knee-pain-comfort": thumbSharpStabbingComfort,
-  "running-shoes-knee-pain-discomfort": thumbRunningShoesDiscomfort,
   "infrared-vs-heating-pads": thumbInfraredVsHeatingPads,
   "intermittent-knee-pain-guide": thumbIntermittentPain,
-  "side-of-knee-pain-explained": thumbSidePainExplained,
-  "back-of-knee-pain-common": thumbBatch2BackOfKneePainCommon,
   "smart-knee-massagers-breakdown": thumbSmartMassagersBreakdown,
   "knee-warmth-daily-comfort": thumbBatch2KneeWarmthDailyComfort,
   "knee-pain-locations-visual-guide": thumbKneePainLocations,
-  "knee-pain-location-map-2026": thumbBatch2KneePainLocationMap2026,
   "runners-knee-pain-location": thumbRunnersKneeLocation,
-  "it-band-syndrome-explained": thumbItBandSyndrome,
   "it-band-pain-location-diagram": thumbBatch2ItBandPainLocationDiagram,
   "why-do-my-knees-hurt-when-sleeping": thumbBatch1WhyKneesHurtWhenSleeping,
   "why-do-my-knees-crack-or-pop": thumbBatch2WhyDoMyKneesCrackOrPop,
@@ -246,15 +185,11 @@ const thumbnailMap: Record<string, string> = {
   "knee-pain-after-flights": thumbKneePainFlights,
   "knee-pain-when-kneeling": thumbKneePainKneeling,
   "pain-behind-kneecap": thumbPainBehindKneecap,
-  "clicking-knee-without-pain": thumbClickingKneeNoPain,
   "exercises-to-relieve-knee-pain-at-home": thumbKneeExercisesHome,
-  "post-exercise-knee-pain-guide": thumbPostExerciseKneePain,
   "knee-swelling-after-exercise": thumbKneeSwellingExercise,
-  "sore-knees-after-workout": thumbSoreKneesWorkout,
   "knee-recovery-exercises-after-workout": thumbKneeRecoveryExercises,
   "knee-ache-after-leg-workouts": thumbBatch3KneeAcheAfterLegWorkouts,
   "home-remedies-knee-pain": thumbBatch2HomeRemediesKneePain,
-  "what-makes-knee-pain-worse": thumbBatch3WhatMakesKneePainWorse,
   "weight-affects-knee-pain": thumbBatch3WeightAffectsKneePain,
 };
 
@@ -282,10 +217,7 @@ const formatGuideDate = (value?: string) => {
 // ?? Section configurations ??
 
 const featuredSlugs = [
-  "cause-of-knee-pain-patterns",
-  "knee-pain-treatment-daily-habits",
   "why-knee-pain-doesnt-go-away",
-  "daily-knee-comfort-routine",
 ];
 
 // Priority Guides (high-impact SEO articles)
@@ -306,25 +238,18 @@ const priorityDescriptions: Record<string, string> = {
 // Category 1: Knee Discomfort by Location
 const locationSlugs = [
   // Top 4 (shown in grid)
-  "pain-in-the-knee-causes-locations",
   "back-of-knee-pain-explained",
   "side-knee-pain-comfort-guide",
   "sharp-knee-pain-guide",
   // Accordion
   "top-of-knee-pain-patterns",
-  "back-of-knee-pain-daily-habits",
-  "side-knee-pain-inner-outer",
-  "sharp-knee-pain-comes-and-goes",
   "front-knee-tightness-after-activity",
   "knee-discomfort-lower-back-hips",
   "below-knee-discomfort-teens-adults",
-  "back-of-knee-pain-common",
-  "side-of-knee-pain-explained",
   "sharp-knee-pain-causes-relief",
   "sharp-stabbing-knee-pain-comfort",
   "intermittent-knee-pain-guide",
   "knee-pain-locations-visual-guide",
-  "knee-pain-location-map-2026",
   "it-band-pain-location-diagram",
   "what-causes-knee-pain-guide",
   "sudden-knee-pain-guide",
@@ -339,13 +264,9 @@ const activitySlugs = [
   "understanding-knee-injuries",
   // Accordion
   "best-running-shoes-knee-pain",
-  "running-shoes-knee-pain-causes-fixes",
-  "running-shoes-knee-pain-discomfort",
   "women-men-knee-comfort-patterns",
-  "knee-pain-worse-at-night",
   "how-to-fix-knee-pain",
   "runners-knee-pain-location",
-  "it-band-syndrome-explained",
   "why-do-my-knees-crack-or-pop",
   "knee-clicking-when-walking",
   "knee-pain-after-sitting-cross-legged",
@@ -370,11 +291,8 @@ const activitySlugs = [
   "heavy-feeling-in-knees",
   "knee-pain-when-kneeling",
   "pain-behind-kneecap",
-  "clicking-knee-without-pain",
   "exercises-to-relieve-knee-pain-at-home",
-  "post-exercise-knee-pain-guide",
   "knee-swelling-after-exercise",
-  "sore-knees-after-workout",
 ];
 
 // Category 3: At-Home Methods & Daily Comfort
@@ -958,7 +876,7 @@ const Guides = () => {
                   subtitle="Comprehensive guides for understanding and supporting everyday knee comfort."
                 />
                 <p className="text-sm text-slate-600 leading-relaxed max-w-3xl mb-6 -mt-4">
-                  New here? Start with <Link to="/guides/cause-of-knee-pain-patterns" className="text-primary hover:underline">what causes knee pain</Link>, build a <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily comfort routine</Link>, or learn <Link to="/guides/why-knee-pain-doesnt-go-away" className="text-primary hover:underline">why knee pain sometimes persists</Link>.
+                  New here? Start with <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">what causes knee pain</Link>, build a <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily comfort routine</Link>, or learn <Link to="/guides/why-knee-pain-doesnt-go-away" className="text-primary hover:underline">why knee pain sometimes persists</Link>.
                 </p>
                 {isLoading ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

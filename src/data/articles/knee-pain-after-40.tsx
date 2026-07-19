@@ -5,7 +5,7 @@ import heroImage from "@/assets/article-hero-knee-pain-after-40.jpg";
 import diagramAgingComparison from "@/assets/diagram-knee-aging-comparison.jpg";
 import sectionMorningStiffness from "@/assets/article-section-morning-stiffness-40s.jpg";
 import sectionDailyComfort from "@/assets/article-section-daily-comfort-routine-40s.jpg";
-import { InfoBox, StatHighlight, TipsList, RelatedGuideCard } from "@/components/ArticleCharts";
+import { InfoBox, TipsList, RelatedGuideCard } from "@/components/ArticleCharts";
 
 export const kneePainAfter40: ArticleExport = {
   cta: "",
@@ -39,12 +39,6 @@ export const kneePainAfter40: ArticleExport = {
         <p>
           This guide covers the science behind <strong>age-related knee pain</strong>, explains the differences between knee discomfort in your 40s versus your 50s, and shares practical daily habits that genuinely help. Whether you're just starting to notice changes or have been managing discomfort for years, you'll find actionable strategies here.
         </p>
-
-        <StatHighlight
-          stat="45%"
-          label="of adults over 40 report regular knee discomfort"
-          description="Making it the most common joint concern in this age group"
-        />
 
         <h2>Why Knee Pain Increases After Age 40</h2>
         <p>
@@ -257,7 +251,7 @@ export const kneePainAfter40: ArticleExport = {
         />
 
         <p>
-          For more detailed routines, see our comprehensive <a href="/guides/how-to-strengthen-knees">knee strengthening guide</a> and <a href="/guides/daily-knee-comfort-routine">daily knee comfort routine</a>.
+          For more detailed routines, see our comprehensive <a href="/guides/how-to-strengthen-knees">knee strengthening guide</a> and <a href="/guides/daily-knee-care-routine">daily knee comfort routine</a>.
         </p>
 
         <h2>When to Seek Professional Guidance</h2>

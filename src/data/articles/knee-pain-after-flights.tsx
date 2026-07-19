@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -86,12 +86,6 @@ const article = {
       <p>
         This sensation is not unusual. The knee joint is designed for regular movement, and when it remains in a fixed bent position for several hours, multiple factors combine to create that familiar post-flight stiffness. Understanding what happens inside the knee during prolonged sitting can help you take simple steps to reduce discomfort during and after your travels.
       </p>
-
-      <StatHighlight
-        stat="72%"
-        label="of frequent travelers report knee or leg stiffness after flights longer than 4 hours"
-        description="Making it one of the most common travel-related joint complaints"
-      />
 
       {/* Section 1 */}
       <h2 id="how-long-sitting-affects-knee">How Long Sitting Affects the Knee Joint</h2>

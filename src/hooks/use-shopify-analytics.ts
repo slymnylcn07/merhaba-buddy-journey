@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { trackPageView } from '@/lib/shopify-analytics';
+import { useAnalyticsConsent } from '@/lib/cookie-consent';
 
 /**
  * Hook to automatically track page views on route changes
@@ -8,9 +9,11 @@ import { trackPageView } from '@/lib/shopify-analytics';
  */
 export function useShopifyPageView() {
   const location = useLocation();
+  const { analyticsAllowed } = useAnalyticsConsent();
   const previousPath = useRef<string | null>(null);
 
   useEffect(() => {
+    if (!analyticsAllowed) return;
     // Avoid duplicate tracking on initial mount
     if (previousPath.current === location.pathname) {
       return;
@@ -37,5 +40,5 @@ export function useShopifyPageView() {
     trackPageView(pageType, {
       pathname: location.pathname,
     });
-  }, [location.pathname]);
+  }, [analyticsAllowed, location.pathname]);
 }

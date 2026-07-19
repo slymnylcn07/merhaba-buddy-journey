@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { StatHighlight, InfoBox, JournalQuote } from "@/components/ArticleCharts";
+import { InfoBox } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-knee-swelling-exercise.jpg";
 import kneeAnatomyImg from "@/assets/fig-knee-swelling-anatomy-v2.svg";
@@ -47,12 +47,6 @@ const articleContent = (
       <li><strong>Fluid accumulation in the joint:</strong> Synovial fluid production can temporarily increase after exercise as the body works to cushion and protect the joint during recovery.</li>
       <li><strong>Muscle fatigue affecting joint stability:</strong> When the muscles surrounding the knee become fatigued during exercise, they may provide less support to the joint. This can place additional stress on joint structures and contribute to a swelling response.</li>
     </ul>
-
-    <StatHighlight
-      stat="24 to 48 hours"
-      label="is the typical window for mild post-exercise swelling to resolve"
-      description="After unfamiliar or intense exercise the body may temporarily increase fluid circulation around joints as part of recovery"
-    />
 
     <h2>Common Activities That May Lead to Knee Swelling</h2>
     <p>
@@ -157,15 +151,7 @@ const articleContent = (
       <li><strong>Strengthening surrounding muscles:</strong> Building strength in the quadriceps, hamstrings, and calf muscles helps distribute joint load more evenly during exercise. When these muscles are strong, the knee joint itself absorbs less stress. For exercises that support this, see our guide on <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee strengthening exercises</Link>.</li>
       <li><strong>Maintaining joint mobility:</strong> Gentle stretching and mobility work helps maintain range of motion and supports healthy fluid circulation within the joint. Our guide on <Link to="/guides/exercises-to-relieve-knee-pain-at-home" className="text-primary hover:underline">exercises to relieve knee discomfort at home</Link> offers practical options.</li>
     </ul>
-
-    <JournalQuote
-      quote="Therapeutic exercise has been shown to support joint function and reduce symptoms associated with knee joint concerns, including swelling and stiffness, when applied consistently over time."
-      source="Fransen et al."
-      publication="British Journal of Sports Medicine"
-      year="2015"
-    />
-
-    <h2>Exercise Habits That Support Healthier Knees</h2>
+<h2>Exercise Habits That Support Healthier Knees</h2>
     <p>
       How you exercise matters as much as what exercises you do. Adopting habits that reduce unnecessary joint stress can help minimize the likelihood of post-workout knee swelling and support long-term knee health.
     </p>
@@ -204,7 +190,7 @@ const articleContent = (
       <li>Swelling that interferes with walking or daily activities</li>
     </ul>
     <p>
-      Tracking when swelling appears, how long it lasts, and what activities preceded it can provide helpful information if you decide to consult with a healthcare professional. For additional context on when knee discomfort after workouts may need attention, our guide on <Link to="/guides/post-exercise-knee-pain-guide" className="text-primary hover:underline">post-exercise knee pain</Link> offers complementary insights.
+      Tracking when swelling appears, how long it lasts, and what activities preceded it can provide helpful information if you decide to consult with a healthcare professional. For additional context on when knee discomfort after workouts may need attention, our guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">post-exercise knee pain</Link> offers complementary insights.
     </p>
     <p>
       Understanding the relationship between exercise related knee swelling, <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee discomfort after exercise</Link>, and recovery habits helps you make informed decisions about your fitness approach. If swelling is accompanied by <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">clicking sounds during walking</Link>, this combination is common and usually reflects temporary joint fluid changes rather than a separate concern. The goal is to stay active in a way that supports your knees rather than placing excessive stress on them.

@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -357,12 +356,6 @@ const articleContent = (
     <p>
       At the bottom of a deep squat, knee joint compression can reach <strong>6 to 8 times your body weight</strong>. For someone weighing 160 pounds, that's nearly 1,300 pounds of force pressing through each knee. This is significantly more than walking (about 1.5x body weight) or even stair climbing (3–4x body weight).
     </p>
-
-    <StatHighlight
-      stat="6-8x"
-      label="body weight in knee compression during a deep squat"
-      description="Significantly more than walking or standing"
-    />
 
     <p>
       The deeper you squat, the more your kneecap is pressed into its groove on the femur. This creates a specific type of stress called <strong>patellofemoral compression</strong>, which is why so many people feel discomfort at the front of the knee during squats — even when other activities feel perfectly fine.

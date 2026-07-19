@@ -1,7 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
-import { JournalQuote, StatHighlight, InfoBox, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-stiffness-resting.jpg";
 import sectionSitting from "@/assets/article-section-knee-stiffness-sitting.jpg";
 import sectionStretching from "@/assets/article-section-knee-tightness-stretch.jpg";
@@ -55,12 +55,6 @@ export const kneeStiffnessAfterResting: ArticleExport = {
         <p>
           Movement promotes blood circulation to the tissues around the knee joint. When you rest, blood flow to the area decreases, which can allow minor inflammatory byproducts to accumulate rather than being cleared away efficiently. This reduced circulation contributes to the stiff, heavy feeling that many people describe when they first begin to move after resting. People who experience <Link to="/guides/knee-pain-after-sitting-cross-legged" className="text-primary hover:underline">knee discomfort after sitting in specific positions</Link> often notice this effect more prominently.
         </p>
-
-        <StatHighlight 
-          stat="70%" 
-          label="of adults over 40 report regular knee stiffness after periods of rest" 
-          description="Making it one of the most common joint sensations worldwide"
-        />
 
         <h2>Why Do Knees Get Stiff After Sitting?</h2>
         <p>
@@ -255,7 +249,7 @@ export const kneeStiffnessAfterResting: ArticleExport = {
 
         <h3>What Is Behind Your Knee</h3>
         <p>
-          The back of the knee contains the hamstring tendons (where the biceps femoris, semimembranosus, and semitendinosus muscles attach), the popliteal artery and vein, the popliteal nerve, and several smaller structures that can all contribute to sensations of tightness. When you sit with bent knees, these structures are compressed and shortened. Standing up requires them to lengthen and decompress, which creates the tight pulling sensation. For a deeper exploration of this area, see our guide on <Link to="/guides/back-of-knee-pain-common" className="text-primary hover:underline">back-of-knee discomfort patterns</Link>.
+          The back of the knee contains the hamstring tendons (where the biceps femoris, semimembranosus, and semitendinosus muscles attach), the popliteal artery and vein, the popliteal nerve, and several smaller structures that can all contribute to sensations of tightness. When you sit with bent knees, these structures are compressed and shortened. Standing up requires them to lengthen and decompress, which creates the tight pulling sensation. For a deeper exploration of this area, see our guide on <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back-of-knee discomfort patterns</Link>.
         </p>
 
         <figure className="my-8">
@@ -444,15 +438,7 @@ export const kneeStiffnessAfterResting: ArticleExport = {
         <p>
           Remember that knee stiffness is a symptom, not a condition. It describes how your knee feels, not what is causing it. A healthcare provider can help determine whether your stiffness is simply the result of normal joint mechanics, lifestyle factors, or whether it may be connected to a specific condition that benefits from professional support.
         </p>
-
-        <JournalQuote
-          quote="Post-rest joint stiffness is one of the most commonly reported musculoskeletal symptoms in adults over 40. In the majority of cases, it reflects normal joint physiology rather than pathology, and responds well to consistent daily movement and warmth-based comfort strategies."
-          source="Research Review"
-          publication="Journal of Musculoskeletal Health"
-          year="2025"
-        />
-
-        <h2>Frequently Asked Questions</h2>
+<h2>Frequently Asked Questions</h2>
 
         <h3>Why do my knees get stiff when I sit?</h3>
         <p>

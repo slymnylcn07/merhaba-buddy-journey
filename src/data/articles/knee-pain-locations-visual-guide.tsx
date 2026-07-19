@@ -6,14 +6,12 @@ import diagramFrontKnee from "@/assets/fig-zone-front-v2.svg";
 import diagramInnerKnee from "@/assets/fig-zone-inner-v2.svg";
 import diagramOuterKnee from "@/assets/fig-zone-outer-v2.svg";
 import diagramBackKnee from "@/assets/fig-zone-back-v2.svg";
-import diagramBelowKneecap from "@/assets/fig-zone-below-kneecap-v2.svg";
 import diagramAboveKneecap from "@/assets/fig-zone-above-kneecap-v2.svg";
 import diagramITBand from "@/assets/fig-zone-itband-v2.svg";
 import diagramJointLine from "@/assets/fig-zone-joint-line-v2.svg";
 import diagramLocationChartFront from "@/assets/diagram-knee-pain-location-chart-front.jpg";
 import diagramPainMapZones from "@/assets/fig-knee-zones-map-v2.svg";
 import diagramAnatomyBonesLigaments from "@/assets/fig-knee-anatomy-v2.svg";
-import diagramSideKneePain from "@/assets/fig-zone-side-overview-v2.svg";
 import diagramBackKneePainViz from "@/assets/fig-zone-back-detail-v2.svg";
 import diagramBelowKneecapPressure from "@/assets/fig-zone-below-kneecap-v2.svg";
 
@@ -39,7 +37,7 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
     heroImage: heroImage,
     publishedDate: "February 25, 2026",
     lastUpdated: "March 19, 2026",
-    nextSlug: "knee-pain-location-map-2026",
+    nextSlug: "knee-pain-locations-visual-guide",
     nextTitle: "Interactive Knee Pain Location Map: Find Your Zone",
     faqs: [
       { question: "What are common knee pain locations?", answer: "The most common knee pain locations include the front of the knee (around the kneecap), the inner (medial) side, the outer (lateral) side, behind the knee, and the areas directly above or below the kneecap. Each location tends to respond to different daily habits and movement patterns." },
@@ -172,7 +170,7 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
 
         <h3>Location Overview</h3>
         <p>
-          The inner (medial) side of the knee is a key <strong>knee pain location</strong> that houses the medial collateral ligament and portions of the meniscus. On a knee pain diagram, this area appears along the inside edge of the joint. It often responds to twisting, pivoting, or sudden directional changes. For a deeper look at inner and outer knee patterns, see our <Link to="/guides/side-knee-pain-inner-outer" className="text-primary underline hover:opacity-80">inner vs. outer knee discomfort guide</Link>.
+          The inner (medial) side of the knee is a key <strong>knee pain location</strong> that houses the medial collateral ligament and portions of the meniscus. On a knee pain diagram, this area appears along the inside edge of the joint. It often responds to twisting, pivoting, or sudden directional changes. For a deeper look at inner and outer knee patterns, see our <Link to="/guides/side-knee-pain-comfort-guide" className="text-primary underline hover:opacity-80">inner vs. outer knee discomfort guide</Link>.
         </p>
 
         <h3>What It Feels Like</h3>
@@ -207,7 +205,7 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
 
         <h3>Location Overview</h3>
         <p>
-          The outer (lateral) side is influenced by the iliotibial (IT) band, running from the hip down the outside of the thigh. On this part of the <strong>knee map</strong>, you will find structures commonly affected in runners, cyclists, and long-distance walkers. This <strong>knee location of pain</strong> is especially common when training volume increases. For more on side-of-knee patterns, visit our <Link to="/guides/side-of-knee-pain-explained" className="text-primary underline hover:opacity-80">side-of-knee comfort guide</Link>.
+          The outer (lateral) side is influenced by the iliotibial (IT) band, running from the hip down the outside of the thigh. On this part of the <strong>knee map</strong>, you will find structures commonly affected in runners, cyclists, and long-distance walkers. This <strong>knee location of pain</strong> is especially common when training volume increases. For more on side-of-knee patterns, visit our <Link to="/guides/side-knee-pain-comfort-guide" className="text-primary underline hover:opacity-80">side-of-knee comfort guide</Link>.
         </p>
 
         <h3>What It Feels Like</h3>
@@ -242,7 +240,7 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
 
         <h3>Location Overview</h3>
         <p>
-          The back of the knee (popliteal area) is where the hamstrings and calf muscles connect. On a <strong>knee pain diagram</strong>, this zone sits behind the joint and is a commonly overlooked <strong>knee pain location</strong>. It is particularly sensitive to sitting habits and activity changes. For a detailed look at behind-the-knee patterns, explore our <Link to="/guides/back-of-knee-pain-common" className="text-primary underline hover:opacity-80">back-of-knee discomfort guide</Link>.
+          The back of the knee (popliteal area) is where the hamstrings and calf muscles connect. On a <strong>knee pain diagram</strong>, this zone sits behind the joint and is a commonly overlooked <strong>knee pain location</strong>. It is particularly sensitive to sitting habits and activity changes. For a detailed look at behind-the-knee patterns, explore our <Link to="/guides/back-of-knee-pain-explained" className="text-primary underline hover:opacity-80">back-of-knee discomfort guide</Link>.
         </p>
 
         <h3>What It Feels Like</h3>
@@ -516,7 +514,7 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
         {/* --- Bottom Line --- */}
         <h2>The Bottom Line</h2>
         <p>
-          Knee discomfort can appear in many different <strong>knee pain locations</strong>, and each zone tends to reflect different daily patterns and lifestyle habits. By using a <strong>knee pain location chart</strong> approach and paying attention to your personal patterns, you can build more targeted and effective <Link to="/guides/daily-knee-comfort-routine" className="text-primary underline hover:opacity-80">daily comfort routines</Link>. Understanding your <strong>knee pain anatomy</strong> does not require expertise. Small, zone-aware habits practiced daily tend to produce the most meaningful improvements in overall knee comfort.
+          Knee discomfort can appear in many different <strong>knee pain locations</strong>, and each zone tends to reflect different daily patterns and lifestyle habits. By using a <strong>knee pain location chart</strong> approach and paying attention to your personal patterns, you can build more targeted and effective <Link to="/guides/daily-knee-care-routine" className="text-primary underline hover:opacity-80">daily comfort routines</Link>. Understanding your <strong>knee pain anatomy</strong> does not require expertise. Small, zone-aware habits practiced daily tend to produce the most meaningful improvements in overall knee comfort.
         </p>
 
         <div className="mt-10 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground">

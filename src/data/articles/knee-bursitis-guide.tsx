@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 // nextSlug/nextTitle updated to chain to patellofemoral-pain-syndrome
@@ -69,12 +69,6 @@ export const kneeBursitisGuide: ArticleExport = {
         <p>
           Understanding <strong>what is knee bursitis</strong>, why it happens, and what you can do about it at home is the first step toward supporting your knee comfort. This guide covers everything from the anatomy of knee bursae to practical strategies that may help you feel more comfortable in your daily life.
         </p>
-
-        <StatHighlight
-          stat="11+"
-          label="Bursae around each knee joint"
-          description="These small fluid sacs help reduce friction during every bend, step, and squat"
-        />
 
         <h2>What the Knee Bursa Does</h2>
         <p>

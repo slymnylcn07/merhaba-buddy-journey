@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { ArticleExport } from "./types";
 import PremiumCTA from "@/components/PremiumCTA";
-import { StatHighlight, InfoBox, JournalQuote } from "@/components/ArticleCharts";
+import { InfoBox } from "@/components/ArticleCharts";
 
 import heroImage from "@/assets/article-hero-knee-exercises-home.jpg";
 import imgStraightLegRaise from "@/assets/article-straight-leg-raise-exercise.jpg";
@@ -81,12 +80,6 @@ export const exercisesToRelieveKneePainAtHome: ArticleExport = {
         <p>
           For many adults, a consistent routine of <strong>knee exercises to relieve pain</strong> at home is more effective than complete rest, which can sometimes make stiffness and discomfort worse over time.
         </p>
-
-        <StatHighlight
-          stat="70%"
-          label="of adults over 40 report improved knee comfort with regular low impact exercise"
-          description="Regular low impact exercise can improve knee function and mobility for many adults"
-        />
 
         <h2>Safety Guidelines Before Starting Knee Exercises</h2>
         <p>
@@ -244,15 +237,7 @@ export const exercisesToRelieveKneePainAtHome: ArticleExport = {
         <p>
           <strong>What it does:</strong> Activates the quadriceps muscle without joint movement, helping maintain muscle engagement and connection even when other exercises feel uncomfortable.
         </p>
-
-        <JournalQuote
-          quote="Exercise therapy is one of the most consistently supported interventions for improving physical function and reducing symptoms in adults with knee osteoarthritis."
-          source="Fransen M, McConnell S, Harmer AR, et al."
-          publication="British Journal of Sports Medicine"
-          year="2019"
-        />
-
-        <InfoBox title="Daily Knee Exercise Tip">
+<InfoBox title="Daily Knee Exercise Tip">
           <p>Small daily exercise routines can support knee strength and stability over time. Even 10 to 15 minutes of gentle strengthening and mobility work, done consistently, can make a noticeable difference in how your knees feel during everyday activities. If your knees tend to be sore after more intense exercise sessions, our guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link> explains the delayed soreness mechanism and how to manage it. For those who find stairs particularly challenging, our <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">stair descent guide</Link> covers specific strengthening exercises for comfortable stair use.</p>
         </InfoBox>
 

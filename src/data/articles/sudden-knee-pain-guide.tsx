@@ -205,7 +205,7 @@ export const suddenKneePainGuide: ArticleExport = {
           <li><strong>Whole-leg warning pattern:</strong> New calf or leg swelling, warmth, color change, chest pain, or breathlessness needs urgent evaluation for a possible blood clot.</li>
         </ul>
         <p>
-          For more detailed coverage, see our guide on <Link to="/guides/back-of-knee-pain-common" className="text-primary hover:underline">back-of-knee pain causes</Link>.
+          For more detailed coverage, see our guide on <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back-of-knee pain causes</Link>.
         </p>
 
         <h3>Sudden Inner Knee Pain</h3>
@@ -228,7 +228,7 @@ export const suddenKneePainGuide: ArticleExport = {
           <li><strong>LCL stress:</strong> The lateral collateral ligament can produce sudden twinges during inward-directed forces</li>
         </ul>
         <p>
-          Explore our <Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT band syndrome guide</Link> for detailed coverage of outer knee discomfort patterns.
+          Explore our <Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT band syndrome guide</Link> for detailed coverage of outer knee discomfort patterns.
         </p>
 
         <figure className="my-8">

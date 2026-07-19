@@ -7,6 +7,7 @@ import {
   SHOPIFY_STORE_DOMAIN as SHOPIFY_STORE_PERMANENT_DOMAIN,
   SHOPIFY_STOREFRONT_TOKEN,
 } from './shopify-config';
+import { hasAnalyticsConsent } from './cookie-consent';
 
 // Get or create unique client ID (persistent across sessions)
 const getUniqueClientId = (): string => {
@@ -141,6 +142,7 @@ const sendStorefrontEvent = async (eventType: string, eventData: Record<string, 
 
 // Track page view
 export function trackPageView(pageType?: string, additionalData?: Record<string, any>) {
+  if (!hasAnalyticsConsent()) return;
   ensureShopifyCookies();
   
   const eventData = {
@@ -166,6 +168,7 @@ export interface ProductViewData {
 }
 
 export function trackProductView(product: ProductViewData) {
+  if (!hasAnalyticsConsent()) return;
   ensureShopifyCookies();
   
   const eventData = {
@@ -184,6 +187,7 @@ export function trackProductView(product: ProductViewData) {
 
 // Track collection view
 export function trackCollectionView(collectionTitle: string, collectionHandle: string) {
+  if (!hasAnalyticsConsent()) return;
   ensureShopifyCookies();
   
   const eventData = {
@@ -209,6 +213,7 @@ export interface AddToCartData {
 }
 
 export function trackAddToCart(item: AddToCartData) {
+  if (!hasAnalyticsConsent()) return;
   ensureShopifyCookies();
   
   const eventData = {
@@ -239,6 +244,7 @@ export interface CartViewData {
 }
 
 export function trackCartView(cart: CartViewData) {
+  if (!hasAnalyticsConsent()) return;
   ensureShopifyCookies();
   
   const eventData = {
@@ -269,6 +275,7 @@ export interface CheckoutStartedData {
 }
 
 export function trackCheckoutStarted(checkout: CheckoutStartedData) {
+  if (!hasAnalyticsConsent()) return;
   ensureShopifyCookies();
   
   const eventData = {
@@ -291,6 +298,7 @@ export function trackCheckoutStarted(checkout: CheckoutStartedData) {
 
 // Track search
 export function trackSearch(searchQuery: string, resultsCount?: number) {
+  if (!hasAnalyticsConsent()) return;
   ensureShopifyCookies();
   
   const eventData = {
@@ -305,6 +313,7 @@ export function trackSearch(searchQuery: string, resultsCount?: number) {
 
 // Track page exit (for session duration)
 export function trackPageExit() {
+  if (!hasAnalyticsConsent()) return;
   const sessionData = localStorage.getItem('shopify_session');
   if (sessionData) {
     const { id, lastActivity } = JSON.parse(sessionData);
@@ -319,7 +328,7 @@ export function trackPageExit() {
 
 // Initialize on page load
 if (typeof window !== 'undefined') {
-  ensureShopifyCookies();
+  if (hasAnalyticsConsent()) ensureShopifyCookies();
   
   // Track exit when user leaves
   window.addEventListener('beforeunload', () => {
@@ -328,7 +337,7 @@ if (typeof window !== 'undefined') {
   
   // Update session on visibility change
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible') {
+    if (document.visibilityState === 'visible' && hasAnalyticsConsent()) {
       ensureShopifyCookies();
     }
   });

@@ -1,19 +1,13 @@
-# FlexiKnee Google + Bing content consolidation
+# FlexiKnee Package 1 upload notes
 
-This package contains the approved consolidation patch.
+This package completes the technical, trust, privacy and retired-content cleanup requested after the Google/Bing consolidation.
 
-- Registered guides before: 101
-- Registered guides after: 90
-- Live content mergers: 11
-- Legacy/ghost URL rescues: 7
-- Permanent redirects: 18
+- Original intended guide set: 105
+- Live merged guides retired: 11
+- Active registered guides after consolidation: 94
+- Permanent redirects preserved: 18
+- Product review content and AggregateRating schema: unchanged
 
-The earlier working estimate of 105 guides was not the count in the supplied repository snapshot. The supplied project contained 101 registered guide slugs, so removing 11 live losers produces 90 registered guides.
+Four approved July 18 article files were present in the project but were missing from the guide/runtime registries. Package 1 registers them correctly, so the valid post-consolidation count is 94 rather than the earlier temporary count of 90.
 
-## Deployment checks
-
-1. Upload the project while preserving all paths.
-2. Confirm Vercel deploy succeeds.
-3. Confirm every old URL returns one permanent redirect and each winner returns 200.
-4. Confirm sitemap excludes the 11 retired live slugs.
-5. Confirm internal links point directly to winners, not through redirects.
+Use the full-project ZIP for the easiest upload. The patch ZIP also requires deleting every path listed in `DELETE_FILES-PACKAGE-1.txt`.

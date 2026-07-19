@@ -2,6 +2,7 @@ import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-intermittent-knee.jpg";
+import sharpPatternVisual from "@/assets/article-hero-sharp-pain-patterns.jpg";
 
 export const intermittentKneePainGuide: ArticleExport = {
   cta: "",
@@ -29,12 +30,17 @@ export const intermittentKneePainGuide: ArticleExport = {
           Few things are as puzzling as knee discomfort that seems to have a mind of its own. One morning you wake up feeling stiff and uncomfortable; the next day, everything feels perfectly fine. Understanding the patterns behind this kind of on-and-off discomfort can help you take a more proactive approach to your daily comfort.
         </p>
 
-        <h2>Why Knee Discomfort Doesn't Always Follow a Pattern</h2>
+                <figure className="my-8">
+          <img src={sharpPatternVisual} alt="Person holding the knee during a short episode of intermittent discomfort" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" decoding="async" />
+          <figcaption className="mt-3 text-center text-sm text-muted-foreground">Short, movement-specific episodes are easier to understand when you record the exact motion, location, duration, and any swelling or instability.</figcaption>
+        </figure>
+
+<h2>Why Knee Discomfort Doesn't Always Follow a Pattern</h2>
         <p>
           The knee joint is influenced by a wide range of factors throughout each day. Your activity level, the shoes you wore, how long you sat at your desk, the weather outside, and even your sleep quality can all influence how your knees feel on any given day.
         </p>
          <p>
-           This is why knee discomfort can feel unpredictable. It's rarely caused by just one thing. Instead, it's usually the result of multiple small factors adding up. On days when several of these factors align unfavorably, discomfort appears. On better days, those same factors happen to be in your favor. If your discomfort tends to feel sharp or sudden, our <Link to="/guides/sharp-knee-pain-comes-and-goes" className="text-primary hover:underline">sharp knee pain guide</Link> covers that specific pattern in more detail. For a broader view of what causes intermittent sharp episodes, our guide on <Link to="/guides/sharp-knee-pain-causes-relief" className="text-primary hover:underline">sharp knee pain causes and relief</Link> explores the most common triggers.
+           This is why knee discomfort can feel unpredictable. It's rarely caused by just one thing. Instead, it's usually the result of multiple small factors adding up. On days when several of these factors align unfavorably, discomfort appears. On better days, those same factors happen to be in your favor. If your discomfort tends to feel sharp or sudden, our <Link to="/guides/intermittent-knee-pain-guide" className="text-primary hover:underline">sharp knee pain guide</Link> covers that specific pattern in more detail. For a broader view of what causes intermittent sharp episodes, our guide on <Link to="/guides/sharp-knee-pain-causes-relief" className="text-primary hover:underline">sharp knee pain causes and relief</Link> explores the most common triggers.
          </p>
 
         <h2>Common Daily Factors That Influence Knee Comfort</h2>
@@ -79,10 +85,10 @@ export const intermittentKneePainGuide: ArticleExport = {
 
         <h2>When Discomfort Tends to Be Worse</h2>
          <p>
-           Many people notice patterns in when their knee discomfort is most noticeable. Common times include first thing in the morning (when joints are stiff from sleep), after sitting for long periods, after unusual physical activity, or during weather changes. If your discomfort tends to be <Link to="/guides/knee-pain-worse-at-night" className="text-primary hover:underline">worse at night</Link>, our nighttime comfort guide explores evening-specific strategies.
+           Many people notice patterns in when their knee discomfort is most noticeable. Common times include first thing in the morning (when joints are stiff from sleep), after sitting for long periods, after unusual physical activity, or during weather changes. If your discomfort tends to be <Link to="/guides/why-do-my-knees-hurt-when-sleeping" className="text-primary hover:underline">worse at night</Link>, our nighttime comfort guide explores evening-specific strategies.
          </p>
          <p>
-           Keeping a simple mental note of when your knees tend to feel their best and worst can help you identify which daily habits are most supportive. Over time, this awareness often leads to naturally gravitating toward the habits that keep your knees more comfortable. Building a structured <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine</Link> can help stabilize your experience day to day.
+           Keeping a simple mental note of when your knees tend to feel their best and worst can help you identify which daily habits are most supportive. Over time, this awareness often leads to naturally gravitating toward the habits that keep your knees more comfortable. Building a structured <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee comfort routine</Link> can help stabilize your experience day to day.
          </p>
 
         <h2>The Importance of Consistency</h2>

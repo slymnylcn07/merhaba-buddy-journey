@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import { InfoBox } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-it-band-diagram.jpg";
+import itBandSyndromeContext from "@/assets/article-hero-it-band-syndrome.jpg";
 import diagramFullPath from "@/assets/fig-itband-path-v2.svg";
 import diagramKneeZone from "@/assets/diagram-it-band-knee-zone.jpg";
 import diagramComparisonZones from "@/assets/diagram-it-band-comparison-zones.jpg";
@@ -24,8 +25,8 @@ export const itBandPainLocationDiagram = {
     heroImage: heroImage,
     publishedDate: "February 25, 2026",
     lastUpdated: "July 13, 2026",
-    nextSlug: "it-band-pain-location-diagram",
-    nextTitle: "IT Band Syndrome Explained: Why Side Knee Discomfort Happens",
+    nextSlug: "it-band-foam-rolling-step-by-step",
+    nextTitle: "IT Band Foam Rolling: A Safer Step-by-Step Guide",
     faqs: [
       { question: "Where exactly is IT band discomfort felt?", answer: "IT band discomfort is most commonly felt along the outer side of the knee, where the band inserts just below the joint. Some people also notice tightness along the outer thigh above the knee. An IT band pain location diagram typically highlights the lateral knee and outer thigh as the primary zones." },
       { question: "How can I tell if my outer knee discomfort is IT band-related?", answer: "IT band discomfort typically builds gradually during activity (especially running), focuses on the outer knee, and often connects to tightness along the outer thigh. Sudden or sharp sensations may have a different source." },
@@ -64,6 +65,19 @@ export const itBandPainLocationDiagram = {
           </p>
         </InfoBox>
 
+        <figure className="my-8">
+          <img
+            src={itBandSyndromeContext}
+            alt="Runner indicating the outer knee and thigh area commonly associated with IT band symptoms"
+            className="w-full h-auto rounded-xl shadow-sm"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            The retired IT-band overview visual is reused here to connect the outer-thigh path with the lateral knee symptom zone.
+          </figcaption>
+        </figure>
+
         <SectionDivider />
 
         {/* --- SECTION 1: IT Band Path --- */}
@@ -93,7 +107,7 @@ export const itBandPainLocationDiagram = {
         </figure>
 
         <p>
-          Because this band crosses the knee joint on the outside, it is especially sensitive to <strong>repetitive motion</strong>. That's why runners and cyclists tend to notice sensations in this area more often than others. For a detailed breakdown of why this happens and common runner patterns, see our <Link to="/guides/it-band-syndrome-explained" className="text-primary underline hover:text-primary/80">IT band syndrome guide</Link>. For a broader overview of running-related knee concerns, see our <Link to="/guides/running-knee-pain-guide" className="text-primary underline hover:text-primary/80">running knee guide</Link>.
+          Because this band crosses the knee joint on the outside, it is especially sensitive to <strong>repetitive motion</strong>. That's why runners and cyclists tend to notice sensations in this area more often than others. For a detailed breakdown of why this happens and common runner patterns, see our <Link to="/guides/it-band-pain-location-diagram" className="text-primary underline hover:text-primary/80">IT band syndrome guide</Link>. For a broader overview of running-related knee concerns, see our <Link to="/guides/running-knee-pain-guide" className="text-primary underline hover:text-primary/80">running knee guide</Link>.
         </p>
 
         <SectionDivider />
@@ -258,7 +272,7 @@ export const itBandPainLocationDiagram = {
         </div>
 
         <p>
-          Understanding which zone your discomfort falls into can help you adjust your daily habits more effectively. For a deeper comparison of inner vs outer knee sensations, see our <Link to="/guides/side-knee-pain-comfort-guide" className="text-primary underline hover:text-primary/80">side knee comfort guide</Link>. If your discomfort is specifically related to running patterns, our <Link to="/guides/it-band-syndrome-explained" className="text-primary underline hover:text-primary/80">IT band syndrome guide</Link> provides a more detailed breakdown.
+          Understanding which zone your discomfort falls into can help you adjust your daily habits more effectively. For a deeper comparison of inner vs outer knee sensations, see our <Link to="/guides/side-knee-pain-comfort-guide" className="text-primary underline hover:text-primary/80">side knee comfort guide</Link>. If your discomfort is specifically related to running patterns, our <Link to="/guides/it-band-pain-location-diagram" className="text-primary underline hover:text-primary/80">IT band syndrome guide</Link> provides a more detailed breakdown.
         </p>
 
         <SectionDivider />

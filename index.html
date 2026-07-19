@@ -9,36 +9,9 @@
     <!-- Preconnect to external origins for faster resource loading -->
     <link rel="preconnect" href="https://flexi-knee-store.myshopify.com" crossorigin />
     <link rel="dns-prefetch" href="https://flexi-knee-store.myshopify.com" />
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://ipapi.co" crossorigin />
+<link rel="preconnect" href="https://ipapi.co" crossorigin />
     <link rel="dns-prefetch" href="https://ipapi.co" />
-    
-    <!-- Google Analytics 4 - deferred until first user interaction to reduce unused JS -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      (function(){
-        var loaded = false;
-        function loadGA() {
-          if (loaded) return;
-          loaded = true;
-          var gs = document.createElement('script');
-          gs.async = true;
-          gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-5QC0R5G1JG';
-          document.head.appendChild(gs);
-          gtag('js', new Date());
-          gtag('config', 'G-5QC0R5G1JG');
-        }
-        ['scroll','click','touchstart','keydown'].forEach(function(e){
-          window.addEventListener(e, loadGA, {once:true,passive:true});
-        });
-        // Fallback: load after 8s if no interaction
-        window.addEventListener('load', function(){ setTimeout(loadGA, 8000); });
-      })();
-    </script>
-    
-    <!-- Preload hero banner images for faster LCP -->
+<!-- Preload hero banner images for faster LCP -->
     <link rel="preload" as="image" href="/images/flexiknee-hero-desktop-premium-v2.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high" />
     <link rel="preload" as="image" href="/images/flexiknee-hero-final-mobile.png" type="image/png" media="(max-width: 767px)" fetchpriority="high" />
     
@@ -68,17 +41,5 @@
     </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- Shopify Inbox Chat Widget - deferred to improve LCP -->
-    <script>
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          var s1 = document.createElement('script');
-          s1.src = 'https://cdn.shopify.com/shopifycloud/shop_chat/storefront/shopifyChatV1.js';
-          s1.async = true;
-          document.body.appendChild(s1);
-        }, 3000);
-      });
-    </script>
-  </body>
+</body>
 </html>

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { hasAnalyticsConsent, useAnalyticsConsent } from '@/lib/cookie-consent';
 import { supabase } from '@/integrations/supabase/client';
 import {
   initMetaPixel,
@@ -24,6 +25,7 @@ const sendToConversionsAPI = async (
   userData?: Record<string, any>
 ) => {
   try {
+    if (!hasAnalyticsConsent()) return;
     const metaUserData = getMetaUserData();
     
     const { data, error } = await supabase.functions.invoke('meta-conversions-api', {
@@ -53,15 +55,17 @@ const sendToConversionsAPI = async (
 // Hook to track page views
 export const useMetaTracking = () => {
   const location = useLocation();
+  const { analyticsAllowed } = useAnalyticsConsent();
 
   useEffect(() => {
     // Initialize pixel on first load
-    if (META_PIXEL_ID) {
+    if (analyticsAllowed && META_PIXEL_ID) {
       initMetaPixel(META_PIXEL_ID);
     }
-  }, []);
+  }, [analyticsAllowed]);
 
   useEffect(() => {
+    if (!analyticsAllowed) return;
     // Defer page view tracking to break critical network dependency chain
     let cancelled = false;
     const doTrack = () => {
@@ -86,7 +90,7 @@ export const useMetaTracking = () => {
     }
 
     return () => { cancelled = true; };
-  }, [location.pathname]);
+  }, [analyticsAllowed, location.pathname]);
 };
 
 // Track product view (ViewContent)

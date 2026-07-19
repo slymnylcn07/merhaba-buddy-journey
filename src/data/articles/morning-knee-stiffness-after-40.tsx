@@ -229,7 +229,7 @@ export const morningKneeStiffnessAfter40: ArticleExport = {
           <li>Listen closely to your body and adjust daily activity based on how you feel</li>
         </ul>
         <p>
-          The common thread across all age groups is <strong>consistency</strong>. Daily gentle movement, even just 10 to 15 minutes, produces better results than occasional intense exercise. For a complete daily framework, see our <Link to="/guides/daily-knee-comfort-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link>.
+          The common thread across all age groups is <strong>consistency</strong>. Daily gentle movement, even just 10 to 15 minutes, produces better results than occasional intense exercise. For a complete daily framework, see our <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee comfort routine guide</Link>.
         </p>
 
         <h2>Habits That Can Make Morning Stiffness Worse</h2>

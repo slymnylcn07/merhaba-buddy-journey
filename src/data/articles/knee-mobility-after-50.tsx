@@ -1,7 +1,7 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
-import { JournalQuote, StatHighlight, InfoBox, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-mobility-after-50.jpg";
 import sectionJointChanges from "@/assets/article-section-joint-changes-aging.jpg";
 import sectionWarningSigns from "@/assets/article-section-mobility-warning-signs.jpg";
@@ -40,12 +40,6 @@ export const kneeMobilityAfter50: ArticleExport = {
         <p>
           Understanding why this happens is the first step toward doing something about it. The decline in knee mobility after 50 is not caused by a single factor. It is the result of several age-related changes happening simultaneously inside and around the joint.
         </p>
-
-        <StatHighlight
-          stat="65%"
-          label="of adults over 55 report some degree of knee stiffness"
-          description="Making it one of the most common mobility concerns in this age group"
-        />
 
         <p>
           The good news is that unlike some age-related changes, knee mobility responds remarkably well to consistent daily attention. People who maintain a regular movement practice often retain significantly more mobility than those who become sedentary. For a broader look at age-related knee changes, our guide on <Link to="/guides/why-knee-pain-gets-worse-with-age" className="text-primary hover:underline">why knee discomfort changes with age</Link> provides additional context.
@@ -144,15 +138,7 @@ export const kneeMobilityAfter50: ArticleExport = {
           <img src={sectionDailyRoutine} alt="Four-step daily knee mobility routine: seated knee extensions, standing quad stretch, gentle knee circles, and heel-to-toe walk" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">A simple 10-minute daily routine keeps knee joints lubricated, muscles engaged, and range of motion preserved</figcaption>
         </figure>
-
-        <JournalQuote
-          quote="Adults over 50 who performed daily low-intensity joint mobility exercises for 8 weeks demonstrated a 22% improvement in knee range of motion and a 35% reduction in self-reported stiffness compared to a control group. Consistency, not intensity, was the primary predictor of improvement."
-          source="Rehabilitation Science Group"
-          publication="Journal of Aging and Physical Activity"
-          year="2025"
-        />
-
-        <h2>Gentle Stretching Sequence for Knee Flexibility</h2>
+<h2>Gentle Stretching Sequence for Knee Flexibility</h2>
         <p>
           Stretching the muscles around the knee is essential for maintaining flexibility. Tight muscles pull on the joint, restrict its range of motion, and increase the compressive forces on the cartilage. This gentle stretching sequence targets the four key muscle groups that influence knee mobility.
         </p>
@@ -174,7 +160,7 @@ export const kneeMobilityAfter50: ArticleExport = {
 
         <h3>IT Band and Outer Thigh Stretch</h3>
         <p>
-          Stand next to a wall for support. Cross your outside leg behind the inside leg and gently lean your hips toward the wall until you feel a stretch along the outer thigh and hip. Hold for 20 to 30 seconds, then switch sides. A tight <Link to="/guides/it-band-syndrome-explained" className="text-primary hover:underline">IT band</Link> contributes to outer knee stiffness and can restrict lateral knee flexibility.
+          Stand next to a wall for support. Cross your outside leg behind the inside leg and gently lean your hips toward the wall until you feel a stretch along the outer thigh and hip. Hold for 20 to 30 seconds, then switch sides. A tight <Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT band</Link> contributes to outer knee stiffness and can restrict lateral knee flexibility.
         </p>
 
         <figure className="my-8">
@@ -214,12 +200,6 @@ export const kneeMobilityAfter50: ArticleExport = {
         <p>
           Sit in a chair with your back supported. Straighten one leg fully, lift it 6 to 8 inches off the floor, hold for 5 seconds, then slowly lower. Repeat 10 times on each side. This targets the quadriceps, the primary muscle responsible for knee extension strength.
         </p>
-
-        <StatHighlight
-          stat="35%"
-          label="reduction in knee stiffness reported by adults who strength train regularly"
-          description="Even light strengthening 3 times per week produces meaningful improvements in knee comfort and function"
-        />
 
         <h2>Low-Impact Exercises for Long-Term Mobility</h2>
         <p>
@@ -266,15 +246,7 @@ export const kneeMobilityAfter50: ArticleExport = {
         <p>
           This schedule is flexible. The most important element is the daily mobility routine, which should happen every day regardless of what else you do. The strengthening and low-impact exercise can be adjusted based on how your knees feel each week. For those also managing <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">discomfort when getting up after sitting</Link>, the daily mobility routine addresses many of the same underlying causes.
         </p>
-
-        <JournalQuote
-          quote="A structured combination of daily mobility exercises, regular stretching, and 3 to 4 sessions of low-impact cardiovascular activity per week produced the greatest improvements in knee function and self-reported quality of life in adults aged 55 to 75. Adherence to a consistent daily routine was more strongly associated with positive outcomes than exercise intensity."
-          source="Gerontology Research Team"
-          publication="Journal of Geriatric Physical Therapy"
-          year="2025"
-        />
-
-        <h2>When to Seek Professional Guidance</h2>
+<h2>When to Seek Professional Guidance</h2>
         <p>
           While most age-related knee stiffness responds well to consistent daily movement, certain situations warrant professional evaluation:
         </p>

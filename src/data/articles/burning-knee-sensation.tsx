@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -69,12 +68,6 @@ export const burningKneeSensation: ArticleExport = {
         <p>
           A burning feeling in the knee typically indicates that the tissues in or around the joint are irritated or under stress. Unlike sharp pain, which often points to a specific structural issue, a burning sensation usually reflects a broader response involving increased blood flow, mild inflammation, or nerve sensitivity.
         </p>
-
-        <StatHighlight
-          stat="1 in 4"
-          label="adults report occasional burning or warm knee sensations"
-          description="Especially after physical activity or prolonged sitting"
-        />
 
         <p>
           <strong>Tissue irritation around the joint</strong> is one of the most common explanations. The cartilage, tendons, and ligaments around the knee can become mildly irritated from repetitive use, sustained pressure, or sudden increases in activity. When these tissues are stressed, the body naturally increases blood flow to the area, producing that warm or burning feeling.

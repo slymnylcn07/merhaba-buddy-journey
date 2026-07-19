@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, StatHighlight, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
@@ -73,12 +73,6 @@ export const patellofemoralPainSyndrome: ArticleExport = {
         <InfoBox title="Important Note">
           This guide is for educational purposes only and does not provide medical diagnoses or clinical treatment recommendations. If you have persistent or severe knee pain, please consult a qualified healthcare professional.
         </InfoBox>
-
-        <StatHighlight
-          stat="25%"
-          label="of all knee complaints involve the patellofemoral joint"
-          description="Making it one of the most common sources of knee discomfort"
-        />
 
         <h2>Understanding the Patellofemoral Joint</h2>
 
@@ -297,7 +291,7 @@ export const patellofemoralPainSyndrome: ArticleExport = {
         />
 
         <p>
-          For a comprehensive overview of knee pain patterns by location, our <Link to="/guides/knee-pain-location-map-2026" className="text-primary hover:underline">knee pain location map</Link> can help you understand where your discomfort fits in the broader picture.
+          For a comprehensive overview of knee pain patterns by location, our <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee pain location map</Link> can help you understand where your discomfort fits in the broader picture.
         </p>
 
         <h2>When Knee Discomfort Should Be Evaluated</h2>
