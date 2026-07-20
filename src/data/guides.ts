@@ -20,14 +20,14 @@ export const guidesData: GuideData[] = [
     title: "Heat vs. Red Light Therapy: What Helps Knee Comfort?",
     description: "Understand how heat and red light therapy work and how they can support everyday knee comfort.",
     readTime: 6,
-    lastModified: "2025-02-10",
+    lastModified: "2025-03-08",
   },
   {
     slug: "who-benefits-from-knee-therapy-devices",
     title: "Who Benefits Most From At-Home Knee Therapy Devices?",
     description: "Learn who these devices are designed for and what to realistically expect from at-home support.",
     readTime: 4,
-    lastModified: "2025-03-05",
+    lastModified: "2025-05-22",
   },
   {
     slug: "back-of-knee-pain-explained",
@@ -48,7 +48,7 @@ export const guidesData: GuideData[] = [
     title: "Running Knee Pain: Injuries, Triggers & What Helps",
     description: "Learn about running knee pain including patellar tendinitis, meniscus tear, ACL injury, and effective strategies for pain when bending knee.",
     readTime: 14,
-    lastModified: "2025-12-20",
+    lastModified: "2026-03-18",
   },
   {
     slug: "knee-arthritis-pain-guide",
@@ -62,7 +62,7 @@ export const guidesData: GuideData[] = [
     title: "Sharp Knee Pain That Comes & Goes: When to Act",
     description: "Understand sharp stabbing pain in knee that comes and goes, pain when straightening leg, pain inside knee, and whether sciatica can cause knee pain.",
     readTime: 12,
-    lastModified: "2025-12-20",
+    lastModified: "2026-03-19",
   },
   {
     slug: "how-to-strengthen-knees",
@@ -76,7 +76,7 @@ export const guidesData: GuideData[] = [
     title: "Knee Injuries: Common Types, Symptoms & Recovery",
     description: "An educational overview of common knee injuries, typical symptoms, and general recovery considerations to help you understand knee joint health.",
     readTime: 11,
-    lastModified: "2025-12-21",
+    lastModified: "2026-04-02",
   },
   // New articles added January 2026
   {
@@ -112,7 +112,7 @@ export const guidesData: GuideData[] = [
     title: "Do Knee Massagers Work? Realistic Expectations (2026)",
     description: "A realistic look at knee massagers: what they can offer, what to expect, and how to set appropriate expectations.",
     readTime: 10,
-    lastModified: "2026-01-19",
+    lastModified: "2026-02-24",
   },
   {
     slug: "is-infrared-safe-for-knees",
@@ -154,7 +154,7 @@ export const guidesData: GuideData[] = [
     title: "Best Running Shoes for Knee Pain: Fit Tips & Mistakes",
     description: "Learn what runners look for in knee-friendly shoes, common fit mistakes, and running habits that influence comfort.",
     readTime: 11,
-    lastModified: "2026-01-19",
+    lastModified: "2026-07-13",
   },
   {
     slug: "front-knee-tightness-after-activity",
@@ -183,7 +183,7 @@ export const guidesData: GuideData[] = [
     title: "FlexiKnee Review 2026: Full Breakdown & Pros/Cons",
     description: "Honest FlexiKnee review for 2026. Full breakdown of features, pros, cons, and who benefits most from this smart heated knee massager with red light therapy.",
     readTime: 12,
-    lastModified: "2026-02-24",
+    lastModified: "2026-07-14",
   },
   {
     slug: "flexiknee-vs-competitors-2026",
@@ -204,7 +204,7 @@ export const guidesData: GuideData[] = [
     title: "Smart Heated Knee Braces: 2026 Buyer's Guide",
     description: "Compare the top 5 smart heated knee braces in 2026. Features, pricing, pros and cons reviewed. Find the best heated knee brace device for your needs.",
     readTime: 13,
-    lastModified: "2026-02-24",
+    lastModified: "2026-07-13",
   },
   {
     slug: "heat-red-light-therapy-benefits-2026",
@@ -268,12 +268,12 @@ export const guidesData: GuideData[] = [
     title: "Knee Pain Locations: A Visual Discomfort Zone Guide",
     description: "A visual guide to common knee discomfort zones: front, inner, outer, back, above and below the kneecap, IT band, and joint line. Daily comfort tips for each area.",
     readTime: 14,
-    lastModified: "2026-02-25",
+    lastModified: "2026-03-19",
   },
   {
     slug: "runners-knee-pain-location",
     title: "Runner's Knee Pain Location: Causes & Patterns",
-    description: "Explore where runners commonly feel knee discomfort ? front, inner, outer, and back of knee. Learn what each location means and everyday comfort approaches.",
+    description: "Explore where runners commonly feel knee discomfort: front, inner, outer, and back of knee. Learn what each location means and everyday comfort approaches.",
     readTime: 12,
     lastModified: "2026-02-25",
   },
@@ -311,14 +311,14 @@ export const guidesData: GuideData[] = [
     title: "Why Do My Knees Feel Tight or Stiff After Resting?",
     description: "Explore why knees feel tight or stiff after resting, sitting, or sleeping. Understand knee stiffness causes, morning tightness patterns, and daily comfort tips.",
     readTime: 14,
-    lastModified: "2026-02-26",
+    lastModified: "2026-07-19",
   },
   {
     slug: "knee-pain-after-standing",
     title: "Knee Pain After Standing: Causes & Comfort Strategies",
     description: "Why does knee pain when standing happen? Explore causes of knee pain after standing all day, standing posture tips, and patellofemoral pain syndrome comfort strategies.",
     readTime: 14,
-    lastModified: "2026-02-26",
+    lastModified: "2026-07-13",
   },
   {
     slug: "best-red-light-therapy-knee",
@@ -367,7 +367,7 @@ export const guidesData: GuideData[] = [
     title: "Knee Pain Getting Up After Sitting: Causes & Tips",
     description: "Why do knees hurt when standing up after sitting? Learn age-related causes of knee stiffness after sitting, first-movement pain, and daily relief strategies.",
     readTime: 15,
-    lastModified: "2026-03-02",
+    lastModified: "2026-07-13",
   },
   {
     slug: "knee-pain-after-long-walks",
@@ -402,7 +402,7 @@ export const guidesData: GuideData[] = [
     title: "Knee Clicking When Walking or Bending Explained",
     description: "Why does your knee click when walking, bending, or on stairs? Learn about movement-based knee clicking, popping without pain, and when to pay attention.",
     readTime: 14,
-    lastModified: "2026-03-03",
+    lastModified: "2026-07-13",
   },
   {
     slug: "knees-hurt-after-resting",
@@ -416,7 +416,7 @@ export const guidesData: GuideData[] = [
     title: "Knees Hurt in Cold Weather? Causes Explained",
     description: "Why do knees hurt in cold weather? Learn how temperature drops, barometric pressure, and humidity cause knee stiffness and discover warmth-based comfort strategies.",
     readTime: 15,
-    lastModified: "2026-03-03",
+    lastModified: "2026-07-16",
   },
   {
     slug: "best-supplements-for-knee-pain",
@@ -430,7 +430,7 @@ export const guidesData: GuideData[] = [
     title: "Knees Hurt After Exercise? Causes & Recovery",
     description: "Why do knees hurt after exercise but not during? Learn about delayed knee pain after workouts, common causes, normal soreness vs warning signs, and recovery tips.",
     readTime: 14,
-    lastModified: "2026-03-04",
+    lastModified: "2026-07-13",
   },
   {
     slug: "knee-pain-climbing-stairs",
@@ -535,7 +535,7 @@ export const guidesData: GuideData[] = [
     title: "Knee Pain After Long Flights: Relief Tips",
     description: "Learn why knees feel stiff after long flights. Discover causes of knee pain from prolonged sitting during travel and simple strategies to support comfort.",
     readTime: 14,
-    lastModified: "2026-03-08",
+    lastModified: "2026-07-13",
   },
   {
     slug: "knee-pain-when-kneeling",
@@ -605,7 +605,7 @@ export const guidesData: GuideData[] = [
     title: "Cordless & Rechargeable Heated Knee Massagers: 2026 Buyer's Guide",
     description: "Real battery life, heat levels, red light, and the features that matter when choosing a wireless heated knee massager in 2026.",
     readTime: 16,
-    lastModified: "2026-07-10",
+    lastModified: "2026-07-13",
   },
   {
     slug: "best-insoles-for-knee-pain-2026",
@@ -682,7 +682,6 @@ export const staticPages = [
   { path: "/why-flexiknee", priority: 0.8, changefreq: "monthly" },
   { path: "/product/knee-massager-smart-red-light-and-massage-therapy", priority: 0.9, changefreq: "weekly" },
   { path: "/foundation", priority: 0.7, changefreq: "monthly" },
-  { path: "/track-order", priority: 0.5, changefreq: "monthly" },
   { path: "/privacy-policy", priority: 0.3, changefreq: "yearly" },
   { path: "/terms-of-service", priority: 0.3, changefreq: "yearly" },
   { path: "/refund-policy", priority: 0.3, changefreq: "yearly" },

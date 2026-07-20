@@ -1,12 +1,40 @@
-import { existsSync, readFileSync, statSync } from "fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "fs";
 import { join, resolve } from "path";
 
 const DIST = resolve(process.cwd(), "dist");
 const ORIGIN = "https://flexi-knee.com";
 const VERCEL_CONFIG = resolve(process.cwd(), "vercel.json");
 
-const criticalRoutes = [
-  { route: "/", requiredText: ["FlexiKnee Smart Heated Knee Massager", "support@flexi-knee.com"] },
+interface CriticalRoute {
+  route: string;
+  requiredText: string[];
+  title?: string;
+  description?: string;
+  h1?: string;
+}
+
+const criticalRoutes: CriticalRoute[] = [
+  {
+    route: "/",
+    requiredText: ["Smart Heated Knee Massager for Everyday Knee Comfort", "support@flexi-knee.com"],
+    title: "Heated Knee Massager & Knee Comfort Guides | FlexiKnee",
+    description: "Shop the FlexiKnee heated knee massager and explore practical guides for knee stiffness, stairs, exercise recovery, heat, ice and daily comfort.",
+    h1: "Smart Heated Knee Massager for Everyday Knee Comfort",
+  },
+  {
+    route: "/shop",
+    requiredText: ["support@flexi-knee.com"],
+    title: "Knee Massagers, Sleeves & Recovery Products | FlexiKnee",
+    description: "Compare FlexiKnee knee massagers, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price.",
+    h1: "Knee Comfort Products for Heat, Compression & Recovery",
+  },
+  {
+    route: "/guides",
+    requiredText: ["support@flexi-knee.com"],
+    title: "Knee Pain Guides by Symptom, Activity & Location | FlexiKnee",
+    description: "Browse practical knee pain guides by symptom, location and activity, including stiffness, clicking, stairs, exercise recovery, heat and ice.",
+    h1: "Knee Pain Guides by Symptom, Activity & Location",
+  },
   { route: "/product/knee-massager-smart-red-light-and-massage-therapy", requiredText: ["FlexiKnee Smart Heated Knee Massager"] },
   { route: "/guides/flexiknee-review-2026", requiredText: ["FlexiKnee Massager Review 2026", "Sources and Further Reading"] },
   { route: "/why-flexiknee", requiredText: ["About FlexiKnee", "support@flexi-knee.com"] },
@@ -31,6 +59,21 @@ function extractLocalAssets(html: string, attribute: "href" | "src"): string[] {
   return [...html.matchAll(pattern)].map((match) => match[1]);
 }
 
+function collectPrerenderedPages(directory: string): string[] {
+  if (!existsSync(directory)) return [];
+  const files: string[] = [];
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    const child = join(directory, entry.name);
+    if (entry.isDirectory()) files.push(...collectPrerenderedPages(child));
+    else if (entry.name === "index.html") files.push(child);
+  }
+  return files;
+}
+
+function escapeHtmlText(value: string): string {
+  return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 const failures: string[] = [];
 
 if (!existsSync(DIST)) {
@@ -46,6 +89,11 @@ if (!existsSync(DIST)) {
     const html = readFileSync(file, "utf8");
     if (html.length < 2_000) failures.push(`${item.route}: HTML is unexpectedly small`);
     if (!/<title>[^<]+<\/title>/i.test(html)) failures.push(`${item.route}: title is missing`);
+    if (item.title && !html.includes(`<title>${escapeHtmlText(item.title)}</title>`)) failures.push(`${item.route}: exact title is incorrect`);
+    if (item.description && !html.includes(`name="description" content="${item.description}"`)) failures.push(`${item.route}: exact meta description is incorrect`);
+    if (item.h1 && !new RegExp(`<h1[^>]*>\\s*${escapeHtmlText(item.h1).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*</h1>`, "i").test(html)) {
+      failures.push(`${item.route}: exact H1 is incorrect`);
+    }
 
     const canonical = canonicalFor(item.route);
     const canonicalTag = [...html.matchAll(/<link\b[^>]*>/gi)]
@@ -70,6 +118,19 @@ if (!existsSync(DIST)) {
     }
   }
 
+  const allPrerenderedPages = collectPrerenderedPages(DIST);
+  for (const file of allPrerenderedPages) {
+    const html = readFileSync(file, "utf8");
+    const route = file === join(DIST, "index.html")
+      ? "/"
+      : `/${file.slice(DIST.length + 1, -"\\index.html".length).replace(/\\/g, "/")}`;
+    if (!/<title>[^<]+<\/title>/i.test(html)) failures.push(`${route}: title is missing`);
+    if (!/<meta\s+name=["']description["']\s+content=["'][^"']+["']/i.test(html)) failures.push(`${route}: meta description is missing`);
+    if (!/<h1\b[^>]*>[\s\S]*?<\/h1>/i.test(html)) failures.push(`${route}: H1 is missing`);
+    if (!/<link\b[^>]*rel=["']canonical["'][^>]*href=["']https:\/\/flexi-knee\.com\//i.test(html)) failures.push(`${route}: canonical is missing`);
+    if (!html.includes("support@flexi-knee.com")) failures.push(`${route}: support email is missing from rendered page`);
+  }
+
   const versionFile = join(DIST, "build-version.json");
   if (!existsSync(versionFile)) {
     failures.push("build-version.json is missing");
@@ -88,6 +149,7 @@ if (!existsSync(DIST)) {
   } else {
     const xml = readFileSync(sitemap, "utf8");
     for (const item of criticalRoutes) if (!xml.includes(canonicalFor(item.route))) failures.push(`sitemap.xml is missing ${canonicalFor(item.route)}`);
+    if (xml.includes(`${ORIGIN}/track-order`)) failures.push("sitemap.xml must not include the noindex track-order page");
   }
 
   const robots = join(DIST, "robots.txt");

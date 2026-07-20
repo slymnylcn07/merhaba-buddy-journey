@@ -25,17 +25,18 @@ function escapeXml(value: string): string {
 }
 
 function generateSitemap(pages: SitemapPage[]): string {
-  const today = new Date().toISOString().split("T")[0];
-
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 `;
 
   for (const page of pages) {
+    const lastModifiedLine = page.lastmod
+      ? `    <lastmod>${page.lastmod}</lastmod>\n`
+      : "";
+
     xml += `  <url>
     <loc>${escapeXml(`${SITE_URL}${page.path}`)}</loc>
-    <lastmod>${page.lastmod || today}</lastmod>
-    <changefreq>${page.changefreq}</changefreq>
+${lastModifiedLine}    <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>
 `;

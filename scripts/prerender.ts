@@ -121,7 +121,22 @@ async function prerender() {
   // - Vercel/serverless: use @sparticuz/chromium (downloaded as a dep)
   // - Local Lovable sandbox: /bin/chromium
   // - Local dev (Mac/Linux): fall back to PUPPETEER_EXECUTABLE_PATH or system chrome
-  let executablePath = process.env.PUPPETEER_EXECUTABLE_PATH || "/bin/chromium";
+  const localBrowserCandidates = [
+    process.env.PUPPETEER_EXECUTABLE_PATH,
+    process.platform === "win32"
+      ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+      : undefined,
+    process.platform === "win32"
+      ? "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+      : undefined,
+    "/bin/chromium",
+    "/usr/bin/chromium",
+    "/usr/bin/google-chrome",
+  ].filter((candidate): candidate is string => Boolean(candidate));
+
+  let executablePath = localBrowserCandidates.find((candidate) => existsSync(candidate))
+    || localBrowserCandidates[0]
+    || "/bin/chromium";
   let extraArgs: string[] = [];
 
   if (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME) {

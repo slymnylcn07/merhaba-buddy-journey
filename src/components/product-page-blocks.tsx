@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import type { ProductBenefit } from "@/data/product-page-config";
 import { DELIVERY_ESTIMATES, FREE_SHIPPING_THRESHOLD, RETURN_WINDOW_DAYS } from "@/lib/policy-config";
+import sleeveMeasurementDiagram from "@/assets/fig-sleeve-measure.svg";
 
 export { PaymentLogosRow, PaymentOptionsRow } from "@/components/PaymentLogos";
 
@@ -263,6 +264,8 @@ import { Link as RouterLink } from "react-router-dom";
 
 interface SizeChartData {
   title: string;
+  measurementImage?: string;
+  measurementAlt?: string;
   columns: string[];
   rows: string[][];
   note: string;
@@ -273,6 +276,8 @@ interface SizeChartData {
 const SIZE_CHARTS: Record<string, SizeChartData> = {
   "compression-sleeve": {
     title: "Knee sleeve size chart",
+    measurementImage: sleeveMeasurementDiagram,
+    measurementAlt: "How to measure leg circumference 10 centimeters above the knee before choosing a compression sleeve size",
     columns: ["Size", "Length", "Upper width", "Bottom width"],
     rows: [
       ["M", "26.5 cm / 10.43 in", "15 cm / 5.91 in", "13 cm / 5.12 in"],
@@ -319,6 +324,18 @@ export const SizeChartTrigger = ({ profileKey }: { profileKey: string }) => {
             {chart.title}
           </DialogTitle>
         </DialogHeader>
+        {chart.measurementImage && (
+          <figure className="rounded-2xl border border-slate-200 bg-slate-50 p-3">
+            <img
+              src={chart.measurementImage}
+              alt={chart.measurementAlt || "How to measure for the selected product"}
+              className="mx-auto h-auto w-full max-w-sm"
+            />
+            <figcaption className="mt-2 text-center text-xs font-medium text-slate-600">
+              Measure before choosing a size; do not size down for extra compression.
+            </figcaption>
+          </figure>
+        )}
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-sm">
             <thead>

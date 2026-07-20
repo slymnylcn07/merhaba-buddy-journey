@@ -17,6 +17,13 @@ const forbidden = [
   { label: "developer-facing video copy", value: "Short vertical videos show the device" },
 ];
 
+const mojibakePatterns = [
+  { label: "Unicode replacement character", pattern: /\uFFFD/u },
+  { label: "misdecoded UTF-8 punctuation", pattern: /\u00E2\u20AC/u },
+  { label: "misdecoded UTF-8 replacement bytes", pattern: /\u00EF\u00BF\u00BD/u },
+  { label: "misdecoded non-breaking space", pattern: /\u00C2\u00A0/u },
+];
+
 function collectFiles(target: string): string[] {
   const absolute = resolve(ROOT, target);
   if (!existsSync(absolute)) return [];
@@ -46,6 +53,9 @@ for (const file of files) {
   if (content.includes("support@flexi-knee.com")) supportEmailFound = true;
   for (const item of forbidden) {
     if (content.includes(item.value)) failures.push(`${displayPath}: contains ${item.label}`);
+  }
+  for (const item of mojibakePatterns) {
+    if (item.pattern.test(content)) failures.push(`${displayPath}: contains ${item.label}`);
   }
 }
 

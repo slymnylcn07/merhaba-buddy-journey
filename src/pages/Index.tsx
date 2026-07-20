@@ -161,20 +161,23 @@ export default function Index() {
   return (
     <>
       <Helmet>
-        <title>FlexiKnee | Official Smart Heated Knee Massager & Guides</title>
+        <title>Heated Knee Massager & Knee Comfort Guides | FlexiKnee</title>
         <meta
           name="description"
-          content="Official FlexiKnee website. Explore the FlexiKnee Smart Heated Knee Massager, practical knee-comfort guides, product details, customer support, and secure checkout."
+          content="Shop the FlexiKnee heated knee massager and explore practical guides for knee stiffness, stairs, exercise recovery, heat, ice and daily comfort."
         />
         <link rel="canonical" href="https://flexi-knee.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/" />
-        <meta property="og:title" content="FlexiKnee | Official Smart Heated Knee Massager & Guides" />
-        <meta property="og:description" content="The official FlexiKnee website for the Smart Heated Knee Massager, practical guides, product details, and customer support." />
+        <meta property="og:title" content="Heated Knee Massager & Knee Comfort Guides | FlexiKnee" />
+        <meta property="og:description" content="Shop the FlexiKnee heated knee massager and explore practical guides for knee stiffness, stairs, exercise recovery, heat, ice and daily comfort." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@flexikneeofficial" />
+        <meta name="twitter:title" content="Heated Knee Massager & Knee Comfort Guides | FlexiKnee" />
+        <meta name="twitter:description" content="Shop the FlexiKnee heated knee massager and explore practical guides for knee stiffness, stairs, exercise recovery, heat, ice and daily comfort." />
+        <meta name="twitter:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(homePageJsonLd)}</script>
       </Helmet>
 
@@ -215,7 +218,7 @@ export default function Index() {
                     <BadgeCheck className="h-3.5 w-3.5" /> Official FlexiKnee website
                   </div>
                   <h1 className="mt-[4%] max-w-[780px] text-[clamp(2.35rem,4.2vw,5rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-slate-950">
-                    FlexiKnee Smart Heated Knee Massager
+                    Smart Heated Knee Massager for Everyday Knee Comfort
                   </h1>
                   <p className="mt-[3%] max-w-xl text-[clamp(1rem,1.55vw,1.5rem)] font-semibold tracking-[-0.02em] text-slate-800">
                     Comfort that keeps you moving.

@@ -22,6 +22,7 @@ export const whatCausesKneePain: ArticleExport = {
     metaDescription: "What causes knee pain? Learn common causes of knee pain by location, sudden knee pain without injury, knee pain in females, and daily relief tips for all ages.",
     heroImage: heroImage,
     publishedDate: "February 28, 2026",
+    lastUpdated: "July 19, 2026",
     faqs: [
       { question: "What causes knee pain without an injury?", answer: "Sudden knee pain without injury is often linked to overuse, muscle imbalances, weight changes, inflammatory conditions, or age-related cartilage wear. Daily habits like prolonged sitting, poor footwear, or sudden activity increases can also trigger unexpected knee discomfort." },
       { question: "Why does my knee hurt when I bend it?", answer: "Knee pain when bending is commonly associated with kneecap tracking issues, cartilage wear behind the patella, or tightness in the quadriceps and hamstrings. Stair climbing and squatting tend to increase this sensation because they load the knee joint under greater angles." },

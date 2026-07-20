@@ -19,6 +19,7 @@ export const whyDoMyKneesCrackOrPop: ArticleExport = {
     metaDescription: "Learn why knees crack and pop. Understand knee clicking, crepitus causes, and when knee cracking sounds are normal. Practical daily comfort tips included.",
     heroImage: heroImage,
     publishedDate: "February 25, 2026",
+    lastUpdated: "July 19, 2026",
     seoTags: "knee cracking, knee popping, crepitus knee, knee clicking, why knees crack, squat knee crack, knee crack sound, knee tendinitis, knee bending crack, knee popping squat, knee joint sounds, morning knee stiffness, knee comfort habits, knee grinding, knee crepitus guide",
     faqs: [
       { question: "Why do my knees crack so much?", answer: "Frequent knee cracking is most commonly caused by gas bubbles releasing in the synovial fluid within the joint. This is called cavitation and is generally harmless. If the cracking is not accompanied by discomfort, swelling, or changes in movement, it is typically considered a normal joint sound." },

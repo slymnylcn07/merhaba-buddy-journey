@@ -24,7 +24,7 @@ export const itBandPainLocationDiagram = {
     metaDescription: "Visual guide to IT band pain location with diagrams. See where IT band discomfort is commonly felt, outer knee zones, and how it differs from other side knee sensations.",
     heroImage: heroImage,
     publishedDate: "February 25, 2026",
-    lastUpdated: "July 13, 2026",
+    lastUpdated: "July 19, 2026",
     nextSlug: "it-band-foam-rolling-step-by-step",
     nextTitle: "IT Band Foam Rolling: A Safer Step-by-Step Guide",
     faqs: [

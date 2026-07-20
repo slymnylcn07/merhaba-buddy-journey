@@ -625,15 +625,20 @@ const Guides = () => {
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Simple Guides for Everyday Knee Comfort",
-    "description": "These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines, without medical advice or treatment claims.",
+    "name": "Knee Pain Guides by Symptom, Activity & Location",
+    "description": "Browse practical knee pain guides by symptom, location and activity, including stiffness, clicking, stairs, exercise recovery, heat and ice.",
     "url": canonicalUrl,
     "isPartOf": { "@type": "WebSite", "name": "FlexiKnee", "url": "https://flexi-knee.com" },
     "publisher": {
       "@type": "Organization",
       "name": "FlexiKnee",
       "url": "https://flexi-knee.com",
-      "logo": { "@type": "ImageObject", "url": "https://flexi-knee.com/flexiknee-logo.png" }
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flexi-knee.com/images/flexiknee-logo.svg",
+        "width": 640,
+        "height": 160
+      }
     },
     "inLanguage": "en"
   };
@@ -643,20 +648,20 @@ const Guides = () => {
   return (
     <>
       <Helmet>
-        <title>Simple Guides for Everyday Knee Comfort | FlexiKnee</title>
-        <meta name="description" content={`Explore ${guides.length} practical guides on knee pain after exercise, knee clicking when walking, stair discomfort, and daily comfort routines.`} />
+        <title>Knee Pain Guides by Symptom, Activity & Location | FlexiKnee</title>
+        <meta name="description" content="Browse practical knee pain guides by symptom, location and activity, including stiffness, clicking, stairs, exercise recovery, heat and ice." />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:title" content="Simple Guides for Everyday Knee Comfort | FlexiKnee" />
-        <meta property="og:description" content="These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines, without medical advice or treatment claims." />
+        <meta property="og:title" content="Knee Pain Guides by Symptom, Activity & Location | FlexiKnee" />
+        <meta property="og:description" content="Browse practical knee pain guides by symptom, location and activity, including stiffness, clicking, stairs, exercise recovery, heat and ice." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@FlexiKnee" />
-        <meta name="twitter:title" content="Simple Guides for Everyday Knee Comfort | FlexiKnee" />
-        <meta name="twitter:description" content="These guides help you understand everyday knee discomfort patterns, daily habits, and supportive at-home routines, without medical advice or treatment claims." />
+        <meta name="twitter:title" content="Knee Pain Guides by Symptom, Activity & Location | FlexiKnee" />
+        <meta name="twitter:description" content="Browse practical knee pain guides by symptom, location and activity, including stiffness, clicking, stairs, exercise recovery, heat and ice." />
         <meta name="twitter:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(webPageJsonLd)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListJsonLd)}</script>
@@ -677,7 +682,7 @@ const Guides = () => {
                   FlexiKnee guide library
                 </p>
                 <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-[-0.055em] text-white md:text-6xl">
-                  Find the right knee comfort routine.
+                  Knee Pain Guides by Symptom, Activity & Location
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
                   Practical guides for stiffness, clicking, stairs, daily habits, warmth, massage, and smarter at home recovery choices.

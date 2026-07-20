@@ -16,14 +16,35 @@ import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getProductPath, PRIMARY_PRODUCT_HANDLE } from "@/lib/product-config";
 import { getProductProfile } from "@/data/product-profiles";
 
+const SHOP_CATEGORIES = ["All", "Heat", "Compression", "Massage", "Walking & Foot Support", "Travel Recovery"] as const;
+
 const collectionJsonLd = {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "FlexiKnee Shop. Knee Comfort & Recovery Products",
-  url: "https://flexi-knee.com/shop",
-  isPartOf: { "@id": "https://flexi-knee.com/#website" },
-  provider: { "@id": "https://flexi-knee.com/#organization" },
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://flexi-knee.com/shop#collection",
+      name: "Knee Comfort Products for Heat, Compression & Recovery",
+      description: "Compare FlexiKnee knee massagers, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price.",
+      url: "https://flexi-knee.com/shop",
+      isPartOf: { "@id": "https://flexi-knee.com/#website" },
+      provider: { "@id": "https://flexi-knee.com/#organization" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://flexi-knee.com/shop#breadcrumb",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://flexi-knee.com/" },
+        { "@type": "ListItem", position: 2, name: "Shop", item: "https://flexi-knee.com/shop" },
+      ],
+    },
+  ],
 };
+
+function getShopCategories(product: ShopifyProduct): string[] {
+  if (product.node.handle === PRIMARY_PRODUCT_HANDLE) return ["Heat", "Massage"];
+  return getProductProfile(product).shopCategories;
+}
 
 function formatMoney(amount?: string, currencyCode?: string) {
   const value = Number(amount || 0);
@@ -42,6 +63,7 @@ function formatMoney(amount?: string, currencyCode?: string) {
 export default function Shop() {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [activeCategory, setActiveCategory] = useState<(typeof SHOP_CATEGORIES)[number]>("All");
 
   useEffect(() => {
     let active = true;
@@ -65,6 +87,10 @@ export default function Shop() {
 
   const primaryProduct = products.find((product) => product.node.handle === PRIMARY_PRODUCT_HANDLE);
   const supportProducts = products.filter((product) => product.node.handle !== PRIMARY_PRODUCT_HANDLE);
+  const showPrimary = Boolean(primaryProduct && (activeCategory === "All" || getShopCategories(primaryProduct).includes(activeCategory)));
+  const visibleSupportProducts = supportProducts.filter(
+    (product) => activeCategory === "All" || getShopCategories(product).includes(activeCategory),
+  );
 
   const itemListJsonLd = useMemo(() => ({
     "@context": "https://schema.org",
@@ -73,23 +99,29 @@ export default function Shop() {
       "@type": "ListItem",
       position: index + 1,
       url: `https://flexi-knee.com${getProductPath(product.node.handle)}`,
-      name: product.node.title,
+      name: product.node.handle === PRIMARY_PRODUCT_HANDLE ? product.node.title : getProductProfile(product).h1,
     })),
   }), [products]);
 
   return (
     <>
       <Helmet>
-        <title>Shop FlexiKnee | Official Knee Comfort Products</title>
+        <title>Knee Massagers, Sleeves & Recovery Products | FlexiKnee</title>
         <meta
           name="description"
-          content="Explore FlexiKnee products for warming routines, compression support, lower-leg recovery and foot-to-knee comfort, including the FlexiKnee Sport Orthopedic Insoles."
+          content="Compare FlexiKnee knee massagers, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price."
         />
         <link rel="canonical" href="https://flexi-knee.com/shop" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/shop" />
-        <meta property="og:title" content="Shop FlexiKnee | Official Knee Comfort Products" />
-        <meta property="og:description" content="One premium knee device, plus focused products for warmth, compression, travel recovery and foot support." />
+        <meta property="og:title" content="Knee Massagers, Sleeves & Recovery Products | FlexiKnee" />
+        <meta property="og:description" content="Compare FlexiKnee knee massagers, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price." />
+        <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
+        <meta property="og:site_name" content="FlexiKnee" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Knee Massagers, Sleeves & Recovery Products | FlexiKnee" />
+        <meta name="twitter:description" content="Compare FlexiKnee knee massagers, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price." />
+        <meta name="twitter:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(collectionJsonLd)}</script>
         {products.length > 0 && <script type="application/ld+json">{JSON.stringify(itemListJsonLd)}</script>}
       </Helmet>
@@ -104,8 +136,11 @@ export default function Shop() {
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">The FlexiKnee system</p>
                   <h1 className="mt-3 max-w-4xl text-4xl font-semibold tracking-[-0.05em] text-slate-950 md:text-6xl">
-                    One clear product for each part of your routine.
+                    Knee Comfort Products for Heat, Compression & Recovery
                   </h1>
+                  <h2 className="mt-4 text-xl font-semibold tracking-[-0.02em] text-slate-800 md:text-2xl">
+                    One clear product for each part of your routine.
+                  </h2>
                   <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
                     Start with the premium Smart Heated Knee Massager, or choose a focused solution for compression, simple warmth, lower-leg recovery or foot support.
                   </p>
@@ -130,6 +165,26 @@ export default function Shop() {
 
           <section className="bg-white py-12 md:py-16">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="mb-9" aria-label="Filter products by purpose">
+                <p className="mb-3 text-sm font-semibold text-slate-900">Choose by purpose</p>
+                <div className="flex gap-2 overflow-x-auto pb-2">
+                  {SHOP_CATEGORIES.map((category) => (
+                    <button
+                      key={category}
+                      type="button"
+                      onClick={() => setActiveCategory(category)}
+                      aria-pressed={activeCategory === category}
+                      className={`shrink-0 rounded-full border px-4 py-2 text-sm font-semibold transition ${
+                        activeCategory === category
+                          ? "border-blue-600 bg-blue-600 text-white"
+                          : "border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:text-blue-700"
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+              </div>
               {isLoading ? (
                 <div className="space-y-8">
                   <div className="h-[430px] animate-pulse rounded-[2.25rem] bg-slate-100" />
@@ -147,7 +202,7 @@ export default function Shop() {
                 </div>
               ) : (
                 <>
-                  {primaryProduct && (() => {
+                  {showPrimary && primaryProduct && (() => {
                     const node = primaryProduct.node;
                     const image = node.images.edges[0]?.node;
                     const price = node.priceRange.minVariantPrice;
@@ -178,6 +233,16 @@ export default function Shop() {
                                 </div>
                               ))}
                             </div>
+                            <div className="mt-6 grid gap-3 text-sm sm:grid-cols-2">
+                              <div className="rounded-2xl bg-white/10 p-4">
+                                <p className="text-xs font-semibold uppercase tracking-wider text-blue-200">Best for</p>
+                                <p className="mt-1 text-slate-100">A complete heat and massage-style knee routine at home</p>
+                              </div>
+                              <div className="rounded-2xl bg-white/10 p-4">
+                                <p className="text-xs font-semibold uppercase tracking-wider text-blue-200">Not ideal for</p>
+                                <p className="mt-1 text-slate-100">Rigid bracing, acute-injury diagnosis or unexplained swelling</p>
+                              </div>
+                            </div>
                             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                               <Link to={getProductPath(node.handle)} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-blue-50">
                                 Explore the main FlexiKnee <ArrowRight className="h-4 w-4" />
@@ -201,7 +266,7 @@ export default function Shop() {
                   </div>
 
                   <div className="mt-8 grid gap-6 md:grid-cols-2">
-                    {supportProducts.map((product) => {
+                    {visibleSupportProducts.map((product) => {
                       const node = product.node;
                       const image = node.images.edges[0]?.node;
                       const price = node.priceRange.minVariantPrice;
@@ -220,11 +285,15 @@ export default function Shop() {
                             </div>
                             <div className="flex flex-col p-6">
                               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">{profile.eyebrow}</p>
-                              <h3 className="mt-3 text-xl font-semibold leading-snug tracking-[-0.02em] text-slate-950">{node.title}</h3>
+                              <h3 className="mt-3 text-xl font-semibold leading-snug tracking-[-0.02em] text-slate-950">{profile.h1}</h3>
                               <p className="mt-3 text-sm leading-7 text-slate-600">{profile.cardCopy}</p>
                               <div className="mt-4 rounded-2xl bg-slate-50 p-3">
                                 <p className="text-xs font-semibold text-slate-500">BEST FOR</p>
                                 <p className="mt-1 text-sm font-medium text-slate-800">{profile.bestFor}</p>
+                              </div>
+                              <div className="mt-2 rounded-2xl border border-amber-100 bg-amber-50/70 p-3">
+                                <p className="text-xs font-semibold text-amber-800">NOT IDEAL FOR</p>
+                                <p className="mt-1 text-sm text-slate-700">{profile.notIdealFor}</p>
                               </div>
                               <div className="mt-auto flex items-end justify-between gap-4 pt-6">
                                 <div>
@@ -232,7 +301,7 @@ export default function Shop() {
                                   <p className="text-xl font-semibold text-slate-950">{formatMoney(price.amount, price.currencyCode)}</p>
                                 </div>
                                 <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600">
-                                  View product <ChevronRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                                  {profile.ctaLabel} <ChevronRight className="h-4 w-4 transition group-hover:translate-x-1" />
                                 </span>
                               </div>
                             </div>
@@ -241,6 +310,14 @@ export default function Shop() {
                       );
                     })}
                   </div>
+                  {!showPrimary && visibleSupportProducts.length === 0 && (
+                    <div className="mt-8 rounded-[2rem] border border-slate-200 bg-slate-50 p-8 text-center">
+                      <p className="font-semibold text-slate-900">No product currently matches this filter.</p>
+                      <button type="button" onClick={() => setActiveCategory("All")} className="mt-3 text-sm font-semibold text-blue-600">
+                        Show all products
+                      </button>
+                    </div>
+                  )}
                 </>
               )}
             </div>
@@ -255,7 +332,42 @@ export default function Shop() {
                   <p className="mt-4 text-base leading-8 text-slate-600">The best choice is the product that matches the routine you will actually use consistently.</p>
                 </div>
 
-                <div className="mt-8 overflow-x-auto rounded-[2rem] border border-slate-200 bg-white shadow-sm">
+                <div className="mt-8 grid gap-4 md:hidden">
+                  {products.map((product) => {
+                    const isPrimary = product.node.handle === PRIMARY_PRODUCT_HANDLE;
+                    const profile = getProductProfile(product);
+                    const comparison = isPrimary
+                      ? { use: "Complete knee routine", heat: "Adjustable", massage: "Vibration", support: "Wraparound", portability: "Wireless" }
+                      : profile.comparison;
+                    return (
+                      <article key={product.node.id} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <Link to={getProductPath(product.node.handle)} className="font-semibold text-slate-950 hover:text-blue-600">
+                          {isPrimary ? product.node.title : profile.h1}
+                        </Link>
+                        <p className="mt-2 text-sm text-slate-600"><strong className="text-slate-800">Best use:</strong> {comparison.use}</p>
+                        <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
+                          {[
+                            ["Heat", comparison.heat],
+                            ["Massage", comparison.massage],
+                            ["Support", comparison.support],
+                            ["Portability", comparison.portability],
+                          ].map(([label, value]) => (
+                            <div key={label} className="rounded-2xl bg-slate-50 p-3">
+                              <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</dt>
+                              <dd className="mt-1 font-medium text-slate-800">{value}</dd>
+                            </div>
+                          ))}
+                        </dl>
+                        <p className="mt-4 border-t border-slate-100 pt-4 text-sm text-slate-600">
+                          <strong className="text-slate-800">Not ideal for:</strong>{" "}
+                          {isPrimary ? "Rigid bracing, acute-injury diagnosis or unexplained swelling" : profile.notIdealFor}
+                        </p>
+                      </article>
+                    );
+                  })}
+                </div>
+
+                <div className="mt-8 hidden overflow-x-auto rounded-[2rem] border border-slate-200 bg-white shadow-sm md:block">
                   <table className="w-full min-w-[850px] border-collapse text-left">
                     <thead>
                       <tr className="border-b border-slate-200 bg-slate-950 text-white">

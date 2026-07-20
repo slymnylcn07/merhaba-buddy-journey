@@ -18,6 +18,7 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
     metaDescription: "Discover why knee pain gets worse at night and when sleeping. Explore common causes, best sleeping positions for knee comfort, and daily tips for better rest.",
     heroImage: heroImage,
     publishedDate: "February 25, 2026",
+    lastUpdated: "July 19, 2026",
     faqs: [
       { question: "Why do my knees hurt at night but not during the day?", answer: "During the day, movement and activity help circulate fluid through the knee joint and keep tissues flexible. At night, reduced movement allows fluid to pool around the joint, and the absence of distractions makes you more aware of sensations you might otherwise overlook." },
       { question: "Why do my knees hurt when I sleep on my side?", answer: "Side sleeping often causes the upper knee to rotate inward, creating pressure on the inner knee structures. The lower knee bears the weight of the upper leg, compressing the outer knee area. Placing a pillow between your knees helps maintain alignment and reduces this pressure." },

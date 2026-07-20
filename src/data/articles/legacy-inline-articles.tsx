@@ -641,7 +641,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
     metaDescription: "Learn about behind knee pain causes including Baker's cyst, pain when straightening leg, and effective relief options. Comprehensive guide to back of knee discomfort.",
     heroImage: heroBackKneePain,
     publishedDate: "December 16, 2025",
-    lastUpdated: "March 19, 2026",
+    lastUpdated: "July 19, 2026",
     nextSlug: "side-knee-pain-comfort-guide",
     nextTitle: "Side Knee Pain Guide",
     content: (
@@ -931,6 +931,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
     metaDescription: "Learn about side knee pain including pain inside knee, lateral discomfort, knee cap pain, and effective relief strategies for left and right knee pain.",
     heroImage: heroSideKneePain,
     publishedDate: "December 17, 2025",
+    lastUpdated: "July 19, 2026",
     nextSlug: "why-knee-pain-doesnt-go-away",
     nextTitle: "Why Knee Pain Doesn't Go Away",
     content: (
@@ -3704,6 +3705,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
     metaDescription: "Understand what 'fixing' knee pain really means and discover supportive daily habits, knee comfort routines, and gentle approaches that help with everyday comfort.",
     heroImage: heroFixKneePain,
     publishedDate: "January 19, 2026",
+    lastUpdated: "July 19, 2026",
     nextSlug: "daily-knee-care-routine",
     nextTitle: "How to Build a Daily Knee Comfort Routine",
     content: (

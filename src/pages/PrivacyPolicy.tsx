@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { SUPPORT_EMAIL } from "@/lib/support-config";
 
 export default function PrivacyPolicy() {
   return (
@@ -249,7 +250,7 @@ export default function PrivacyPolicy() {
               Should you have any questions about our privacy practices or this Privacy Policy, or if you would like to exercise any of the rights available to you, please email us at:
             </p>
             <p className="text-muted-foreground mb-4">
-              📩 <a href="mailto:support@flexi-knee.com" className="text-primary hover:underline">support@flexi-knee.com</a>
+              📩 <a href={`mailto:${SUPPORT_EMAIL}`} className="text-primary hover:underline">{SUPPORT_EMAIL}</a>
             </p>
             <p className="text-muted-foreground">
               For the purpose of applicable data protection laws, we are the data controller of your personal information.

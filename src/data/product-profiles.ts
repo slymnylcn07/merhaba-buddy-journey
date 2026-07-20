@@ -18,9 +18,15 @@ export interface ProductVisual {
 
 export interface ProductProfile {
   key: "insoles" | "calf-massager" | "heated-wrap" | "compression-sleeve" | "generic";
+  seoTitle: string;
+  seoDescription: string;
+  h1: string;
   badge: string;
   eyebrow: string;
   bestFor: string;
+  notIdealFor: string;
+  shopCategories: string[];
+  ctaLabel: string;
   cardCopy: string;
   summary: string;
   highlights: string[];
@@ -43,9 +49,15 @@ export interface ProductProfile {
 const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile> = {
   insoles: {
     key: "insoles",
+    seoTitle: "Orthopedic Insoles for Knee & Foot Support | FlexiKnee",
+    seoDescription: "Structured sport orthopedic insoles for walking, training and long days on your feet. Review fit, cushioning, arch support and care guidance.",
+    h1: "FlexiKnee Sport Orthopedic Insoles",
     badge: "New",
     eyebrow: "Foot-to-knee support",
     bestFor: "Walking, running and long days on your feet",
+    notIdealFor: "Shoes without removable liners or enough toe room",
+    shopCategories: ["Walking & Foot Support"],
+    ctaLabel: "Explore the Orthopedic Insoles",
     cardCopy: "Structured foot support designed to improve comfort from the ground up.",
     summary:
       "Support starts at the feet. These sport orthopedic insoles are designed to add cushioning, arch guidance and a more stable base inside everyday and active footwear.",
@@ -157,9 +169,15 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
   },
   "calf-massager": {
     key: "calf-massager",
+    seoTitle: "Rechargeable Calf Massager with Heat & Compression | FlexiKnee",
+    seoDescription: "Rechargeable calf massager with adjustable air compression and warmth for travel, desk days and post-activity lower-leg recovery routines.",
+    h1: "FlexiKnee Rechargeable Calf Massager",
     badge: "Recovery",
     eyebrow: "Lower-leg recovery",
     bestFor: "Travel, desk days and post-activity calf fatigue",
+    notIdealFor: "Unexplained one-sided swelling or suspected circulation problems",
+    shopCategories: ["Compression", "Massage", "Travel Recovery"],
+    ctaLabel: "Explore the Calf Massager",
     cardCopy: "Rechargeable compression and warmth for tired calves and lower legs.",
     summary:
       "A portable lower-leg recovery device designed to combine air compression, adjustable modes and gentle warmth for routines after travel, desk work or active days.",
@@ -265,9 +283,15 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
   },
   "heated-wrap": {
     key: "heated-wrap",
+    seoTitle: "USB Heated Knee Wrap for Targeted Warmth | FlexiKnee",
+    seoDescription: "Lightweight USB heated knee wrap with adjustable warmth for focused sessions at home or at a desk. Review fit, use, care and safety guidance.",
+    h1: "FlexiKnee USB Heated Knee Wrap",
     badge: "Simple warmth",
     eyebrow: "Targeted knee warmth",
     bestFor: "Straightforward warming sessions at home or at a desk",
+    notIdealFor: "Users who want massage modes or fully cordless use",
+    shopCategories: ["Heat"],
+    ctaLabel: "Explore the Heated Knee Wrap",
     cardCopy: "A lightweight heated knee wrap for simple, focused warmth.",
     summary:
       "A flexible knee wrap for people who want uncomplicated warmth without a full massage program. Connect the power source, choose a comfortable level and build a short warming session into the day.",
@@ -373,9 +397,15 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
   },
   "compression-sleeve": {
     key: "compression-sleeve",
+    seoTitle: "Knee Compression Sleeve for Daily Support | FlexiKnee",
+    seoDescription: "Breathable knee compression sleeve for walking, work and training. Compare sizing, materials, fit, care instructions and available colors.",
+    h1: "FlexiKnee Compression Support Sleeve",
     badge: "Daily support",
     eyebrow: "Flexible compression",
     bestFor: "Walking, work, training and everyday movement",
+    notIdealFor: "Unexplained swelling, numbness or anyone needing a rigid brace",
+    shopCategories: ["Compression"],
+    ctaLabel: "View the Compression Sleeve",
     cardCopy: "Breathable compression support for active daily routines.",
     summary:
       "A flexible knee sleeve designed to provide a close, supportive feel during everyday movement. It is a simple non-powered option for walking, work and activity routines.",
@@ -483,9 +513,15 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
 
 const genericProfile: ProductProfile = {
   key: "generic",
+  seoTitle: "Knee Comfort Product | FlexiKnee",
+  seoDescription: "Explore this FlexiKnee product's purpose, options, care guidance and place in a practical everyday comfort routine.",
+  h1: "FlexiKnee Knee Comfort Product",
   badge: "FlexiKnee system",
   eyebrow: "Daily comfort support",
   bestFor: "Building a simple at-home comfort routine",
+  notIdealFor: "Diagnosing or treating a medical condition",
+  shopCategories: [],
+  ctaLabel: "View Product Details",
   cardCopy: "A practical addition to the FlexiKnee daily comfort system.",
   summary:
     "This product is part of the FlexiKnee system of practical tools for movement, recovery and everyday comfort. Review the Shopify product details and selected variant before ordering.",

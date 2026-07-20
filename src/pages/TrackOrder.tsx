@@ -37,6 +37,7 @@ const TrackOrder = () => {
     <>
       <Helmet>
         <title>Track Your Order | FlexiKnee</title>
+        <meta name="robots" content="noindex, follow" />
         <meta name="description" content="Track your FlexiKnee order shipment. Enter your tracking number to see real-time delivery updates and shipping information." />
         <link rel="canonical" href="https://flexi-knee.com/track-order" />
         <meta property="og:type" content="website" />

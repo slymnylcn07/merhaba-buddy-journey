@@ -32,6 +32,7 @@ export interface ShopifyProduct {
       edges: Array<{
         node: {
           id: string;
+          sku?: string | null;
           title: string;
           price: {
             amount: string;
@@ -42,6 +43,10 @@ export interface ShopifyProduct {
             currencyCode: string;
           } | null;
           availableForSale: boolean;
+          image?: {
+            url: string;
+            altText: string | null;
+          } | null;
           selectedOptions: Array<{
             name: string;
             value: string;
@@ -132,6 +137,7 @@ const STOREFRONT_QUERY = `
             edges {
               node {
                 id
+                sku
                 title
                 price {
                   amount
@@ -142,6 +148,10 @@ const STOREFRONT_QUERY = `
                   currencyCode
                 }
                 availableForSale
+                image {
+                  url
+                  altText
+                }
                 selectedOptions {
                   name
                   value
@@ -188,6 +198,7 @@ const PRODUCT_BY_HANDLE_QUERY = `
         edges {
           node {
             id
+            sku
             title
             price {
               amount
@@ -198,6 +209,10 @@ const PRODUCT_BY_HANDLE_QUERY = `
               currencyCode
             }
             availableForSale
+            image {
+              url
+              altText
+            }
             selectedOptions {
               name
               value

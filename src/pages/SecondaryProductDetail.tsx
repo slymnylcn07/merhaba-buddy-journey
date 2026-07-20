@@ -29,6 +29,7 @@ import { getProductPath, resolveShopifyProductHandle } from "@/lib/product-confi
 import { useCartStore } from "@/stores/cartStore";
 import { getProductProfile } from "@/data/product-profiles";
 import { PremiumProductStory } from "@/components/PremiumProductStory";
+import { FREE_SHIPPING_THRESHOLD, RETURN_WINDOW_DAYS } from "@/lib/policy-config";
 
 function formatMoney(amount?: string, currencyCode?: string) {
   const value = Number(amount || 0);
@@ -80,6 +81,10 @@ export default function SecondaryProductDetail() {
         const firstAvailable = item?.node.variants.edges.find((edge) => edge.node.availableForSale)?.node;
         const firstVariant = firstAvailable || item?.node.variants.edges[0]?.node;
         setSelectedVariantId(firstVariant?.id || "");
+        const initialImageIndex = item?.node.images.edges.findIndex(
+          (edge) => edge.node.url === firstVariant?.image?.url,
+        ) ?? -1;
+        setSelectedImage(initialImageIndex >= 0 ? initialImageIndex : 0);
       })
       .catch(() => {
         if (active) setProduct(null);
@@ -129,7 +134,11 @@ export default function SecondaryProductDetail() {
     );
 
     const nextVariant = exactMatch || partialMatch;
-    if (nextVariant) setSelectedVariantId(nextVariant.id);
+    if (nextVariant) {
+      setSelectedVariantId(nextVariant.id);
+      const variantImageIndex = images.findIndex((image) => image.url === nextVariant.image?.url);
+      if (variantImageIndex >= 0) setSelectedImage(variantImageIndex);
+    }
   };
 
   const makeCartItem = () => {
@@ -181,25 +190,67 @@ export default function SecondaryProductDetail() {
 
   const productJsonLd = useMemo(() => {
     if (!node || !price) return null;
-    return {
-      "@context": "https://schema.org",
+    const productSchema = {
       "@type": "Product",
-      name: node.title,
+      "@id": `${canonical}#product`,
+      name: profile.h1,
       brand: { "@type": "Brand", name: "FlexiKnee" },
-      description: node.description || profile.summary,
+      description: profile.seoDescription,
       image: images.map((image) => image.url),
       offers: variants.map((variant) => ({
         "@type": "Offer",
-        sku: variant.id,
+        sku: variant.sku || undefined,
         availability: variant.availableForSale
           ? "https://schema.org/InStock"
           : "https://schema.org/OutOfStock",
+        itemCondition: "https://schema.org/NewCondition",
         price: variant.price.amount,
         priceCurrency: variant.price.currencyCode,
         url: canonical,
+        shippingDetails: Number(variant.price.amount) > FREE_SHIPPING_THRESHOLD
+          ? {
+              "@type": "OfferShippingDetails",
+              shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
+              shippingRate: {
+                "@type": "MonetaryAmount",
+                value: "0",
+                currency: variant.price.currencyCode,
+              },
+              deliveryTime: {
+                "@type": "ShippingDeliveryTime",
+                handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
+                transitTime: { "@type": "QuantitativeValue", minValue: 6, maxValue: 7, unitCode: "DAY" },
+              },
+            }
+          : undefined,
+        hasMerchantReturnPolicy: {
+          "@type": "MerchantReturnPolicy",
+          applicableCountry: "US",
+          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+          merchantReturnDays: RETURN_WINDOW_DAYS,
+          returnMethod: "https://schema.org/ReturnByMail",
+          returnFees: "https://schema.org/ReturnShippingFees",
+          merchantReturnLink: "https://flexi-knee.com/refund-policy",
+        },
       })),
     };
-  }, [node, price, profile.summary, images, variants, canonical]);
+
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        productSchema,
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${canonical}#breadcrumb`,
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://flexi-knee.com/" },
+            { "@type": "ListItem", position: 2, name: "Shop", item: "https://flexi-knee.com/shop" },
+            { "@type": "ListItem", position: 3, name: profile.h1, item: canonical },
+          ],
+        },
+      ],
+    };
+  }, [node, price, profile.h1, profile.seoDescription, images, variants, canonical]);
 
   if (isLoading) {
     return (
@@ -250,13 +301,18 @@ export default function SecondaryProductDetail() {
   return (
     <div className="min-h-screen bg-white pb-24 text-slate-950 lg:pb-0">
       <Helmet>
-        <title>{node.title} | FlexiKnee</title>
-        <meta name="description" content={(node.description || profile.summary).slice(0, 158)} />
+        <title>{profile.seoTitle}</title>
+        <meta name="description" content={profile.seoDescription} />
         <link rel="canonical" href={canonical} />
         <meta property="og:type" content="product" />
-        <meta property="og:title" content={`${node.title} | FlexiKnee`} />
-        <meta property="og:description" content={profile.summary} />
+        <meta property="og:title" content={profile.seoTitle} />
+        <meta property="og:description" content={profile.seoDescription} />
         {images[0] && <meta property="og:image" content={images[0].url} />}
+        <meta property="og:site_name" content="FlexiKnee" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={profile.seoTitle} />
+        <meta name="twitter:description" content={profile.seoDescription} />
+        {images[0] && <meta name="twitter:image" content={images[0].url} />}
         {productJsonLd && <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>}
       </Helmet>
 
@@ -270,7 +326,7 @@ export default function SecondaryProductDetail() {
               <ChevronRight className="h-3 w-3" />
               <Link to="/shop" className="hover:text-blue-600">Shop</Link>
               <ChevronRight className="h-3 w-3" />
-              <span className="max-w-[16rem] truncate text-slate-900">{node.title}</span>
+              <span className="max-w-[16rem] truncate text-slate-900">{profile.h1}</span>
             </div>
           </div>
         </section>
@@ -326,7 +382,7 @@ export default function SecondaryProductDetail() {
                   )}
                 </div>
 
-                <h1 className="mt-4 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl">{node.title}</h1>
+                <h1 className="mt-4 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl">{profile.h1}</h1>
                 <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">{profile.eyebrow}</p>
                 <p className="mt-3 text-sm font-medium text-blue-700">Best for: {profile.bestFor}</p>
                 <p className="mt-4 text-base leading-7 text-slate-600">{profile.summary}</p>

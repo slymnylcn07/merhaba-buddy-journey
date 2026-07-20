@@ -1,6 +1,6 @@
 import { guidesData } from "../src/data/guides";
 import { articleLoaderSlugs } from "../src/data/article-loaders";
-import { existsSync, readFileSync } from "fs";
+import { existsSync, readFileSync, readdirSync } from "fs";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 
@@ -37,6 +37,67 @@ const missingTargets = [...new Set(Object.values(redirects))].filter((slug) => !
 const missingArticleImplementations = slugs.filter((slug) => !runtimeSlugs.has(slug));
 const unregisteredRuntimeArticles = articleLoaderSlugs.filter((slug) => !slugSet.has(slug));
 
+interface ArticleDateRecord {
+  publishedDate: string;
+  lastUpdated?: string;
+  file: string;
+}
+
+function toISODate(value: string): string | null {
+  const normalized = /^\d{4}-\d{2}-\d{2}$/.test(value) ? `${value}T12:00:00Z` : `${value} 12:00:00 UTC`;
+  const timestamp = Date.parse(normalized);
+  if (Number.isNaN(timestamp)) return null;
+  return new Date(timestamp).toISOString().slice(0, 10);
+}
+
+function collectArticleDates(): Map<string, ArticleDateRecord> {
+  const articlesDir = resolve(ROOT, "src", "data", "articles");
+  const records = new Map<string, ArticleDateRecord>();
+
+  for (const file of readdirSync(articlesDir).filter((name) => name.endsWith(".tsx"))) {
+    const source = readFileSync(resolve(articlesDir, file), "utf8");
+    const explicitSlugs = [...source.matchAll(/^\s*slug:\s*"([^"]+)"/gm)];
+
+    explicitSlugs.forEach((match, index) => {
+      const start = match.index ?? 0;
+      const end = explicitSlugs[index + 1]?.index ?? source.length;
+      const block = source.slice(start, end);
+      const publishedDate = block.match(/^\s*publishedDate:\s*"([^"]+)"/m)?.[1];
+      const lastUpdated = block.match(/^\s*lastUpdated:\s*"([^"]+)"/m)?.[1];
+      if (publishedDate) records.set(match[1], { publishedDate, lastUpdated, file });
+    });
+
+    const constSlug = source.match(/^const slug\s*=\s*"([^"]+)"/m)?.[1];
+    if (constSlug && !records.has(constSlug)) {
+      const publishedDate = source.match(/^\s*publishedDate:\s*"([^"]+)"/m)?.[1];
+      const lastUpdated = source.match(/^\s*lastUpdated:\s*"([^"]+)"/m)?.[1];
+      if (publishedDate) records.set(constSlug, { publishedDate, lastUpdated, file });
+    }
+  }
+
+  return records;
+}
+
+const articleDates = collectArticleDates();
+const missingArticleDates: string[] = [];
+const dateMismatches: string[] = [];
+
+for (const guide of guidesData) {
+  const articleDate = articleDates.get(guide.slug);
+  if (!articleDate) {
+    missingArticleDates.push(guide.slug);
+    continue;
+  }
+
+  const cardDate = guide.lastModified ? toISODate(guide.lastModified) : null;
+  const displayedDate = toISODate(articleDate.lastUpdated || articleDate.publishedDate);
+  if (!cardDate || !displayedDate || cardDate !== displayedDate) {
+    dateMismatches.push(
+      `${guide.slug}: card=${guide.lastModified || "missing"}, article=${articleDate.lastUpdated || articleDate.publishedDate} (${articleDate.file})`,
+    );
+  }
+}
+
 const vercelPath = resolve(ROOT, "vercel.json");
 const vercel = JSON.parse(readFileSync(vercelPath, "utf-8"));
 interface RedirectRule {
@@ -59,6 +120,8 @@ if (missingTargets.length) failures.push(`Redirect targets missing from guidesDa
 if (missingRedirectRules.length) failures.push(`Missing permanent redirects: ${missingRedirectRules.map(([source, destination]) => `${source} -> ${destination}`).join(", ")}`);
 if (missingArticleImplementations.length) failures.push(`Guide cards without a runtime article loader: ${missingArticleImplementations.join(", ")}`);
 if (unregisteredRuntimeArticles.length) failures.push(`Runtime article loaders missing from guidesData: ${unregisteredRuntimeArticles.join(", ")}`);
+if (missingArticleDates.length) failures.push(`Active guides missing article date metadata: ${missingArticleDates.join(", ")}`);
+if (dateMismatches.length) failures.push(`Guide card/article date mismatches: ${dateMismatches.join("; ")}`);
 
 if (failures.length) {
   console.error("Content registry validation failed:\n- " + failures.join("\n- "));

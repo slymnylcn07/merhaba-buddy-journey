@@ -15,6 +15,7 @@ export const intermittentKneePainGuide: ArticleExport = {
     metaDescription: "Why does knee pain come and go? Understand common patterns behind intermittent knee discomfort and build daily habits that support consistent comfort.",
     heroImage: heroImage,
     publishedDate: "February 24, 2026",
+    lastUpdated: "July 19, 2026",
     nextSlug: "side-knee-pain-comfort-guide",
     nextTitle: "Side-of-Knee Pain Explained: Causes, Shoes, and At-Home Comfort Tips",
     faqs: [

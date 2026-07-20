@@ -144,6 +144,7 @@ const Account = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
         <title>My Account | FlexiKnee</title>
+        <meta name="robots" content="noindex, nofollow" />
         <meta name="description" content="Manage your FlexiKnee orders, track shipments, and submit return requests from your personal dashboard." />
         <link rel="canonical" href="https://flexi-knee.com/account" />
         

@@ -158,7 +158,9 @@ const GuideArticle = () => {
       "name": "FlexiKnee",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://flexi-knee.com/favicon-32.png"
+        "url": "https://flexi-knee.com/images/flexiknee-logo.svg",
+        "width": 640,
+        "height": 160
       }
     },
     "inLanguage": "en",
