@@ -3,6 +3,7 @@ import { join, resolve } from "path";
 
 const DIST = resolve(process.cwd(), "dist");
 const ORIGIN = "https://flexi-knee.com";
+const VERCEL_CONFIG = resolve(process.cwd(), "vercel.json");
 
 const criticalRoutes = [
   { route: "/", requiredText: ["FlexiKnee Smart Heated Knee Massager", "support@flexi-knee.com"] },
@@ -96,6 +97,54 @@ if (!existsSync(DIST)) {
     const text = readFileSync(robots, "utf8");
     if (!text.includes("User-agent: OAI-SearchBot") || !text.includes("User-agent: Googlebot")) failures.push("robots.txt is missing required crawler access rules");
   }
+
+  const notFound = join(DIST, "404.html");
+  if (!existsSync(notFound)) {
+    failures.push("404.html is missing");
+  } else {
+    const html = readFileSync(notFound, "utf8");
+    if (!/<title>Page Not Found \| FlexiKnee<\/title>/i.test(html)) failures.push("404.html title is missing or incorrect");
+    if (!/<meta\s+name=["']robots["']\s+content=["']noindex, follow["']/i.test(html)) failures.push("404.html is missing noindex, follow");
+  }
+}
+
+if (!existsSync(VERCEL_CONFIG)) {
+  failures.push("vercel.json is missing");
+} else {
+  try {
+    const config = JSON.parse(readFileSync(VERCEL_CONFIG, "utf8"));
+    const rewrites = Array.isArray(config.rewrites) ? config.rewrites : [];
+    const forbiddenPublicFallbacks = ["/:path*", "/guides/:path*", "/product/:path*", "/science", "/track-order", "/why-flexiknee"];
+
+    for (const source of forbiddenPublicFallbacks) {
+      if (rewrites.some((rule: { source?: string }) => rule.source === source)) {
+        failures.push(`vercel.json contains forbidden public SPA fallback: ${source}`);
+      }
+    }
+
+    const requiredPrivateFallbacks = [
+      ["/account", "/index.html"],
+      ["/admin", "/index.html"],
+      ["/admin/:path*", "/index.html"],
+    ];
+
+    for (const [source, destination] of requiredPrivateFallbacks) {
+      if (!rewrites.some((rule: { source?: string; destination?: string }) => rule.source === source && rule.destination === destination)) {
+        failures.push(`vercel.json is missing private SPA fallback: ${source} -> ${destination}`);
+      }
+    }
+
+    const redirects = Array.isArray(config.redirects) ? config.redirects : [];
+    if (!redirects.some((rule: { source?: string; destination?: string; permanent?: boolean }) =>
+      rule.source === "/:path*" &&
+      rule.destination === "https://flexi-knee.com/:path*" &&
+      rule.permanent === true
+    )) {
+      failures.push("vercel.json is missing the permanent www-to-apex redirect");
+    }
+  } catch {
+    failures.push("vercel.json is not valid JSON");
+  }
 }
 
 if (failures.length) {
@@ -105,4 +154,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`✅ Production-build validation passed (${criticalRoutes.length} critical routes checked)`);
+console.log(`✅ Production-build validation passed (${criticalRoutes.length} critical routes checked, real 404 verified)`);

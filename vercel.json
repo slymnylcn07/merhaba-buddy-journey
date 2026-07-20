@@ -19,28 +19,16 @@
       "destination": "/api/:path*"
     },
     {
-      "source": "/product/:path*",
-      "destination": "/"
+      "source": "/account",
+      "destination": "/index.html"
     },
     {
-      "source": "/guides/:path*",
-      "destination": "/"
+      "source": "/admin",
+      "destination": "/index.html"
     },
     {
-      "source": "/science",
-      "destination": "/"
-    },
-    {
-      "source": "/track-order",
-      "destination": "/"
-    },
-    {
-      "source": "/why-flexiknee",
-      "destination": "/"
-    },
-    {
-      "source": "/:path*",
-      "destination": "/"
+      "source": "/admin/:path*",
+      "destination": "/index.html"
     }
   ],
   "headers": [
@@ -131,6 +119,49 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/account",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/admin",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/admin/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
         }
       ]
     },
@@ -208,74 +239,13 @@
   ],
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.flexi-knee.com"
-        }
-      ],
-      "destination": "https://flexi-knee.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/guides/clicking-knee-without-pain",
-      "destination": "/guides/why-do-my-knees-crack-or-pop",
-      "permanent": true
-    },
-    {
-      "source": "/guides/back-of-knee-pain-common",
-      "destination": "/guides/back-of-knee-pain-explained",
-      "permanent": true
-    },
-    {
-      "source": "/guides/back-of-knee-pain-daily-habits",
-      "destination": "/guides/back-of-knee-pain-explained",
-      "permanent": true
-    },
-    {
-      "source": "/guides/knee-pain-worse-at-night",
-      "destination": "/guides/why-do-my-knees-hurt-when-sleeping",
-      "permanent": true
-    },
-    {
-      "source": "/guides/side-of-knee-pain-explained",
-      "destination": "/guides/side-knee-pain-comfort-guide",
-      "permanent": true
-    },
-    {
-      "source": "/guides/side-knee-pain-inner-outer",
-      "destination": "/guides/side-knee-pain-comfort-guide",
-      "permanent": true
-    },
-    {
-      "source": "/guides/cause-of-knee-pain-patterns",
-      "destination": "/guides/what-causes-knee-pain-guide",
-      "permanent": true
-    },
-    {
-      "source": "/guides/what-makes-knee-pain-worse",
-      "destination": "/guides/what-causes-knee-pain-guide",
-      "permanent": true
-    },
-    {
-      "source": "/guides/knee-pain-treatment-daily-habits",
-      "destination": "/guides/how-to-fix-knee-pain",
-      "permanent": true
-    },
-    {
-      "source": "/guides/it-band-syndrome-explained",
-      "destination": "/guides/it-band-pain-location-diagram",
-      "permanent": true
-    },
-    {
-      "source": "/guides/sharp-knee-pain-comes-and-goes",
-      "destination": "/guides/intermittent-knee-pain-guide",
-      "permanent": true
-    },
-    {
       "source": "/editorial-policy",
       "destination": "/editorial-team",
+      "permanent": true
+    },
+    {
+      "source": "/science",
+      "destination": "/guides",
       "permanent": true
     },
     {
@@ -369,38 +339,69 @@
       "permanent": true
     },
     {
-      "source": "/collections/:path*",
-      "destination": "/shop",
+      "source": "/guides/clicking-knee-without-pain",
+      "destination": "/guides/why-do-my-knees-crack-or-pop",
       "permanent": true
     },
     {
-      "source": "/products/:handle",
-      "destination": "/product/:handle",
+      "source": "/guides/back-of-knee-pain-common",
+      "destination": "/guides/back-of-knee-pain-explained",
       "permanent": true
     },
     {
-      "source": "/pages/:path*",
-      "destination": "/",
+      "source": "/guides/back-of-knee-pain-daily-habits",
+      "destination": "/guides/back-of-knee-pain-explained",
       "permanent": true
     },
     {
-      "source": "/blogs/:path*",
-      "destination": "/guides",
+      "source": "/guides/knee-pain-worse-at-night",
+      "destination": "/guides/why-do-my-knees-hurt-when-sleeping",
       "permanent": true
     },
     {
-      "source": "/cart",
-      "destination": "/shop",
+      "source": "/guides/side-of-knee-pain-explained",
+      "destination": "/guides/side-knee-pain-comfort-guide",
       "permanent": true
     },
     {
-      "source": "/product/flexiknee",
-      "destination": "/product/knee-massager-smart-red-light-and-massage-therapy",
+      "source": "/guides/side-knee-pain-inner-outer",
+      "destination": "/guides/side-knee-pain-comfort-guide",
       "permanent": true
     },
     {
-      "source": "/product/knee-massager-smart-heated-red-light-and-massage-therapy",
-      "destination": "/product/knee-massager-smart-red-light-and-massage-therapy",
+      "source": "/guides/cause-of-knee-pain-patterns",
+      "destination": "/guides/what-causes-knee-pain-guide",
+      "permanent": true
+    },
+    {
+      "source": "/guides/what-makes-knee-pain-worse",
+      "destination": "/guides/what-causes-knee-pain-guide",
+      "permanent": true
+    },
+    {
+      "source": "/guides/knee-pain-treatment-daily-habits",
+      "destination": "/guides/how-to-fix-knee-pain",
+      "permanent": true
+    },
+    {
+      "source": "/guides/it-band-syndrome-explained",
+      "destination": "/guides/it-band-pain-location-diagram",
+      "permanent": true
+    },
+    {
+      "source": "/guides/sharp-knee-pain-comes-and-goes",
+      "destination": "/guides/intermittent-knee-pain-guide",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.flexi-knee.com"
+        }
+      ],
+      "destination": "https://flexi-knee.com/:path*",
       "permanent": true
     }
   ]
