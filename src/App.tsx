@@ -6,13 +6,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
-import { useShopifyPageView } from "./hooks/use-shopify-analytics";
-import { useGoogleAnalytics } from "./hooks/use-google-analytics";
-import { useMetaTracking } from "./hooks/use-meta-tracking";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { CookieConsentBanner } from "@/components/CookieConsentBanner";
-import { ShopifyChatLoader } from "@/components/ShopifyChatLoader";
 
 // Lazy load non-critical routes for code splitting
 const ProductRoute = lazy(() => import("./pages/ProductRoute"));
@@ -41,19 +36,9 @@ const PageLoader = () => (
   </div>
 );
 
-// Google Analytics, Meta and optional Shopify tracking remain consent-aware
-// inside their own hooks. Vercel Analytics and Speed Insights are cookieless,
-// aggregate platform analytics and run for all visitors.
-const AnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
-  useShopifyPageView();
-  useGoogleAnalytics();
-  useMetaTracking();
-  return <>{children}</>;
-};
-
 const App = () => {
   const [queryClient] = useState(() => new QueryClient());
-
+  
   return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -63,10 +48,7 @@ const App = () => {
       <SpeedInsights />
       <BrowserRouter>
         <ScrollToTop />
-        <CookieConsentBanner />
-        <ShopifyChatLoader />
-        <AnalyticsProvider>
-          <main>
+        <main>
             <Suspense fallback={<PageLoader />}>
               <Routes>
                 <Route path="/" element={<Index />} />
@@ -110,8 +92,7 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
-          </main>
-        </AnalyticsProvider>
+        </main>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

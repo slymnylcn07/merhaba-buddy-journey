@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 
 export type CookieConsentChoice = "accepted" | "rejected" | null;
 
+// Temporary master switch: keep the consent infrastructure, but disable all
+// optional Google, Meta and Shopify tracking until it is intentionally restored.
+export const OPTIONAL_TRACKING_ENABLED = false;
+
 const STORAGE_KEY = "flexiknee_cookie_consent_v1";
 const GA_MEASUREMENT_ID = "G-5QC0R5G1JG";
 export const COOKIE_CONSENT_EVENT = "flexiknee:cookie-consent";
@@ -13,7 +17,7 @@ export function getCookieConsent(): CookieConsentChoice {
 }
 
 export function hasAnalyticsConsent(): boolean {
-  return getCookieConsent() === "accepted";
+  return OPTIONAL_TRACKING_ENABLED && getCookieConsent() === "accepted";
 }
 
 function expireCookie(name: string) {
@@ -68,8 +72,8 @@ export function clearNonEssentialTracking() {
 export function setCookieConsent(choice: Exclude<CookieConsentChoice, null>) {
   if (typeof window === "undefined") return;
   window.localStorage.setItem(STORAGE_KEY, choice);
-  if (choice === "accepted") updateGoogleConsent(true);
-  if (choice === "rejected") clearNonEssentialTracking();
+  if (choice === "accepted" && OPTIONAL_TRACKING_ENABLED) updateGoogleConsent(true);
+  if (choice === "rejected" || !OPTIONAL_TRACKING_ENABLED) clearNonEssentialTracking();
   window.dispatchEvent(new CustomEvent(COOKIE_CONSENT_EVENT, { detail: choice }));
 }
 
@@ -92,5 +96,5 @@ export function useAnalyticsConsent() {
       window.removeEventListener("storage", storage);
     };
   }, []);
-  return { choice, analyticsAllowed: choice === "accepted" };
+  return { choice, analyticsAllowed: OPTIONAL_TRACKING_ENABLED && choice === "accepted" };
 }
