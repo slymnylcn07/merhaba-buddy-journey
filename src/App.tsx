@@ -13,7 +13,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { CookieConsentBanner } from "@/components/CookieConsentBanner";
 import { ShopifyChatLoader } from "@/components/ShopifyChatLoader";
-import { useAnalyticsConsent } from "@/lib/cookie-consent";
 
 // Lazy load non-critical routes for code splitting
 const ProductRoute = lazy(() => import("./pages/ProductRoute"));
@@ -42,7 +41,9 @@ const PageLoader = () => (
   </div>
 );
 
-// Component to handle analytics
+// Google Analytics, Meta and optional Shopify tracking remain consent-aware
+// inside their own hooks. Vercel Analytics and Speed Insights are cookieless,
+// aggregate platform analytics and run for all visitors.
 const AnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
   useShopifyPageView();
   useGoogleAnalytics();
@@ -50,24 +51,16 @@ const AnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 
-const ConsentAwarePlatformAnalytics = () => {
-  const { analyticsAllowed } = useAnalyticsConsent();
-  if (!analyticsAllowed) return null;
-  return (<>
-    <Analytics />
-    <SpeedInsights />
-  </>);
-};
-
 const App = () => {
   const [queryClient] = useState(() => new QueryClient());
-  
+
   return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner position="top-center" />
-      <ConsentAwarePlatformAnalytics />
+      <Analytics />
+      <SpeedInsights />
       <BrowserRouter>
         <ScrollToTop />
         <CookieConsentBanner />
