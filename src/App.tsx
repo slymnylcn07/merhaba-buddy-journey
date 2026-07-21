@@ -6,10 +6,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
+import { useShopifyPageView } from "./hooks/use-shopify-analytics";
+import { useGoogleAnalytics } from "./hooks/use-google-analytics";
+import { useMetaTracking } from "./hooks/use-meta-tracking";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { ShopifyChatLoader } from "@/components/ShopifyChatLoader";
 
-// Lazy load non-critical routes for code splitting
 const ProductRoute = lazy(() => import("./pages/ProductRoute"));
 const TrackOrder = lazy(() => import("./pages/TrackOrder"));
 const Account = lazy(() => import("./pages/Account"));
@@ -29,73 +32,81 @@ const EditorialTeam = lazy(() => import("./pages/EditorialTeam"));
 const GuideArticle = lazy(() => import("./pages/GuideArticle"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
-// Loading fallback component
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center">
     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
   </div>
 );
 
+const FullAnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
+  useShopifyPageView();
+  useGoogleAnalytics();
+  useMetaTracking();
+  return <>{children}</>;
+};
+
 const App = () => {
   const [queryClient] = useState(() => new QueryClient());
-  
+
   return (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner position="top-center" />
-      <Analytics />
-      <SpeedInsights />
-      <BrowserRouter>
-        <ScrollToTop />
-        <main>
-            <Suspense fallback={<PageLoader />}>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/product/:handle" element={<ProductRoute />} />
-                <Route path="/track-order" element={<TrackOrder />} />
-                <Route path="/account" element={<Account />} />
-                <Route path="/terms-of-service" element={<TermsOfService />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/shipping-policy" element={<ShippingPolicy />} />
-                <Route path="/refund-policy" element={<RefundPolicy />} />
-                <Route path="/foundation" element={<Foundation />} />
-                <Route path="/why-flexiknee" element={<WhyFlexiKnee />} />
-                <Route path="/shop" element={<Shop />} />
-                <Route path="/knee-quiz" element={<KneeQuiz />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/editorial-team" element={<EditorialTeam />} />
-                <Route path="/editorial-policy" element={<Navigate to="/editorial-team" replace />} />
-                <Route path="/guides/do-knee-massagers-actually-work-guide" element={<Navigate to="/guides/do-knee-massagers-work" replace />} />
-                <Route path="/guides/heat-or-ice-knee-pain" element={<Navigate to="/guides/heat-vs-ice-for-knees" replace />} />
-                <Route path="/guides/knee-pain-hiking" element={<Navigate to="/guides/knee-pain-when-hiking" replace />} />
-                <Route path="/guides/knee-pain-squatting" element={<Navigate to="/guides/knee-pain-when-squatting" replace />} />
-                <Route path="/guides/knee-stiffness-after-resting" element={<Navigate to="/guides/why-do-my-knees-feel-tight-after-resting" replace />} />
-                <Route path="/guides/running-shoes-knee-pain" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
-                <Route path="/guides/sharp-knee-pain-causes" element={<Navigate to="/guides/sharp-knee-pain-causes-relief" replace />} />
-                <Route path="/guides/what-causes-knee-pain" element={<Navigate to="/guides/what-causes-knee-pain-guide" replace />} />
-                <Route path="/guides/running-shoes-knee-pain-causes-fixes" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
-                <Route path="/guides/running-shoes-knee-pain-discomfort" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
-                <Route path="/guides/post-exercise-knee-pain-guide" element={<Navigate to="/guides/knee-pain-after-exercise" replace />} />
-                <Route path="/guides/sore-knees-after-workout" element={<Navigate to="/guides/knee-pain-after-exercise" replace />} />
-                <Route path="/guides/knee-pain-after-exercise-but-not-during" element={<Navigate to="/guides/knee-pain-after-exercise" replace />} />
-                <Route path="/guides/knee-pain-location-map-2026" element={<Navigate to="/guides/knee-pain-locations-visual-guide" replace />} />
-                <Route path="/guides/pain-in-the-knee-causes-locations" element={<Navigate to="/guides/knee-pain-locations-visual-guide" replace />} />
-                <Route path="/guides/daily-knee-comfort-routine" element={<Navigate to="/guides/daily-knee-care-routine" replace />} />
-                <Route path="/guides/heat-or-ice-knee-pain-situations" element={<Navigate to="/guides/heat-vs-ice-for-knees" replace />} />
-                <Route path="/guides/heat-or-ice-knee-pain-science" element={<Navigate to="/guides/heat-vs-ice-for-knees" replace />} />
-                <Route path="/guides" element={<Guides />} />
-                <Route path="/guides/:slug" element={<GuideArticle />} />
-                <Route path="/admin" element={<AdminAuth />} />
-                <Route path="/admin/returns" element={<AdminReturns />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
-        </main>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner position="top-center" />
+        <Analytics />
+        <SpeedInsights />
+        <BrowserRouter>
+          <ScrollToTop />
+          <ShopifyChatLoader />
+          <FullAnalyticsProvider>
+            <main>
+              <Suspense fallback={<PageLoader />}>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/product/:handle" element={<ProductRoute />} />
+                  <Route path="/track-order" element={<TrackOrder />} />
+                  <Route path="/account" element={<Account />} />
+                  <Route path="/terms-of-service" element={<TermsOfService />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/shipping-policy" element={<ShippingPolicy />} />
+                  <Route path="/refund-policy" element={<RefundPolicy />} />
+                  <Route path="/foundation" element={<Foundation />} />
+                  <Route path="/why-flexiknee" element={<WhyFlexiKnee />} />
+                  <Route path="/shop" element={<Shop />} />
+                  <Route path="/knee-quiz" element={<KneeQuiz />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/editorial-team" element={<EditorialTeam />} />
+                  <Route path="/editorial-policy" element={<Navigate to="/editorial-team" replace />} />
+                  <Route path="/guides/do-knee-massagers-actually-work-guide" element={<Navigate to="/guides/do-knee-massagers-work" replace />} />
+                  <Route path="/guides/heat-or-ice-knee-pain" element={<Navigate to="/guides/heat-vs-ice-for-knees" replace />} />
+                  <Route path="/guides/knee-pain-hiking" element={<Navigate to="/guides/knee-pain-when-hiking" replace />} />
+                  <Route path="/guides/knee-pain-squatting" element={<Navigate to="/guides/knee-pain-when-squatting" replace />} />
+                  <Route path="/guides/knee-stiffness-after-resting" element={<Navigate to="/guides/why-do-my-knees-feel-tight-after-resting" replace />} />
+                  <Route path="/guides/running-shoes-knee-pain" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
+                  <Route path="/guides/sharp-knee-pain-causes" element={<Navigate to="/guides/sharp-knee-pain-causes-relief" replace />} />
+                  <Route path="/guides/what-causes-knee-pain" element={<Navigate to="/guides/what-causes-knee-pain-guide" replace />} />
+                  <Route path="/guides/running-shoes-knee-pain-causes-fixes" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
+                  <Route path="/guides/running-shoes-knee-pain-discomfort" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
+                  <Route path="/guides/post-exercise-knee-pain-guide" element={<Navigate to="/guides/knee-pain-after-exercise" replace />} />
+                  <Route path="/guides/sore-knees-after-workout" element={<Navigate to="/guides/knee-pain-after-exercise" replace />} />
+                  <Route path="/guides/knee-pain-after-exercise-but-not-during" element={<Navigate to="/guides/knee-pain-after-exercise" replace />} />
+                  <Route path="/guides/knee-pain-location-map-2026" element={<Navigate to="/guides/knee-pain-locations-visual-guide" replace />} />
+                  <Route path="/guides/pain-in-the-knee-causes-locations" element={<Navigate to="/guides/knee-pain-locations-visual-guide" replace />} />
+                  <Route path="/guides/daily-knee-comfort-routine" element={<Navigate to="/guides/daily-knee-care-routine" replace />} />
+                  <Route path="/guides/heat-or-ice-knee-pain-situations" element={<Navigate to="/guides/heat-vs-ice-for-knees" replace />} />
+                  <Route path="/guides/heat-or-ice-knee-pain-science" element={<Navigate to="/guides/heat-vs-ice-for-knees" replace />} />
+                  <Route path="/guides" element={<Guides />} />
+                  <Route path="/guides/:slug" element={<GuideArticle />} />
+                  <Route path="/admin" element={<AdminAuth />} />
+                  <Route path="/admin/returns" element={<AdminReturns />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
+            </main>
+          </FullAnalyticsProvider>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
   );
 };
 
