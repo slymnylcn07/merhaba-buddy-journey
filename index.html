@@ -3,21 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js): loaded before React so every landing page is measured -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QC0R5G1JG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+      window["ga-disable-G-5QC0R5G1JG"] = false;
+      window.gtag("consent", "default", {
+        analytics_storage: "granted",
+        ad_storage: "granted",
+        ad_user_data: "granted",
+        ad_personalization: "granted"
+      });
+      window.gtag("js", new Date());
+      window.gtag("config", "G-5QC0R5G1JG", {
+        send_page_view: false
+      });
+    </script>
+
     <title>FlexiKnee | Official Smart Heated Knee Massager & Guides</title>
     <meta name="author" content="FlexiKnee" />
-    
+
     <!-- Preconnect to external origins for faster resource loading -->
     <link rel="preconnect" href="https://flexi-knee-store.myshopify.com" crossorigin />
     <link rel="dns-prefetch" href="https://flexi-knee-store.myshopify.com" />
 <!-- Preload hero banner images for faster LCP -->
     <link rel="preload" as="image" href="/images/flexiknee-hero-desktop-premium-v2.avif" type="image/avif" media="(min-width: 768px)" fetchpriority="high" />
     <link rel="preload" as="image" href="/images/flexiknee-hero-final-mobile.avif" type="image/avif" media="(max-width: 767px)" fetchpriority="high" />
-    
+
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/favicon-32.png" />
-    
+
     <!-- Critical inline styles for FCP: paint static hero before CSS bundle loads -->
     <style>
       *,*::before,*::after{box-sizing:border-box}
