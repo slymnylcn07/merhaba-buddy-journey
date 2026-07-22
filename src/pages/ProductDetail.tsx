@@ -170,6 +170,7 @@ export default function ProductDetail() {
       ? formatMoney(String(compareAtAmount * bundleQty), currency)
       : null;
   const productTitle = "FlexiKnee Smart Heated Knee Massager";
+  const publicHandle = handle || PRIMARY_PRODUCT_HANDLE;
 
   const shopifyImages =
     product?.node.images.edges.map((edge) => ({
@@ -313,7 +314,8 @@ export default function ProductDetail() {
           name="description"
           content="FlexiKnee is a smart at home knee comfort device with adjustable heat, massage style vibration, wraparound support, and simple touch controls."
         />
-        <link rel="canonical" href={`https://flexi-knee.com/product/${handle || "knee-massager-smart-red-light-and-massage-therapy"}`} />
+        <link rel="canonical" href={`https://flexi-knee.com/product/${publicHandle}`} />
+        <meta name="robots" content="index, follow" />
         <meta property="og:title" content={`${productTitle} | FlexiKnee`} />
         <meta property="og:description" content="A premium knee comfort device for simple daily recovery routines." />
         <meta property="og:image" content="https://flexi-knee.com/images/shopify-gallery/flexiknee-gallery-01-main.webp" />
@@ -322,7 +324,7 @@ export default function ProductDetail() {
 
       <Header />
 
-      <main>
+      <main data-seo-page="product" data-seo-product={publicHandle}>
         <section className="border-b border-slate-200 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-2 text-xs font-medium text-slate-500">

@@ -304,6 +304,7 @@ export default function SecondaryProductDetail() {
         <title>{profile.seoTitle}</title>
         <meta name="description" content={profile.seoDescription} />
         <link rel="canonical" href={canonical} />
+        <meta name="robots" content="index, follow" />
         <meta property="og:type" content="product" />
         <meta property="og:title" content={profile.seoTitle} />
         <meta property="og:description" content={profile.seoDescription} />
@@ -318,7 +319,7 @@ export default function SecondaryProductDetail() {
 
       <Header />
 
-      <main>
+      <main data-seo-page="product" data-seo-product={handle}>
         <section className="border-b border-slate-200 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500">

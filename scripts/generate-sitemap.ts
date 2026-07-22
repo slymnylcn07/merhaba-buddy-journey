@@ -1,18 +1,14 @@
-// Sitemap generator script - runs at build time
-import { guidesData, staticPages } from "../src/data/guides";
-import { getShopifyProductHandles } from "./shopify-build-products";
+// Sitemap generator script - runs at build time.
+// The same route manifest is consumed by prerendering and build validation so
+// sitemap, canonical and rendered-route decisions cannot silently drift apart.
 import * as fs from "fs";
 import * as path from "path";
-
-const SITE_URL = "https://flexi-knee.com";
-const PRIMARY_PRODUCT_HANDLE = "knee-massager-smart-red-light-and-massage-therapy";
-
-interface SitemapPage {
-  path: string;
-  priority: number;
-  changefreq: string;
-  lastmod?: string;
-}
+import {
+  buildSeoRouteManifest,
+  canonicalForRoute,
+  writeSeoRouteManifest,
+  type SeoRouteRecord,
+} from "./seo-route-registry";
 
 function escapeXml(value: string): string {
   return value.replace(/[<>&'"]/g, (character) => ({
@@ -24,57 +20,48 @@ function escapeXml(value: string): string {
   })[character] || character);
 }
 
-function generateSitemap(pages: SitemapPage[]): string {
+function generateSitemap(pages: SeoRouteRecord[]): string {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 `;
 
   for (const page of pages) {
     const lastModifiedLine = page.lastmod
-      ? `    <lastmod>${page.lastmod}</lastmod>\n`
+      ? `    <lastmod>${escapeXml(page.lastmod)}</lastmod>\n`
       : "";
 
     xml += `  <url>
-    <loc>${escapeXml(`${SITE_URL}${page.path}`)}</loc>
-${lastModifiedLine}    <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
+    <loc>${escapeXml(canonicalForRoute(page.path))}</loc>
+${lastModifiedLine}    <changefreq>${page.changefreq || "monthly"}</changefreq>
+    <priority>${page.priority ?? 0.5}</priority>
   </url>
 `;
   }
 
-  xml += `</urlset>`;
+  xml += `</urlset>\n`;
   return xml;
 }
 
 async function main(): Promise<void> {
-  const productHandles = await getShopifyProductHandles();
-  const productPages: SitemapPage[] = [...new Set([PRIMARY_PRODUCT_HANDLE, ...productHandles])].map((handle) => ({
-    path: `/product/${handle}`,
-    priority: 0.9,
-    changefreq: "weekly",
-  }));
-
-  const guidePages: SitemapPage[] = guidesData.map((guide) => ({
-    path: `/guides/${guide.slug}`,
-    priority: 0.8,
-    changefreq: "monthly",
-    lastmod: guide.lastModified,
-  }));
-
-  const uniquePages = new Map<string, SitemapPage>();
-  [...staticPages, ...guidePages, ...productPages].forEach((page) => uniquePages.set(page.path, page));
-  const pages = [...uniquePages.values()];
+  const manifest = await buildSeoRouteManifest();
+  const pages = manifest.routes.filter((route) => route.indexable && route.sitemap);
   const sitemap = generateSitemap(pages);
 
   const outputPath = path.resolve(process.cwd(), "public/sitemap.xml");
   const distPath = path.resolve(process.cwd(), "dist/sitemap.xml");
 
-  fs.writeFileSync(outputPath, sitemap, "utf-8");
+  fs.writeFileSync(outputPath, sitemap, "utf8");
   if (fs.existsSync(path.dirname(distPath))) {
-    fs.writeFileSync(distPath, sitemap, "utf-8");
+    fs.writeFileSync(distPath, sitemap, "utf8");
+    writeSeoRouteManifest(manifest);
   }
 
-  console.log(`✅ Sitemap generated with ${pages.length} URLs (${productPages.length} product routes)`);
+  const guideCount = pages.filter((route) => route.kind === "guide").length;
+  const productCount = pages.filter((route) => route.kind === "product").length;
+  console.log(
+    `✅ Sitemap generated with ${pages.length} canonical URLs ` +
+    `(${guideCount} guides, ${productCount} products)`,
+  );
 }
 
 main().catch((error) => {

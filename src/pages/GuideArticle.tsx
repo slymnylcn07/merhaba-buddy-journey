@@ -281,7 +281,11 @@ const GuideArticle = () => {
         />
       </div>
       
-      <main className="min-h-screen bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_24%,#ffffff_100%)]">
+      <main
+        data-seo-page="guide"
+        data-seo-guide={article.slug}
+        className="min-h-screen bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_24%,#ffffff_100%)]"
+      >
         {/* Article Hero */}
         <section className="relative">
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-slate-950/55 via-slate-950/25 to-white" />
@@ -340,7 +344,7 @@ const GuideArticle = () => {
 
                 <hr className="my-6 border-t border-border/30" />
 
-                <div id="article-content" className="article-content max-w-none
+                <div id="article-content" data-seo-content="guide" className="article-content max-w-none
                   [&_h2]:mt-14 [&_h2]:mb-5 [&_h2]:border-b [&_h2]:border-slate-200 [&_h2]:pb-4 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-[-0.035em] [&_h2]:text-slate-950 [&_h2]:md:text-3xl
                   [&_h3]:mt-9 [&_h3]:mb-3 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:tracking-[-0.02em] [&_h3]:text-slate-950
                   [&_p]:mb-5 [&_p]:text-base [&_p]:font-normal [&_p]:leading-8 [&_p]:text-slate-600
@@ -352,6 +356,7 @@ const GuideArticle = () => {
                 ">
                   {article.content}
                 </div>
+                <span data-seo-content-end="guide" hidden />
 
                 <ArticleImageLightbox articleSlug={article.slug} />
 

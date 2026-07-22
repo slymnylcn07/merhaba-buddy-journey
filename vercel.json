@@ -202,6 +202,57 @@
       ]
     },
     {
+      "source": "/build-version.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/seo-route-manifest.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/seo-index-audit.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
       "source": "/assets/(.*)",
       "headers": [
         {
@@ -391,6 +442,41 @@
     {
       "source": "/guides/sharp-knee-pain-comes-and-goes",
       "destination": "/guides/intermittent-knee-pain-guide",
+      "permanent": true
+    },
+    {
+      "source": "/product/flexiknee",
+      "destination": "/product/knee-massager-smart-red-light-and-massage-therapy",
+      "permanent": true
+    },
+    {
+      "source": "/product/multifunctional-smart-cordless-knee-massager-vibration-knee-relaxing-massage-machine-joint-knee-device-gifts-for-grandma-grandpa",
+      "destination": "/product/knee-massager-smart-red-light-and-massage-therapy",
+      "permanent": true
+    },
+    {
+      "source": "/pages/privacy-policy",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/pages/terms-of-service",
+      "destination": "/terms-of-service",
+      "permanent": true
+    },
+    {
+      "source": "/pages/refund-policy",
+      "destination": "/refund-policy",
+      "permanent": true
+    },
+    {
+      "source": "/pages/shipping-policy",
+      "destination": "/shipping-policy",
+      "permanent": true
+    },
+    {
+      "source": "/collections/frontpage",
+      "destination": "/shop",
       "permanent": true
     },
     {
