@@ -122,8 +122,8 @@ function stripHtml(value: string): string {
 }
 
 function getAttribute(tag: string, attribute: string): string | undefined {
-  const match = tag.match(new RegExp(`\\b${attribute}=["']([^"']*)["']`, "i"));
-  return match?.[1];
+  const match = tag.match(new RegExp(`\\b${attribute}\\s*=\\s*(["'])([\\s\\S]*?)\\1`, "i"));
+  return match?.[2];
 }
 
 function findTag(html: string, tagName: string, predicate: (tag: string) => boolean): string | undefined {
