@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 import { guidesData, staticPages } from "../src/data/guides";
+import { recentGuidesData } from "../src/data/recent-guides-data";
 import { getShopifyProductHandles } from "./shopify-build-products";
 
 export const SITE_ORIGIN = "https://flexi-knee.com";
@@ -47,8 +48,6 @@ function addRoute(target: Map<string, SeoRouteRecord>, route: SeoRouteRecord): v
     );
   }
 
-  // Later, more-specific records (guide/product) intentionally replace a
-  // generic static-page record for the same path.
   target.set(path, { ...existing, ...normalized });
 }
 
@@ -71,7 +70,7 @@ export async function buildSeoRouteManifest(): Promise<SeoRouteManifest> {
     });
   }
 
-  for (const guide of guidesData) {
+  for (const guide of [...guidesData, ...recentGuidesData]) {
     addRoute(routes, {
       path: `/guides/${guide.slug}`,
       kind: "guide",
@@ -97,8 +96,6 @@ export async function buildSeoRouteManifest(): Promise<SeoRouteManifest> {
     });
   }
 
-  // Utility pages can be prerendered for users while being deliberately kept
-  // out of search results and the XML sitemap.
   addRoute(routes, {
     path: "/track-order",
     kind: "utility",

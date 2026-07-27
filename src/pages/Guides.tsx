@@ -7,6 +7,8 @@ import { ArrowRight, Search, X, Clock, ChevronDown, ArrowUp, Sparkles, Check } f
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { guidesData } from "@/data/guides";
+import { recentGuidesData } from "@/data/recent-guides-data";
+import { guidePublicationDates } from "@/data/guide-publication-dates";
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 
@@ -103,6 +105,8 @@ import thumbCustomFlatFeet from "@/assets/thumb-can-flat-feet-cause-knee-pain-ov
 import thumbCustomCycling from "@/assets/thumb-cycling-knee-pain-location-chart-and-bike-fit-fixes.png";
 import thumbCustomTightCalves from "@/assets/thumb-can-tight-calves-cause-knee-pain-the-calf-knee-connection.png";
 import thumbCustomBraceVsSleeve from "@/assets/thumb-knee-brace-vs-compression-sleeve-which-do-you-need.png";
+import thumbLowImpactCardio from "@/assets/guide-thumb-low-impact-cardio-knee-pain.svg";
+import thumbBackwardWalking from "@/assets/guide-thumb-backward-walking-knee-pain.svg";
 import thumbItBandFoamRollingList from "@/assets/hero-itband-foam-rolling.svg";
 import thumbSleepKneePainList from "@/assets/hero-sleep-knee-pain.svg";
 import thumbAirCompressionLegList from "@/assets/hero-air-compression-leg.svg";
@@ -131,6 +135,8 @@ import thumbBatch2HomeRemediesKneePainAvif from "@/assets/guide-thumbnails/batch
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "best-supplements-for-knee-pain": thumbSupplements,
+  "best-low-impact-cardio-knee-pain": thumbLowImpactCardio,
+  "backward-walking-knee-pain": thumbBackwardWalking,
   "glucosamine-chondroitin-knee-pain": thumbGlucosamine,
   "cordless-rechargeable-heated-knee-massagers-2026": thumbCustomCordlessMassagers,
   "can-flat-feet-cause-knee-pain": thumbCustomFlatFeet,
@@ -271,8 +277,18 @@ const resolveGuideThumbnail = (slug: string) => {
   return matched?.image || thumbKneePain;
 };
 
-// Combine data with thumbnails
-const guides = guidesData.map(guide => ({
+type GuideWithPublication = (typeof guidesData)[number] & { publishedDate?: string };
+
+const allGuidesData: GuideWithPublication[] = [
+  ...guidesData.map((guide) => ({
+    ...guide,
+    publishedDate: guidePublicationDates[guide.slug],
+  })),
+  ...recentGuidesData,
+];
+
+// Combine data with thumbnails and immutable publication dates.
+const guides = allGuidesData.map(guide => ({
   ...guide,
   thumbnail: resolveGuideThumbnail(guide.slug),
   thumbnailAvif: thumbnailAvifMap[guide.slug],
@@ -281,12 +297,9 @@ const guides = guidesData.map(guide => ({
 // Helper to get guide by slug
 const getGuide = (slug: string) => guides.find(g => g.slug === slug);
 
-const getGuidePublishedTime = (guide: { publishedDate?: string; lastModified?: string }) => {
+const getGuidePublishedTime = (guide: { publishedDate?: string }) => {
   const published = new Date(guide.publishedDate || "").getTime();
-  if (!Number.isNaN(published) && published > 0) return published;
-  const modified = new Date(guide.lastModified || "").getTime();
-  if (!Number.isNaN(modified) && modified > 0) return modified;
-  return 0;
+  return !Number.isNaN(published) && published > 0 ? published : 0;
 };
 
 const formatGuideDate = (value?: string) => {
@@ -356,6 +369,8 @@ const activitySlugs = [
   "knee-arthritis-pain-guide",
   "how-to-strengthen-knees",
   // Accordion
+  "best-low-impact-cardio-knee-pain",
+  "backward-walking-knee-pain",
   "understanding-knee-injuries",
   "best-running-shoes-knee-pain",
   "how-to-fix-knee-pain",
@@ -980,7 +995,7 @@ const Guides = () => {
                               className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                               loading={index < 3 ? "eager" : "lazy"}
                             />
-                            {isNewGuide((guide as { publishedDate?: string; lastModified?: string }).publishedDate || guide.lastModified) && (
+                            {isNewGuide(guide.publishedDate) && (
                               <span className="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white shadow-sm">
                                 New guide
                               </span>
@@ -988,7 +1003,7 @@ const Guides = () => {
                           </div>
                           <div className="p-5">
                             <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                              <span>Published {formatGuideDate((guide as { publishedDate?: string; lastModified?: string }).publishedDate || guide.lastModified)}</span>
+                              <span>Published {formatGuideDate(guide.publishedDate)}</span>
                               <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" />{guide.readTime} min</span>
                             </div>
                             <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950 transition-colors group-hover:text-blue-600">{guide.title}</h3>

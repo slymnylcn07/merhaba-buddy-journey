@@ -31,6 +31,18 @@ const SUBSCRIBED_KEY = "flexiknee_newsletter_subscribed";
 function getContextualContent(slug: string): { hook: string; support: string } {
   const s = slug.toLowerCase();
 
+  if (s.includes("low-impact-cardio"))
+    return {
+      hook: "Trying to build cardio without overloading your knees?",
+      support: "Breathable compression can add a supported feel during walking, cycling, and other controlled sessions.",
+    };
+
+  if (s.includes("backward-walking"))
+    return {
+      hook: "Practicing short walking drills with more confidence?",
+      support: "A flexible compression sleeve can add warmth and sensory feedback while you progress carefully.",
+    };
+
   if (s.includes("stairs") || s.includes("going-down"))
     return {
       hook: "Does your knee give you trouble on the stairs?",

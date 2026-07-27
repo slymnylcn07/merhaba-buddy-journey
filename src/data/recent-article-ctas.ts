@@ -1,4 +1,12 @@
 export const recentArticleCTAs: Record<string, { headline: string; text: string }> = {
+  "best-low-impact-cardio-knee-pain": {
+    headline: "Want flexible support while building your cardio base?",
+    text: "The FlexiKnee Compression Support Sleeve adds breathable compression and a supported feel for walking, cycling, and other controlled low-impact sessions.",
+  },
+  "backward-walking-knee-pain": {
+    headline: "Building confidence with short walking drills?",
+    text: "The FlexiKnee Compression Support Sleeve provides movement-friendly support and warmth while you progress controlled walking practice.",
+  },
   "cordless-rechargeable-heated-knee-massagers-2026": {
     headline: "Looking for a cordless knee comfort routine?",
     text: "Compare battery life, heat, red light, and fit, then explore the FlexiKnee Smart Heated Knee Massager for a short wireless daily routine.",

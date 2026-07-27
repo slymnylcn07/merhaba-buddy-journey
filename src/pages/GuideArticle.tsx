@@ -13,14 +13,18 @@ import { ArticleSlideInCTA } from "@/components/ArticleSlideInCTA";
 import PremiumCTA from "@/components/PremiumCTA";
 import { LazyRelatedGuideCard } from "@/components/LazyRelatedGuideCard";
 import { guidesData } from "@/data/guides";
+import { recentGuidesData } from "@/data/recent-guides-data";
 import { articleCTAs } from "@/data/article-ctas";
 import { recentArticleCTAs } from "@/data/recent-article-ctas";
 import { articleHowToSchemas } from "@/data/article-howto-schemas";
 import { loadArticleBySlug } from "@/data/article-loaders";
+import { loadRecentArticleBySlug } from "@/data/recent-article-loaders";
+import { articleEditorialCrosslinks } from "@/data/article-editorial-crosslinks";
 import { getRelatedGuides } from "@/data/related-guides";
 import type { ArticleData } from "@/data/articles/types";
 
 const allArticleCTAs = { ...articleCTAs, ...recentArticleCTAs };
+const allGuidesData = [...guidesData, ...recentGuidesData];
 
 const GuideArticle = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -40,7 +44,8 @@ const GuideArticle = () => {
       };
     }
 
-    loadArticleBySlug(slug)
+    Promise.resolve()
+      .then(async () => (await loadRecentArticleBySlug(slug)) ?? (await loadArticleBySlug(slug)))
       .then((loadedArticle) => {
         if (!active) return;
         if (!loadedArticle) {
@@ -114,8 +119,8 @@ const GuideArticle = () => {
     );
   }
 
-  const readingTime = guidesData.find((guide) => guide.slug === article.slug)?.readTime ?? 8;
-  const relatedGuides = getRelatedGuides(article.slug, guidesData, 3);
+  const readingTime = allGuidesData.find((guide) => guide.slug === article.slug)?.readTime ?? 8;
+  const relatedGuides = getRelatedGuides(article.slug, allGuidesData, 3);
 
   const getISODate = (dateString: string) => {
     const date = new Date(dateString);
@@ -133,6 +138,17 @@ const GuideArticle = () => {
       title.toLowerCase().includes(phrase.split(" ")[0])
     ).slice(0, 5).join(", ") || "knee comfort, knee wellness, at-home support";
   };
+
+  const normalizedPublishedDate = new Date(article.publishedDate).toDateString();
+  const normalizedUpdatedDate = article.lastUpdated
+    ? new Date(article.lastUpdated).toDateString()
+    : normalizedPublishedDate;
+  const hasMaterialUpdate = Boolean(
+    article.lastUpdated && normalizedUpdatedDate !== normalizedPublishedDate,
+  );
+  const articleDateLabel = hasMaterialUpdate
+    ? `Published ${article.publishedDate} · Updated ${article.lastUpdated}`
+    : `Published ${article.publishedDate}`;
 
   const canonicalUrl = `https://flexi-knee.com/guides/${article.slug}`;
 
@@ -302,7 +318,7 @@ const GuideArticle = () => {
               </h1>
               <ArticleHeaderMeta
                 dateIso={getISODate(article.publishedDate)}
-                dateLabel={`Published ${article.publishedDate}`}
+                dateLabel={articleDateLabel}
                 readingTime={readingTime}
               />
             </div>
@@ -344,6 +360,7 @@ const GuideArticle = () => {
                   [&_img]:my-8 [&_img]:w-full [&_img]:rounded-[1.5rem] [&_img]:border [&_img]:border-slate-200 [&_img]:bg-white [&_img]:object-contain [&_img]:shadow-sm [&_img]:transition [&_img]:hover:shadow-md [&_img:focus]:outline-none [&_img:focus]:ring-2 [&_img:focus]:ring-blue-500
                 ">
                   {article.content}
+                  {articleEditorialCrosslinks[article.slug]}
                 </div>
                 <span data-seo-content-end="guide" hidden />
 

@@ -1,5 +1,8 @@
 import { guidesData } from "../src/data/guides";
+import { recentGuidesData } from "../src/data/recent-guides-data";
+import { guidePublicationDates } from "../src/data/guide-publication-dates";
 import { articleLoaderSlugs } from "../src/data/article-loaders";
+import { recentArticleLoaderSlugs } from "../src/data/recent-article-loaders";
 import { existsSync, readFileSync, readdirSync } from "fs";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
@@ -7,19 +10,27 @@ import { fileURLToPath } from "url";
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const VERCEL_PATH = resolve(ROOT, "vercel.json");
 
-const slugs = guidesData.map((guide) => guide.slug);
+const allGuidesData = [
+  ...guidesData.map((guide) => ({
+    ...guide,
+    publishedDate: guidePublicationDates[guide.slug],
+  })),
+  ...recentGuidesData,
+];
+const allArticleLoaderSlugs = [...articleLoaderSlugs, ...recentArticleLoaderSlugs];
+const slugs = allGuidesData.map((guide) => guide.slug);
 const slugSet = new Set(slugs);
-const runtimeSlugs = new Set(articleLoaderSlugs);
+const runtimeSlugs = new Set(allArticleLoaderSlugs);
 const duplicates = [...new Set(slugs.filter((slug, index) => slugs.indexOf(slug) !== index))];
-const duplicateLoaders = articleLoaderSlugs.filter(
-  (slug, index) => articleLoaderSlugs.indexOf(slug) !== index,
+const duplicateLoaders = allArticleLoaderSlugs.filter(
+  (slug, index) => allArticleLoaderSlugs.indexOf(slug) !== index,
 );
 const missingArticleImplementations = slugs.filter((slug) => !runtimeSlugs.has(slug));
-const unregisteredRuntimeArticles = articleLoaderSlugs.filter((slug) => !slugSet.has(slug));
-const duplicateGuideTitles = guidesData
+const unregisteredRuntimeArticles = allArticleLoaderSlugs.filter((slug) => !slugSet.has(slug));
+const duplicateGuideTitles = allGuidesData
   .map((guide) => guide.title.trim().toLowerCase())
   .filter((title, index, titles) => titles.indexOf(title) !== index);
-const duplicateGuideDescriptions = guidesData
+const duplicateGuideDescriptions = allGuidesData
   .map((guide) => guide.description.trim().toLowerCase())
   .filter((description, index, descriptions) => descriptions.indexOf(description) !== index);
 
@@ -118,23 +129,34 @@ function titleCoverage(cardTitle: string, articleTitle: string): number {
 
 const articleMetadata = collectArticleMetadata();
 const missingArticleMetadata: string[] = [];
-const dateMismatches: string[] = [];
+const modifiedDateMismatches: string[] = [];
+const publishedDateMismatches: string[] = [];
 const unrelatedTitles: string[] = [];
 
-for (const guide of guidesData) {
+for (const guide of allGuidesData) {
   const article = articleMetadata.get(guide.slug);
   if (!article) {
     missingArticleMetadata.push(guide.slug);
     continue;
   }
 
-  const cardDate = guide.lastModified ? toISODate(guide.lastModified) : null;
-  const displayedDate = toISODate(article.lastUpdated || article.publishedDate);
-  if (!cardDate || !displayedDate || cardDate !== displayedDate) {
-    dateMismatches.push(
+  const cardModified = guide.lastModified ? toISODate(guide.lastModified) : null;
+  const articleModified = toISODate(article.lastUpdated || article.publishedDate);
+  if (!cardModified || !articleModified || cardModified !== articleModified) {
+    modifiedDateMismatches.push(
       `${guide.slug}: card=${guide.lastModified || "missing"}, ` +
       `article=${article.lastUpdated || article.publishedDate} (${article.file})`,
     );
+  }
+
+  if (guide.publishedDate) {
+    const cardPublished = toISODate(guide.publishedDate);
+    const articlePublished = toISODate(article.publishedDate);
+    if (!cardPublished || !articlePublished || cardPublished !== articlePublished) {
+      publishedDateMismatches.push(
+        `${guide.slug}: card=${guide.publishedDate}, article=${article.publishedDate} (${article.file})`,
+      );
+    }
   }
 
   if (article.title && titleCoverage(guide.title, article.title) < 0.35) {
@@ -193,14 +215,15 @@ if (duplicateLoaders.length) failures.push(`Duplicate article loader slugs: ${du
 if (duplicateGuideTitles.length) failures.push(`Duplicate guide titles: ${[...new Set(duplicateGuideTitles)].join(", ")}`);
 if (duplicateGuideDescriptions.length) failures.push(`Duplicate guide descriptions: ${[...new Set(duplicateGuideDescriptions)].join(", ")}`);
 if (retiredStillRegistered.length) failures.push(`Redirect sources still registered as active guides: ${retiredStillRegistered.join(", ")}`);
-if (missingGuideTargets.length) failures.push(`Guide redirect targets missing from guidesData: ${missingGuideTargets.join(", ")}`);
+if (missingGuideTargets.length) failures.push(`Guide redirect targets missing from guide registry: ${missingGuideTargets.join(", ")}`);
 if (duplicateRedirectSources.length) failures.push(`Duplicate redirect sources: ${[...new Set(duplicateRedirectSources)].join(", ")}`);
 if (redirectChains.length) failures.push(`Redirect chains found: ${redirectChains.map((rule) => `${rule.source} -> ${rule.destination}`).join(", ")}`);
 if (temporaryRedirects.length) failures.push(`Non-permanent local redirects found: ${temporaryRedirects.map((rule) => rule.source).join(", ")}`);
 if (missingArticleImplementations.length) failures.push(`Guide cards without a runtime article loader: ${missingArticleImplementations.join(", ")}`);
-if (unregisteredRuntimeArticles.length) failures.push(`Runtime article loaders missing from guidesData: ${unregisteredRuntimeArticles.join(", ")}`);
+if (unregisteredRuntimeArticles.length) failures.push(`Runtime article loaders missing from guide registry: ${unregisteredRuntimeArticles.join(", ")}`);
 if (missingArticleMetadata.length) failures.push(`Active guides missing article metadata: ${missingArticleMetadata.join(", ")}`);
-if (dateMismatches.length) failures.push(`Guide card/article date mismatches: ${dateMismatches.join("; ")}`);
+if (modifiedDateMismatches.length) failures.push(`Guide card/article modified-date mismatches: ${modifiedDateMismatches.join("; ")}`);
+if (publishedDateMismatches.length) failures.push(`Guide card/article publication-date mismatches: ${publishedDateMismatches.join("; ")}`);
 if (unrelatedTitles.length) failures.push(`Guide card/article titles appear unrelated: ${unrelatedTitles.join("; ")}`);
 
 if (failures.length) {
