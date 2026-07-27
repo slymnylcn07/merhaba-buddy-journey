@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="t d">
+<title id="t">A five step routine for tight calves</title><desc id="d">Test, warm, stretch both calf muscles, strengthen, and reassess.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#ecfdf5"/></linearGradient></defs>
+<rect width="1400" height="900" fill="url(#bg)"/>
+<text x="70" y="100" font-family="Inter,Arial,Helvetica,sans-serif" font-size="42" font-weight="700" fill="#020617">A five step routine that actually changes calf length</text>
+<text x="70" y="150" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" fill="#64748b">Stretching alone rarely holds. Loading the muscle is what makes it last.</text>
+
+<rect x="70" y="200" width="1260" height="112" rx="18" fill="#ffffff" stroke="#d1fae5" stroke-width="3"/>
+<circle cx="130" cy="256" r="26" fill="#059669"/>
+<text x="130" y="265" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#ffffff">1</text>
+<text x="180" y="246" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#020617">Test the ankle first</text>
+<text x="180" y="286" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Knee to wall: how far can your knee pass your toes before the heel lifts?</text>
+<text x="1290" y="265" text-anchor="end" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="600" fill="#059669">1 min</text>
+
+<rect x="70" y="328" width="1260" height="112" rx="18" fill="#ffffff" stroke="#d1fae5" stroke-width="3"/>
+<circle cx="130" cy="384" r="26" fill="#059669"/>
+<text x="130" y="393" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#ffffff">2</text>
+<text x="180" y="374" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#020617">Warm before you stretch</text>
+<text x="180" y="414" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Two minutes of walking or gentle heat. Cold muscle resists lengthening.</text>
+<text x="1290" y="393" text-anchor="end" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="600" fill="#059669">2 min</text>
+
+<rect x="70" y="456" width="1260" height="112" rx="18" fill="#ffffff" stroke="#d1fae5" stroke-width="3"/>
+<circle cx="130" cy="512" r="26" fill="#059669"/>
+<text x="130" y="521" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#ffffff">3</text>
+<text x="180" y="502" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#020617">Stretch straight knee</text>
+<text x="180" y="542" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Back leg straight, heel down, 30 to 45 seconds. This is the gastrocnemius.</text>
+<text x="1290" y="521" text-anchor="end" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="600" fill="#059669">2 min</text>
+
+<rect x="70" y="584" width="1260" height="112" rx="18" fill="#ffffff" stroke="#d1fae5" stroke-width="3"/>
+<circle cx="130" cy="640" r="26" fill="#059669"/>
+<text x="130" y="649" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#ffffff">4</text>
+<text x="180" y="630" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#020617">Stretch bent knee</text>
+<text x="180" y="670" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Same position, back knee softly bent. This reaches the soleus underneath.</text>
+<text x="1290" y="649" text-anchor="end" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="600" fill="#059669">2 min</text>
+
+<rect x="70" y="712" width="1260" height="112" rx="18" fill="#ffffff" stroke="#d1fae5" stroke-width="3"/>
+<circle cx="130" cy="768" r="26" fill="#059669"/>
+<text x="130" y="777" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#ffffff">5</text>
+<text x="180" y="758" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#020617">Load it, then retest</text>
+<text x="180" y="798" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Slow heel raises, both legs, three sets. Repeat the wall test next week.</text>
+<text x="1290" y="777" text-anchor="end" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="600" fill="#059669">5 min</text>
+
+</svg>

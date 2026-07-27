@@ -643,6 +643,20 @@ export const guidesData: GuideData[] = [
     lastModified: "2026-07-12",
   },
   {
+    slug: "tight-calves-knee-pain",
+    title: "Can Tight Calves Cause Knee Pain? The Calf-Knee Connection",
+    description: "Why tight calves pull on the back of the knee and limit ankle motion, what makes them tight, and a five step routine that changes it.",
+    readTime: 12,
+    lastModified: "2026-07-26",
+  },
+  {
+    slug: "knee-brace-vs-compression-sleeve",
+    title: "Knee Brace vs Compression Sleeve: Which Do You Need?",
+    description: "Compare sleeves, straps, wraparounds and hinged braces, what compression really does, the copper claims, and how to choose by symptom.",
+    readTime: 13,
+    lastModified: "2026-07-26",
+  },
+  {
     slug: "glucosamine-chondroitin-knee-pain",
     title: "Glucosamine & Chondroitin for Knee Pain: Do They Work?",
     description: "A balanced guide to forms, evidence, doses, safety, interactions, product quality, and how to run a time-limited supplement trial.",

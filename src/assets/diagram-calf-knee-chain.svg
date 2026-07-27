@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="t d">
+<title id="t">How tight calves change knee load</title><desc id="d">Four stages from calf tightness to knee discomfort.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#eff6ff"/></linearGradient></defs>
+<rect width="1400" height="900" fill="url(#bg)"/>
+<text x="70" y="100" font-family="Inter,Arial,Helvetica,sans-serif" font-size="42" font-weight="700" fill="#020617">From calf tightness to knee discomfort</text>
+<text x="70" y="150" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" fill="#64748b">Each step is small. Repeated thousands of times a day, they add up.</text>
+
+<rect x="70" y="210" width="285" height="250" rx="20" fill="#ffffff" stroke="#dbeafe" stroke-width="3"/>
+<circle cx="112" cy="260" r="22" fill="#2563eb"/>
+<text x="112" y="268" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#ffffff">1</text>
+<text x="148" y="268" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#020617">Calf shortens</text>
+<text x="100" y="330" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Sitting, sudden mileage,</text>
+<text x="100" y="366" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">raised heels or simply</text>
+<text x="100" y="402" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">years of little stretching.</text>
+
+<rect x="395" y="210" width="285" height="250" rx="20" fill="#ffffff" stroke="#dbeafe" stroke-width="3"/>
+<circle cx="437" cy="260" r="22" fill="#2563eb"/>
+<text x="437" y="268" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#ffffff">2</text>
+<text x="473" y="268" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#020617">Ankle stiffens</text>
+<text x="425" y="330" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">The foot cannot bend</text>
+<text x="425" y="366" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">upward as far, so the</text>
+<text x="425" y="402" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">shin stops travelling.</text>
+
+<rect x="720" y="210" width="285" height="250" rx="20" fill="#ffffff" stroke="#dbeafe" stroke-width="3"/>
+<circle cx="762" cy="260" r="22" fill="#2563eb"/>
+<text x="762" y="268" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#ffffff">3</text>
+<text x="798" y="268" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#020617">Gait changes</text>
+<text x="750" y="330" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">The heel lifts early, the</text>
+<text x="750" y="366" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">foot rolls inward, the</text>
+<text x="750" y="402" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">knee turns in slightly.</text>
+
+<rect x="1045" y="210" width="285" height="250" rx="20" fill="#ffffff" stroke="#dbeafe" stroke-width="3"/>
+<circle cx="1087" cy="260" r="22" fill="#2563eb"/>
+<text x="1087" y="268" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#ffffff">4</text>
+<text x="1123" y="268" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#020617">Knee absorbs it</text>
+<text x="1075" y="330" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">The kneecap and inner</text>
+<text x="1075" y="366" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">joint take load they</text>
+<text x="1075" y="402" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">were not built to take.</text>
+
+<path d="M366 335 L400 335" stroke="#94a3b8" stroke-width="6" marker-end="url(#a)"/>
+<path d="M691 335 L725 335" stroke="#94a3b8" stroke-width="6" marker-end="url(#a)"/>
+<path d="M1016 335 L1050 335" stroke="#94a3b8" stroke-width="6" marker-end="url(#a)"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#94a3b8"/></marker></defs>
+<rect x="70" y="530" width="1260" height="290" rx="22" fill="#ffffff" stroke="#e2e8f0" stroke-width="3"/>
+<text x="110" y="592" font-family="Inter,Arial,Helvetica,sans-serif" font-size="28" font-weight="700" fill="#020617">The two calf muscles behave differently</text>
+<rect x="110" y="622" width="580" height="160" rx="16" fill="#fff7ed" stroke="#fed7aa" stroke-width="3"/>
+<text x="150" y="668" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#c2410c">Gastrocnemius</text>
+<text x="150" y="706" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#7c2d12">Starts above the knee on the thigh bone.</text>
+<text x="150" y="740" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#7c2d12">Stretch it with the back knee straight.</text>
+<rect x="720" y="622" width="580" height="160" rx="16" fill="#eff6ff" stroke="#bfdbfe" stroke-width="3"/>
+<text x="760" y="668" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#1d4ed8">Soleus</text>
+<text x="760" y="706" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#1e3a8a">Sits underneath and stops at the shin.</text>
+<text x="760" y="740" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#1e3a8a">Stretch it with the back knee bent.</text>
+</svg>

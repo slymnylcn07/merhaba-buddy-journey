@@ -1,4 +1,28 @@
 export const articleHowToSchemas: Record<string, { name: string; description: string; steps: { name: string; text: string }[] }> = {
+  "tight-calves-knee-pain": {
+    name: "How to Loosen Tight Calves and Protect the Knee",
+    description: "A five step routine that tests ankle motion, stretches both calf muscles, and loads the tissue so the change lasts.",
+    steps: [
+      { name: "Test your ankle motion first", text: "Use the knee to wall test. Stand facing a wall with the toes a hand span away, keep the heel flat, and see whether the knee can touch the wall. Record the distance for each leg so you can measure progress." },
+      { name: "Warm the tissue before stretching", text: "Walk for two minutes or apply warmth to the calf. A cold muscle resists lengthening, which is why stretching first thing in the morning often achieves little." },
+      { name: "Stretch with the back knee straight", text: "Hands on a wall, one leg back, heel flat, back knee locked straight. Hold 30 to 45 seconds. This position targets the gastrocnemius, the calf muscle that crosses the knee joint." },
+      { name: "Stretch with the back knee bent", text: "Keep the same stance and heel position, then bend the back knee softly. The stretch should move lower toward the ankle. This reaches the soleus, the muscle most routines miss." },
+      { name: "Load the calf with slow heel raises", text: "Three sets of ten to fifteen heel raises, lowering for a count of three. Standing on a step and letting the heels drop below it adds range. Loading is what makes the change persist." },
+      { name: "Retest weekly", text: "Repeat the knee to wall test once a week. Expect measurable change over three to four weeks rather than in a single session." },
+    ],
+  },
+  "knee-brace-vs-compression-sleeve": {
+    name: "How to Choose Between a Knee Sleeve and a Brace",
+    description: "A symptom led method for picking the right level of knee support instead of buying by price or packaging.",
+    steps: [
+      { name: "Check for instability first", text: "Ask whether the knee ever gives way, locks, catches, or feels untrustworthy on uneven ground. If it does, arrange a clinical assessment before buying support, because instability usually reflects a ligament or meniscus problem." },
+      { name: "Start at the least restrictive level", text: "If the knee aches but feels secure, begin with a plain compression sleeve. It is the cheapest and least intrusive way to find out whether compression and warmth help you at all." },
+      { name: "Match the detail to your symptom", text: "Choose a wraparound with an open kneecap for swelling that changes through the day, a single strap for sharp pinpoint pain below the kneecap, and a plain sleeve for general arthritis stiffness." },
+      { name: "Measure before you order", text: "Sizing differs between brands, so measure your knee and follow that brand's chart rather than your usual size. Size up for all day comfort and down for sport if you fall between two." },
+      { name: "Check the fit against four points", text: "It should stay in place while walking, feel firm without pinching, cause no numbness or colour change below it, and still allow full bending of the knee." },
+      { name: "Give it two weeks, then reassess", text: "Use the support to stay active and build strength alongside it. If you cannot function without it, that is a signal to strengthen rather than to buy a firmer one." },
+    ],
+  },
   "best-supplements-for-knee-pain": {
     name: "How to Run a Fair Knee Supplement Trial",
     description: "A step-by-step method to test a knee supplement honestly over eight to twelve weeks without wasting money.",

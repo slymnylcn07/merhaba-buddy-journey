@@ -355,6 +355,10 @@ const articleContent = (
     </InfoBox>
 
     {/* ?? NEW: Weakness Signal Section ?? */}
+    <p>
+      Post exercise knee soreness also travels up from the calf more often than people expect, particularly after running, hiking or a jump in walking volume. Calf tightness limits ankle motion and quietly shifts load toward the kneecap, which our guide on <Link to="/guides/tight-calves-knee-pain" className="text-primary hover:underline">tight calves and knee pain</Link> explains along with a routine that changes it.
+    </p>
+
     <h2>Why Some People Feel Knee Weakness After Exercise</h2>
     <p>
       Beyond soreness, many people report a distinct sensation of <strong>knee weakness after workouts</strong>. This feeling, where the knee seems unsteady, less supportive, or slightly "wobbly," is different from pain and can be just as concerning. If you have wondered <strong>why do my knees feel weak after workout</strong> sessions, the answer usually comes down to muscle exhaustion rather than a structural problem.

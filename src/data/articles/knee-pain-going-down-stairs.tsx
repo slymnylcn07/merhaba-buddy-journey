@@ -167,6 +167,10 @@ export const kneePainGoingDownStairs: ArticleExport = {
           Avoid repeatedly testing the painful step just to see whether it still hurts. Use the information from normal daily movement, reduce unnecessary repetitions for a short period, and watch the overall direction. Improvement means ordinary tasks are becoming easier and the knee returns to baseline more quickly. Worsening means pain arrives earlier, lasts longer, or is joined by swelling, locking, instability, or reduced movement.
         </p>
 
+        <p>
+          One contributor that is easy to miss sits below the knee rather than in it. Descending stairs demands ankle motion, and when the calf is short the ankle runs out of range, so the knee absorbs what is left over. If your stairs discomfort has resisted knee focused work, the guide on <Link to="/guides/tight-calves-knee-pain" className="text-primary hover:underline">tight calves and knee pain</Link> covers how to test and change that.
+        </p>
+
         <h2>A Practical Return-to-Stairs Progression</h2>
         <p>
           When symptoms are settling and there are no warning signs, rebuild the task in stages instead of jumping from avoidance to repeated flights. Begin with a low step or the bottom stair while holding a stable rail. Practice a small, slow lowering movement within a tolerable range, keeping the foot secure and the knee generally aligned with the toes. The goal is control, not depth or speed.

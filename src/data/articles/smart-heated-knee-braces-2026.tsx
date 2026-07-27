@@ -119,6 +119,10 @@ export const smartHeatedKneeBraces2026: ArticleExport = {
           </table>
         </div>
 
+        <p>
+          It also helps to separate comfort devices from support devices entirely. A heated wrap works on stiffness while you rest, whereas a sleeve or brace changes how the joint feels while you use it, a distinction covered in our guide to <Link to="/guides/knee-brace-vs-compression-sleeve" className="text-primary hover:underline">knee braces versus compression sleeves</Link>.
+        </p>
+
         <h2>Fit Comes Before Feature Count</h2>
         <p>
           A device cannot provide consistent warmth if it shifts, gaps away from the front of the knee, or bunches behind the joint. Check the stated size range and how the straps are arranged. Product measurements are more useful than broad labels such as one-size-fits-all.

@@ -93,6 +93,8 @@ export const articleLoaders: Record<string, ArticleLoader> = {
   "air-compression-leg-massagers-do-they-work": () => import("./articles/air-compression-leg-massagers-do-they-work").then((module) => module.airCompressionLegMassagers.article),
   "knee-compression-sleeve-sizing-guide": () => import("./articles/knee-compression-sleeve-sizing-guide").then((module) => module.kneeSleeveSizingGuide.article),
   "best-supplements-for-knee-pain": () => import("./articles/best-supplements-for-knee-pain").then((module) => module.bestSupplementsForKneePain.article),
+  "tight-calves-knee-pain": () => import("./articles/tight-calves-knee-pain").then((module) => module.tightCalvesKneePain.article),
+  "knee-brace-vs-compression-sleeve": () => import("./articles/knee-brace-vs-compression-sleeve").then((module) => module.kneeBraceVsCompressionSleeve.article),
   "glucosamine-chondroitin-knee-pain": () => import("./articles/glucosamine-chondroitin-knee-pain").then((module) => module.glucosamineChondroitinKneePain.article),
   "menopause-knee-pain": () => import("./articles/menopause-knee-pain").then((module) => module.menopauseKneePain.article),
   "red-light-therapy-dose-knees": () => import("./articles/red-light-therapy-dose-knees").then((module) => module.redLightTherapyDoseKnees.article),

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="t d">
+<title id="t">Four kinds of knee support</title><desc id="d">Sleeve, strap, wraparound and hinged brace with what each one does.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#eff6ff"/></linearGradient></defs>
+<rect width="1400" height="900" fill="url(#bg)"/>
+<text x="70" y="100" font-family="Inter,Arial,Helvetica,sans-serif" font-size="42" font-weight="700" fill="#020617">Four kinds of knee support, four different jobs</text>
+<text x="70" y="150" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" fill="#64748b">Support level rises from left to right. So does bulk, cost, and how much it restricts you.</text>
+
+<rect x="70" y="200" width="285" height="440" rx="20" fill="#ffffff" stroke="#dbeafe" stroke-width="3"/>
+<rect x="70" y="200" width="285" height="8" rx="4" fill="#3b82f6"/>
+<text x="212" y="266" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#020617">Sleeve</text>
+<g transform="translate(112,296)">
+  <path d="M58 20 C36 66, 38 122, 50 164 L146 164 C158 122, 160 66, 138 20 Z" fill="#e2e8f0"/>
+  <rect x="44" y="58" width="112" height="88" rx="20" fill="#3b82f6" opacity=".5"/>
+</g>
+<text x="100" y="530" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Even pressure all round.</text>
+<text x="100" y="564" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">No moving parts.</text>
+<text x="100" y="612" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="600" fill="#3b82f6">Everyday aches, arthritis</text>
+
+<rect x="395" y="200" width="285" height="440" rx="20" fill="#ffffff" stroke="#dbeafe" stroke-width="3"/>
+<rect x="395" y="200" width="285" height="8" rx="4" fill="#8b5cf6"/>
+<text x="537" y="266" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#020617">Strap</text>
+<g transform="translate(437,296)">
+  <path d="M58 20 C36 66, 38 122, 50 164 L146 164 C158 122, 160 66, 138 20 Z" fill="#e2e8f0"/>
+  <rect x="44" y="132" width="112" height="22" rx="11" fill="#8b5cf6" opacity=".7"/>
+</g>
+<text x="425" y="530" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">One narrow band below</text>
+<text x="425" y="564" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">or above the kneecap.</text>
+<text x="425" y="612" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="600" fill="#8b5cf6">Tendon pain, jumper's knee</text>
+
+<rect x="720" y="200" width="285" height="440" rx="20" fill="#ffffff" stroke="#dbeafe" stroke-width="3"/>
+<rect x="720" y="200" width="285" height="8" rx="4" fill="#f59e0b"/>
+<text x="862" y="266" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#020617">Wraparound</text>
+<g transform="translate(762,296)">
+  <path d="M58 20 C36 66, 38 122, 50 164 L146 164 C158 122, 160 66, 138 20 Z" fill="#e2e8f0"/>
+  <rect x="40" y="52" width="120" height="100" rx="16" fill="#f59e0b" opacity=".45"/><rect x="30" y="86" width="140" height="14" rx="7" fill="#b45309"/>
+</g>
+<text x="750" y="530" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Adjustable straps, open</text>
+<text x="750" y="564" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">kneecap, tunable pressure.</text>
+<text x="750" y="612" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="600" fill="#f59e0b">Swelling, changing fit</text>
+
+<rect x="1045" y="200" width="285" height="440" rx="20" fill="#ffffff" stroke="#dbeafe" stroke-width="3"/>
+<rect x="1045" y="200" width="285" height="8" rx="4" fill="#0f172a"/>
+<text x="1187" y="266" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#020617">Hinged brace</text>
+<g transform="translate(1087,296)">
+  <path d="M58 20 C36 66, 38 122, 50 164 L146 164 C158 122, 160 66, 138 20 Z" fill="#e2e8f0"/>
+  <rect x="40" y="52" width="120" height="104" rx="14" fill="#94a3b8" opacity=".55"/><circle cx="36" cy="104" r="14" fill="#0f172a"/><circle cx="164" cy="104" r="14" fill="#0f172a"/><rect x="28" y="60" width="16" height="52" rx="8" fill="#0f172a"/><rect x="156" y="60" width="16" height="52" rx="8" fill="#0f172a"/>
+</g>
+<text x="1075" y="530" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Rigid uprights and metal</text>
+<text x="1075" y="564" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">hinges at the joint line.</text>
+<text x="1075" y="612" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="600" fill="#0f172a">Ligament injury, instability</text>
+
+<rect x="70" y="690" width="1260" height="130" rx="20" fill="#fff7ed" stroke="#fed7aa" stroke-width="3"/>
+<text x="112" y="746" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#c2410c">More support is not automatically better</text>
+<text x="112" y="788" font-family="Inter,Arial,Helvetica,sans-serif" font-size="22" fill="#7c2d12">A hinged brace on a knee that only aches after gardening is bulky, hot, expensive, and no more effective than a sleeve.</text>
+</svg>

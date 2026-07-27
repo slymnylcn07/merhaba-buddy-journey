@@ -658,7 +658,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           <strong>Hamstring tendons:</strong> The three hamstring muscles at the back of your thigh all attach near the back of the knee. The muscle behind the knee that people feel most often when they notice tightness is usually one of these hamstring insertions. Strain or tension in these tendons is one of the most common sources of discomfort in this area.
         </p>
         <p>
-          <strong>Gastrocnemius muscle:</strong> This is the larger calf muscle, and its two heads attach directly behind the knee joint. As a major back of knee muscle, issues here can cause discomfort that extends downward into the calf and upward into the posterior knee.
+          <strong>Gastrocnemius muscle:</strong> This is the larger calf muscle, and its two heads attach directly behind the knee joint. As a major back of knee muscle, issues here can cause discomfort that extends downward into the calf and upward into the posterior knee. Because this muscle begins above the knee, persistent calf tension pulls directly on the back of the joint, which is why <Link to="/guides/tight-calves-knee-pain" className="text-primary hover:underline">tight calves so often show up as knee pain</Link>.
         </p>
         <p>
           <strong>Popliteus muscle:</strong> A smaller but important muscle that sits deep in the back of the knee, helping to unlock the joint during bending. Together with the gastrocnemius and hamstrings, these muscles behind the knee work as a group to stabilize and move the joint through its full range.
@@ -1538,7 +1538,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
 
         <h2>Knee Support for Pain Management</h2>
         <p>
-          Various forms of knee support for pain can help manage arthritis symptoms. From simple braces to more sophisticated devices, support options can provide stability, warmth, and compression that many people find helpful.
+          Various forms of knee support for pain can help manage arthritis symptoms. From simple braces to more sophisticated devices, support options can provide stability, warmth, and compression that many people find helpful. The categories are not interchangeable, so it is worth understanding <Link to="/guides/knee-brace-vs-compression-sleeve" className="text-primary hover:underline">how a brace differs from a compression sleeve</Link> before choosing one.
         </p>
         <p>
           <strong>Compression sleeves:</strong> These simple elastic sleeves provide gentle compression and warmth. They can help reduce swelling and provide a proprioceptive reminder to move carefully. Many people find them comfortable for daily wear.
@@ -3229,7 +3229,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
 
         <h3>Gentle Evening Movement</h3>
         <p>
-          A few minutes of gentle movement before bed, such as slow knee bends, gentle leg extensions, or simple stretches, can help maintain range of motion. Keep movements slow and controlled, avoiding anything strenuous close to bedtime. This isn't exercise; it's gentle mobility maintenance.
+          A few minutes of gentle movement before bed, such as slow knee bends, gentle leg extensions, or simple stretches, can help maintain range of motion. Keep movements slow and controlled, avoiding anything strenuous close to bedtime. This isn't exercise; it's gentle mobility maintenance. If your knees feel stiff on stairs, a short calf stretch here is often the highest value minute in the whole routine, and our guide on <Link to="/guides/tight-calves-knee-pain" className="text-primary hover:underline">tight calves and knee pain</Link> explains why.
         </p>
 <h2>Making Your Routine Sustainable</h2>
         <p>

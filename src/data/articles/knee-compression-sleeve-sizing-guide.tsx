@@ -116,6 +116,10 @@ export const kneeSleeveSizingGuide: ArticleExport = {
         <PremiumCTA />
 
 
+        <p>
+          Before settling on a size, it is worth confirming that a sleeve is the right category at all. Straps, wraparounds and hinged braces each solve a different problem, and our comparison of <Link to="/guides/knee-brace-vs-compression-sleeve" className="text-primary hover:underline">knee braces versus compression sleeves</Link> shows which one matches your symptoms.
+        </p>
+
         <h2>Compression Levels: Light, Medium, and Firm Explained</h2>
         <p>
           Size determines whether the sleeve fits; the knit's compression level determines how strong the squeeze is at that size, and the two are frequently confused. Light compression, in sock terms roughly the 15 to 20 mmHg neighborhood, feels like attentive fabric: barely-there pressure suited to all-day comfort wear, mild achiness, and knees that dislike being squeezed. Medium compression, around 20 to 25, is the sweet spot for most activity use: enough pressure for a clear supported feeling and warmth, still comfortable across a long walk or a work shift. Firm compression suits high-demand sport and post-activity recovery windows, but it punishes sizing errors and long wear times, and it is not the beginner's choice. Most quality knee sleeves sit in the light-to-medium band by design, because that is the range people actually keep wearing. If a sleeve does not state its level at all, judge it by the four-point fit check and how your leg feels after an hour; your skin gives more honest readings than a spec sheet.

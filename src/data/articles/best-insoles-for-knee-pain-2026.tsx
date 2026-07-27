@@ -135,6 +135,10 @@ export const bestInsolesKneePain2026: ArticleExport = {
           A wedge intentionally shifts pressure toward one side. That can be useful for a specific mechanical or knee-compartment goal, but it is not a neutral product. Because the direction matters, this is the category most worth discussing with a podiatrist, physical therapist, or other qualified clinician.
         </p>
 
+        <p>
+          The same chain runs upward through the calf. Limited ankle motion changes how the foot loads with every step, which is why insoles and calf length are often worth addressing together, as covered in <Link to="/guides/tight-calves-knee-pain" className="text-primary hover:underline">tight calves and knee pain</Link>.
+        </p>
+
         <h2>Five Clues Your Footwear Is Worth Investigating</h2>
         <p>
           None of the following proves that the foot is the source of knee discomfort, but several clues together make a structured footwear test more reasonable:
