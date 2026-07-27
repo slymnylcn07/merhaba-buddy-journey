@@ -165,6 +165,10 @@ export const patellofemoralPainSyndrome: ArticleExport = {
           Many people notice that <strong>front knee pain stairs</strong> is one of the first activities that becomes uncomfortable. This is because stair climbing places significant compressive forces on the kneecap, often several times greater than walking on flat ground. If you notice a pattern of <strong>knee pain under kneecap</strong> during specific activities, this may be worth noting.
         </p>
 
+        <p>
+          Cycling deserves a particular mention here, because kneecap discomfort is the most common complaint riders report and it usually traces to a saddle that sits too low rather than to the joint itself, as explained in our guide to <Link to="/guides/cycling-knee-pain-bike-fit" className="text-primary hover:underline">cycling knee pain and bike fit</Link>.
+        </p>
+
         <h2>Activities That May Trigger Kneecap Discomfort</h2>
 
         <img

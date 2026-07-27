@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" role="img" aria-labelledby="t d">
+<title id="t">What helps flat feet related knee pain</title><desc id="d">Four steps from footwear through arch support and strengthening to clinical assessment.</desc>
+<defs><linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#f0fdf4"/></linearGradient></defs>
+<rect width="1400" height="860" fill="url(#bg2)"/>
+<text x="70" y="92" font-family="Inter,Arial,Helvetica,sans-serif" font-size="40" font-weight="700" fill="#0f172a">Work up the ladder, not down it</text>
+<text x="70" y="140" font-family="Inter,Arial,Helvetica,sans-serif" font-size="23" fill="#64748b">Each step is cheaper, faster and less invasive than the one after it. Most people never need the top rung.</text>
+
+
+<rect x="70" y="190" width="1260" height="132" rx="20" fill="#ffffff" stroke="#059669" stroke-width="3"/>
+<rect x="70" y="190" width="10" height="132" rx="5" fill="#059669"/>
+<circle cx="140" cy="256" r="30" fill="#059669"/>
+<text x="140" y="266" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#ffffff">1</text>
+<text x="196" y="242" font-family="Inter,Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#0f172a">Fix the shoes first</text>
+<text x="196" y="282" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Supportive, structured shoes with a firm heel counter change more than most people expect, and cost nothing extra if you were replacing them anyway.</text>
+<text x="1300" y="266" text-anchor="end" font-family="Inter,Arial,Helvetica,sans-serif" font-size="19" font-weight="600" fill="#059669">Do this first</text>
+
+<rect x="70" y="342" width="1260" height="132" rx="20" fill="#ffffff" stroke="#2563eb" stroke-width="3"/>
+<rect x="70" y="342" width="10" height="132" rx="5" fill="#2563eb"/>
+<circle cx="140" cy="408" r="30" fill="#2563eb"/>
+<text x="140" y="418" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#ffffff">2</text>
+<text x="196" y="394" font-family="Inter,Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#0f172a">Add arch support</text>
+<text x="196" y="434" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Over-the-counter insoles are the usual next step. They do not rebuild an arch, they change how load reaches the knee.</text>
+<text x="1300" y="418" text-anchor="end" font-family="Inter,Arial,Helvetica,sans-serif" font-size="19" font-weight="600" fill="#2563eb">Two week trial</text>
+
+<rect x="70" y="494" width="1260" height="132" rx="20" fill="#ffffff" stroke="#7c3aed" stroke-width="3"/>
+<rect x="70" y="494" width="10" height="132" rx="5" fill="#7c3aed"/>
+<circle cx="140" cy="560" r="30" fill="#7c3aed"/>
+<text x="140" y="570" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#ffffff">3</text>
+<text x="196" y="546" font-family="Inter,Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#0f172a">Strengthen the foot and hip</text>
+<text x="196" y="586" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Calf raises, toe yoga, single leg balance, plus hip abductor work, because the knee is squeezed from both ends of the chain.</text>
+<text x="1300" y="570" text-anchor="end" font-family="Inter,Arial,Helvetica,sans-serif" font-size="19" font-weight="600" fill="#7c3aed">Twice a week</text>
+
+<rect x="70" y="646" width="1260" height="132" rx="20" fill="#ffffff" stroke="#c2410c" stroke-width="3"/>
+<rect x="70" y="646" width="10" height="132" rx="5" fill="#c2410c"/>
+<circle cx="140" cy="712" r="30" fill="#c2410c"/>
+<text x="140" y="722" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#ffffff">4</text>
+<text x="196" y="698" font-family="Inter,Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#0f172a">Get assessed if it persists</text>
+<text x="196" y="738" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Custom orthotics, gait analysis, or a look at the posterior tibial tendon belong with a clinician, not with a search bar.</text>
+<text x="1300" y="722" text-anchor="end" font-family="Inter,Arial,Helvetica,sans-serif" font-size="19" font-weight="600" fill="#c2410c">If nothing changes</text>
+
+<rect x="70" y="800" width="1260" height="1" fill="#e2e8f0"/>
+</svg>

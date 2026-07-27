@@ -323,6 +323,10 @@ const articleContent = (
     </p>
 
     {/* ?? Section 4: Normal vs Warning Signs ?? */}
+    <p>
+      Repetitive endurance activities follow slightly different rules from gym sessions. Cycling in particular can produce delayed knee soreness from setup rather than effort, since a single misplaced millimetre is repeated thousands of times per ride, as our guide to <Link to="/guides/cycling-knee-pain-bike-fit" className="text-primary hover:underline">cycling knee pain and bike fit</Link> explains.
+    </p>
+
     <h2>Normal Soreness vs. Warning Signs After Exercise</h2>
     <p>
       One of the most important things to understand about <strong>knee pain after exercise</strong> is the difference between normal post-exercise soreness and signs that something may need attention. Here is how to tell them apart:

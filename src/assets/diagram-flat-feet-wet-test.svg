@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-labelledby="t d">
+<title id="t">The wet footprint test</title><desc id="d">Three footprint shapes showing high arch, normal arch and flat foot.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#eff6ff"/></linearGradient></defs>
+<rect width="1400" height="820" fill="url(#bg)"/>
+<text x="70" y="92" font-family="Inter,Arial,Helvetica,sans-serif" font-size="40" font-weight="700" fill="#0f172a">Do you actually have flat feet? The wet test</text>
+<text x="70" y="140" font-family="Inter,Arial,Helvetica,sans-serif" font-size="23" fill="#64748b">Wet the sole of your foot, stand normally on dark paper or a dry floor, then look at the shape you leave.</text>
+
+<g transform="translate(120,200)">
+  <rect x="0" y="0" width="340" height="500" rx="24" fill="#ffffff" stroke="#e2e8f0" stroke-width="3"/>
+  <text x="170" y="56" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#0f172a">High arch</text>
+  <g transform="translate(96,90)">
+    <ellipse cx="70" cy="46" rx="52" ry="40" fill="#1d4ed8" opacity=".8"/>
+    <ellipse cx="26" cy="104" rx="12" ry="14" fill="#1d4ed8" opacity=".8"/>
+    <ellipse cx="52" cy="112" rx="10" ry="12" fill="#1d4ed8" opacity=".8"/>
+    <ellipse cx="76" cy="112" rx="10" ry="12" fill="#1d4ed8" opacity=".8"/>
+    <ellipse cx="98" cy="106" rx="9" ry="11" fill="#1d4ed8" opacity=".8"/>
+    <path d="M44 82 C36 150, 40 210, 52 250 L92 250 C104 210, 108 150, 100 82 Z" fill="#1d4ed8" opacity=".18"/>
+    <path d="M56 96 C46 150, 50 208, 60 246 L86 246 C96 208, 100 150, 90 96 Z" fill="#1d4ed8" opacity=".8"/>
+    <ellipse cx="72" cy="286" rx="40" ry="34" fill="#1d4ed8" opacity=".8"/>
+  </g>
+  <text x="170" y="452" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">A thin band, or none at all,</text>
+  <text x="170" y="480" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">joining the ball and heel</text>
+</g>
+
+<g transform="translate(530,200)">
+  <rect x="0" y="0" width="340" height="500" rx="24" fill="#ffffff" stroke="#bbf7d0" stroke-width="4"/>
+  <text x="170" y="56" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#047857">Normal arch</text>
+  <g transform="translate(96,90)">
+    <ellipse cx="70" cy="46" rx="52" ry="40" fill="#059669" opacity=".85"/>
+    <ellipse cx="26" cy="104" rx="12" ry="14" fill="#059669" opacity=".85"/>
+    <ellipse cx="52" cy="112" rx="10" ry="12" fill="#059669" opacity=".85"/>
+    <ellipse cx="76" cy="112" rx="10" ry="12" fill="#059669" opacity=".85"/>
+    <ellipse cx="98" cy="106" rx="9" ry="11" fill="#059669" opacity=".85"/>
+    <path d="M44 82 C34 150, 38 212, 52 250 L104 250 C110 210, 112 150, 100 82 Z" fill="#059669" opacity=".85"/>
+    <path d="M40 120 C64 150, 66 200, 46 236 Z" fill="#ffffff"/>
+    <ellipse cx="72" cy="286" rx="40" ry="34" fill="#059669" opacity=".85"/>
+  </g>
+  <text x="170" y="452" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Roughly half the width</text>
+  <text x="170" y="480" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">of the midfoot shows</text>
+</g>
+
+<g transform="translate(940,200)">
+  <rect x="0" y="0" width="340" height="500" rx="24" fill="#ffffff" stroke="#fed7aa" stroke-width="4"/>
+  <text x="170" y="56" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#c2410c">Flat foot</text>
+  <g transform="translate(96,90)">
+    <ellipse cx="70" cy="46" rx="54" ry="40" fill="#ea580c" opacity=".85"/>
+    <ellipse cx="26" cy="104" rx="12" ry="14" fill="#ea580c" opacity=".85"/>
+    <ellipse cx="52" cy="112" rx="10" ry="12" fill="#ea580c" opacity=".85"/>
+    <ellipse cx="76" cy="112" rx="10" ry="12" fill="#ea580c" opacity=".85"/>
+    <ellipse cx="98" cy="106" rx="9" ry="11" fill="#ea580c" opacity=".85"/>
+    <path d="M40 82 C30 150, 34 214, 50 252 L108 252 C114 212, 116 150, 104 82 Z" fill="#ea580c" opacity=".85"/>
+    <ellipse cx="72" cy="286" rx="42" ry="34" fill="#ea580c" opacity=".85"/>
+  </g>
+  <text x="170" y="452" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Almost the whole sole</text>
+  <text x="170" y="480" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">prints, with little or no gap</text>
+</g>
+<text x="700" y="762" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#94a3b8">A flat print is not a diagnosis and not a problem on its own. It only matters when it comes with symptoms.</text>
+</svg>

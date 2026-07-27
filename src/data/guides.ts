@@ -643,6 +643,20 @@ export const guidesData: GuideData[] = [
     lastModified: "2026-07-12",
   },
   {
+    slug: "flat-feet-overpronation-knee-pain",
+    title: "Can Flat Feet Cause Knee Pain? Overpronation Explained",
+    description: "How a collapsed arch rotates the shin and pulls the kneecap off track, the wet footprint test, what helps, and when to get assessed.",
+    readTime: 13,
+    lastModified: "2026-07-27",
+  },
+  {
+    slug: "cycling-knee-pain-bike-fit",
+    title: "Cycling Knee Pain: Location Chart and Bike Fit Fixes",
+    description: "Front, back, inner or outer knee pain on the bike? Match the location to the cause, then the exact saddle, cleat and cadence change that fixes it.",
+    readTime: 13,
+    lastModified: "2026-07-27",
+  },
+  {
     slug: "tight-calves-knee-pain",
     title: "Can Tight Calves Cause Knee Pain? The Calf-Knee Connection",
     description: "Why tight calves pull on the back of the knee and limit ankle motion, what makes them tight, and a five step routine that changes it.",

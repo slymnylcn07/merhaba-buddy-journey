@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="t d">
+<title id="t">Flat feet and knee pain</title><desc id="d">A normal arch beside a collapsed arch, with the knee angle each one produces.</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#eef4ff"/></linearGradient>
+  <linearGradient id="skin" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f8fafc"/><stop offset=".5" stop-color="#e2e8f0"/><stop offset="1" stop-color="#cbd5e1"/></linearGradient>
+  <linearGradient id="warn" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fb923c"/><stop offset="1" stop-color="#ea580c"/></linearGradient>
+  <linearGradient id="good" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#34d399"/><stop offset="1" stop-color="#059669"/></linearGradient>
+  <radialGradient id="hot" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f97316" stop-opacity=".35"/><stop offset="1" stop-color="#f97316" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="800" fill="url(#sky)"/>
+<text x="600" y="96" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="44" font-weight="700" fill="#0f172a" letter-spacing="-1">Flat feet and your knees</text>
+<text x="600" y="142" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="24" fill="#64748b">The arch decides the angle the knee has to work at</text>
+
+<g transform="translate(140,220)">
+  <rect x="0" y="0" width="400" height="440" rx="26" fill="#ffffff" stroke="#bbf7d0" stroke-width="4"/>
+  <text x="200" y="58" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#047857">Supported arch</text>
+  <path d="M120 150 L120 250" stroke="#94a3b8" stroke-width="26" stroke-linecap="round"/>
+  <path d="M120 250 L120 300" stroke="#94a3b8" stroke-width="22" stroke-linecap="round"/>
+  <path d="M78 330 C120 288, 190 292, 250 330 C300 362, 320 372, 320 372 L70 372 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="3"/>
+  <path d="M100 344 C140 312, 200 314, 250 344" fill="none" stroke="#059669" stroke-width="7" stroke-linecap="round"/>
+  <rect x="60" y="372" width="280" height="10" rx="5" fill="#cbd5e1"/>
+  <text x="200" y="424" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="22" font-weight="600" fill="#047857">Knee tracks straight</text>
+</g>
+
+<g transform="translate(660,220)">
+  <rect x="0" y="0" width="400" height="440" rx="26" fill="#ffffff" stroke="#fed7aa" stroke-width="4"/>
+  <text x="200" y="58" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#c2410c">Collapsed arch</text>
+  <circle cx="150" cy="200" r="54" fill="url(#hot)"/>
+  <path d="M150 150 L128 250" stroke="#94a3b8" stroke-width="26" stroke-linecap="round"/>
+  <path d="M128 250 L118 300" stroke="#94a3b8" stroke-width="22" stroke-linecap="round"/>
+  <path d="M72 348 C120 336, 190 334, 250 348 C300 360, 320 372, 320 372 L64 372 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="3"/>
+  <path d="M96 356 C140 350, 200 350, 250 358" fill="none" stroke="#ea580c" stroke-width="7" stroke-linecap="round" stroke-dasharray="10 8"/>
+  <rect x="56" y="372" width="284" height="10" rx="5" fill="#cbd5e1"/>
+  <text x="200" y="424" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="22" font-weight="600" fill="#c2410c">Knee rolls inward</text>
+</g>
+</svg>

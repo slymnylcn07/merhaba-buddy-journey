@@ -75,6 +75,10 @@ export const bestInsolesKneePain2026: ArticleExport = {
           </p>
         </div>
 
+        <p>
+          If your arches collapse noticeably when you stand, the chain described above has a specific name and a specific pattern of knee symptoms, which our guide on <Link to="/guides/flat-feet-overpronation-knee-pain" className="text-primary hover:underline">flat feet, overpronation and knee pain</Link> walks through before you choose a pair.
+        </p>
+
         <h2>Match the Insole to the Pattern</h2>
         <div className="my-8 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
           <table className="w-full min-w-[720px] border-collapse text-left text-sm">

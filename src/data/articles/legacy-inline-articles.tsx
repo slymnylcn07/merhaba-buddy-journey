@@ -1498,7 +1498,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           Regular knee pain exercises are one of the most effective ways to manage arthritis knee pain. While it might seem counterintuitive to exercise a painful joint, appropriate activity actually helps maintain function, reduce stiffness, and can even decrease pain over time.
         </p>
         <p>
-          The key is choosing the right types of exercise. Low-impact activities that strengthen the muscles around the knee without putting excessive stress on the joint are ideal. Swimming, water aerobics, cycling, and walking on flat surfaces are excellent choices for most people with knee arthritis.
+          The key is choosing the right types of exercise. Low-impact activities that strengthen the muscles around the knee without putting excessive stress on the joint are ideal. Swimming, water aerobics, cycling, and walking on flat surfaces are excellent choices for most people with knee arthritis. Cycling in particular is worth setting up properly rather than abandoning if it hurts, since knee pain on the bike is usually a fit problem, as our guide to <Link to="/guides/cycling-knee-pain-bike-fit" className="text-primary hover:underline">cycling knee pain and bike fit</Link> explains.
         </p>
 
         <figure className="my-8">
@@ -4608,7 +4608,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </ul>
 
         <p>
-          It's important to note that no single brand works for everyone. Two runners with the same foot size can have very different experiences with the same shoe because of differences in foot shape, arch height, pronation pattern, and personal preference. The right shoe is the one that fits your foot comfortably and supports your natural movement pattern, regardless of brand name or price tag.
+          It's important to note that no single brand works for everyone. Two runners with the same foot size can have very different experiences with the same shoe because of differences in foot shape, arch height, pronation pattern, and personal preference. If your arches flatten noticeably under load, that pattern has its own knock-on effect further up the leg, which our guide on <Link to="/guides/flat-feet-overpronation-knee-pain" className="text-primary hover:underline">flat feet, overpronation and knee pain</Link> explains. The right shoe is the one that fits your foot comfortably and supports your natural movement pattern, regardless of brand name or price tag.
         </p>
 
         <figure className="my-8">

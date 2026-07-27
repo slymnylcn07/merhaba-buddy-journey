@@ -105,6 +105,8 @@ import thumbSleeveSizingList from "@/assets/hero-sleeve-sizing.svg";
 import thumbSupplements from "@/assets/thumb-knee-supplements.svg";
 import thumbGlucosamine from "@/assets/article-hero-glucosamine-chondroitin.svg";
 import thumbTightCalves from "@/assets/article-hero-tight-calves-knee-pain.svg";
+import thumbFlatFeet from "@/assets/guide-thumb-flat-feet-knee-pain.svg";
+import thumbCycling from "@/assets/guide-thumb-cycling-knee-pain.svg";
 import thumbBraceVsSleeve from "@/assets/article-hero-knee-brace-vs-compression-sleeve.svg";
 import thumbMenopause from "@/assets/article-hero-menopause-knee-pain.svg";
 import thumbRedLightDose from "@/assets/article-hero-red-light-dose-knees.svg";
@@ -130,6 +132,8 @@ const thumbnailMap: Record<string, string> = {
   "best-supplements-for-knee-pain": thumbSupplements,
   "glucosamine-chondroitin-knee-pain": thumbGlucosamine,
   "tight-calves-knee-pain": thumbTightCalves,
+  "flat-feet-overpronation-knee-pain": thumbFlatFeet,
+  "cycling-knee-pain-bike-fit": thumbCycling,
   "knee-brace-vs-compression-sleeve": thumbBraceVsSleeve,
   "menopause-knee-pain": thumbMenopause,
   "red-light-therapy-dose-knees": thumbRedLightDose,

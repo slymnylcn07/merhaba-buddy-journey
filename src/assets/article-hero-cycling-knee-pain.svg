@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="t d">
+<title id="t">Cycling knee pain and bike fit</title><desc id="d">A cyclist on a bike with saddle height and knee angle marked.</desc>
+<defs>
+  <linearGradient id="sky2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#eef4ff"/></linearGradient>
+  <linearGradient id="lg2" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f1f5f9"/><stop offset=".5" stop-color="#e2e8f0"/><stop offset="1" stop-color="#cbd5e1"/></linearGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#sky2)"/>
+<circle cx="1140" cy="440" r="330" fill="#dbeafe" opacity=".38"/>
+
+<text x="96" y="184" font-family="Inter,Arial,Helvetica,sans-serif" font-size="62" font-weight="700" fill="#0f172a" letter-spacing="-2">Cycling is kind to knees.</text>
+<text x="96" y="262" font-family="Inter,Arial,Helvetica,sans-serif" font-size="62" font-weight="700" fill="#2563eb" letter-spacing="-2">Bad bike fit is not.</text>
+<rect x="96" y="306" width="96" height="6" rx="3" fill="#2563eb"/>
+<text x="96" y="378" font-family="Inter,Arial,Helvetica,sans-serif" font-size="28" fill="#475569">Ninety revolutions a minute, an hour at a time. A small</text>
+<text x="96" y="418" font-family="Inter,Arial,Helvetica,sans-serif" font-size="28" fill="#475569">setup error becomes five thousand small errors.</text>
+
+<g font-family="Inter,Arial,Helvetica,sans-serif">
+  <rect x="96" y="490" width="292" height="112" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="124" y="534" font-size="22" font-weight="700" fill="#0f172a">Saddle too low</text>
+  <text x="124" y="570" font-size="20" fill="#ef4444">front of the knee</text>
+  <rect x="412" y="490" width="292" height="112" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="440" y="534" font-size="22" font-weight="700" fill="#0f172a">Saddle too high</text>
+  <text x="440" y="570" font-size="20" fill="#0ea5e9">back of the knee</text>
+  <rect x="96" y="626" width="608" height="112" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="124" y="670" font-size="22" font-weight="700" fill="#0f172a">Target knee angle at the bottom of the stroke</text>
+  <text x="124" y="706" font-size="20" fill="#475569">25 to 35 degrees from straight, never fully locked out</text>
+</g>
+
+<g transform="translate(890,250)">
+  <circle cx="120" cy="380" r="118" fill="none" stroke="#94a3b8" stroke-width="10"/>
+  <circle cx="500" cy="380" r="118" fill="none" stroke="#94a3b8" stroke-width="10"/>
+  <path d="M120 380 L300 250 L470 268" fill="none" stroke="#334155" stroke-width="12" stroke-linecap="round"/>
+  <path d="M300 250 L336 96 L472 108" fill="none" stroke="#334155" stroke-width="12" stroke-linecap="round"/>
+  <path d="M336 96 L500 380" fill="none" stroke="#334155" stroke-width="12" stroke-linecap="round"/>
+  <rect x="286" y="72" width="108" height="22" rx="11" fill="#0f172a"/>
+  <circle cx="300" cy="250" r="26" fill="#e2e8f0" stroke="#64748b" stroke-width="6"/>
+  <path d="M340 118 C300 168, 280 210, 268 254" stroke="url(#lg2)" stroke-width="46" stroke-linecap="round" fill="none"/>
+  <path d="M268 254 C264 316, 278 356, 292 382" stroke="url(#lg2)" stroke-width="40" stroke-linecap="round" fill="none"/>
+  <circle cx="268" cy="254" r="40" fill="#fee2e2" stroke="#ef4444" stroke-width="6"/>
+  <path d="M268 254 L340 118" stroke="#ef4444" stroke-width="4" stroke-dasharray="9 7"/>
+  <path d="M268 254 L292 382" stroke="#ef4444" stroke-width="4" stroke-dasharray="9 7"/>
+  <path d="M300 210 A 56 56 0 0 0 300 300" fill="none" stroke="#ef4444" stroke-width="4"/>
+  <text x="352" y="268" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#ef4444">30&#176;</text>
+  <text x="120" y="540" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#94a3b8">rear</text>
+  <text x="500" y="540" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#94a3b8">front</text>
+</g>
+</svg>

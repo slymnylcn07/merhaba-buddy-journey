@@ -9,13 +9,13 @@ import { toast } from "sonner";
 import { Mail } from "lucide-react";
 import { DiscountCodeModal } from "@/components/DiscountCodeModal";
 import { NEWSLETTER_DISCOUNT_CODE } from "@/lib/newsletter-config";
-import { getProductPath } from "@/lib/product-config";
+import { getProductPath, resolveShopifyProductHandle } from "@/lib/product-config";
 
 // Urun gorselleri icin oturum ici tek istek (PremiumCTA ile ayni desen)
 let slideInProductsPromise: Promise<ShopifyProduct[]> | null = null;
 function getSlideInProducts() {
   if (!slideInProductsPromise) {
-    slideInProductsPromise = getProducts(20).catch(() => []);
+    slideInProductsPromise = getProducts(50).catch(() => []);
   }
   return slideInProductsPromise;
 }
@@ -210,8 +210,11 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
     let active = true;
     getSlideInProducts().then((list) => {
       if (!active) return;
-      const match = list.find(
-        (p) => decodeURIComponent(p.node.handle) === decodeURIComponent(rec.handle)
+      const wanted = [rec.handle, resolveShopifyProductHandle(rec.handle)].map((h) =>
+        decodeURIComponent(h).toLowerCase()
+      );
+      const match = list.find((p) =>
+        wanted.includes(decodeURIComponent(p.node.handle).toLowerCase())
       );
       if (match) setLiveImage(match.node.images?.edges?.[0]?.node?.url || null);
     });
@@ -277,7 +280,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
 
   const isMain = rec.handle === PRODUCT_RECS.main.handle;
   const productShortName = rec.title.replace("FlexiKnee ", "");
-  const productImage = liveImage || (isMain ? deviceImage : null);
+  const productImage = liveImage || rec.fallbackImage || (isMain ? deviceImage : null);
 
   return (
     <>

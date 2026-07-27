@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="t d">
+<title id="t">The foot to knee chain</title><desc id="d">A leg showing how a collapsed arch rotates the shin and angles the knee inward.</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#eef4ff"/></linearGradient>
+  <linearGradient id="skin" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f8fafc"/><stop offset=".5" stop-color="#e2e8f0"/><stop offset="1" stop-color="#cbd5e1"/></linearGradient>
+  <linearGradient id="warn" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fb923c"/><stop offset="1" stop-color="#ea580c"/></linearGradient>
+  <linearGradient id="good" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#34d399"/><stop offset="1" stop-color="#059669"/></linearGradient>
+  <radialGradient id="hot" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f97316" stop-opacity=".35"/><stop offset="1" stop-color="#f97316" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<circle cx="1170" cy="450" r="340" fill="#dbeafe" opacity=".4"/>
+
+<text x="96" y="188" font-family="Inter,Arial,Helvetica,sans-serif" font-size="64" font-weight="700" fill="#0f172a" letter-spacing="-2">Your knees inherit</text>
+<text x="96" y="266" font-family="Inter,Arial,Helvetica,sans-serif" font-size="64" font-weight="700" fill="#ea580c" letter-spacing="-2">what your feet do</text>
+<rect x="96" y="310" width="96" height="6" rx="3" fill="#ea580c"/>
+<text x="96" y="382" font-family="Inter,Arial,Helvetica,sans-serif" font-size="28" fill="#475569">When an arch flattens, the shin rotates inward and the</text>
+<text x="96" y="422" font-family="Inter,Arial,Helvetica,sans-serif" font-size="28" fill="#475569">kneecap is pulled off its track with every single step.</text>
+
+<g font-family="Inter,Arial,Helvetica,sans-serif">
+  <rect x="96" y="500" width="620" height="76" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <circle cx="132" cy="538" r="13" fill="#ea580c"/><text x="132" y="545" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">1</text>
+  <text x="162" y="546" font-size="22" fill="#334155">Arch lowers and the foot rolls inward (overpronation)</text>
+  <rect x="96" y="590" width="620" height="76" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <circle cx="132" cy="628" r="13" fill="#ea580c"/><text x="132" y="635" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">2</text>
+  <text x="162" y="636" font-size="22" fill="#334155">The shin bone turns in, dragging the knee with it</text>
+  <rect x="96" y="680" width="620" height="76" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <circle cx="132" cy="718" r="13" fill="#ea580c"/><text x="132" y="725" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">3</text>
+  <text x="162" y="726" font-size="22" fill="#334155">The kneecap grinds slightly off centre, thousands of times</text>
+</g>
+
+<g transform="translate(1000,120)">
+  <ellipse cx="180" cy="668" rx="150" ry="20" fill="#0f172a" opacity=".07"/>
+  <path d="M136 0 C124 92, 126 168, 142 224 L246 224 C262 168, 264 92, 252 0 Z" fill="url(#skin)"/>
+  <circle cx="194" cy="272" r="72" fill="url(#hot)"/>
+  <ellipse cx="194" cy="272" rx="50" ry="44" fill="#e2e8f0" stroke="#94a3b8" stroke-width="3"/>
+  <ellipse cx="186" cy="272" rx="22" ry="19" fill="#fb923c"/>
+  <path d="M146 314 C130 400, 132 500, 146 588 L238 588 C252 500, 250 400, 240 314 Z" fill="url(#skin)"/>
+  <path d="M194 320 L176 580" stroke="#ea580c" stroke-width="4" stroke-dasharray="9 8"/>
+  <path d="M118 636 C170 612, 246 616, 300 640 C330 654, 344 668, 344 668 L112 668 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="3"/>
+  <path d="M138 650 C180 640, 250 642, 296 654" fill="none" stroke="#ea580c" stroke-width="8" stroke-linecap="round" stroke-dasharray="12 9"/>
+  <path d="M240 250 L340 208" stroke="#ea580c" stroke-width="3"/>
+  <circle cx="238" cy="252" r="8" fill="#fff" stroke="#ea580c" stroke-width="4"/>
+  <text x="350" y="214" font-family="Inter,Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#ea580c">Kneecap pulled inward</text>
+  <path d="M300 646 L360 674" stroke="#0f766e" stroke-width="3"/>
+  <circle cx="298" cy="644" r="8" fill="#fff" stroke="#0f766e" stroke-width="4"/>
+  <text x="370" y="682" font-family="Inter,Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#0f766e">Arch flattens on load</text>
+</g>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" role="img" aria-labelledby="t d">
+<title id="t">The order to change bike fit</title><desc id="d">Five steps from saddle height to professional bike fit, one change at a time.</desc>
+<defs><linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#f0f9ff"/></linearGradient></defs>
+<rect width="1400" height="840" fill="url(#bg4)"/>
+<text x="70" y="90" font-family="Inter,Arial,Helvetica,sans-serif" font-size="40" font-weight="700" fill="#0f172a">Change one thing, ride twice, then judge</text>
+<text x="70" y="136" font-family="Inter,Arial,Helvetica,sans-serif" font-size="23" fill="#64748b">Adjusting three things at once means you will never know which one helped.</text>
+
+
+<rect x="70" y="180" width="1260" height="104" rx="18" fill="#ffffff" stroke="#dbeafe" stroke-width="3"/>
+<circle cx="132" cy="232" r="28" fill="#2563eb"/>
+<text x="132" y="241" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#ffffff">1</text>
+<text x="186" y="222" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#0f172a">Saddle height</text>
+<text x="186" y="260" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">The single biggest lever. Move it 3 mm at a time, never more, and always from a marked starting point.</text>
+<text x="1300" y="240" text-anchor="end" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="600" fill="#2563eb">3 mm</text>
+
+<rect x="70" y="304" width="1260" height="104" rx="18" fill="#ffffff" stroke="#dbeafe" stroke-width="3"/>
+<circle cx="132" cy="356" r="28" fill="#2563eb"/>
+<text x="132" y="365" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#ffffff">2</text>
+<text x="186" y="346" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#0f172a">Saddle fore and aft</text>
+<text x="186" y="384" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Slide it back if the front of the knee hurts, forward if the back of the knee does. Small moves only.</text>
+<text x="1300" y="364" text-anchor="end" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="600" fill="#2563eb">5 mm</text>
+
+<rect x="70" y="428" width="1260" height="104" rx="18" fill="#ffffff" stroke="#dbeafe" stroke-width="3"/>
+<circle cx="132" cy="480" r="28" fill="#2563eb"/>
+<text x="132" y="489" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#ffffff">3</text>
+<text x="186" y="470" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#0f172a">Cleat position</text>
+<text x="186" y="508" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Move cleats back toward the middle of the foot, and check the rotation lets your heel float naturally.</text>
+<text x="1300" y="488" text-anchor="end" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="600" fill="#2563eb">2 mm</text>
+
+<rect x="70" y="552" width="1260" height="104" rx="18" fill="#ffffff" stroke="#dbeafe" stroke-width="3"/>
+<circle cx="132" cy="604" r="28" fill="#2563eb"/>
+<text x="132" y="613" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#ffffff">4</text>
+<text x="186" y="594" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#0f172a">Gearing and cadence</text>
+<text x="186" y="632" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">Grinding a heavy gear loads the kneecap. Spin lighter at 80 to 95 rpm before changing anything else.</text>
+<text x="1300" y="612" text-anchor="end" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="600" fill="#2563eb">every ride</text>
+
+<rect x="70" y="676" width="1260" height="104" rx="18" fill="#ffffff" stroke="#dbeafe" stroke-width="3"/>
+<circle cx="132" cy="728" r="28" fill="#2563eb"/>
+<text x="132" y="737" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#ffffff">5</text>
+<text x="186" y="718" font-family="Inter,Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#0f172a">Professional bike fit</text>
+<text x="186" y="756" font-family="Inter,Arial,Helvetica,sans-serif" font-size="21" fill="#475569">If two of the above did not settle it, a fitter measures what you cannot see from the saddle.</text>
+<text x="1300" y="736" text-anchor="end" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="600" fill="#2563eb">if stuck</text>
+
+<rect x="70" y="800" width="1260" height="1" fill="#e2e8f0"/>
+</svg>

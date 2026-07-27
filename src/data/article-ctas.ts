@@ -1,4 +1,6 @@
 export const articleCTAs: Record<string, { headline: string; text: string }> = {
+  "flat-feet-overpronation-knee-pain": { headline: "Ready to trial arch support?", text: "Structured, shock-absorbing, trim-to-fit insoles, the cheapest and most reversible way to change how load reaches your knees from the ground up." },
+  "cycling-knee-pain-bike-fit": { headline: "Stiff knees after a long ride?", text: "Warmth, red light, and gentle vibration in one wrap for the evening window after riding, when cycling stiffness usually shows up." },
   "tight-calves-knee-pain": { headline: "Tight calves, heavy legs at the end of the day?", text: "Air compression and warmth for the lower leg, a simple way to finish long days on your feet while you work on calf length." },
   "knee-brace-vs-compression-sleeve": { headline: "Starting with a sleeve, as this guide suggests?", text: "Breathable graduated compression with an open kneecap position, sized from a proper chart rather than guesswork." },
   "knee-compression-sleeve-sizing-guide": { headline: "Measured up and ready to choose a size?", text: "Breathable compression knit designed for all-day wear, with a size chart that matches the measurements in this guide." },

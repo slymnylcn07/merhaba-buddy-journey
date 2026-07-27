@@ -1,6 +1,8 @@
 export type GuideThumbnailLoader = () => Promise<string>;
 
 const thumbnailLoaders: Record<string, GuideThumbnailLoader> = {
+  "flat-feet-overpronation-knee-pain": () => import("../assets/guide-thumb-flat-feet-knee-pain.svg").then((module) => module.default),
+  "cycling-knee-pain-bike-fit": () => import("../assets/guide-thumb-cycling-knee-pain.svg").then((module) => module.default),
   "knee-brace-vs-compression-sleeve": () => import("../assets/article-hero-knee-brace-vs-compression-sleeve.svg").then((module) => module.default),
   "tight-calves-knee-pain": () => import("../assets/article-hero-tight-calves-knee-pain.svg").then((module) => module.default),
   "air-compression-leg-massagers-do-they-work": () => import("../assets/hero-air-compression-leg.svg").then((module) => module.default),

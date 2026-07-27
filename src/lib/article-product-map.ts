@@ -93,6 +93,8 @@ const RULES: { keywords: string[]; product: keyof typeof PRODUCT_RECS }[] = [
 /** Anahtar kelime kurallarından önce çalışan, slug'a birebir eşleşen tanımlar. */
 const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
   "tight-calves-knee-pain": "calf",
+  "flat-feet-overpronation-knee-pain": "insoles",
+  "cycling-knee-pain-bike-fit": "main",
   "air-compression-leg-massagers-do-they-work": "calf",
   "knee-brace-vs-compression-sleeve": "sleeve",
   "knee-compression-sleeve-sizing-guide": "sleeve",

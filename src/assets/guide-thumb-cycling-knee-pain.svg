@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="t d">
+<title id="t">Cycling knee pain by location</title><desc id="d">A knee with four marked zones matched to bike setup causes.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#eef4ff"/></linearGradient>
+  <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f8fafc"/><stop offset=".5" stop-color="#e2e8f0"/><stop offset="1" stop-color="#cbd5e1"/></linearGradient>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<text x="600" y="92" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="43" font-weight="700" fill="#0f172a" letter-spacing="-1">Where it hurts tells you what to adjust</text>
+<text x="600" y="138" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="23" fill="#64748b">Four zones, four different bike fit fixes</text>
+
+<g transform="translate(430,190)">
+  <path d="M110 0 C98 70, 100 128, 114 172 L226 172 C240 128, 242 70, 230 0 Z" fill="url(#lg)"/>
+  <ellipse cx="170" cy="234" rx="86" ry="72" fill="#e2e8f0" stroke="#94a3b8" stroke-width="3"/>
+  <ellipse cx="170" cy="228" rx="40" ry="46" fill="#cbd5e1"/>
+  <path d="M114 300 C102 380, 106 452, 118 512 L222 512 C234 452, 238 380, 226 300 Z" fill="url(#lg)"/>
+  <circle cx="170" cy="222" r="26" fill="#ef4444" opacity=".85"/><text x="170" y="230" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#fff">1</text>
+  <circle cx="86" cy="256" r="26" fill="#f59e0b" opacity=".9"/><text x="86" y="264" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#fff">2</text>
+  <circle cx="254" cy="256" r="26" fill="#8b5cf6" opacity=".9"/><text x="254" y="264" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#fff">3</text>
+  <circle cx="170" cy="322" r="26" fill="#0ea5e9" opacity=".9"/><text x="170" y="330" text-anchor="middle" font-family="Inter,Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#fff">4</text>
+</g>
+
+<g font-family="Inter,Arial,Helvetica,sans-serif" font-size="21">
+  <circle cx="140" cy="620" r="11" fill="#ef4444"/><text x="164" y="628" fill="#334155">Front: saddle too low</text>
+  <circle cx="140" cy="676" r="11" fill="#f59e0b"/><text x="164" y="684" fill="#334155">Inner: cleats too far apart</text>
+  <circle cx="680" cy="620" r="11" fill="#8b5cf6"/><text x="704" y="628" fill="#334155">Outer: IT band, cleat angle</text>
+  <circle cx="680" cy="676" r="11" fill="#0ea5e9"/><text x="704" y="684" fill="#334155">Back: saddle too high</text>
+</g>
+</svg>

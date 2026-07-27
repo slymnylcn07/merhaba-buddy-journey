@@ -1,4 +1,29 @@
 export const articleHowToSchemas: Record<string, { name: string; description: string; steps: { name: string; text: string }[] }> = {
+  "flat-feet-overpronation-knee-pain": {
+    name: "How to Check Your Arches and Reduce Knee Strain",
+    description: "A step-by-step method to test your own arches, then work up the support ladder from footwear to clinical assessment.",
+    steps: [
+      { name: "Run the wet footprint test", text: "Wet the sole of one foot, stand normally on dark paper or a dry floor, and read the shape. A flat foot prints almost the whole sole with little or no gap on the inner edge." },
+      { name: "Check your ankles from behind", text: "Stand relaxed and look at the back of your ankles in a mirror. Achilles tendons angling inward, with outer toes visible past the ankle, indicate the foot is rolling inward under load." },
+      { name: "Assess your shoes before buying anything", text: "Pinch the heel counter, wring the shoe like a towel, and try to fold it in half. A supportive shoe resists all three. Check whether the midsole is simply worn out." },
+      { name: "Trial arch support for two to three weeks", text: "Wear over-the-counter insoles for an hour or two on the first day and build up across a week. Judge them after consistent use, not after one uncomfortable afternoon." },
+      { name: "Strengthen both ends of the chain", text: "Twice a week, add slow calf raises, short foot exercises and single leg balance for the foot, plus side lying leg raises and band walks for the hip." },
+      { name: "Escalate only if nothing changes", text: "If a month of supportive shoes, arch support and sensible loading changes nothing, book an assessment rather than buying more insoles." },
+    ],
+  },
+  "cycling-knee-pain-bike-fit": {
+    name: "How to Fix Cycling Knee Pain With Bike Fit",
+    description: "Match knee pain location to the likely setup cause, then change one variable at a time until it settles.",
+    steps: [
+      { name: "Locate the pain precisely", text: "Decide whether the pain sits at the front, the back, the inner side or the outer side of the knee. Each location points to a different setup cause." },
+      { name: "Mark your current saddle position", text: "Put tape or a marker line on the seat post before touching anything, so you can always return to your starting point." },
+      { name: "Adjust saddle height in 3 mm steps", text: "Raise it for front of knee pain, lower it for back of knee pain. Aim for a knee angle of 25 to 35 degrees from straight at the bottom of the stroke, never locked out." },
+      { name: "Then adjust saddle fore and aft", text: "Slide the saddle back a few millimetres for front of knee pain, forward for back of knee pain. Move in 5 mm steps and recheck height afterwards." },
+      { name: "Check cleat position and rotation", text: "Move cleats rearward toward the middle of the foot for anterior knee pain, match stance width to how your legs naturally hang, and ensure the pedals allow a few degrees of float." },
+      { name: "Raise your cadence before adding distance", text: "Spin at 80 to 95 revolutions per minute in lighter gears instead of grinding. Count your right leg for fifteen seconds and multiply by four to check." },
+      { name: "Ride twice before judging each change", text: "Make one adjustment at a time and complete at least two similar rides before deciding whether it helped. Write down what you changed." },
+    ],
+  },
   "tight-calves-knee-pain": {
     name: "How to Loosen Tight Calves and Protect the Knee",
     description: "A five step routine that tests ankle motion, stretches both calf muscles, and loads the tissue so the change lasts.",
