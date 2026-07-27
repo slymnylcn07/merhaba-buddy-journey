@@ -17,8 +17,8 @@ export const kneeBraceVsCompressionSleeve: ArticleExport = {
     metaDescription:
       "Compression sleeve, strap, wraparound or hinged brace? Compare what each knee support actually does, what copper claims are worth, and how to choose for your symptoms.",
     heroImage,
-    publishedDate: "July 26, 2026",
-    lastUpdated: "July 26, 2026",
+    publishedDate: "July 27, 2026",
+    lastUpdated: "July 27, 2026",
     nextSlug: "knee-compression-sleeve-sizing-guide",
     nextTitle: "Knee Compression Sleeve Sizing Guide",
     seoTags:

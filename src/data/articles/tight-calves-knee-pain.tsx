@@ -17,8 +17,8 @@ export const tightCalvesKneePain: ArticleExport = {
     metaDescription:
       "Tight calves can pull on the back of the knee and limit ankle motion, changing how you walk. Learn why calves get tight, how it affects knees, and a five step fix.",
     heroImage,
-    publishedDate: "July 26, 2026",
-    lastUpdated: "July 26, 2026",
+    publishedDate: "July 27, 2026",
+    lastUpdated: "July 27, 2026",
     nextSlug: "knee-pain-going-down-stairs",
     nextTitle: "Knee Pain Going Down Stairs",
     seoTags:
