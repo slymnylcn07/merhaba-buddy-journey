@@ -9,6 +9,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { guidesData } from "@/data/guides";
 import { recentGuidesData } from "@/data/recent-guides-data";
 import { guidePublicationDates } from "@/data/guide-publication-dates";
+import { guideDateOverrides } from "@/data/guide-date-overrides";
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 
@@ -280,11 +281,22 @@ const resolveGuideThumbnail = (slug: string) => {
 type GuideWithPublication = (typeof guidesData)[number] & { publishedDate?: string };
 
 const allGuidesData: GuideWithPublication[] = [
-  ...guidesData.map((guide) => ({
-    ...guide,
-    publishedDate: guidePublicationDates[guide.slug],
-  })),
-  ...recentGuidesData,
+  ...guidesData.map((guide) => {
+    const override = guideDateOverrides[guide.slug];
+    return {
+      ...guide,
+      publishedDate: override?.publishedDate ?? guidePublicationDates[guide.slug],
+      lastModified: override?.lastModified ?? guide.lastModified,
+    };
+  }),
+  ...recentGuidesData.map((guide) => {
+    const override = guideDateOverrides[guide.slug];
+    return {
+      ...guide,
+      publishedDate: override?.publishedDate ?? guide.publishedDate,
+      lastModified: override?.lastModified ?? guide.lastModified,
+    };
+  }),
 ];
 
 // Combine data with thumbnails and immutable publication dates.

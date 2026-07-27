@@ -2,6 +2,7 @@ import { existsSync, readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 import { guidesData, staticPages } from "../src/data/guides";
 import { recentGuidesData } from "../src/data/recent-guides-data";
+import { guideDateOverrides } from "../src/data/guide-date-overrides";
 import { getShopifyProductHandles } from "./shopify-build-products";
 
 export const SITE_ORIGIN = "https://flexi-knee.com";
@@ -71,6 +72,7 @@ export async function buildSeoRouteManifest(): Promise<SeoRouteManifest> {
   }
 
   for (const guide of [...guidesData, ...recentGuidesData]) {
+    const override = guideDateOverrides[guide.slug];
     addRoute(routes, {
       path: `/guides/${guide.slug}`,
       kind: "guide",
@@ -78,7 +80,7 @@ export async function buildSeoRouteManifest(): Promise<SeoRouteManifest> {
       sitemap: true,
       priority: 0.8,
       changefreq: "monthly",
-      lastmod: guide.lastModified,
+      lastmod: override?.lastModified ?? guide.lastModified,
       identity: guide.slug,
     });
   }

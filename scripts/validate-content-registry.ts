@@ -1,6 +1,7 @@
 import { guidesData } from "../src/data/guides";
 import { recentGuidesData } from "../src/data/recent-guides-data";
 import { guidePublicationDates } from "../src/data/guide-publication-dates";
+import { guideDateOverrides } from "../src/data/guide-date-overrides";
 import { articleLoaderSlugs } from "../src/data/article-loaders";
 import { recentArticleLoaderSlugs } from "../src/data/recent-article-loaders";
 import { existsSync, readFileSync, readdirSync } from "fs";
@@ -11,11 +12,22 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const VERCEL_PATH = resolve(ROOT, "vercel.json");
 
 const allGuidesData = [
-  ...guidesData.map((guide) => ({
-    ...guide,
-    publishedDate: guidePublicationDates[guide.slug],
-  })),
-  ...recentGuidesData,
+  ...guidesData.map((guide) => {
+    const override = guideDateOverrides[guide.slug];
+    return {
+      ...guide,
+      publishedDate: override?.publishedDate ?? guidePublicationDates[guide.slug],
+      lastModified: override?.lastModified ?? guide.lastModified,
+    };
+  }),
+  ...recentGuidesData.map((guide) => {
+    const override = guideDateOverrides[guide.slug];
+    return {
+      ...guide,
+      publishedDate: override?.publishedDate ?? guide.publishedDate,
+      lastModified: override?.lastModified ?? guide.lastModified,
+    };
+  }),
 ];
 const allArticleLoaderSlugs = [...articleLoaderSlugs, ...recentArticleLoaderSlugs];
 const slugs = allGuidesData.map((guide) => guide.slug);
