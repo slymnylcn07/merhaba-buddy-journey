@@ -105,8 +105,8 @@ import thumbCustomFlatFeet from "@/assets/thumb-can-flat-feet-cause-knee-pain-ov
 import thumbCustomCycling from "@/assets/thumb-cycling-knee-pain-location-chart-and-bike-fit-fixes.png";
 import thumbCustomTightCalves from "@/assets/thumb-can-tight-calves-cause-knee-pain-the-calf-knee-connection.png";
 import thumbCustomBraceVsSleeve from "@/assets/thumb-knee-brace-vs-compression-sleeve-which-do-you-need.png";
-import thumbLowImpactCardio from "@/assets/guide-thumb-low-impact-cardio-knee-pain.svg";
-import thumbBackwardWalking from "@/assets/guide-thumb-backward-walking-knee-pain.svg";
+import thumbLowImpactCardio from "@/assets/guide-thumb-low-impact-cardio-knee-pain.jpg";
+import thumbBackwardWalking from "@/assets/guide-thumb-backward-walking-knee-pain.jpg";
 import thumbItBandFoamRollingList from "@/assets/hero-itband-foam-rolling.svg";
 import thumbSleepKneePainList from "@/assets/hero-sleep-knee-pain.svg";
 import thumbAirCompressionLegList from "@/assets/hero-air-compression-leg.svg";

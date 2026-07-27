@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
-import heroImage from "@/assets/article-hero-backward-walking-knee-pain.svg";
+import heroImage from "@/assets/article-hero-backward-walking-knee-pain.jpg";
+import gaitControlImage from "@/assets/article-inline-backward-walking-gait-control.jpg";
+import ankleKneeChainImage from "@/assets/article-inline-backward-walking-ankle-knee-chain.jpg";
 
 const linkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
@@ -127,6 +129,19 @@ export const backwardWalkingKneePain: ArticleExport = {
           </table>
         </div>
 
+        <figure className="my-8">
+          <img
+            src={gaitControlImage}
+            alt="Lower-limb alignment and gait-control visual showing the connection between foot placement, shin rotation, and knee position"
+            className="w-full h-auto rounded-xl border border-slate-200 shadow-sm"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption className="mt-3 text-center text-sm text-muted-foreground">
+            Backward walking changes foot contact, stride length, and muscle timing, so controlled alignment matters more than speed.
+          </figcaption>
+        </figure>
+
         <h2>Why Might It Change Knee Symptoms?</h2>
         <h3>It changes the direction of force</h3>
         <p>
@@ -169,6 +184,19 @@ export const backwardWalkingKneePain: ArticleExport = {
         <p>
           A compression sleeve may improve warmth or body awareness, but it cannot make an unstable knee structurally safe. The guide comparing a <Link to="/guides/knee-brace-vs-compression-sleeve" className={linkClass}>knee brace versus a compression sleeve</Link> explains why support categories are not interchangeable.
         </p>
+
+        <figure className="my-8">
+          <img
+            src={ankleKneeChainImage}
+            alt="Anatomical lower-leg visual showing how ankle motion and calf loading connect with the knee during reverse stepping"
+            className="w-full h-auto rounded-xl border border-slate-200 shadow-sm"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption className="mt-3 text-center text-sm text-muted-foreground">
+            Reverse stepping begins at the foot and ankle; short steps and controlled heel lowering reduce the urge to reach backward with the whole leg.
+          </figcaption>
+        </figure>
 
         <h2>How to Start Backward Walking Safely</h2>
         <ol>

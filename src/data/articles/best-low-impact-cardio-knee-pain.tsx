@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
-import heroImage from "@/assets/article-hero-low-impact-cardio-knee-pain.svg";
+import heroImage from "@/assets/article-hero-low-impact-cardio-knee-pain.jpg";
+import walkingMechanicsImage from "@/assets/article-inline-low-impact-walking-mechanics.jpg";
+import cyclingFitImage from "@/assets/article-inline-low-impact-cycling-fit.jpg";
 
 const linkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
@@ -104,6 +106,19 @@ export const bestLowImpactCardioKneePain: ArticleExport = {
           Public-health guidance for adults generally points toward 150 to 300 minutes of moderate aerobic activity per week plus strengthening on at least two days. People with arthritis or chronic conditions are also advised to move more and sit less, beginning with small amounts when necessary. That target should not pressure a painful beginner into jumping from zero to five 30-minute sessions. Five- or ten-minute bouts count, and a sustainable increase is more valuable than one ambitious week followed by a flare.
         </p>
 
+        <figure className="my-8">
+          <img
+            src={walkingMechanicsImage}
+            alt="Walking mechanics showing how foot and ankle alignment can influence knee loading during low-impact cardio"
+            className="w-full h-auto rounded-xl border border-slate-200 shadow-sm"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption className="mt-3 text-center text-sm text-muted-foreground">
+            Walking is low impact, but foot placement, arch control, and step volume still shape the load that reaches the knee.
+          </figcaption>
+        </figure>
+
         <h2>Walking vs. Cycling vs. Swimming: Side-by-Side Comparison</h2>
         <div className="my-8 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
           <table className="min-w-[760px] w-full border-collapse text-left text-sm">
@@ -152,6 +167,19 @@ export const bestLowImpactCardioKneePain: ArticleExport = {
           headline="Want flexible support during walking and low-impact training?"
           text="A breathable compression sleeve can add warmth and a supported feel without replacing gradual cardio progression."
         />
+
+        <figure className="my-8">
+          <img
+            src={cyclingFitImage}
+            alt="Cyclist with knee and bike-fit markers showing the importance of saddle and foot position"
+            className="w-full h-auto rounded-xl border border-slate-200 shadow-sm"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption className="mt-3 text-center text-sm text-muted-foreground">
+            Cycling removes impact, but saddle height, resistance, cadence, and foot position determine whether repeated knee bending feels smooth or irritating.
+          </figcaption>
+        </figure>
 
         <h2>Swimming and Water Exercise: Best for Maximum Unloading</h2>
         <p>
