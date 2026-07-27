@@ -6,7 +6,7 @@ import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { PRODUCT_RECS, pickProductForSlug, ProductRec } from "@/lib/article-product-map";
 import { FREE_SHIPPING_THRESHOLD } from "@/lib/policy-config";
 import { MAIN_PRODUCT_RATING } from "@/lib/main-product-rating";
-import { getProductPath } from "@/lib/product-config";
+import { getProductPath, resolveShopifyProductHandle } from "@/lib/product-config";
 
 /**
  * Makale içi ürün kartı (eski yeşil banner'ın yerini alır).
@@ -28,7 +28,7 @@ interface PremiumCTAProps {
 let productsPromise: Promise<ShopifyProduct[]> | null = null;
 function getCachedProducts() {
   if (!productsPromise) {
-    productsPromise = getProducts(20).catch(() => []);
+    productsPromise = getProducts(50).catch(() => []);
   }
   return productsPromise;
 }
@@ -58,8 +58,11 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
     let active = true;
     getCachedProducts().then((list) => {
       if (!active) return;
-      const match = list.find(
-        (p) => decodeURIComponent(p.node.handle) === decodeURIComponent(rec.handle)
+      const wanted = [rec.handle, resolveShopifyProductHandle(rec.handle)].map((h) =>
+        decodeURIComponent(h).toLowerCase()
+      );
+      const match = list.find((p) =>
+        wanted.includes(decodeURIComponent(p.node.handle).toLowerCase())
       );
       if (match) {
         setLiveImage(match.node.images?.edges?.[0]?.node?.url || null);
@@ -79,7 +82,7 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
     };
   }, [rec.handle]);
 
-  const imageSrc = liveImage || (isMain ? deviceImage : null);
+  const imageSrc = liveImage || rec.fallbackImage || (isMain ? deviceImage : null);
   const price = livePrice || rec.fallbackPrice;
   const fallbackPriceAmount = Number(rec.fallbackPrice.replace(/[^0-9.]/g, ""));
   const currentPriceAmount = livePriceAmount ?? fallbackPriceAmount;

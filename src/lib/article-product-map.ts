@@ -21,6 +21,8 @@ export interface ProductRec {
   benefit: string;
   /** API'ye ulaşılamazsa gösterilecek yedek fiyat etiketi */
   fallbackPrice: string;
+  /** Shopify görseli çekilemezse kullanılacak yerel ürün fotoğrafı (public/ yolu) */
+  fallbackImage: string;
 }
 
 export const PRODUCT_RECS: Record<string, ProductRec> = {
@@ -30,6 +32,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     benefit:
       "Adjustable warmth, red light, and gentle vibration in one wireless wrap for a complete 15-minute daily knee routine.",
     fallbackPrice: "$79.99",
+    fallbackImage: "/images/product-stories/massager-closeup-comfort.webp",
   },
   calf: {
     handle:
@@ -38,6 +41,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     benefit:
       "Air compression and warmth for lower-leg circulation after flights, long drives, and desk-heavy days.",
     fallbackPrice: "$49.99",
+    fallbackImage: "/images/product-stories/calf-massager-closeup.webp",
   },
   insoles: {
     handle:
@@ -46,6 +50,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     benefit:
       "Structured arch support that improves how load travels from your feet to your knees from the ground up.",
     fallbackPrice: "$14.99",
+    fallbackImage: "/images/product-stories/insoles-closeup-fit.webp",
   },
   sleeve: {
     handle: "flexiknee™-compression-support-sleeve",
@@ -53,6 +58,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     benefit:
       "Breathable compression for a supported, stable feel during walking, work, and training.",
     fallbackPrice: "$19.99",
+    fallbackImage: "/images/product-stories/compression-sleeve-closeup.webp",
   },
   wrap: {
     handle:
@@ -61,6 +67,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     benefit:
       "Simple, focused warmth for desk sessions and low-effort daily warming routines.",
     fallbackPrice: "$34.99",
+    fallbackImage: "/images/product-stories/heated-wrap-closeup-fit.webp",
   },
 };
 
@@ -83,8 +90,20 @@ const RULES: { keywords: string[]; product: keyof typeof PRODUCT_RECS }[] = [
   },
 ];
 
+/** Anahtar kelime kurallarından önce çalışan, slug'a birebir eşleşen tanımlar. */
+const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
+  "tight-calves-knee-pain": "calf",
+  "air-compression-leg-massagers-do-they-work": "calf",
+  "knee-brace-vs-compression-sleeve": "sleeve",
+  "knee-compression-sleeve-sizing-guide": "sleeve",
+  "best-insoles-for-knee-pain-2026": "insoles",
+  "how-to-sleep-with-knee-pain": "wrap",
+};
+
 export function pickProductForSlug(slug: string | undefined): ProductRec {
   if (slug) {
+    const override = SLUG_OVERRIDES[slug];
+    if (override) return PRODUCT_RECS[override];
     for (const rule of RULES) {
       if (rule.keywords.some((k) => slug.includes(k))) {
         return PRODUCT_RECS[rule.product];

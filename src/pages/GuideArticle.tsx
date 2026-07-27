@@ -360,6 +360,16 @@ const GuideArticle = () => {
 
                 <ArticleImageLightbox articleSlug={article.slug} />
 
+                {/* Final article order: product recommendation, quiz, then sources. */}
+                {articleCTAs[slug] && (
+                  <PremiumCTA
+                    headline={articleCTAs[slug].headline}
+                    text={articleCTAs[slug].text}
+                  />
+                )}
+
+                <ArticleQuizCard articleSlug={article.slug} articleTitle={article.title} />
+
                 {/* Sources and Further Reading */}
                 {article.sources && article.sources.length > 0 && (
                   <section
@@ -394,15 +404,6 @@ const GuideArticle = () => {
                   </section>
                 )}
 
-                {/* Final article order: sources, product recommendation, then quiz. */}
-                {articleCTAs[slug] && (
-                  <PremiumCTA
-                    headline={articleCTAs[slug].headline}
-                    text={articleCTAs[slug].text}
-                  />
-                )}
-
-                <ArticleQuizCard articleSlug={article.slug} articleTitle={article.title} />
 
               </article>
 </div>
