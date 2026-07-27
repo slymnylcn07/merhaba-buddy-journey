@@ -2,10 +2,10 @@
  * Build-time prerendering.
  *
  * Routes come from dist/seo-route-manifest.json, which is generated together
- * with the sitemap. This guarantees that sitemap URLs, prerendered URLs and
- * build validation all use one immutable route list for the deployment.
+ * with the sitemap. Sitemap URLs, prerendered URLs and build validation use
+ * the same immutable route list for each deployment.
  */
-import puppeteer from "puppeteer-core";
+import puppeteer, { type Browser, type Page } from "puppeteer-core";
 import { createServer } from "http";
 import {
   readFileSync,
@@ -31,6 +31,11 @@ const rawBuildId =
   process.env.COMMIT_REF ||
   `local-${GENERATED_AT}`;
 const BUILD_ID = rawBuildId.replace(/[^a-zA-Z0-9._-]/g, "-").slice(0, 48);
+
+const BATCH_SIZE = 4;
+const MAX_ATTEMPTS = 3;
+const NAVIGATION_TIMEOUT_MS = 60_000;
+const CONTENT_TIMEOUT_MS = 60_000;
 
 const MIME: Record<string, string> = {
   ".html": "text/html",
@@ -60,6 +65,10 @@ function escapeAttribute(value: string): string {
     .replace(/>/g, "&gt;");
 }
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolveSleep) => setTimeout(resolveSleep, ms));
+}
+
 function startServer(): Promise<ReturnType<typeof createServer>> {
   return new Promise((ok) => {
     const srv = createServer((req, res) => {
@@ -81,14 +90,190 @@ function startServer(): Promise<ReturnType<typeof createServer>> {
         return;
       }
 
-      // The local server needs an SPA fallback only while the known route is
-      // being rendered. Vercel production routing intentionally has no public
-      // catch-all rewrite.
+      // SPA fallback is used only by the local build-time renderer.
       res.writeHead(200, { "Content-Type": "text/html" });
       res.end(readFileSync(join(DIST, "index.html")));
     });
     srv.listen(PORT, () => ok(srv));
   });
+}
+
+async function configurePage(page: Page): Promise<string[]> {
+  const browserErrors: string[] = [];
+
+  page.setDefaultNavigationTimeout(NAVIGATION_TIMEOUT_MS);
+  page.setDefaultTimeout(CONTENT_TIMEOUT_MS);
+  await page.setCacheEnabled(true);
+  await page.setRequestInterception(true);
+
+  page.on("request", (request) => {
+    const type = request.resourceType();
+    if (["image", "font", "media"].includes(type)) {
+      void request.abort();
+      return;
+    }
+    void request.continue();
+  });
+
+  page.on("pageerror", (error) => {
+    browserErrors.push(`pageerror: ${error.message}`);
+  });
+
+  page.on("console", (message) => {
+    if (message.type() === "error") {
+      browserErrors.push(`console: ${message.text()}`);
+    }
+  });
+
+  return browserErrors;
+}
+
+async function waitForValidRoute(page: Page, routeRecord: SeoRouteRecord): Promise<void> {
+  await page.waitForFunction(
+    (expected: SeoRouteRecord & { canonical: string }) => {
+      const canonical = document
+        .querySelector('link[rel="canonical"]')
+        ?.getAttribute("href");
+      const title = document.title?.trim();
+      const h1 = document.querySelector("h1")?.textContent?.trim();
+      const robots = document
+        .querySelector('meta[name="robots"]')
+        ?.getAttribute("content")
+        ?.toLowerCase() || "";
+      const bodyText = document.body?.innerText || "";
+
+      if (canonical !== expected.canonical || !title || !h1) return false;
+      if (/loading guide|page not found|product not found/i.test(title)) return false;
+      if (/guide not found|we could not find this product/i.test(bodyText)) return false;
+      if (expected.indexable && robots.includes("noindex")) return false;
+      if (!expected.indexable && !robots.includes("noindex")) return false;
+
+      if (expected.kind === "guide") {
+        const guide = document.querySelector(
+          `[data-seo-page="guide"][data-seo-guide="${expected.identity}"]`,
+        );
+        const content = document.querySelector('[data-seo-content="guide"]');
+        const wordCount = (content?.textContent || "")
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean).length;
+        const schemas = [...document.querySelectorAll('script[type="application/ld+json"]')]
+          .map((node) => node.textContent || "")
+          .join("\n");
+
+        if (!guide || !content || wordCount < 250 || !schemas.includes('"BlogPosting"')) {
+          return false;
+        }
+      }
+
+      if (expected.kind === "product") {
+        const product = document.querySelector(
+          `[data-seo-page="product"][data-seo-product="${expected.identity}"]`,
+        );
+        const schemas = [...document.querySelectorAll('script[type="application/ld+json"]')]
+          .map((node) => node.textContent || "")
+          .join("\n");
+        if (!product || !schemas.includes('"Product"')) return false;
+      }
+
+      if (
+        (expected.kind === "home" || expected.path === "/guides") &&
+        document.querySelectorAll('script[type="application/ld+json"]').length < 1
+      ) {
+        return false;
+      }
+
+      return true;
+    },
+    { timeout: CONTENT_TIMEOUT_MS, polling: 250 },
+    { ...routeRecord, canonical: canonicalForRoute(routeRecord.path) },
+  );
+}
+
+async function collectDiagnostics(page: Page): Promise<string> {
+  try {
+    const diagnostics = await page.evaluate(() => {
+      const canonical = document
+        .querySelector('link[rel="canonical"]')
+        ?.getAttribute("href") || "missing";
+      const title = document.title?.trim() || "missing";
+      const h1 = document.querySelector("h1")?.textContent?.trim() || "missing";
+      const robots = document
+        .querySelector('meta[name="robots"]')
+        ?.getAttribute("content") || "missing";
+      const body = (document.body?.innerText || "").replace(/\s+/g, " ").slice(0, 240);
+      return { canonical, title, h1, robots, body };
+    });
+    return JSON.stringify(diagnostics);
+  } catch {
+    return "Page diagnostics unavailable";
+  }
+}
+
+async function renderRoute(
+  browser: Browser,
+  routeRecord: SeoRouteRecord,
+): Promise<{ ok: true } | { ok: false; message: string }> {
+  let finalMessage = "Unknown prerender error";
+
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
+    const page = await browser.newPage();
+    const browserErrors = await configurePage(page);
+
+    try {
+      // DOM readiness plus the explicit SEO/content assertion below is more
+      // deterministic than networkidle0, which can be held open by Shopify,
+      // analytics or other non-critical external requests.
+      await page.goto(`${SITE}${routeRecord.path}`, {
+        waitUntil: "domcontentloaded",
+        timeout: NAVIGATION_TIMEOUT_MS,
+      });
+
+      await waitForValidRoute(page, routeRecord);
+
+      let html = await page.content();
+      html = html.replace(/<script[^>]*parcelpanel[^>]*>\s*<\/script>/gi, "");
+
+      const routeMeta = [
+        `<meta name="flexiknee-build" content="${escapeAttribute(BUILD_ID)}" />`,
+        `<meta name="flexiknee-route" content="${escapeAttribute(routeRecord.path)}" />`,
+        `<meta name="flexiknee-indexable" content="${routeRecord.indexable ? "true" : "false"}" />`,
+      ].join("\n  ");
+
+      html = html
+        .replace(/\s*<meta name="flexiknee-build"[^>]*>/gi, "")
+        .replace(/\s*<meta name="flexiknee-route"[^>]*>/gi, "")
+        .replace(/\s*<meta name="flexiknee-indexable"[^>]*>/gi, "")
+        .replace("</head>", `  ${routeMeta}\n</head>`);
+
+      const outputDirectory = routeToDistDirectory(routeRecord.path);
+      mkdirSync(outputDirectory, { recursive: true });
+      writeFileSync(join(outputDirectory, "index.html"), html, "utf8");
+      await page.close();
+      return { ok: true };
+    } catch (error) {
+      const diagnostics = await collectDiagnostics(page);
+      const browserErrorText = browserErrors.slice(-4).join(" | ");
+      finalMessage = [
+        error instanceof Error ? error.message : String(error),
+        diagnostics,
+        browserErrorText,
+      ]
+        .filter(Boolean)
+        .join(" | ");
+
+      await page.close();
+
+      if (attempt < MAX_ATTEMPTS) {
+        console.warn(
+          `  ⚠️ Retry ${attempt + 1}/${MAX_ATTEMPTS}: ${routeRecord.path} — ${finalMessage}`,
+        );
+        await sleep(750 * attempt);
+      }
+    }
+  }
+
+  return { ok: false, message: finalMessage };
 }
 
 async function prerender(): Promise<void> {
@@ -103,7 +288,7 @@ async function prerender(): Promise<void> {
   const productCount = routes.filter((route) => route.kind === "product").length;
   console.log(
     `🔍 Route manifest: ${routes.length} prerender routes ` +
-    `(${guideCount} guides, ${productCount} products)`,
+      `(${guideCount} guides, ${productCount} products)`,
   );
 
   const server = await startServer();
@@ -147,123 +332,36 @@ async function prerender(): Promise<void> {
   });
 
   let success = 0;
-  let failed = 0;
-  const BATCH_SIZE = 5;
+  const failures: Array<{ path: string; message: string }> = [];
 
   try {
     for (let i = 0; i < routes.length; i += BATCH_SIZE) {
       const batch = routes.slice(i, i + BATCH_SIZE);
-      await Promise.all(
-        batch.map(async (routeRecord: SeoRouteRecord) => {
-          const page = await browser.newPage();
-          try {
-            await page.setRequestInterception(true);
-            page.on("request", (request) => {
-              const type = request.resourceType();
-              if (["image", "font", "media"].includes(type)) request.abort();
-              else request.continue();
-            });
-
-            await page.goto(`${SITE}${routeRecord.path}`, {
-              waitUntil: "networkidle0",
-              timeout: 30_000,
-            });
-
-            await page.waitForFunction(
-              (expected: SeoRouteRecord & { canonical: string }) => {
-                const canonical = document
-                  .querySelector('link[rel="canonical"]')
-                  ?.getAttribute("href");
-                const title = document.title?.trim();
-                const h1 = document.querySelector("h1")?.textContent?.trim();
-                const robots = document
-                  .querySelector('meta[name="robots"]')
-                  ?.getAttribute("content")
-                  ?.toLowerCase() || "";
-                const bodyText = document.body?.innerText || "";
-
-                if (canonical !== expected.canonical || !title || !h1) return false;
-                if (/loading guide|page not found|product not found/i.test(title)) return false;
-                if (/guide not found|we could not find this product/i.test(bodyText)) return false;
-                if (expected.indexable && robots.includes("noindex")) return false;
-                if (!expected.indexable && !robots.includes("noindex")) return false;
-
-                if (expected.kind === "guide") {
-                  const guide = document.querySelector(
-                    `[data-seo-page="guide"][data-seo-guide="${expected.identity}"]`,
-                  );
-                  const content = document.querySelector('[data-seo-content="guide"]');
-                  const wordCount = (content?.textContent || "")
-                    .trim()
-                    .split(/\s+/)
-                    .filter(Boolean).length;
-                  const schemas = [...document.querySelectorAll('script[type="application/ld+json"]')]
-                    .map((node) => node.textContent || "")
-                    .join("\n");
-                  if (!guide || !content || wordCount < 250 || !schemas.includes('"BlogPosting"')) {
-                    return false;
-                  }
-                }
-
-                if (expected.kind === "product") {
-                  const product = document.querySelector(
-                    `[data-seo-page="product"][data-seo-product="${expected.identity}"]`,
-                  );
-                  const schemas = [...document.querySelectorAll('script[type="application/ld+json"]')]
-                    .map((node) => node.textContent || "")
-                    .join("\n");
-                  if (!product || !schemas.includes('"Product"')) return false;
-                }
-
-                if (
-                  (expected.kind === "home" || expected.path === "/guides") &&
-                  document.querySelectorAll('script[type="application/ld+json"]').length < 1
-                ) {
-                  return false;
-                }
-
-                return true;
-              },
-              { timeout: 20_000 },
-              { ...routeRecord, canonical: canonicalForRoute(routeRecord.path) },
-            );
-
-            let html = await page.content();
-            html = html.replace(/<script[^>]*parcelpanel[^>]*>\s*<\/script>/gi, "");
-
-            const routeMeta = [
-              `<meta name="flexiknee-build" content="${escapeAttribute(BUILD_ID)}" />`,
-              `<meta name="flexiknee-route" content="${escapeAttribute(routeRecord.path)}" />`,
-              `<meta name="flexiknee-indexable" content="${routeRecord.indexable ? "true" : "false"}" />`,
-            ].join("\n  ");
-
-            html = html
-              .replace(/\s*<meta name="flexiknee-build"[^>]*>/gi, "")
-              .replace(/\s*<meta name="flexiknee-route"[^>]*>/gi, "")
-              .replace(/\s*<meta name="flexiknee-indexable"[^>]*>/gi, "")
-              .replace("</head>", `  ${routeMeta}\n</head>`);
-
-            const outputDirectory = routeToDistDirectory(routeRecord.path);
-            mkdirSync(outputDirectory, { recursive: true });
-            writeFileSync(join(outputDirectory, "index.html"), html, "utf8");
-            success += 1;
-          } catch (error) {
-            console.error(`  ❌ Failed: ${routeRecord.path}`, (error as Error).message);
-            failed += 1;
-          } finally {
-            await page.close();
-          }
+      const results = await Promise.all(
+        batch.map(async (routeRecord) => {
+          const result = await renderRoute(browser, routeRecord);
+          return { routeRecord, result };
         }),
       );
 
+      for (const { routeRecord, result } of results) {
+        if (result.ok) {
+          success += 1;
+        } else {
+          failures.push({ path: routeRecord.path, message: result.message });
+          console.error(`  ❌ Failed: ${routeRecord.path} — ${result.message}`);
+        }
+      }
+
       const done = Math.min(i + BATCH_SIZE, routes.length);
-      process.stdout.write(`\r  ✅ Prerendered ${done}/${routes.length} pages`);
+      console.log(`  ✅ Prerendered ${done}/${routes.length} pages`);
     }
   } finally {
     await browser.close();
     server.close();
   }
 
+  const failed = failures.length;
   const buildVersion = {
     buildId: BUILD_ID,
     generatedAt: GENERATED_AT,
@@ -281,10 +379,14 @@ async function prerender(): Promise<void> {
     "utf8",
   );
 
-  console.log(`\n🎉 Prerendering complete: ${success} succeeded, ${failed} failed`);
+  console.log(`🎉 Prerendering complete: ${success} succeeded, ${failed} failed`);
   console.log(`🏷️  Build ID: ${BUILD_ID}`);
 
   if (failed > 0) {
+    console.error("❌ Routes that could not be prerendered:");
+    failures.forEach((failure) => {
+      console.error(`   - ${failure.path}: ${failure.message}`);
+    });
     console.error(
       `❌ ${failed} route(s) could not be prerendered. Deployment stopped to prevent publishing incomplete or duplicated pages.`,
     );
