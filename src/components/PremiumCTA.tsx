@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight, Star } from "lucide-react";
-import deviceImage from "@/assets/flexiknee-device-main.jpg";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { PRODUCT_RECS, pickProductForSlug, ProductRec } from "@/lib/article-product-map";
 import { FREE_SHIPPING_THRESHOLD } from "@/lib/policy-config";
 import { MAIN_PRODUCT_RATING } from "@/lib/main-product-rating";
-import { getProductPath, resolveShopifyProductHandle } from "@/lib/product-config";
+import { getProductPath } from "@/lib/product-config";
 
 /**
  * Makale içi ürün kartı (eski yeşil banner'ın yerini alır).
@@ -14,7 +13,7 @@ import { getProductPath, resolveShopifyProductHandle } from "@/lib/product-confi
  * - Okunan makalenin slug'ına göre konuyla ilgili ürünü gösterir
  *   (eşleşme yoksa ana ürün).
  * - Fiyat ve görseli Shopify'dan canlı çeker; API'ye ulaşamazsa
- *   yedek fiyat + yerel görselle çalışmaya devam eder.
+ *   yedek fiyat + ürünün yerel/public görseliyle çalışmaya devam eder.
  * - headline/text prop'ları geriye dönük uyumluluk için korunur;
  *   yeni tasarımda per-ürün metin kullanıldığından görmezden gelinir.
  */
@@ -28,7 +27,7 @@ interface PremiumCTAProps {
 let productsPromise: Promise<ShopifyProduct[]> | null = null;
 function getCachedProducts() {
   if (!productsPromise) {
-    productsPromise = getProducts(50).catch(() => []);
+    productsPromise = getProducts(20).catch(() => []);
   }
   return productsPromise;
 }
@@ -56,13 +55,14 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
 
   useEffect(() => {
     let active = true;
+    setLiveImage(null);
+    setLivePrice(null);
+    setLivePriceAmount(null);
+
     getCachedProducts().then((list) => {
       if (!active) return;
-      const wanted = [rec.handle, resolveShopifyProductHandle(rec.handle)].map((h) =>
-        decodeURIComponent(h).toLowerCase()
-      );
-      const match = list.find((p) =>
-        wanted.includes(decodeURIComponent(p.node.handle).toLowerCase())
+      const match = list.find(
+        (p) => decodeURIComponent(p.node.handle) === decodeURIComponent(rec.handle)
       );
       if (match) {
         setLiveImage(match.node.images?.edges?.[0]?.node?.url || null);
@@ -82,7 +82,7 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
     };
   }, [rec.handle]);
 
-  const imageSrc = liveImage || rec.fallbackImage || (isMain ? deviceImage : null);
+  const imageSrc = liveImage || rec.fallbackImage;
   const price = livePrice || rec.fallbackPrice;
   const fallbackPriceAmount = Number(rec.fallbackPrice.replace(/[^0-9.]/g, ""));
   const currentPriceAmount = livePriceAmount ?? fallbackPriceAmount;
@@ -97,14 +97,17 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
       className="my-10 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md [&_p]:!my-0 [&_p]:!leading-normal [&_img]:!my-0 [&_img]:!w-24 [&_img]:sm:!w-28 [&_img]:!h-24 [&_img]:sm:!h-28 [&_img]:!max-h-28 [&_img]:!rounded-xl [&_img]:!border-0 [&_img]:!shadow-none [&_img]:!object-cover [&_a]:!no-underline"
     >
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-        {imageSrc && (
-          <img
-            src={imageSrc}
-            alt={rec.title}
-            loading="lazy"
-            className="h-24 w-24 flex-shrink-0 rounded-xl bg-slate-50 object-cover sm:h-28 sm:w-28"
-          />
-        )}
+        <img
+          src={imageSrc}
+          alt={rec.title}
+          loading="lazy"
+          onError={(event) => {
+            const image = event.currentTarget;
+            const fallbackUrl = new URL(rec.fallbackImage, window.location.origin).href;
+            if (image.src !== fallbackUrl) image.src = rec.fallbackImage;
+          }}
+          className="h-24 w-24 flex-shrink-0 rounded-xl bg-slate-50 object-cover sm:h-28 sm:w-28"
+        />
         <div className="min-w-0 flex-1">
           <p className="!text-xs !font-medium uppercase tracking-wide !text-slate-400">
             Recommended for this guide

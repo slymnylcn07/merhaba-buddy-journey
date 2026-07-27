@@ -21,7 +21,7 @@ export interface ProductRec {
   benefit: string;
   /** API'ye ulaşılamazsa gösterilecek yedek fiyat etiketi */
   fallbackPrice: string;
-  /** Shopify görseli çekilemezse kullanılacak yerel ürün fotoğrafı (public/ yolu) */
+  /** Shopify resmi gecikir veya bulunamazsa kullanılacak yerel/public görsel */
   fallbackImage: string;
 }
 
@@ -32,7 +32,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     benefit:
       "Adjustable warmth, red light, and gentle vibration in one wireless wrap for a complete 15-minute daily knee routine.",
     fallbackPrice: "$79.99",
-    fallbackImage: "/images/product-stories/massager-closeup-comfort.webp",
+    fallbackImage: "/images/shopify-gallery/flexiknee-gallery-01-main.webp",
   },
   calf: {
     handle:
@@ -71,11 +71,20 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
   },
 };
 
+const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
+  "tight-calves-knee-pain": "calf",
+  "air-compression-leg-massagers-do-they-work": "calf",
+  "knee-brace-vs-compression-sleeve": "sleeve",
+  "knee-compression-sleeve-sizing-guide": "sleeve",
+  "best-insoles-for-knee-pain-2026": "insoles",
+  "pickleball-knee-recovery-routine": "sleeve",
+};
+
 /** Sıra önemli: ilk eşleşen kural kazanır. */
 const RULES: { keywords: string[]; product: keyof typeof PRODUCT_RECS }[] = [
   {
     // Seyahat / dolaşım / alt bacak
-    keywords: ["flight", "car-ride", "travel", "swelling", "circulation", "heavy-feeling", "leg-massager", "air-compression"],
+    keywords: ["flight", "car-ride", "travel", "swelling", "circulation", "heavy-feeling", "leg-massager", "air-compression", "tight-calves"],
     product: "calf",
   },
   {
@@ -85,27 +94,16 @@ const RULES: { keywords: string[]; product: keyof typeof PRODUCT_RECS }[] = [
   },
   {
     // Destek / kompresyon / stabilite hissi
-    keywords: ["compression", "sleeve", "weakness", "instability", "support-sleeve"],
+    keywords: ["compression", "sleeve", "weakness", "instability", "support-sleeve", "pickleball"],
     product: "sleeve",
   },
 ];
 
-/** Anahtar kelime kurallarından önce çalışan, slug'a birebir eşleşen tanımlar. */
-const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
-  "tight-calves-knee-pain": "calf",
-  "flat-feet-overpronation-knee-pain": "insoles",
-  "cycling-knee-pain-bike-fit": "main",
-  "air-compression-leg-massagers-do-they-work": "calf",
-  "knee-brace-vs-compression-sleeve": "sleeve",
-  "knee-compression-sleeve-sizing-guide": "sleeve",
-  "best-insoles-for-knee-pain-2026": "insoles",
-  "how-to-sleep-with-knee-pain": "wrap",
-};
-
 export function pickProductForSlug(slug: string | undefined): ProductRec {
   if (slug) {
-    const override = SLUG_OVERRIDES[slug];
-    if (override) return PRODUCT_RECS[override];
+    const exact = SLUG_OVERRIDES[slug];
+    if (exact) return PRODUCT_RECS[exact];
+
     for (const rule of RULES) {
       if (rule.keywords.some((k) => slug.includes(k))) {
         return PRODUCT_RECS[rule.product];

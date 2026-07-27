@@ -1,5 +1,6 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
+import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-tight-calves-knee-pain.svg";
 import chainDiagram from "@/assets/diagram-calf-knee-chain.svg";
 import protocolDiagram from "@/assets/diagram-calf-release-protocol.svg";
@@ -41,7 +42,7 @@ export const tightCalvesKneePain: ArticleExport = {
       {
         question: "Are tight calves linked to plantar fasciitis?",
         answer:
-          "Yes, this is one of the better established links in foot and ankle care. The calf connects to the heel through the Achilles tendon, and limited ankle motion increases strain through the plantar fascia under the foot. Many plantar fasciitis programmes include calf stretching for exactly this reason. If you have both heel pain and knee pain, the calf is a sensible place to start. If your arches also flatten under load, that can add to the same strain from below."
+          "Yes, this is one of the better established links in foot and ankle care. The calf connects to the heel through the Achilles tendon, and limited ankle motion increases strain through the plantar fascia under the foot. Many plantar fasciitis programmes include calf stretching for exactly this reason. If you have both heel pain and knee pain, the calf is a sensible place to start."
       },
       {
         question: "How long should I hold a calf stretch?",
@@ -111,6 +112,8 @@ export const tightCalvesKneePain: ArticleExport = {
           <Link to="/guides/back-of-knee-pain-explained">back of knee pain</Link> pair naturally with this one.
         </p>
 
+        <PremiumCTA />
+
         <h2>Why Are My Calves Tight in the First Place?</h2>
         <p>
           Tightness is a symptom, not a diagnosis, and the useful question is what is producing it. A handful of causes account for most cases.
@@ -169,7 +172,7 @@ export const tightCalvesKneePain: ArticleExport = {
           The calf muscles converge into the Achilles tendon, which attaches to the heel bone. On the underside of the foot, the plantar fascia runs forward from that same heel bone toward the toes. Tension travels across this junction, which is why calf tightness, Achilles discomfort and plantar heel pain so often turn up together.
         </p>
         <p>
-          The practical implication is helpful rather than alarming. If you have knee discomfort and morning heel pain and tight calves, you are not necessarily dealing with three problems. You may be dealing with one restriction producing three symptoms, and the calf is the most accessible place to intervene. If your arches also flatten noticeably when you stand, the same region is being loaded from underneath as well, which our guide on <Link to="/guides/flat-feet-overpronation-knee-pain">flat feet, overpronation and knee pain</Link> covers in detail. It also means that fixing calf length can improve more than the knee, which makes the effort easier to sustain.
+          The practical implication is helpful rather than alarming. If you have knee discomfort and morning heel pain and tight calves, you are not necessarily dealing with three problems. You may be dealing with one restriction producing three symptoms, and the calf is the most accessible place to intervene. It also means that fixing calf length can improve more than the knee, which makes the effort easier to sustain.
         </p>
 
         <h2>Test Before You Stretch</h2>
@@ -241,7 +244,7 @@ export const tightCalvesKneePain: ArticleExport = {
           The practical consequence is that calf work alone sometimes gives only partial relief. If your knee discomfort sits behind the joint rather than at the front, adding a simple hamstring stretch to the routine, seated with one leg extended and the back kept long, is a reasonable next step. The same logic extends upward: hip stiffness changes how the knee tracks, which is why programmes that address only one joint often stall. You do not need to fix everything at once, but if four weeks of dedicated calf work produces no change at all, the restriction is probably somewhere else in the chain.
         </p>
         <p>
-          Tightness that shows up mainly as shin discomfort during running deserves a separate mention. Shin pain and calf tightness frequently appear together in people who have recently increased their mileage, changed surfaces, or moved into worn out shoes. The calf routine below usually helps, but the more important lever is load: how much you added, how quickly, and on what surface. Our guides on <Link to="/guides/knee-pain-after-exercise">knee pain after exercise</Link> and <Link to="/guides/running-knee-pain-guide">running knee pain</Link> cover how to manage that side of it. Cyclists tend to develop the same tightness for a different reason, since the ankle barely moves through a pedal stroke, and our guide to <Link to="/guides/cycling-knee-pain-bike-fit">cycling knee pain and bike fit</Link> covers what that does to the knee.
+          Tightness that shows up mainly as shin discomfort during running deserves a separate mention. Shin pain and calf tightness frequently appear together in people who have recently increased their mileage, changed surfaces, or moved into worn out shoes. The calf routine below usually helps, but the more important lever is load: how much you added, how quickly, and on what surface. Our guides on <Link to="/guides/knee-pain-after-exercise">knee pain after exercise</Link> and <Link to="/guides/running-knee-pain-guide">running knee pain</Link> cover how to manage that side of it.
         </p>
 
         <h2>How Long Before Anything Changes</h2>

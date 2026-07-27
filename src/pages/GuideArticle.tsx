@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpenText } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArticleShareBlock } from "@/components/ArticleShareSidebar";
@@ -14,10 +14,13 @@ import PremiumCTA from "@/components/PremiumCTA";
 import { LazyRelatedGuideCard } from "@/components/LazyRelatedGuideCard";
 import { guidesData } from "@/data/guides";
 import { articleCTAs } from "@/data/article-ctas";
+import { recentArticleCTAs } from "@/data/recent-article-ctas";
 import { articleHowToSchemas } from "@/data/article-howto-schemas";
 import { loadArticleBySlug } from "@/data/article-loaders";
 import { getRelatedGuides } from "@/data/related-guides";
 import type { ArticleData } from "@/data/articles/types";
+
+const allArticleCTAs = { ...articleCTAs, ...recentArticleCTAs };
 
 const GuideArticle = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -56,7 +59,6 @@ const GuideArticle = () => {
     };
   }, [slug]);
 
-  // Track reading progress
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -115,13 +117,11 @@ const GuideArticle = () => {
   const readingTime = guidesData.find((guide) => guide.slug === article.slug)?.readTime ?? 8;
   const relatedGuides = getRelatedGuides(article.slug, guidesData, 3);
 
-  // Convert readable date to ISO format for JSON-LD
   const getISODate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toISOString();
   };
 
-  // Get article keywords from title for SEO
   const getKeywords = (title: string): string => {
     const keywordPhrases = [
       "knee pain", "knee discomfort", "knee comfort", "knee therapy",
@@ -129,7 +129,7 @@ const GuideArticle = () => {
       "running knee", "arthritis knee", "sharp knee pain", "back of knee",
       "side knee pain", "knee exercises", "knee support", "daily routine"
     ];
-    return keywordPhrases.filter(phrase => 
+    return keywordPhrases.filter(phrase =>
       title.toLowerCase().includes(phrase.split(" ")[0])
     ).slice(0, 5).join(", ") || "knee comfort, knee wellness, at-home support";
   };
@@ -203,7 +203,6 @@ const GuideArticle = () => {
     ]
   };
 
-  // Generate FAQPage JSON-LD if article has FAQs
   const faqJsonLd = article.faqs && article.faqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -217,7 +216,6 @@ const GuideArticle = () => {
     }))
   } : null;
 
-  // Generate HowTo JSON-LD for routine/exercise/posture guides
   const howToData = articleHowToSchemas[article.slug];
   const howToJsonLd = howToData ? {
     "@context": "https://schema.org",
@@ -232,8 +230,6 @@ const GuideArticle = () => {
     })),
   } : null;
 
-
-  // Combine all JSON-LD schemas into a single array for one-shot injection
   const allSchemas = [articleJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd].filter(Boolean);
 
   return (
@@ -243,8 +239,7 @@ const GuideArticle = () => {
         <meta name="description" content={article.metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        
-        {/* Open Graph Meta Tags */}
+
         <meta property="og:type" content="article" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={article.metaTitle} />
@@ -255,47 +250,42 @@ const GuideArticle = () => {
         <meta property="article:modified_time" content={getISODate(article.lastUpdated || article.publishedDate)} />
         <meta property="article:author" content="FlexiKnee Editorial Team" />
         <meta property="article:section" content="Guides" />
-        
-        {/* Twitter Card Meta Tags */}
+
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@FlexiKnee" />
         <meta name="twitter:title" content={article.metaTitle} />
         <meta name="twitter:description" content={article.metaDescription} />
         <meta name="twitter:image" content={`https://flexi-knee.com${article.heroImage}`} />
-        
-        {/* All structured data in a single Helmet for immediate injection */}
+
         {allSchemas.map((schema, i) => (
           <script key={i} id={`ld-schema-${i}`} type="application/ld+json">
             {JSON.stringify(schema)}
           </script>
         ))}
       </Helmet>
-      
+
       <Header />
-      
-      {/* Reading Progress Bar */}
+
       <div className="fixed top-0 left-0 right-0 z-[60] h-1 bg-transparent">
-        <div 
+        <div
           className="h-full bg-primary transition-all duration-150 ease-out"
           style={{ width: `${readProgress}%` }}
         />
       </div>
-      
+
       <main
         data-seo-page="guide"
         data-seo-guide={article.slug}
         className="min-h-screen bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_24%,#ffffff_100%)]"
       >
-        {/* Article Hero */}
         <section className="relative">
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-slate-950/55 via-slate-950/25 to-white" />
-          <div 
+          <div
             className="h-[34vh] bg-cover bg-center bg-no-repeat md:h-[44vh]"
             style={{ backgroundImage: `url(${article.heroImage})` }}
           />
         </section>
 
-        {/* Article Header */}
         <section className="relative z-20 bg-white py-8 md:py-10">
           <div className="container mx-auto max-w-6xl px-4">
             <div className="mx-auto max-w-5xl">
@@ -311,15 +301,14 @@ const GuideArticle = () => {
                 {article.title}
               </h1>
               <ArticleHeaderMeta
-                dateIso={getISODate(article.lastUpdated || article.publishedDate)}
-                dateLabel={article.lastUpdated ? `Updated ${article.lastUpdated}` : article.publishedDate}
+                dateIso={getISODate(article.publishedDate)}
+                dateLabel={`Published ${article.publishedDate}`}
                 readingTime={readingTime}
               />
             </div>
           </div>
         </section>
 
-        {/* Editorial article layout: TOC follows content until CTA without shifting the article */}
         <section className="pb-6 md:pb-8 md:pt-2">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="lg:grid lg:grid-cols-[12rem_minmax(0,52rem)] lg:gap-x-10 xl:gap-x-12">
@@ -360,17 +349,16 @@ const GuideArticle = () => {
 
                 <ArticleImageLightbox articleSlug={article.slug} />
 
-                {/* Final article order: product recommendation, quiz, then sources. */}
-                {articleCTAs[slug] && (
+                {/* Required article-end order: product CTA -> knee quiz -> sources. */}
+                {allArticleCTAs[slug] && (
                   <PremiumCTA
-                    headline={articleCTAs[slug].headline}
-                    text={articleCTAs[slug].text}
+                    headline={allArticleCTAs[slug].headline}
+                    text={allArticleCTAs[slug].text}
                   />
                 )}
 
                 <ArticleQuizCard articleSlug={article.slug} articleTitle={article.title} />
 
-                {/* Sources and Further Reading */}
                 {article.sources && article.sources.length > 0 && (
                   <section
                     aria-labelledby="sources-heading"
@@ -378,9 +366,10 @@ const GuideArticle = () => {
                   >
                     <h2
                       id="sources-heading"
-                      className="mb-4 text-xl font-semibold tracking-[-0.02em] text-slate-950"
+                      className="mb-4 inline-flex items-center gap-2 text-xl font-semibold tracking-[-0.02em] text-slate-950"
                     >
-                      Sources and Further Reading
+                      <BookOpenText className="h-5 w-5 shrink-0 text-slate-500" aria-hidden="true" />
+                      <span>Sources and Further Reading</span>
                     </h2>
                     <ul className="space-y-3">
                       {article.sources.map((source, i) => (
@@ -403,14 +392,11 @@ const GuideArticle = () => {
                     </p>
                   </section>
                 )}
-
-
               </article>
-</div>
+            </div>
           </div>
         </section>
 
-        {/* Related Guides Section */}
         <section className="py-8 md:py-10 bg-muted/20">
           <div className="container px-4 max-w-4xl mx-auto">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-5 text-center">
@@ -428,7 +414,6 @@ const GuideArticle = () => {
           </div>
         </section>
 
-        {/* Share Block */}
         <section>
           <div className="container mx-auto max-w-7xl px-4">
             <div className="lg:grid lg:grid-cols-[10rem_minmax(0,48rem)] lg:gap-x-14 xl:grid-cols-[11rem_minmax(0,48rem)] xl:gap-x-16">
@@ -451,16 +436,16 @@ const GuideArticle = () => {
         <section className="py-10 border-t border-border/30">
           <div className="container px-4 max-w-3xl mx-auto">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-              <Link 
-                to="/guides" 
+              <Link
+                to="/guides"
                 className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Back to Guides
               </Link>
-              
+
               {article.nextSlug && (
-                <Link 
+                <Link
                   to={`/guides/${article.nextSlug}`}
                   className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all"
                 >

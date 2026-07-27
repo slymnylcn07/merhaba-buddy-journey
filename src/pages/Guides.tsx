@@ -256,10 +256,25 @@ const thumbnailAvifMap: Record<string, string> = {
   "heat-vs-ice-for-knees": thumbHeatVsIceAvif,
 };
 
+const thumbnailPatternMap: { pattern: RegExp; image: string }[] = [
+  { pattern: /cordless-rechargeable-heated-knee-massagers/i, image: thumbCustomCordlessMassagers },
+  { pattern: /(flat-feet|overpronation|foot-to-knee-chain)/i, image: thumbCustomFlatFeet },
+  { pattern: /(cycling-knee-pain|bike-fit)/i, image: thumbCustomCycling },
+  { pattern: /(tight-calves|calf-knee-connection)/i, image: thumbCustomTightCalves },
+  { pattern: /(knee-brace-vs-compression-sleeve|compression-sleeve)/i, image: thumbCustomBraceVsSleeve },
+];
+
+const resolveGuideThumbnail = (slug: string) => {
+  const exact = thumbnailMap[slug];
+  if (exact) return exact;
+  const matched = thumbnailPatternMap.find((entry) => entry.pattern.test(slug));
+  return matched?.image || thumbKneePain;
+};
+
 // Combine data with thumbnails
 const guides = guidesData.map(guide => ({
   ...guide,
-  thumbnail: thumbnailMap[guide.slug] || thumbKneePain,
+  thumbnail: resolveGuideThumbnail(guide.slug),
   thumbnailAvif: thumbnailAvifMap[guide.slug],
 }));
 
@@ -275,10 +290,18 @@ const getGuidePublishedTime = (guide: { publishedDate?: string; lastModified?: s
 };
 
 const formatGuideDate = (value?: string) => {
-  if (!value) return "Recently updated";
+  if (!value) return "Recently published";
   const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return "Recently updated";
+  if (Number.isNaN(date.getTime())) return "Recently published";
   return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", year: "numeric" }).format(date);
+};
+
+const isNewGuide = (value?: string) => {
+  if (!value) return false;
+  const time = new Date(value).getTime();
+  if (Number.isNaN(time)) return false;
+  const TWENTY_ONE_DAYS = 1000 * 60 * 60 * 24 * 21;
+  return Date.now() - time <= TWENTY_ONE_DAYS;
 };
 
 // ?? Section configurations ??
@@ -929,7 +952,7 @@ const Guides = () => {
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">New & recently updated</p>
                     <h2 className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-slate-950 md:text-3xl">Latest Guides</h2>
                     <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-                      Automatically sorted by original publish date so genuinely new guides stay on top, not just recently updated older articles.
+                      Automatically sorted by publish date so genuinely new guides stay on top, while older guides do not jump ahead just because they were edited.
                     </p>
                   </div>
                   <button
@@ -957,7 +980,7 @@ const Guides = () => {
                               className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                               loading={index < 3 ? "eager" : "lazy"}
                             />
-                            {index < 3 && (
+                            {isNewGuide((guide as { publishedDate?: string; lastModified?: string }).publishedDate || guide.lastModified) && (
                               <span className="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white shadow-sm">
                                 New guide
                               </span>
@@ -965,7 +988,7 @@ const Guides = () => {
                           </div>
                           <div className="p-5">
                             <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                              <span>Updated {formatGuideDate(guide.lastModified)}</span>
+                              <span>Published {formatGuideDate((guide as { publishedDate?: string; lastModified?: string }).publishedDate || guide.lastModified)}</span>
                               <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" />{guide.readTime} min</span>
                             </div>
                             <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950 transition-colors group-hover:text-blue-600">{guide.title}</h3>

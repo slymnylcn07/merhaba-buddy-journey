@@ -2,20 +2,19 @@ import { useState, useEffect, useCallback } from "react";
 import { X, ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { trackEvent } from "@/hooks/use-google-analytics";
-import deviceImage from "@/assets/flexiknee-device-main.jpg";
 import { pickProductForSlug, PRODUCT_RECS } from "@/lib/article-product-map";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { toast } from "sonner";
 import { Mail } from "lucide-react";
 import { DiscountCodeModal } from "@/components/DiscountCodeModal";
 import { NEWSLETTER_DISCOUNT_CODE } from "@/lib/newsletter-config";
-import { getProductPath, resolveShopifyProductHandle } from "@/lib/product-config";
+import { getProductPath } from "@/lib/product-config";
 
 // Urun gorselleri icin oturum ici tek istek (PremiumCTA ile ayni desen)
 let slideInProductsPromise: Promise<ShopifyProduct[]> | null = null;
 function getSlideInProducts() {
   if (!slideInProductsPromise) {
-    slideInProductsPromise = getProducts(50).catch(() => []);
+    slideInProductsPromise = getProducts(20).catch(() => []);
   }
   return slideInProductsPromise;
 }
@@ -152,6 +151,18 @@ function getContextualContent(slug: string): { hook: string; support: string } {
       support: "Gentle heat-based support may help ease the discomfort that comes with post-activity swelling.",
     };
 
+  if (s.includes("tight-calves") || s.includes("calf"))
+    return {
+      hook: "Do your calves feel tight after walking, work, or training?",
+      support: "A short compression-and-warmth recovery session can help tired lower legs unwind after activity.",
+    };
+
+  if (s.includes("compression") || s.includes("sleeve"))
+    return {
+      hook: "Would a flexible support sleeve fit your daily routine?",
+      support: "Breathable compression can add a supported feel during walking, work, and training.",
+    };
+
   return {
     hook: "Is knee discomfort affecting your daily comfort?",
     support: "Simple heat-based support methods can help reduce the pressure your knees feel every day.",
@@ -170,7 +181,6 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   const [showCodeModal, setShowCodeModal] = useState(false);
 
   const { hook, support } = getContextualContent(slug);
-
   const [liveImage, setLiveImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -208,13 +218,11 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
 
   useEffect(() => {
     let active = true;
+    setLiveImage(null);
     getSlideInProducts().then((list) => {
       if (!active) return;
-      const wanted = [rec.handle, resolveShopifyProductHandle(rec.handle)].map((h) =>
-        decodeURIComponent(h).toLowerCase()
-      );
-      const match = list.find((p) =>
-        wanted.includes(decodeURIComponent(p.node.handle).toLowerCase())
+      const match = list.find(
+        (p) => decodeURIComponent(p.node.handle) === decodeURIComponent(rec.handle)
       );
       if (match) setLiveImage(match.node.images?.edges?.[0]?.node?.url || null);
     });
@@ -280,112 +288,120 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
 
   const isMain = rec.handle === PRODUCT_RECS.main.handle;
   const productShortName = rec.title.replace("FlexiKnee ", "");
-  const productImage = liveImage || rec.fallbackImage || (isMain ? deviceImage : null);
+  const productImage = liveImage || rec.fallbackImage;
 
   return (
     <>
       <DiscountCodeModal open={showCodeModal} onOpenChange={setShowCodeModal} />
-    <div
-      className={`fixed z-40 transition-all duration-500 ease-out
-        bottom-0 left-0 right-0
-        md:bottom-6 md:left-auto md:right-6 md:w-[400px]
-        ${isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"}
-      `}
-    >
-      <div className="relative overflow-hidden border border-slate-200 bg-white px-5 pb-5 pt-4 shadow-[0_-10px_40px_rgba(15,23,42,0.16)] md:rounded-3xl md:shadow-[0_24px_70px_-20px_rgba(15,23,42,0.35)]">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-emerald-400" />
+      <div
+        className={`fixed z-40 transition-all duration-500 ease-out
+          bottom-0 left-0 right-0
+          md:bottom-6 md:left-auto md:right-6 md:w-[400px]
+          ${isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"}
+        `}
+      >
+        <div className="relative overflow-hidden border border-slate-200 bg-white px-5 pb-5 pt-4 shadow-[0_-10px_40px_rgba(15,23,42,0.16)] md:rounded-3xl md:shadow-[0_24px_70px_-20px_rgba(15,23,42,0.35)]">
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-emerald-400" />
 
-        <button
-          onClick={handleDismiss}
-          className="absolute right-3 top-3 rounded-full p-1.5 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
-          aria-label="Close"
-        >
-          <X className="h-4 w-4" />
-        </button>
+          <button
+            onClick={handleDismiss}
+            className="absolute right-3 top-3 rounded-full p-1.5 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
+            aria-label="Close"
+          >
+            <X className="h-4 w-4" />
+          </button>
 
-        {stage === 2 ? (
-          <div className="pr-7">
-            {subscribed ? null : (
-              <div>
-                <div className="flex items-start gap-3">
-                  <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-blue-50">
-                    <Mail className="h-5 w-5 text-blue-600" />
-                  </span>
-                  <div className="min-w-0">
-                    <p className="text-sm font-bold leading-snug text-slate-950">
-                      Enjoying this guide? Get the next one first.
-                    </p>
-                    <p className="mt-1 text-xs leading-relaxed text-slate-500">
-                      Join the FlexiKnee list: new guides in your inbox, plus an extra 10% off any device.
-                    </p>
+          {stage === 2 ? (
+            <div className="pr-7">
+              {subscribed ? null : (
+                <div>
+                  <div className="flex items-start gap-3">
+                    <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-blue-50">
+                      <Mail className="h-5 w-5 text-blue-600" />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-sm font-bold leading-snug text-slate-950">
+                        Enjoying this guide? Get the next one first.
+                      </p>
+                      <p className="mt-1 text-xs leading-relaxed text-slate-500">
+                        Join the FlexiKnee list: new guides in your inbox, plus an extra 10% off any device.
+                      </p>
+                    </div>
                   </div>
+                  <form onSubmit={handleNewsletterSubmit} className="mt-3 flex gap-2">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="you@example.com"
+                      className="min-w-0 flex-1 rounded-full border border-slate-300 px-4 py-2.5 text-xs outline-none transition focus:border-blue-500"
+                    />
+                    <button
+                      type="submit"
+                      disabled={isSending}
+                      className="whitespace-nowrap rounded-full bg-blue-600 px-4 py-2.5 text-xs font-bold text-white transition hover:bg-blue-700 disabled:opacity-60"
+                    >
+                      {isSending ? "..." : "Get 10% off"}
+                    </button>
+                  </form>
+                  <p className="mt-2 text-[10px] leading-4 text-slate-400">
+                    Use code <strong>{NEWSLETTER_DISCOUNT_CODE}</strong> after signup. Unsubscribe any time.
+                  </p>
                 </div>
-                <form onSubmit={handleNewsletterSubmit} className="mt-3 flex gap-2">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@example.com"
-                    className="min-w-0 flex-1 rounded-full border border-slate-300 px-4 py-2.5 text-xs outline-none transition focus:border-blue-500"
-                  />
-                  <button
-                    type="submit"
-                    disabled={isSending}
-                    className="whitespace-nowrap rounded-full bg-blue-600 px-4 py-2.5 text-xs font-bold text-white transition hover:bg-blue-700 disabled:opacity-60"
-                  >
-                    {isSending ? "..." : "Get 10% off"}
-                  </button>
-                </form>
-              </div>
-            )}
-          </div>
-        ) : (
-          <>
-        <div className="flex items-start gap-3 pr-7">
-          {productImage ? (
-            <img
-              src={productImage}
-              alt={rec.title}
-              className="h-14 w-14 flex-shrink-0 rounded-2xl border border-slate-100 bg-slate-50 object-cover"
-            />
+              )}
+            </div>
           ) : (
-            <span className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-blue-50">
-              <Sparkles className="h-6 w-6 text-blue-600" />
-            </span>
+            <>
+              <div className="flex items-start gap-3 pr-7">
+                {productImage ? (
+                  <img
+                    src={productImage}
+                    alt={rec.title}
+                    onError={(event) => {
+                      const image = event.currentTarget;
+                      const fallbackUrl = new URL(rec.fallbackImage, window.location.origin).href;
+                      if (image.src !== fallbackUrl) image.src = rec.fallbackImage;
+                    }}
+                    className="h-14 w-14 flex-shrink-0 rounded-2xl border border-slate-100 bg-slate-50 object-cover"
+                  />
+                ) : (
+                  <span className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-blue-50">
+                    <Sparkles className="h-6 w-6 text-blue-600" />
+                  </span>
+                )}
+                <div className="min-w-0">
+                  <p className="text-sm font-bold leading-snug text-slate-950">{hook}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-slate-500">{support}</p>
+                </div>
+              </div>
+
+              <div className="mt-3 flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-2xl bg-slate-50 px-3.5 py-2.5">
+                <span className="min-w-0 flex-1 truncate text-xs font-semibold text-slate-800">{productShortName}</span>
+                <span className="text-sm font-bold text-slate-950">{rec.fallbackPrice}</span>
+                <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-semibold text-blue-700">30-day returns</span>
+              </div>
+
+              <div className="mt-3.5 flex items-center gap-3">
+                <Link
+                  to={getProductPath(rec.handle)}
+                  onClick={handleCTAClick}
+                  className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-slate-950 px-5 py-3 text-xs font-bold text-white transition hover:bg-slate-800"
+                >
+                  See the {isMain ? "FlexiKnee" : productShortName.split(" ").slice(-2).join(" ").toLowerCase()}
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+                <Link
+                  to="/knee-quiz"
+                  onClick={() => trackEvent("article_cta_quiz_clicked", { slug })}
+                  className="whitespace-nowrap text-xs font-semibold text-blue-600 hover:underline"
+                >
+                  60-sec quiz
+                </Link>
+              </div>
+            </>
           )}
-          <div className="min-w-0">
-            <p className="text-sm font-bold leading-snug text-slate-950">{hook}</p>
-            <p className="mt-1 text-xs leading-relaxed text-slate-500">{support}</p>
-          </div>
         </div>
-
-        <div className="mt-3 flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-2xl bg-slate-50 px-3.5 py-2.5">
-          <span className="min-w-0 flex-1 truncate text-xs font-semibold text-slate-800">{productShortName}</span>
-          <span className="text-sm font-bold text-slate-950">{rec.fallbackPrice}</span>
-          <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-semibold text-blue-700">30-day returns</span>
-        </div>
-
-        <div className="mt-3.5 flex items-center gap-3">
-          <Link
-            to={getProductPath(rec.handle)}
-            onClick={handleCTAClick}
-            className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-slate-950 px-5 py-3 text-xs font-bold text-white transition hover:bg-slate-800"
-          >
-            See the {isMain ? "FlexiKnee" : productShortName.split(" ").slice(-2).join(" ").toLowerCase()}
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-          <Link
-            to="/knee-quiz"
-            onClick={() => trackEvent("article_cta_quiz_clicked", { slug })}
-            className="whitespace-nowrap text-xs font-semibold text-blue-600 hover:underline"
-          >
-            60-sec quiz
-          </Link>
-        </div>
-          </>
-        )}
       </div>
-    </div>
     </>
   );
 };
