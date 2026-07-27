@@ -242,10 +242,40 @@ jobs:
           console.log("All source markers validated.");
           NODE
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies and repair local binaries
+        env:
+          NODE_ENV: development
+          NPM_CONFIG_PRODUCTION: "false"
+          NPM_CONFIG_OMIT: ""
+          NPM_CONFIG_BIN_LINKS: "true"
+        shell: bash
+        run: |
+          npm ci --include=dev --bin-links=true
+
+          if [ ! -f node_modules/tsx/dist/cli.mjs ] || [ ! -f node_modules/vite/bin/vite.js ]; then
+            npm install --no-save --package-lock=false --include=dev --bin-links=true tsx@4.21.0 vite@5.4.19
+          fi
+
+          mkdir -p node_modules/.bin
+
+          if [ ! -x node_modules/.bin/tsx ]; then
+            printf '%s\n'               '#!/usr/bin/env sh'               'exec node "$GITHUB_WORKSPACE/node_modules/tsx/dist/cli.mjs" "$@"'               > node_modules/.bin/tsx
+            chmod +x node_modules/.bin/tsx
+          fi
+
+          if [ ! -x node_modules/.bin/vite ]; then
+            printf '%s\n'               '#!/usr/bin/env sh'               'exec node "$GITHUB_WORKSPACE/node_modules/vite/bin/vite.js" "$@"'               > node_modules/.bin/vite
+            chmod +x node_modules/.bin/vite
+          fi
+
+          node_modules/.bin/tsx --version
+          node_modules/.bin/vite --version
 
       - name: Validate production build
+        env:
+          NPM_CONFIG_PRODUCTION: "false"
+          NPM_CONFIG_OMIT: ""
+          NPM_CONFIG_BIN_LINKS: "true"
         run: npm run build
 
       - name: Commit source updates
