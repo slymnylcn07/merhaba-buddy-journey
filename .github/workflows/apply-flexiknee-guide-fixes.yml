@@ -31,26 +31,36 @@ jobs:
           node <<'NODE'
           const fs = require("node:fs");
 
-          function replaceOnce(file, before, after, marker) {
-            const original = fs.readFileSync(file, "utf8");
+          function normalizeLineEndings(value) {
+            return value.replace(/\r\n/g, "\n");
+          }
 
-            if (marker && original.includes(marker)) {
+          function replaceOnce(file, before, after, marker) {
+            const raw = fs.readFileSync(file, "utf8");
+            const outputLineEnding = raw.includes("\r\n") ? "\r\n" : "\n";
+            const original = normalizeLineEndings(raw);
+            const expected = normalizeLineEndings(before);
+            const replacement = normalizeLineEndings(after);
+            const appliedMarker = marker ? normalizeLineEndings(marker) : marker;
+
+            if (appliedMarker && original.includes(appliedMarker)) {
               console.log(`Already applied: ${file}`);
               return false;
             }
 
-            const first = original.indexOf(before);
+            const first = original.indexOf(expected);
             if (first === -1) {
               throw new Error(`Expected source block not found in ${file}`);
             }
 
-            const second = original.indexOf(before, first + before.length);
+            const second = original.indexOf(expected, first + expected.length);
             if (second !== -1) {
               throw new Error(`Expected source block appears more than once in ${file}`);
             }
 
-            const updated = original.slice(0, first) + after + original.slice(first + before.length);
-            fs.writeFileSync(file, updated, "utf8");
+            const updated = original.slice(0, first) + replacement + original.slice(first + expected.length);
+            const output = outputLineEnding === "\r\n" ? updated.replace(/\n/g, "\r\n") : updated;
+            fs.writeFileSync(file, output, "utf8");
             console.log(`Updated: ${file}`);
             return true;
           }
@@ -392,13 +402,17 @@ jobs:
       - name: Validate production build
         run: npm run build
 
-      - name: Commit source updates and remove temporary workflow
+      - name: Commit source updates
         shell: bash
         run: |
-          rm -f .github/workflows/apply-flexiknee-guide-fixes.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
+          git add \
+            src/pages/Guides.tsx \
+            src/data/articles/best-supplements-for-knee-pain.tsx \
+            src/data/articles/knee-pain-after-40.tsx \
+            src/data/articles/knee-pain-after-exercise.tsx \
+            src/data/articles/legacy-inline-articles.tsx
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
