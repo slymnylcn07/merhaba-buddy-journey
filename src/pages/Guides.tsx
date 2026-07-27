@@ -98,16 +98,17 @@ import thumbBatch1BestInsolesForKneePain2026 from "@/assets/guide-thumbnails/bat
 import thumbBatch1BestInsolesForKneePain2026Avif from "@/assets/guide-thumbnails/batch-1/best-insoles-for-knee-pain-2026.avif";
 import thumbBatch1CordlessRechargeableHeatedKneeMassagers2026 from "@/assets/guide-thumbnails/batch-1/cordless-rechargeable-heated-knee-massagers-2026.webp";
 import thumbBatch1CordlessRechargeableHeatedKneeMassagers2026Avif from "@/assets/guide-thumbnails/batch-1/cordless-rechargeable-heated-knee-massagers-2026.avif";
+import thumbCustomCordlessMassagers from "@/assets/thumb-cordless-rechargeable-heated-knee-massagers-2026-buyers-guide.png";
+import thumbCustomFlatFeet from "@/assets/thumb-can-flat-feet-cause-knee-pain-overpronation-explained.png";
+import thumbCustomCycling from "@/assets/thumb-cycling-knee-pain-location-chart-and-bike-fit-fixes.png";
+import thumbCustomTightCalves from "@/assets/thumb-can-tight-calves-cause-knee-pain-the-calf-knee-connection.png";
+import thumbCustomBraceVsSleeve from "@/assets/thumb-knee-brace-vs-compression-sleeve-which-do-you-need.png";
 import thumbItBandFoamRollingList from "@/assets/hero-itband-foam-rolling.svg";
 import thumbSleepKneePainList from "@/assets/hero-sleep-knee-pain.svg";
 import thumbAirCompressionLegList from "@/assets/hero-air-compression-leg.svg";
 import thumbSleeveSizingList from "@/assets/hero-sleeve-sizing.svg";
 import thumbSupplements from "@/assets/thumb-knee-supplements.svg";
 import thumbGlucosamine from "@/assets/article-hero-glucosamine-chondroitin.svg";
-import thumbTightCalves from "@/assets/article-hero-tight-calves-knee-pain.svg";
-import thumbFlatFeet from "@/assets/guide-thumb-flat-feet-knee-pain.svg";
-import thumbCycling from "@/assets/guide-thumb-cycling-knee-pain.svg";
-import thumbBraceVsSleeve from "@/assets/article-hero-knee-brace-vs-compression-sleeve.svg";
 import thumbMenopause from "@/assets/article-hero-menopause-knee-pain.svg";
 import thumbRedLightDose from "@/assets/article-hero-red-light-dose-knees.svg";
 import thumbPickleballRecovery from "@/assets/article-hero-pickleball-knee-recovery.jpg";
@@ -131,10 +132,17 @@ import thumbBatch2HomeRemediesKneePainAvif from "@/assets/guide-thumbnails/batch
 const thumbnailMap: Record<string, string> = {
   "best-supplements-for-knee-pain": thumbSupplements,
   "glucosamine-chondroitin-knee-pain": thumbGlucosamine,
-  "tight-calves-knee-pain": thumbTightCalves,
-  "flat-feet-overpronation-knee-pain": thumbFlatFeet,
-  "cycling-knee-pain-bike-fit": thumbCycling,
-  "knee-brace-vs-compression-sleeve": thumbBraceVsSleeve,
+  "cordless-rechargeable-heated-knee-massagers-2026": thumbCustomCordlessMassagers,
+  "can-flat-feet-cause-knee-pain": thumbCustomFlatFeet,
+  "flat-feet-knee-pain": thumbCustomFlatFeet,
+  "can-flat-feet-cause-knee-pain-overpronation-explained": thumbCustomFlatFeet,
+  "cycling-knee-pain-location-chart-and-bike-fit-fixes": thumbCustomCycling,
+  "cycling-knee-pain": thumbCustomCycling,
+  "tight-calves-knee-pain": thumbCustomTightCalves,
+  "can-tight-calves-cause-knee-pain": thumbCustomTightCalves,
+  "can-tight-calves-cause-knee-pain-the-calf-knee-connection": thumbCustomTightCalves,
+  "knee-brace-vs-compression-sleeve": thumbCustomBraceVsSleeve,
+  "knee-brace-vs-compression-sleeve-which-do-you-need": thumbCustomBraceVsSleeve,
   "menopause-knee-pain": thumbMenopause,
   "red-light-therapy-dose-knees": thumbRedLightDose,
   "pickleball-knee-recovery-routine": thumbPickleballRecovery,
@@ -199,7 +207,6 @@ const thumbnailMap: Record<string, string> = {
   "knee-pain-after-exercise": thumbKneePainAfterExercise,
   "burning-knees-after-exercise": thumbBatch1BurningKneesAfterExercise,
   "best-insoles-for-knee-pain-2026": thumbBatch1BestInsolesForKneePain2026,
-  "cordless-rechargeable-heated-knee-massagers-2026": thumbBatch1CordlessRechargeableHeatedKneeMassagers2026,
   "it-band-foam-rolling-step-by-step": thumbItBandFoamRollingList,
   "how-to-sleep-with-knee-pain": thumbSleepKneePainList,
   "air-compression-leg-massagers-do-they-work": thumbAirCompressionLegList,
@@ -259,10 +266,13 @@ const guides = guidesData.map(guide => ({
 // Helper to get guide by slug
 const getGuide = (slug: string) => guides.find(g => g.slug === slug);
 
-const latestPrioritySlugs = [
-  "cordless-rechargeable-heated-knee-massagers-2026",
-  "best-insoles-for-knee-pain-2026",
-];
+const getGuidePublishedTime = (guide: { publishedDate?: string; lastModified?: string }) => {
+  const published = new Date(guide.publishedDate || "").getTime();
+  if (!Number.isNaN(published) && published > 0) return published;
+  const modified = new Date(guide.lastModified || "").getTime();
+  if (!Number.isNaN(modified) && modified > 0) return modified;
+  return 0;
+};
 
 const formatGuideDate = (value?: string) => {
   if (!value) return "Recently updated";
@@ -274,7 +284,10 @@ const formatGuideDate = (value?: string) => {
 // ?? Section configurations ??
 
 const featuredSlugs = [
-  "why-knee-pain-doesnt-go-away",
+  "what-causes-knee-pain-guide",
+  "heat-vs-ice-for-knees",
+  "knee-clicking-when-walking",
+  "knee-pain-after-exercise",
 ];
 
 // Priority Guides (high-impact SEO articles)
@@ -316,12 +329,12 @@ const locationSlugs = [
 const activitySlugs = [
   // Top 4
   "running-knee-pain-guide",
+  "pickleball-knee-recovery-routine",
   "knee-arthritis-pain-guide",
   "how-to-strengthen-knees",
-  "understanding-knee-injuries",
   // Accordion
+  "understanding-knee-injuries",
   "best-running-shoes-knee-pain",
-  "women-men-knee-comfort-patterns",
   "how-to-fix-knee-pain",
   "runners-knee-pain-location",
   "why-do-my-knees-crack-or-pop",
@@ -331,10 +344,6 @@ const activitySlugs = [
   "knee-pain-after-standing",
   "knee-pain-exercises-guide",
   "what-causes-knee-pain-guide",
-  "knee-pain-after-40",
-  "why-knee-pain-gets-worse-with-age",
-  "morning-knee-stiffness-after-40",
-  "knee-pain-at-night-after-40",
   "knees-hurt-after-resting",
   "cold-weather-knee-pain",
   "knee-pain-after-exercise",
@@ -352,14 +361,26 @@ const activitySlugs = [
   "knee-swelling-after-exercise",
 ];
 
-// Category 3: At-Home Methods & Daily Comfort
+// Category 3: Aging, Women & Life Stages
+const lifeStageSlugs = [
+  "menopause-knee-pain",
+  "knee-pain-after-40",
+  "why-knee-pain-gets-worse-with-age",
+  "morning-knee-stiffness-after-40",
+  "knee-pain-at-night-after-40",
+  "knee-mobility-after-50",
+  "women-men-knee-comfort-patterns",
+];
+
+// Category 4: At-Home Methods & Daily Comfort
 const methodsSlugs = [
   // Top 4
   "heat-vs-red-light-therapy",
   "heat-vs-ice-for-knees",
+  "red-light-therapy-dose-knees",
   "red-light-therapy-for-knees",
-  "daily-knee-care-routine",
   // Accordion
+  "daily-knee-care-routine",
   "warmth-vs-infrared-knee-routines",
   "is-infrared-safe-for-knees",
   "who-benefits-from-knee-therapy-devices",
@@ -368,7 +389,13 @@ const methodsSlugs = [
   "best-red-light-therapy-knee",
 ];
 
-// Category 4: Device Comparisons & Buying Guides
+// Category 5: Supplements & Evidence
+const supplementSlugs = [
+  "glucosamine-chondroitin-knee-pain",
+  "best-supplements-for-knee-pain",
+];
+
+// Category 6: Device Comparisons & Buying Guides
 const deviceSlugs = [
   // Top 4
   "flexiknee-review-2026",
@@ -596,16 +623,12 @@ const Guides = () => {
   const featuredGuides = featuredSlugs.map(getGuide).filter(Boolean) as typeof guides;
 
   const latestGuides = useMemo(() => {
-    const priority = latestPrioritySlugs.map(getGuide).filter(Boolean) as typeof guides;
-    const prioritySet = new Set(priority.map((guide) => guide.slug));
-    const remaining = [...guides]
-      .filter((guide) => !prioritySet.has(guide.slug))
-      .sort((a, b) => new Date(b.lastModified || 0).getTime() - new Date(a.lastModified || 0).getTime());
-    return [...priority, ...remaining].slice(0, 6);
+    return [...guides]
+      .sort((a, b) => getGuidePublishedTime(b) - getGuidePublishedTime(a))
+      .slice(0, 6);
   }, []);
 
   const canonicalUrl = "https://flexi-knee.com/guides";
-
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -675,9 +698,9 @@ const Guides = () => {
         <script type="application/ld+json">{JSON.stringify(itemListJsonLd)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       </Helmet>
-      
+
       <Header />
-      
+
       <main className="min-h-screen bg-slate-50">
         {/* Hero Section */}
         <section className="overflow-hidden border-b border-slate-200 bg-slate-950 text-white">
@@ -721,9 +744,10 @@ const Guides = () => {
                   {[
                     ["By Symptom", "by-location"],
                     ["By Activity", "by-activity"],
+                    ["Aging & Women", "by-life-stage"],
                     ["Daily Routine", "by-methods"],
+                    ["Supplements", "by-supplements"],
                     ["Device Guides", "by-devices"],
-                    ["Buying Guides", "by-devices"],
                   ].map(([label, id]) => (
                     <button
                       key={label}
@@ -795,7 +819,7 @@ const Guides = () => {
                       <p className="mt-1 text-xs font-medium text-slate-500">Guides</p>
                     </div>
                     <div className="rounded-2xl bg-white/95 p-4 text-slate-950 shadow-sm">
-                      <p className="text-2xl font-semibold">5</p>
+                      <p className="text-2xl font-semibold">7</p>
                       <p className="mt-1 text-xs font-medium text-slate-500">Topic paths</p>
                     </div>
                   </div>
@@ -905,7 +929,7 @@ const Guides = () => {
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">New & recently updated</p>
                     <h2 className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-slate-950 md:text-3xl">Latest Guides</h2>
                     <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-                      The newest research-led additions, including our three latest guides on delayed exercise discomfort, cordless massagers and orthopedic insoles.
+                      Automatically sorted by original publish date so genuinely new guides stay on top, not just recently updated older articles.
                     </p>
                   </div>
                   <button
@@ -961,11 +985,11 @@ const Guides = () => {
               <div className="container px-4 max-w-6xl mx-auto">
                 <SectionHeader 
                   id="featured"
-                  title="Start Here"
-                  subtitle="Comprehensive guides for understanding and supporting everyday knee comfort."
+                  title="Start Here: Core Knee Guides"
+                  subtitle="Our locomotive guides: the highest-leverage starting points for understanding symptoms, daily routines, and what to try next."
                 />
                 <p className="text-sm text-slate-600 leading-relaxed max-w-3xl mb-6 -mt-4">
-                  New here? Start with <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">what causes knee pain</Link>, build a <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily comfort routine</Link>, or learn <Link to="/guides/why-knee-pain-doesnt-go-away" className="text-primary hover:underline">why knee pain sometimes persists</Link>.
+                  Start with <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">what causes knee pain</Link>, then move to <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat vs. ice</Link>, <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking while walking</Link>, and <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">post-exercise knee pain</Link> for the clearest entry points into the library.
                 </p>
                 {isLoading ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1005,28 +1029,40 @@ const Guides = () => {
             <CategorySection
               id="by-activity"
               title="Knee Discomfort by Activity"
-              subtitle="Understand why exercises, stairs, and daily movements affect your knees differently."
-              contextText={<>Explore how <Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">climbing stairs</Link>, <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">squatting</Link>, and <Link to="/guides/knee-pain-when-hiking" className="text-primary hover:underline">hiking</Link> each stress your knees in unique ways.</>}
+              subtitle="Understand why exercises, sports, stairs, and daily movements affect your knees differently."
+              contextText={<>Explore how <Link to="/guides/pickleball-knee-recovery-routine" className="text-primary hover:underline">pickleball</Link>, <Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">climbing stairs</Link>, <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">squatting</Link>, and <Link to="/guides/knee-pain-when-hiking" className="text-primary hover:underline">hiking</Link> each challenge the knees in different ways.</>}
               allSlugs={activitySlugs}
               isLoading={isLoading}
             />
 
-            {/* Contextual bridge */}
-            <section className="py-6">
-              <div className="container px-4 max-w-4xl mx-auto">
-                <p className="text-slate-600 text-sm leading-relaxed text-center">
-                  Daily habits matter as much as movement. From <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massagers</Link> to managing <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">stiffness after resting</Link>, consistent at-home care supports long-term comfort.
-                </p>
-              </div>
-            </section>
+            {/* Category 3: Aging, Women & Life Stages */}
+            <CategorySection
+              id="by-life-stage"
+              title="Aging, Women & Life Stages"
+              subtitle="Understand how midlife, menopause, age-related changes, sleep, and recovery can shape knee symptoms."
+              contextText={<>Start with our guide to <Link to="/guides/menopause-knee-pain" className="text-primary hover:underline">menopause and knee pain</Link>, then explore <Link to="/guides/knee-pain-after-40" className="text-primary hover:underline">knee pain after 40</Link> and practical ways to maintain <Link to="/guides/knee-mobility-after-50" className="text-primary hover:underline">knee mobility after 50</Link>.</>}
+              allSlugs={lifeStageSlugs}
+              isLoading={isLoading}
+              bgWhite
+            />
 
-            {/* Category 3: At-Home Methods */}
+            {/* Category 4: At-Home Methods */}
             <CategorySection
               id="by-methods"
               title="At-Home Methods & Daily Comfort"
               subtitle="Practical at-home approaches for knee comfort, from heat and cold therapy to daily routines."
-              contextText={<>Compare <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat vs. ice therapy</Link>, explore <Link to="/guides/red-light-therapy-for-knees" className="text-primary hover:underline">red light therapy</Link>, or build a <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee care routine</Link> that fits your lifestyle.</>}
+              contextText={<>Compare <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat vs. ice therapy</Link>, understand <Link to="/guides/red-light-therapy-dose-knees" className="text-primary hover:underline">red-light dose and session timing</Link>, or build a <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee care routine</Link> that fits your lifestyle.</>}
               allSlugs={methodsSlugs}
+              isLoading={isLoading}
+            />
+
+            {/* Category 5: Supplements & Evidence */}
+            <CategorySection
+              id="by-supplements"
+              title="Supplements & Evidence"
+              subtitle="Evidence-led guides to popular knee supplements, realistic benefits, product forms, safety, and interactions."
+              contextText={<>Compare our overview of the <Link to="/guides/best-supplements-for-knee-pain" className="text-primary hover:underline">best supplements for knee pain</Link> with the deeper guide to <Link to="/guides/glucosamine-chondroitin-knee-pain" className="text-primary hover:underline">glucosamine and chondroitin</Link>.</>}
+              allSlugs={supplementSlugs}
               isLoading={isLoading}
               bgWhite
             />
@@ -1040,7 +1076,7 @@ const Guides = () => {
               </div>
             </section>
 
-            {/* Category 4: Device Comparisons */}
+            {/* Category 6: Device Comparisons */}
             <CategorySection
               id="by-devices"
               title="Device Comparisons & Buying Guides"
@@ -1089,7 +1125,7 @@ const Guides = () => {
                     <ChevronDown className="h-5 w-5 text-blue-600" />
                   </div>
                 </button>
-                
+
                 <div 
                   className={`transition-all duration-500 ease-in-out ${
                     showAllGuides ? 'mt-8 opacity-100 max-h-[20000px]' : 'max-h-0 opacity-0 overflow-hidden'
@@ -1150,7 +1186,9 @@ const Guides = () => {
                   <button onClick={() => scrollToSection('priority-guides')} className="text-sm text-slate-600 hover:text-primary transition-colors">Featured</button>
                   <button onClick={() => scrollToSection('by-location')} className="text-sm text-slate-600 hover:text-primary transition-colors">By Location</button>
                   <button onClick={() => scrollToSection('by-activity')} className="text-sm text-slate-600 hover:text-primary transition-colors">By Activity</button>
+                  <button onClick={() => scrollToSection('by-life-stage')} className="text-sm text-slate-600 hover:text-primary transition-colors">Aging & Women</button>
                   <button onClick={() => scrollToSection('by-methods')} className="text-sm text-slate-600 hover:text-primary transition-colors">Methods & Comfort</button>
+                  <button onClick={() => scrollToSection('by-supplements')} className="text-sm text-slate-600 hover:text-primary transition-colors">Supplements</button>
                   <button onClick={() => scrollToSection('by-devices')} className="text-sm text-slate-600 hover:text-primary transition-colors">Device Guides</button>
                 </nav>
               </div>
