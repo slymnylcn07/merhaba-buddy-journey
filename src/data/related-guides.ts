@@ -6,6 +6,21 @@ const STOP_WORDS = new Set([
   "2026", "step", "best",
 ]);
 
+const PRIORITY_RELATED: Record<string, string[]> = {
+  "best-supplements-for-knee-pain": [
+    "glucosamine-chondroitin-knee-pain",
+  ],
+  "knee-pain-after-40": [
+    "menopause-knee-pain",
+  ],
+  "red-light-therapy-for-knees": [
+    "red-light-therapy-dose-knees",
+  ],
+  "knee-pain-after-exercise": [
+    "pickleball-knee-recovery-routine",
+  ],
+};
+
 function tokensOf(guide: GuideData): Set<string> {
   const raw = [
     ...guide.slug.split("-"),
@@ -18,9 +33,14 @@ export function getRelatedGuides(currentSlug: string, guides: GuideData[], limit
   const current = guides.find((guide) => guide.slug === currentSlug);
   if (!current) return guides.filter((guide) => guide.slug !== currentSlug).slice(0, limit);
 
+  const priorityGuides = (PRIORITY_RELATED[currentSlug] || [])
+    .map((slug) => guides.find((guide) => guide.slug === slug))
+    .filter((guide): guide is GuideData => Boolean(guide));
+
+  const prioritySlugs = new Set(priorityGuides.map((guide) => guide.slug));
   const currentTokens = tokensOf(current);
   const ranked = guides
-    .filter((guide) => guide.slug !== currentSlug)
+    .filter((guide) => guide.slug !== currentSlug && !prioritySlugs.has(guide.slug))
     .map((guide) => {
       let score = 0;
       tokensOf(guide).forEach((token) => {
@@ -30,6 +50,14 @@ export function getRelatedGuides(currentSlug: string, guides: GuideData[], limit
     })
     .sort((left, right) => right.score - left.score || left.guide.title.localeCompare(right.guide.title));
 
-  const matches = ranked.filter(({ score }) => score > 0).slice(0, limit).map(({ guide }) => guide);
-  return matches.length ? matches : ranked.slice(0, limit).map(({ guide }) => guide);
+  const rankedMatches = ranked
+    .filter(({ score }) => score > 0)
+    .map(({ guide }) => guide);
+
+  const fallbackGuides = ranked.map(({ guide }) => guide);
+  const combined = [...priorityGuides, ...rankedMatches, ...fallbackGuides];
+
+  return combined
+    .filter((guide, index, all) => all.findIndex((item) => item.slug === guide.slug) === index)
+    .slice(0, limit);
 }
