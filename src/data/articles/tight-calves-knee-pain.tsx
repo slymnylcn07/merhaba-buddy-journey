@@ -41,7 +41,7 @@ export const tightCalvesKneePain: ArticleExport = {
       {
         question: "Are tight calves linked to plantar fasciitis?",
         answer:
-          "Yes, this is one of the better established links in foot and ankle care. The calf connects to the heel through the Achilles tendon, and limited ankle motion increases strain through the plantar fascia under the foot. Many plantar fasciitis programmes include calf stretching for exactly this reason. If you have both heel pain and knee pain, the calf is a sensible place to start, and if your arches also flatten under load then <Link to="/guides/flat-feet-overpronation-knee-pain">flat feet and overpronation</Link> may be adding to the same strain from below."
+          "Yes, this is one of the better established links in foot and ankle care. The calf connects to the heel through the Achilles tendon, and limited ankle motion increases strain through the plantar fascia under the foot. Many plantar fasciitis programmes include calf stretching for exactly this reason. If you have both heel pain and knee pain, the calf is a sensible place to start. If your arches also flatten under load, that can add to the same strain from below."
       },
       {
         question: "How long should I hold a calf stretch?",
@@ -169,7 +169,7 @@ export const tightCalvesKneePain: ArticleExport = {
           The calf muscles converge into the Achilles tendon, which attaches to the heel bone. On the underside of the foot, the plantar fascia runs forward from that same heel bone toward the toes. Tension travels across this junction, which is why calf tightness, Achilles discomfort and plantar heel pain so often turn up together.
         </p>
         <p>
-          The practical implication is helpful rather than alarming. If you have knee discomfort and morning heel pain and tight calves, you are not necessarily dealing with three problems. You may be dealing with one restriction producing three symptoms, and the calf is the most accessible place to intervene. It also means that fixing calf length can improve more than the knee, which makes the effort easier to sustain.
+          The practical implication is helpful rather than alarming. If you have knee discomfort and morning heel pain and tight calves, you are not necessarily dealing with three problems. You may be dealing with one restriction producing three symptoms, and the calf is the most accessible place to intervene. If your arches also flatten noticeably when you stand, the same region is being loaded from underneath as well, which our guide on <Link to="/guides/flat-feet-overpronation-knee-pain">flat feet, overpronation and knee pain</Link> covers in detail. It also means that fixing calf length can improve more than the knee, which makes the effort easier to sustain.
         </p>
 
         <h2>Test Before You Stretch</h2>
