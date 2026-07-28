@@ -190,7 +190,7 @@ export const whyKneePainGetsWorseWithAge: ArticleExport = {
 
         <h3>Apply Warmth to Stiff Joints</h3>
         <p>
-          Warmth increases blood flow, helps synovial fluid distribute more evenly, and relaxes tight muscles around the joint. Applying warmth before activity can help your knees transition from rest to movement more comfortably. This is especially helpful for people who experience significant <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">stiffness after resting</Link>.
+          Warmth increases blood flow, helps synovial fluid distribute more evenly, and relaxes tight muscles around the joint. Applying warmth before activity can help your knees transition from rest to movement more comfortably. This is especially helpful for people who experience significant <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">stiffness after resting</Link>.
         </p>
 
         <h3>Maintain a Healthy Weight</h3>

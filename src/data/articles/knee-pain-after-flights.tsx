@@ -173,7 +173,7 @@ const article = {
         The synovial fluid within the joint needs movement to redistribute across the cartilage surfaces. The muscles around the knee need to re-engage after hours of inactivity. Blood flow needs to readjust from the pooled state to the active pumping pattern of walking. All of these transitions take a few minutes, which is why the first 50-100 steps after landing often feel the stiffest.
       </p>
       <p>
-        This experience is similar to what people notice with <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link>, but the duration and confined nature of air travel can make it more pronounced. Most people find that the stiffness gradually improves as they walk through the airport and resume normal movement patterns.
+        This experience is similar to what people notice with <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link>, but the duration and confined nature of air travel can make it more pronounced. Most people find that the stiffness gradually improves as they walk through the airport and resume normal movement patterns.
       </p>
 
       <InfoBox title="The First 10 Minutes After Landing">

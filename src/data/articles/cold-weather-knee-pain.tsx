@@ -118,7 +118,7 @@ const articleContent = (
       At the same time, the quadriceps, hamstrings, and calf muscles that support your knee all tighten in response to cold. This muscle contraction reduces your range of motion and makes bending and straightening your knee feel more effortful. The combination of thicker fluid and tighter muscles is what creates that characteristic "cold morning stiffness" that can last until your body warms up.
     </p>
     <p>
-      For a deeper look at how <Link to="/guides/knees-hurt-after-resting">inactivity and rest affect knee stiffness</Link>, check our dedicated guide, the mechanisms overlap with cold-weather patterns.
+      For a deeper look at how <Link to="/guides/knee-pain-getting-up-after-sitting">inactivity and rest affect knee stiffness</Link>, check our dedicated guide, the mechanisms overlap with cold-weather patterns.
     </p>
 
     <h2>Why Knees Ache More in Damp or Rainy Weather</h2>

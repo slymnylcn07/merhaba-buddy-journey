@@ -317,7 +317,7 @@ export const suddenKneePainGuide: ArticleExport = {
 
         <h3>Sudden Pain After Inactivity</h3>
         <p>
-          Pain or stiffness on the first movements after sitting can occur with osteoarthritis and other load-sensitive knee conditions. If it eases with gentle motion and there are no warning signs, note how long it takes to settle and whether the pattern is changing. A knee that is physically locked, badly swollen, hot, or unable to bear weight is not a routine first-step pattern. This is explored further in our <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting guide</Link>.
+          Pain or stiffness on the first movements after sitting can occur with osteoarthritis and other load-sensitive knee conditions. If it eases with gentle motion and there are no warning signs, note how long it takes to settle and whether the pattern is changing. A knee that is physically locked, badly swollen, hot, or unable to bear weight is not a routine first-step pattern. This is explored further in our <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting guide</Link>.
         </p>
 
         <h2>When Sudden Knee Pain Is Normal vs. When to Pay Attention</h2>

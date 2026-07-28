@@ -317,7 +317,7 @@ const kneePainDuringYoga: ArticleExport = {
 
         <h3>Focus on Gradual Flexibility</h3>
         <p>
-          Flexibility is a long-term adaptation. Consistent, gentle practice over weeks and months produces far better results, and far less injury risk, than aggressive stretching in a single session. Your knees will thank you for patience. Learn more about gradual approaches in our <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting guide</Link>.
+          Flexibility is a long-term adaptation. Consistent, gentle practice over weeks and months produces far better results, and far less injury risk, than aggressive stretching in a single session. Your knees will thank you for patience. Learn more about gradual approaches in our <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting guide</Link>.
         </p>
 
         <TipsList tips={[

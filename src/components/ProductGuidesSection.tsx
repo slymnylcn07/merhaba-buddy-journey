@@ -11,7 +11,6 @@ import thumbItBandDiagram from "@/assets/guide-thumb-it-band-diagram.jpg";
 import thumbNightKneePain from "@/assets/guide-thumb-night-knee-pain-v3.jpg";
 import thumbKneeCrackingCrepitus from "@/assets/guide-thumb-knee-cracking-crepitus.jpg";
 import thumbKneePainSittingCrossLegged from "@/assets/guide-thumb-knee-pain-sitting-cross-legged.jpg";
-import thumbKneeStiffnessResting from "@/assets/guide-thumb-knee-stiffness-resting.jpg";
 import thumbKneePainStanding from "@/assets/guide-thumb-knee-pain-standing.jpg";
 import thumbBestRedLightKnee from "@/assets/guide-thumb-best-red-light-knee.jpg";
 import thumbKneeExercises from "@/assets/guide-thumb-knee-exercises.jpg";
@@ -26,7 +25,6 @@ import thumbSuddenKneePain from "@/assets/guide-thumb-sudden-knee-pain.jpg";
 import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40-v2.jpg";
 import thumbHomeRemediesKneePain from "@/assets/guide-thumb-home-remedies-knee-pain-v2.jpg";
 import thumbKneeClickingWalking from "@/assets/guide-thumb-knee-clicking-walking.jpg";
-import thumbKneesHurtAfterResting from "@/assets/guide-thumb-knees-hurt-after-resting.jpg";
 import thumbColdWeatherKneePain from "@/assets/guide-thumb-cold-weather-knee-pain.jpg";
 import thumbKneePainAfterExercise from "@/assets/guide-thumb-knee-pain-after-exercise.jpg";
 import thumbKneePainClimbingStairs from "@/assets/guide-thumb-knee-pain-climbing-stairs.jpg";
@@ -39,7 +37,6 @@ import thumbBurningKneeSensation from "@/assets/guide-thumb-burning-knee-sensati
 import thumbKneeWeaknessNoPain from "@/assets/guide-thumb-knee-weakness-no-pain.jpg";
 import thumbPlicaSyndrome from "@/assets/guide-thumb-plica-syndrome.jpg";
 import thumbKneeBursitis from "@/assets/guide-thumb-knee-bursitis.jpg";
-import thumbPFPS from "@/assets/guide-thumb-pfps.jpg";
 import thumbKneePainCarRides from "@/assets/guide-thumb-knee-pain-car-rides.jpg";
 import thumbWarmFeelingKnee from "@/assets/guide-thumb-warm-feeling-knee.jpg";
 import thumbHeavyKnees from "@/assets/guide-thumb-heavy-knees.jpg";
@@ -63,7 +60,6 @@ const thumbnailMap: Record<string, string> = {
   "why-do-my-knees-hurt-when-sleeping": thumbNightKneePain,
   "why-do-my-knees-crack-or-pop": thumbKneeCrackingCrepitus,
   "knee-pain-after-sitting-cross-legged": thumbKneePainSittingCrossLegged,
-  "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
   "knee-pain-after-standing": thumbKneePainStanding,
   "best-red-light-therapy-knee": thumbBestRedLightKnee,
   "knee-pain-exercises-guide": thumbKneeExercises,
@@ -77,7 +73,6 @@ const thumbnailMap: Record<string, string> = {
   "sudden-knee-pain-guide": thumbSuddenKneePain,
   "knee-pain-at-night-after-40": thumbNightKneePain40,
   "knee-clicking-when-walking": thumbKneeClickingWalking,
-  "knees-hurt-after-resting": thumbKneesHurtAfterResting,
   "cold-weather-knee-pain": thumbColdWeatherKneePain,
   "knee-pain-after-exercise": thumbKneePainAfterExercise,
   "knee-pain-climbing-stairs": thumbKneePainClimbingStairs,
@@ -90,7 +85,6 @@ const thumbnailMap: Record<string, string> = {
   "knee-weakness-without-pain": thumbKneeWeaknessNoPain,
   "plica-syndrome-knee-pain": thumbPlicaSyndrome,
   "knee-bursitis-guide": thumbKneeBursitis,
-  "patellofemoral-pain-syndrome": thumbPFPS,
   "knee-pain-after-car-rides": thumbKneePainCarRides,
   "warm-feeling-in-knee": thumbWarmFeelingKnee,
   "heavy-feeling-in-knees": thumbHeavyKnees,

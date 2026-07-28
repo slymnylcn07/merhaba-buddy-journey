@@ -54,7 +54,6 @@ import thumbSharpStabbingComfort from "@/assets/guide-thumb-sharp-stabbing-comfo
 import thumbSmartMassagersBreakdown from "@/assets/guide-thumb-smart-massagers-breakdown-new.jpg";
 import thumbKneePainLocations from "@/assets/guide-thumb-knee-pain-locations.jpg";
 import thumbRunnersKneeLocation from "@/assets/guide-thumb-runners-knee-location.jpg";
-import thumbKneeStiffnessResting from "@/assets/guide-thumb-knee-stiffness-resting.jpg";
 import thumbKneePainStanding from "@/assets/guide-thumb-knee-pain-standing.jpg";
 import thumbKneeExercises from "@/assets/guide-thumb-knee-exercises.jpg";
 import thumbCauseKneePainNew from "@/assets/guide-thumb-cause-knee-pain-new.jpg";
@@ -65,7 +64,6 @@ import thumbKneePainLongWalks from "@/assets/guide-thumb-knee-pain-long-walks.jp
 import thumbKneeMobilityAfter50 from "@/assets/guide-thumb-knee-mobility-after-50.jpg";
 import thumbNightKneePain40 from "@/assets/guide-thumb-night-knee-pain-40-v2.jpg";
 import thumbKneeClickingWalking from "@/assets/guide-thumb-knee-clicking-walking.jpg";
-import thumbKneesHurtAfterResting from "@/assets/guide-thumb-knees-hurt-after-resting.jpg";
 import thumbColdWeatherKneePain from "@/assets/guide-thumb-cold-weather-knee-pain.jpg";
 import thumbKneePainAfterExercise from "@/assets/guide-thumb-knee-pain-after-exercise.jpg";
 import thumbKneePainClimbingStairs from "@/assets/guide-thumb-knee-pain-climbing-stairs.jpg";
@@ -87,7 +85,6 @@ import thumbBatch3WeightAffectsKneePain from "@/assets/guide-thumbnails/batch-3/
 import thumbBatch3KneeWeaknessWithoutPain from "@/assets/guide-thumbnails/batch-3/knee-weakness-without-pain.webp";
 import thumbBatch3PlicaSyndromeKneePain from "@/assets/guide-thumbnails/batch-3/plica-syndrome-knee-pain.webp";
 import thumbBatch3KneeBursitisGuide from "@/assets/guide-thumbnails/batch-3/knee-bursitis-guide.webp";
-import thumbBatch3PatellofemoralPainSyndrome from "@/assets/guide-thumbnails/batch-3/patellofemoral-pain-syndrome.webp";
 import thumbBatch3WarmFeelingInKnee from "@/assets/guide-thumbnails/batch-3/warm-feeling-in-knee.webp";
 import thumbBatch1WhyKneePainDoesntGoAway from "@/assets/guide-thumbnails/batch-1/why-knee-pain-doesnt-go-away.webp";
 import thumbBatch1WhyKneePainDoesntGoAwayAvif from "@/assets/guide-thumbnails/batch-1/why-knee-pain-doesnt-go-away.avif";
@@ -199,7 +196,6 @@ const thumbnailMap: Record<string, string> = {
   "why-do-my-knees-hurt-when-sleeping": thumbBatch1WhyKneesHurtWhenSleeping,
   "why-do-my-knees-crack-or-pop": thumbBatch2WhyDoMyKneesCrackOrPop,
   "knee-pain-after-sitting-cross-legged": thumbBatch2KneePainAfterSittingCrossLegged,
-  "why-do-my-knees-feel-tight-after-resting": thumbKneeStiffnessResting,
   "knee-pain-after-standing": thumbKneePainStanding,
   "best-red-light-therapy-knee": thumbBatch2BestRedLightTherapyKnee,
   "knee-pain-exercises-guide": thumbKneeExercises,
@@ -213,7 +209,6 @@ const thumbnailMap: Record<string, string> = {
   "sudden-knee-pain-guide": thumbBatch2SuddenKneePainGuide,
   "knee-pain-at-night-after-40": thumbNightKneePain40,
   "knee-clicking-when-walking": thumbKneeClickingWalking,
-  "knees-hurt-after-resting": thumbKneesHurtAfterResting,
   "cold-weather-knee-pain": thumbColdWeatherKneePain,
   "knee-pain-after-exercise": thumbKneePainAfterExercise,
   "burning-knees-after-exercise": thumbBatch1BurningKneesAfterExercise,
@@ -232,7 +227,6 @@ const thumbnailMap: Record<string, string> = {
   "knee-weakness-without-pain": thumbBatch3KneeWeaknessWithoutPain,
   "plica-syndrome-knee-pain": thumbBatch3PlicaSyndromeKneePain,
   "knee-bursitis-guide": thumbBatch3KneeBursitisGuide,
-  "patellofemoral-pain-syndrome": thumbBatch3PatellofemoralPainSyndrome,
   "knee-pain-after-car-rides": thumbKneePainCarRides,
   "warm-feeling-in-knee": thumbBatch3WarmFeelingInKnee,
   "heavy-feeling-in-knees": thumbHeavyKnees,
@@ -398,18 +392,17 @@ const activitySlugs = [
   "why-do-my-knees-crack-or-pop",
   "knee-clicking-when-walking",
   "knee-pain-after-sitting-cross-legged",
-  "why-do-my-knees-feel-tight-after-resting",
+  "knee-pain-getting-up-after-sitting",
+  "knee-tightness-without-pain",
   "knee-pain-after-standing",
   "knee-pain-exercises-guide",
   "what-causes-knee-pain-guide",
-  "knees-hurt-after-resting",
   "cold-weather-knee-pain",
   "knee-pain-after-exercise",
   "knee-pain-when-squatting",
   "knee-weakness-without-pain",
   "plica-syndrome-knee-pain",
   "knee-bursitis-guide",
-  "patellofemoral-pain-syndrome",
   "knee-pain-after-car-rides",
   "warm-feeling-in-knee",
   "heavy-feeling-in-knees",

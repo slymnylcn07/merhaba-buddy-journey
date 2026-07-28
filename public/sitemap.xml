@@ -6,21 +6,6 @@
     <priority>1</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/shop</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/knee-quiz</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://flexi-knee.com/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -31,55 +16,18 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/why-flexiknee</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/product/knee-massager-smart-red-light-and-massage-therapy</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://flexi-knee.com/foundation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/privacy-policy</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://flexi-knee.com/guides</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/terms-of-service</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/refund-policy</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/shipping-policy</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/why-knee-pain-doesnt-go-away</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/heat-vs-red-light-therapy</loc>
-    <lastmod>2025-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/who-benefits-from-knee-therapy-devices</loc>
-    <lastmod>2025-05-22</lastmod>
+    <loc>https://flexi-knee.com/guides/air-compression-leg-massagers-do-they-work</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -90,38 +38,20 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/side-knee-pain-comfort-guide</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://flexi-knee.com/guides/backward-walking-knee-pain</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/running-knee-pain-guide</loc>
-    <lastmod>2026-03-18</lastmod>
+    <loc>https://flexi-knee.com/guides/below-knee-discomfort-teens-adults</loc>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/knee-arthritis-pain-guide</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/sharp-knee-pain-guide</loc>
-    <lastmod>2026-03-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/how-to-strengthen-knees</loc>
-    <lastmod>2025-12-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/understanding-knee-injuries</loc>
-    <lastmod>2026-04-02</lastmod>
+    <loc>https://flexi-knee.com/guides/best-heated-knee-massager-arthritis</loc>
+    <lastmod>2026-02-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -132,56 +62,20 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/red-light-therapy-for-knees</loc>
-    <lastmod>2026-01-19</lastmod>
+    <loc>https://flexi-knee.com/guides/best-insoles-for-knee-pain-2026</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/daily-knee-care-routine</loc>
-    <lastmod>2026-01-19</lastmod>
+    <loc>https://flexi-knee.com/guides/best-low-impact-cardio-knee-pain</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/heat-vs-ice-for-knees</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/do-knee-massagers-work</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/is-infrared-safe-for-knees</loc>
-    <lastmod>2026-01-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/warmth-vs-infrared-knee-routines</loc>
-    <lastmod>2026-01-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/how-to-fix-knee-pain</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/women-men-knee-comfort-patterns</loc>
-    <lastmod>2026-01-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/top-of-knee-pain-patterns</loc>
-    <lastmod>2026-01-19</lastmod>
+    <loc>https://flexi-knee.com/guides/best-red-light-therapy-knee</loc>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -192,20 +86,68 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/front-knee-tightness-after-activity</loc>
-    <lastmod>2026-01-20</lastmod>
+    <loc>https://flexi-knee.com/guides/best-supplements-for-knee-pain</loc>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/knee-discomfort-lower-back-hips</loc>
-    <lastmod>2026-01-20</lastmod>
+    <loc>https://flexi-knee.com/guides/burning-knees-after-exercise</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/below-knee-discomfort-teens-adults</loc>
-    <lastmod>2026-01-20</lastmod>
+    <loc>https://flexi-knee.com/guides/burning-sensation-in-knee</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/cold-weather-knee-pain</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/collagen-peptides-knee-pain</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/cordless-rechargeable-heated-knee-massagers-2026</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/cycling-knee-pain-bike-fit</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/daily-knee-care-routine</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/do-knee-massagers-work</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/exercises-to-relieve-knee-pain-at-home</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/flat-feet-overpronation-knee-pain</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -222,14 +164,14 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/best-heated-knee-massager-arthritis</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://flexi-knee.com/guides/front-knee-tightness-after-activity</loc>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/smart-heated-knee-braces-2026</loc>
-    <lastmod>2026-07-13</lastmod>
+    <loc>https://flexi-knee.com/guides/glucosamine-chondroitin-knee-pain</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -240,19 +182,49 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/sharp-knee-pain-causes-relief</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://flexi-knee.com/guides/heat-vs-ice-for-knees</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/heat-vs-red-light-therapy</loc>
+    <lastmod>2025-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/heavy-feeling-in-knees</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/home-remedies-knee-pain</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/how-to-fix-knee-pain</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/how-to-sleep-with-knee-pain</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/how-to-strengthen-knees</loc>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flexi-knee.com/guides/infrared-knee-massager-guide-2026</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/sharp-stabbing-knee-pain-comfort</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -270,26 +242,14 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/smart-knee-massagers-breakdown</loc>
-    <lastmod>2026-02-25</lastmod>
+    <loc>https://flexi-knee.com/guides/is-infrared-safe-for-knees</loc>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/knee-warmth-daily-comfort</loc>
-    <lastmod>2026-02-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-pain-locations-visual-guide</loc>
-    <lastmod>2026-03-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/runners-knee-pain-location</loc>
-    <lastmod>2026-02-25</lastmod>
+    <loc>https://flexi-knee.com/guides/it-band-foam-rolling-step-by-step</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -300,182 +260,20 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/why-do-my-knees-hurt-when-sleeping</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://flexi-knee.com/guides/knee-ache-after-leg-workouts</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/why-do-my-knees-crack-or-pop</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://flexi-knee.com/guides/knee-arthritis-pain-guide</loc>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/knee-pain-after-sitting-cross-legged</loc>
-    <lastmod>2026-02-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/why-do-my-knees-feel-tight-after-resting</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-pain-after-standing</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/best-red-light-therapy-knee</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-pain-exercises-guide</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/what-causes-knee-pain-guide</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-pain-after-40</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/why-knee-pain-gets-worse-with-age</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/morning-knee-stiffness-after-40</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-pain-getting-up-after-sitting</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-pain-after-long-walks</loc>
-    <lastmod>2026-03-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-mobility-after-50</loc>
-    <lastmod>2026-03-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/sudden-knee-pain-guide</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-pain-at-night-after-40</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-clicking-when-walking</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knees-hurt-after-resting</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/cold-weather-knee-pain</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/best-supplements-for-knee-pain</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-pain-after-exercise</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-pain-climbing-stairs</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-pain-going-down-stairs</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-pain-when-squatting</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-pain-during-yoga</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-pain-when-hiking</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-tightness-without-pain</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/burning-sensation-in-knee</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-weakness-without-pain</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/plica-syndrome-knee-pain</loc>
-    <lastmod>2026-03-08</lastmod>
+    <loc>https://flexi-knee.com/guides/knee-brace-vs-compression-sleeve</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -486,8 +284,38 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/patellofemoral-pain-syndrome</loc>
-    <lastmod>2026-03-08</lastmod>
+    <loc>https://flexi-knee.com/guides/knee-clicking-when-walking</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-compression-sleeve-sizing-guide</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-discomfort-lower-back-hips</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-mobility-after-50</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-osteoarthritis-vs-rheumatoid-arthritis</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-pain-after-40</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -498,13 +326,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/warm-feeling-in-knee</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/heavy-feeling-in-knees</loc>
+    <loc>https://flexi-knee.com/guides/knee-pain-after-exercise</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -516,98 +338,110 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flexi-knee.com/guides/knee-pain-after-long-walks</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-pain-after-sitting-cross-legged</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-pain-after-standing</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-pain-at-night-after-40</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-pain-climbing-stairs</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-pain-during-yoga</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-pain-exercises-guide</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-pain-getting-up-after-sitting</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-pain-going-down-stairs</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-pain-locations-visual-guide</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/knee-pain-when-hiking</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flexi-knee.com/guides/knee-pain-when-kneeling</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/pain-behind-kneecap</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/exercises-to-relieve-knee-pain-at-home</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-swelling-after-exercise</loc>
-    <lastmod>2026-03-13</lastmod>
+    <loc>https://flexi-knee.com/guides/knee-pain-when-squatting</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://flexi-knee.com/guides/knee-recovery-exercises-after-workout</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/knee-ache-after-leg-workouts</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://flexi-knee.com/guides/knee-swelling-after-exercise</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/burning-knees-after-exercise</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://flexi-knee.com/guides/knee-tightness-without-pain</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/home-remedies-knee-pain</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://flexi-knee.com/guides/knee-warmth-daily-comfort</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/weight-affects-knee-pain</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/cordless-rechargeable-heated-knee-massagers-2026</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/best-insoles-for-knee-pain-2026</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/it-band-foam-rolling-step-by-step</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/how-to-sleep-with-knee-pain</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/air-compression-leg-massagers-do-they-work</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/knee-compression-sleeve-sizing-guide</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/guides/glucosamine-chondroitin-knee-pain</loc>
-    <lastmod>2026-07-18</lastmod>
+    <loc>https://flexi-knee.com/guides/knee-weakness-without-pain</loc>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -618,8 +452,14 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/guides/red-light-therapy-dose-knees</loc>
-    <lastmod>2026-07-18</lastmod>
+    <loc>https://flexi-knee.com/guides/morning-knee-stiffness-after-40</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/pain-behind-kneecap</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -630,9 +470,176 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/product/flexiknee-compression-support-sleeve</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://flexi-knee.com/guides/plica-syndrome-knee-pain</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/red-light-therapy-dose-knees</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/red-light-therapy-for-knees</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/runners-knee-pain-location</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/running-knee-pain-guide</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/sharp-knee-pain-causes-relief</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/sharp-knee-pain-guide</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/sharp-stabbing-knee-pain-comfort</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/side-knee-pain-comfort-guide</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/smart-heated-knee-braces-2026</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/smart-knee-massagers-breakdown</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/sudden-knee-pain-guide</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/tight-calves-knee-pain</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/top-of-knee-pain-patterns</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/turmeric-curcumin-knee-pain</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/understanding-knee-injuries</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/varicose-veins-knee-pain</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/warm-feeling-in-knee</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/warmth-vs-infrared-knee-routines</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/weight-affects-knee-pain</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/what-causes-knee-pain-guide</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/who-benefits-from-knee-therapy-devices</loc>
+    <lastmod>2025-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/why-do-my-knees-crack-or-pop</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/why-do-my-knees-hurt-when-sleeping</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/why-knee-pain-doesnt-go-away</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/why-knee-pain-gets-worse-with-age</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/guides/women-men-knee-comfort-patterns</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/knee-quiz</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://flexi-knee.com/product/360-electric-calf-massager-rechargeable-3-modes-air-compression-leg-massager-hot-compress-leg-massage-blood-circulation</loc>
@@ -645,8 +652,43 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://flexi-knee.com/product/flexiknee-compression-support-sleeve</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/product/knee-massager-smart-red-light-and-massage-therapy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://flexi-knee.com/product/sport-orthopedic-insoles-for-feet-men-women-eva-breathable-shock-absorption-shoes-insole-for-running-basketball-sport-care-pads</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/refund-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/shipping-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/shop</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/terms-of-service</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/why-flexiknee</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

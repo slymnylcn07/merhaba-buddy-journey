@@ -321,7 +321,42 @@
     },
     {
       "source": "/guides/knee-stiffness-after-resting",
-      "destination": "/guides/why-do-my-knees-feel-tight-after-resting",
+      "destination": "/guides/knee-pain-getting-up-after-sitting",
+      "permanent": true
+    },
+    {
+      "source": "/guides/why-do-my-knees-feel-tight-after-resting",
+      "destination": "/guides/knee-pain-getting-up-after-sitting",
+      "permanent": true
+    },
+    {
+      "source": "/guides/knees-hurt-after-resting",
+      "destination": "/guides/knee-pain-getting-up-after-sitting",
+      "permanent": true
+    },
+    {
+      "source": "/knee-stiffness-after-resting",
+      "destination": "/guides/knee-pain-getting-up-after-sitting",
+      "permanent": true
+    },
+    {
+      "source": "/why-do-my-knees-feel-tight-after-resting",
+      "destination": "/guides/knee-pain-getting-up-after-sitting",
+      "permanent": true
+    },
+    {
+      "source": "/knees-hurt-after-resting",
+      "destination": "/guides/knee-pain-getting-up-after-sitting",
+      "permanent": true
+    },
+    {
+      "source": "/guides/patellofemoral-pain-syndrome",
+      "destination": "/guides/pain-behind-kneecap",
+      "permanent": true
+    },
+    {
+      "source": "/patellofemoral-pain-syndrome",
+      "destination": "/guides/pain-behind-kneecap",
       "permanent": true
     },
     {

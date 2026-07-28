@@ -176,7 +176,7 @@ export const burningKneeSensation: ArticleExport = {
           Front-of-knee burning is often reported with repeated bending, stairs, squats, kneeling, or sitting for a long time with the knee flexed. These situations increase pressure around the kneecap and can irritate sensitive tissues at the front of the joint. The sensation may be broad around the patella or more focused just above or below it.
         </p>
         <p>
-          Pain and stiffness around the kneecap that are linked to running, stairs, squatting, or prolonged sitting can fit a patellofemoral pattern, but a symptom description cannot confirm that diagnosis. Compare the pattern with our <Link to="/guides/patellofemoral-pain-syndrome">patellofemoral pain syndrome guide</Link> and the more location-specific guide to <Link to="/guides/pain-behind-kneecap">pain behind the kneecap</Link>. Burning caused by direct pressure while gardening or working on the floor may be better matched to <Link to="/guides/knee-pain-when-kneeling">knee pain when kneeling</Link>.
+          Pain and stiffness around the kneecap that are linked to running, stairs, squatting, or prolonged sitting can fit a patellofemoral pattern, but a symptom description cannot confirm that diagnosis. Compare the pattern with our <Link to="/guides/pain-behind-kneecap">patellofemoral pain syndrome guide</Link> and the more location-specific guide to <Link to="/guides/pain-behind-kneecap">pain behind the kneecap</Link>. Burning caused by direct pressure while gardening or working on the floor may be better matched to <Link to="/guides/knee-pain-when-kneeling">knee pain when kneeling</Link>.
         </p>
 
         <figure className="my-8">
@@ -210,7 +210,7 @@ export const burningKneeSensation: ArticleExport = {
 
         <h2>Burning When Sitting, Resting, or at Night</h2>
         <p>
-          Long periods with the knee bent can increase pressure around the kneecap and make a sensitive joint more noticeable when you first stand. A symptom that settles after a few minutes of easy movement may behave more like a pressure or stiffness pattern. Our guide to <Link to="/guides/why-do-my-knees-feel-tight-after-resting">knees that feel tight after resting</Link> covers that transition in more detail.
+          Long periods with the knee bent can increase pressure around the kneecap and make a sensitive joint more noticeable when you first stand. A symptom that settles after a few minutes of easy movement may behave more like a pressure or stiffness pattern. Our guide to <Link to="/guides/knee-pain-getting-up-after-sitting">knees that feel tight after resting</Link> covers that transition in more detail.
         </p>
         <p>
           Burning that continues at rest, wakes you repeatedly, follows a strip of skin, or arrives with tingling, numbness, unusual sensitivity to clothing, or weakness is more suggestive of a sensory nerve component. Nerve symptoms may originate near the knee or farther up the leg or spine. Persistent or progressive symptoms need clinical evaluation rather than a stronger stretching routine.

@@ -125,7 +125,7 @@ export const kneePainAfter40: ArticleExport = {
         />
 
         <p>
-          For a deeper exploration of this topic, see our guide on <a href="/guides/knee-pain-after-sitting-cross-legged">knee pain after sitting</a> and <a href="/guides/why-do-my-knees-feel-tight-after-resting">why knees feel tight after resting</a>.
+          For a deeper exploration of this topic, see our guide on <a href="/guides/knee-pain-after-sitting-cross-legged">knee pain after sitting</a> and <a href="/guides/knee-pain-getting-up-after-sitting">why knees feel tight after resting</a>.
         </p>
 
         <h2>Morning Stiffness Patterns After 40</h2>

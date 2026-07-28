@@ -94,7 +94,7 @@ export const kneePainAfterCarRides: ArticleExport = {
 
         <h3>Reduced Circulation</h3>
         <p>
-           Prolonged sitting compresses the blood vessels behind the knee and in the thigh, reducing blood flow to the muscles, tendons, and joint structures around the knee. This <strong>reduced circulation knee joint</strong> pattern means that the tissues receive less oxygen and nutrients while metabolic waste products accumulate, contributing to sensations of heaviness and discomfort. This same heaviness pattern is something many people recognize from other situations as well, as explored in our guide on <Link to="/guides/heavy-feeling-in-knees" className="text-primary hover:underline">why knees feel heavy</Link>. If you have noticed similar patterns in other situations, our guide on <Link to="/guides/knees-hurt-after-resting" className="text-primary hover:underline">why knees hurt after resting</Link> explores this further.
+           Prolonged sitting compresses the blood vessels behind the knee and in the thigh, reducing blood flow to the muscles, tendons, and joint structures around the knee. This <strong>reduced circulation knee joint</strong> pattern means that the tissues receive less oxygen and nutrients while metabolic waste products accumulate, contributing to sensations of heaviness and discomfort. This same heaviness pattern is something many people recognize from other situations as well, as explored in our guide on <Link to="/guides/heavy-feeling-in-knees" className="text-primary hover:underline">why knees feel heavy</Link>. If you have noticed similar patterns in other situations, our guide on <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">why knees hurt after resting</Link> explores this further.
         </p>
 
         <h3>Joint Compression</h3>
@@ -127,7 +127,7 @@ export const kneePainAfterCarRides: ArticleExport = {
 
         <h3>Muscle Inactivity</h3>
         <p>
-          The muscles surrounding the knee, including the quadriceps, hamstrings, and calf muscles, become essentially dormant during prolonged sitting. Without regular contractions, these muscles lose their readiness for immediate activity. When you stand after a long drive, the muscles need time to "wake up" and regain their full function, which contributes to the sensation of weakness or unsteadiness. For more on this pattern, see our guide on <Link to="/guides/knees-hurt-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link>.
+          The muscles surrounding the knee, including the quadriceps, hamstrings, and calf muscles, become essentially dormant during prolonged sitting. Without regular contractions, these muscles lose their readiness for immediate activity. When you stand after a long drive, the muscles need time to "wake up" and regain their full function, which contributes to the sensation of weakness or unsteadiness. For more on this pattern, see our guide on <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link>.
         </p>
 
         <h3>Joint Fluid Circulation Slowing Down</h3>

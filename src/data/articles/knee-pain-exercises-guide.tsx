@@ -172,7 +172,7 @@ const article: ArticleData = {
 
       <h2>Mobility Exercises for Knee Pain</h2>
       <p>
-        Strength alone isn't enough — <strong>knee mobility exercises</strong> help maintain and improve range of motion, which is essential for comfortable daily movement. These exercises are particularly helpful for people who experience <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link>.
+        Strength alone isn't enough — <strong>knee mobility exercises</strong> help maintain and improve range of motion, which is essential for comfortable daily movement. These exercises are particularly helpful for people who experience <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link>.
       </p>
 
       <h3>6. Seated Knee Extensions</h3>

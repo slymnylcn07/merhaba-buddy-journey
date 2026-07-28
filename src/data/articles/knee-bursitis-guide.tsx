@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
-// nextSlug/nextTitle updated to chain to patellofemoral-pain-syndrome
+// nextSlug/nextTitle updated to chain to pain-behind-kneecap
 
 import heroImage from "@/assets/article-hero-knee-bursitis.jpg";
 import imgBursaAnatomy from "@/assets/article-bursa-anatomy.jpg";
@@ -58,8 +58,8 @@ export const kneeBursitisGuide: ArticleExport = {
     metaDescription: "Learn what knee bursitis is, common causes of bursa irritation, typical symptoms, and 40+ everyday strategies to support knee comfort. Clear educational guide for adults.",
     heroImage: heroImage,
     publishedDate: "March 8, 2026",
-    nextSlug: "patellofemoral-pain-syndrome",
-    nextTitle: "Patellofemoral Pain Syndrome: Symptoms & Everyday Relief",
+    nextSlug: "pain-behind-kneecap",
+    nextTitle: "Pain Behind the Kneecap: PFPS, Causes & What Helps",
     faqs: faqs,
     content: (
       <>
@@ -261,7 +261,7 @@ export const kneeBursitisGuide: ArticleExport = {
           <li><strong>Supportive movement patterns</strong>: Using proper form during exercises, maintaining good posture while standing, and being mindful of knee alignment during daily activities all contribute to reduced bursa stress.</li>
         </ul>
         <p>
-          For more on building a sustainable comfort routine, our guide on <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link> provides practical daily habit suggestions that complement bursitis management strategies.
+          For more on building a sustainable comfort routine, our guide on <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link> provides practical daily habit suggestions that complement bursitis management strategies.
         </p>
 
         <div className="my-8 rounded-xl overflow-hidden">
@@ -290,7 +290,7 @@ export const kneeBursitisGuide: ArticleExport = {
           <li><Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">Knee Pain When Squatting: Causes and Comfort Strategies</Link></li>
           <li><Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">Knee Pain When Climbing Stairs</Link></li>
           <li><Link to="/guides/knee-tightness-without-pain" className="text-primary hover:underline">Knee Tightness Without Pain: What It Means</Link></li>
-          <li><Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">Knee Stiffness After Resting</Link></li>
+          <li><Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">Knee Stiffness After Resting</Link></li>
           <li><Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">Knee Pain After Exercise</Link></li>
           <li><Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">Knee Pain Locations Visual Guide</Link></li>
           <li><Link to="/guides/sudden-knee-pain-guide" className="text-primary hover:underline">Sudden Knee Pain Guide</Link></li>

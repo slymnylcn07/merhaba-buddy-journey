@@ -388,7 +388,7 @@ export const kneeClickingWhenWalking = {
           The key distinction: if the stiffness and clicking resolve within the first 10-15 minutes of movement, it's likely a normal "warm-up" pattern. If stiffness persists throughout the day or worsens with activity, it may be worth exploring further.
         </p>
         <p>
-          Our guide on <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link> covers warm-up patterns and what they mean.
+          Our guide on <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link> covers warm-up patterns and what they mean.
         </p>
 
         {/* ── Section 8: Sudden Loud Pop vs Repetitive Clicking ── */}
