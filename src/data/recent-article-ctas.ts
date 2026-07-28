@@ -1,4 +1,20 @@
 export const recentArticleCTAs: Record<string, { headline: string; text: string }> = {
+  "collagen-peptides-knee-pain": {
+    headline: "Pair a measured supplement trial with a repeatable comfort routine",
+    text: "Collagen may take eight to twelve weeks to judge. FlexiKnee offers a separate short warmth, red-light, and gentle-vibration routine for day-to-day knee comfort while you track real changes in stairs, walking, and morning stiffness.",
+  },
+  "turmeric-curcumin-knee-pain": {
+    headline: "Looking for everyday support while you evaluate curcumin?",
+    text: "Use turmeric only as an optional supplement trial. FlexiKnee provides adjustable warmth, red light, and gentle vibration in a separate wireless knee-comfort routine.",
+  },
+  "varicose-veins-knee-pain": {
+    headline: "Has a clinician ruled out a vascular cause for your knee symptoms?",
+    text: "FlexiKnee is designed for everyday knee comfort, not varicose veins, venous insufficiency, or blood clots. Use heat, massage, vibration, or compression near symptomatic veins only after a clinician confirms it is appropriate.",
+  },
+  "knee-osteoarthritis-vs-rheumatoid-arthritis": {
+    headline: "Support comfort without confusing it with disease treatment",
+    text: "FlexiKnee combines adjustable warmth, red light, and gentle vibration for a short knee-comfort routine. It does not replace exercise, osteoarthritis care, rheumatology assessment, or disease-modifying treatment for rheumatoid arthritis.",
+  },
   "best-low-impact-cardio-knee-pain": {
     headline: "Want flexible support while building your cardio base?",
     text: "The FlexiKnee Compression Support Sleeve adds breathable compression and a supported feel for walking, cycling, and other controlled low-impact sessions.",

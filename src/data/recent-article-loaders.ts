@@ -9,6 +9,22 @@ const recentArticleLoaders: Record<string, () => Promise<ArticleData>> = {
     import("./articles/backward-walking-knee-pain").then(
       (module) => module.backwardWalkingKneePain.article,
     ),
+  "collagen-peptides-knee-pain": () =>
+    import("./articles/collagen-peptides-knee-pain").then(
+      (module) => module.collagenPeptidesKneePain.article,
+    ),
+  "turmeric-curcumin-knee-pain": () =>
+    import("./articles/turmeric-curcumin-knee-pain").then(
+      (module) => module.turmericCurcuminKneePain.article,
+    ),
+  "varicose-veins-knee-pain": () =>
+    import("./articles/varicose-veins-knee-pain").then(
+      (module) => module.varicoseVeinsKneePain.article,
+    ),
+  "knee-osteoarthritis-vs-rheumatoid-arthritis": () =>
+    import("./articles/knee-osteoarthritis-vs-rheumatoid-arthritis").then(
+      (module) => module.kneeOsteoarthritisVsRheumatoidArthritis.article,
+    ),
 };
 
 export const recentArticleLoaderSlugs = Object.freeze(Object.keys(recentArticleLoaders));
