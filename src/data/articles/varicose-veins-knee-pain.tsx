@@ -280,7 +280,7 @@ export const varicoseVeinsKneePain: ArticleExport = {
 
         <h2>Could the Pain Still Be Coming From the Knee?</h2>
         <p>
-          Yes. Osteoarthritis can coexist with varicose veins and may create stiffness after rest, pain with stairs, crepitus, and activity-related swelling. The article on <Link to="/guides/knees-hurt-after-resting" className={linkClass}>knees that hurt after resting</Link> describes the first-movement pattern typical of joint stiffness.
+          Yes. Osteoarthritis can coexist with varicose veins and may create stiffness after rest, pain with stairs, crepitus, and activity-related swelling. The article on <Link to="/guides/knee-pain-getting-up-after-sitting" className={linkClass}>knees that hurt after resting</Link> describes the first-movement pattern typical of joint stiffness.
         </p>
         <p>
           Tight calf muscles can pull directly on the back of the knee and limit ankle motion, altering gait. The <Link to="/guides/tight-calves-knee-pain" className={linkClass}>calf–ankle–knee connection</Link> is especially relevant when there is no visible swelling or vein tenderness and symptoms reproduce during stretching or walking.

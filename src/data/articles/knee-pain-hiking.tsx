@@ -335,7 +335,7 @@ const kneePainHiking: ArticleExport = {
         ]} />
 
         <p>
-          Knee pain during hiking is common, but it does not have to be inevitable. By understanding the specific demands that trails place on your knee joints and taking practical steps to prepare, protect, and recover, you can enjoy hiking with greater comfort and confidence. The key is consistency: building strength gradually, using the right gear, and listening to your body on every trail. If knee stiffness is a broader concern in your daily life, our guide on <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link> may also be helpful.
+          Knee pain during hiking is common, but it does not have to be inevitable. By understanding the specific demands that trails place on your knee joints and taking practical steps to prepare, protect, and recover, you can enjoy hiking with greater comfort and confidence. The key is consistency: building strength gradually, using the right gear, and listening to your body on every trail. If knee stiffness is a broader concern in your daily life, our guide on <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link> may also be helpful.
         </p>
       </>
     ),

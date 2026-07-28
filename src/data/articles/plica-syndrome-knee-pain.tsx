@@ -250,7 +250,7 @@ export const plicaSyndromeKneePain: ArticleExport = {
             <li>Progress training gradually, increasing volume by no more than 10% per week</li>
             <li>Avoid prolonged periods in deeply bent knee positions that may increase plica contact</li>
             <li>Include hip strengthening exercises to improve overall lower body mechanics</li>
-            <li>Take movement breaks during long periods of sitting to prevent <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">joint stiffness</Link></li>
+            <li>Take movement breaks during long periods of sitting to prevent <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">joint stiffness</Link></li>
           </ul>
         </InfoBox>
 

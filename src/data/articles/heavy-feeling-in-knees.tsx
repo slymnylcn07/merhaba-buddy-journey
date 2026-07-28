@@ -245,7 +245,7 @@ const article = {
 
       <h3>How Inactivity Reduces Circulation</h3>
       <p>
-        Extended sitting can leave the legs stiff and sluggish. For a simple, symmetrical stiffness pattern without warning signs, changing position and taking a comfortable movement break may help. For related context, see our guide on <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link>. Long travel or immobility also increases the importance of recognizing one-sided DVT symptoms rather than treating every sensation as ordinary stiffness.
+        Extended sitting can leave the legs stiff and sluggish. For a simple, symmetrical stiffness pattern without warning signs, changing position and taking a comfortable movement break may help. For related context, see our guide on <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link>. Long travel or immobility also increases the importance of recognizing one-sided DVT symptoms rather than treating every sensation as ordinary stiffness.
       </p>
 
       <h3>Medicines and General Health</h3>

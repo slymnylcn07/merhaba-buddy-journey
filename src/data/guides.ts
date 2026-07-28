@@ -307,13 +307,6 @@ export const guidesData: GuideData[] = [
   },
   // New articles - February 26, 2026
   {
-    slug: "why-do-my-knees-feel-tight-after-resting",
-    title: "Why Do My Knees Feel Tight or Stiff After Resting?",
-    description: "Explore why knees feel tight or stiff after resting, sitting, or sleeping. Understand knee stiffness causes, morning tightness patterns, and daily comfort tips.",
-    readTime: 14,
-    lastModified: "2026-07-19",
-  },
-  {
     slug: "knee-pain-after-standing",
     title: "Knee Pain After Standing: Causes & Comfort Strategies",
     description: "Why does knee pain when standing happen? Explore causes of knee pain after standing all day, standing posture tips, and patellofemoral pain syndrome comfort strategies.",
@@ -364,10 +357,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "knee-pain-getting-up-after-sitting",
-    title: "Knee Pain Getting Up After Sitting: Causes & Tips",
-    description: "Why do knees hurt when standing up after sitting? Learn age-related causes of knee stiffness after sitting, first-movement pain, and daily relief strategies.",
-    readTime: 15,
-    lastModified: "2026-07-13",
+    title: "Knee Pain and Stiffness After Sitting: Why Standing Up Hurts",
+    description: "Learn why knees hurt or feel stiff after sitting, how first-step pain differs from pain at rest, and which chair, movement, and warning-sign details matter.",
+    readTime: 18,
+    lastModified: "2026-07-28",
   },
   {
     slug: "knee-pain-after-long-walks",
@@ -405,13 +398,6 @@ export const guidesData: GuideData[] = [
     lastModified: "2026-07-13",
   },
   {
-    slug: "knees-hurt-after-resting",
-    title: "Knees Hurt After Resting? Inactivity Stiffness Guide",
-    description: "Why do knees hurt after resting? Understand inactivity stiffness, first-movement pain, fluid thickening during rest, and practical tips to reduce stiffness.",
-    readTime: 15,
-    lastModified: "2026-03-03",
-  },
-  {
     slug: "cold-weather-knee-pain",
     title: "Knees Hurt in Cold Weather? Causes Explained",
     description: "Why do knees hurt in cold weather? Learn how temperature drops, barometric pressure, and humidity cause knee stiffness and discover warmth-based comfort strategies.",
@@ -434,24 +420,24 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "knee-pain-climbing-stairs",
-    title: "Knee Pain When Climbing Stairs: Causes & Tips",
-    description: "Understand why knee pain happens when climbing stairs and how strengthening habits can support lasting knee comfort. Covers biomechanics, common causes, and daily routines.",
-    readTime: 14,
-    lastModified: "2026-03-04",
+    title: "Knee Pain When Climbing Stairs: Causes by Location & What Helps",
+    description: "Learn why knees hurt going upstairs, how pain location and step phase change the pattern, practical stair adjustments, and warning signs.",
+    readTime: 15,
+    lastModified: "2026-07-28",
   },
   {
     slug: "knee-pain-going-down-stairs",
     title: "Knee Pain Going Down Stairs: Causes and What Helps",
-    description: "Learn why stair descent may provoke knee pain, how location and next-day response guide decisions, and how to rebuild stair capacity safely.",
-    readTime: 11,
-    lastModified: "2026-07-13",
+    description: "Learn why stair descent can provoke knee pain, how location and next-day response guide decisions, and how to rebuild stair capacity.",
+    readTime: 13,
+    lastModified: "2026-07-28",
   },
   {
     slug: "knee-pain-when-squatting",
-    title: "Knee Pain When Squatting: Biomechanics & Fixes",
-    description: "Learn why knee pain happens during squats. Explore squat biomechanics, patellofemoral stress, and at-home adjustments for comfortable squatting.",
-    readTime: 15,
-    lastModified: "2026-03-05",
+    title: "Knee Pain When Squatting: Location, Depth, Load & Warning Signs",
+    description: "Compare pain during descent, at the bottom, while rising, or after squats, then test depth, load, volume, stance, and support safely.",
+    readTime: 17,
+    lastModified: "2026-07-28",
   },
   {
     slug: "knee-pain-during-yoga",
@@ -469,10 +455,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "knee-tightness-without-pain",
-    title: "Knee Tightness Without Pain: What It Means",
-    description: "Learn why your knee feels tight without pain. Discover common causes of knee stiffness, when to take action, and daily habits that support joint flexibility.",
-    readTime: 14,
-    lastModified: "2026-03-08",
+    title: "Knee Tightness Without Pain: Causes, Locations & Warning Signs",
+    description: "Compare front, back, inner, and outer knee tightness without pain, including bending restrictions, swelling, safe mobility checks, and warning signs.",
+    readTime: 16,
+    lastModified: "2026-07-28",
   },
   {
     slug: "burning-sensation-in-knee",
@@ -500,13 +486,6 @@ export const guidesData: GuideData[] = [
     title: "Knee Bursitis: Causes, Symptoms & Comfort",
     description: "Learn what knee bursitis is, common causes of bursa irritation, typical symptoms, and 40+ everyday strategies to support knee comfort and mobility.",
     readTime: 16,
-    lastModified: "2026-03-08",
-  },
-  {
-    slug: "patellofemoral-pain-syndrome",
-    title: "Patellofemoral Pain Syndrome: Symptoms & Relief",
-    description: "Learn what patellofemoral pain syndrome is, common PFPS symptoms, why kneecap pain occurs during stairs and squats, and everyday strategies for knee comfort.",
-    readTime: 15,
     lastModified: "2026-03-08",
   },
   {
@@ -546,10 +525,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "pain-behind-kneecap",
-    title: "Pain Behind the Kneecap: Causes & Everyday Relief",
-    description: "Why does your kneecap hurt when bending, walking, or using stairs? Learn common causes of pain behind the kneecap and simple daily habits for knee comfort.",
-    readTime: 16,
-    lastModified: "2026-03-08",
+    title: "Pain Behind the Kneecap: PFPS, Causes & What Helps",
+    description: "Understand pain behind the kneecap, PFPS and runner's knee, common triggers, other possible causes, evidence-based care, and warning signs.",
+    readTime: 18,
+    lastModified: "2026-07-28",
   },
   {
     slug: "exercises-to-relieve-knee-pain-at-home",

@@ -77,7 +77,7 @@ export const kneePainAfterStanding: ArticleExport = {
 
         <h3>Fluid Dynamics in the Knee</h3>
         <p>
-          The synovial fluid that lubricates your knee joints circulates best during varied movement. Prolonged standing, particularly in one position, can reduce this natural circulation, leading to a sensation of stiffness or tightness that compounds the feeling of discomfort. People who also experience <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link> may notice similar patterns during long standing periods.
+          The synovial fluid that lubricates your knee joints circulates best during varied movement. Prolonged standing, particularly in one position, can reduce this natural circulation, leading to a sensation of stiffness or tightness that compounds the feeling of discomfort. People who also experience <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link> may notice similar patterns during long standing periods.
         </p>
 
         <figure className="my-8">

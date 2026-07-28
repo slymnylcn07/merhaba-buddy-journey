@@ -299,7 +299,7 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
         </p>
 
         <p>
-          For general support between activities, many people find that maintaining a consistent routine of gentle exercise, stretching, and mobility work helps their knees feel more stable and confident during daily life. Exploring guides on related topics like <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link> or <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee discomfort when standing up</Link> may also provide helpful context.
+          For general support between activities, many people find that maintaining a consistent routine of gentle exercise, stretching, and mobility work helps their knees feel more stable and confident during daily life. Exploring guides on related topics like <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link> or <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee discomfort when standing up</Link> may also provide helpful context.
         </p>
       </>
     ),

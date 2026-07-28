@@ -143,7 +143,7 @@ export const kneeOsteoarthritisVsRheumatoidArthritis: ArticleExport = {
 
         <h2>Morning Stiffness: Useful Clue, Not a Diagnosis</h2>
         <p>
-          Osteoarthritis commonly causes “gelling”: the knee stiffens after inactivity and hurts during the first few steps, then loosens with movement. The guide to <Link to="/guides/knees-hurt-after-resting" className={linkClass}>knees that hurt after resting</Link> covers this pattern. Morning stiffness is often relatively brief, although advanced OA can remain stiff longer.
+          Osteoarthritis commonly causes “gelling”: the knee stiffens after inactivity and hurts during the first few steps, then loosens with movement. The guide to <Link to="/guides/knee-pain-getting-up-after-sitting" className={linkClass}>knees that hurt after resting</Link> covers this pattern. Morning stiffness is often relatively brief, although advanced OA can remain stiff longer.
         </p>
         <p>
           RA stiffness is more likely to last beyond 30 minutes and sometimes several hours. It may affect hands, feet, shoulders, and knees together, making dressing, gripping, or walking difficult. Inflammatory stiffness often accompanies soft swelling and warmth rather than only a bony or grinding sensation.

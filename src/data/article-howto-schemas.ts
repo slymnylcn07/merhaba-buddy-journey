@@ -88,6 +88,39 @@ export const articleHowToSchemas: Record<string, { name: string; description: st
       { name: "Stay Consistent", text: "Maintain your comfort routine daily. Regular, moderate attention to knee care produces better long-term results than sporadic intensive efforts." },
     ],
   },
+  "knee-pain-climbing-stairs": {
+    name: "How to Rebuild Stair Climbing Gradually",
+    description: "A staged return to stair ascent when urgent warning signs are absent.",
+    steps: [
+      { name: "Check Warning Signs", text: "Do not use the progression after a major injury or when the knee is badly swollen, locked, unstable, hot and red, or unable to bear weight." },
+      { name: "Record a Baseline", text: "Note the pain location, the part of the step that hurts, and how many steps are comfortable before symptoms begin." },
+      { name: "Practice a Low Supported Step", text: "Use a stable rail and a low step within a controlled range rather than repeatedly forcing a full flight." },
+      { name: "Add One Variable", text: "Increase repetitions, step height, speed, or carried load separately and review the later and next-day response." },
+      { name: "Return to Ordinary Stairs", text: "Progress from a step-to pattern to alternating feet when a short flight is controlled and does not create a meaningful flare." },
+    ],
+  },
+  "knee-pain-going-down-stairs": {
+    name: "How to Rebuild Stair Descent Gradually",
+    description: "A staged return to controlled stair descent when urgent warning signs are absent.",
+    steps: [
+      { name: "Use the Handrail", text: "Begin with secure support and reduce unnecessary stair trips while the knee is sensitive." },
+      { name: "Practice a Small Lowering", text: "Use the bottom stair or a low platform and control a shallow lowering movement within a tolerable range." },
+      { name: "Use a Step-to Pattern", text: "Place both feet on each stair before returning to alternating feet for a short flight." },
+      { name: "Increase One Demand", text: "Add steps, speed, or carried load separately rather than changing everything at once." },
+      { name: "Review the Next Day", text: "Reduce the dose if pain arrives earlier, lasts longer, causes a limp, or is followed by swelling or a meaningful next-day flare." },
+    ],
+  },
+  "knee-pain-when-squatting": {
+    name: "How to Test Squat Adjustments Safely",
+    description: "A one-variable-at-a-time method for rebuilding a tolerable squat when urgent warning signs are absent.",
+    steps: [
+      { name: "Identify the Pain Phase", text: "Record whether pain begins during descent, at the bottom, while rising, or only after the session." },
+      { name: "Choose a Tolerable Variation", text: "Use support, reduce depth, lower the load, or select a higher target without forcing sharp or escalating pain." },
+      { name: "Keep the Initial Dose Small", text: "Start with a few controlled repetitions instead of testing maximum depth, load, or fatigue." },
+      { name: "Change One Variable", text: "Add depth, load, repetitions, tempo, or frequency separately so the response is easier to interpret." },
+      { name: "Review the 24-Hour Response", text: "Reduce the dose when the session causes swelling, a limp, earlier-onset pain, or a clear next-day deterioration." },
+    ],
+  },
   "knee-pain-after-standing": {
     name: "How to Manage Knee Pain After Standing All Day",
     description: "Step-by-step comfort strategies for reducing knee discomfort caused by prolonged standing.",
@@ -128,25 +161,15 @@ export const articleHowToSchemas: Record<string, { name: string; description: st
       { name: "Evening Cool-Down", text: "End with gentle calf raises (15 reps) and heel slides (10 per leg). Follow with 10-15 minutes of warmth application to help muscles and joints relax before sleep." },
     ],
   },
-  "knees-hurt-after-resting": {
-    name: "How to Reduce Knee Stiffness After Resting",
-    description: "Simple steps to minimize inactivity stiffness and first-movement knee pain after rest periods.",
+  "knee-pain-getting-up-after-sitting": {
+    name: "How to Stand Up More Comfortably After Sitting",
+    description: "A gradual sit-to-stand sequence for ordinary knee stiffness when urgent warning signs are absent.",
     steps: [
-      { name: "Keep Joints Moving During Rest", text: "Do gentle ankle circles and toe curls every 20-30 minutes while resting. This keeps some synovial fluid circulating without fully getting up." },
-      { name: "Apply Warmth Before Standing", text: "Use a warm compress or heat therapy device on your knees for 10-15 minutes before you plan to stand up from a long rest period." },
-      { name: "Stand Up Slowly", text: "When transitioning from rest to movement, take your first 5-10 steps slowly and gently. Allow 2-5 minutes for your joints to warm up before walking at your normal pace." },
-      { name: "Stay Hydrated", text: "Drink water consistently throughout the day to support healthy synovial fluid production and keep your joint lubrication at its best." },
-    ],
-  },
-  "patellofemoral-pain-syndrome": {
-    name: "How to Support Kneecap Comfort with Patellofemoral Pain",
-    description: "Everyday strategies to support patellofemoral joint comfort and reduce kneecap irritation during daily activities.",
-    steps: [
-      { name: "Strengthen Your Quadriceps", text: "Perform exercises like straight-leg raises, wall sits, and terminal knee extensions to build the quadriceps muscles that guide the kneecap within the femoral groove." },
-      { name: "Build Hip and Glute Stability", text: "Include clamshells, side-lying leg raises, and single-leg bridges in your routine to improve lower limb alignment and reduce inward knee rotation during movement." },
-      { name: "Progress Activity Gradually", text: "Increase training volume, intensity, and duration by no more than 10% per week. Avoid sudden jumps in activity that may overload the patellofemoral joint." },
-      { name: "Stretch Key Muscle Groups", text: "Regularly stretch your quadriceps, hamstrings, IT band, and calves for 20-30 seconds each to maintain balanced tension around the knee joint." },
-      { name: "Take Movement Breaks", text: "If you sit for long periods, stand and walk briefly every 30-45 minutes to reduce sustained kneecap compression against the femoral groove." },
+      { name: "Check for Warning Signs", text: "Do not use the sequence if the knee is badly swollen, hot, locked, unstable, sharply painful, or unable to bear weight." },
+      { name: "Move Before Standing", text: "Perform a few comfortable ankle pumps and small seated knee bends or extensions without forcing the range." },
+      { name: "Set Your Feet", text: "Place both feet flat, about hip-width apart, and slightly behind the knees. Move toward the front edge of a soft or deep seat." },
+      { name: "Lean Forward and Use Support", text: "Bring your chest over your feet and use stable armrests or another secure surface when needed." },
+      { name: "Pause and Take Short Steps", text: "Find your balance after standing, then begin with short comfortable steps and reassess whether symptoms improve or worsen." },
     ],
   },
   "knee-pain-after-car-rides": {
@@ -204,17 +227,6 @@ export const articleHowToSchemas: Record<string, { name: string; description: st
       { name: "Apply Warmth After Kneeling Activities", text: "After extended kneeling sessions, apply soothing warmth to the front of the knee for 10-15 minutes to help the tissues recover and reduce any residual sensitivity." },
     ],
   },
-  "pain-behind-kneecap": {
-    name: "How to Support Kneecap Comfort During Daily Activities",
-    description: "Simple strategies to reduce pressure behind the kneecap and support comfortable knee movement during stairs, squats, and everyday activities.",
-    steps: [
-      { name: "Strengthen Your Quadriceps", text: "Perform straight-leg raises, wall sits, and terminal knee extensions 3-4 times per week to build the quadriceps muscles that guide the kneecap within its groove and distribute pressure evenly." },
-      { name: "Build Hip and Glute Stability", text: "Include clamshells, side-lying leg raises, and single-leg bridges to improve lower limb alignment and prevent the knee from collapsing inward during movement." },
-      { name: "Stretch Key Muscle Groups", text: "Regularly stretch quadriceps, hamstrings, IT band, and calves for 20-30 seconds each to maintain balanced tension around the knee joint." },
-      { name: "Progress Activity Gradually", text: "Increase training volume, intensity, and duration by no more than 10% per week. Allow the kneecap area time to adapt to new demands." },
-      { name: "Take Movement Breaks", text: "Stand and walk briefly every 30-45 minutes during prolonged sitting to reduce sustained kneecap compression against the thigh bone." },
-    ],
-  },
   "exercises-to-relieve-knee-pain-at-home": {
     name: "How to Do Knee Exercises at Home for Pain Relief",
     description: "A step-by-step guide to simple home exercises that support knee comfort, strength, and mobility for everyday movement.",
@@ -258,28 +270,6 @@ export const articleHowToSchemas: Record<string, { name: string; description: st
       { name: "Perform Gentle Standing Stretches", text: "Do a standing quad stretch and calf stretch for 20-30 seconds per side. These target the muscles that tighten most overnight and contribute to morning stiffness." },
       { name: "Take a Short Morning Walk", text: "Walk gently for 5-10 minutes at a comfortable pace. This activates all supporting muscle groups, distributes joint fluid, and transitions the knees into daily activity." },
       { name: "Stay Hydrated From the Start", text: "Drink a glass of water first thing in the morning. Overnight dehydration reduces synovial fluid viscosity, and rehydrating early supports smoother joint movement throughout the day." },
-    ],
-  },
-  "knee-pain-climbing-stairs": {
-    name: "How to Climb Stairs with Less Knee Discomfort",
-    description: "Practical techniques and strengthening strategies to make stair climbing more comfortable for your knees.",
-    steps: [
-      { name: "Lead with Your Stronger Leg Going Up", text: "When climbing stairs, step up with your less affected leg first, then bring the other leg to meet it. This reduces the load on the more sensitive knee during the push-off phase." },
-      { name: "Use the Handrail for Support", text: "Lightly grip the handrail to distribute some of your body weight through your arms. This simple habit reduces the force on your knees by up to 15-20% per step." },
-      { name: "Take One Step at a Time", text: "Avoid taking stairs two at a time. Single steps keep the knee bend angle smaller and reduce the peak force on the patellofemoral joint during each step." },
-      { name: "Strengthen Your Quadriceps and Glutes", text: "Perform wall sits, step-ups, and glute bridges 3-4 times per week. Stronger leg muscles absorb more of the stair-climbing force, protecting the knee joint." },
-      { name: "Apply Warmth Before Stair-Heavy Days", text: "If you know you'll be using stairs frequently, apply warmth to your knees for 10-15 minutes beforehand to improve circulation and prepare the joint for repeated loading." },
-    ],
-  },
-  "knee-pain-going-down-stairs": {
-    name: "How to Go Down Stairs with Less Knee Pain",
-    description: "Short-term movement adjustments and longer-term capacity building for more manageable stair descent.",
-    steps: [
-      { name: "Use the Handrail", text: "Use the rail for balance and to let the arms share some of the task while the knee is sensitive." },
-      { name: "Slow the Descent", text: "Place the whole foot securely and avoid rushing onto the next step." },
-      { name: "Use a Step-to Pattern During a Flare", text: "Put both feet on each step temporarily if alternating legs is too painful or feels unsafe." },
-      { name: "Reduce Extra Load", text: "Avoid carrying heavy or awkward items until the knee is more settled and stair control feels reliable." },
-      { name: "Build Capacity Gradually", text: "Progress knee-targeted and hip-targeted exercise at a tolerable level, with professional guidance when ordinary exercises provoke symptoms." },
     ],
   },
   "knee-pain-squatting": {

@@ -227,7 +227,7 @@ export const whatCausesKneePain: ArticleExport = {
               </tr>
             </thead>
             <tbody>
-              <tr><td className="border border-border/50 p-3 font-medium">Stiffness after sitting</td><td className="border border-border/50 p-3">Movement breaks, morning warm-up</td><td className="border border-border/50 p-3"><a href="/guides/why-do-my-knees-feel-tight-after-resting">Stiffness after resting</a></td></tr>
+              <tr><td className="border border-border/50 p-3 font-medium">Stiffness after sitting</td><td className="border border-border/50 p-3">Movement breaks, morning warm-up</td><td className="border border-border/50 p-3"><a href="/guides/knee-pain-getting-up-after-sitting">Stiffness after resting</a></td></tr>
               <tr className="bg-muted/20"><td className="border border-border/50 p-3 font-medium">Pain going up stairs</td><td className="border border-border/50 p-3">Quad strengthening, kneecap mobility</td><td className="border border-border/50 p-3"><a href="/guides/front-knee-tightness-after-activity">Front knee tightness</a></td></tr>
               <tr><td className="border border-border/50 p-3 font-medium">Nighttime knee discomfort</td><td className="border border-border/50 p-3">Evening warmth routine, pillow support</td><td className="border border-border/50 p-3"><a href="/guides/why-do-my-knees-hurt-when-sleeping">Night knee pain guide</a></td></tr>
               <tr className="bg-muted/20"><td className="border border-border/50 p-3 font-medium">Pain after standing all day</td><td className="border border-border/50 p-3">Supportive shoes, calf stretches</td><td className="border border-border/50 p-3"><a href="/guides/knee-pain-after-standing">Standing knee pain</a></td></tr>

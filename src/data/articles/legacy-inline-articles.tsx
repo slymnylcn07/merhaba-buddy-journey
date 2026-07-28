@@ -2417,7 +2417,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
 
         <h3>Front of the Knee</h3>
         <p>
-          Discomfort at the front of the knee frequently involves the kneecap (patella) or the tendons that connect to it. Activities like climbing stairs, sitting for long periods, or squatting often bring attention to this area. Our guide on <Link to="/guides/patellofemoral-pain-syndrome" className="text-primary hover:underline">patellofemoral patterns</Link> explores front-of-knee discomfort in detail.
+          Discomfort at the front of the knee frequently involves the kneecap (patella) or the tendons that connect to it. Activities like climbing stairs, sitting for long periods, or squatting often bring attention to this area. Our guide on <Link to="/guides/pain-behind-kneecap" className="text-primary hover:underline">patellofemoral patterns</Link> explores front-of-knee discomfort in detail.
         </p>
 
         <h3>Back of the Knee</h3>
@@ -2491,7 +2491,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
 
         <h3>Stiffness and Limited Movement</h3>
         <p>
-          After a <strong>knee injury</strong>, the joint may feel stiff and difficult to fully bend or straighten. This restriction can result from swelling, pain, or mechanical problems like a torn meniscus interfering with normal movement. Some people describe feeling like their knee is "locked" in a position. Those who experience persistent stiffness may find our guide on <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link> helpful.
+          After a <strong>knee injury</strong>, the joint may feel stiff and difficult to fully bend or straighten. This restriction can result from swelling, pain, or mechanical problems like a torn meniscus interfering with normal movement. Some people describe feeling like their knee is "locked" in a position. Those who experience persistent stiffness may find our guide on <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link> helpful.
         </p>
 
         <h3>Instability</h3>
@@ -4474,7 +4474,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <p>
-          Remember that finding the right shoe is highly individual. What feels perfect for one runner may not suit another. The goal is to understand your options so you can make informed choices for your own comfort. If you're also dealing with <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">stiffness after resting</Link>, footwear is just one piece of a larger comfort puzzle.
+          Remember that finding the right shoe is highly individual. What feels perfect for one runner may not suit another. The goal is to understand your options so you can make informed choices for your own comfort. If you're also dealing with <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">stiffness after resting</Link>, footwear is just one piece of a larger comfort puzzle.
         </p>
 
         <figure className="my-8">
@@ -4894,7 +4894,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
 
         <h3>Evening Comfort Habits</h3>
         <p>
-          After running days, many runners pay attention to evening comfort. This might include comfortable positioning, attention to rest, and creating supportive environments for recovery. Runners who experience <Link to="/guides/knees-hurt-after-resting" className="text-primary hover:underline">knee discomfort after resting</Link> may find that gentle evening movement helps prevent stiffness from setting in.
+          After running days, many runners pay attention to evening comfort. This might include comfortable positioning, attention to rest, and creating supportive environments for recovery. Runners who experience <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee discomfort after resting</Link> may find that gentle evening movement helps prevent stiffness from setting in.
         </p>
 
         <h3>Warmth-Based Habits</h3>

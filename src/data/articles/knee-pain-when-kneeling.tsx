@@ -209,7 +209,7 @@ export const kneePainWhenKneeling: ArticleExport = {
 
         <h3>Adjusting knee position</h3>
         <p>
-          Slight changes in how you position your knee can shift the pressure zone. Leaning slightly forward, keeping one foot planted (half-kneeling), or rotating your position periodically distributes the load across different parts of the knee rather than concentrating it on one spot. For related joint position strategies, see our <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting guide</Link>.
+          Slight changes in how you position your knee can shift the pressure zone. Leaning slightly forward, keeping one foot planted (half-kneeling), or rotating your position periodically distributes the load across different parts of the knee rather than concentrating it on one spot. For related joint position strategies, see our <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting guide</Link>.
         </p>
 
         <h3>Strengthening surrounding muscles</h3>

@@ -88,6 +88,8 @@ const App = () => {
                   <Route path="/knee-stiffness-after-resting" element={<Navigate to="/guides/knee-pain-getting-up-after-sitting" replace />} />
                   <Route path="/why-do-my-knees-feel-tight-after-resting" element={<Navigate to="/guides/knee-pain-getting-up-after-sitting" replace />} />
                   <Route path="/knees-hurt-after-resting" element={<Navigate to="/guides/knee-pain-getting-up-after-sitting" replace />} />
+                  <Route path="/guides/patellofemoral-pain-syndrome" element={<Navigate to="/guides/pain-behind-kneecap" replace />} />
+                  <Route path="/patellofemoral-pain-syndrome" element={<Navigate to="/guides/pain-behind-kneecap" replace />} />
                   <Route path="/guides/running-shoes-knee-pain" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
                   <Route path="/guides/sharp-knee-pain-causes" element={<Navigate to="/guides/sharp-knee-pain-causes-relief" replace />} />
                   <Route path="/guides/what-causes-knee-pain" element={<Navigate to="/guides/what-causes-knee-pain-guide" replace />} />

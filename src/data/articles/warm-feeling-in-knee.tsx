@@ -184,7 +184,7 @@ const article = {
 
       <h3>Prolonged Standing or Sitting</h3>
       <p>
-        Interestingly, both prolonged standing and prolonged sitting can contribute to knee warmth. Standing keeps the joint under constant load, while sitting can reduce circulation and then cause a rush of blood flow when you finally stand and move. If you notice stiffness after sitting, our <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting guide</Link> provides practical tips.
+        Interestingly, both prolonged standing and prolonged sitting can contribute to knee warmth. Standing keeps the joint under constant load, while sitting can reduce circulation and then cause a rush of blood flow when you finally stand and move. If you notice stiffness after sitting, our <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting guide</Link> provides practical tips.
       </p>
 
       <h3>Gardening and Kneeling Activities</h3>
