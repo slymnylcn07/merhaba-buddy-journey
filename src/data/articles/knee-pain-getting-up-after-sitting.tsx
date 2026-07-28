@@ -139,7 +139,7 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
 
         <h3>The Kneecap Is Loaded Differently</h3>
         <p>
-          Bent-knee sitting maintains contact between the kneecap and the thigh bone. People with patellofemoral irritation often notice discomfort after cinemas, flights, desk work, or long car rides. The ache is commonly felt at the front of the knee or behind the kneecap. Our <Link to="/guides/patellofemoral-pain-syndrome">patellofemoral pain guide</Link> explains that pattern in more depth.
+          Bent-knee sitting maintains contact between the kneecap and the thigh bone. People with patellofemoral irritation often notice discomfort after cinemas, flights, desk work, or long car rides. The ache is commonly felt at the front of the knee or behind the kneecap. Our <Link to="/guides/pain-behind-kneecap">patellofemoral pain guide</Link> explains that pattern in more depth.
         </p>
 
         <h3>Standing Requires an Immediate Increase in Muscle Work</h3>

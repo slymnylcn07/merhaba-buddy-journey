@@ -1,554 +1,265 @@
 import { Link } from "react-router-dom";
-import { InfoBox, TipsList } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
+import { InfoBox } from "@/components/ArticleCharts";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-knee-pain-climbing-stairs.jpg";
 
 const faqs = [
   {
-    question: "Why does my knee hurt when climbing stairs?",
-    answer: "When you climb stairs, your knee joint absorbs 3–4 times your body weight with each step. This creates significantly more load on the kneecap and surrounding tissues compared to flat walking. If the muscles supporting your knee — especially the quadriceps — are not strong enough, the joint absorbs excess stress, which can lead to discomfort during or after stair climbing.",
+    question: "Why does my knee hurt when climbing stairs but not walking?",
+    answer:
+      "Going upstairs requires a deeper knee bend and a stronger push from the quadriceps, hip, and calf than level walking. That combination can expose a load-sensitive kneecap joint, tendon, arthritic joint, or recently irritated tissue even when ordinary walking remains comfortable.",
   },
   {
-    question: "Why do knees hurt when going up stairs but not walking?",
-    answer: "Walking on a flat surface distributes force relatively evenly across the knee joint. Stair climbing requires your knee to bend more deeply while bearing your full body weight against gravity, which increases the compressive load on the patella (kneecap). This concentrated pressure is why stairs can trigger discomfort even when flat walking feels comfortable.",
+    question: "Why does my kneecap hurt when I go upstairs?",
+    answer:
+      "Pain around or behind the kneecap during stair ascent commonly fits a patellofemoral pain pattern. The knee bends under body weight while the quadriceps help lift you to the next step. The symptom does not prove one diagnosis, so swelling, injury history, pain location, and mechanical symptoms still matter.",
   },
   {
-    question: "Is knee pain while climbing stairs normal?",
-    answer: "Occasional mild discomfort when climbing stairs, especially after a period of inactivity or a tough workout, can be a common experience. However, persistent or worsening pain on stairs — particularly if accompanied by swelling, locking, or giving way — warrants a visit to a healthcare professional to rule out underlying issues.",
+    question: "Why does only one knee hurt going up stairs?",
+    answer:
+      "One-sided symptoms may reflect a recent training change, an old injury, a difference in strength or movement strategy, a tendon problem, or another local knee condition. Persistent asymmetry, swelling, instability, or loss of movement deserves assessment rather than repeated self-testing.",
   },
   {
-    question: "What muscle weakness causes knee pain on stairs?",
-    answer: "Weakness in the quadriceps (front thigh muscles) is the most common muscular contributor to stair-related knee pain. Weak glutes and hip stabilizers can also play a role, as they affect how your leg aligns during each step. When these muscles are underdeveloped, the knee joint takes on more stress than it's designed to handle.",
+    question: "Can weak leg muscles contribute to stair pain?",
+    answer:
+      "Reduced strength or confidence can make stair ascent more demanding, but weakness is not the only explanation. Pain itself can also reduce how much force a person produces. A gradual strengthening plan is more useful than assuming the knee hurts because one muscle is weak.",
   },
   {
-    question: "Why do stairs hurt more than walking?",
-    answer: "Stairs require a deeper knee bend angle (typically 60–90 degrees) compared to flat walking (around 15–20 degrees). At these deeper angles, the pressure between the kneecap and the thigh bone increases dramatically. Combined with the force of lifting your body weight against gravity, this makes stair climbing one of the most demanding everyday activities for the knee joint.",
+    question: "Should I avoid stairs if my knee hurts?",
+    answer:
+      "Complete avoidance is not always necessary. During a flare, reduce unnecessary trips, use the handrail, take one step at a time, and lead with the less painful leg. Rebuild normal stair use gradually if symptoms return to baseline and there are no warning signs.",
   },
   {
-    question: "Can weak quads cause knee pain on stairs?",
-    answer: "Yes. The quadriceps are the primary muscles that control your knee during stair climbing. When they're weak, they can't absorb shock effectively, so the kneecap tracks improperly and excess load transfers directly to the joint surfaces. Strengthening the quadriceps is one of the most effective ways to reduce stair-related knee discomfort.",
+    question: "What exercises can help with knee pain going upstairs?",
+    answer:
+      "Common starting options include supported sit-to-stands, shallow squats, low step-ups, calf raises, and hip-strengthening work. The best starting range depends on what you can control without sharp or escalating pain and how the knee responds later that day and the next morning.",
   },
   {
-    question: "How can I strengthen knees for stair climbing?",
-    answer: "Focus on exercises that build quadriceps, hamstring, and glute strength without excessive knee stress. Wall sits, straight leg raises, step-ups on a low platform, and seated leg extensions are good starting points. Consistency matters more than intensity — aim for gentle daily sessions rather than occasional intense workouts.",
+    question: "Why does the first stair hurt more than the rest?",
+    answer:
+      "The first step may combine a sudden transition from rest to a demanding loaded bend. It may also reveal stiffness, hesitation, or a pain-sensitive movement strategy. Note whether the discomfort quickly settles or becomes worse with every step, because those are different patterns.",
   },
   {
-    question: "When should knee pain on stairs be checked?",
-    answer: "See a healthcare professional if your stair-related knee pain persists for more than 2 weeks, worsens over time, includes swelling or redness, causes your knee to lock or give way, or prevents you from performing daily activities. Early evaluation can help identify the cause and prevent further discomfort.",
+    question: "When should stair-climbing knee pain be checked?",
+    answer:
+      "Arrange an assessment when pain is persistent, worsening, repeatedly limits daily activity, or occurs with swelling, locking, giving way, or reduced movement. Seek urgent care after a major injury, if you cannot bear weight, or if the knee is badly swollen, deformed, hot, and red with fever.",
   },
 ];
 
-const articleContent = (
-  <>
-
-    {/* INTRODUCTION */}
-    <p>
-      <strong>Knee pain when climbing stairs</strong> is one of the most common joint complaints — and for good reason. Stair climbing places significantly more stress on your knee joint than flat walking, making it one of the first activities to feel uncomfortable when something in the joint isn't working optimally.
-    </p>
-    <p>
-      Whether you notice <strong>pain in knee when climbing stairs</strong> after a long day, during your morning routine, or only when going up (not down), this guide explains the biomechanical reasons behind stair-related knee discomfort and shares practical strengthening habits that can help support long-term comfort.
-    </p>
-
-    {/* SECTION 1 */}
-    <h2>Why Knee Pain Happens When Climbing Stairs but Not Walking</h2>
-    <p>
-      Many people experience <strong>knee pain when climbing stairs but not walking</strong> — and this discrepancy often causes confusion. The answer lies in the biomechanics of each movement.
-    </p>
-    <p>
-      When you walk on a flat surface, your knee bends only about 15–20 degrees with each stride. The load is distributed relatively evenly across the joint, and your body's momentum helps carry you forward with minimal effort from the knee.
-    </p>
-    <p>
-      Stair climbing is fundamentally different. Each step requires your knee to bend to approximately 60–90 degrees while simultaneously bearing your full body weight against gravity. This deeper flexion angle dramatically increases the compressive force between your kneecap (patella) and the groove in your thigh bone (femoral trochlea).
-    </p>
-    <p>
-      This is why <strong>knee pain while climbing stairs</strong> is often the earliest sign of developing knee issues — the joint is being tested under much higher loads than everyday walking provides.
-    </p>
-
-    <InfoBox title="The Angle Factor">
-      <p>At a 90-degree knee bend during stair climbing, the patellofemoral contact force can reach 3.3 times your body weight. For a 70 kg person, that's over 230 kg of force concentrated on the kneecap area with every single step.</p>
-    </InfoBox>
-
-    {/* Illustration 1: Knee joint load diagram */}
-    <figure className="my-8">
-      <svg viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto rounded-xl bg-white border border-border">
-        <text x="400" y="40" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="22" fontWeight="800" fill="#111827">Knee Joint Load: Walking vs Stair Climbing</text>
-
-        {/* Walking side */}
-        <rect x="60" y="80" width="300" height="360" rx="16" fill="#F0FDF4" stroke="#86EFAC" strokeWidth="2"/>
-        <text x="210" y="115" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" fill="#166534">Flat Walking</text>
-
-        <text x="210" y="155" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="14" fill="#374151">Knee bend angle</text>
-        <text x="210" y="180" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="28" fontWeight="800" fill="#16A34A">15–20°</text>
-
-        <text x="210" y="225" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="14" fill="#374151">Joint load (× body weight)</text>
-        <rect x="110" y="240" width="200" height="30" rx="8" fill="#E5E7EB"/>
-        <rect x="110" y="240" width="75" height="30" rx="8" fill="#22C55E"/>
-        <text x="200" y="261" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="700" fill="#111827">1.5×</text>
-
-        <text x="210" y="310" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="14" fill="#374151">Patella pressure</text>
-        <text x="210" y="340" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="22" fontWeight="700" fill="#16A34A">Low</text>
-
-        <text x="210" y="385" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="14" fill="#374151">Muscle demand</text>
-        <text x="210" y="415" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="22" fontWeight="700" fill="#16A34A">Moderate</text>
-
-        {/* Stairs side */}
-        <rect x="440" y="80" width="300" height="360" rx="16" fill="#FEF2F2" stroke="#FCA5A5" strokeWidth="2"/>
-        <text x="590" y="115" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" fill="#991B1B">Stair Climbing</text>
-
-        <text x="590" y="155" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="14" fill="#374151">Knee bend angle</text>
-        <text x="590" y="180" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="28" fontWeight="800" fill="#DC2626">60–90°</text>
-
-        <text x="590" y="225" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="14" fill="#374151">Joint load (× body weight)</text>
-        <rect x="490" y="240" width="200" height="30" rx="8" fill="#E5E7EB"/>
-        <rect x="490" y="240" width="200" height="30" rx="8" fill="#EF4444" opacity="0.8"/>
-        <text x="590" y="261" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="700" fill="#FFFFFF">3.3×</text>
-
-        <text x="590" y="310" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="14" fill="#374151">Patella pressure</text>
-        <text x="590" y="340" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="22" fontWeight="700" fill="#DC2626">High</text>
-
-        <text x="590" y="385" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="14" fill="#374151">Muscle demand</text>
-        <text x="590" y="415" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="22" fontWeight="700" fill="#DC2626">Very High</text>
-
-        {/* VS divider */}
-        <circle cx="400" cy="260" r="24" fill="#111827"/>
-        <text x="400" y="267" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="16" fontWeight="800" fill="#FFFFFF">VS</text>
-
-        <text x="400" y="480" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#6B7280">Source: Biomechanical studies on patellofemoral joint loading</text>
-      </svg>
-      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        Knee joint load comparison between flat walking and stair climbing
-      </figcaption>
-    </figure>
-
-    {/* SECTION 2 */}
-    <h2>How Stair Climbing Increases Knee Joint Load</h2>
-    <p>
-      Understanding why <strong>knee pain walking up stairs</strong> happens requires a closer look at what your knee joint actually does during each step.
-    </p>
-    <p>
-      When you place your foot on the next stair and push upward, your quadriceps muscle contracts powerfully to straighten the knee against gravity. This contraction pulls on the patellar tendon, which presses the kneecap firmly into the femoral groove. The deeper the knee bend, the greater this compressive force.
-    </p>
-    <p>
-      Additionally, your body weight creates a moment arm around the knee joint. On stairs, this moment arm is longer than during flat walking because your center of mass is further behind the supporting knee. This means the muscles must generate more force to move you upward — and that extra force is transmitted directly through the knee joint.
-    </p>
-    <p>
-      For people who already have some cartilage wear, inflammation, or muscle weakness, this increased load can cross the threshold from comfortable to painful — which explains why <strong>knee pain when climbing up stairs</strong> is often the first symptom people notice.
-    </p>
-
-    {/* Illustration 2: Patella pressure diagram */}
-    <figure className="my-8">
-      <svg viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto rounded-xl bg-white border border-border">
-        <text x="400" y="40" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="22" fontWeight="800" fill="#111827">Patella Pressure During Stair Climbing</text>
-
-        {/* Pressure scale */}
-        <text x="80" y="85" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="600" fill="#374151">Knee Bend Angle</text>
-        <text x="550" y="85" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="600" fill="#374151">Patellofemoral Force</text>
-
-        {/* Bars */}
-        {[
-          { angle: "0° (standing)", force: "0.5×", width: 40, color: "#22C55E" },
-          { angle: "15° (walking)", force: "1.3×", width: 80, color: "#84CC16" },
-          { angle: "30° (gentle slope)", force: "1.8×", width: 120, color: "#EAB308" },
-          { angle: "60° (stair up)", force: "2.5×", width: 180, color: "#F97316" },
-          { angle: "90° (deep stair step)", force: "3.3×", width: 240, color: "#EF4444" },
-          { angle: "130° (deep squat)", force: "5.6×", width: 340, color: "#DC2626" },
-        ].map((item, i) => (
-          <g key={i}>
-            <text x="80" y={130 + i * 52} fontFamily="system-ui, sans-serif" fontSize="14" fill="#374151">{item.angle}</text>
-            <rect x="310" y={115 + i * 52} width={item.width} height="24" rx="6" fill={item.color}/>
-            <text x={320 + item.width} y={133 + i * 52} fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="700" fill="#111827">{item.force} body weight</text>
-          </g>
-        ))}
-
-        {/* Highlight box */}
-        <rect x="60" y={115 + 3 * 52 - 8} width="700" height={52 * 2 + 16} rx="8" fill="none" stroke="#EF4444" strokeWidth="2" strokeDasharray="6 3"/>
-        <text x="710" y={115 + 3 * 52 + 30} fontFamily="system-ui, sans-serif" fontSize="12" fontWeight="600" fill="#EF4444" textAnchor="end">Stair range</text>
-
-        <text x="400" y="440" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#6B7280">Higher angles = more compressive force on the kneecap</text>
-      </svg>
-      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        How patellofemoral force increases with knee bend angle during stair climbing
-      </figcaption>
-    </figure>
-
-    <p>
-      If you're also experiencing discomfort during other activities, our guide on <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">knee pain when bending</Link> explains similar biomechanical patterns that affect the knee at deeper flexion angles.
-    </p>
-
-    {/* SECTION 3 */}
-    <h2>Common Causes of Knee Pain on Stairs</h2>
-    <p>
-      Several factors can contribute to <strong>knee pain when climbing stairs</strong>. Understanding the most common causes can help you identify what might be relevant to your experience.
-    </p>
-
-    <h3>Patellofemoral Stress</h3>
-    <p>
-      The patellofemoral joint — where your kneecap meets the thigh bone — is under the most pressure during stair climbing. When the cartilage on the underside of the kneecap becomes irritated or worn, the increased load from stairs can trigger <strong>knee cap pain</strong> that feels like a dull ache or grinding sensation behind the kneecap.
-    </p>
-
-    <h3>Muscle Imbalance</h3>
-    <p>
-      When certain muscle groups around the knee are stronger than others, the kneecap can track unevenly during movement. For example, if your inner quadriceps (VMO) is weaker than your outer quadriceps, the patella may pull laterally during stair climbing, creating uneven pressure distribution and discomfort.
-    </p>
-
-    <h3>Overuse</h3>
-    <p>
-      Repetitive stair climbing — especially in jobs or living situations that require frequent flights — can accumulate stress on the knee joint over time. This cumulative load can irritate tendons, stress cartilage, and lead to persistent discomfort that worsens with continued use.
-    </p>
-
-    <h3>Weak Quadriceps</h3>
-    <p>
-      The quadriceps are the primary muscles responsible for controlling your knee during stair ascent. When these muscles are weak, they can't adequately absorb the forces of stair climbing, causing the joint itself to absorb more impact. This is one of the most modifiable risk factors for stair-related <strong>knee joint pain</strong>.
-    </p>
-
-    <h3>Joint Irritation</h3>
-    <p>
-      General inflammation or irritation within the knee joint — from overactivity, weather changes, or age-related wear — can make the joint more sensitive to the higher loads that stair climbing demands. Even mild joint irritation that goes unnoticed during flat walking may become apparent on stairs.
-    </p>
-
-    <TipsList tips={[
-      "Patellofemoral stress is the most common cause of stair-related knee pain",
-      "Muscle imbalance can cause the kneecap to track unevenly",
-      "Overuse from frequent stair climbing accumulates stress over time",
-      "Weak quadriceps force the joint to absorb excess load",
-      "Even mild joint irritation becomes noticeable on stairs due to higher forces",
-    ]} />
-
-    <p>
-      For a broader overview of potential causes, see our comprehensive guide on <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">what causes knee pain</Link>.
-    </p>
-
-    <PremiumCTA
-      headline="Want daily comfort support for your knees?"
-      text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable after every stair climb."
-    />
-
-    {/* SECTION 4 */}
-    <h2>Why Knee Pain on Stairs Is Common After Age 30–40</h2>
-    <p>
-      Age plays a significant role in stair-related knee discomfort. After age 30, the body's natural cartilage begins to lose some of its resilience and water content. By age 40, many adults have experienced enough cumulative joint use for early cartilage changes to become noticeable — particularly during high-load activities like stair climbing.
-    </p>
-    <p>
-      Additionally, muscle mass naturally decreases with age (a process called sarcopenia), which means the quadriceps and surrounding muscles may provide less support to the knee joint over time. This combination of reduced cartilage cushioning and decreased muscular support creates a "perfect storm" for stair-related discomfort.
-    </p>
-    <p>
-      The good news: targeted strengthening exercises can significantly offset these age-related changes. Building and maintaining muscle around the knee helps compensate for natural cartilage changes and keeps the joint better supported during demanding activities.
-    </p>
-
-    <p>
-      Our guide on <Link to="/guides/knee-pain-after-40" className="text-primary hover:underline">knee pain after 40</Link> explores age-related joint changes in more detail and offers practical strategies for maintaining comfort as you age.
-    </p>
-
-    {/* SECTION 5 */}
-    <h2>Movements That Can Trigger Stair-Related Knee Pain</h2>
-    <p>
-      If you experience knee pain on stairs, you may also notice discomfort during other activities that place similar demands on the knee joint. Understanding these connections can help you manage your overall activity patterns.
-    </p>
-
-    <h3>Squatting</h3>
-    <p>
-      Like stair climbing, squatting requires deep knee flexion under load. <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">Knee pain when squatting</Link> often involves the same patellofemoral mechanism — the kneecap pressing into the femoral groove at deeper angles.
-    </p>
-
-    <h3>Bending</h3>
-    <p>
-      Any activity that requires sustained <Link to="/guides/knee-pain-when-kneeling" className="text-primary hover:underline">knee bending</Link> — kneeling, gardening, or getting in and out of low chairs — can trigger similar discomfort because the patellofemoral contact force increases with greater flexion angles.
-    </p>
-
-    <h3>Running</h3>
-    <p>
-      While running involves less knee flexion than stairs, the repetitive impact can stress the same structures. Runners who also experience stair pain often have patellofemoral stress or quadriceps weakness as a common underlying factor.
-    </p>
-
-    <h3>Long Walking Sessions</h3>
-    <p>
-      Extended walking, particularly on uneven terrain or hills, can fatigue the muscles that support the knee. As these muscles tire, the joint absorbs more impact, which may trigger symptoms similar to stair-related pain. Our <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">knee pain when walking</Link> guide covers this in depth.
-    </p>
-
-    {/* Illustration 3: Muscle groups supporting the knee */}
-    <figure className="my-8">
-      <svg viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto rounded-xl bg-white border border-border">
-        <text x="400" y="40" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="22" fontWeight="800" fill="#111827">Key Muscle Groups Supporting the Knee</text>
-        <text x="400" y="65" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="14" fill="#6B7280">Strengthening these muscles reduces stair-related knee stress</text>
-
-        {/* Quadriceps */}
-        <rect x="40" y="100" width="220" height="170" rx="16" fill="#EFF6FF" stroke="#3B82F6" strokeWidth="2"/>
-        <text x="150" y="135" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" fill="#1D4ED8">Quadriceps</text>
-        <text x="150" y="160" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">Front of thigh</text>
-        <text x="150" y="185" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">Primary stair-climbing</text>
-        <text x="150" y="205" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">muscle group</text>
-        <rect x="80" y="225" width="140" height="24" rx="6" fill="#3B82F6"/>
-        <text x="150" y="242" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="12" fontWeight="700" fill="#FFFFFF">Impact: Very High</text>
-
-        {/* Hamstrings */}
-        <rect x="290" y="100" width="220" height="170" rx="16" fill="#FEF3C7" stroke="#F59E0B" strokeWidth="2"/>
-        <text x="400" y="135" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" fill="#B45309">Hamstrings</text>
-        <text x="400" y="160" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">Back of thigh</text>
-        <text x="400" y="185" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">Stabilizes and controls</text>
-        <text x="400" y="205" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">knee flexion speed</text>
-        <rect x="330" y="225" width="140" height="24" rx="6" fill="#F59E0B"/>
-        <text x="400" y="242" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="12" fontWeight="700" fill="#FFFFFF">Impact: High</text>
-
-        {/* Glutes */}
-        <rect x="540" y="100" width="220" height="170" rx="16" fill="#F0FDF4" stroke="#22C55E" strokeWidth="2"/>
-        <text x="650" y="135" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" fill="#166534">Glutes</text>
-        <text x="650" y="160" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">Hip and pelvis</text>
-        <text x="650" y="185" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">Controls leg alignment</text>
-        <text x="650" y="205" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">and knee tracking</text>
-        <rect x="580" y="225" width="140" height="24" rx="6" fill="#22C55E"/>
-        <text x="650" y="242" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="12" fontWeight="700" fill="#FFFFFF">Impact: High</text>
-
-        {/* Calves */}
-        <rect x="100" y="310" width="220" height="150" rx="16" fill="#FDF2F8" stroke="#EC4899" strokeWidth="2"/>
-        <text x="210" y="345" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" fill="#9D174D">Calf Muscles</text>
-        <text x="210" y="370" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">Lower leg, back</text>
-        <text x="210" y="395" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">Provides ankle stability</text>
-        <text x="210" y="415" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">and push-off power</text>
-
-        {/* Hip Stabilizers */}
-        <rect x="480" y="310" width="220" height="150" rx="16" fill="#F5F3FF" stroke="#8B5CF6" strokeWidth="2"/>
-        <text x="590" y="345" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" fill="#6D28D9">Hip Stabilizers</text>
-        <text x="590" y="370" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">Outer hip area</text>
-        <text x="590" y="395" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">Prevents inward knee</text>
-        <text x="590" y="415" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#374151">collapse on stairs</text>
-      </svg>
-      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        The five key muscle groups that support your knee during stair climbing
-      </figcaption>
-    </figure>
-
-    {/* SECTION 6 */}
-    <h2>Strengthening Habits That Support Knee Stability</h2>
-    <p>
-      One of the most effective approaches to reducing <strong>knee pain when climbing stairs</strong> is building strength in the muscles that support the knee joint. Research consistently shows that stronger quadriceps, hamstrings, and glutes reduce the load on the knee during stair climbing.
-    </p>
-
-    <h3>Wall Sits (30–60 seconds)</h3>
-    <p>
-      Lean against a wall with your feet shoulder-width apart, sliding down until your knees reach about 45 degrees. Hold this position for 30–60 seconds. This isometric exercise strengthens the quadriceps without requiring dynamic movement that might aggravate a sensitive knee.
-    </p>
-
-    <h3>Straight Leg Raises</h3>
-    <p>
-      Lying on your back with one knee bent, raise the straight leg to the height of the bent knee, hold for 3 seconds, and lower slowly. This targets the quadriceps while keeping the knee in an extended position, minimizing patellofemoral stress.
-    </p>
-
-    <h3>Step-Ups on a Low Platform</h3>
-    <p>
-      Using a step 10–15 cm high, step up with one foot, bring the other foot up, then step back down. Focus on controlled movement and keeping your knee aligned over your toes. This functional exercise directly mimics stair climbing at a reduced intensity.
-    </p>
-
-    <h3>Clamshells for Hip Stability</h3>
-    <p>
-      Lying on your side with knees bent, lift your top knee while keeping feet together. This targets the gluteus medius, a critical muscle for preventing inward knee collapse during stair climbing.
-    </p>
-
-    <h3>Seated Knee Extensions</h3>
-    <p>
-      Sitting in a chair, slowly straighten one leg, hold for 3 seconds, and lower. This isolated movement strengthens the quadriceps through a controlled range of motion. Our <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">how to strengthen knees</Link> guide provides a comprehensive strengthening program.
-    </p>
-
-    <InfoBox title="Consistency Over Intensity">
-      <p>When building knee strength, daily gentle sessions of 10–15 minutes are more effective than occasional intense workouts. The muscles around your knee respond best to consistent, moderate loading that allows progressive adaptation over weeks and months.</p>
-    </InfoBox>
-
-    {/* Illustration 4: Incorrect vs correct stair climbing */}
-    <figure className="my-8">
-      <svg viewBox="0 0 800 480" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto rounded-xl bg-white border border-border">
-        <text x="400" y="40" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="22" fontWeight="800" fill="#111827">Stair Climbing: Common Mistakes vs Correct Form</text>
-
-        {/* Incorrect side */}
-        <rect x="30" y="70" width="350" height="380" rx="16" fill="#FEF2F2" stroke="#FCA5A5" strokeWidth="2"/>
-        <circle cx="205" cy="100" r="18" fill="#EF4444"/>
-        <text x="205" y="107" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="20" fontWeight="800" fill="#FFFFFF">✕</text>
-        <text x="205" y="140" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" fill="#DC2626">Common Mistakes</text>
-
-        {[
-          "Leaning too far forward",
-          "Knee collapsing inward",
-          "Taking steps too quickly",
-          "Landing on toes only",
-          "Locking knee at the top",
-          "Gripping handrail too tightly",
-        ].map((item, i) => (
-          <g key={i}>
-            <circle cx="70" cy={180 + i * 36} r="10" fill="#FCA5A5"/>
-            <text x="70" y={185 + i * 36} textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="12" fontWeight="700" fill="#991B1B">{i + 1}</text>
-            <text x="90" y={186 + i * 36} fontFamily="system-ui, sans-serif" fontSize="14" fill="#374151">{item}</text>
-          </g>
-        ))}
-
-        {/* Correct side */}
-        <rect x="420" y="70" width="350" height="380" rx="16" fill="#F0FDF4" stroke="#86EFAC" strokeWidth="2"/>
-        <circle cx="595" cy="100" r="18" fill="#22C55E"/>
-        <text x="595" y="107" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="20" fontWeight="800" fill="#FFFFFF">✓</text>
-        <text x="595" y="140" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" fill="#16A34A">Correct Form</text>
-
-        {[
-          "Upright torso, slight forward lean",
-          "Knee tracks over 2nd/3rd toe",
-          "Controlled, steady pace",
-          "Full foot on each step",
-          "Soft knee at the top (not locked)",
-          "Handrail for balance, not pulling",
-        ].map((item, i) => (
-          <g key={i}>
-            <circle cx="460" cy={180 + i * 36} r="10" fill="#86EFAC"/>
-            <text x="460" y={185 + i * 36} textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="12" fontWeight="700" fill="#166534">{i + 1}</text>
-            <text x="480" y={186 + i * 36} fontFamily="system-ui, sans-serif" fontSize="14" fill="#374151">{item}</text>
-          </g>
-        ))}
-      </svg>
-      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        Simple adjustments to stair climbing form can significantly reduce knee stress
-      </figcaption>
-    </figure>
-
-    {/* SECTION 7 */}
-    <h2>Daily Routines That Help Reduce Knee Discomfort</h2>
-    <p>
-      Beyond specific exercises, incorporating supportive habits into your daily routine can make a meaningful difference in how your knees feel on stairs.
-    </p>
-
-    <h3>Morning Warm-Up</h3>
-    <p>
-      Before your first flight of stairs each day, take 2–3 minutes to gently bend and straighten your knees while seated. This helps distribute synovial fluid within the joint, providing natural lubrication before loading.
-    </p>
-
-    <h3>Pre-Stair Quad Activation</h3>
-    <p>
-      Before climbing stairs, tighten your quadriceps by pressing the back of your knee into the floor (if seated) or simply contracting the front thigh muscles for 5 seconds. This "wakes up" the muscles so they're ready to support the joint.
-    </p>
-
-    <h3>Post-Activity Warmth</h3>
-    <p>
-      After a day involving lots of stair climbing, applying gentle warmth to the knee area can help soothe the joint and support comfortable recovery. A warm compress or heated wrap for 15–20 minutes can make a noticeable difference in how your knees feel the next morning.
-    </p>
-
-    <h3>Evening Stretching</h3>
-    <p>
-      Gentle stretching of the quadriceps, hamstrings, and calves before bed helps maintain flexibility and reduces overnight stiffness. Even 5 minutes of targeted stretching can improve morning knee comfort.
-    </p>
-
-    <TipsList tips={[
-      "Warm up your knees gently before the first stair climb of the day",
-      "Activate your quadriceps for 5 seconds before approaching stairs",
-      "Apply warmth to the knee area after heavy stair use",
-      "Stretch quadriceps, hamstrings, and calves each evening",
-      "Take elevator breaks if possible on high stair-use days",
-      "Wear supportive shoes with cushioned soles for daily stair climbing",
-    ]} />
-
-    <p>
-      If you're experiencing <Link to="/guides/sudden-knee-pain-guide" className="text-primary hover:underline">sudden knee pain</Link> that started recently and doesn't follow your usual pattern, it may be worth having it evaluated separately from chronic stair-related discomfort.
-    </p>
-
-    {/* SECTION 8 */}
-    <h2>How to Climb Stairs with Less Knee Strain</h2>
-    <p>
-      While strengthening is the long-term solution, there are immediate techniques you can use to reduce knee strain during stair climbing today.
-    </p>
-
-    <h3>Lead with Your Stronger Leg Going Up</h3>
-    <p>
-      When ascending stairs, lead with your less painful or stronger leg. This leg does the majority of the lifting work, reducing demand on the more sensitive knee.
-    </p>
-
-    <h3>Use the Handrail Strategically</h3>
-    <p>
-      Lightly grip the handrail for balance — not to pull yourself up. Using the handrail for balance reduces the stabilization demand on your knee muscles without creating a crutch dependency. If you find descending even harder than climbing, our detailed guide on <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">knee pain going down stairs</Link> explains the eccentric loading pattern and specific techniques for comfortable descent. Many people also notice <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking sounds</Link> on stairs, which are usually normal mechanical events amplified by the higher forces involved.
-    </p>
-
-    <h3>Take One Step at a Time</h3>
-    <p>
-      Avoid skipping steps. Taking stairs one at a time reduces the knee flexion angle required, which directly reduces patellofemoral load. This simple change can make a significant difference in comfort.
-    </p>
-
-    <h3>Control Your Speed</h3>
-    <p>
-      Rushing up stairs increases impact forces on the knee. A steady, controlled pace allows your muscles to properly absorb each step's load rather than transferring it to the joint.
-    </p>
-
-    <h3>Place Your Full Foot on Each Step</h3>
-    <p>
-      Avoid climbing on your toes. Placing your full foot on the stair distributes force more evenly and engages the glutes and hamstrings in addition to the quadriceps, spreading the workload across more muscles.
-    </p>
-
-    {/* Illustration 5: Quadriceps support diagram */}
-    <figure className="my-8">
-      <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto rounded-xl bg-white border border-border">
-        <text x="400" y="40" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="22" fontWeight="800" fill="#111827">How Strong Quadriceps Protect Your Knee</text>
-
-        {/* Weak quads path */}
-        <rect x="40" y="80" width="340" height="280" rx="16" fill="#FEF2F2" stroke="#FCA5A5" strokeWidth="2"/>
-        <text x="210" y="115" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" fill="#DC2626">Weak Quadriceps</text>
-
-        <g>
-          <rect x="80" y="140" width="260" height="40" rx="8" fill="#FECACA"/>
-          <text x="210" y="165" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#991B1B">Muscles can't absorb stair forces</text>
-        </g>
-        <text x="210" y="200" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="20" fill="#9CA3AF">↓</text>
-        <g>
-          <rect x="80" y="210" width="260" height="40" rx="8" fill="#FECACA"/>
-          <text x="210" y="235" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#991B1B">Excess load transfers to joint surfaces</text>
-        </g>
-        <text x="210" y="270" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="20" fill="#9CA3AF">↓</text>
-        <g>
-          <rect x="80" y="280" width="260" height="40" rx="8" fill="#FCA5A5"/>
-          <text x="210" y="305" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fontWeight="700" fill="#991B1B">Knee pain on stairs</text>
-        </g>
-
-        {/* Strong quads path */}
-        <rect x="420" y="80" width="340" height="280" rx="16" fill="#F0FDF4" stroke="#86EFAC" strokeWidth="2"/>
-        <text x="590" y="115" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" fill="#16A34A">Strong Quadriceps</text>
-
-        <g>
-          <rect x="460" y="140" width="260" height="40" rx="8" fill="#DCFCE7"/>
-          <text x="590" y="165" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#166534">Muscles absorb stair forces effectively</text>
-        </g>
-        <text x="590" y="200" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="20" fill="#9CA3AF">↓</text>
-        <g>
-          <rect x="460" y="210" width="260" height="40" rx="8" fill="#DCFCE7"/>
-          <text x="590" y="235" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fill="#166534">Joint surfaces experience reduced load</text>
-        </g>
-        <text x="590" y="270" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="20" fill="#9CA3AF">↓</text>
-        <g>
-          <rect x="460" y="280" width="260" height="40" rx="8" fill="#86EFAC"/>
-          <text x="590" y="305" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fontWeight="700" fill="#166534">Comfortable stair climbing</text>
-        </g>
-      </svg>
-      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        Strong quadriceps act as shock absorbers, protecting the knee joint during stair climbing
-      </figcaption>
-    </figure>
-
-    <InfoBox title="The 'Good Leg Up, Bad Leg Down' Rule">
-      <p>When climbing stairs, lead with your stronger (less painful) leg going up, and lead with your weaker (more painful) leg going down. This technique is used by physiotherapists worldwide and ensures the stronger leg does the heavier lifting work in both directions.</p>
-    </InfoBox>
-
-    <p>
-      For more exercises and strengthening strategies, explore our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee pain exercises guide</Link> and our guide to <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">knee pain when walking</Link> for related movement patterns.
-    </p>
-  </>
-);
-
 export const kneePainClimbingStairs: ArticleExport = {
+  cta: "knee-pain-climbing-stairs",
   article: {
     slug: "knee-pain-climbing-stairs",
-    title: "Knee Pain When Climbing Stairs: Causes & Strengthening Tips",
-    subtitle: "Why Stairs Stress Your Knees & What Helps",
-    intro: "Understand why knee pain happens when climbing stairs and learn practical strengthening habits that support lasting knee comfort. This guide covers the biomechanics of stair climbing, common causes of stair-related knee pain, and daily routines that help reduce discomfort.",
-    metaTitle: "Knee Pain Climbing Stairs: Causes & Tips",
-    metaDescription: "Why does your knee hurt when climbing stairs? Learn the biomechanics, common causes, and strengthening habits that support knee comfort on stairs every day.",
-    heroImage: heroImage,
+    title: "Knee Pain When Climbing Stairs: Causes by Location & What Helps",
+    subtitle: "Why stair ascent can hurt even when level walking feels fine",
+    intro:
+      "Knee pain when climbing stairs often appears because stair ascent combines a deeper knee bend with the effort of lifting your body to the next step. The exact meaning depends on where the pain is felt, when it appears during the step, whether the knee swells, and whether the pattern began after an injury or a sudden increase in activity. This guide focuses specifically on going upstairs, not stair descent.",
+    metaTitle: "Knee Pain Climbing Stairs: Causes & What Helps",
+    metaDescription:
+      "Learn why knees hurt going upstairs, how pain location and step phase change the likely pattern, practical stair adjustments, and warning signs.",
+    heroImage,
     publishedDate: "March 4, 2026",
-    content: articleContent,
-    nextSlug: "knee-pain-after-exercise",
-    nextTitle: "Knees Hurt After Exercise? Causes & Recovery",
+    lastUpdated: "July 28, 2026",
+    nextSlug: "knee-pain-going-down-stairs",
+    nextTitle: "Knee Pain Going Down Stairs: Causes and What Helps",
+    seoTags:
+      "knee pain climbing stairs, knee pain going upstairs, knee hurts walking up stairs, kneecap pain climbing stairs, knee pain upstairs but not walking, one knee hurts going upstairs, pain above kneecap stairs, pain below kneecap stairs",
     faqs,
-    seoTags: "knee pain when climbing stairs, pain in knee when climbing stairs, knee pain while climbing stairs, knee pain walking up stairs, knee pain when climbing up stairs, knee pain climbing stairs but not walking, knee cap pain stairs, quadriceps knee support, stair climbing knee comfort, strengthening knees for stairs",
+    sources: [
+      {
+        title: "Patellofemoral Pain Syndrome",
+        publisher: "American Academy of Orthopaedic Surgeons",
+        url: "https://orthoinfo.aaos.org/en/diseases--conditions/patellofemoral-pain-syndrome/",
+      },
+      {
+        title: "Best Practice Guide for Patellofemoral Pain",
+        publisher: "British Journal of Sports Medicine via PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/39401870/",
+      },
+      {
+        title: "Patellofemoral Joint Reaction Force Across Activities",
+        publisher: "British Journal of Sports Medicine via PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/35115309/",
+      },
+      {
+        title: "Knee Joint Biomechanics in Stair Ascent",
+        publisher: "Journal of Orthopaedic Research via PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/36054682/",
+      },
+      {
+        title: "Patellofemoral Joint Stress During Stair Ascent and Descent",
+        publisher: "Gait & Posture via PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/12297253/",
+      },
+      {
+        title: "Knee Pain: Self-Care and When to Get Help",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/conditions/knee-pain/",
+      },
+    ],
+    content: (
+      <>
+        <InfoBox title="Quick answer">
+          <p>
+            Going upstairs asks the knee to bend under load while the leg produces enough force to lift the body. Pain around the kneecap is common, but tendon irritation, osteoarthritis, a recent load increase, and other knee problems can create a similar pattern. Use the handrail, slow the task, reduce unnecessary stair repetitions during a flare, and pay attention to pain location, swelling, and the next-day response.
+          </p>
+        </InfoBox>
+
+        <h2>Why Going Upstairs Can Hurt When Walking Does Not</h2>
+        <p>
+          Level walking and stair ascent are not the same task. On a stair, the supporting knee usually bends more, the body must be raised against gravity, and the quadriceps produce a larger knee-extension effort. The hip and calf also contribute to lifting and stabilizing the body. This makes a stair step a useful capacity test for the whole leg rather than a simple test of the knee alone.
+        </p>
+        <p>
+          Biomechanical studies estimate greater patellofemoral joint force during stair ascent than during level walking, but the exact value varies with step height, speed, knee angle, body proportions, and the model used. A fixed number cannot diagnose why one person's knee hurts. More useful clues are the location of the symptom, the phase of the step that provokes it, and whether the knee returns to baseline afterward.
+        </p>
+        <p>
+          If the problem occurs mainly while lowering yourself, use the separate guide to <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">knee pain going down stairs</Link>. Descent relies more heavily on controlled braking and deserves its own plan.
+        </p>
+
+        <h2>Use Pain Location as the First Clue</h2>
+        <div className="my-6 overflow-x-auto">
+          <table className="w-full min-w-[760px] border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="p-3 text-left font-semibold">Where it hurts</th>
+                <th className="p-3 text-left font-semibold">A pattern it may fit</th>
+                <th className="p-3 text-left font-semibold">Details that matter</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border align-top">
+                <td className="p-3 font-medium">Around or behind the kneecap</td>
+                <td className="p-3">A common patellofemoral pain pattern</td>
+                <td className="p-3">Often also sensitive with squats, running, prolonged sitting, or stair descent</td>
+              </tr>
+              <tr className="border-b border-border align-top">
+                <td className="p-3 font-medium">Just below the kneecap</td>
+                <td className="p-3">Patellar tendon irritation may be considered</td>
+                <td className="p-3">Jumping, running, heavy leg training, and a recent increase in load may be relevant</td>
+              </tr>
+              <tr className="border-b border-border align-top">
+                <td className="p-3 font-medium">Above the kneecap</td>
+                <td className="p-3">Quadriceps tendon or nearby tissue sensitivity</td>
+                <td className="p-3">Look for recent hill work, step-ups, squats, or repeated stair use</td>
+              </tr>
+              <tr className="border-b border-border align-top">
+                <td className="p-3 font-medium">Inner or outer joint line</td>
+                <td className="p-3">Meniscus or another joint structure may be involved</td>
+                <td className="p-3">A twist, swelling, catching, or true locking increases concern</td>
+              </tr>
+              <tr className="align-top">
+                <td className="p-3 font-medium">Back of the knee</td>
+                <td className="p-3">Soft-tissue tension, swelling, or another posterior-knee problem</td>
+                <td className="p-3">A lump, calf swelling, or inability to straighten the knee needs assessment</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Location narrows the possibilities but does not confirm a diagnosis. The <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee pain location map</Link> can help you describe the area more precisely. For a symptom centered under or behind the patella, see the main guide to <Link to="/guides/pain-behind-kneecap" className="text-primary hover:underline">pain behind the kneecap and patellofemoral pain</Link>.
+        </p>
+
+        <h2>Notice When the Pain Appears During the Step</h2>
+        <h3>As you place the foot on the next stair</h3>
+        <p>
+          Pain before the leg begins to push may be influenced by the initial knee bend, confidence in loading the leg, or a sensitive range of motion. A higher step demands more knee and hip flexion. Compare ordinary stairs with a lower step rather than repeatedly forcing the painful range.
+        </p>
+
+        <h3>As you push your body upward</h3>
+        <p>
+          Pain during the lifting phase may be more sensitive to step height, speed, fatigue, and current strength capacity. It does not automatically mean the quadriceps are weak. Pain can temporarily reduce force production, and people often change their movement strategy to protect the knee.
+        </p>
+
+        <h3>As the trailing foot leaves the lower step</h3>
+        <p>
+          The calf and hip contribute to the final part of ascent. Limited ankle motion, calf discomfort, or reduced confidence on one side may shift more demand toward the leading knee. If ankle restriction seems relevant, the guide to <Link to="/guides/tight-calves-knee-pain" className="text-primary hover:underline">tight calves and knee pain</Link> explains a simple mobility check.
+        </p>
+
+        <h3>Only after several flights</h3>
+        <p>
+          A symptom that appears with accumulated repetitions may fit a capacity or workload problem more than an immediate injury. Note how many steps you can manage before pain begins, whether it settles after a short break, and whether the threshold changes from week to week.
+        </p>
+
+        <h2>Common Patterns Behind Stair-Ascent Pain</h2>
+        <h3>Patellofemoral pain</h3>
+        <p>
+          Patellofemoral pain is usually felt around or behind the kneecap and is commonly provoked by loaded knee bending. Stairs, squats, running, and prolonged sitting may all be relevant. It is a clinical pattern rather than proof of a single tracking fault or damaged cartilage.
+        </p>
+
+        <h3>A recent jump in activity</h3>
+        <p>
+          A new workout, more hill walking, repeated step-ups, moving house, travel, or an unusually stair-heavy week can exceed current capacity. The useful response is not necessarily complete rest. Reduce the provoking dose, maintain comfortable movement, and rebuild gradually as symptoms settle.
+        </p>
+
+        <h3>Tendon sensitivity</h3>
+        <p>
+          Pain above or below the kneecap may follow repeated jumping, heavy squats, running, or rapid changes in training. Tendon symptoms often respond to a structured loading plan, but a clinician should confirm the pattern when the pain is persistent or highly localized.
+        </p>
+
+        <h3>Osteoarthritis or another joint condition</h3>
+        <p>
+          Gradual aching, stiffness, reduced movement, and symptoms across several daily tasks can occur with osteoarthritis or another load-sensitive knee condition. Age alone does not determine the cause, and imaging findings do not always match symptom severity. A history and examination are more useful than guessing from stairs alone.
+        </p>
+
+        <h3>An acute injury</h3>
+        <p>
+          Pain that began after a fall, twist, impact, or sudden pop needs a more cautious approach. Rapid swelling, inability to bear weight, instability, or a blocked knee should not be managed as ordinary stair sensitivity.
+        </p>
+
+        <h2>How to Climb Stairs With Less Irritation</h2>
+        <ol className="my-4 list-decimal space-y-3 pl-6">
+          <li><strong>Use the handrail.</strong> Let the arms share some of the task and improve balance.</li>
+          <li><strong>Lead with the less painful leg.</strong> During a short flare, the stronger or more comfortable side can do more of the lifting.</li>
+          <li><strong>Use a step-to pattern.</strong> Place both feet on each step instead of alternating if a normal pattern is too painful.</li>
+          <li><strong>Place the whole foot securely.</strong> A stable contact can reduce rushing and improve confidence.</li>
+          <li><strong>Slow the pace.</strong> Avoid jumping, skipping steps, or turning while the knee is sensitive.</li>
+          <li><strong>Reduce extra load temporarily.</strong> Carrying bags or a child increases task difficulty.</li>
+        </ol>
+        <p>
+          These are temporary ways to keep the task manageable. They are not a permanent rule and do not mean the painful leg should never be used. As symptoms settle, gradually return to alternating steps.
+        </p>
+
+        <h2>A Gradual Return-to-Stairs Progression</h2>
+        <p>
+          Start below the level that repeatedly triggers symptoms. A supported sit-to-stand, shallow squat, or low step-up may provide a manageable entry point. Use a stable rail or counter and choose a range that remains controlled.
+        </p>
+        <ol className="my-4 list-decimal space-y-3 pl-6">
+          <li><strong>Establish a baseline.</strong> Record the number of comfortable repetitions and the response later that day.</li>
+          <li><strong>Practice a low step.</strong> Use a lower platform or the bottom stair with support.</li>
+          <li><strong>Add repetitions before height.</strong> Increase only one variable at a time.</li>
+          <li><strong>Return to a short flight.</strong> Use ordinary stairs at a steady pace without carrying extra load.</li>
+          <li><strong>Add speed, height, or load last.</strong> Do not increase all three together.</li>
+        </ol>
+        <p>
+          A tolerable session should not produce sharp or escalating pain, a limp, meaningful swelling, or a next-day flare that clearly exceeds baseline. If even a low supported step remains difficult, a physiotherapist can assess strength, movement strategy, and an appropriate starting level. General strengthening options are covered in the <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">knee-strengthening guide</Link>.
+        </p>
+
+        <h2>Heat, Ice, and Short-Term Comfort</h2>
+        <p>
+          Temperature is optional symptom relief. A wrapped cold pack may be considered when the knee is newly swollen or unusually warm. Gentle heat may feel more comfortable when stiffness or muscle tightness is the main problem and there is no swelling. Use a barrier, follow product instructions, and do not use temporary relief as permission to force a painful stair pattern.
+        </p>
+        <p>
+          The <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat versus ice guide</Link> explains when each option may be more appropriate.
+        </p>
+
+        <h2>When to Arrange an Assessment</h2>
+        <div className="my-6 rounded-2xl border border-amber-200 bg-amber-50 p-6">
+          <p className="mb-3 font-semibold text-amber-950">Arrange a non-urgent assessment when:</p>
+          <ul className="list-disc space-y-2 pl-5 text-amber-950/90">
+            <li>pain persists, worsens, or repeatedly limits stairs and ordinary walking</li>
+            <li>the knee swells, catches, truly locks, or repeatedly gives way</li>
+            <li>you cannot regain normal bending or straightening</li>
+            <li>one-sided symptoms keep returning without a clear load change</li>
+          </ul>
+          <p className="mb-3 mt-5 font-semibold text-amber-950">Seek urgent care when:</p>
+          <ul className="list-disc space-y-2 pl-5 text-amber-950/90">
+            <li>you cannot bear weight after an injury</li>
+            <li>the knee is badly swollen, deformed, or changed shape</li>
+            <li>the knee is hot and red and you also feel feverish or unwell</li>
+          </ul>
+        </div>
+      </>
+    ),
   },
-  cta: "stair-climbing-knee-comfort",
 };

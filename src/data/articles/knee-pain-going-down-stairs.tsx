@@ -3,26 +3,23 @@ import { InfoBox } from "@/components/ArticleCharts";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-knee-pain-going-down-stairs.jpg";
 import stairDescentImage from "@/assets/article-stair-descent-control-v1.svg";
-import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
-
-const sourceLinkClass = "font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700";
 
 export const kneePainGoingDownStairs: ArticleExport = {
-  cta: "",
+  cta: "knee-pain-going-down-stairs",
   article: {
     slug: "knee-pain-going-down-stairs",
     title: "Knee Pain Going Down Stairs: Causes and What Helps",
     subtitle: "Why descent can expose kneecap sensitivity, muscle-control limits, and other knee problems",
     intro:
       "Going down stairs asks one leg to control your body as the knee bends under load. Pain during that task is often felt around the kneecap, but the location, onset, swelling, and mechanical symptoms matter. This guide explains the common patterns, safer short-term adjustments, and when an assessment is the better next step.",
-    metaTitle: "Knee Pain Going Down Stairs: Causes and Relief",
+    metaTitle: "Knee Pain Going Down Stairs: Causes & What Helps",
     metaDescription:
-      "Learn why knees may hurt going down stairs, how pain location changes the possibilities, what adjustments may help, and when to seek medical care.",
+      "Learn why knees hurt going down stairs, how pain location changes the likely pattern, practical descent adjustments, and when to seek care.",
     heroImage,
     publishedDate: "March 4, 2026",
-    lastUpdated: "July 13, 2026",
+    lastUpdated: "July 28, 2026",
     nextSlug: "knee-pain-climbing-stairs",
-    nextTitle: "Knee Pain When Climbing Stairs: Causes and Tips",
+    nextTitle: "Knee Pain When Climbing Stairs: Causes by Location",
     faqs: [
       {
         question: "Why does my knee hurt when going down stairs?",
@@ -54,9 +51,51 @@ export const kneePainGoingDownStairs: ArticleExport = {
         answer:
           "Arrange an assessment when pain persists, worsens, repeatedly limits normal activity, or comes with swelling, locking, instability, or reduced movement. Seek urgent care after major injury, with deformity, inability to bear weight, a very swollen knee, or a hot red knee with fever.",
       },
+      {
+        question: "Why does one knee hurt going down stairs?",
+        answer:
+          "One-sided pain may reflect a recent load change, a previous injury, a local tendon or joint problem, or pain-related compensation. Persistent asymmetry, swelling, catching, instability, or a reduced range of motion should be assessed.",
+      },
+      {
+        question: "Why does my knee hurt going down stairs but not up?",
+        answer:
+          "Descent requires the supporting leg to brake and lower the body while the knee bends. That demand can provoke a sensitive kneecap joint or expose limited control even when stair ascent feels manageable. The pattern is useful information but is not a diagnosis by itself.",
+      },
     ],
     seoTags:
       "knee pain going down stairs, knee hurts downstairs, kneecap pain stairs, patellofemoral pain stairs, knee pain descending stairs, front knee pain",
+    sources: [
+      {
+        title: "Patellofemoral Pain Syndrome",
+        publisher: "American Academy of Orthopaedic Surgeons",
+        url: "https://orthoinfo.aaos.org/en/diseases--conditions/patellofemoral-pain-syndrome/",
+      },
+      {
+        title: "Best Practice Guide for Patellofemoral Pain",
+        publisher: "British Journal of Sports Medicine via PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/39401870/",
+      },
+      {
+        title: "Patellofemoral Pain Clinical Practice Guideline",
+        publisher: "APTA Orthopedics",
+        url: "https://www.orthopt.org/content/s/patellofemoral-pain-2019",
+      },
+      {
+        title: "Patellofemoral Joint Stress During Stair Ascent and Descent",
+        publisher: "Gait & Posture via PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/12297253/",
+      },
+      {
+        title: "Patellofemoral Joint Reaction Force Across Activities",
+        publisher: "British Journal of Sports Medicine via PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/35115309/",
+      },
+      {
+        title: "Knee Pain: Self-Care and When to Get Help",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/conditions/knee-pain/",
+      },
+    ],
     content: (
       <>
         <InfoBox title="Quick answer">
@@ -140,7 +179,7 @@ export const kneePainGoingDownStairs: ArticleExport = {
           Patellofemoral pain describes pain around or behind the kneecap. The American Academy of Orthopaedic Surgeons lists activities that repeatedly bend the knee, including stairs, running, jumping, and squatting, among common triggers. Long periods of sitting with the knee bent may also be uncomfortable.
         </p>
         <p>
-          Patellofemoral pain is not simply proof that cartilage is “wearing away,” and it is not caused by one universal alignment fault. Activity changes, current physical capacity, movement strategy, sleep, recovery, and sensitivity can all influence symptoms. A useful plan is therefore based on what you can currently tolerate and how the knee responds over time.
+          Patellofemoral pain is not simply proof that cartilage is “wearing away,” and it is not caused by one universal alignment fault. Activity changes, current physical capacity, movement strategy, sleep, recovery, and sensitivity can all influence symptoms. A useful plan is therefore based on what you can currently tolerate and how the knee responds over time. The main guide to <Link to="/guides/pain-behind-kneecap" className="text-primary hover:underline">pain behind the kneecap and patellofemoral pain</Link> explains this pattern in more detail.
         </p>
 
         <h2>How to Go Down Stairs With Less Irritation</h2>
@@ -165,10 +204,6 @@ export const kneePainGoingDownStairs: ArticleExport = {
         </p>
         <p>
           Avoid repeatedly testing the painful step just to see whether it still hurts. Use the information from normal daily movement, reduce unnecessary repetitions for a short period, and watch the overall direction. Improvement means ordinary tasks are becoming easier and the knee returns to baseline more quickly. Worsening means pain arrives earlier, lasts longer, or is joined by swelling, locking, instability, or reduced movement.
-        </p>
-
-        <p>
-          One contributor that is easy to miss sits below the knee rather than in it. Descending stairs demands ankle motion, and when the calf is short the ankle runs out of range, so the knee absorbs what is left over. If your stairs discomfort has resisted knee focused work, the guide on <Link to="/guides/tight-calves-knee-pain" className="text-primary hover:underline">tight calves and knee pain</Link> covers how to test and change that.
         </p>
 
         <h2>A Practical Return-to-Stairs Progression</h2>
@@ -217,40 +252,6 @@ export const kneePainGoingDownStairs: ArticleExport = {
             <li>the knee is hot and red and you also feel feverish or unwell</li>
           </ul>
         </div>
-
-        <ArticleSourcesBox>
-        <ul className="my-4 list-disc space-y-3 pl-6">
-          <li>
-            <a className={sourceLinkClass} href="https://orthoinfo.aaos.org/en/diseases--conditions/patellofemoral-pain-syndrome/" target="_blank" rel="noreferrer noopener">
-              American Academy of Orthopaedic Surgeons: Patellofemoral Pain Syndrome
-            </a>
-          </li>
-          <li>
-            <a className={sourceLinkClass} href="https://pubmed.ncbi.nlm.nih.gov/39401870/" target="_blank" rel="noreferrer noopener">
-              British Journal of Sports Medicine: 2024 best-practice guide for patellofemoral pain
-            </a>
-          </li>
-          <li>
-            <a className={sourceLinkClass} href="https://www.orthopt.org/content/s/patellofemoral-pain-2019" target="_blank" rel="noreferrer noopener">
-              Academy of Orthopaedic Physical Therapy: Patellofemoral Pain Clinical Practice Guideline
-            </a>
-          </li>
-          <li>
-            <a className={sourceLinkClass} href="https://pubmed.ncbi.nlm.nih.gov/37770867/" target="_blank" rel="noreferrer noopener">
-              PubMed: Patellofemoral contact area and pressure during stair ascent and descent
-            </a>
-          </li>
-          <li>
-            <a className={sourceLinkClass} href="https://www.nhs.uk/symptoms/knee-pain/" target="_blank" rel="noreferrer noopener">
-              NHS: Knee pain, self-care, and urgent warning signs
-            </a>
-          </li>
-        </ul>
-
-        <div className="my-8 rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm leading-6 text-slate-600">
-          <strong className="text-slate-900">Medical note:</strong> This guide provides general education and cannot diagnose the cause of knee pain. A qualified healthcare professional can assess your history, movement, strength, and need for testing.
-        </div>
-      </ArticleSourcesBox>
       </>
     ),
   },

@@ -196,7 +196,7 @@ export const kneeTightnessWithoutPain: ArticleExport = {
 
         <h3>Patellofemoral Sensitivity</h3>
         <p>
-          The front of the knee may feel tight during bending, stairs, or squatting when the kneecap area is sensitive. This pattern may overlap with patellofemoral pain even when discomfort is mild. See the <Link to="/guides/patellofemoral-pain-syndrome">patellofemoral pain syndrome guide</Link> when the sensation is concentrated around or behind the kneecap.
+          The front of the knee may feel tight during bending, stairs, or squatting when the kneecap area is sensitive. This pattern may overlap with patellofemoral pain even when discomfort is mild. See the <Link to="/guides/pain-behind-kneecap">patellofemoral pain syndrome guide</Link> when the sensation is concentrated around or behind the kneecap.
         </p>
 
         <h3>Osteoarthritis or Previous Injury</h3>

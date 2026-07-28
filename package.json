@@ -14,7 +14,7 @@
     "indexnow": "tsx scripts/submit-indexnow.ts",
     "validate:content": "tsx scripts/validate-content-registry.ts",
     "validate:assets": "node scripts/validate-performance-assets.mjs",
-    "prebuild": "node scripts/apply-resting-cluster-seo.mjs"
+    "prebuild": "node scripts/apply-resting-cluster-seo.mjs && node scripts/apply-front-knee-cluster-seo.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

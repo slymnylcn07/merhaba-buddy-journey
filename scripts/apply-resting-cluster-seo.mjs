@@ -117,8 +117,11 @@ function patchHowToSchema() {
   source = removeRecordBlock(source, "knees-hurt-after-resting");
   source = removeRecordBlock(source, "knee-pain-getting-up-after-sitting");
 
-  const anchor = '  "patellofemoral-pain-syndrome": {';
-  if (!source.includes(anchor)) throw new Error("HowTo insertion anchor not found");
+  const anchor = [
+    '  "patellofemoral-pain-syndrome": {',
+    '  "knee-pain-after-car-rides": {',
+  ].find((candidate) => source.includes(candidate));
+  if (!anchor) throw new Error("HowTo insertion anchor not found");
   const block = `  "knee-pain-getting-up-after-sitting": {\n` +
     `    name: "How to Stand Up More Comfortably After Sitting",\n` +
     `    description: "A gradual sit-to-stand sequence for ordinary knee stiffness when urgent warning signs are absent.",\n` +
