@@ -7,13 +7,14 @@ import { ArrowRight, Search, X, Clock, ChevronDown, ArrowUp, Sparkles, Check } f
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { guidesData } from "@/data/guides";
-import { recentGuidesData } from "@/data/recent-guides-data";
-import { guidePublicationDates } from "@/data/guide-publication-dates";
-import { guideDateOverrides } from "@/data/guide-date-overrides";
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 // Import images
+import thumbCollagenKneePain from "@/assets/guide-thumb-collagen-knee-pain.jpg";
+import thumbTurmericKneePain from "@/assets/guide-thumb-turmeric-knee-pain.jpg";
+import thumbVaricoseVeinsKneePain from "@/assets/guide-thumb-varicose-veins-knee-pain.jpg";
+import thumbKneeOsteoarthritisVsRheumatoidArthritis from "@/assets/guide-thumb-knee-osteoarthritis-vs-rheumatoid-arthritis.jpg";
 import thumbKneePain from "@/assets/guide-thumb-knee-pain.jpg";
 import thumbHeatTherapy from "@/assets/guide-thumb-heat-therapy.jpg";
 import thumbWhoBenefits from "@/assets/guide-thumb-who-benefits-branded.jpg";
@@ -101,13 +102,6 @@ import thumbBatch1BestInsolesForKneePain2026 from "@/assets/guide-thumbnails/bat
 import thumbBatch1BestInsolesForKneePain2026Avif from "@/assets/guide-thumbnails/batch-1/best-insoles-for-knee-pain-2026.avif";
 import thumbBatch1CordlessRechargeableHeatedKneeMassagers2026 from "@/assets/guide-thumbnails/batch-1/cordless-rechargeable-heated-knee-massagers-2026.webp";
 import thumbBatch1CordlessRechargeableHeatedKneeMassagers2026Avif from "@/assets/guide-thumbnails/batch-1/cordless-rechargeable-heated-knee-massagers-2026.avif";
-import thumbCustomCordlessMassagers from "@/assets/thumb-cordless-rechargeable-heated-knee-massagers-2026-buyers-guide.png";
-import thumbCustomFlatFeet from "@/assets/thumb-can-flat-feet-cause-knee-pain-overpronation-explained.png";
-import thumbCustomCycling from "@/assets/thumb-cycling-knee-pain-location-chart-and-bike-fit-fixes.png";
-import thumbCustomTightCalves from "@/assets/thumb-can-tight-calves-cause-knee-pain-the-calf-knee-connection.png";
-import thumbCustomBraceVsSleeve from "@/assets/thumb-knee-brace-vs-compression-sleeve-which-do-you-need.png";
-import thumbLowImpactCardio from "@/assets/guide-thumb-low-impact-cardio-knee-pain.jpg";
-import thumbBackwardWalking from "@/assets/guide-thumb-backward-walking-knee-pain.jpg";
 import thumbItBandFoamRollingList from "@/assets/hero-itband-foam-rolling.svg";
 import thumbSleepKneePainList from "@/assets/hero-sleep-knee-pain.svg";
 import thumbAirCompressionLegList from "@/assets/hero-air-compression-leg.svg";
@@ -136,20 +130,7 @@ import thumbBatch2HomeRemediesKneePainAvif from "@/assets/guide-thumbnails/batch
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "best-supplements-for-knee-pain": thumbSupplements,
-  "best-low-impact-cardio-knee-pain": thumbLowImpactCardio,
-  "backward-walking-knee-pain": thumbBackwardWalking,
   "glucosamine-chondroitin-knee-pain": thumbGlucosamine,
-  "cordless-rechargeable-heated-knee-massagers-2026": thumbCustomCordlessMassagers,
-  "can-flat-feet-cause-knee-pain": thumbCustomFlatFeet,
-  "flat-feet-knee-pain": thumbCustomFlatFeet,
-  "can-flat-feet-cause-knee-pain-overpronation-explained": thumbCustomFlatFeet,
-  "cycling-knee-pain-location-chart-and-bike-fit-fixes": thumbCustomCycling,
-  "cycling-knee-pain": thumbCustomCycling,
-  "tight-calves-knee-pain": thumbCustomTightCalves,
-  "can-tight-calves-cause-knee-pain": thumbCustomTightCalves,
-  "can-tight-calves-cause-knee-pain-the-calf-knee-connection": thumbCustomTightCalves,
-  "knee-brace-vs-compression-sleeve": thumbCustomBraceVsSleeve,
-  "knee-brace-vs-compression-sleeve-which-do-you-need": thumbCustomBraceVsSleeve,
   "menopause-knee-pain": thumbMenopause,
   "red-light-therapy-dose-knees": thumbRedLightDose,
   "pickleball-knee-recovery-routine": thumbPickleballRecovery,
@@ -214,6 +195,7 @@ const thumbnailMap: Record<string, string> = {
   "knee-pain-after-exercise": thumbKneePainAfterExercise,
   "burning-knees-after-exercise": thumbBatch1BurningKneesAfterExercise,
   "best-insoles-for-knee-pain-2026": thumbBatch1BestInsolesForKneePain2026,
+  "cordless-rechargeable-heated-knee-massagers-2026": thumbBatch1CordlessRechargeableHeatedKneeMassagers2026,
   "it-band-foam-rolling-step-by-step": thumbItBandFoamRollingList,
   "how-to-sleep-with-knee-pain": thumbSleepKneePainList,
   "air-compression-leg-massagers-do-they-work": thumbAirCompressionLegList,
@@ -241,6 +223,10 @@ const thumbnailMap: Record<string, string> = {
   "knee-ache-after-leg-workouts": thumbBatch3KneeAcheAfterLegWorkouts,
   "home-remedies-knee-pain": thumbBatch2HomeRemediesKneePain,
   "weight-affects-knee-pain": thumbBatch3WeightAffectsKneePain,
+  "collagen-peptides-knee-pain": thumbCollagenKneePain,
+  "turmeric-curcumin-knee-pain": thumbTurmericKneePain,
+  "varicose-veins-knee-pain": thumbVaricoseVeinsKneePain,
+  "knee-osteoarthritis-vs-rheumatoid-arthritis": thumbKneeOsteoarthritisVsRheumatoidArthritis,
 };
 
 const thumbnailAvifMap: Record<string, string> = {
@@ -263,79 +249,36 @@ const thumbnailAvifMap: Record<string, string> = {
   "heat-vs-ice-for-knees": thumbHeatVsIceAvif,
 };
 
-const thumbnailPatternMap: { pattern: RegExp; image: string }[] = [
-  { pattern: /cordless-rechargeable-heated-knee-massagers/i, image: thumbCustomCordlessMassagers },
-  { pattern: /(flat-feet|overpronation|foot-to-knee-chain)/i, image: thumbCustomFlatFeet },
-  { pattern: /(cycling-knee-pain|bike-fit)/i, image: thumbCustomCycling },
-  { pattern: /(tight-calves|calf-knee-connection)/i, image: thumbCustomTightCalves },
-  { pattern: /(knee-brace-vs-compression-sleeve|compression-sleeve)/i, image: thumbCustomBraceVsSleeve },
-];
-
-const resolveGuideThumbnail = (slug: string) => {
-  const exact = thumbnailMap[slug];
-  if (exact) return exact;
-  const matched = thumbnailPatternMap.find((entry) => entry.pattern.test(slug));
-  return matched?.image || thumbKneePain;
-};
-
-type GuideWithPublication = (typeof guidesData)[number] & { publishedDate?: string };
-
-const allGuidesData: GuideWithPublication[] = [
-  ...guidesData.map((guide) => {
-    const override = guideDateOverrides[guide.slug];
-    return {
-      ...guide,
-      publishedDate: override?.publishedDate ?? guidePublicationDates[guide.slug],
-      lastModified: override?.lastModified ?? guide.lastModified,
-    };
-  }),
-  ...recentGuidesData.map((guide) => {
-    const override = guideDateOverrides[guide.slug];
-    return {
-      ...guide,
-      publishedDate: override?.publishedDate ?? guide.publishedDate,
-      lastModified: override?.lastModified ?? guide.lastModified,
-    };
-  }),
-];
-
-// Combine data with thumbnails and immutable publication dates.
-const guides = allGuidesData.map(guide => ({
+// Combine data with thumbnails
+const guides = guidesData.map(guide => ({
   ...guide,
-  thumbnail: resolveGuideThumbnail(guide.slug),
+  thumbnail: thumbnailMap[guide.slug] || thumbKneePain,
   thumbnailAvif: thumbnailAvifMap[guide.slug],
 }));
 
 // Helper to get guide by slug
 const getGuide = (slug: string) => guides.find(g => g.slug === slug);
 
-const getGuidePublishedTime = (guide: { publishedDate?: string }) => {
-  const published = new Date(guide.publishedDate || "").getTime();
-  return !Number.isNaN(published) && published > 0 ? published : 0;
-};
+const latestPrioritySlugs = [
+  "menopause-knee-pain",
+  "glucosamine-chondroitin-knee-pain",
+  "red-light-therapy-dose-knees",
+  "pickleball-knee-recovery-routine",
+  "cordless-rechargeable-heated-knee-massagers-2026",
+  "best-insoles-for-knee-pain-2026",
+];
 
 const formatGuideDate = (value?: string) => {
-  if (!value) return "Recently published";
+  if (!value) return "Recently updated";
   const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return "Recently published";
+  if (Number.isNaN(date.getTime())) return "Recently updated";
   return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", year: "numeric" }).format(date);
-};
-
-const isNewGuide = (value?: string) => {
-  if (!value) return false;
-  const time = new Date(value).getTime();
-  if (Number.isNaN(time)) return false;
-  const TWENTY_ONE_DAYS = 1000 * 60 * 60 * 24 * 21;
-  return Date.now() - time <= TWENTY_ONE_DAYS;
 };
 
 // ?? Section configurations ??
 
 const featuredSlugs = [
-  "what-causes-knee-pain-guide",
-  "heat-vs-ice-for-knees",
-  "knee-clicking-when-walking",
-  "knee-pain-after-exercise",
+  "why-knee-pain-doesnt-go-away",
 ];
 
 // Priority Guides (high-impact SEO articles)
@@ -381,8 +324,6 @@ const activitySlugs = [
   "knee-arthritis-pain-guide",
   "how-to-strengthen-knees",
   // Accordion
-  "best-low-impact-cardio-knee-pain",
-  "backward-walking-knee-pain",
   "understanding-knee-injuries",
   "best-running-shoes-knee-pain",
   "how-to-fix-knee-pain",
@@ -673,9 +614,12 @@ const Guides = () => {
   const featuredGuides = featuredSlugs.map(getGuide).filter(Boolean) as typeof guides;
 
   const latestGuides = useMemo(() => {
-    return [...guides]
-      .sort((a, b) => getGuidePublishedTime(b) - getGuidePublishedTime(a))
-      .slice(0, 6);
+    const priority = latestPrioritySlugs.map(getGuide).filter(Boolean) as typeof guides;
+    const prioritySet = new Set(priority.map((guide) => guide.slug));
+    const remaining = [...guides]
+      .filter((guide) => !prioritySet.has(guide.slug))
+      .sort((a, b) => new Date(b.lastModified || 0).getTime() - new Date(a.lastModified || 0).getTime());
+    return [...priority, ...remaining].slice(0, 6);
   }, []);
 
   const canonicalUrl = "https://flexi-knee.com/guides";
@@ -979,7 +923,7 @@ const Guides = () => {
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">New & recently updated</p>
                     <h2 className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-slate-950 md:text-3xl">Latest Guides</h2>
                     <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-                      Automatically sorted by publish date so genuinely new guides stay on top, while older guides do not jump ahead just because they were edited.
+                      The newest research-led additions on menopause, glucosamine, red-light dosing, pickleball recovery, cordless massagers, and orthopedic insoles.
                     </p>
                   </div>
                   <button
@@ -1007,7 +951,7 @@ const Guides = () => {
                               className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                               loading={index < 3 ? "eager" : "lazy"}
                             />
-                            {isNewGuide(guide.publishedDate) && (
+                            {index < 3 && (
                               <span className="absolute left-4 top-4 rounded-full bg-blue-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white shadow-sm">
                                 New guide
                               </span>
@@ -1015,7 +959,7 @@ const Guides = () => {
                           </div>
                           <div className="p-5">
                             <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                              <span>Published {formatGuideDate(guide.publishedDate)}</span>
+                              <span>Updated {formatGuideDate(guide.lastModified)}</span>
                               <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" />{guide.readTime} min</span>
                             </div>
                             <h3 className="mt-3 text-lg font-semibold leading-snug text-slate-950 transition-colors group-hover:text-blue-600">{guide.title}</h3>
@@ -1035,11 +979,11 @@ const Guides = () => {
               <div className="container px-4 max-w-6xl mx-auto">
                 <SectionHeader 
                   id="featured"
-                  title="Start Here: Core Knee Guides"
-                  subtitle="Our locomotive guides: the highest-leverage starting points for understanding symptoms, daily routines, and what to try next."
+                  title="Start Here"
+                  subtitle="Comprehensive guides for understanding and supporting everyday knee comfort."
                 />
                 <p className="text-sm text-slate-600 leading-relaxed max-w-3xl mb-6 -mt-4">
-                  Start with <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">what causes knee pain</Link>, then move to <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat vs. ice</Link>, <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking while walking</Link>, and <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">post-exercise knee pain</Link> for the clearest entry points into the library.
+                  New here? Start with <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">what causes knee pain</Link>, build a <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily comfort routine</Link>, or learn <Link to="/guides/why-knee-pain-doesnt-go-away" className="text-primary hover:underline">why knee pain sometimes persists</Link>.
                 </p>
                 {isLoading ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

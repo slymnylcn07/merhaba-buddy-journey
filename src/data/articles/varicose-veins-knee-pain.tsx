@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
-import heroImage from "@/assets/hero-air-compression-leg.svg";
+import heroImage from "@/assets/article-hero-varicose-veins-knee-pain.jpg";
+import varicoseWarningSignsImage from "@/assets/article-inline-varicose-veins-warning-signs.jpg";
+import varicoseUltrasoundImage from "@/assets/article-inline-varicose-veins-ultrasound.jpg";
 
 const linkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
@@ -103,6 +105,18 @@ export const varicoseVeinsKneePain: ArticleExport = {
           The patterns are not absolute. Venous swelling can make the knee feel tight when bending, and osteoarthritis can ache after prolonged standing. A person can have both. The guide to <Link to="/guides/knee-pain-locations-visual-guide" className={linkClass}>knee pain locations</Link> helps identify whether symptoms sit in the joint line, kneecap, tendon, calf, or popliteal area.
         </p>
 
+
+        <figure>
+          <img
+            src={varicoseWarningSignsImage}
+            alt="Visible behind-knee varicose veins with a tender, painful area highlighted around the calf and knee"
+            loading="lazy"
+          />
+          <figcaption>
+            Behind-knee varicose veins usually create aching, heaviness, or tenderness, but a suddenly hotter or more painful area deserves closer attention.
+          </figcaption>
+        </figure>
+
         <h2>Varicose Veins vs. Baker’s Cyst vs. Joint Pain vs. DVT</h2>
         <div className="my-8 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
           <table className="w-full min-w-[980px] border-collapse text-left text-sm">
@@ -195,6 +209,18 @@ export const varicoseVeinsKneePain: ArticleExport = {
         <p>
           Knee imaging answers different questions. Ultrasound or MRI may be used when a Baker’s cyst or soft-tissue structure is suspected. X-rays can show osteoarthritis but do not diagnose venous reflux. Blood tests do not diagnose ordinary varicose veins.
         </p>
+
+
+        <figure>
+          <img
+            src={varicoseUltrasoundImage}
+            alt="A clinician using ultrasound to assess veins around the knee and calf in a medical exam room"
+            loading="lazy"
+          />
+          <figcaption>
+            Duplex ultrasound helps confirm venous reflux and is the standard test when the diagnosis is uncertain or treatment is being planned.
+          </figcaption>
+        </figure>
 
         <h2>What Can Be Done at Home for Stable Varicose Vein Symptoms?</h2>
         <p>

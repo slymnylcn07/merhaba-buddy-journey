@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
-import heroImage from "@/assets/guide-thumb-knee-arthritis.jpg";
+import heroImage from "@/assets/article-hero-knee-osteoarthritis-vs-rheumatoid-arthritis.jpg";
+import arthritisDiagnosisImage from "@/assets/article-inline-knee-arthritis-diagnosis.jpg";
+import arthritisSymptomsImage from "@/assets/article-inline-knee-arthritis-symptoms.jpg";
 
 const linkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
@@ -127,6 +129,18 @@ export const kneeOsteoarthritisVsRheumatoidArthritis: ArticleExport = {
           </table>
         </div>
 
+
+        <figure>
+          <img
+            src={arthritisSymptomsImage}
+            alt="A side-by-side visual comparison of knee osteoarthritis and rheumatoid arthritis symptoms, including load-related pain versus inflammatory joint symptoms"
+            loading="lazy"
+          />
+          <figcaption>
+            Osteoarthritis and rheumatoid arthritis can both affect the knee, but the symptom pattern around movement, stiffness, swelling, and other joints is often different.
+          </figcaption>
+        </figure>
+
         <h2>Morning Stiffness: Useful Clue, Not a Diagnosis</h2>
         <p>
           Osteoarthritis commonly causes “gelling”: the knee stiffens after inactivity and hurts during the first few steps, then loosens with movement. The guide to <Link to="/guides/knees-hurt-after-resting" className={linkClass}>knees that hurt after resting</Link> covers this pattern. Morning stiffness is often relatively brief, although advanced OA can remain stiff longer.
@@ -189,6 +203,18 @@ export const kneeOsteoarthritisVsRheumatoidArthritis: ArticleExport = {
         <p>
           Persistent visible joint swelling for more than a few weeks, particularly with hand or foot symptoms, should prompt assessment. Search interest in “how does rheumatoid arthritis start” is important because the window for preventing damage opens before late deformities appear.
         </p>
+
+
+        <figure>
+          <img
+            src={arthritisDiagnosisImage}
+            alt="A doctor reviewing knee X-rays and related tests with an older patient during an arthritis assessment"
+            loading="lazy"
+          />
+          <figcaption>
+            Imaging and lab work answer different questions: X-rays often support osteoarthritis assessment, while blood tests and a broader inflammatory picture matter more in rheumatoid arthritis.
+          </figcaption>
+        </figure>
 
         <h2>Do Osteoarthritis and Rheumatoid Arthritis Have Stages?</h2>
         <p>
