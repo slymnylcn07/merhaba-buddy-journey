@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, TipsList } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
+import { InfoBox } from "@/components/ArticleCharts";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-knee-tightness-no-pain.jpg";
@@ -10,331 +9,324 @@ import imgMobilityComparison from "@/assets/fig-knee-range-comparison-v2.svg";
 import imgFlexionRange from "@/assets/article-knee-flexion-range.jpg";
 import imgInactivityStiffness from "@/assets/package-4/first-steps-after-rest.svg";
 
-const faqs = [
-  {
-    question: "Why does my knee feel tight but not painful?",
-    answer: "A tight feeling without pain can be associated with muscle tension, reduced flexibility, time spent in one position, joint stiffness, or another cause. The symptom alone cannot confirm that there is no injury or inflammation.",
-  },
-  {
-    question: "Is knee stiffness without pain normal?",
-    answer: "Knee stiffness without pain is common, especially after sleep or prolonged sitting, but there is no single explanation. Muscle tension, activity level, osteoarthritis, previous injury, and the way the hip and ankle move can all be relevant.",
-  },
-  {
-    question: "Why do my knees feel stiff in the morning?",
-    answer: "Morning stiffness may be influenced by time spent still, sleep position, osteoarthritis, tendon symptoms, swelling, or activity from the previous day. Gentle movement helps some people, but it does not identify the cause.",
-  },
-  {
-    question: "What causes tight knees after sitting?",
-    answer: "Sitting keeps the knee in a sustained position and reduces muscle activity. Seat height, time in a deep bend, tissue sensitivity, and an existing joint or tendon issue may influence how the first movement feels.",
-  },
-  {
-    question: "Can knee stiffness happen without injury?",
-    answer: "Yes, stiffness can occur without a clear injury, but it should not automatically be assumed harmless. Persistent restriction, swelling, locking, instability, or a worsening pattern should be assessed.",
-  },
-  {
-    question: "How can I loosen a tight knee joint?",
-    answer: "A few slow knee bends, seated leg extensions, or a short walk may help some people transition back to movement. Stop if the knee locks, gives way, swells, or develops sharp pain, and follow individual clinical advice when relevant.",
-  },
-  {
-    question: "When should knee stiffness be checked?",
-    answer: "Consider seeking guidance if your knee stiffness progressively worsens over weeks or months, if you notice swelling or instability developing alongside the tightness, if you lose the ability to fully bend or straighten the knee, or if the stiffness significantly interferes with daily activities like walking or climbing stairs.",
-  },
-  {
-    question: "Does stretching help knee tightness?",
-    answer: "Yes, regular stretching is one of the most effective habits for managing knee tightness. Focus on the muscles that directly affect the knee joint: quadriceps, hamstrings, calves, and hip flexors. Consistent daily stretching, even for just 5 to 10 minutes, can gradually improve flexibility and reduce the frequency of stiffness episodes over time.",
-  },
-];
-
 export const kneeTightnessWithoutPain: ArticleExport = {
-  cta: "knee-tightness-without-pain",
+  cta: "",
   article: {
     slug: "knee-tightness-without-pain",
-    title: "Knee Tightness Without Pain: What It Means & When to Act",
-    subtitle: "Understanding stiffness that happens without injury",
-    intro: "Many people notice a tight, restricted feeling in the knee even when there is no actual pain. This sensation can be puzzling, especially when it shows up during everyday activities like standing up from a chair, bending down, or walking after sitting for a while. Knee tightness without pain is surprisingly common and usually points to muscle tension, joint mechanics, or reduced mobility rather than a serious injury. This guide explores why it happens, what situations commonly trigger it, and what daily habits may help you support knee comfort and flexibility.",
-    metaTitle: "Knee Tightness Without Pain: Causes & Tips",
-    metaDescription: "Learn why your knee feels tight without pain. Discover common causes of knee stiffness, when to take action, and daily habits that support joint flexibility and comfort.",
-    heroImage: heroImage,
+    title: "Knee Tightness Without Pain: Causes, Locations & Warning Signs",
+    subtitle: "How to interpret pressure, pulling, fullness, or restricted movement when the knee does not actually hurt",
+    intro:
+      "A knee can feel tight without producing pain. Some people notice pressure around the kneecap, pulling behind the joint, resistance when bending, or a sense that one knee does not move as freely as the other. The sensation may come from muscles and tendons, a change in joint motion, mild swelling, or another cause. This guide separates general pain-free tightness from the separate pattern that appears specifically after sitting or resting.",
+    metaTitle: "Knee Tightness Without Pain: Causes & Warning Signs",
+    metaDescription:
+      "Why does a knee feel tight without pain? Compare front, back, inner and outer tightness, bending limits, swelling, mobility checks, and warning signs.",
+    heroImage,
     publishedDate: "March 8, 2026",
-    nextSlug: "burning-sensation-in-knee",
-    nextTitle: "Burning Sensation in the Knees",
-    seoTags: "knee tightness without pain,knee stiffness without pain,tight knee feeling,stiff knee no pain,knee tightness when bending,tight knee after sitting,morning knee stiffness,knee joint stiffness without swelling,reduced knee mobility,knee flexibility limitation,knee stiffness causes,tight knee joint feeling",
-    faqs,
+    lastUpdated: "July 28, 2026",
+    nextSlug: "knee-pain-getting-up-after-sitting",
+    nextTitle: "Knee Pain and Stiffness After Sitting",
+    seoTags:
+      "knee tightness without pain,knee stiffness without pain,tight knee feeling,knee feels tight,knee tightness when bending no pain,tightness around knee,back of knee tightness without pain,pressure in knee without pain,knee feels full but no pain,one knee feels tight,knee tightness without swelling,reduced knee range of motion",
+    sources: [
+      {
+        title: "Osteoarthritis",
+        publisher: "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
+        url: "https://www.niams.nih.gov/health-topics/osteoarthritis",
+      },
+      {
+        title: "Osteoarthritis in over 16s: diagnosis and management",
+        publisher: "National Institute for Health and Care Excellence",
+        url: "https://www.nice.org.uk/guidance/ng226/chapter/recommendations",
+      },
+      {
+        title: "Knee Conditioning Program",
+        publisher: "OrthoInfo, American Academy of Orthopaedic Surgeons",
+        url: "https://orthoinfo.aaos.org/en/recovery/knee-conditioning-program/",
+      },
+      {
+        title: "Patellofemoral Pain Syndrome",
+        publisher: "OrthoInfo, American Academy of Orthopaedic Surgeons",
+        url: "https://orthoinfo.aaos.org/en/diseases--conditions/patellofemoral-pain-syndrome/",
+      },
+      {
+        title: "Knee pain",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/symptoms/knee-pain/",
+      },
+      {
+        title: "Joint pain",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/symptoms/joint-pain/",
+      },
+    ],
+    faqs: [
+      {
+        question: "Why does my knee feel tight but not painful?",
+        answer:
+          "Possible contributors include muscle or tendon tension, reduced flexibility, a temporary change in joint motion, mild swelling, osteoarthritis, previous injury, or sensitivity around the kneecap. The word tight does not identify one tissue or confirm that the knee is uninjured.",
+      },
+      {
+        question: "What does pressure in the knee without pain mean?",
+        answer:
+          "Pressure or fullness may come from the joint, surrounding soft tissues, or mild swelling that is not yet painful. Compare both knees and note warmth, visible puffiness, loss of motion, or a repeatable activity trigger. Persistent fullness should be assessed rather than self-diagnosed.",
+      },
+      {
+        question: "Why does my knee feel tight when bending but not hurt?",
+        answer:
+          "Bending tightness can reflect limited quadriceps, hamstring, calf, hip, or ankle mobility, kneecap sensitivity, joint swelling, or a mechanical block. Stop forcing the range if the knee catches, locks, or cannot fully bend or straighten.",
+      },
+      {
+        question: "Why does the back of my knee feel tight without pain?",
+        answer:
+          "The hamstrings, upper calf, and other tissues behind the knee can create a pulling sensation. Fullness from joint swelling or a Baker's cyst can feel similar. A persistent lump, one-sided calf swelling, warmth, or a blocked feeling needs medical assessment.",
+      },
+      {
+        question: "Is knee tightness without swelling less concerning?",
+        answer:
+          "The absence of visible swelling is reassuring but does not rule out all causes. Track whether the range of motion is changing, whether the tightness is worsening, and whether locking, instability, numbness, or weakness develops.",
+      },
+      {
+        question: "Why does only one knee feel tight?",
+        answer:
+          "A one-sided pattern may relate to an old injury, different mobility or strength between the legs, local tendon or joint irritation, swelling, or another condition. New, persistent, or progressively worsening one-sided tightness deserves a closer assessment.",
+      },
+      {
+        question: "How can I loosen a tight knee safely?",
+        answer:
+          "Use comfortable ankle pumps, seated knee extensions, heel slides, and a short easy walk rather than aggressive stretching. Stop if the knee becomes painful, swells, catches, locks, gives way, or loses motion. Long-term improvement may require strength and mobility work tailored to the cause.",
+      },
+      {
+        question: "When should knee tightness without pain be checked?",
+        answer:
+          "Arrange an assessment for persistent or worsening restriction, a clear inability to bend or straighten, recurrent swelling, a lump behind the knee, locking, instability, numbness, weakness, or tightness that significantly changes walking and daily activity.",
+      },
+    ],
     content: (
       <>
+        <InfoBox title="Quick Answer">
+          <p>
+            <strong>Knee tightness without pain may come from muscles and tendons, reduced joint motion, mild swelling, kneecap sensitivity, previous injury, or osteoarthritis.</strong> Location and function matter more than the word tight. Compare both knees, check whether you can fully bend and straighten them, and use only comfortable movement. Seek assessment if the tightness is worsening, one-sided, associated with swelling or a lump, or accompanied by locking, giving way, numbness, weakness, or a true loss of motion.
+          </p>
+        </InfoBox>
 
-        {/* Section 1 */}
-        <h2>What Knee Tightness Without Pain Usually Means</h2>
+        <h2>What Does a Tight Knee Feel Like?</h2>
         <p>
-          When your knee feels tight but does not hurt, it typically indicates a change in the soft tissues around the joint rather than structural damage. The sensation often comes from muscle tension, mild joint capsule stiffness, or temporary changes in how the joint moves.
-        </p>
-
-        <p>
-          The knee joint is surrounded by muscles, tendons, ligaments, and a protective capsule filled with synovial fluid. When any of these structures become tense, shortened, or less well-lubricated, the knee can feel restricted, tight, or resistant to bending, even though no pain is present.
+          People describe knee tightness as pressure, fullness, pulling, resistance, or a sense that the joint is wrapped too firmly. It may be noticed only at the end of bending, during the first few steps, while squatting, or when comparing one knee with the other.
         </p>
         <p>
-          <strong>Muscle tension around the joint</strong> is one of the most common causes. The quadriceps, hamstrings, and calf muscles all cross or influence the knee joint. When these muscles become tight from inactivity, overuse, or poor posture, they can create a pulling sensation that limits comfortable knee movement.
+          Tightness is a symptom description, not a diagnosis. It does not automatically mean the muscles are short, the joint needs to be stretched, or the cartilage is damaged. The most helpful details are location, range of motion, swelling, timing, and whether normal activities are changing.
         </p>
 
         <figure className="my-8">
           <img
             src={imgJointStiffness}
-            alt="Knee joint stiffness diagram showing joint capsule, cartilage, synovial fluid, and stiffness zone"
+            alt="Knee anatomy illustration showing the joint capsule and areas that may feel tight or full"
             className="w-full h-auto rounded-xl shadow-sm"
+            loading="eager"
+            decoding="async"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            The knee joint capsule, cartilage, and synovial fluid all play a role in how stiff the joint feels
+            A tight feeling can come from the joint itself or from muscles, tendons, and other tissues around it.
           </figcaption>
         </figure>
 
+        <h2>Tightness vs Stiffness vs Loss of Motion</h2>
         <p>
-          <strong>Joint capsule stiffness</strong> can also contribute. The knee's joint capsule is a fibrous structure that encloses the joint space. After prolonged inactivity, this capsule can temporarily stiffen, making the first few movements of the day feel resistant or restricted.
+          These terms overlap, but they are not identical. <strong>Tightness</strong> is the sensation of pressure or pulling. <strong>Stiffness</strong> usually describes movement that feels slow or resistant. <strong>Loss of motion</strong> means the knee genuinely cannot reach its usual bend or straight position.
         </p>
         <p>
-          <strong>Reduced flexibility</strong> plays a significant role as well. As we age or become less active, the tissues around the knee gradually lose elasticity. This means the joint may not move through its full range as easily, creating that characteristic "tight" sensation even without any injury.
+          A knee may feel tight while still moving normally. That is different from a knee that is blocked, locked, or progressively losing range. A true mechanical block, especially after an injury, should not be forced through with stretching.
         </p>
 
-        <InfoBox title="Tightness vs. Pain: An Important Distinction">
-          <p>Knee tightness without pain is generally a mechanical or muscular issue rather than a sign of damage. Pain usually indicates irritation or injury to joint structures, while tightness often reflects reduced flexibility, muscle tension, or temporary changes in joint lubrication. Understanding this difference can help you respond appropriately.</p>
-        </InfoBox>
+        <div className="my-6 overflow-x-auto">
+          <table className="w-full border-collapse text-left text-sm">
+            <thead>
+              <tr className="border-b">
+                <th className="py-3 pr-4">Description</th>
+                <th className="py-3 pr-4">Common wording</th>
+                <th className="py-3">What matters next</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b">
+                <td className="py-3 pr-4 font-semibold">Sensation only</td>
+                <td className="py-3 pr-4">Tight, pressured, wrapped, or full</td>
+                <td className="py-3">Check location, swelling, and triggers</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-3 pr-4 font-semibold">Movement stiffness</td>
+                <td className="py-3 pr-4">Rusty or slow at first</td>
+                <td className="py-3">Track whether comfortable movement restores ease</td>
+              </tr>
+              <tr>
+                <td className="py-3 pr-4 font-semibold">Restricted range</td>
+                <td className="py-3 pr-4">Cannot fully bend or straighten</td>
+                <td className="py-3">Do not force a blocked or worsening knee</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        {/* Section 2 */}
-        <h2>Common Causes of Knee Stiffness Without Pain</h2>
-        <p>
-          Several everyday factors can contribute to knee stiffness that appears without any associated pain. Understanding these causes can help you identify patterns and make adjustments that support better knee comfort.
-        </p>
+        <h2>Common Contributors to Knee Tightness Without Pain</h2>
 
-        <h3>Long Periods of Sitting</h3>
+        <h3>Muscle and Tendon Tension</h3>
         <p>
-          Long periods in one position can make the first few movements feel stiff or restricted. A sustained knee bend, reduced muscle activity, seat height, and an existing joint or tendon issue may all influence the experience.
-        </p>
-
-        <h3>Tight Quadriceps or Hamstrings</h3>
-        <p>
-          The quadriceps and hamstrings contribute to knee movement. Tension, fatigue, or reduced flexibility in these areas can be associated with a tight feeling, although they are not the only possible source.
+          The quadriceps, hamstrings, calf muscles, and hip muscles all influence knee motion. Fatigue, inactivity, training changes, or limited ankle and hip mobility can produce pulling around the knee without creating pain inside the joint.
         </p>
 
         <figure className="my-8">
           <img
             src={imgMuscleTightness}
-            alt="Infographic listing possible contributors to a tight knee feeling, including thigh muscles, calf and ankle stiffness, and joint-related factors"
+            alt="Infographic showing thigh, calf, ankle, and joint contributors to a tight knee feeling"
             className="w-full h-auto rounded-xl shadow-sm"
-           loading="lazy"  decoding="async"  width={1200} height={760} />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Possible contributors to a tight knee feeling include the front and back of the thigh, the calf and ankle, and the joint itself
-          </figcaption>
-        </figure>
-
-        <h3>Reduced Hip Mobility</h3>
-        <p>
-          The hip, knee, and ankle work as a movement chain. Limited hip mobility or control can change how the leg moves, but a diagram or symptom description cannot establish where tightness originates.
-        </p>
-
-        <h3>Minor Joint Changes</h3>
-        <p>
-          Joint changes become more common with age, but age alone does not explain every tight or stiff knee. Activity level, previous injury, osteoarthritis, tendon symptoms, and time spent in one position may all be relevant.
-        </p>
-
-        <h3>Lack of Movement During the Day</h3>
-        <p>
-          Some people notice that regular, comfortable movement breaks make stiffness less noticeable. The response varies, and new swelling, locking, instability, or persistent restriction should be evaluated.
-        </p>
-
-        <PremiumCTA
-          headline="Want daily warmth support for stiff knees?"
-          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel more flexible and comfortable throughout the day."
-        />
-
-        {/* Section 3 */}
-        <h2>Why Knees May Feel Tight After Sitting or Resting</h2>
-        <p>
-          Many people notice tightness after sitting or resting, but the pattern does not have one universal mechanism.
-        </p>
-
-        <figure className="my-8">
-          <img
-            src={imgInactivityStiffness}
-            alt="Infographic showing that a sustained position, the first movement, and a gentle warm-up may influence how the knee feels after rest"
-            className="w-full h-auto rounded-xl shadow-sm"
-          loading="lazy"
+            loading="lazy"
             decoding="async"
             width={1200}
             height={760}
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            A sustained position can make the first steps feel stiff; gentle movement may help some people
+            The knee sits between the hip and ankle, so tightness may reflect more than one part of the movement chain.
           </figcaption>
         </figure>
 
-        <h3>Sustained Position</h3>
+        <h3>Mild Joint Swelling or Fullness</h3>
         <p>
-          Holding the knee in one angle for a long time can make the first movement feel restricted. Seat height, the depth of the bend, and how much room you have to change position may all matter.
+          A small amount of swelling may feel like internal pressure before it becomes obviously painful. Compare both knees for puffiness around the kneecap or joint line, and note whether bending is reduced. Recurrent or persistent fullness should be assessed rather than repeatedly stretched.
         </p>
 
-        <h3>Muscle Activity and Coordination</h3>
+        <h3>Patellofemoral Sensitivity</h3>
         <p>
-          After a quiet period, the first stand or step can feel less coordinated while the thigh, calf, hip, and ankle muscles return to activity. This is a possible contributor, not proof of weakness or poor circulation.
+          The front of the knee may feel tight during bending, stairs, or squatting when the kneecap area is sensitive. This pattern may overlap with patellofemoral pain even when discomfort is mild. See the <Link to="/guides/patellofemoral-pain-syndrome">patellofemoral pain syndrome guide</Link> when the sensation is concentrated around or behind the kneecap.
         </p>
 
-        <h3>Existing Tissue Sensitivity</h3>
+        <h3>Osteoarthritis or Previous Injury</h3>
         <p>
-          Osteoarthritis, tendon symptoms, swelling, a previous injury, or another joint issue may become more noticeable after rest. The pattern should be interpreted alongside other symptoms rather than through a single “lubrication” explanation.
+          Osteoarthritis can produce stiffness and reduced motion, including after inactivity. A previous meniscus, ligament, or joint injury may also leave one knee moving differently. Neither age nor a tight feeling alone confirms arthritis or structural damage.
         </p>
 
+        <h2>What the Location of Tightness May Suggest</h2>
+
+        <h3>Front of the Knee</h3>
         <p>
-          If you frequently experience knee tightness after sitting, you might also find our guide on <Link to="/guides/knees-hurt-after-resting" className="text-primary hover:underline">why knees feel stiff after resting</Link> helpful for understanding the connection between inactivity and joint comfort.
+          Front-knee tightness may involve the quadriceps tendon, tissues around the kneecap, or patellofemoral loading. Track whether stairs, squats, or prolonged bending reproduce the sensation.
         </p>
 
-        {/* Section 4 */}
-        <h2>Situations Where Knee Tightness Often Appears</h2>
+        <h3>Back of the Knee</h3>
         <p>
-          Knee tightness without pain often appears in recognizable situations, although the reason can differ between people. Tracking context and associated symptoms is more useful than assuming one mechanism.
+          Tightness behind the knee may come from the hamstrings or upper calf, but joint swelling and a Baker&apos;s cyst can create a similar sense of fullness. Avoid aggressive massage over an unexplained lump. For pain-focused posterior symptoms, use our <Link to="/guides/back-of-knee-pain-explained">back-of-knee pain guide</Link>.
         </p>
 
-        <h3>Morning Stiffness</h3>
+        <h3>Inner or Outer Side</h3>
         <p>
-          Many people notice their knees feel tight during the first few minutes after waking up. After a night in one position, the first movements may feel stiff. Slow knee bends or a brief walk help some people transition into activity. For a deeper look at this pattern, check our guide on <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning knee stiffness after 40</Link>.
+          Inner or outer tightness may reflect local tendons, ligaments, the IT band region, foot and ankle mechanics, or how the hip controls the leg. Location narrows the questions to ask but does not identify a tissue by itself. The <Link to="/guides/knee-pain-locations-visual-guide">visual knee location guide</Link> can help map the area more precisely.
         </p>
 
-        <h3>After Long Car Rides</h3>
+        <h2>Knee Tightness When Bending or Straightening</h2>
         <p>
-          Extended time in a car keeps the knee bent in a fixed position with very limited space to adjust. The sustained bend and limited opportunity to change position may produce noticeable stiffness on arrival. Taking brief stops to walk and stretch during long drives can make a significant difference.
-        </p>
-
-        <h3>After Exercise Recovery</h3>
-        <p>
-          It may seem counterintuitive, but some people experience knee tightness during the recovery period after exercise rather than during the activity itself. This may reflect fatigue, changes in activity load, or the way the muscles and tendons respond during recovery. A gentle cooldown helps some people, but worsening symptoms should not be pushed through. Our <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise guide</Link> covers this topic in more detail.
-        </p>
-
-        <h3>During Weather Changes</h3>
-        <p>
-          Many people report increased knee stiffness during cold or damp weather. While the exact mechanism is still being studied, changes in barometric pressure may affect joint tissues, and cold temperatures can reduce blood flow to the area. Our guide on <Link to="/guides/cold-weather-knee-pain" className="text-primary hover:underline">cold weather and knee discomfort</Link> explores this connection further.
-        </p>
-
-        <h3>After Prolonged Sitting at Work</h3>
-        <p>
-          Desk workers frequently notice knee tightness at the end of the workday or when standing up after long focused sessions. Setting a timer to remind yourself to stand and move every 30 to 45 minutes is one of the simplest ways to prevent this pattern.
-        </p>
-
-        <figure className="my-8">
-          <img
-            src={imgMobilityComparison}
-            alt="Joint mobility comparison showing normal range versus limited range of knee movement"
-            className="w-full h-auto rounded-xl shadow-sm"
-          />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Comparing normal knee range of motion with limited range caused by stiffness
-          </figcaption>
-        </figure>
-
-        {/* Section 5 */}
-        <h2>Daily Habits That May Help Reduce Knee Tightness</h2>
-        <p>
-          The good news about knee tightness without pain is that it often responds well to simple daily habits. Consistency matters more than intensity when it comes to maintaining comfortable knee mobility.
-        </p>
-
-        <TipsList tips={[
-          "Start each morning with 2 to 3 minutes of gentle knee bends and leg swings",
-          "Stretch your quadriceps, hamstrings, and calves for at least 5 minutes daily",
-          "Take a brief walk or standing break every 30 to 45 minutes during seated work",
-          "Perform hip circles and ankle rotations to support the full lower body chain",
-          "Apply gentle warmth to the knee area before activity on particularly stiff days",
-          "Stay hydrated throughout the day to support joint fluid production",
-        ]} />
-
-        <h3>Gentle Mobility Exercises</h3>
-        <p>
-          Simple movements like seated leg extensions, heel slides, and gentle knee circles can help distribute synovial fluid within the joint and encourage comfortable movement. These exercises do not need to be intense. The goal is to gently move the joint through its available range of motion. For a structured routine, see our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee exercises guide</Link>.
-        </p>
-
-        <h3>Stretching Surrounding Muscles</h3>
-        <p>
-          Tight muscles are one of the primary contributors to knee stiffness. Regular stretching of the quadriceps (standing quad stretch), hamstrings (seated toe reach), and calves (wall stretch) can gradually improve the knee's freedom of movement. Holding each stretch for 20 to 30 seconds and repeating 2 to 3 times per side is a solid starting point.
-        </p>
-
-        <h3>Improving Hip and Ankle Mobility</h3>
-        <p>
-          Because the knee sits between the hip and ankle, limitations in either neighboring joint can contribute to knee tightness. Hip flexor stretches, pigeon pose variations, and ankle dorsiflexion exercises all support the full kinetic chain and may help the knee move more freely.
-        </p>
-
-        <h3>Staying Active Throughout the Day</h3>
-        <p>
-          Even if you cannot commit to a structured exercise program, simply staying moderately active throughout the day can significantly reduce knee tightness. Walking, taking stairs, standing during phone calls, and performing light household tasks all help maintain joint mobility.
-        </p>
-
-        <PremiumCTA
-          headline="Support your daily knee flexibility routine"
-          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device, helping your knees warm up comfortably before your daily mobility routine."
-        />
-
-        {/* Section 6 */}
-        <h2>When Knee Tightness May Need Attention</h2>
-        <p>
-          While knee tightness without pain is usually harmless, there are certain signs that suggest it may be worth discussing with a healthcare professional. Being aware of these warning signs helps you distinguish between normal stiffness and something that deserves closer attention.
-        </p>
-
-        <InfoBox title="When to Consider Seeking Guidance">
-          <p>Occasional knee tightness that resolves with movement is usually normal. However, you should consider professional guidance if the stiffness progressively worsens over several weeks, if you notice swelling developing alongside the tightness, if your ability to fully bend or straighten the knee becomes significantly limited, or if instability (a feeling of the knee "giving way") appears alongside the stiffness.</p>
-        </InfoBox>
-
-        <h3>Stiffness That Progressively Worsens</h3>
-        <p>
-          If your knee stiffness has been gradually increasing over weeks or months, it may indicate underlying changes in the joint that benefit from professional evaluation. Normal stiffness tends to remain stable or improve with consistent movement, while progressive stiffness suggests something may be changing within the joint itself.
-        </p>
-
-        <h3>Limited Ability to Bend or Straighten</h3>
-        <p>
-          Occasional tightness that resolves with movement is typical. However, if you find that your knee range of motion is becoming permanently restricted, meaning you can no longer fully straighten or fully bend the knee even after warming up, this warrants further investigation. Our guide on <Link to="/guides/sudden-knee-pain-guide" className="text-primary hover:underline">sudden knee discomfort</Link> discusses when to take knee changes seriously.
+          Note where in the movement the tightness appears. Resistance only at the deepest bend suggests a different pattern from difficulty reaching full extension. Also compare active motion, where you move the leg yourself, with a comfortable supported position.
         </p>
 
         <figure className="my-8">
           <img
             src={imgFlexionRange}
-            alt="Knee flexion range diagram showing full flexion at 135 degrees versus restricted range at 90 degrees"
+            alt="Illustration showing the knee moving through comfortable bending and straightening ranges"
             className="w-full h-auto rounded-xl shadow-sm"
+            loading="lazy"
+            decoding="async"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Normal knee flexion reaches approximately 135 degrees, while restricted range may stop around 90 degrees
+            Do not chase a deeper range if the knee catches, locks, swells, or feels mechanically blocked.
           </figcaption>
         </figure>
 
-        <h3>Swelling or Instability Appearing Later</h3>
+        <ul>
+          <li><strong>Tight only near full bend:</strong> check quadriceps, kneecap, swelling, and the activity that preceded it.</li>
+          <li><strong>Tight near full straightening:</strong> check the back of the knee, hamstrings, calf, swelling, and any blocked sensation.</li>
+          <li><strong>Tight throughout the range:</strong> compare both knees and track visible swelling or a recent activity change.</li>
+          <li><strong>Sudden loss of range:</strong> stop forcing the movement and arrange an assessment.</li>
+        </ul>
+
+        <h2>One Tight Knee vs Both Knees</h2>
         <p>
-          Tightness alone is usually benign, but if swelling, warmth (not from external sources), or a feeling of instability develops alongside the stiffness, it may suggest an inflammatory or structural issue that benefits from professional assessment.
+          A symmetrical pattern may relate to general mobility, activity, or prolonged positioning. One-sided tightness deserves more attention to local history: previous injury, swelling, a change in walking, a new training load, or a visible difference between the knees.
+        </p>
+        <p>
+          New one-sided tightness with calf swelling, warmth, redness, numbness, or weakness is not a routine flexibility issue. Seek medical advice rather than trying to stretch it away.
         </p>
 
-        {/* Section 7 */}
-        <h2>Supporting Knee Flexibility and Joint Comfort</h2>
+        <h2>A Safe Mobility Check</h2>
         <p>
-          Maintaining comfortable, flexible knees over time involves a combination of regular movement, targeted strengthening, and attention to overall lower body mobility. The following strategies can help support long-term knee comfort.
+          This is a symptom check, not a diagnostic test. Stop if the knee becomes painful, unstable, swollen, or blocked.
         </p>
 
-        <h3>Gradual Strengthening</h3>
+        <figure className="my-8">
+          <img
+            src={imgMobilityComparison}
+            alt="Comparison showing comfortable knee movement and visibly limited knee range"
+            className="w-full h-auto rounded-xl shadow-sm"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            Compare ease and range rather than forcing both knees to look identical.
+          </figcaption>
+        </figure>
+
+        <ol>
+          <li>Compare both knees while seated for visible puffiness and resting position.</li>
+          <li>Perform five slow ankle pumps on each side.</li>
+          <li>Slide each heel back and forward through a comfortable range.</li>
+          <li>Try a few seated knee extensions without forcing the final degrees.</li>
+          <li>Walk briefly and record whether the sensation improves, stays the same, or worsens.</li>
+        </ol>
+
+        <InfoBox title="Do Not Stretch Through These Signs">
+          <p>
+            Stop and arrange appropriate care if the knee locks, gives way, becomes sharply painful, develops significant swelling, or cannot reach its usual range. A blocked joint is not the same thing as a muscle that needs a harder stretch.
+          </p>
+        </InfoBox>
+
+        <h2>What If the Tightness Appears After Sitting or Resting?</h2>
         <p>
-          Strong muscles around the knee provide better support and stability for the joint, which can reduce the frequency of stiffness episodes. Low-impact exercises like wall sits, step-ups, straight leg raises, and gentle squats gradually build the quadriceps and glutes without placing excessive stress on the knee. If squatting causes discomfort, our <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">knee discomfort when squatting</Link> guide offers helpful modifications.
+          When the main trigger is a chair, sofa, car ride, sleep, or another period of being still, the timing becomes the primary search intent. That pattern is covered in our focused guide to <Link to="/guides/knee-pain-getting-up-after-sitting">knee pain and stiffness after sitting</Link>, including first-step pain, sit-to-stand mechanics, back-of-knee tightness, and pain while resting versus after resting.
         </p>
 
-        <h3>Mobility Routines</h3>
+        <figure className="my-8">
+          <img
+            src={imgInactivityStiffness}
+            alt="Illustration of a gradual transition from sitting to comfortable first steps"
+            className="w-full h-auto rounded-xl shadow-sm"
+            loading="lazy"
+            decoding="async"
+            width={1200}
+            height={760}
+          />
+          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+            Rest-triggered stiffness is a separate timing pattern; this guide remains focused on general tightness without pain.
+          </figcaption>
+        </figure>
+
+        <h2>Daily Habits That May Help</h2>
+        <ul>
+          <li>Change positions regularly instead of holding one posture for long periods.</li>
+          <li>Use comfortable ankle, knee, hip, and calf mobility rather than aggressive stretching.</li>
+          <li>Build quadriceps, hip, and calf strength gradually; see our <Link to="/guides/how-to-strengthen-knees">knee-strengthening guide</Link>.</li>
+          <li>Progress exercise volume one variable at a time and track the next-day response.</li>
+          <li>Use warmth only for ordinary stiffness when the knee is not swollen, red, newly injured, or unusually hot; see <Link to="/guides/heat-vs-ice-for-knees">heat versus ice</Link>.</li>
+        </ul>
+
+        <h2>When Knee Tightness Needs Medical Attention</h2>
         <p>
-          Dedicating 5 to 10 minutes each day to a simple mobility routine can make a noticeable difference in how your knees feel over time. Focus on movements that take the knee, hip, and ankle through their full available range of motion. Consistency is far more important than duration, so even brief daily sessions are valuable.
+          Arrange an assessment when tightness persists, progressively worsens, significantly changes walking, or causes a clear reduction in bending or straightening. Also seek advice for recurrent swelling, a lump behind the knee, locking, giving way, numbness, weakness, or a new one-sided pattern.
+        </p>
+        <p>
+          Seek urgent help for a badly swollen or deformed knee, inability to bear weight, a hot red joint with fever, or symptoms after a significant injury. Unexplained one-sided calf or leg swelling also needs prompt assessment.
         </p>
 
-        <h3>Maintaining Balanced Muscle Strength</h3>
+        <h2>The Bottom Line</h2>
         <p>
-          Muscle imbalances between the front and back of the thigh, or between the inner and outer thigh muscles, can contribute to ongoing knee tightness. A well-rounded exercise program that targets all the major muscle groups around the knee helps keep the joint moving smoothly and reduces the likelihood of one-sided tension patterns.
+          Knee tightness without pain is common but nonspecific. It may reflect muscles, tendons, joint motion, mild swelling, kneecap sensitivity, osteoarthritis, or an old injury. Use location, range, symmetry, swelling, and progression to decide what matters. Comfortable movement and gradual strengthening are reasonable when warning signs are absent, but a blocked, swollen, unstable, or progressively restricted knee should not be stretched through.
         </p>
-
-        <p>
-          For more strategies on building knee-friendly strength, our <Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">knee discomfort when climbing stairs</Link> guide includes progressive exercises that support daily activities.
-        </p>
-
-        <TipsList tips={[
-          "Start with bodyweight exercises and progress gradually over weeks",
-          "Focus on both quadriceps and hamstring strength for balanced support",
-          "Include hip strengthening exercises, as weak hips contribute to knee stiffness",
-          "Listen to your body and avoid pushing through increasing discomfort",
-          "Consider a warm-up routine with gentle warmth or light walking before exercise",
-        ]} />
       </>
     ),
   },

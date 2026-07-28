@@ -81,7 +81,13 @@ const App = () => {
                   <Route path="/guides/heat-or-ice-knee-pain" element={<Navigate to="/guides/heat-vs-ice-for-knees" replace />} />
                   <Route path="/guides/knee-pain-hiking" element={<Navigate to="/guides/knee-pain-when-hiking" replace />} />
                   <Route path="/guides/knee-pain-squatting" element={<Navigate to="/guides/knee-pain-when-squatting" replace />} />
-                  <Route path="/guides/knee-stiffness-after-resting" element={<Navigate to="/guides/why-do-my-knees-feel-tight-after-resting" replace />} />
+
+                  <Route path="/guides/knee-stiffness-after-resting" element={<Navigate to="/guides/knee-pain-getting-up-after-sitting" replace />} />
+                  <Route path="/guides/why-do-my-knees-feel-tight-after-resting" element={<Navigate to="/guides/knee-pain-getting-up-after-sitting" replace />} />
+                  <Route path="/guides/knees-hurt-after-resting" element={<Navigate to="/guides/knee-pain-getting-up-after-sitting" replace />} />
+                  <Route path="/knee-stiffness-after-resting" element={<Navigate to="/guides/knee-pain-getting-up-after-sitting" replace />} />
+                  <Route path="/why-do-my-knees-feel-tight-after-resting" element={<Navigate to="/guides/knee-pain-getting-up-after-sitting" replace />} />
+                  <Route path="/knees-hurt-after-resting" element={<Navigate to="/guides/knee-pain-getting-up-after-sitting" replace />} />
                   <Route path="/guides/running-shoes-knee-pain" element={<Navigate to="/guides/best-running-shoes-knee-pain" replace />} />
                   <Route path="/guides/sharp-knee-pain-causes" element={<Navigate to="/guides/sharp-knee-pain-causes-relief" replace />} />
                   <Route path="/guides/what-causes-knee-pain" element={<Navigate to="/guides/what-causes-knee-pain-guide" replace />} />
