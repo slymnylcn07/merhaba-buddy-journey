@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, TipsList } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
+import { InfoBox } from "@/components/ArticleCharts";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-burning-knee-sensation.jpg";
@@ -12,36 +11,44 @@ import imgStressComparison from "@/assets/article-knee-movement-stress-compariso
 
 const faqs = [
   {
-    question: "Why does my knee feel like it's burning?",
-    answer: "A burning sensation in the knee is often caused by irritation of the tissues surrounding the joint. This can result from overuse during physical activity, mild inflammation after exercise, patellofemoral joint stress, or nerve sensitivity in the knee area. The body increases blood flow to irritated areas, which can create that characteristic warm or burning feeling.",
+    question: "Why does my knee feel like it is burning?",
+    answer:
+      "Burning is a description of the sensation, not a diagnosis. It may come from irritated joint or tendon tissue, pressure around the kneecap, skin irritation, or nerve-type pain. Location, timing, numbness, swelling, redness, and the activity that triggered it help narrow the pattern.",
   },
   {
-    question: "Is burning knee pain serious?",
-    answer: "In many cases, a mild burning sensation in the knee is not a sign of a serious condition. It often results from temporary irritation due to overuse, muscle fatigue, or repetitive bending. However, if the burning sensation persists for several days, intensifies during normal activities, or appears alongside swelling or instability, it is worth discussing with a healthcare professional.",
+    question: "What causes a burning sensation on the side of the knee?",
+    answer:
+      "Side-of-knee burning can involve local soft-tissue irritation or a nearby nerve. Outer-knee symptoms may follow repetitive bending or pressure, while inner-knee burning may occur near tendons, bursae, or sensory nerves. Persistent pinpoint pain, numbness, weakness, or swelling should be assessed.",
   },
   {
-    question: "What causes a warm feeling in the knee?",
-    answer: "A warm feeling in the knee is usually related to increased blood flow to the area. This can happen after exercise, during mild inflammation, or when the joint is recovering from repetitive stress. The body naturally directs more blood to areas that need support, and this increased circulation can produce a noticeable warmth or burning sensation around the joint.",
+    question: "Why does my knee burn when sitting?",
+    answer:
+      "A long period with the knee bent can increase pressure around the kneecap and may also irritate sensitive tissues or nerves. Note whether the sensation improves after a few minutes of easy movement or is accompanied by tingling, numbness, back pain, or weakness.",
   },
   {
-    question: "Can exercise cause burning knee sensations?",
-    answer: "Yes, exercise is one of the most common triggers for burning knee sensations. Activities that involve repetitive knee bending, such as running, cycling, stair climbing, or squatting, can create temporary irritation in the joint tissues. Muscle fatigue during or after exercise also increases pressure on the knee, which can contribute to a burning or warm feeling.",
+    question: "Can a knee burn without being painful?",
+    answer:
+      "Yes. Some people describe warmth, stinging, tingling, or an unusual hot feeling rather than conventional pain. A recurring sensory change still deserves attention when it is one-sided, spreading, associated with numbness, or present without a clear mechanical trigger.",
   },
   {
-    question: "How can I relieve burning pain in the knee?",
-    answer: "Gentle rest and avoiding the activity that triggered the burning sensation is usually a good first step. Stretching the quadriceps, hamstrings, and calves can help reduce tension around the joint. Applying a cool compress may help if the area feels actively warm. Gradually returning to activity rather than pushing through discomfort, and strengthening the muscles around the knee, can also help reduce recurring episodes.",
+    question: "What does burning behind the knee mean?",
+    answer:
+      "Burning behind the knee can come from local tissue irritation, pressure in the back of the joint, or nerve sensitivity. A new lump, visible swelling, calf swelling, redness, warmth, sudden pain, or reduced motion should be evaluated promptly rather than massaged or exercised through.",
   },
   {
-    question: "Why does my knee burn after walking?",
-    answer: "Walking, especially over long distances or on hard surfaces, involves repetitive knee bending that can gradually fatigue the muscles supporting the joint. As these muscles tire, the knee absorbs more stress with each step, which can irritate the joint tissues and create a burning sensation. Wearing supportive footwear and taking breaks during long walks can help.",
+    question: "Is burning in the knee a nerve symptom?",
+    answer:
+      "It can be. Neuropathic pain is often described as burning, tingling, shooting, or electric. Nerve involvement becomes more likely when burning follows a line, the skin is unusually sensitive, or numbness, pins and needles, or weakness are present. A clinician is needed to identify the source.",
   },
   {
-    question: "Does inflammation cause burning knee pain?",
-    answer: "Yes, mild inflammation is one of the most common causes of a burning feeling in the knee. When joint tissues become irritated, the body responds by increasing blood flow to the area, which can produce warmth, a sense of fullness, and sometimes a burning sensation. This inflammatory response is typically the body's natural way of supporting recovery.",
+    question: "Should I use heat on a burning knee?",
+    answer:
+      "Do not add heat when the knee is already objectively hot, red, newly swollen, or recently injured. When the sensation is subjective burning without surface heat or swelling, comfort choices depend on the cause. A cool compress may be more appropriate after recent irritation, but persistent symptoms need assessment rather than repeated temperature treatment.",
   },
   {
-    question: "When should burning knee pain be checked?",
-    answer: "Consider seeking guidance if the burning sensation persists for more than a few days without improvement, if it intensifies during normal daily activities, if swelling or visible redness develops alongside the burning, if you notice reduced ability to bend or straighten the knee, or if the burning is accompanied by instability or a feeling of the knee giving way.",
+    question: "When should a burning knee be checked?",
+    answer:
+      "Seek urgent advice for severe pain, inability to bear weight, a badly swollen or deformed knee, locking or giving way, or a hot red knee with fever. Arrange an assessment for burning that persists, repeatedly returns, spreads, occurs at rest, or comes with numbness, weakness, a lump, or reduced motion.",
   },
 ];
 
@@ -49,294 +56,238 @@ export const burningKneeSensation: ArticleExport = {
   cta: "burning-sensation-in-knee",
   article: {
     slug: "burning-sensation-in-knee",
-    title: "Burning Sensation in the Knees: Causes & Home Relief Options",
-    subtitle: "Understanding why your knee may feel warm or burning",
-    intro: "A burning or warm sensation in the knee can be unsettling, especially when it appears without a clear injury. Many people experience this feeling after exercise, during prolonged sitting, or simply during everyday movement. While the sensation can be uncomfortable, it is often related to temporary irritation of the joint tissues, mild inflammation, or nerve sensitivity rather than a serious structural problem. This guide explores the common everyday causes of a burning feeling in the knee, explains why certain activities trigger it, and shares practical home strategies that may help support knee comfort and recovery.",
-    metaTitle: "Burning Sensation in Knee: Causes & Relief",
-    metaDescription: "Learn why your knee feels warm or burning. Discover common causes of burning knee pain, when to take action, and home strategies that support joint comfort and recovery.",
-    heroImage: heroImage,
+    title: "Burning Sensation in Knee: Causes & Relief",
+    subtitle: "How location, timing, and accompanying symptoms change what it may mean",
+    intro:
+      "A burning sensation in the knee can feel hot, stinging, prickly, or as if the joint is on fire even when the skin temperature seems normal. Burning describes a pain quality rather than one specific condition, so the most useful clues are where it is felt, what triggers it, whether it follows a line, and whether swelling, redness, numbness, weakness, or loss of motion appear with it. This guide separates general burning knee patterns from exercise-only burning and from a knee that is objectively warm to the touch.",
+    metaTitle: "Burning Sensation in Knee: Causes by Location",
+    metaDescription:
+      "A burning sensation in the knee may involve joint irritation, pressure, or nerve-type pain. Compare causes by location, trigger, symptoms, and warning signs.",
+    heroImage,
     publishedDate: "March 8, 2026",
+    lastUpdated: "July 28, 2026",
     nextSlug: "knee-weakness-without-pain",
     nextTitle: "Knee Weakness Without Pain",
-    seoTags: "burning sensation in knee,burning knee pain,knee burning sensation,burning feeling in knee,burning pain in knee,knee feels warm or burning,knee inflammation sensation,overuse knee irritation,patellofemoral joint pressure,nerve irritation knee,burning knee after exercise,warm knee joint feeling",
+    seoTags:
+      "burning sensation in knee,burning knee pain,knee burning sensation,burning feeling in knee,knee feels like it is burning,burning inside knee,burning behind kneecap,burning sensation on side of knee,burning knee when sitting,burning knee at rest,burning knee without pain,nerve pain around knee,burning and swelling in knee",
     faqs,
+    sources: [
+      {
+        title: "Pain",
+        publisher: "National Institute of Neurological Disorders and Stroke",
+        url: "https://www.ninds.nih.gov/health-information/disorders/pain",
+      },
+      {
+        title: "Peripheral Neuropathy",
+        publisher: "National Institute of Neurological Disorders and Stroke",
+        url: "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy",
+      },
+      {
+        title: "Knee pain",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/symptoms/knee-pain/",
+      },
+      {
+        title: "Patellofemoral Pain Syndrome",
+        publisher: "OrthoInfo, American Academy of Orthopaedic Surgeons",
+        url: "https://orthoinfo.aaos.org/en/diseases--conditions/patellofemoral-pain-syndrome/",
+      },
+      {
+        title: "Sports Injuries: Types, Symptoms, and Risk Factors",
+        publisher: "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
+        url: "https://www.niams.nih.gov/health-topics/sports-injuries",
+      },
+    ],
     content: (
       <>
+        <InfoBox title="Quick Answer">
+          <p>
+            <strong>A burning sensation in the knee is a symptom description, not a diagnosis.</strong> Front-of-knee burning often follows pressure or repeated bending; burning that follows a narrow line with tingling or numbness is more suggestive of nerve sensitivity; burning with visible swelling, redness, surface heat, weakness, or loss of motion needs closer attention. Record the exact location, trigger, duration, and accompanying symptoms before deciding whether it is a short-lived irritation or a pattern that should be assessed.
+          </p>
+        </InfoBox>
 
-        {/* Section 1 */}
-        <h2>What a Burning Sensation in the Knee Usually Means</h2>
         <p>
-          A burning feeling in the knee typically indicates that the tissues in or around the joint are irritated or under stress. Unlike sharp pain, which often points to a specific structural issue, a burning sensation usually reflects a broader response involving increased blood flow, mild inflammation, or nerve sensitivity.
+          This page covers burning that may happen while sitting, kneeling, walking, resting, or during ordinary movement. Burning that appears specifically during or after running, cycling, lifting, tai chi, or another workout has a more focused activity-related pattern. See <Link to="/guides/burning-knees-after-exercise">burning knees after exercise</Link> for that version. A knee that is physically warmer than the other knee, especially with redness or swelling, is also different from a purely sensory burning feeling; our <Link to="/guides/warm-feeling-in-knee">warm feeling in the knee guide</Link> separates those patterns.
         </p>
 
+        <h2>What a Burning Sensation in the Knee Can Mean</h2>
         <p>
-          <strong>Tissue irritation around the joint</strong> is one of the most common explanations. The cartilage, tendons, and ligaments around the knee can become mildly irritated from repetitive use, sustained pressure, or sudden increases in activity. When these tissues are stressed, the body naturally increases blood flow to the area, producing that warm or burning feeling.
+          Pain can be generated by irritated or inflamed tissue, by a sensitized or compressed nerve, or by a combination of both. Burning, tingling, shooting, and electric sensations are common descriptions of nerve-type pain, but the word <em>burning</em> alone does not prove that a nerve is damaged. Joint, tendon, bursa, skin, and kneecap-related symptoms can also be described as hot or burning.
+        </p>
+        <p>
+          That is why the useful question is not simply, “What causes burning knees?” It is: <strong>Where is the burning, what were you doing when it began, is the skin actually hot, and what else changed?</strong> A broad feeling at the front after stairs is a different pattern from a narrow stripe of burning with pins and needles, and both are different from a red, swollen joint.
         </p>
 
         <figure className="my-8">
           <img
             src={imgJointIrritation}
-            alt="Knee joint irritation diagram showing tissue irritation, joint capsule, cartilage surface, and soft tissue areas"
+            alt="Knee diagram showing joint, tendon, soft-tissue, and nerve areas that may be described as burning"
             className="w-full h-auto rounded-xl shadow-sm"
+            loading="lazy"
+            decoding="async"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Tissue irritation around the knee joint can produce burning sensations in different areas
+            The same word can describe symptoms coming from different tissues, so location and accompanying signs matter.
           </figcaption>
         </figure>
 
-        <p>
-          <strong>Increased circulation or inflammation response</strong> is the body's natural reaction to irritation. When joint tissues are stressed, blood vessels in the area dilate, delivering more oxygen and nutrients to support recovery. This increased blood flow creates warmth and, in some cases, a noticeable burning sensation that can feel intense even without significant structural damage. If the sensation feels more like general warmth rather than a distinct burning, our guide on <Link to="/guides/warm-feeling-in-knee" className="text-primary hover:underline">warm feeling in the knee</Link> covers that specific pattern.
-        </p>
-        <p>
-          <strong>Nerve sensitivity</strong> around the knee can also contribute. Several nerves pass near or through the knee joint area, and when surrounding tissues become inflamed or tense, these nerves may become temporarily more sensitive, producing a burning or tingling sensation. This is particularly common when muscles tighten after exercise or prolonged inactivity.
-        </p>
-        <p>
-          <strong>Joint overuse</strong> is another frequent factor. When the knee performs the same motion repeatedly, such as bending during cycling, squatting, or stair climbing, the joint tissues can become fatigued. This fatigue increases the likelihood of irritation and the burning sensation that often accompanies it.
-        </p>
+        <h2>Use Location and Trigger to Narrow the Pattern</h2>
+        <div className="my-6 overflow-x-auto">
+          <table className="w-full border-collapse text-left text-sm">
+            <thead>
+              <tr className="border-b">
+                <th className="py-3 pr-4">Pattern</th>
+                <th className="py-3 pr-4">Useful clues</th>
+                <th className="py-3">Best next step</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b">
+                <td className="py-3 pr-4">Front or under kneecap</td>
+                <td className="py-3 pr-4">Stairs, squats, kneeling, or prolonged sitting</td>
+                <td className="py-3">Reduce the provoking bend or pressure and compare the next-day response</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-3 pr-4">Inside or outside</td>
+                <td className="py-3 pr-4">Pinpoint tenderness, friction, pressure, or a line of tingling</td>
+                <td className="py-3">Track whether the symptom behaves like local tissue pain or nerve sensitivity</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-3 pr-4">Behind the knee</td>
+                <td className="py-3 pr-4">Fullness, a lump, calf symptoms, or reduced bending</td>
+                <td className="py-3">Avoid aggressive massage and seek advice for swelling or a persistent lump</td>
+              </tr>
+              <tr className="border-b">
+                <td className="py-3 pr-4">When sitting or at rest</td>
+                <td className="py-3 pr-4">Bent-knee pressure, skin sensitivity, tingling, numbness, or back symptoms</td>
+                <td className="py-3">Change position, note the distribution, and assess persistent sensory symptoms</td>
+              </tr>
+              <tr>
+                <td className="py-3 pr-4">With redness or surface heat</td>
+                <td className="py-3 pr-4">Visible swelling, fever, severe pain, or rapid change</td>
+                <td className="py-3">Do not treat it as routine stiffness; use the warning-sign guidance below</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        <InfoBox title="Burning vs. Sharp Pain: Key Differences">
-          <p>A burning sensation usually indicates tissue irritation, increased circulation, or nerve sensitivity, and it often covers a broader area around the knee. Sharp pain, by contrast, tends to be localized and may point to a specific structural issue. If your burning sensation is mild and connected to a recent activity, it is often a temporary response that improves with rest and gradual recovery.</p>
-        </InfoBox>
-
-        {/* Section 2 */}
-        <h2>Common Causes of a Burning Feeling in the Knee</h2>
+        <h2>Burning at the Front or Under the Kneecap</h2>
         <p>
-          Understanding what commonly triggers a burning sensation in the knee can help you identify patterns and make adjustments that reduce the frequency or intensity of episodes.
+          Front-of-knee burning is often reported with repeated bending, stairs, squats, kneeling, or sitting for a long time with the knee flexed. These situations increase pressure around the kneecap and can irritate sensitive tissues at the front of the joint. The sensation may be broad around the patella or more focused just above or below it.
         </p>
-
-        <h3>Overuse During Physical Activity</h3>
         <p>
-          One of the most frequent causes of burning knee sensations is simply doing too much too quickly. Whether it is a longer-than-usual walk, an intense workout, or a sudden return to exercise after a break, the knee joint can become irritated when it is asked to handle more stress than it is conditioned for. Our guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee discomfort after exercise</Link> explores this pattern in more detail.
-        </p>
-
-        <h3>Prolonged Kneeling or Bending</h3>
-        <p>
-          Activities that require sustained knee bending, such as gardening, cleaning floors, or working in a crouched position, place concentrated pressure on the front of the knee. This pressure can irritate the structures behind and around the kneecap, producing a warm or burning sensation that may persist even after the activity ends.
-        </p>
-
-        <h3>Patellofemoral Joint Stress</h3>
-        <p>
-          The patellofemoral joint, where the kneecap meets the thigh bone, is particularly susceptible to burning sensations. When this joint is under excess pressure from tight muscles, weak quadriceps, or repetitive bending, the cartilage surfaces can become irritated. This is especially common during activities like stair climbing or squatting. For more on squatting-related discomfort, see our guide on <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">knee discomfort when squatting</Link>.
+          Pain and stiffness around the kneecap that are linked to running, stairs, squatting, or prolonged sitting can fit a patellofemoral pattern, but a symptom description cannot confirm that diagnosis. Compare the pattern with our <Link to="/guides/patellofemoral-pain-syndrome">patellofemoral pain syndrome guide</Link> and the more location-specific guide to <Link to="/guides/pain-behind-kneecap">pain behind the kneecap</Link>. Burning caused by direct pressure while gardening or working on the floor may be better matched to <Link to="/guides/knee-pain-when-kneeling">knee pain when kneeling</Link>.
         </p>
 
         <figure className="my-8">
           <img
             src={imgPatellofemoral}
-            alt="Patellofemoral pressure illustration showing patella, femur groove, pressure zone, and cartilage contact areas"
+            alt="Illustration of pressure around the kneecap during repeated bending"
             className="w-full h-auto rounded-xl shadow-sm"
+            loading="lazy"
+            decoding="async"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            The patellofemoral joint is a common source of burning sensations when under excess pressure
+            A front-of-knee burning pattern is often linked to how the kneecap area responds to pressure and repeated bending.
           </figcaption>
         </figure>
 
-        <h3>Mild Inflammation After Exercise</h3>
+        <h2>Burning on the Inside or Outside of the Knee</h2>
         <p>
-          After physical activity, the body initiates a natural inflammatory response to help repair minor tissue stress. This response involves increased blood flow, warmth, and sometimes swelling at a microscopic level. For most people, this mild post-exercise inflammation resolves within hours, but for some, it can produce a noticeable burning sensation that lingers longer.
+          A burning sensation on one side of the knee deserves more precise tracking than “my knee burns.” Note whether the area is tender when pressed, whether the burning follows a narrow path, and whether there is tingling or altered skin sensation. Local tendons and bursae can become irritated, while nearby sensory nerves can create burning or stinging without much joint ache.
+        </p>
+        <p>
+          Outer-knee burning during repetitive movement may overlap with the patterns discussed in the <Link to="/guides/it-band-pain-location-diagram">IT band pain location guide</Link>. A broader comparison of inner and outer discomfort is available in our <Link to="/guides/side-knee-pain-comfort-guide">side knee pain guide</Link>. Do not assume every side-burning symptom is an IT band problem, particularly when numbness, weakness, or pain below the knee is present.
         </p>
 
-        <h3>Nerve Irritation Around the Knee</h3>
+        <h2>Burning Behind the Knee</h2>
         <p>
-          Several nerves run near the knee joint, including the saphenous nerve on the inner side and the peroneal nerve on the outer side. When these nerves become irritated from muscle tension, poor positioning, or swelling in surrounding tissues, they can produce a burning or tingling sensation. This type of burning often feels different from joint irritation, as it may follow a specific pathway along the leg.
+          Burning behind the knee can feel deep in the crease, closer to the skin, or beside an area of fullness. The back of the knee contains tendons, vessels, nerves, and the joint capsule, so this is not a location to diagnose from sensation alone. Record whether there is a lump, visible swelling, calf swelling, reduced motion, or pain when fully straightening the leg.
+        </p>
+        <p>
+          A new or enlarging lump, a hot swollen knee, or calf swelling with sudden pain needs medical assessment. Do not repeatedly massage unexplained fullness behind the knee. For the swelling-specific decision path, read <Link to="/guides/knee-swelling-after-exercise">knee swelling after exercise</Link>; the same warning principles apply even when exercise was not the trigger.
+        </p>
+
+        <h2>Burning When Sitting, Resting, or at Night</h2>
+        <p>
+          Long periods with the knee bent can increase pressure around the kneecap and make a sensitive joint more noticeable when you first stand. A symptom that settles after a few minutes of easy movement may behave more like a pressure or stiffness pattern. Our guide to <Link to="/guides/why-do-my-knees-feel-tight-after-resting">knees that feel tight after resting</Link> covers that transition in more detail.
+        </p>
+        <p>
+          Burning that continues at rest, wakes you repeatedly, follows a strip of skin, or arrives with tingling, numbness, unusual sensitivity to clothing, or weakness is more suggestive of a sensory nerve component. Nerve symptoms may originate near the knee or farther up the leg or spine. Persistent or progressive symptoms need clinical evaluation rather than a stronger stretching routine.
         </p>
 
         <figure className="my-8">
           <img
             src={imgNerveIrritation}
-            alt="Nerve pathways around the knee showing sensitivity areas where irritation can cause burning sensations"
+            alt="Nerve pathways around the knee and lower leg that may produce burning or tingling sensations"
             className="w-full h-auto rounded-xl shadow-sm"
+            loading="lazy"
+            decoding="async"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Nerve pathways around the knee can become sensitive when surrounding tissues are tense or inflamed
+            Burning that follows a path or comes with tingling, numbness, or skin sensitivity may involve a nerve rather than the joint alone.
           </figcaption>
         </figure>
 
-        <PremiumCTA
-          headline="Want soothing warmth for irritated knees?"
-          text="FlexiKnee provides adjustable warmth, red light, and gentle vibration to help support knee comfort during your daily recovery routine."
-        />
-
-        {/* Section 3 */}
-        <h2>Why Burning Sensations May Appear After Exercise or Long Walks</h2>
+        <h2>Burning After an Injury</h2>
         <p>
-          Many people notice that their knee burning sensation is most noticeable after, rather than during, physical activity. Understanding why this happens can help you manage the pattern more effectively.
+          A burning sensation that begins after a twist, fall, direct blow, kneecap dislocation, or failed repetition should not be grouped with an occasional unexplained burning feeling. The injury event, swelling, bruising, ability to bear weight, and ability to fully bend and straighten the knee matter more than the word used to describe the pain.
+        </p>
+        <p>
+          Stop the provoking activity. Seek prompt advice when there is severe pain, major swelling, deformity, inability to bear weight, locking, giving way, or a large loss of motion. The <Link to="/guides/sudden-knee-pain-guide">sudden knee pain guide</Link> provides a clearer injury and warning-sign pathway.
         </p>
 
-        <h3>Muscle Fatigue</h3>
+        <h2>Burning With Warmth, Redness, or Swelling</h2>
         <p>
-          During exercise or long walks, the muscles surrounding the knee gradually fatigue. As the quadriceps, hamstrings, and calf muscles tire, they provide less support and shock absorption for the knee joint. This means the joint itself absorbs more of the repetitive impact, which can trigger irritation and a subsequent burning sensation once you stop and the body begins its recovery process.
-        </p>
-
-        <h3>Increased Joint Pressure</h3>
-        <p>
-          Physical activity naturally increases pressure within the knee joint. During walking, the knee bears approximately 1.5 times your body weight with each step. During stair climbing, this increases to 3 to 4 times body weight. This accumulated pressure over an extended period can irritate the joint surfaces and surrounding tissues.
-        </p>
-
-        <h3>Circulation Changes</h3>
-        <p>
-          After exercise, the body redistributes blood flow as it transitions from an active to a resting state. During this transition, the knee may experience a surge of blood flow as the body directs recovery resources to the area. This increased circulation can produce a warm or burning sensation that was not noticeable during the activity itself.
-        </p>
-
-        <h3>Repetitive Knee Bending</h3>
-        <p>
-          Walking, hiking, and most forms of exercise involve thousands of repetitive knee bending cycles. Each cycle creates minor friction within the joint. Over the course of a long walk or workout, this accumulated friction can produce enough tissue irritation to trigger a burning sensation. If you frequently experience this after walks, our guide on <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">knee discomfort after long walks</Link> offers additional strategies.
-        </p>
-
-        {/* Section 4 */}
-        <h2>Situations Where Burning Knee Sensations Commonly Occur</h2>
-        <p>
-          Recognizing the specific situations that trigger burning knee sensations can help you anticipate and prepare for them.
-        </p>
-
-        <h3>After Workouts</h3>
-        <p>
-          Burning sensations frequently appear within 30 minutes to several hours after a workout, particularly workouts that involve squatting, lunging, or repetitive leg movements. The body's post-exercise inflammatory response peaks during this window, which is why the burning may feel more intense after activity than during it.
-        </p>
-
-        <h3>After Hiking or Long Walks</h3>
-        <p>
-          Extended walking or hiking, especially on inclines or uneven terrain, significantly increases the cumulative stress on the knee joint. For those interested in hiking-specific knee concerns, our guide on <Link to="/guides/knee-pain-when-hiking" className="text-primary hover:underline">knee discomfort when hiking</Link> provides detailed strategies.
-        </p>
-
-        <h3>After Prolonged Sitting</h3>
-        <p>
-          Sitting for extended periods can sometimes trigger a burning sensation when you first stand up and begin moving. This happens because the joint has been held in a bent position, and the sudden transition to movement can irritate tissues that have temporarily stiffened. Our guide on <Link to="/guides/knee-tightness-without-pain" className="text-primary hover:underline">knee tightness without pain</Link> discusses how inactivity affects knee comfort.
+          Subjective burning and objective heat are not the same. A knee can feel as though it is burning while both knees have the same skin temperature. By contrast, a knee that is visibly red, noticeably hotter than the other side, and swollen needs more caution. Infection, gout, bursitis, injury, and other inflammatory problems can produce a hot joint, and they cannot be distinguished from a web description.
         </p>
 
         <figure className="my-8">
           <img
             src={imgInflammation}
-            alt="Knee inflammation visualization showing increased blood flow, inflammatory response, joint lining, and warmth zone"
+            alt="Visual comparison of a subjective burning sensation and visible heat, redness, or swelling around the knee"
             className="w-full h-auto rounded-xl shadow-sm"
+            loading="lazy"
+            decoding="async"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            The body's inflammatory response involves increased blood flow that can produce warmth and burning sensations
+            Visible redness, swelling, and measurable surface heat change the decision and should not be treated as simple tightness.
           </figcaption>
         </figure>
 
-        <h3>During Stair Climbing</h3>
-        <p>
-          Stair climbing places the patellofemoral joint under significant pressure, as the kneecap presses firmly into the femur groove with each step. This concentrated pressure can irritate the cartilage behind the kneecap, producing a burning sensation that is most noticeable at the front of the knee. Our <Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">knee discomfort when climbing stairs</Link> guide covers this in depth.
-        </p>
+        <InfoBox title="Get Urgent Medical Advice">
+          <p>
+            Seek urgent help if the knee is very painful, you cannot move it or bear weight, it is badly swollen or deformed, it locks or gives way, or it is hot and red while you have a fever or feel unwell. Arrange a non-urgent assessment for burning that persists, repeatedly returns, spreads, appears at rest, or comes with numbness, weakness, a lump, or progressive loss of motion.
+          </p>
+        </InfoBox>
 
-        <h3>After Repetitive Bending Movements</h3>
-        <p>
-          Activities like gardening, cleaning, or any task that requires frequent bending and straightening of the knee can gradually irritate the joint tissues. The burning sensation may not appear immediately but often develops after the activity is completed and the body begins its recovery response.
-        </p>
-
-        {/* Section 5 */}
-        <h2>Home Strategies That May Help Reduce Knee Burning Sensation</h2>
-        <p>
-          For many people, a burning sensation in the knee responds well to simple home strategies. The key is to address both the immediate discomfort and the underlying factors that contribute to it.
-        </p>
-
-        <TipsList tips={[
-          "Allow gentle rest from the triggering activity, but avoid complete immobilization",
-          "Stretch the quadriceps, hamstrings, and calves gently to reduce muscle tension",
-          "Apply a cool compress if the knee feels actively warm after exercise",
-          "Gradually return to activity rather than resuming full intensity immediately",
-          "Strengthen the muscles around the knee to reduce joint stress during daily activities",
-          "Vary your exercise routine to avoid sustained repetitive knee bending",
-        ]} />
-
-        <h3>Gentle Rest and Recovery</h3>
-        <p>
-          When a burning sensation appears, reducing the intensity or duration of the activity that triggered it is usually the most effective first step. However, complete immobilization is generally not recommended, as gentle movement helps maintain joint lubrication and supports recovery. The goal is to find a comfortable level of activity that allows the irritation to settle.
-        </p>
-
-        <h3>Stretching Surrounding Muscles</h3>
-        <p>
-          Tight muscles around the knee can increase pressure on the joint and contribute to tissue irritation. Regular stretching of the quadriceps (front thigh), hamstrings (back thigh), and calves can help reduce this tension. Holding each stretch for 20 to 30 seconds and repeating 2 to 3 times per side is a good starting point.
-        </p>
-
-        <h3>Improving Hip and Leg Strength</h3>
-        <p>
-          Strong muscles provide better support for the knee joint, which reduces the amount of stress the joint itself must absorb. Low-impact exercises like wall sits, step-ups, and straight leg raises gradually build the quadriceps and glutes without placing excessive load on the knee. Our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee exercises guide</Link> provides a structured approach.
-        </p>
-
-        <h3>Reducing Repetitive Stress</h3>
-        <p>
-          If your burning sensation is linked to a specific repetitive activity, consider varying your routine. For example, if cycling triggers knee burning, alternating with swimming or walking can help distribute the stress more evenly across different movement patterns.
-        </p>
-
-        <h3>Gradual Return to Activity</h3>
-        <p>
-          After a burning episode subsides, returning to your normal activity level gradually is important. Jumping back to full intensity too quickly often retrieves the cycle of irritation. A general guideline is to increase activity duration or intensity by no more than 10 percent per week.
-        </p>
-
-        <PremiumCTA
-          headline="Support your knee comfort routine at home"
-          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device, making it easy to support your knees before and after daily activities."
-        />
-
-        {/* Section 6 */}
-        <h2>Daily Habits That Support Knee Joint Comfort</h2>
-        <p>
-          Building consistent daily habits can help reduce the frequency and intensity of burning knee sensations over time. These habits focus on keeping the knee well-supported, mobile, and comfortable throughout the day.
-        </p>
+        <h2>What to Do First</h2>
+        <ol>
+          <li><strong>Stop guessing from the word “burning.”</strong> Mark the exact location with one finger and note whether the feeling is deep, on the skin, or follows a line.</li>
+          <li><strong>Record the trigger and timing.</strong> Sitting, kneeling, an injury, ordinary walking, and exercise create different patterns.</li>
+          <li><strong>Check accompanying signs.</strong> Compare both knees for swelling, redness, surface heat, range of motion, and stability.</li>
+          <li><strong>Remove the obvious irritant.</strong> Avoid the position, pressure, or activity that reliably provokes the symptom while it settles.</li>
+          <li><strong>Use gentle movement only when comfortable.</strong> Do not stretch aggressively through burning, numbness, or sharp pain.</li>
+          <li><strong>Avoid heat on a hot or newly swollen knee.</strong> Temperature-based comfort should never override warning signs.</li>
+          <li><strong>Get assessed when the pattern is persistent or neurological.</strong> Burning with numbness, weakness, spreading symptoms, or night pain needs a more specific explanation.</li>
+        </ol>
 
         <figure className="my-8">
           <img
             src={imgStressComparison}
-            alt="Comparison of low-impact walking versus high-impact stair climbing and their effects on knee stress"
+            alt="Comparison of knee burning patterns linked to pressure, repeated movement, and nerve sensitivity"
             className="w-full h-auto rounded-xl shadow-sm"
+            loading="lazy"
+            decoding="async"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Low-impact activities like walking place significantly less stress on the knee than high-impact movements like stair climbing
+            The goal is to identify the repeatable pattern, not to force every burning sensation into one cause.
           </figcaption>
         </figure>
 
-        <h3>Balanced Movement Throughout the Day</h3>
+        <h2>The Bottom Line</h2>
         <p>
-          Rather than concentrating all your physical activity into a single session, try to spread movement throughout the day. Taking regular walking breaks, standing periodically during desk work, and incorporating gentle stretching between activities all help maintain joint lubrication and reduce the buildup of tension that can lead to burning sensations.
-        </p>
-
-        <h3>Strengthening Muscles Supporting the Knee</h3>
-        <p>
-          Consistent strengthening of the quadriceps, hamstrings, and glutes is one of the most effective long-term strategies for reducing knee burning. Strong muscles absorb more of the impact and stress that would otherwise be transferred to the joint tissues. Even 10 to 15 minutes of targeted exercises three to four times per week can make a meaningful difference.
-        </p>
-
-        <h3>Mobility Exercises for Hips and Ankles</h3>
-        <p>
-          The knee sits between the hip and ankle, and limitations in either of these neighboring joints can increase stress on the knee. Regular hip mobility exercises (hip circles, pigeon pose variations) and ankle mobility work (calf stretches, ankle rotations) help distribute movement demands more evenly across the lower body.
-        </p>
-
-        <h3>Gradual Training Progression</h3>
-        <p>
-          One of the most common triggers for burning knee sensations is increasing activity too quickly. Whether you are starting a new exercise routine, returning after a break, or training for an event, gradual progression gives the knee joint time to adapt. Increasing volume or intensity by small increments each week helps prevent the overuse pattern that often leads to burning sensations.
-        </p>
-
-        <TipsList tips={[
-          "Aim for at least 5 minutes of gentle mobility work each morning",
-          "Strengthen the quadriceps and glutes 3 to 4 times per week",
-          "Take a 2-minute movement break every 30 to 45 minutes of sitting",
-          "Increase exercise duration or intensity by no more than 10 percent per week",
-          "Include hip and ankle mobility work in your regular routine",
-        ]} />
-
-        {/* Section 7 */}
-        <h2>When a Burning Sensation in the Knee May Need Attention</h2>
-        <p>
-          While most burning knee sensations are temporary and respond well to home strategies, there are certain signs that suggest it may be worth discussing with a healthcare professional.
-        </p>
-
-        <InfoBox title="When to Consider Professional Guidance">
-          <p>Occasional burning that resolves with rest is usually not a concern. However, you should consider seeking guidance if the burning persists for more than a few days without improvement, if it intensifies during normal daily activities like walking or climbing stairs, if swelling or visible redness develops alongside the burning, or if your knee range of motion becomes progressively limited.</p>
-        </InfoBox>
-
-        <h3>Persistent Burning Sensation</h3>
-        <p>
-          A burning sensation that appears occasionally after intense activity and resolves with rest is generally normal. However, if the burning becomes a daily occurrence or persists even during rest, it may indicate that the underlying irritation is not resolving on its own. For more on monitoring knee changes, our <Link to="/guides/sudden-knee-pain-guide" className="text-primary hover:underline">sudden knee discomfort guide</Link> provides useful context.
-        </p>
-
-        <h3>Increasing Discomfort During Daily Movement</h3>
-        <p>
-          If activities that previously did not trigger burning, such as walking at a normal pace or climbing a single flight of stairs, begin to produce the sensation, this may suggest that the joint irritation is progressing rather than improving. This pattern warrants attention, especially if it develops gradually over several weeks.
-        </p>
-
-        <h3>Swelling or Reduced Mobility Appearing Later</h3>
-        <p>
-          Burning alone is usually benign, but if it becomes accompanied by visible swelling, warmth that feels different from the original burning, or a noticeable reduction in your ability to bend or straighten the knee, these additional symptoms suggest that a professional evaluation may be beneficial. If you are also experiencing stiffness alongside the burning, our guide on <Link to="/guides/why-do-my-knees-feel-tight-after-resting" className="text-primary hover:underline">knee stiffness after resting</Link> may provide helpful context.
+          A burning knee can reflect local tissue irritation, pressure around the kneecap, an injury, skin sensitivity, or nerve-type pain. Location and context do most of the diagnostic work: front burning after bending, side burning that follows a path, burning behind a swollen knee, and burning at rest are not interchangeable. Use the pattern to choose the right guide, and seek medical advice when burning is persistent, progressive, associated with neurological symptoms, or accompanied by a hot, red, swollen, unstable, or locked knee.
         </p>
       </>
     ),

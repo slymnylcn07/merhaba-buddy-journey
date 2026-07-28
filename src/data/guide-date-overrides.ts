@@ -17,4 +17,10 @@ export const guideDateOverrides: Record<string, GuideDateOverride> = {
     publishedDate: "2026-07-27",
     lastModified: "2026-07-27",
   },
+  "burning-sensation-in-knee": {
+    lastModified: "2026-07-28",
+  },
+  "burning-knees-after-exercise": {
+    lastModified: "2026-07-28",
+  },
 };
