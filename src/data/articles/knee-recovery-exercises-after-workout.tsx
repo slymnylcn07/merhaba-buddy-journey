@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { InfoBox } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
+import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
+
 import heroImage from "@/assets/article-hero-knee-recovery-exercises.jpg";
 import quadStretchImg from "@/assets/article-knee-recovery-quad-stretch.jpg";
 import gluteBridgeImg from "@/assets/article-knee-recovery-glute-bridge.jpg";
@@ -8,260 +10,245 @@ import straightLegRaiseImg from "@/assets/article-knee-recovery-straight-leg-rai
 import restVsActiveImg from "@/assets/article-knee-recovery-rest-vs-active.jpg";
 import hamstringStretchImg from "@/assets/article-knee-recovery-hamstring-stretch.jpg";
 
+const sourceLinkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
+
 const articleContent = (
   <>
-
     <p>
-      You just finished an intense session at the gym and now your knees are aching. If you regularly experience knee pain after a workout, you are not alone. Sore knees after exercise are one of the most common complaints among active people, whether you run, lift weights, or do general fitness training. The good news is that with the right knee recovery after workout habits, most post-workout knee discomfort can be managed and even prevented over time.
+      This guide gives you a practical <strong>10-minute post-workout knee recovery routine</strong> for mild, general soreness after running, gym sessions, or leg day. It is designed around gentle movement, mobility, and low-load strengthening rather than a long explanation of why knees hurt.
     </p>
     <p>
-      This guide covers the best exercises for knee recovery after workout sessions, explains why your knees may feel sore, and provides practical strategies to help you get back to training with confidence. Whether you are dealing with knee soreness after a workout from squats, running, or simply a long leg day, you will find actionable steps to support your knees.
-    </p>
-
-    <h2>Is Knee Pain After a Workout Normal?</h2>
-    <p>
-      One of the most frequently asked questions by active people is whether knee pain after a workout is something to worry about. In most cases, mild knee soreness that appears gradually after exercise and resolves within two to three days is a normal part of the recovery process. This type of discomfort is typically related to delayed onset muscle soreness (DOMS), which occurs when muscles and tendons around the knee adapt to physical stress.
-    </p>
-    <p>
-      However, not all post workout knee pain follows this pattern. If your knees hurt after exercise with sharp, sudden, or localized pain that appears during activity rather than after, it may be worth paying closer attention. Swelling, instability, or discomfort that persists beyond four days without improvement are also signals that deserve professional evaluation.
+      Use it when both knees feel generally tired or stiff but you can walk normally and there is no acute injury. For the causes of delayed soreness, read <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">why knees hurt after exercise but not during</Link>. For visible puffiness or fluid-like fullness, go to <Link to="/guides/knee-swelling-after-exercise" className="text-primary hover:underline">knee swelling after exercise</Link> instead.
     </p>
 
-    <InfoBox title="Normal vs Warning Signs">
-      <p>Normal knee soreness after a workout feels like a dull, general ache that improves with gentle movement. Warning signs include sharp pain during exercise, swelling, instability, or discomfort that does not improve with rest over several days. If you notice these patterns, consulting a healthcare professional is recommended.</p>
+    <InfoBox title="Quick Answer">
+      <p>
+        A simple post-workout knee recovery routine can take 10 minutes: 2 minutes of easy walking, 1 minute of quad stretching, 1 minute of hamstring stretching, 2 minutes of glute bridges, 2 minutes of straight-leg raises, and 2 minutes of relaxed mobility. Keep every movement comfortable and stop if pain becomes sharp, swelling increases, or the knee feels unstable.
+      </p>
     </InfoBox>
 
-    <h2>Why Your Knees Feel Sore After Exercise</h2>
+    <h2>Who This 10-Minute Routine Is For</h2>
     <p>
-      If you have ever wondered why do my knees hurt after working out, several factors can contribute to this common experience. Understanding the root causes helps you take smarter steps toward recovery and prevention.
-    </p>
-
-    <h3>Muscle Fatigue and Overload</h3>
-    <p>
-      The quadriceps, hamstrings, glutes, and calves all work together to stabilize the knee during exercise. When these muscles become fatigued, they are less effective at absorbing impact, and the knee joint itself takes on more stress. This is one of the most common reasons people experience sore knees after exercise, especially after high-repetition or high-intensity sessions.
-    </p>
-
-    <h3>Joint Stress from Repetitive Movement</h3>
-    <p>
-      Activities like running, cycling, and stair climbing place repetitive load on the knee with every stride or pedal stroke. Over time, this accumulated stress can create temporary soreness in the joint structures. People who ask "why do my knees hurt after running" are often experiencing this type of repetitive load fatigue. For detailed guidance on running-related discomfort, see our guide on <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">running knee pain</Link>.
-    </p>
-
-    <h3>Overuse and Training Volume</h3>
-    <p>
-      Increasing your training frequency, duration, or intensity too quickly is a leading cause of knee soreness after workout sessions. When the body does not have enough time to adapt between workouts, the tissues around the knee become temporarily overloaded. This is especially common after returning from a break or starting a new program.
-    </p>
-
-    <h3>Form and Alignment Issues</h3>
-    <p>
-      Poor movement mechanics during exercises like squats, lunges, and leg presses can place unnecessary stress on the knee joint. When the knee tracks inward, extends too far forward, or absorbs load unevenly, the surrounding structures compensate, leading to soreness and potential discomfort over time. For specific squat-related guidance, see our guide on <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">knee discomfort when squatting</Link>.
-    </p>
-
-    <h3>Knee Stiffness After Workout</h3>
-    <p>
-      Tightness in the muscles surrounding the knee, particularly the quadriceps, hamstrings, and IT band, can restrict joint movement and increase post-exercise stiffness. This knee stiffness after workout is often most noticeable first thing in the morning or after periods of sitting following exercise. Regular stretching and mobility work can help maintain comfortable range of motion. For more on IT band-related issues, see our guide on <Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT band syndrome</Link>.
-    </p>
-
-    <h2>Best Exercises for Knee Recovery After Workout</h2>
-    <p>
-      The following exercises are among the best exercises for knee recovery after workout sessions. They focus on gentle stretching, strengthening the muscles that support the knee, and promoting blood flow to the area. Perform these exercises on rest days or after your workout as part of a cooldown routine.
-    </p>
-
-    <h3>Standing Quad Stretch</h3>
-    <p>
-      The quadriceps are the primary muscles that support and stabilize the knee joint. Tight quads pull on the kneecap and increase joint pressure. A standing quad stretch is one of the simplest and most effective exercises for sore knees after workout sessions.
+      This routine is suitable for mild post-workout stiffness, diffuse muscle soreness around the knees, or a heavy feeling after a harder-than-usual session. It is not a test for an injured knee.
     </p>
     <ul>
-      <li>Stand on one leg, holding a wall or chair for balance</li>
-      <li>Bend the opposite knee and pull your heel toward your glutes</li>
-      <li>Keep your knees close together and your torso upright</li>
-      <li>Hold for 20 to 30 seconds, then switch sides</li>
-      <li>Repeat 2 to 3 times per side</li>
+      <li>You can walk and bear weight normally.</li>
+      <li>The discomfort is dull and general rather than sharp and pinpointed.</li>
+      <li>There is no rapidly increasing swelling, heat, redness, locking, or giving way.</li>
+      <li>The symptoms appeared after exercise rather than during a specific twist, pop, or impact.</li>
     </ul>
 
-    <figure className="my-8">
-      <img
-        src={quadStretchImg}
-        alt="Illustration of a person performing a standing quad stretch for knee recovery after exercise"
-        className="w-full h-auto rounded-xl shadow-sm"
-        loading="lazy"
-      />
-      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        Standing quad stretch: one of the most effective exercises for post-workout knee recovery
-      </figcaption>
-    </figure>
+    <InfoBox title="Do Not Start the Routine Yet">
+      <p>
+        Skip the routine and seek appropriate medical advice if the knee is visibly swollen after an injury, cannot fully straighten, gives way, locks, is hot and red, or cannot comfortably bear weight. Do not stretch aggressively through sharp pain.
+      </p>
+    </InfoBox>
 
-    <h3>Seated Hamstring Stretch</h3>
+    <h2>The 10-Minute Post-Workout Knee Recovery Routine</h2>
+    <div className="my-6 overflow-x-auto">
+      <table className="w-full border-collapse text-left text-sm">
+        <thead>
+          <tr className="border-b">
+            <th className="py-3 pr-4">Time</th>
+            <th className="py-3 pr-4">Exercise</th>
+            <th className="py-3">Goal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="border-b"><td className="py-3 pr-4">0:00-2:00</td><td className="py-3 pr-4">Easy walk or march</td><td className="py-3">Settle breathing and keep the joint moving</td></tr>
+          <tr className="border-b"><td className="py-3 pr-4">2:00-3:00</td><td className="py-3 pr-4">Standing quad stretch</td><td className="py-3">Reduce front-thigh tension</td></tr>
+          <tr className="border-b"><td className="py-3 pr-4">3:00-4:00</td><td className="py-3 pr-4">Seated hamstring stretch</td><td className="py-3">Ease back-thigh tightness</td></tr>
+          <tr className="border-b"><td className="py-3 pr-4">4:00-6:00</td><td className="py-3 pr-4">Glute bridges</td><td className="py-3">Restore hip support with low knee load</td></tr>
+          <tr className="border-b"><td className="py-3 pr-4">6:00-8:00</td><td className="py-3 pr-4">Straight-leg raises</td><td className="py-3">Activate the quadriceps without deep bending</td></tr>
+          <tr><td className="py-3 pr-4">8:00-10:00</td><td className="py-3 pr-4">Heel slides and ankle pumps</td><td className="py-3">Finish with easy mobility</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Minutes 0-2: Easy Walking or Marching</h3>
     <p>
-      Tight hamstrings can alter the mechanics of the knee joint and contribute to post-exercise soreness. A seated hamstring stretch helps relieve tension in the back of the thigh and supports knee flexibility.
-    </p>
-    <ul>
-      <li>Sit on the floor with one leg extended straight in front of you</li>
-      <li>Bend the opposite knee and place the sole of that foot against your inner thigh</li>
-      <li>Reach forward toward your toes while keeping your back straight</li>
-      <li>Hold for 20 to 30 seconds, then switch sides</li>
-      <li>Repeat 2 to 3 times per side</li>
-    </ul>
-
-    <figure className="my-8">
-      <img
-        src={hamstringStretchImg}
-        alt="Illustration of a person performing a seated hamstring stretch for knee recovery"
-        className="w-full h-auto rounded-xl shadow-sm"
-        loading="lazy"
-      />
-      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        Seated hamstring stretch: helps relieve tension that contributes to knee soreness
-      </figcaption>
-    </figure>
-
-    <h3>Glute Bridges</h3>
-    <p>
-      Weak glutes are a common contributor to knee discomfort because the knee compensates for the lack of hip stability. Glute bridges strengthen the posterior chain and reduce the load on the knee joint during exercise.
-    </p>
-    <ul>
-      <li>Lie on your back with knees bent and feet flat on the floor</li>
-      <li>Press through your heels to lift your hips toward the ceiling</li>
-      <li>Squeeze your glutes at the top and hold for 2 to 3 seconds</li>
-      <li>Lower slowly and repeat for 12 to 15 repetitions</li>
-      <li>Perform 2 to 3 sets</li>
-    </ul>
-
-    <figure className="my-8">
-      <img
-        src={gluteBridgeImg}
-        alt="Illustration of a person performing a glute bridge exercise for knee support"
-        className="w-full h-auto rounded-xl shadow-sm"
-        loading="lazy"
-      />
-      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        Glute bridges: strengthen the posterior chain to reduce knee joint stress
-      </figcaption>
-    </figure>
-
-    <h3>Straight Leg Raises</h3>
-    <p>
-      Straight leg raises are a low-impact exercise that strengthens the quadriceps without placing direct load on the knee joint. This makes them ideal for people who experience knee pain after leg day and want to maintain strength during recovery.
-    </p>
-    <ul>
-      <li>Lie on your back with one leg bent and the other extended straight</li>
-      <li>Tighten the quadriceps of the straight leg and lift it to about 45 degrees</li>
-      <li>Hold at the top for 3 to 5 seconds, then lower slowly</li>
-      <li>Perform 10 to 15 repetitions per side</li>
-      <li>Complete 2 to 3 sets</li>
-    </ul>
-
-    <figure className="my-8">
-      <img
-        src={straightLegRaiseImg}
-        alt="Illustration of a person performing straight leg raises for quadriceps strengthening"
-        className="w-full h-auto rounded-xl shadow-sm"
-        loading="lazy"
-      />
-      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        Straight leg raises: build quadriceps strength without loading the knee joint
-      </figcaption>
-    </figure>
-
-    <h3>Light Mobility Drills</h3>
-    <p>
-      Gentle mobility work keeps the knee joint lubricated and maintains range of motion. Simple movements like slow knee circles, ankle rotations, and gentle bodyweight squats to a comfortable depth can help reduce stiffness and promote recovery. For additional home-based options, see our guide on <Link to="/guides/exercises-to-relieve-knee-pain-at-home" className="text-primary hover:underline">exercises to relieve knee discomfort at home</Link>.
-    </p>
-<PremiumCTA
-      headline="Support your knees during post-workout recovery"
-      text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable after exercise, making your recovery routine simple and consistent."
-    />
-
-    <h2>How to Relieve Knee Pain After Exercise</h2>
-    <p>
-      Beyond targeted exercises, several practical strategies can help you manage how to relieve knee pain after exercise and support faster recovery between sessions.
-    </p>
-
-    <h3>Rest vs Active Recovery</h3>
-    <p>
-      Complete rest is sometimes necessary, but in most cases active recovery is more effective for knee soreness. Light activities such as walking, easy cycling, or swimming promote blood flow to the knee area without adding stress to the joint. The key is keeping the intensity low enough that it feels comfortable rather than challenging.
+      Walk slowly or march in place at a pace that feels easier than the workout you just completed. The goal is not additional conditioning. It is a gradual transition from training to recovery. If discomfort increases with every step, stop rather than forcing the full two minutes.
     </p>
 
     <figure className="my-8">
       <img
         src={restVsActiveImg}
-        alt="Illustration comparing rest and active recovery approaches for knee comfort after exercise"
+        alt="Comparison of complete rest and gentle active recovery after a workout"
         className="w-full h-auto rounded-xl shadow-sm"
         loading="lazy"
+        decoding="async"
       />
       <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        Rest vs active recovery: light movement often supports faster knee recovery than complete rest
+        Gentle movement may reduce stiffness better than immediately sitting still, provided it does not increase symptoms.
       </figcaption>
     </figure>
 
-    <h3>Heat vs Cold</h3>
-    <p>
-      Applying warmth to the knee area after exercise can help promote circulation and ease stiffness, which many people find soothing during the recovery period. Cold application may help with acute swelling if present. For a detailed comparison, see our guide on <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat vs ice for knees</Link>.
-    </p>
-
-    <h3>Compression and Elevation</h3>
-    <p>
-      Gentle compression through a supportive knee sleeve can help manage minor swelling and provide a sense of stability during recovery. Elevating the legs after exercise also helps reduce fluid accumulation around the joint. If you notice visible swelling, see our guide on <Link to="/guides/knee-swelling-after-exercise" className="text-primary hover:underline">knee swelling after exercise</Link>.
-    </p>
-
-    <h3>Light Movement Throughout the Day</h3>
-    <p>
-      If you spend most of your day sitting after a workout, your knees may stiffen up more than necessary. Taking short walking breaks, doing gentle knee bends at your desk, or performing a few minutes of stretching can help maintain joint comfort between sessions.
-    </p>
-
-    <h2>Knee Pain After Leg Day: What to Do</h2>
-    <p>
-      Leg day workouts that include squats, leg presses, lunges, and leg extensions place significant load on the knee joint. It is common to experience knee pain after leg day, especially if the workout included heavier weights or higher volume than usual. Here are specific strategies for managing post-leg day knee discomfort:
-    </p>
+    <h3>Minutes 2-3: Standing Quad Stretch</h3>
     <ul>
-      <li><strong>Cool down properly:</strong> Spend 5 to 10 minutes after your leg workout doing light walking or cycling, followed by the stretches outlined earlier in this guide.</li>
-      <li><strong>Monitor your training volume:</strong> If knee pain after leg day is a recurring pattern, consider reducing the number of sets or slightly lowering the weight while your body adapts.</li>
-      <li><strong>Check your form:</strong> Video yourself during key exercises like squats and lunges to ensure your knees track properly over your toes and do not collapse inward.</li>
-      <li><strong>Allow adequate recovery:</strong> Give your legs at least 48 to 72 hours between heavy leg sessions. Training the same muscles before they have recovered can lead to cumulative stress on the knee.</li>
-      <li><strong>Warm up your knees:</strong> Applying gentle warmth before training can help the joint feel more prepared for load. For ideas on daily warmth routines, see our guide on <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">daily knee comfort routines</Link>.</li>
+      <li>Hold a wall or chair for balance.</li>
+      <li>Bend one knee and bring the heel toward the glute without forcing it.</li>
+      <li>Keep the thighs roughly parallel and the torso upright.</li>
+      <li>Hold for 20 to 30 seconds per side.</li>
     </ul>
 
-    <h2>How to Recover Knees Faster After Workout</h2>
-    <p>
-      If you want to know how to recover knees after workout sessions more efficiently, consistency is the most important factor. Building a simple recovery routine and performing it after every workout creates cumulative benefits over time.
-    </p>
+    <figure className="my-8">
+      <img
+        src={quadStretchImg}
+        alt="Standing quadriceps stretch used in a post-workout knee recovery routine"
+        className="w-full h-auto rounded-xl shadow-sm"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+        The stretch should be felt in the front of the thigh, not as pressure inside the knee.
+      </figcaption>
+    </figure>
+
+    <h3>Minutes 3-4: Seated Hamstring Stretch</h3>
     <ul>
-      <li><strong>Build a 10-minute post-workout routine:</strong> Combine 5 minutes of light walking or cycling with 5 minutes of targeted stretching (quad stretch, hamstring stretch, and calf stretch). This simple habit can significantly reduce how to fix sore knees after gym sessions.</li>
-      <li><strong>Strengthen your supporting muscles:</strong> Include glute bridges, straight leg raises, and calf raises in your weekly training to build balanced strength around the knee. Our guide on <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee strengthening exercises</Link> provides additional options.</li>
-      <li><strong>Stay consistent with mobility work:</strong> Perform light mobility drills on rest days to maintain joint flexibility and promote blood flow to the knee area.</li>
-      <li><strong>Listen to your body:</strong> If knee soreness increases over consecutive workouts rather than improving, reduce your training intensity and allow additional recovery time.</li>
-      <li><strong>Support with warmth:</strong> Many active people find that applying gentle warmth to their knees after exercise helps the joint feel more comfortable during the recovery window.</li>
+      <li>Sit with one leg extended and the other comfortably bent.</li>
+      <li>Hinge forward from the hips while keeping the back long.</li>
+      <li>Stop at a mild stretch behind the thigh.</li>
+      <li>Hold for 20 to 30 seconds per side without bouncing.</li>
     </ul>
 
-    <InfoBox title="The 10-Minute Recovery Rule">
-      <p>Building a short post-workout recovery routine does not require complicated equipment or significant time. Just 10 minutes of light movement and targeted stretching after every session can make a meaningful difference in how your knees feel the next day. Consistency matters more than duration. For a deeper understanding of why post-exercise knee soreness occurs and what it means, see our comprehensive guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link>. Adding an <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massager session</Link> after your recovery stretches can provide an additional layer of comfort support.</p>
+    <figure className="my-8">
+      <img
+        src={hamstringStretchImg}
+        alt="Seated hamstring stretch for post-workout knee recovery"
+        className="w-full h-auto rounded-xl shadow-sm"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+        Keep the stretch gentle; reaching the toes is not the goal.
+      </figcaption>
+    </figure>
+
+    <h3>Minutes 4-6: Glute Bridges</h3>
+    <ul>
+      <li>Lie on your back with knees bent and feet flat.</li>
+      <li>Brace gently and lift the hips by pressing through the feet.</li>
+      <li>Pause briefly, then lower with control.</li>
+      <li>Perform 8 to 12 comfortable repetitions.</li>
+    </ul>
+
+    <figure className="my-8">
+      <img
+        src={gluteBridgeImg}
+        alt="Glute bridge exercise for a post-workout knee recovery routine"
+        className="w-full h-auto rounded-xl shadow-sm"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+        Glute bridges add low-load hip work without requiring deep knee flexion.
+      </figcaption>
+    </figure>
+
+    <h3>Minutes 6-8: Straight-Leg Raises</h3>
+    <ul>
+      <li>Lie on your back with one knee bent and the other leg straight.</li>
+      <li>Tighten the front of the straight thigh.</li>
+      <li>Lift the heel slowly to the height of the opposite knee.</li>
+      <li>Lower with control and complete 8 to 10 repetitions per side.</li>
+    </ul>
+
+    <figure className="my-8">
+      <img
+        src={straightLegRaiseImg}
+        alt="Straight-leg raise for gentle quadriceps activation after a workout"
+        className="w-full h-auto rounded-xl shadow-sm"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+        Keep the knee straight and use a smaller lift if the hip flexors fatigue first.
+      </figcaption>
+    </figure>
+
+    <h3>Minutes 8-10: Heel Slides and Ankle Pumps</h3>
+    <p>
+      Finish with slow heel slides through a comfortable range, followed by ankle pumps. Use 8 to 10 repetitions of each. The final two minutes should leave the knee feeling the same or easier, not more irritated.
+    </p>
+
+    <h2>How to Adjust the Routine After Running</h2>
+    <p>
+      After a run, keep the first walking phase very easy and add a gentle calf stretch if the calves feel tight. Avoid adding more impact, deep squats, or aggressive foam rolling directly over a painful knee. Recurring pain tied to distance, pace, or surface needs a training-load review, not a harder recovery routine.
+    </p>
+
+    <h2>How to Adjust the Routine After Leg Day</h2>
+    <p>
+      After squats, lunges, leg press, or Bulgarian split squats, reduce the bridge and straight-leg raise repetitions if the quadriceps are heavily fatigued. The purpose is to restore easy movement, not to create another training stimulus. For exercise-specific causes and technique factors, see <Link to="/guides/knee-ache-after-leg-workouts" className="text-primary hover:underline">knee ache after leg workouts</Link>.
+    </p>
+
+    <h2>Should You Use Heat, Cold, or Compression?</h2>
+    <p>
+      Choose based on the symptom pattern rather than using the same option after every workout. Cold may feel useful after a recent aggravation with swelling, while gentle warmth may feel more comfortable for stiffness without visible swelling. A sleeve can provide light compression, but it should not be used to conceal increasing swelling or instability. Our <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat vs ice guide</Link> explains the decision in more detail.
+    </p>
+
+    <h2>How Often Should You Do the Routine?</h2>
+    <p>
+      Use the routine after demanding sessions or on the following day when mild stiffness is present. It does not need to be performed after every easy workout. If you repeatedly need recovery work just to tolerate the same training plan, reduce the provoking load and investigate the cause rather than adding more recovery volume.
+    </p>
+
+    <InfoBox title="The 24-Hour Rule">
+      <p>
+        The knee should be no worse the next morning. If pain, swelling, or loss of motion is clearly greater after the routine, stop using it and reassess the activity that triggered the symptoms.
+      </p>
     </InfoBox>
 
+    <PremiumCTA
+      headline="Add comfort after your recovery routine"
+      text="Once injury and acute swelling have been ruled out, FlexiKnee can add gentle warmth and vibration after the movement portion of your post-workout routine."
+    />
+
+    <ArticleSourcesBox>
+      <ul className="my-4 list-disc space-y-3 pl-6">
+        <li>
+          <a className={sourceLinkClass} href="https://orthoinfo.aaos.org/globalassets/pdfs/2017-rehab_knee.pdf" target="_blank" rel="noreferrer noopener">
+            AAOS knee conditioning program with stretching and strengthening exercises
+          </a>
+        </li>
+        <li>
+          <a className={sourceLinkClass} href="https://www.uhleicester.nhs.uk/wp-content/uploads/2025/06/999_012024-Knee-exercises-for-injury-or-pain.pdf" target="_blank" rel="noreferrer noopener">
+            University Hospitals of Leicester knee exercise guidance
+          </a>
+        </li>
+        <li>
+          <a className={sourceLinkClass} href="https://www.nhs.uk/symptoms/knee-pain/" target="_blank" rel="noreferrer noopener">
+            NHS knee pain self-care and warning-sign guidance
+          </a>
+        </li>
+      </ul>
+    </ArticleSourcesBox>
   </>
 );
 
 export const kneeRecoveryExercisesAfterWorkout = {
   article: {
     slug: "knee-recovery-exercises-after-workout",
-    title: "Best Post-Workout Recovery Exercises for the Knees",
-    subtitle: "Practical exercises and strategies for knee recovery after exercise",
-    intro: "If your knees hurt after working out, this guide covers the best recovery exercises, explains why knees feel sore after exercise, and provides practical strategies for reducing knee pain after workouts and leg day sessions.",
-    metaTitle: "Best Post-Workout Knee Recovery Exercises | 2026 Guide",
-    metaDescription: "Discover the best post-workout knee recovery exercises, learn why knees hurt after working out, and find practical tips for knee soreness after exercise.",
-    heroImage: heroImage,
+    title: "5 Post-Workout Knee Recovery Exercises: 10-Minute Routine",
+    subtitle: "A practical cooldown for mild knee soreness and stiffness",
+    intro: "Follow a 10-minute post-workout knee recovery routine with easy movement, quad and hamstring stretches, glute bridges, straight-leg raises, and gentle mobility.",
+    metaTitle: "Post-Workout Knee Recovery Exercises: 10-Minute Routine",
+    metaDescription: "Try a 10-minute post-workout knee recovery routine with five gentle exercises for mild soreness after running, gym sessions, or leg day.",
+    heroImage,
     publishedDate: "March 19, 2026",
+    lastUpdated: "July 28, 2026",
     content: articleContent,
     nextSlug: "knee-ache-after-leg-workouts",
     nextTitle: "Why Knees Ache After Leg Workouts",
     faqs: [
-      { question: "Why do my knees hurt after working out?", answer: "Knee pain after a workout is most commonly caused by muscle fatigue, joint stress from repetitive movement, or doing too much too quickly. The muscles around the knee absorb significant load during exercise, and temporary soreness is part of the body's natural recovery process." },
-      { question: "Is knee pain after a workout normal?", answer: "Yes, mild knee soreness that appears gradually after exercise and resolves within two to three days is typically a normal response. This is especially common after unfamiliar exercises, increased intensity, or returning to activity after a break." },
-      { question: "How to fix sore knees after gym?", answer: "The most effective approach combines gentle stretching (quad stretch, hamstring stretch), low-impact strengthening exercises (glute bridges, straight leg raises), light active recovery, and applying warmth to the knee area. Consistency with these habits is more important than any single intervention." },
-      { question: "What helps knee pain after exercise?", answer: "Active recovery through light walking or cycling, targeted stretching, warmth application, and gentle compression can all help reduce knee pain after exercise. Building balanced strength in the muscles around the knee through regular exercises also supports long-term comfort." },
-      { question: "How long should knee soreness last after a workout?", answer: "Normal post-workout knee soreness typically peaks within 24 to 48 hours and resolves within two to three days. Soreness lasting beyond four days, or that worsens with each workout, may benefit from professional evaluation." },
-      { question: "What are the best exercises for knee recovery after a workout?", answer: "Standing quad stretches, seated hamstring stretches, glute bridges, straight leg raises, and light mobility drills are among the most effective exercises for supporting knee recovery after workouts. These exercises promote flexibility, build supporting muscle strength, and increase blood flow to the knee area." },
-      { question: "Is it better to rest or keep moving with sore knees?", answer: "In most cases, gentle active recovery such as light walking or easy cycling is more effective than complete rest. Movement helps maintain joint lubrication, promotes blood flow, and prevents the stiffness that can come from prolonged inactivity." },
-      { question: "Why do my knees hurt after leg day?", answer: "Leg day exercises like squats, leg presses, and lunges place concentrated load on the knee joint. When training volume or intensity exceeds what your body is adapted to, temporary knee soreness is a common result. Proper warm-up, controlled form, and adequate recovery between sessions can help manage this." },
+      { question: "What are the best post-workout knee recovery exercises?", answer: "Easy walking, a gentle quad stretch, a hamstring stretch, glute bridges, straight-leg raises, heel slides, and ankle pumps can form a simple low-load recovery routine." },
+      { question: "How long should a post-workout knee recovery routine take?", answer: "About 10 minutes is enough for a focused routine. The goal is comfortable movement and light activation, not another workout." },
+      { question: "How soon after exercise should I do the routine?", answer: "You can begin with easy walking immediately after training and complete the rest once breathing has settled. Delay the routine if the knee is acutely swollen, injured, or sharply painful." },
+      { question: "Should I stretch a swollen knee?", answer: "Do not aggressively stretch a visibly swollen or injured knee. Stop the provoking activity and seek advice if swelling is substantial, hot, red, persistent, or limits movement." },
+      { question: "Is walking good for post-workout knee recovery?", answer: "Easy walking can help prevent stiffness when it remains comfortable. Stop if each step increases pain or swelling." },
+      { question: "Can I do these exercises after leg day?", answer: "Yes, but keep the repetitions low and comfortable. The routine should restore movement rather than add fatigue after squats, lunges, or leg press." },
+      { question: "How often can I do the routine?", answer: "Use it after demanding sessions or on the next day for mild stiffness. Repeated symptoms after ordinary workouts are a reason to adjust training load or seek professional guidance." },
     ],
-    seoTags: "knee pain after workout, sore knees after exercise, knee soreness after workout, post workout knee pain, knees hurt after exercise, knee recovery after workout, exercises for sore knees after workout, knee pain after leg day, how to recover knees after workout, knee stiffness after workout, why do my knees hurt after working out, how to relieve knee pain after exercise, best exercises for knee recovery after workout, is knee pain after workout normal, how to fix sore knees after gym",
+    seoTags: "post workout knee recovery exercises,knee recovery after workout,10 minute knee recovery routine,exercises for sore knees after workout,how to recover knees after workout,post workout knee stretches,knee cooldown routine,knee recovery exercises after running,knee recovery after leg day,active recovery for sore knees",
   },
   cta: "post-exercise-recovery",
 };

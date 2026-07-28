@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { InfoBox } from "@/components/ArticleCharts";
 import PremiumCTA from "@/components/PremiumCTA";
+import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
+
 import heroImage from "@/assets/article-hero-knee-swelling-exercise.jpg";
 import kneeAnatomyImg from "@/assets/fig-knee-swelling-anatomy-v2.svg";
 import kneeFluidImg from "@/assets/article-knee-swelling-fluid.jpg";
@@ -8,221 +10,216 @@ import kneeCompressionImg from "@/assets/article-knee-compression-exercise.jpg";
 import kneeRecoveryImg from "@/assets/article-knee-recovery-swelling.jpg";
 import kneeExerciseStressImg from "@/assets/article-knee-exercise-stress.jpg";
 
+const sourceLinkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
+
 const articleContent = (
   <>
-
     <p>
-      Many people notice some degree of knee swelling after exercise. Whether it appears as mild puffiness, a feeling of tightness, or visible changes around the knee, it can be concerning if you are not sure what your body is telling you.
+      <strong>Knee swelling after exercise</strong> may look like mild puffiness, feel like pressure inside the joint, or appear as a fuller area above, below, or behind the knee. The timing, location, and symptoms that accompany the swelling matter more than the swelling alone.
     </p>
     <p>
-      Knee swelling after a workout is not always a sign of something serious. In many cases, it reflects the body's natural response to physical stress and the recovery process that follows. However, understanding the difference between a normal recovery response and a signal that something may need attention is important for anyone who exercises regularly.
-    </p>
-    <p>
-      This guide focuses specifically on why the knee can swell after physical activity, what different types of swelling may indicate, and how your exercise and recovery habits play a role.
+      This guide focuses specifically on a <strong>swollen knee after a workout</strong>, including swelling after running, swelling behind the knee, fluid-like fullness without pain, and signs that should not be treated as routine recovery. For a broader explanation of soreness without visible swelling, see our guide to <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link>.
     </p>
 
-    <h2>Why the Knee Can Swell After Exercise</h2>
+    <InfoBox title="Quick Answer">
+      <p>
+        Mild swelling that develops gradually after unfamiliar or demanding activity and improves over 24 to 48 hours may reflect temporary tissue irritation. Stop the aggravating activity and seek medical advice sooner when swelling is sudden, severe, hot or red, follows a specific injury, prevents weight-bearing, causes locking or instability, or keeps returning after ordinary workouts.
+      </p>
+    </InfoBox>
+
+    <h2>Why Can a Knee Swell After Exercise?</h2>
     <p>
-      The knee joint is surrounded by a protective capsule filled with synovial fluid. This fluid serves as a natural lubricant, helping the joint move smoothly during activity. When the knee experiences physical stress from exercise, the body may respond by temporarily increasing fluid circulation around the joint as part of the recovery process.
+      A swollen knee can involve fluid inside the joint, irritation of tissues around the joint, or swelling in a nearby structure such as a bursa or cyst. Exercise does not create one single type of swelling. Repetitive impact, a sudden increase in training load, deep bending under resistance, or an unnoticed twist can each produce a different pattern.
     </p>
 
     <figure className="my-8">
       <img
         src={kneeAnatomyImg}
-        alt="Knee joint anatomy showing femur, tibia, patella, and synovial fluid"
+        alt="Knee joint anatomy showing the joint capsule and areas where swelling may appear"
         className="w-full h-auto rounded-xl shadow-sm"
         loading="lazy"
+        decoding="async"
       />
       <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        The knee joint contains synovial fluid that helps cushion and lubricate the joint during movement
+        Swelling may come from inside the joint or from tissues around the kneecap, joint line, or back of the knee.
       </figcaption>
     </figure>
 
+    <h3>Temporary Irritation After a Harder-Than-Usual Session</h3>
     <p>
-      Several factors can contribute to post-exercise knee swelling:
+      A new running distance, a large jump in squat volume, or returning to exercise after time away can exceed the knee&apos;s current capacity. Mild puffiness or stiffness that settles as the joint recovers is different from rapidly expanding swelling or swelling linked to a specific injury event.
     </p>
-    <ul>
-      <li><strong>Temporary inflammation response:</strong> Physical activity creates microscopic stress on joint tissues. The body responds by sending increased blood flow and fluid to the area to support the natural repair process.</li>
-      <li><strong>Joint stress from activity:</strong> Activities that place significant load on the knee, such as running, jumping, or deep bending, can temporarily increase joint stress. The body may respond with mild fluid accumulation.</li>
-      <li><strong>Fluid accumulation in the joint:</strong> Synovial fluid production can temporarily increase after exercise as the body works to cushion and protect the joint during recovery.</li>
-      <li><strong>Muscle fatigue affecting joint stability:</strong> When the muscles surrounding the knee become fatigued during exercise, they may provide less support to the joint. This can place additional stress on joint structures and contribute to a swelling response.</li>
-    </ul>
 
-    <h2>Common Activities That May Lead to Knee Swelling</h2>
+    <h3>Fluid in the Knee After Exercise</h3>
     <p>
-      Not all exercises affect the knee in the same way. Some activities place more load on the knee joint than others, which can influence whether swelling appears after a workout.
+      People often describe a full, tight, or &quot;water-filled&quot; sensation as <strong>fluid in the knee after exercise</strong>. True joint effusion means excess fluid has accumulated inside the joint capsule. Because several conditions can cause an effusion, recurring or substantial fluid should not be diagnosed from appearance alone.
+    </p>
+
+    <figure className="my-8">
+      <img
+        src={kneeFluidImg}
+        alt="Concept illustration of fluid-related fullness around the knee after activity"
+        className="w-full h-auto rounded-xl shadow-sm"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
+        A feeling of fullness may suggest fluid or tissue swelling, but the cause depends on the full symptom pattern.
+      </figcaption>
+    </figure>
+
+    <h2>Swollen Knee After Running</h2>
+    <p>
+      Running repeats the same loading pattern thousands of times. A <strong>swollen knee after running</strong> is more likely when distance, pace, hills, surface, or weekly frequency increased faster than the body adapted. It may also follow altered mechanics caused by fatigue, footwear changes, or an existing knee problem.
+    </p>
+    <p>
+      Note whether the swelling appears during the run, immediately afterward, or later that evening. Also record whether it is above the kneecap, at the joint line, or behind the knee. These details are more useful than simply recording that the knee was swollen. Our <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">running knee pain guide</Link> covers training-load and movement factors in more depth.
     </p>
 
     <figure className="my-8">
       <img
         src={kneeCompressionImg}
-        alt="Illustration showing knee compression during physical activity"
+        alt="Illustration showing repeated knee loading during running and exercise"
         className="w-full h-auto rounded-xl shadow-sm"
         loading="lazy"
+        decoding="async"
       />
       <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        Certain movements place greater compressive load on the knee joint during exercise
+        Repeated loading can expose a mismatch between training demand and current recovery capacity.
       </figcaption>
     </figure>
 
+    <h2>Swelling Behind the Knee After Exercise</h2>
     <p>
-      Activities commonly associated with post-exercise knee swelling include:
-    </p>
-    <ul>
-      <li><strong>Running:</strong> The repetitive impact of each stride places continuous load on the knee joint. Longer distances or running on hard surfaces can increase this effect. For more on running related knee discomfort, see our guide on <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">running knee pain</Link>.</li>
-      <li><strong>High impact workouts:</strong> Exercises that involve jumping, plyometrics, or rapid direction changes create sudden forces through the knee. These movements can stimulate a more noticeable fluid response.</li>
-      <li><strong>Deep squats and lunges:</strong> Bending the knee deeply under load places significant stress on the joint structures. If the supporting muscles are not strong enough, the joint absorbs more of that stress. Our guide on <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">knee discomfort when squatting</Link> covers this in more detail.</li>
-      <li><strong>Sudden increases in training intensity:</strong> Increasing workout duration, weight, or frequency too quickly does not give the body adequate time to adapt. This is one of the most common reasons people experience swollen knees after a workout.</li>
-    </ul>
-
-    <h2>How to Recognize Normal Swelling vs Warning Signs</h2>
-    <p>
-      Understanding the characteristics of normal post-exercise swelling can help you determine whether your body is simply recovering or sending a signal that something may need further attention.
+      <strong>Swelling behind the knee after exercise</strong> may feel like tightness, a firm area, or a rounded fullness in the popliteal space. Possible explanations include irritation around the joint, a popliteal or Baker&apos;s cyst, or swelling linked to another knee condition. A hard or enlarging lump, calf swelling, redness, warmth, or sudden pain deserves prompt medical assessment rather than continued training.
     </p>
     <p>
-      <strong>Signs of typical post-exercise swelling:</strong>
-    </p>
-    <ul>
-      <li>Mild puffiness around the knee that appears gradually after activity</li>
-      <li>A feeling of tightness or fullness in the joint</li>
-      <li>Slight stiffness that improves with gentle movement</li>
-      <li>Swelling that decreases noticeably with rest and resolves within one to two days</li>
-    </ul>
-
-    <figure className="my-8">
-      <img
-        src={kneeFluidImg}
-        alt="Concept illustration showing fluid circulation around the knee joint"
-        className="w-full h-auto rounded-xl shadow-sm"
-        loading="lazy"
-      />
-      <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        The body naturally adjusts fluid circulation around joints during and after physical activity
-      </figcaption>
-    </figure>
-
-    <p>
-      Normal post-exercise swelling tends to follow a predictable pattern. It appears within hours after activity, peaks within the first day, and gradually resolves as the body completes its recovery process. Some people also notice a <Link to="/guides/burning-knees-after-exercise" className="text-primary hover:underline">burning sensation in their knees after exercise</Link>, which is a separate but related response driven by increased blood flow and tissue sensitivity.
+      Do not aggressively massage an unexplained lump behind the knee. Reduce the activity that triggers it and obtain an evaluation if the fullness persists, repeatedly returns, or affects bending and straightening.
     </p>
 
-    <h2>Signs That Knee Swelling May Need Attention</h2>
+    <h2>Swollen Knee With No Pain After a Workout</h2>
     <p>
-      While mild swelling is often a normal part of recovery, certain characteristics may suggest that the knee needs closer monitoring or professional evaluation. Being aware of these signs can help you make informed decisions about your activity level and recovery approach.
+      A <strong>swollen knee with no pain after a workout</strong> can still be meaningful. Painless puffiness may occur after increased activity, but swelling that repeatedly appears without discomfort should be tracked rather than ignored. Compare both knees, note changes in range of motion, and watch for increasing warmth, redness, or heaviness.
     </p>
-    <ul>
-      <li><strong>Persistent swelling:</strong> Swelling that does not improve after two to three days of rest and gentle care may indicate that the joint needs additional support or evaluation.</li>
-      <li><strong>Swelling with sharp or sudden pain:</strong> If swelling is accompanied by a sharp, localized pain that differs from general muscle soreness, this may be worth discussing with a healthcare provider.</li>
-      <li><strong>Joint instability:</strong> If the knee feels unstable, as though it might give way during movement, this could indicate that the supporting structures around the joint may need attention.</li>
-      <li><strong>Swelling that worsens with activity:</strong> If swelling progressively increases each time you exercise rather than following a recovery pattern, this may indicate that the current activity level is exceeding what the joint can comfortably manage.</li>
-    </ul>
     <p>
-      This guide is educational and does not replace professional evaluation. If you have concerns about persistent or worsening knee swelling, consulting with a qualified healthcare professional is always a good step.
+      If the knee looks normal again by the next day and daily movement is unaffected, monitoring may be reasonable. If the swelling persists, returns after light exercise, or progressively limits motion, professional assessment is appropriate.
     </p>
 
-    <InfoBox title="Understanding Your Body's Signals">
-      <p>Gradual increases in workout intensity help the knee joint adapt and reduce the chance of excessive swelling. Listening to how your body responds after each session provides valuable information about whether your current approach is sustainable.</p>
+    <h2>Swollen Knee After Squats, Lunges, or Lifting</h2>
+    <p>
+      Deep knee flexion and external load increase the demand placed on the knee. Swelling after squats, lunges, or leg press may follow excessive volume, a sudden load increase, or a technique change. The relevant question is not whether the knee moved past the toes, but whether the load, depth, speed, and total volume matched your current tolerance.
+    </p>
+    <p>
+      For exercise-specific mechanics, see <Link to="/guides/knee-ache-after-leg-workouts" className="text-primary hover:underline">why knees ache after leg workouts</Link>. That guide covers squats, lunges, leg press, and Bulgarian split squats without duplicating the swelling-focused guidance here.
+    </p>
+
+    <h2>Can You Work Out With a Swollen Knee?</h2>
+    <p>
+      Avoid pushing through a workout when the knee is visibly swollen, losing motion, unstable, or painful with ordinary walking. Continuing the same aggravating activity can make it harder to judge whether the swelling is improving. A safer first step is to stop the provoking exercise and reassess walking, stairs, bending, and swelling over the following day.
+    </p>
+    <p>
+      Gentle movement may be appropriate only when it does not increase swelling or pain. Do not use a recovery routine to test a knee that is acutely swollen after an injury. Our <Link to="/guides/knee-recovery-exercises-after-workout" className="text-primary hover:underline">post-workout knee recovery routine</Link> is intended for mild general soreness, not a hot, rapidly swollen, unstable, or injured knee.
+    </p>
+
+    <InfoBox title="Stop and Get Medical Advice">
+      <p>
+        Seek urgent advice if you cannot bear weight, the knee is badly swollen or deformed, it locks or gives way, or it is hot and red with fever. Arrange a non-urgent assessment when swelling lasts more than a few days, repeatedly returns, or interferes with normal walking and knee motion.
+      </p>
     </InfoBox>
 
-    <PremiumCTA
-      headline="Support your knees during post-workout recovery"
-      text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable after exercise, making your recovery routine simple and consistent."
-    />
-
-    <h2>How Recovery Habits Influence Knee Swelling</h2>
-    <p>
-      The way you approach recovery after exercise plays a significant role in how your knees respond. Consistent, supportive recovery habits can help the body manage the natural inflammation process more effectively and reduce the likelihood of excessive or prolonged swelling.
-    </p>
+    <h2>A Simple 24-Hour Swelling Check</h2>
+    <ul>
+      <li>Record the activity, duration, load, surface, and any specific twist or impact.</li>
+      <li>Note when the swelling began and where it is most visible.</li>
+      <li>Compare both knees and check whether bending or straightening is reduced.</li>
+      <li>Reassess walking, stairs, warmth, redness, and swelling the next morning.</li>
+      <li>Reduce the next session if the same activity repeatedly produces swelling.</li>
+    </ul>
 
     <figure className="my-8">
       <img
         src={kneeRecoveryImg}
-        alt="Knee recovery cycle showing exercise, rest, and adaptation phases"
+        alt="Post-workout knee monitoring and recovery sequence"
         className="w-full h-auto rounded-xl shadow-sm"
         loading="lazy"
+        decoding="async"
       />
       <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        A balanced recovery cycle supports the body's natural adaptation to exercise
+        Tracking the knee&apos;s response over 24 hours helps distinguish an isolated reaction from a repeatable pattern.
       </figcaption>
     </figure>
 
+    <h2>How to Reduce the Chance of Recurrent Exercise-Related Swelling</h2>
     <ul>
-      <li><strong>Recovery time between workouts:</strong> Allowing adequate time between exercise sessions gives the body an opportunity to complete its natural repair process. Exercising the same joint intensely on consecutive days without rest can lead to cumulative fluid accumulation.</li>
-      <li><strong>Gradual activity progression:</strong> Increasing workout intensity, duration, or frequency in small increments allows the knee joint and surrounding muscles to adapt at a comfortable pace. Sudden jumps in training load are a common contributor to exercise related knee swelling.</li>
-      <li><strong>Strengthening surrounding muscles:</strong> Building strength in the quadriceps, hamstrings, and calf muscles helps distribute joint load more evenly during exercise. When these muscles are strong, the knee joint itself absorbs less stress. For exercises that support this, see our guide on <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee strengthening exercises</Link>.</li>
-      <li><strong>Maintaining joint mobility:</strong> Gentle stretching and mobility work helps maintain range of motion and supports healthy fluid circulation within the joint. Our guide on <Link to="/guides/exercises-to-relieve-knee-pain-at-home" className="text-primary hover:underline">exercises to relieve knee discomfort at home</Link> offers practical options.</li>
+      <li>Increase running distance, resistance, and weekly volume gradually.</li>
+      <li>Keep one or more lower-load days between demanding knee sessions.</li>
+      <li>Use controlled repetitions and a range of motion you can manage without symptoms.</li>
+      <li>Address recurring technique or bike-fit issues instead of repeatedly treating the aftermath.</li>
+      <li>Do not rely on heat, compression, or a device to override swelling that needs assessment.</li>
     </ul>
-<h2>Exercise Habits That Support Healthier Knees</h2>
-    <p>
-      How you exercise matters as much as what exercises you do. Adopting habits that reduce unnecessary joint stress can help minimize the likelihood of post-workout knee swelling and support long-term knee health.
-    </p>
 
     <figure className="my-8">
       <img
         src={kneeExerciseStressImg}
-        alt="Person performing controlled leg exercises with proper form"
+        alt="Controlled lower-body exercise with appropriate knee alignment"
         className="w-full h-auto rounded-xl shadow-sm"
         loading="lazy"
+        decoding="async"
       />
       <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-        Controlled movements and proper form help reduce unnecessary stress on the knee joint
+        Gradual progression and controlled movement reduce unnecessary spikes in knee load.
       </figcaption>
     </figure>
 
-    <ul>
-      <li><strong>Balanced leg strength:</strong> Strengthening all the major muscle groups that support the knee, including the quadriceps, hamstrings, glutes, and calves, creates more balanced support around the joint. When one muscle group is significantly weaker than others, the knee may compensate in ways that increase joint stress.</li>
-      <li><strong>Controlled movement patterns:</strong> Performing exercises with controlled, deliberate movements reduces the risk of placing sudden or excessive force on the knee. This is especially important during weight-bearing exercises like squats, lunges, and step-ups.</li>
-      <li><strong>Proper warm-up routines:</strong> Warming up before exercise increases blood flow to the muscles and joints, preparing them for the demands of the workout. A good warm-up can reduce the intensity of the body's post-exercise inflammation response.</li>
-      <li><strong>Avoiding sudden overload:</strong> Following a progressive approach to exercise intensity helps the knee joint adapt gradually. This means increasing weight, distance, or workout duration by small amounts rather than making dramatic changes.</li>
-    </ul>
+    <PremiumCTA
+      headline="Build a calmer post-workout routine"
+      text="FlexiKnee can add gentle warmth and vibration to a comfort routine once acute swelling, injury, and warning signs have been ruled out."
+    />
 
-    <h2>When Post-Exercise Knee Swelling Should Be Monitored</h2>
-    <p>
-      While most post-exercise knee swelling is temporary and resolves on its own, certain patterns may indicate that closer monitoring is appropriate.
-    </p>
-    <p>
-      Consider keeping track of your knee's response to exercise if you notice any of the following:
-    </p>
-    <ul>
-      <li>Swelling that appears after every workout session, regardless of intensity</li>
-      <li>A pattern of gradually increasing swelling over weeks</li>
-      <li>Swelling accompanied by warmth, redness, or visible changes in the skin around the knee</li>
-      <li>Difficulty fully bending or straightening the knee due to swelling</li>
-      <li>Swelling that interferes with walking or daily activities</li>
-    </ul>
-    <p>
-      Tracking when swelling appears, how long it lasts, and what activities preceded it can provide helpful information if you decide to consult with a healthcare professional. For additional context on when knee discomfort after workouts may need attention, our guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">post-exercise knee pain</Link> offers complementary insights.
-    </p>
-    <p>
-      Understanding the relationship between exercise related knee swelling, <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee discomfort after exercise</Link>, and recovery habits helps you make informed decisions about your fitness approach. If swelling is accompanied by <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">clicking sounds during walking</Link>, this combination is common and usually reflects temporary joint fluid changes rather than a separate concern. The goal is to stay active in a way that supports your knees rather than placing excessive stress on them.
-    </p>
-    <p>
-      For those who experience discomfort around the front of the knee during or after exercise, our guide on <Link to="/guides/patellofemoral-pain-syndrome" className="text-primary hover:underline">patellofemoral discomfort</Link> provides additional context about this common pattern.
-    </p>
+    <ArticleSourcesBox>
+      <ul className="my-4 list-disc space-y-3 pl-6">
+        <li>
+          <a className={sourceLinkClass} href="https://www.nhs.uk/symptoms/knee-pain/" target="_blank" rel="noreferrer noopener">
+            NHS guidance on knee pain, swelling, self-care, and warning signs
+          </a>
+        </li>
+        <li>
+          <a className={sourceLinkClass} href="https://www.ncbi.nlm.nih.gov/books/NBK532279/" target="_blank" rel="noreferrer noopener">
+            NCBI Bookshelf overview of knee effusion and causes of joint swelling
+          </a>
+        </li>
+        <li>
+          <a className={sourceLinkClass} href="https://www.niams.nih.gov/health-topics/sports-injuries" target="_blank" rel="noreferrer noopener">
+            NIAMS overview of sports injuries and symptoms that need medical attention
+          </a>
+        </li>
+      </ul>
+    </ArticleSourcesBox>
   </>
 );
 
 export const kneeSwellingAfterExercise = {
   article: {
     slug: "knee-swelling-after-exercise",
-    title: "Knee Swelling After Exercise: What Your Body Is Telling You",
-    subtitle: "Understanding post-workout knee swelling",
-    intro: "Many people notice knee swelling after workouts and wonder whether it is a normal recovery response or something that needs attention. This guide explains why the knee can swell after exercise, what different patterns of swelling may indicate, and how recovery habits influence the process.",
-    metaTitle: "Knee Swelling After Exercise: Normal vs Warning",
-    metaDescription: "Learn why your knee may swell after exercise, when post-workout swelling is a normal recovery response, and when knee swelling after a workout may need closer attention.",
-    heroImage: heroImage,
+    title: "Knee Swelling After Exercise: Causes, Locations & Warning Signs",
+    subtitle: "What swelling after running, lifting, or sport may mean",
+    intro: "Learn why a knee may swell after exercise, how swelling behind the knee differs from general puffiness, what painless swelling can mean, and when a swollen knee after a workout needs medical attention.",
+    metaTitle: "Knee Swelling After Exercise: Causes & Warning Signs",
+    metaDescription: "Why does your knee swell after exercise? Learn about swelling after running, fluid in the knee, painless swelling, swelling behind the knee, and warning signs.",
+    heroImage,
     publishedDate: "March 13, 2026",
+    lastUpdated: "July 28, 2026",
     content: articleContent,
     faqs: [
-      { question: "Why does my knee swell after exercise?", answer: "Knee swelling after exercise can result from increased fluid circulation around the joint, temporary inflammation from physical stress, or the body's natural response to unfamiliar activity levels." },
-      { question: "Is knee swelling after a workout normal?", answer: "Mild, temporary swelling that resolves within a day or two is often a normal part of the body's recovery process after physical activity, especially after new or intense workouts." },
-      { question: "How long should swelling last after exercise?", answer: "Mild post-exercise swelling typically subsides within 24 to 48 hours with rest and gentle movement. Swelling that persists beyond a few days may need closer attention." },
-      { question: "Can exercise cause fluid in the knee?", answer: "Physical activity can temporarily increase synovial fluid production around the knee joint as part of the body's natural response to joint stress and recovery." },
-      { question: "Why does my knee swell after running?", answer: "Running places repetitive impact on the knee joint, which can trigger temporary fluid accumulation as the body responds to the increased physical demand on the joint structures." },
-      { question: "How can I reduce swelling after workouts?", answer: "Supporting recovery through gentle movement, gradual activity progression, balanced muscle strengthening, and adequate rest between workout sessions can help manage post-exercise knee swelling." },
-      { question: "When should knee swelling be evaluated?", answer: "Consider seeking evaluation if swelling persists for more than a few days, is accompanied by sharp pain or joint instability, or progressively worsens with continued activity." },
-      { question: "Can strengthening exercises support knee stability?", answer: "Yes. Strengthening the muscles around the knee, including the quadriceps, hamstrings, and calves, helps distribute joint load more evenly and supports overall knee stability during exercise." },
+      { question: "Why does my knee swell after exercise?", answer: "Exercise-related knee swelling can reflect temporary tissue irritation, excess fluid inside the joint, or swelling in tissues around it. The cause depends on the activity, timing, location, and accompanying symptoms." },
+      { question: "Why is there swelling behind my knee after exercise?", answer: "Fullness behind the knee may be related to joint irritation, a popliteal or Baker's cyst, or another knee condition. Persistent, painful, hard, or enlarging swelling should be evaluated." },
+      { question: "Can a knee be swollen after a workout without pain?", answer: "Yes. Mild painless puffiness can occur after increased activity, but swelling that persists, repeatedly returns, or limits movement should not be ignored." },
+      { question: "Why does my knee swell after running?", answer: "Running-related swelling may follow a rapid increase in distance, pace, hills, surface, or frequency. Repeated swelling after ordinary runs warrants a closer look at training load and the knee itself." },
+      { question: "Can I still work out if my knee is swollen?", answer: "Avoid the activity that produced visible swelling, especially when walking, bending, or weight-bearing is affected. Seek advice sooner for severe, hot, red, unstable, or injury-related swelling." },
+      { question: "How long should knee swelling last after exercise?", answer: "Mild swelling may improve over 24 to 48 hours. Swelling that lasts several days, worsens, or repeatedly returns should be assessed by a healthcare professional." },
+      { question: "Is fluid in the knee after exercise normal?", answer: "A feeling of fullness does not confirm joint fluid. True knee effusion has multiple possible causes, so substantial or recurrent fluid-like swelling should be medically evaluated." },
     ],
-    seoTags: "knee swelling after exercise, swollen knee after workout, post workout knee inflammation, fluid in knee after exercise, knee joint irritation, exercise recovery knee, overuse knee swelling, knee swelling causes, post exercise knee care, knee recovery habits",
+    seoTags: "knee swelling after exercise,swollen knee after workout,swelling behind knee after exercise,swollen knee after running,swollen knee no pain after workout,fluid in knee after exercise,knee swelling after squats,knee swelling after lifting,can i workout with a swollen knee,knee keeps swelling after exercise",
   },
   cta: "post-exercise-recovery",
 };
