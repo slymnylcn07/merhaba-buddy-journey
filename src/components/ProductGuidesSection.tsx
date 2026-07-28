@@ -17,7 +17,7 @@ import thumbBestRedLightKnee from "@/assets/guide-thumb-best-red-light-knee.jpg"
 import thumbKneeExercises from "@/assets/guide-thumb-knee-exercises.jpg";
 import thumbCauseKneePainNew from "@/assets/guide-thumb-cause-knee-pain-new.jpg";
 import thumbKneePainAfter40 from "@/assets/guide-thumb-knee-pain-after-40.jpg";
-import thumbJointAgingChanges from "@/assets/guide-thumb-joint-aging-changes.jpg";
+import thumbJointAgingChanges from "@/assets/guide-thumbnails/refresh-2026-07-28/why-knee-pain-gets-worse-with-age.webp";
 import thumbMorningStiffness40s from "@/assets/guide-thumb-morning-stiffness-40s.jpg";
 import thumbKneePainGettingUpSitting from "@/assets/guide-thumb-knee-pain-getting-up-sitting.jpg";
 import thumbKneePainLongWalks from "@/assets/guide-thumb-knee-pain-long-walks.jpg";
