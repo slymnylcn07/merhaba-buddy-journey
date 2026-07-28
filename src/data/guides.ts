@@ -670,6 +670,34 @@ export const guidesData: GuideData[] = [
     readTime: 15,
     lastModified: "2026-07-18",
   },
+  {
+    slug: "flat-feet-overpronation-knee-pain",
+    title: "Can Flat Feet Cause Knee Pain? Overpronation and the Foot to Knee Chain",
+    description: "Learn how flat feet and overpronation can change the foot-to-knee chain, how to check your arches, and what footwear, insoles, and strengthening may help.",
+    readTime: 15,
+    lastModified: "2026-07-27",
+  },
+  {
+    slug: "cycling-knee-pain-bike-fit",
+    title: "Cycling Knee Pain: Location, Bike Fit, and What to Adjust",
+    description: "Use knee-pain location to identify likely cycling setup problems, then adjust saddle height, saddle position, cleats, cadence, and training load.",
+    readTime: 15,
+    lastModified: "2026-07-27",
+  },
+  {
+    slug: "tight-calves-knee-pain",
+    title: "Can Tight Calves Cause Knee Pain? The Calf, Ankle and Knee Connection",
+    description: "Learn how calf tightness can affect the back of the knee and ankle motion, plus a practical stretching and strengthening routine and warning signs.",
+    readTime: 14,
+    lastModified: "2026-07-27",
+  },
+  {
+    slug: "knee-brace-vs-compression-sleeve",
+    title: "Knee Brace vs Compression Sleeve: Which Support Do You Actually Need?",
+    description: "Compare compression sleeves, straps, wraparound supports, and hinged braces to choose the right knee support for comfort, swelling, sport, or instability.",
+    readTime: 14,
+    lastModified: "2026-07-27",
+  },
 ];
 
 export const staticPages = [
