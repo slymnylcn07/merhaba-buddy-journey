@@ -238,7 +238,7 @@ export const kneeRecoveryExercisesAfterWorkout = {
     lastUpdated: "July 28, 2026",
     content: articleContent,
     nextSlug: "knee-ache-after-leg-workouts",
-    nextTitle: "Why Knees Ache After Leg Workouts",
+    nextTitle: "Knee Pain After Leg Day: Squats, Lunges & Leg Press",
     faqs: [
       { question: "What are the best post-workout knee recovery exercises?", answer: "Easy walking, a gentle quad stretch, a hamstring stretch, glute bridges, straight-leg raises, heel slides, and ankle pumps can form a simple low-load recovery routine." },
       { question: "How long should a post-workout knee recovery routine take?", answer: "About 10 minutes is enough for a focused routine. The goal is comfortable movement and light activation, not another workout." },
