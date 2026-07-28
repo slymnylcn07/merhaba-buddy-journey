@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
-import heroImage from "@/assets/thumb-knee-supplements.svg";
+import heroImage from "@/assets/article-hero-turmeric-knee-pain.jpg";
+import turmericFormsImage from "@/assets/article-inline-turmeric-forms-comparison.jpg";
+import turmericUseImage from "@/assets/article-inline-turmeric-daily-use.jpg";
 
 const linkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
@@ -91,6 +93,17 @@ export const turmericCurcuminKneePain: ArticleExport = {
         <p>
           Increased absorption changes both potential benefit and potential risk. A highly bioavailable 250 mg product cannot be assumed weaker than a conventional 1,000 mg product. This is why articles that announce one universal dose of turmeric are unreliable. The formulation is part of the dose.
         </p>
+
+        <figure>
+          <img
+            src={turmericFormsImage}
+            alt="Fresh turmeric root, turmeric powder, curcumin capsules, and a supplement bottle arranged for comparison"
+            loading="lazy"
+          />
+          <figcaption>
+            Culinary turmeric, standardized extracts, and enhanced curcumin formulas can deliver very different exposures.
+          </figcaption>
+        </figure>
 
         <h2>Turmeric Powder vs. Curcumin Extract vs. Enhanced Formulas</h2>
         <div className="my-8 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
@@ -264,6 +277,17 @@ export const turmericCurcuminKneePain: ArticleExport = {
         <p>
           The same caution applies when pain is generated mainly by movement mechanics. If a low saddle is compressing the kneecap thousands of times during a ride, the useful intervention is found in the <Link to="/guides/cycling-knee-pain-bike-fit" className={linkClass}>cycling knee pain and bike-fit guide</Link>, not in increasing curcumin. Supplements can change symptom perception; they cannot correct a repeated setup error.
         </p>
+        <figure>
+          <img
+            src={turmericUseImage}
+            alt="Adult reviewing a turmeric supplement beside water and turmeric capsules while monitoring knee symptoms"
+            loading="lazy"
+          />
+          <figcaption>
+            Test one clearly labeled formulation at a time and measure a real activity rather than relying on day-to-day impressions.
+          </figcaption>
+        </figure>
+
         <h2>A Practical Eight-Week Curcumin Test</h2>
         <ol>
           <li><strong>Choose one product:</strong> Prefer a single, clearly standardized formulation with a traceable daily dose.</li>

@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
-import heroImage from "@/assets/thumb-knee-supplements.svg";
+import heroImage from "@/assets/article-hero-collagen-knee-pain.jpg";
+import collagenFormsImage from "@/assets/article-inline-collagen-forms-comparison.jpg";
+import collagenRoutineImage from "@/assets/article-inline-collagen-daily-routine.jpg";
 
 const linkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
@@ -91,6 +93,17 @@ export const collagenPeptidesKneePain: ArticleExport = {
         <p>
           Undenatured type II collagen is different. It is processed to preserve parts of its three-dimensional structure and is used in tiny milligram doses. Its proposed mechanism is oral tolerance: immune tissue in the gut encounters type II collagen and may reduce inflammatory responses directed toward similar joint proteins. That theory is not the same as supplying grams of building material. It also explains why a 40 mg capsule cannot be compared gram for gram with a 10 g peptide powder.
         </p>
+
+        <figure>
+          <img
+            src={collagenFormsImage}
+            alt="Collagen powder, capsules, a knee joint model, and an adult comparing collagen supplement forms for knee support"
+            loading="lazy"
+          />
+          <figcaption>
+            Collagen products are not interchangeable: peptides, capsules, and type II collagen use different forms and doses.
+          </figcaption>
+        </figure>
 
         <h2>Collagen Peptides vs. Type II Collagen vs. Marine Collagen</h2>
         <div className="my-8 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
@@ -253,6 +266,17 @@ export const collagenPeptidesKneePain: ArticleExport = {
         <p>
           Older adults should be especially careful with this distinction because maintaining muscle is central to balance, stair control, and joint loading. A collagen serving can count toward daily protein, but it should sit beside complete protein sources rather than displacing them. Anyone with a medically restricted diet should ask a dietitian or clinician how the supplement fits their individual target.
         </p>
+        <figure>
+          <img
+            src={collagenRoutineImage}
+            alt="Active adult mixing collagen powder into water before a walk as part of a consistent knee care routine"
+            loading="lazy"
+          />
+          <figcaption>
+            A useful collagen trial is consistent, time-limited, and measured against repeatable activities such as walking or stairs.
+          </figcaption>
+        </figure>
+
         <h2>A Practical Twelve-Week Collagen Trial</h2>
         <ol>
           <li><strong>Week 0:</strong> Choose one clearly labeled form and write down two symptom measures.</li>
