@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { InfoBox } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
-import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
 import heroImage from "@/assets/article-hero-knee-swelling-exercise.jpg";
 import kneeAnatomyImg from "@/assets/fig-knee-swelling-anatomy-v2.svg";
@@ -9,8 +7,6 @@ import kneeFluidImg from "@/assets/article-knee-swelling-fluid.jpg";
 import kneeCompressionImg from "@/assets/article-knee-compression-exercise.jpg";
 import kneeRecoveryImg from "@/assets/article-knee-recovery-swelling.jpg";
 import kneeExerciseStressImg from "@/assets/article-knee-exercise-stress.jpg";
-
-const sourceLinkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
 const articleContent = (
   <>
@@ -170,31 +166,6 @@ const articleContent = (
         Gradual progression and controlled movement reduce unnecessary spikes in knee load.
       </figcaption>
     </figure>
-
-    <PremiumCTA
-      headline="Build a calmer post-workout routine"
-      text="FlexiKnee can add gentle warmth and vibration to a comfort routine once acute swelling, injury, and warning signs have been ruled out."
-    />
-
-    <ArticleSourcesBox>
-      <ul className="my-4 list-disc space-y-3 pl-6">
-        <li>
-          <a className={sourceLinkClass} href="https://www.nhs.uk/symptoms/knee-pain/" target="_blank" rel="noreferrer noopener">
-            NHS guidance on knee pain, swelling, self-care, and warning signs
-          </a>
-        </li>
-        <li>
-          <a className={sourceLinkClass} href="https://www.ncbi.nlm.nih.gov/books/NBK532279/" target="_blank" rel="noreferrer noopener">
-            NCBI Bookshelf overview of knee effusion and causes of joint swelling
-          </a>
-        </li>
-        <li>
-          <a className={sourceLinkClass} href="https://www.niams.nih.gov/health-topics/sports-injuries" target="_blank" rel="noreferrer noopener">
-            NIAMS overview of sports injuries and symptoms that need medical attention
-          </a>
-        </li>
-      </ul>
-    </ArticleSourcesBox>
   </>
 );
 
@@ -210,6 +181,23 @@ export const kneeSwellingAfterExercise = {
     publishedDate: "March 13, 2026",
     lastUpdated: "July 28, 2026",
     content: articleContent,
+    sources: [
+      {
+        title: "Knee pain: swelling, self-care, and warning signs",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/symptoms/knee-pain/",
+      },
+      {
+        title: "Knee Effusion",
+        publisher: "StatPearls, NCBI Bookshelf",
+        url: "https://www.ncbi.nlm.nih.gov/books/NBK532279/",
+      },
+      {
+        title: "Sports Injuries",
+        publisher: "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
+        url: "https://www.niams.nih.gov/health-topics/sports-injuries",
+      },
+    ],
     faqs: [
       { question: "Why does my knee swell after exercise?", answer: "Exercise-related knee swelling can reflect temporary tissue irritation, excess fluid inside the joint, or swelling in tissues around it. The cause depends on the activity, timing, location, and accompanying symptoms." },
       { question: "Why is there swelling behind my knee after exercise?", answer: "Fullness behind the knee may be related to joint irritation, a popliteal or Baker's cyst, or another knee condition. Persistent, painful, hard, or enlarging swelling should be evaluated." },

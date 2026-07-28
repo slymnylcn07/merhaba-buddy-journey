@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { InfoBox } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
-import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
 import heroImage from "@/assets/article-hero-knee-ache-leg-workouts.jpg";
 import kneeLoadSquat from "@/assets/article-knee-load-squat.jpg";
@@ -10,8 +8,6 @@ import squatFormComparison from "@/assets/article-squat-form-comparison.jpg";
 import kneeStabilizationMuscles from "@/assets/article-knee-stabilization-muscles.jpg";
 import kneeStressLegPress from "@/assets/article-knee-stress-leg-press.jpg";
 import kneeRecoveryFatigue from "@/assets/article-knee-recovery-fatigue.jpg";
-
-const sourceLinkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
 const articleContent = (
   <>
@@ -229,36 +225,6 @@ const articleContent = (
         Do not change five variables at once. Make one clear adjustment and compare the knee&apos;s 24-hour response. This makes it easier to identify whether load, volume, depth, speed, or a specific exercise is the main trigger.
       </p>
     </InfoBox>
-
-    <PremiumCTA
-      headline="Support comfort after leg day"
-      text="Once acute injury and significant swelling have been ruled out, FlexiKnee can add gentle warmth and vibration after your cooldown or mobility routine."
-    />
-
-    <ArticleSourcesBox>
-      <ul className="my-4 list-disc space-y-3 pl-6">
-        <li>
-          <a className={sourceLinkClass} href="https://pubmed.ncbi.nlm.nih.gov/38576836/" target="_blank" rel="noreferrer noopener">
-            2024 biomechanical review of squat technique and joint loading
-          </a>
-        </li>
-        <li>
-          <a className={sourceLinkClass} href="https://pubmed.ncbi.nlm.nih.gov/35697336/" target="_blank" rel="noreferrer noopener">
-            Study of patellofemoral loading with forward-lunge step variations
-          </a>
-        </li>
-        <li>
-          <a className={sourceLinkClass} href="https://pubmed.ncbi.nlm.nih.gov/29308697/" target="_blank" rel="noreferrer noopener">
-            Knee loading during squats, lunges, stairs, and other functional exercises
-          </a>
-        </li>
-        <li>
-          <a className={sourceLinkClass} href="https://www.niams.nih.gov/health-topics/sports-injuries" target="_blank" rel="noreferrer noopener">
-            NIAMS sports injury symptoms and when to seek medical attention
-          </a>
-        </li>
-      </ul>
-    </ArticleSourcesBox>
   </>
 );
 
@@ -274,6 +240,28 @@ export const kneeAcheAfterLegWorkouts = {
     publishedDate: "March 19, 2026",
     lastUpdated: "July 28, 2026",
     content: articleContent,
+    sources: [
+      {
+        title: "Biomechanical review of squat technique and joint loading",
+        publisher: "PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/38576836/",
+      },
+      {
+        title: "Patellofemoral loading with forward-lunge step variations",
+        publisher: "PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/35697336/",
+      },
+      {
+        title: "Knee loading during squats, lunges, stairs, and functional exercises",
+        publisher: "PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/29308697/",
+      },
+      {
+        title: "Sports Injuries",
+        publisher: "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
+        url: "https://www.niams.nih.gov/health-topics/sports-injuries",
+      },
+    ],
     nextSlug: undefined,
     nextTitle: undefined,
     faqs: [

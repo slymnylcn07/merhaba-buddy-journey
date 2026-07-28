@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { InfoBox } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
-import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
 import heroImage from "@/assets/article-hero-knee-recovery-exercises.jpg";
 import quadStretchImg from "@/assets/article-knee-recovery-quad-stretch.jpg";
@@ -9,8 +7,6 @@ import gluteBridgeImg from "@/assets/article-knee-recovery-glute-bridge.jpg";
 import straightLegRaiseImg from "@/assets/article-knee-recovery-straight-leg-raise.jpg";
 import restVsActiveImg from "@/assets/article-knee-recovery-rest-vs-active.jpg";
 import hamstringStretchImg from "@/assets/article-knee-recovery-hamstring-stretch.jpg";
-
-const sourceLinkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
 const articleContent = (
   <>
@@ -197,31 +193,6 @@ const articleContent = (
         The knee should be no worse the next morning. If pain, swelling, or loss of motion is clearly greater after the routine, stop using it and reassess the activity that triggered the symptoms.
       </p>
     </InfoBox>
-
-    <PremiumCTA
-      headline="Add comfort after your recovery routine"
-      text="Once injury and acute swelling have been ruled out, FlexiKnee can add gentle warmth and vibration after the movement portion of your post-workout routine."
-    />
-
-    <ArticleSourcesBox>
-      <ul className="my-4 list-disc space-y-3 pl-6">
-        <li>
-          <a className={sourceLinkClass} href="https://orthoinfo.aaos.org/globalassets/pdfs/2017-rehab_knee.pdf" target="_blank" rel="noreferrer noopener">
-            AAOS knee conditioning program with stretching and strengthening exercises
-          </a>
-        </li>
-        <li>
-          <a className={sourceLinkClass} href="https://www.uhleicester.nhs.uk/wp-content/uploads/2025/06/999_012024-Knee-exercises-for-injury-or-pain.pdf" target="_blank" rel="noreferrer noopener">
-            University Hospitals of Leicester knee exercise guidance
-          </a>
-        </li>
-        <li>
-          <a className={sourceLinkClass} href="https://www.nhs.uk/symptoms/knee-pain/" target="_blank" rel="noreferrer noopener">
-            NHS knee pain self-care and warning-sign guidance
-          </a>
-        </li>
-      </ul>
-    </ArticleSourcesBox>
   </>
 );
 
@@ -237,6 +208,23 @@ export const kneeRecoveryExercisesAfterWorkout = {
     publishedDate: "March 19, 2026",
     lastUpdated: "July 28, 2026",
     content: articleContent,
+    sources: [
+      {
+        title: "Knee Conditioning Program",
+        publisher: "American Academy of Orthopaedic Surgeons",
+        url: "https://orthoinfo.aaos.org/globalassets/pdfs/2017-rehab_knee.pdf",
+      },
+      {
+        title: "Knee exercises for injury or pain",
+        publisher: "University Hospitals of Leicester NHS Trust",
+        url: "https://www.uhleicester.nhs.uk/wp-content/uploads/2025/06/999_012024-Knee-exercises-for-injury-or-pain.pdf",
+      },
+      {
+        title: "Knee pain: self-care and warning signs",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/symptoms/knee-pain/",
+      },
+    ],
     nextSlug: "knee-ache-after-leg-workouts",
     nextTitle: "Knee Pain After Leg Day: Squats, Lunges & Leg Press",
     faqs: [
