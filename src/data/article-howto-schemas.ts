@@ -207,14 +207,14 @@ export const articleHowToSchemas: Record<string, { name: string; description: st
     ],
   },
   "knee-pain-after-flights": {
-    name: "How to Reduce Knee Stiffness During Long Flights",
-    description: "Simple strategies to keep your knees comfortable during and after long flights by maintaining circulation and joint mobility.",
+    name: "How to Manage Knee Stiffness During a Long Flight",
+    description: "A flexible movement plan for ordinary post-sitting stiffness, with a separate response for blood-clot warning signs.",
     steps: [
-      { name: "Perform Seated Ankle Pumps", text: "Every 20-30 minutes, point your toes up and down 10-15 times to activate the calf muscle pump and promote blood circulation back from the lower legs." },
-      { name: "Do Gentle Knee Extensions", text: "Straighten one leg at a time under the seat in front of you and hold for 5 seconds, then slowly lower. Repeat 5 times per leg every hour to keep the joint mobile." },
-      { name: "Walk the Aisle Regularly", text: "Stand and walk the aisle at least once every 1-2 hours during long flights to restore full circulation and give the knee joint a break from the bent position." },
-      { name: "Stay Hydrated Throughout the Flight", text: "Drink water consistently during the flight to counteract cabin dehydration and support healthy blood flow and joint fluid production." },
-      { name: "Walk Gently After Landing", text: "Spend 10-15 minutes walking at a comfortable pace after landing to help your knees transition from the prolonged sitting position back to normal movement patterns." },
+      { name: "Check Personal Risk Before Travel", text: "Ask a clinician about an individual prevention plan if you have a previous blood clot, recent surgery, major mobility limits, or another relevant risk factor." },
+      { name: "Change Position", text: "Use the space available to vary the knee angle instead of holding one position for the entire flight." },
+      { name: "Move the Legs While Seated", text: "Use comfortable ankle movements and gentle knee straightening without forcing pain or disturbing nearby passengers." },
+      { name: "Take Safe Walking Breaks", text: "Walk when the seatbelt sign, cabin conditions, and your balance make it safe to do so." },
+      { name: "Review Symptoms After Landing", text: "Begin with comfortable movement, but seek urgent advice for unexplained one-sided leg pain, swelling, warmth, redness, or discoloration." },
     ],
   },
   "knee-pain-when-kneeling": {

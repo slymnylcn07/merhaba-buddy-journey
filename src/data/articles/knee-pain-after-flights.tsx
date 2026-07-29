@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-knee-pain-flights.jpg";
@@ -13,11 +12,11 @@ import imgMobilityRecovery from "@/assets/article-joint-mobility-recovery.jpg";
 const faqs = [
   {
     question: "Why do my knees hurt after flying?",
-    answer: "Knees often feel stiff or uncomfortable after flying because the joint stays in a bent position for hours with very limited movement. This causes reduced circulation, compression on the cartilage surfaces, and muscle inactivity that leads to stiffness when you finally stand and walk.",
+    answer: "A long flight keeps the knee bent and the leg relatively still for hours. That can make the first steps after landing feel stiff or uncomfortable, especially when the seat limits position changes. Pain that is severe, one-sided, swollen, or paired with calf symptoms needs a more cautious response.",
   },
   {
     question: "Why do knees feel stiff after long flights?",
-    answer: "During long flights, the knee joint remains bent at roughly 90 degrees for extended periods. This static position reduces synovial fluid circulation within the joint, causes blood to pool in the lower legs, and allows muscles to stiffen from inactivity, all of which contribute to noticeable stiffness upon landing.",
+    answer: "Prolonged sitting limits movement of the knee, hip, ankle, and calf muscles. The knee may therefore feel reluctant to straighten or load when you first stand. A simple stiffness pattern should begin easing with comfortable movement rather than progressively worsening.",
   },
   {
     question: "Does sitting during travel affect knees?",
@@ -25,7 +24,7 @@ const faqs = [
   },
   {
     question: "How can I reduce knee stiffness on flights?",
-    answer: "You can reduce knee stiffness by performing seated ankle circles and knee extensions every 20-30 minutes, walking the aisle when possible, staying hydrated, avoiding crossing your legs, and gently stretching your quadriceps and hamstrings when you have the opportunity to stand.",
+    answer: "Change position when space and safety allow, move your ankles and legs while seated, and take occasional walking breaks on a long flight. Travelers with personal blood-clot risks should ask a clinician about an individual prevention plan before travel.",
   },
   {
     question: "Why do knees feel tight after sitting long time?",
@@ -33,11 +32,11 @@ const faqs = [
   },
   {
     question: "Is knee pain common after travel?",
-    answer: "Yes, knee stiffness and discomfort after travel are very common, especially after flights longer than 3-4 hours. The confined seating, limited movement space, and cabin pressure changes all contribute. Most people find that the stiffness resolves within 30-60 minutes of walking after landing.",
+    answer: "Many people notice stiffness after prolonged sitting, but the word common should not be used to dismiss a new or unusual symptom. Watch whether gentle movement helps and whether swelling, warmth, redness, calf pain, breathlessness, or chest pain is present.",
   },
   {
     question: "What exercises help knee stiffness after flights?",
-    answer: "Gentle walking for 10-15 minutes after landing is one of the most effective approaches. Seated ankle pumps, knee extensions, standing quad stretches, gentle hamstring stretches, and calf raises can all help restore circulation and flexibility to stiff knees after a flight.",
+    answer: "If walking is safe and there are no warning signs, begin with easy ankle pumps, comfortable knee straightening, and a short walk after landing. Do not force a swollen or sharply painful knee, and do not massage a newly swollen, painful calf.",
   },
   {
     question: "When should knee pain after travel be checked?",
@@ -47,18 +46,18 @@ const faqs = [
 
 const article = {
   slug: "knee-pain-after-flights",
-  title: "Knee Pain After Long Flights: Stiffness, Sitting & Relief Tips",
-  subtitle: "Why knees feel stiff after flying and what helps",
-  intro: "If your knees feel stiff, heavy, or uncomfortable after a long flight, you are not alone. Sitting in a confined space for hours places the knee joint in a sustained bent position with very little opportunity for movement. This guide explores why knee stiffness happens during air travel and what everyday strategies may help support more comfortable journeys.",
-  metaTitle: "Knee Pain After Long Flights: Causes & Tips",
-  metaDescription: "Learn why knees feel stiff after long flights. Discover causes of knee pain from prolonged sitting during travel and simple strategies to support comfort.",
+  title: "Knee Pain After Flying: Why Knees Hurt After a Long Flight",
+  subtitle: "Causes of post-flight stiffness, safer movement tips, and travel warning signs",
+  intro: "Knee pain after flying often appears when you stand after hours in a confined seat. This guide explains why knees may hurt or feel stiff after a flight, what can help during long air travel, and how to separate ordinary post-sitting stiffness from symptoms that need prompt medical care.",
+  metaTitle: "Knee Pain After Flying or a Long Flight: Causes and Tips",
+  metaDescription: "Why do knees hurt after flying? Learn what causes knee pain and stiffness after a long flight, what may help, and which one-sided symptoms need care.",
   heroImage: heroImage,
   publishedDate: "March 8, 2026",
-  lastUpdated: "July 13, 2026",
+  lastUpdated: "July 29, 2026",
   nextSlug: undefined,
   nextTitle: undefined,
   faqs: faqs,
-  seoTags: "knee pain after long flights,knee stiffness after flight,knees hurt after flying,knee pain after sitting long time,stiff knees after travel,knee discomfort after flying,prolonged sitting knee pain,reduced circulation during travel,knee compression sitting,joint stiffness after sitting,long travel knee stiffness,travel knee comfort,flight knee tips,airplane knee stiffness",
+  seoTags: "knee pain after flying, knees hurt after flight, knee pain after long flight, knees hurt after flying, knee stiffness after flight, stiff knees after travel, prolonged sitting knee pain, airplane knee stiffness, flight knee tips",
   sources: [
     {
       title: "Knee pain: causes, self-care and when to get help",
@@ -70,12 +69,17 @@ const article = {
       publisher: "Cleveland Clinic",
       url: "https://my.clevelandclinic.org/health/symptoms/21207-knee-pain",
     },
+    {
+      title: "Understanding Your Risk for Blood Clots with Travel",
+      publisher: "Centers for Disease Control and Prevention",
+      url: "https://www.cdc.gov/blood-clots/risk-factors/travel.html",
+    },
   ],
   content: (
     <>
       <InfoBox title="Quick answer">
         <p>
-          Knees often feel <strong>stiff after a long flight</strong> because the joint stays bent for hours with little movement, which temporarily reduces circulation and the fluid that keeps it gliding smoothly. Stiffness that eases within a few hours of walking is usually normal. During the flight, move your ankles and straighten your knees regularly; after landing, walk for 10-15 minutes, stay hydrated, and consider gentle warmth. Seek medical advice if you notice significant swelling, warmth, or calf pain, or if the discomfort does not settle.
+          <strong>Knee pain after flying</strong> often begins when you stand after hours with the knee bent and the leg relatively still. Change position, move your ankles and knees while seated, and take safe walking breaks on a long flight. After landing, start with comfortable movement instead of forcing the knee. New one-sided calf or leg swelling, warmth, redness, or unexplained pain needs urgent medical advice. Chest pain, breathlessness, coughing blood, or fainting requires emergency help.
         </p>
       </InfoBox>
 
@@ -88,15 +92,15 @@ const article = {
       </p>
 
       {/* Section 1 */}
-      <h2 id="how-long-sitting-affects-knee">How Long Sitting Affects the Knee Joint</h2>
+      <h2 id="how-long-sitting-affects-knee">Why Do Knees Hurt After Flying?</h2>
       <p>
-        When you sit in an airplane seat, your knee typically stays bent at approximately 90 degrees for the entire flight duration. This sustained position affects the joint in several important ways that contribute to post-flight stiffness.
+        An airplane seat can keep the knee bent in a narrow range for a long time. The hip, knee, ankle, and calf muscles also move less than they do during an ordinary day. That combination can make straightening the leg, standing, and taking the first few steps feel uncomfortable after landing.
       </p>
 
       <figure className="my-8">
         <img
           src={imgAirplaneSitting}
-          alt="Diagram showing seated posture in airplane with knee bent at 90 degrees"
+          alt="Diagram showing an airplane passenger with the knee held in a bent position"
           className="w-full h-auto rounded-xl shadow-sm"
           loading="lazy"
         />
@@ -106,21 +110,21 @@ const article = {
       </figure>
 
       <p>
-        First, the cartilage surfaces within the knee experience continuous compression in the same area. Unlike walking, where pressure shifts across different zones of the cartilage with each step, sitting keeps the load concentrated on the same contact points. Over time, this sustained pressure can temporarily reduce the cushioning effect of the cartilage.
+        The bent position can be especially noticeable when the knee was already sensitive before travel. Limited legroom may also prevent you from changing the knee angle as freely as you would at home or at a desk.
       </p>
       <p>
-        Second, the synovial fluid that lubricates the joint becomes less active when the knee is not moving. This fluid distributes best during gentle, regular motion. Without movement, the joint surfaces lose some of their natural lubrication, which contributes to the stiff feeling when you first try to move.
+        Gentle movement changes joint position and re-engages the muscles that control the leg. This is one reason a simple post-sitting stiffness pattern may begin to ease as you walk. Improvement with movement is useful information, but it does not identify the cause by itself.
       </p>
       <p>
-        Third, the muscles around the knee, including the quadriceps, hamstrings, and calves, remain in shortened or lengthened positions without contracting. After several hours of inactivity, these muscles can feel tight and resistant to movement, making the first steps after landing feel particularly uncomfortable.
+        Pain that becomes sharper, causes a limp, or comes with swelling, warmth, redness, locking, or instability should not be treated as routine travel stiffness.
       </p>
 
       <InfoBox title="Why Airplane Seats Are Particularly Challenging">
-        <p>Airplane economy seats typically offer only 28-32 inches of legroom, which restricts how much you can adjust your knee angle. This limited space, combined with the inability to fully extend your legs, creates a uniquely challenging environment for knee comfort compared to sitting at a desk or on a sofa at home.</p>
+        <p>Seat pitch, passenger height, the position of the seat in front, and where your bag is stored all affect usable legroom. An aisle seat may make position changes and walking breaks easier, while a window seat may discourage movement.</p>
       </InfoBox>
 
       {/* Section 2 */}
-      <h2 id="circulation-changes-during-flights">Why Circulation Changes During Flights</h2>
+      <h2 id="circulation-changes-during-flights">Knee Pain After a Long Flight: Movement and Circulation</h2>
       <p>
         Blood circulation in the lower legs naturally slows down when you sit for extended periods, and flying adds several additional factors that can make this more pronounced.
       </p>
@@ -138,13 +142,10 @@ const article = {
       </figure>
 
       <p>
-        The calf muscles act as a natural pump for venous blood return. When you walk, these muscles contract and squeeze blood back up toward the heart. During a flight, the calf muscles remain largely inactive, which means blood and fluid can pool in the lower legs and around the knee area. This pooling contributes to feelings of heaviness, stiffness, and sometimes mild swelling.
+        Calf-muscle contractions help venous blood return toward the heart. During prolonged travel, the calf muscles are less active and the legs stay still for longer. This is why public-health guidance encourages leg movement during long trips and recommends that people with additional blood-clot risks discuss prevention with a clinician before travel.
       </p>
       <p>
-        Cabin pressure also plays a role. Commercial aircraft cabins are typically pressurized to the equivalent of 6,000 to 8,000 feet altitude. This reduced pressure can cause slight tissue expansion and affect how fluids distribute in the body, particularly in the legs and feet.
-      </p>
-      <p>
-        Additionally, the lower humidity in aircraft cabins (typically 10-20%) can contribute to mild dehydration if you do not drink enough water. Dehydration affects blood viscosity and can further slow circulation, making the knees and legs feel even more sluggish after a long flight.
+        A blood clot is not the most likely explanation for every sore knee after flying. However, unexplained swelling, pain or tenderness, warmth, redness, or discoloration in one leg needs urgent medical advice. Breathlessness, chest pain, coughing blood, lightheadedness, or fainting requires emergency help.
       </p>
 
       <p>
@@ -170,14 +171,14 @@ const article = {
         The moment you stand up after a long flight is typically when knee stiffness feels most intense. This happens because the joint is transitioning from a prolonged static state to an active one, and several systems need to "restart" simultaneously.
       </p>
       <p>
-        The synovial fluid within the joint needs movement to redistribute across the cartilage surfaces. The muscles around the knee need to re-engage after hours of inactivity. Blood flow needs to readjust from the pooled state to the active pumping pattern of walking. All of these transitions take a few minutes, which is why the first 50-100 steps after landing often feel the stiffest.
+        The muscles around the knee and hip need to resume controlling the leg after hours of limited movement. Begin with shorter, comfortable steps and allow the knee to straighten gradually. Do not use a rigid step count or timeline to decide that a symptom is harmless.
       </p>
       <p>
         This experience is similar to what people notice with <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link>, but the duration and confined nature of air travel can make it more pronounced. Most people find that the stiffness gradually improves as they walk through the airport and resume normal movement patterns.
       </p>
 
       <InfoBox title="The First 10 Minutes After Landing">
-        <p>The initial stiffness you feel when standing after a long flight is usually temporary. Most knee joints begin to feel noticeably more comfortable within 10-15 minutes of gentle walking. The key is to start moving slowly and allow the joint to warm up gradually rather than rushing through the terminal.</p>
+        <p>Notice the direction of change. A simple stiffness pattern should begin moving toward baseline with comfortable activity. Stop and seek help when pain escalates, walking becomes unsafe, or swelling and other warning signs appear.</p>
       </InfoBox>
 
       {/* Section 4 */}
@@ -203,7 +204,7 @@ const article = {
       </p>
 
       {/* Section 5 */}
-      <h2 id="strategies-reduce-stiffness">Simple Strategies to Reduce Stiffness During Flights</h2>
+      <h2 id="strategies-reduce-stiffness">What to Do When Your Knees Hurt After a Flight</h2>
 
       <figure className="my-8">
         <img
@@ -222,23 +223,18 @@ const article = {
       </p>
 
       <TipsList tips={[
-        "Perform seated ankle pumps every 20-30 minutes by pointing your toes up and down 10-15 times",
-        "Do gentle seated knee extensions by straightening one leg at a time and holding for 5 seconds",
-        "Walk the aisle at least once every 1-2 hours during long flights",
-        "Shift your sitting position regularly, alternating between feet flat and slightly extended",
-        "Stay hydrated by drinking water consistently throughout the flight",
-        "Avoid crossing your legs, which further restricts circulation to the knee area",
-        "Choose an aisle seat when possible for easier access to walking breaks",
+        "Move your ankles and calf muscles while seated",
+        "Straighten one knee at a time within the space available",
+        "Change position instead of holding one knee angle for the whole flight",
+        "Take safe walking breaks when the seatbelt sign and cabin conditions allow",
+        "Keep the space under the seat clear enough to move your feet when possible",
+        "Choose an aisle seat if easier movement is a priority",
+        "Ask a clinician about an individual plan before travel if you have blood-clot risk factors",
       ]} />
 
       <p>
-        These small movements help maintain circulation, keep the synovial fluid active within the joint, and prevent the muscles from becoming completely dormant. Even brief 30-second movement sessions can make a meaningful difference in how your knees feel when you land.
+        These movements interrupt a sustained position and engage the calf and thigh muscles. They cannot guarantee that pain or a blood clot will be prevented, so personal risk factors and warning signs still matter.
       </p>
-
-      <PremiumCTA
-        headline="Want post-travel knee comfort support?"
-        text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long flights and travel days."
-      />
 
       {/* Section 6 */}
       <h2 id="daily-habits-knee-mobility">Daily Habits That Support Knee Mobility During Travel</h2>
@@ -259,45 +255,35 @@ const article = {
         Beyond in-flight strategies, your overall daily habits leading up to and following travel can significantly influence how your knees respond to long periods of sitting.
       </p>
       <p>
-        Regular walking, light stretching, and leg strengthening exercises in the weeks before travel help prepare the muscles around your knee for the demands of prolonged sitting. Stronger, more flexible muscles are more resilient to the stiffness that comes from inactivity.
+        Regular activity may make ordinary walking and travel days easier to tolerate, but no exercise routine removes every cause of post-flight knee pain. If you already have a knee condition, recent surgery, limited mobility, or a history of blood clots, obtain advice that fits your situation before a long trip.
       </p>
       <p>
-        After landing, prioritize gentle movement rather than immediately sitting down again. A 10-15 minute walk through the airport can help your knees recover more quickly than waiting at the gate. Simple standing stretches for the quadriceps, hamstrings, and calves during layovers can also make a noticeable difference.
+        After landing, try a short, comfortable walk if it is safe to do so. Use support if you feel unsteady, and avoid forcing deep stretches or repeated stairs simply to test the knee.
       </p>
       <p>
-        Hydration is equally important before, during, and after flights. Well-hydrated tissues respond better to movement and recover more quickly from the effects of prolonged sitting. Consider drinking extra water the day before a long flight to start your journey well-hydrated.
+        Follow ordinary hydration guidance and any medical advice you have been given. Drinking extra water is not a treatment for knee pain or a substitute for an individual blood-clot prevention plan.
       </p>
       <p>
         These habits are similar to the general principles that help with <Link to="/guides/knee-weakness-without-pain" className="text-primary hover:underline">supporting knee strength</Link> in everyday life, just applied specifically to the travel context.
       </p>
 
       {/* Section 7 */}
-      <h2 id="when-knee-discomfort-evaluated">When Knee Discomfort After Travel Should Be Evaluated</h2>
-      <p>
-        For most people, knee stiffness after a long flight is temporary and resolves within 30-60 minutes of normal walking and movement. However, certain signs suggest that it may be worth seeking professional evaluation.
-      </p>
-
-      <InfoBox title="Signs That Deserve Attention">
-        <p>Consider consulting a healthcare provider if your post-flight knee discomfort includes significant swelling that does not resolve within a few hours, sharp or sudden pain rather than general stiffness, redness or unusual warmth in one knee compared to the other, numbness or tingling that persists after movement, or if stiffness does not improve within several hours of normal activity. These signs may indicate something beyond typical travel-related stiffness.</p>
+      <InfoBox title="When to Get Medical Help">
+        <p>
+          Arrange an assessment when pain keeps returning after travel, does not trend toward baseline, limits walking, or comes with knee swelling, locking, instability, numbness, or loss of movement. Seek urgent medical advice for unexplained pain, swelling, warmth, redness, or discoloration in one calf or leg. Chest pain, difficulty breathing, coughing blood, lightheadedness, or fainting requires emergency help.
+        </p>
       </InfoBox>
-
-      <p>
-        It is also worth noting that if you experience persistent knee stiffness after every flight, even shorter ones, it may be helpful to discuss this pattern with a healthcare professional. They can assess whether underlying factors like joint mobility limitations or circulation patterns may benefit from targeted support.
-      </p>
-      <p>
-        For general post-travel stiffness that follows the typical pattern of improving with movement, the in-flight and daily habit strategies described above are usually sufficient to keep your knees comfortable during and after air travel.
-      </p>
 
       {/* Summary */}
       <h2 id="supporting-knees-air-travel">Supporting Your Knees Through Air Travel</h2>
       <p>
-        Knee stiffness after long flights is a common experience driven by the combination of prolonged sitting, reduced circulation, cabin pressure changes, and muscle inactivity. The good news is that understanding these factors makes it straightforward to take steps that reduce their impact.
+        Knee pain after a long flight often follows prolonged sitting and limited movement, but the pattern matters more than the flight alone. Record whether symptoms affect the knee or the whole leg, whether one side looks different, and whether comfortable movement helps.
       </p>
       <p>
-        Simple in-flight movements, proper hydration, strategic seat selection, and gentle post-landing walking can all contribute to more comfortable travel experiences. Building these habits into your travel routine, much like you would prepare for <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">long walks</Link>, helps your knees adapt to the demands of air travel with less stiffness and faster recovery.
+        Position changes, seated leg movement, safe walking breaks, and a gradual return to walking after landing are reasonable comfort strategies. Building them into your travel routine, much like preparing for <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">long walks</Link>, can make the journey easier to manage.
       </p>
       <p>
-        Your knees are designed for movement. By finding small ways to keep them active even during long flights, you support their natural function and arrive at your destination feeling more comfortable and ready to enjoy your trip.
+        If you have additional blood-clot risks, recent surgery, major mobility limits, or a previous clot, ask a clinician what prevention measures are appropriate before you fly.
       </p>
     </>
   ),

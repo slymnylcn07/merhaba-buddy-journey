@@ -4440,28 +4440,42 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
   "best-running-shoes-knee-pain": {
     slug: "best-running-shoes-knee-pain",
     title: "Best Running Shoes for Bad Knees & Knee Pain",
-    subtitle: "Understanding shoe comfort, brand differences, and running habits",
-    intro: "When runners search for the best running shoes for knee pain, they're usually looking for guidance on finding footwear that supports comfortable running. This guide explores what runners commonly consider when choosing shoes, how popular brands differ in their approach, typical fit mistakes to avoid, and the running habits that influence knee comfort alongside footwear choices.",
+    subtitle: "How to compare cushioning, stability, fit, and running habits without relying on brand hype",
+    intro: "The best running shoes for bad knees are not one universal model. Fit, comfort, platform stability, cushioning feel, training load, and the surface you run on all influence the decision. This guide keeps the main target on shoes for bad knees and knee pain while explaining what footwear can and cannot change.",
     metaTitle: "Best Running Shoes for Bad Knees & Knee Pain (2026 Guide)",
-    metaDescription: "The best running shoes for bad knees balance cushioning, support, and fit. See the shoe features and brand types to prioritize for knee pain and runner's knee, plus the fit mistakes to avoid in 2026.",
+    metaDescription: "Compare the best running shoes for bad knees by fit, cushioning, stability and surface. Learn what may help knee pain and which buying mistakes to avoid.",
     heroImage: heroRunningShoesKnee,
     publishedDate: "January 19, 2026",
-    lastUpdated: "July 13, 2026",
+    lastUpdated: "July 29, 2026",
     nextSlug: "running-knee-pain-guide",
     nextTitle: "Running Knee Pain: Common Injuries & What Runners Can Do",
+    sources: [
+      {
+        title: "Running Shoes for Preventing Lower-Limb Running Injuries in Adults",
+        publisher: "Cochrane Review via PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/35993829/",
+      },
+      {
+        title: "Effect of Flat Flexible Versus Stable Supportive Shoes on Knee Osteoarthritis Symptoms",
+        publisher: "Annals of Internal Medicine via PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/33428439/",
+      },
+      {
+        title: "Patellofemoral Pain Syndrome",
+        publisher: "American Academy of Orthopaedic Surgeons",
+        url: "https://orthoinfo.aaos.org/en/diseases--conditions/patellofemoral-pain-syndrome/",
+      },
+      {
+        title: "Best Practice Guide for Patellofemoral Pain",
+        publisher: "British Journal of Sports Medicine via PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/39401870/",
+      },
+    ],
     content: (
       <>
         <InfoBox title="Quick answer">
           <p>
-            For <strong>bad knees</strong>, the most knee-friendly running shoes usually combine
-            generous <strong>shock-absorbing cushioning</strong>, a <strong>stable platform</strong> that
-            controls excess motion, and a <strong>secure, comfortable fit</strong>. Maximum-cushion
-            models (a category Hoka helped popularise) suit runners who want more impact absorption,
-            while stability shoes (Brooks and Asics are well known here) tend to help runners whose
-            knees feel better with extra support; New Balance is a common pick for wider feet. There is
-            no single shoe that is best for everyone, so match cushioning and support to your stride,
-            change to new shoes gradually, and pair good footwear with sensible mileage. Persistent,
-            sharp, or swelling knee pain deserves a professional assessment rather than only a shoe change.
+            The <strong>best running shoes for bad knees</strong> are the pair that fits securely, feels comfortable on your usual surface, and remains stable through your stride. More cushioning is not automatically better, and no brand can guarantee relief from knee pain. Compare cushioning and stability categories, test the fit while running, change shoe type gradually, and review training load alongside footwear. Persistent pain, swelling, locking, or instability needs more than a shoe change.
           </p>
         </InfoBox>
 
@@ -4529,7 +4543,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           <p>There is no universally "best" shoe for knee comfort. What matters most is finding shoes that feel right for your running style, body, and preferred surfaces. This requires personal experimentation and attention to how different shoes feel during your runs.</p>
         </InfoBox>
 
-        <h2>Key Features Runners Often Consider in Shoes</h2>
+        <h2>Best Running Shoes for Bad Knees: Features to Compare</h2>
         <p>
           When searching for <strong>shoes for knee pain running</strong>, runners typically evaluate several key characteristics. Understanding these features helps you make more informed choices about <strong>cushioned running shoes knee</strong> support.
         </p>
@@ -4563,7 +4577,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           The drop refers to the height difference between the heel and toe of the shoe. Higher drops (10-12mm) position your heel higher relative to your forefoot, while lower drops (0-6mm) create a more level platform. Some runners feel more comfortable in one versus the other; there's no universally correct choice.
         </p>
         <p>
-          If you're considering changing your drop preference, gradual adaptation is important. Switching from a high-drop shoe to a low-drop shoe suddenly can place different stresses on your calves, Achilles, and knees. Most running experts suggest transitioning over several weeks, alternating between your old and new shoes to give your body time to adjust.
+          If you're considering changing your drop preference, gradual adaptation is important. Switching from a high-drop shoe to a low-drop shoe changes demand on the calves, Achilles tendon, feet, and knees. Alternate the new shoe with a familiar pair and increase exposure according to your response rather than following one universal timetable.
         </p>
 
         <h3>Long-Distance vs. Short-Distance Preferences</h3>
@@ -4624,7 +4638,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           <table className="w-full border-collapse text-left text-sm">
             <thead>
               <tr className="border-b-2 border-slate-300">
-                <th className="py-3 pr-4 font-semibold text-slate-950">If your knees…</th>
+                <th className="py-3 pr-4 font-semibold text-slate-950">If your knees feel</th>
                 <th className="py-3 pr-4 font-semibold text-slate-950">Prioritise this shoe type</th>
                 <th className="py-3 pr-4 font-semibold text-slate-950">Look for</th>
                 <th className="py-3 font-semibold text-slate-950">Brands known for it</th>
@@ -4659,7 +4673,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
                 <td className="py-3 pr-4 text-slate-600">Feel worse after switching shoes</td>
                 <td className="py-3 pr-4 text-slate-600">Gradual transition</td>
                 <td className="py-3 pr-4 text-slate-600">A heel-to-toe drop similar to your current shoes</td>
-                <td className="py-3 text-slate-600">Any brand — change over several weeks</td>
+                <td className="py-3 text-slate-600">Any brand; change gradually</td>
               </tr>
             </tbody>
           </table>
@@ -4719,12 +4733,12 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
 
         <h3>Fit Above Everything</h3>
         <p>
-          The single most important factor is how a shoe fits your specific foot. This includes length, width, volume, and how the shoe locks around your heel and midfoot. A perfectly engineered shoe from any brand will not help your knees if it doesn't fit your foot properly. Different brands use different lasts (foot molds), which is why the same size can feel completely different across brands.
+          The first factor to check is how a shoe fits your specific foot. This includes length, width, volume, and how the shoe holds the heel and midfoot. A well-designed shoe from any brand is a poor choice when it creates pressure, slipping, or instability. Different brands use different foot shapes, which is why the same labeled size can feel different.
         </p>
 
         <h3>Gait Pattern Compatibility</h3>
         <p>
-          Your natural gait, including your pronation pattern, cadence, and foot strike, determines what type of shoe structure works for you. Overpronators generally benefit from stability features, while neutral runners often do well in less structured shoes. A professional gait analysis removes much of the guesswork from this decision. Understanding your <Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT band and lateral movement patterns</Link> can also inform shoe selection.
+          Your gait, cadence, foot strike, comfort, and previous shoe experience can all influence which structure feels suitable. Pronation alone does not prescribe one shoe for every runner, and a gait analysis does not guarantee an injury-free recommendation. Use an assessment as one input alongside fit and an actual running trial. Our <Link to="/guides/flat-feet-overpronation-knee-pain" className="text-primary hover:underline">flat feet and overpronation guide</Link> explains that pattern in more detail.
         </p>
 
         <h3>Cushioning Preference</h3>
@@ -4734,7 +4748,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
 
         <h3>Running Surface</h3>
         <p>
-          The surfaces you primarily run on should inform your shoe choice. Road shoes, trail shoes, and track shoes are designed for different demands. Using the wrong type increases both discomfort and injury risk. Runners who alternate between surfaces may benefit from having multiple pairs suited to each terrain.
+          The surfaces you primarily run on should inform your shoe choice. Road, trail, and track shoes differ in grip, protection, weight, and ride. Choose a design that feels secure on the intended surface rather than assuming one category will prevent injury.
         </p>
 
         <h3>Foot Shape and Width</h3>
@@ -4775,11 +4789,6 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           Sudden increases in mileage or intensity are commonly associated with increased knee awareness. Gradual progression in training is something most experienced runners pay attention to as part of maintaining comfortable running. For runners over 40, our guide on <Link to="/guides/knee-pain-after-40" className="text-primary hover:underline">knee comfort changes after 40</Link> covers age-related considerations in training.
         </p>
 
-        <PremiumCTA
-          headline="A simple post-run comfort step worth considering"
-          text="Some runners complement their footwear and training habits with a brief post-run comfort routine. FlexiKnee provides gentle warmth and vibration that fits naturally into those few minutes after cooling down, supporting the transition from high-impact activity to rest."
-        />
-
         <h2>Common Shoe Fit Mistakes Runners Make</h2>
         <p>
           Understanding <strong>running shoe fit mistakes</strong> can help you avoid common pitfalls that affect comfort. Many of these mistakes are easy to make but also easy to correct once you're aware of them.
@@ -4801,7 +4810,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
 
         <h3>Shoe Lifespan</h3>
         <p>
-          Running shoes don't last forever. Most have recommended mileage ranges of 300 to 500 miles, after which their cushioning and support properties degrade. Running in worn-out shoes is one of the most common issues that affects knee comfort. Many runners track their shoe mileage using running apps to know exactly when replacement is appropriate.
+          Running shoes do not have one expiration mileage that applies to every model and runner. Track distance, but also check uneven wear, a compressed or leaning midsole, damaged tread, loss of secure fit, and a consistent change in how the shoe feels.
         </p>
 
         <h3>Size and Fit Issues</h3>
@@ -4844,7 +4853,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           Before investing in a new pair of running shoes, take a moment to run through this quick self-assessment. It can help clarify whether a shoe change is likely to make a difference and what to prioritize in your search:
         </p>
         <ul className="list-disc pl-6 space-y-2 my-4">
-          <li><strong>Are your current shoes worn out?</strong> Check the mileage. If you've logged more than 400 to 500 miles, the cushioning is likely compromised even if the shoes still look fine externally. Flip them over and check for uneven tread wear</li>
+          <li><strong>Are your current shoes worn out?</strong> Check mileage, tread, midsole shape, heel structure, and whether the shoe still feels stable and comfortable. Appearance and distance should be considered together.</li>
           <li><strong>Do your knees feel worse specifically after runs?</strong> If knee discomfort appears primarily during or after running but not during other activities, your shoes may be a contributing factor. If discomfort persists across activities, other factors are likely involved</li>
           <li><strong>Do different shoes feel noticeably better?</strong> Try running in a different pair (even a friend's, briefly). If you notice a meaningful difference in knee comfort, that's a useful signal about what your current shoes may be lacking</li>
           <li><strong>Have you tested different cushioning types?</strong> If you've only ever worn one type of shoe, you may not know whether a different approach to cushioning or support would feel better. Trying shoes at the opposite end of the cushioning spectrum can be informative</li>
@@ -4916,6 +4925,12 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           Individual experiences vary, and these tools complement rather than replace good running habits, appropriate footwear, and sensible training progressions.
         </p>
 
+        <InfoBox title="When to Get Medical Help">
+          <p>
+            Arrange an assessment when knee pain persists across different shoes, worsens as you run, repeatedly changes your gait, or comes with swelling, locking, instability, or reduced movement. Seek urgent care after a major injury, when you cannot bear weight, or when the knee is badly swollen, deformed, hot, and red.
+          </p>
+        </InfoBox>
+
         <h2>Summary: Finding Your Best Running Shoes for Knee Comfort</h2>
         <p>
           The <strong>best running shoes for knee pain</strong> are ultimately the ones that feel stable, comfortable, and supportive for your individual running style and needs. There's no universal answer because every runner is different, and no single brand or model works for everyone.
@@ -4925,7 +4940,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
            Focus on understanding the features that influence shoe feel, explore multiple brands with an open mind, avoid common fit mistakes, and pay attention to your running habits alongside your footwear choices. Shoes and habits work together as a system.
          </p>
          <p>
-           For more on how footwear affects knee comfort, see our detailed guide on <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee discomfort</Link>. Runners dealing with knee pain can also benefit from our <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">comprehensive running knee pain guide</Link>. For post-run warmth routines, explore <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">warmth for daily knee comfort</Link>. And if you're looking for strengthening options, our <Link to="/guides/exercises-to-relieve-knee-pain-at-home" className="text-primary hover:underline">at-home knee exercise guide</Link> provides practical options you can start today.
+           Runners dealing with knee pain can also use our <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">comprehensive running knee pain guide</Link>. For post-run warmth routines, explore <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">warmth for daily knee comfort</Link>. If you're looking for strengthening options, our <Link to="/guides/exercises-to-relieve-knee-pain-at-home" className="text-primary hover:underline">at-home knee exercise guide</Link> provides general starting points.
          </p>
 
         <p>
@@ -4939,7 +4954,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
       { question: "Why do some running shoes feel better for my knees than others?", answer: "Shoes vary significantly in cushioning, stability, flexibility, and fit. These differences affect how your stride feels and how forces are distributed during running. Personal preference plays a major role; what feels comfortable for one runner may not suit another. Testing different options helps identify what works for your running style." },
       { question: "Is it normal for knees to feel tired after increasing running mileage?", answer: "Many runners notice increased knee awareness when they increase their training volume. This is a common experience, particularly with sudden jumps in mileage or intensity. Gradual progression in training is a practice most experienced runners follow to manage this pattern." },
       { question: "Does more cushioning always help with knee comfort?", answer: "Not necessarily. While cushioning absorbs some impact, very soft cushioning isn't automatically better for everyone. Some runners actually prefer firmer shoes and find them more comfortable. The best cushioning level is the one that feels right for your running style and preferences." },
-      { question: "How long should running shoes typically last?", answer: "Most running shoes have recommended mileage ranges, often 300 to 500 miles depending on the shoe and runner. After this, cushioning and support properties typically degrade. Many runners track their shoe mileage and notice changes in how shoes feel as they age. Replacing worn shoes is a common practice for maintaining comfort." },
+      { question: "How long should running shoes typically last?", answer: "There is no single replacement mileage for every shoe and runner. Track distance together with tread wear, midsole compression, leaning, damaged uppers, loss of secure fit, and a consistent change in ride. Manufacturer guidance can be another input." },
       { question: "Can changing running shoes help with knee comfort?", answer: "Footwear is one factor that can influence running comfort. For some runners, finding better-suited shoes makes a noticeable difference. However, shoes work alongside running form, training habits, and other factors. Changing shoes alone may or may not address comfort concerns; a holistic approach considering multiple factors is often most effective." },
       { question: "Which running shoe brand is best for knee comfort?", answer: "There is no single best brand for knee comfort. Nike, Adidas, Asics, Brooks, Hoka, New Balance, Saucony, and On Running each approach shoe design differently. The right choice depends on your individual foot shape, gait pattern, cushioning preference, and the surfaces you run on. Personal fit matters more than brand name." },
       { question: "Should I buy running shoes based on what other runners recommend?", answer: "Other runners' recommendations are a helpful starting point for research, but they shouldn't be the sole basis for your decision. Every runner has a unique combination of foot shape, gait, weight, and preferences. What works perfectly for one runner may not work for you. Use recommendations as research input and make your final choice based on your own testing." },

@@ -9,7 +9,6 @@ import imgCirculationLimbs from "@/assets/fig-leg-circulation-v2.svg";
 import imgJointLoad from "@/assets/article-knee-joint-load.jpg";
 import imgMovementStiffness from "@/assets/article-movement-vs-stiffness.jpg";
 import imgHeavyKneePatterns from "@/assets/article-heavy-knees-patterns-v1.svg";
-import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
 const faqs = [
   {
@@ -48,23 +47,45 @@ const faqs = [
 
 const article = {
   slug: "heavy-feeling-in-knees",
-  title: "Heavy Feeling in the Knees: Causes, Clues, and When to Act",
-  subtitle: "Compare fatigue, stiffness, swelling, and warning patterns without guessing the diagnosis",
-  intro: "A heavy feeling in the knees can describe tired muscles, stiffness after sitting, effortful walking, or swelling in the lower leg. Because the word heavy means different things to different people, the safest approach is to compare the timing, visible changes, one-sided versus two-sided symptoms, and what happens with movement. This guide explains practical next steps and the signs that need medical care.",
-  metaTitle: "Heavy Feeling in Knees: Causes and Warning Signs",
-  metaDescription: "Compare fatigue, stiffness, swelling, and weakness when your knees feel heavy. Learn practical steps and when one-sided leg symptoms need urgent care.",
+  title: "Why Do My Knees Feel Heavy, Stiff, or Full?",
+  subtitle: "Compare fatigue, stiffness, fullness, swelling, and warning patterns without guessing the diagnosis",
+  intro: "When a knee feels heavy and stiff or unusually full, the words may describe tired muscles, start-up stiffness after sitting, effortful walking, or actual swelling. Compare the timing, visible changes, one-sided versus two-sided symptoms, and what happens with movement before deciding what to do next.",
+  metaTitle: "Knees Feel Heavy and Stiff or Full? Causes and Clues",
+  metaDescription: "Why do knees feel heavy, stiff or full? Compare fatigue, start-up stiffness, swelling and weakness, plus practical steps and urgent one-sided warning signs.",
   heroImage,
   publishedDate: "March 8, 2026",
-  lastUpdated: "July 13, 2026",
+  lastUpdated: "July 29, 2026",
   nextSlug: "knee-pain-after-flights",
   nextTitle: "Knee Pain After Long Flights",
   faqs,
-  seoTags: "heavy feeling in knees, knees feel heavy, heavy knees walking, legs feel heavy, knee heaviness and swelling, heavy knees after sitting, one leg feels heavy, knee fatigue, when heavy legs are serious",
+  seoTags: "heavy feeling in knees, knee feels heavy and stiff, knee feels heavy and full, knees feel heavy, heavy knees walking, knee heaviness and swelling, heavy knees after sitting, one leg feels heavy, knee fatigue, when heavy legs are serious",
+  sources: [
+    {
+      title: "Swollen Ankles, Feet and Legs (Oedema)",
+      publisher: "NHS",
+      url: "https://www.nhs.uk/conditions/oedema/",
+    },
+    {
+      title: "Deep Vein Thrombosis (DVT)",
+      publisher: "NHS",
+      url: "https://www.nhs.uk/conditions/deep-vein-thrombosis-dvt/",
+    },
+    {
+      title: "About Venous Thromboembolism",
+      publisher: "Centers for Disease Control and Prevention",
+      url: "https://www.cdc.gov/blood-clots/about/",
+    },
+    {
+      title: "Knee Pain: Self-Care and When to Get Help",
+      publisher: "NHS",
+      url: "https://www.nhs.uk/conditions/knee-pain/",
+    },
+  ],
   content: (
     <>
       <InfoBox title="Quick answer">
         <p>
-          Heavy-feeling knees are not one condition. If both legs feel tired after unusual activity and improve with recovery, muscle fatigue may be contributing. If the feeling appears after sitting and eases after a few gentle steps, stiffness may be more relevant. Visible swelling, progressive weakness, or a new change on only one side shifts the decision toward medical assessment. <strong>Unexplained one-sided swelling with pain, warmth, or color change needs urgent advice. Chest pain or sudden breathlessness requires emergency help.</strong>
+          A knee that feels <strong>heavy and stiff</strong> after sitting may reflect a start-up stiffness pattern, while a knee that feels <strong>heavy and full</strong> may need a closer check for visible swelling or loss of motion. Tired muscles can also make both knees feel effortful after activity. Unexplained one-sided swelling with pain, warmth, or color change needs urgent advice. Chest pain or sudden breathlessness requires emergency help.
         </p>
       </InfoBox>
 
@@ -136,6 +157,22 @@ const article = {
           </tbody>
         </table>
       </div>
+
+      <h2>When Knees Feel Heavy and Stiff</h2>
+      <p>
+        A heavy and stiff feeling often appears on the first steps after sitting, driving, or waking. Notice whether both knees are similar, whether the joint can fully bend and straighten, and whether gentle movement returns it toward baseline. This pattern is different from a knee that is physically locked, repeatedly gives way, or becomes progressively more painful.
+      </p>
+      <p>
+        When stiffness after rest is the main problem, change position more often and use a short, comfortable movement break. Our <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">guide to knee pain when standing after sitting</Link> explains that specific transition.
+      </p>
+
+      <h2>When a Knee Feels Heavy and Full</h2>
+      <p>
+        Fullness can be a way of describing pressure inside or around the knee. Compare the sides and look for puffiness, tighter clothing or socks, warmth, redness, and reduced movement. A full sensation without visible swelling still deserves assessment when it persists or repeatedly limits activity.
+      </p>
+      <p>
+        Do not assume that a newly full, swollen knee only needs massage or extra exercise. Rapid swelling after an injury, a hot red knee, or unexplained one-sided leg swelling changes the decision toward prompt medical care.
+      </p>
 
       <h2>What Causes Heaviness in the Knees</h2>
 
@@ -330,7 +367,7 @@ const article = {
         "Walk for 5 to 10 minutes to reset circulation and muscle activity",
         "Stretch quadriceps, hamstrings, and calves daily",
         "Build leg strength gradually with low-impact exercises",
-        "Stay hydrated to support muscle function and joint lubrication",
+        "Follow ordinary hydration guidance rather than treating extra water as a cure",
         "Elevate legs briefly after long periods of standing",
         "Choose low-impact activities like swimming or cycling for joint-friendly conditioning",
       ]} />
@@ -383,48 +420,16 @@ const article = {
         How you sit and stand affects how your leg muscles and circulation function. Sitting with your legs crossed, standing with locked knees, or adopting other sustained positions can restrict circulation and contribute to heaviness. Being mindful of your posture throughout the day helps maintain healthy blood flow. For understanding how different knee sensations map to specific areas, check our <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">knee pain location guide</Link>.
       </p>
 
-      <h2>When Knee Heaviness Should Be Evaluated</h2>
-
-      <p>
-        A short-lived, symmetrical tired feeling after unusual activity may settle as the muscles recover. The following patterns need a different response because heaviness can be the first word someone uses for swelling, weakness, or a whole-leg problem.
-      </p>
-
-      <h3>Persistent Heaviness Without Clear Cause</h3>
-      <p>
-        If your knees consistently feel heavy even after adequate rest and regular activity, it may be worth discussing with a healthcare professional. Persistent heaviness without an obvious trigger could indicate an underlying factor that would benefit from evaluation.
-      </p>
-
-      <h3>Heaviness Accompanied by Swelling</h3>
-      <p>
-        Recurrent swelling in both legs, or swelling that does not improve, should be discussed with a healthcare professional. Unexplained swelling in one leg needs urgent advice, particularly when it is painful, tender, warm, red, or discolored. These symptoms can occur with a deep vein thrombosis, although only a medical assessment can determine the cause.
-      </p>
-
-      <h3>Numbness or Tingling</h3>
-      <p>
-        Numbness, tingling, foot drag, or difficulty controlling the leg may involve a nerve or another problem outside the knee. New or progressive weakness should be assessed. Sudden major weakness or neurological symptoms affecting more than the knee require urgent care.
-      </p>
-
-      <h3>Progressive Worsening</h3>
-      <p>
-        Knee heaviness that progressively worsens over time despite maintaining regular activity and healthy habits should be discussed with a healthcare provider to rule out any contributing factors.
-      </p>
-
-      <InfoBox title="Urgent and Emergency Warning Signs">
-        <p><strong>Seek urgent medical advice</strong> for unexplained one-sided leg swelling, especially with pain, tenderness, warmth, redness, or discoloration; sudden severe swelling; a hot red knee with fever; inability to bear weight; or a knee that is badly swollen or misshapen. <strong>Call emergency services</strong> for sudden breathlessness, chest pain, coughing up blood, fainting, confusion, or feeling acutely unwell. These combinations should not be managed with heat, massage, or exercise while waiting to see whether they pass.</p>
+      <InfoBox title="When to Get Medical Help">
+        <p>
+          Arrange an assessment when heaviness persists, worsens, limits walking, or comes with recurrent swelling, weakness, numbness, locking, or giving way. Seek urgent advice for unexplained one-sided leg swelling with pain, warmth, redness, or discoloration; a hot red knee with fever; inability to bear weight; or major swelling after an injury. Chest pain, sudden breathlessness, coughing blood, or fainting requires emergency help.
+        </p>
       </InfoBox>
 
       <p>
         Understanding why your knees feel heavy starts with describing the pattern accurately. Fatigue, stiffness, swelling, and weakness are not interchangeable, and the right response depends on which clues are present. For an uncomplicated activity-related pattern, gradual capacity building can be useful. For persistent, one-sided, swollen, or progressive symptoms, an assessment is the safer next step.
       </p>
 
-      <ArticleSourcesBox>
-      <ul>
-        <li><a href="https://www.nhs.uk/conditions/oedema/" target="_blank" rel="noreferrer" className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700">NHS: Swollen ankles, feet and legs (oedema)</a></li>
-        <li><a href="https://www.nhs.uk/conditions/deep-vein-thrombosis-dvt/" target="_blank" rel="noreferrer" className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700">NHS: Deep vein thrombosis (DVT)</a></li>
-        <li><a href="https://www.cdc.gov/blood-clots/about/" target="_blank" rel="noreferrer" className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700">CDC: About venous thromboembolism</a></li>
-        <li><a href="https://www.nhs.uk/symptoms/knee-pain/" target="_blank" rel="noreferrer" className="font-medium text-blue-600 underline underline-offset-4 hover:text-blue-700">NHS: Knee pain and urgent warning signs</a></li>
-      </ul>
-    </ArticleSourcesBox>
     </>
   ),
 };
