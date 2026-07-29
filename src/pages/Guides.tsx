@@ -46,11 +46,9 @@ import thumbBelowKneeDiscomfort from "@/assets/guide-thumb-below-knee-discomfort
 import thumbFlexikneeReview from "@/assets/guide-thumb-flexiknee-review-new.jpg";
 import thumbCompetitorsComparison from "@/assets/guide-thumbnails/refresh-2026-07-28/flexiknee-vs-competitors-2026.webp";
 import thumbInfraredGuide2026 from "@/assets/guide-thumbnails/refresh-2026-07-28/infrared-knee-massager-guide-2026.webp";
-import thumbSharpPainRelief from "@/assets/guide-thumb-sharp-pain-relief.jpg";
 import thumbIntermittentPain from "@/assets/guide-thumb-intermittent-pain.jpg";
 import thumbArthritisMassager from "@/assets/guide-thumb-arthritis-massager-new.jpg";
 import thumbHeatRedlightBenefits from "@/assets/guide-thumbnails/refresh-2026-07-28/heat-red-light-therapy-benefits-2026.webp";
-import thumbSharpStabbingComfort from "@/assets/guide-thumb-sharp-stabbing-comfort.jpg";
 import thumbSmartMassagersBreakdown from "@/assets/guide-thumb-smart-massagers-breakdown-new.jpg";
 import thumbKneePainLocations from "@/assets/guide-thumb-knee-pain-locations.jpg";
 import thumbRunnersKneeLocation from "@/assets/guide-thumb-runners-knee-location.jpg";
@@ -183,9 +181,7 @@ const thumbnailMap: Record<string, string> = {
   "best-heated-knee-massager-arthritis": thumbArthritisMassager,
   "smart-heated-knee-braces-2026": thumbBatch1SmartHeatedKneeBraces2026,
   "heat-red-light-therapy-benefits-2026": thumbHeatRedlightBenefits,
-  "sharp-knee-pain-causes-relief": thumbSharpPainRelief,
   "infrared-knee-massager-guide-2026": thumbInfraredGuide2026,
-  "sharp-stabbing-knee-pain-comfort": thumbSharpStabbingComfort,
   "infrared-vs-heating-pads": thumbInfraredVsHeatingPads,
   "intermittent-knee-pain-guide": thumbIntermittentPain,
   "smart-knee-massagers-breakdown": thumbSmartMassagersBreakdown,
@@ -366,8 +362,6 @@ const locationSlugs = [
   "front-knee-tightness-after-activity",
   "knee-discomfort-lower-back-hips",
   "below-knee-discomfort-teens-adults",
-  "sharp-knee-pain-causes-relief",
-  "sharp-stabbing-knee-pain-comfort",
   "intermittent-knee-pain-guide",
   "knee-pain-locations-visual-guide",
   "it-band-pain-location-diagram",

@@ -366,7 +366,17 @@
     },
     {
       "source": "/guides/sharp-knee-pain-causes",
-      "destination": "/guides/sharp-knee-pain-causes-relief",
+      "destination": "/guides/sharp-knee-pain-guide",
+      "permanent": true
+    },
+    {
+      "source": "/guides/sharp-knee-pain-causes-relief",
+      "destination": "/guides/sharp-knee-pain-guide",
+      "permanent": true
+    },
+    {
+      "source": "/guides/sharp-stabbing-knee-pain-comfort",
+      "destination": "/guides/sharp-knee-pain-guide",
       "permanent": true
     },
     {
@@ -476,7 +486,7 @@
     },
     {
       "source": "/guides/sharp-knee-pain-comes-and-goes",
-      "destination": "/guides/intermittent-knee-pain-guide",
+      "destination": "/guides/sharp-knee-pain-guide",
       "permanent": true
     },
     {

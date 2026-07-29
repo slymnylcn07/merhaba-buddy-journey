@@ -144,7 +144,7 @@ export const kneeClickingWhenWalking = {
           <li><strong>Tight or weak muscles:</strong> Weak quadriceps or tight hamstrings can affect how smoothly the kneecap moves, increasing clicking during squats.</li>
         </ul>
         <p>
-          If you experience clicking every time you squat but feel no pain, stiffness, or limitation, it's very likely a normal mechanical event. However, if squatting produces a sharp catch or brief locking feeling, the meniscus may be involved and it's worth paying closer attention.
+          If you experience clicking every time you squat but feel no pain, stiffness, or limitation, it may be a normal mechanical event. However, a painful sharp catch or brief locking feeling deserves closer attention. Use our <Link to="/guides/sharp-knee-pain-guide" className="text-primary hover:underline">sharp and stabbing knee pain guide</Link> to record the pattern and check warning signs rather than assuming the sound identifies one cause.
         </p>
         <p>
           People who notice stiffness along with clicking after sitting may find our guide on <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee pain when getting up after sitting</Link> helpful.
