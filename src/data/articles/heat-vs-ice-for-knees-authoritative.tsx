@@ -356,12 +356,20 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
 
         <section aria-labelledby="heat-ice-faq-heading" className="my-10">
           <h2 id="heat-ice-faq-heading">Frequently Asked Questions</h2>
-          <div className="space-y-5">
+          <div className="space-y-3">
             {heatVsIceFaqs.map((faq) => (
-              <div key={faq.question} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <h3 className="mt-0 text-lg font-semibold text-slate-950">{faq.question}</h3>
-                <p className="mb-0">{faq.answer}</p>
-              </div>
+              <details key={faq.question} className="group rounded-2xl border border-slate-200 bg-white shadow-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 [&::-webkit-details-marker]:hidden">
+                  <h3 className="m-0 text-lg font-semibold text-slate-950">{faq.question}</h3>
+                  <span aria-hidden="true" className="shrink-0 text-2xl font-light leading-none text-primary">
+                    <span className="group-open:hidden">+</span>
+                    <span className="hidden group-open:inline">−</span>
+                  </span>
+                </summary>
+                <div className="border-t border-slate-100 px-5 py-4">
+                  <p className="m-0">{faq.answer}</p>
+                </div>
+              </details>
             ))}
           </div>
         </section>
