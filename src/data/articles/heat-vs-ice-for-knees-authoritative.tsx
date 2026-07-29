@@ -331,20 +331,26 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
           Some knees feel temporarily stiffer or achier with cold, but a severe or persistent reaction should not be treated as proof that heat is the answer. Seek advice when symptoms keep worsening, sensation or color does not return to normal, or the original knee problem includes significant swelling, instability, or loss of movement.
         </p>
 
-        <h2>When Heat or Ice Is Not Enough</h2>
-        <div className="my-8 rounded-2xl border border-amber-200 bg-amber-50 p-6">
-          <p className="mb-3 font-semibold text-amber-950">Seek urgent medical advice when:</p>
-          <ul className="mb-0">
-            <li>You cannot put weight on the leg or move the knee</li>
-            <li>The knee is badly swollen, misshapen, locked, or repeatedly gives way</li>
-            <li>You heard a crack during an injury</li>
-            <li>Redness and heat are accompanied by fever or feeling unwell</li>
-            <li>Calf swelling, chest pain, or shortness of breath develops</li>
+        <h2>When to Get Medical Help</h2>
+        <aside
+          aria-label="Urgent knee pain warning signs"
+          className="my-6 rounded-xl border border-rose-200 bg-rose-50 p-5 text-slate-800"
+        >
+          <ul className="!mb-0 space-y-2">
+            <li className="!mb-0">
+              You cannot move the knee or bear weight, or severe pain follows an injury
+            </li>
+            <li className="!mb-0">
+              The knee is badly swollen, misshapen, locked, or repeatedly gives way
+            </li>
+            <li className="!mb-0">
+              The knee is hot and red with fever or feeling unwell
+            </li>
+            <li className="!mb-0">
+              Calf swelling occurs with chest pain or shortness of breath; seek emergency help
+            </li>
           </ul>
-        </div>
-        <p>
-          Arrange a non-urgent review when symptoms persist for several weeks, keep returning, or are gradually limiting sleep, walking, or normal daily activities.
-        </p>
+        </aside>
 
         <h2>A Simple Decision Checklist</h2>
         <ol>

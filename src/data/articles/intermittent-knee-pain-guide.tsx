@@ -356,34 +356,28 @@ export const intermittentKneePainGuide: ArticleExport = {
           still deserve assessment even when the knee feels normal between them.
         </NoteBox>
 
-        <h2>When Recurring Knee Pain Needs an Appointment</h2>
-        <p>Arrange a clinical assessment when:</p>
-        <ul>
-          <li>Episodes are becoming more frequent, severe, or longer lasting</li>
-          <li>Pain repeatedly affects walking, stairs, work, exercise, or sleep</li>
-          <li>The knee swells more than once or does not regain its normal motion</li>
-          <li>There is catching, painful clicking, locking, or giving way</li>
-          <li>Symptoms return every time you try to resume normal activity</li>
-          <li>There is numbness, tingling, weakness, back pain, or pain traveling down the leg</li>
-          <li>The pattern does not improve with a reasonable period of load adjustment</li>
-        </ul>
-
-        <h2>When Intermittent Knee Pain Is Urgent</h2>
-        <p>Seek urgent medical guidance if an episode includes:</p>
-        <ul>
-          <li>Severe pain after trauma or inability to bear weight</li>
-          <li>Major or rapid swelling, deformity, or inability to move the knee</li>
-          <li>A knee that is physically locked or repeatedly gives way</li>
-          <li>A hot, red, swollen knee with fever, chills, or feeling unwell</li>
-          <li>Increasing calf pain or swelling, especially with breathing symptoms</li>
-          <li>New marked numbness, weakness, or a cold or discolored foot</li>
-        </ul>
-
-        <NoteBox tone="red">
-          <strong>Emergency symptoms:</strong> Seek emergency help for chest pain, breathing
-          difficulty, collapse, severe deformity after trauma, or sudden concerning
-          circulation or nerve symptoms.
-        </NoteBox>
+        <h2>When to Get Medical Help</h2>
+        <aside
+          aria-label="Urgent intermittent knee pain warning signs"
+          className="my-6 rounded-xl border border-rose-200 bg-rose-50 p-5 text-slate-800"
+        >
+          <ul className="!mb-0 space-y-2">
+            <li className="!mb-0">
+              Severe pain follows trauma, or you cannot move the knee or bear weight
+            </li>
+            <li className="!mb-0">
+              Swelling is major or rapid, the knee is deformed or locked, or it repeatedly
+              gives way
+            </li>
+            <li className="!mb-0">
+              The knee is hot, red, and swollen with fever, chills, or feeling unwell
+            </li>
+            <li className="!mb-0">
+              Calf swelling occurs with chest pain or breathing difficulty, or there is new
+              marked numbness, weakness, or a cold or discolored foot; seek emergency help
+            </li>
+          </ul>
+        </aside>
 
         <h2>How a Clinician Evaluates an Episodic Pattern</h2>
         <p>

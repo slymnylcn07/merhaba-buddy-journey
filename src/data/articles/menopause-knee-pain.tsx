@@ -121,6 +121,9 @@ export const menopauseKneePain: ArticleExport = {
           This creates a loop. Knee discomfort interrupts sleep; poor sleep amplifies pain the next day; fatigue reduces movement and strength training; reduced capacity makes normal activity more demanding. Treating only the knee can miss the most modifiable driver. If hot flashes or insomnia are prominent, discuss them as clinical problems rather than accepting them as a stage you must simply endure.
         </p>
         <p>
+          If knee symptoms specifically wake you during midlife, the guide to <Link to="/guides/knee-pain-at-night-after-40">knee pain at night after 40</Link> compares menopause context with osteoarthritis, daily load, sleep position, and warning signs.
+        </p>
+        <p>
           A practical sleep plan includes a consistent wake time, a cool bedroom, reduced late alcohol, morning daylight, regular activity, and evidence-based insomnia care when needed. Menopausal hormone therapy or nonhormonal medicines may be appropriate for some women with significant vasomotor symptoms, but that decision should be made for the full symptom picture and personal risk profile-not prescribed as a knee treatment.
         </p>
 

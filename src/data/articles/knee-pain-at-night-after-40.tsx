@@ -1,4 +1,6 @@
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
+import ArticleFaqAccordion from "@/components/ArticleFaqAccordion";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-night-knee-pain-40.jpg";
 import sectionNightStiffnessCycle from "@/assets/package-4/evening-morning-comfort-cycle.svg";
@@ -7,283 +9,508 @@ import sectionJointChangesAging from "@/assets/package-4/age-knee-comfort-factor
 import sectionNightPainLocations from "@/assets/package-4/night-knee-location-guide.svg";
 import sectionEveningComfortRoutine from "@/assets/article-section-evening-comfort-routine-40.jpg";
 import sectionDailyComfortRoutine40s from "@/assets/article-section-daily-comfort-routine-40s.jpg";
-
 import type { ArticleExport } from "./types";
 
-const slug = "knee-pain-at-night-after-40";
-
-const faqs = [
+const nightPainAfter40Faqs = [
   {
-    question: "Why do my knees hurt more at night after 40?",
-    answer: "Night knee symptoms after 40 can be influenced by osteoarthritis, tendons, bursae, activity during the day, sleep position, swelling, or another condition. Age alone does not establish the cause."
+    question: "Why can knee pain at night become more noticeable after 40?",
+    answer:
+      "Age changes the likelihood of osteoarthritis, previous-injury effects, tendon or bursa irritation, and reduced muscle capacity, but age alone does not identify the cause. Daily load, sleep position, swelling, morning stiffness, menopause symptoms, and loss of function help define the pattern.",
   },
   {
-    question: "Can sudden night knee pain happen without injury?",
-    answer: "Yes, discomfort can occur without a clear injury, but a sudden or severe change should not be assumed to be age-related. Swelling, redness, warmth, fever, calf symptoms, or difficulty bearing weight need timely assessment."
+    question: "Can knee osteoarthritis cause pain that wakes me at night?",
+    answer:
+      "Osteoarthritis often causes activity-related pain and short-lived stiffness after rest. More established symptoms can also occur at rest or interrupt sleep. Night waking does not confirm osteoarthritis, so persistent symptoms should be assessed in the context of function, swelling, examination findings, and other possible causes.",
   },
   {
-    question: "Is night knee stiffness different from daytime stiffness?",
-    answer: "Night symptoms may feel more noticeable because of prolonged position, sleep disruption, pressure from bedding or side-lying, or symptoms accumulated during the day. The pattern varies and is not diagnostic."
+    question: "Can perimenopause or menopause affect knee and joint pain?",
+    answer:
+      "Muscle aches and joint pains are recognized symptoms during perimenopause and menopause. A wider pattern involving several joints, sleep disruption, hot flushes, or cycle changes may be relevant. New one-sided swelling, locking, instability, or a hot red knee should not be attributed to menopause without assessment.",
   },
   {
-    question: "What are the best sleeping positions for knee pain?",
-    answer: "There is no single best position for everyone. Some people prefer side sleeping with a pillow between the knees; others prefer lying on the back with light support under the knees. Use the setup that reduces pressure and does not increase symptoms."
+    question: "Does morning stiffness mean I have knee osteoarthritis?",
+    answer:
+      "No. Morning stiffness can occur for several reasons. Osteoarthritis commonly causes stiffness after rest that eases within about 30 minutes, but this pattern is not a diagnosis by itself. Longer or worsening stiffness, swelling, or symptoms in several joints deserves medical discussion.",
   },
   {
-    question: "Why do my knees hurt when lying on my side?",
-    answer: "Side sleeping can place the knees together or allow the top leg to rotate. A pillow between the knees may improve comfort for some people, but it will not address every cause of night pain."
+    question: "Why do my knees hurt at night but feel better after I move?",
+    answer:
+      "A prolonged position may make a sensitive knee feel stiff, and gentle movement can sometimes make it feel easier. This can occur with osteoarthritis and other patterns. Record how long the stiffness lasts and whether there is swelling, warmth, locking, or reduced motion.",
   },
   {
-    question: "Can night knee pain wake me up from sleep?",
-    answer: "Yes. Knee discomfort can interrupt sleep for many reasons, including position, pressure, osteoarthritis, tendons, bursae, swelling, or another condition. Repeated sleep disruption is worth discussing with a healthcare professional."
+    question: "What sleep position may help knee pain after 40?",
+    answer:
+      "There is no single best position. Side sleepers can try a pillow between the knees, while back sleepers can try light support under the knees. The useful setup is the one that reduces pressure without forcing the knee into a painful bend or twist.",
   },
   {
-    question: "How long does night knee stiffness usually last?",
-    answer: "The duration varies. Record how long stiffness lasts and whether it is accompanied by swelling, warmth, locking, or worsening pain. Persistent or prolonged stiffness should be discussed with a healthcare professional."
+    question: "Is warmth safe for knee pain at night after 40?",
+    answer:
+      "Gentle warmth may feel comfortable for a stiff knee when there is no new injury, swelling, unusual heat, or redness. Do not use heat on a newly injured, hot, red, or acutely swollen knee, and stop if symptoms increase. Warmth does not treat the underlying cause.",
   },
   {
-    question: "When should I pay attention to night knee pain?",
-    answer: "Consider professional guidance if night knee pain consistently wakes you up, if you notice significant swelling that appears overnight, if stiffness lasts more than an hour each morning, or if the discomfort progressively worsens over several weeks."
-  }
+    question: "When does knee pain at night need urgent assessment?",
+    answer:
+      "Seek urgent guidance for a very painful knee, inability to move it or bear weight, major swelling or deformity, true locking, repeated giving way, or a hot red swollen knee with fever or feeling unwell. Concerning calf swelling, breathing symptoms, new marked weakness, or a cold discolored foot also require prompt help.",
+  },
 ];
 
-const article = {
-  slug,
-  title: "What Causes Knee Pain at Night for Adults Over 40? Age-Related Night Pain Explained",
-  subtitle: "Understanding why knee discomfort intensifies at night with age",
-  intro: "Night knee symptoms can become more noticeable after 40, but they should not automatically be attributed to aging. This guide reviews practical patterns, sleep-position considerations, and signs that deserve assessment.",
-  metaTitle: "Knee Pain at Night After 40: Causes & Comfort Tips",
-  metaDescription: "Why does knee pain get worse at night after 40? Learn age-related causes of night knee stiffness, sleeping position tips, and evening comfort routines for better rest.",
-  heroImage,
-  publishedDate: "March 3, 2026",
-  nextSlug: "why-do-my-knees-hurt-when-sleeping",
-  nextTitle: "Why Knees Hurt When Sleeping",
-  faqs,
-  seoTags: "knee pain at night, night knee stiffness over 40, knees hurt at night, knee pain worse at night, age-related knee pain, nighttime knee throbbing, knee pain sleeping, joint stiffness at night, knee ache after resting, night pain flare patterns, knee pain lying down, evening knee comfort routine, knee pain waking up, fluid redistribution knee",
-  content: (
-    <>
+const QuickAnswer = ({ children }: { children: ReactNode }) => (
+  <aside
+    aria-label="Quick answer"
+    className="my-7 rounded-xl border border-sky-200 bg-sky-50 p-5 text-slate-900"
+  >
+    <p className="mb-2 text-sm font-bold uppercase tracking-wide text-sky-800">
+      Quick Answer
+    </p>
+    <div className="space-y-3 leading-relaxed">{children}</div>
+  </aside>
+);
 
-      <h2>Why Knee Pain Commonly Worsens at Night After 40</h2>
-      <p>
-        Adults over 40 may notice knee symptoms at night, but the reason differs from person to person. Activity during the day, a prolonged sleep position, pressure from bedding, osteoarthritis, tendons, bursae, swelling, and other conditions can all be relevant.
-      </p>
-      <p>
-        A repeated pattern is useful information, but it does not prove one biological mechanism. Tracking triggers and associated symptoms is more reliable than assuming “wear and tear.”
-      </p>
-
-      <p>
-        Unlike the general guide on <Link to="/guides/why-do-my-knees-hurt-when-sleeping" className="text-primary hover:underline">why knees hurt when sleeping</Link>, this article focuses specifically on how aging affects nighttime knee comfort and what adults 40+ can do differently.
-      </p>
-
-      <h2>Why Knee Symptoms May Feel More Noticeable at Night</h2>
-      <p>
-        Symptoms may be more noticeable at night after a busy day, when the knee remains in one position, or when side-lying or bedding places pressure on a sensitive area. Quiet surroundings can also make existing sensations easier to notice.
-      </p>
-      <p>
-        These observations do not prove that inflammation, cartilage wear, or “daily damage” is the cause. The same pattern can occur with several different conditions, so the practical focus is to track triggers, use a comfortable sleep setup, and seek advice when symptoms persist or worsen.
-      </p>
-
-      <figure className="my-8">
-        <img
-          src={sectionNightStiffnessCycle}
-          alt="Evening-to-morning comfort plan showing symptom check-in, comfortable sleep setup, gentle first movements, and reassessment"
-          className="w-full h-auto rounded-xl shadow-sm"
-         loading="lazy"  decoding="async"  width={1200} height={760} />
-        <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-          A practical evening-to-morning routine that avoids claiming one biological cause
-        </figcaption>
-      </figure>
-
-      <InfoBox title="Track the Pattern, Not Just the Clock">
-        <p>Record activity, sleep position, swelling, warmth, and how long symptoms last. A repeated pattern can help a clinician distinguish an activity-related flare from osteoarthritis, a tendon or bursa problem, a nerve-related symptom, or another cause.</p>
-      </InfoBox>
-
-      <h2>Factors That Can Affect Night Comfort After 40</h2>
-      <p>
-        Age changes the likelihood of some conditions, but it does not tell us why one person has night pain. Joint health, previous injury, muscle capacity, activity, sleep position, and symptom sensitivity can overlap.
-      </p>
-
-      <figure className="my-8">
-        <img
-          src={sectionJointChangesAging}
-          alt="Infographic showing joint health, previous injury, muscle capacity, sleep position, and daily load as possible factors affecting knee comfort after 40"
-          className="w-full h-auto rounded-xl shadow-sm"
-          loading="lazy"
-          decoding="async"
-          width={1200}
-          height={760}
-        />
-        <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-          Age can influence risk patterns, but it does not identify the cause of an individual symptom
-        </figcaption>
-      </figure>
-      <p>
-        For a broader discussion of age and knee symptoms, read our guide on <Link to="/guides/why-knee-pain-gets-worse-with-age" className="text-primary hover:underline">why knee pain changes with age</Link>.
-      </p>
-
-      <h2>Why Throbbing or a Deep Ache May Feel More Noticeable at Night</h2>
-      <p>
-        Several practical factors can make an existing sensation more noticeable at bedtime:
-      </p>
-      <ul>
-        <li><strong>Fewer distractions:</strong> quiet surroundings can make body sensations easier to notice.</li>
-        <li><strong>Position and pressure:</strong> side-lying, a deep knee bend, or contact between the knees may irritate a sensitive area.</li>
-        <li><strong>Symptoms accumulated during the day:</strong> an unusually active day or a change in routine may be relevant.</li>
-        <li><strong>Sleep disruption:</strong> poor sleep can increase sensitivity to discomfort and make recovery feel harder.</li>
-      </ul>
-
-      <p>
-        If you also experience <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning knee stiffness after 40</Link>, record both patterns rather than assuming one fluid or inflammation cycle explains them.
-      </p>
-
-      <h2>Night Symptoms by Knee Location</h2>
-      <p>
-        Location can help organize questions, but the same area can have several causes. History, examination, associated symptoms, and sometimes imaging are needed to identify the problem.
-      </p>
-
-      <figure className="my-8">
-        <img
-          src={sectionNightPainLocations}
-          alt="Knee location guide showing front, inner, outer, and back areas without assigning a diagnosis"
-          className="w-full h-auto rounded-xl shadow-sm"
-          loading="lazy"
-          decoding="async"
-          width={1200}
-          height={760}
-        />
-        <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-          Use location to describe the symptom, not to diagnose its cause
-        </figcaption>
-      </figure>
-
-      <h3>Front of the Knee</h3>
-      <p>
-        Front symptoms may involve the kneecap region, quadriceps tendon, patellar tendon, or surrounding tissues. Stairs, squatting, kneeling, and prolonged sitting are useful activity details to record.
-      </p>
-
-      <h3>Inner or Outer Knee</h3>
-      <p>
-        Joint-line structures, ligaments, tendons, bursae, or the IT-band region can all be relevant. Twisting, side-lying pressure, swelling, locking, or instability provide more information than location alone.
-      </p>
-      <p>
-        Learn more about outer-knee anatomy in our <Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT band location guide</Link>.
-      </p>
-
-      <h3>Back of the Knee</h3>
-      <p>
-        The back of the knee contains hamstring and calf tendons, the popliteal area, and structures that can be affected by swelling. A new lump, marked swelling, calf pain, redness, or warmth should be assessed promptly. See our <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back-of-knee pain guide</Link> for a fuller overview.
-      </p>
-
-      <h2>Sleeping Positions That May Increase Night Knee Discomfort</h2>
-      <p>
-        How you sleep has a direct impact on whether your knees feel comfortable or uncomfortable throughout the night. For adults over 40, sleeping position becomes increasingly important as joint sensitivity increases.
-      </p>
-
-      <figure className="my-8">
-        <img
-          src={sectionSleepingPositionsImpact}
-          alt="Three sleeping positions showing side sleeping with pressure on inner knee, back sleeping with back of knee compression, and pillow between knees for reduced joint stress"
-          className="w-full h-auto rounded-xl shadow-sm"
-        />
-        <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-          How different sleeping positions affect knee comfort at night
-        </figcaption>
-      </figure>
-
-      <h3>Why Knees Hurt Lying on Side vs Back</h3>
-      <p>
-        <strong>Side sleeping</strong> is the most common sleeping position, but it can be challenging for sensitive knees. When you lie on your side, the top knee drops across the bottom knee, creating rotational stress. The inner knee of the bottom leg bears the weight of the upper leg, compressing the medial joint surface. Without a pillow between the knees, this position can cause or worsen inner knee discomfort overnight.
-      </p>
-      <p>
-        <strong>Back sleeping</strong> keeps the knees in a more neutral position, but fully extended legs can create hyperextension pressure behind the knee. A small pillow or rolled towel under the knees creates a slight bend that reduces this pressure and supports natural joint alignment.
-      </p>
-      <p>
-        <strong>Stomach sleeping</strong> is generally the most challenging for knee comfort, as it can twist the knee joint and compress the kneecap against the mattress.
-      </p>
-
-      <TipsList tips={[
-        "Place a firm pillow between your knees when side sleeping",
-        "Use a small pillow under your knees when sleeping on your back",
-        "Avoid sleeping with legs fully straight or locked",
-        "Consider a body pillow for consistent knee support throughout the night",
-        "Experiment with slightly different pillow thicknesses to find your ideal support level"
-      ]} />
-
-      <h2>Age-Specific Evening Comfort Routine Before Bedtime</h2>
-      <p>
-        The 30–60 minutes before bed represent an ideal window for knee comfort preparation. A consistent evening routine can significantly reduce nighttime knee discomfort for adults over 40. Here's a practical approach:
-      </p>
-
-      <figure className="my-8">
-        <img
-          src={sectionEveningComfortRoutine}
-          alt="Evening knee comfort routine for adults over 40 showing four steps: gentle stretching, apply warmth, pillow positioning, and elevation"
-          className="w-full h-auto rounded-xl shadow-sm"
-        />
-        <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-          A simple evening routine designed for knee comfort in adults 40+
-        </figcaption>
-      </figure>
-
-      <h3>Step 1: Gentle Evening Stretching (5–10 minutes)</h3>
-      <p>
-        Gentle quad stretches, seated hamstring stretches, and slow ankle circles help release the tension accumulated during the day. Focus on slow, comfortable movements — this isn't about flexibility, it's about signaling your joints to relax before sleep.
-      </p>
-
-      <h3>Step 2: Apply Warmth (15–20 minutes)</h3>
-      <p>
-        Warmth application before bed helps increase blood flow to the joint area, supporting natural lubrication and easing muscle tension. Whether you use a warm compress, heated wrap, or therapy device, the goal is gentle, sustained warmth that helps your knees transition into rest mode.
-      </p>
-
-      <h3>Step 3: Position Your Pillows</h3>
-      <p>
-        Before getting into bed, set up your knee support pillows. Having them ready means you won't need to adjust positions once you're settled. A firm pillow between the knees for side sleepers, or under the knees for back sleepers, makes a significant difference.
-      </p>
-
-      <h3>Step 4: Gentle Elevation (optional)</h3>
-      <p>
-        If your knees feel particularly swollen or heavy after a long day, elevating them slightly for 10–15 minutes before settling into your sleeping position can help with fluid drainage and reduce overnight puffiness.
-      </p>
-
-      <p>
-        For more detailed daily routines, explore our <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee care routine guide</Link> and our article on <Link to="/guides/knee-pain-after-40" className="text-primary hover:underline">knee pain after 40</Link>.
-      </p>
-
-      <h2>When Night Knee Pain Deserves Attention</h2>
-      <p>
-        Most nighttime knee discomfort in adults over 40 is a normal consequence of aging joints and daily wear. However, certain patterns suggest it may be worth consulting a healthcare professional:
-      </p>
-      <ul>
-        <li><strong>Pain that consistently wakes you from sleep</strong> — occasional wake-ups are common, but nightly disruption deserves evaluation</li>
-        <li><strong>Visible swelling that appears overnight</strong> — some fluid changes are normal, but significant swelling may indicate an underlying issue</li>
-        <li><strong>Morning stiffness lasting over 45 minutes</strong> — prolonged stiffness can be a sign of inflammatory conditions</li>
-        <li><strong>Progressive worsening over weeks</strong> — if night pain is getting steadily worse rather than fluctuating, professional input is valuable</li>
-        <li><strong>Night pain combined with warmth and redness</strong> — these together may indicate an inflammatory response that benefits from evaluation</li>
-      </ul>
-
-      <figure className="my-8">
-        <img
-          src={sectionDailyComfortRoutine40s}
-          alt="Daily comfort habits for adults over 40 to support nighttime knee comfort"
-          className="w-full h-auto rounded-xl shadow-sm"
-        />
-        <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-          Building consistent daily habits supports better nighttime knee comfort
-        </figcaption>
-      </figure>
-
-      <InfoBox title="The Age Factor in Night Pain">
-        <p>Research consistently shows that adults over 40 report nighttime joint discomfort at nearly twice the rate of younger adults. This isn't a sign of something "wrong" — it's a natural consequence of decades of joint use. The key is building supportive daily habits rather than trying to eliminate all discomfort.</p>
-      </InfoBox>
-
-      <p>
-        If nighttime knee discomfort is part of a broader pattern, our guides on <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee pain exercises</Link> and <Link to="/guides/knee-mobility-after-50" className="text-primary hover:underline">knee mobility after 50</Link> offer complementary daily strategies.
-      </p>
-    </>
-  ),
-};
+const Figure = ({
+  src,
+  alt,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  caption: string;
+}) => (
+  <figure className="my-8">
+    <img
+      src={src}
+      alt={alt}
+      width={1200}
+      height={760}
+      className="h-auto w-full rounded-xl border border-slate-200 bg-white shadow-sm"
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption className="mt-3 text-center text-sm leading-relaxed text-muted-foreground">
+      {caption}
+    </figcaption>
+  </figure>
+);
 
 export const kneePainAtNightAfter40: ArticleExport = {
-  article,
-  cta: "Want a soothing evening knee comfort routine?"
+  cta: "",
+  article: {
+    slug: "knee-pain-at-night-after-40",
+    title:
+      "Knee Pain at Night After 40: Osteoarthritis, Menopause, and Age-Related Patterns",
+    subtitle:
+      "Separate age-related risk, menopause symptoms, daily load, and sleep-position clues without assuming that age is the diagnosis",
+    intro:
+      "Knee pain at night after 40 can overlap with osteoarthritis, perimenopause or menopause symptoms, an older injury, a change in activity, sleep-position pressure, or another knee condition. This focused guide explains which details help separate those patterns, what to track from evening to morning, and when night pain deserves medical assessment.",
+    metaTitle: "Knee Pain at Night After 40: OA & Menopause",
+    metaDescription:
+      "Compare osteoarthritis, menopause, daily load and sleep-position patterns behind knee pain at night after 40, plus warning signs and what to track.",
+    heroImage,
+    publishedDate: "March 3, 2026",
+    lastUpdated: "July 29, 2026",
+    nextSlug: "why-do-my-knees-hurt-when-sleeping",
+    nextTitle: "Why Knees Hurt When Sleeping",
+    faqs: nightPainAfter40Faqs,
+    seoTags:
+      "knee pain at night after 40, knee pain at night after 50, menopause knee pain at night, perimenopause knee pain, osteoarthritis knee pain at night, aging knees hurt at night, night knee stiffness over 40, morning stiffness after 40, knee pain waking me up after 40, knee pain in middle aged women, joint pain menopause sleep, knee osteoarthritis sleep",
+    sources: [
+      {
+        title: "Symptoms of menopause and perimenopause",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/conditions/menopause-and-perimenopause/symptoms/",
+      },
+      {
+        title: "Osteoarthritis in over 16s: diagnosis and management",
+        publisher: "National Institute for Health and Care Excellence",
+        url: "https://www.nice.org.uk/guidance/ng226/chapter/recommendations",
+      },
+      {
+        title: "Osteoarthritis",
+        publisher: "MedlinePlus, U.S. National Library of Medicine",
+        url: "https://medlineplus.gov/ency/article/000423.htm",
+      },
+      {
+        title: "Knee pain",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/symptoms/knee-pain/",
+      },
+      {
+        title: "Knee Pain in Adults and Adolescents: The Initial Evaluation",
+        publisher: "American Academy of Family Physicians",
+        url: "https://www.aafp.org/pubs/afp/issues/2018/1101/p576.html",
+      },
+      {
+        title: "Knee pain and sleep-position guidance",
+        publisher: "Leicestershire Partnership NHS Trust",
+        url: "https://www.leicspart.nhs.uk/msk-physiotherapy-resources/getting-started/lower-limb/knee/",
+      },
+    ],
+    content: (
+      <>
+        <QuickAnswer>
+          <p>
+            <strong>
+              Knee pain at night after 40 is a pattern, not proof that the knee is
+              simply wearing out.
+            </strong>{" "}
+            Osteoarthritis becomes more likely with age, but menopause symptoms, previous
+            injury, daily load, a sensitive tendon or bursa, swelling, and sleep position
+            can overlap.
+          </p>
+          <p>
+            Track whether the pain is in one or both knees, what happened during the day,
+            how long morning stiffness lasts, and whether there is swelling, warmth,
+            locking, instability, or loss of motion. A hot red swollen knee, inability to
+            bear weight, major swelling, deformity, or true locking needs urgent guidance.
+          </p>
+        </QuickAnswer>
+
+        <h2>How This Guide Differs From General Night Knee Pain</h2>
+        <p>
+          The main guide to{" "}
+          <Link to="/guides/why-do-my-knees-hurt-when-sleeping">
+            why knees hurt when sleeping
+          </Link>{" "}
+          covers night pain at any age, sleep positions, side sleeping, pain behind the
+          knee, throbbing, and broad comfort questions. This page has a narrower job: it
+          looks at the patterns that become especially relevant in midlife and later life.
+        </p>
+
+        <div className="my-8 overflow-x-auto rounded-xl border border-slate-200">
+          <table className="w-full min-w-[680px] border-collapse text-left">
+            <thead className="bg-slate-100 text-slate-950">
+              <tr>
+                <th className="p-4 font-semibold">Use this guide when</th>
+                <th className="p-4 font-semibold">Primary focus</th>
+                <th className="p-4 font-semibold">Best next page</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200">
+              <tr>
+                <td className="p-4">Night knee pain can happen at any age</td>
+                <td className="p-4">General causes, positions, throbbing, and sleep comfort</td>
+                <td className="p-4">
+                  <Link to="/guides/why-do-my-knees-hurt-when-sleeping">
+                    General night knee pain guide
+                  </Link>
+                </td>
+              </tr>
+              <tr>
+                <td className="p-4">Symptoms became relevant after 40 or around menopause</td>
+                <td className="p-4">
+                  Osteoarthritis, menopause, age-related risk, and morning stiffness
+                </td>
+                <td className="p-4">Continue with this focused guide</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Four Patterns to Compare After 40</h2>
+        <p>
+          More than one pattern can be present. The purpose of comparing them is to improve
+          the description you bring to a healthcare professional, not to diagnose the knee
+          from one symptom.
+        </p>
+
+        <div className="my-8 overflow-x-auto rounded-xl border border-slate-200">
+          <table className="w-full min-w-[760px] border-collapse text-left">
+            <thead className="bg-slate-100 text-slate-950">
+              <tr>
+                <th className="p-4 font-semibold">Pattern</th>
+                <th className="p-4 font-semibold">Useful clues</th>
+                <th className="p-4 font-semibold">What not to assume</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200">
+              <tr>
+                <td className="p-4 font-semibold">Osteoarthritis-type pattern</td>
+                <td className="p-4">
+                  Activity-related pain, stiffness after rest, reduced motion, crepitus,
+                  swelling, symptoms worse near the end of the day
+                </td>
+                <td className="p-4">Night pain alone does not confirm osteoarthritis</td>
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold">Perimenopause or menopause context</td>
+                <td className="p-4">
+                  Joint or muscle aches with cycle changes, hot flushes, night sweats, or
+                  symptoms in more than one area
+                </td>
+                <td className="p-4">
+                  A new one-sided knee problem should not automatically be blamed on hormones
+                </td>
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold">Daily-load or previous-injury pattern</td>
+                <td className="p-4">
+                  Symptoms follow stairs, walking, kneeling, exercise, a new routine, or an
+                  older injury
+                </td>
+                <td className="p-4">Age does not make every load response permanent damage</td>
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold">Position and pressure pattern</td>
+                <td className="p-4">
+                  Pain changes when the knees touch, the top leg rotates, or the knee stays
+                  deeply bent or fully straight
+                </td>
+                <td className="p-4">A pillow response does not identify the underlying cause</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <Figure
+          src={sectionNightStiffnessCycle}
+          alt="Evening-to-morning knee symptom tracker showing daily load, sleep setup, night waking, morning stiffness, and reassessment"
+          caption="Track the full evening-to-morning pattern instead of relying on the clock alone."
+        />
+
+        <h2>Knee Osteoarthritis and Night Pain After 40</h2>
+        <p>
+          Osteoarthritis becomes more common with age, but imaging changes and symptoms do
+          not always match. A clinical pattern is more useful. NICE guidance describes a
+          typical osteoarthritis presentation in adults 45 or older as activity-related
+          joint pain with either no morning stiffness or stiffness lasting no longer than
+          30 minutes. These clues support an evaluation; they are not a self-diagnosis.
+        </p>
+        <p>
+          Earlier osteoarthritis symptoms may be most noticeable with walking, stairs, or at
+          the end of the day. More established symptoms can also occur during rest or wake
+          someone at night. Record swelling, loss of motion, instability, and how the knee
+          responds to movement. A clinician may not need imaging when the clinical pattern
+          is typical, but atypical features can change that decision.
+        </p>
+
+        <Figure
+          src={sectionJointChangesAging}
+          alt="Age-related knee pain factors including osteoarthritis risk, previous injury, muscle capacity, activity load, and sleep"
+          caption="Age changes the probability of some conditions, but it does not identify one cause by itself."
+        />
+
+        <p>
+          For a wider discussion of age and activity, use the guide to{" "}
+          <Link to="/guides/why-knee-pain-gets-worse-with-age">
+            why knee pain may change with age
+          </Link>
+          . For a direct comparison of arthritis patterns, see{" "}
+          <Link to="/guides/knee-osteoarthritis-vs-rheumatoid-arthritis">
+            knee osteoarthritis versus rheumatoid arthritis
+          </Link>
+          .
+        </p>
+
+        <h2>Perimenopause, Menopause, and Knee Pain at Night</h2>
+        <p>
+          NHS guidance lists muscle aches and joint pains among the possible symptoms of
+          perimenopause and menopause. Sleep can also be disrupted by hot flushes or night
+          sweats, which can make any existing knee discomfort harder to tolerate. The
+          connection is relevant, but it does not mean every knee symptom is caused by
+          menopause.
+        </p>
+        <p>
+          A menopause-related context is more plausible when knee discomfort appears within
+          a broader change that may include symptoms in several joints, altered periods,
+          hot flushes, sleep disruption, or other recognized menopause symptoms. A new
+          swollen knee, one-sided mechanical symptoms, an injury, locking, or instability
+          still needs its own knee assessment.
+        </p>
+
+        <InfoBox title="Menopause Context Is Not a Knee Diagnosis">
+          <p>
+            Bring both timelines to an appointment: when menopause or perimenopause
+            symptoms changed and when the knee pattern changed. That helps avoid dismissing
+            a knee problem as age-related while still considering the wider symptom picture.
+          </p>
+        </InfoBox>
+
+        <p>
+          Read the focused{" "}
+          <Link to="/guides/menopause-knee-pain">
+            menopause and knee pain guide
+          </Link>{" "}
+          for a broader discussion of midlife joint symptoms.
+        </p>
+
+        <h2>Night Pain by Location and Daily Trigger</h2>
+        <p>
+          Location is useful for organizing the story, but no location has only one cause.
+          Pair the exact area with the activity that preceded the episode and the symptoms
+          that appeared with it.
+        </p>
+
+        <Figure
+          src={sectionNightPainLocations}
+          alt="Front, inner, outer, and back knee locations to record when night pain occurs after age 40"
+          caption="Use location to describe the symptom, then add the trigger, swelling, and movement response."
+        />
+
+        <ul>
+          <li>
+            <strong>Front of the knee:</strong> record stairs, squats, kneeling, prolonged
+            sitting, and pressure from stomach sleeping.
+          </li>
+          <li>
+            <strong>Inner or outer knee:</strong> record side-sleeping pressure, twisting,
+            joint-line tenderness, locking, or giving way.
+          </li>
+          <li>
+            <strong>Back of the knee:</strong> record fullness, a new lump, loss of
+            extension, and any calf pain or swelling.
+          </li>
+          <li>
+            <strong>Both knees:</strong> record morning stiffness, other painful joints,
+            activity changes, and menopause or systemic symptoms.
+          </li>
+        </ul>
+
+        <h2>What to Track From Evening to Morning</h2>
+        <p>
+          A seven-day log is often more useful than trying to remember the worst night. Use
+          the same short fields each day:
+        </p>
+
+        <div className="my-8 overflow-x-auto rounded-xl border border-slate-200">
+          <table className="w-full min-w-[720px] border-collapse text-left">
+            <thead className="bg-slate-100 text-slate-950">
+              <tr>
+                <th className="p-4 font-semibold">Time</th>
+                <th className="p-4 font-semibold">Record</th>
+                <th className="p-4 font-semibold">Why it helps</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200">
+              <tr>
+                <td className="p-4 font-semibold">Evening</td>
+                <td className="p-4">Walking, stairs, exercise, kneeling, swelling, warmth</td>
+                <td className="p-4">Shows whether daily load is linked to the episode</td>
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold">During the night</td>
+                <td className="p-4">Position, exact location, pain quality, night waking</td>
+                <td className="p-4">Separates pressure-sensitive and position-sensitive clues</td>
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold">Morning</td>
+                <td className="p-4">Minutes of stiffness, swelling, first-step response</td>
+                <td className="p-4">Adds a useful osteoarthritis or inflammatory clue</td>
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold">Wider context</td>
+                <td className="p-4">Other joints, hot flushes, cycle changes, fatigue, fever</td>
+                <td className="p-4">Shows whether the knee is part of a broader pattern</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Sleep Positions: Keep This Section Focused</h2>
+        <p>
+          Position changes may reduce pressure, but they do not treat osteoarthritis or
+          menopause-related symptoms. Try one adjustment at a time so you can tell whether
+          it actually changes the night pattern.
+        </p>
+
+        <Figure
+          src={sectionSleepingPositionsImpact}
+          alt="Side and back sleeping options with pillow support for adults over 40 who have knee pain at night"
+          caption="Use the smallest support that improves comfort without forcing the knee into a painful angle."
+        />
+
+        <TipsList
+          tips={[
+            "Place a pillow between the knees when side sleeping if knee-to-knee pressure is uncomfortable",
+            "Try light support under the knees when back sleeping if full extension feels uncomfortable",
+            "Avoid a very thick pillow that forces the knee into a deep bend",
+            "Change one part of the sleep setup at a time and record the result",
+            "Do not force a position when the knee is locked, very swollen, or acutely injured",
+          ]}
+        />
+
+        <h2>An Evening Routine That Does Not Hide Warning Signs</h2>
+        <p>
+          The goal of an evening routine is comfort and observation. It should not delay
+          assessment of persistent sleep disruption, progressive symptoms, or warning signs.
+        </p>
+
+        <Figure
+          src={sectionEveningComfortRoutine}
+          alt="Evening knee comfort routine after 40 with symptom check, gentle movement, optional warmth, and pillow setup"
+          caption="Check the knee first, then choose a comfort step that matches the current symptoms."
+        />
+
+        <ol>
+          <li>
+            <strong>Check before treating:</strong> look for new swelling, redness, unusual
+            heat, deformity, locking, or loss of weight-bearing ability.
+          </li>
+          <li>
+            <strong>Use gentle movement:</strong> a few comfortable bends and straightens
+            may help a stiff knee, but do not push through sharp pain or a blocked motion.
+          </li>
+          <li>
+            <strong>Choose temperature carefully:</strong> gentle warmth may feel comfortable
+            for stiffness when the knee is not newly injured, swollen, hot, or red.
+          </li>
+          <li>
+            <strong>Prepare the sleep setup:</strong> position a pillow before settling so
+            the knee is not left twisted or pressed against the other knee.
+          </li>
+          <li>
+            <strong>Protect sleep:</strong> discuss repeated night waking with a healthcare
+            professional rather than endlessly changing pillows or routines.
+          </li>
+        </ol>
+
+        <Figure
+          src={sectionDailyComfortRoutine40s}
+          alt="Daytime and evening habits that support a knee pain assessment after age 40"
+          caption="Daytime load, strength, sleep, and symptom tracking work together."
+        />
+
+        <h2>When to Get Medical Help</h2>
+        <aside
+          aria-label="Urgent knee pain warning signs"
+          className="my-6 rounded-xl border border-rose-200 bg-rose-50 p-5 text-slate-800"
+        >
+          <ul className="!mb-0 space-y-2">
+            <li className="!mb-0">
+              The knee is very painful, locked, deformed, or you cannot move it or bear weight
+            </li>
+            <li className="!mb-0">
+              Swelling is major or rapid, or the knee is hot and red with fever, chills, or
+              feeling unwell
+            </li>
+            <li className="!mb-0">
+              The knee repeatedly gives way and causes falls, or there is new marked numbness,
+              weakness, or a cold or discolored foot
+            </li>
+            <li className="!mb-0">
+              New calf swelling or pain occurs with chest pain or breathing difficulty; seek
+              emergency help
+            </li>
+          </ul>
+        </aside>
+
+        <h2>How the Pattern Is Evaluated</h2>
+        <p>
+          A knee assessment usually starts with the history and physical examination. Useful
+          details include exact location, onset, night waking, daily triggers, trauma,
+          swelling, warmth, morning stiffness, mechanical symptoms, other painful joints,
+          systemic symptoms, menopause context, and previous knee problems.
+        </p>
+        <p>
+          Imaging is not automatic for every adult over 40. Typical osteoarthritis can often
+          be assessed clinically, while atypical symptoms, trauma, persistent loss of
+          function, mechanical symptoms, or concern about another condition may change the
+          investigation.
+        </p>
+
+        <ArticleFaqAccordion
+          faqs={nightPainAfter40Faqs}
+          headingId="knee-pain-at-night-after-40-frequently-asked-questions"
+        />
+      </>
+    ),
+  },
 };

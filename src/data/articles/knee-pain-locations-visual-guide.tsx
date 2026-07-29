@@ -650,17 +650,26 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
           </li>
         </ol>
 
-        <h2>When the Location Needs Prompt Assessment</h2>
-        <NoteBox tone="red">
-          <p className="font-semibold">Seek urgent medical guidance if:</p>
-          <ul className="mb-0 mt-3">
-            <li>the knee looks deformed after an injury;</li>
-            <li>you cannot bear weight or the knee gives way after trauma;</li>
-            <li>swelling is sudden or severe, or movement is markedly limited;</li>
-            <li>the knee is red, hot, and swollen with fever;</li>
-            <li>pain behind the knee is accompanied by concerning calf swelling, chest pain, or breathlessness.</li>
+        <h2>When to Get Medical Help</h2>
+        <aside
+          aria-label="Urgent knee pain warning signs"
+          className="my-6 rounded-xl border border-rose-200 bg-rose-50 p-5 text-slate-800"
+        >
+          <ul className="!mb-0 space-y-2">
+            <li className="!mb-0">
+              The knee is deformed after an injury, or you cannot move it or bear weight
+            </li>
+            <li className="!mb-0">
+              Swelling is sudden or severe, or the knee is locked or repeatedly gives way
+            </li>
+            <li className="!mb-0">
+              The knee is hot, red, and swollen with fever or feeling unwell
+            </li>
+            <li className="!mb-0">
+              Calf swelling occurs with chest pain or breathlessness; seek emergency help
+            </li>
           </ul>
-        </NoteBox>
+        </aside>
         <p>
           If the pain began suddenly without an obvious explanation, our{" "}
           <Link to="/guides/sudden-knee-pain-guide" className="text-primary underline hover:opacity-80">sudden knee pain guide</Link> can help you organize the history and warning signs before seeking care.

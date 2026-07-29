@@ -272,10 +272,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "why-do-my-knees-hurt-when-sleeping",
-    title: "Why Knees Hurt When Sleeping: Night Pain & Comfort",
-    description: "Discover why knee pain gets worse at night and when sleeping. Explore common causes, best sleeping positions for knee comfort, and daily tips for better rest.",
-    readTime: 14,
-    lastModified: "2026-07-19",
+    title: "Why Do My Knees Hurt at Night or When Sleeping?",
+    description: "Learn why knees may ache, throb, or feel stiff at night, how sleep position affects symptoms, what to track, and which warning signs need medical care.",
+    readTime: 16,
+    lastModified: "2026-07-29",
   },
   {
     slug: "why-do-my-knees-crack-or-pop",
@@ -371,10 +371,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "knee-pain-at-night-after-40",
-    title: "Knee Pain at Night After 40: Age-Related Causes",
-    description: "Why does knee pain get worse at night after 40? Learn age-related causes of night knee stiffness, sleeping positions, and evening comfort routines for better rest.",
+    title: "Knee Pain at Night After 40: OA & Menopause",
+    description: "Compare osteoarthritis, menopause, daily load, and sleep-position patterns behind knee pain at night after 40, plus warning signs and what to track.",
     readTime: 15,
-    lastModified: "2026-03-03",
+    lastModified: "2026-07-29",
   },
   {
     slug: "knee-clicking-when-walking",

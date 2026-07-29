@@ -1,398 +1,491 @@
-import { ArticleExport } from "./types";
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
+import ArticleFaqAccordion from "@/components/ArticleFaqAccordion";
 import { NightKneePainCausesChart, SleepPositionImpactChart } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-night-knee-pain.jpg";
 import articleSectionStretching from "@/assets/article-section-stretching-relief.jpg";
 import articleSectionWarmth from "@/assets/article-section-warmth.jpg";
 import articleSectionKneeBending from "@/assets/package-4/exercise-gentle-knee-flexion.svg";
+import type { ArticleExport } from "./types";
+
+const nightKneePainFaqs = [
+  {
+    question: "Why do my knees hurt at night but not during the day?",
+    answer:
+      "Symptoms can become more noticeable after the day's activity, when the knee stays in one position, or when there are fewer distractions. The timing does not identify a cause. Record the day's load, sleep position, exact location, swelling, warmth, and morning response.",
+  },
+  {
+    question: "Why do my knees hurt when I sleep on my side?",
+    answer:
+      "Side sleeping can bring the knees together or let the top leg rotate, which may increase pressure on a sensitive area. A pillow between the knees may improve comfort, but a response to pillow support does not diagnose the cause.",
+  },
+  {
+    question: "Can sleeping position affect knee pain?",
+    answer:
+      "Yes. A prolonged bend, full extension, twisting, or direct knee-to-knee pressure can change symptoms. Try one small position adjustment at a time and avoid forcing a knee that is locked, very swollen, or recently injured.",
+  },
+  {
+    question: "Why do my knees throb at night?",
+    answer:
+      "People use throbbing to describe several sensations. It may accompany swelling, warmth, an activity-related flare, or increased awareness at rest. A hot red swollen knee, fever, rapid swelling, or severe worsening pain needs prompt medical guidance.",
+  },
+  {
+    question: "Why does the back of my knee hurt at night?",
+    answer:
+      "Structures behind the knee include tendons, muscles, the joint capsule, and the popliteal area. Position, swelling, or a Baker's cyst can be relevant. A new lump, marked swelling, calf pain, redness, or warmth should be assessed.",
+  },
+  {
+    question: "Does warmth help nighttime knee discomfort?",
+    answer:
+      "Gentle warmth may feel comfortable for stiffness when the knee is not newly injured, swollen, unusually hot, or red. Do not use heat over an acute injury or a hot swollen knee, and stop if symptoms increase. Warmth does not treat the underlying cause.",
+  },
+  {
+    question: "Why do a teenager's knees hurt at night?",
+    answer:
+      "Activity load, sports, an injury, or a growth-related condition can be relevant, but pain should not automatically be labeled growing pains. Persistent pain, swelling, a limp, night waking, fever, or reduced activity deserves assessment.",
+  },
+  {
+    question: "When should nighttime knee pain be checked urgently?",
+    answer:
+      "Seek urgent guidance for a very painful knee, inability to move it or bear weight, major swelling or deformity, true locking, repeated giving way, or a hot red swollen knee with fever or feeling unwell. Concerning calf swelling, breathing symptoms, new marked weakness, or a cold discolored foot also need prompt help.",
+  },
+];
+
+const QuickAnswer = ({ children }: { children: ReactNode }) => (
+  <aside
+    aria-label="Quick answer"
+    className="my-7 rounded-xl border border-sky-200 bg-sky-50 p-5 text-slate-900"
+  >
+    <p className="mb-2 text-sm font-bold uppercase tracking-wide text-sky-800">
+      Quick Answer
+    </p>
+    <div className="space-y-3 leading-relaxed">{children}</div>
+  </aside>
+);
+
+const Figure = ({
+  src,
+  alt,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  caption: string;
+}) => (
+  <figure className="my-8">
+    <img
+      src={src}
+      alt={alt}
+      width={1200}
+      height={760}
+      className="h-auto w-full rounded-xl border border-slate-200 bg-white shadow-sm"
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption className="mt-3 text-center text-sm leading-relaxed text-muted-foreground">
+      {caption}
+    </figcaption>
+  </figure>
+);
 
 export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
   cta: "",
   article: {
     slug: "why-do-my-knees-hurt-when-sleeping",
-    title: "Why Do My Knees Hurt When Sleeping? Complete Guide to Night Knee Pain, Causes & Comfort Tips",
-    subtitle: "Understanding why knee discomfort intensifies at night and what you can do about it",
-    intro: "If you have ever asked yourself 'why do my knees hurt at night?' or wondered why knee pain seems to get worse when you lie down, you are not alone. Millions of people experience knee discomfort that intensifies during sleep, disrupting rest and leaving knees feeling stiff by morning. This comprehensive guide explores the most common reasons behind nighttime knee pain, explains why certain sleeping positions make things worse, and shares practical comfort tips you can start using tonight.",
-    metaTitle: "Why Do My Knees Hurt When Sleeping? Night Knee Pain Guide",
-    metaDescription: "Discover why knee pain gets worse at night and when sleeping. Explore common causes, best sleeping positions for knee comfort, and daily tips for better rest.",
-    heroImage: heroImage,
+    title: "Why Do My Knees Hurt at Night or When Sleeping?",
+    subtitle:
+      "Compare activity, sleep-position, location, swelling, and warning-sign clues behind nighttime knee pain",
+    intro:
+      "Knee pain at night can feel like an ache, throb, stiffness, pressure, burning sensation, or a sharp pain that appears when you change position. The clock alone cannot identify the cause. This guide covers nighttime knee pain at any age, including side sleeping, pain behind the knee, sleep positions, morning stiffness, and the signs that need medical assessment.",
+    metaTitle: "Why Do My Knees Hurt at Night? Causes & Sleep Tips",
+    metaDescription:
+      "Learn why knees may ache, throb or feel stiff at night, how sleep position affects symptoms, what to track and which warning signs need medical care.",
+    heroImage,
     publishedDate: "February 25, 2026",
-    lastUpdated: "July 19, 2026",
-    faqs: [
-      { question: "Why do my knees hurt at night but not during the day?", answer: "During the day, movement and activity help circulate fluid through the knee joint and keep tissues flexible. At night, reduced movement allows fluid to pool around the joint, and the absence of distractions makes you more aware of sensations you might otherwise overlook." },
-      { question: "Why do my knees hurt when I sleep on my side?", answer: "Side sleeping often causes the upper knee to rotate inward, creating pressure on the inner knee structures. The lower knee bears the weight of the upper leg, compressing the outer knee area. Placing a pillow between your knees helps maintain alignment and reduces this pressure." },
-      { question: "Can sleeping position really affect knee pain?", answer: "Yes. Different positions place varying amounts of stress on different parts of the knee. Back sleeping with a small pillow under the knees is generally the most joint-friendly position, while stomach sleeping can hyperextend the knees and increase discomfort." },
-      { question: "Why do my knees throb at night?", answer: "Throbbing sensations at night are often related to increased blood flow to the area as the body enters rest mode. Inflammatory processes that were managed during daytime activity may become more noticeable when the body shifts focus to recovery and repair during sleep." },
-      { question: "Why do my knees crack when I get up after sleeping?", answer: "Cracking or popping sounds after sleep are commonly caused by gas bubbles releasing in the synovial fluid, or by tendons and ligaments shifting over bony surfaces after being in one position for hours. This is usually harmless and often decreases after a few minutes of movement." },
-      { question: "Does warmth help with nighttime knee discomfort?", answer: "Many people find that applying gentle warmth before bed helps relax the muscles and tissues around the knee, reducing stiffness and promoting comfort through the night. A 15 to 20 minute warmth session before sleep is a common approach." },
-      { question: "Why do my knees hurt so bad at night as a teenager?", answer: "Teenagers may experience nighttime knee discomfort due to rapid growth, increased physical activity from sports, or the effects of growth-related changes on the bones and soft tissues around the knee. These patterns are usually temporary but should be discussed with a healthcare provider if persistent." },
-      { question: "When should I see a doctor about nighttime knee pain?", answer: "Consider seeking professional guidance if nighttime knee pain is accompanied by significant swelling, warmth, redness, inability to bear weight, or if it consistently disrupts your sleep for more than two weeks despite trying comfort strategies." },
+    lastUpdated: "July 29, 2026",
+    faqs: nightKneePainFaqs,
+    seoTags:
+      "why do my knees hurt at night, knee pain at night, aching knees at night, sore knees at night, nighttime knee pain, why do my knees hurt when sleeping, knee pain lying down, knees throb at night, side sleeping knee pain, back of knee pain at night, knee stiffness at night, knee pain waking me up, warm knee at night, teenager knee pain at night, best sleeping position for knee pain",
+    sources: [
+      {
+        title: "Knee pain",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/symptoms/knee-pain/",
+      },
+      {
+        title: "Knee Pain in Adults and Adolescents: The Initial Evaluation",
+        publisher: "American Academy of Family Physicians",
+        url: "https://www.aafp.org/pubs/afp/issues/2018/1101/p576.html",
+      },
+      {
+        title: "Osteoarthritis",
+        publisher: "MedlinePlus, U.S. National Library of Medicine",
+        url: "https://medlineplus.gov/ency/article/000423.htm",
+      },
+      {
+        title: "Baker's Cyst (Popliteal Cyst)",
+        publisher: "American Academy of Orthopaedic Surgeons",
+        url: "https://orthoinfo.aaos.org/diseases--conditions/bakers-cyst-popliteal-cyst/",
+      },
+      {
+        title: "Meniscus Tears",
+        publisher: "American Academy of Orthopaedic Surgeons",
+        url: "https://orthoinfo.aaos.org/en/diseases--conditions/meniscus-tears/",
+      },
+      {
+        title: "Knee pain and sleep-position guidance",
+        publisher: "Leicestershire Partnership NHS Trust",
+        url: "https://www.leicspart.nhs.uk/msk-physiotherapy-resources/getting-started/lower-limb/knee/",
+      },
+      {
+        title: "Osteoarthritis and Sleep",
+        publisher: "Arthritis Foundation",
+        url: "https://www.arthritis.org/health-wellness/healthy-living/managing-pain/fatigue-sleep/osteoarthritis-and-sleep",
+      },
     ],
     content: (
       <>
+        <QuickAnswer>
+          <p>
+            <strong>
+              Knee pain at night may be linked to the day's activity, a prolonged sleep
+              position, osteoarthritis, a tendon or bursa, swelling, an old injury, or
+              another condition.
+            </strong>{" "}
+            Nighttime makes the pattern noticeable, but it does not provide a diagnosis.
+          </p>
+          <p>
+            Record the exact location, whether one or both knees are affected, the position
+            that triggers it, swelling, warmth, locking, instability, morning stiffness,
+            and how often pain wakes you. Seek urgent guidance for a hot red swollen knee,
+            inability to bear weight, major swelling, deformity, or true locking.
+          </p>
+        </QuickAnswer>
+
+        <h2>What Nighttime Knee Pain Can and Cannot Tell You</h2>
         <p>
-          Why do my knees hurt? It is one of the most commonly searched health questions online, and for good reason. Knee discomfort affects people of all ages, from teenagers dealing with growth-related changes to adults managing the effects of daily wear on their joints. But for many people, the frustration is not just that their knees hurt: it is that the discomfort seems to get significantly worse at night.
-        </p>
-        <p>
-          If you have noticed that your knees ache, throb, or feel stiff specifically when you lie down or try to sleep, you are experiencing a pattern that millions share. Knee pain at night is remarkably common, and understanding why it happens is the first step toward improving your comfort and getting better rest.
-        </p>
-        <p>
-          This guide covers the full spectrum of nighttime knee discomfort: why it happens, what causes it, how sleeping position plays a role, what knee cracking and warmth sensations mean, and practical strategies you can use to support your comfort every night. Whether you are dealing with knee stiffness in the morning, night knee throbbing, or wondering why the back of your knees hurt after lying down, you will find clear, practical answers below.
+          Timing is one clue among several. Pain that begins after a high-load day may have
+          a different pattern from pain caused by knee-to-knee pressure, pain that wakes you
+          regardless of position, or severe pain with swelling and loss of motion.
         </p>
 
-        <h2>Why Knee Pain Happens at Night</h2>
-        <p>
-          Understanding why knees hurt more at night requires looking at several factors that converge once you stop moving and settle into bed. During the day, regular movement keeps synovial fluid circulating through the knee joint, providing natural lubrication and cushioning. Walking, standing, shifting positions: all of these activities help maintain joint flexibility and distribute fluid evenly throughout the joint space.
-        </p>
-
-        <h3>Reduced Movement and Fluid Pooling</h3>
-        <p>
-          When you lie down for the night, this natural circulation slows dramatically. Fluid can begin to pool around the joint, creating a sensation of pressure, fullness, or stiffness that was not noticeable during the day. The longer you remain still, the more pronounced this effect becomes, which is why many people find their knees feel worst in the first few hours of lying down and again when they first wake up.
-        </p>
-
-        <h3>Heightened Pain Awareness at Night</h3>
-        <p>
-          During daytime hours, your brain processes an enormous amount of sensory input: visual, auditory, social, and physical stimuli all compete for attention. This natural distraction effect means that mild to moderate knee sensations often go unnoticed or feel manageable. At night, with external stimulation reduced to near zero, your brain has far fewer competing signals. Sensations that were background noise during the day can suddenly feel intense and unavoidable.
-        </p>
-        <p>
-          Research suggests that the body's pain perception pathways actually shift during the evening hours. Cortisol levels, which help manage the body's response to discomfort, naturally decrease as bedtime approaches. This hormonal shift can make the same level of knee discomfort feel noticeably stronger at night compared to what you experienced during the afternoon.
-        </p>
-
-        <h3>Inflammatory Processes During Rest</h3>
-        <p>
-          The body uses sleep as its primary recovery period. During rest, inflammatory responses that were modulated during activity can become more active as the body focuses resources on tissue maintenance and repair. For people whose knees are dealing with accumulated daily stress, this nighttime repair activity can produce warmth, throbbing, or aching sensations that are most noticeable when everything else is quiet.
-        </p>
-<h2>Most Common Causes of Night Knee Pain</h2>
-        <p>
-          While the mechanisms above explain why knee discomfort feels worse at night, the underlying causes of that discomfort vary widely. Here are the most common factors, ranked by how frequently people report them:
-        </p>
+        <div className="my-8 overflow-x-auto rounded-xl border border-slate-200">
+          <table className="w-full min-w-[760px] border-collapse text-left">
+            <thead className="bg-slate-100 text-slate-950">
+              <tr>
+                <th className="p-4 font-semibold">Night pattern</th>
+                <th className="p-4 font-semibold">Useful clues</th>
+                <th className="p-4 font-semibold">Next question</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200">
+              <tr>
+                <td className="p-4 font-semibold">After an active day</td>
+                <td className="p-4">Walking, stairs, exercise, kneeling, new workload</td>
+                <td className="p-4">Does reducing or pacing the trigger change the next night?</td>
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold">Only in one position</td>
+                <td className="p-4">Side sleeping, knees touching, deep bend, full extension</td>
+                <td className="p-4">Does a small support change reduce pressure?</td>
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold">With stiffness after rest</td>
+                <td className="p-4">Morning duration, swelling, age, activity response</td>
+                <td className="p-4">Does comfortable movement ease the stiffness?</td>
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold">With mechanical symptoms</td>
+                <td className="p-4">Catching, locking, giving way, painful clicking</td>
+                <td className="p-4">Is motion physically blocked or walking unsafe?</td>
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold">With systemic warning signs</td>
+                <td className="p-4">Fever, feeling unwell, unexplained weight loss, hot red knee</td>
+                <td className="p-4">Is urgent medical guidance needed?</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <NightKneePainCausesChart />
 
-        <h3>1. Joint Stiffness from Daily Wear</h3>
+        <h2>Why Knee Symptoms May Feel Worse at Night</h2>
         <p>
-          This is by far the most common cause of nighttime knee discomfort in adults over 35. Years of walking, climbing stairs, exercising, and simply bearing body weight create cumulative effects on the cartilage, tendons, and ligaments within the knee joint. By the end of the day, these structures are at their most fatigued, and lying down does not immediately relieve the tension they have accumulated. For a broader perspective on everyday knee discomfort patterns, our guide on <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">common causes of knee pain</Link> explores these daily factors in detail.
+          Several effects can overlap. The knee has already handled the day's load, sleep
+          keeps it in fewer positions for longer periods, and quiet surroundings can make
+          an existing sensation easier to notice. Pain can also disturb sleep, while poor
+          sleep can make pain harder to tolerate the next day.
         </p>
-
-        <h3>2. Muscle Tension and Imbalance</h3>
         <p>
-          The muscles surrounding the knee, including the quadriceps, hamstrings, calves, and IT band, play a critical role in joint stability. When these muscles are tight, weak, or imbalanced, they can pull on the knee structures unevenly, creating discomfort that becomes most apparent when you stop moving and the muscles settle into their shortened positions during sleep.
+          These factors explain why timing matters, but they do not prove that fluid pooling,
+          inflammation, circulation, or one specific tissue is responsible. The safest
+          approach is to connect the night symptom with location, trigger, swelling,
+          function, and the morning response.
         </p>
-
-        <h3>3. Activity-Related Strain</h3>
-        <p>
-          If you exercise, play sports, or have a physically demanding job, the effects of that activity often do not peak until hours later. Many people notice that their knees feel fine during a workout but begin to ache significantly in the evening or after going to bed. This delayed response is the body's natural reaction to accumulated physical stress.
-        </p>
-
-        <h3>4. Cartilage Changes</h3>
-        <p>
-          Over time, the cartilage that cushions the knee joint can thin or change in texture. These changes reduce the joint's shock-absorbing capacity, meaning that even normal daily activities create more direct contact between bony surfaces. This effect is particularly noticeable at night when the joint is no longer being actively cushioned by movement.
-        </p>
-
-        <h3>5. Meniscus and Soft Tissue Considerations</h3>
-        <p>
-          The meniscus, a C-shaped piece of cartilage that acts as a shock absorber between the shinbone and thighbone, is a common source of knee discomfort. Meniscus changes, whether from gradual wear or specific incidents, often produce symptoms that are most noticeable during position changes and at night when the knee is held in one position for extended periods.
-        </p>
-
-        <h3>6. Knee Tendinitis Patterns</h3>
-        <p>
-          Knee tendinitis involves the tendons around the knee becoming irritated from repetitive use. Common types include patellar tendinitis (affecting the tendon below the kneecap) and quadriceps tendinitis (above the kneecap). People with tendon-related discomfort often report that their knees feel particularly stiff and uncomfortable after periods of inactivity, making nighttime a common trigger for increased awareness. If you experience discomfort specifically in the front knee area, our <Link to="/guides/front-knee-tightness-after-activity" className="text-primary hover:underline">front knee tightness guide</Link> provides more detail.
-        </p>
-
-        <figure className="my-8">
-          <img src={articleSectionKneeBending} alt="Two-step illustration of gentle knee flexion and extension through a comfortable range" className="w-full h-auto rounded-xl shadow-sm" loading="lazy"  decoding="async"  width={1200} height={760} />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">A gentle bend-and-straighten movement can be used as a comfort check when it is appropriate and pain-free</figcaption>
-        </figure>
 
         <h2>Why Do My Knees Hurt When I Sleep on My Side?</h2>
         <p>
-          Side sleeping is the most popular sleeping position, but it is also one of the most problematic for knee comfort. Understanding the mechanics helps explain why so many side sleepers struggle with nighttime knee discomfort.
-        </p>
-
-        <h3>The Mechanics of Side Sleeping and Knee Pressure</h3>
-        <p>
-          When you sleep on your side, your legs naturally stack or overlap. This creates two distinct pressure points on your knees:
-        </p>
-        <ul>
-          <li><strong>Lower knee compression</strong>: the lower knee bears the weight of the upper leg, pressing the outer knee structures against the mattress surface</li>
-          <li><strong>Upper knee rotation</strong>: the upper knee tends to rotate inward and downward, twisting the inner knee structures and creating tension in the IT band and outer knee area</li>
-          <li><strong>Hip alignment effects</strong>: if the hips are not properly supported, the entire leg rotates, placing additional rotational stress on the knee joint</li>
-          <li><strong>Contact point friction</strong>: the bony surfaces of both knees pressing against each other can create localized discomfort at the inner knee</li>
-        </ul>
-
-        <h3>The Pillow Between Knees Solution</h3>
-        <p>
-          The single most effective adjustment for side sleepers is placing a firm pillow between the knees. This accomplishes several things simultaneously: it prevents the knees from pressing against each other, maintains proper hip width alignment, prevents the upper knee from rotating inward, and distributes weight more evenly across both legs. A pillow that is thick enough to keep the knees at roughly hip width apart provides the best results.
-        </p>
-
-        <h2>Why Do the Back of My Knees Hurt at Night?</h2>
-        <p>
-          Posterior knee discomfort (behind the knee) at night is a specific pattern that many people report. The area behind the knee is a complex junction where hamstring tendons, calf muscles, and several stabilizing structures converge. Our detailed guide on <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back-of-knee discomfort patterns</Link> explores this anatomy more thoroughly.
-        </p>
-
-        <h3>Why the Back of the Knee Is Vulnerable at Night</h3>
-        <p>
-          During sleep, the hamstrings naturally contract slightly, pulling on the structures behind the knee. If you sleep with your knees bent, this contraction is more pronounced and can create a persistent tightness or aching sensation. People who sit for long hours during the day often have chronically shortened hamstrings, which compounds this nighttime effect.
+          Side sleeping can place the knees together and allow the top leg to rotate. This
+          may increase pressure at the inner knee, outer knee, or kneecap depending on the
+          position. A pillow between the knees can reduce direct contact and help keep the
+          top leg from dropping forward.
         </p>
         <p>
-          The popliteal area (the soft space directly behind the knee) also contains blood vessels that respond to changes in body position. When lying down, blood flow redistribution can create warmth, pulsing, or a sensation of fullness behind the knee that some people describe as throbbing.
-        </p>
-
-        <h3>Tips for Reducing Behind-the-Knee Discomfort at Night</h3>
-        <ul>
-          <li>Gently stretch your hamstrings and calves before bed (hold each stretch 20 to 30 seconds)</li>
-          <li>When sleeping on your back, place a small rolled towel or thin pillow directly under the knees to support a slight bend</li>
-          <li>Avoid tucking your legs tightly when sleeping in the fetal position</li>
-          <li>Apply gentle warmth to the back of the knee for 15 to 20 minutes before lying down</li>
-        </ul>
-<PremiumCTA
-          headline="Looking for soothing nighttime knee comfort support?"
-          text="FlexiKnee provides gentle warmth and vibration before bed, helping your knees feel more relaxed and comfortable through the night."
-        />
-
-        <h2>Why Knees Hurt When Squatting and Why It Worsens at Night</h2>
-        <p>
-          "Why do my knees hurt when I squat?" is one of the most frequently asked questions about knee comfort. Squatting places the knee joint under significant compressive force, and the effects of that compression often linger well into the evening.
-        </p>
-
-        <h3>The Squat-Night Pain Connection</h3>
-        <p>
-          When you squat, the knee joint experiences forces of 6 to 8 times your body weight. This compressive load is absorbed by the cartilage, meniscus, and surrounding soft tissues. For people with any degree of cartilage thinning or soft tissue sensitivity, these forces create micro-stresses that accumulate throughout the day. By nighttime, the cumulative effect of these stresses manifests as aching, stiffness, or a feeling of pressure within the joint.
-        </p>
-
-        <h3>Squatting Tips for People with Nighttime Knee Discomfort</h3>
-        <ul>
-          <li>Limit deep squats if you notice a consistent connection between squatting and nighttime discomfort</li>
-          <li>Focus on proper form: keep knees aligned with toes and avoid letting knees collapse inward</li>
-          <li>Strengthen the muscles around the knee (quadriceps, hamstrings, glutes) to improve load distribution</li>
-          <li>Consider partial squats or wall sits as lower-stress alternatives</li>
-          <li>Apply warmth to your knees in the evening after days that involve heavy squatting</li>
-        </ul>
-        <p>
-          For a deeper look at how to build stronger, more resilient knees, our <Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">knee strengthening guide</Link> provides practical daily exercises and habits.
-        </p>
-
-        <h2>Knee Clicking, Cracking, or Popping at Night</h2>
-        <p>
-          "Why do my knees crack?" is another extremely common question, and many people notice these sounds are more frequent or more noticeable at night.
-        </p>
-
-        <h3>What Causes Knee Cracking (Crepitus)?</h3>
-        <p>
-          The sounds your knee makes, often described as clicking, cracking, popping, or grinding, are collectively known as crepitus. Several mechanisms can produce these sounds:
-        </p>
-        <ul>
-          <li><strong>Gas bubble release</strong>: the most common cause. Synovial fluid contains dissolved gases that can form bubbles. When these bubbles pop, they produce an audible crack. This is similar to the mechanism behind knuckle cracking and is generally considered harmless.</li>
-          <li><strong>Tendon or ligament shifting</strong>: tendons and ligaments can slip over bony prominences as the knee moves, creating a snapping or popping sound. This is more common after periods of immobility, such as sleeping.</li>
-          <li><strong>Surface changes in cartilage</strong>: rough or uneven cartilage surfaces can produce a grinding sensation (often described as "crunchy") when the knee bends or straightens. This is more common in people over 40 and tends to be more noticeable in quiet environments like the bedroom.</li>
-        </ul>
-
-        <h3>Why Do My Knees Crack When I Squat?</h3>
-        <p>
-          Squatting involves moving the knee through its full range of motion under load, which maximizes the opportunity for all three types of crepitus. Gas bubbles that accumulated during sleep are released as the joint moves, tendons shift across bony surfaces, and any cartilage surface irregularities produce friction. The combination of these factors explains why squatting after sleep often produces the most dramatic cracking sounds.
-        </p>
-        <p>
-          In most cases, knee cracking that is not accompanied by pain, swelling, or reduced range of motion is not a cause for concern. However, if cracking is consistently accompanied by discomfort or if the sounds have changed significantly in frequency or intensity, professional evaluation is worthwhile.
-        </p>
-
-        <h2>Knee Warmth, Burning, or Throbbing After Lying Down</h2>
-        <p>
-          A warm knee sensation or throbbing feeling after lying down is a specific nighttime pattern that many people find concerning. Understanding what causes these sensations can help alleviate worry and guide your comfort approach.
-        </p>
-
-        <h3>Why Your Knee May Feel Warm at Night</h3>
-        <p>
-          Warmth in the knee area at night can result from several factors:
-        </p>
-        <ul>
-          <li><strong>Increased blood flow during rest</strong>: when the body transitions to rest mode, blood flow patterns shift. The knee joint may receive increased circulation as the body prioritizes tissue maintenance and repair, creating a noticeable warmth.</li>
-          <li><strong>Inflammation from daily activity</strong>: if the knee structures were stressed during the day, the body's natural repair response can produce localized warmth. This is a normal part of the body's maintenance cycle.</li>
-          <li><strong>Position-related circulation changes</strong>: lying down changes the hydrostatic pressure in your legs. Blood that gravity kept flowing downward during standing is now distributed more evenly, which can increase warmth in the knee area.</li>
-          <li><strong>Blanket and mattress heat retention</strong>: the combination of blankets, mattress material, and body heat can create a warm microenvironment around the knee that amplifies any existing warmth sensation.</li>
-        </ul>
-
-        <h3>Managing Nighttime Warmth and Throbbing</h3>
-        <p>
-          For gentle nighttime warmth sensations that are not accompanied by visible redness or significant swelling, many people find the following strategies helpful:
-        </p>
-        <ul>
-          <li>Keep the knee uncovered or use a light sheet instead of a heavy blanket</li>
-          <li>Elevate the leg slightly to promote fluid drainage</li>
-          <li>Apply a cool cloth briefly before bed if warmth is particularly noticeable</li>
-          <li>Use breathable bedding materials that do not trap heat</li>
-        </ul>
-        <p>
-          To understand when warmth might be beneficial versus when cooling is more appropriate, our guide on <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice for different knee situations</Link> provides detailed guidance.
-        </p>
-
-        <figure className="my-8">
-          <img src={articleSectionWarmth} alt="Gentle warmth therapy applied to the knee before sleep" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">Some people find a brief, skin-safe warmth routine comfortable before bed; avoid heat on a newly injured, swollen, or unusually warm knee</figcaption>
-        </figure>
-
-        <h2>Knee Stiffness in the Morning and How It Connects to Night Pain</h2>
-        <p>
-          Morning knee stiffness and nighttime knee pain are closely related. In fact, they are often two sides of the same coin: the stiffness you feel in the morning is frequently the result of the same factors that caused your nighttime discomfort.
-        </p>
-
-        <h3>The Overnight Stiffness Cycle</h3>
-        <p>
-          During 6 to 8 hours of sleep, the knee joint remains relatively immobile. Synovial fluid, which normally circulates with movement, becomes more viscous and less evenly distributed. The muscles, tendons, and ligaments around the knee settle into shortened positions. By morning, these combined effects produce the characteristic stiffness that many people experience during their first steps of the day.
-        </p>
-        <p>
-          This stiffness typically improves within 15 to 30 minutes of gentle movement as fluid circulation resumes and tissues warm up. The duration and intensity of morning stiffness often correlate with how much nighttime discomfort you experienced: more nighttime pain usually means more pronounced morning stiffness.
-        </p>
-
-        <h3>Breaking the Night Pain to Morning Stiffness Cycle</h3>
-        <ul>
-          <li>Perform gentle ankle pumps and knee bends before getting out of bed</li>
-          <li>Apply warmth to your knees for 10 minutes before standing</li>
-          <li>Start your morning with a slow, gentle walk rather than immediately tackling stairs</li>
-          <li>Consider a brief evening stretching routine to reduce overnight tissue shortening</li>
-          <li>Stay hydrated throughout the day to support synovial fluid quality</li>
-        </ul>
-        <p>
-          For a complete morning and evening routine designed around knee comfort, see our <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee care routine guide</Link>.
+          Pillow support is a comfort test, not a diagnosis. If the knee remains painful in
+          every position, repeatedly wakes you, swells, locks, or gives way, the pattern
+          deserves assessment.
         </p>
 
         <SleepPositionImpactChart />
 
-        <h2>Best Sleeping Positions for Knee Comfort</h2>
+        <h2>Night Knee Pain by Location</h2>
         <p>
-          Your sleeping position has a direct and significant impact on how your knees feel during the night and the following morning. Here are the most common positions, ranked from most to least knee-friendly:
-        </p>
-
-        <h3>Back Sleeping (Most Recommended)</h3>
-        <p>
-          Sleeping on your back distributes your body weight most evenly and places the least amount of rotational stress on the knee joints. To optimize this position for knee comfort:
-        </p>
-        <ol>
-          <li>Place a small pillow or rolled towel under both knees to support a slight 10 to 15 degree bend</li>
-          <li>Avoid pillows that are too thick, as this can overextend the hamstrings</li>
-          <li>Keep your legs roughly hip-width apart rather than pressed together</li>
-          <li>Use a thin pillow under the calves if you experience posterior knee tightness</li>
-        </ol>
-
-        <h3>Side Sleeping (Common but Requires Adjustment)</h3>
-        <p>
-          Since most people naturally sleep on their side, optimizing this position is important:
-        </p>
-        <ol>
-          <li>Place a firm, full-length pillow between your knees and extend it to between your ankles</li>
-          <li>Keep both knees slightly bent at a comfortable angle (roughly 20 to 30 degrees)</li>
-          <li>Use a supportive mattress that prevents your hips from sinking too deeply, which would misalign the knees</li>
-          <li>Avoid pulling the upper knee up significantly higher than the lower knee (the "fetal position trap")</li>
-        </ol>
-
-        <h3>Stomach Sleeping (Least Recommended)</h3>
-        <p>
-          Stomach sleeping tends to hyperextend the knee joints and rotate the lower legs in ways that stress the knee structures:
+          Use a fingertip to identify the most specific area you can, then record whether
+          the pain stays there or travels. A visual location guide can help you describe the
+          zone without assigning a diagnosis.
         </p>
         <ul>
-          <li>If you must sleep on your stomach, place a thin pillow under your ankles to prevent full knee extension</li>
-          <li>Try transitioning to a "quarter stomach" position (partially on your side, partially on your stomach) to reduce knee strain</li>
-          <li>Be aware that stomach sleeping also tends to increase lower back stress, which can contribute to referred discomfort in the knee area. Our guide on <Link to="/guides/knee-discomfort-lower-back-hips" className="text-primary hover:underline">knee and lower body connections</Link> explains this relationship.</li>
+          <li>
+            <strong>Front or around the kneecap:</strong> record stairs, squatting, kneeling,
+            prolonged sitting, and direct mattress pressure.
+          </li>
+          <li>
+            <strong>Inner or outer knee:</strong> record side-sleeping pressure, twisting,
+            joint-line tenderness, and instability.
+          </li>
+          <li>
+            <strong>Behind the knee:</strong> record fullness, a lump, reduced extension,
+            swelling, and calf symptoms.
+          </li>
+          <li>
+            <strong>Diffuse or both knees:</strong> record morning stiffness, other joints,
+            activity changes, and systemic symptoms.
+          </li>
         </ul>
-
-        <h2>Night Knee Pain in Teenagers</h2>
         <p>
-          "As a teenager, why do my knees hurt so much?" is a question that parents and young people frequently search for. Nighttime knee discomfort in teenagers has some unique contributing factors:
+          Compare the area with the{" "}
+          <Link to="/guides/knee-pain-locations-visual-guide">
+            knee pain location map
+          </Link>
+          .
         </p>
 
-        <h3>Growth-Related Changes</h3>
+        <h2>Why Does the Back of My Knee Hurt at Night?</h2>
         <p>
-          During growth spurts, bones grow faster than the surrounding muscles and tendons can adapt. This creates temporary tension imbalances around the knee joint that are most noticeable at night when the body enters its growth and repair cycle. The area below the kneecap is particularly common for this type of discomfort in active teenagers.
+          The back of the knee contains tendons, muscles, the joint capsule, nerves, blood
+          vessels, and the popliteal area. A prolonged bend or full extension can change
+          pressure on a sensitive structure. Joint swelling can also create fullness behind
+          the knee, and a Baker's cyst is one possible cause of a noticeable lump or
+          pressure.
+        </p>
+        <p>
+          Do not massage a new unexplained lump or marked calf swelling. Seek timely
+          assessment for a new mass, rapid swelling, redness, warmth, calf pain, or symptoms
+          that affect circulation or breathing. The{" "}
+          <Link to="/guides/back-of-knee-pain-explained">
+            back-of-knee pain guide
+          </Link>{" "}
+          covers that location in more detail.
         </p>
 
-        <h3>Sports and Activity Load</h3>
+        <h2>Throbbing, Warmth, or Burning at Night</h2>
         <p>
-          Teenagers who are active in sports may experience nighttime knee discomfort from the cumulative effects of training. Young athletes are especially susceptible because their bodies are still developing, and the same training loads that an adult might tolerate can place proportionally greater stress on growing joints. For a closer look at below-knee discomfort in younger people, see our <Link to="/guides/below-knee-discomfort-teens-adults" className="text-primary hover:underline">below-knee discomfort guide for teens and adults</Link>.
+          Throbbing describes a sensation, not a cause. It can be reported with swelling,
+          an activity-related flare, or increased awareness at rest. Warmth can also be
+          subjective, so compare both knees with the back of your hand and look for visible
+          redness or swelling.
+        </p>
+        <p>
+          A hot red swollen knee with fever or feeling unwell needs urgent medical guidance.
+          A recurring burning quality, numbness, tingling, weakness, or pain traveling from
+          the back or hip may require evaluation for a nerve-related or referred pattern.
+          See the{" "}
+          <Link to="/guides/burning-knee-sensation">
+            burning knee sensation guide
+          </Link>{" "}
+          for a focused comparison.
         </p>
 
-        <figure className="my-8">
-          <img src={articleSectionStretching} alt="Gentle stretching routine for knee comfort before sleep" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">A gentle, comfortable mobility routine may help some people settle before bed; stop if symptoms increase</figcaption>
-        </figure>
-<PremiumCTA
-          headline="Support your knees with soothing warmth before bed"
-          text="FlexiKnee combines gentle heat, red light, and vibration in one wireless knee wrap, designed to help your nighttime comfort routine feel effortless."
+        <Figure
+          src={articleSectionWarmth}
+          alt="Person checking a knee before choosing warmth or another comfort step at night"
+          caption="Check for swelling, redness, unusual heat, and recent injury before using warmth."
         />
 
-        <h2>When to See a Professional</h2>
+        <h2>Night Pain After Squatting, Stairs, or Exercise</h2>
         <p>
-          While nighttime knee discomfort is very common and often connected to everyday habits and lifestyle factors, certain situations warrant professional evaluation. Seek guidance from a healthcare provider if you experience any of the following:
+          A knee can feel comfortable during an activity and become sore later. Record the
+          depth and number of squats, stairs, running, jumping, kneeling, or a sudden
+          increase in training. The next-day response is also useful.
+        </p>
+        <p>
+          Reduce the specific trigger temporarily rather than avoiding all movement. A
+          gradual return is more informative than repeatedly testing a painful motion.
+          Persistent swelling, locking, instability, or loss of motion should be assessed.
+          For exercise-specific timing, use the{" "}
+          <Link to="/guides/knee-pain-after-exercise">
+            knee pain after exercise guide
+          </Link>
+          .
         </p>
 
-        <h3>Signs That Warrant Professional Attention</h3>
+        <Figure
+          src={articleSectionKneeBending}
+          alt="Gentle knee bending range used to observe whether night pain follows squatting or repeated flexion"
+          caption="Record the movement range that triggers symptoms without forcing a painful or blocked knee."
+        />
+
+        <h2>Knee Clicking or Cracking After Sleep</h2>
+        <p>
+          Painless clicking or cracking can occur when the knee begins moving after rest.
+          Sound becomes more important when it is painful or appears with swelling,
+          catching, true locking, instability, or a new injury. Do not use the sound alone
+          to decide whether the knee is damaged.
+        </p>
+        <p>
+          Compare painless and painful patterns in the{" "}
+          <Link to="/guides/why-do-my-knees-crack-or-pop">
+            knee cracking and popping guide
+          </Link>
+          .
+        </p>
+
+        <h2>Night Knee Pain in Teenagers and Younger Adults</h2>
+        <p>
+          Younger people can have activity-related pain, sports injuries, tendon problems,
+          kneecap-related symptoms, or growth-related conditions. Persistent night pain
+          should not automatically be called growing pains. Record a limp, swelling,
+          reduced participation, a specific injury, pain below the kneecap, fever, and
+          whether the pain wakes the teenager.
+        </p>
+        <p>
+          A clinician should assess persistent or worsening symptoms, significant swelling,
+          inability to bear weight, fever, or a clear loss of normal activity.
+        </p>
+
+        <h2>Best Sleeping Position for Knee Pain</h2>
+        <p>
+          There is no universal best position. The useful position reduces pressure and
+          does not force the knee into a painful twist, deep bend, or full extension.
+        </p>
         <ul>
-          <li>Nighttime knee pain that consistently prevents you from falling asleep or wakes you from sleep</li>
-          <li>Significant swelling that appears or worsens overnight</li>
-          <li>Knee warmth accompanied by visible redness that was not present earlier</li>
-          <li>Inability to fully straighten or bend the knee in the morning</li>
-          <li>Pain that is sharp, sudden, and localized to a specific point within the joint</li>
-          <li>Nighttime discomfort that has been gradually worsening over several weeks</li>
-          <li>Any knee discomfort accompanied by fever or feeling generally unwell</li>
-          <li>A noticeable change in the shape or alignment of your knee</li>
+          <li>
+            <strong>Side sleeping:</strong> try a pillow between the knees so the top leg
+            does not drop forward.
+          </li>
+          <li>
+            <strong>Back sleeping:</strong> try light support under the knees if full
+            extension feels uncomfortable.
+          </li>
+          <li>
+            <strong>Stomach sleeping:</strong> avoid direct kneecap pressure or twisting if
+            it reproduces symptoms.
+          </li>
+        </ul>
+        <p>
+          Use the smallest support that improves comfort. Very thick pillows can hold the
+          knee in a deep bend and create a different problem.
+        </p>
+
+        <h2>A Safe Nighttime Knee Comfort Routine</h2>
+        <ol>
+          <li>
+            <strong>Check the knee:</strong> look for a new injury, swelling, unusual heat,
+            redness, deformity, locking, or loss of weight-bearing ability.
+          </li>
+          <li>
+            <strong>Review the day's load:</strong> note exercise, stairs, kneeling, long
+            sitting, or a change in routine.
+          </li>
+          <li>
+            <strong>Use comfortable movement:</strong> try a few gentle bends and
+            straightens without forcing pain or a blocked motion.
+          </li>
+          <li>
+            <strong>Choose temperature carefully:</strong> gentle warmth may feel
+            comfortable for stiffness when there is no new injury, swelling, unusual heat,
+            or redness. Follow the{" "}
+            <Link to="/guides/heat-vs-ice-for-knees">
+              ice or heat for knee pain guide
+            </Link>{" "}
+            for situation-specific safety.
+          </li>
+          <li>
+            <strong>Set one pillow adjustment:</strong> keep it consistent for several
+            nights so you can judge the response.
+          </li>
+        </ol>
+
+        <Figure
+          src={articleSectionStretching}
+          alt="Gentle evening mobility sequence for knee comfort before sleep"
+          caption="Keep evening movement gentle and stop if pain, swelling, or instability increases."
+        />
+
+        <h2>What to Track When Knee Pain Wakes You</h2>
+        <p>Record these details for seven nights:</p>
+        <ul>
+          <li>Which knee and the exact location</li>
+          <li>Ache, sharp pain, pressure, burning, throbbing, or stiffness</li>
+          <li>Sleep position and whether changing position helped</li>
+          <li>Swelling, warmth, redness, locking, catching, or giving way</li>
+          <li>The day's walking, exercise, stairs, kneeling, or injury</li>
+          <li>How long morning stiffness lasted and whether movement changed it</li>
+          <li>Other joint pain, fever, feeling unwell, numbness, or weakness</li>
         </ul>
 
-        <h3>What to Tell Your Healthcare Provider</h3>
         <p>
-          When discussing nighttime knee discomfort with a professional, helpful details include: which specific part of the knee is most affected, whether the discomfort started gradually or suddenly, which sleeping positions make it better or worse, what your daily activity level looks like, and whether the discomfort has changed over time. Keeping a brief journal of your nighttime patterns for a week before your appointment can provide valuable information.
+          If this pattern began in midlife, compare osteoarthritis and menopause clues in
+          the focused guide to{" "}
+          <Link to="/guides/knee-pain-at-night-after-40">
+            knee pain at night after 40
+          </Link>
+          .
         </p>
 
-        <h2>Building a Nighttime Knee Comfort Routine</h2>
+        <h2>When to Get Medical Help</h2>
+        <aside
+          aria-label="Urgent knee pain warning signs"
+          className="my-6 rounded-xl border border-rose-200 bg-rose-50 p-5 text-slate-800"
+        >
+          <ul className="!mb-0 space-y-2">
+            <li className="!mb-0">
+              The knee is very painful, locked, deformed, or you cannot move it or bear weight
+            </li>
+            <li className="!mb-0">
+              Swelling is major or rapid, or the knee is hot and red with fever, chills, or
+              feeling unwell
+            </li>
+            <li className="!mb-0">
+              The knee repeatedly gives way and causes falls, or there is new marked numbness,
+              weakness, or a cold or discolored foot
+            </li>
+            <li className="!mb-0">
+              New calf swelling or pain occurs with chest pain or breathing difficulty; seek
+              emergency help
+            </li>
+          </ul>
+        </aside>
+
+        <h2>How Night Knee Pain Is Evaluated</h2>
         <p>
-          The most effective approach to managing nighttime knee discomfort is building a consistent evening routine that prepares your knees for rest. Here is a practical framework that many people find helpful:
+          Evaluation usually starts with the history and physical examination. The
+          clinician can compare location, onset, duration, night waking, daily triggers,
+          trauma, swelling, warmth, mechanical symptoms, other joint symptoms, previous
+          knee problems, motion, strength, stability, circulation, and nerve function.
+        </p>
+        <p>
+          Imaging is not required for every night symptom. It is selected when the history
+          and examination raise a specific question or when persistent pain, mechanical
+          symptoms, trauma, or atypical features change the investigation.
         </p>
 
-        <h3>60 to 90 Minutes Before Bed</h3>
-        <ul>
-          <li>Apply gentle warmth to both knees for 15 to 20 minutes</li>
-          <li>Perform gentle hamstring, calf, and quadriceps stretches (hold each for 20 to 30 seconds)</li>
-          <li>Take a slow, short walk to promote fluid circulation through the joint</li>
-        </ul>
-
-        <h3>At Bedtime</h3>
-        <ul>
-          <li>Position your knee pillow (under knees for back sleeping, between knees for side sleeping)</li>
-          <li>Ensure your bedroom temperature is cool enough that blankets do not trap excessive heat around the knees</li>
-          <li>Perform gentle ankle pumps and knee circles while lying down to distribute synovial fluid</li>
-        </ul>
-
-        <h3>Upon Waking</h3>
-        <ul>
-          <li>Before standing, perform 10 to 15 gentle ankle pumps and 5 to 10 slow knee bends in bed</li>
-          <li>Apply warmth for 5 to 10 minutes if morning stiffness is significant</li>
-          <li>Stand slowly and take your first few steps gently, allowing time for the joints to warm up</li>
-        </ul>
-        <p>
-          For guidance on choosing the right warmth approach, our <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">knee warmth daily comfort guide</Link> explains when and how warmth supports knee comfort most effectively.
-        </p>
-
-        <h2>The Bottom Line</h2>
-        <p>
-          Nighttime knee discomfort can have several possible contributors, including daytime activity, sleep position, reduced movement, osteoarthritis, tendon or bursa irritation, previous injury, and increased awareness of symptoms in a quiet setting. The pattern cannot identify the cause on its own, so note associated swelling, warmth, locking, instability, trauma, and how symptoms change over time.
-        </p>
-        <p>
-          The good news is that small, consistent adjustments to your sleeping position, evening routine, and daily habits can make a meaningful difference in how your knees feel at night. Placing a pillow between or under your knees, incorporating a brief warmth and stretching routine before bed, and paying attention to your daytime activity patterns are simple steps that compound into significant improvements over time.
-        </p>
-        <p>
-          Looking for more guidance? Explore our knee comfort guides to better understand your symptoms and discover simple, effective ways to support knee health. Start with our <Link to="/guides/why-do-my-knees-hurt-when-sleeping" className="text-primary hover:underline">nighttime knee discomfort guide</Link>, learn about <Link to="/guides/sharp-knee-pain-guide" className="text-primary hover:underline">sharp and stabbing knee pain patterns</Link>, or explore our <Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">visual guide to knee pain locations</Link> to identify which area of your knee may need the most attention.
-        </p>
-
-        <div className="mt-10 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground">
-          <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and common experiences. Always consult a healthcare professional for persistent or severe knee discomfort.
-        </div>
-              <h2>Why Symptoms Can Feel Worse at Night</h2>
-        <p>
-          Nighttime symptoms may feel stronger because the knee has fewer position changes, stiffness builds during rest, and there are fewer daytime distractions. An evening log can help separate discomfort related to the day’s workload from symptoms that appear regardless of activity.
-        </p>
-        <p>
-          A brief wind-down routine, comfortable pillow support, and avoiding a sudden jump in daily load may help. New one-sided swelling, warmth with fever, calf swelling, or severe unrelenting pain should not be managed as a routine sleep-position problem.
-        </p>
-</>
+        <ArticleFaqAccordion
+          faqs={nightKneePainFaqs}
+          headingId="night-knee-pain-frequently-asked-questions"
+        />
+      </>
     ),
-    seoTags: "knee pain at night, why do my knees hurt, knee throbbing, warm knee sensation, knee cracking, knee squatting pain, knee stiffness morning, side sleeping knee pain, night knee discomfort, meniscus knee pain, knee tendinitis, teenager knee pain, back of knee pain night, sleeping positions knees",
   },
 };
