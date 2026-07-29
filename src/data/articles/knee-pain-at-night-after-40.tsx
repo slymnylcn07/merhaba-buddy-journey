@@ -468,36 +468,29 @@ export const kneePainAtNightAfter40: ArticleExport = {
           caption="Daytime load, strength, sleep, and symptom tracking work together."
         />
 
-        <h2>When to Arrange a Clinical Assessment</h2>
-        <p>Arrange an appointment when:</p>
-        <ul>
-          <li>Night pain repeatedly wakes you or is becoming more frequent or severe</li>
-          <li>Morning stiffness is prolonged, worsening, or affects several joints</li>
-          <li>The knee repeatedly swells or does not regain its usual motion</li>
-          <li>Walking, stairs, work, exercise, or sleep are consistently limited</li>
-          <li>There is catching, painful clicking, locking, or giving way</li>
-          <li>A menopause symptom change and a new joint-pain pattern need to be reviewed together</li>
-          <li>Self-care has not improved the pattern within a reasonable period</li>
-        </ul>
-
-        <h2>When Knee Pain at Night Is Urgent</h2>
-        <p>Seek urgent medical guidance for:</p>
-        <ul>
-          <li>A very painful knee or inability to move it or bear weight</li>
-          <li>Major or rapid swelling, deformity, or a knee that is physically locked</li>
-          <li>A hot red swollen knee with fever, chills, or feeling unwell</li>
-          <li>Repeated giving way, especially when it causes falls</li>
-          <li>New calf swelling or pain, especially with chest pain or breathing difficulty</li>
-          <li>New marked numbness, weakness, or a cold or discolored foot</li>
-        </ul>
-
-        <InfoBox title="Persistent Night Pain Deserves Context">
-          <p>
-            Do not assume that a symptom is normal because it started after 40. A clinician
-            can compare the night pattern with activity, morning stiffness, menopause
-            symptoms, examination findings, and any need for imaging or laboratory tests.
-          </p>
-        </InfoBox>
+        <h2>When to Get Medical Help</h2>
+        <aside
+          aria-label="Urgent knee pain warning signs"
+          className="my-6 rounded-xl border border-rose-200 bg-rose-50 p-5 text-slate-800"
+        >
+          <ul className="!mb-0 space-y-2">
+            <li className="!mb-0">
+              The knee is very painful, locked, deformed, or you cannot move it or bear weight
+            </li>
+            <li className="!mb-0">
+              Swelling is major or rapid, or the knee is hot and red with fever, chills, or
+              feeling unwell
+            </li>
+            <li className="!mb-0">
+              The knee repeatedly gives way and causes falls, or there is new marked numbness,
+              weakness, or a cold or discolored foot
+            </li>
+            <li className="!mb-0">
+              New calf swelling or pain occurs with chest pain or breathing difficulty; seek
+              emergency help
+            </li>
+          </ul>
+        </aside>
 
         <h2>How the Pattern Is Evaluated</h2>
         <p>
