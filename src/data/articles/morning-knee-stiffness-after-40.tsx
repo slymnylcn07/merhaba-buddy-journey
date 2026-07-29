@@ -251,6 +251,9 @@ export const morningKneeStiffnessAfter40: ArticleExport = {
         <p>
           These patterns may indicate something beyond typical age-related stiffness and are worth discussing with a healthcare professional. For more on knee pain patterns by age, see our guide on <Link to="/guides/knee-pain-after-40" className="text-primary hover:underline">knee pain after age 40 and 50</Link>.
         </p>
+        <p>
+          If symptoms begin before morning and repeatedly interrupt sleep, compare osteoarthritis, menopause, position, and warning-sign clues in the <Link to="/guides/knee-pain-at-night-after-40" className="text-primary hover:underline">knee pain at night after 40 guide</Link>.
+        </p>
 
         <h2>The Bottom Line</h2>
         <p>

@@ -146,6 +146,9 @@ export const kneeOsteoarthritisVsRheumatoidArthritis: ArticleExport = {
           Osteoarthritis commonly causes “gelling”: the knee stiffens after inactivity and hurts during the first few steps, then loosens with movement. The guide to <Link to="/guides/knee-pain-getting-up-after-sitting" className={linkClass}>knees that hurt after resting</Link> covers this pattern. Morning stiffness is often relatively brief, although advanced OA can remain stiff longer.
         </p>
         <p>
+          When symptoms interrupt sleep in midlife, the focused <Link to="/guides/knee-pain-at-night-after-40" className={linkClass}>knee pain at night after 40 guide</Link> compares osteoarthritis with menopause context, daily load, and position-sensitive symptoms.
+        </p>
+        <p>
           RA stiffness is more likely to last beyond 30 minutes and sometimes several hours. It may affect hands, feet, shoulders, and knees together, making dressing, gripping, or walking difficult. Inflammatory stiffness often accompanies soft swelling and warmth rather than only a bony or grinding sensation.
         </p>
         <p>

@@ -245,6 +245,9 @@ export const whyKneePainGetsWorseWithAge: ArticleExport = {
         <p>
           Whether you are in your 40s noticing the first signs of change or in your 50s managing daily stiffness, the strategies outlined in this guide can help you maintain comfort and function for decades to come. For a deeper look at age-specific patterns, explore our guide on <Link to="/guides/knee-pain-after-40" className="text-primary hover:underline">knee pain after age 40 and 50</Link>.
         </p>
+        <p>
+          If the main problem is pain that appears after bedtime or wakes you from sleep, use the focused guide to <Link to="/guides/knee-pain-at-night-after-40" className="text-primary hover:underline">night knee pain after 40, including osteoarthritis and menopause patterns</Link>.
+        </p>
       </>
     ),
   },

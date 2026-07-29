@@ -205,7 +205,7 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
           These searches sound similar but describe different experiences. <strong>Pain after resting</strong> appears when movement restarts. <strong>Pain while resting</strong> is present during the seated or lying position itself.
         </p>
         <p>
-          Pain during rest may still come from a sustained position, but persistent pain that disrupts sleep, steadily worsens, or occurs without a clear mechanical trigger deserves a closer look. For symptoms that mainly occur in bed, use our guide to <Link to="/guides/why-do-my-knees-hurt-when-sleeping">knee pain while sleeping</Link>. For pain that is specifically worse at night after 40, see the <Link to="/guides/knee-pain-at-night-after-40">night knee pain guide</Link>.
+          Pain during rest may still come from a sustained position, but persistent pain that disrupts sleep, steadily worsens, or occurs without a clear mechanical trigger deserves a closer look. For symptoms that mainly occur in bed at any age, use our guide to <Link to="/guides/why-do-my-knees-hurt-when-sleeping">knee pain while sleeping</Link>. For midlife symptoms, see the focused guide to <Link to="/guides/knee-pain-at-night-after-40">night knee pain after 40, osteoarthritis, and menopause patterns</Link>.
         </p>
 
         <h2>Why the Back of the Knee May Feel Tight After Sitting</h2>
