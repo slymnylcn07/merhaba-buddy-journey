@@ -399,7 +399,7 @@ const GuideArticle = () => {
                           >
                             {source.title}
                           </a>
-                          <span className="text-slate-500"> — {source.publisher}</span>
+                          <span className="text-slate-500">, {source.publisher}</span>
                         </li>
                       ))}
                     </ul>

@@ -28,6 +28,7 @@
 - Do not add manual `PremiumCTA` or manual source boxes inside article bodies.
 - Store references in `article.sources`.
 - The final article order must be CTA, Knee Quiz, then Sources and Further Reading.
+- Do not use em dashes in article copy. Rewrite the sentence with a period, comma, colon, or parentheses.
 - Avoid unsupported medical claims, invented precision, guarantees, and diagnosis language.
 
 ## Required validation

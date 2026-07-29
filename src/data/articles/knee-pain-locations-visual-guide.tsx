@@ -245,7 +245,7 @@ const locationFaqs = [
   {
     question: "Why can knee pain move from one location to another?",
     answer:
-      "Pain can feel diffuse, spread from nearby tissues, or change as you alter your movement to protect one area. A shifting location is a reason to track the whole pattern—timing, activity, swelling, and function—instead of matching one spot to one condition.",
+      "Pain can feel diffuse, spread from nearby tissues, or change as you alter your movement to protect one area. A shifting location is a reason to track the whole pattern: timing, activity, swelling, and function. Do not match one spot to one condition.",
   },
   {
     question: "How do I identify knee pain by location accurately?",
@@ -358,8 +358,8 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
           A useful <strong>knee pain diagram</strong> separates the knee into zones
           without pretending that each color equals one condition. Several tissues
           overlap in a small space. That is why two people pointing to the same spot can
-          have different histories—and why a clinician asks more than “where does it
-          hurt?”
+          have different histories. That is why a clinician asks more than “where does
+          it hurt?”
         </p>
 
         <div className="my-8 overflow-x-auto rounded-xl border border-border">
@@ -416,7 +416,7 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
           </table>
         </div>
 
-        <h2>What a Knee Pain Chart Can—and Cannot—Tell You</h2>
+        <h2>What a Knee Pain Chart Can and Cannot Tell You</h2>
         <p>
           Location is one part of a knee assessment. Age, how the symptoms began,
           duration, recent changes in activity, swelling, trauma, mechanical symptoms,
