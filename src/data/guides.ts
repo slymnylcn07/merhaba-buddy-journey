@@ -413,10 +413,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "knee-pain-after-exercise",
-    title: "Knees Hurt After Exercise? Causes & Recovery",
-    description: "Why do knees hurt after exercise but not during? Learn about delayed knee pain after workouts, common causes, normal soreness vs warning signs, and recovery tips.",
+    title: "Knee Pain After Exercise or a Workout (But Not During)",
+    description: "Why do knees hurt after exercise but not during? Compare delayed soreness, pain after workouts, the 24-hour response, practical adjustments, and warning signs.",
     readTime: 14,
-    lastModified: "2026-07-13",
+    lastModified: "2026-07-29",
   },
   {
     slug: "knee-pain-climbing-stairs",
@@ -539,10 +539,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "knee-swelling-after-exercise",
-    title: "Knee Swelling After Exercise: Causes, Locations & Warning Signs",
-    description: "Learn why a knee may swell after exercise, how swelling behind the knee differs from general puffiness, and when post-workout swelling needs medical attention.",
+    title: "Knee Swelling After Exercise or Running: Causes & Warning Signs",
+    description: "Why does a knee swell after exercise or running? Compare persistent swelling, painless puffiness, swelling behind the knee, fluid-like fullness, and warning signs.",
     readTime: 15,
-    lastModified: "2026-07-28",
+    lastModified: "2026-07-29",
   },
   {
     slug: "knee-recovery-exercises-after-workout",
@@ -554,16 +554,16 @@ export const guidesData: GuideData[] = [
   {
     slug: "knee-ache-after-leg-workouts",
     title: "Knee Pain After Leg Day: Squats, Lunges & Leg Press",
-    description: "Learn why knees hurt after leg day and how load, depth, fatigue, and technique affect knee pain after squats, lunges, Bulgarian split squats, and leg press.",
+    description: "Why do knees hurt after leg day? Compare squats, lunges, Bulgarian split squats, leg press, inner-knee pain, stiffness, popping, and next-session adjustments.",
     readTime: 14,
-    lastModified: "2026-07-28",
+    lastModified: "2026-07-29",
   },
   {
     slug: "burning-knees-after-exercise",
-    title: "Burning Knees After Exercise: What Causes the Sensation",
-    description: "Understand why your knees burn after exercise. Learn what causes burning knee sensations, how they differ from other pain types, and recovery habits that help.",
+    title: "Burning Knees After Exercise: Causes by Activity & Timing",
+    description: "Why do knees burn after exercise, running, lifting, walking, cycling, or tai chi? Compare during-vs-after timing, activity triggers, and warning signs.",
     readTime: 14,
-    lastModified: "2026-03-19",
+    lastModified: "2026-07-29",
   },
   {
     slug: "home-remedies-knee-pain",

@@ -233,12 +233,12 @@ export const kneeAcheAfterLegWorkouts = {
     slug: "knee-ache-after-leg-workouts",
     title: "Knee Pain After Leg Day: Squats, Lunges & Leg Press",
     subtitle: "Why knees ache after lower-body strength training",
-    intro: "Learn why knees ache after leg workouts and how load, depth, fatigue, and technique affect knee pain after squats, lunges, Bulgarian split squats, and leg press.",
+    intro: "Why do knees hurt after leg day? Compare knee pain after squats, lunges, Bulgarian split squats, and leg press, including inner-knee pain, stiffness, popping, load, depth, fatigue, and technique.",
     metaTitle: "Knee Pain After Leg Day: Squats, Lunges & Leg Press",
-    metaDescription: "Why do knees hurt after leg day? Learn about knee pain after squats, lunges, Bulgarian split squats and leg press, plus practical training adjustments.",
+    metaDescription: "Why do my knees hurt after leg day? Compare squats, lunges, Bulgarian split squats, leg press, inner-knee pain and next-session adjustments.",
     heroImage,
     publishedDate: "March 19, 2026",
-    lastUpdated: "July 28, 2026",
+    lastUpdated: "July 29, 2026",
     content: articleContent,
     sources: [
       {
