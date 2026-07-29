@@ -434,7 +434,7 @@ const articleContent = (
 
     <h3>Warmth-Based Support</h3>
     <p>
-      Applying warmth to your knees after exercise can help increase blood flow to the area, support the delivery of nutrients for tissue repair, and relax the muscles surrounding the joint. Many people find that using a <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">warmth-based comfort routine</Link> after their workouts significantly reduces next-day soreness.
+      Gentle warmth may feel comfortable when the knee is not swollen and the main problem is stiffness or tight surrounding muscles. If the knee looks puffy, feels unusually warm, or became painful after a specific movement, the decision changes. Use the <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">ice-or-heat guide for post-exercise knee pain</Link> before defaulting to warmth after every workout; the separate <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">warmth-based comfort routine</Link> is intended for non-swollen stiffness.
     </p>
 
     <h3>Gentle Movement and Stretching</h3>
