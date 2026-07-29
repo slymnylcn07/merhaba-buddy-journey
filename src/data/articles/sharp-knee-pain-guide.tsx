@@ -443,29 +443,28 @@ export const sharpKneePainGuide: ArticleExport = {
           mobility work, or activity modification fits your pattern.
         </p>
 
-        <NoteBox tone="amber">
-          <strong>Do not use symptom relief as a clearance test.</strong> A knee that feels
-          temporarily better may still need assessment when it locks, gives way, swells
-          repeatedly, loses motion, or cannot tolerate normal walking.
-        </NoteBox>
-
-        <h2>When Sharp Knee Pain Needs Urgent Medical Guidance</h2>
-        <p>Seek urgent medical guidance when you have any of the following:</p>
-        <ul>
-          <li>Severe pain after a fall, twist, collision, or other trauma</li>
-          <li>Inability to move the knee or put weight on the leg</li>
-          <li>Rapid or major swelling, visible deformity, or loss of normal alignment</li>
-          <li>A knee that is physically locked or repeatedly gives way</li>
-          <li>A hot, red, swollen knee with fever, chills, or feeling unwell</li>
-          <li>Increasing calf pain or swelling, especially with breathing symptoms</li>
-          <li>New numbness, marked weakness, or a cold or discolored foot</li>
-        </ul>
-
-        <NoteBox tone="red">
-          <strong>Emergency symptoms:</strong> Seek emergency help for breathing difficulty,
-          chest pain, collapse, a visibly deformed limb after trauma, or sudden concerning
-          circulation or nerve symptoms.
-        </NoteBox>
+        <h2>When to Get Medical Help</h2>
+        <aside
+          aria-label="Urgent sharp knee pain warning signs"
+          className="my-6 rounded-xl border border-rose-200 bg-rose-50 p-5 text-slate-800"
+        >
+          <ul className="!mb-0 space-y-2">
+            <li className="!mb-0">
+              Severe pain follows trauma, or you cannot move the knee or bear weight
+            </li>
+            <li className="!mb-0">
+              Swelling is major or rapid, the knee is deformed or locked, or it repeatedly
+              gives way
+            </li>
+            <li className="!mb-0">
+              The knee is hot, red, and swollen with fever, chills, or feeling unwell
+            </li>
+            <li className="!mb-0">
+              Calf swelling occurs with chest pain or breathing difficulty, or the foot
+              becomes cold, discolored, numb, or markedly weak; seek emergency help
+            </li>
+          </ul>
+        </aside>
 
         <h2>How Sharp Knee Pain Is Evaluated</h2>
         <p>
