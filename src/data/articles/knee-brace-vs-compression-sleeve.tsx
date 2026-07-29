@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-knee-brace-vs-compression-sleeve.svg";
 import typesDiagram from "@/assets/diagram-knee-support-types.svg";
 import decisionDiagram from "@/assets/diagram-knee-support-decision.svg";
@@ -200,10 +199,7 @@ export const kneeBraceVsCompressionSleeve: ArticleExport = {
           <Link to="/product/flexiknee-compression-support-sleeve">FlexiKnee compression support sleeve</Link>{" "}
           uses graduated knit compression with an open kneecap position, and is the category we would suggest trying before anything firmer.
         </p>
-
-        <PremiumCTA />
-
-        <h2>Where a Heated Massager Fits, and Where It Does Not</h2>
+<h2>Where a Heated Massager Fits, and Where It Does Not</h2>
         <p>
           Because we make a heated knee device, it is worth being clear about the category boundary rather than blurring it. A support is worn during activity to change how the joint feels while you use it. A heated massager is used at rest to work on stiffness and comfort before or after activity. They are not substitutes for each other, and a device that applies heat and massage will not stabilise a knee any more than a sleeve will.
         </p>

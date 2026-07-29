@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-mobility-after-50.jpg";
 import sectionJointChanges from "@/assets/package-4/age-knee-comfort-factors.svg";
@@ -106,13 +105,7 @@ export const kneeMobilityAfter50: ArticleExport = {
           <img src={sectionWarningSigns} alt="Three warning signs of knee mobility loss: difficulty bending fully, stiffness lasting over 30 minutes, and avoiding stairs or kneeling" className="w-full h-auto rounded-xl shadow-sm" loading="lazy" />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">Recognizing early warning signs of mobility loss allows you to take action before changes become difficult to reverse</figcaption>
         </figure>
-
-        <PremiumCTA
-          headline="Support your daily knee mobility routine"
-          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees warm up for daily mobility exercises and feel more comfortable through every movement."
-        />
-
-        <h2>Daily Mobility Routine: Step-by-Step, Age-Friendly</h2>
+<h2>Daily Mobility Routine: Step-by-Step, Age-Friendly</h2>
         <p>
           The foundation of maintaining knee mobility after 50 is a simple, consistent daily routine. This routine takes approximately 10 to 15 minutes and can be done at home with no equipment. The key is consistency: doing these movements every day matters far more than doing an intense session once a week.
         </p>

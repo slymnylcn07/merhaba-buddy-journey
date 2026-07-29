@@ -297,8 +297,9 @@ const handler = async (req: Request): Promise<Response> => {
         headers: { "Content-Type": "application/json", ...corsHeaders },
       }
     );
-  } catch (error: any) {
-    console.error("Error sending return notification:", error.message);
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("Error sending return notification:", message);
     return new Response(
       JSON.stringify({ error: "An error occurred processing your request" }),
       {

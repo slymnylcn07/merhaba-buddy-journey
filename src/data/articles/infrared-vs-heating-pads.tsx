@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-infrared-vs-heating.jpg";
 import infraredPenetrationImg from "@/assets/article-infrared-penetration-knee.jpg";
 import heatingPadSurfaceImg from "@/assets/article-heating-pad-surface-heat.jpg";
@@ -128,13 +127,7 @@ export const infraredVsHeatingPads: ArticleExport = {
         <p>
           Built-in timers and adjustable temperature settings are also common in infrared devices. These features make it easier to build a consistent daily routine without worrying about overheating or forgetting to turn the device off.
         </p>
-
-        <PremiumCTA
-          headline="Looking for a smarter alternative to your heating pad?"
-          text="FlexiKnee wraps around your knee with infrared warmth, red light, and gentle vibration, all in one wireless device designed for daily comfort."
-        />
-
-        <h2>Targeted Support vs. General Warmth</h2>
+<h2>Targeted Support vs. General Warmth</h2>
         <p>
           Heating pads are general-purpose tools. They work well for broad areas of muscle tension but aren't designed with any specific joint in mind. Infrared knee massagers, on the other hand, are built around the knee's unique shape and needs.
         </p>
@@ -217,12 +210,7 @@ export const infraredVsHeatingPads: ArticleExport = {
         <p>
           If you're still deciding between heat and cold for your needs, our <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice situations guide</Link> helps you choose the right approach for each scenario.
         </p>
-
-        <PremiumCTA
-          headline="Ready to upgrade from your heating pad?"
-          text="FlexiKnee combines infrared warmth, red light, and vibration massage in one comfortable knee wrap designed for daily use."
-        />
-      </>
+</>
     ),
     seoTags: "infrared vs heating pad, knee warmth comparison, heating pad knee, infrared knee comfort, wireless vs wired knee warmth, deeper warmth infrared, targeted knee comfort, daily knee warming options, infrared therapy knee, heating pad vs infrared, infrared heat benefits knee, heated knee brace safety",
   },

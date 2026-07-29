@@ -1,11 +1,9 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-insoles-knee.svg";
 import alignmentImage from "@/assets/article-hip-knee-alignment.jpg";
 import shoeWearImage from "@/assets/article-shoe-wear-check.jpg";
 import runningShoesImage from "@/assets/article-running-shoes-lineup.jpg";
-import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
 export const bestInsolesKneePain2026: ArticleExport = {
   cta: "",
@@ -55,7 +53,7 @@ export const bestInsolesKneePain2026: ArticleExport = {
 
         <h2>How the Foot–Ankle–Knee Chain Works</h2>
         <p>
-          During a step, the foot first accepts load, then adapts to the surface, and finally becomes a firmer lever for push-off. Some inward roll — pronation — is normal. The concern is not pronation itself, but motion that is excessive for the person, poorly controlled, or combined with a shoe that no longer provides a stable platform.
+          During a step, the foot first accepts load, then adapts to the surface, and finally becomes a firmer lever for push-off. Some inward roll, pronation, is normal. The concern is not pronation itself, but motion that is excessive for the person, poorly controlled, or combined with a shoe that no longer provides a stable platform.
         </p>
         <p>
           When the arch drops and the ankle rolls inward, the shin can rotate inward with it. The thigh and kneecap must then manage a slightly different line of force. In some people, especially those with front-of-knee discomfort, changing that chain can make walking or running feel easier. Current best-practice guidance for patellofemoral pain includes prefabricated foot orthoses as a possible supporting intervention for selected people, usually combined with education and exercise rather than used as a stand-alone fix.
@@ -71,7 +69,7 @@ export const bestInsolesKneePain2026: ArticleExport = {
         <div className="my-8 rounded-3xl border border-emerald-200 bg-emerald-50 p-6">
           <p className="!mb-3 !font-semibold !text-emerald-950">A useful expectation</p>
           <p className="!mb-0 !text-emerald-900">
-            An insole is a load-management tool, not a diagnosis or a cure. A successful trial may mean you can walk longer with less irritation, finish a work shift more comfortably, or recover more easily — not that every knee symptom disappears.
+            An insole is a load-management tool, not a diagnosis or a cure. A successful trial may mean you can walk longer with less irritation, finish a work shift more comfortably, or recover more easily, not that every knee symptom disappears.
           </p>
         </div>
 
@@ -126,7 +124,7 @@ export const bestInsolesKneePain2026: ArticleExport = {
 
         <h3>2. Cushioned Insoles</h3>
         <p>
-          Cushioning may be more relevant when the foot is relatively stable but impact feels harsh — for example, during long shifts on tile, concrete, or warehouse flooring. The goal is not maximum softness. Very thick gel or memory foam can raise the foot, reduce space around the toes, and create side-to-side movement. Look for controlled cushioning with a stable heel base.
+          Cushioning may be more relevant when the foot is relatively stable but impact feels harsh, for example, during long shifts on tile, concrete, or warehouse flooring. The goal is not maximum softness. Very thick gel or memory foam can raise the foot, reduce space around the toes, and create side-to-side movement. Look for controlled cushioning with a stable heel base.
         </p>
 
         <h3>3. Heel Cups and Heel-Focused Inserts</h3>
@@ -207,13 +205,7 @@ export const bestInsolesKneePain2026: ArticleExport = {
             New shoes, new insoles, a new running surface, and a major mileage increase in the same week make it impossible to know what helped or hurt. Change one major variable, observe, then progress.
           </p>
         </div>
-
-        <PremiumCTA
-          headline="Support the day, then build a calmer evening routine"
-          text="A well-fitted insole can change how load reaches the knee during movement. FlexiKnee is designed for a separate role: a convenient warmth, red-light, and vibration routine after the day is done."
-        />
-
-        <h2>Sport and Running: What Changes?</h2>
+<h2>Sport and Running: What Changes?</h2>
         <p>
           For running, court sports, or gym use, the insert must stay flat during faster movement and should not make the heel unstable. Test it first during a short, familiar session. Athletes with a rigid high arch may prefer impact control; those whose feet roll inward may prefer a more structured platform. Neither category automatically prevents injury.
         </p>
@@ -226,7 +218,7 @@ export const bestInsolesKneePain2026: ArticleExport = {
           Consider a professional assessment when the feet are markedly different, symptoms persist despite a careful footwear trial, you have diabetes or reduced foot sensation, there is recurrent skin breakdown, or pain follows an injury. Visible swelling, locking, repeated giving way, night pain, fever, or inability to bear weight also falls outside a simple insole experiment.
         </p>
         <p>
-          A clinician can look at the entire chain — foot mobility, ankle range, hip control, strength, training load, and the knee itself. Sometimes the best recommendation is a custom device. Sometimes it is a different shoe, a strengthening plan, or no orthotic at all.
+          A clinician can look at the entire chain, foot mobility, ankle range, hip control, strength, training load, and the knee itself. Sometimes the best recommendation is a custom device. Sometimes it is a different shoe, a strengthening plan, or no orthotic at all.
         </p>
 
         <h2>Bottom Line: The Best Insole Is the One That Solves a Defined Problem</h2>
@@ -236,24 +228,7 @@ export const bestInsolesKneePain2026: ArticleExport = {
         <p>
           Evidence supports foot orthoses as a useful option for selected knee-pain presentations, but not as a universal cure. The strongest plan still combines sensible footwear, progressive activity, and the muscle capacity to control the knee over time.
         </p>
-
-        <ArticleSourcesBox>
-        <ul>
-          <li>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/39401870/" target="_blank" rel="noreferrer">Best practice guide for patellofemoral pain, British Journal of Sports Medicine (2024)</a>
-          </li>
-          <li>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/29925502/" target="_blank" rel="noreferrer">International Patellofemoral Pain Research Retreat consensus statement on exercise and physical interventions (2018)</a>
-          </li>
-          <li>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/37192287/" target="_blank" rel="noreferrer">Clinical review of common knee pain presentations and conservative management (2023)</a>
-          </li>
-        </ul>
-        <p className="!text-sm !leading-6 !text-slate-500">
-          This guide is educational and does not diagnose the cause of knee pain. Product selection should be individualized, particularly when symptoms are persistent, severe, or associated with swelling, instability, or injury.
-        </p>
-      </ArticleSourcesBox>
-      </>
+</>
     ),
   },
 };

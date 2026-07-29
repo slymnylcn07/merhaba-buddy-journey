@@ -4,7 +4,6 @@ import {
 } from "@/components/ArticleCharts";
 import { Link } from "react-router-dom";
 import type { ArticleExport } from "./types";
-import PremiumCTA from "@/components/PremiumCTA";
 
 import heroKneeArthritis from "@/assets/article-hero-knee-arthritis.jpg";
 import blogDeviceWarmth from "@/assets/blog-device-warmth.jpg";
@@ -111,13 +110,7 @@ export const bestHeatedKneeMassagerArthritis: ArticleExport = {
         <InfoBox title="The Usability Factor">
           <p>A device is more likely to fit a routine when it is comfortable, simple to position, easy to control, and clear about session limits. Do not increase heat or duration merely to chase a stronger result.</p>
         </InfoBox>
-
-        <PremiumCTA
-          headline="Looking for the multi-feature heated knee device?"
-          text="FlexiKnee combines adjustable heat with red light and vibration in one wireless wrap, designed for daily joint comfort support."
-        />
-
-        <h2>A Transparent Feature Checklist</h2>
+<h2>A Transparent Feature Checklist</h2>
         <p>
           Rather than assigning an unsupported ranking, compare each device against the same documented criteria. Product pages should make it possible to verify the following points before purchase.
         </p>
@@ -283,12 +276,7 @@ export const bestHeatedKneeMassagerArthritis: ArticleExport = {
         <p>
           FlexiKnee is included because it combines adjustable warmth, vibration, red light, rechargeable operation, and a wraparound fit. It remains a comfort product, not a treatment for arthritis or a substitute for medical care.
         </p>
-        <PremiumCTA
-          headline="Ready to support your daily joint comfort?"
-          text="FlexiKnee combines adjustable warmth, a red-light mode, and gentle vibration in one rechargeable wrap for a simple at-home comfort routine."
-        />
-
-        {/* Disclaimer */}
+{/* Disclaimer */}
         <div className="mt-12 p-4 rounded-lg bg-muted/30 border border-border/30">
           <p className="text-sm text-muted-foreground italic mb-0">
             This content is general education and product-selection guidance, not medical advice. Product features do not establish treatment effectiveness, and individual experiences vary.

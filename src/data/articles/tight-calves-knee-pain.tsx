@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-tight-calves-knee-pain.svg";
 import chainDiagram from "@/assets/diagram-calf-knee-chain.svg";
 import protocolDiagram from "@/assets/diagram-calf-release-protocol.svg";
@@ -111,10 +110,7 @@ export const tightCalvesKneePain: ArticleExport = {
           <Link to="/guides/knee-pain-going-down-stairs">knee pain going down stairs</Link> and{" "}
           <Link to="/guides/back-of-knee-pain-explained">back of knee pain</Link> pair naturally with this one.
         </p>
-
-        <PremiumCTA />
-
-        <h2>Why Are My Calves Tight in the First Place?</h2>
+<h2>Why Are My Calves Tight in the First Place?</h2>
         <p>
           Tightness is a symptom, not a diagnosis, and the useful question is what is producing it. A handful of causes account for most cases.
         </p>

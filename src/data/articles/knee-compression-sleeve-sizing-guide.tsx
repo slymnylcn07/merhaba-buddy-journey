@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/hero-sleeve-sizing.svg";
 import figMeasure from "@/assets/fig-sleeve-measure.svg";
 import figGradient from "@/assets/fig-compression-gradient.svg";
@@ -112,11 +111,7 @@ export const kneeSleeveSizingGuide: ArticleExport = {
           <img src={figGradient} alt="Comparison of correct snug sleeve fit versus wrong fit: correct fit shows firm even contact, wrong fit shows pinching when too tight or sliding when too loose" loading="lazy" />
           <figcaption>Snug means firm, even, forgettable contact. Pain and sliding are both sizing failures.</figcaption>
         </figure>
-
-        <PremiumCTA />
-
-
-        <p>
+<p>
           Before settling on a size, it is worth confirming that a sleeve is the right category at all. Straps, wraparounds and hinged braces each solve a different problem, and our comparison of <Link to="/guides/knee-brace-vs-compression-sleeve" className="text-primary hover:underline">knee braces versus compression sleeves</Link> shows which one matches your symptoms.
         </p>
 

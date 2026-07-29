@@ -1,4 +1,12 @@
-import { useEffect, useState } from "react";
+import {
+  Children,
+  Fragment,
+  cloneElement,
+  isValidElement,
+  useEffect,
+  useState,
+  type ReactNode,
+} from "react";
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, BookOpenText } from "lucide-react";
@@ -25,6 +33,33 @@ import type { ArticleData } from "@/data/articles/types";
 
 const allArticleCTAs = { ...articleCTAs, ...recentArticleCTAs };
 const allGuidesData = [...guidesData, ...recentGuidesData];
+
+function containsQuickAnswerLabel(node: ReactNode): boolean {
+  if (typeof node === "string") return node.trim().toLowerCase() === "quick answer";
+  if (typeof node === "number" || node == null || typeof node === "boolean") return false;
+  if (Array.isArray(node)) return node.some(containsQuickAnswerLabel);
+  if (!isValidElement<{ title?: ReactNode; children?: ReactNode }>(node)) return false;
+
+  if (containsQuickAnswerLabel(node.props.title)) return true;
+  return Children.toArray(node.props.children).some(containsQuickAnswerLabel);
+}
+
+function removeLegacyQuickAnswer(content: ReactNode): ReactNode {
+  if (!isValidElement<{ children?: ReactNode }>(content) || content.type !== Fragment) {
+    return content;
+  }
+
+  let removed = false;
+  const children = Children.map(content.props.children, (child) => {
+    if (!removed && containsQuickAnswerLabel(child)) {
+      removed = true;
+      return null;
+    }
+    return child;
+  });
+
+  return cloneElement(content, undefined, children);
+}
 
 const GuideArticle = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -121,6 +156,7 @@ const GuideArticle = () => {
 
   const readingTime = allGuidesData.find((guide) => guide.slug === article.slug)?.readTime ?? 8;
   const relatedGuides = getRelatedGuides(article.slug, allGuidesData, 3);
+  const standardizedArticleContent = removeLegacyQuickAnswer(article.content);
 
   const getISODate = (dateString: string) => {
     const date = new Date(dateString);
@@ -343,9 +379,17 @@ const GuideArticle = () => {
                   <ArticleTableOfContents variant="mobile" initialCount={5} />
                 </div>
 
-                <p className="rounded-[1.5rem] border border-slate-200 bg-white p-5 text-lg font-normal leading-8 text-slate-600 shadow-sm">
-                  {article.intro}
-                </p>
+                <div
+                  data-article-quick-answer="true"
+                  className="rounded-[1.5rem] border border-blue-200 bg-blue-50/70 p-5 shadow-sm"
+                >
+                  <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
+                    Quick Answer
+                  </p>
+                  <p className="mb-0 text-lg font-normal leading-8 text-slate-700">
+                    {article.intro}
+                  </p>
+                </div>
 
                 <hr className="my-6 border-t border-border/30" />
 
@@ -359,7 +403,7 @@ const GuideArticle = () => {
                   [&_li]:mb-2 [&_li]:text-base [&_li]:leading-7 [&_li]:text-slate-600
                   [&_img]:my-8 [&_img]:w-full [&_img]:rounded-[1.5rem] [&_img]:border [&_img]:border-slate-200 [&_img]:bg-white [&_img]:object-contain [&_img]:shadow-sm [&_img]:transition [&_img]:hover:shadow-md [&_img:focus]:outline-none [&_img:focus]:ring-2 [&_img:focus]:ring-blue-500
                 ">
-                  {article.content}
+                  {standardizedArticleContent}
                   {articleEditorialCrosslinks[article.slug]}
                 </div>
                 <span data-seo-content-end="guide" hidden />
@@ -368,16 +412,21 @@ const GuideArticle = () => {
 
                 {/* Required article-end order: product CTA -> knee quiz -> sources. */}
                 {allArticleCTAs[slug] && (
-                  <PremiumCTA
-                    headline={allArticleCTAs[slug].headline}
-                    text={allArticleCTAs[slug].text}
-                  />
+                  <div data-article-end-block="cta">
+                    <PremiumCTA
+                      headline={allArticleCTAs[slug].headline}
+                      text={allArticleCTAs[slug].text}
+                    />
+                  </div>
                 )}
 
-                <ArticleQuizCard articleSlug={article.slug} articleTitle={article.title} />
+                <div data-article-end-block="knee-quiz">
+                  <ArticleQuizCard articleSlug={article.slug} articleTitle={article.title} />
+                </div>
 
                 {article.sources && article.sources.length > 0 && (
                   <section
+                    data-article-end-block="sources"
                     aria-labelledby="sources-heading"
                     className="mt-10 rounded-[1.5rem] border border-slate-200 bg-slate-50/70 p-6 shadow-sm"
                   >

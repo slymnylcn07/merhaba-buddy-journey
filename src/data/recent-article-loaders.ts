@@ -1,4 +1,5 @@
 import type { ArticleData } from "./articles/types";
+import { applyArticleSourceStandards } from "./article-source-standards";
 
 const recentArticleLoaders: Record<string, () => Promise<ArticleData>> = {
   "best-low-impact-cardio-knee-pain": () =>
@@ -33,5 +34,5 @@ export async function loadRecentArticleBySlug(slug: string): Promise<ArticleData
   const loader = recentArticleLoaders[slug];
   if (!loader) return undefined;
   const article = await loader();
-  return article.slug === slug ? article : undefined;
+  return article.slug === slug ? applyArticleSourceStandards(article) : undefined;
 }

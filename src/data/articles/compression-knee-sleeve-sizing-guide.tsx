@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/hero-sleeve-sizing.svg";
 import figMeasure from "@/assets/fig-sleeve-measure.svg";
 import figGradient from "@/assets/fig-compression-gradient.svg";
@@ -129,10 +128,7 @@ export const compressionKneeSleeveSizingGuide: ArticleExport = {
         <p>
           One subtlety almost nobody mentions: legs change size through the day. Thighs and knees are measurably fuller in the evening, especially after a day on your feet, than first thing in the morning. Measure in the late afternoon or evening, when your leg is at its realistic daily size. A sleeve sized to your 7 a.m. leg can feel like a clamp by 6 p.m.
         </p>
-
-        <PremiumCTA />
-
-        <h2>The Two-Minute Fit Test</h2>
+<h2>The Two-Minute Fit Test</h2>
         <p>
           Whether the sleeve is fresh out of the package or the one you already own, run this check before trusting it for a full day:
         </p>

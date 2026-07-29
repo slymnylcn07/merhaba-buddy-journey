@@ -17,7 +17,17 @@
 const SUPPORT_EMAIL = "support@flexi-knee.com";
 const FROM_EMAIL = process.env.RESEND_FROM || "FlexiKnee Support <support@flexi-knee.com>";
 
-export default async function handler(req: any, res: any) {
+interface ApiRequest {
+  method?: string;
+  body?: Record<string, unknown>;
+}
+
+interface ApiResponse {
+  status(code: number): ApiResponse;
+  json(body: unknown): ApiResponse;
+}
+
+export default async function handler(req: ApiRequest, res: ApiResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }

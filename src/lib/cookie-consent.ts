@@ -8,6 +8,10 @@ export const OPTIONAL_TRACKING_ENABLED = true;
 const STORAGE_KEY = "flexiknee_cookie_consent_v1";
 const GA_MEASUREMENT_ID = "G-5QC0R5G1JG";
 export const COOKIE_CONSENT_EVENT = "flexiknee:cookie-consent";
+type GoogleConsentWindow = Window &
+  Record<`ga-disable-${string}`, boolean | undefined> & {
+    gtag?: (...args: unknown[]) => void;
+  };
 
 export function getCookieConsent(): CookieConsentChoice {
   return "accepted";
@@ -19,9 +23,10 @@ export function hasAnalyticsConsent(): boolean {
 
 function updateGoogleConsent(granted: boolean) {
   if (typeof window === "undefined") return;
-  (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = !granted;
-  if (typeof (window as any).gtag === "function") {
-    (window as any).gtag("consent", "update", {
+  const consentWindow = window as GoogleConsentWindow;
+  consentWindow[`ga-disable-${GA_MEASUREMENT_ID}`] = !granted;
+  if (typeof consentWindow.gtag === "function") {
+    consentWindow.gtag("consent", "update", {
       analytics_storage: granted ? "granted" : "denied",
       ad_storage: granted ? "granted" : "denied",
       ad_user_data: granted ? "granted" : "denied",

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ArticleExport } from "./types";
-import PremiumCTA from "@/components/PremiumCTA";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
 
 import heroImage from "@/assets/thumb-cold-weather-knees.svg";
@@ -168,13 +167,7 @@ const articleContent = (
     <p>
       Wind strips heat from exposed skin and tissues rapidly. If your knees aren't covered, wind chill can cool the joint area much faster than still cold air. The discomfort tends to be more surface-level, affecting the skin and superficial tissues first, but can deepen with prolonged exposure.
     </p>
-
-    <PremiumCTA
-      headline="Need warmth support for cold-weather knee comfort?"
-      text="FlexiKnee provides adjustable soothing warmth, red light, and gentle vibration to help your knees stay comfortable during cold weather, perfect for warming up joints before heading outside."
-    />
-
-    <h2>Why People Over 40 Notice Cold-Weather Pain More</h2>
+<h2>Why People Over 40 Notice Cold-Weather Pain More</h2>
     <p>
       If you're over 40 and finding that <strong>knees hurt when temperature drops</strong> more than they used to, there are clear reasons for this shift.
     </p>

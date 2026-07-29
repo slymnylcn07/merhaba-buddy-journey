@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-heat-redlight-benefits.jpg";
 import EvidenceScopeNotice from "@/components/EvidenceScopeNotice";
 
@@ -15,7 +14,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
     metaDescription: "Updated 2026 research summary on heat and red light therapy benefits for knee pain. Learn how combining both therapies supports daily knee comfort and recovery.",
     heroImage: heroImage,
     publishedDate: "February 24, 2026",
-    nextSlug: "do-knee-massagers-actually-work-guide",
+    nextSlug: "do-knee-massagers-work",
     nextTitle: "Do Knee Massagers Actually Work?",
     faqs: [
       { question: "What is red light therapy for knees?", answer: "Red light therapy (photobiomodulation) uses specific wavelengths of light (typically 630-850nm) that penetrate skin and tissue to support cellular energy production and comfort at a deeper level." },
@@ -68,13 +67,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
           <li>Research indicates cumulative benefits, meaning consistent use over weeks yields better outcomes than sporadic application</li>
           <li>Direct research on combining heat with red light remains limited, so claims of added benefit should be treated cautiously.</li>
         </ul>
-
-        <PremiumCTA
-          headline="Interested in combining heat and red light at home?"
-          text="FlexiKnee uses soothing warmth, red light wavelengths, and gentle vibration in one easy-to-use device designed for your daily knee comfort routine."
-        />
-
-        <h2>The Synergy Effect: Why Combining Heat + Red Light Works Better</h2>
+<h2>The Synergy Effect: Why Combining Heat + Red Light Works Better</h2>
         <p>
           Perhaps the most compelling finding in recent research is that heat and red light therapy may feel complementary in the same routine, meaning their combined benefit is potentially complementary, but not yet proven to outperform either approach alone.
         </p>
@@ -193,13 +186,7 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
         <p>
           Whether you're exploring at-home knee comfort for the first time or looking to upgrade from basic approaches, the combination of heat, red light therapy, and vibration represents the most evidence-supported, comprehensive strategy available in 2026. And for those ready to explore the right footwear alongside therapy, our guide on <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee comfort</Link> is a helpful companion read.
         </p>
-
-        <PremiumCTA
-          headline="Ready to experience the heat + red light synergy?"
-          text="FlexiKnee brings heat therapy, red light wavelengths, and vibration massage together in one wireless knee device for comprehensive daily comfort."
-        />
-
-        <div className="my-8 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground italic">
+<div className="my-8 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground italic">
           <strong>Disclaimer:</strong> This content is not medical advice. It is based on general research and customer experiences. Always consult a healthcare professional for persistent or severe knee concerns.
         </div>
 

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-knee-osteoarthritis-vs-rheumatoid-arthritis.jpg";
 import arthritisDiagnosisImage from "@/assets/article-inline-knee-arthritis-diagnosis.jpg";
@@ -12,7 +11,7 @@ export const kneeOsteoarthritisVsRheumatoidArthritis: ArticleExport = {
   article: {
     slug: "knee-osteoarthritis-vs-rheumatoid-arthritis",
     title: "Knee Osteoarthritis vs. Rheumatoid Arthritis: Symptoms, Tests, and Treatment Differences",
-    subtitle: "How mechanical joint wear differs from autoimmune inflammation—and why the right diagnosis changes everything",
+    subtitle: "How mechanical joint wear differs from autoimmune inflammation, and why the right diagnosis changes everything",
     intro:
       "Osteoarthritis and rheumatoid arthritis can both make a knee painful, swollen, stiff, and difficult to bend, but they are fundamentally different diseases. Knee osteoarthritis develops through changes across the whole joint and usually follows a mechanical, load-related pattern. Rheumatoid arthritis is an autoimmune inflammatory disease that often affects several joints symmetrically and can involve the rest of the body. This guide compares the symptoms, morning stiffness, blood tests, imaging, treatment, stages, and warning signs that help clinicians tell them apart.",
     metaTitle: "Knee Osteoarthritis vs Rheumatoid Arthritis: Key Differences",
@@ -154,13 +153,7 @@ export const kneeOsteoarthritisVsRheumatoidArthritis: ArticleExport = {
         <p>
           Duration is not a perfect threshold. Some people with OA report long stiffness, and early RA can be subtle. A clinician interprets stiffness alongside joint count, swelling, blood tests, symptom duration, and alternative diagnoses.
         </p>
-
-        <PremiumCTA
-          headline="Comfort tools can support a diagnosed plan—not decide the diagnosis"
-          text="FlexiKnee provides a short warmth, red-light, and vibration routine for everyday knee comfort. It does not treat autoimmune inflammation or replace DMARDs, rheumatology care, exercise, or evaluation of a persistently swollen joint."
-        />
-
-        <h2>How Knee Swelling Differs</h2>
+<h2>How Knee Swelling Differs</h2>
         <p>
           Osteoarthritis can produce an effusion, especially after a load increase, and can form a Baker’s cyst behind the knee. Bony enlargement and osteophytes may make the joint look broader or feel hard at the edges. Swelling often tracks with activity but can persist during a flare.
         </p>
@@ -173,7 +166,7 @@ export const kneeOsteoarthritisVsRheumatoidArthritis: ArticleExport = {
 
         <h2>Rheumatoid Factor, Anti-CCP, ESR, and CRP</h2>
         <p>
-          Rheumatoid factor is an antibody found in many—but not all—people with RA. It can also appear in infections, other autoimmune conditions, older adults, and some healthy people. A positive result therefore supports a clinical picture but cannot diagnose RA by itself.
+          Rheumatoid factor is an antibody found in many, but not all, people with RA. It can also appear in infections, other autoimmune conditions, older adults, and some healthy people. A positive result therefore supports a clinical picture but cannot diagnose RA by itself.
         </p>
         <p>
           Anti-cyclic citrullinated peptide antibodies, usually shortened to anti-CCP or ACPA, are more specific for RA and can be associated with a greater risk of persistent or erosive disease. Yet some people with RA remain anti-CCP negative. Seronegative RA is a clinical reality, not a contradiction.
@@ -329,7 +322,7 @@ export const kneeOsteoarthritisVsRheumatoidArthritis: ArticleExport = {
           Knee osteoarthritis and rheumatoid arthritis can share pain, stiffness, swelling, and loss of function, but they are not interchangeable. Osteoarthritis is usually dominated by local joint remodeling and mechanical load. Rheumatoid arthritis is systemic autoimmune inflammation that often causes prolonged morning stiffness, soft warm swelling, symmetrical small-joint disease, fatigue, and flares.
         </p>
         <p>
-          Blood tests help with RA but do not diagnose or exclude it alone. X-rays can support osteoarthritis but do not determine how much pain a person should have. OA care centers on exercise, load management, weight management where relevant, symptom medication, and selected procedures. RA care requires early disease-modifying treatment and ongoing monitoring. The safest approach is not to ask which arthritis is “worse,” but which disease pattern is present—and then treat that disease early and specifically.
+          Blood tests help with RA but do not diagnose or exclude it alone. X-rays can support osteoarthritis but do not determine how much pain a person should have. OA care centers on exercise, load management, weight management where relevant, symptom medication, and selected procedures. RA care requires early disease-modifying treatment and ongoing monitoring. The safest approach is not to ask which arthritis is “worse,” but which disease pattern is present, and then treat that disease early and specifically.
         </p>
       </>
     ),

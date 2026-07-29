@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-knee-pain-car-rides.jpg";
@@ -202,13 +201,7 @@ export const kneePainAfterCarRides: ArticleExport = {
         <p>
           The combination of improved lubrication, muscle activation, and restored circulation creates a progressive improvement in knee mobility. Most people find that after 5 to 10 minutes of gentle walking, their knees feel significantly more comfortable and flexible.
         </p>
-
-        <PremiumCTA
-          headline="Support Your Knees During and After Travel"
-          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long drives, making post-travel comfort simple."
-        />
-
-        <h2>Travel Situations That Increase Knee Stiffness</h2>
+<h2>Travel Situations That Increase Knee Stiffness</h2>
 
         <img
           src={imgJointStiffness}

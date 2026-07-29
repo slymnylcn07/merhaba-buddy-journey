@@ -17,13 +17,16 @@ import {
 const META_PIXEL_ID = import.meta.env.VITE_META_PIXEL_ID || '';
 const SUPABASE_URL = (import.meta.env.VITE_SUPABASE_URL || '').replace(/\/$/, '');
 const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || '';
+type IdleWindow = Window & {
+  requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
+};
 
 // Send event directly to the Edge Function without loading the Supabase browser SDK.
 const sendToConversionsAPI = async (
   eventName: string,
   eventId: string,
-  customData?: Record<string, any>,
-  userData?: Record<string, any>
+  customData?: Record<string, unknown>,
+  userData?: Record<string, unknown>
 ) => {
   try {
     if (!hasAnalyticsConsent()) return;
@@ -84,8 +87,9 @@ export const useMetaTracking = () => {
     };
 
     const runDeferred = () => {
-      if ('requestIdleCallback' in window) {
-        (window as any).requestIdleCallback(doTrack, { timeout: 5000 });
+      const idleWindow = window as IdleWindow;
+      if (idleWindow.requestIdleCallback) {
+        idleWindow.requestIdleCallback(doTrack, { timeout: 5000 });
       } else {
         setTimeout(doTrack, 2000);
       }

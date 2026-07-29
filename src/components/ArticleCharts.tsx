@@ -1,5 +1,5 @@
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
-import { Link } from "react-router-dom";
+export { RelatedGuideCard } from "@/components/RelatedGuideCard";
 
 // Chart color palette
 const COLORS = ['#ef4444', '#f97316', '#22c55e', '#3b82f6', '#8b5cf6'];
@@ -290,38 +290,6 @@ export const TipsList = ({ tips, title, items }: { tips?: string[]; title?: stri
     </div>
   );
 };
-
-// Related Guides Card Component
-export const RelatedGuideCard = ({ 
-  slug, 
-  title, 
-  thumbnail,
-  description 
-}: { 
-  slug: string; 
-  title: string; 
-  thumbnail: string;
-  description?: string;
-}) => (
-  <Link
-    to={`/guides/${slug}`}
-    className="group block bg-background border border-border/50 rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300"
-  >
-    <div className="aspect-[16/10] overflow-hidden">
-      <img 
-        src={thumbnail} 
-        alt={title}
-        className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500"
-        loading="lazy"
-      />
-    </div>
-    <div className="px-4 py-3.5">
-      <h4 className="text-sm font-semibold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">
-        {title}
-      </h4>
-    </div>
-  </Link>
-);
 
 // NEW CHARTS FOR KNEE PAIN CAUSES ARTICLE
 export const KneePainLocationsChart = () => {

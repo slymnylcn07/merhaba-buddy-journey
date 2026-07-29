@@ -26,7 +26,7 @@ const getSessionId = (): string => {
   const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes
   const now = Date.now();
   
-  let sessionData = localStorage.getItem('shopify_session');
+  const sessionData = localStorage.getItem('shopify_session');
   if (sessionData) {
     const { id, lastActivity } = JSON.parse(sessionData);
     if (now - lastActivity < SESSION_TIMEOUT) {
@@ -61,7 +61,7 @@ const ensureShopifyCookies = () => {
 };
 
 // Send event to Shopify via their analytics endpoint
-const sendToShopify = async (eventType: string, eventData: Record<string, any>) => {
+const sendToShopify = async (eventType: string, eventData: Record<string, unknown>) => {
   try {
     const clientId = getUniqueClientId();
     const sessionId = getSessionId();
@@ -110,7 +110,7 @@ const sendToShopify = async (eventType: string, eventData: Record<string, any>) 
 };
 
 // Alternative: Send via Shopify Storefront API customer event
-const sendStorefrontEvent = async (eventType: string, eventData: Record<string, any>) => {
+const sendStorefrontEvent = async (eventType: string, eventData: Record<string, unknown>) => {
   try {
     const clientId = getUniqueClientId();
     const sessionId = getSessionId();
@@ -141,7 +141,7 @@ const sendStorefrontEvent = async (eventType: string, eventData: Record<string, 
 };
 
 // Track page view
-export function trackPageView(pageType?: string, additionalData?: Record<string, any>) {
+export function trackPageView(pageType?: string, additionalData?: Record<string, unknown>) {
   if (!hasAnalyticsConsent()) return;
   ensureShopifyCookies();
   

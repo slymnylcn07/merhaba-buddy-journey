@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/hero-itband-foam-rolling.svg";
 import figAnatomy from "@/assets/fig-itband-anatomy.svg";
 import figPosition from "@/assets/fig-itband-position.svg";
@@ -154,10 +153,7 @@ export const itBandFoamRollingGuide: ArticleExport = {
         <p>
           A single rolling session changes how your leg feels for a few hours, mostly through nervous-system effects rather than physical tissue change. Lasting change comes from consistency: short sessions repeated over two to three weeks, combined with strengthening. Plan for a routine, not a rescue.
         </p>
-
-        <PremiumCTA />
-
-        <h2>What to Do When Rolling Alone Is Not Enough</h2>
+<h2>What to Do When Rolling Alone Is Not Enough</h2>
         <p>
           For a stubborn outer thigh, layer these on top of your rolling routine. First, add warmth before or instead of rolling on rest days. Heat increases local circulation and makes tissue more pliable, which is why a 15-minute warmth session before rolling often makes the same pressure feel far more productive. The full decision logic for when warmth helps versus when cold is smarter lives in our <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat vs. ice guide</Link>.
         </p>

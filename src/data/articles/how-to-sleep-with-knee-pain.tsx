@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/hero-sleep-knee-pain.svg";
 import figSide from "@/assets/fig-sleep-side.svg";
 import figBack from "@/assets/fig-sleep-back.svg";
@@ -143,11 +142,7 @@ export const howToSleepWithKneePain: ArticleExport = {
         <p>
           Finish with 60 seconds of light stretching: a gentle standing quad stretch and a seated hamstring stretch, held softly rather than aggressively. Then set up your pillow before you are sleepy enough to skip it. People who keep this routine for two weeks consistently report both easier sleep onset and calmer mornings, which compounds, because better sleep lowers next-day pain sensitivity. If your mornings are still the hardest part, pair this with the routines in our <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">guide to knee pain when getting up after sitting</Link>.
         </p>
-
-        <PremiumCTA />
-
-
-        <h2>Sleep and Pain: the Cycle Worth Knowing About</h2>
+<h2>Sleep and Pain: the Cycle Worth Knowing About</h2>
         <p>
           There is one more reason to take night knee comfort seriously, and it is bigger than the knee itself. Sleep and pain regulate each other in both directions. Poor sleep measurably lowers your pain threshold the next day: research on sleep restriction consistently shows that people rate identical stimuli as more painful after short or fragmented nights, because the brain systems that normally dampen pain signals run on sleep. At the same time, deep sleep is when the body does its most efficient tissue maintenance and inflammation regulation. So a bad knee night does not just cost you rest; it hands you a more sensitive knee tomorrow, which makes the next night harder, and the spiral feeds itself.
         </p>

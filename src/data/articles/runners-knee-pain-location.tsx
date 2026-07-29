@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-runners-knee-location.jpg";
 import diagramFrontKnee from "@/assets/diagram-runners-front-knee.jpg";
 import diagramInnerKnee from "@/assets/diagram-runners-inner-knee.jpg";
@@ -15,9 +14,9 @@ export const runnersKneePainLocation = {
     slug: "runners-knee-pain-location",
     title: "Runner's Knee Pain Location: Why It Happens and What People Commonly Feel",
     subtitle: "Understanding where running-related knee discomfort shows up",
-    intro: "Runners often notice that knee discomfort doesn't always feel the same — and where it shows up can say a lot about what's going on. This guide maps out the most common runner's knee pain locations, what people typically feel in each area, and simple everyday habits that support comfort.",
+    intro: "Runners often notice that knee discomfort doesn't always feel the same, and where it shows up can say a lot about what's going on. This guide maps out the most common runner's knee pain locations, what people typically feel in each area, and simple everyday habits that support comfort.",
     metaTitle: "Runner's Knee Pain Location: Why It Happens & What Runners Feel",
-    metaDescription: "Explore where runners commonly feel knee discomfort — front, inner, outer, and back of knee. Learn what each location means and everyday comfort approaches.",
+    metaDescription: "Explore where runners commonly feel knee discomfort, front, inner, outer, and back of knee. Learn what each location means and everyday comfort approaches.",
     heroImage: heroImage,
     publishedDate: "February 25, 2026",
     nextSlug: "running-knee-pain-guide",
@@ -32,7 +31,7 @@ export const runnersKneePainLocation = {
     content: (
       <>
         <p>
-          Running is one of the most popular forms of exercise, but it also places significant repetitive stress on the knee joint. Many runners report that their discomfort tends to show up in specific locations — and understanding <strong>where</strong> that discomfort appears can help you adjust your habits, footwear, and daily routines for better comfort.
+          Running is one of the most popular forms of exercise, but it also places significant repetitive stress on the knee joint. Many runners report that their discomfort tends to show up in specific locations, and understanding <strong>where</strong> that discomfort appears can help you adjust your habits, footwear, and daily routines for better comfort.
         </p>
         <p>
           Whether you're a seasoned marathoner or someone who jogs a few times a week, this guide breaks down the four most common <strong>runner's knee pain locations</strong> and what people typically experience in each zone.
@@ -53,7 +52,7 @@ export const runnersKneePainLocation = {
             className="w-full max-w-md mx-auto h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            The front knee / patella zone — the most commonly reported area among runners
+            The front knee / patella zone, the most commonly reported area among runners
           </figcaption>
         </figure>
 
@@ -76,11 +75,11 @@ export const runnersKneePainLocation = {
           The patella area handles a large share of the repetitive load during running. Several common factors contribute to front-knee sensitivity:
         </p>
         <ul>
-          <li><strong>Overstriding</strong> — landing with the foot too far ahead of the body increases impact on the kneecap</li>
-          <li><strong>Weak quadriceps</strong> — insufficient thigh strength means the kneecap doesn't track as smoothly</li>
-          <li><strong>Sudden mileage increases</strong> — jumping up distance or intensity too quickly without building gradually</li>
-          <li><strong>Worn-out shoes</strong> — shoes that have lost their cushioning transfer more impact to the knee</li>
-          <li><strong>Hard surfaces</strong> — running on concrete or asphalt rather than trails or tracks</li>
+          <li><strong>Overstriding</strong>, landing with the foot too far ahead of the body increases impact on the kneecap</li>
+          <li><strong>Weak quadriceps</strong>, insufficient thigh strength means the kneecap doesn't track as smoothly</li>
+          <li><strong>Sudden mileage increases</strong>, jumping up distance or intensity too quickly without building gradually</li>
+          <li><strong>Worn-out shoes</strong>, shoes that have lost their cushioning transfer more impact to the knee</li>
+          <li><strong>Hard surfaces</strong>, running on concrete or asphalt rather than trails or tracks</li>
         </ul>
 
         <h3>Everyday Comfort Approaches</h3>
@@ -104,7 +103,7 @@ export const runnersKneePainLocation = {
             className="w-full max-w-md mx-auto h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            The inner (medial) knee zone — often connected to foot mechanics and stride patterns
+            The inner (medial) knee zone, often connected to foot mechanics and stride patterns
           </figcaption>
         </figure>
 
@@ -124,10 +123,10 @@ export const runnersKneePainLocation = {
 
         <h3>Typical Running-Related Triggers</h3>
         <ul>
-          <li><strong>Overpronation</strong> — feet rolling inward too much puts extra stress on the inner knee</li>
-          <li><strong>Worn medial shoe support</strong> — shoes that tilt inward increase inner knee load</li>
-          <li><strong>Weak hip stabilizers</strong> — hip weakness can cause the knee to collapse inward during each stride</li>
-          <li><strong>Running on cambered roads</strong> — slanted surfaces create uneven stress between inner and outer knee</li>
+          <li><strong>Overpronation</strong>, feet rolling inward too much puts extra stress on the inner knee</li>
+          <li><strong>Worn medial shoe support</strong>, shoes that tilt inward increase inner knee load</li>
+          <li><strong>Weak hip stabilizers</strong>, hip weakness can cause the knee to collapse inward during each stride</li>
+          <li><strong>Running on cambered roads</strong>, slanted surfaces create uneven stress between inner and outer knee</li>
         </ul>
         <p>
           For a deeper look at how shoes connect to knee discomfort, see our guide on <Link to="/guides/best-running-shoes-knee-pain" className="text-primary underline hover:text-primary/80">running shoes and knee comfort</Link>.
@@ -143,12 +142,7 @@ export const runnersKneePainLocation = {
         </ul>
 
         {/* Mid-article CTA */}
-        <PremiumCTA
-          headline="Support your knees after every run"
-          text="FlexiKnee wraps around the full knee area, delivering soothing warmth, red light, and gentle vibration designed for runners who want daily comfort support."
-        />
-
-        <SectionDivider />
+<SectionDivider />
 
         {/* --- Zone 3: Outer Knee --- */}
         <h2>Outer Knee Tightness During Runs</h2>
@@ -160,7 +154,7 @@ export const runnersKneePainLocation = {
             className="w-full max-w-md mx-auto h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            The outer (lateral) knee zone — often linked to IT band tension and running surface
+            The outer (lateral) knee zone, often linked to IT band tension and running surface
           </figcaption>
         </figure>
 
@@ -180,11 +174,11 @@ export const runnersKneePainLocation = {
 
         <h3>Common Running Patterns Behind It</h3>
         <ul>
-          <li><strong>High weekly mileage without adequate rest</strong> — repetitive friction at the IT band</li>
-          <li><strong>Running on banked or sloped surfaces</strong> — creates asymmetric lateral stress</li>
-          <li><strong>Tight hip flexors and glutes</strong> — reduced hip mobility transfers tension to the IT band</li>
-          <li><strong>Narrow running gait</strong> — feet landing too close together increases crossover stress</li>
-          <li><strong>Rapid pace increases</strong> — jumping from easy runs to tempo work too quickly</li>
+          <li><strong>High weekly mileage without adequate rest</strong>, repetitive friction at the IT band</li>
+          <li><strong>Running on banked or sloped surfaces</strong>, creates asymmetric lateral stress</li>
+          <li><strong>Tight hip flexors and glutes</strong>, reduced hip mobility transfers tension to the IT band</li>
+          <li><strong>Narrow running gait</strong>, feet landing too close together increases crossover stress</li>
+          <li><strong>Rapid pace increases</strong>, jumping from easy runs to tempo work too quickly</li>
         </ul>
 
         <h3>Everyday Comfort Approaches</h3>
@@ -208,13 +202,13 @@ export const runnersKneePainLocation = {
             className="w-full max-w-md mx-auto h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            The posterior knee zone — commonly noticed after longer distances or limited flexibility
+            The posterior knee zone, commonly noticed after longer distances or limited flexibility
           </figcaption>
         </figure>
 
         <h3>Location Overview</h3>
         <p>
-          The back of the knee (popliteal area) sits behind the joint, where the hamstrings and calf muscles connect. This area is less commonly discussed than the front or outer knee, but many runners — especially those who run longer distances — report tightness or a feeling of pressure here. For more detail, explore our guide on <Link to="/guides/below-knee-discomfort-teens-adults" className="text-primary underline hover:text-primary/80">below-knee discomfort in active people</Link>.
+          The back of the knee (popliteal area) sits behind the joint, where the hamstrings and calf muscles connect. This area is less commonly discussed than the front or outer knee, but many runners, especially those who run longer distances, report tightness or a feeling of pressure here. For more detail, explore our guide on <Link to="/guides/below-knee-discomfort-teens-adults" className="text-primary underline hover:text-primary/80">below-knee discomfort in active people</Link>.
         </p>
 
         <h3>Common Feelings</h3>
@@ -227,16 +221,16 @@ export const runnersKneePainLocation = {
 
         <h3>When Runners Usually Notice It</h3>
         <ul>
-          <li><strong>After long runs</strong> — the posterior area accumulates tension over distance</li>
-          <li><strong>During hill running</strong> — inclines and declines increase hamstring and calf engagement</li>
-          <li><strong>With limited flexibility</strong> — tight hamstrings pull on the back of the knee</li>
-          <li><strong>After sitting for long periods post-run</strong> — the muscles tighten up when cooling down in a seated position</li>
+          <li><strong>After long runs</strong>, the posterior area accumulates tension over distance</li>
+          <li><strong>During hill running</strong>, inclines and declines increase hamstring and calf engagement</li>
+          <li><strong>With limited flexibility</strong>, tight hamstrings pull on the back of the knee</li>
+          <li><strong>After sitting for long periods post-run</strong>, the muscles tighten up when cooling down in a seated position</li>
         </ul>
 
         <h3>Everyday Comfort Approaches</h3>
         <ul>
           <li>Gentle hamstring and calf stretches after every run</li>
-          <li>Avoiding extended sitting immediately after running — a short cool-down walk helps</li>
+          <li>Avoiding extended sitting immediately after running, a short cool-down walk helps</li>
           <li>Applying warmth to the back of the knee area in the evening</li>
           <li>Foam rolling the calves and hamstrings to reduce posterior tension</li>
           <li>Gradually increasing distance rather than making large jumps</li>
@@ -305,11 +299,11 @@ export const runnersKneePainLocation = {
           <div className="rounded-xl border border-border/40 p-5 bg-muted/20">
             <h3 className="flex items-center gap-2">🏃 Before Your Run</h3>
             <ul className="mt-3 space-y-2 text-sm">
-              <li>✅ Dynamic warm-up (leg swings, walking lunges) — 5 minutes minimum</li>
-              <li>✅ Check your shoes for wear — replace every 400–500 miles</li>
+              <li>✅ Dynamic warm-up (leg swings, walking lunges), 5 minutes minimum</li>
+              <li>✅ Check your shoes for wear, replace every 400–500 miles</li>
               <li>✅ Apply gentle warmth to stiff areas if needed</li>
               <li>✅ Start with an easy pace for the first 5–10 minutes</li>
-              <li>✅ Choose your surface — vary between road, trail, and track</li>
+              <li>✅ Choose your surface, vary between road, trail, and track</li>
               <li>✅ Hydrate before heading out</li>
             </ul>
           </div>
@@ -317,12 +311,12 @@ export const runnersKneePainLocation = {
           <div className="rounded-xl border border-border/40 p-5 bg-muted/20">
             <h3 className="flex items-center gap-2">🧘 After Your Run</h3>
             <ul className="mt-3 space-y-2 text-sm">
-              <li>✅ Cool-down walk for 5 minutes — don't sit immediately</li>
+              <li>✅ Cool-down walk for 5 minutes, don't sit immediately</li>
               <li>✅ Gentle static stretches (quads, hamstrings, calves, IT band)</li>
               <li>✅ Apply warmth to any areas that feel stiff or tight</li>
               <li>✅ Foam roll the outer thigh, quads, and calves</li>
               <li>✅ Rehydrate and refuel within 30 minutes</li>
-              <li>✅ Note which knee areas felt sensitive — track patterns over time</li>
+              <li>✅ Note which knee areas felt sensitive, track patterns over time</li>
             </ul>
           </div>
 
@@ -334,7 +328,7 @@ export const runnersKneePainLocation = {
               <li>✅ Deep hamstring and calf flexibility work</li>
               <li>✅ Core stability exercises (planks, dead bugs)</li>
               <li>✅ One rest or cross-training day (swimming, cycling)</li>
-              <li>✅ Review your weekly mileage — increase by no more than 10%</li>
+              <li>✅ Review your weekly mileage, increase by no more than 10%</li>
             </ul>
           </div>
         </div>
@@ -342,10 +336,10 @@ export const runnersKneePainLocation = {
 
         <h2>Putting It All Together</h2>
         <p>
-          Knowing your runner's knee pain location is one of the most practical things you can do to support your daily running comfort. Rather than treating all knee discomfort the same, paying attention to <em>where</em> the sensation shows up helps you focus on the right habits — whether that's strengthening specific muscles, adjusting your form, upgrading your shoes, or simply adding warmth to your post-run routine.
+          Knowing your runner's knee pain location is one of the most practical things you can do to support your daily running comfort. Rather than treating all knee discomfort the same, paying attention to <em>where</em> the sensation shows up helps you focus on the right habits, whether that's strengthening specific muscles, adjusting your form, upgrading your shoes, or simply adding warmth to your post-run routine.
         </p>
         <p>
-          The goal isn't to diagnose anything — it's to become more aware of your body's patterns so you can make small, consistent adjustments that support long-term comfort and enjoyment of running.
+          The goal isn't to diagnose anything, it's to become more aware of your body's patterns so you can make small, consistent adjustments that support long-term comfort and enjoyment of running.
         </p>
 
         <p className="text-xs text-muted-foreground mt-8 italic">

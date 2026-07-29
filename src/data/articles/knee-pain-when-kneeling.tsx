@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-knee-pain-kneeling.jpg";
@@ -153,13 +152,7 @@ export const kneePainWhenKneeling: ArticleExport = {
           <li><strong>Stiffness after kneeling:</strong> A tight, stiff feeling in the knee when you first stand up and begin walking after kneeling for several minutes. This is related to reduced circulation and muscle inactivity during the kneeling period. Our <Link to="/guides/knee-tightness-without-pain" className="text-primary hover:underline">knee tightness guide</Link> discusses similar stiffness patterns.</li>
           <li><strong>Sensitivity when touching the kneecap area:</strong> Some people notice that the front of the knee feels tender to touch after extended kneeling, even hours later</li>
         </ul>
-
-        <PremiumCTA
-          headline="Want soothing warmth for kneeling-related knee discomfort?"
-          text="FlexiKnee wraps around the full knee, delivering soothing infrared warmth, red light, and gentle vibration to help the front knee area recover after kneeling activities."
-        />
-
-        <h2>Situations Where Kneeling Discomfort Often Appears</h2>
+<h2>Situations Where Kneeling Discomfort Often Appears</h2>
         <p>
           Certain everyday activities and occupations involve more kneeling than others, and people in these situations tend to notice front-of-knee sensitivity more frequently.
         </p>

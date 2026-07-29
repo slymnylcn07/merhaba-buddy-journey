@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-collagen-knee-pain.jpg";
 import collagenFormsImage from "@/assets/article-inline-collagen-forms-comparison.jpg";
@@ -167,13 +166,7 @@ export const collagenPeptidesKneePain: ArticleExport = {
         <p>
           Funding and product specificity also matter. A meaningful share of supplement research is sponsored by ingredient manufacturers, and a trial of one branded extract does not automatically validate every powder or tablet sold online. The fairest conclusion is therefore neither “collagen works” nor “collagen is useless.” It is that certain preparations may produce a modest symptom benefit for some people, while the certainty and generalizability remain limited.
         </p>
-
-        <PremiumCTA
-          headline="Testing a supplement? Keep your daily routine separate and measurable"
-          text="Collagen can take weeks to judge. A short FlexiKnee warmth, red-light, and vibration routine gives you a separate day-to-day comfort tool while you track whether the supplement itself changes stairs, walking, or morning stiffness."
-        />
-
-        <h2>Can Collagen Repair or Regrow Knee Cartilage?</h2>
+<h2>Can Collagen Repair or Regrow Knee Cartilage?</h2>
         <p>
           The search term <strong>collagen for knee repair</strong> invites the most misleading promise in the category. Symptom studies measure pain, stiffness, walking ability, or questionnaires such as WOMAC. They do not show that a person has regenerated a meaningful layer of cartilage. Even when a blood or urine marker changes, that is not the same as restoring joint structure on imaging or reversing established osteoarthritis.
         </p>

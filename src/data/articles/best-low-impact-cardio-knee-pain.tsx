@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-low-impact-cardio-knee-pain.jpg";
 import walkingMechanicsImage from "@/assets/article-inline-low-impact-walking-mechanics.jpg";
@@ -162,13 +161,7 @@ export const bestLowImpactCardioKneePain: ArticleExport = {
         <p>
           Upright bikes generally feel more like outdoor cycling. Recumbent bikes provide a larger seat and back support and can feel safer for people with balance, back, or confidence limitations. Neither is automatically superior. Choose the version that allows a neutral position, smooth pedal circle, and repeatable sessions without sharp pain. Two or three minutes of easy pedaling can also work as a warm-up before strength exercises.
         </p>
-
-        <PremiumCTA
-          headline="Want flexible support during walking and low-impact training?"
-          text="A breathable compression sleeve can add warmth and a supported feel without replacing gradual cardio progression."
-        />
-
-        <figure className="my-8">
+<figure className="my-8">
           <img
             src={cyclingFitImage}
             alt="Cyclist with knee and bike-fit markers showing the importance of saddle and foot position"

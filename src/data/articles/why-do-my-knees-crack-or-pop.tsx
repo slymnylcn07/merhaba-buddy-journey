@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import { TipsList, InfoBox } from "@/components/ArticleCharts";
 import { KneeCrackingCausesChart, KneeSoundTypesChart } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-cracking-crepitus.jpg";
@@ -135,12 +134,7 @@ export const whyDoMyKneesCrackOrPop: ArticleExport = {
         <p>
           If your knees crack specifically when you first bend them after waking up or after sitting, the mechanism is closely related to fluid dynamics. During rest, the synovial fluid becomes less actively circulated, and the joint's natural lubrication is at its lowest efficiency. The first bending motion redistributes this fluid and releases accumulated gas, producing sounds that typically diminish after a few repetitions of the movement.
         </p>
-<PremiumCTA
-          headline="Looking for daily knee comfort support?"
-          text="FlexiKnee provides gentle warmth and vibration to help keep your knee joints comfortable and supported through everyday movements."
-        />
-
-        <h2>Are Knee Cracking Sounds Normal?</h2>
+<h2>Are Knee Cracking Sounds Normal?</h2>
         <p>
           The short answer is: almost always, yes. Knee cracking sounds are one of the most normal joint phenomena in the human body. Research consistently shows that the vast majority of knee crepitus occurs in healthy joints and does not predict or indicate joint problems.
         </p>
@@ -272,13 +266,7 @@ export const whyDoMyKneesCrackOrPop: ArticleExport = {
         <p>
           Gentle warmth applied to the knee before exercise or the start of daily activities can help improve synovial fluid circulation, relax tight muscles, and prepare the joint for movement. Many people find that a warm towel or heat application for 10 to 15 minutes before activity reduces the intensity and frequency of knee cracking sounds throughout the day. Our guide on <Link to="/guides/knee-warmth-daily-comfort" className="text-primary hover:underline">daily knee warmth strategies</Link> explores this approach in detail.
         </p>
-
-        <PremiumCTA
-          headline="Want to incorporate daily warmth into your knee comfort routine?"
-          text="FlexiKnee provides adjustable warmth and gentle vibration to help keep your knee joints comfortable, flexible, and supported through everyday movements."
-        />
-
-        <h2>When to Seek Professional Help</h2>
+<h2>When to Seek Professional Help</h2>
         <p>
           While the vast majority of knee cracking is harmless, there are specific patterns that may benefit from professional evaluation. Knowing when to seek guidance can help you address potential concerns early while avoiding unnecessary worry about normal joint sounds.
         </p>
@@ -305,11 +293,11 @@ export const whyDoMyKneesCrackOrPop: ArticleExport = {
           Understanding why your knees crack is just one part of supporting your overall knee comfort. We have created a comprehensive library of guides covering every aspect of daily knee wellness. Here are some that may be particularly relevant:
         </p>
         <ul>
-          <li><Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">Pain in the Knee: Common Causes, Locations, and What Helps</Link> — A complete overview of knee discomfort patterns</li>
-          <li><Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">Knee Pain Locations Explained: A Visual Guide</Link> — Understand where different types of discomfort originate</li>
-          <li><Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">How to Strengthen Knees for Better Daily Support</Link> — Practical exercises for long-term knee resilience</li>
-          <li><Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">Daily Knee Care Routine: Simple Habits for Long-Term Comfort</Link> — Build sustainable daily habits for knee wellness</li>
-          <li><Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT Band Syndrome Explained</Link> — Why outer knee sensations happen and what helps</li>
+          <li><Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">Pain in the Knee: Common Causes, Locations, and What Helps</Link>, A complete overview of knee discomfort patterns</li>
+          <li><Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">Knee Pain Locations Explained: A Visual Guide</Link>, Understand where different types of discomfort originate</li>
+          <li><Link to="/guides/how-to-strengthen-knees" className="text-primary hover:underline">How to Strengthen Knees for Better Daily Support</Link>, Practical exercises for long-term knee resilience</li>
+          <li><Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">Daily Knee Care Routine: Simple Habits for Long-Term Comfort</Link>, Build sustainable daily habits for knee wellness</li>
+          <li><Link to="/guides/it-band-pain-location-diagram" className="text-primary hover:underline">IT Band Syndrome Explained</Link>, Why outer knee sensations happen and what helps</li>
         </ul>
               <h2>Painless Clicking: What the Sound Usually Means</h2>
         <p>

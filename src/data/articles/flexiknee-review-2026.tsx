@@ -2,10 +2,8 @@ import {
   InfoBox,
   TipsList,
 } from "@/components/ArticleCharts";
-import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 import { Link } from "react-router-dom";
 import type { ArticleExport } from "./types";
-import PremiumCTA from "@/components/PremiumCTA";
 import { MAIN_PRODUCT_RATING, MAIN_PRODUCT_REVIEW_COUNT } from "@/lib/main-product-rating";
 
 import heroInfraredMassager from "@/assets/article-hero-infrared-massager.jpg";
@@ -162,13 +160,7 @@ export const flexikneeReview2026: ArticleExport = {
         <p>
           A rechargeable battery and adjustable straps make the device easier to use while sitting, reading, or relaxing without remaining connected to a wall outlet. The trade-off is weight and charging: a powered shell is heavier than a fabric wrap and needs regular recharging.
         </p>
-
-        <PremiumCTA
-          headline="See the current FlexiKnee configuration"
-          text="Review the live product details, specifications, current 4.7 rating, price, delivery estimate, and return information."
-        />
-
-        <h2>Pros: Where FlexiKnee Is Strongest</h2>
+<h2>Pros: Where FlexiKnee Is Strongest</h2>
         <TipsList tips={[
           "Combines warmth, red light, and three vibration modes in one device",
           "Cordless design supports simple seated routines without an attached power cable",
@@ -243,43 +235,7 @@ export const flexikneeReview2026: ArticleExport = {
         <p>
           What it should not become is a shortcut around proper evaluation. The product can support a comfort routine, but it is not evidence that a knee condition has been diagnosed or treated. With that expectation set correctly, FlexiKnee is a credible option for people who value convenience and are comfortable with the product's weight, charging needs, and general-fit design.
         </p>
-
-        <PremiumCTA
-          headline="Compare the details before choosing"
-          text="See current specifications, price, delivery information, returns, and the same 4.7 product rating used throughout the site."
-        />
-
-        <ArticleSourcesBox note="Research on heat or photobiomodulation does not prove that this exact consumer product will produce the same outcomes as the clinical devices or protocols studied. The links below provide context for safe use and evidence boundaries.">
-          <ul>
-            <li>
-              <a href="https://orthoinfo.aaos.org/globalassets/pdfs/heat-or-ice-for-your-pain-infographic_final.pdf" target="_blank" rel="noreferrer noopener">
-                American Academy of Orthopaedic Surgeons: Heat or Ice for Your Pain?
-              </a>
-            </li>
-            <li>
-              <a href="https://pubmed.ncbi.nlm.nih.gov/31683036/" target="_blank" rel="noreferrer noopener">
-                BMJ Open: Low-level laser therapy for pain and disability in knee osteoarthritis — systematic review and meta-analysis (2019)
-              </a>
-            </li>
-            <li>
-              <a href="https://pubmed.ncbi.nlm.nih.gov/37762594/" target="_blank" rel="noreferrer noopener">
-                Systematic review of photobiomodulation parameters and musculoskeletal outcomes (2023)
-              </a>
-            </li>
-            <li>
-              <a href="https://www.nhs.uk/symptoms/knee-pain/" target="_blank" rel="noreferrer noopener">
-                NHS: Knee pain, self-care, and warning signs
-              </a>
-            </li>
-            <li>
-              <a href="https://www.fda.gov/medical-devices/medical-device-recalls/copper-fit-recalls-rapid-relief-heating-pad-due-fire-and-burn-hazards" target="_blank" rel="noreferrer noopener">
-                FDA: Heating-pad recall notice describing overheating, fire, and burn hazards
-              </a>
-            </li>
-          </ul>
-        </ArticleSourcesBox>
-
-        <div className="mt-12 rounded-lg border border-border/30 bg-muted/30 p-4">
+<div className="mt-12 rounded-lg border border-border/30 bg-muted/30 p-4">
           <p className="mb-0 text-sm italic text-muted-foreground">
             This content is general product and wellness information, not medical advice. Product specifications in this review are based on the supplied documentation and live product information available at the updated date.
           </p>

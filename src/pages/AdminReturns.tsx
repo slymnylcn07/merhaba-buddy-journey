@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -53,12 +53,7 @@ const AdminReturns = () => {
   const [filterStatus, setFilterStatus] = useState<string>("all");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    checkAuth();
-    fetchReturns();
-  }, [filterStatus]);
-
-  const checkAuth = async () => {
+  const checkAuth = useCallback(async () => {
     const { data: { session } } = await supabase.auth.getSession();
     
     if (!session) {
@@ -78,9 +73,9 @@ const AdminReturns = () => {
       navigate("/admin");
       toast.error("Admin yetkisi bulunamadı");
     }
-  };
+  }, [navigate]);
 
-  const fetchReturns = async () => {
+  const fetchReturns = useCallback(async () => {
     setIsLoading(true);
     
     let query = supabase
@@ -101,7 +96,12 @@ const AdminReturns = () => {
     }
 
     setIsLoading(false);
-  };
+  }, [filterStatus]);
+
+  useEffect(() => {
+    checkAuth();
+    fetchReturns();
+  }, [checkAuth, fetchReturns]);
 
   const updateStatus = async (id: string, newStatus: string) => {
     const request = returns.find((r) => r.id === id);
