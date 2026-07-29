@@ -1571,7 +1571,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           <strong>Weight management:</strong> Every pound of body weight adds approximately four pounds of pressure on the knees. Maintaining a healthy weight significantly reduces knee joint pain and slows arthritis progression.
         </p>
         <p>
-          <strong>Temperature therapy:</strong> Heat typically helps with stiffness and chronic pain, while ice can be useful for acute flare-ups with swelling. Experiment to find what works best for you.
+          <strong>Temperature therapy:</strong> Gentle heat may feel useful for stiffness when the knee is not swollen, while cold may feel better during a short-term hot or swollen flare. Our guide to <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">choosing heat or cold for arthritis knee symptoms</Link> explains the safety differences and when home treatment should stop.
         </p>
 <h2>When to Consider Knee Replacement</h2>
         <p>

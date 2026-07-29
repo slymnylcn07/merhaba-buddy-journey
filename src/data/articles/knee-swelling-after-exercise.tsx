@@ -114,7 +114,7 @@ const articleContent = (
       Avoid pushing through a workout when the knee is visibly swollen, losing motion, unstable, or painful with ordinary walking. Continuing the same aggravating activity can make it harder to judge whether the swelling is improving. A safer first step is to stop the provoking exercise and reassess walking, stairs, bending, and swelling over the following day.
     </p>
     <p>
-      Gentle movement may be appropriate only when it does not increase swelling or pain. Do not use a recovery routine to test a knee that is acutely swollen after an injury. Our <Link to="/guides/knee-recovery-exercises-after-workout" className="text-primary hover:underline">post-workout knee recovery routine</Link> is intended for mild general soreness, not a hot, rapidly swollen, unstable, or injured knee.
+      Gentle movement may be appropriate only when it does not increase swelling or pain. Do not use a recovery routine to test a knee that is acutely swollen after an injury. Our <Link to="/guides/knee-recovery-exercises-after-workout" className="text-primary hover:underline">post-workout knee recovery routine</Link> is intended for mild general soreness, not a hot, rapidly swollen, unstable, or injured knee. If you are deciding between <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">ice or heat for a swollen knee</Link>, use the current swelling and warmth pattern rather than applying the same method after every workout.
     </p>
 
     <InfoBox title="Stop and Get Medical Advice">

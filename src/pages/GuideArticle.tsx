@@ -181,7 +181,7 @@ const GuideArticle = () => {
     },
     "inLanguage": "en",
     "articleSection": "Guides",
-    "keywords": getKeywords(article.title),
+    "keywords": article.seoTags || getKeywords(article.title),
     ...(article.sources && article.sources.length > 0
       ? {
           citation: article.sources.map((source) => ({

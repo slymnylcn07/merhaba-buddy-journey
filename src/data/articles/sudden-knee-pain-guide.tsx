@@ -363,7 +363,7 @@ export const suddenKneePainGuide: ArticleExport = {
 
         <h3>Step 2: Protect, Do Not Provoke</h3>
         <p>
-          Avoid the exact twist, squat depth, stair pattern, or impact that triggered the pain. Do not repeatedly test a locked or unstable knee. If the knee is newly painful or swollen and skin sensation is normal, a wrapped cold pack can be used for up to 20 minutes at a time. Never place ice directly on the skin. Avoid heat on a hot, red, or acutely swollen knee.
+          Avoid the exact twist, squat depth, stair pattern, or impact that triggered the pain. Do not repeatedly test a locked or unstable knee. If the knee is newly painful or swollen and skin sensation is normal, a wrapped cold pack can be used for up to 20 minutes at a time. Never place ice directly on the skin. Avoid heat on a hot, red, or acutely swollen knee. The <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">knee injury ice-or-heat guide</Link> explains how swelling, bruising, stiffness, and skin safety change that short-term choice.
         </p>
 
         <h3>Step 3: Gentle Range-of-Motion</h3>

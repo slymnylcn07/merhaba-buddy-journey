@@ -104,8 +104,8 @@ export const guidesData: GuideData[] = [
     slug: "heat-vs-ice-for-knees",
     title: "Heat or Ice for Knee Pain: A Practical Decision Guide",
     description: "Compare cold for recent swelling with gentle heat for stiffness, including post-exercise examples, timing, skin safety, and warning signs.",
-    readTime: 14,
-    lastModified: "2026-07-13",
+    readTime: 18,
+    lastModified: "2026-07-29",
   },
   {
     slug: "do-knee-massagers-work",

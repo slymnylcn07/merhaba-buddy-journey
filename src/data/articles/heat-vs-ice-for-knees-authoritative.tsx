@@ -3,9 +3,49 @@ import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-heat-vs-ice.jpg";
 import comparisonImage from "@/assets/illustration-heat-vs-ice-comparison.jpg";
 import mistakesImage from "@/assets/illustration-heat-ice-mistakes.jpg";
-import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
-const sourceLinkClass = "font-medium text-blue-600 hover:underline";
+const heatVsIceFaqs = [
+  {
+    question: "Is heat or ice better for knee pain?",
+    answer:
+      "Neither is always better. Cold is commonly used for a recent injury, visible swelling, or unusual warmth. Gentle heat may feel better for stiffness or muscle tightness when the knee is not swollen. The cause of the symptoms and your medical history still matter.",
+  },
+  {
+    question: "Should I use ice or heat for a sore knee?",
+    answer:
+      "Check for swelling first. A sore knee that is visibly puffy, unusually warm, or recently injured may fit cold better. A non-swollen knee that mainly feels stiff or surrounded by tight muscles may feel more comfortable with gentle heat.",
+  },
+  {
+    question: "Is ice or heat better for a swollen knee?",
+    answer:
+      "Cold is generally the better first match for visible swelling, particularly after a recent aggravation or injury. Use a cloth barrier and keep the session brief. Rapid, severe, hot, red, or recurring swelling needs medical assessment rather than repeated home treatment.",
+  },
+  {
+    question: "Should I use ice or heat after a knee injury?",
+    answer:
+      "A wrapped cold pack is commonly used early when a recent twist, fall, or impact causes pain or swelling. Avoid heat over fresh swelling or bruising. Seek prompt assessment if the knee is deformed, rapidly swelling, locked, unstable, or unable to support weight.",
+  },
+  {
+    question: "Is heat or cold better for an arthritic knee?",
+    answer:
+      "Gentle heat may feel useful for arthritis-related stiffness when the knee is not swollen. Cold may feel better during a short-term hot or swollen flare. Neither changes the underlying arthritis, and a first episode of a very hot, red, swollen joint should be assessed promptly.",
+  },
+  {
+    question: "How long should I use heat or ice on my knee?",
+    answer:
+      "A common safety range is 10 to 20 minutes. Use a cloth barrier, follow the product instructions, let the skin return to its usual temperature between sessions, and stop sooner if pain, burning, marked redness, blotching, or prolonged numbness develops.",
+  },
+  {
+    question: "Why does my knee hurt more after icing?",
+    answer:
+      "Cold can sometimes increase aching or stiffness, and excessive cold or direct skin contact can irritate the area. Stop the session if pain increases, allow the knee to warm naturally, and seek advice if the reaction is severe, persistent, or accompanied by skin-color or sensation changes.",
+  },
+  {
+    question: "Can I use heat or ice before bed?",
+    answer:
+      "Gentle heat may feel soothing before bed when stiffness is the main problem and there is no swelling. Cold may be considered after an activity-related swollen flare. Never sleep with an active heating device or ice pack, and arrange an assessment if knee pain repeatedly wakes you.",
+  },
+];
 
 export const heatVsIceForKneesAuthoritative: ArticleExport = {
   cta: "",
@@ -20,42 +60,42 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
       "Use ice for recent swelling or injury and heat for stiffness without swelling. Compare timing, safety limits, common situations, and warning signs.",
     heroImage,
     publishedDate: "January 19, 2026",
-    lastUpdated: "July 13, 2026",
+    lastUpdated: "July 29, 2026",
     nextSlug: "knee-pain-after-exercise",
     nextTitle: "Knee Pain After Exercise: Common Patterns and Recovery",
-    faqs: [
+    seoTags: "heat or ice for knee pain, ice or heat for knee pain, sore knee ice or heat, ice or heat for swollen knee, knee injury ice or heat, heat or cold for arthritic knee, how long to ice a knee",
+    sources: [
       {
-        question: "Is heat or ice better for knee pain?",
-        answer:
-          "Neither is always better. Cold is commonly used for a recent injury, visible swelling, or inflammation. Gentle heat may feel better for stiffness or muscle tightness when the knee is not swollen. The cause of the symptoms and your medical history matter.",
+        title: "Heat or Ice for Your Pain?",
+        publisher: "American Academy of Orthopaedic Surgeons",
+        url: "https://orthoinfo.aaos.org/globalassets/pdfs/heat-or-ice-for-your-pain-infographic_final.pdf",
       },
       {
-        question: "How long should I use heat or ice on my knee?",
-        answer:
-          "Many orthopedic and hospital guides recommend sessions of about 10 to 20 minutes. Use a cloth barrier, follow the product instructions, and stop sooner if the skin becomes painful, numb, blotchy, or unusually red.",
+        title: "Knee Pain",
+        publisher: "NHS",
+        url: "https://www.nhs.uk/symptoms/knee-pain/",
       },
       {
-        question: "Can I use heat and ice on the same day?",
-        answer:
-          "Some people use them at different times for different symptoms, such as warmth for morning stiffness and cold after activity if swelling develops. Do not alternate extremes rapidly, and allow the skin to return to normal between sessions.",
+        title: "Swollen Knee: Diagnosis and Treatment",
+        publisher: "Mayo Clinic",
+        url: "https://www.mayoclinic.org/diseases-conditions/swollen-knee/diagnosis-treatment/drc-20378134",
       },
       {
-        question: "When should I avoid heat on my knee?",
-        answer:
-          "Avoid heat over a swollen, bruised, or open area. Do not use it if you have reduced temperature sensation unless a clinician has advised you, because burns can occur without being noticed.",
+        title: "Ice Packs vs. Warm Compresses for Pain",
+        publisher: "Johns Hopkins Medicine",
+        url: "https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/ice-packs-vs-warm-compresses-for-pain",
       },
       {
-        question: "When should I avoid ice on my knee?",
-        answer:
-          "Do not apply ice directly to the skin. People with poor circulation or reduced sensation should ask a healthcare professional before using cold therapy.",
+        title: "2019 Guideline for the Management of Osteoarthritis of the Hand, Hip, and Knee",
+        publisher: "American College of Rheumatology and Arthritis Foundation",
+        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11488261/",
       },
       {
-        question: "When should knee pain be checked by a professional?",
-        answer:
-          "Seek urgent assessment after a major injury, if you cannot bear weight, the knee is badly swollen or deformed, it locks or gives way, or you have redness, heat, and fever. Persistent or worsening symptoms also deserve medical review.",
+        title: "Heat Therapy Helps Relax Stiff Joints",
+        publisher: "Arthritis Foundation",
+        url: "https://www.arthritis.org/health-wellness/healthy-living/managing-pain/pain-relief-solutions/heat-therapy-helps-relax-stiff-joints",
       },
     ],
-    seoTags: "heat or ice, knee swelling, knee stiffness, home comfort",
     content: (
       <>
         <div className="my-8 rounded-2xl border border-blue-200 bg-blue-50 p-6">
@@ -68,7 +108,7 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
         </div>
 
         <p>
-          The heat-or-ice question is common because both approaches can change how a sore knee feels, but they do so in different ways. Cold can temporarily numb an area and help limit swelling. Warmth can relax tight muscles and make a stiff joint feel easier to move. The useful question is not ?Which one is best?? but ?Which one fits the symptoms I have right now??
+          The heat-or-ice question is common because both approaches can change how a sore knee feels, but they do so in different ways. Cold can temporarily numb an area and help limit swelling. Warmth can relax tight muscles and make a stiff joint feel easier to move. The useful question is not “Which one is best?” but “Which one fits the symptoms I have right now?”
         </p>
         <p>
           This guide focuses on everyday self-care. It does not replace an examination, especially after a fall, twist, impact, or sudden loss of function.
@@ -155,6 +195,21 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
                 <td className="border-b border-slate-100 p-4">Consider later for tightness without swelling</td>
               </tr>
               <tr>
+                <td className="border-b border-slate-100 p-4 font-medium text-slate-900">Sore knee without swelling</td>
+                <td className="border-b border-slate-100 p-4">May temporarily numb an irritated area</td>
+                <td className="border-b border-slate-100 p-4">May suit stiffness or tight surrounding muscles</td>
+              </tr>
+              <tr>
+                <td className="border-b border-slate-100 p-4 font-medium text-slate-900">Arthritis symptoms</td>
+                <td className="border-b border-slate-100 p-4">May feel better during a short-term hot or swollen flare</td>
+                <td className="border-b border-slate-100 p-4">May feel better for stiffness without active swelling</td>
+              </tr>
+              <tr>
+                <td className="border-b border-slate-100 p-4 font-medium text-slate-900">Night pain</td>
+                <td className="border-b border-slate-100 p-4">Consider only if an activity-related swollen flare is present</td>
+                <td className="border-b border-slate-100 p-4">May feel soothing before bed for a non-swollen stiff knee</td>
+              </tr>
+              <tr>
                 <td className="p-4 font-medium text-slate-900">Unexplained, severe, or worsening pain</td>
                 <td className="p-4" colSpan={2}>Do not rely on either method alone. Seek professional assessment.</td>
               </tr>
@@ -176,6 +231,22 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
           Cold should not become a reason to ignore a significant injury. A knee that is badly swollen, deformed, locked, unstable, or unable to bear weight needs assessment.
         </p>
 
+        <h3>Ice or Heat for a Swollen Knee?</h3>
+        <p>
+          For a visibly swollen knee, cold is generally the better first match. Use a wrapped cold pack rather than placing ice directly on the skin, and elevate the leg if that is comfortable. A short session may reduce pain and swelling temporarily, but it does not explain why the swelling started.
+        </p>
+        <p>
+          Rapid swelling after a twist or impact, swelling that repeatedly returns, or a knee that is hot and red needs more than a temperature choice. Our <Link to="/guides/knee-swelling-after-exercise">knee swelling after exercise guide</Link> explains activity-related patterns, while severe or unexplained swelling deserves professional assessment.
+        </p>
+
+        <h3>Knee Injury: Ice or Heat?</h3>
+        <p>
+          After a recent twist, fall, bump, or awkward landing, cold is commonly considered first when pain or swelling is present. Heat is usually avoided over fresh swelling, bruising, or an open area. Do not use cold to numb the knee and then return immediately to the activity that caused the injury.
+        </p>
+        <p>
+          Seek prompt assessment if swelling develops quickly, the knee looks misshapen, you heard a crack, or the joint locks, gives way, or cannot support weight. These signs matter more than choosing between heat and ice.
+        </p>
+
         <h2>When Heat May Be the Better Choice</h2>
         <p>
           Gentle warmth may be useful when the main problem is stiffness, achiness, or tight muscles around the knee and there is no visible swelling. Heat can increase local blood flow and help muscles relax, which may make gentle movement feel easier for a limited period.
@@ -190,12 +261,23 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
           Heat should feel comfortably warm, never hot. Do not use it over swelling, bruising, an open wound, or an area with reduced temperature sensation.
         </p>
 
-        <h2>Common Situations</h2>
-        <h3>After a Workout</h3>
+        <h3>Sore Knee: Ice or Heat?</h3>
         <p>
-          First check the knee rather than automatically reaching for one method. If it is visibly swollen or unusually warm, cold may be the more appropriate short-term option. If the knee is not swollen and the feeling is mainly muscular tightness, gentle warmth later may be more comfortable. Our <Link to="/guides/knee-pain-after-exercise">knee pain after exercise guide</Link> explains the wider recovery pattern.
+          “Sore knee” describes a feeling, not one cause. First check whether the joint is visibly swollen, unusually warm, or linked to a recent injury. Those signs make cold the more suitable short-term option. If the knee is not swollen and the soreness feels more like stiffness or tight muscles after sitting, walking, or ordinary activity, gentle heat may feel better.
+        </p>
+        <p>
+          Whichever option you try, judge it by the response. Stop if symptoms intensify, and do not use temporary numbness or warmth as permission to push through sharp pain, locking, or instability.
         </p>
 
+        <h3>Heat or Cold for an Arthritic Knee?</h3>
+        <p>
+          Arthritis symptoms can change from one day to another. Gentle heat may feel useful for morning or after-sitting stiffness when the knee is not swollen. Cold may feel better during a short-term hot or swollen flare. Current osteoarthritis guidance treats locally applied heat or cold as optional symptom tools rather than treatment that changes the disease itself.
+        </p>
+        <p>
+          A first episode of a very hot, red, swollen knee should not automatically be labeled an arthritis flare because infection and crystal arthritis can look similar. Seek prompt assessment, especially when fever, illness, or inability to bear weight is present.
+        </p>
+
+        <h2>Common Situations</h2>
         <h3>After Repeated Stair Use</h3>
         <p>
           Soreness after stairs should be judged by the same symptom pattern. New puffiness or unusual warmth points toward a different short-term choice than stiffness without swelling. Temperature can provide comfort, but repeated pain during descent is better addressed by reviewing stair load, movement control, and progressive strengthening. See our <Link to="/guides/knee-pain-going-down-stairs">knee pain going down stairs guide</Link> for that broader plan.
@@ -206,14 +288,20 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
           A warm shower, warm compress, or temperature-controlled device may make gentle movement more comfortable. Persistent morning stiffness, recurrent swelling, or a steady loss of motion should be discussed with a healthcare professional.
         </p>
 
-        <h3>After a New Injury</h3>
+        <h3>At Night or Before Bed</h3>
         <p>
-          Cold is commonly used in the early period when swelling is present, but self-care should not delay assessment after a significant injury. Seek help promptly if the knee looks deformed, you heard a crack, you cannot bear weight, or the knee locks or repeatedly gives way.
+          Gentle heat may feel soothing before bed when stiffness or muscle tightness is the main issue and the knee is not swollen. Cold may be considered when an activity-related swollen flare is still present. Never fall asleep with an active heating device or ice pack in place.
+        </p>
+        <p>
+          Temperature is not an explanation for recurring night pain. Arrange an assessment if pain repeatedly wakes you, progressively limits sleep, or occurs with swelling, fever, unexplained weight loss, or worsening function.
         </p>
 
-        <h3>Ongoing Arthritis-Related Stiffness</h3>
+        <h2>How Long Should You Use Heat or Ice on a Knee?</h2>
         <p>
-          Some people find warmth soothing for stiff joints, while cold may feel better during a swollen flare. Arthritis symptoms vary, so your clinician?s advice and your own response matter more than a universal rule.
+          A common safety range for either method is 10 to 20 minutes. Use a cloth barrier, follow the instructions for the specific pack or device, and allow the skin to return to its usual color and temperature before another session. Longer or more intense treatment is not automatically more effective.
+        </p>
+        <p>
+          Stop sooner if the skin becomes painful, very red, blotchy, pale, burned, or numb for longer than expected. People with reduced sensation, poor circulation, nerve problems, or difficulty judging temperature should ask a healthcare professional before using either method.
         </p>
 
         <h2>How to Use Heat or Ice More Safely</h2>
@@ -234,6 +322,14 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
           <li><strong>Ask before using either method if sensation or circulation is reduced.</strong> This includes some nerve, vascular, and diabetes-related problems.</li>
           <li><strong>Do not use heat over swelling, bruising, an open wound, or suspected infection.</strong></li>
         </ol>
+
+        <h2>What If Knee Pain Gets Worse After Icing?</h2>
+        <p>
+          Stop the cold session if it increases pain, produces burning, causes marked skin-color change, or leaves prolonged numbness. Remove the pack and let the knee warm naturally. Do not follow uncomfortable cold with immediate intense heat, and do not place either method directly on the skin.
+        </p>
+        <p>
+          Some knees feel temporarily stiffer or achier with cold, but a severe or persistent reaction should not be treated as proof that heat is the answer. Seek advice when symptoms keep worsening, sensation or color does not return to normal, or the original knee problem includes significant swelling, instability, or loss of movement.
+        </p>
 
         <h2>When Heat or Ice Is Not Enough</h2>
         <div className="my-8 rounded-2xl border border-amber-200 bg-amber-50 p-6">
@@ -258,42 +354,29 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
           <li><strong>Are symptoms severe, unexplained, or worsening?</strong> Skip the home experiment and seek an assessment.</li>
         </ol>
 
-        <ArticleSourcesBox>
-        <p>
-          This guide was updated using patient information from orthopedic and hospital sources. The links below provide the full context and should be read alongside advice from your own clinician.
-        </p>
-        <ol>
-          <li>
-            <a className={sourceLinkClass} href="https://orthoinfo.aaos.org/globalassets/pdfs/heat-or-ice-for-your-pain-infographic_final.pdf" target="_blank" rel="noreferrer noopener">
-              American Academy of Orthopaedic Surgeons: Heat or Ice for Your Pain?
-            </a>
-          </li>
-          <li>
-            <a className={sourceLinkClass} href="https://www.nhs.uk/symptoms/knee-pain/" target="_blank" rel="noreferrer noopener">
-              NHS: Knee pain, self-care and warning signs
-            </a>
-          </li>
-          <li>
-            <a className={sourceLinkClass} href="https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/ice-packs-vs-warm-compresses-for-pain" target="_blank" rel="noreferrer noopener">
-              Johns Hopkins Medicine: Ice packs vs warm compresses
-            </a>
-          </li>
-          <li>
-            <a className={sourceLinkClass} href="https://www.gloshospitals.nhs.uk/your-visit/patient-information-leaflets/ice-and-heat-treatment/" target="_blank" rel="noreferrer noopener">
-              Gloucestershire Hospitals NHS: Ice and heat treatment
-            </a>
-          </li>
-          <li>
-            <a className={sourceLinkClass} href="https://www.arthritis.org/health-wellness/healthy-living/managing-pain/pain-relief-solutions/heat-therapy-helps-relax-stiff-joints" target="_blank" rel="noreferrer noopener">
-              Arthritis Foundation: Heat and cold for stiff or swollen joints
-            </a>
-          </li>
-        </ol>
+        <section aria-labelledby="heat-ice-faq-heading" className="my-10">
+          <h2 id="heat-ice-faq-heading">Frequently Asked Questions</h2>
+          <div className="space-y-2">
+            {heatVsIceFaqs.map((faq) => (
+              <details key={faq.question} className="group rounded-xl border border-slate-200 bg-white shadow-sm">
+                <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-4 py-2.5 [&::-webkit-details-marker]:hidden">
+                  <span className="text-base font-semibold leading-6 text-slate-950">{faq.question}</span>
+                  <span aria-hidden="true" className="shrink-0 text-xl font-light leading-none text-primary">
+                    <span className="group-open:hidden">+</span>
+                    <span className="hidden group-open:inline">−</span>
+                  </span>
+                </summary>
+                <div className="border-t border-slate-100 px-4 py-3">
+                  <p className="!m-0 !text-base !leading-7">{faq.answer}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
 
         <div className="my-8 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm leading-7 text-slate-600">
           <strong className="text-slate-900">Medical note:</strong> This article provides general educational information. It does not diagnose knee pain and is not a substitute for care from a doctor, physiotherapist, or other qualified professional.
         </div>
-      </ArticleSourcesBox>
       </>
     ),
   },

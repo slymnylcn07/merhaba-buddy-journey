@@ -287,7 +287,7 @@ export const kneeOsteoarthritisVsRheumatoidArthritis: ArticleExport = {
 
         <h2>Can Heat, Ice, or a Knee Device Help?</h2>
         <p>
-          Warmth can temporarily ease stiffness in both OA and stable RA, while cold may be more comfortable during a recent hot swollen flare. The <Link to="/guides/heat-vs-ice-for-knees" className={linkClass}>heat versus ice guide</Link> separates those patterns. Never use intense heat over a very hot, red joint or as a reason to delay assessment of possible infection.
+          Warmth can temporarily ease stiffness in both OA and stable RA, while cold may be more comfortable during a recent hot swollen flare. The guide to <Link to="/guides/heat-vs-ice-for-knees" className={linkClass}>heat or cold for an arthritic knee</Link> separates those patterns. Never use intense heat over a very hot, red joint or as a reason to delay assessment of possible infection.
         </p>
         <p>
           A knee massager, heated wrap, or compression sleeve can support comfort but cannot diagnose arthritis, regenerate cartilage, or suppress autoimmune disease. In RA, device use should fit the treatment plan, skin sensation, swelling, medication, and clinician advice. During active synovitis, tight compression or aggressive vibration may be uncomfortable.
