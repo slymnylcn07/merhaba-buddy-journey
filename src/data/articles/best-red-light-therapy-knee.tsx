@@ -115,7 +115,7 @@ export const bestRedLightTherapyKnee: ArticleExport = {
           <li>As a replacement for prescribed medical care</li>
         </ul>
         <p>
-          If you're experiencing sharp or unpredictable knee discomfort, our guide on <Link to="/guides/intermittent-knee-pain-guide" className="text-primary hover:underline">sharp knee pain patterns</Link> can help you understand common causes before considering therapy options.
+          If you're experiencing sharp or stabbing knee discomfort, our guide on <Link to="/guides/sharp-knee-pain-guide" className="text-primary hover:underline">sharp knee pain patterns</Link> can help you describe the pattern and check warning signs before considering comfort options.
         </p>
 
         <PremiumCTA headline="Looking for red light therapy designed specifically for knees?" text="FlexiKnee combines red light wavelengths with adjustable warmth and gentle vibration in one wireless knee wrap for convenient daily use." />

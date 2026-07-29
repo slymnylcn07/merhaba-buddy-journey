@@ -1,7 +1,9 @@
 {
   "generated": "2026-07-19",
+  "updated": "2026-07-29",
   "registered_guides_before": 105,
   "registered_guides_after": 94,
+  "current_registered_guides": 99,
   "live_merges": {
     "clicking-knee-without-pain": "why-do-my-knees-crack-or-pop",
     "back-of-knee-pain-common": "back-of-knee-pain-explained",
@@ -13,7 +15,9 @@
     "what-makes-knee-pain-worse": "what-causes-knee-pain-guide",
     "knee-pain-treatment-daily-habits": "how-to-fix-knee-pain",
     "it-band-syndrome-explained": "it-band-pain-location-diagram",
-    "sharp-knee-pain-comes-and-goes": "intermittent-knee-pain-guide"
+    "sharp-knee-pain-comes-and-goes": "sharp-knee-pain-guide",
+    "sharp-knee-pain-causes-relief": "sharp-knee-pain-guide",
+    "sharp-stabbing-knee-pain-comfort": "sharp-knee-pain-guide"
   },
   "ghost_redirects": {
     "sore-knees-after-workout": "knee-pain-after-exercise",
@@ -24,5 +28,5 @@
     "running-shoes-knee-pain-discomfort": "best-running-shoes-knee-pain",
     "running-shoes-knee-pain-causes-fixes": "best-running-shoes-knee-pain"
   },
-  "total_redirects": 18
+  "total_redirects": 20
 }

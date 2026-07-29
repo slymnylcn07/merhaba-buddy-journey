@@ -254,7 +254,7 @@ export const suddenKneePainGuide: ArticleExport = {
 
         <h3>Sudden Stabbing Pain</h3>
         <p>
-          <strong>Sudden stabbing knee pain</strong> describes intensity and focus, but it does not identify the cause. A recurrent pinpoint symptom deserves assessment when it limits activity, and a first severe episode deserves faster care when the knee is swollen, hot, red, locked, or unable to support weight. For more on describing this pattern, read our guide on <Link to="/guides/sharp-stabbing-knee-pain-comfort" className="text-primary hover:underline">sharp stabbing knee pain</Link>.
+          <strong>Sudden stabbing knee pain</strong> describes intensity and focus, but it does not identify the cause. A recurrent pinpoint symptom deserves assessment when it limits activity, and a first severe episode deserves faster care when the knee is swollen, hot, red, locked, or unable to support weight. For more on describing this pattern, read our guide on <Link to="/guides/sharp-knee-pain-guide" className="text-primary hover:underline">sharp and stabbing knee pain</Link>.
         </p>
 
         <h3>Sudden Locking Sensation</h3>

@@ -59,10 +59,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "sharp-knee-pain-guide",
-    title: "Sharp Knee Pain That Comes & Goes: When to Act",
-    description: "Understand sharp stabbing pain in knee that comes and goes, pain when straightening leg, pain inside knee, and whether sciatica can cause knee pain.",
-    readTime: 12,
-    lastModified: "2026-03-19",
+    title: "Sharp or Stabbing Knee Pain: Causes & Warning Signs",
+    description: "Compare sharp, stabbing and shooting knee pain by location and trigger. Learn what to track, what may help and which warning signs need medical care.",
+    readTime: 16,
+    lastModified: "2026-07-29",
   },
   {
     slug: "how-to-strengthen-knees",
@@ -214,24 +214,10 @@ export const guidesData: GuideData[] = [
     lastModified: "2026-02-24",
   },
   {
-    slug: "sharp-knee-pain-causes-relief",
-    title: "Sharp Knee Pain: Causes, Relief & Home Treatments",
-    description: "Sharp knee pain that comes and goes? Learn common causes, relief options, and home treatments including heat therapy for daily comfort.",
-    readTime: 12,
-    lastModified: "2026-02-24",
-  },
-  {
     slug: "infrared-knee-massager-guide-2026",
     title: "Infrared Knee Massager Guide 2026: How They Work",
     description: "Complete 2026 guide to infrared knee massagers. Learn how infrared therapy works for knees, what to expect, key features to look for, and the best devices available.",
     readTime: 13,
-    lastModified: "2026-02-24",
-  },
-  {
-    slug: "sharp-stabbing-knee-pain-comfort",
-    title: "Sharp Stabbing Knee Pain: Causes & At-Home Comfort",
-    description: "Experiencing sharp stabbing pain in the knee? Learn common causes, daily patterns, and at-home comfort strategies to support your everyday knee comfort.",
-    readTime: 11,
     lastModified: "2026-02-24",
   },
   {
@@ -243,10 +229,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "intermittent-knee-pain-guide",
-    title: "Intermittent Knee Pain: Why It Comes & Goes (Guide)",
-    description: "Understand why knee pain comes and goes, common daily patterns, and practical habits for supporting consistent knee comfort.",
-    readTime: 11,
-    lastModified: "2026-07-19",
+    title: "Intermittent Knee Pain: Why It Comes and Goes",
+    description: "Learn why knee pain may come and go, how to track recurring episodes, what patterns matter and when intermittent knee pain needs assessment.",
+    readTime: 13,
+    lastModified: "2026-07-29",
   },
   // New articles - February 25, 2026
   {

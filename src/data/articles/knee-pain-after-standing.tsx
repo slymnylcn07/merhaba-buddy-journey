@@ -375,7 +375,7 @@ export const kneePainAfterStanding: ArticleExport = {
           <ul className="space-y-2">
             <li><Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">Pain in the Knee: Common Causes & Locations</Link></li>
             <li><Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">Knee Pain Locations: A Visual Guide</Link></li>
-            <li><Link to="/guides/intermittent-knee-pain-guide" className="text-primary hover:underline">Sharp Knee Pain That Comes and Goes</Link></li>
+            <li><Link to="/guides/sharp-knee-pain-guide" className="text-primary hover:underline">Sharp or Stabbing Knee Pain</Link></li>
             <li><Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">Heat vs Ice for Knee Discomfort</Link></li>
             <li><Link to="/guides/intermittent-knee-pain-guide" className="text-primary hover:underline">Intermittent Knee Pain: Why It Comes and Goes</Link></li>
           </ul>

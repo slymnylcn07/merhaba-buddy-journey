@@ -508,7 +508,11 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
             connected to a longer path up the outside of the thigh. Repetitive running,
             cycling, hills, cambered roads, and a rapid change in training load are
             useful details, but location alone cannot distinguish the structures
-            involved.
+            involved. If the main feature is a stab, jolt, or shooting sensation, compare
+            the timing and warning signs in our{" "}
+            <Link to="/guides/sharp-knee-pain-guide" className="text-primary underline hover:opacity-80">
+              sharp knee pain guide
+            </Link>.
           </p>
           <VisualFigure
             src={diagramITBand}
