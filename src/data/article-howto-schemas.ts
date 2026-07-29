@@ -123,12 +123,13 @@ export const articleHowToSchemas: Record<string, { name: string; description: st
   },
   "knee-pain-after-standing": {
     name: "How to Manage Knee Pain After Standing All Day",
-    description: "Step-by-step comfort strategies for reducing knee discomfort caused by prolonged standing.",
+    description: "A practical way to test position, breaks, footwear, and floor setup when knee pain builds during prolonged standing.",
     steps: [
-      { name: "Assess Your Standing Posture", text: "Check your weight distribution ? avoid locking knees or leaning to one side. Keep a slight bend in the knees and distribute weight evenly between both feet." },
-      { name: "Take Micro-Breaks", text: "Shift your weight, march in place, or do gentle calf raises every 20-30 minutes to reduce sustained pressure on the knee joint." },
-      { name: "Use Supportive Footwear", text: "Wear cushioned, supportive shoes with arch support. Avoid flat or hard-soled shoes when standing for extended periods." },
-      { name: "Apply Warmth After Standing", text: "Use a heat therapy device or warm compress on the knees for 15-20 minutes after a long standing session to ease stiffness and promote circulation." },
+      { name: "Identify the Standing Trigger", text: "Record whether symptoms build while standing still, late in a work shift, on a particular floor, or only during certain tasks." },
+      { name: "Change Position Before Pain Peaks", text: "Use comfortable movement, task rotation, a footrest, or a seated break before the knee becomes very painful. Avoid locking the knees." },
+      { name: "Review Footwear and the Floor", text: "Check whether shoes are stable and worn evenly. Test a suitable anti-fatigue mat when hard flooring appears to be a clear trigger." },
+      { name: "Change One Variable", text: "Adjust one part of the setup at a time so you can tell whether symptoms begin later, feel less intense, or recover more quickly." },
+      { name: "Check the Response", text: "Arrange assessment if pain keeps worsening or comes with recurrent swelling, locking, giving way, or a clear loss of normal function." },
     ],
   },
   "front-knee-tightness-after-activity": {

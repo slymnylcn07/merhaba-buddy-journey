@@ -128,6 +128,9 @@ export const homeRemediesKneePain: ArticleExport = {
           <li>Spread household chores across the day rather than doing everything at once</li>
           <li>Listen to your body and pause when you notice increasing stiffness</li>
         </ul>
+        <p>
+          When discomfort builds mainly during a work shift, cooking, or another long period on your feet, use the focused guide to <Link to="/guides/knee-pain-after-standing" className="text-primary hover:underline">knee pain after prolonged standing</Link> to compare standing still, floor, footwear, and break patterns.
+        </p>
 
         <h3>Warm and Cold Applications</h3>
         <p>

@@ -14,19 +14,19 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
   article: {
     slug: "knee-pain-getting-up-after-sitting",
     title: "Knee Pain and Stiffness After Sitting: Why Standing Up Hurts",
-    subtitle: "How to read first-step pain after a chair, sofa, car ride, sleep, or another period of rest",
+    subtitle: "Why the first stand or first few steps can hurt after a chair, desk, sofa, car ride, or another period of rest",
     intro:
-      "Knee pain after sitting can show up as stiffness, a dull ache, pressure behind the kneecap, or a few uncomfortable first steps when you stand. The useful clues are not just how long you sat, but whether the knee hurts while resting or only when movement begins, how quickly it eases, where the discomfort sits, and whether swelling, locking, or instability is present. This guide brings the sitting, resting, and first-movement patterns into one clear framework.",
+      "Knee pain after sitting can show up as stiff knees, a dull ache, pressure behind the kneecap, or pain when standing up that eases after a few steps. The useful clues are not just how long you sat, but whether the knee hurts while resting or only when movement begins, how quickly it loosens, where the discomfort sits, and whether swelling, locking, or instability is present. This guide brings knee stiffness after sitting, chair and desk triggers, sit-to-stand pain, and first-movement patterns into one clear framework.",
     metaTitle: "Knee Pain After Sitting: Why Standing Up Hurts",
     metaDescription:
-      "Why do knees hurt or feel stiff after sitting? Compare first-step pain, pain at rest, back-knee tightness, chair factors, movement tips, and warning signs.",
+      "Why do knees hurt or feel stiff after sitting? Learn about standing from a chair, first-step pain, symptoms that ease with walking, tips, and warning signs.",
     heroImage,
     publishedDate: "March 2, 2026",
-    lastUpdated: "July 28, 2026",
+    lastUpdated: "July 29, 2026",
     nextSlug: "knee-tightness-without-pain",
     nextTitle: "Knee Tightness Without Pain",
     seoTags:
-      "knee pain after sitting,knee stiffness after sitting,knee pain when standing up from sitting,knees hurt after sitting,stiff knees from sitting,first step knee pain,knee pain after resting,knees hurt after being still,knee gets stiff after sitting,back of knee tightness after sitting,pain while resting versus after resting,sit to stand knee pain",
+      "knee pain after sitting,knee stiffness after sitting,knee pain when standing up from sitting,knee pain when getting up from sitting,knee pain when getting up,knees hurt after sitting,stiff knees from sitting,first step knee pain,knee pain after resting,knees hurt after being still,knee gets stiff after sitting,knee pain getting up from chair,pain in knees when standing up,knee pain that goes away after a few steps,back of knee tightness after sitting,sit to stand knee pain",
     sources: [
       {
         title: "Osteoarthritis",
@@ -69,6 +69,16 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
         question: "Why do my knees feel stiff after sitting but improve when I walk?",
         answer:
           "Brief stiffness after inactivity is common, including in osteoarthritis. Comfortable movement may make the transition feel easier as the muscles re-engage and the joint begins moving through a wider range. Improvement with walking is useful context, but it does not confirm a diagnosis or rule out an underlying condition.",
+      },
+      {
+        question: "Why does knee pain after sitting go away after a few steps?",
+        answer:
+          "The first stand and first steps place a previously bent, inactive knee under load quickly. A brief pattern may ease as the leg muscles re-engage and the knee moves through a wider range. Track how many steps it takes, whether the pattern is changing, and whether swelling, locking, or instability is also present.",
+      },
+      {
+        question: "Why do my kneecaps hurt when getting up from a desk?",
+        answer:
+          "Desk sitting keeps the knees bent and the kneecaps in contact with the thigh bones. Standing then requires a rapid increase in quadriceps effort. Seat height, long sitting periods, kneecap sensitivity, and reduced leg strength may overlap. Pain that persists, worsens, or limits normal activity should be assessed.",
       },
       {
         question: "Is knee pain after resting the same as pain while resting?",
@@ -152,6 +162,14 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
           Osteoarthritis can cause short-lived stiffness after rest or inactivity, particularly in the knees. It is only one possible explanation. Age alone does not diagnose arthritis, and the same pattern may occur with kneecap irritation, a previous injury, tendon sensitivity, swelling, or reduced mobility elsewhere in the leg.
         </p>
 
+        <h2>Why Do Knees Feel Stiff After Sitting?</h2>
+        <p>
+          <strong>Stiff knees from sitting</strong> are often described as rusty, tight, slow to straighten, or uncomfortable for the first movements. The knee has remained in one position while the surrounding muscles have done little work. A deep seat can hold the joint in more flexion, while a long desk session can make the first change in position feel abrupt.
+        </p>
+        <p>
+          Stiffness is a symptom pattern, not proof that the joint has worn out or lost lubrication. Track whether both knees behave similarly, whether comfortable movement restores the usual range, and whether the time needed to loosen is becoming longer. Recurrent swelling, a blocked range, or progressive loss of function deserves assessment.
+        </p>
+
         <figure className="my-8">
           <img
             src={sectionJointCompression}
@@ -200,12 +218,23 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
           </table>
         </div>
 
+        <h2>Pain When Standing After Sitting but It Goes Away After a Few Steps</h2>
+        <p>
+          Some people feel the strongest pain as they rise, then notice that it settles during the first few steps. This is often called first-step or start-up pain. The sequence matters: the knee moves from a sustained bend to full weight-bearing, the leg muscles re-engage, and walking begins almost immediately.
+        </p>
+        <p>
+          Count roughly how many steps it takes to feel easier and whether that number is stable. A brief, repeatable pattern is different from pain that continues through walking, starts sooner over time, or comes with swelling, catching, locking, or giving way. Improvement after a few steps is useful context, but it does not identify one cause or rule out osteoarthritis, patellofemoral pain, or another condition.
+        </p>
+
         <h2>Pain While Resting vs Pain After Resting</h2>
         <p>
           These searches sound similar but describe different experiences. <strong>Pain after resting</strong> appears when movement restarts. <strong>Pain while resting</strong> is present during the seated or lying position itself.
         </p>
         <p>
           Pain during rest may still come from a sustained position, but persistent pain that disrupts sleep, steadily worsens, or occurs without a clear mechanical trigger deserves a closer look. For symptoms that mainly occur in bed at any age, use our guide to <Link to="/guides/why-do-my-knees-hurt-when-sleeping">knee pain while sleeping</Link>. For midlife symptoms, see the focused guide to <Link to="/guides/knee-pain-at-night-after-40">night knee pain after 40, osteoarthritis, and menopause patterns</Link>.
+        </p>
+        <p>
+          If discomfort builds while you remain on your feet rather than during the first stand, use the separate guide to <Link to="/guides/knee-pain-after-standing">knee pain after prolonged standing</Link>. That page focuses on long work shifts, standing still, hard floors, and symptoms that develop over time.
         </p>
 
         <h2>Why the Back of the Knee May Feel Tight After Sitting</h2>
@@ -249,7 +278,7 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
           </p>
         </InfoBox>
 
-        <h2>Chair, Sofa, Car, and Travel Factors</h2>
+        <h2>Knee Pain When Getting Up From a Chair, Sofa, or Desk</h2>
 
         <h3>Low or Soft Seats</h3>
         <p>
@@ -301,13 +330,13 @@ export const kneePainGettingUpAfterSitting: ArticleExport = {
           Gentle warmth may feel soothing when stiffness is the main complaint and the knee is not newly injured, swollen, red, or unusually hot. Do not use a comfort device to override warning signs or to test whether a painful activity is safe. The <Link to="/guides/heat-vs-ice-for-knees">heat versus ice guide</Link> explains when each option is more appropriate.
         </p>
 
-        <h2>When to Arrange an Assessment</h2>
-        <p>
-          Arrange a routine assessment when the pattern persists for weeks, progressively worsens, repeatedly limits work or daily activity, or does not respond to sensible changes in sitting and movement. Also seek advice for a clear loss of bending or straightening, recurrent swelling, instability, or pain that is increasingly present at rest.
-        </p>
-        <p>
-          Seek urgent help if you cannot bear weight, the knee is badly swollen or deformed, it locks after an injury, or it is hot and red with fever. Unexplained one-sided calf or leg swelling, particularly with chest pain or breathlessness, also needs urgent attention.
-        </p>
+        <InfoBox title="When to Get Medical Help">
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Arrange an assessment when the pattern persists, worsens, limits daily activity, or comes with recurrent swelling, locking, or giving way.</li>
+            <li>Seek urgent help if you cannot bear weight, the knee is badly swollen or deformed, it is locked, or it is hot and red with fever.</li>
+            <li>Get urgent medical help for unexplained one-sided calf or leg swelling, especially with chest pain or breathlessness.</li>
+          </ul>
+        </InfoBox>
 
         <h2>The Bottom Line</h2>
         <p>
