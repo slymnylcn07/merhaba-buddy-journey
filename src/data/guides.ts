@@ -265,10 +265,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "knee-pain-locations-visual-guide",
-    title: "Knee Pain Locations: A Visual Discomfort Zone Guide",
-    description: "A visual guide to common knee discomfort zones: front, inner, outer, back, above and below the kneecap, IT band, and joint line. Daily comfort tips for each area.",
-    readTime: 14,
-    lastModified: "2026-03-19",
+    title: "Knee Pain Location Chart: A Visual Map of Where Your Knee Hurts",
+    description: "Use an interactive knee pain map and labeled diagrams to compare front, inner, outer, back, kneecap, tendon, and joint-line locations.",
+    readTime: 18,
+    lastModified: "2026-07-29",
   },
   {
     slug: "runners-knee-pain-location",

@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" role="img" aria-labelledby="knee-map-title knee-map-description">
+  <title id="knee-map-title">Knee pain location chart</title>
+  <desc id="knee-map-description">Front and back knee diagrams highlighting the kneecap, inner, outer, above, below, joint-line, and back-of-knee zones.</desc>
   <rect width="1000" height="620" fill="#F8FAFC"/>
   <text x="500" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="bold" fill="#0F172A">Knee pain location map</text>
   <text x="500" y="70" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#64748B">Right knee, shown from the front and from behind</text>
@@ -50,8 +52,8 @@
   <ellipse cx="760" cy="336" rx="44" ry="52" fill="#8B5CF6" opacity="0.55"/>
   <text x="760" y="342" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">BEHIND</text>
   <text x="760" y="440" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#5B21B6">Back of the knee</text>
-  <text x="760" y="462" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">tightness, swelling, Baker's cyst</text>
+  <text x="760" y="462" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#64748B">tightness, fullness or swelling</text>
   <text x="760" y="486" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#94A3B8">only visible from this side</text>
 
-  <text x="500" y="592" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B" font-style="italic">Point to where it hurts, then match the zone. Swelling, locking or giving way needs assessment.</text>
+  <text x="500" y="592" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#64748B" font-style="italic">Match the location, then add timing, swelling and movement. A chart cannot diagnose the cause.</text>
 </svg>
