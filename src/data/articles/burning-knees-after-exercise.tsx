@@ -57,18 +57,18 @@ export const burningKneesAfterExercise: ArticleExport = {
   cta: "burning-knees-after-exercise",
   article: {
     slug: "burning-knees-after-exercise",
-    title: "Burning Knees After Exercise: What Causes the Sensation",
+    title: "Burning Knees After Exercise: Causes by Activity & Timing",
     subtitle: "How activity type and during-versus-after timing narrow the pattern",
     intro:
       "Burning knees after exercise are different from a general post-workout ache. The useful clues are whether the sensation began during the activity or after it, which exercise produced it, where the burning is located, and whether the knee is swollen, red, objectively hot, unstable, numb, or losing motion. This guide is limited to running, strength training, walking, hiking, cycling, tai chi, and other physical activity so it does not compete with the broader guide to knee pain after exercise or the general guide to burning knee sensations.",
     metaTitle: "Burning Knees After Exercise: Causes by Activity",
     metaDescription:
-      "Why do knees burn after exercise? Compare running, leg-day, walking, cycling, and tai chi triggers, timing, next-workout changes, and warning signs.",
+      "Why do knees burn after exercise, running or leg day? Compare during-vs-after timing, activity triggers, next-workout changes and warning signs.",
     heroImage,
     publishedDate: "March 19, 2026",
-    lastUpdated: "July 28, 2026",
+    lastUpdated: "July 29, 2026",
     nextSlug: "knee-pain-after-exercise",
-    nextTitle: "Why Knees Hurt After Exercise (But Not During)",
+    nextTitle: "Knee Pain After Exercise or a Workout (But Not During)",
     seoTags:
       "burning knees after exercise,burning knee after workout,why do my knees burn after exercise,knee feels burning after exercise,burning knees after running,burning knee after lifting,burning knees after leg day,burning knees after walking,burning knees after hiking,burning knees after cycling,burning knees after tai chi,hot knees after exercise,burning during exercise vs after exercise",
     faqs,

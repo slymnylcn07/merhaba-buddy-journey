@@ -172,14 +172,14 @@ const articleContent = (
 export const kneeSwellingAfterExercise = {
   article: {
     slug: "knee-swelling-after-exercise",
-    title: "Knee Swelling After Exercise: Causes, Locations & Warning Signs",
+    title: "Knee Swelling After Exercise or Running: Causes & Warning Signs",
     subtitle: "What swelling after running, lifting, or sport may mean",
-    intro: "Learn why a knee may swell after exercise, how swelling behind the knee differs from general puffiness, what painless swelling can mean, and when a swollen knee after a workout needs medical attention.",
-    metaTitle: "Knee Swelling After Exercise: Causes & Warning Signs",
-    metaDescription: "Why does your knee swell after exercise? Learn about swelling after running, fluid in the knee, painless swelling, swelling behind the knee, and warning signs.",
+    intro: "Why does a knee swell after exercise or running? Compare persistent swelling, swelling behind the knee, painless puffiness after a workout, fluid-like fullness, lifting triggers, and warning signs.",
+    metaTitle: "Knee Swelling After Exercise or Running: Causes",
+    metaDescription: "Why does your knee swell after exercise or running? Compare persistent swelling, painless puffiness, swelling behind the knee, fluid and warning signs.",
     heroImage,
     publishedDate: "March 13, 2026",
-    lastUpdated: "July 28, 2026",
+    lastUpdated: "July 29, 2026",
     content: articleContent,
     sources: [
       {
