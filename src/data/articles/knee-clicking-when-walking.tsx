@@ -1,41 +1,33 @@
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
 
 import heroImage from "@/assets/hero-knee-clicking-v2.svg";
 import sectionBendingSquatting from "@/assets/article-section-bending-squatting-motion.jpg";
 import sectionReduceClickingTips from "@/assets/article-section-reduce-clicking-tips.jpg";
 
-const PRODUCT_URL = "https://flexi-knee.com/product/knee-massager-smart-red-light-and-massage-therapy";
-
 export const kneeClickingWhenWalking = {
   article: {
     slug: "knee-clicking-when-walking",
     title: "Knee Clicking When Walking or Bending: Why It Happens & What It Means",
-    subtitle: "Movement-based knee sounds explained simply",
-    intro: "You're walking, bending down, or climbing stairs and your knee makes a clicking, popping, or snapping sound. Is it normal? Should you worry? This guide covers everything about movement-based knee clicking, from the mechanics behind it to when it actually deserves attention.",
-    metaTitle: "Knee Clicking When Walking or Bending Explained",
-    metaDescription: "Why does your knee click when walking or bending? Learn about knee popping when walking, clicking on stairs, clicking without pain, and when to pay attention.",
+    subtitle: "Separate clicking during walking, bending, squatting, and stairs by the symptoms that accompany it",
+    intro: "A knee may click when walking, bending, or squatting for several reasons, and the sound alone cannot identify one cause. This guide separates each movement pattern, explains why pain and swelling matter more than the noise, and shows when clicking deserves an assessment.",
+    metaTitle: "Knee Clicking When Walking, Bending or Squatting",
+    metaDescription: "Why does a knee click when walking, bending or squatting? Compare painless sounds with clicking plus pain, swelling, locking or instability.",
     heroImage: heroImage,
     publishedDate: "March 3, 2026",
-    lastUpdated: "July 13, 2026",
+    lastUpdated: "July 29, 2026",
     nextSlug: "why-do-my-knees-crack-or-pop",
     nextTitle: "Why Do My Knees Crack or Pop?",
     content: (
       <>
         <InfoBox title="Quick answer">
           <p>
-            <strong>Clicking, popping, or crackling in the knee</strong> while walking or bending is
-            very common and, on its own, is usually harmless. The sound often comes from tiny gas
-            bubbles in the joint fluid, tendons gliding over bony edges, or the kneecap tracking as the
-            knee moves. Painless clicking rarely needs treatment. Pay closer attention if the noise
-            comes with <strong>pain, swelling, locking, catching, or a feeling that the knee gives
-            way</strong> — those combinations deserve a professional assessment.
+            <strong>Knee clicking during walking, bending, or squatting is common</strong>, and the sound alone does not prove damage. Pay more attention to the pattern around it. Clicking without pain, swelling, catching, or loss of function often needs no treatment. Clicking with <strong>pain, swelling, true locking, instability, reduced movement, or a recent injury</strong> deserves an assessment.
           </p>
         </InfoBox>
 
         <p>
-          Knee clicking during everyday movement is one of the most common joint concerns, and also one of the most misunderstood. Many people assume clicking means something is damaged or worn out, but in most cases, movement-based knee sounds are completely harmless and don't indicate a problem. If your knee clicks without any accompanying discomfort, our guide on <Link to="/guides/why-do-my-knees-crack-or-pop" className="text-primary hover:underline">clicking knee without pain</Link> covers why painless joint sounds are typically normal.
+          Knee clicking during everyday movement is common and often misunderstood. A sound does not confirm that something is damaged, but it also cannot identify one harmless mechanism with certainty. If your knee clicks without pain or loss of function, our guide on <Link to="/guides/why-do-my-knees-crack-or-pop" className="text-primary hover:underline">clicking knee without pain</Link> explains how to monitor the pattern.
         </p>
         <p>
           Whether you notice a <strong>clicking sound in knee when walking</strong>, a pop when you bend down, or a snap on the stairs, these sounds usually come from normal joint mechanics. This guide focuses specifically on <strong>knee clicking that happens during movement</strong>: walking, bending, squatting, climbing stairs, and standing up. If you're looking for a broader overview of cracking and popping, our <Link to="/guides/why-do-my-knees-crack-or-pop" className="text-primary hover:underline">complete guide to knee cracking and crepitus</Link> covers the general topic in depth.
@@ -50,7 +42,7 @@ export const kneeClickingWhenWalking = {
           When you move, several things happen simultaneously that can create sounds:
         </p>
         <ul>
-          <li><strong>Gas bubble release:</strong> Tiny gas bubbles in the synovial fluid can collapse or form during movement, creating a soft clicking or popping sound. This is called <em>cavitation</em> and is completely harmless.</li>
+          <li><strong>Changes in joint-fluid pressure:</strong> Cavitation is one possible explanation for an isolated pop, although a sound alone cannot prove the exact source.</li>
           <li><strong>Tendon or ligament movement:</strong> Tendons and ligaments can shift slightly over bony surfaces as your knee bends and straightens, producing a quiet snap or click.</li>
           <li><strong>Cartilage surface contact:</strong> As your kneecap (patella) tracks over the front of your knee joint, slight variations in the cartilage surface can create subtle clicking sensations.</li>
           <li><strong>Muscle tightness:</strong> Tight quadriceps, hamstrings, or IT band can pull on the kneecap slightly off-center, increasing the likelihood of clicking during movement.</li>
@@ -112,15 +104,10 @@ export const kneeClickingWhenWalking = {
           For those who notice walking-related knee discomfort, our guide on <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">knee pain after long walks</Link> explores how daily walking distance affects comfort.
         </p>
 
-        <PremiumCTA
-          headline="Want daily comfort support for clicking knees?"
-          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help keep your knee joints comfortable and supported through everyday movements."
-        />
-
         {/* ── Section 3: Clicking When Bending or Squatting ── */}
-        <h2>Knee Clicking When Bending Down or Squatting</h2>
+        <h2>Knee Clicking When Squatting</h2>
         <p>
-          Bending and squatting place your knee through a much deeper range of motion than walking. The deeper the bend, the more pressure is placed on the kneecap and the cartilage behind it, which is why clicking tends to be louder or more noticeable during these movements.
+          Squatting takes the knee through a deeper loaded range than ordinary walking. That can make an existing click or crackle easier to hear. The important distinction is whether the squat remains controlled and comfortable or produces pain, swelling, catching, or a feeling that the knee may give way.
         </p>
 
         <figure className="my-8">
@@ -192,7 +179,7 @@ export const kneeClickingWhenWalking = {
             <circle cx="164" cy="100" r="7" fill="#F97316" />
             <text x="140" y="150" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">CLICKING</text>
             <text x="140" y="176" textAnchor="middle" fontSize="13" fill="#64748B">Quiet, repetitive and</text>
-            <text x="140" y="194" textAnchor="middle" fontSize="13" fill="#64748B">rhythmic — often with</text>
+            <text x="140" y="194" textAnchor="middle" fontSize="13" fill="#64748B">rhythmic, often with</text>
             <text x="140" y="212" textAnchor="middle" fontSize="13" fill="#64748B">each step or bend</text>
 
             {/* POPPING */}
@@ -214,7 +201,7 @@ export const kneeClickingWhenWalking = {
             {/* SNAPPING */}
             <polygon points="585,80 569,103 580,103 575,120 593,95 582,95" fill="#F97316" />
             <text x="580" y="150" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">SNAPPING</text>
-            <text x="580" y="176" textAnchor="middle" fontSize="13" fill="#64748B">A snapping feeling —</text>
+            <text x="580" y="176" textAnchor="middle" fontSize="13" fill="#64748B">A snapping feeling,</text>
             <text x="580" y="194" textAnchor="middle" fontSize="13" fill="#64748B">often a tendon</text>
             <text x="580" y="212" textAnchor="middle" fontSize="13" fill="#64748B">gliding over bone</text>
           </svg>
@@ -277,7 +264,7 @@ export const kneeClickingWhenWalking = {
           <strong>Knee popping when walking</strong> often happens at the same point in the stride, usually as weight transfers to the leg or as the knee straightens during push-off. This consistency can feel concerning, but it usually just means a specific tendon or tracking pattern produces a sound at that particular angle.
         </p>
         <p>
-          If you've wondered <strong>why does my knee pop when I walk</strong>, the answer is almost always one of the harmless mechanisms described earlier: gas release, tendon gliding, or kneecap tracking. The repetitive nature of walking simply makes these sounds more noticeable because they can happen with every step.
+          If you have wondered <strong>why does my knee pop when I walk</strong>, note where in the stride it occurs and whether it is painful. Repetition makes a sound easier to notice, but the sound cannot confirm whether it comes from joint-fluid pressure, a tendon, the kneecap, or another structure.
         </p>
         <p>
           A helpful test: if the popping disappears after a few minutes of walking (as the joint warms up and fluid distributes), it's very likely a normal warm-up phenomenon. If it persists but remains painless, it's still generally considered harmless.
@@ -369,14 +356,14 @@ export const kneeClickingWhenWalking = {
             <ellipse cx="200" cy="132" rx="26" ry="21" fill="#FDBA74" stroke="#F97316" strokeWidth="2.5" />
             <path d="M200 66 L200 82 M194 76 L200 82 L206 76" fill="none" stroke="#22C55E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
             <text x="200" y="208" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">NORMAL TRACKING</text>
-            <text x="200" y="232" textAnchor="middle" fontSize="13" fill="#64748B">Kneecap stays centered —</text>
+            <text x="200" y="232" textAnchor="middle" fontSize="13" fill="#64748B">Kneecap stays centered,</text>
             <text x="200" y="250" textAnchor="middle" fontSize="13" fill="#64748B">quiet and smooth</text>
             <rect x="476" y="86" width="8" height="92" rx="4" fill="#CBD5E1" />
             <rect x="556" y="86" width="8" height="92" rx="4" fill="#CBD5E1" />
             <ellipse cx="542" cy="132" rx="26" ry="21" fill="#FDBA74" stroke="#F97316" strokeWidth="2.5" />
             <path d="M520 66 L532 80 M524 68 L532 80 L522 78" fill="none" stroke="#F97316" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
             <text x="520" y="208" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0F172A" letterSpacing="0.5">MISALIGNED TRACKING</text>
-            <text x="520" y="232" textAnchor="middle" fontSize="13" fill="#64748B">Kneecap pulls off-center —</text>
+            <text x="520" y="232" textAnchor="middle" fontSize="13" fill="#64748B">Kneecap moves off-center,</text>
             <text x="520" y="250" textAnchor="middle" fontSize="13" fill="#64748B">more likely to click</text>
           </svg>
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -385,7 +372,7 @@ export const kneeClickingWhenWalking = {
         </figure>
 
         <p>
-          The key distinction: if the stiffness and clicking resolve within the first 10-15 minutes of movement, it's likely a normal "warm-up" pattern. If stiffness persists throughout the day or worsens with activity, it may be worth exploring further.
+          The key distinction is the direction of change. Clicking with mild start-up stiffness that returns toward baseline is different from stiffness that persists, worsens with activity, or is joined by swelling and reduced movement.
         </p>
         <p>
           Our guide on <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link> covers warm-up patterns and what they mean.
@@ -398,7 +385,7 @@ export const kneeClickingWhenWalking = {
         </p>
         <h3>Single Loud Pop Without Injury</h3>
         <p>
-          A sudden loud pop, like a "crack," without any preceding injury or trauma is almost always gas bubble release. This is exactly the same mechanism as cracking your knuckles. It sounds dramatic but is completely harmless. The sound may be accompanied by a brief sensation of pressure release.
+          A sudden loud pop without a clear injury may occur without lasting symptoms, but the sound alone cannot prove that it was only cavitation. Check whether pain, swelling, instability, loss of movement, or difficulty bearing weight appears afterward.
         </p>
         <p>
           After the pop, you may notice the knee feels slightly looser or more mobile for a few minutes before the gas reforms in the joint fluid. This is normal and not a sign of instability.
@@ -412,63 +399,48 @@ export const kneeClickingWhenWalking = {
           For more on sudden knee events, our <Link to="/guides/sudden-knee-pain-guide" className="text-primary hover:underline">sudden knee pain guide</Link> explains how to distinguish normal events from those needing attention.
         </p>
 
-        <PremiumCTA
-          headline="Support your joints through every movement"
-          text="FlexiKnee combines soothing warmth, red light, and gentle vibration massage to help keep your knees comfortable, flexible, and supported during daily activities."
-        />
-
         {/* ── Section 9: Daily Movement Adjustments ── */}
-        <h2>Daily Movement Adjustments to Reduce Knee Clicking</h2>
+        <h2>What to Do About Knee Clicking During Movement</h2>
         <p>
-          While painless clicking doesn't require treatment, many people prefer to reduce it for comfort or peace of mind. These daily habits can help:
+          Painless clicking does not need to be silenced. If clicking comes with stiffness or discomfort, focus on the movement and symptoms rather than promising to eliminate the sound.
         </p>
 
         <figure className="my-8">
           <img
             src={sectionReduceClickingTips}
-            alt="Four-quadrant infographic showing tips to reduce knee clicking: warm up first, strengthen quads, stay hydrated, move regularly"
+            alt="Four-quadrant infographic showing a warm-up, leg strengthening, movement breaks, and symptom monitoring"
             className="w-full h-auto rounded-xl shadow-sm"
             loading="lazy"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Four daily habits that can help reduce knee clicking during movement
+            Movement habits may improve comfort even when the sound itself does not disappear.
           </figcaption>
         </figure>
 
-        <h3>1. Warm Up Before Activity</h3>
+        <h3>1. Begin With Comfortable Movement</h3>
         <p>
-          Cold, stiff joints click more. A 2-3 minute warm-up (gentle walking, leg swings, or knee circles) helps distribute synovial fluid throughout the joint, reducing clicking during subsequent activity. Applying warmth to the knee area before exercise can also help.
+          Start a walk, workout, or squat session gradually and notice whether the movement becomes more comfortable. A warm-up is useful preparation, but it cannot guarantee that clicking will stop.
         </p>
 
-        <h3>2. Strengthen Your Quadriceps</h3>
+        <h3>2. Build Leg Capacity Gradually</h3>
         <p>
-          The quadriceps muscles control kneecap tracking. Weak or imbalanced quads can allow the kneecap to track slightly off-center, increasing clicking. Simple exercises like wall sits, straight leg raises, and step-ups can improve tracking over time. Our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee exercises guide</Link> has specific routines.
+          Knee-targeted and hip-targeted exercise may help when pain or limited capacity is part of the pattern. Choose a tolerable starting level and progress one variable at a time. Our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee exercise guide</Link> provides general examples.
         </p>
 
-        <h3>3. Stay Hydrated</h3>
+        <h3>3. Change Sustained Positions</h3>
         <p>
-          Synovial fluid, the lubricant in your joints, is largely water-based. Staying well-hydrated supports healthy fluid production and may reduce dry, grinding-type clicking sensations.
+          If the knee feels stiff after sitting, change position and take a comfortable movement break. Use an interval that fits your day instead of relying on a rigid timer or claiming that movement lubricates away every sound.
         </p>
 
-        <h3>4. Move Regularly Throughout the Day</h3>
+        <h3>4. Review Footwear Only When Walking Is the Trigger</h3>
         <p>
-          Prolonged sitting causes joint fluid to settle and muscles to stiffen, leading to more clicking when you first stand up and move. Taking brief movement breaks every 30-45 minutes keeps the joint lubricated and reduces start-up clicking.
-        </p>
-
-        <h3>5. Stretch the IT Band and Hamstrings</h3>
-        <p>
-          Tight lateral structures (IT band) and posterior muscles (hamstrings) can pull the kneecap off-track. Regular stretching of these areas can improve kneecap alignment and reduce clicking, especially during stairs and squats.
-        </p>
-
-        <h3>6. Choose Supportive Footwear</h3>
-        <p>
-          Worn-out shoes alter your gait mechanics, which can change how your knee tracks during walking. Shoes with proper arch support and cushioning help maintain optimal knee alignment. See our <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee pain guide</Link> for footwear recommendations.
+          A worn or uncomfortable shoe can change how walking feels, but no shoe can guarantee that a knee stops clicking. If symptoms occur mainly during walking or running, compare fit, comfort, surface, and shoe wear using our <Link to="/guides/best-running-shoes-knee-pain" className="text-primary hover:underline">running shoes and knee pain guide</Link>.
         </p>
 
         {/* ── Knee Clicking When Bending and Straightening ── */}
         <h2>Knee Clicking When Bending and Straightening</h2>
         <p>
-          Some people notice clicking in both directions: when bending the knee and when straightening it. This is perfectly normal and simply means that the joint produces sounds at different points in its range of motion.
+          Some people notice clicking in both directions: when bending the knee and when straightening it. A painless sound may occur at different points in the range of motion, but the noise alone cannot identify its source.
         </p>
         <p>
           <strong>Knee clicking when bending and straightening</strong> can happen because the mechanisms are slightly different in each direction. During bending, the kneecap slides downward and compression increases. During straightening, the kneecap moves upward and the quadriceps tendon tightens. Each direction creates its own set of pressure changes, tendon adjustments, and cartilage contact patterns.
@@ -494,28 +466,18 @@ export const kneeClickingWhenWalking = {
 
         <h2>How Knee Clicking Relates to Stair Discomfort</h2>
         <p>
-          Stairs represent one of the most demanding daily activities for the kneecap. The combination of body weight, deep flexion angles, and repetitive loading makes stair activities a common trigger for both knee clicking and knee discomfort. Many people who notice clicking on stairs also experience mild front-of-knee aching, particularly when <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">going down stairs</Link>. This is because descending creates significantly higher kneecap compression than ascending or flat walking.
+          Stairs combine knee bending with load and muscle control, which can make sounds and front-of-knee symptoms more noticeable. If clicking is painful during <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">stair descent</Link>, describe the pain location, swelling, and whether the knee catches or gives way instead of assuming the noise identifies the cause.
         </p>
         <p>
-          If your clicking is limited to stairs and accompanied by no other symptoms, strengthening the quadriceps (especially through eccentric exercises like slow step-downs) can improve kneecap tracking and often reduces both the clicking frequency and any mild discomfort. For those considering at-home support tools, an <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massager</Link> can provide soothing warmth after stair-intensive days.
+          When stair pain is part of the pattern, progressive knee-targeted and hip-targeted exercise may be useful at an appropriate starting level. The goal is improved function and tolerance, not a promise that every sound will disappear.
         </p>
 
         {/* ── When to Pay Attention ── */}
-        <h2>When Knee Clicking Deserves Attention</h2>
-        <p>
-          While most knee clicking is harmless, certain patterns may warrant closer monitoring. <strong>Knee pain clicking</strong> together is the key combination that separates normal sounds from something worth investigating:
-        </p>
-        <TipsList tips={[
-          "Clicking accompanied by pain, especially sharp or burning sensations",
-          "Clicking with swelling that doesn't resolve within 24-48 hours",
-          "A catching or locking feeling where the knee briefly won't bend or straighten",
-          "Clicking that suddenly starts after a specific incident (twist, fall, awkward landing)",
-          "Clicking combined with a feeling of instability or the knee 'giving way'",
-          "Clicking that progressively worsens over weeks despite movement and stretching",
-        ]} />
-        <p>
-          If you notice any of these patterns, it's worth speaking with a healthcare professional. They can assess whether the clicking is related to a structural issue that may benefit from targeted support. Understanding the difference between <strong>why is my knee clicking when I walk</strong> harmlessly and when sounds signal something more significant helps you make informed decisions about your joint health. Our guide on <Link to="/guides/home-remedies-knee-pain" className="text-primary hover:underline">home remedies for knee discomfort</Link> covers additional daily strategies that may help support joint comfort alongside your movement habits.
-        </p>
+        <InfoBox title="When to Get Medical Help">
+          <p>
+            Arrange an assessment when clicking comes with persistent pain, swelling, catching, true locking, giving way, reduced movement, or begins after an injury. Seek urgent care when you cannot bear weight, the knee is badly swollen or deformed, or a hot red knee is accompanied by fever or feeling unwell.
+          </p>
+        </InfoBox>
       </>
     ),
     faqs: [
@@ -529,7 +491,7 @@ export const kneeClickingWhenWalking = {
       },
       {
         question: "Is knee clicking normal?",
-        answer: "Yes, knee clicking is very common and usually normal. Research suggests that 30-40% of adults experience regular knee clicking during movement. As long as there's no pain, swelling, or instability, clicking is considered a normal part of joint mechanics.",
+        answer: "Knee clicking and crepitus are common in both pain-free people and people with knee conditions. The sound should be interpreted with symptoms and function. Clicking without pain, swelling, locking, or instability often needs no treatment.",
       },
       {
         question: "When should I be concerned about knee clicking?",
@@ -537,7 +499,7 @@ export const kneeClickingWhenWalking = {
       },
       {
         question: "Why does my knee click when walking up stairs?",
-        answer: "Stair climbing places 3-4 times your body weight in force through the kneecap joint. This increased load presses the kneecap more firmly into its groove, amplifying normal clicking sounds from tracking variations, cartilage contact, or tendon movement.",
+        answer: "Stairs combine knee bending with greater muscle demand than level walking, so an existing click may become easier to notice. Pain location, swelling, catching, and instability matter more than the loudness of the sound.",
       },
       {
         question: "Why does my knee click when I squat?",
@@ -561,7 +523,7 @@ export const kneeClickingWhenWalking = {
       },
       {
         question: "I heard a sudden loud pop in my knee but wasn't injured. Is that serious?",
-        answer: "A single loud pop without injury is almost always gas bubble release, the same mechanism as cracking your knuckles. It sounds dramatic but is harmless. If followed by pain, swelling, or instability, it's worth getting checked.",
+        answer: "A loud pop can occur without lasting symptoms, but the sound alone cannot confirm the source. Check what follows. Pain, swelling, instability, loss of movement, or difficulty bearing weight deserves prompt assessment.",
       },
       {
         question: "Does knee clicking mean cartilage damage?",
@@ -569,7 +531,7 @@ export const kneeClickingWhenWalking = {
       },
       {
         question: "How can I reduce knee clicking during everyday movement?",
-        answer: "Regular warm-ups before activity, quadriceps strengthening exercises, staying hydrated, stretching the IT band and hamstrings, and taking movement breaks during prolonged sitting can all help reduce clicking frequency.",
+        answer: "Painless clicking does not need treatment. If stiffness or discomfort accompanies it, start activity gradually, change sustained sitting positions, and build knee and hip capacity at a tolerable level. These steps may improve comfort even if the sound remains.",
       },
       {
         question: "Can knee clicking happen more after exercise?",
@@ -581,15 +543,25 @@ export const kneeClickingWhenWalking = {
       },
       {
         question: "Should I use a knee massager for clicking knees?",
-        answer: "While clicking itself does not require treatment, many people find that gentle warmth and vibration from a knee massager helps reduce associated stiffness and supports the muscles that control kneecap tracking. Consistent use may help reduce clicking over time by improving joint lubrication and muscle flexibility.",
+        answer: "Clicking itself does not require a massager. Gentle warmth or vibration may feel soothing when stiffness is present and the knee is not hot or swollen, but a device has not proven that it can correct tracking or make joint sounds disappear.",
       },
     ],
     seoTags: "knee clicking when walking,knee clicking when bending,knee clicking when straightening leg,knee popping when walking,knees click when walking,knee popping when extending,knee clicks when walking up stairs,knee pops when bending,knee pain clicking,why does my knee pop when i walk,why does my knee pop when i bend it,knee clicking when i walk,why does my knee click when i walk up stairs,why is my knee clicking when i walk,knee clicking when bending and straightening,clicking sound in knee when walking,knee clicking squatting,knee popping sound,movement-related knee sounds",
     sources: [
       {
+        title: "Noisy Knees: Crepitus Prevalence and Association With Structural Pathology",
+        publisher: "British Journal of Sports Medicine via PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/39375004/",
+      },
+      {
+        title: "Knee Crepitus and Patellofemoral Pain, Function, and Activity",
+        publisher: "Physical Therapy in Sport via PubMed",
+        url: "https://pubmed.ncbi.nlm.nih.gov/29890402/",
+      },
+      {
         title: "Patellofemoral Pain Syndrome",
-        publisher: "OrthoInfo — American Academy of Orthopaedic Surgeons (AAOS)",
-        url: "https://www.orthoinfo.org/en/diseases--conditions/patellofemoral-pain-syndrome/",
+        publisher: "American Academy of Orthopaedic Surgeons",
+        url: "https://orthoinfo.aaos.org/en/diseases--conditions/patellofemoral-pain-syndrome/",
       },
       {
         title: "Knee pain: causes, self-care and when to get help",

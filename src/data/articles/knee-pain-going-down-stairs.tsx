@@ -9,7 +9,7 @@ export const kneePainGoingDownStairs: ArticleExport = {
   article: {
     slug: "knee-pain-going-down-stairs",
     title: "Knee Pain Going Down Stairs: Causes and What Helps",
-    subtitle: "Why descent can expose kneecap sensitivity, muscle-control limits, and other knee problems",
+    subtitle: "Why walking downstairs may hurt more than going up, common causes, and safer adjustments",
     intro:
       "Going down stairs asks one leg to control your body as the knee bends under load. Pain during that task is often felt around the kneecap, but the location, onset, swelling, and mechanical symptoms matter. This guide explains the common patterns, safer short-term adjustments, and when an assessment is the better next step.",
     metaTitle: "Knee Pain Going Down Stairs: Causes & What Helps",
@@ -17,7 +17,7 @@ export const kneePainGoingDownStairs: ArticleExport = {
       "Learn why knees hurt going down stairs, how pain location changes the likely pattern, practical descent adjustments, and when to seek care.",
     heroImage,
     publishedDate: "March 4, 2026",
-    lastUpdated: "July 28, 2026",
+    lastUpdated: "July 29, 2026",
     nextSlug: "knee-pain-climbing-stairs",
     nextTitle: "Knee Pain When Climbing Stairs: Causes by Location",
     faqs: [
@@ -63,7 +63,7 @@ export const kneePainGoingDownStairs: ArticleExport = {
       },
     ],
     seoTags:
-      "knee pain going down stairs, knee hurts downstairs, kneecap pain stairs, patellofemoral pain stairs, knee pain descending stairs, front knee pain",
+      "knee pain going down stairs, knee pain walking downstairs, knee pain going down stairs but not up, causes of knee pain going down stairs, knee hurts downstairs, kneecap pain stairs, patellofemoral pain stairs, knee pain descending stairs, front knee pain",
     sources: [
       {
         title: "Patellofemoral Pain Syndrome",
@@ -111,12 +111,20 @@ export const kneePainGoingDownStairs: ArticleExport = {
           If climbing rather than descending is the main problem, see our <Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">guide to knee pain when climbing stairs</Link>. If symptoms appeared after a workout, our <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">post-exercise knee pain guide</Link> helps separate load response from warning signs.
         </p>
 
-        <h2>Why Going Down Stairs Can Provoke Knee Pain</h2>
+        <h2>Knee Pain Walking Downstairs: Common Causes</h2>
         <p>
           During descent, the supporting leg controls your downward movement. The quadriceps produce an eccentric contraction, meaning they generate force while lengthening. At the same time, the knee bends and the kneecap remains in contact with the groove at the end of the thigh bone.
         </p>
         <p>
           This is a demanding combination when the front of the knee is already sensitive or when the movement exceeds your current capacity. Research confirms that stair negotiation changes patellofemoral contact mechanics, but published load estimates vary with the model, stair height, speed, knee angle, and population. A universal claim that every step equals a fixed multiple of body weight is therefore not a reliable way to explain an individual person's pain.
+        </p>
+
+        <h2>Knee Pain Going Down Stairs but Not Upstairs</h2>
+        <p>
+          Going downstairs asks the supporting leg to brake and lower the body while the knee bends. Going upstairs also loads the knee, but the movement goal and muscle action are different. A knee may therefore hurt during descent even when ascent feels manageable.
+        </p>
+        <p>
+          This pattern often points attention toward front-of-knee sensitivity or limited control during lowering, but it does not diagnose one condition. Location, swelling, recent injury, catching, instability, and the later response still matter. Tell a clinician that descent hurts but ascent does not, because that task-specific detail is more useful than saying only that stairs hurt.
         </p>
 
         <figure className="my-8">
@@ -179,7 +187,7 @@ export const kneePainGoingDownStairs: ArticleExport = {
           Patellofemoral pain describes pain around or behind the kneecap. The American Academy of Orthopaedic Surgeons lists activities that repeatedly bend the knee, including stairs, running, jumping, and squatting, among common triggers. Long periods of sitting with the knee bent may also be uncomfortable.
         </p>
         <p>
-          Patellofemoral pain is not simply proof that cartilage is “wearing away,” and it is not caused by one universal alignment fault. Activity changes, current physical capacity, movement strategy, sleep, recovery, and sensitivity can all influence symptoms. A useful plan is therefore based on what you can currently tolerate and how the knee responds over time. The main guide to <Link to="/guides/pain-behind-kneecap" className="text-primary hover:underline">pain behind the kneecap and patellofemoral pain</Link> explains this pattern in more detail.
+          Patellofemoral pain is not simply proof that cartilage is "wearing away," and it is not caused by one universal alignment fault. Activity changes, current physical capacity, movement strategy, sleep, recovery, and sensitivity can all influence symptoms. A useful plan is therefore based on what you can currently tolerate and how the knee responds over time. The main guide to <Link to="/guides/pain-behind-kneecap" className="text-primary hover:underline">pain behind the kneecap and patellofemoral pain</Link> explains this pattern in more detail.
         </p>
 
         <h2>How to Go Down Stairs With Less Irritation</h2>
@@ -236,22 +244,11 @@ export const kneePainGoingDownStairs: ArticleExport = {
           See the full <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat versus ice decision guide</Link> before using either method. Do not use temporary numbness or warmth as permission to push through instability or sharp pain.
         </p>
 
-        <h2>When to Seek Medical Care</h2>
-        <div className="my-6 rounded-2xl border border-amber-200 bg-amber-50 p-6">
-          <p className="mb-3 font-semibold text-amber-950">Arrange an assessment when:</p>
-          <ul className="list-disc space-y-2 pl-5 text-amber-950/90">
-            <li>pain is persistent, worsening, or repeatedly limits stairs and normal daily activity</li>
-            <li>the knee swells, catches, truly locks, or repeatedly gives way</li>
-            <li>you cannot regain normal bending or straightening</li>
-            <li>symptoms began after an injury or are not improving with sensible load changes</li>
-          </ul>
-          <p className="mb-3 mt-5 font-semibold text-amber-950">Seek urgent care when:</p>
-          <ul className="list-disc space-y-2 pl-5 text-amber-950/90">
-            <li>you cannot bear weight after an injury</li>
-            <li>the knee is badly swollen, deformed, or changed shape</li>
-            <li>the knee is hot and red and you also feel feverish or unwell</li>
-          </ul>
-        </div>
+        <InfoBox title="When to Get Medical Help">
+          <p>
+            Arrange an assessment when pain persists, worsens, repeatedly limits stairs, or comes with swelling, catching, locking, giving way, or loss of movement. Seek urgent care after a major injury, when you cannot bear weight, when the knee is badly swollen or deformed, or when it is hot and red with fever.
+          </p>
+        </InfoBox>
       </>
     ),
   },

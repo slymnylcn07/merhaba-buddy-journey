@@ -109,10 +109,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "do-knee-massagers-work",
-    title: "Do Knee Massagers Work? Realistic Expectations (2026)",
-    description: "A realistic look at knee massagers: what they can offer, what to expect, and how to set appropriate expectations.",
+    title: "Do Knee Massagers Really Work, and Are They Worth It?",
+    description: "Compare heated, vibration, and red-light knee massagers, realistic benefits, safety limits, and how to decide whether a device is worth buying.",
     readTime: 10,
-    lastModified: "2026-02-24",
+    lastModified: "2026-07-29",
   },
   {
     slug: "is-infrared-safe-for-knees",
@@ -151,10 +151,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "best-running-shoes-knee-pain",
-    title: "Best Running Shoes for Knee Pain: Fit Tips & Mistakes",
-    description: "Learn what runners look for in knee-friendly shoes, common fit mistakes, and running habits that influence comfort.",
+    title: "Best Running Shoes for Bad Knees & Knee Pain",
+    description: "Compare running shoes for bad knees by fit, cushioning, stability, and surface, plus what footwear can and cannot change.",
     readTime: 11,
-    lastModified: "2026-07-13",
+    lastModified: "2026-07-29",
   },
   {
     slug: "front-knee-tightness-after-activity",
@@ -201,10 +201,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "smart-heated-knee-braces-2026",
-    title: "Smart Heated Knee Braces: 2026 Buyer's Guide",
-    description: "Compare the top 5 smart heated knee braces in 2026. Features, pricing, pros and cons reviewed. Find the best heated knee brace device for your needs.",
+    title: "Best Smart Heated Knee Braces in 2026: 5 Cordless Picks",
+    description: "Compare five smart heated knee braces by programmable controls, rechargeable power, fit, heat, portability, and safety.",
     readTime: 13,
-    lastModified: "2026-07-13",
+    lastModified: "2026-07-29",
   },
   {
     slug: "heat-red-light-therapy-benefits-2026",
@@ -378,10 +378,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "knee-clicking-when-walking",
-    title: "Knee Clicking When Walking or Bending Explained",
-    description: "Why does your knee click when walking, bending, or on stairs? Learn about movement-based knee clicking, popping without pain, and when to pay attention.",
+    title: "Knee Clicking When Walking or Bending: Why It Happens & What It Means",
+    description: "Compare knee clicking during walking, bending, squatting, and stairs, including painless sounds and symptoms that need attention.",
     readTime: 14,
-    lastModified: "2026-07-13",
+    lastModified: "2026-07-29",
   },
   {
     slug: "cold-weather-knee-pain",
@@ -414,9 +414,9 @@ export const guidesData: GuideData[] = [
   {
     slug: "knee-pain-going-down-stairs",
     title: "Knee Pain Going Down Stairs: Causes and What Helps",
-    description: "Learn why stair descent can provoke knee pain, how location and next-day response guide decisions, and how to rebuild stair capacity.",
+    description: "Learn why walking downstairs may hurt more than going up, common causes, practical descent adjustments, and how to rebuild stair capacity.",
     readTime: 13,
-    lastModified: "2026-07-28",
+    lastModified: "2026-07-29",
   },
   {
     slug: "knee-pain-when-squatting",
@@ -490,17 +490,17 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "heavy-feeling-in-knees",
-    title: "Heavy Feeling in the Knees: Causes and Warning Signs",
-    description: "Compare fatigue, stiffness, swelling, and weakness when your knees feel heavy, with practical next steps and urgent one-sided leg warning signs.",
+    title: "Why Do My Knees Feel Heavy, Stiff, or Full?",
+    description: "Compare fatigue, start-up stiffness, fullness, swelling, and weakness when your knees feel heavy, plus urgent one-sided warning signs.",
     readTime: 16,
-    lastModified: "2026-07-13",
+    lastModified: "2026-07-29",
   },
   {
     slug: "knee-pain-after-flights",
-    title: "Knee Pain After Long Flights: Relief Tips",
-    description: "Learn why knees feel stiff after long flights. Discover causes of knee pain from prolonged sitting during travel and simple strategies to support comfort.",
+    title: "Knee Pain After Flying: Why Knees Hurt After a Long Flight",
+    description: "Learn why knees may hurt after flying, what prolonged sitting changes, practical travel tips, and one-sided warning signs.",
     readTime: 14,
-    lastModified: "2026-07-13",
+    lastModified: "2026-07-29",
   },
   {
     slug: "knee-pain-when-kneeling",
