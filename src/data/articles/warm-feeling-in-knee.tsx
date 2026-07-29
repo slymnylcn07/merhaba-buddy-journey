@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-warm-feeling-knee.jpg";
@@ -228,10 +227,7 @@ const article = {
       <p>
         Starting a new exercise routine or significantly increasing your activity level can lead to more noticeable knee warmth as your joints adapt to new demands. This is why gradual progression is important, as allowing your body time to adapt reduces the intensity of these warmth responses.
       </p>
-
-      <PremiumCTA headline="Want soothing warmth support for your knees?" text="FlexiKnee provides adjustable heat, red light, and gentle vibration in one wireless device, designed for daily knee comfort support." />
-
-      <h2>Simple Ways to Support Knee Comfort</h2>
+<h2>Simple Ways to Support Knee Comfort</h2>
 
       <p>
         While occasional knee warmth is normal, there are several everyday strategies that may help support comfortable knee joints and manage warmth sensations that become bothersome.

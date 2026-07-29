@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-knee-weakness-no-pain.jpg";
@@ -207,13 +206,7 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
         <p>
           If you notice weakness specifically when <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">squatting</Link> or bending deeply, the quadriceps and hip muscles may need additional strengthening to handle the increased demand of these movements.
         </p>
-
-        <PremiumCTA
-          headline="Support Your Knee Stability Every Day"
-          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable and supported before and after your daily strengthening routine."
-        />
-
-        {/* Section 5 */}
+{/* Section 5 */}
         <h2>Simple Ways to Support Knee Stability at Home</h2>
         <p>
           The good news about knee weakness related to muscle conditioning is that it often responds well to consistent, gradual effort. Here are practical strategies you can incorporate into your daily routine.

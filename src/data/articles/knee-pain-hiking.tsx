@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-knee-pain-hiking.jpg";
@@ -133,13 +132,7 @@ const kneePainHiking: ArticleExport = {
         <p>
           Restricted mobility in the hip or ankle forces the knee to compensate by absorbing forces it was not designed to handle. Tight hip flexors can alter your gait pattern on inclines, while limited ankle dorsiflexion changes how your foot lands on uneven surfaces. For more on this connection, see our guide on <Link to="/guides/knee-discomfort-lower-back-hips" className="text-primary hover:underline">how hips and lower back affect knee comfort</Link>.
         </p>
-
-        <PremiumCTA
-          headline="Support your knees after every trail"
-          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after hiking, making your post-trail recovery routine simple and effective."
-        />
-
-        {/* Section 3 */}
+{/* Section 3 */}
         <h2>Why Downhill Hiking Causes the Most Knee Discomfort</h2>
 
         <p>

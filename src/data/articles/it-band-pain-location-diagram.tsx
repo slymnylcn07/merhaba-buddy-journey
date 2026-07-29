@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import { InfoBox } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-it-band-diagram.jpg";
 import itBandSyndromeContext from "@/assets/article-hero-it-band-syndrome.jpg";
@@ -38,7 +37,7 @@ export const itBandPainLocationDiagram = {
     sources: [
       {
         title: "Iliotibial Band Syndrome",
-        publisher: "StatPearls — NCBI Bookshelf (National Library of Medicine)",
+        publisher: "StatPearls, NCBI Bookshelf (National Library of Medicine)",
         url: "https://www.ncbi.nlm.nih.gov/books/NBK542185/",
       },
       {
@@ -180,13 +179,7 @@ export const itBandPainLocationDiagram = {
           <li><strong>Sudden mileage increases:</strong> Adding distance too quickly without gradual build-up</li>
           <li><strong>Prolonged sitting:</strong> Extended periods in a seated position can contribute to tightness</li>
         </ul>
-
-        <PremiumCTA
-          headline="Looking for daily outer knee comfort support?"
-          text="FlexiKnee wraps around the full knee area, delivering soothing warmth, red light, and gentle vibration to the outer knee zone where IT band sensations are most commonly felt."
-        />
-
-        <SectionDivider />
+<SectionDivider />
 
         {/* --- SECTION 4: Outer Knee Pain from Iliotibial Band Syndrome --- */}
         <h2>Outer Knee Pain from Iliotibial Band Syndrome</h2>

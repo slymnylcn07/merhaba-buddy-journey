@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ArticleData } from "./types";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImg from "@/assets/article-hero-knee-exercises.jpg";
 import exerciseStraightLegRaise from "@/assets/exercise-straight-leg-raise.jpg";
 import exerciseWallSit from "@/assets/exercise-wall-sit.jpg";
@@ -13,7 +12,7 @@ const article: ArticleData = {
   slug: "knee-pain-exercises-guide",
   title: "Best Knee Pain Exercises for Strength, Mobility & Comfort",
   subtitle: "A complete exercise guide for everyday knee support",
-  intro: "Whether you're dealing with morning stiffness, post-activity soreness, or age-related knee discomfort, the right exercises can make a meaningful difference. This comprehensive guide covers the best knee pain exercises for strengthening, mobility, and daily comfort — with step-by-step illustrations and a senior-friendly routine.",
+  intro: "Whether you're dealing with morning stiffness, post-activity soreness, or age-related knee discomfort, the right exercises can make a meaningful difference. This comprehensive guide covers the best knee pain exercises for strengthening, mobility, and daily comfort, with step-by-step illustrations and a senior-friendly routine.",
   metaTitle: "Knee Pain Exercises: Strength & Mobility Guide (2026)",
   metaDescription: "Best knee pain exercises for strength, mobility, and daily comfort. Includes straight leg raises, quadriceps strengthening, ankle mobility, and a senior-friendly routine.",
   heroImage: heroImg,
@@ -26,15 +25,15 @@ const article: ArticleData = {
         Search interest in <strong>knee pain exercises</strong> has surged in recent years, and for good reason. As more people seek non-invasive, at-home approaches to <strong>knee pain relief</strong>, exercise has emerged as one of the most consistently recommended strategies by health professionals worldwide. The right <strong>exercises for knee pain</strong> can help strengthen the muscles that support your joint, improve mobility, and reduce everyday <strong>knee discomfort</strong>.
       </p>
       <p>
-        But not all exercises are created equal. Some can actually make knee discomfort worse if done incorrectly or at the wrong time. This guide breaks down the <strong>best exercises for knee pain</strong> — from <strong>quadriceps strengthening exercises</strong> and <strong>straight leg raises</strong> to <strong>ankle mobility exercises</strong> — so you can build a routine that works for your body and your lifestyle.
+        But not all exercises are created equal. Some can actually make knee discomfort worse if done incorrectly or at the wrong time. This guide breaks down the <strong>best exercises for knee pain</strong>, from <strong>quadriceps strengthening exercises</strong> and <strong>straight leg raises</strong> to <strong>ankle mobility exercises</strong>, so you can build a routine that works for your body and your lifestyle.
       </p>
 
       <h2>Why Knee Pain Exercises Help: The Simple Science</h2>
       <p>
-        Your knee joint doesn't work in isolation. It relies on a network of muscles — quadriceps, hamstrings, calves, and glutes — to absorb shock, stabilize movement, and distribute load evenly. When these muscles are weak or imbalanced, the knee joint bears more stress than it should, which can contribute to stiffness, instability, and discomfort.
+        Your knee joint doesn't work in isolation. It relies on a network of muscles, quadriceps, hamstrings, calves, and glutes, to absorb shock, stabilize movement, and distribute load evenly. When these muscles are weak or imbalanced, the knee joint bears more stress than it should, which can contribute to stiffness, instability, and discomfort.
       </p>
       <p>
-        <strong>Knee exercises for knee pain</strong> work by strengthening these supporting muscles, improving the range of motion around the joint, and promoting better blood flow to the area. Research consistently shows that regular, gentle exercise is one of the most effective approaches for managing everyday knee discomfort — often more effective than rest alone.
+        <strong>Knee exercises for knee pain</strong> work by strengthening these supporting muscles, improving the range of motion around the joint, and promoting better blood flow to the area. Research consistently shows that regular, gentle exercise is one of the most effective approaches for managing everyday knee discomfort, often more effective than rest alone.
       </p>
       <p>
         This is especially relevant for people with <Link to="/guides/knee-arthritis-pain-guide" className="text-primary hover:underline">knee arthritis</Link>, where strengthening exercises can help maintain joint function and slow the progression of stiffness. Similarly, runners dealing with <Link to="/guides/runners-knee-pain-location" className="text-primary hover:underline">runner's knee pain</Link> benefit significantly from targeted strengthening programs.
@@ -52,7 +51,7 @@ const article: ArticleData = {
       <figure className="my-8">
         <img
           src={exerciseStraightLegRaise}
-          alt="Straight leg raise exercise for quadriceps strengthening — lying on back with one leg raised"
+          alt="Straight leg raise exercise for quadriceps strengthening, lying on back with one leg raised"
           className="w-full h-auto rounded-xl shadow-sm"
           loading="lazy"
         />
@@ -76,7 +75,7 @@ const article: ArticleData = {
       <figure className="my-8">
         <img
           src={exerciseWallSit}
-          alt="Wall sit exercise for quadriceps and glute strengthening — back against wall with thighs parallel"
+          alt="Wall sit exercise for quadriceps and glute strengthening, back against wall with thighs parallel"
           className="w-full h-auto rounded-xl shadow-sm"
           loading="lazy"
         />
@@ -88,7 +87,7 @@ const article: ArticleData = {
       <ul>
         <li>Stand with your back flat against a wall</li>
         <li>Slide down until your thighs are parallel to the floor (or as far as comfortable)</li>
-        <li>Keep your knees directly above your ankles — don't let them extend past your toes</li>
+        <li>Keep your knees directly above your ankles, don't let them extend past your toes</li>
         <li>Hold for 10–30 seconds, building up over time</li>
         <li>Rest and repeat 3–5 times</li>
       </ul>
@@ -100,7 +99,7 @@ const article: ArticleData = {
       <figure className="my-8">
         <img
           src={exerciseHamstringCurl}
-          alt="Standing hamstring curl exercise — bending knee behind while holding chair for balance"
+          alt="Standing hamstring curl exercise, bending knee behind while holding chair for balance"
           className="w-full h-auto rounded-xl shadow-sm"
           loading="lazy"
          decoding="async"  width={1200} height={760} />
@@ -124,7 +123,7 @@ const article: ArticleData = {
       <figure className="my-8">
         <img
           src={exerciseCalfRaise}
-          alt="Calf raise exercise — rising up on toes while holding counter for support"
+          alt="Calf raise exercise, rising up on toes while holding counter for support"
           className="w-full h-auto rounded-xl shadow-sm"
           loading="lazy"
          decoding="async"  width={1200} height={760} />
@@ -148,7 +147,7 @@ const article: ArticleData = {
       <figure className="my-8">
         <img
           src={exerciseGluteBridge}
-          alt="Glute bridge exercise — lying on back with hips raised and glutes engaged"
+          alt="Glute bridge exercise, lying on back with hips raised and glutes engaged"
           className="w-full h-auto rounded-xl shadow-sm"
           loading="lazy"
         />
@@ -164,15 +163,9 @@ const article: ArticleData = {
         <li>Lower slowly and repeat 10–15 times</li>
         <li>Perform 2–3 sets</li>
       </ul>
-
-      <PremiumCTA
-        headline="Want to complement your exercises with daily comfort support?"
-        text="FlexiKnee provides soothing warmth, red light, and gentle vibration after workouts, helping your knees recover and stay comfortable as you build strength."
-      />
-
-      <h2>Mobility Exercises for Knee Pain</h2>
+<h2>Mobility Exercises for Knee Pain</h2>
       <p>
-        Strength alone isn't enough — <strong>knee mobility exercises</strong> help maintain and improve range of motion, which is essential for comfortable daily movement. These exercises are particularly helpful for people who experience <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link>.
+        Strength alone isn't enough, <strong>knee mobility exercises</strong> help maintain and improve range of motion, which is essential for comfortable daily movement. These exercises are particularly helpful for people who experience <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link>.
       </p>
 
       <h3>6. Seated Knee Extensions</h3>
@@ -190,12 +183,12 @@ const article: ArticleData = {
 
       <h3>7. Ankle Circles (Ankle Mobility)</h3>
       <p>
-        <strong>Ankle mobility exercises</strong> are often overlooked in knee care, but ankle stiffness can directly affect knee alignment and comfort. When the ankle can't move through its full range, the knee compensates — often in ways that increase discomfort.
+        <strong>Ankle mobility exercises</strong> are often overlooked in knee care, but ankle stiffness can directly affect knee alignment and comfort. When the ankle can't move through its full range, the knee compensates, often in ways that increase discomfort.
       </p>
       <figure className="my-8">
         <img
           src={exerciseAnkleCircles}
-          alt="Ankle circles exercise — rotating foot in circular motion while seated"
+          alt="Ankle circles exercise, rotating foot in circular motion while seated"
           className="w-full h-auto rounded-xl shadow-sm"
           loading="lazy"
         />
@@ -206,7 +199,7 @@ const article: ArticleData = {
       <p><strong>How to do it:</strong></p>
       <ul>
         <li>Sit in a chair and lift one foot slightly off the floor</li>
-        <li>Slowly rotate the foot in large circles — 10 clockwise, 10 counter-clockwise</li>
+        <li>Slowly rotate the foot in large circles, 10 clockwise, 10 counter-clockwise</li>
         <li>Switch feet and repeat</li>
         <li>Perform 2 sets per foot</li>
       </ul>
@@ -234,18 +227,18 @@ const article: ArticleData = {
 
       <h3>Recommended Senior Routine (15–20 minutes)</h3>
       <ol>
-        <li><strong>Seated knee extensions</strong> — 10 reps each leg (warm-up)</li>
-        <li><strong>Ankle circles</strong> — 10 each direction per foot</li>
-        <li><strong>Chair-supported standing hamstring curls</strong> — 10 reps each leg</li>
-        <li><strong>Chair-supported calf raises</strong> — 15 reps</li>
-        <li><strong>Straight leg raises</strong> — 10 reps each leg (lying down or seated)</li>
-        <li><strong>Glute bridges</strong> — 10 reps (if comfortable on the floor)</li>
+        <li><strong>Seated knee extensions</strong>, 10 reps each leg (warm-up)</li>
+        <li><strong>Ankle circles</strong>, 10 each direction per foot</li>
+        <li><strong>Chair-supported standing hamstring curls</strong>, 10 reps each leg</li>
+        <li><strong>Chair-supported calf raises</strong>, 15 reps</li>
+        <li><strong>Straight leg raises</strong>, 10 reps each leg (lying down or seated)</li>
+        <li><strong>Glute bridges</strong>, 10 reps (if comfortable on the floor)</li>
       </ol>
 
       <h4>Senior Safety Tips</h4>
       <ul>
         <li>Always hold onto a sturdy surface for standing exercises</li>
-        <li>Stop if you feel sharp or sudden discomfort — mild muscle effort is normal</li>
+        <li>Stop if you feel sharp or sudden discomfort, mild muscle effort is normal</li>
         <li>Start with fewer repetitions and build up gradually over weeks</li>
         <li>Exercise on a non-slip surface or yoga mat</li>
         <li>Apply warmth to knees before exercising to help with initial stiffness</li>
@@ -315,7 +308,7 @@ const article: ArticleData = {
     },
     {
       question: "How do knee strengthening exercises help with knee pain?",
-      answer: "Knee strengthening exercises help by building the quadriceps, hamstrings, glutes, and calves — the muscles that support and stabilize the knee joint. Stronger muscles absorb more shock during movement, reducing stress on the joint and improving daily comfort."
+      answer: "Knee strengthening exercises help by building the quadriceps, hamstrings, glutes, and calves, the muscles that support and stabilize the knee joint. Stronger muscles absorb more shock during movement, reducing stress on the joint and improving daily comfort."
     },
     {
       question: "Are straight leg raises good for knee pain?",

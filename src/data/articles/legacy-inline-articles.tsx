@@ -28,7 +28,6 @@ import {
   InfoBox,
   TipsList,
 } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
 
 import heroKneePain from "@/assets/article-hero-knee-pain.jpg";
 import heroHeatTherapy from "@/assets/article-hero-heat-therapy.jpg";
@@ -107,9 +106,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         <KneePainFactorsChart />
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceComfortRoutine} 
-            alt="Person using FlexiKnee therapy device at home on sofa" 
+          <img
+            src={blogDeviceComfortRoutine}
+            alt="Person using FlexiKnee therapy device at home on sofa"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -151,9 +150,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         ]} />
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceWarmth} 
-            alt="FlexiKnee device providing heat therapy for knee comfort" 
+          <img
+            src={blogDeviceWarmth}
+            alt="FlexiKnee device providing heat therapy for knee comfort"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -248,9 +247,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </InfoBox>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceWarmth} 
-            alt="FlexiKnee device providing heat therapy warmth to knee area" 
+          <img
+            src={blogDeviceWarmth}
+            alt="FlexiKnee device providing heat therapy warmth to knee area"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -272,9 +271,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </InfoBox>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceRedlight} 
-            alt="FlexiKnee device emitting red light therapy" 
+          <img
+            src={blogDeviceRedlight}
+            alt="FlexiKnee device emitting red light therapy"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -420,9 +419,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceDailyRoutine} 
-            alt="Person using FlexiKnee device at home during daily routine" 
+          <img
+            src={blogDeviceDailyRoutine}
+            alt="Person using FlexiKnee device at home during daily routine"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -486,9 +485,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={blogWhoBenefitsRelaxing} 
-            alt="Person relaxing at home on couch using a knee therapy wrap while reading" 
+          <img
+            src={blogWhoBenefitsRelaxing}
+            alt="Person relaxing at home on couch using a knee therapy wrap while reading"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -505,9 +504,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceMovement} 
-            alt="Person doing gentle movement with FlexiKnee device" 
+          <img
+            src={blogDeviceMovement}
+            alt="Person doing gentle movement with FlexiKnee device"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -717,9 +716,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </InfoBox>
 
         <figure className="my-8">
-          <img 
-            src={sectionLegStraight} 
-            alt="Person stretching leg to relieve pain when straightening leg and back of knee discomfort" 
+          <img
+            src={sectionLegStraight}
+            alt="Person stretching leg to relieve pain when straightening leg and back of knee discomfort"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -967,9 +966,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           <strong>Pes anserine issues:</strong> Three tendons converge at a point on the inner shin bone just below the knee, forming the pes anserine. This area can become irritated, especially in runners or people who do a lot of stair climbing, causing pain inside knee that may extend slightly down the shin.
         </p>
 <figure className="my-8">
-          <img 
-            src={sectionSideStretch} 
-            alt="Person doing lateral stretch exercise to help with side knee pain and knee joint comfort" 
+          <img
+            src={sectionSideStretch}
+            alt="Person doing lateral stretch exercise to help with side knee pain and knee joint comfort"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -1219,13 +1218,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         <p>
           If your knee hurts when running and the pain forces you to stop or significantly alter your stride, this is a clear signal to reduce your training volume and investigate the cause. Continuing to run through significant pain can turn a manageable issue into a longer-lasting problem.
         </p>
-
-        <PremiumCTA
-          headline="Support your knees between runs"
-          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to support your knees as part of a daily comfort routine. Many runners use it after training to help their knees feel comfortable and ready for the next session."
-        />
-
-        <h2>Runner's Knee: The Most Common Culprit</h2>
+<h2>Runner's Knee: The Most Common Culprit</h2>
         <p>
           Runner's knee, technically known as patellofemoral pain syndrome, is the most frequent cause of running knee pain. It causes pain around or behind the kneecap, often worsening during running, squatting, climbing stairs, or after prolonged sitting.
         </p>
@@ -1247,8 +1240,8 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={sectionRunnerForm} 
+          <img
+            src={sectionRunnerForm}
             alt="Runner demonstrating proper running form and knee alignment"
             className="w-full h-auto rounded-xl shadow-lg"
           />
@@ -1502,8 +1495,8 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={sectionArthritisExercise} 
+          <img
+            src={sectionArthritisExercise}
             alt="Gentle knee exercises for arthritis management"
             className="w-full h-auto rounded-xl shadow-lg"
            loading="lazy"  decoding="async"  width={1200} height={760} />
@@ -1759,8 +1752,8 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={sectionStretchingRelief} 
+          <img
+            src={sectionStretchingRelief}
             alt="Gentle leg stretching for knee pain relief"
             className="w-full h-auto rounded-xl shadow-lg"
           />
@@ -1822,13 +1815,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         <p>
           <strong>Medial plica irritation:</strong> The medial plica is a common location for plica syndrome. Sharp, catching pain on the inner side of the knee, often with a snapping sensation, suggests this condition.
         </p>
-
-        <PremiumCTA
-          headline="Need comfort support between sharp pain episodes?"
-          text="FlexiKnee offers soothing warmth, red light, and gentle vibration at home, helping you stay comfortable between unpredictable flare-ups."
-        />
-
-        <h2>Stabbing Pain in Back of Knee</h2>
+<h2>Stabbing Pain in Back of Knee</h2>
         <p>
           Stabbing pain in back of knee (the posterior region) can be related to Baker's cysts, hamstring tendon irritation, or popliteal muscle strain. Sharp shooting pain in knee that originates behind the joint may also involve the gastrocnemius heads or, less commonly, vascular structures. If you notice pain in back of leg behind knee that radiates downward, the calf muscles or their tendon attachments may be contributing.
         </p>
@@ -2092,9 +2079,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </InfoBox>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceMovement} 
-            alt="Person maintaining active lifestyle for knee health" 
+          <img
+            src={blogDeviceMovement}
+            alt="Person maintaining active lifestyle for knee health"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -2153,9 +2140,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceDailyRoutine} 
-            alt="Person incorporating gentle movements into daily routine" 
+          <img
+            src={blogDeviceDailyRoutine}
+            alt="Person incorporating gentle movements into daily routine"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -2399,9 +2386,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         <KneeInjuryTypeFrequencyChart />
 
         <figure className="my-8">
-          <img 
-            src={sectionKneeBending} 
-            alt="Person gently bending knee demonstrating joint movement" 
+          <img
+            src={sectionKneeBending}
+            alt="Person gently bending knee demonstrating joint movement"
             className="w-full h-auto rounded-xl shadow-sm"
            loading="lazy"  decoding="async"  width={1200} height={760} />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -2466,13 +2453,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         <p>
           Hiking combines prolonged walking with uneven terrain, elevation changes, and often heavy packs. The combination of impact, instability, and sustained effort makes the knee particularly vulnerable during long hikes, especially on downhill sections. Our guide on <Link to="/guides/knee-pain-when-hiking" className="text-primary hover:underline">knee comfort while hiking</Link> covers practical considerations.
         </p>
-
-        <PremiumCTA
-          headline="Looking for comfortable at-home knee support?"
-          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device, fitting naturally into daily comfort routines during and after recovery."
-        />
-
-        {sectionDivider}
+{sectionDivider}
 
         <h2>Typical Symptoms People Notice</h2>
         <p>
@@ -2638,9 +2619,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceComfortRoutine} 
-            alt="Person resting with at-home knee support" 
+          <img
+            src={blogDeviceComfortRoutine}
+            alt="Person resting with at-home knee support"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -3336,9 +3317,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceRedlight} 
-            alt="FlexiKnee device with infrared technology" 
+          <img
+            src={blogDeviceRedlight}
+            alt="FlexiKnee device with infrared technology"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -3551,9 +3532,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceWarmth} 
-            alt="FlexiKnee device providing warmth and infrared" 
+          <img
+            src={blogDeviceWarmth}
+            alt="FlexiKnee device providing warmth and infrared"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -3754,9 +3735,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceComfortRoutine} 
-            alt="Person establishing comfortable daily routine at home" 
+          <img
+            src={blogDeviceComfortRoutine}
+            alt="Person establishing comfortable daily routine at home"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -3779,7 +3760,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           Our modern lifestyles often involve long periods in the same position. Whether you work at a desk, commute in a car, or stand for extended periods, these sustained postures can influence how your knees feel.
         </p>
 
-        <TipsList 
+        <TipsList
           title="Common Daily Comfort Factors"
           items={[
             "Movement frequency: Taking brief movement breaks throughout the day",
@@ -3815,9 +3796,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={sectionStretchingRelief} 
-            alt="Person doing gentle stretches at home" 
+          <img
+            src={sectionStretchingRelief}
+            alt="Person doing gentle stretches at home"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -3854,7 +3835,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           Once you understand your patterns, you can make informed adjustments. Perhaps you need more movement breaks during your workday. Maybe your evening routine could include some gentle stretching. These personalized adjustments are more valuable than generic advice.
         </p>
 
-        <TipsList 
+        <TipsList
           title="Building Supportive Daily Habits"
           items={[
             "Start with small, manageable changes that feel sustainable",
@@ -3886,9 +3867,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceWarmth} 
-            alt="Warmth-based device for at-home comfort" 
+          <img
+            src={blogDeviceWarmth}
+            alt="Warmth-based device for at-home comfort"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -3995,9 +3976,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceComfortRoutine} 
-            alt="Woman establishing comfortable daily routine at home" 
+          <img
+            src={blogDeviceComfortRoutine}
+            alt="Woman establishing comfortable daily routine at home"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -4020,7 +4001,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           Tasks like lifting children, bending to clean, carrying groceries, and other caregiving activities often involve repetitive knee movements. Many women who perform these tasks regularly notice patterns in their knee comfort related to the intensity and frequency of these activities.
         </p>
 
-        <TipsList 
+        <TipsList
           title="Common Patterns Women Report"
           items={[
             "Extended standing during daily tasks and work",
@@ -4080,7 +4061,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           Frequent stair use is commonly associated with knee awareness. Both ascending and descending stairs places specific demands on knees, and many people notice this activity more than flat walking.
         </p>
 
-        <TipsList 
+        <TipsList
           title="Universal Comfort Patterns"
           items={[
             "Stiffness after prolonged sitting periods",
@@ -4117,9 +4098,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={sectionStretchingRelief} 
-            alt="Gentle stretching at home for comfort" 
+          <img
+            src={sectionStretchingRelief}
+            alt="Gentle stretching at home for comfort"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -4229,7 +4210,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           The way people describe front knee discomfort varies considerably. Some common descriptions include:
         </p>
 
-        <TipsList 
+        <TipsList
           title="Common Descriptions of Front Knee Sensations"
           items={[
             "A feeling of tightness or pressure in the front of the knee",
@@ -4254,9 +4235,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceComfortRoutine} 
-            alt="Person establishing comfortable daily routine" 
+          <img
+            src={blogDeviceComfortRoutine}
+            alt="Person establishing comfortable daily routine"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -4284,7 +4265,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           Jumping into physical activity after periods of being sedentary is a pattern many people recognize. The transition from inactivity to sudden movement often brings increased awareness to the front knee area.
         </p>
 
-        <TipsList 
+        <TipsList
           title="Common Activity Patterns People Report"
           items={[
             "Extended standing on hard surfaces",
@@ -4345,9 +4326,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={sectionStretchingRelief} 
-            alt="Gentle movement for daily comfort" 
+          <img
+            src={sectionStretchingRelief}
+            alt="Gentle movement for daily comfort"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -4514,7 +4495,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           When runners talk about <strong>running shoes knee discomfort</strong>, they often describe feelings like:
         </p>
 
-        <TipsList 
+        <TipsList
           title="Common Running Sensations"
           items={[
             "Tightness or pressure in the knee area during or after runs",
@@ -4549,9 +4530,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={sectionRunnerForm} 
-            alt="Runner with proper form on trail" 
+          <img
+            src={sectionRunnerForm}
+            alt="Runner with proper form on trail"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -4794,7 +4775,7 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
           Understanding <strong>running shoe fit mistakes</strong> can help you avoid common pitfalls that affect comfort. Many of these mistakes are easy to make but also easy to correct once you're aware of them.
         </p>
 
-        <TipsList 
+        <TipsList
           title="Common Fit Mistakes to Avoid"
           items={[
             "Wearing shoes well past their recommended lifespan",
@@ -4876,9 +4857,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceMovement} 
-            alt="Runner in comfortable daily routine" 
+          <img
+            src={blogDeviceMovement}
+            alt="Runner in comfortable daily routine"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
@@ -5561,9 +5542,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         </p>
 
         <figure className="my-8">
-          <img 
-            src={blogDeviceWarmth} 
-            alt="FlexiKnee device providing gentle warmth for post-activity comfort" 
+          <img
+            src={blogDeviceWarmth}
+            alt="FlexiKnee device providing gentle warmth for post-activity comfort"
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">

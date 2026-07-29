@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-red-light-dose-knees.svg";
 import doseFormula from "@/assets/diagram-red-light-dose-formula.svg";
 import sessionPlan from "@/assets/diagram-red-light-session-plan.svg";
@@ -226,10 +225,7 @@ export const redLightTherapyDoseKnees: ArticleExport = {
         <p>
           Multiweek assessment is more realistic than expecting a dramatic first-session change. Compare your planned outcomes with baseline. Continue only if benefit is meaningful, the routine is tolerable, and it does not displace exercise or necessary care. If nothing changes, more minutes are not the automatic answer. Reassess the device, diagnosis, and broader plan.
         </p>
-
-        <PremiumCTA />
-
-        <h2>Can You Use Red Light Before or After Exercise?</h2>
+<h2>Can You Use Red Light Before or After Exercise?</h2>
         <p>
           Studies have tested photobiomodulation before and after exercise in different contexts, but knee osteoarthritis evidence does not establish one universal best timing. Practical timing can be based on behavior. Before activity, a session with gentle warmth may make stiffness feel easier and cue a mobility routine. After activity, a comfortable session may support relaxation. The optical effect should not be promised to prevent injury or erase the consequences of excessive training load.
         </p>

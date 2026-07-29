@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { InfoBox } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-weight-knee-pain.jpg";
@@ -81,7 +80,7 @@ export const weightAffectsKneePain: ArticleExport = {
          decoding="async"  width={1200} height={760} />
 
         <p>
-          Walking, stairs, running, and jumping place different demands on the knee. A sustainable plan may include activity pacing, strength and balance work, footwear or technique changes, and — when personally appropriate — support for overall health or weight goals.
+          Walking, stairs, running, and jumping place different demands on the knee. A sustainable plan may include activity pacing, strength and balance work, footwear or technique changes, and, when personally appropriate, support for overall health or weight goals.
         </p>
         <p>
           If you are interested in how aging interacts with these factors, our <Link to="/guides/why-knee-pain-gets-worse-with-age" className="text-primary hover:underline">guide on why knee pain changes with age</Link> covers this topic in detail.
@@ -172,12 +171,7 @@ export const weightAffectsKneePain: ArticleExport = {
           width={800}
           height={600}
         />
-<PremiumCTA
-          headline="Looking for daily knee comfort support?"
-          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device designed to support your knee comfort routine alongside healthy daily habits."
-        />
-
-        <h2>Other Factors That Combine With Weight</h2>
+<h2>Other Factors That Combine With Weight</h2>
         <p>
           While body weight is an important factor in knee joint pressure, it does not work in isolation. Several other daily habits and factors interact with weight to influence overall knee comfort.
         </p>

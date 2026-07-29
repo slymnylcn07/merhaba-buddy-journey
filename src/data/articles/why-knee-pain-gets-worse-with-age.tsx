@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-joint-aging-changes.jpg";
 import sectionProtectionHabits from "@/assets/article-section-joint-protection-habits.jpg";
 import sectionMorningStiffness from "@/assets/article-section-morning-stiffness-40s.jpg";
@@ -118,13 +117,7 @@ export const whyKneePainGetsWorseWithAge: ArticleExport = {
         <InfoBox title="Synovial Fluid and Aging">
           <p>Synovial fluid is the thick, viscous liquid that lubricates your knee joint and nourishes the cartilage. With age, production decreases and the fluid's consistency changes, becoming thicker and less effective. This <strong>knee fluid loss with age</strong> contributes significantly to morning stiffness and the "rusty hinge" feeling many people describe when first getting up.</p>
         </InfoBox>
-
-        <PremiumCTA
-          headline="Want daily comfort support for aging joints?"
-          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device, designed for adults who want consistent daily knee comfort."
-        />
-
-        <h2>Activity-Specific Triggers: Stairs, Walking, Bending</h2>
+<h2>Activity-Specific Triggers: Stairs, Walking, Bending</h2>
         <p>
           Certain activities place significantly more stress on the knee joint than others, and these become more challenging as the joint's natural protection diminishes with age.
         </p>

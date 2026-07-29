@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-turmeric-knee-pain.jpg";
 import turmericFormsImage from "@/assets/article-inline-turmeric-forms-comparison.jpg";
@@ -80,7 +79,7 @@ export const turmericCurcuminKneePain: ArticleExport = {
           Search data shows strong interest in <strong>turmeric for joint pain</strong>, <strong>turmeric supplements</strong>, <strong>turmeric benefits</strong>, <strong>turmeric and ginger</strong>, and the misspelled but common query “tumeric for knee pain.” Those searches often land on pages that treat every yellow capsule as the same product. That is the first problem to solve. The active compounds studied in most knee trials are curcuminoids, especially curcumin, and the amount absorbed depends heavily on how the product is made.
         </p>
         <p>
-          Turmeric sits within the wider supplement picture described in our <Link to="/guides/best-supplements-for-knee-pain" className={linkClass}>evidence guide to knee pain supplements</Link>. It has a more credible symptom signal than many proprietary joint blends, yet it still belongs beside—not instead of—exercise, strength, weight management, and diagnosis. If your main question is whether your symptoms reflect joint wear, start with the <Link to="/guides/knee-arthritis-pain-guide" className={linkClass}>knee arthritis guide</Link> before trying to treat an uncertain problem with a herb.
+          Turmeric sits within the wider supplement picture described in our <Link to="/guides/best-supplements-for-knee-pain" className={linkClass}>evidence guide to knee pain supplements</Link>. It has a more credible symptom signal than many proprietary joint blends, yet it still belongs beside, not instead of, exercise, strength, weight management, and diagnosis. If your main question is whether your symptoms reflect joint wear, start with the <Link to="/guides/knee-arthritis-pain-guide" className={linkClass}>knee arthritis guide</Link> before trying to treat an uncertain problem with a herb.
         </p>
 
         <h2>Turmeric, Curcumin, and Curcuminoids Are Not the Same Thing</h2>
@@ -170,13 +169,7 @@ export const turmericCurcuminKneePain: ArticleExport = {
         <p>
           Importantly, trials generally measure pain scales and function questionnaires. They do not show that turmeric rebuilds cartilage. Imaging and biochemical outcomes have not consistently demonstrated structural change. The realistic promise is possible symptom reduction, not reversal of osteoarthritis.
         </p>
-
-        <PremiumCTA
-          headline="Use symptom relief to support movement—not to replace it"
-          text="A turmeric trial may take weeks to judge. FlexiKnee offers a separate short warmth, red-light, and gentle-vibration routine for everyday stiffness while you keep strength and activity as the foundation of your plan."
-        />
-
-        <h2>How Much Turmeric or Curcumin Is Used in Studies?</h2>
+<h2>How Much Turmeric or Curcumin Is Used in Studies?</h2>
         <p>
           Searchers often ask “how much turmeric for knee pain,” but the honest answer must begin with the formulation. Trials have used a wide range: conventional curcuminoid extracts totaling several hundred milligrams to around 1,500 mg per day, highly bioavailable preparations at lower nominal doses, and branded turmeric matrices that cannot be reproduced by weighing kitchen spice.
         </p>

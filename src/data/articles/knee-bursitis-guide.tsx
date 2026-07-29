@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 // nextSlug/nextTitle updated to chain to pain-behind-kneecap
 
@@ -169,13 +168,7 @@ export const kneeBursitisGuide: ArticleExport = {
         <p>
           If you notice that your knee discomfort increases after specific activities, our guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee discomfort after exercise</Link> offers additional context on post-activity patterns.
         </p>
-
-        <PremiumCTA
-          headline="Want gentle warmth support for irritated knees?"
-          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help support knee comfort during your daily routine, especially after activities that may irritate the knee area."
-        />
-
-        <h2>40+ Everyday Strategies That May Support Knee Comfort</h2>
+<h2>40+ Everyday Strategies That May Support Knee Comfort</h2>
         <p>
           Managing <strong>knee bursitis</strong> discomfort often comes down to consistent daily habits rather than a single solution. Here are over 40 practical strategies organized by category that may help support your knee comfort and mobility.
         </p>

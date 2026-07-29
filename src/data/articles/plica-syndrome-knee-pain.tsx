@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-plica-syndrome.jpg";
@@ -205,13 +204,7 @@ export const plicaSyndromeKneePain: ArticleExport = {
         <p>
           If you notice that specific activities consistently trigger discomfort, it may be helpful to temporarily reduce their frequency or intensity while focusing on strategies that support tissue recovery. For more on how repetitive activity affects the knee, see our guide on <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee discomfort after exercise</Link>.
         </p>
-
-        <PremiumCTA
-          headline="Support Your Knee Comfort During Recovery"
-          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees feel comfortable and supported as part of your daily knee comfort routine."
-        />
-
-        {/* Section 5 */}
+{/* Section 5 */}
         <h2>Home Strategies That May Support Knee Comfort</h2>
         <p>
           Many people find that simple home strategies can help support knee comfort when dealing with plica irritation. The goal is to reduce the factors that contribute to tissue irritation while maintaining joint mobility and building strength.

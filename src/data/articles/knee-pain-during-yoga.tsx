@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-knee-pain-yoga.jpg";
@@ -228,13 +227,7 @@ const kneePainDuringYoga: ArticleExport = {
         <p>
           This is why experienced yoga teachers often emphasize that poses like lotus and pigeon are actually <em>hip</em> stretches, not knee stretches. If you feel the stretch primarily in your knee rather than your hip, it's a clear signal that the pose needs modification. The sensation should be felt in the hip and glute area, not around the knee joint. You can learn more about how hip mobility affects knee comfort in our guide on <Link to="/guides/knee-pain-after-sitting-cross-legged" className="text-primary hover:underline">knee pain after sitting cross-legged</Link>.
         </p>
-
-        <PremiumCTA
-          headline="Support your knees during yoga practice"
-          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device, designed for comfortable pre- and post-yoga knee support."
-        />
-
-        {/* Section 4: Biomechanics mistakes */}
+{/* Section 4: Biomechanics mistakes */}
         <h2>Biomechanics Mistakes in Yoga That Increase Knee Stress</h2>
         <p>
           Beyond flexibility limitations, certain movement patterns and alignment errors during yoga practice significantly increase <strong>knee strain during stretching</strong> and pose work. Awareness of these common mistakes can help protect the knee joint:

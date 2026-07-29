@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-morning-stiffness-40s-v2.jpg";
 import diagramFluidSleep from "@/assets/package-4/first-steps-after-rest.svg";
 import sectionMorningStiffness from "@/assets/article-section-morning-stiffness-40s.jpg";
@@ -146,13 +145,7 @@ export const morningKneeStiffnessAfter40: ArticleExport = {
         <p>
           Sit on the edge of the bed with feet on the floor. Slowly straighten one knee, hold for 3 seconds at the top, then lower slowly. Repeat 6 to 8 times per leg. This is your final warm-up before standing, preparing the knee for weight-bearing. For more exercises like these, see our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">complete knee exercises guide</Link>.
         </p>
-
-        <PremiumCTA
-          headline="Start your morning with soothing knee warmth"
-          text="FlexiKnee provides adjustable warmth, red light, and gentle vibration to help your knees warm up comfortably before your first step of the day."
-        />
-
-        <h2>How to Reduce Morning Knee Tightness Over Time</h2>
+<h2>How to Reduce Morning Knee Tightness Over Time</h2>
         <p>
           While the morning routine above helps with immediate stiffness, there are longer-term strategies that can gradually reduce the severity of your morning knee tightness:
         </p>

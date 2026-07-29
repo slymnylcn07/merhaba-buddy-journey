@@ -1,4 +1,5 @@
 import type { ArticleData } from "./articles/types";
+import { applyArticleSourceStandards } from "./article-source-standards";
 
 export type ArticleLoader = () => Promise<ArticleData | undefined>;
 
@@ -104,5 +105,5 @@ export async function loadArticleBySlug(slug: string): Promise<ArticleData | und
   const loader = articleLoaders[slug];
   if (!loader) return undefined;
   const article = await loader();
-  return article?.slug === slug ? article : undefined;
+  return article?.slug === slug ? applyArticleSourceStandards(article) : undefined;
 }

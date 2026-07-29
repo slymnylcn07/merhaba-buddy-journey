@@ -1,12 +1,10 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-cordless-massagers.svg";
 import homeUseImage from "@/assets/article-device-home-use.jpg";
 import eveningImage from "@/assets/article-device-evening.jpg";
 import heatRedLightImage from "@/assets/article-heat-vs-redlight-knee.jpg";
 import routineImage from "@/assets/article-device-routine.jpg";
-import { ArticleSourcesBox } from "@/components/ArticleSourcesBox";
 
 export const cordlessHeatedKneeMassagers2026: ArticleExport = {
   cta: "",
@@ -16,7 +14,7 @@ export const cordlessHeatedKneeMassagers2026: ArticleExport = {
     subtitle: "How to compare fit, controls, battery claims, heat delivery, vibration, and red light",
     intro: "Cordless knee devices are easier to use than traditional heating pads, but feature lists can hide the details that determine comfort and safety. This guide gives you a practical comparison method: how the wrap fits, how heat is controlled, what battery figures really mean, and which extras are worth paying for.",
     metaTitle: "Best Cordless Knee Massagers 2026: Rechargeable & Wireless",
-    metaDescription: "Our 2026 picks for cordless, rechargeable knee massagers — compared on battery life, heat levels, auto shut-off, fit, and safety, so you can choose with confidence.",
+    metaDescription: "Our 2026 picks for cordless, rechargeable knee massagers, compared on battery life, heat levels, auto shut-off, fit, and safety, so you can choose with confidence.",
     heroImage,
     publishedDate: "July 10, 2026",
     lastUpdated: "July 13, 2026",
@@ -30,7 +28,7 @@ export const cordlessHeatedKneeMassagers2026: ArticleExport = {
       },
       {
         question: "Is a cordless device as warm as a plug-in heating pad?",
-        answer: "It can provide useful local warmth, but cordless products manage power differently and may heat a smaller area. The safer comparison is evenness, controllable levels, and automatic shutoff — not which product advertises the highest temperature.",
+        answer: "It can provide useful local warmth, but cordless products manage power differently and may heat a smaller area. The safer comparison is evenness, controllable levels, and automatic shutoff, not which product advertises the highest temperature.",
       },
       {
         question: "Do vibration and red light make a meaningful difference?",
@@ -131,7 +129,7 @@ export const cordlessHeatedKneeMassagers2026: ArticleExport = {
           Runtime depends on battery capacity and which functions are active. Heat at the highest level normally consumes more power than low heat; vibration and light features can reduce runtime further. Useful listings state battery capacity, charging input, approximate charge time, and runtime under specific settings. Vague claims such as “all-day battery” are not comparable.
         </p>
         <p>
-          A practical device should complete several ordinary sessions without creating charging anxiety. Also check whether it can be used while charging — many products should not be — and whether the battery is replaceable or permanently sealed.
+          A practical device should complete several ordinary sessions without creating charging anxiety. Also check whether it can be used while charging, many products should not be, and whether the battery is replaceable or permanently sealed.
         </p>
 
         <h3>5. Controls and visibility</h3>
@@ -193,13 +191,7 @@ export const cordlessHeatedKneeMassagers2026: ArticleExport = {
           <li>The return period is long enough to assess fit and routine compatibility.</li>
           <li>The claims focus on comfort and use, not guaranteed treatment or cure.</li>
         </ol>
-
-        <PremiumCTA
-          headline="A cordless routine built around convenience"
-          text="FlexiKnee combines adjustable warmth, red light, and gentle vibration in a rechargeable wrap designed for simple home sessions without presenting higher heat as the goal."
-        />
-
-        <h2>Safe Use: A Practical Routine</h2>
+<h2>Safe Use: A Practical Routine</h2>
         <ol>
           <li>Inspect the wrap, connector, battery, and controls before use.</li>
           <li>Start at the lowest comfortable setting, especially during the first session.</li>
@@ -243,24 +235,7 @@ export const cordlessHeatedKneeMassagers2026: ArticleExport = {
         <p>
           Compare the device as a complete system: wrap geometry, active coverage, power, controls, materials, cleaning, instructions, and seller support. That approach is more dependable than choosing by maximum temperature or a single headline runtime.
         </p>
-
-        <ArticleSourcesBox>
-        <ul>
-          <li>
-            <a href="https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/biovanta-recalls-heating-pads-due-risk-fire-and-burn-hazards" target="_blank" rel="noreferrer">FDA heating-product recall notice describing overheating and burn hazards (2026)</a>
-          </li>
-          <li>
-            <a href="https://www.fda.gov/medical-devices/medical-device-recalls/copper-fit-recalls-rapid-relief-heating-pad-due-fire-and-burn-hazards" target="_blank" rel="noreferrer">FDA recall notice for heating pads associated with burns, sparks, or fire hazards (2022)</a>
-          </li>
-          <li>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/37762594/" target="_blank" rel="noreferrer">Systematic review of photobiomodulation parameters and musculoskeletal outcomes (2023)</a>
-          </li>
-        </ul>
-        <p className="!text-sm !leading-6 !text-slate-500">
-          This guide is educational and is not a medical-device prescription. Always follow the instructions supplied with the specific product and seek professional advice when symptoms are severe, unexplained, or associated with injury, swelling, redness, or loss of function.
-        </p>
-      </ArticleSourcesBox>
-      </>
+</>
     ),
   },
 };

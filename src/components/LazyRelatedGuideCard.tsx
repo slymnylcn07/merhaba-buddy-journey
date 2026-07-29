@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RelatedGuideCard } from "@/components/ArticleCharts";
+import { RelatedGuideCard } from "@/components/RelatedGuideCard";
 import { loadGuideThumbnail } from "@/data/guide-thumbnail-loaders";
 
 interface LazyRelatedGuideCardProps {

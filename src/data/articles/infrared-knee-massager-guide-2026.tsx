@@ -3,7 +3,6 @@ import heroInfraredMassager from "@/assets/article-hero-infrared-massager.jpg";
 import blogDeviceRedlight from "@/assets/blog-device-redlight.jpg";
 import blogDeviceWarmth from "@/assets/blog-device-warmth.jpg";
 import type { ArticleExport } from "./types";
-import PremiumCTA from "@/components/PremiumCTA";
 import EvidenceScopeNotice from "@/components/EvidenceScopeNotice";
 
 export const infraredKneeMassagerGuide2026: ArticleExport = {
@@ -104,13 +103,7 @@ export const infraredKneeMassagerGuide2026: ArticleExport = {
         <p>
           For more on how warmth and infrared compare in daily routines, check out our <Link to="/guides/warmth-vs-infrared-knee-routines" className="text-primary hover:underline">warmth vs. infrared comparison guide</Link>.
         </p>
-
-        <PremiumCTA
-          headline="Interested in upgrading from a basic heating pad?"
-          text="FlexiKnee combines infrared warmth with adjustable heat and gentle vibration massage in one wireless device, delivering deeper comfort than surface-level heat pads."
-        />
-
-        <h2>Key Features to Look for in an Infrared Knee Massager</h2>
+<h2>Key Features to Look for in an Infrared Knee Massager</h2>
         <p>
           Not all infrared knee massagers are created equal. Here are the features that separate effective devices from basic ones:
         </p>
@@ -268,13 +261,7 @@ export const infraredKneeMassagerGuide2026: ArticleExport = {
         <p>
           The key is choosing a device that delivers genuine infrared therapy (not just surface heat) with the adjustability and build quality to support daily use over months and years. FlexiKnee's 3-in-1 approach, combining infrared, adjustable heat, and vibration massage in a cordless knee-specific device, makes it the standout choice in 2026 for people who want comprehensive at-home knee support. For a full understanding of what causes your knee discomfort and how to address it holistically, our guide on <Link to="/guides/home-remedies-knee-pain" className="text-primary hover:underline">home remedies for knee pain</Link> provides practical complementary strategies.
         </p>
-
-        <PremiumCTA
-          headline="Ready to experience deeper infrared knee comfort?"
-          text="FlexiKnee combines infrared warmth, adjustable heat, and gentle vibration in one wireless device designed specifically for daily knee comfort."
-        />
-
-        <div className="mt-12 p-4 bg-muted/50 rounded-lg text-sm text-muted-foreground">
+<div className="mt-12 p-4 bg-muted/50 rounded-lg text-sm text-muted-foreground">
           <p className="font-medium mb-2">Disclaimer</p>
           <p>
             This article is for informational purposes only and does not constitute medical advice. Infrared knee massagers are comfort and wellness devices, not medical treatments. If you have a diagnosed knee condition, recent injury, or ongoing pain, please consult a qualified healthcare professional before starting any new therapy routine. Individual results vary, and no at-home device should replace professional medical guidance.

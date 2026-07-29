@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ArticleExport } from "./types";
-import PremiumCTA from "@/components/PremiumCTA";
 import { InfoBox } from "@/components/ArticleCharts";
 
 import heroImage from "@/assets/article-hero-home-remedies-knee-pain.jpg";
@@ -25,7 +24,7 @@ export const homeRemediesKneePain: ArticleExport = {
     nextSlug: "exercises-to-relieve-knee-pain-at-home",
     nextTitle: "Exercises to Relieve Knee Pain at Home",
     seoTags: "home remedies for knee pain, natural knee comfort, knee pain home treatment, daily knee care habits, warm compress knee, cold application knee, knee elevation, gentle knee movement, knee comfort routine, reduce knee discomfort naturally, knee support habits, home knee care, knee pain relief methods, knee stiffness home support, at home knee comfort",
-    
+
     faqs: [
       {
         question: "What are the best home remedies for knee pain?",
@@ -174,13 +173,7 @@ export const homeRemediesKneePain: ArticleExport = {
             Elevating the leg on pillows can help ease knee heaviness
           </figcaption>
         </figure>
-
-        <PremiumCTA
-          headline="Want an easy way to add warmth to your daily knee routine?"
-          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device designed for everyday knee comfort at home."
-        />
-
-        <h2>Warm vs. Cold: Which Approach Works for What</h2>
+<h2>Warm vs. Cold: Which Approach Works for What</h2>
         <p>
           One of the most common questions about how to relieve knee pain at home is whether to use heat or cold. Both have their place, and understanding when each may be most helpful can make your home care more effective. For a more detailed exploration, see our guide on <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat or ice for knee pain</Link>.
         </p>

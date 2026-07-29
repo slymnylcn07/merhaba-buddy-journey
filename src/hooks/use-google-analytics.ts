@@ -4,18 +4,20 @@ import { hasAnalyticsConsent, useAnalyticsConsent } from "@/lib/cookie-consent";
 
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void;
-    dataLayer: any[];
+    gtag: (...args: unknown[]) => void;
+    dataLayer: unknown[];
   }
 }
 
 const GA_MEASUREMENT_ID = "G-5QC0R5G1JG";
+type GoogleAnalyticsWindow = Window &
+  Record<`ga-disable-${string}`, boolean | undefined>;
 
 function ensureGoogleTagQueue() {
   window.dataLayer = window.dataLayer || [];
   window.gtag =
     window.gtag ||
-    function gtag(...args: any[]) {
+    function gtag(...args: unknown[]) {
       window.dataLayer.push(args);
     };
 }
@@ -26,12 +28,12 @@ export const useGoogleAnalytics = () => {
 
   useEffect(() => {
     if (!analyticsAllowed) {
-      (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+      (window as GoogleAnalyticsWindow)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
       return;
     }
 
     ensureGoogleTagQueue();
-    (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
+    (window as GoogleAnalyticsWindow)[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
 
     window.gtag("consent", "update", {
       analytics_storage: "granted",
@@ -58,7 +60,7 @@ export const useGoogleAnalytics = () => {
 // Track custom events
 export const trackEvent = (
   eventName: string,
-  eventParams?: Record<string, any>
+  eventParams?: Record<string, unknown>
 ) => {
   if (!hasAnalyticsConsent()) return;
   ensureGoogleTagQueue();

@@ -4,7 +4,6 @@ import {
 } from "@/components/ArticleCharts";
 import { Link } from "react-router-dom";
 import type { ArticleExport } from "./types";
-import PremiumCTA from "@/components/PremiumCTA";
 
 import heroMassagerExpectations from "@/assets/article-hero-massager-expectations.jpg";
 import blogDeviceWarmth from "@/assets/blog-device-warmth.jpg";
@@ -161,13 +160,7 @@ export const flexikneeVsCompetitors2026: ArticleExport = {
         <InfoBox title="Why Knee-Specific Design Matters">
           <p>Generic massage devices apply force and stimulation broadly. Knee-specific wraps position heat, light, and vibration directly where they're needed most: around the joint capsule and surrounding soft tissue. This targeted approach means each session delivers more focused support to the areas that matter most for knee comfort.</p>
         </InfoBox>
-
-        <PremiumCTA
-          headline="Want the multi-feature at-home knee comfort option?"
-          text="FlexiKnee combines all three modalities in one wireless, knee-specific device designed for consistent daily use."
-        />
-
-        <h2>Which Device Fits Your Needs?</h2>
+<h2>Which Device Fits Your Needs?</h2>
         <p>
           The best device for you depends on what you're looking for:
         </p>
@@ -234,13 +227,7 @@ export const flexikneeVsCompetitors2026: ArticleExport = {
           </Link>{" "}
           helpful for understanding how device placement and daily habits work together.
         </p>
-
-        <PremiumCTA
-          headline="Ready to choose the best knee comfort device for your routine?"
-          text="FlexiKnee combines warmth, red light, and vibration in one wireless device. See the full specs and user reviews."
-        />
-
-        {/* Disclaimer */}
+{/* Disclaimer */}
         <div className="mt-12 p-4 rounded-lg bg-muted/30 border border-border/30">
           <p className="text-sm text-muted-foreground italic mb-0">
             This content is not medical advice. It is based on general research and customer experiences.

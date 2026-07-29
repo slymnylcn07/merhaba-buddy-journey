@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-backward-walking-knee-pain.jpg";
 import gaitControlImage from "@/assets/article-inline-backward-walking-gait-control.jpg";
@@ -159,13 +158,7 @@ export const backwardWalkingKneePain: ArticleExport = {
         <p>
           Novel movement requires concentration. That may challenge coordination and balance, but “harder for the brain” does not automatically mean therapeutic. The dose must remain low enough that posture and control stay clean. Fatigued, hurried backward walking is not a better exercise simply because it is unusual.
         </p>
-
-        <PremiumCTA
-          headline="Want a supported feel while you build walking confidence?"
-          text="A breathable compression sleeve can add warmth and sensory feedback during short, controlled walking sessions."
-        />
-
-        <h2>Who May Benefit Most?</h2>
+<h2>Who May Benefit Most?</h2>
         <p>
           The clearest research group is adults with stable knee osteoarthritis who can walk independently and who are participating in a broader rehabilitation program. A therapist may use backward walking to add variety, train quadriceps control, or change gait loading while monitoring symptoms. It may also interest active adults who tolerate forward walking but want a low-volume coordination drill.
         </p>

@@ -192,6 +192,34 @@ function extractLocalAssets(html: string, attribute: "href" | "src"): string[] {
   return [...html.matchAll(pattern)].map((match) => match[1]);
 }
 
+function extractInternalGuideLinks(html: string): string[] {
+  const links: string[] = [];
+
+  for (const match of html.matchAll(/<a\b[^>]*>/gi)) {
+    const href = decodeHtml(getAttribute(match[0], "href") || "").trim();
+    if (!href) continue;
+
+    let path = href;
+    if (href.startsWith(`${SITE_ORIGIN}/guides/`)) {
+      try {
+        path = new URL(href).pathname;
+      } catch {
+        continue;
+      }
+    }
+
+    if (!path.startsWith("/guides/")) continue;
+    const normalized = path.split(/[?#]/, 1)[0].replace(/\/+$/, "");
+    links.push(normalized);
+  }
+
+  return [...new Set(links)];
+}
+
+function occurrenceCount(value: string, needle: string): number {
+  return value.split(needle).length - 1;
+}
+
 
 function uniqueDuplicates(values: string[]): string[] {
   return [...new Set(values.filter((value, index) => values.indexOf(value) !== index))];
@@ -252,6 +280,12 @@ if (!existsSync(DIST)) {
         failures.push(`${routeRecord.path}: loading, not-found or unavailable fallback was prerendered`);
       }
 
+      for (const target of extractInternalGuideLinks(html)) {
+        if (!expectedPaths.has(target)) {
+          failures.push(`${routeRecord.path}: internal guide link does not target an active canonical route: ${target}`);
+        }
+      }
+
       for (const text of forbidden) {
         if (html.includes(text)) failures.push(`${routeRecord.path}: forbidden stale text found: ${text}`);
       }
@@ -280,6 +314,31 @@ if (!existsSync(DIST)) {
       if (routeRecord.kind === "guide") {
         if (!html.includes(`data-seo-guide="${routeRecord.identity}"`)) {
           failures.push(`${routeRecord.path}: guide identity marker is missing or incorrect`);
+        }
+        const quickAnswerIndex = html.indexOf('data-article-quick-answer="true"');
+        const ctaIndex = html.indexOf('data-article-end-block="cta"');
+        const quizIndex = html.indexOf('data-article-end-block="knee-quiz"');
+        const sourcesIndex = html.indexOf('data-article-end-block="sources"');
+        if (quickAnswerIndex < 0) failures.push(`${routeRecord.path}: standardized Quick Answer is missing`);
+        if (ctaIndex < 0) failures.push(`${routeRecord.path}: automatic article CTA is missing`);
+        if (quizIndex < 0) failures.push(`${routeRecord.path}: Knee Quiz is missing`);
+        if (sourcesIndex < 0) failures.push(`${routeRecord.path}: Sources and Further Reading is missing`);
+        for (const [label, marker] of [
+          ["Quick Answer", 'data-article-quick-answer="true"'],
+          ["automatic article CTA", 'data-article-end-block="cta"'],
+          ["Knee Quiz", 'data-article-end-block="knee-quiz"'],
+          ["Sources and Further Reading", 'data-article-end-block="sources"'],
+        ] as Array<[string, string]>) {
+          const count = occurrenceCount(html, marker);
+          if (count > 1) failures.push(`${routeRecord.path}: ${label} is rendered ${count} times`);
+        }
+        if (
+          ctaIndex >= 0 &&
+          quizIndex >= 0 &&
+          sourcesIndex >= 0 &&
+          !(ctaIndex < quizIndex && quizIndex < sourcesIndex)
+        ) {
+          failures.push(`${routeRecord.path}: article-end order must be CTA, Knee Quiz, then Sources`);
         }
         const guideText = extractGuideContent(html);
         const guideTokens = words(guideText);

@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import { InfoBox, TipsList } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-pain-long-walks.jpg";
 import sectionBiomechanics from "@/assets/article-section-walking-biomechanics-age.jpg";
@@ -87,16 +86,11 @@ export const kneePainAfterLongWalks: ArticleExport = {
         </figure>
 
         <InfoBox title="The Fatigue-Pain Connection">
-          <p><strong>Phase 1 — Fresh Muscles:</strong> Quadriceps and hamstrings absorb most walking impact, protecting joint surfaces.</p>
-          <p><strong>Phase 2 — Muscle Fatigue:</strong> After sustained walking, muscles lose contractile efficiency and absorb less shock.</p>
-          <p><strong>Phase 3 — Joint Overload:</strong> Unabsorbed forces reach cartilage and bone directly, triggering post-walk pain and stiffness.</p>
+          <p><strong>Phase 1, Fresh Muscles:</strong> Quadriceps and hamstrings absorb most walking impact, protecting joint surfaces.</p>
+          <p><strong>Phase 2, Muscle Fatigue:</strong> After sustained walking, muscles lose contractile efficiency and absorb less shock.</p>
+          <p><strong>Phase 3, Joint Overload:</strong> Unabsorbed forces reach cartilage and bone directly, triggering post-walk pain and stiffness.</p>
         </InfoBox>
-<PremiumCTA
-          headline="Want post-walk comfort support for your knees?"
-          text="FlexiKnee provides soothing warmth, red light, and gentle vibration to help your knees recover comfortably after long walks, making your daily walking routine sustainable."
-        />
-
-        <h2>Inner vs Outer Knee Pain After Long Walks</h2>
+<h2>Inner vs Outer Knee Pain After Long Walks</h2>
         <p>
           The location of your knee pain after walking provides important clues about which structures are being stressed. Inner and outer knee pain after long walks involve different anatomical structures and often respond to different strategies.
         </p>
@@ -145,13 +139,13 @@ export const kneePainAfterLongWalks: ArticleExport = {
           "Replace walking shoes every 300–500 miles or when midsole cushioning feels flat",
           "Choose shoes with firm arch support and adequate heel cushioning",
           "Use shorter steps on downhill sections to reduce kneecap compression",
-          "Maintain a moderate pace — not too fast, not too slow",
+          "Maintain a moderate pace, not too fast, not too slow",
           "Consider walking poles for hilly terrain to distribute load away from knees",
         ]} />
 
         <h2>How to Walk Without Triggering Knee Pain</h2>
         <p>
-          The goal is not to avoid walking — walking is one of the best things you can do for your knee health. The goal is to walk smarter so that you can enjoy longer walks without triggering the pain cycle.
+          The goal is not to avoid walking, walking is one of the best things you can do for your knee health. The goal is to walk smarter so that you can enjoy longer walks without triggering the pain cycle.
         </p>
 
         <h3>Warm Up Before Long Walks</h3>
@@ -205,11 +199,11 @@ export const kneePainAfterLongWalks: ArticleExport = {
         </figure>
 
         <InfoBox title="Your Post-Walk Recovery Checklist">
-          <p>✓ Gentle quad stretch — 30 seconds each side, twice</p>
-          <p>✓ Hamstring and calf stretch — 30 seconds each side</p>
-          <p>✓ Apply warmth — 10 minutes with a warm cloth or therapy device</p>
-          <p>✓ Gentle knee bends — 10–15 slow partial squats to circulate synovial fluid</p>
-          <p>✓ Hydrate — drink water to support joint fluid replenishment</p>
+          <p>✓ Gentle quad stretch, 30 seconds each side, twice</p>
+          <p>✓ Hamstring and calf stretch, 30 seconds each side</p>
+          <p>✓ Apply warmth, 10 minutes with a warm cloth or therapy device</p>
+          <p>✓ Gentle knee bends, 10–15 slow partial squats to circulate synovial fluid</p>
+          <p>✓ Hydrate, drink water to support joint fluid replenishment</p>
         </InfoBox>
 <h2>When to Modify Your Walking Routine</h2>
         <p>
@@ -229,12 +223,12 @@ export const kneePainAfterLongWalks: ArticleExport = {
 
         <InfoBox title="Summary: Walk Longer, Walk Smarter">
           <p>✓ Warm up for 3–5 minutes before long walks</p>
-          <p>✓ Build distance gradually — no more than 10–15% per week</p>
+          <p>✓ Build distance gradually, no more than 10–15% per week</p>
           <p>✓ Wear supportive shoes with adequate cushioning</p>
           <p>✓ Use shorter steps on downhill sections</p>
           <p>✓ Take strategic stretch breaks during walks over 30 minutes</p>
           <p>✓ Complete your post-walk recovery routine: stretch, warmth, gentle movement</p>
-          <p>✓ Listen to your knees — adjust distance when needed</p>
+          <p>✓ Listen to your knees, adjust distance when needed</p>
           <p>If you notice <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">clicking or popping sounds</Link> during or after long walks, this is usually related to normal joint mechanics and is not a cause for concern unless accompanied by pain. After particularly long walks, using an <Link to="/guides/infrared-knee-massager-guide-2026" className="text-primary hover:underline">infrared knee massager</Link> can help support recovery</p>
         </InfoBox>
       </>

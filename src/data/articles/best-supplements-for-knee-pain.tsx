@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/thumb-knee-supplements.svg";
 import evidenceImage from "@/assets/fig-supplements-evidence-v1.svg";
 import timelineImage from "@/assets/fig-supplements-timeline-v1.svg";
@@ -145,9 +144,7 @@ export const bestSupplementsForKneePain: ArticleExport = {
         <p>
           The best supplements for knee pain are not miracle workers, and the honest answer to which one to take starts with lowering expectations. Omega-3, curcumin, and vitamin D when you are deficient have the most reasonable support, and their effects are still modest and slow. Glucosamine, chondroitin, and collagen are mixed at best. Blends and miracle cures are mostly marketing. If you want to try one, pick a single ingredient from the strongest group, run a fair eight-to-twelve-week trial with a written baseline, and be willing to stop if nothing changes. Above all, remember that the real work happens below the supplement line: movement, strength, healthy weight, and daily comfort habits. That is where knees actually improve.
         </p>
-
-        <PremiumCTA />
-      </>
+</>
     ),
     sources: [
       {

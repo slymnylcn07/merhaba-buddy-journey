@@ -2,10 +2,18 @@ import { hasAnalyticsConsent } from "@/lib/cookie-consent";
 // Meta Pixel (Facebook Pixel) Client-Side Integration
 // This handles client-side event tracking
 
+type MetaPixelFunction = ((...args: unknown[]) => void) & {
+  callMethod?: (...args: unknown[]) => void;
+  loaded: boolean;
+  version: string;
+  queue: unknown[][];
+  push: MetaPixelFunction;
+};
+
 declare global {
   interface Window {
-    fbq: (...args: any[]) => void;
-    _fbq: any;
+    fbq?: MetaPixelFunction;
+    _fbq?: MetaPixelFunction;
   }
 }
 
@@ -27,26 +35,26 @@ export const initMetaPixel = (pixelId?: string) => {
 
   const doInit = () => {
     if (!hasAnalyticsConsent()) return;
-    // Facebook Pixel base code
-    (function(f: any, b: any, e: any, v: string, n?: any, t?: any, s?: any) {
-      if (f.fbq) return;
-      n = f.fbq = function() {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = '2.0';
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    const queue = ((...args: unknown[]) => {
+      if (queue.callMethod) queue.callMethod(...args);
+      else queue.queue.push(args);
+    }) as MetaPixelFunction;
+    queue.push = queue;
+    queue.loaded = true;
+    queue.version = "2.0";
+    queue.queue = [];
+    window.fbq = queue;
+    window._fbq = window._fbq || queue;
 
-    window.fbq('init', id);
-    window.fbq('track', 'PageView');
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://connect.facebook.net/en_US/fbevents.js";
+    const firstScript = document.getElementsByTagName("script")[0];
+    if (firstScript?.parentNode) firstScript.parentNode.insertBefore(script, firstScript);
+    else document.head.appendChild(script);
+
+    queue("init", id);
+    queue("track", "PageView");
   };
 
   // Defer pixel loading until first user interaction to reduce unused JS
@@ -176,7 +184,7 @@ export const trackMetaSearch = (searchQuery: string) => {
 };
 
 // Track custom events
-export const trackMetaCustomEvent = (eventName: string, params?: Record<string, any>) => {
+export const trackMetaCustomEvent = (eventName: string, params?: Record<string, unknown>) => {
   if (!hasAnalyticsConsent()) return;
   if (typeof window.fbq !== 'undefined') {
     window.fbq('trackCustom', eventName, params);

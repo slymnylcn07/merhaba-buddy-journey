@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-smart-massagers-breakdown-v3.jpg";
 import EvidenceScopeNotice from "@/components/EvidenceScopeNotice";
 
@@ -130,13 +129,7 @@ export const smartKneeMassagersBreakdown: ArticleExport = {
           <li><strong>People seeking a daily comfort routine</strong>: those who want a consistent, easy-to-use wellness habit that doesn't require appointments, travel, or complex preparation</li>
           <li><strong>Older adults maintaining mobility</strong>: people over 50 who want to support their knee comfort proactively as part of an active aging strategy</li>
         </ul>
-
-        <PremiumCTA
-          headline="Curious about a device that combines all three approaches?"
-          text="FlexiKnee brings heat, red light, and vibration together in one wireless knee device. Adjustable settings let you customize each session to your comfort level."
-        />
-
-        <h2>What Smart Knee Massagers Are Not Designed For</h2>
+<h2>What Smart Knee Massagers Are Not Designed For</h2>
         <p>
           Setting realistic expectations is just as important as understanding the benefits. Smart knee massagers are wellness devices, not medical devices, and this distinction matters. They are not designed to:
         </p>

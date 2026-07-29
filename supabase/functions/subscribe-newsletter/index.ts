@@ -161,8 +161,9 @@ const handler = async (req: Request): Promise<Response> => {
         headers: { "Content-Type": "application/json", ...corsHeaders },
       }
     );
-  } catch (error: any) {
-    console.error("Error in subscribe-newsletter function:", error.message);
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("Error in subscribe-newsletter function:", message);
     return new Response(
       JSON.stringify({ error: "An error occurred processing your request" }),
       {

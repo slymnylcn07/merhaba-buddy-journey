@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-knee-pain-after-40.jpg";
 import diagramAgingComparison from "@/assets/diagram-knee-aging-comparison.jpg";
 import sectionMorningStiffness from "@/assets/article-section-morning-stiffness-40s.jpg";
@@ -13,7 +12,7 @@ export const kneePainAfter40: ArticleExport = {
     slug: "knee-pain-after-40",
     title: "Knee Pain After Age 40 & 50: Why It Happens and How to Reduce Daily Discomfort",
     subtitle: "Understanding age-related knee changes and building comfort habits that last",
-    intro: "Knee pain after age 40 is one of the most common joint concerns adults face. Whether you're in your early 40s noticing occasional stiffness or in your 50s dealing with daily discomfort, understanding why your knees change with age — and what you can do about it — is the first step toward feeling better every day.",
+    intro: "Knee pain after age 40 is one of the most common joint concerns adults face. Whether you're in your early 40s noticing occasional stiffness or in your 50s dealing with daily discomfort, understanding why your knees change with age, and what you can do about it, is the first step toward feeling better every day.",
     metaTitle: "Knee Pain After 40 & 50: Why It Happens & Daily Tips",
     metaDescription: "Why does knee pain increase after 40 and 50? Learn about age-related joint changes, morning stiffness patterns, and daily habits that support lasting knee comfort.",
     heroImage: heroImage,
@@ -34,7 +33,7 @@ export const kneePainAfter40: ArticleExport = {
     content: (
       <>
         <p>
-          If you're over 40 and your knees have started to remind you of their existence — with morning stiffness, achiness after sitting, or discomfort on stairs — you're experiencing one of the most common aspects of aging. <strong>Knee pain after age 40</strong> affects millions of adults, and understanding <em>why</em> it happens is the foundation for managing it well.
+          If you're over 40 and your knees have started to remind you of their existence, with morning stiffness, achiness after sitting, or discomfort on stairs, you're experiencing one of the most common aspects of aging. <strong>Knee pain after age 40</strong> affects millions of adults, and understanding <em>why</em> it happens is the foundation for managing it well.
         </p>
         <p>
           This guide covers the science behind <strong>age-related knee pain</strong>, explains the differences between knee discomfort in your 40s versus your 50s, and shares practical daily habits that genuinely help. Whether you're just starting to notice changes or have been managing discomfort for years, you'll find actionable strategies here.
@@ -42,25 +41,25 @@ export const kneePainAfter40: ArticleExport = {
 
         <h2>Why Knee Pain Increases After Age 40</h2>
         <p>
-          Your knee joint is a remarkable piece of engineering — it supports your body weight, absorbs shock, and enables complex movements thousands of times each day. But like any well-used mechanism, it changes over time. After age 40, several gradual shifts begin to affect how your knees feel day to day.
+          Your knee joint is a remarkable piece of engineering, it supports your body weight, absorbs shock, and enables complex movements thousands of times each day. But like any well-used mechanism, it changes over time. After age 40, several gradual shifts begin to affect how your knees feel day to day.
         </p>
 
         <h3>Cartilage Thinning and Wear</h3>
         <p>
-          The smooth, rubbery cartilage that cushions the ends of your bones gradually loses water content and elasticity after 40. This means it becomes thinner and less effective at absorbing the daily impact of walking, climbing stairs, and bending. <strong>Cartilage wear over time</strong> is the single most significant factor in age-related knee discomfort — and it's completely natural.
+          The smooth, rubbery cartilage that cushions the ends of your bones gradually loses water content and elasticity after 40. This means it becomes thinner and less effective at absorbing the daily impact of walking, climbing stairs, and bending. <strong>Cartilage wear over time</strong> is the single most significant factor in age-related knee discomfort, and it's completely natural.
         </p>
         <p>
-          Unlike muscles, cartilage has very limited blood supply, which means it repairs itself slowly. Years of normal use can gradually reduce the cushioning available, leading to sensations of stiffness, grinding, or achiness — especially during weight-bearing activities.
+          Unlike muscles, cartilage has very limited blood supply, which means it repairs itself slowly. Years of normal use can gradually reduce the cushioning available, leading to sensations of stiffness, grinding, or achiness, especially during weight-bearing activities.
         </p>
 
         <h3>Synovial Fluid Changes</h3>
         <p>
-          Your knee joint contains synovial fluid — a thick, viscous liquid that lubricates the joint and reduces friction between moving surfaces. After 40, the body produces less of this fluid, and its consistency may change. This is one reason why <strong>morning knee stiffness</strong> becomes more noticeable with age — the fluid thickens during rest and takes time to distribute evenly once you start moving.
+          Your knee joint contains synovial fluid, a thick, viscous liquid that lubricates the joint and reduces friction between moving surfaces. After 40, the body produces less of this fluid, and its consistency may change. This is one reason why <strong>morning knee stiffness</strong> becomes more noticeable with age, the fluid thickens during rest and takes time to distribute evenly once you start moving.
         </p>
 
         <h3>Muscle Imbalances and Strength Loss</h3>
         <p>
-          Starting around age 30, adults naturally lose muscle mass at a rate of 3-8% per decade — a process called sarcopenia. The quadriceps, hamstrings, and calf muscles all play crucial roles in supporting and stabilizing the knee joint. As these muscles weaken, more stress transfers directly to the joint itself, contributing to <strong>knee stiffness after 40</strong> and increased vulnerability to discomfort.
+          Starting around age 30, adults naturally lose muscle mass at a rate of 3-8% per decade, a process called sarcopenia. The quadriceps, hamstrings, and calf muscles all play crucial roles in supporting and stabilizing the knee joint. As these muscles weaken, more stress transfers directly to the joint itself, contributing to <strong>knee stiffness after 40</strong> and increased vulnerability to discomfort.
         </p>
 
         <figure className="my-8">
@@ -80,25 +79,25 @@ export const kneePainAfter40: ArticleExport = {
 
         <h2>Knee Pain in Your 40s vs. Your 50s: Key Differences</h2>
         <p>
-          While the underlying process is the same — gradual <strong>joint aging changes</strong> — the experience of knee discomfort often differs between your 40s and 50s. Understanding these patterns can help you set realistic expectations and choose appropriate support strategies.
+          While the underlying process is the same, gradual <strong>joint aging changes</strong>, the experience of knee discomfort often differs between your 40s and 50s. Understanding these patterns can help you set realistic expectations and choose appropriate support strategies.
         </p>
 
         <h3>In Your 40s: The Early Signals</h3>
         <ul>
-          <li><strong>Activity-specific discomfort</strong> — knee discomfort tends to appear during or after specific activities (long walks, hiking, gym workouts) rather than constantly</li>
-          <li><strong>Brief morning stiffness</strong> — stiffness upon waking usually resolves within 10-15 minutes of moving around</li>
-          <li><strong>Quick recovery</strong> — after a day of heavy use, knees typically feel normal again within 24-48 hours</li>
-          <li><strong>Occasional clicking or popping</strong> — joints may make more noise than before, but usually without accompanying discomfort</li>
-          <li><strong>Weather sensitivity</strong> — some people start noticing knee stiffness changes with weather or temperature shifts</li>
+          <li><strong>Activity-specific discomfort</strong>, knee discomfort tends to appear during or after specific activities (long walks, hiking, gym workouts) rather than constantly</li>
+          <li><strong>Brief morning stiffness</strong>, stiffness upon waking usually resolves within 10-15 minutes of moving around</li>
+          <li><strong>Quick recovery</strong>, after a day of heavy use, knees typically feel normal again within 24-48 hours</li>
+          <li><strong>Occasional clicking or popping</strong>, joints may make more noise than before, but usually without accompanying discomfort</li>
+          <li><strong>Weather sensitivity</strong>, some people start noticing knee stiffness changes with weather or temperature shifts</li>
         </ul>
 
         <h3>In Your 50s: More Consistent Patterns</h3>
         <ul>
-          <li><strong>Daily baseline stiffness</strong> — a low level of stiffness may be present most days, with periodic flare-ups</li>
-          <li><strong>Longer morning adjustment</strong> — <strong>morning knee stiffness</strong> may take 20-30+ minutes to fully ease</li>
-          <li><strong>Stair and squatting difficulty</strong> — activities requiring deep knee bending become noticeably more challenging</li>
-          <li><strong>Post-sitting stiffness</strong> — getting up after 30+ minutes of sitting consistently triggers <strong>knee pain when getting up</strong></li>
-          <li><strong>Reduced impact tolerance</strong> — high-impact activities like running may require modifications or alternatives</li>
+          <li><strong>Daily baseline stiffness</strong>, a low level of stiffness may be present most days, with periodic flare-ups</li>
+          <li><strong>Longer morning adjustment</strong>, <strong>morning knee stiffness</strong> may take 20-30+ minutes to fully ease</li>
+          <li><strong>Stair and squatting difficulty</strong>, activities requiring deep knee bending become noticeably more challenging</li>
+          <li><strong>Post-sitting stiffness</strong>, getting up after 30+ minutes of sitting consistently triggers <strong>knee pain when getting up</strong></li>
+          <li><strong>Reduced impact tolerance</strong>, high-impact activities like running may require modifications or alternatives</li>
         </ul>
 
         <p>
@@ -107,7 +106,7 @@ export const kneePainAfter40: ArticleExport = {
 
         <h2>Why Knees Hurt After Sitting or Resting</h2>
         <p>
-          One of the most frustrating aspects of <strong>knee pain over 40</strong> is the paradox of rest: you'd expect sitting down to help your knees, but getting up after a period of rest often feels worse. This is sometimes called the "theater sign" — because it's especially noticeable after sitting through a long movie or event.
+          One of the most frustrating aspects of <strong>knee pain over 40</strong> is the paradox of rest: you'd expect sitting down to help your knees, but getting up after a period of rest often feels worse. This is sometimes called the "theater sign", because it's especially noticeable after sitting through a long movie or event.
         </p>
         <p>
           The reason is straightforward: when your knee is bent and stationary, several things happen simultaneously. Blood flow to the joint decreases, synovial fluid settles and thickens, the joint capsule stiffens slightly, and muscles around the knee cool down and tighten. When you stand up, your knee hasn't had the benefit of continuous lubrication from movement.
@@ -119,7 +118,7 @@ export const kneePainAfter40: ArticleExport = {
             "Set a timer to stand and move every 30-45 minutes during seated activities",
             "Do gentle ankle circles and knee extensions while seated to keep fluid moving",
             "When standing up, rise slowly and take a few moments before walking quickly",
-            "Keep your feet flat on the floor while sitting — avoid crossing legs for extended periods",
+            "Keep your feet flat on the floor while sitting, avoid crossing legs for extended periods",
             "Apply warmth to your knees before standing after long sitting periods",
           ]}
         />
@@ -140,7 +139,7 @@ export const kneePainAfter40: ArticleExport = {
             className="w-full h-auto rounded-xl shadow-sm"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Morning knee stiffness is common after 40 — gentle movement and warmth can help ease the transition
+            Morning knee stiffness is common after 40, gentle movement and warmth can help ease the transition
           </figcaption>
         </figure>
 
@@ -151,9 +150,9 @@ export const kneePainAfter40: ArticleExport = {
           The duration and intensity of morning stiffness can indicate how your knees are doing overall:
         </p>
         <ul>
-          <li><strong>5-10 minutes</strong> — typical for mild age-related changes; generally manageable with a brief morning routine</li>
-          <li><strong>15-30 minutes</strong> — suggests more significant joint changes; a dedicated morning warm-up routine is beneficial</li>
-          <li><strong>30+ minutes</strong> — may indicate more advanced changes; worth discussing with a healthcare professional while maintaining daily comfort habits</li>
+          <li><strong>5-10 minutes</strong>, typical for mild age-related changes; generally manageable with a brief morning routine</li>
+          <li><strong>15-30 minutes</strong>, suggests more significant joint changes; a dedicated morning warm-up routine is beneficial</li>
+          <li><strong>30+ minutes</strong>, may indicate more advanced changes; worth discussing with a healthcare professional while maintaining daily comfort habits</li>
         </ul>
 
         <InfoBox title="Morning Routine Tip">
@@ -167,7 +166,7 @@ export const kneePainAfter40: ArticleExport = {
 
         <h3>Stairs</h3>
         <p>
-          Going up and down stairs places 3-4 times your body weight through the knee joint — significantly more than flat walking. The combination of impact, deep bending, and weight-bearing makes stairs one of the first activities where <strong>knee pain over 50</strong> becomes noticeable. Going <em>downhill</em> or <em>downstairs</em> is typically harder than going up because the quadriceps must eccentrically control your descent.
+          Going up and down stairs places 3-4 times your body weight through the knee joint, significantly more than flat walking. The combination of impact, deep bending, and weight-bearing makes stairs one of the first activities where <strong>knee pain over 50</strong> becomes noticeable. Going <em>downhill</em> or <em>downstairs</em> is typically harder than going up because the quadriceps must eccentrically control your descent.
         </p>
 
         <h3>Squatting and Kneeling</h3>
@@ -177,31 +176,25 @@ export const kneePainAfter40: ArticleExport = {
 
         <h3>Extended Walking</h3>
         <p>
-          While walking is generally one of the best activities for knee health, extended walks (over 30-60 minutes) can be challenging for aging knees. The cumulative impact, especially on hard surfaces, can trigger achiness or swelling. Proper footwear and pacing strategies make a significant difference — see our guide on <a href="/guides/best-running-shoes-knee-pain">choosing knee-friendly shoes</a>. Many people in this age group also notice that <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link> takes longer to resolve than it did in their younger years, and <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking during walking</Link> may become more noticeable as cartilage surfaces change.
+          While walking is generally one of the best activities for knee health, extended walks (over 30-60 minutes) can be challenging for aging knees. The cumulative impact, especially on hard surfaces, can trigger achiness or swelling. Proper footwear and pacing strategies make a significant difference, see our guide on <a href="/guides/best-running-shoes-knee-pain">choosing knee-friendly shoes</a>. Many people in this age group also notice that <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link> takes longer to resolve than it did in their younger years, and <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking during walking</Link> may become more noticeable as cartilage surfaces change.
         </p>
-
-        <PremiumCTA
-          headline="Want daily comfort support for aging knees?"
-          text="FlexiKnee combines soothing warmth, red light, and gentle vibration in one wireless device designed for adults who want consistent daily knee comfort support."
-        />
-
-        <h2>Daily Habits That Worsen Age-Related Knee Pain</h2>
+<h2>Daily Habits That Worsen Age-Related Knee Pain</h2>
         <p>
           Some everyday habits accelerate <strong>age-related knee pain</strong> without people realizing it. Identifying and adjusting these patterns can make a meaningful difference in how your knees feel day to day.
         </p>
         <ul>
-          <li><strong>Prolonged sitting without breaks</strong> — sitting for hours without movement allows joint stiffness to set in and muscles to tighten; this is one of the biggest contributors to <strong>knee pain after sitting</strong></li>
-          <li><strong>Wearing unsupportive footwear</strong> — flat shoes, worn-out sneakers, or high heels all change how force travels through your knees</li>
-          <li><strong>Skipping warm-ups</strong> — jumping into physical activity without warming up puts cold, stiff joints under sudden stress</li>
-          <li><strong>Ignoring weight management</strong> — every extra pound adds approximately 4 pounds of stress to the knee joint during walking</li>
-          <li><strong>Avoiding all exercise</strong> — complete inactivity weakens the muscles that protect the knee, creating a cycle of decline</li>
-          <li><strong>Dehydration</strong> — adequate water intake supports synovial fluid production and cartilage health</li>
-          <li><strong>Overtraining without recovery</strong> — pushing through discomfort repeatedly without allowing adequate rest can accelerate wear</li>
+          <li><strong>Prolonged sitting without breaks</strong>, sitting for hours without movement allows joint stiffness to set in and muscles to tighten; this is one of the biggest contributors to <strong>knee pain after sitting</strong></li>
+          <li><strong>Wearing unsupportive footwear</strong>, flat shoes, worn-out sneakers, or high heels all change how force travels through your knees</li>
+          <li><strong>Skipping warm-ups</strong>, jumping into physical activity without warming up puts cold, stiff joints under sudden stress</li>
+          <li><strong>Ignoring weight management</strong>, every extra pound adds approximately 4 pounds of stress to the knee joint during walking</li>
+          <li><strong>Avoiding all exercise</strong>, complete inactivity weakens the muscles that protect the knee, creating a cycle of decline</li>
+          <li><strong>Dehydration</strong>, adequate water intake supports synovial fluid production and cartilage health</li>
+          <li><strong>Overtraining without recovery</strong>, pushing through discomfort repeatedly without allowing adequate rest can accelerate wear</li>
         </ul>
 
         <h2>Daily Habits and Lifestyle Changes That Help</h2>
         <p>
-          The most effective approach to <strong>knee pain over 40</strong> isn't a single dramatic intervention — it's a collection of small, sustainable habits practiced consistently. Here's what research and user experience suggest works best:
+          The most effective approach to <strong>knee pain over 40</strong> isn't a single dramatic intervention, it's a collection of small, sustainable habits practiced consistently. Here's what research and user experience suggest works best:
         </p>
 
         <figure className="my-8">
@@ -217,26 +210,26 @@ export const kneePainAfter40: ArticleExport = {
 
         <h3>Movement and Exercise</h3>
         <ul>
-          <li><strong>Walk daily</strong> — aim for 20-30 minutes of comfortable walking; this is the single most beneficial activity for aging knees</li>
-          <li><strong>Strengthen key muscles</strong> — focus on quadriceps, hamstrings, glutes, and calves with gentle exercises (see our <a href="/guides/knee-pain-exercises-guide">knee exercises guide</a>)</li>
-          <li><strong>Stretch regularly</strong> — gentle stretching of the hamstrings, quadriceps, and calves helps maintain flexibility around the joint</li>
-          <li><strong>Try low-impact alternatives</strong> — swimming, cycling, and water aerobics provide excellent knee-friendly cardiovascular exercise</li>
+          <li><strong>Walk daily</strong>, aim for 20-30 minutes of comfortable walking; this is the single most beneficial activity for aging knees</li>
+          <li><strong>Strengthen key muscles</strong>, focus on quadriceps, hamstrings, glutes, and calves with gentle exercises (see our <a href="/guides/knee-pain-exercises-guide">knee exercises guide</a>)</li>
+          <li><strong>Stretch regularly</strong>, gentle stretching of the hamstrings, quadriceps, and calves helps maintain flexibility around the joint</li>
+          <li><strong>Try low-impact alternatives</strong>, swimming, cycling, and water aerobics provide excellent knee-friendly cardiovascular exercise</li>
         </ul>
 
         <h3>Warmth and Comfort Support</h3>
         <ul>
-          <li><strong>Apply warmth before activity</strong> — warming the knee joint before exercise or daily activities helps increase blood flow and flexibility</li>
-          <li><strong>Use warmth for evening wind-down</strong> — applying gentle warmth in the evening can help the joint relax before sleep (learn more about <a href="/guides/heat-vs-ice-for-knees">heat vs ice for knees</a>)</li>
-          <li><strong>Consider at-home therapy devices</strong> — devices combining warmth with other modalities can simplify daily comfort routines (explore our <a href="/guides/daily-knee-care-routine">daily knee care routine guide</a>)</li>
+          <li><strong>Apply warmth before activity</strong>, warming the knee joint before exercise or daily activities helps increase blood flow and flexibility</li>
+          <li><strong>Use warmth for evening wind-down</strong>, applying gentle warmth in the evening can help the joint relax before sleep (learn more about <a href="/guides/heat-vs-ice-for-knees">heat vs ice for knees</a>)</li>
+          <li><strong>Consider at-home therapy devices</strong>, devices combining warmth with other modalities can simplify daily comfort routines (explore our <a href="/guides/daily-knee-care-routine">daily knee care routine guide</a>)</li>
         </ul>
 
         <h3>Lifestyle Adjustments</h3>
         <ul>
-          <li><strong>Maintain a healthy weight</strong> — even modest weight loss (5-10 pounds) can significantly reduce knee stress</li>
-          <li><strong>Choose supportive footwear</strong> — invest in shoes with good arch support and cushioning for daily wear</li>
-          <li><strong>Stay hydrated</strong> — aim for 6-8 glasses of water daily to support joint fluid production</li>
-          <li><strong>Optimize your workspace</strong> — ensure your chair height allows your feet flat on the floor with knees at roughly 90 degrees</li>
-          <li><strong>Use movement breaks</strong> — stand and move for 2-3 minutes every 30-45 minutes during seated work</li>
+          <li><strong>Maintain a healthy weight</strong>, even modest weight loss (5-10 pounds) can significantly reduce knee stress</li>
+          <li><strong>Choose supportive footwear</strong>, invest in shoes with good arch support and cushioning for daily wear</li>
+          <li><strong>Stay hydrated</strong>, aim for 6-8 glasses of water daily to support joint fluid production</li>
+          <li><strong>Optimize your workspace</strong>, ensure your chair height allows your feet flat on the floor with knees at roughly 90 degrees</li>
+          <li><strong>Use movement breaks</strong>, stand and move for 2-3 minutes every 30-45 minutes during seated work</li>
         </ul>
 
         <TipsList
@@ -275,7 +268,7 @@ export const kneePainAfter40: ArticleExport = {
           The most important thing to understand about <strong>knee pain after age 40</strong> is that it's manageable. Joint aging is natural, but discomfort doesn't have to define your daily experience. The people who maintain the most comfortable knees into their 60s, 70s, and beyond tend to share a few common traits:
         </p>
         <ul>
-          <li>They move consistently — not excessively, but regularly</li>
+          <li>They move consistently, not excessively, but regularly</li>
           <li>They maintain muscle strength around the knee joint</li>
           <li>They address stiffness proactively rather than waiting for it to become severe</li>
           <li>They build daily comfort habits and stick with them</li>

@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import { TipsList, InfoBox } from "@/components/ArticleCharts";
 import { SittingKneePainCausesChart, SittingPositionImpactChart } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-pain-sitting-cross-legged.jpg";
@@ -123,12 +122,7 @@ export const kneePainAfterSittingCrossLegged: ArticleExport = {
           <li>Strengthen your quadriceps, particularly the vastus medialis (inner quad), to improve kneecap tracking</li>
           <li>Use a footrest if your chair is too high, preventing your knees from hanging in deep flexion</li>
         </ul>
-<PremiumCTA
-          headline="Looking for daily knee comfort support?"
-          text="FlexiKnee provides gentle warmth and vibration to help your knees feel more comfortable and supported, especially after prolonged sitting periods."
-        />
-
-        <h2>Why Your Knees Hurt When You Stand Up After Sitting</h2>
+<h2>Why Your Knees Hurt When You Stand Up After Sitting</h2>
         <p>
           Knee pain when standing up after sitting is a very common experience that many people search for answers about. The transition from sitting to standing requires your knee to shift rapidly from a passive, bent position to an active, weight-bearing position, and this is where many discomfort patterns become most noticeable.
         </p>

@@ -301,7 +301,7 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
           A recurring burning quality, numbness, tingling, weakness, or pain traveling from
           the back or hip may require evaluation for a nerve-related or referred pattern.
           See the{" "}
-          <Link to="/guides/burning-knee-sensation">
+          <Link to="/guides/burning-sensation-in-knee">
             burning knee sensation guide
           </Link>{" "}
           for a focused comparison.

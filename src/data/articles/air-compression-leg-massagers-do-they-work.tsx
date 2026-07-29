@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/hero-air-compression-leg.svg";
 import figChambers from "@/assets/fig-air-chambers.svg";
 import figTimeline from "@/assets/fig-compression-timeline.svg";
@@ -119,10 +118,7 @@ export const airCompressionLegMassagers: ArticleExport = {
         <p>
           The comparison also answers a common question: these tools are complements, not competitors. A frequent traveler might wear compression socks during the flight, walk the terminal after landing, and run a 15-minute air compression session at the hotel. Each covers a moment the others cannot.
         </p>
-
-        <PremiumCTA />
-
-        <h2>How to Choose One in 2026</h2>
+<h2>How to Choose One in 2026</h2>
         <p>
           The category has matured, which means spec sheets have gotten noisier. Five things actually matter. First, sequential chambers: confirm the sleeve inflates in a bottom-up sequence rather than as one big cuff; the wave is the mechanism. Three or more chambers is the practical threshold. Second, adjustable intensity: legs differ, days differ, and the right pressure feels firm but never painful; you want at least two or three levels. Third, battery over cords for real-world use: a rechargeable unit gets used on the couch, at the desk, and in hotel rooms, while a plug-bound one slowly migrates to a closet. Look for enough capacity for several sessions per charge. Fourth, fit range: check the maximum calf circumference the sleeve accommodates; a sleeve that barely closes will squeeze unevenly. Fifth, optional warmth: models that add gentle heat combine two circulation-supporting mechanisms in one session, which many people find noticeably more relaxing in the evening. If you are comparing this category against heated knee devices for a different problem, our <Link to="/guides/cordless-rechargeable-heated-knee-massagers-2026" className="text-primary hover:underline">cordless heated knee massager guide</Link> maps that adjacent territory.
         </p>

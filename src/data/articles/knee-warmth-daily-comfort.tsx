@@ -1,6 +1,5 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import heroImage from "@/assets/article-hero-knee-warmth-daily.jpg";
 
 export const kneeWarmthDailyComfort: ArticleExport = {
@@ -109,13 +108,7 @@ export const kneeWarmthDailyComfort: ArticleExport = {
         <p>
           People with reduced skin sensitivity (due to conditions like peripheral neuropathy or diabetes) should use warmth cautiously and always at lower temperature settings. Without full sensation, it can be difficult to gauge whether the heat level is too high, which could lead to discomfort. Smart devices with adjustable temperature controls and auto-shutoff timers add an important safety layer for these individuals.
         </p>
-
-        <PremiumCTA
-          headline="Want effortless daily warmth for your knees?"
-          text="FlexiKnee provides adjustable warmth along with red light and gentle vibration, all in one wireless wrap designed for morning and evening comfort routines."
-        />
-
-        <h2>Warmth Methods Compared: Finding the Right Approach</h2>
+<h2>Warmth Methods Compared: Finding the Right Approach</h2>
         <p>
           Not all warmth sources are created equal. The best method for you depends on your lifestyle, convenience needs, and how consistently you plan to use warmth as part of your routine:
         </p>

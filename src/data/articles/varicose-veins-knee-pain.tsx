@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import PremiumCTA from "@/components/PremiumCTA";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-varicose-veins-knee-pain.jpg";
 import varicoseWarningSignsImage from "@/assets/article-inline-varicose-veins-warning-signs.jpg";
@@ -161,7 +160,7 @@ export const varicoseVeinsKneePain: ArticleExport = {
               <tr>
                 <td className="px-5 py-4 font-semibold text-slate-950">Deep vein thrombosis</td>
                 <td className="px-5 py-4 text-slate-600">New one-sided swelling, warmth, pain or tenderness, possible discoloration</td>
-                <td className="px-5 py-4 text-slate-600">Surgery, immobility, travel, pregnancy, cancer, previous clot—though it can occur without these</td>
+                <td className="px-5 py-4 text-slate-600">Surgery, immobility, travel, pregnancy, cancer, previous clot, though it can occur without these</td>
                 <td className="px-5 py-4 text-slate-600">Do not self-massage or wait for home treatment</td>
                 <td className="px-5 py-4 font-semibold text-red-700">Urgent assessment</td>
               </tr>
@@ -179,13 +178,7 @@ export const varicoseVeinsKneePain: ArticleExport = {
         <p>
           One-sided swelling deserves more caution than symmetrical mild ankle swelling. If a leg becomes suddenly larger, warmer, more painful, or discolored, it should be evaluated rather than attributed to known varicose veins. Having visible varicose veins does not protect someone from DVT, and the presence of an obvious vein can create false reassurance.
         </p>
-
-        <PremiumCTA
-          headline="Treat the vein diagnosis first; support the knee separately"
-          text="FlexiKnee products are designed for everyday knee comfort, not for varicose veins, thrombosis, or venous insufficiency. Use heat, massage, or compression near symptomatic veins only after a clinician confirms that the approach is appropriate for your circulation."
-        />
-
-        <h2>Red Flags: When Pain Behind the Knee Is Urgent</h2>
+<h2>Red Flags: When Pain Behind the Knee Is Urgent</h2>
         <p>
           Seek urgent medical assessment for new one-sided leg swelling, warmth, redness or darkening, calf or thigh tenderness, rapidly worsening pain, or a swollen leg after surgery, a hospital stay, immobilization, long travel, pregnancy, cancer treatment, or a previous clot. DVT can occur without dramatic redness and sometimes with few symptoms, so risk context matters.
         </p>
