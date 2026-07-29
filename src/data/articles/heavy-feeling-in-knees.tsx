@@ -321,6 +321,9 @@ const article = {
       <p>
         Building strength in the muscles around the knee increases their endurance and resistance to fatigue. Stronger muscles can support the knee for longer periods before heaviness develops. Exercises like wall sits, leg raises, step-ups, and gentle squats gradually build this capacity. For a comprehensive routine, see our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee exercises guide</Link>.
       </p>
+      <p>
+        If heaviness is paired with knee pain that consistently builds during long periods on your feet, the guide to <Link to="/guides/knee-pain-after-standing" className="text-primary hover:underline">standing-related knee pain at work</Link> helps separate static standing, hard-floor, footwear, and swelling patterns.
+      </p>
 
       <TipsList tips={[
         "Change position regularly during prolonged sitting",

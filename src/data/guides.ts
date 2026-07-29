@@ -294,10 +294,10 @@ export const guidesData: GuideData[] = [
   // New articles - February 26, 2026
   {
     slug: "knee-pain-after-standing",
-    title: "Knee Pain After Standing: Causes & Comfort Strategies",
-    description: "Why does knee pain when standing happen? Explore causes of knee pain after standing all day, standing posture tips, and patellofemoral pain syndrome comfort strategies.",
+    title: "Knee Pain After Standing for a Long Time: Causes and What Helps",
+    description: "Why do knees hurt after prolonged standing or standing all day? Compare work, floor, footwear, location, relief, and warning-sign patterns.",
     readTime: 14,
-    lastModified: "2026-07-13",
+    lastModified: "2026-07-29",
   },
   {
     slug: "best-red-light-therapy-knee",
@@ -344,9 +344,9 @@ export const guidesData: GuideData[] = [
   {
     slug: "knee-pain-getting-up-after-sitting",
     title: "Knee Pain and Stiffness After Sitting: Why Standing Up Hurts",
-    description: "Learn why knees hurt or feel stiff after sitting, how first-step pain differs from pain at rest, and which chair, movement, and warning-sign details matter.",
+    description: "Learn why knees feel stiff after sitting, why standing up or the first few steps can hurt, and which chair, movement, and warning signs matter.",
     readTime: 18,
-    lastModified: "2026-07-28",
+    lastModified: "2026-07-29",
   },
   {
     slug: "knee-pain-after-long-walks",
