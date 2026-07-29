@@ -356,18 +356,18 @@ export const heatVsIceForKneesAuthoritative: ArticleExport = {
 
         <section aria-labelledby="heat-ice-faq-heading" className="my-10">
           <h2 id="heat-ice-faq-heading">Frequently Asked Questions</h2>
-          <div className="space-y-3">
+          <div className="space-y-2">
             {heatVsIceFaqs.map((faq) => (
-              <details key={faq.question} className="group rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 [&::-webkit-details-marker]:hidden">
-                  <h3 className="m-0 text-lg font-semibold text-slate-950">{faq.question}</h3>
-                  <span aria-hidden="true" className="shrink-0 text-2xl font-light leading-none text-primary">
+              <details key={faq.question} className="group rounded-xl border border-slate-200 bg-white shadow-sm">
+                <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-4 py-2.5 [&::-webkit-details-marker]:hidden">
+                  <span className="text-base font-semibold leading-6 text-slate-950">{faq.question}</span>
+                  <span aria-hidden="true" className="shrink-0 text-xl font-light leading-none text-primary">
                     <span className="group-open:hidden">+</span>
                     <span className="hidden group-open:inline">−</span>
                   </span>
                 </summary>
-                <div className="border-t border-slate-100 px-5 py-4">
-                  <p className="m-0">{faq.answer}</p>
+                <div className="border-t border-slate-100 px-4 py-3">
+                  <p className="!m-0 !text-base !leading-7">{faq.answer}</p>
                 </div>
               </details>
             ))}
