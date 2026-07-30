@@ -471,6 +471,9 @@ export const kneeClickingWhenWalking = {
         <p>
           When stair pain is part of the pattern, progressive knee-targeted and hip-targeted exercise may be useful at an appropriate starting level. The goal is improved function and tolerance, not a promise that every sound will disappear.
         </p>
+        <p>
+          Clicking with repeated swelling, true locking, or a blocked range after a twist is a different pattern from harmless noise. An <Link to="/guides/osteochondral-lesion-knee" className="text-primary hover:underline">osteochondral cartilage-and-bone injury</Link> or loose fragment is one reason a clinician may consider imaging after those mechanical symptoms.
+        </p>
 
         {/* ── When to Pay Attention ── */}
         <InfoBox title="When to Get Medical Help">

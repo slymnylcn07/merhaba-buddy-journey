@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Decision path for a painful bump below the knee</title>
+  <desc id="desc">A three-step diagram separating painless bumps, recurring focal pain, and urgent symptoms after injury.</desc>
+  <rect width="900" height="520" rx="28" fill="#f8fafc"/>
+  <text x="45" y="58" fill="#0f172a" font-family="Arial, sans-serif" font-size="28" font-weight="700">A painful bump is not one single diagnosis</text>
+  <rect x="55" y="105" width="240" height="300" rx="24" fill="#e6fffb" stroke="#14b8a6" stroke-width="4"/>
+  <circle cx="175" cy="170" r="38" fill="#14b8a6"/><text x="175" y="179" text-anchor="middle" fill="white" font-family="Arial" font-size="27" font-weight="700">1</text>
+  <text x="175" y="245" text-anchor="middle" fill="#0f172a" font-family="Arial" font-size="22" font-weight="700">Painless old bump</text>
+  <text x="175" y="285" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">Usually observe</text>
+  <text x="175" y="316" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">Protect only if kneeling</text>
+  <rect x="330" y="105" width="240" height="300" rx="24" fill="#fff7ed" stroke="#f59e0b" stroke-width="4"/>
+  <circle cx="450" cy="170" r="38" fill="#f59e0b"/><text x="450" y="179" text-anchor="middle" fill="white" font-family="Arial" font-size="27" font-weight="700">2</text>
+  <text x="450" y="245" text-anchor="middle" fill="#0f172a" font-family="Arial" font-size="22" font-weight="700">Recurring focal pain</text>
+  <text x="450" y="285" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">Review load and pressure</text>
+  <text x="450" y="316" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">Assess if it persists</text>
+  <rect x="605" y="105" width="240" height="300" rx="24" fill="#fff1f2" stroke="#e11d48" stroke-width="4"/>
+  <circle cx="725" cy="170" r="38" fill="#e11d48"/><text x="725" y="179" text-anchor="middle" fill="white" font-family="Arial" font-size="27" font-weight="700">3</text>
+  <text x="725" y="245" text-anchor="middle" fill="#0f172a" font-family="Arial" font-size="22" font-weight="700">New injury signs</text>
+  <text x="725" y="285" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">Rapid swelling or weakness</text>
+  <text x="725" y="316" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">Prompt medical care</text>
+</svg>

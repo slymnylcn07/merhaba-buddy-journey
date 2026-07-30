@@ -16,6 +16,7 @@ import { ArticleShareBlock } from "@/components/ArticleShareSidebar";
 import { ArticleHeaderMeta } from "@/components/ArticleHeaderMeta";
 import { ArticleTableOfContents } from "@/components/ArticleTableOfContents";
 import { ArticleImageLightbox } from "@/components/ArticleImageLightbox";
+import ArticleFaqAccordion from "@/components/ArticleFaqAccordion";
 import { ArticleQuizCard } from "@/components/ArticleQuizCard";
 import { ArticleSlideInCTA } from "@/components/ArticleSlideInCTA";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -60,6 +61,18 @@ function removeLegacyQuickAnswer(content: ReactNode): ReactNode {
   });
 
   return cloneElement(content, undefined, children);
+}
+
+function containsVisibleFaq(node: ReactNode): boolean {
+  if (typeof node === "string") {
+    return node.toLowerCase().includes("frequently asked questions");
+  }
+  if (typeof node === "number" || node == null || typeof node === "boolean") return false;
+  if (Array.isArray(node)) return node.some(containsVisibleFaq);
+  if (!isValidElement<{ children?: ReactNode }>(node)) return false;
+
+  if (node.type === ArticleFaqAccordion) return true;
+  return Children.toArray(node.props.children).some(containsVisibleFaq);
 }
 
 const GuideArticle = () => {
@@ -164,6 +177,7 @@ const GuideArticle = () => {
   const readingTime = allGuidesData.find((guide) => guide.slug === article.slug)?.readTime ?? 8;
   const relatedGuides = getRelatedGuides(article.slug, allGuidesData, 3);
   const standardizedArticleContent = removeLegacyQuickAnswer(article.content);
+  const hasVisibleFaq = containsVisibleFaq(article.content);
 
   const getISODate = (dateString: string) => {
     const date = new Date(dateString);
@@ -412,6 +426,12 @@ const GuideArticle = () => {
                 ">
                   {standardizedArticleContent}
                   {articleEditorialCrosslinks[article.slug]}
+                  {article.faqs && article.faqs.length > 0 && !hasVisibleFaq && (
+                    <ArticleFaqAccordion
+                      faqs={article.faqs}
+                      headingId={`${article.slug}-faq-heading`}
+                    />
+                  )}
                 </div>
                 <span data-seo-content-end="guide" hidden />
 

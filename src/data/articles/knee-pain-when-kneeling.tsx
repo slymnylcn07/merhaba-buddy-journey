@@ -238,6 +238,9 @@ export const kneePainWhenKneeling: ArticleExport = {
           <li><strong>Warmth or redness:</strong> Noticeable heat or color changes around the kneecap area that appear alongside discomfort</li>
         </ul>
         <p>
+          If pressure is most painful on a hard, longstanding bump below the kneecap rather than over the kneecap itself, compare the pattern with <Link to="/guides/osgood-schlatter-adults" className="text-primary hover:underline">Osgood-Schlatter symptoms in adults</Link>. A residual tibial tubercle prominence or ossicle can make direct kneeling unusually sensitive.
+        </p>
+        <p>
           A healthcare professional can help identify specific contributing factors and recommend targeted approaches that complement your daily comfort strategies.
         </p>
 

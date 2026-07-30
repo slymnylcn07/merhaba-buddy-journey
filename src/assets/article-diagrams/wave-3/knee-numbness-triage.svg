@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Knee numbness triage guide</title>
+  <desc id="desc">Three-level guide for small stable patches, progressive symptoms, and emergency neurological or circulation signs.</desc>
+  <rect width="900" height="520" rx="28" fill="#f8fafc"/>
+  <text x="45" y="58" fill="#0f172a" font-family="Arial" font-size="28" font-weight="700">Numbness priority depends on what comes with it</text>
+  <g font-family="Arial">
+    <rect x="55" y="110" width="240" height="310" rx="24" fill="#f0fdf4" stroke="#22c55e" stroke-width="4"/>
+    <text x="175" y="165" text-anchor="middle" fill="#15803d" font-size="22" font-weight="700">Monitor closely</text>
+    <text x="175" y="220" text-anchor="middle" fill="#334155" font-size="18">Small stable patch</text>
+    <text x="175" y="254" text-anchor="middle" fill="#334155" font-size="18">No weakness</text>
+    <text x="175" y="288" text-anchor="middle" fill="#334155" font-size="18">Known recent pressure</text>
+    <rect x="330" y="110" width="240" height="310" rx="24" fill="#fff7ed" stroke="#f59e0b" stroke-width="4"/>
+    <text x="450" y="165" text-anchor="middle" fill="#b45309" font-size="22" font-weight="700">Arrange assessment</text>
+    <text x="450" y="220" text-anchor="middle" fill="#334155" font-size="18">Spreading or recurring</text>
+    <text x="450" y="254" text-anchor="middle" fill="#334155" font-size="18">Pain or gait change</text>
+    <text x="450" y="288" text-anchor="middle" fill="#334155" font-size="18">After surgery or injury</text>
+    <rect x="605" y="110" width="240" height="310" rx="24" fill="#fff1f2" stroke="#e11d48" stroke-width="4"/>
+    <text x="725" y="165" text-anchor="middle" fill="#be123c" font-size="22" font-weight="700">Emergency care</text>
+    <text x="725" y="220" text-anchor="middle" fill="#334155" font-size="18">Sudden weakness</text>
+    <text x="725" y="254" text-anchor="middle" fill="#334155" font-size="18">Bladder or bowel change</text>
+    <text x="725" y="288" text-anchor="middle" fill="#334155" font-size="18">Cold, pale, painful limb</text>
+  </g>
+</svg>

@@ -14,6 +14,51 @@ export interface PublishedGuideData extends GuideData {
 
 export const recentGuidesData: PublishedGuideData[] = [
   {
+    slug: "osgood-schlatter-adults",
+    title: "Osgood-Schlatter in Adults: Why the Bump Below the Knee Can Still Hurt",
+    description:
+      "Why an old Osgood-Schlatter bump can hurt in adulthood, including tibial tubercle pressure, residual ossicles, imaging, treatment, and surgery.",
+    readTime: 19,
+    publishedDate: "2026-07-30",
+    lastModified: "2026-07-30",
+  },
+  {
+    slug: "peroneal-nerve-compression-knee",
+    title: "Peroneal Nerve Compression Near the Knee: Numbness, Pain, and Foot Drop",
+    description:
+      "How compression at the fibular head can cause outer-shin numbness, top-of-foot tingling, weakness, foot slap, and foot drop.",
+    readTime: 19,
+    publishedDate: "2026-07-30",
+    lastModified: "2026-07-30",
+  },
+  {
+    slug: "saphenous-nerve-knee-pain",
+    title: "Saphenous Nerve Knee Pain: Inner-Knee Burning, Numbness, and Entrapment",
+    description:
+      "Map saphenous nerve distribution, inner-knee burning, infrapatellar numbness, surgical scar pain, diagnosis, and treatment options.",
+    readTime: 17,
+    publishedDate: "2026-07-30",
+    lastModified: "2026-07-30",
+  },
+  {
+    slug: "knee-numbness-guide",
+    title: "Knee Numbness: Around the Kneecap, Outer Knee, and Below the Knee",
+    description:
+      "A location-first guide to knee numbness from local pressure, surgery, peroneal and saphenous nerves, sciatica, neuropathy, and urgent warning signs.",
+    readTime: 18,
+    publishedDate: "2026-07-30",
+    lastModified: "2026-07-30",
+  },
+  {
+    slug: "osteochondral-lesion-knee",
+    title: "Osteochondral Lesions of the Knee: Cartilage and Bone Injury",
+    description:
+      "Understand osteochondral lesions and defects, cartilage and bone injury, MRI stability, osteochondritis dissecans, treatment, surgery, and recovery.",
+    readTime: 18,
+    publishedDate: "2026-07-30",
+    lastModified: "2026-07-30",
+  },
+  {
     slug: "collagen-peptides-knee-pain",
     title: "Collagen for Knee Pain: Do Collagen Peptides Actually Work?",
     description:

@@ -650,6 +650,10 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
           </li>
         </ol>
 
+        <p>
+          Sensory symptoms need a different map from pain alone. Use the <Link to="/guides/knee-numbness-guide" className="text-primary underline hover:opacity-80">knee numbness guide</Link> for patches around, above, or below the knee. Outer-knee numbness that continues toward the foot is covered in the <Link to="/guides/peroneal-nerve-compression-knee" className="text-primary underline hover:opacity-80">peroneal nerve compression guide</Link>, while inner-knee burning or scar sensitivity is covered in the <Link to="/guides/saphenous-nerve-knee-pain" className="text-primary underline hover:opacity-80">saphenous nerve guide</Link>. A hard focal bump below the kneecap may fit <Link to="/guides/osgood-schlatter-adults" className="text-primary underline hover:opacity-80">adult Osgood-Schlatter symptoms</Link>. Deep pain with repeated swelling or locking after injury may require evaluation for an <Link to="/guides/osteochondral-lesion-knee" className="text-primary underline hover:opacity-80">osteochondral lesion</Link>.
+        </p>
+
         <h2>When to Get Medical Help</h2>
         <aside
           aria-label="Urgent knee pain warning signs"

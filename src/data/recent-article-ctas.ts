@@ -1,4 +1,24 @@
 export const recentArticleCTAs: Record<string, { headline: string; text: string }> = {
+  "osgood-schlatter-adults": {
+    headline: "Want a short comfort routine after the cause is clear?",
+    text: "FlexiKnee offers adjustable warmth, red light, and gentle vibration for everyday knee comfort. Avoid direct device pressure on a tender tibial tubercle bump, and do not use it in place of assessment after a new injury.",
+  },
+  "peroneal-nerve-compression-knee": {
+    headline: "Protect the nerve first, then choose comfort support carefully",
+    text: "FlexiKnee does not treat nerve compression or foot drop. Do not place a tight wrap over the fibular head, and seek prompt assessment for weakness before using any knee-comfort device.",
+  },
+  "saphenous-nerve-knee-pain": {
+    headline: "Use comfort tools only when touch and heat are well tolerated",
+    text: "FlexiKnee does not treat nerve entrapment or a painful neuroma. Avoid pressure or heat over numb, highly sensitive, or recently operated skin unless the treating clinician confirms it is appropriate.",
+  },
+  "knee-numbness-guide": {
+    headline: "Numb skin needs protection, not stronger stimulation",
+    text: "FlexiKnee is an everyday comfort device, not a treatment for numbness or weakness. Do not use heat where temperature cannot be judged normally, and have progressive sensory or motor symptoms assessed first.",
+  },
+  "osteochondral-lesion-knee": {
+    headline: "Keep comfort support separate from cartilage treatment",
+    text: "FlexiKnee may provide a short warmth and vibration routine when a clinician says it is appropriate. It does not heal an osteochondral defect, stabilize a fragment, or replace activity restrictions and rehabilitation.",
+  },
   "collagen-peptides-knee-pain": {
     headline: "Pair a measured supplement trial with a repeatable comfort routine",
     text: "Collagen may take eight to twelve weeks to judge. FlexiKnee offers a separate short warmth, red-light, and gentle-vibration routine for day-to-day knee comfort while you track real changes in stairs, walking, and morning stiffness.",

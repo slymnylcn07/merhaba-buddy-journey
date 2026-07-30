@@ -2,6 +2,26 @@ import type { ArticleData } from "./articles/types";
 import { applyArticleSourceStandards } from "./article-source-standards";
 
 const recentArticleLoaders: Record<string, () => Promise<ArticleData>> = {
+  "osgood-schlatter-adults": () =>
+    import("./articles/osgood-schlatter-adults").then(
+      (module) => module.osgoodSchlatterAdults.article,
+    ),
+  "peroneal-nerve-compression-knee": () =>
+    import("./articles/peroneal-nerve-compression-knee").then(
+      (module) => module.peronealNerveCompressionKnee.article,
+    ),
+  "saphenous-nerve-knee-pain": () =>
+    import("./articles/saphenous-nerve-knee-pain").then(
+      (module) => module.saphenousNerveKneePain.article,
+    ),
+  "knee-numbness-guide": () =>
+    import("./articles/knee-numbness-guide").then(
+      (module) => module.kneeNumbnessGuide.article,
+    ),
+  "osteochondral-lesion-knee": () =>
+    import("./articles/osteochondral-lesion-knee").then(
+      (module) => module.osteochondralLesionKnee.article,
+    ),
   "best-low-impact-cardio-knee-pain": () =>
     import("./articles/best-low-impact-cardio-knee-pain").then(
       (module) => module.bestLowImpactCardioKneePain.article,
