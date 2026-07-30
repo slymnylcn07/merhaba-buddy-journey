@@ -1,4 +1,4 @@
-import { guidesData } from "../src/data/guides";
+import { guidesData, staticPages } from "../src/data/guides";
 import { recentGuidesData } from "../src/data/recent-guides-data";
 import { guidePublicationDates } from "../src/data/guide-publication-dates";
 import { guideDateOverrides } from "../src/data/guide-date-overrides";
@@ -34,6 +34,9 @@ const allGuidesData = [
 const allArticleLoaderSlugs = [...articleLoaderSlugs, ...recentArticleLoaderSlugs];
 const slugs = allGuidesData.map((guide) => guide.slug);
 const slugSet = new Set(slugs);
+const staticGuidePathSet = new Set(
+  staticPages.map((page) => page.path).filter((path) => path.startsWith("/guides/")),
+);
 const runtimeSlugs = new Set(allArticleLoaderSlugs);
 const duplicates = [...new Set(slugs.filter((slug, index) => slugs.indexOf(slug) !== index))];
 const duplicateLoaders = allArticleLoaderSlugs.filter(
@@ -250,6 +253,7 @@ for (const file of sourceFiles) {
     const targetSlug = match[1];
     const targetPath = `/guides/${targetSlug}`;
     if (slugSet.has(targetSlug)) continue;
+    if (staticGuidePathSet.has(targetPath)) continue;
     if (redirectSourceSet.has(targetPath)) staleInternalGuideLinks.push(`${displayPath}: ${targetPath}`);
     else missingInternalGuideLinks.push(`${displayPath}: ${targetPath}`);
   }

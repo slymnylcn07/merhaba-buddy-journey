@@ -103,10 +103,27 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_popular_guide_slugs: {
+        Args: {
+          p_days?: number
+          p_limit?: number
+          p_slugs?: string[]
+        }
+        Returns: {
+          slug: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
           _user_id: string
+        }
+        Returns: boolean
+      }
+      record_guide_view: {
+        Args: {
+          p_slug: string
+          p_visitor_hash: string
         }
         Returns: boolean
       }

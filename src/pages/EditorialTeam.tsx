@@ -66,7 +66,7 @@ const EditorialTeam = () => {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     name: "FlexiKnee Editorial Team",
-    description: "Meet the editorial roles behind FlexiKnee guides and learn how content is researched, reviewed, sourced, and updated.",
+    description: "Meet the FlexiKnee editorial team and learn how each person contributes to researching, reviewing, illustrating, and refining our guides.",
     url: canonicalUrl,
     publisher: {
       "@type": "Organization",
@@ -113,9 +113,9 @@ const EditorialTeam = () => {
 
         <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-16">
           <div className="text-center">
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-950">Meet the editorial roles</h2>
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950">Meet the FlexiKnee editorial team</h2>
             <p className="mx-auto mt-3 max-w-3xl leading-7 text-slate-600">
-              These illustrated profiles show the functions involved in preparing FlexiKnee content. The names and avatars are editorial role profiles used for presentation and do not represent licensed clinicians or independent medical reviewers.
+              These are the people who research, shape, review, and refine FlexiKnee guides. Each team member has a defined responsibility, covering source review, movement content, visual clarity, product accuracy, and final copy.
             </p>
           </div>
 
@@ -124,7 +124,7 @@ const EditorialTeam = () => {
               <article key={member.name} className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm">
                 <img
                   src={member.image}
-                  alt={`Illustrated avatar for ${member.name}, ${member.role}`}
+                  alt={`Profile image of ${member.name}, ${member.role}`}
                   width={800}
                   height={800}
                   loading="lazy"
