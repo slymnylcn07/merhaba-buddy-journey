@@ -359,15 +359,15 @@ export default function ProductDetail() {
 
             <aside className="min-w-0 xl:sticky xl:top-24 xl:self-start">
               <div className="rounded-[1.8rem] border border-slate-200 bg-white p-5 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.7)] sm:p-6 lg:rounded-[2rem] lg:p-8">
+                <h1 className="text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">{productTitle}</h1>
                 <button
                   type="button"
                   onClick={() => document.getElementById("product-reviews")?.scrollIntoView({ behavior: "smooth" })}
-                  className="group flex flex-wrap items-center gap-2"
+                  className="group mt-3 flex flex-wrap items-center gap-2"
                   aria-label="Jump to buyer reviews"
                 >
                   <ProductMarketplaceRating handle={publicHandle} showCount />
                 </button>
-                <h1 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">{productTitle}</h1>
                 <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">Smart daily knee comfort</p>
 
                 <p className="mt-5 text-base leading-7 text-slate-600">
