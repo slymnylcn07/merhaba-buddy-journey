@@ -11,7 +11,6 @@ import { useGoogleAnalytics } from "./hooks/use-google-analytics";
 import { useMetaTracking } from "./hooks/use-meta-tracking";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { ShopifyChatLoader } from "@/components/ShopifyChatLoader";
 
 const ProductRoute = lazy(() => import("./pages/ProductRoute"));
 const TrackOrder = lazy(() => import("./pages/TrackOrder"));
@@ -20,7 +19,6 @@ const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const ShippingPolicy = lazy(() => import("./pages/ShippingPolicy"));
 const RefundPolicy = lazy(() => import("./pages/RefundPolicy"));
-const Foundation = lazy(() => import("./pages/Foundation"));
 const AdminAuth = lazy(() => import("./pages/AdminAuth"));
 const AdminReturns = lazy(() => import("./pages/AdminReturns"));
 const WhyFlexiKnee = lazy(() => import("./pages/WhyFlexiKnee"));
@@ -60,7 +58,6 @@ const App = () => {
         <SpeedInsights />
         <BrowserRouter>
           <ScrollToTop />
-          <ShopifyChatLoader />
           <FullAnalyticsProvider>
             <main>
               <Suspense fallback={<PageLoader />}>
@@ -73,7 +70,7 @@ const App = () => {
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/shipping-policy" element={<ShippingPolicy />} />
                   <Route path="/refund-policy" element={<RefundPolicy />} />
-                  <Route path="/foundation" element={<Foundation />} />
+                  <Route path="/foundation" element={<Navigate to="/why-flexiknee" replace />} />
                   <Route path="/why-flexiknee" element={<WhyFlexiKnee />} />
                   <Route path="/shop" element={<Shop />} />
                   <Route path="/knee-quiz" element={<KneeQuiz />} />

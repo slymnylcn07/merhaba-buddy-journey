@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     question: "Why do my knees feel weak after sitting?",
-    answer: "After sitting for extended periods, the muscles around the knee can become temporarily shortened and less active. Blood flow to the legs decreases during inactivity, and the muscles that stabilize the knee may take a moment to re-engage when you stand up. This creates a temporary feeling of weakness or instability that usually improves within a few steps as circulation returns and the muscles activate.",
+    answer: "After a long period of sitting, stiffness and a sudden change from rest to weight bearing can make the first few steps feel less steady. Note whether the feeling quickly settles or comes with pain, swelling, numbness, back symptoms, or true buckling.",
   },
   {
     question: "Does exercise help knee weakness?",
@@ -48,24 +48,30 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
   cta: "knee-weakness-without-pain",
   article: {
     slug: "knee-weakness-without-pain",
-    title: "Knee Weakness Without Pain: Early Signs & Support Tips",
-    subtitle: "Understanding why your knees may feel weak or unstable",
-    intro: "Many people notice their knees feeling weak, unstable, or less supportive even when there is no actual pain. This can happen during walking, climbing stairs, standing up from a chair, or simply moving through daily life. While the sensation can be concerning, knee weakness without pain is often related to muscle fatigue, reduced joint stability, or changes in movement patterns rather than serious structural damage. This guide explores the common everyday causes of weak knees, explains why certain situations trigger this feeling, and shares practical strategies to support knee stability at home.",
-    metaTitle: "Knee Weakness Without Pain: Signs & Support Tips",
-    metaDescription: "Learn why your knees feel weak without pain. Discover common causes of knee instability, when to take action, and simple daily habits that support knee strength.",
+    title: "Knees Feel Weak Without Pain: Causes and What to Do",
+    subtitle: "Separate temporary fatigue from buckling, balance, and nerve-related warning signs",
+    intro: "A knee can feel weak even when it does not hurt. You might notice it on stairs, during a longer walk, or in the first few steps after getting out of a chair. Sometimes the feeling is temporary fatigue or reduced conditioning. Sometimes people use the word weak to describe true buckling, poor balance, numbness, or a loss of control. Those are not interchangeable, so this guide begins by helping you identify which pattern you actually have.",
+    metaTitle: "Knees Feel Weak Without Pain: Causes & What to Do",
+    metaDescription: "Why do knees feel weak without pain? Compare fatigue, instability, buckling, balance, and nerve symptoms, plus when weakness needs assessment.",
     heroImage: heroImage,
     publishedDate: "March 8, 2026",
+    lastUpdated: "July 31, 2026",
     nextSlug: "plica-syndrome-knee-pain",
     nextTitle: "Plica Syndrome Knee Pain",
     seoTags: "knee weakness without pain,weak knee feeling,knees feel weak but no pain,knee instability without pain,why does my knee feel weak,weak knees when walking,knee stability muscles,temporary knee weakness,knee support muscles,weak knees after activity,leg muscle fatigue knee,knee joint stability",
     faqs,
     content: (
       <>
+        <InfoBox title="Quick Answer">
+          <p>
+            If your knees feel weak without pain, first decide whether you mean tired muscles, an unsteady feeling, or the knee actually giving way. Brief fatigue after unfamiliar activity may settle with recovery and gradual conditioning. Repeated buckling, one-sided weakness, numbness, foot slapping, swelling, locking, or a sudden change after injury needs professional assessment.
+          </p>
+        </InfoBox>
 
         {/* Section 1 */}
-        <h2>What Knee Weakness Without Pain May Indicate</h2>
+        <h2>Why Do My Knees Feel Weak Without Pain?</h2>
         <p>
-          When your knee feels weak or unstable without accompanying pain, it is usually a sign that the muscles supporting the joint are not providing enough stability during movement. This is different from a structural injury, where pain is typically the first and most noticeable symptom.
+          A weak feeling does not identify one cause. Muscles may be tired or deconditioned, but balance, coordination, the hip and ankle, joint swelling, previous injury, and nerve-related changes can also affect how secure the knee feels. Some structural problems can occur with little pain, so the absence of pain should not be used as proof that the joint is normal.
         </p>
 
         <p>
@@ -109,7 +115,7 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
 
         <h3>Prolonged Sitting</h3>
         <p>
-          Sitting for long periods causes the muscles around the knee to become inactive. The quadriceps, which are the primary stabilizers of the knee during standing and walking, can become temporarily shortened and less responsive after extended sitting. This means that when you stand up, those muscles may take a moment to fully engage, creating a brief feeling of instability.
+          After a long period of sitting, stiffness and the sudden move from rest to weight bearing can make the first few steps feel less steady. A feeling that quickly settles is different from repeated buckling or weakness that continues while walking. If standing up is the main trigger, compare the pattern with our <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">guide to knee symptoms after sitting</Link>.
         </p>
 
         <h3>Muscle Fatigue After Activity</h3>

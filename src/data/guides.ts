@@ -38,10 +38,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "side-knee-pain-comfort-guide",
-    title: "Side Knee Pain: How It Happens & Daily Comfort Tips",
-    description: "Understand pain on the side of knee, whether inside or outside, left knee pain or right knee pain, plus knee cap pain relief strategies.",
+    title: "Side Knee Pain: Inner vs Outer Causes and What Helps",
+    description: "Compare outer and inner side knee pain by exact location, activity trigger, swelling, tenderness, and warning signs, including common lateral knee pain patterns.",
     readTime: 10,
-    lastModified: "2026-07-19",
+    lastModified: "2026-07-31",
   },
   {
     slug: "running-knee-pain-guide",
@@ -279,10 +279,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "why-do-my-knees-crack-or-pop",
-    title: "Why Knees Crack or Pop: Crepitus & Comfort Guide",
-    description: "Learn why knees crack and pop. Understand knee clicking, crepitus causes, and when knee cracking sounds are normal. Practical daily comfort tips included.",
+    title: "Why Do My Knees Crack or Pop? Causes and Warning Signs",
+    description: "Learn why knees crack, pop, or grind when bending, squatting, and standing up, plus how painless crepitus differs from sounds that need assessment.",
     readTime: 14,
-    lastModified: "2026-07-19",
+    lastModified: "2026-07-31",
   },
   {
     slug: "knee-pain-after-sitting-cross-legged",
@@ -448,17 +448,17 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "burning-sensation-in-knee",
-    title: "Burning Sensation in Knee: Causes & Relief",
-    description: "Learn why your knee feels warm or burning. Discover common causes of burning knee pain, when to take action, and home strategies that support joint comfort.",
+    title: "Burning Knee Pain: Causes by Location and When to Worry",
+    description: "Compare burning knee pain at the kneecap, inner or outer side, and back of the knee, including nerve-type symptoms, triggers, and warning signs.",
     readTime: 14,
-    lastModified: "2026-03-08",
+    lastModified: "2026-07-31",
   },
   {
     slug: "knee-weakness-without-pain",
-    title: "Knee Weakness Without Pain: Signs & Support",
-    description: "Learn why your knees feel weak without pain. Discover common causes of knee instability, when to take action, and daily habits that support knee strength.",
+    title: "Knees Feel Weak Without Pain: Causes and What to Do",
+    description: "Learn why knees may feel weak without pain when walking, climbing stairs, or standing up, and when buckling, numbness, or instability needs assessment.",
     readTime: 14,
-    lastModified: "2026-03-08",
+    lastModified: "2026-07-31",
   },
   {
     slug: "plica-syndrome-knee-pain",
@@ -504,10 +504,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "knee-pain-when-kneeling",
-    title: "Knee Pain When Kneeling: Causes & Simple Relief",
-    description: "Why does your knee hurt when kneeling? Learn common causes of kneeling knee pain, front knee pressure, and simple everyday strategies for comfort and support.",
+    title: "Knee Pain When Kneeling: Sharp, Front and Back Pain",
+    description: "Learn why a knee may hurt when kneeling, including sharp pain, pressure at the kneecap, pain behind the knee, bursitis clues, and practical cushioning tips.",
     readTime: 15,
-    lastModified: "2026-03-08",
+    lastModified: "2026-07-31",
   },
   {
     slug: "pain-behind-kneecap",
@@ -680,7 +680,6 @@ export const staticPages = [
   { path: "/editorial-team", priority: 0.5, changefreq: "yearly" },
   { path: "/why-flexiknee", priority: 0.8, changefreq: "monthly" },
   { path: "/product/knee-massager-smart-red-light-and-massage-therapy", priority: 0.9, changefreq: "weekly" },
-  { path: "/foundation", priority: 0.7, changefreq: "monthly" },
   { path: "/privacy-policy", priority: 0.3, changefreq: "yearly" },
   { path: "/terms-of-service", priority: 0.3, changefreq: "yearly" },
   { path: "/refund-policy", priority: 0.3, changefreq: "yearly" },

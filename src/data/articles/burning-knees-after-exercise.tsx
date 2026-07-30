@@ -113,7 +113,7 @@ export const burningKneesAfterExercise: ArticleExport = {
         </InfoBox>
 
         <p>
-          This page is only for burning linked to physical activity. For a burning sensation that occurs while sitting, at rest, after an injury, or in a specific location without an exercise trigger, use <Link to="/guides/burning-sensation-in-knee">Burning Sensation in Knee: Causes & Relief</Link>. For a dull ache, soreness, stiffness, or pain behind the knee after a workout without a burning quality, the correct hub is <Link to="/guides/knee-pain-after-exercise">knee pain after exercise</Link>.
+          This page is only for burning linked to physical activity. For a burning sensation that occurs while sitting, at rest, after an injury, or in a specific location without an exercise trigger, use the <Link to="/guides/burning-sensation-in-knee">burning knee pain by location guide</Link>. For a dull ache, soreness, stiffness, or pain behind the knee after a workout without a burning quality, the correct hub is <Link to="/guides/knee-pain-after-exercise">knee pain after exercise</Link>.
         </p>
 
         <figure className="my-8">
