@@ -15,10 +15,7 @@ import { Footer } from "@/components/Footer";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getProductPath, PRIMARY_PRODUCT_HANDLE } from "@/lib/product-config";
 import { getProductProfile } from "@/data/product-profiles";
-import { productSystem } from "@/data/product-system";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
-
-const SHOP_CATEGORIES = ["All", "Heat", "Compression", "Massage", "Walking & Foot Support", "Travel Recovery"] as const;
 
 const collectionJsonLd = {
   "@context": "https://schema.org",
@@ -43,11 +40,6 @@ const collectionJsonLd = {
   ],
 };
 
-function getShopCategories(product: ShopifyProduct): string[] {
-  if (product.node.handle === PRIMARY_PRODUCT_HANDLE) return ["Heat", "Massage"];
-  return getProductProfile(product).shopCategories;
-}
-
 function formatMoney(amount?: string, currencyCode?: string) {
   const value = Number(amount || 0);
   const currency = currencyCode || "USD";
@@ -65,7 +57,6 @@ function formatMoney(amount?: string, currencyCode?: string) {
 export default function Shop() {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeCategory, setActiveCategory] = useState<(typeof SHOP_CATEGORIES)[number]>("All");
 
   useEffect(() => {
     let active = true;
@@ -89,10 +80,8 @@ export default function Shop() {
 
   const primaryProduct = products.find((product) => product.node.handle === PRIMARY_PRODUCT_HANDLE);
   const supportProducts = products.filter((product) => product.node.handle !== PRIMARY_PRODUCT_HANDLE);
-  const showPrimary = Boolean(primaryProduct && (activeCategory === "All" || getShopCategories(primaryProduct).includes(activeCategory)));
-  const visibleSupportProducts = supportProducts.filter(
-    (product) => activeCategory === "All" || getShopCategories(product).includes(activeCategory),
-  );
+  const showPrimary = Boolean(primaryProduct);
+  const visibleSupportProducts = supportProducts;
 
   const itemListJsonLd = useMemo(() => ({
     "@context": "https://schema.org",
@@ -167,40 +156,6 @@ export default function Shop() {
 
           <section className="bg-white py-12 md:py-16">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <nav aria-label="Browse all products" className="mb-9">
-                <p className="mb-3 text-sm font-semibold text-slate-900">Browse every FlexiKnee product</p>
-                <div className="flex gap-2 overflow-x-auto pb-2">
-                  {productSystem.map((product) => (
-                    <Link
-                      key={product.href}
-                      to={product.href}
-                      className="shrink-0 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-300 hover:text-blue-700"
-                    >
-                      {product.name}
-                    </Link>
-                  ))}
-                </div>
-              </nav>
-              <div className="mb-9" aria-label="Filter products by purpose">
-                <p className="mb-3 text-sm font-semibold text-slate-900">Choose by purpose</p>
-                <div className="flex gap-2 overflow-x-auto pb-2">
-                  {SHOP_CATEGORIES.map((category) => (
-                    <button
-                      key={category}
-                      type="button"
-                      onClick={() => setActiveCategory(category)}
-                      aria-pressed={activeCategory === category}
-                      className={`shrink-0 rounded-full border px-4 py-2 text-sm font-semibold transition ${
-                        activeCategory === category
-                          ? "border-blue-600 bg-blue-600 text-white"
-                          : "border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:text-blue-700"
-                      }`}
-                    >
-                      {category}
-                    </button>
-                  ))}
-                </div>
-              </div>
               {isLoading ? (
                 <div className="space-y-8">
                   <div className="h-[430px] animate-pulse rounded-[2.25rem] bg-slate-100" />
@@ -328,14 +283,6 @@ export default function Shop() {
                       );
                     })}
                   </div>
-                  {!showPrimary && visibleSupportProducts.length === 0 && (
-                    <div className="mt-8 rounded-[2rem] border border-slate-200 bg-slate-50 p-8 text-center">
-                      <p className="font-semibold text-slate-900">No product currently matches this filter.</p>
-                      <button type="button" onClick={() => setActiveCategory("All")} className="mt-3 text-sm font-semibold text-blue-600">
-                        Show all products
-                      </button>
-                    </div>
-                  )}
                 </>
               )}
             </div>

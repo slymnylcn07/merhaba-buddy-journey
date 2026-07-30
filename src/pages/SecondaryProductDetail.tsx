@@ -342,7 +342,7 @@ export default function SecondaryProductDetail() {
             <aside className="min-w-0 xl:sticky xl:top-24 xl:self-start">
               <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.75)] lg:p-8">
                 <h1 className="text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl">{profile.h1}</h1>
-                <ProductMarketplaceRating handle={handle} showCount linkToReviews className="mt-3" />
+                <ProductMarketplaceRating handle={handle} showCount linkToReviews prominent className="mt-3" />
                 <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">{profile.eyebrow}</p>
                 <p className="mt-3 text-sm font-medium text-blue-700">Best for: {profile.bestFor}</p>
                 <p className="mt-4 text-base leading-7 text-slate-600">{profile.summary}</p>

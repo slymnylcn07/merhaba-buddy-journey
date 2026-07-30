@@ -366,7 +366,7 @@ export default function ProductDetail() {
                   className="group mt-3 flex flex-wrap items-center gap-2"
                   aria-label="Jump to buyer reviews"
                 >
-                  <ProductMarketplaceRating handle={publicHandle} showCount />
+                  <ProductMarketplaceRating handle={publicHandle} showCount prominent />
                 </button>
                 <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">Smart daily knee comfort</p>
 
