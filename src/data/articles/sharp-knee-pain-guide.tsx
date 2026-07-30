@@ -58,18 +58,6 @@ const sharpPainFaqs = [
   },
 ];
 
-const QuickAnswer = ({ children }: { children: ReactNode }) => (
-  <aside
-    aria-label="Quick answer"
-    className="my-7 rounded-xl border border-sky-200 bg-sky-50 p-5 text-slate-900"
-  >
-    <p className="mb-2 text-sm font-bold uppercase tracking-wide text-sky-800">
-      Quick Answer
-    </p>
-    <div className="space-y-3 leading-relaxed">{children}</div>
-  </aside>
-);
-
 const NoteBox = ({
   children,
   tone = "blue",
@@ -170,21 +158,6 @@ export const sharpKneePainGuide: ArticleExport = {
     faqs: sharpPainFaqs,
     content: (
       <>
-        <QuickAnswer>
-          <p>
-            <strong>Sharp, stabbing, and shooting describe pain quality, not a diagnosis.</strong>{" "}
-            A brief pain with one motion can reflect a different pattern from severe pain
-            after a twist, pain around the kneecap during stairs, or an electric sensation
-            that travels with tingling.
-          </p>
-          <p>
-            Check five clues: <strong>onset, exact location, trigger, swelling, and function</strong>.
-            Seek urgent medical guidance if the knee is deformed, badly swollen, hot and red,
-            locked, repeatedly giving way, unable to bear weight, or associated with fever
-            after a new severe episode.
-          </p>
-        </QuickAnswer>
-
         <h2>What Sharp, Stabbing, and Shooting Knee Pain Can Tell You</h2>
         <p>
           Pain quality helps you describe an episode, but different people can use the same

@@ -51,18 +51,6 @@ const nightKneePainFaqs = [
   },
 ];
 
-const QuickAnswer = ({ children }: { children: ReactNode }) => (
-  <aside
-    aria-label="Quick answer"
-    className="my-7 rounded-xl border border-sky-200 bg-sky-50 p-5 text-slate-900"
-  >
-    <p className="mb-2 text-sm font-bold uppercase tracking-wide text-sky-800">
-      Quick Answer
-    </p>
-    <div className="space-y-3 leading-relaxed">{children}</div>
-  </aside>
-);
-
 const Figure = ({
   src,
   alt,
@@ -145,23 +133,6 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
     ],
     content: (
       <>
-        <QuickAnswer>
-          <p>
-            <strong>
-              Knee pain at night may be linked to the day's activity, a prolonged sleep
-              position, osteoarthritis, a tendon or bursa, swelling, an old injury, or
-              another condition.
-            </strong>{" "}
-            Nighttime makes the pattern noticeable, but it does not provide a diagnosis.
-          </p>
-          <p>
-            Record the exact location, whether one or both knees are affected, the position
-            that triggers it, swelling, warmth, locking, instability, morning stiffness,
-            and how often pain wakes you. Seek urgent guidance for a hot red swollen knee,
-            inability to bear weight, major swelling, deformity, or true locking.
-          </p>
-        </QuickAnswer>
-
         <h2>What Nighttime Knee Pain Can and Cannot Tell You</h2>
         <p>
           Timing is one clue among several. Pain that begins after a high-load day may have

@@ -16,18 +16,6 @@ import diagramBelowKneecapPressure from "@/assets/fig-zone-below-kneecap-v2.svg"
 
 const SectionDivider = () => <hr className="my-10 border-t border-border/40" />;
 
-const QuickAnswer = ({ children }: { children: ReactNode }) => (
-  <aside
-    aria-label="Quick answer"
-    className="my-7 rounded-xl border border-sky-200 bg-sky-50 p-5 text-slate-900"
-  >
-    <p className="mb-2 text-sm font-bold uppercase tracking-wide text-sky-800">
-      Quick Answer
-    </p>
-    <div className="space-y-3 leading-relaxed">{children}</div>
-  </aside>
-);
-
 const NoteBox = ({
   children,
   tone = "blue",
@@ -312,21 +300,6 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
     ],
     content: (
       <>
-        <QuickAnswer>
-          <p>
-            <strong>Where your knee hurts narrows the description, not the diagnosis.</strong>{" "}
-            Pain around the kneecap often shows up with stairs, squats, running, or
-            prolonged sitting; inner or outer pain may follow a joint line or nearby
-            soft tissue; pain behind the knee can feel like tightness or fullness; and
-            pain above or below the kneecap often sits near a tendon.
-          </p>
-          <p>
-            Match the spot on the map, then add the clues that matter most: how it
-            started, which movement triggers it, whether it is swollen, and whether the
-            knee locks, catches, or gives way.
-          </p>
-        </QuickAnswer>
-
         <h2>Interactive Knee Pain Map: Choose Where It Hurts</h2>
         <p>
           Select the closest zone for a quick visual comparison. Start with the place
