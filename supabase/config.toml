@@ -11,6 +11,3 @@ verify_jwt = false
 
 [functions.meta-conversions-api]
 verify_jwt = false
-
-[functions.guide-popularity]
-verify_jwt = false

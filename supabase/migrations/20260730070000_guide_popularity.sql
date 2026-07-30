@@ -104,7 +104,36 @@ as $$
   limit greatest(1, least(coalesce(p_limit, 100), 120));
 $$;
 
+create or replace function public.get_popular_guide_slugs(
+  p_days integer default 30,
+  p_slugs text[] default null,
+  p_limit integer default 100
+)
+returns table (
+  slug text
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  with ranked as materialized (
+    select *
+    from public.get_popular_guides(p_days, p_slugs, 120)
+  )
+  select ranked.slug
+  from ranked
+  where (
+    select coalesce(sum(sample.total_views), 0)
+    from ranked as sample
+  ) >= 20
+  order by ranked.total_views desc, ranked.slug asc
+  limit greatest(1, least(coalesce(p_limit, 100), 120));
+$$;
+
 revoke all on function public.record_guide_view(text, text) from public, anon, authenticated;
 revoke all on function public.get_popular_guides(integer, text[], integer) from public, anon, authenticated;
-grant execute on function public.record_guide_view(text, text) to service_role;
+revoke all on function public.get_popular_guide_slugs(integer, text[], integer) from public, anon, authenticated;
+grant execute on function public.record_guide_view(text, text) to anon, authenticated, service_role;
 grant execute on function public.get_popular_guides(integer, text[], integer) to service_role;
+grant execute on function public.get_popular_guide_slugs(integer, text[], integer) to anon, authenticated, service_role;
