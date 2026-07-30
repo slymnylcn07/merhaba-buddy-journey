@@ -154,7 +154,7 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         text: "It arrived quickly. The squeezing and releasing action feels strong even before increasing the level, and the stitching looks better than in the photos.",
       },
       {
-        name: "정***한",
+        name: "Buyer",
         date: "05 Sep 2025",
         details: "2 pieces, 3 modes",
         text: "The pressure feels just right and the wireless design is convenient. It is good value for the price.",
@@ -166,7 +166,7 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         text: "The air pressure is strong and the massage feels cool and pleasant. Highly recommended.",
       },
       {
-        name: "정***황",
+        name: "Buyer",
         date: "14 Feb 2026",
         details: "2 pieces, 4 modes",
         text: "A good purchase with satisfying compression. Wearing the adjuster toward the side made the fit more comfortable for me.",
@@ -249,7 +249,7 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         text: "Works perfectly and gets very warm on the highest setting. A power bank makes it easy to use away from an outlet.",
       },
       {
-        name: "П***ы",
+        name: "Buyer",
         date: "26 Mar 2026",
         details: "Color: Black",
         text: "The quality feels good. It warms up quickly on the maximum setting, then the lower level is enough to maintain the warmth.",
