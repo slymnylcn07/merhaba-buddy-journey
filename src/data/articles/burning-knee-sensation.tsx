@@ -289,6 +289,9 @@ export const burningKneeSensation: ArticleExport = {
         <p>
           A burning knee can reflect local tissue irritation, pressure around the kneecap, an injury, skin sensitivity, or nerve-type pain. Location and context do most of the diagnostic work: front burning after bending, side burning that follows a path, burning behind a swollen knee, and burning at rest are not interchangeable. Use the pattern to choose the right guide, and seek medical advice when burning is persistent, progressive, associated with neurological symptoms, or accompanied by a hot, red, swollen, unstable, or locked knee.
         </p>
+        <p>
+          Burning with numbness along the inner knee or beside a surgical scar may fit the <Link to="/guides/saphenous-nerve-knee-pain" className="text-primary hover:underline">saphenous nerve distribution</Link>. If altered sensation is the main symptom, map the full area with our <Link to="/guides/knee-numbness-guide" className="text-primary hover:underline">knee numbness guide</Link> before assuming the problem begins inside the joint.
+        </p>
       </>
     ),
   },

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Layers involved in an osteochondral lesion</title>
+  <desc id="desc">Cross section showing articular cartilage, subchondral bone, and a defect affecting both layers.</desc>
+  <rect width="900" height="520" rx="28" fill="#07182d"/>
+  <text x="45" y="58" fill="#f8fafc" font-family="Arial" font-size="28" font-weight="700">Osteochondral means cartilage plus bone</text>
+  <path d="M90 150 Q450 90 810 150 L810 215 Q450 155 90 215 Z" fill="#bdeef5"/>
+  <path d="M90 215 Q450 155 810 215 L810 430 Q450 370 90 430 Z" fill="#d5c0a3"/>
+  <path d="M450 125 C405 145 405 210 425 250 C445 290 430 330 405 370 L530 390 C500 330 515 285 535 245 C555 205 540 145 500 125 Z" fill="#f59e0b" opacity=".88"/>
+  <path d="M450 125 C405 145 405 210 425 250" fill="none" stroke="#fff7ed" stroke-width="6"/>
+  <text x="120" y="145" fill="#a5f3fc" font-family="Arial" font-size="20" font-weight="700">Articular cartilage</text>
+  <text x="120" y="305" fill="#fef3c7" font-family="Arial" font-size="20" font-weight="700">Subchondral bone</text>
+  <path d="M535 250 H755" stroke="#f59e0b" stroke-width="4"/>
+  <text x="755" y="235" text-anchor="end" fill="#fde68a" font-family="Arial" font-size="20" font-weight="700">Osteochondral defect</text>
+  <text x="755" y="265" text-anchor="end" fill="#cbd5e1" font-family="Arial" font-size="18">Depth and stability guide treatment</text>
+</svg>

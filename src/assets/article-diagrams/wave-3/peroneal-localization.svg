@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Localizing foot drop and peroneal symptoms</title>
+  <desc id="desc">Comparison of clues at the fibular head, lumbar spine, and urgent central neurological patterns.</desc>
+  <rect width="900" height="520" rx="28" fill="#f8fafc"/>
+  <text x="45" y="58" fill="#0f172a" font-family="Arial" font-size="28" font-weight="700">Where can the signal problem begin?</text>
+  <rect x="50" y="105" width="250" height="330" rx="24" fill="#ecfeff" stroke="#06b6d4" stroke-width="4"/>
+  <text x="175" y="165" text-anchor="middle" fill="#0e7490" font-family="Arial" font-size="22" font-weight="700">Outer knee</text>
+  <text x="175" y="210" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">Fibular-head pressure</text>
+  <text x="175" y="244" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">Top-of-foot numbness</text>
+  <text x="175" y="278" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">Weak lift and eversion</text>
+  <rect x="325" y="105" width="250" height="330" rx="24" fill="#f0fdf4" stroke="#22c55e" stroke-width="4"/>
+  <text x="450" y="165" text-anchor="middle" fill="#15803d" font-family="Arial" font-size="22" font-weight="700">Lumbar root</text>
+  <text x="450" y="210" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">Back or buttock symptoms</text>
+  <text x="450" y="244" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">Broader weakness pattern</text>
+  <text x="450" y="278" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">May affect inversion</text>
+  <rect x="600" y="105" width="250" height="330" rx="24" fill="#fff1f2" stroke="#e11d48" stroke-width="4"/>
+  <text x="725" y="165" text-anchor="middle" fill="#be123c" font-family="Arial" font-size="22" font-weight="700">Urgent pattern</text>
+  <text x="725" y="210" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">Sudden widespread weakness</text>
+  <text x="725" y="244" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">Speech or facial change</text>
+  <text x="725" y="278" text-anchor="middle" fill="#334155" font-family="Arial" font-size="18">Bladder or bowel change</text>
+  <text x="450" y="480" text-anchor="middle" fill="#475569" font-family="Arial" font-size="18">Examination and electrodiagnostic testing help localize the lesion.</text>
+</svg>

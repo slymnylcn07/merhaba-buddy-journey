@@ -211,6 +211,9 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
         <p>
           The good news about knee weakness related to muscle conditioning is that it often responds well to consistent, gradual effort. Here are practical strategies you can incorporate into your daily routine.
         </p>
+        <p>
+          New difficulty lifting the ankle or toes is not ordinary knee deconditioning. Foot slapping, repeated toe catching, or outer-shin numbness can reflect <Link to="/guides/peroneal-nerve-compression-knee" className="text-primary hover:underline">peroneal nerve compression near the fibular head</Link> and deserves prompt assessment.
+        </p>
 
         <h3>Strengthening Leg Muscles</h3>
         <p>

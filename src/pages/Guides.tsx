@@ -133,6 +133,16 @@ import thumbBatch2ItBandPainLocationDiagram from "@/assets/guide-thumbnails/batc
 import thumbBatch2ItBandPainLocationDiagramAvif from "@/assets/guide-thumbnails/batch-2/it-band-pain-location-diagram.avif";
 import thumbBatch2HomeRemediesKneePain from "@/assets/guide-thumbnails/batch-2/home-remedies-knee-pain.webp";
 import thumbBatch2HomeRemediesKneePainAvif from "@/assets/guide-thumbnails/batch-2/home-remedies-knee-pain.avif";
+import thumbWave3OsgoodSchlatterAdults from "@/assets/guide-thumbnails/wave-3/osgood-schlatter-adults-thumb.webp";
+import thumbWave3OsgoodSchlatterAdultsAvif from "@/assets/guide-thumbnails/wave-3/osgood-schlatter-adults-thumb.avif";
+import thumbWave3PeronealNerveCompression from "@/assets/guide-thumbnails/wave-3/peroneal-nerve-compression-knee-thumb.webp";
+import thumbWave3PeronealNerveCompressionAvif from "@/assets/guide-thumbnails/wave-3/peroneal-nerve-compression-knee-thumb.avif";
+import thumbWave3SaphenousNervePain from "@/assets/guide-thumbnails/wave-3/saphenous-nerve-knee-pain-thumb.webp";
+import thumbWave3SaphenousNervePainAvif from "@/assets/guide-thumbnails/wave-3/saphenous-nerve-knee-pain-thumb.avif";
+import thumbWave3KneeNumbness from "@/assets/guide-thumbnails/wave-3/knee-numbness-guide-thumb.webp";
+import thumbWave3KneeNumbnessAvif from "@/assets/guide-thumbnails/wave-3/knee-numbness-guide-thumb.avif";
+import thumbWave3OsteochondralLesion from "@/assets/guide-thumbnails/wave-3/osteochondral-lesion-knee-thumb.webp";
+import thumbWave3OsteochondralLesionAvif from "@/assets/guide-thumbnails/wave-3/osteochondral-lesion-knee-thumb.avif";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "best-supplements-for-knee-pain": thumbSupplements,
@@ -240,6 +250,11 @@ const thumbnailMap: Record<string, string> = {
   "turmeric-curcumin-knee-pain": thumbTurmericKneePain,
   "varicose-veins-knee-pain": thumbVaricoseVeinsKneePain,
   "knee-osteoarthritis-vs-rheumatoid-arthritis": thumbKneeOsteoarthritisVsRheumatoidArthritis,
+  "osgood-schlatter-adults": thumbWave3OsgoodSchlatterAdults,
+  "peroneal-nerve-compression-knee": thumbWave3PeronealNerveCompression,
+  "saphenous-nerve-knee-pain": thumbWave3SaphenousNervePain,
+  "knee-numbness-guide": thumbWave3KneeNumbness,
+  "osteochondral-lesion-knee": thumbWave3OsteochondralLesion,
 };
 
 const thumbnailAvifMap: Record<string, string> = {
@@ -260,6 +275,11 @@ const thumbnailAvifMap: Record<string, string> = {
   "it-band-pain-location-diagram": thumbBatch2ItBandPainLocationDiagramAvif,
   "home-remedies-knee-pain": thumbBatch2HomeRemediesKneePainAvif,
   "heat-vs-ice-for-knees": thumbHeatVsIceAvif,
+  "osgood-schlatter-adults": thumbWave3OsgoodSchlatterAdultsAvif,
+  "peroneal-nerve-compression-knee": thumbWave3PeronealNerveCompressionAvif,
+  "saphenous-nerve-knee-pain": thumbWave3SaphenousNervePainAvif,
+  "knee-numbness-guide": thumbWave3KneeNumbnessAvif,
+  "osteochondral-lesion-knee": thumbWave3OsteochondralLesionAvif,
 };
 
 const thumbnailPatternMap: { pattern: RegExp; image: string }[] = [
@@ -381,6 +401,11 @@ const locationSlugs = [
   "varicose-veins-knee-pain",
   "why-do-my-knees-hurt-when-sleeping",
   "pain-behind-kneecap",
+  "osgood-schlatter-adults",
+  "peroneal-nerve-compression-knee",
+  "saphenous-nerve-knee-pain",
+  "knee-numbness-guide",
+  "osteochondral-lesion-knee",
 ];
 
 const activitySlugs = [
@@ -421,6 +446,8 @@ const activitySlugs = [
   "knee-arthritis-pain-guide",
   "how-to-fix-knee-pain",
   "cold-weather-knee-pain",
+  "osgood-schlatter-adults",
+  "osteochondral-lesion-knee",
 ];
 
 const lifeStageSlugs = [

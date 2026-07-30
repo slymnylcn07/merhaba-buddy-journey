@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Common peroneal nerve sensory and motor map</title>
+  <desc id="desc">Outer knee and lower leg diagram showing the nerve at the fibular head, sensation on the outer shin and top of foot, and ankle lifting.</desc>
+  <rect width="900" height="520" rx="28" fill="#07182d"/>
+  <text x="45" y="58" fill="#f8fafc" font-family="Arial" font-size="28" font-weight="700">Common peroneal nerve pattern</text>
+  <path d="M260 90 C225 175 230 260 260 330 L250 455 H430 L420 330 C450 255 455 175 420 90 Z" fill="#dbe5ee" opacity=".9"/>
+  <circle cx="435" cy="257" r="24" fill="#f59e0b"/>
+  <path d="M390 110 C410 170 440 210 435 257 C430 320 395 390 405 465" fill="none" stroke="#2dd4bf" stroke-width="13" stroke-linecap="round"/>
+  <path d="M430 340 C500 365 555 400 630 438" fill="none" stroke="#38bdf8" stroke-width="55" opacity=".38"/>
+  <path d="M450 258 H760" stroke="#f59e0b" stroke-width="4"/>
+  <text x="760" y="235" text-anchor="end" fill="#fde68a" font-family="Arial" font-size="22" font-weight="700">Compression site</text>
+  <text x="760" y="265" text-anchor="end" fill="#cbd5e1" font-family="Arial" font-size="18">Around the fibular head</text>
+  <text x="650" y="404" fill="#bae6fd" font-family="Arial" font-size="18">Outer shin and top-of-foot sensation</text>
+  <text x="475" y="120" fill="#99f6e4" font-family="Arial" font-size="18">Nerve route</text>
+</svg>

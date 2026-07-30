@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Saphenous nerve distribution around the inner knee</title>
+  <desc id="desc">Medial knee diagram showing the main saphenous nerve, infrapatellar branch, and sensory territory.</desc>
+  <rect width="900" height="520" rx="28" fill="#07182d"/>
+  <text x="45" y="58" fill="#f8fafc" font-family="Arial" font-size="28" font-weight="700">Saphenous nerve distribution at the knee</text>
+  <path d="M285 80 C245 180 255 315 285 455 H475 C505 315 515 180 475 80 Z" fill="#dbe5ee" opacity=".9"/>
+  <ellipse cx="380" cy="250" rx="60" ry="78" fill="#91a8bb"/>
+  <path d="M505 85 C480 155 475 230 485 290 C490 340 470 405 460 465" fill="none" stroke="#2dd4bf" stroke-width="12" stroke-linecap="round"/>
+  <path d="M485 260 C445 275 405 295 350 315" fill="none" stroke="#67e8f9" stroke-width="9" stroke-linecap="round"/>
+  <ellipse cx="335" cy="320" rx="76" ry="56" fill="#f59e0b" opacity=".34"/>
+  <text x="700" y="180" fill="#99f6e4" font-family="Arial" font-size="20" font-weight="700">Main saphenous route</text>
+  <path d="M520 170 H680" stroke="#2dd4bf" stroke-width="4"/>
+  <text x="700" y="300" fill="#a5f3fc" font-family="Arial" font-size="20" font-weight="700">Infrapatellar branch</text>
+  <path d="M430 290 H680" stroke="#67e8f9" stroke-width="4"/>
+  <text x="700" y="390" fill="#fde68a" font-family="Arial" font-size="18" font-weight="700">Possible burning or numbness zone</text>
+</svg>

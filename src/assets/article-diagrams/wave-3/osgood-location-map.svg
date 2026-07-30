@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Location of an adult Osgood-Schlatter bump</title>
+  <desc id="desc">Front knee diagram showing the patella, patellar tendon, and tibial tubercle below the kneecap.</desc>
+  <rect width="900" height="520" rx="28" fill="#07182d"/>
+  <text x="48" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="28" font-weight="700">Where the old Osgood-Schlatter bump sits</text>
+  <path d="M305 90 C270 150 270 220 300 255 L335 275 L340 425 L500 425 L505 275 L540 255 C570 220 570 150 535 90 Z" fill="#d9e3ec" stroke="#89a4bb" stroke-width="5"/>
+  <ellipse cx="420" cy="205" rx="62" ry="80" fill="#94a9ba" stroke="#d6f4ff" stroke-width="5"/>
+  <path d="M420 270 L420 360" stroke="#34d6d3" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="420" cy="376" r="34" fill="#f59e0b" opacity=".95"/>
+  <path d="M470 376 H700" stroke="#f59e0b" stroke-width="4"/>
+  <text x="720" y="366" fill="#fde68a" font-family="Arial, sans-serif" font-size="22" text-anchor="end">Tibial tubercle</text>
+  <text x="720" y="394" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="18" text-anchor="end">Typical focal bump and pressure point</text>
+  <text x="475" y="313" fill="#8ff5ef" font-family="Arial, sans-serif" font-size="18">Patellar tendon</text>
+  <text x="505" y="196" fill="#dbeafe" font-family="Arial, sans-serif" font-size="18">Patella</text>
+</svg>

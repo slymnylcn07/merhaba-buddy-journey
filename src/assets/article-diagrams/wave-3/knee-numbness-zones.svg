@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Knee numbness location map</title>
+  <desc id="desc">Front knee map showing common sensory zones around the kneecap, inner knee, outer knee, and below the knee.</desc>
+  <rect width="900" height="520" rx="28" fill="#07182d"/>
+  <text x="45" y="58" fill="#f8fafc" font-family="Arial" font-size="28" font-weight="700">Map the numb area before naming the cause</text>
+  <path d="M330 85 C290 170 295 295 320 450 H520 C545 295 550 170 510 85 Z" fill="#dbe5ee" opacity=".92"/>
+  <ellipse cx="420" cy="245" rx="66" ry="84" fill="#94a9ba"/>
+  <ellipse cx="420" cy="245" rx="94" ry="115" fill="none" stroke="#67e8f9" stroke-width="16" opacity=".8"/>
+  <ellipse cx="310" cy="275" rx="48" ry="92" fill="#38bdf8" opacity=".48"/>
+  <ellipse cx="530" cy="275" rx="48" ry="92" fill="#f59e0b" opacity=".48"/>
+  <rect x="370" y="365" width="100" height="104" rx="40" fill="#2dd4bf" opacity=".48"/>
+  <text x="650" y="150" fill="#a5f3fc" font-family="Arial" font-size="19">Around kneecap</text>
+  <text x="650" y="205" fill="#7dd3fc" font-family="Arial" font-size="19">Outer knee</text>
+  <text x="650" y="260" fill="#fde68a" font-family="Arial" font-size="19">Inner knee</text>
+  <text x="650" y="315" fill="#99f6e4" font-family="Arial" font-size="19">Below knee</text>
+</svg>
