@@ -365,6 +365,16 @@ if (!existsSync(DIST)) {
           failures.push(`${routeRecord.path}: product identity marker is missing or incorrect`);
         }
         if (!html.includes('"Product"')) failures.push(`${routeRecord.path}: Product schema is missing`);
+        if (!html.includes('"offers"')) failures.push(`${routeRecord.path}: Product offers are missing`);
+        if (!html.includes('"itemCondition":"https://schema.org/NewCondition"')) {
+          failures.push(`${routeRecord.path}: Product item condition is missing`);
+        }
+        if (!html.includes('"shippingDetails"') || !html.includes('"hasShippingService"')) {
+          failures.push(`${routeRecord.path}: Merchant shipping policy reference is missing`);
+        }
+        if (!html.includes('"hasMerchantReturnPolicy"')) {
+          failures.push(`${routeRecord.path}: Merchant return policy reference is missing`);
+        }
       }
 
       pageAudits.push(pageAudit);

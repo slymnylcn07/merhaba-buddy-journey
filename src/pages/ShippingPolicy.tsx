@@ -5,6 +5,57 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { SUPPORT_EMAIL } from "@/lib/support-config";
 import { DELIVERY_ESTIMATES, FREE_SHIPPING_THRESHOLD, SUPPORT_RESPONSE_TIME } from "@/lib/policy-config";
+import { SHIPPING_SERVICE_ID } from "@/lib/merchant-schema";
+
+const shippingPolicyJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://flexi-knee.com/#organization",
+  name: "FlexiKnee",
+  url: "https://flexi-knee.com/",
+  hasShippingService: {
+    "@type": "ShippingService",
+    "@id": SHIPPING_SERVICE_ID,
+    name: "FlexiKnee standard shipping",
+    description: "Tracked standard shipping with free delivery on eligible orders over $24.99.",
+    fulfillmentType: "https://schema.org/FulfillmentTypeDelivery",
+    handlingTime: {
+      "@type": "ServicePeriod",
+      duration: {
+        "@type": "QuantitativeValue",
+        minValue: 0,
+        maxValue: 1,
+        unitCode: "DAY",
+      },
+    },
+    shippingConditions: {
+      "@type": "ShippingConditions",
+      shippingDestination: {
+        "@type": "DefinedRegion",
+        addressCountry: "US",
+      },
+      orderValue: {
+        "@type": "MonetaryAmount",
+        minValue: 25,
+        currency: "USD",
+      },
+      shippingRate: {
+        "@type": "MonetaryAmount",
+        value: 0,
+        currency: "USD",
+      },
+      transitTime: {
+        "@type": "ServicePeriod",
+        duration: {
+          "@type": "QuantitativeValue",
+          minValue: 6,
+          maxValue: 7,
+          unitCode: "DAY",
+        },
+      },
+    },
+  },
+};
 
 export default function ShippingPolicy() {
   return (
@@ -22,6 +73,7 @@ export default function ShippingPolicy() {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@FlexiKnee" />
         <meta name="twitter:title" content="Shipping Policy | FlexiKnee" />
+        <script type="application/ld+json">{JSON.stringify(shippingPolicyJsonLd)}</script>
       </Helmet>
 
       <Header />

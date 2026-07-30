@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
-import { PRODUCT_RECS, pickProductForSlug, ProductRec } from "@/lib/article-product-map";
+import { pickProductForSlug, ProductRec } from "@/lib/article-product-map";
 import { FREE_SHIPPING_THRESHOLD } from "@/lib/policy-config";
-import { MAIN_PRODUCT_RATING } from "@/lib/main-product-rating";
-import { getProductPath } from "@/lib/product-config";
+import { getProductPath, getPublicProductHandle } from "@/lib/product-config";
+import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
 
 /**
  * Makale içi ürün kartı (eski yeşil banner'ın yerini alır).
@@ -47,7 +47,6 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
     : undefined;
 
   const rec: ProductRec = pickProductForSlug(slug);
-  const isMain = rec.handle === PRODUCT_RECS.main.handle;
 
   const [liveImage, setLiveImage] = useState<string | null>(null);
   const [livePrice, setLivePrice] = useState<string | null>(null);
@@ -62,7 +61,9 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
     getCachedProducts().then((list) => {
       if (!active) return;
       const match = list.find(
-        (p) => decodeURIComponent(p.node.handle) === decodeURIComponent(rec.handle)
+        (p) =>
+          getPublicProductHandle(decodeURIComponent(p.node.handle)) ===
+          getPublicProductHandle(decodeURIComponent(rec.handle))
       );
       if (match) {
         setLiveImage(match.node.images?.edges?.[0]?.node?.url || null);
@@ -120,12 +121,7 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
             {price && (
               <span className="text-base font-semibold text-slate-950">{price}</span>
             )}
-            {isMain && (
-              <span className="inline-flex items-center gap-1 text-xs text-slate-500">
-                <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                {MAIN_PRODUCT_RATING.toFixed(1)} rated
-              </span>
-            )}
+            <ProductMarketplaceRating handle={rec.handle} showCount />
             <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
               {shippingLabel}
             </span>

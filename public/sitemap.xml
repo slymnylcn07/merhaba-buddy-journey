@@ -690,12 +690,7 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/product/360-electric-calf-massager-rechargeable-3-modes-air-compression-leg-massager-hot-compress-leg-massage-blood-circulation</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://flexi-knee.com/product/electric-knee-heating-pad-a-usb-powered-warming-knee-strap-suitable-for-joints-with-adjustable-heating-band-ideal-for-daily</loc>
+    <loc>https://flexi-knee.com/product/flexiknee-calf-massager</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -705,12 +700,17 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/product/knee-massager-smart-red-light-and-massage-therapy</loc>
+    <loc>https://flexi-knee.com/product/flexiknee-sport-orthopedic-insoles</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://flexi-knee.com/product/sport-orthopedic-insoles-for-feet-men-women-eva-breathable-shock-absorption-shoes-insole-for-running-basketball-sport-care-pads</loc>
+    <loc>https://flexi-knee.com/product/flexiknee-usb-heated-knee-wrap</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/product/knee-massager-smart-red-light-and-massage-therapy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

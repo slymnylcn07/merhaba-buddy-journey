@@ -5,6 +5,25 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { SUPPORT_EMAIL } from "@/lib/support-config";
 import { LIMITED_WARRANTY_YEARS, RETURN_WINDOW_DAYS, SUPPORT_RESPONSE_TIME } from "@/lib/policy-config";
+import { RETURN_POLICY_ID } from "@/lib/merchant-schema";
+
+const returnPolicyJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://flexi-knee.com/#organization",
+  name: "FlexiKnee",
+  url: "https://flexi-knee.com/",
+  hasMerchantReturnPolicy: {
+    "@type": "MerchantReturnPolicy",
+    "@id": RETURN_POLICY_ID,
+    applicableCountry: "US",
+    returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+    merchantReturnDays: RETURN_WINDOW_DAYS,
+    returnMethod: "https://schema.org/ReturnByMail",
+    returnFees: "https://schema.org/ReturnShippingFees",
+    merchantReturnLink: "https://flexi-knee.com/refund-policy",
+  },
+};
 
 export default function RefundPolicy() {
   return (
@@ -22,6 +41,7 @@ export default function RefundPolicy() {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@FlexiKnee" />
         <meta name="twitter:title" content="Returns, Refunds & Warranty | FlexiKnee" />
+        <script type="application/ld+json">{JSON.stringify(returnPolicyJsonLd)}</script>
       </Helmet>
 
       <Header />
