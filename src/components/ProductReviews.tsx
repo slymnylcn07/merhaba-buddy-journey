@@ -28,14 +28,14 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         text: "A good product with very fast delivery. The box was damaged in transit, but the device inside arrived in good condition.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "31 Mar 2026",
         details: "Color: White",
         text:
           "Two relatives recommended this model to me. It matches the description and images, arrived earlier than expected and feels like excellent value for the quality.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "10 Mar 2026",
         details: "Color: White",
         text: "It ran smoothly from the first use and felt comfortable on my knee. I am happy to recommend it.",
@@ -47,7 +47,7 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         text: "This is the second one I have purchased. It arrived quickly and the device itself was well protected inside the package.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "01 Jan 2026",
         details: "Color: White",
         text:
@@ -72,7 +72,7 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         text: "The delivery was very fast and the massager is excellent.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "11 Dec 2025",
         details: "Color: White",
         text: "I bought it for my mother and it works very well. The massage surprised me and the heat feels strong.",
@@ -113,13 +113,13 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         text: "Works well and stretches the way I need.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "30 Jan 2026",
         details: "Color: Red, Size: L",
         text: "The smaller size fits me better for pickleball than the XL sleeve I bought before.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "20 Sep 2025",
         details: "Color: Black, Size: M",
         text: "The support helped me get through a long school and work day more comfortably.",
@@ -131,7 +131,7 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         text: "The material feels excellent and gives my legs good support.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "06 Mar 2026",
         details: "Color: Dark blue, Size: M",
         text: "Perfect fit and it looks high quality.",
@@ -148,7 +148,7 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         text: "The finish feels good, the fastening is durable and the compression is pleasantly firm during a 15 minute routine.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "13 May 2026",
         details: "2 pieces, 4 modes",
         text: "It arrived quickly. The squeezing and releasing action feels strong even before increasing the level, and the stitching looks better than in the photos.",
@@ -160,7 +160,7 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         text: "The pressure feels just right and the wireless design is convenient. It is good value for the price.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "01 Sep 2025",
         details: "1 piece, 3 modes",
         text: "The air pressure is strong and the massage feels cool and pleasant. Highly recommended.",
@@ -172,7 +172,7 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         text: "A good purchase with satisfying compression. Wearing the adjuster toward the side made the fit more comfortable for me.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "16 Aug 2025",
         details: "2 pieces, 3 modes",
         text: "Great value for money. The second pressure level is enough for my routine.",
@@ -184,7 +184,7 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         text: "The massage feels good and leaves my calves relaxed after a tiring day.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "04 Jun 2026",
         details: "1 piece, 3 modes",
         text: "I have been using it every evening since it arrived. Very good and easy to recommend.",
@@ -207,7 +207,7 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         text: "The controls are a little large, but the wrap fits well around my knee and the warmth feels great.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "26 Mar 2026",
         details: "Color: Black",
         text: "Everything works well. I am very pleased with the product.",
@@ -231,19 +231,19 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         text: "Fits really well and should be useful when my knees feel tight or sore. It was also packed nicely.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "30 Oct 2025",
         details: "Heating model, Black",
         text: "A solid product that works as described.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "23 May 2026",
         details: "Color: Black",
         text: "It arrived undamaged and works without any issues. The highest heat setting is especially comfortable in cold weather.",
       },
       {
-        name: "Anonymous customer",
+        name: "Buyer",
         date: "12 Feb 2026",
         details: "Color: Black",
         text: "Works perfectly and gets very warm on the highest setting. A power bank makes it easy to use away from an outlet.",
