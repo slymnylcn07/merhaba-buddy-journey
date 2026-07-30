@@ -14,7 +14,6 @@ import {
   ShoppingBag,
   Sparkles,
   Truck,
-  Star,
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -29,7 +28,9 @@ import { getProductPath, resolveShopifyProductHandle } from "@/lib/product-confi
 import { useCartStore } from "@/stores/cartStore";
 import { getProductProfile } from "@/data/product-profiles";
 import { PremiumProductStory } from "@/components/PremiumProductStory";
-import { FREE_SHIPPING_THRESHOLD, RETURN_WINDOW_DAYS } from "@/lib/policy-config";
+import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
+import { ProductReviewSummary } from "@/components/ProductReviews";
+import { buildMerchantOffer } from "@/lib/merchant-schema";
 
 function formatMoney(amount?: string, currencyCode?: string) {
   const value = Number(amount || 0);
@@ -197,41 +198,12 @@ export default function SecondaryProductDetail() {
       brand: { "@type": "Brand", name: "FlexiKnee" },
       description: profile.seoDescription,
       image: images.map((image) => image.url),
-      offers: variants.map((variant) => ({
-        "@type": "Offer",
+      offers: variants.map((variant) => buildMerchantOffer({
         sku: variant.sku || undefined,
-        availability: variant.availableForSale
-          ? "https://schema.org/InStock"
-          : "https://schema.org/OutOfStock",
-        itemCondition: "https://schema.org/NewCondition",
+        availability: variant.availableForSale,
         price: variant.price.amount,
         priceCurrency: variant.price.currencyCode,
         url: canonical,
-        shippingDetails: Number(variant.price.amount) > FREE_SHIPPING_THRESHOLD
-          ? {
-              "@type": "OfferShippingDetails",
-              shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
-              shippingRate: {
-                "@type": "MonetaryAmount",
-                value: "0",
-                currency: variant.price.currencyCode,
-              },
-              deliveryTime: {
-                "@type": "ShippingDeliveryTime",
-                handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
-                transitTime: { "@type": "QuantitativeValue", minValue: 6, maxValue: 7, unitCode: "DAY" },
-              },
-            }
-          : undefined,
-        hasMerchantReturnPolicy: {
-          "@type": "MerchantReturnPolicy",
-          applicableCountry: "US",
-          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-          merchantReturnDays: RETURN_WINDOW_DAYS,
-          returnMethod: "https://schema.org/ReturnByMail",
-          returnFees: "https://schema.org/ReturnShippingFees",
-          merchantReturnLink: "https://flexi-knee.com/refund-policy",
-        },
       })),
     };
 
@@ -369,21 +341,8 @@ export default function SecondaryProductDetail() {
 
             <aside className="min-w-0 xl:sticky xl:top-24 xl:self-start">
               <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.75)] lg:p-8">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">{profile.badge}</span>
-                  {pageConfig.reviewCount && (
-                    <span className="flex items-center gap-1.5 text-sm font-medium text-slate-700">
-                      <span className="flex items-center gap-0.5">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <Star key={star} className="h-4 w-4 fill-blue-600 text-blue-600" />
-                        ))}
-                      </span>
-                      {pageConfig.rating} out of 5 ({pageConfig.reviewCount} reviews)
-                    </span>
-                  )}
-                </div>
-
-                <h1 className="mt-4 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl">{profile.h1}</h1>
+                <h1 className="text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl">{profile.h1}</h1>
+                <ProductMarketplaceRating handle={handle} showCount linkToReviews prominent className="mt-3" />
                 <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">{profile.eyebrow}</p>
                 <p className="mt-3 text-sm font-medium text-blue-700">Best for: {profile.bestFor}</p>
                 <p className="mt-4 text-base leading-7 text-slate-600">{profile.summary}</p>
@@ -549,6 +508,8 @@ export default function SecondaryProductDetail() {
           visuals={profile.visuals}
           highlights={profile.highlights}
         />
+
+        <ProductReviewSummary handle={handle} productName={node.title} />
 
         <section className="bg-white py-14 lg:py-20">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">

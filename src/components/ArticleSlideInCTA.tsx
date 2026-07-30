@@ -9,6 +9,7 @@ import { Mail } from "lucide-react";
 import { DiscountCodeModal } from "@/components/DiscountCodeModal";
 import { NEWSLETTER_DISCOUNT_CODE } from "@/lib/newsletter-config";
 import { getProductPath } from "@/lib/product-config";
+import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
 
 // Urun gorselleri icin oturum ici tek istek (PremiumCTA ile ayni desen)
 let slideInProductsPromise: Promise<ShopifyProduct[]> | null = null;
@@ -388,7 +389,10 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
               </div>
 
               <div className="mt-3 flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-2xl bg-slate-50 px-3.5 py-2.5">
-                <span className="min-w-0 flex-1 truncate text-xs font-semibold text-slate-800">{productShortName}</span>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-xs font-semibold text-slate-800">{productShortName}</p>
+                  <ProductMarketplaceRating handle={rec.handle} showCount className="mt-1" />
+                </div>
                 <span className="text-sm font-bold text-slate-950">{rec.fallbackPrice}</span>
                 <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-semibold text-blue-700">30-day returns</span>
               </div>

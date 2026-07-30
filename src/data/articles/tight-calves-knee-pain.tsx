@@ -195,7 +195,7 @@ export const tightCalvesKneePain: ArticleExport = {
         <p>
           <strong>Step two, warm the tissue.</strong> Two minutes of easy walking, or warmth applied to the calf, makes the muscle far more willing to lengthen. This is the same principle covered in our guide on{" "}
           <Link to="/guides/heat-vs-ice-for-knees">heat versus ice</Link>: warmth before movement, cold for angry swelling. A warm towel, a shower or a{" "}
-          <Link to="/product/electric-knee-heating-pad-a-usb-powered-warming-knee-strap-suitable-for-joints-with-adjustable-heating-band-ideal-for-daily">USB heated wrap</Link>{" "}
+          <Link to="/product/flexiknee-usb-heated-knee-wrap">USB heated wrap</Link>{" "}
           all do the same job here.
         </p>
         <p>
@@ -255,9 +255,9 @@ export const tightCalvesKneePain: ArticleExport = {
           <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-slate-700">From our range</p>
           <p className="mb-0 text-slate-700">
             Nothing replaces the stretch and load routine above, and no device lengthens a muscle for you. What some people find useful alongside it is circulation support at the end of a long day, particularly after flights, long drives or hours on their feet, when calves feel heavy as well as tight. Our{" "}
-            <Link to="/product/360-electric-calf-massager-rechargeable-3-modes-air-compression-leg-massager-hot-compress-leg-massage-blood-circulation">360 air compression calf massager</Link>{" "}
+            <Link to="/product/flexiknee-calf-massager">360 air compression calf massager</Link>{" "}
             runs fifteen minute sessions for exactly that, and the{" "}
-            <Link to="/product/electric-knee-heating-pad-a-usb-powered-warming-knee-strap-suitable-for-joints-with-adjustable-heating-band-ideal-for-daily">USB heated knee wrap</Link>{" "}
+            <Link to="/product/flexiknee-usb-heated-knee-wrap">USB heated knee wrap</Link>{" "}
             is a simple way to warm the area before you stretch. Treat both as comfort tools that make the routine easier to keep, not as substitutes for it.
           </p>
         </div>

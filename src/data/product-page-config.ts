@@ -1,17 +1,11 @@
 /**
  * Ürün sayfası satın alma paneli yapılandırması. ÜRÜN BAŞINA.
  *
- * Her ürünün: 4 fayda ikonu, kullanım adımları, teklif kuralları
- * (24.99$ eşiğine göre kargo rozetleri) ve yorum sayısı alanı burada.
- *
- * reviewCount: Gerçek yorum sayınızı buraya girin (örn. Judge.me kurup ilk
- * gerçek yorumlar geldiğinde). null bırakılırsa sayı gösterilmez. Sitede
- * henüz var olmayan yorum sayıları yayınlamak ABD'de FTC'nin sahte yorum
- * kuralı kapsamında para cezası riskidir, bu alan o yüzden boş geliyor.
+ * Her ürünün fayda ikonları, kullanım adımları ve teklif kuralları burada.
+ * Dış pazar puanları product-marketplace-feedback.ts içinde ayrı tutulur.
  */
 
 import type { LucideIcon } from "lucide-react";
-import { MAIN_PRODUCT_RATING, MAIN_PRODUCT_REVIEW_COUNT } from "@/lib/main-product-rating";
 import {
   Flame,
   Sun,
@@ -38,8 +32,6 @@ export interface ProductBenefit {
 
 export interface ProductPageConfig {
   /** Yıldızların yanında gösterilecek gerçek yorum sayısı (null = gizli) */
-  reviewCount: number | null;
-  rating: number;
   benefits: ProductBenefit[];
   howToUse: string[];
   /** Tek adet fiyatı 24.99$ ve üzeriyse Buy 1 satırına FREE SHIPPING rozeti */
@@ -50,14 +42,10 @@ export interface ProductPageConfig {
   specs?: Array<{ label: string; value: string }>;
 }
 
-const SHARED_RATING = 4.8;
-
 export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
   main: {
     // Verified-purchase reviews for this exact product (aggregated at product
     // level via ProductReviews.tsx). Not presented as flexi-knee.com order volume.
-    reviewCount: MAIN_PRODUCT_REVIEW_COUNT,
-    rating: MAIN_PRODUCT_RATING,
     benefits: [
       { icon: Flame, label: "Adjustable warmth" },
       { icon: Sun, label: "Integrated red light" },
@@ -88,8 +76,6 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
     duoDiscountPct: 15,
   },
   "calf-massager": {
-    reviewCount: null,
-    rating: SHARED_RATING,
     benefits: [
       { icon: Wind, label: "360° air compression" },
       { icon: RefreshCw, label: "Circulation support" },
@@ -106,8 +92,6 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
     duoDiscountPct: 15,
   },
   "heated-wrap": {
-    reviewCount: null,
-    rating: SHARED_RATING,
     benefits: [
       { icon: Flame, label: "Gentle focused heat" },
       { icon: Plug, label: "USB powered" },
@@ -124,8 +108,6 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
     duoDiscountPct: 15,
   },
   "compression-sleeve": {
-    reviewCount: null,
-    rating: SHARED_RATING,
     benefits: [
       { icon: Shield, label: "Stable, supported feel" },
       { icon: Wind, label: "Breathable knit fabric" },
@@ -142,8 +124,6 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
     duoDiscountPct: 15,
   },
   insoles: {
-    reviewCount: null,
-    rating: SHARED_RATING,
     benefits: [
       { icon: Footprints, label: "Structured arch support" },
       { icon: Activity, label: "Shock absorption" },
@@ -160,8 +140,6 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
     duoDiscountPct: 15,
   },
   generic: {
-    reviewCount: null,
-    rating: SHARED_RATING,
     benefits: [
       { icon: Shield, label: "Daily knee comfort" },
       { icon: Clock, label: "Short simple routines" },

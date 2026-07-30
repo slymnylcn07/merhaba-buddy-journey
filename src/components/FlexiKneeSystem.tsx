@@ -4,6 +4,7 @@ import { ArrowRight, ImageOff } from "lucide-react";
 import { productSystem } from "@/data/product-system";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getProductPath } from "@/lib/product-config";
+import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
 
 type ProductKind = "massager" | "sleeve" | "calf" | "insoles" | "wrap" | "other";
 
@@ -116,7 +117,6 @@ function toLiveCard(product: ShopifyProduct): SystemCard {
 
 export const FlexiKneeSystem = () => {
   const [liveProducts, setLiveProducts] = useState<ShopifyProduct[]>([]);
-  const [hasFinishedLoading, setHasFinishedLoading] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -128,9 +128,6 @@ export const FlexiKneeSystem = () => {
       .catch(() => {
         if (active) setLiveProducts([]);
       })
-      .finally(() => {
-        if (active) setHasFinishedLoading(true);
-      });
 
     return () => {
       active = false;
@@ -170,23 +167,6 @@ export const FlexiKneeSystem = () => {
     }));
   }, [liveProducts]);
 
-  if (!hasFinishedLoading && liveProducts.length === 0) {
-    return (
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <div key={index} className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm">
-            <div className="aspect-[4/3] animate-pulse bg-slate-100" />
-            <div className="space-y-3 p-5">
-              <div className="h-3 w-24 animate-pulse rounded bg-slate-100" />
-              <div className="h-5 w-4/5 animate-pulse rounded bg-slate-100" />
-              <div className="h-12 animate-pulse rounded bg-slate-100" />
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  }
-
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
       {items.map((item) => (
@@ -216,6 +196,10 @@ export const FlexiKneeSystem = () => {
           <div className="p-5">
             <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-blue-600">{item.label}</p>
             <h3 className="mt-2 text-base font-semibold leading-snug tracking-tight text-slate-950">{item.name}</h3>
+            <ProductMarketplaceRating
+              handle={item.href.replace(/^\/product\//, "")}
+              className="mt-2"
+            />
             <p className="mt-2 min-h-[66px] text-sm leading-6 text-slate-500">{item.description}</p>
             <div className="mt-5 flex items-center justify-between gap-3">
               <span className="truncate text-sm font-semibold text-slate-950">{item.price}</span>

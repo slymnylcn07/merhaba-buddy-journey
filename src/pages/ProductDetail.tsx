@@ -8,7 +8,6 @@ import {
   ChevronRight,
   RotateCcw,
   Shield,
-  Star,
   Truck,
 } from "lucide-react";
 import { Header } from "@/components/Header";
@@ -28,6 +27,8 @@ import { useCartStore } from "@/stores/cartStore";
 import { featurePillars } from "@/data/product-system";
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { PremiumProductStory } from "@/components/PremiumProductStory";
+import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
+import { buildMerchantOffer } from "@/lib/merchant-schema";
 import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
 import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.webp";
@@ -187,12 +188,13 @@ export default function ProductDetail() {
   const productJsonLd = useMemo(() => ({
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `https://flexi-knee.com/product/${publicHandle}#product`,
     name: productTitle,
     brand: { "@type": "Brand", name: "FlexiKnee" },
     category: "Knee massager",
     description:
       "A cordless knee comfort device with adjustable warmth, an integrated red light mode, three massage vibration modes, and a wraparound fit with simple touch controls.",
-    image: "https://flexi-knee.com/images/shopify-gallery/flexiknee-gallery-01-main.webp",
+    image: gallery.map((image) => image.src),
     // Dogrulanmis teknik veriler (tedarikci teknik sayfasi). Tahmin edilen deger yok.
     additionalProperty: (pageConfig.specs || []).map((row) => ({
       "@type": "PropertyValue",
@@ -200,24 +202,14 @@ export default function ProductDetail() {
       value: row.value,
     })),
     weight: { "@type": "QuantitativeValue", value: 830, unitCode: "GRM" },
-    // Urun duzeyinde dogrulanmis alici yorumlari (magaza siparis hacmi degil).
-    aggregateRating: pageConfig.reviewCount
-      ? {
-          "@type": "AggregateRating",
-          ratingValue: String(pageConfig.rating),
-          reviewCount: String(pageConfig.reviewCount),
-        }
-      : undefined,
-    offers: {
-      "@type": "Offer",
-      availability: variant?.availableForSale
-        ? "https://schema.org/InStock"
-        : "https://schema.org/OutOfStock",
-      price: String(basePrice || 59.99),
+    offers: buildMerchantOffer({
+      availability: Boolean(variant?.availableForSale),
+      price: basePrice || 59.99,
       priceCurrency: currency,
-      url: `https://flexi-knee.com/product/${handle || "knee-massager-smart-red-light-and-massage-therapy"}`,
-    },
-  }), [basePrice, currency, handle, pageConfig, variant?.availableForSale]);
+      url: `https://flexi-knee.com/product/${publicHandle}`,
+      sku: variant?.sku || undefined,
+    }),
+  }), [basePrice, currency, gallery, pageConfig.specs, publicHandle, variant?.availableForSale, variant?.sku]);
 
   if (isLoading) {
     return (
@@ -367,23 +359,15 @@ export default function ProductDetail() {
 
             <aside className="min-w-0 xl:sticky xl:top-24 xl:self-start">
               <div className="rounded-[1.8rem] border border-slate-200 bg-white p-5 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.7)] sm:p-6 lg:rounded-[2rem] lg:p-8">
+                <h1 className="text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">{productTitle}</h1>
                 <button
                   type="button"
                   onClick={() => document.getElementById("product-reviews")?.scrollIntoView({ behavior: "smooth" })}
-                  className="group flex flex-wrap items-center gap-2"
-                  aria-label="Jump to customer reviews"
+                  className="group mt-3 flex flex-wrap items-center gap-2"
+                  aria-label="Jump to buyer reviews"
                 >
-                  <div className="flex items-center gap-1 text-blue-600">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="h-4 w-4 fill-blue-600" />
-                    ))}
-                  </div>
-                  <span className="text-sm font-medium text-slate-700 underline-offset-4 group-hover:text-blue-700 group-hover:underline">
-                    {pageConfig.rating}
-                    {pageConfig.reviewCount ? ` out of 5 (${pageConfig.reviewCount} reviews)` : " rating"}
-                  </span>
+                  <ProductMarketplaceRating handle={publicHandle} showCount prominent />
                 </button>
-                <h1 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">{productTitle}</h1>
                 <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">Smart daily knee comfort</p>
 
                 <p className="mt-5 text-base leading-7 text-slate-600">

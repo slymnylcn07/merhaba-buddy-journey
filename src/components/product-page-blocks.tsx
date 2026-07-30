@@ -22,7 +22,7 @@ export const BenefitIconsRow = ({ benefits }: { benefits: ProductBenefit[] }) =>
         <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50">
           <Icon className="h-5 w-5 text-blue-600" />
         </span>
-        <span className="mt-2 text-[11px] font-medium leading-tight text-slate-700">
+        <span className="mt-2 text-xs font-medium leading-tight text-slate-700">
           {label}
         </span>
       </div>

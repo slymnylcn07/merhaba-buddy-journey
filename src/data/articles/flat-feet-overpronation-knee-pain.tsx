@@ -197,7 +197,7 @@ export const flatFeetOverpronationKneePain: ArticleExport = {
           <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-slate-700">Worth trying early</p>
           <p className="mb-0 text-slate-700">
             Arch support is the cheapest, fastest and most reversible experiment in this whole article, which is why it sits before strengthening and long before anything clinical. Our{" "}
-            <Link to="/product/sport-orthopedic-insoles-for-feet-men-women-eva-breathable-shock-absorption-shoes-insole-for-running-basketball-sport-care-pads">FlexiKnee Sport Orthopedic Insoles</Link>{" "}
+            <Link to="/product/flexiknee-sport-orthopedic-insoles">FlexiKnee Sport Orthopedic Insoles</Link>{" "}
             are structured, shock absorbing and trim to fit, which makes them a reasonable way to find out whether changing what happens under your foot changes what your knee feels. Give any insole two to three weeks before you judge it, and read our{" "}
             <Link to="/guides/best-insoles-for-knee-pain-2026">insole buying guide</Link> first if you want to compare types rather than buy blind.
           </p>

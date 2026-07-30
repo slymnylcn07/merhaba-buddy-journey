@@ -35,8 +35,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     fallbackImage: "/images/shopify-gallery/flexiknee-gallery-01-main.webp",
   },
   calf: {
-    handle:
-      "360-electric-calf-massager-rechargeable-3-modes-air-compression-leg-massager-hot-compress-leg-massage-blood-circulation",
+    handle: "flexiknee-calf-massager",
     title: "FlexiKnee Rechargeable Calf Recovery Massager",
     benefit:
       "Air compression and warmth for lower-leg circulation after flights, long drives, and desk-heavy days.",
@@ -44,8 +43,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     fallbackImage: "/images/product-stories/calf-massager-closeup.webp",
   },
   insoles: {
-    handle:
-      "sport-orthopedic-insoles-for-feet-men-women-eva-breathable-shock-absorption-shoes-insole-for-running-basketball-sport-care-pads",
+    handle: "flexiknee-sport-orthopedic-insoles",
     title: "FlexiKnee Sport Orthopedic Insoles",
     benefit:
       "Structured arch support that improves how load travels from your feet to your knees from the ground up.",
@@ -53,7 +51,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     fallbackImage: "/images/product-stories/insoles-closeup-fit.webp",
   },
   sleeve: {
-    handle: "flexiknee™-compression-support-sleeve",
+    handle: "flexiknee-compression-support-sleeve",
     title: "FlexiKnee Compression Support Sleeve",
     benefit:
       "Breathable compression for a supported, stable feel during walking, work, and training.",
@@ -61,8 +59,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     fallbackImage: "/images/product-stories/compression-sleeve-closeup.webp",
   },
   wrap: {
-    handle:
-      "electric-knee-heating-pad-a-usb-powered-warming-knee-strap-suitable-for-joints-with-adjustable-heating-band-ideal-for-daily",
+    handle: "flexiknee-usb-heated-knee-wrap",
     title: "FlexiKnee USB Heated Knee Wrap",
     benefit:
       "Simple, focused warmth for desk sessions and low-effort daily warming routines.",
