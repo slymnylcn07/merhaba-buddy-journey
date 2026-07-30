@@ -25,6 +25,9 @@ const AdminAuth = lazy(() => import("./pages/AdminAuth"));
 const AdminReturns = lazy(() => import("./pages/AdminReturns"));
 const WhyFlexiKnee = lazy(() => import("./pages/WhyFlexiKnee"));
 const Guides = lazy(() => import("./pages/Guides"));
+const GuideCategoryPage = lazy(() =>
+  import("./pages/Guides").then((module) => ({ default: module.GuideCategoryPage }))
+);
 const Shop = lazy(() => import("./pages/Shop"));
 const KneeQuiz = lazy(() => import("./pages/KneeQuiz"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -104,6 +107,12 @@ const App = () => {
                   <Route path="/guides/heat-or-ice-knee-pain-situations" element={<Navigate to="/guides/heat-vs-ice-for-knees" replace />} />
                   <Route path="/guides/heat-or-ice-knee-pain-science" element={<Navigate to="/guides/heat-vs-ice-for-knees" replace />} />
                   <Route path="/guides" element={<Guides />} />
+                  <Route path="/guides/symptoms" element={<GuideCategoryPage categoryKey="symptoms" />} />
+                  <Route path="/guides/activities" element={<GuideCategoryPage categoryKey="activities" />} />
+                  <Route path="/guides/aging-women" element={<GuideCategoryPage categoryKey="aging-women" />} />
+                  <Route path="/guides/daily-routines" element={<GuideCategoryPage categoryKey="daily-routines" />} />
+                  <Route path="/guides/supplements" element={<GuideCategoryPage categoryKey="supplements" />} />
+                  <Route path="/guides/devices" element={<GuideCategoryPage categoryKey="devices" />} />
                   <Route path="/guides/:slug" element={<GuideArticle />} />
                   <Route path="/admin" element={<AdminAuth />} />
                   <Route path="/admin/returns" element={<AdminReturns />} />

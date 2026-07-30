@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { ArrowRight, Search, X, Clock, ChevronDown, ArrowUp, Sparkles, Check } from "lucide-react";
+import { ArrowRight, Search, X, Clock, ArrowUp, Sparkles, Check } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { guidesData } from "@/data/guides";
@@ -327,7 +327,7 @@ const isNewGuide = (value?: string) => {
   return Date.now() - time <= TWENTY_ONE_DAYS;
 };
 
-// ?? Section configurations ??
+// Guide library configuration
 
 const featuredSlugs = [
   "what-causes-knee-pain-guide",
@@ -336,126 +336,203 @@ const featuredSlugs = [
   "knee-pain-after-exercise",
 ];
 
-// Priority Guides (high-impact SEO articles)
-const prioritySlugs = [
-  "knee-pain-after-exercise",
-  "knee-clicking-when-walking",
-  "knee-pain-going-down-stairs",
-  "infrared-knee-massager-guide-2026",
-];
-
-const priorityDescriptions: Record<string, string> = {
-  "knee-pain-after-exercise": "Understand why knee soreness appears hours after exercise, the difference between normal fatigue and warning signs, and recovery strategies that work.",
-  "knee-clicking-when-walking": "Learn why your knee clicks during walking, bending, and stairs, what different sounds mean, and when clicking deserves attention.",
-  "knee-pain-going-down-stairs": "Learn why stair descent may provoke knee pain, how location and next-day response guide decisions, and how to rebuild stair capacity safely.",
-  "infrared-knee-massager-guide-2026": "Compare the best infrared knee massagers of 2026, understand how infrared therapy works, and find the right device for your daily routine.",
-};
-
-// Category 1: Knee Discomfort by Location
 const locationSlugs = [
-  // Top 4 (shown in grid)
+  "knee-pain-locations-visual-guide",
+  "what-causes-knee-pain-guide",
+  "sharp-knee-pain-guide",
   "back-of-knee-pain-explained",
   "side-knee-pain-comfort-guide",
-  "sharp-knee-pain-guide",
-  // Accordion
   "top-of-knee-pain-patterns",
   "front-knee-tightness-after-activity",
   "knee-discomfort-lower-back-hips",
   "below-knee-discomfort-teens-adults",
   "intermittent-knee-pain-guide",
-  "knee-pain-locations-visual-guide",
   "it-band-pain-location-diagram",
-  "what-causes-knee-pain-guide",
   "sudden-knee-pain-guide",
-];
-
-// Category 2: Knee Discomfort by Activity
-const activitySlugs = [
-  // Top 4
-  "running-knee-pain-guide",
-  "pickleball-knee-recovery-routine",
-  "knee-arthritis-pain-guide",
-  "how-to-strengthen-knees",
-  // Accordion
-  "best-low-impact-cardio-knee-pain",
-  "backward-walking-knee-pain",
-  "understanding-knee-injuries",
-  "best-running-shoes-knee-pain",
-  "how-to-fix-knee-pain",
-  "runners-knee-pain-location",
-  "why-do-my-knees-crack-or-pop",
-  "knee-clicking-when-walking",
-  "knee-pain-after-sitting-cross-legged",
-  "knee-pain-getting-up-after-sitting",
-  "knee-tightness-without-pain",
-  "knee-pain-after-standing",
-  "knee-pain-exercises-guide",
-  "what-causes-knee-pain-guide",
-  "cold-weather-knee-pain",
-  "knee-pain-after-exercise",
-  "knee-pain-when-squatting",
+  "burning-sensation-in-knee",
+  "why-knee-pain-doesnt-go-away",
+  "warm-feeling-in-knee",
+  "heavy-feeling-in-knees",
   "knee-weakness-without-pain",
   "plica-syndrome-knee-pain",
   "knee-bursitis-guide",
-  "knee-pain-after-car-rides",
-  "warm-feeling-in-knee",
-  "heavy-feeling-in-knees",
-  "knee-pain-when-kneeling",
+  "knee-osteoarthritis-vs-rheumatoid-arthritis",
+  "varicose-veins-knee-pain",
+  "why-do-my-knees-hurt-when-sleeping",
   "pain-behind-kneecap",
-  "exercises-to-relieve-knee-pain-at-home",
-  "knee-swelling-after-exercise",
 ];
 
-// Category 3: Aging, Women & Life Stages
+const activitySlugs = [
+  "knee-pain-after-exercise",
+  "knee-pain-going-down-stairs",
+  "running-knee-pain-guide",
+  "knee-pain-climbing-stairs",
+  "knee-pain-when-squatting",
+  "knee-pain-when-hiking",
+  "knee-pain-during-yoga",
+  "cycling-knee-pain-bike-fit",
+  "pickleball-knee-recovery-routine",
+  "knee-pain-after-long-walks",
+  "knee-pain-after-flights",
+  "knee-pain-after-car-rides",
+  "knee-pain-after-standing",
+  "knee-pain-getting-up-after-sitting",
+  "knee-pain-after-sitting-cross-legged",
+  "knee-pain-when-kneeling",
+  "burning-knees-after-exercise",
+  "knee-ache-after-leg-workouts",
+  "knee-swelling-after-exercise",
+  "knee-recovery-exercises-after-workout",
+  "best-running-shoes-knee-pain",
+  "best-insoles-for-knee-pain-2026",
+  "flat-feet-overpronation-knee-pain",
+  "tight-calves-knee-pain",
+  "runners-knee-pain-location",
+  "knee-clicking-when-walking",
+  "why-do-my-knees-crack-or-pop",
+  "knee-tightness-without-pain",
+  "knee-pain-exercises-guide",
+  "exercises-to-relieve-knee-pain-at-home",
+  "how-to-strengthen-knees",
+  "best-low-impact-cardio-knee-pain",
+  "backward-walking-knee-pain",
+  "understanding-knee-injuries",
+  "knee-arthritis-pain-guide",
+  "how-to-fix-knee-pain",
+  "cold-weather-knee-pain",
+];
+
 const lifeStageSlugs = [
-  "menopause-knee-pain",
   "knee-pain-after-40",
+  "menopause-knee-pain",
+  "knee-pain-at-night-after-40",
   "why-knee-pain-gets-worse-with-age",
   "morning-knee-stiffness-after-40",
-  "knee-pain-at-night-after-40",
   "knee-mobility-after-50",
   "women-men-knee-comfort-patterns",
+  "weight-affects-knee-pain",
+  "why-do-my-knees-hurt-when-sleeping",
+  "knee-osteoarthritis-vs-rheumatoid-arthritis",
+  "varicose-veins-knee-pain",
 ];
 
-// Category 4: At-Home Methods & Daily Comfort
 const methodsSlugs = [
-  // Top 4
-  "heat-vs-red-light-therapy",
   "heat-vs-ice-for-knees",
+  "daily-knee-care-routine",
+  "home-remedies-knee-pain",
+  "how-to-sleep-with-knee-pain",
+  "it-band-foam-rolling-step-by-step",
+  "knee-recovery-exercises-after-workout",
+  "exercises-to-relieve-knee-pain-at-home",
+  "how-to-strengthen-knees",
+  "knee-warmth-daily-comfort",
+  "heat-vs-red-light-therapy",
+  "warmth-vs-infrared-knee-routines",
   "red-light-therapy-dose-knees",
   "red-light-therapy-for-knees",
-  // Accordion
-  "daily-knee-care-routine",
-  "warmth-vs-infrared-knee-routines",
   "is-infrared-safe-for-knees",
   "who-benefits-from-knee-therapy-devices",
   "heat-red-light-therapy-benefits-2026",
-  "knee-warmth-daily-comfort",
   "best-red-light-therapy-knee",
+  "knee-brace-vs-compression-sleeve",
+  "knee-compression-sleeve-sizing-guide",
 ];
 
-// Category 5: Supplements & Evidence
 const supplementSlugs = [
-  "glucosamine-chondroitin-knee-pain",
   "best-supplements-for-knee-pain",
+  "glucosamine-chondroitin-knee-pain",
+  "collagen-peptides-knee-pain",
+  "turmeric-curcumin-knee-pain",
 ];
 
-// Category 6: Device Comparisons & Buying Guides
 const deviceSlugs = [
-  // Top 4
+  "do-knee-massagers-work",
+  "smart-heated-knee-braces-2026",
+  "infrared-knee-massager-guide-2026",
   "flexiknee-review-2026",
   "flexiknee-vs-competitors-2026",
   "best-heated-knee-massager-arthritis",
   "best-infrared-knee-massagers",
-  // Accordion
-  "smart-heated-knee-braces-2026",
-  "infrared-knee-massager-guide-2026",
   "infrared-vs-heating-pads",
-  "do-knee-massagers-work",
   "smart-knee-massagers-breakdown",
+  "air-compression-leg-massagers-do-they-work",
+  "cordless-rechargeable-heated-knee-massagers-2026",
+  "knee-brace-vs-compression-sleeve",
+  "knee-compression-sleeve-sizing-guide",
+  "best-insoles-for-knee-pain-2026",
 ];
 
-// ?? Skeleton components ??
+type GuideCategoryKey =
+  | "symptoms"
+  | "activities"
+  | "aging-women"
+  | "daily-routines"
+  | "supplements"
+  | "devices";
+
+type GuideCategoryConfig = {
+  path: string;
+  eyebrow: string;
+  title: string;
+  shortTitle: string;
+  description: string;
+  slugs: string[];
+};
+
+const guideCategoryConfigs: Record<GuideCategoryKey, GuideCategoryConfig> = {
+  symptoms: {
+    path: "/guides/symptoms",
+    eyebrow: "Symptoms and locations",
+    title: "Knee Pain Guides by Symptom and Location",
+    shortTitle: "By Symptom",
+    description: "Start with where and how your knee feels different, then compare common patterns such as sharp pain, burning, heaviness, swelling, or pain around the kneecap.",
+    slugs: locationSlugs,
+  },
+  activities: {
+    path: "/guides/activities",
+    eyebrow: "Movement and exercise",
+    title: "Knee Pain Guides by Activity",
+    shortTitle: "By Activity",
+    description: "Explore knee pain patterns linked with exercise, stairs, running, walking, sitting, standing, travel, and everyday movement.",
+    slugs: activitySlugs,
+  },
+  "aging-women": {
+    path: "/guides/aging-women",
+    eyebrow: "Age and life stages",
+    title: "Knee Pain Guides for Women and Healthy Aging",
+    shortTitle: "Aging & Women",
+    description: "Understand how age, menopause, sleep, morning stiffness, mobility, and changing daily loads can shape knee comfort.",
+    slugs: lifeStageSlugs,
+  },
+  "daily-routines": {
+    path: "/guides/daily-routines",
+    eyebrow: "At-home comfort",
+    title: "Daily Knee Care and At-Home Routine Guides",
+    shortTitle: "Daily Routines",
+    description: "Build practical routines around heat, ice, sleep, gentle exercise, mobility, and other at-home comfort options.",
+    slugs: methodsSlugs,
+  },
+  supplements: {
+    path: "/guides/supplements",
+    eyebrow: "Evidence and safety",
+    title: "Knee Supplement Guides",
+    shortTitle: "Supplements",
+    description: "Compare evidence, realistic benefits, product forms, safety points, and interactions for popular knee supplements.",
+    slugs: supplementSlugs,
+  },
+  devices: {
+    path: "/guides/devices",
+    eyebrow: "Products and comparisons",
+    title: "Knee Device Reviews and Buying Guides",
+    shortTitle: "Device Guides",
+    description: "Compare heated braces, knee massagers, red light devices, compression supports, and other comfort products before you buy.",
+    slugs: deviceSlugs,
+  },
+};
+
+const guideCategoryList = Object.entries(guideCategoryConfigs) as [GuideCategoryKey, GuideCategoryConfig][];
+
+// Skeleton components
 
 const FeaturedCardSkeleton = () => (
   <div className="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm">
@@ -553,84 +630,62 @@ const SectionHeader = ({ id, title, subtitle }: { id: string; title: string; sub
   </div>
 );
 
-// Category Section with top 4 + accordion
-const CategorySection = ({
-  id,
-  title,
-  subtitle,
-  contextText,
-  allSlugs,
-  isLoading,
-  bgWhite = false,
-}: {
-  id: string;
-  title: string;
-  subtitle: string;
-  contextText?: React.ReactNode;
-  allSlugs: string[];
-  isLoading: boolean;
-  bgWhite?: boolean;
-}) => {
-  const [expanded, setExpanded] = useState(false);
-  const allGuides = allSlugs.map(getGuide).filter(Boolean) as typeof guides;
-  const topGuides = allGuides.slice(0, 4);
-  const remainingGuides = allGuides.slice(4);
+const CategoryPreviewCard = ({ category }: { category: GuideCategoryConfig }) => {
+  const categoryGuides = category.slugs.map(getGuide).filter(Boolean) as typeof guides;
+  const previewGuides = categoryGuides.slice(0, 3);
 
   return (
-    <section className={`py-12 md:py-16 ${bgWhite ? 'bg-white' : ''}`}>
-      <div className="container px-4 max-w-6xl mx-auto">
-        <SectionHeader id={id} title={title} subtitle={subtitle} />
-        {contextText && (
-          <p className="text-sm text-slate-600 leading-relaxed max-w-3xl mb-6 -mt-4">
-            {contextText}
-          </p>
-        )}
-        {isLoading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {[1, 2, 3, 4].map((i) => <CardSkeleton key={i} />)}
-          </div>
-        ) : (
-          <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {topGuides.map((guide) => (
-                <GuideCard key={guide.slug} guide={guide} />
-              ))}
-            </div>
-
-            {remainingGuides.length > 0 && (
-              <div className="mt-6">
-                <button
-                  onClick={() => setExpanded(!expanded)}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-primary transition-colors group"
-                >
-                  <span>View All Articles in This Category ({allGuides.length})</span>
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`} />
-                </button>
-
-                <div
-                  className={`transition-all duration-500 ease-in-out ${
-                    expanded ? 'mt-5 opacity-100 max-h-[8000px]' : 'max-h-0 opacity-0 overflow-hidden'
-                  }`}
-                >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                    {remainingGuides.map((guide) => (
-                      <GuideCard key={guide.slug} guide={guide} compact />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-          </>
-        )}
+    <article className="flex h-full flex-col rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl md:p-6">
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">{category.eyebrow}</p>
+        <h3 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-slate-950">{category.shortTitle}</h3>
+        <p className="mt-3 text-sm leading-6 text-slate-600">{category.description}</p>
       </div>
-    </section>
+
+      <div className="mt-6 space-y-3">
+        {previewGuides.map((guide) => (
+          <Link
+            key={guide.slug}
+            to={`/guides/${guide.slug}`}
+            className="group flex items-center gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-2.5 transition hover:border-blue-200 hover:bg-blue-50/60"
+          >
+            <ResponsiveImage
+              src={guide.thumbnail}
+              avifSrc={guide.thumbnailAvif}
+              alt=""
+              className="h-16 w-20 rounded-xl object-cover"
+              pictureClassName="block h-16 w-20 flex-none"
+              sizes="80px"
+              width={160}
+              height={128}
+            />
+            <span className="min-w-0">
+              <span className="line-clamp-2 text-sm font-semibold leading-5 text-slate-900 transition-colors group-hover:text-blue-700">
+                {guide.title}
+              </span>
+              <span className="mt-1 inline-flex items-center gap-1 text-xs text-slate-500">
+                <Clock className="h-3 w-3" />
+                {guide.readTime} min
+              </span>
+            </span>
+          </Link>
+        ))}
+      </div>
+
+      <Link
+        to={category.path}
+        className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600"
+      >
+        Explore all {categoryGuides.length} guides
+        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+      </Link>
+    </article>
   );
 };
 
 const Guides = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const [showAllGuides, setShowAllGuides] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const searchResultsRef = useRef<HTMLDivElement>(null);
 
@@ -649,16 +704,6 @@ const Guides = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  const scrollToSection = useCallback((sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerOffset = 100;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-    }
-  }, []);
-
   const filteredGuides = guides.filter(
     (guide) =>
       guide.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -670,7 +715,7 @@ const Guides = () => {
   const latestGuides = useMemo(() => {
     return [...guides]
       .sort((a, b) => getGuidePublishedTime(b) - getGuidePublishedTime(a))
-      .slice(0, 6);
+      .slice(0, 3);
   }, []);
 
   const canonicalUrl = "https://flexi-knee.com/guides";
@@ -786,21 +831,14 @@ const Guides = () => {
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2">
-                  {[
-                    ["By Symptom", "by-location"],
-                    ["By Activity", "by-activity"],
-                    ["Aging & Women", "by-life-stage"],
-                    ["Daily Routine", "by-methods"],
-                    ["Supplements", "by-supplements"],
-                    ["Device Guides", "by-devices"],
-                  ].map(([label, id]) => (
-                    <button
-                      key={label}
-                      onClick={() => scrollToSection(id)}
+                  {guideCategoryList.map(([, category]) => (
+                    <Link
+                      key={category.path}
+                      to={category.path}
                       className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur transition hover:bg-white hover:text-slate-950"
                     >
-                      {label}
-                    </button>
+                      {category.shortTitle}
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -853,7 +891,7 @@ const Guides = () => {
 
                       <p className="mt-3.5 flex items-center gap-1.5 text-[11px] text-slate-400">
                         <Check className="h-3.5 w-3.5 text-emerald-400" />
-                        Free · no email required · instant result
+                        Free, no email required, instant result
                       </p>
                     </div>
                   </div>
@@ -864,7 +902,7 @@ const Guides = () => {
                       <p className="mt-1 text-xs font-medium text-slate-500">Guides</p>
                     </div>
                     <div className="rounded-2xl bg-white/95 p-4 text-slate-950 shadow-sm">
-                      <p className="text-2xl font-semibold">7</p>
+                      <p className="text-2xl font-semibold">{guideCategoryList.length}</p>
                       <p className="mt-1 text-xs font-medium text-slate-500">Topic paths</p>
                     </div>
                   </div>
@@ -903,92 +941,63 @@ const Guides = () => {
         {/* Main Content - Hide when searching */}
         {!showSearchResults && (
           <>
-            {/* Featured Guides - Priority Articles */}
+            {/* Start Here */}
             <section className="py-12 md:py-16 bg-white">
               <div className="container px-4 max-w-6xl mx-auto">
                 <SectionHeader 
-                  id="priority-guides"
-                  title="Featured Guides"
-                  subtitle="Our most-read guides covering the knee concerns people search for most."
+                  id="start-here"
+                  title="Start Here"
+                  subtitle="Four clear starting points for understanding common knee symptoms, activity-related pain, and simple at-home choices."
                 />
+                <p className="text-sm text-slate-600 leading-relaxed max-w-3xl mb-6 -mt-4">
+                  New to the library? Begin with <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">what causes knee pain</Link>, then choose the guide that best matches what you notice during daily life.
+                </p>
                 {isLoading ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[1, 2, 3, 4].map((i) => <FeaturedCardSkeleton key={i} />)}
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {prioritySlugs.map(slug => {
-                      const guide = getGuide(slug);
-                      if (!guide) return null;
-                      return (
-                        <Link key={slug} to={`/guides/${slug}`} className="group block">
-                          <article className="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 h-full border-2 border-primary/10">
-                            <div className="aspect-[4/3] overflow-hidden">
-                              <ResponsiveImage
-                                src={guide.thumbnail}
-                                avifSrc={guide.thumbnailAvif}
-                                alt={guide.title}
-                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                pictureClassName="block h-full w-full"
-                                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                                width={1200}
-                                height={750}
-                              />
-                            </div>
-                            <div className="p-5 md:p-6">
-                              <div className="flex items-center gap-2 mb-3">
-                                <span className="text-xs font-medium text-primary uppercase tracking-wider">Featured</span>
-                                <span className="inline-flex items-center gap-1 text-xs text-blue-600">
-                                  <Clock className="h-3 w-3" />
-                                  {guide.readTime} min
-                                </span>
-                              </div>
-                              <h3 className="text-lg md:text-xl font-semibold text-slate-950 leading-snug mb-2 group-hover:text-primary transition-colors">
-                                {guide.title}
-                              </h3>
-                              <p className="text-sm text-slate-600 leading-relaxed line-clamp-2">{priorityDescriptions[slug] || guide.description}</p>
-                            </div>
-                          </article>
-                        </Link>
-                      );
-                    })}
+                    {featuredGuides.map((guide) => (
+                      <FeaturedGuideCard key={guide.slug} guide={guide} />
+                    ))}
                   </div>
                 )}
               </div>
             </section>
 
-            {/* Micro text under Featured Guides */}
-            <section className="pb-8 bg-white -mt-6">
-              <div className="container px-4 max-w-4xl mx-auto">
-                <p className="text-sm text-slate-600 leading-relaxed text-center">
-                  These guides cover the most common knee discomfort situations, from knee pain during movement to post-activity soreness. A practical starting point for understanding common knee issues.
-                </p>
+            {/* Browse by topic */}
+            <section className="border-y border-slate-200 bg-slate-50 py-12 md:py-16">
+              <div className="container mx-auto max-w-6xl px-4">
+                <SectionHeader
+                  id="browse-by-topic"
+                  title="Browse by Topic"
+                  subtitle="Choose the path that best matches your question. Each topic page brings the most relevant guides together without making you scan the full library."
+                />
+                <div className="grid gap-5 lg:grid-cols-2">
+                  {guideCategoryList.map(([, category]) => (
+                    <CategoryPreviewCard key={category.path} category={category} />
+                  ))}
+                </div>
               </div>
             </section>
 
             {/* Latest Guides */}
-            <section className="border-y border-slate-200 bg-slate-50 py-12 md:py-16">
+            <section className="bg-white py-12 md:py-16">
               <div className="container mx-auto max-w-6xl px-4">
                 <div className="mb-7 flex flex-col justify-between gap-4 md:flex-row md:items-end">
                   <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">New & recently updated</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">New in the library</p>
                     <h2 className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-slate-950 md:text-3xl">Latest Guides</h2>
                     <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-                      Automatically sorted by publish date so genuinely new guides stay on top, while older guides do not jump ahead just because they were edited.
+                      See the newest topics added to the FlexiKnee guide library.
                     </p>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => setShowAllGuides(true)}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600"
-                  >
-                    Browse all guides <ArrowRight className="h-4 w-4" />
-                  </button>
                 </div>
 
                 {isLoading ? (
                   <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                    {[1, 2, 3, 4, 5, 6].map((item) => <CardSkeleton key={item} />)}
+                    {[1, 2, 3].map((item) => <CardSkeleton key={item} />)}
                   </div>
                 ) : (
                   <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -1025,113 +1034,6 @@ const Guides = () => {
               </div>
             </section>
 
-            {/* Start Here */}
-            <section className="py-12 md:py-16">
-              <div className="container px-4 max-w-6xl mx-auto">
-                <SectionHeader 
-                  id="featured"
-                  title="Start Here: Core Knee Guides"
-                  subtitle="Our locomotive guides: the highest-leverage starting points for understanding symptoms, daily routines, and what to try next."
-                />
-                <p className="text-sm text-slate-600 leading-relaxed max-w-3xl mb-6 -mt-4">
-                  Start with <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">what causes knee pain</Link>, then move to <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat vs. ice</Link>, <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">knee clicking while walking</Link>, and <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">post-exercise knee pain</Link> for the clearest entry points into the library.
-                </p>
-                {isLoading ? (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {[1, 2, 3, 4].map((i) => <FeaturedCardSkeleton key={i} />)}
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {featuredGuides.map((guide) => (
-                      <FeaturedGuideCard key={guide.slug} guide={guide} />
-                    ))}
-                  </div>
-                )}
-              </div>
-            </section>
-
-            {/* Category 1: By Location */}
-            <CategorySection
-              id="by-location"
-              title="Knee Discomfort by Location"
-              subtitle="Learn what discomfort in different knee areas often indicates and how patterns vary by location."
-              contextText={<>Pinpoint your discomfort: explore guides on the <Link to="/guides/back-of-knee-pain-explained" className="text-primary hover:underline">back of the knee</Link>, <Link to="/guides/side-knee-pain-comfort-guide" className="text-primary hover:underline">inner and outer sides</Link>, and other specific areas.</>}
-              allSlugs={locationSlugs}
-              isLoading={isLoading}
-              bgWhite
-            />
-
-            {/* Contextual bridge */}
-            <section className="py-6">
-              <div className="container px-4 max-w-4xl mx-auto">
-                <p className="text-slate-600 text-sm leading-relaxed text-center">
-                  Knee discomfort often shows up during movement. Whether you notice <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise</Link>, hear <Link to="/guides/knee-clicking-when-walking" className="text-primary hover:underline">clicking while walking</Link>, or feel aching when <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">going down stairs</Link>, activity-related guides can help.
-                </p>
-              </div>
-            </section>
-
-            {/* Category 2: By Activity */}
-            <CategorySection
-              id="by-activity"
-              title="Knee Discomfort by Activity"
-              subtitle="Understand why exercises, sports, stairs, and daily movements affect your knees differently."
-              contextText={<>Explore how <Link to="/guides/pickleball-knee-recovery-routine" className="text-primary hover:underline">pickleball</Link>, <Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">climbing stairs</Link>, <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">squatting</Link>, and <Link to="/guides/knee-pain-when-hiking" className="text-primary hover:underline">hiking</Link> each challenge the knees in different ways.</>}
-              allSlugs={activitySlugs}
-              isLoading={isLoading}
-            />
-
-            {/* Category 3: Aging, Women & Life Stages */}
-            <CategorySection
-              id="by-life-stage"
-              title="Aging, Women & Life Stages"
-              subtitle="Understand how midlife, menopause, age-related changes, sleep, and recovery can shape knee symptoms."
-              contextText={<>Start with our guide to <Link to="/guides/menopause-knee-pain" className="text-primary hover:underline">menopause and knee pain</Link>, then explore <Link to="/guides/knee-pain-after-40" className="text-primary hover:underline">knee pain after 40</Link> and practical ways to maintain <Link to="/guides/knee-mobility-after-50" className="text-primary hover:underline">knee mobility after 50</Link>.</>}
-              allSlugs={lifeStageSlugs}
-              isLoading={isLoading}
-              bgWhite
-            />
-
-            {/* Category 4: At-Home Methods */}
-            <CategorySection
-              id="by-methods"
-              title="At-Home Methods & Daily Comfort"
-              subtitle="Practical at-home approaches for knee comfort, from heat and cold therapy to daily routines."
-              contextText={<>Compare <Link to="/guides/heat-vs-ice-for-knees" className="text-primary hover:underline">heat vs. ice therapy</Link>, understand <Link to="/guides/red-light-therapy-dose-knees" className="text-primary hover:underline">red-light dose and session timing</Link>, or build a <Link to="/guides/daily-knee-care-routine" className="text-primary hover:underline">daily knee care routine</Link> that fits your lifestyle.</>}
-              allSlugs={methodsSlugs}
-              isLoading={isLoading}
-            />
-
-            {/* Category 5: Supplements & Evidence */}
-            <CategorySection
-              id="by-supplements"
-              title="Supplements & Evidence"
-              subtitle="Evidence-led guides to popular knee supplements, realistic benefits, product forms, safety, and interactions."
-              contextText={<>Compare our overview of the <Link to="/guides/best-supplements-for-knee-pain" className="text-primary hover:underline">best supplements for knee pain</Link> with the deeper guide to <Link to="/guides/glucosamine-chondroitin-knee-pain" className="text-primary hover:underline">glucosamine and chondroitin</Link>.</>}
-              allSlugs={supplementSlugs}
-              isLoading={isLoading}
-              bgWhite
-            />
-
-            {/* Contextual bridge between Methods and Devices */}
-            <section className="py-6">
-              <div className="container px-4 max-w-4xl mx-auto">
-                <p className="text-slate-600 text-sm leading-relaxed text-center">
-                  Ready to choose a device? People dealing with <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">post-exercise discomfort</Link> or <Link to="/guides/morning-knee-stiffness-after-40" className="text-primary hover:underline">morning stiffness</Link> often benefit from dedicated knee comfort devices.
-                </p>
-              </div>
-            </section>
-
-            {/* Category 6: Device Comparisons */}
-            <CategorySection
-              id="by-devices"
-              title="Device Comparisons & Buying Guides"
-              subtitle="Compare infrared massagers, heated braces, and red light therapy options side by side."
-              contextText={<>See how <Link to="/guides/infrared-vs-heating-pads" className="text-primary hover:underline">infrared massagers compare to heating pads</Link>, read <Link to="/guides/flexiknee-review-2026" className="text-primary hover:underline">in-depth product reviews</Link>, and find the right fit for your daily routine.</>}
-              allSlugs={deviceSlugs}
-              isLoading={isLoading}
-            />
-
-
             {/* Product Ecosystem Module */}
             <section className="bg-white py-12 md:py-16">
               <div className="container mx-auto max-w-6xl px-4">
@@ -1140,7 +1042,7 @@ const Guides = () => {
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Explore products</p>
                     <h2 className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-slate-950 md:text-3xl">Daily knee comfort tools.</h2>
                     <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-                      Articles stay educational, but the hub now connects readers to the FlexiKnee system in a calm, premium way.
+                      Compare warmth, massage, and support options alongside the educational guides in this library.
                     </p>
                   </div>
                   <Link to="/shop" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
@@ -1148,40 +1050,6 @@ const Guides = () => {
                   </Link>
                 </div>
                 <FlexiKneeSystem />
-              </div>
-            </section>
-
-            {/* Browse All Guides - Collapsed */}
-            <section className="py-12 md:py-16 bg-white">
-              <div className="container px-4 max-w-6xl mx-auto">
-                <button
-                  onClick={() => setShowAllGuides(!showAllGuides)}
-                  className="w-full flex items-center justify-between gap-4 group"
-                >
-                  <div className="text-left">
-                    <h2 className="text-2xl md:text-3xl font-semibold text-slate-950 mb-1 group-hover:text-primary transition-colors">
-                      Browse All Guides
-                    </h2>
-                    <p className="text-slate-600 font-light">
-                      {guides.length} guides available
-                    </p>
-                  </div>
-                  <div className={`flex-shrink-0 w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center transition-transform duration-300 ${showAllGuides ? 'rotate-180' : ''}`}>
-                    <ChevronDown className="h-5 w-5 text-blue-600" />
-                  </div>
-                </button>
-
-                <div 
-                  className={`transition-all duration-500 ease-in-out ${
-                    showAllGuides ? 'mt-8 opacity-100 max-h-[20000px]' : 'max-h-0 opacity-0 overflow-hidden'
-                  }`}
-                >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                    {guides.map((guide) => (
-                      <GuideCard key={guide.slug} guide={guide} compact />
-                    ))}
-                  </div>
-                </div>
               </div>
             </section>
 
@@ -1228,13 +1096,15 @@ const Guides = () => {
               <div className="container px-4 max-w-6xl mx-auto">
                 <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
                   <span className="text-sm text-blue-600 font-medium">Browse by:</span>
-                  <button onClick={() => scrollToSection('priority-guides')} className="text-sm text-slate-600 hover:text-primary transition-colors">Featured</button>
-                  <button onClick={() => scrollToSection('by-location')} className="text-sm text-slate-600 hover:text-primary transition-colors">By Location</button>
-                  <button onClick={() => scrollToSection('by-activity')} className="text-sm text-slate-600 hover:text-primary transition-colors">By Activity</button>
-                  <button onClick={() => scrollToSection('by-life-stage')} className="text-sm text-slate-600 hover:text-primary transition-colors">Aging & Women</button>
-                  <button onClick={() => scrollToSection('by-methods')} className="text-sm text-slate-600 hover:text-primary transition-colors">Methods & Comfort</button>
-                  <button onClick={() => scrollToSection('by-supplements')} className="text-sm text-slate-600 hover:text-primary transition-colors">Supplements</button>
-                  <button onClick={() => scrollToSection('by-devices')} className="text-sm text-slate-600 hover:text-primary transition-colors">Device Guides</button>
+                  {guideCategoryList.map(([, category]) => (
+                    <Link
+                      key={category.path}
+                      to={category.path}
+                      className="text-sm text-slate-600 transition-colors hover:text-primary"
+                    >
+                      {category.shortTitle}
+                    </Link>
+                  ))}
                 </nav>
               </div>
             </section>
@@ -1252,6 +1122,150 @@ const Guides = () => {
       >
         <ArrowUp className="h-5 w-5" />
       </button>
+
+      <Footer />
+    </>
+  );
+};
+
+export const GuideCategoryPage = ({ categoryKey }: { categoryKey: GuideCategoryKey }) => {
+  const category = guideCategoryConfigs[categoryKey];
+  const categoryGuides = category.slugs.map(getGuide).filter(Boolean) as typeof guides;
+  const canonicalUrl = `https://flexi-knee.com${category.path}`;
+
+  const collectionPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": category.title,
+    "description": category.description,
+    "url": canonicalUrl,
+    "isPartOf": {
+      "@type": "CollectionPage",
+      "name": "FlexiKnee Guide Library",
+      "url": "https://flexi-knee.com/guides",
+    },
+    "inLanguage": "en",
+  };
+
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": category.title,
+    "numberOfItems": categoryGuides.length,
+    "itemListElement": categoryGuides.map((guide, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": guide.title,
+      "url": `https://flexi-knee.com/guides/${guide.slug}`,
+    })),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://flexi-knee.com" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://flexi-knee.com/guides" },
+      { "@type": "ListItem", "position": 3, "name": category.shortTitle, "item": canonicalUrl },
+    ],
+  };
+
+  return (
+    <>
+      <Helmet>
+        <title>{category.title} | FlexiKnee</title>
+        <meta name="description" content={category.description} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={`${category.title} | FlexiKnee`} />
+        <meta property="og:description" content={category.description} />
+        <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
+        <meta property="og:site_name" content="FlexiKnee" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${category.title} | FlexiKnee`} />
+        <meta name="twitter:description" content={category.description} />
+        <meta name="twitter:image" content="https://flexi-knee.com/images/og-image.jpg" />
+        <script type="application/ld+json">{JSON.stringify(collectionPageJsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(itemListJsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
+      </Helmet>
+
+      <Header />
+
+      <main className="min-h-screen bg-slate-50">
+        <section className="border-b border-slate-200 bg-white">
+          <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
+            <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-slate-500">
+              <Link to="/" className="transition-colors hover:text-blue-600">Home</Link>
+              <span aria-hidden="true">/</span>
+              <Link to="/guides" className="transition-colors hover:text-blue-600">Guides</Link>
+              <span aria-hidden="true">/</span>
+              <span className="text-slate-700">{category.shortTitle}</span>
+            </nav>
+
+            <p className="mt-10 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">{category.eyebrow}</p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.05em] text-slate-950 md:text-5xl">
+              {category.title}
+            </h1>
+            <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 md:text-lg">
+              {category.description}
+            </p>
+            <div className="mt-6 inline-flex items-center rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+              {categoryGuides.length} guides in this topic
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-slate-200 bg-slate-950 py-5">
+          <div className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-4 sm:px-6">
+            {guideCategoryList.map(([key, item]) => (
+              <Link
+                key={key}
+                to={item.path}
+                aria-current={key === categoryKey ? "page" : undefined}
+                className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition ${
+                  key === categoryKey
+                    ? "bg-white text-slate-950"
+                    : "border border-white/15 bg-white/10 text-white hover:bg-white/20"
+                }`}
+              >
+                {item.shortTitle}
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="py-12 md:py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {categoryGuides.map((guide) => (
+                <GuideCard key={guide.slug} guide={guide} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-slate-200 bg-white py-12">
+          <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">Need a simpler starting point?</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-slate-950">
+              Find the guides that match your knee pattern
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-600">
+              Answer three quick questions and get a more focused route through the library.
+            </p>
+            <Link
+              to="/knee-quiz"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+            >
+              Take the knee quiz
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </section>
+      </main>
 
       <Footer />
     </>

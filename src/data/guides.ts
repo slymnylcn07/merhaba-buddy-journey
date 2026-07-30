@@ -668,6 +668,12 @@ export const guidesData: GuideData[] = [
 export const staticPages = [
   { path: "/", priority: 1.0, changefreq: "weekly" },
   { path: "/guides", priority: 0.9, changefreq: "weekly" },
+  { path: "/guides/symptoms", priority: 0.8, changefreq: "weekly" },
+  { path: "/guides/activities", priority: 0.8, changefreq: "weekly" },
+  { path: "/guides/aging-women", priority: 0.8, changefreq: "weekly" },
+  { path: "/guides/daily-routines", priority: 0.8, changefreq: "weekly" },
+  { path: "/guides/supplements", priority: 0.8, changefreq: "weekly" },
+  { path: "/guides/devices", priority: 0.8, changefreq: "weekly" },
   { path: "/shop", priority: 0.9, changefreq: "weekly" },
   { path: "/knee-quiz", priority: 0.7, changefreq: "monthly" },
   { path: "/contact", priority: 0.5, changefreq: "yearly" },
