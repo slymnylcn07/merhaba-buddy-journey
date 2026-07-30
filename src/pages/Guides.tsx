@@ -12,6 +12,7 @@ import { guidePublicationDates } from "@/data/guide-publication-dates";
 import { guideDateOverrides } from "@/data/guide-date-overrides";
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { useGuidePopularity } from "@/hooks/use-guide-popularity";
 
 // Import images
 import thumbCollagenKneePain from "@/assets/guide-thumb-collagen-knee-pain.jpg";
@@ -303,6 +304,7 @@ const guides = allGuidesData.map(guide => ({
   thumbnail: resolveGuideThumbnail(guide.slug),
   thumbnailAvif: thumbnailAvifMap[guide.slug],
 }));
+const allGuideSlugs = guides.map((guide) => guide.slug);
 
 // Helper to get guide by slug
 const getGuide = (slug: string) => guides.find(g => g.slug === slug);
@@ -335,6 +337,25 @@ const featuredSlugs = [
   "knee-clicking-when-walking",
   "knee-pain-after-exercise",
 ];
+
+const popularityFallbackSlugs = [
+  "knee-pain-getting-up-after-sitting",
+  "knee-pain-after-standing",
+  "heat-vs-ice-for-knees",
+  "do-knee-massagers-work",
+];
+
+const selectPopularSlugs = (
+  rankedSlugs: string[],
+  fallbackSlugs: string[],
+  allowedSlugs: string[],
+  limit: number,
+) => {
+  const allowed = new Set(allowedSlugs);
+  return [...new Set([...rankedSlugs, ...fallbackSlugs, ...allowedSlugs])]
+    .filter((slug) => allowed.has(slug))
+    .slice(0, limit);
+};
 
 const locationSlugs = [
   "knee-pain-locations-visual-guide",
@@ -630,9 +651,16 @@ const SectionHeader = ({ id, title, subtitle }: { id: string; title: string; sub
   </div>
 );
 
-const CategoryPreviewCard = ({ category }: { category: GuideCategoryConfig }) => {
+const CategoryPreviewCard = ({
+  category,
+  rankedSlugs,
+}: {
+  category: GuideCategoryConfig;
+  rankedSlugs: string[];
+}) => {
   const categoryGuides = category.slugs.map(getGuide).filter(Boolean) as typeof guides;
-  const previewGuides = categoryGuides.slice(0, 3);
+  const previewSlugs = selectPopularSlugs(rankedSlugs, category.slugs, category.slugs, 3);
+  const previewGuides = previewSlugs.map(getGuide).filter(Boolean) as typeof guides;
 
   return (
     <article className="flex h-full flex-col rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl md:p-6">
@@ -688,6 +716,7 @@ const Guides = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const searchResultsRef = useRef<HTMLDivElement>(null);
+  const rankedGuideSlugs = useGuidePopularity(allGuideSlugs);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 300);
@@ -711,6 +740,12 @@ const Guides = () => {
   );
 
   const featuredGuides = featuredSlugs.map(getGuide).filter(Boolean) as typeof guides;
+  const mostReadGuides = selectPopularSlugs(
+    rankedGuideSlugs,
+    popularityFallbackSlugs,
+    allGuideSlugs,
+    4,
+  ).map(getGuide).filter(Boolean) as typeof guides;
 
   const latestGuides = useMemo(() => {
     return [...guides]
@@ -966,8 +1001,30 @@ const Guides = () => {
               </div>
             </section>
 
+            {/* Most read this month */}
+            <section className="border-t border-slate-200 bg-slate-50 py-12 md:py-16">
+              <div className="container mx-auto max-w-6xl px-4">
+                <SectionHeader
+                  id="most-read"
+                  title="Most Read This Month"
+                  subtitle="The guides readers have opened most often during the last 30 days. This selection updates automatically."
+                />
+                {isLoading ? (
+                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                    {[1, 2, 3, 4].map((item) => <CardSkeleton key={item} />)}
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                    {mostReadGuides.map((guide) => (
+                      <GuideCard key={guide.slug} guide={guide} compact />
+                    ))}
+                  </div>
+                )}
+              </div>
+            </section>
+
             {/* Browse by topic */}
-            <section className="border-y border-slate-200 bg-slate-50 py-12 md:py-16">
+            <section className="border-y border-slate-200 bg-white py-12 md:py-16">
               <div className="container mx-auto max-w-6xl px-4">
                 <SectionHeader
                   id="browse-by-topic"
@@ -976,7 +1033,11 @@ const Guides = () => {
                 />
                 <div className="grid gap-5 lg:grid-cols-2">
                   {guideCategoryList.map(([, category]) => (
-                    <CategoryPreviewCard key={category.path} category={category} />
+                    <CategoryPreviewCard
+                      key={category.path}
+                      category={category}
+                      rankedSlugs={rankedGuideSlugs}
+                    />
                   ))}
                 </div>
               </div>
@@ -1131,6 +1192,20 @@ const Guides = () => {
 export const GuideCategoryPage = ({ categoryKey }: { categoryKey: GuideCategoryKey }) => {
   const category = guideCategoryConfigs[categoryKey];
   const categoryGuides = category.slugs.map(getGuide).filter(Boolean) as typeof guides;
+  const rankedCategorySlugs = useGuidePopularity(category.slugs);
+  const popularCategorySlugs = selectPopularSlugs(
+    rankedCategorySlugs,
+    category.slugs,
+    category.slugs,
+    3,
+  );
+  const popularCategoryGuides = popularCategorySlugs
+    .map(getGuide)
+    .filter(Boolean) as typeof guides;
+  const popularCategorySet = new Set(popularCategorySlugs);
+  const remainingCategoryGuides = categoryGuides.filter(
+    (guide) => !popularCategorySet.has(guide.slug),
+  );
   const canonicalUrl = `https://flexi-knee.com${category.path}`;
 
   const collectionPageJsonLd = {
@@ -1237,15 +1312,37 @@ export const GuideCategoryPage = ({ categoryKey }: { categoryKey: GuideCategoryK
           </div>
         </section>
 
-        <section className="py-12 md:py-16">
+        <section className="border-b border-slate-200 bg-white py-12 md:py-16">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <SectionHeader
+              id="popular-in-topic"
+              title="Popular in This Topic"
+              subtitle="The three guides readers have opened most often in this topic during the last 30 days."
+            />
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {categoryGuides.map((guide) => (
+              {popularCategoryGuides.map((guide) => (
                 <GuideCard key={guide.slug} guide={guide} />
               ))}
             </div>
           </div>
         </section>
+
+        {remainingCategoryGuides.length > 0 && (
+          <section className="py-12 md:py-16">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6">
+              <SectionHeader
+                id="all-topic-guides"
+                title="More Guides in This Topic"
+                subtitle="Continue through the rest of the guides in this topic."
+              />
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {remainingCategoryGuides.map((guide) => (
+                  <GuideCard key={guide.slug} guide={guide} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="border-t border-slate-200 bg-white py-12">
           <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">

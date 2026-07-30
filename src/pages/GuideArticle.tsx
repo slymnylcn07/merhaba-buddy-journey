@@ -29,6 +29,7 @@ import { loadArticleBySlug } from "@/data/article-loaders";
 import { loadRecentArticleBySlug } from "@/data/recent-article-loaders";
 import { articleEditorialCrosslinks } from "@/data/article-editorial-crosslinks";
 import { getRelatedGuides } from "@/data/related-guides";
+import { recordGuideView } from "@/lib/guide-popularity";
 import type { ArticleData } from "@/data/articles/types";
 
 const allArticleCTAs = { ...articleCTAs, ...recentArticleCTAs };
@@ -110,6 +111,12 @@ const GuideArticle = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (loadState === "ready" && article) {
+      void recordGuideView(article.slug);
+    }
+  }, [article, loadState]);
 
   if (loadState === "loading") {
     return (
