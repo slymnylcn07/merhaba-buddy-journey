@@ -3,7 +3,6 @@ import { Star, ShieldCheck, BadgeCheck, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MAIN_PRODUCT_RATING, MAIN_PRODUCT_REVIEW_COUNT } from "@/lib/main-product-rating";
 import { getProductMarketplaceFeedback } from "@/data/product-marketplace-feedback";
-import { PRIMARY_PRODUCT_HANDLE } from "@/lib/product-config";
 
 /**
  * External marketplace feedback for the flagship device.
@@ -91,7 +90,6 @@ function Stars({ value, className = "" }: { value: number; className?: string })
 export function ProductReviews() {
   const [showNotice, setShowNotice] = useState(false);
   const [showAll, setShowAll] = useState(false);
-  const marketplaceFeedback = getProductMarketplaceFeedback(PRIMARY_PRODUCT_HANDLE);
 
   const visibleReviews = showAll ? REVIEWS : REVIEWS.slice(0, 3);
 
@@ -134,18 +132,7 @@ export function ProductReviews() {
           </div>
         </div>
         <p className="mx-auto mt-3 max-w-2xl text-center text-xs leading-5 text-slate-400">
-          These reviews were collected from buyers of this product outside FlexiKnee.com. Individual results vary.{" "}
-          {marketplaceFeedback && (
-            <a
-              href={marketplaceFeedback.sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer nofollow sponsored"
-              className="font-semibold text-blue-600 underline underline-offset-2"
-            >
-              View the original review source
-            </a>
-          )}
-          .
+          Buyer feedback reflects individual experiences with the product. Comfort, fit and preferences may vary.
         </p>
 
         {/* Review cards: mobilde yatay kaydirma, masaustunde 3'lu grid */}
@@ -211,6 +198,49 @@ export function ProductReviews() {
             </div>
           )}
         </div>
+      </div>
+    </section>
+  );
+}
+
+export function ProductReviewSummary({
+  handle,
+  productName,
+}: {
+  handle: string | undefined;
+  productName: string;
+}) {
+  const feedback = getProductMarketplaceFeedback(handle);
+  if (!feedback) return null;
+
+  return (
+    <section
+      id="product-reviews"
+      className="scroll-mt-24 bg-slate-50 py-16 sm:py-20"
+      aria-labelledby="product-review-summary-heading"
+    >
+      <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mb-2 flex items-center justify-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+          <BadgeCheck className="h-4 w-4" /> Buyer feedback
+        </div>
+        <h2
+          id="product-review-summary-heading"
+          className="text-3xl font-semibold tracking-[-0.03em] text-slate-950 sm:text-4xl"
+        >
+          What buyers say about {productName}
+        </h2>
+        <div className="mx-auto mt-8 flex max-w-xl items-center justify-center gap-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <span className="text-4xl font-bold text-slate-950">{feedback.rating.toFixed(1)}</span>
+          <div className="text-left">
+            <Stars value={feedback.rating} />
+            <p className="mt-1 text-sm text-slate-500">
+              {feedback.reviewCount.toLocaleString("en-US")} buyer reviews
+            </p>
+          </div>
+        </div>
+        <p className="mx-auto mt-3 max-w-2xl text-xs leading-5 text-slate-400">
+          Buyer feedback reflects individual experiences with the product. Comfort, fit and preferences may vary.
+        </p>
       </div>
     </section>
   );

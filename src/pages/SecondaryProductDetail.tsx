@@ -29,6 +29,7 @@ import { useCartStore } from "@/stores/cartStore";
 import { getProductProfile } from "@/data/product-profiles";
 import { PremiumProductStory } from "@/components/PremiumProductStory";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
+import { ProductReviewSummary } from "@/components/ProductReviews";
 import { buildMerchantOffer } from "@/lib/merchant-schema";
 
 function formatMoney(amount?: string, currencyCode?: string) {
@@ -342,7 +343,7 @@ export default function SecondaryProductDetail() {
               <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.75)] lg:p-8">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">{profile.badge}</span>
-                  <ProductMarketplaceRating handle={handle} showCount linkSource />
+                  <ProductMarketplaceRating handle={handle} showCount linkToReviews />
                 </div>
 
                 <h1 className="mt-4 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl">{profile.h1}</h1>
@@ -511,6 +512,8 @@ export default function SecondaryProductDetail() {
           visuals={profile.visuals}
           highlights={profile.highlights}
         />
+
+        <ProductReviewSummary handle={handle} productName={node.title} />
 
         <section className="bg-white py-14 lg:py-20">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">

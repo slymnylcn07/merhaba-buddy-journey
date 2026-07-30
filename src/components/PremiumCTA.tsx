@@ -121,7 +121,7 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
             {price && (
               <span className="text-base font-semibold text-slate-950">{price}</span>
             )}
-            <ProductMarketplaceRating handle={rec.handle} />
+            <ProductMarketplaceRating handle={rec.handle} showCount />
             <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
               {shippingLabel}
             </span>

@@ -363,7 +363,7 @@ export default function ProductDetail() {
                   type="button"
                   onClick={() => document.getElementById("product-reviews")?.scrollIntoView({ behavior: "smooth" })}
                   className="group flex flex-wrap items-center gap-2"
-                  aria-label="Jump to marketplace buyer feedback"
+                  aria-label="Jump to buyer reviews"
                 >
                   <ProductMarketplaceRating handle={publicHandle} showCount />
                 </button>

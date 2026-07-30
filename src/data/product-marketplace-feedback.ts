@@ -43,9 +43,9 @@ const feedbackByHandle: Record<string, ProductMarketplaceFeedback> = {
     rating: 4.9,
     reviewCount: 1091,
     sourceUrl: "https://www.aliexpress.us/item/3256806810921685.html",
-    sourceLabel: "External similar-product rating",
+    sourceLabel: "External buyer rating",
     lastChecked: "2026-07-30",
-    scope: "similar-products",
+    scope: "exact-product",
   },
   "flexiknee-sport-orthopedic-insoles": {
     platform: "External source",
