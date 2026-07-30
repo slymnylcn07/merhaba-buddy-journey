@@ -15,6 +15,8 @@ import { Footer } from "@/components/Footer";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getProductPath, PRIMARY_PRODUCT_HANDLE } from "@/lib/product-config";
 import { getProductProfile } from "@/data/product-profiles";
+import { productSystem } from "@/data/product-system";
+import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
 
 const SHOP_CATEGORIES = ["All", "Heat", "Compression", "Massage", "Walking & Foot Support", "Travel Recovery"] as const;
 
@@ -165,6 +167,20 @@ export default function Shop() {
 
           <section className="bg-white py-12 md:py-16">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <nav aria-label="Browse all products" className="mb-9">
+                <p className="mb-3 text-sm font-semibold text-slate-900">Browse every FlexiKnee product</p>
+                <div className="flex gap-2 overflow-x-auto pb-2">
+                  {productSystem.map((product) => (
+                    <Link
+                      key={product.href}
+                      to={product.href}
+                      className="shrink-0 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-300 hover:text-blue-700"
+                    >
+                      {product.name}
+                    </Link>
+                  ))}
+                </div>
+              </nav>
               <div className="mb-9" aria-label="Filter products by purpose">
                 <p className="mb-3 text-sm font-semibold text-slate-900">Choose by purpose</p>
                 <div className="flex gap-2 overflow-x-auto pb-2">
@@ -223,6 +239,7 @@ export default function Shop() {
                           <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
                             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-300">The complete knee routine</p>
                             <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">{node.title}</h2>
+                            <ProductMarketplaceRating handle={node.handle} inverse className="mt-3" />
                             <p className="mt-4 max-w-xl text-base leading-8 text-slate-300">
                               The premium all-in-one option for users who want adjustable warmth, massage-style vibration and a dedicated at-home knee routine.
                             </p>
@@ -286,6 +303,7 @@ export default function Shop() {
                             <div className="flex flex-col p-6">
                               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">{profile.eyebrow}</p>
                               <h3 className="mt-3 text-xl font-semibold leading-snug tracking-[-0.02em] text-slate-950">{profile.h1}</h3>
+                              <ProductMarketplaceRating handle={node.handle} className="mt-2" />
                               <p className="mt-3 text-sm leading-7 text-slate-600">{profile.cardCopy}</p>
                               <div className="mt-4 rounded-2xl bg-slate-50 p-3">
                                 <p className="text-xs font-semibold text-slate-500">BEST FOR</p>

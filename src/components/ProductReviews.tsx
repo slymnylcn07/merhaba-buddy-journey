@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Star, ShieldCheck, BadgeCheck, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MAIN_PRODUCT_RATING, MAIN_PRODUCT_REVIEW_COUNT } from "@/lib/main-product-rating";
+import { getProductMarketplaceFeedback } from "@/data/product-marketplace-feedback";
+import { PRIMARY_PRODUCT_HANDLE } from "@/lib/product-config";
 
 /**
- * Verified product reviews for the flagship device.
+ * External marketplace feedback for the flagship device.
  *
- * These are real, verified-purchase reviews of this exact product, aggregated
- * at the product level (not store-exclusive claims). Rating/count reflect the
- * product's verified reviews. Do NOT invent additional reviews or present the
- * count as flexi-knee.com order volume — that is an FTC fake-review risk.
+ * The source must remain visible. These entries are not FlexiKnee.com order
+ * reviews and are intentionally excluded from Product structured data.
  */
 
 
@@ -22,47 +22,47 @@ interface Review {
 
 const REVIEWS: Review[] = [
   {
-    name: "Daniel R.",
+    name: "Buyer",
     date: "19 May 2026",
     color: "White",
     text: "I will use it well. It's very good.",
   },
   {
-    name: "Carmen L.",
+    name: "Buyer",
     date: "31 Mar 2026",
     color: "White",
     text:
       "Two close relatives who already have it recommended it to me. It perfectly matches the entire description and the images shown. Personally, this is the most highly valued model. I received it earlier than expected, very good service through the postal service. Excellent quality-price ratio. Highly recommended.",
   },
   {
-    name: "Marta S.",
+    name: "Buyer",
     date: "10 Mar 2026",
     color: "White",
     text:
       "After the first use it works smoothly and feels like real pain relief. Really good product, I recommend it to anyone who suffers, it helps.",
   },
   {
-    name: "Javier M.",
+    name: "Buyer",
     date: "09 Jan 2026",
     color: "White",
     text:
       "Everything is fine. It was marked as delivered before it reached me; it was tracked with the carrier, had gone to the wrong address, was retrieved and I finally received it. I repeat, everything is okay.",
   },
   {
-    name: "Andrew P.",
+    name: "Buyer",
     date: "01 Jan 2026",
     color: "White",
     text:
       "The knee massager is fantastic. I've used it each day since delivery and it's working well. One day I used it on bare skin, which wasn't a good idea as my skin got extremely hot, so keep the sleeve between. The manual says not to run the unit flat, so every couple of days I recharge it.",
   },
   {
-    name: "Thomas R.",
+    name: "Buyer",
     date: "27 Sep 2025",
     color: "White",
     text: "My knee feels better after using it.",
   },
   {
-    name: "Jason N.",
+    name: "Buyer",
     date: "16 Jul 2025",
     color: "White",
     text:
@@ -91,6 +91,7 @@ function Stars({ value, className = "" }: { value: number; className?: string })
 export function ProductReviews() {
   const [showNotice, setShowNotice] = useState(false);
   const [showAll, setShowAll] = useState(false);
+  const marketplaceFeedback = getProductMarketplaceFeedback(PRIMARY_PRODUCT_HANDLE);
 
   const visibleReviews = showAll ? REVIEWS : REVIEWS.slice(0, 3);
 
@@ -98,13 +99,13 @@ export function ProductReviews() {
     <section id="product-reviews" className="scroll-mt-24 bg-slate-50 py-16 sm:py-20" aria-labelledby="reviews-heading">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="mb-2 flex items-center justify-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-          <BadgeCheck className="h-4 w-4" /> Verified product reviews
+          <BadgeCheck className="h-4 w-4" /> Buyer feedback
         </div>
         <h2
           id="reviews-heading"
           className="text-center text-3xl font-semibold tracking-[-0.03em] text-slate-950 sm:text-4xl"
         >
-          What customers say about this device
+          What buyers say about this device
         </h2>
 
         {/* Summary */}
@@ -113,7 +114,9 @@ export function ProductReviews() {
             <span className="text-4xl font-bold text-slate-950">{MAIN_PRODUCT_RATING.toFixed(1)}</span>
             <div>
               <Stars value={MAIN_PRODUCT_RATING} />
-              <p className="mt-1 text-sm text-slate-500">{MAIN_PRODUCT_REVIEW_COUNT} verified buyer reviews</p>
+              <p className="mt-1 text-sm text-slate-500">
+                {MAIN_PRODUCT_REVIEW_COUNT} buyer reviews
+              </p>
             </div>
           </div>
           <div className="hidden h-12 w-px bg-slate-200 sm:block" />
@@ -131,8 +134,18 @@ export function ProductReviews() {
           </div>
         </div>
         <p className="mx-auto mt-3 max-w-2xl text-center text-xs leading-5 text-slate-400">
-          Verified-purchase reviews for this product. Individual results vary; this device supports everyday
-          comfort.
+          These reviews were collected from buyers of this product outside FlexiKnee.com. Individual results vary.{" "}
+          {marketplaceFeedback && (
+            <a
+              href={marketplaceFeedback.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer nofollow sponsored"
+              className="font-semibold text-blue-600 underline underline-offset-2"
+            >
+              View the original review source
+            </a>
+          )}
+          .
         </p>
 
         {/* Review cards: mobilde yatay kaydirma, masaustunde 3'lu grid */}
@@ -169,7 +182,7 @@ export function ProductReviews() {
               onClick={() => setShowAll((v) => !v)}
               className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-slate-500 hover:bg-slate-50"
             >
-              {showAll ? "Show fewer reviews" : `More reviews (${REVIEWS.length - 3})`}
+              {showAll ? "Show fewer reviews" : "More reviews"}
               <ChevronDown className={`h-4 w-4 transition-transform ${showAll ? "rotate-180" : ""}`} />
             </button>
           </div>

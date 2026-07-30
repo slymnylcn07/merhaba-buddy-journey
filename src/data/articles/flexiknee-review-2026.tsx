@@ -61,7 +61,7 @@ export const flexikneeReview2026: ArticleExport = {
           The at-home knee-comfort market is crowded with products that use similar language, so a useful review has to separate three things: what the device physically includes, what the supplied documentation states, and what can genuinely be concluded about health outcomes.
         </p>
         <p>
-          FlexiKnee combines adjustable warmth, an integrated red-light mode, and massage-style vibration in a rechargeable wraparound device. The current product-level rating shown across the FlexiKnee site is <strong>{MAIN_PRODUCT_RATING.toFixed(1)} out of 5</strong>, based on <strong>{MAIN_PRODUCT_REVIEW_COUNT} product-level reviews</strong>. That rating describes buyer feedback about the product; it is not proof that the device treats a medical condition.
+          FlexiKnee combines adjustable warmth, an integrated red-light mode, and massage-style vibration in a rechargeable wraparound device. The external product rating shown across the FlexiKnee site is <strong>{MAIN_PRODUCT_RATING.toFixed(1)} out of 5</strong>, based on <strong>{MAIN_PRODUCT_REVIEW_COUNT} buyer reviews collected outside FlexiKnee.com</strong>. The rating is not FlexiKnee.com order history or proof that the device treats a medical condition.
         </p>
 
         <h2>What Is FlexiKnee</h2>
@@ -122,7 +122,7 @@ export const flexikneeReview2026: ArticleExport = {
               <tr>
                 <td className="px-5 py-4 font-semibold text-slate-950">Buyer feedback</td>
                 <td className="px-5 py-4 text-slate-600">Current product-level rating and recurring themes in displayed reviews</td>
-                <td className="px-5 py-4 text-slate-600">The current site-wide product rating is {MAIN_PRODUCT_RATING.toFixed(1)}/5; experiences still vary by fit, heat preference, and expectations</td>
+                <td className="px-5 py-4 text-slate-600">The current external buyer rating is {MAIN_PRODUCT_RATING.toFixed(1)}/5; experiences still vary by fit, heat preference, and expectations</td>
               </tr>
               <tr>
                 <td className="px-5 py-4 font-semibold text-slate-950">Claim boundaries</td>

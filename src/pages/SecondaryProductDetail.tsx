@@ -14,7 +14,6 @@ import {
   ShoppingBag,
   Sparkles,
   Truck,
-  Star,
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -29,7 +28,8 @@ import { getProductPath, resolveShopifyProductHandle } from "@/lib/product-confi
 import { useCartStore } from "@/stores/cartStore";
 import { getProductProfile } from "@/data/product-profiles";
 import { PremiumProductStory } from "@/components/PremiumProductStory";
-import { FREE_SHIPPING_THRESHOLD, RETURN_WINDOW_DAYS } from "@/lib/policy-config";
+import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
+import { buildMerchantOffer } from "@/lib/merchant-schema";
 
 function formatMoney(amount?: string, currencyCode?: string) {
   const value = Number(amount || 0);
@@ -197,41 +197,12 @@ export default function SecondaryProductDetail() {
       brand: { "@type": "Brand", name: "FlexiKnee" },
       description: profile.seoDescription,
       image: images.map((image) => image.url),
-      offers: variants.map((variant) => ({
-        "@type": "Offer",
+      offers: variants.map((variant) => buildMerchantOffer({
         sku: variant.sku || undefined,
-        availability: variant.availableForSale
-          ? "https://schema.org/InStock"
-          : "https://schema.org/OutOfStock",
-        itemCondition: "https://schema.org/NewCondition",
+        availability: variant.availableForSale,
         price: variant.price.amount,
         priceCurrency: variant.price.currencyCode,
         url: canonical,
-        shippingDetails: Number(variant.price.amount) > FREE_SHIPPING_THRESHOLD
-          ? {
-              "@type": "OfferShippingDetails",
-              shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
-              shippingRate: {
-                "@type": "MonetaryAmount",
-                value: "0",
-                currency: variant.price.currencyCode,
-              },
-              deliveryTime: {
-                "@type": "ShippingDeliveryTime",
-                handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
-                transitTime: { "@type": "QuantitativeValue", minValue: 6, maxValue: 7, unitCode: "DAY" },
-              },
-            }
-          : undefined,
-        hasMerchantReturnPolicy: {
-          "@type": "MerchantReturnPolicy",
-          applicableCountry: "US",
-          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-          merchantReturnDays: RETURN_WINDOW_DAYS,
-          returnMethod: "https://schema.org/ReturnByMail",
-          returnFees: "https://schema.org/ReturnShippingFees",
-          merchantReturnLink: "https://flexi-knee.com/refund-policy",
-        },
       })),
     };
 
@@ -371,16 +342,7 @@ export default function SecondaryProductDetail() {
               <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.75)] lg:p-8">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">{profile.badge}</span>
-                  {pageConfig.reviewCount && (
-                    <span className="flex items-center gap-1.5 text-sm font-medium text-slate-700">
-                      <span className="flex items-center gap-0.5">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <Star key={star} className="h-4 w-4 fill-blue-600 text-blue-600" />
-                        ))}
-                      </span>
-                      {pageConfig.rating} out of 5 ({pageConfig.reviewCount} reviews)
-                    </span>
-                  )}
+                  <ProductMarketplaceRating handle={handle} showCount linkSource />
                 </div>
 
                 <h1 className="mt-4 text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl">{profile.h1}</h1>
