@@ -43,18 +43,6 @@ const intermittentKneePainFaqs = [
   },
 ];
 
-const QuickAnswer = ({ children }: { children: ReactNode }) => (
-  <aside
-    aria-label="Quick answer"
-    className="my-7 rounded-xl border border-sky-200 bg-sky-50 p-5 text-slate-900"
-  >
-    <p className="mb-2 text-sm font-bold uppercase tracking-wide text-sky-800">
-      Quick Answer
-    </p>
-    <div className="space-y-3 leading-relaxed">{children}</div>
-  </aside>
-);
-
 const NoteBox = ({
   children,
   tone = "blue",
@@ -129,20 +117,6 @@ export const intermittentKneePainGuide: ArticleExport = {
     faqs: intermittentKneePainFaqs,
     content: (
       <>
-        <QuickAnswer>
-          <p>
-            <strong>Intermittent knee pain means the symptoms recur with pain-free or
-            lower-symptom periods between episodes.</strong> It may feel dull, achy, stiff,
-            swollen, unstable, or occasionally sharp. The pattern does not identify one
-            condition.
-          </p>
-          <p>
-            Track what happens before, during, and after each episode. The most useful clues
-            are the exact location, trigger, duration, swelling, loss of motion, locking,
-            catching, giving way, and next-day response.
-          </p>
-        </QuickAnswer>
-
         <h2>What Intermittent Knee Pain Means</h2>
         <p>
           Intermittent describes timing. It does not describe severity or cause. One person

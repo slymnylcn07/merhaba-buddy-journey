@@ -54,18 +54,6 @@ const nightPainAfter40Faqs = [
   },
 ];
 
-const QuickAnswer = ({ children }: { children: ReactNode }) => (
-  <aside
-    aria-label="Quick answer"
-    className="my-7 rounded-xl border border-sky-200 bg-sky-50 p-5 text-slate-900"
-  >
-    <p className="mb-2 text-sm font-bold uppercase tracking-wide text-sky-800">
-      Quick Answer
-    </p>
-    <div className="space-y-3 leading-relaxed">{children}</div>
-  </aside>
-);
-
 const Figure = ({
   src,
   alt,
@@ -146,24 +134,6 @@ export const kneePainAtNightAfter40: ArticleExport = {
     ],
     content: (
       <>
-        <QuickAnswer>
-          <p>
-            <strong>
-              Knee pain at night after 40 is a pattern, not proof that the knee is
-              simply wearing out.
-            </strong>{" "}
-            Osteoarthritis becomes more likely with age, but menopause symptoms, previous
-            injury, daily load, a sensitive tendon or bursa, swelling, and sleep position
-            can overlap.
-          </p>
-          <p>
-            Track whether the pain is in one or both knees, what happened during the day,
-            how long morning stiffness lasts, and whether there is swelling, warmth,
-            locking, instability, or loss of motion. A hot red swollen knee, inability to
-            bear weight, major swelling, deformity, or true locking needs urgent guidance.
-          </p>
-        </QuickAnswer>
-
         <h2>How This Guide Differs From General Night Knee Pain</h2>
         <p>
           The main guide to{" "}
