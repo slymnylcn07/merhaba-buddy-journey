@@ -5,6 +5,13 @@
   "framework": "vite",
   "trailingSlash": false,
   "cleanUrls": false,
+  "redirects": [
+    {
+      "source": "/foundation",
+      "destination": "/why-flexiknee",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/apps/parcelpanel",
