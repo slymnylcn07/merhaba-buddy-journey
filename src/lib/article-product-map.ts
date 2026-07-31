@@ -75,6 +75,10 @@ const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
   "knee-compression-sleeve-sizing-guide": "sleeve",
   "best-insoles-for-knee-pain-2026": "insoles",
   "pickleball-knee-recovery-routine": "sleeve",
+  "hyrox-knee-pain": "sleeve",
+  "padel-knee-pain": "sleeve",
+  "rucking-knee-pain": "insoles",
+  "trail-running-knee-pain": "insoles",
   "best-low-impact-cardio-knee-pain": "sleeve",
   "backward-walking-knee-pain": "sleeve",
 };

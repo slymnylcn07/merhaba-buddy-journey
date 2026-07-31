@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">HYROX training load adjustment dials</title>
+  <desc id="desc">Four adjustable training dials for running, sled work, lunges, and wall balls with a symptom response guide.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef2ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#0f172a" flood-opacity=".1"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="700" rx="36" fill="url(#bg)"/>
+  <text x="70" y="78" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#0f172a">Turn one training dial at a time</text>
+  <text x="70" y="118" font-family="Arial, sans-serif" font-size="21" fill="#475569">A smaller, measurable change makes the knee response easier to interpret.</text>
+
+  <g transform="translate(70 160)">
+    <g>
+      <rect width="240" height="280" rx="24" fill="#ffffff" filter="url(#shadow)"/>
+      <circle cx="120" cy="108" r="66" fill="#dbeafe" stroke="#60a5fa" stroke-width="10"/>
+      <path d="M120 108L160 73" stroke="#1d4ed8" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="120" cy="108" r="12" fill="#1d4ed8"/>
+      <text x="120" y="204" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" fill="#0f172a">Running</text>
+      <text x="120" y="237" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" fill="#475569">pace, total distance,</text>
+      <text x="120" y="261" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" fill="#475569">interval length</text>
+    </g>
+    <g transform="translate(270)">
+      <rect width="240" height="280" rx="24" fill="#ffffff" filter="url(#shadow)"/>
+      <circle cx="120" cy="108" r="66" fill="#fef3c7" stroke="#fbbf24" stroke-width="10"/>
+      <path d="M120 108L150 63" stroke="#b45309" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="120" cy="108" r="12" fill="#b45309"/>
+      <text x="120" y="204" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" fill="#0f172a">Sled work</text>
+      <text x="120" y="237" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" fill="#475569">load, surface friction,</text>
+      <text x="120" y="261" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" fill="#475569">length per set</text>
+    </g>
+    <g transform="translate(540)">
+      <rect width="240" height="280" rx="24" fill="#ffffff" filter="url(#shadow)"/>
+      <circle cx="120" cy="108" r="66" fill="#dcfce7" stroke="#4ade80" stroke-width="10"/>
+      <path d="M120 108L144 62" stroke="#15803d" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="120" cy="108" r="12" fill="#15803d"/>
+      <text x="120" y="204" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" fill="#0f172a">Lunges</text>
+      <text x="120" y="237" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" fill="#475569">load, range, distance,</text>
+      <text x="120" y="261" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" fill="#475569">repetitions</text>
+    </g>
+    <g transform="translate(810)">
+      <rect width="240" height="280" rx="24" fill="#ffffff" filter="url(#shadow)"/>
+      <circle cx="120" cy="108" r="66" fill="#fee2e2" stroke="#f87171" stroke-width="10"/>
+      <path d="M120 108L139 58" stroke="#b91c1c" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="120" cy="108" r="12" fill="#b91c1c"/>
+      <text x="120" y="204" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" fill="#0f172a">Wall balls</text>
+      <text x="120" y="237" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" fill="#475569">ball load, set size,</text>
+      <text x="120" y="261" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" fill="#475569">squat range</text>
+    </g>
+  </g>
+
+  <g transform="translate(70 482)">
+    <rect width="1060" height="150" rx="24" fill="#0f172a"/>
+    <text x="34" y="44" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff">Use the response, not a perfect pain number</text>
+    <circle cx="52" cy="94" r="12" fill="#22c55e"/>
+    <text x="76" y="88" font-family="Arial, sans-serif" font-size="18" fill="#e2e8f0">Stable movement and usual next-morning baseline:</text>
+    <text x="76" y="113" font-family="Arial, sans-serif" font-size="18" fill="#e2e8f0">hold or progress gradually.</text>
+    <circle cx="600" cy="94" r="12" fill="#f59e0b"/>
+    <text x="624" y="88" font-family="Arial, sans-serif" font-size="18" fill="#e2e8f0">Increasing ache or altered technique:</text>
+    <text x="624" y="113" font-family="Arial, sans-serif" font-size="18" fill="#e2e8f0">reduce one dial and reassess.</text>
+    <rect x="34" y="124" width="990" height="2" fill="#334155"/>
+  </g>
+</svg>

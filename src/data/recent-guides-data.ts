@@ -14,6 +14,51 @@ export interface PublishedGuideData extends GuideData {
 
 export const recentGuidesData: PublishedGuideData[] = [
   {
+    slug: "hyrox-knee-pain",
+    title: "HYROX Knee Pain: Running, Lunges, Sleds, and Wall Balls",
+    description:
+      "Map HYROX knee pain to running, sled work, lunges, wall balls, fatigue, training load, shoes, and a staged return to race-specific work.",
+    readTime: 20,
+    publishedDate: "2026-07-31",
+    lastModified: "2026-07-31",
+  },
+  {
+    slug: "rucking-knee-pain",
+    title: "Rucking With Bad Knees: Backpack Weight, Hills, and Footwear",
+    description:
+      "Learn how backpack weight, pace, hills, terrain, pack fit, footwear, and recovery affect knee comfort during loaded walking.",
+    readTime: 21,
+    publishedDate: "2026-07-31",
+    lastModified: "2026-07-31",
+  },
+  {
+    slug: "padel-knee-pain",
+    title: "Padel Knee Pain: Turning, Stopping, and Court-Sport Recovery",
+    description:
+      "Understand knee pain after padel through braking, pivots, low lunges, court load, footwear, warning signs, and a gradual return to play.",
+    readTime: 19,
+    publishedDate: "2026-07-31",
+    lastModified: "2026-07-31",
+  },
+  {
+    slug: "trail-running-knee-pain",
+    title: "Trail Running Knee Pain: Descents, Terrain, and Training Load",
+    description:
+      "Why downhill trail running can bother the front, outer, or back of the knee, plus terrain, footwear, load, and return-to-trail decisions.",
+    readTime: 19,
+    publishedDate: "2026-07-31",
+    lastModified: "2026-07-31",
+  },
+  {
+    slug: "knee-xray-vs-mri-vs-ultrasound",
+    title: "Knee X-Ray vs MRI vs Ultrasound: What Each Test Can Show",
+    description:
+      "Compare what knee X-rays, MRI, and ultrasound can show, what each may miss, when contrast is used, and why the examination still matters.",
+    readTime: 24,
+    publishedDate: "2026-07-31",
+    lastModified: "2026-07-31",
+  },
+  {
     slug: "osgood-schlatter-adults",
     title: "Osgood-Schlatter in Adults: Why the Bump Below the Knee Can Still Hurt",
     description:

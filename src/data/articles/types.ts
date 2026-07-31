@@ -16,6 +16,7 @@ export interface ArticleData {
   title: string;
   subtitle?: string;
   intro: string;
+  quickAnswer?: string;
   metaTitle: string;
   metaDescription: string;
   heroImage: string;

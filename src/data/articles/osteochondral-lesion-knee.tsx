@@ -153,6 +153,9 @@ export const osteochondralLesionKnee: ArticleExport = {
         <p>
           CT gives excellent bone detail and may help define a fragment or plan surgery. The chosen study should answer a management question. Repeating scans without a change in symptoms or treatment plan does not automatically improve care.
         </p>
+        <p>
+          For a broader explanation of why one test may be chosen before another, compare <Link to="/guides/knee-xray-vs-mri-vs-ultrasound" className={linkClass}>knee X-ray, MRI, and ultrasound</Link>. That guide explains what each modality can show without turning imaging into a self-ordering decision.
+        </p>
 
         <h2>What Makes a Lesion Stable or Unstable?</h2>
         <p>

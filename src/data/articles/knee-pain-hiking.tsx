@@ -204,6 +204,9 @@ const kneePainHiking: ArticleExport = {
         <p>
           Every pound in your pack increases the force on your knees with each step. A 20-pound backpack may seem modest, but over thousands of steps on a downhill section, the cumulative added load on the knee joint is substantial. Lighter packing can meaningfully reduce knee stress on longer hikes.
         </p>
+        <p>
+          When added weight is the main training goal, the <Link to="/guides/rucking-knee-pain" className="text-primary hover:underline">rucking with bad knees guide</Link> separates backpack weight, fit, pace, and hills. If the problem appears while running rather than walking, the <Link to="/guides/trail-running-knee-pain" className="text-primary hover:underline">trail running knee pain guide</Link> focuses on descents, terrain, and return-to-run load.
+        </p>
 
         <TipsList tips={[
           "Choose trails with moderate elevation gain when building conditioning",

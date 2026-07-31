@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">What knee X-ray, MRI, and ultrasound show</title>
+  <desc id="desc">Three-panel comparison of the structures best evaluated by knee X-ray, MRI, and ultrasound.</desc>
+  <rect width="1200" height="760" rx="34" fill="#f8fafc"/>
+  <text x="60" y="64" fill="#0f172a" font-family="Arial, sans-serif" font-size="32" font-weight="700">One knee, three different imaging questions</text>
+  <text x="60" y="100" fill="#475569" font-family="Arial, sans-serif" font-size="19">The useful test is the one matched to the tissue and decision.</text>
+
+  <g>
+    <rect x="50" y="135" width="340" height="540" rx="28" fill="#07182d"/>
+    <rect x="430" y="135" width="340" height="540" rx="28" fill="#eaf8f7" stroke="#99d5cf" stroke-width="2"/>
+    <rect x="810" y="135" width="340" height="540" rx="28" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <text x="80" y="185" fill="#ffffff" font-size="26" font-weight="700">X-ray</text>
+    <text x="460" y="185" fill="#0f4c47" font-size="26" font-weight="700">MRI</text>
+    <text x="840" y="185" fill="#9a3412" font-size="26" font-weight="700">Ultrasound</text>
+
+    <g transform="translate(95 218)">
+      <path d="M75 0 C58 70 61 111 92 160 L126 160 C157 111 160 70 143 0 Z" fill="#f8fafc"/>
+      <path d="M86 180 C61 254 66 327 77 374 L109 374 C103 315 103 255 118 180 Z" fill="#f8fafc"/>
+      <path d="M132 180 C147 255 147 315 141 374 L173 374 C184 327 189 254 164 180 Z" fill="#f8fafc"/>
+      <ellipse cx="109" cy="170" rx="31" ry="23" fill="#93c5fd" stroke="#ffffff" stroke-width="5"/>
+      <path d="M82 165 Q109 150 136 165" fill="none" stroke="#38bdf8" stroke-width="8"/>
+      <path d="M84 188 Q109 198 134 188" fill="none" stroke="#38bdf8" stroke-width="8"/>
+      <circle cx="56" cy="171" r="17" fill="#ffffff" opacity=".92"/>
+      <path d="M48 159 Q65 170 48 184" fill="none" stroke="#93c5fd" stroke-width="5"/>
+    </g>
+    <text x="80" y="585" fill="#a5f3fc" font-size="17" font-weight="700">Strongest view</text>
+    <text x="80" y="614" fill="#e2e8f0" font-size="17">Bone, alignment, fracture,</text>
+    <text x="80" y="640" fill="#e2e8f0" font-size="17">joint-space narrowing</text>
+
+    <g transform="translate(485 218)">
+      <path d="M65 0 C48 68 53 111 84 157 L129 157 C160 111 165 68 148 0 Z" fill="#d6b991"/>
+      <path d="M78 184 C57 250 58 323 69 374 L104 374 C98 310 101 247 114 184 Z" fill="#d6b991"/>
+      <path d="M132 184 C145 247 148 310 142 374 L177 374 C188 323 189 250 168 184 Z" fill="#d6b991"/>
+      <path d="M76 159 Q107 143 139 159" fill="none" stroke="#22c55e" stroke-width="11"/>
+      <path d="M78 183 Q107 199 137 183" fill="none" stroke="#22c55e" stroke-width="11"/>
+      <path d="M83 173 Q107 157 132 173 Q107 189 83 173 Z" fill="#fb923c"/>
+      <path d="M89 151 L129 195" stroke="#ef4444" stroke-width="8" stroke-linecap="round"/>
+      <path d="M126 151 L88 195" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+      <ellipse cx="52" cy="171" rx="19" ry="29" fill="#f5d0a9" stroke="#0f766e" stroke-width="4"/>
+      <path d="M49 205 L58 345" stroke="#8b5cf6" stroke-width="11" stroke-linecap="round"/>
+    </g>
+    <text x="460" y="585" fill="#0f766e" font-size="17" font-weight="700">Strongest view</text>
+    <text x="460" y="614" fill="#334155" font-size="17">Menisci, ligaments, cartilage,</text>
+    <text x="460" y="640" fill="#334155" font-size="17">tendons, bone marrow</text>
+
+    <g transform="translate(848 226)">
+      <path d="M25 55 Q120 18 228 58 L215 125 Q121 96 39 131 Z" fill="#334155"/>
+      <rect x="66" y="10" width="130" height="72" rx="20" fill="#0f172a" transform="rotate(12 131 46)"/>
+      <rect x="86" y="21" width="90" height="33" rx="10" fill="#38bdf8" transform="rotate(12 131 46)"/>
+      <path d="M61 119 Q122 148 198 120" fill="none" stroke="#fb923c" stroke-width="15" stroke-linecap="round"/>
+      <path d="M44 157 Q125 185 217 156" fill="none" stroke="#0f766e" stroke-width="20" stroke-linecap="round"/>
+      <ellipse cx="131" cy="215" rx="57" ry="31" fill="#7dd3fc" opacity=".7" stroke="#0284c7" stroke-width="5"/>
+      <path d="M51 90 Q131 125 212 91" fill="none" stroke="#38bdf8" stroke-width="4" stroke-dasharray="10 10"/>
+      <path d="M42 105 Q131 146 222 106" fill="none" stroke="#38bdf8" stroke-width="4" stroke-dasharray="10 10"/>
+      <path d="M36 121 Q131 166 229 122" fill="none" stroke="#38bdf8" stroke-width="4" stroke-dasharray="10 10"/>
+      <path d="M55 250 C45 315 49 346 69 374" fill="none" stroke="#d6b991" stroke-width="32" stroke-linecap="round"/>
+      <path d="M207 250 C217 315 213 346 193 374" fill="none" stroke="#d6b991" stroke-width="32" stroke-linecap="round"/>
+    </g>
+    <text x="840" y="585" fill="#c2410c" font-size="17" font-weight="700">Strongest view</text>
+    <text x="840" y="614" fill="#334155" font-size="17">Superficial tendon, fluid, cyst,</text>
+    <text x="840" y="640" fill="#334155" font-size="17">movement, needle guidance</text>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="250" y="700" width="700" height="38" rx="19" fill="#e2e8f0"/>
+    <text x="600" y="726" text-anchor="middle" fill="#334155" font-size="16" font-weight="700">No single image explains pain without the history and examination.</text>
+  </g>
+</svg>

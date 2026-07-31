@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Trail descent knee load map</title>
+  <desc id="desc">Runner descending a varied trail with labels for braking, quadriceps control, front-knee demand, and uneven footing.</desc>
+  <rect width="900" height="520" rx="28" fill="#07182d"/>
+  <text x="46" y="56" fill="#f8fafc" font-family="Arial, sans-serif" font-size="28" font-weight="700">Why descents feel different from flat running</text>
+  <path d="M35 390 C140 330 210 310 300 340 C400 375 480 280 560 260 C650 238 725 170 865 122 L865 486 L35 486 Z" fill="#14532d"/>
+  <path d="M35 390 C140 330 210 310 300 340 C400 375 480 280 560 260 C650 238 725 170 865 122" fill="none" stroke="#a3e635" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="535" cy="224" r="18" fill="#f8fafc"/>
+  <path d="M535 242 L520 290 M522 255 L485 270 M523 260 L553 279 M520 290 L486 327 M520 290 L550 323" stroke="#f8fafc" stroke-width="9" stroke-linecap="round"/>
+  <path d="M490 327 L446 344" stroke="#38bdf8" stroke-width="7" stroke-linecap="round" marker-end="url(#blueArrow)"/>
+  <path d="M550 323 L590 303" stroke="#fbbf24" stroke-width="7" stroke-linecap="round" marker-end="url(#goldArrow)"/>
+  <path d="M524 279 L475 245" stroke="#f472b6" stroke-width="6" stroke-linecap="round" marker-end="url(#pinkArrow)"/>
+  <defs>
+    <marker id="blueArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#38bdf8"/>
+    </marker>
+    <marker id="goldArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#fbbf24"/>
+    </marker>
+    <marker id="pinkArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#f472b6"/>
+    </marker>
+  </defs>
+  <g font-family="Arial, sans-serif">
+    <rect x="58" y="95" width="260" height="72" rx="15" fill="#102a43"/>
+    <circle cx="86" cy="131" r="10" fill="#38bdf8"/>
+    <text x="106" y="125" fill="#f8fafc" font-size="19" font-weight="700">Braking demand</text>
+    <text x="106" y="148" fill="#cbd5e1" font-size="15">Control forward and downward speed</text>
+    <rect x="58" y="180" width="260" height="72" rx="15" fill="#102a43"/>
+    <circle cx="86" cy="216" r="10" fill="#fbbf24"/>
+    <text x="106" y="210" fill="#f8fafc" font-size="19" font-weight="700">Quadriceps control</text>
+    <text x="106" y="233" fill="#cbd5e1" font-size="15">Repeated lowering under load</text>
+    <rect x="58" y="265" width="260" height="72" rx="15" fill="#102a43"/>
+    <circle cx="86" cy="301" r="10" fill="#f472b6"/>
+    <text x="106" y="295" fill="#f8fafc" font-size="19" font-weight="700">Front-knee demand</text>
+    <text x="106" y="318" fill="#cbd5e1" font-size="15">May rise across long descents</text>
+    <rect x="610" y="355" width="240" height="82" rx="15" fill="#102a43"/>
+    <text x="634" y="386" fill="#f8fafc" font-size="19" font-weight="700">Terrain adaptation</text>
+    <text x="634" y="411" fill="#cbd5e1" font-size="15">Roots, rocks, camber and loose ground</text>
+    <circle cx="670" cy="303" r="12" fill="#94a3b8"/>
+    <circle cx="710" cy="283" r="16" fill="#64748b"/>
+    <path d="M760 235 l18 -35 l18 35 z" fill="#84cc16"/>
+  </g>
+</svg>

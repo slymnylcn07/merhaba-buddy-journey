@@ -269,6 +269,9 @@ const articleContent = (
     <p>
       Running repeats a similar loading cycle many times. A rapid change in distance, pace, hills, surface, footwear, or weekly frequency can therefore compound into noticeable <Link to="/guides/running-knee-pain-guide" className="text-primary hover:underline">post-run knee discomfort</Link>.
     </p>
+    <p>
+      Hybrid fitness can stack that running volume with loaded knee work in the same session. If symptoms appear as you move between repeated runs, sleds, lunges, and wall balls, use the <Link to="/guides/hyrox-knee-pain" className="text-primary hover:underline">HYROX knee pain guide</Link> to identify the first task that changes your movement.
+    </p>
 
     <figure className="my-8">
       <img

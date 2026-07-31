@@ -2,6 +2,26 @@ import type { ArticleData } from "./articles/types";
 import { applyArticleSourceStandards } from "./article-source-standards";
 
 const recentArticleLoaders: Record<string, () => Promise<ArticleData>> = {
+  "hyrox-knee-pain": () =>
+    import("./articles/hyrox-knee-pain").then(
+      (module) => module.hyroxKneePain.article,
+    ),
+  "rucking-knee-pain": () =>
+    import("./articles/rucking-knee-pain").then(
+      (module) => module.ruckingKneePain.article,
+    ),
+  "padel-knee-pain": () =>
+    import("./articles/padel-knee-pain").then(
+      (module) => module.padelKneePain.article,
+    ),
+  "trail-running-knee-pain": () =>
+    import("./articles/trail-running-knee-pain").then(
+      (module) => module.trailRunningKneePain.article,
+    ),
+  "knee-xray-vs-mri-vs-ultrasound": () =>
+    import("./articles/knee-xray-vs-mri-vs-ultrasound").then(
+      (module) => module.kneeXrayVsMriVsUltrasound.article,
+    ),
   "osgood-schlatter-adults": () =>
     import("./articles/osgood-schlatter-adults").then(
       (module) => module.osgoodSchlatterAdults.article,
