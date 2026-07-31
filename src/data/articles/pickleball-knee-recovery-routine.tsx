@@ -102,6 +102,9 @@ export const pickleballKneeRecoveryRoutine: ArticleExport = {
         <p>
           The knee does more than bend when you stop. The quadriceps work eccentrically, meaning they produce force while lengthening, to keep the body from continuing forward. Those braking forces repeat every time you chase a short ball, stop at the kitchen line, or recover after a wide shot. When fatigue rises, the knee may drift inward, the trunk may stay too upright, and the final step may become a hard plant instead of a controlled deceleration.
         </p>
+        <p>
+          Padel uses some of the same stop-start court skills, but the enclosed court, wall rebounds, low reaches, and movement patterns deserve their own progression. Padel players can use the separate <Link to="/guides/padel-knee-pain" className="text-primary hover:underline">padel knee pain and return-to-court guide</Link>.
+        </p>
         <h3>Low reaches and lunges</h3>
         <p>
           A soft dink can force a deeper knee bend than a powerful baseline shot. Players often reach the paddle forward while the hips remain behind, loading the front leg and kneecap. Repeating this position without adequate hip and thigh strength can make the front of the knee feel sore, especially on stairs or when standing up later.

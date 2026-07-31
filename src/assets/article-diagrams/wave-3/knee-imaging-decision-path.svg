@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Typical adult knee imaging decision path</title>
+  <desc id="desc">A clinician-led flow from the main imaging question to X-ray, MRI, ultrasound, or urgent assessment.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="800" rx="34" fill="#07182d"/>
+  <text x="60" y="64" fill="#f8fafc" font-family="Arial, sans-serif" font-size="32" font-weight="700">Which question needs an image?</text>
+  <text x="60" y="101" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="19">A typical adult pathway starts with clinical assessment, not a machine.</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="410" y="132" width="380" height="94" rx="26" fill="#ffffff"/>
+    <text x="600" y="172" text-anchor="middle" fill="#0f172a" font-size="22" font-weight="700">History and knee examination</text>
+    <text x="600" y="202" text-anchor="middle" fill="#475569" font-size="17">Injury, location, swelling, motion, stability</text>
+
+    <path d="M600 226 V274" stroke="#94a3b8" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <rect x="345" y="285" width="510" height="84" rx="24" fill="#dff7f4" stroke="#5eead4" stroke-width="3"/>
+    <text x="600" y="321" text-anchor="middle" fill="#115e59" font-size="21" font-weight="700">What is the first unanswered question?</text>
+    <text x="600" y="349" text-anchor="middle" fill="#334155" font-size="16">The same symptom can lead to a different test after examination.</text>
+
+    <path d="M600 369 V411" stroke="#94a3b8" stroke-width="5"/>
+    <path d="M600 411 H210 V449" fill="none" stroke="#64748b" stroke-width="5" marker-end="url(#arrow)"/>
+    <path d="M600 411 V449" fill="none" stroke="#64748b" stroke-width="5" marker-end="url(#arrow)"/>
+    <path d="M600 411 H990 V449" fill="none" stroke="#64748b" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <g>
+      <rect x="55" y="460" width="310" height="202" rx="26" fill="#eff6ff" stroke="#60a5fa" stroke-width="3"/>
+      <circle cx="102" cy="508" r="25" fill="#2563eb"/>
+      <text x="102" y="516" text-anchor="middle" fill="#ffffff" font-size="21" font-weight="700">1</text>
+      <text x="140" y="506" fill="#1e3a8a" font-size="20" font-weight="700">Bone or alignment?</text>
+      <text x="85" y="548" fill="#334155" font-size="16">Fracture concern</text>
+      <text x="85" y="575" fill="#334155" font-size="16">Dislocation or deformity</text>
+      <text x="85" y="602" fill="#334155" font-size="16">Chronic arthritis pattern</text>
+      <rect x="95" y="623" width="230" height="57" rx="18" fill="#1d4ed8"/>
+      <text x="210" y="659" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700">X-ray often first</text>
+    </g>
+
+    <g>
+      <rect x="445" y="460" width="310" height="202" rx="26" fill="#ecfdf5" stroke="#34d399" stroke-width="3"/>
+      <circle cx="492" cy="508" r="25" fill="#059669"/>
+      <text x="492" y="516" text-anchor="middle" fill="#ffffff" font-size="21" font-weight="700">2</text>
+      <text x="530" y="506" fill="#065f46" font-size="20" font-weight="700">Deep internal tissue?</text>
+      <text x="475" y="548" fill="#334155" font-size="16">Meniscus or ligament</text>
+      <text x="475" y="575" fill="#334155" font-size="16">Cartilage or bone marrow</text>
+      <text x="475" y="602" fill="#334155" font-size="16">Occult injury after X-ray</text>
+      <rect x="485" y="623" width="230" height="57" rx="18" fill="#047857"/>
+      <text x="600" y="659" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700">MRI may follow</text>
+    </g>
+
+    <g>
+      <rect x="835" y="460" width="310" height="202" rx="26" fill="#fff7ed" stroke="#fb923c" stroke-width="3"/>
+      <circle cx="882" cy="508" r="25" fill="#ea580c"/>
+      <text x="882" y="516" text-anchor="middle" fill="#ffffff" font-size="21" font-weight="700">3</text>
+      <text x="920" y="506" fill="#9a3412" font-size="20" font-weight="700">Focused surface issue?</text>
+      <text x="865" y="548" fill="#334155" font-size="16">Tendon or bursa</text>
+      <text x="865" y="575" fill="#334155" font-size="16">Fluid, cyst, or soft-tissue lump</text>
+      <text x="865" y="602" fill="#334155" font-size="16">Movement or needle guidance</text>
+      <rect x="875" y="623" width="230" height="57" rx="18" fill="#c2410c"/>
+      <text x="990" y="659" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700">Ultrasound may help</text>
+    </g>
+
+    <rect x="80" y="706" width="1040" height="58" rx="22" fill="#3b1620" stroke="#fb7185" stroke-width="2"/>
+    <text x="600" y="731" text-anchor="middle" fill="#fecdd3" font-size="17" font-weight="700">Deformity, inability to bear weight, a locked knee, or a hot red swollen knee needs prompt assessment.</text>
+    <text x="600" y="754" text-anchor="middle" fill="#fda4af" font-size="15">Do not delay urgent symptoms while choosing a scan.</text>
+  </g>
+</svg>

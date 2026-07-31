@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Padel movement and knee load map</title>
+  <desc id="desc">Top-down padel court showing a forward stop, lateral cut, low lunge, turn after glass, and jump landing.</desc>
+  <rect width="900" height="520" rx="28" fill="#07182d"/>
+  <text x="46" y="54" fill="#f8fafc" font-family="Arial, sans-serif" font-size="27" font-weight="700">Why a small court can create repeated knee demand</text>
+  <rect x="58" y="90" width="520" height="380" rx="14" fill="#0e7490" stroke="#bae6fd" stroke-width="4"/>
+  <line x1="318" y1="90" x2="318" y2="470" stroke="#e0f2fe" stroke-width="3"/>
+  <line x1="58" y1="280" x2="578" y2="280" stroke="#f8fafc" stroke-width="7"/>
+  <rect x="73" y="105" width="230" height="160" fill="none" stroke="#67e8f9" stroke-width="2"/>
+  <rect x="333" y="105" width="230" height="160" fill="none" stroke="#67e8f9" stroke-width="2"/>
+  <rect x="73" y="295" width="230" height="160" fill="none" stroke="#67e8f9" stroke-width="2"/>
+  <rect x="333" y="295" width="230" height="160" fill="none" stroke="#67e8f9" stroke-width="2"/>
+  <circle cx="205" cy="392" r="15" fill="#f8fafc"/>
+  <path d="M205 372 L205 330 M205 345 L180 360 M205 345 L230 355 M205 330 L188 300 M205 330 L230 300" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+  <path d="M215 385 C250 350 258 320 260 292" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <circle cx="260" cy="292" r="9" fill="#fbbf24"/>
+  <path d="M278 310 C340 345 395 345 442 308" fill="none" stroke="#34d399" stroke-width="6" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <circle cx="442" cy="308" r="9" fill="#34d399"/>
+  <path d="M450 300 C500 255 515 200 500 145" fill="none" stroke="#f472b6" stroke-width="6" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <circle cx="500" cy="145" r="9" fill="#f472b6"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/>
+    </marker>
+  </defs>
+  <g font-family="Arial, sans-serif">
+    <rect x="610" y="94" width="244" height="67" rx="14" fill="#102a43"/>
+    <circle cx="635" cy="127" r="9" fill="#fbbf24"/>
+    <text x="655" y="121" fill="#f8fafc" font-size="18" font-weight="700">Forward braking</text>
+    <text x="655" y="143" fill="#cbd5e1" font-size="15">Control speed before the net</text>
+    <rect x="610" y="174" width="244" height="67" rx="14" fill="#102a43"/>
+    <circle cx="635" cy="207" r="9" fill="#34d399"/>
+    <text x="655" y="201" fill="#f8fafc" font-size="18" font-weight="700">Lateral cut</text>
+    <text x="655" y="223" fill="#cbd5e1" font-size="15">Plant, redirect, recover</text>
+    <rect x="610" y="254" width="244" height="67" rx="14" fill="#102a43"/>
+    <circle cx="635" cy="287" r="9" fill="#f472b6"/>
+    <text x="655" y="281" fill="#f8fafc" font-size="18" font-weight="700">Low lunge</text>
+    <text x="655" y="303" fill="#cbd5e1" font-size="15">Reach, then push back</text>
+    <rect x="610" y="334" width="244" height="67" rx="14" fill="#102a43"/>
+    <circle cx="635" cy="367" r="9" fill="#60a5fa"/>
+    <text x="655" y="361" fill="#f8fafc" font-size="18" font-weight="700">Turn after glass</text>
+    <text x="655" y="383" fill="#cbd5e1" font-size="15">Reorganize the feet first</text>
+    <rect x="610" y="414" width="244" height="54" rx="14" fill="#102a43"/>
+    <circle cx="635" cy="441" r="9" fill="#a78bfa"/>
+    <text x="655" y="447" fill="#f8fafc" font-size="18" font-weight="700">Jump and landing</text>
+  </g>
+</svg>

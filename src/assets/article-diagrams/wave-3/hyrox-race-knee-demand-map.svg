@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">HYROX race knee demand map</title>
+  <desc id="desc">A visual timeline showing eight one kilometer runs and the knee demands of the sled push, sandbag lunges, and wall balls.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity=".12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="700" rx="36" fill="url(#bg)"/>
+  <text x="70" y="80" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#0f172a">Where HYROX can challenge the knee</text>
+  <text x="70" y="120" font-family="Arial, sans-serif" font-size="21" fill="#475569">Demand changes across the event. Demand is not the same as damage.</text>
+
+  <g transform="translate(70 168)">
+    <rect width="1060" height="138" rx="24" fill="#ffffff" filter="url(#shadow)"/>
+    <text x="34" y="40" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#1d4ed8">8 x 1 km running</text>
+    <g transform="translate(34 62)">
+      <rect width="116" height="42" rx="21" fill="#dbeafe"/>
+      <rect x="126" width="116" height="42" rx="21" fill="#bfdbfe"/>
+      <rect x="252" width="116" height="42" rx="21" fill="#93c5fd"/>
+      <rect x="378" width="116" height="42" rx="21" fill="#60a5fa"/>
+      <rect x="504" width="116" height="42" rx="21" fill="#3b82f6"/>
+      <rect x="630" width="116" height="42" rx="21" fill="#2563eb"/>
+      <rect x="756" width="116" height="42" rx="21" fill="#1d4ed8"/>
+      <rect x="882" width="116" height="42" rx="21" fill="#1e40af"/>
+      <g font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">
+        <text x="58" y="27" fill="#1e3a8a">1</text><text x="184" y="27" fill="#1e3a8a">2</text>
+        <text x="310" y="27" fill="#1e3a8a">3</text><text x="436" y="27" fill="#ffffff">4</text>
+        <text x="562" y="27" fill="#ffffff">5</text><text x="688" y="27" fill="#ffffff">6</text>
+        <text x="814" y="27" fill="#ffffff">7</text><text x="940" y="27" fill="#ffffff">8</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(70 344)">
+    <rect width="330" height="236" rx="24" fill="#ffffff" filter="url(#shadow)"/>
+    <circle cx="52" cy="54" r="28" fill="#fef3c7"/>
+    <path d="M38 62h34M45 48h20M46 48v14M64 48v14" fill="none" stroke="#d97706" stroke-width="5" stroke-linecap="round"/>
+    <text x="96" y="51" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#0f172a">Sled push</text>
+    <text x="96" y="79" font-family="Arial, sans-serif" font-size="17" fill="#64748b">50 meters</text>
+    <text x="30" y="122" font-family="Arial, sans-serif" font-size="18" fill="#334155">Knee demand changes with:</text>
+    <text x="30" y="156" font-family="Arial, sans-serif" font-size="18" fill="#334155">• load and floor friction</text>
+    <text x="30" y="187" font-family="Arial, sans-serif" font-size="18" fill="#334155">• trunk angle and step length</text>
+    <text x="30" y="218" font-family="Arial, sans-serif" font-size="18" fill="#334155">• fatigue after earlier runs</text>
+  </g>
+
+  <g transform="translate(435 344)">
+    <rect width="330" height="236" rx="24" fill="#ffffff" filter="url(#shadow)"/>
+    <circle cx="52" cy="54" r="28" fill="#dcfce7"/>
+    <path d="M45 34v30M45 64l-15 24M45 64l27 4M72 68l18 20M45 46l24 8" fill="none" stroke="#15803d" stroke-width="5" stroke-linecap="round"/>
+    <text x="96" y="51" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#0f172a">Sandbag lunges</text>
+    <text x="96" y="79" font-family="Arial, sans-serif" font-size="17" fill="#64748b">100 meters</text>
+    <text x="30" y="122" font-family="Arial, sans-serif" font-size="18" fill="#334155">Knee demand changes with:</text>
+    <text x="30" y="156" font-family="Arial, sans-serif" font-size="18" fill="#334155">• depth and front shin angle</text>
+    <text x="30" y="187" font-family="Arial, sans-serif" font-size="18" fill="#334155">• sandbag load and control</text>
+    <text x="30" y="218" font-family="Arial, sans-serif" font-size="18" fill="#334155">• total repeated steps</text>
+  </g>
+
+  <g transform="translate(800 344)">
+    <rect width="330" height="236" rx="24" fill="#ffffff" filter="url(#shadow)"/>
+    <circle cx="52" cy="54" r="28" fill="#fee2e2"/>
+    <circle cx="52" cy="39" r="8" fill="#b91c1c"/>
+    <path d="M52 49v32M52 58l-18 14M52 58l18 14M52 81l-16 24M52 81l16 24" fill="none" stroke="#b91c1c" stroke-width="5" stroke-linecap="round"/>
+    <text x="96" y="51" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#0f172a">Wall balls</text>
+    <text x="96" y="79" font-family="Arial, sans-serif" font-size="17" fill="#64748b">100 repetitions</text>
+    <text x="30" y="122" font-family="Arial, sans-serif" font-size="18" fill="#334155">Knee demand changes with:</text>
+    <text x="30" y="156" font-family="Arial, sans-serif" font-size="18" fill="#334155">• squat depth and rhythm</text>
+    <text x="30" y="187" font-family="Arial, sans-serif" font-size="18" fill="#334155">• ball load and target height</text>
+    <text x="30" y="218" font-family="Arial, sans-serif" font-size="18" fill="#334155">• late-race fatigue</text>
+  </g>
+
+  <rect x="70" y="617" width="1060" height="46" rx="23" fill="#0f172a"/>
+  <text x="600" y="647" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle" fill="#ffffff">Look for the station, dose, and timing that reproduce symptoms before changing everything.</text>
+</svg>

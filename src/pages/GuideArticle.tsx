@@ -396,6 +396,12 @@ const GuideArticle = () => {
                   </p>
                 )}
 
+                {article.quickAnswer && (
+                  <p className="mb-6 text-lg font-normal leading-8 text-slate-700">
+                    {article.intro}
+                  </p>
+                )}
+
                 <div className="mb-6 lg:hidden">
                   <ArticleTableOfContents variant="mobile" initialCount={5} />
                 </div>
@@ -408,7 +414,7 @@ const GuideArticle = () => {
                     Quick Answer
                   </p>
                   <p className="mb-0 text-lg font-normal leading-8 text-slate-700">
-                    {article.intro}
+                    {article.quickAnswer || article.intro}
                   </p>
                 </div>
 

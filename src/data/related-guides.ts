@@ -7,6 +7,31 @@ const STOP_WORDS = new Set([
 ]);
 
 const PRIORITY_RELATED: Record<string, string[]> = {
+  "hyrox-knee-pain": [
+    "knee-pain-after-exercise",
+    "knee-ache-after-leg-workouts",
+    "running-knee-pain-guide",
+  ],
+  "rucking-knee-pain": [
+    "knee-pain-when-hiking",
+    "knee-pain-after-long-walks",
+    "best-insoles-for-knee-pain-2026",
+  ],
+  "padel-knee-pain": [
+    "pickleball-knee-recovery-routine",
+    "pain-behind-kneecap",
+    "knee-pain-when-squatting",
+  ],
+  "trail-running-knee-pain": [
+    "running-knee-pain-guide",
+    "knee-pain-when-hiking",
+    "it-band-pain-location-diagram",
+  ],
+  "knee-xray-vs-mri-vs-ultrasound": [
+    "understanding-knee-injuries",
+    "osteochondral-lesion-knee",
+    "knee-arthritis-pain-guide",
+  ],
   "best-supplements-for-knee-pain": [
     "glucosamine-chondroitin-knee-pain",
   ],

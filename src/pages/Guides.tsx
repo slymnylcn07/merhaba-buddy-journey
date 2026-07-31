@@ -143,6 +143,16 @@ import thumbWave3KneeNumbness from "@/assets/guide-thumbnails/wave-3/knee-numbne
 import thumbWave3KneeNumbnessAvif from "@/assets/guide-thumbnails/wave-3/knee-numbness-guide-thumb.avif";
 import thumbWave3OsteochondralLesion from "@/assets/guide-thumbnails/wave-3/osteochondral-lesion-knee-thumb.webp";
 import thumbWave3OsteochondralLesionAvif from "@/assets/guide-thumbnails/wave-3/osteochondral-lesion-knee-thumb.avif";
+import thumbWave3HyroxKneePain from "@/assets/guide-thumbnails/wave-3/hyrox-knee-pain-thumb.webp";
+import thumbWave3HyroxKneePainAvif from "@/assets/guide-thumbnails/wave-3/hyrox-knee-pain-thumb.avif";
+import thumbWave3RuckingKneePain from "@/assets/guide-thumbnails/wave-3/rucking-knee-pain-thumb.webp";
+import thumbWave3RuckingKneePainAvif from "@/assets/guide-thumbnails/wave-3/rucking-knee-pain-thumb.avif";
+import thumbWave3PadelKneePain from "@/assets/guide-thumbnails/wave-3/padel-knee-pain-thumb.webp";
+import thumbWave3PadelKneePainAvif from "@/assets/guide-thumbnails/wave-3/padel-knee-pain-thumb.avif";
+import thumbWave3TrailRunningKneePain from "@/assets/guide-thumbnails/wave-3/trail-running-knee-pain-thumb.webp";
+import thumbWave3TrailRunningKneePainAvif from "@/assets/guide-thumbnails/wave-3/trail-running-knee-pain-thumb.avif";
+import thumbWave3KneeImaging from "@/assets/guide-thumbnails/wave-3/knee-xray-vs-mri-vs-ultrasound-thumb.webp";
+import thumbWave3KneeImagingAvif from "@/assets/guide-thumbnails/wave-3/knee-xray-vs-mri-vs-ultrasound-thumb.avif";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "best-supplements-for-knee-pain": thumbSupplements,
@@ -255,6 +265,11 @@ const thumbnailMap: Record<string, string> = {
   "saphenous-nerve-knee-pain": thumbWave3SaphenousNervePain,
   "knee-numbness-guide": thumbWave3KneeNumbness,
   "osteochondral-lesion-knee": thumbWave3OsteochondralLesion,
+  "hyrox-knee-pain": thumbWave3HyroxKneePain,
+  "rucking-knee-pain": thumbWave3RuckingKneePain,
+  "padel-knee-pain": thumbWave3PadelKneePain,
+  "trail-running-knee-pain": thumbWave3TrailRunningKneePain,
+  "knee-xray-vs-mri-vs-ultrasound": thumbWave3KneeImaging,
 };
 
 const thumbnailAvifMap: Record<string, string> = {
@@ -280,6 +295,11 @@ const thumbnailAvifMap: Record<string, string> = {
   "saphenous-nerve-knee-pain": thumbWave3SaphenousNervePainAvif,
   "knee-numbness-guide": thumbWave3KneeNumbnessAvif,
   "osteochondral-lesion-knee": thumbWave3OsteochondralLesionAvif,
+  "hyrox-knee-pain": thumbWave3HyroxKneePainAvif,
+  "rucking-knee-pain": thumbWave3RuckingKneePainAvif,
+  "padel-knee-pain": thumbWave3PadelKneePainAvif,
+  "trail-running-knee-pain": thumbWave3TrailRunningKneePainAvif,
+  "knee-xray-vs-mri-vs-ultrasound": thumbWave3KneeImagingAvif,
 };
 
 const thumbnailPatternMap: { pattern: RegExp; image: string }[] = [
@@ -406,6 +426,7 @@ const locationSlugs = [
   "saphenous-nerve-knee-pain",
   "knee-numbness-guide",
   "osteochondral-lesion-knee",
+  "knee-xray-vs-mri-vs-ultrasound",
 ];
 
 const activitySlugs = [
@@ -448,6 +469,10 @@ const activitySlugs = [
   "cold-weather-knee-pain",
   "osgood-schlatter-adults",
   "osteochondral-lesion-knee",
+  "hyrox-knee-pain",
+  "rucking-knee-pain",
+  "padel-knee-pain",
+  "trail-running-knee-pain",
 ];
 
 const lifeStageSlugs = [

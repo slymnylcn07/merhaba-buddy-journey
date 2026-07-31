@@ -1,4 +1,24 @@
 export const recentArticleCTAs: Record<string, { headline: string; text: string }> = {
+  "hyrox-knee-pain": {
+    headline: "Want a simple comfort routine after HYROX training?",
+    text: "When there is no new injury, swelling, unusual heat, or instability, FlexiKnee can add adjustable warmth and optional vibration after training. It does not correct race preparation, replace rehabilitation, or make an injured knee safe to race.",
+  },
+  "rucking-knee-pain": {
+    headline: "Looking for comfort after a loaded walking day?",
+    text: "When warning signs and swelling are absent, FlexiKnee can add adjustable warmth and optional vibration after a ruck. It does not offset an overly heavy pack, poor fit, unsuitable footwear, or a training load your knee cannot yet recover from.",
+  },
+  "padel-knee-pain": {
+    headline: "Building a calmer routine after court time?",
+    text: "When the knee is not newly injured, swollen, hot, locked, or unstable, FlexiKnee can add adjustable warmth and optional vibration after play. It does not replace court-specific strength, load progression, or assessment after a twist.",
+  },
+  "trail-running-knee-pain": {
+    headline: "Want a short comfort routine after the trail?",
+    text: "When swelling and warning signs are absent, FlexiKnee can add adjustable warmth and optional vibration after a run. It does not replace descent training, sensible elevation progress, footwear decisions, or assessment after a fall.",
+  },
+  "knee-xray-vs-mri-vs-ultrasound": {
+    headline: "Has the knee been assessed and cleared for a comfort routine?",
+    text: "FlexiKnee may support everyday comfort after a clinician has ruled out a problem that needs specific care. It cannot diagnose a knee condition, replace a recommended scan, or explain an imaging finding.",
+  },
   "osgood-schlatter-adults": {
     headline: "Want a short comfort routine after the cause is clear?",
     text: "FlexiKnee offers adjustable warmth, red light, and gentle vibration for everyday knee comfort. Avoid direct device pressure on a tender tibial tubercle bump, and do not use it in place of assessment after a new injury.",

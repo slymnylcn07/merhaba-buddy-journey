@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Rucksack fit and hill strategy</title>
+  <desc id="desc">A visual showing a secured backpack and how level, uphill, and downhill terrain change rucking demands.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#f0fdf4"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity=".11"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="700" rx="36" fill="url(#bg)"/>
+  <text x="70" y="78" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#0f172a">Pack control and terrain both matter</text>
+  <text x="70" y="119" font-family="Arial, sans-serif" font-size="21" fill="#475569">A secure load reduces movement. It does not erase the extra demand of weight or hills.</text>
+
+  <g transform="translate(70 162)">
+    <rect width="420" height="460" rx="28" fill="#ffffff" filter="url(#shadow)"/>
+    <text x="32" y="45" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#0f172a">Secure the load</text>
+    <circle cx="188" cy="103" r="32" fill="#bfdbfe"/>
+    <path d="M188 136v124M188 161l-52 74M188 161l44 71M188 260l-42 94M188 260l52 91" fill="none" stroke="#1e3a8a" stroke-width="13" stroke-linecap="round"/>
+    <rect x="204" y="142" width="92" height="132" rx="18" fill="#166534"/>
+    <path d="M217 153q-42 42-21 112M282 153q31 42 12 112" fill="none" stroke="#4ade80" stroke-width="8"/>
+    <path d="M204 223h92" stroke="#dcfce7" stroke-width="8"/>
+    <path d="M208 170h-66" stroke="#ef4444" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="30" y="389" font-family="Arial, sans-serif" font-size="18" fill="#334155">• tighten shoulder straps evenly</text>
+    <text x="30" y="421" font-family="Arial, sans-serif" font-size="18" fill="#334155">• limit load bounce and side shift</text>
+    <text x="30" y="453" font-family="Arial, sans-serif" font-size="18" fill="#334155">• use the hip belt if the pack has one</text>
+  </g>
+
+  <g transform="translate(530 162)">
+    <rect width="600" height="460" rx="28" fill="#ffffff" filter="url(#shadow)"/>
+    <text x="32" y="45" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#0f172a">Read the terrain</text>
+    <g transform="translate(30 82)">
+      <rect width="164" height="250" rx="20" fill="#eff6ff"/>
+      <path d="M18 171h128" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="74" cy="103" r="15" fill="#1d4ed8"/>
+      <path d="M74 119v49M74 130l-27 31M74 130l31 26M74 168l-24 44M74 168l37 35" fill="none" stroke="#1e3a8a" stroke-width="7" stroke-linecap="round"/>
+      <rect x="82" y="121" width="39" height="57" rx="8" fill="#15803d"/>
+      <text x="82" y="229" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle" fill="#0f172a">Level</text>
+    </g>
+    <g transform="translate(218 82)">
+      <rect width="164" height="250" rx="20" fill="#f0fdf4"/>
+      <path d="M16 196L148 132" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="73" cy="103" r="15" fill="#15803d"/>
+      <path d="M73 119v49M73 130l-26 29M73 130l29 25M73 168l-23 40M73 168l37 31" fill="none" stroke="#166534" stroke-width="7" stroke-linecap="round"/>
+      <rect x="81" y="121" width="39" height="57" rx="8" fill="#1d4ed8"/>
+      <text x="82" y="229" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle" fill="#0f172a">Uphill</text>
+    </g>
+    <g transform="translate(406 82)">
+      <rect width="164" height="250" rx="20" fill="#fff7ed"/>
+      <path d="M16 132L148 196" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="73" cy="103" r="15" fill="#b45309"/>
+      <path d="M73 119v49M73 130l-24 30M73 130l30 24M73 168l-22 40M73 168l39 31" fill="none" stroke="#9a3412" stroke-width="7" stroke-linecap="round"/>
+      <rect x="81" y="121" width="39" height="57" rx="8" fill="#15803d"/>
+      <text x="82" y="229" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle" fill="#0f172a">Downhill</text>
+    </g>
+    <text x="32" y="376" font-family="Arial, sans-serif" font-size="18" fill="#334155">Use your natural, controlled stride. Avoid braking hard on every step.</text>
+    <text x="32" y="410" font-family="Arial, sans-serif" font-size="18" fill="#334155">Reduce weight, pace, or hill exposure if the knee response escalates.</text>
+  </g>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444"/>
+    </marker>
+  </defs>
+</svg>
