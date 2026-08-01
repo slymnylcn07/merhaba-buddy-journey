@@ -153,6 +153,16 @@ import thumbWave3TrailRunningKneePain from "@/assets/guide-thumbnails/wave-3/tra
 import thumbWave3TrailRunningKneePainAvif from "@/assets/guide-thumbnails/wave-3/trail-running-knee-pain-thumb.avif";
 import thumbWave3KneeImaging from "@/assets/guide-thumbnails/wave-3/knee-xray-vs-mri-vs-ultrasound-thumb.webp";
 import thumbWave3KneeImagingAvif from "@/assets/guide-thumbnails/wave-3/knee-xray-vs-mri-vs-ultrasound-thumb.avif";
+import thumbWave341StairmasterVsIncline from "@/assets/guide-thumbnails/wave-3-41-45/stairmaster-vs-incline-treadmill-knees-thumb.webp";
+import thumbWave341StairmasterVsInclineAvif from "@/assets/guide-thumbnails/wave-3-41-45/stairmaster-vs-incline-treadmill-knees-thumb.avif";
+import thumbWave342InclineWalking from "@/assets/guide-thumbnails/wave-3-41-45/incline-walking-knee-pain-thumb.webp";
+import thumbWave342InclineWalkingAvif from "@/assets/guide-thumbnails/wave-3-41-45/incline-walking-knee-pain-thumb.avif";
+import thumbWave343ReformerPilates from "@/assets/guide-thumbnails/wave-3-41-45/reformer-pilates-knee-pain-thumb.webp";
+import thumbWave343ReformerPilatesAvif from "@/assets/guide-thumbnails/wave-3-41-45/reformer-pilates-knee-pain-thumb.avif";
+import thumbWave344AquaJogging from "@/assets/guide-thumbnails/wave-3-41-45/aqua-jogging-knee-pain-thumb.webp";
+import thumbWave344AquaJoggingAvif from "@/assets/guide-thumbnails/wave-3-41-45/aqua-jogging-knee-pain-thumb.avif";
+import thumbWave345DownhillRunning from "@/assets/guide-thumbnails/wave-3-41-45/downhill-running-knee-pain-thumb.webp";
+import thumbWave345DownhillRunningAvif from "@/assets/guide-thumbnails/wave-3-41-45/downhill-running-knee-pain-thumb.avif";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "best-supplements-for-knee-pain": thumbSupplements,
@@ -270,6 +280,11 @@ const thumbnailMap: Record<string, string> = {
   "padel-knee-pain": thumbWave3PadelKneePain,
   "trail-running-knee-pain": thumbWave3TrailRunningKneePain,
   "knee-xray-vs-mri-vs-ultrasound": thumbWave3KneeImaging,
+  "stairmaster-vs-incline-treadmill-knees": thumbWave341StairmasterVsIncline,
+  "incline-walking-knee-pain": thumbWave342InclineWalking,
+  "reformer-pilates-knee-pain": thumbWave343ReformerPilates,
+  "aqua-jogging-knee-pain": thumbWave344AquaJogging,
+  "downhill-running-knee-pain": thumbWave345DownhillRunning,
 };
 
 const thumbnailAvifMap: Record<string, string> = {
@@ -300,6 +315,11 @@ const thumbnailAvifMap: Record<string, string> = {
   "padel-knee-pain": thumbWave3PadelKneePainAvif,
   "trail-running-knee-pain": thumbWave3TrailRunningKneePainAvif,
   "knee-xray-vs-mri-vs-ultrasound": thumbWave3KneeImagingAvif,
+  "stairmaster-vs-incline-treadmill-knees": thumbWave341StairmasterVsInclineAvif,
+  "incline-walking-knee-pain": thumbWave342InclineWalkingAvif,
+  "reformer-pilates-knee-pain": thumbWave343ReformerPilatesAvif,
+  "aqua-jogging-knee-pain": thumbWave344AquaJoggingAvif,
+  "downhill-running-knee-pain": thumbWave345DownhillRunningAvif,
 };
 
 const thumbnailPatternMap: { pattern: RegExp; image: string }[] = [
@@ -473,6 +493,11 @@ const activitySlugs = [
   "rucking-knee-pain",
   "padel-knee-pain",
   "trail-running-knee-pain",
+  "stairmaster-vs-incline-treadmill-knees",
+  "incline-walking-knee-pain",
+  "reformer-pilates-knee-pain",
+  "aqua-jogging-knee-pain",
+  "downhill-running-knee-pain",
 ];
 
 const lifeStageSlugs = [

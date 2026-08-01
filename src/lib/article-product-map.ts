@@ -81,6 +81,11 @@ const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
   "trail-running-knee-pain": "insoles",
   "best-low-impact-cardio-knee-pain": "sleeve",
   "backward-walking-knee-pain": "sleeve",
+  "stairmaster-vs-incline-treadmill-knees": "insoles",
+  "incline-walking-knee-pain": "insoles",
+  "reformer-pilates-knee-pain": "main",
+  "aqua-jogging-knee-pain": "main",
+  "downhill-running-knee-pain": "insoles",
 };
 
 /** Sıra önemli: ilk eşleşen kural kazanır. */

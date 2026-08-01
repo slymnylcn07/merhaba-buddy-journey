@@ -7,6 +7,31 @@ const STOP_WORDS = new Set([
 ]);
 
 const PRIORITY_RELATED: Record<string, string[]> = {
+  "stairmaster-vs-incline-treadmill-knees": [
+    "incline-walking-knee-pain",
+    "best-low-impact-cardio-knee-pain",
+    "knee-pain-climbing-stairs",
+  ],
+  "incline-walking-knee-pain": [
+    "stairmaster-vs-incline-treadmill-knees",
+    "knee-pain-when-hiking",
+    "best-low-impact-cardio-knee-pain",
+  ],
+  "reformer-pilates-knee-pain": [
+    "knee-pain-during-yoga",
+    "knee-pain-when-squatting",
+    "best-low-impact-cardio-knee-pain",
+  ],
+  "aqua-jogging-knee-pain": [
+    "best-low-impact-cardio-knee-pain",
+    "running-knee-pain-guide",
+    "knee-pain-after-exercise",
+  ],
+  "downhill-running-knee-pain": [
+    "trail-running-knee-pain",
+    "running-knee-pain-guide",
+    "knee-pain-when-hiking",
+  ],
   "hyrox-knee-pain": [
     "knee-pain-after-exercise",
     "knee-ache-after-leg-workouts",
@@ -23,9 +48,24 @@ const PRIORITY_RELATED: Record<string, string[]> = {
     "knee-pain-when-squatting",
   ],
   "trail-running-knee-pain": [
+    "downhill-running-knee-pain",
     "running-knee-pain-guide",
     "knee-pain-when-hiking",
-    "it-band-pain-location-diagram",
+  ],
+  "running-knee-pain-guide": [
+    "downhill-running-knee-pain",
+    "aqua-jogging-knee-pain",
+    "trail-running-knee-pain",
+  ],
+  "knee-pain-when-hiking": [
+    "incline-walking-knee-pain",
+    "downhill-running-knee-pain",
+    "trail-running-knee-pain",
+  ],
+  "best-low-impact-cardio-knee-pain": [
+    "aqua-jogging-knee-pain",
+    "stairmaster-vs-incline-treadmill-knees",
+    "reformer-pilates-knee-pain",
   ],
   "knee-xray-vs-mri-vs-ultrasound": [
     "understanding-knee-injuries",

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Four incline walking progression dials</title>
+  <desc id="desc">Four dials for treadmill grade, walking speed, session duration, and weekly frequency, with guidance to change one dial and review the knee response.</desc>
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#f0fdf4"/>
+    </linearGradient>
+    <filter id="shadow3" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.09"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="760" rx="36" fill="url(#bg3)"/>
+  <text x="600" y="67" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#0f172a">Incline walking has four separate load dials</text>
+  <text x="600" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#475569">A small grade is not small if speed, time, and frequency all jump with it.</text>
+
+  <g filter="url(#shadow3)">
+    <rect x="56" y="150" width="254" height="366" rx="28" fill="#ffffff"/>
+    <rect x="334" y="150" width="254" height="366" rx="28" fill="#ffffff"/>
+    <rect x="612" y="150" width="254" height="366" rx="28" fill="#ffffff"/>
+    <rect x="890" y="150" width="254" height="366" rx="28" fill="#ffffff"/>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <circle cx="183" cy="280" r="82" fill="#eff6ff" stroke="#bfdbfe" stroke-width="9"/>
+    <path d="M126 323A82 82 0 0 1 238 220" fill="none" stroke="#2563eb" stroke-width="13" stroke-linecap="round"/>
+    <path d="M183 280l47-44" stroke="#0f172a" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="183" cy="280" r="11" fill="#0f172a"/>
+    <text x="183" y="399" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">Grade</text>
+    <text x="183" y="430" text-anchor="middle" font-size="16" fill="#475569">Percent incline</text>
+    <text x="183" y="460" text-anchor="middle" font-size="15" fill="#1d4ed8">Raises uphill demand</text>
+
+    <circle cx="461" cy="280" r="82" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="9"/>
+    <path d="M404 323A82 82 0 0 1 516 220" fill="none" stroke="#10b981" stroke-width="13" stroke-linecap="round"/>
+    <path d="M461 280l22-58" stroke="#0f172a" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="461" cy="280" r="11" fill="#0f172a"/>
+    <text x="461" y="399" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">Speed</text>
+    <text x="461" y="430" text-anchor="middle" font-size="16" fill="#475569">Walking pace</text>
+    <text x="461" y="460" text-anchor="middle" font-size="15" fill="#047857">Changes step demand</text>
+
+    <circle cx="739" cy="280" r="82" fill="#fff7ed" stroke="#fed7aa" stroke-width="9"/>
+    <path d="M682 323A82 82 0 0 1 794 220" fill="none" stroke="#f97316" stroke-width="13" stroke-linecap="round"/>
+    <path d="M739 280l-10-61" stroke="#0f172a" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="739" cy="280" r="11" fill="#0f172a"/>
+    <text x="739" y="399" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">Duration</text>
+    <text x="739" y="430" text-anchor="middle" font-size="16" fill="#475569">Minutes per session</text>
+    <text x="739" y="460" text-anchor="middle" font-size="15" fill="#c2410c">Builds repeated exposure</text>
+
+    <circle cx="1017" cy="280" r="82" fill="#faf5ff" stroke="#e9d5ff" stroke-width="9"/>
+    <path d="M960 323A82 82 0 0 1 1072 220" fill="none" stroke="#9333ea" stroke-width="13" stroke-linecap="round"/>
+    <path d="M1017 280l-45-42" stroke="#0f172a" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="1017" cy="280" r="11" fill="#0f172a"/>
+    <text x="1017" y="399" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">Frequency</text>
+    <text x="1017" y="430" text-anchor="middle" font-size="16" fill="#475569">Sessions per week</text>
+    <text x="1017" y="460" text-anchor="middle" font-size="15" fill="#7e22ce">Changes recovery time</text>
+  </g>
+
+  <rect x="116" y="568" width="968" height="122" rx="28" fill="#0f172a"/>
+  <text x="600" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Progress one dial, then review three signals</text>
+  <g font-family="Arial, sans-serif" font-size="16">
+    <rect x="165" y="636" width="246" height="34" rx="17" fill="#1e3a8a"/>
+    <text x="288" y="659" text-anchor="middle" fill="#dbeafe">Normal walking pattern</text>
+    <rect x="477" y="636" width="246" height="34" rx="17" fill="#065f46"/>
+    <text x="600" y="659" text-anchor="middle" fill="#d1fae5">No meaningful swelling</text>
+    <rect x="789" y="636" width="246" height="34" rx="17" fill="#713f12"/>
+    <text x="912" y="659" text-anchor="middle" fill="#fef3c7">Next morning near baseline</text>
+  </g>
+</svg>

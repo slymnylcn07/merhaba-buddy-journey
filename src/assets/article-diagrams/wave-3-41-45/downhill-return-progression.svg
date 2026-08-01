@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Return to downhill running progression</title>
+  <desc id="desc">A five-stage progression from daily function and level running to longer, steeper, and faster descents, with a symptom checkpoint after every stage.</desc>
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#07182d"/>
+      <stop offset="1" stop-color="#134e4a"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="760" rx="34" fill="#f8fafc"/>
+  <rect x="32" y="28" width="1136" height="100" rx="28" fill="url(#header)"/>
+  <text x="70" y="72" fill="#f8fafc" font-family="Arial, sans-serif" font-size="31" font-weight="700">Rebuild downhill capacity in layers</text>
+  <text x="70" y="104" fill="#ccfbf1" font-family="Arial, sans-serif" font-size="17">Repeat a tolerable stage before adding the next demand.</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="42" y="172" width="204" height="360" rx="26" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+    <circle cx="86" cy="216" r="27" fill="#2563eb"/>
+    <text x="86" y="225" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">1</text>
+    <text x="72" y="272" fill="#1e3a8a" font-size="20" font-weight="700">Daily function</text>
+    <text x="72" y="310" fill="#475569" font-size="16">Comfortable walking</text>
+    <text x="72" y="338" fill="#475569" font-size="16">Ordinary stairs</text>
+    <text x="72" y="366" fill="#475569" font-size="16">Usual knee motion</text>
+    <text x="72" y="394" fill="#475569" font-size="16">No meaningful swelling</text>
+    <path d="M80 468 H208" stroke="#93c5fd" stroke-width="4" stroke-linecap="round"/>
+    <text x="144" y="496" text-anchor="middle" fill="#1e40af" font-size="15" font-weight="700">Build the base first</text>
+
+    <path d="M254 352 H279" stroke="#64748b" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <rect x="281" y="172" width="204" height="360" rx="26" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <circle cx="325" cy="216" r="27" fill="#059669"/>
+    <text x="325" y="225" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">2</text>
+    <text x="311" y="272" fill="#065f46" font-size="20" font-weight="700">Level running</text>
+    <text x="311" y="310" fill="#475569" font-size="16">Predictable surface</text>
+    <text x="311" y="338" fill="#475569" font-size="16">Easy effort</text>
+    <text x="311" y="366" fill="#475569" font-size="16">Short enough to read</text>
+    <text x="311" y="394" fill="#475569" font-size="16">the later response</text>
+    <path d="M319 468 H447" stroke="#6ee7b7" stroke-width="4" stroke-linecap="round"/>
+    <text x="383" y="496" text-anchor="middle" fill="#047857" font-size="15" font-weight="700">Confirm running first</text>
+
+    <path d="M493 352 H518" stroke="#64748b" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <rect x="520" y="172" width="204" height="360" rx="26" fill="#f0fdfa" stroke="#5eead4" stroke-width="2"/>
+    <circle cx="564" cy="216" r="27" fill="#0f766e"/>
+    <text x="564" y="225" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">3</text>
+    <text x="550" y="272" fill="#115e59" font-size="20" font-weight="700">Short descents</text>
+    <text x="550" y="310" fill="#475569" font-size="16">Gentle grade</text>
+    <text x="550" y="338" fill="#475569" font-size="16">Smooth surface</text>
+    <text x="550" y="366" fill="#475569" font-size="16">Controlled pace</text>
+    <text x="550" y="394" fill="#475569" font-size="16">Recovery between repeats</text>
+    <path d="M558 468 H686" stroke="#5eead4" stroke-width="4" stroke-linecap="round"/>
+    <text x="622" y="496" text-anchor="middle" fill="#0f766e" font-size="15" font-weight="700">Introduce braking</text>
+
+    <path d="M732 352 H757" stroke="#64748b" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <rect x="759" y="172" width="204" height="360" rx="26" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+    <circle cx="803" cy="216" r="27" fill="#ea580c"/>
+    <text x="803" y="225" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">4</text>
+    <text x="789" y="272" fill="#9a3412" font-size="20" font-weight="700">Longer descent</text>
+    <text x="789" y="310" fill="#475569" font-size="16">Extend continuous time</text>
+    <text x="789" y="338" fill="#475569" font-size="16">Keep grade familiar</text>
+    <text x="789" y="366" fill="#475569" font-size="16">Keep speed controlled</text>
+    <text x="789" y="394" fill="#475569" font-size="16">Watch form under fatigue</text>
+    <path d="M797 468 H925" stroke="#fdba74" stroke-width="4" stroke-linecap="round"/>
+    <text x="861" y="496" text-anchor="middle" fill="#c2410c" font-size="15" font-weight="700">Build duration</text>
+
+    <path d="M971 352 H996" stroke="#64748b" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <rect x="998" y="172" width="160" height="360" rx="26" fill="#fdf2f8" stroke="#f9a8d4" stroke-width="2"/>
+    <circle cx="1042" cy="216" r="27" fill="#db2777"/>
+    <text x="1042" y="225" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">5</text>
+    <text x="1026" y="272" fill="#9d174d" font-size="19" font-weight="700">Performance</text>
+    <text x="1026" y="310" fill="#475569" font-size="15">Steeper grade</text>
+    <text x="1026" y="338" fill="#475569" font-size="15">Faster pace</text>
+    <text x="1026" y="366" fill="#475569" font-size="15">Hill repeats</text>
+    <text x="1026" y="394" fill="#475569" font-size="15">Fatigue exposure</text>
+    <path d="M1026 468 H1130" stroke="#f9a8d4" stroke-width="4" stroke-linecap="round"/>
+    <text x="1078" y="496" text-anchor="middle" fill="#be185d" font-size="14" font-weight="700">Add one dial</text>
+  </g>
+
+  <rect x="94" y="576" width="1012" height="105" rx="28" fill="#07182d"/>
+  <circle cx="156" cy="629" r="29" fill="#14b8a6"/>
+  <path d="M144 629 L153 638 L170 616" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="204" y="616" fill="#f8fafc" font-family="Arial, sans-serif" font-size="21" font-weight="700">Checkpoint after every stage</text>
+  <text x="204" y="646" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">Review gait, swelling, ordinary stairs, later-day symptoms, and the next morning.</text>
+  <text x="204" y="669" fill="#99f6e4" font-family="Arial, sans-serif" font-size="15" font-weight="700">Repeat, progress, or step back based on the response.</text>
+
+  <text x="600" y="724" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="15" font-weight="700">A diagnosed injury may require different criteria and clinician-led progression.</text>
+</svg>
