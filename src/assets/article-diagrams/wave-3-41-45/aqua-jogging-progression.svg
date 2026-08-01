@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Aqua jogging progression and land return</title>
+  <desc id="desc">A four-stage progression from deep-water technique to easy time, controlled intervals, and a separate return to land running.</desc>
+  <defs>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07182d"/>
+      <stop offset="1" stop-color="#0c4a6e"/>
+    </linearGradient>
+    <marker id="next" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="760" rx="34" fill="#f8fafc"/>
+  <rect x="38" y="35" width="1124" height="135" rx="28" fill="url(#top)"/>
+  <text x="82" y="91" fill="#fff" font-family="Arial, sans-serif" font-size="34" font-weight="700">Build pool capacity, then restore land contact separately</text>
+  <text x="82" y="132" fill="#bae6fd" font-family="Arial, sans-serif" font-size="18">Progress only after the knee returns to its usual baseline later that day and next morning.</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="50" y="221" width="250" height="347" rx="28" fill="#eff6ff" stroke="#93c5fd" stroke-width="3"/>
+    <circle cx="175" cy="278" r="36" fill="#2563eb"/>
+    <text x="175" y="290" text-anchor="middle" fill="#fff" font-size="32" font-weight="700">1</text>
+    <text x="175" y="342" text-anchor="middle" fill="#1e3a8a" font-size="24" font-weight="700">Technique</text>
+    <path d="M109 397 C131 379 153 415 175 397 C197 379 219 415 241 397" fill="none" stroke="#0ea5e9" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="175" cy="387" r="17" fill="#0f172a"/>
+    <path d="M175 404 L175 464 M175 423 L144 448 M175 423 L207 447 M175 464 L151 507 M175 464 L204 501" stroke="#0f172a" stroke-width="9" stroke-linecap="round"/>
+    <text x="175" y="533" text-anchor="middle" fill="#475569" font-size="16">Secure belt, deep water,</text>
+    <text x="175" y="555" text-anchor="middle" fill="#475569" font-size="16">repeatable rhythm.</text>
+
+    <path d="M307 395 L335 395" stroke="#64748b" stroke-width="5" marker-end="url(#next)"/>
+
+    <rect x="350" y="221" width="250" height="347" rx="28" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="3"/>
+    <circle cx="475" cy="278" r="36" fill="#059669"/>
+    <text x="475" y="290" text-anchor="middle" fill="#fff" font-size="32" font-weight="700">2</text>
+    <text x="475" y="342" text-anchor="middle" fill="#065f46" font-size="24" font-weight="700">Easy time</text>
+    <circle cx="475" cy="430" r="62" fill="#d1fae5" stroke="#059669" stroke-width="7"/>
+    <path d="M475 430 L475 388 M475 430 L509 448" stroke="#059669" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="475" cy="430" r="7" fill="#059669"/>
+    <text x="475" y="533" text-anchor="middle" fill="#475569" font-size="16">Add a little conversational</text>
+    <text x="475" y="555" text-anchor="middle" fill="#475569" font-size="16">time before intensity.</text>
+
+    <path d="M607 395 L635 395" stroke="#64748b" stroke-width="5" marker-end="url(#next)"/>
+
+    <rect x="650" y="221" width="250" height="347" rx="28" fill="#fff7ed" stroke="#fdba74" stroke-width="3"/>
+    <circle cx="775" cy="278" r="36" fill="#ea580c"/>
+    <text x="775" y="290" text-anchor="middle" fill="#fff" font-size="32" font-weight="700">3</text>
+    <text x="775" y="342" text-anchor="middle" fill="#9a3412" font-size="24" font-weight="700">Intervals</text>
+    <rect x="706" y="384" width="138" height="24" rx="12" fill="#fed7aa"/>
+    <rect x="706" y="384" width="89" height="24" rx="12" fill="#ea580c"/>
+    <rect x="706" y="429" width="138" height="24" rx="12" fill="#fed7aa"/>
+    <rect x="706" y="429" width="49" height="24" rx="12" fill="#fb923c"/>
+    <rect x="706" y="474" width="138" height="24" rx="12" fill="#fed7aa"/>
+    <rect x="706" y="474" width="108" height="24" rx="12" fill="#ea580c"/>
+    <text x="775" y="533" text-anchor="middle" fill="#475569" font-size="16">Add one interval or change</text>
+    <text x="775" y="555" text-anchor="middle" fill="#475569" font-size="16">one work period at a time.</text>
+
+    <path d="M907 395 L935 395" stroke="#64748b" stroke-width="5" marker-end="url(#next)"/>
+
+    <rect x="950" y="221" width="200" height="347" rx="28" fill="#fdf2f8" stroke="#f9a8d4" stroke-width="3"/>
+    <circle cx="1050" cy="278" r="36" fill="#db2777"/>
+    <text x="1050" y="290" text-anchor="middle" fill="#fff" font-size="32" font-weight="700">4</text>
+    <text x="1050" y="342" text-anchor="middle" fill="#9d174d" font-size="24" font-weight="700">Land bridge</text>
+    <path d="M983 468 C1008 443 1028 452 1045 424 C1066 389 1090 393 1118 369" fill="none" stroke="#db2777" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="1001" cy="456" r="8" fill="#9d174d"/>
+    <circle cx="1050" cy="418" r="8" fill="#9d174d"/>
+    <circle cx="1104" cy="381" r="8" fill="#9d174d"/>
+    <text x="1050" y="533" text-anchor="middle" fill="#475569" font-size="16">Rebuild walking and</text>
+    <text x="1050" y="555" text-anchor="middle" fill="#475569" font-size="16">running contact separately.</text>
+  </g>
+
+  <rect x="100" y="616" width="1000" height="73" rx="26" fill="#07182d"/>
+  <text x="600" y="647" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="19" font-weight="700">Progress one variable: easy time, interval count, work duration, or speed.</text>
+  <text x="600" y="675" text-anchor="middle" fill="#bae6fd" font-family="Arial, sans-serif" font-size="16">A hard pool session does not prove that hills, impact, or normal running volume are ready.</text>
+  <text x="600" y="727" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="15" font-weight="700">Stop and reassess if pain escalates, swelling appears, or ordinary walking becomes worse.</text>
+</svg>

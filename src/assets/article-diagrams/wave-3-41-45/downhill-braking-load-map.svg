@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Downhill running braking load map</title>
+  <desc id="desc">A runner descending a slope with arrows for motion, gravity, and braking, alongside four load dials for grade, speed, stride, and duration.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07182d"/>
+      <stop offset="1" stop-color="#123d5b"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#99f6e4"/>
+      <stop offset="1" stop-color="#2dd4bf"/>
+    </linearGradient>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#fbbf24"/>
+    </marker>
+    <marker id="arrowRose" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#fb7185"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="760" rx="34" fill="#f8fafc"/>
+  <text x="54" y="63" fill="#0f172a" font-family="Arial, sans-serif" font-size="32" font-weight="700">Why a descent is more than easy pace</text>
+  <text x="54" y="99" fill="#475569" font-family="Arial, sans-serif" font-size="18">The knee helps control forward and downward motion, one braking step at a time.</text>
+
+  <rect x="50" y="130" width="700" height="560" rx="30" fill="url(#sky)"/>
+  <path d="M82 286 C246 324 409 398 718 585 L718 654 L82 654 Z" fill="url(#hill)" opacity="0.95"/>
+  <path d="M82 286 C246 324 409 398 718 585" fill="none" stroke="#ecfeff" stroke-width="12" stroke-linecap="round"/>
+
+  <g transform="translate(392 365) rotate(22)" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="0" cy="-82" r="24" fill="#f8fafc"/>
+    <path d="M-3 -56 L12 18" stroke="#f8fafc" stroke-width="18"/>
+    <path d="M2 -40 L-46 -7" stroke="#f8fafc" stroke-width="13"/>
+    <path d="M5 -38 L55 -19" stroke="#f8fafc" stroke-width="13"/>
+    <path d="M12 16 L-34 79" stroke="#f8fafc" stroke-width="16"/>
+    <path d="M12 16 L62 58" stroke="#f8fafc" stroke-width="16"/>
+    <path d="M-52 82 L-18 89" stroke="#38bdf8" stroke-width="12"/>
+    <path d="M57 61 L90 67" stroke="#38bdf8" stroke-width="12"/>
+  </g>
+
+  <path d="M328 222 L328 349" stroke="#fbbf24" stroke-width="8" marker-end="url(#arrowAmber)"/>
+  <text x="277" y="202" fill="#fde68a" font-family="Arial, sans-serif" font-size="18" font-weight="700">Gravity</text>
+
+  <path d="M446 265 L616 374" stroke="#38bdf8" stroke-width="8" marker-end="url(#arrowBlue)"/>
+  <text x="519" y="258" fill="#bae6fd" font-family="Arial, sans-serif" font-size="18" font-weight="700">Motion</text>
+
+  <path d="M465 510 L344 432" stroke="#fb7185" stroke-width="8" marker-end="url(#arrowRose)"/>
+  <text x="450" y="545" text-anchor="middle" fill="#fecdd3" font-family="Arial, sans-serif" font-size="18" font-weight="700">Braking control</text>
+  <text x="450" y="570" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="15">Quadriceps work while lengthening</text>
+
+  <rect x="102" y="604" width="596" height="58" rx="18" fill="#082f49" stroke="#38bdf8" stroke-width="2"/>
+  <text x="400" y="630" text-anchor="middle" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="16" font-weight="700">A short dip and a long continuous descent are different exposures.</text>
+  <text x="400" y="651" text-anchor="middle" fill="#bae6fd" font-family="Arial, sans-serif" font-size="14">Count downhill time, not only route distance.</text>
+
+  <g font-family="Arial, sans-serif">
+    <text x="796" y="166" fill="#0f172a" font-size="22" font-weight="700">Four load dials</text>
+
+    <rect x="780" y="188" width="370" height="104" rx="22" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+    <circle cx="824" cy="240" r="25" fill="#2563eb"/>
+    <text x="824" y="248" text-anchor="middle" fill="#fff" font-size="22" font-weight="700">1</text>
+    <text x="866" y="226" fill="#1e3a8a" font-size="20" font-weight="700">Grade</text>
+    <text x="866" y="253" fill="#475569" font-size="15">How steep is the slope?</text>
+    <text x="866" y="275" fill="#475569" font-size="15">Is it familiar?</text>
+
+    <rect x="780" y="309" width="370" height="104" rx="22" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <circle cx="824" cy="361" r="25" fill="#059669"/>
+    <text x="824" y="369" text-anchor="middle" fill="#fff" font-size="22" font-weight="700">2</text>
+    <text x="866" y="347" fill="#065f46" font-size="20" font-weight="700">Speed</text>
+    <text x="866" y="374" fill="#475569" font-size="15">Easy breathing can hide</text>
+    <text x="866" y="396" fill="#475569" font-size="15">fast mechanical loading.</text>
+
+    <rect x="780" y="430" width="370" height="104" rx="22" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+    <circle cx="824" cy="482" r="25" fill="#ea580c"/>
+    <text x="824" y="490" text-anchor="middle" fill="#fff" font-size="22" font-weight="700">3</text>
+    <text x="866" y="468" fill="#9a3412" font-size="20" font-weight="700">Stride and cadence</text>
+    <text x="866" y="495" fill="#475569" font-size="15">Farther reach can feel like</text>
+    <text x="866" y="517" fill="#475569" font-size="15">a stronger brake.</text>
+
+    <rect x="780" y="551" width="370" height="104" rx="22" fill="#fdf2f8" stroke="#f9a8d4" stroke-width="2"/>
+    <circle cx="824" cy="603" r="25" fill="#db2777"/>
+    <text x="824" y="611" text-anchor="middle" fill="#fff" font-size="22" font-weight="700">4</text>
+    <text x="866" y="589" fill="#9d174d" font-size="20" font-weight="700">Duration</text>
+    <text x="866" y="616" fill="#475569" font-size="15">How many braking steps</text>
+    <text x="866" y="638" fill="#475569" font-size="15">accumulate before fatigue?</text>
+  </g>
+
+  <text x="600" y="726" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="15" font-weight="700">No single dial diagnoses pain. Use the pattern to guide a safer training decision.</text>
+</svg>

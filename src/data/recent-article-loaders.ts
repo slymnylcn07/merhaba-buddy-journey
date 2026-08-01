@@ -2,6 +2,26 @@ import type { ArticleData } from "./articles/types";
 import { applyArticleSourceStandards } from "./article-source-standards";
 
 const recentArticleLoaders: Record<string, () => Promise<ArticleData>> = {
+  "stairmaster-vs-incline-treadmill-knees": () =>
+    import("./articles/stairmaster-vs-incline-treadmill-knees").then(
+      (module) => module.stairmasterVsInclineTreadmillKnees.article,
+    ),
+  "incline-walking-knee-pain": () =>
+    import("./articles/incline-walking-knee-pain").then(
+      (module) => module.inclineWalkingKneePain.article,
+    ),
+  "reformer-pilates-knee-pain": () =>
+    import("./articles/reformer-pilates-knee-pain").then(
+      (module) => module.reformerPilatesKneePain.article,
+    ),
+  "aqua-jogging-knee-pain": () =>
+    import("./articles/aqua-jogging-knee-pain").then(
+      (module) => module.aquaJoggingKneePain.article,
+    ),
+  "downhill-running-knee-pain": () =>
+    import("./articles/downhill-running-knee-pain").then(
+      (module) => module.downhillRunningKneePain.article,
+    ),
   "hyrox-knee-pain": () =>
     import("./articles/hyrox-knee-pain").then(
       (module) => module.hyroxKneePain.article,

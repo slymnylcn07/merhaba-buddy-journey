@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Reformer class knee communication plan</title>
+  <desc id="desc">A four-step pre-class conversation covering pain location, triggering movement, current restriction, and planned alternative.</desc>
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07182d"/>
+      <stop offset="1" stop-color="#164e63"/>
+    </linearGradient>
+    <marker id="stepArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="760" rx="34" fill="#f8fafc"/>
+  <rect x="38" y="35" width="1124" height="132" rx="28" fill="url(#header)"/>
+  <text x="82" y="91" fill="#fff" font-family="Arial, sans-serif" font-size="34" font-weight="700">Before class, give the instructor four useful details</text>
+  <text x="82" y="132" fill="#bae6fd" font-family="Arial, sans-serif" font-size="18">Specific information makes a planned alternative easier than a last-second guess.</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="55" y="213" width="250" height="310" rx="28" fill="#eff6ff" stroke="#93c5fd" stroke-width="3"/>
+    <circle cx="180" cy="267" r="34" fill="#2563eb"/>
+    <text x="180" y="278" text-anchor="middle" fill="#fff" font-size="31" font-weight="700">1</text>
+    <text x="180" y="333" text-anchor="middle" fill="#1e3a8a" font-size="24" font-weight="700">Location</text>
+    <path d="M149 374 C149 349 167 340 180 340 C193 340 211 349 211 374 C211 416 180 458 180 458 C180 458 149 416 149 374 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="4"/>
+    <circle cx="180" cy="375" r="14" fill="#fb7185"/>
+    <text x="180" y="486" text-anchor="middle" fill="#475569" font-size="16">Where is it felt?</text>
+    <text x="180" y="508" text-anchor="middle" fill="#475569" font-size="16">Which knee?</text>
+
+    <path d="M315 368 L344 368" stroke="#64748b" stroke-width="5" marker-end="url(#stepArrow)"/>
+
+    <rect x="355" y="213" width="250" height="310" rx="28" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="3"/>
+    <circle cx="480" cy="267" r="34" fill="#059669"/>
+    <text x="480" y="278" text-anchor="middle" fill="#fff" font-size="31" font-weight="700">2</text>
+    <text x="480" y="333" text-anchor="middle" fill="#065f46" font-size="24" font-weight="700">Trigger</text>
+    <path d="M424 421 L462 370 L501 421 L538 366" fill="none" stroke="#059669" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="501" cy="421" r="11" fill="#fb7185"/>
+    <text x="480" y="486" text-anchor="middle" fill="#475569" font-size="16">Deep bend, kneeling,</text>
+    <text x="480" y="508" text-anchor="middle" fill="#475569" font-size="16">lunge, or later soreness?</text>
+
+    <path d="M615 368 L644 368" stroke="#64748b" stroke-width="5" marker-end="url(#stepArrow)"/>
+
+    <rect x="655" y="213" width="250" height="310" rx="28" fill="#fff7ed" stroke="#fdba74" stroke-width="3"/>
+    <circle cx="780" cy="267" r="34" fill="#ea580c"/>
+    <text x="780" y="278" text-anchor="middle" fill="#fff" font-size="31" font-weight="700">3</text>
+    <text x="780" y="333" text-anchor="middle" fill="#9a3412" font-size="24" font-weight="700">Restriction</text>
+    <rect x="723" y="365" width="114" height="90" rx="14" fill="#ffedd5" stroke="#ea580c" stroke-width="4"/>
+    <path d="M742 392 L818 392 M742 416 L799 416 M742 440 L784 440" stroke="#ea580c" stroke-width="6" stroke-linecap="round"/>
+    <text x="780" y="486" text-anchor="middle" fill="#475569" font-size="16">Diagnosis, surgery rule,</text>
+    <text x="780" y="508" text-anchor="middle" fill="#475569" font-size="16">or clinician instruction?</text>
+
+    <path d="M915 368 L944 368" stroke="#64748b" stroke-width="5" marker-end="url(#stepArrow)"/>
+
+    <rect x="955" y="213" width="190" height="310" rx="28" fill="#fdf2f8" stroke="#f9a8d4" stroke-width="3"/>
+    <circle cx="1050" cy="267" r="34" fill="#db2777"/>
+    <text x="1050" y="278" text-anchor="middle" fill="#fff" font-size="31" font-weight="700">4</text>
+    <text x="1050" y="333" text-anchor="middle" fill="#9d174d" font-size="24" font-weight="700">Alternative</text>
+    <circle cx="1050" cy="390" r="38" fill="#fce7f3" stroke="#db2777" stroke-width="4"/>
+    <path d="M1028 390 L1044 406 L1076 372" fill="none" stroke="#db2777" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="1050" y="486" text-anchor="middle" fill="#475569" font-size="16">Agree on the substitute</text>
+    <text x="1050" y="508" text-anchor="middle" fill="#475569" font-size="16">before the sequence.</text>
+  </g>
+
+  <rect x="92" y="565" width="1016" height="122" rx="28" fill="#07182d"/>
+  <text x="600" y="611" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="21" font-weight="700">Example</text>
+  <text x="600" y="646" text-anchor="middle" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="18">“My right kneecap area hurts in a deep bend. Kneeling is uncomfortable,</text>
+  <text x="600" y="674" text-anchor="middle" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="18">so I need an alternative ready before lunges begin.”</text>
+  <text x="600" y="725" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="15" font-weight="700">An instructor can modify a class, but cannot diagnose a new injury.</text>
+</svg>

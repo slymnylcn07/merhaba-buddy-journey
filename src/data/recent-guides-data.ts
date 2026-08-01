@@ -14,6 +14,51 @@ export interface PublishedGuideData extends GuideData {
 
 export const recentGuidesData: PublishedGuideData[] = [
   {
+    slug: "stairmaster-vs-incline-treadmill-knees",
+    title: "StairMaster vs Incline Treadmill for Bad Knees",
+    description:
+      "Compare knee bend, workout control, Zone 2 cardio, calorie estimates, technique, and a practical first test on both machines.",
+    readTime: 18,
+    publishedDate: "2026-08-01",
+    lastModified: "2026-08-01",
+  },
+  {
+    slug: "incline-walking-knee-pain",
+    title: "Incline Walking With Knee Pain: When Hills Help or Hurt",
+    description:
+      "Learn how treadmill grade, pace, duration, hills, downhill exposure, and the 12-3-30 workout can change knee demand.",
+    readTime: 18,
+    publishedDate: "2026-08-01",
+    lastModified: "2026-08-01",
+  },
+  {
+    slug: "reformer-pilates-knee-pain",
+    title: "Reformer Pilates With Knee Pain: Springs, Footbar, and Modifications",
+    description:
+      "Adjust reformer springs, footbar position, range, kneeling, lunges, and class communication without relying on one universal setting.",
+    readTime: 17,
+    publishedDate: "2026-08-01",
+    lastModified: "2026-08-01",
+  },
+  {
+    slug: "aqua-jogging-knee-pain",
+    title: "Aqua Jogging for Knee Pain: A Pool Workout Without Impact",
+    description:
+      "Set up deep-water pool running with a flotation belt, form cues, a beginner workout, progression, and return-to-land checks.",
+    readTime: 17,
+    publishedDate: "2026-08-01",
+    lastModified: "2026-08-01",
+  },
+  {
+    slug: "downhill-running-knee-pain",
+    title: "Downhill Running Knee Pain: Braking Load, Form, and Recovery",
+    description:
+      "Understand how grade, speed, braking, cadence, stride, and descent exposure shape knee pain and a gradual return to downhill running.",
+    readTime: 18,
+    publishedDate: "2026-08-01",
+    lastModified: "2026-08-01",
+  },
+  {
     slug: "hyrox-knee-pain",
     title: "HYROX Knee Pain: Running, Lunges, Sleds, and Wall Balls",
     description:
@@ -42,12 +87,12 @@ export const recentGuidesData: PublishedGuideData[] = [
   },
   {
     slug: "trail-running-knee-pain",
-    title: "Trail Running Knee Pain: Descents, Terrain, and Training Load",
+    title: "Trail Running Knee Pain: Terrain, Footing, and Route Load",
     description:
-      "Why downhill trail running can bother the front, outer, or back of the knee, plus terrain, footwear, load, and return-to-trail decisions.",
+      "How technical terrain, footing, elevation, route design, and fatigue shape knee symptoms and a gradual return to trail running.",
     readTime: 19,
     publishedDate: "2026-07-31",
-    lastModified: "2026-07-31",
+    lastModified: "2026-08-01",
   },
   {
     slug: "knee-xray-vs-mri-vs-ultrasound",

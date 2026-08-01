@@ -1,4 +1,24 @@
 export const recentArticleCTAs: Record<string, { headline: string; text: string }> = {
+  "stairmaster-vs-incline-treadmill-knees": {
+    headline: "Want ground-up support in your cardio shoes?",
+    text: "FlexiKnee Sport Orthopedic Insoles can add structured arch support and cushioning inside compatible gym shoes. They do not make a painful machine safe, replace load progression, or resolve swelling, locking, or instability.",
+  },
+  "incline-walking-knee-pain": {
+    headline: "Looking for support on your next walking progression?",
+    text: "FlexiKnee Sport Orthopedic Insoles add structured arch support and cushioning inside compatible walking shoes. They do not replace a tolerable grade, sensible pacing, or assessment when hills repeatedly provoke pain.",
+  },
+  "reformer-pilates-knee-pain": {
+    headline: "Want a short comfort routine after reformer class?",
+    text: "When the knee is not newly injured, swollen, hot, locked, or unstable, FlexiKnee can add adjustable warmth and optional vibration at rest after class. It does not replace exercise modifications, instructor guidance, or rehabilitation.",
+  },
+  "aqua-jogging-knee-pain": {
+    headline: "Want a dry-land comfort routine after the pool?",
+    text: "After leaving the pool and drying completely, FlexiKnee can add adjustable warmth and optional vibration at rest. Keep every electronic comfort device away from water, and do not use it to replace a return-to-land plan or assessment of persistent symptoms.",
+  },
+  "downhill-running-knee-pain": {
+    headline: "Want ground-up support for your trail shoes?",
+    text: "FlexiKnee Sport Orthopedic Insoles can add structured arch support and cushioning inside compatible running or trail shoes. They do not correct braking technique, replace descent conditioning, or make a swollen or unstable knee safe to run on.",
+  },
   "hyrox-knee-pain": {
     headline: "Want a simple comfort routine after HYROX training?",
     text: "When there is no new injury, swelling, unusual heat, or instability, FlexiKnee can add adjustable warmth and optional vibration after training. It does not correct race preparation, replace rehabilitation, or make an injured knee safe to race.",

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Deep-water aqua jogging form check</title>
+  <desc id="desc">A pool runner supported by a flotation belt with callouts for water depth, trunk control, arm and leg rhythm, and keeping the feet off the bottom.</desc>
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#0c4a6e"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e0f2fe"/>
+      <stop offset="1" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="760" rx="34" fill="#f8fafc"/>
+  <text x="54" y="64" fill="#0f172a" font-family="Arial, sans-serif" font-size="32" font-weight="700">Deep-water form: supported, rhythmic, and off the floor</text>
+  <text x="54" y="101" fill="#475569" font-family="Arial, sans-serif" font-size="18">The belt supports buoyancy. It does not replace pool supervision or water confidence.</text>
+
+  <rect x="46" y="135" width="648" height="550" rx="30" fill="url(#sky)"/>
+  <path d="M46 282 C100 262 154 302 208 282 C262 262 316 302 370 282 C424 262 478 302 532 282 C586 262 640 302 694 282 L694 685 L46 685 Z" fill="url(#water)"/>
+  <path d="M46 282 C100 262 154 302 208 282 C262 262 316 302 370 282 C424 262 478 302 532 282 C586 262 640 302 694 282" fill="none" stroke="#7dd3fc" stroke-width="10"/>
+  <path d="M65 438 C116 418 167 458 218 438 C269 418 320 458 371 438 C422 418 473 458 524 438 C575 418 626 458 677 438" fill="none" stroke="#38bdf8" stroke-width="5" opacity="0.55"/>
+  <path d="M65 574 C116 554 167 594 218 574 C269 554 320 594 371 574 C422 554 473 594 524 574 C575 554 626 594 677 574" fill="none" stroke="#38bdf8" stroke-width="5" opacity="0.4"/>
+
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="359" cy="192" r="35" fill="#0f172a"/>
+    <path d="M357 230 L355 404" stroke="#0f172a" stroke-width="23"/>
+    <path d="M355 277 L276 345" stroke="#0f172a" stroke-width="17"/>
+    <path d="M355 277 L436 335" stroke="#0f172a" stroke-width="17"/>
+    <path d="M355 401 L293 520" stroke="#0f172a" stroke-width="20"/>
+    <path d="M355 401 L431 492" stroke="#0f172a" stroke-width="20"/>
+    <path d="M292 520 L338 580" stroke="#0f172a" stroke-width="17"/>
+    <path d="M431 492 L399 578" stroke="#0f172a" stroke-width="17"/>
+    <rect x="306" y="353" width="100" height="45" rx="20" fill="#fbbf24" stroke="#fff7ed" stroke-width="5"/>
+    <path d="M334 370 L378 370" stroke="#92400e" stroke-width="5"/>
+  </g>
+  <text x="508" y="366" fill="#fef3c7" font-family="Arial, sans-serif" font-size="16" font-weight="700">Flotation belt</text>
+  <path d="M492 360 L411 371" stroke="#fbbf24" stroke-width="4"/>
+
+  <line x1="86" y1="638" x2="654" y2="638" stroke="#bae6fd" stroke-width="8" stroke-dasharray="15 13"/>
+  <text x="370" y="664" text-anchor="middle" fill="#bae6fd" font-family="Arial, sans-serif" font-size="16" font-weight="700">Pool floor: feet remain clear throughout the cycle</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="737" y="137" width="413" height="116" rx="24" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+    <circle cx="789" cy="195" r="30" fill="#2563eb"/>
+    <path d="M773 198 C781 185 789 210 797 198 C805 185 813 210 821 198" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+    <text x="836" y="184" fill="#1e3a8a" font-size="21" font-weight="700">Secure belt</text>
+    <text x="836" y="212" fill="#475569" font-size="16">Snug enough not to ride up,</text>
+    <text x="836" y="234" fill="#475569" font-size="16">without restricting breathing.</text>
+
+    <rect x="737" y="274" width="413" height="116" rx="24" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <circle cx="789" cy="332" r="30" fill="#059669"/>
+    <path d="M789 312 L789 352 M773 321 L789 312 L805 321" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+    <text x="836" y="321" fill="#065f46" font-size="21" font-weight="700">Controlled trunk</text>
+    <text x="836" y="349" fill="#475569" font-size="16">Avoid leaning far back and</text>
+    <text x="836" y="371" fill="#475569" font-size="16">bicycling the feet forward.</text>
+
+    <rect x="737" y="411" width="413" height="116" rx="24" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+    <circle cx="789" cy="469" r="30" fill="#ea580c"/>
+    <path d="M770 477 L808 461 M770 461 L808 477" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+    <text x="836" y="458" fill="#9a3412" font-size="21" font-weight="700">Alternating rhythm</text>
+    <text x="836" y="486" fill="#475569" font-size="16">Move opposite arm and leg</text>
+    <text x="836" y="508" fill="#475569" font-size="16">with a repeatable cadence.</text>
+
+    <rect x="737" y="548" width="413" height="116" rx="24" fill="#fdf2f8" stroke="#f9a8d4" stroke-width="2"/>
+    <circle cx="789" cy="606" r="30" fill="#db2777"/>
+    <path d="M770 612 L808 612 M776 596 L802 596" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+    <text x="836" y="595" fill="#9d174d" font-size="21" font-weight="700">No floor contact</text>
+    <text x="836" y="623" fill="#475569" font-size="16">If the feet push off, it is</text>
+    <text x="836" y="645" fill="#475569" font-size="16">shallow-water running instead.</text>
+  </g>
+
+  <text x="600" y="727" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="15" font-weight="700">Controlled form is more useful than trying to travel quickly across the pool.</text>
+</svg>
