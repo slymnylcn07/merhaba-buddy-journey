@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/guide-thumbnails/wave-3-46-50/banded-tke-knee-exercise.webp";
-import bandSetup from "@/assets/article-diagrams/wave-3-46-50/tke-band-setup.svg";
-import progressionLadder from "@/assets/article-diagrams/wave-3-46-50/tke-progression-ladder.svg";
+import bandSetupAvif from "@/assets/article-photos/wave-3-46-50/banded-tke-inline-setup.avif";
+import bandSetupWebp from "@/assets/article-photos/wave-3-46-50/banded-tke-inline-setup.webp";
+import progressionLadderMobile from "@/assets/article-diagrams/wave-3-46-50/tke-progression-ladder.svg";
+import progressionLadderDesktop from "@/assets/article-diagrams/wave-3-46-50/tke-progression-ladder-desktop.svg";
 
 const linkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
@@ -112,12 +114,16 @@ export const bandedTkeKneeExercise: ArticleExport = {
 
         <h2>How to Set Up a Terminal Knee Extension With a Band</h2>
         <figure className="my-8">
-          <img
-            src={bandSetup}
-            alt="Banded terminal knee extension setup showing a secure knee-height anchor, band behind the knee, flat foot, and controlled straightening"
-            loading="lazy"
-          />
-          <figcaption>A secure anchor and a band behind the knee create the intended line of pull.</figcaption>
+          <picture>
+            <source srcSet={bandSetupAvif} type="image/avif" />
+            <img
+              src={bandSetupWebp}
+              alt="Athlete facing a secure knee-height anchor with a resistance band behind one knee, the working foot flat, and the knee nearly straight"
+              loading="lazy"
+              className="h-auto w-full rounded-2xl border border-slate-200 object-cover shadow-sm"
+            />
+          </picture>
+          <figcaption>Face the anchor, place the band behind one knee, keep the working heel down, and straighten without snapping the joint backward.</figcaption>
         </figure>
         <p>
           Use a long loop band or a resistance band tied into a secure loop. The anchor must be fixed, smooth enough not to cut the band, and able to tolerate more force than you plan to use. A closed rack post can work in a gym. At home, use equipment designed as an exercise anchor rather than a loose table leg, door handle, radiator, or object that can slide toward you.
@@ -161,11 +167,15 @@ export const bandedTkeKneeExercise: ArticleExport = {
           Band color is not a universal dose because manufacturers use different materials, widths, and color systems. Distance from the anchor also changes tension. Record the band, how far you stood from the anchor, repetitions, and perceived effort. That makes progression more reliable than simply changing from one color to another.
         </p>
         <figure className="my-8">
-          <img
-            src={progressionLadder}
-            alt="Terminal knee extension progression ladder moving from supported light band practice to stronger resistance and integrated functional exercise"
-            loading="lazy"
-          />
+          <picture>
+            <source media="(min-width: 768px)" srcSet={progressionLadderDesktop} type="image/svg+xml" />
+            <img
+              src={progressionLadderMobile}
+              alt="Terminal knee extension progression ladder moving from supported light band practice to stronger resistance and integrated functional exercise"
+              loading="lazy"
+              className="h-auto w-full"
+            />
+          </picture>
           <figcaption>Progress one variable at a time: control, repetitions, resistance, stance, then integration.</figcaption>
         </figure>
         <p>

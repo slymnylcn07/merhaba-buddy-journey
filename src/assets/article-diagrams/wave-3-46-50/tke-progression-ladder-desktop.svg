@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Five-step banded terminal knee extension progression</title>
+  <desc id="description">A desktop-friendly horizontal sequence that progresses control, repetitions, band tension, stance challenge, and integration into larger movements.</desc>
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f766e" />
+      <stop offset="1" stop-color="#2563eb" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="720" rx="32" fill="#f8fafc" />
+  <rect width="1200" height="142" rx="32" fill="url(#header)" />
+  <text x="600" y="66" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700">TKE Progression</text>
+  <text x="600" y="108" text-anchor="middle" fill="#dbeafe" font-family="Arial, Helvetica, sans-serif" font-size="26">One change at a time</text>
+
+  <path d="M148 226 H1052" fill="none" stroke="#bfdbfe" stroke-width="8" stroke-linecap="round" />
+
+  <g filter="url(#shadow)">
+    <rect x="42" y="274" width="208" height="284" rx="24" fill="#ffffff" stroke="#dbeafe" stroke-width="3" />
+    <circle cx="146" cy="226" r="37" fill="#0f766e" />
+    <text x="146" y="239" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700">1</text>
+    <text x="146" y="326" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">CONTROL</text>
+    <text x="146" y="390" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">Light band</text>
+    <text x="146" y="429" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">Hand support</text>
+    <text x="146" y="468" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">Same motion</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="269" y="274" width="208" height="284" rx="24" fill="#ffffff" stroke="#dbeafe" stroke-width="3" />
+    <circle cx="373" cy="226" r="37" fill="#0f766e" />
+    <text x="373" y="239" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700">2</text>
+    <text x="373" y="326" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">REPETITIONS</text>
+    <text x="373" y="390" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">Add reps first</text>
+    <text x="373" y="429" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">Keep heel flat</text>
+    <text x="373" y="468" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">Control return</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="496" y="274" width="208" height="284" rx="24" fill="#ffffff" stroke="#dbeafe" stroke-width="3" />
+    <circle cx="600" cy="226" r="37" fill="#2563eb" />
+    <text x="600" y="239" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700">3</text>
+    <text x="600" y="326" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">BAND TENSION</text>
+    <text x="600" y="390" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">Small increase</text>
+    <text x="600" y="429" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">No hip drive</text>
+    <text x="600" y="468" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">No knee snap</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="723" y="274" width="208" height="284" rx="24" fill="#ffffff" stroke="#dbeafe" stroke-width="3" />
+    <circle cx="827" cy="226" r="37" fill="#2563eb" />
+    <text x="827" y="239" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700">4</text>
+    <text x="827" y="326" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">STANCE</text>
+    <text x="827" y="390" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">Less support</text>
+    <text x="827" y="429" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">Stay stable</text>
+    <text x="827" y="468" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">Quad stays active</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="950" y="274" width="208" height="284" rx="24" fill="#ffffff" stroke="#dbeafe" stroke-width="3" />
+    <circle cx="1054" cy="226" r="37" fill="#7c3aed" />
+    <text x="1054" y="239" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700">5</text>
+    <text x="1054" y="326" text-anchor="middle" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">INTEGRATE</text>
+    <text x="1054" y="390" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">Squats or steps</text>
+    <text x="1054" y="429" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">Then running</text>
+    <text x="1054" y="468" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="24">or sport</text>
+  </g>
+
+  <rect x="248" y="606" width="704" height="76" rx="22" fill="#e0f2fe" />
+  <text x="600" y="654" text-anchor="middle" fill="#0c4a6e" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Check the response later today and tomorrow.</text>
+</svg>
