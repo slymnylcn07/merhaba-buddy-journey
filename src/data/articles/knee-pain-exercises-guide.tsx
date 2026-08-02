@@ -87,7 +87,7 @@ const article: ArticleData = {
       <ul>
         <li>Stand with your back flat against a wall</li>
         <li>Slide down until your thighs are parallel to the floor (or as far as comfortable)</li>
-        <li>Keep your knees directly above your ankles, don't let them extend past your toes</li>
+        <li>Keep your heels planted and use a depth that feels controlled; the knees may travel forward as your ankle mobility and proportions allow</li>
         <li>Hold for 10–30 seconds, building up over time</li>
         <li>Rest and repeat 3–5 times</li>
       </ul>
@@ -332,7 +332,7 @@ const article: ArticleData = {
     },
     {
       question: "What exercises should I avoid with knee pain?",
-      answer: "Generally avoid deep squats, lunges with knees past toes, high-impact jumping, and running on hard surfaces if you have knee discomfort. Focus instead on low-impact exercises like straight leg raises, wall sits, and gentle mobility work that don't stress the joint."
+      answer: "Temporarily reduce or modify any exercise that causes sharp pain, changes your movement, or leaves the knee clearly worse afterward. Depth, speed, resistance, recent training load, and individual capacity matter more than a universal rule about the knees crossing the toes. Start with a comfortable range and seek individual guidance when pain persists or the knee swells, locks, or gives way."
     },
   ],
   seoTags: "knee pain exercises, knee strengthening exercises, exercises for knee pain, straight leg raises, quadriceps strengthening, ankle mobility exercises, knee exercises for seniors, knee pain relief exercises, gentle knee exercises, daily knee routine",

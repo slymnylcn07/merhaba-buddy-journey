@@ -163,6 +163,16 @@ import thumbWave344AquaJogging from "@/assets/guide-thumbnails/wave-3-41-45/aqua
 import thumbWave344AquaJoggingAvif from "@/assets/guide-thumbnails/wave-3-41-45/aqua-jogging-knee-pain-thumb.avif";
 import thumbWave345DownhillRunning from "@/assets/guide-thumbnails/wave-3-41-45/downhill-running-knee-pain-thumb.webp";
 import thumbWave345DownhillRunningAvif from "@/assets/guide-thumbnails/wave-3-41-45/downhill-running-knee-pain-thumb.avif";
+import thumbWave346KneesOverToes from "@/assets/guide-thumbnails/wave-3-46-50/are-knees-over-toes-bad-thumb.webp";
+import thumbWave346KneesOverToesAvif from "@/assets/guide-thumbnails/wave-3-46-50/are-knees-over-toes-bad-thumb.avif";
+import thumbWave347TibialisRaises from "@/assets/guide-thumbnails/wave-3-46-50/tibialis-raises-knee-strength-thumb.webp";
+import thumbWave347TibialisRaisesAvif from "@/assets/guide-thumbnails/wave-3-46-50/tibialis-raises-knee-strength-thumb.avif";
+import thumbWave348BandedTke from "@/assets/guide-thumbnails/wave-3-46-50/banded-tke-knee-exercise-thumb.webp";
+import thumbWave348BandedTkeAvif from "@/assets/guide-thumbnails/wave-3-46-50/banded-tke-knee-exercise-thumb.avif";
+import thumbWave349SpanishSquat from "@/assets/guide-thumbnails/wave-3-46-50/spanish-squat-patellar-tendon-thumb.webp";
+import thumbWave349SpanishSquatAvif from "@/assets/guide-thumbnails/wave-3-46-50/spanish-squat-patellar-tendon-thumb.avif";
+import thumbWave350StepDown from "@/assets/guide-thumbnails/wave-3-46-50/step-down-exercise-knee-control-thumb.webp";
+import thumbWave350StepDownAvif from "@/assets/guide-thumbnails/wave-3-46-50/step-down-exercise-knee-control-thumb.avif";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "best-supplements-for-knee-pain": thumbSupplements,
@@ -285,6 +295,11 @@ const thumbnailMap: Record<string, string> = {
   "reformer-pilates-knee-pain": thumbWave343ReformerPilates,
   "aqua-jogging-knee-pain": thumbWave344AquaJogging,
   "downhill-running-knee-pain": thumbWave345DownhillRunning,
+  "are-knees-over-toes-bad": thumbWave346KneesOverToes,
+  "tibialis-raises-knee-strength": thumbWave347TibialisRaises,
+  "banded-tke-knee-exercise": thumbWave348BandedTke,
+  "spanish-squat-patellar-tendon": thumbWave349SpanishSquat,
+  "step-down-exercise-knee-control": thumbWave350StepDown,
 };
 
 const thumbnailAvifMap: Record<string, string> = {
@@ -320,6 +335,11 @@ const thumbnailAvifMap: Record<string, string> = {
   "reformer-pilates-knee-pain": thumbWave343ReformerPilatesAvif,
   "aqua-jogging-knee-pain": thumbWave344AquaJoggingAvif,
   "downhill-running-knee-pain": thumbWave345DownhillRunningAvif,
+  "are-knees-over-toes-bad": thumbWave346KneesOverToesAvif,
+  "tibialis-raises-knee-strength": thumbWave347TibialisRaisesAvif,
+  "banded-tke-knee-exercise": thumbWave348BandedTkeAvif,
+  "spanish-squat-patellar-tendon": thumbWave349SpanishSquatAvif,
+  "step-down-exercise-knee-control": thumbWave350StepDownAvif,
 };
 
 const thumbnailPatternMap: { pattern: RegExp; image: string }[] = [
@@ -498,6 +518,11 @@ const activitySlugs = [
   "reformer-pilates-knee-pain",
   "aqua-jogging-knee-pain",
   "downhill-running-knee-pain",
+  "are-knees-over-toes-bad",
+  "tibialis-raises-knee-strength",
+  "banded-tke-knee-exercise",
+  "spanish-squat-patellar-tendon",
+  "step-down-exercise-knee-control",
 ];
 
 const lifeStageSlugs = [

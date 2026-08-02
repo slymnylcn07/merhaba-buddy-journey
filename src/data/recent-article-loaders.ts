@@ -2,6 +2,26 @@ import type { ArticleData } from "./articles/types";
 import { applyArticleSourceStandards } from "./article-source-standards";
 
 const recentArticleLoaders: Record<string, () => Promise<ArticleData>> = {
+  "are-knees-over-toes-bad": () =>
+    import("./articles/are-knees-over-toes-bad").then(
+      (module) => module.areKneesOverToesBad.article,
+    ),
+  "tibialis-raises-knee-strength": () =>
+    import("./articles/tibialis-raises-knee-strength").then(
+      (module) => module.tibialisRaisesKneeStrength.article,
+    ),
+  "banded-tke-knee-exercise": () =>
+    import("./articles/banded-tke-knee-exercise").then(
+      (module) => module.bandedTkeKneeExercise.article,
+    ),
+  "spanish-squat-patellar-tendon": () =>
+    import("./articles/spanish-squat-patellar-tendon").then(
+      (module) => module.spanishSquatPatellarTendon.article,
+    ),
+  "step-down-exercise-knee-control": () =>
+    import("./articles/step-down-exercise-knee-control").then(
+      (module) => module.stepDownExerciseKneeControl.article,
+    ),
   "stairmaster-vs-incline-treadmill-knees": () =>
     import("./articles/stairmaster-vs-incline-treadmill-knees").then(
       (module) => module.stairmasterVsInclineTreadmillKnees.article,

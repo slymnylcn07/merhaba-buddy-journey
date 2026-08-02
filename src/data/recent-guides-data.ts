@@ -14,6 +14,51 @@ export interface PublishedGuideData extends GuideData {
 
 export const recentGuidesData: PublishedGuideData[] = [
   {
+    slug: "are-knees-over-toes-bad",
+    title: "Are Knees Over Toes Bad? What the Evidence and Load Actually Mean",
+    description:
+      "Learn what knees over toes means in squats and lunges, how depth and load change knee demand, and how to progress the position without treating it as a pass-or-fail rule.",
+    readTime: 18,
+    publishedDate: "2026-08-02",
+    lastModified: "2026-08-02",
+  },
+  {
+    slug: "tibialis-raises-knee-strength",
+    title: "Tibialis Raises for Knee Strength: Benefits and Technique",
+    description:
+      "Use wall tibialis raises with clear setup, form, range, and progression while understanding what stronger ankle dorsiflexors can and cannot do for knee comfort.",
+    readTime: 17,
+    publishedDate: "2026-08-02",
+    lastModified: "2026-08-02",
+  },
+  {
+    slug: "banded-tke-knee-exercise",
+    title: "Banded TKE for Knee Strength: Setup, Form, and Progression",
+    description:
+      "Set up terminal knee extension with a resistance band, find a controlled quadriceps squeeze, troubleshoot form, and progress the drill one variable at a time.",
+    readTime: 17,
+    publishedDate: "2026-08-02",
+    lastModified: "2026-08-02",
+  },
+  {
+    slug: "spanish-squat-patellar-tendon",
+    title: "Spanish Squat for Patellar Tendon Pain: How and When to Use It",
+    description:
+      "Learn Spanish squat band setup, upright form, isometric holds, symptom monitoring, and where the exercise may fit within progressive patellar tendon loading.",
+    readTime: 18,
+    publishedDate: "2026-08-02",
+    lastModified: "2026-08-02",
+  },
+  {
+    slug: "step-down-exercise-knee-control",
+    title: "Step-Down Exercise for Knee Control: Form and Progression",
+    description:
+      "Build single-leg knee control with forward and lateral step-downs, a low heel tap, practical alignment cues, and gradual height, repetition, and load progressions.",
+    readTime: 18,
+    publishedDate: "2026-08-02",
+    lastModified: "2026-08-02",
+  },
+  {
     slug: "stairmaster-vs-incline-treadmill-knees",
     title: "StairMaster vs Incline Treadmill for Bad Knees",
     description:

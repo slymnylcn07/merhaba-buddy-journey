@@ -7,6 +7,56 @@ const STOP_WORDS = new Set([
 ]);
 
 const PRIORITY_RELATED: Record<string, string[]> = {
+  "are-knees-over-toes-bad": [
+    "knee-pain-when-squatting",
+    "spanish-squat-patellar-tendon",
+    "step-down-exercise-knee-control",
+  ],
+  "tibialis-raises-knee-strength": [
+    "how-to-strengthen-knees",
+    "banded-tke-knee-exercise",
+    "tight-calves-knee-pain",
+  ],
+  "banded-tke-knee-exercise": [
+    "how-to-strengthen-knees",
+    "step-down-exercise-knee-control",
+    "backward-walking-knee-pain",
+  ],
+  "spanish-squat-patellar-tendon": [
+    "pain-behind-kneecap",
+    "knee-pain-when-squatting",
+    "banded-tke-knee-exercise",
+  ],
+  "step-down-exercise-knee-control": [
+    "knee-pain-going-down-stairs",
+    "knee-pain-climbing-stairs",
+    "banded-tke-knee-exercise",
+  ],
+  "knee-pain-when-squatting": [
+    "are-knees-over-toes-bad",
+    "spanish-squat-patellar-tendon",
+    "step-down-exercise-knee-control",
+  ],
+  "how-to-strengthen-knees": [
+    "banded-tke-knee-exercise",
+    "tibialis-raises-knee-strength",
+    "step-down-exercise-knee-control",
+  ],
+  "knee-pain-going-down-stairs": [
+    "step-down-exercise-knee-control",
+    "knee-pain-climbing-stairs",
+    "pain-behind-kneecap",
+  ],
+  "backward-walking-knee-pain": [
+    "banded-tke-knee-exercise",
+    "tibialis-raises-knee-strength",
+    "how-to-strengthen-knees",
+  ],
+  "pain-behind-kneecap": [
+    "spanish-squat-patellar-tendon",
+    "step-down-exercise-knee-control",
+    "knee-pain-when-squatting",
+  ],
   "stairmaster-vs-incline-treadmill-knees": [
     "incline-walking-knee-pain",
     "best-low-impact-cardio-knee-pain",
