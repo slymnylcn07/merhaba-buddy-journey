@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Step-down exercise progression and symptom checkpoint</title>
+  <desc id="desc">A five-stage progression from a supported weight shift to a loaded or directional step-down, with checkpoints for movement control and the later knee response.</desc>
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#07182d"/>
+      <stop offset="1" stop-color="#134e4a"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="760" rx="34" fill="#f8fafc"/>
+  <rect x="32" y="28" width="1136" height="102" rx="28" fill="url(#header)"/>
+  <text x="70" y="73" fill="#f8fafc" font-family="Arial, sans-serif" font-size="31" font-weight="700">Progress the task without losing the baseline</text>
+  <text x="70" y="106" fill="#ccfbf1" font-family="Arial, sans-serif" font-size="17">Control first. Add only one main demand, then check the later response.</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="42" y="168" width="204" height="352" rx="26" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+    <circle cx="86" cy="212" r="27" fill="#2563eb"/>
+    <text x="86" y="221" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">1</text>
+    <text x="70" y="267" fill="#1e3a8a" font-size="19" font-weight="700">Supported shift</text>
+    <text x="70" y="306" fill="#475569" font-size="15">Stable rail</text>
+    <text x="70" y="334" fill="#475569" font-size="15">Small knee bend</text>
+    <text x="70" y="362" fill="#475569" font-size="15">No floor reach</text>
+    <path d="M80 445 H208" stroke="#93c5fd" stroke-width="4" stroke-linecap="round"/>
+    <text x="144" y="476" text-anchor="middle" fill="#1e40af" font-size="14" font-weight="700">Find balance</text>
+
+    <path d="M254 344 H279" stroke="#64748b" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <rect x="281" y="168" width="204" height="352" rx="26" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <circle cx="325" cy="212" r="27" fill="#059669"/>
+    <text x="325" y="221" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">2</text>
+    <text x="309" y="267" fill="#065f46" font-size="19" font-weight="700">Low heel tap</text>
+    <text x="309" y="306" fill="#475569" font-size="15">Lateral direction</text>
+    <text x="309" y="334" fill="#475569" font-size="15">Light contact</text>
+    <text x="309" y="362" fill="#475569" font-size="15">No push-off</text>
+    <path d="M319 445 H447" stroke="#6ee7b7" stroke-width="4" stroke-linecap="round"/>
+    <text x="383" y="476" text-anchor="middle" fill="#047857" font-size="14" font-weight="700">Own the range</text>
+
+    <path d="M493 344 H518" stroke="#64748b" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <rect x="520" y="168" width="204" height="352" rx="26" fill="#f0fdfa" stroke="#5eead4" stroke-width="2"/>
+    <circle cx="564" cy="212" r="27" fill="#0f766e"/>
+    <text x="564" y="221" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">3</text>
+    <text x="548" y="267" fill="#115e59" font-size="19" font-weight="700">Range or support</text>
+    <text x="548" y="306" fill="#475569" font-size="15">Go slightly deeper</text>
+    <text x="548" y="334" fill="#475569" font-size="15">or use less rail</text>
+    <text x="548" y="362" fill="#475569" font-size="15">Choose one</text>
+    <path d="M558 445 H686" stroke="#5eead4" stroke-width="4" stroke-linecap="round"/>
+    <text x="622" y="476" text-anchor="middle" fill="#0f766e" font-size="14" font-weight="700">Keep it readable</text>
+
+    <path d="M732 344 H757" stroke="#64748b" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <rect x="759" y="168" width="204" height="352" rx="26" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+    <circle cx="803" cy="212" r="27" fill="#ea580c"/>
+    <text x="803" y="221" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">4</text>
+    <text x="787" y="267" fill="#9a3412" font-size="19" font-weight="700">Repeatable volume</text>
+    <text x="787" y="306" fill="#475569" font-size="15">Add reps or a set</text>
+    <text x="787" y="334" fill="#475569" font-size="15">Keep first and last</text>
+    <text x="787" y="362" fill="#475569" font-size="15">rep similar</text>
+    <path d="M797 445 H925" stroke="#fdba74" stroke-width="4" stroke-linecap="round"/>
+    <text x="861" y="476" text-anchor="middle" fill="#c2410c" font-size="14" font-weight="700">Build capacity</text>
+
+    <path d="M971 344 H996" stroke="#64748b" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <rect x="998" y="168" width="160" height="352" rx="26" fill="#fdf2f8" stroke="#f9a8d4" stroke-width="2"/>
+    <circle cx="1042" cy="212" r="27" fill="#db2777"/>
+    <text x="1042" y="221" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">5</text>
+    <text x="1022" y="267" fill="#9d174d" font-size="18" font-weight="700">Add a demand</text>
+    <text x="1022" y="306" fill="#475569" font-size="14">Forward reach</text>
+    <text x="1022" y="334" fill="#475569" font-size="14">Slower lowering</text>
+    <text x="1022" y="362" fill="#475569" font-size="14">or light load</text>
+    <path d="M1026 445 H1130" stroke="#f9a8d4" stroke-width="4" stroke-linecap="round"/>
+    <text x="1078" y="476" text-anchor="middle" fill="#be185d" font-size="14" font-weight="700">Choose one</text>
+  </g>
+
+  <rect x="94" y="565" width="1012" height="116" rx="28" fill="#07182d"/>
+  <circle cx="156" cy="623" r="29" fill="#14b8a6"/>
+  <path d="M144 623 L153 632 L170 610" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="204" y="609" fill="#f8fafc" font-family="Arial, sans-serif" font-size="21" font-weight="700">Checkpoint before progressing</text>
+  <text x="204" y="640" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">Review control during the set, then check swelling, walking, stairs, and motion later that day and next morning.</text>
+  <text x="204" y="665" fill="#99f6e4" font-family="Arial, sans-serif" font-size="15" font-weight="700">Repeat, adjust, or progress based on the whole response.</text>
+
+  <text x="600" y="724" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="15" font-weight="700">After surgery or a significant injury, follow diagnosis-specific rehabilitation criteria.</text>
+</svg>

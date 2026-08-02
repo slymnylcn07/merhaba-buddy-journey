@@ -1,4 +1,24 @@
 export const recentArticleCTAs: Record<string, { headline: string; text: string }> = {
+  "are-knees-over-toes-bad": {
+    headline: "Want a supported feel during controlled squat practice?",
+    text: "The FlexiKnee Compression Support Sleeve adds breathable compression during controlled strength sessions. It does not change squat mechanics, make a painful range safe, or replace gradual loading and assessment of persistent symptoms.",
+  },
+  "tibialis-raises-knee-strength": {
+    headline: "Looking for ground-up support beyond tibialis training?",
+    text: "FlexiKnee Sport Orthopedic Insoles add structured arch support and cushioning inside compatible walking or training shoes. They do not strengthen the tibialis anterior, restore ankle motion, or replace a balanced lower-leg program.",
+  },
+  "banded-tke-knee-exercise": {
+    headline: "Want a supported feel during simple standing drills?",
+    text: "The FlexiKnee Compression Support Sleeve adds breathable compression during controlled knee-strength sessions. It does not restore missing knee extension, correct TKE form, or replace rehabilitation after injury or surgery.",
+  },
+  "spanish-squat-patellar-tendon": {
+    headline: "Want light support during a measured squat session?",
+    text: "The FlexiKnee Compression Support Sleeve can add a supported feel during controlled exercise. It does not treat patellar tendinopathy, make a painful Spanish squat appropriate, or replace progressive tendon loading and clinical guidance.",
+  },
+  "step-down-exercise-knee-control": {
+    headline: "Want a supported feel while practicing knee control?",
+    text: "The FlexiKnee Compression Support Sleeve adds breathable compression during controlled step-down practice. It does not correct balance or alignment, prevent a fall, or replace a lower step, stable hand support, and gradual progression.",
+  },
   "stairmaster-vs-incline-treadmill-knees": {
     headline: "Want ground-up support in your cardio shoes?",
     text: "FlexiKnee Sport Orthopedic Insoles can add structured arch support and cushioning inside compatible gym shoes. They do not make a painful machine safe, replace load progression, or resolve swelling, locking, or instability.",

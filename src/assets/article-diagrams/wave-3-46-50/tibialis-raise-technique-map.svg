@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Wall tibialis raise technique</title>
+  <desc id="desc">Three stages of a wall tibialis raise: start with heels planted, lift the forefoot, and lower it under control.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eff6ff"/><stop offset="1" stop-color="#f8fafc"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.08"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="url(#bg)"/>
+  <text x="64" y="70" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="750">Wall tibialis raise: lift, pause, lower</text>
+  <text x="64" y="108" fill="#475569" font-family="Inter, Arial, sans-serif" font-size="18">The heel stays down. The ankle moves. The body does not rock to manufacture extra range.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="56" y="146" width="332" height="380" rx="26" fill="#ffffff"/>
+    <rect x="434" y="146" width="332" height="380" rx="26" fill="#ffffff"/>
+    <rect x="812" y="146" width="332" height="380" rx="26" fill="#ffffff"/>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <circle cx="99" cy="190" r="21" fill="#dbeafe"/>
+    <text x="99" y="197" text-anchor="middle" fill="#1d4ed8" font-size="18" font-weight="800">1</text>
+    <text x="132" y="197" fill="#0f172a" font-size="21" font-weight="750">Set the position</text>
+    <line x1="111" y1="238" x2="111" y2="444" stroke="#cbd5e1" stroke-width="8"/>
+    <line x1="112" y1="444" x2="334" y2="444" stroke="#cbd5e1" stroke-width="8"/>
+    <path d="M153 270L201 321L198 399" fill="none" stroke="#0f172a" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M198 399L209 444L286 444" fill="none" stroke="#2563eb" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="145" cy="252" r="18" fill="#f8fafc" stroke="#0f172a" stroke-width="6"/>
+    <circle cx="209" cy="444" r="9" fill="#ffffff" stroke="#16a34a" stroke-width="5"/>
+    <text x="222" y="484" text-anchor="middle" fill="#166534" font-size="15" font-weight="700">heels planted</text>
+
+    <circle cx="477" cy="190" r="21" fill="#dbeafe"/>
+    <text x="477" y="197" text-anchor="middle" fill="#1d4ed8" font-size="18" font-weight="800">2</text>
+    <text x="510" y="197" fill="#0f172a" font-size="21" font-weight="750">Lift the forefoot</text>
+    <line x1="489" y1="238" x2="489" y2="444" stroke="#cbd5e1" stroke-width="8"/>
+    <line x1="490" y1="444" x2="712" y2="444" stroke="#cbd5e1" stroke-width="8"/>
+    <path d="M531 270L579 321L576 399" fill="none" stroke="#0f172a" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M576 399L587 444L662 419" fill="none" stroke="#2563eb" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="523" cy="252" r="18" fill="#f8fafc" stroke="#0f172a" stroke-width="6"/>
+    <circle cx="587" cy="444" r="9" fill="#ffffff" stroke="#16a34a" stroke-width="5"/>
+    <path d="M674 444C691 427 697 410 694 390" fill="none" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="625" y="484" text-anchor="middle" fill="#1d4ed8" font-size="15" font-weight="700">toes rise together</text>
+
+    <circle cx="855" cy="190" r="21" fill="#dbeafe"/>
+    <text x="855" y="197" text-anchor="middle" fill="#1d4ed8" font-size="18" font-weight="800">3</text>
+    <text x="888" y="197" fill="#0f172a" font-size="21" font-weight="750">Lower with control</text>
+    <line x1="867" y1="238" x2="867" y2="444" stroke="#cbd5e1" stroke-width="8"/>
+    <line x1="868" y1="444" x2="1090" y2="444" stroke="#cbd5e1" stroke-width="8"/>
+    <path d="M909 270L957 321L954 399" fill="none" stroke="#0f172a" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M954 399L965 444L1040 431" fill="none" stroke="#2563eb" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="901" cy="252" r="18" fill="#f8fafc" stroke="#0f172a" stroke-width="6"/>
+    <circle cx="965" cy="444" r="9" fill="#ffffff" stroke="#16a34a" stroke-width="5"/>
+    <path d="M1052 400C1061 415 1061 431 1056 448" fill="none" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="1000" y="484" text-anchor="middle" fill="#1d4ed8" font-size="15" font-weight="700">quiet return</text>
+  </g>
+
+  <rect x="89" y="558" width="1022" height="68" rx="26" fill="url(#accent)"/>
+  <text x="600" y="586" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="750">Make it easier: stand closer to the wall</text>
+  <text x="600" y="611" text-anchor="middle" fill="#dbeafe" font-family="Inter, Arial, sans-serif" font-size="16">Make it harder: move the feet farther away, add range, or use resistance, one change at a time</text>
+</svg>

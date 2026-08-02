@@ -86,6 +86,11 @@ const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
   "reformer-pilates-knee-pain": "main",
   "aqua-jogging-knee-pain": "main",
   "downhill-running-knee-pain": "insoles",
+  "are-knees-over-toes-bad": "sleeve",
+  "tibialis-raises-knee-strength": "insoles",
+  "banded-tke-knee-exercise": "sleeve",
+  "spanish-squat-patellar-tendon": "sleeve",
+  "step-down-exercise-knee-control": "sleeve",
 };
 
 /** Sıra önemli: ilk eşleşen kural kazanır. */

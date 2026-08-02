@@ -1,6 +1,11 @@
 export type GuideThumbnailLoader = () => Promise<string>;
 
 const thumbnailLoaders: Record<string, GuideThumbnailLoader> = {
+  "are-knees-over-toes-bad": () => import("../assets/guide-thumbnails/wave-3-46-50/are-knees-over-toes-bad-thumb.webp").then((module) => module.default),
+  "tibialis-raises-knee-strength": () => import("../assets/guide-thumbnails/wave-3-46-50/tibialis-raises-knee-strength-thumb.webp").then((module) => module.default),
+  "banded-tke-knee-exercise": () => import("../assets/guide-thumbnails/wave-3-46-50/banded-tke-knee-exercise-thumb.webp").then((module) => module.default),
+  "spanish-squat-patellar-tendon": () => import("../assets/guide-thumbnails/wave-3-46-50/spanish-squat-patellar-tendon-thumb.webp").then((module) => module.default),
+  "step-down-exercise-knee-control": () => import("../assets/guide-thumbnails/wave-3-46-50/step-down-exercise-knee-control-thumb.webp").then((module) => module.default),
   "air-compression-leg-massagers-do-they-work": () => import("../assets/guide-thumbnails/refresh-2026-07-28/air-compression-leg-massagers-do-they-work.webp").then((module) => module.default),
   "back-of-knee-pain-explained": () => import("../assets/guide-thumb-back-knee-pain-new.jpg").then((module) => module.default),
   "below-knee-discomfort-teens-adults": () => import("../assets/guide-thumb-below-knee-discomfort-v2.jpg").then((module) => module.default),

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How forward knee travel changes squat load distribution</title>
+  <desc id="desc">A comparison of a squat with natural forward knee travel and a squat with the knees deliberately held behind the toes, showing that joint demand shifts rather than disappearing.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowAmber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#d97706"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="url(#bg)"/>
+  <text x="64" y="70" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="750">Knees over toes changes where the work goes</text>
+  <text x="64" y="108" fill="#475569" font-family="Inter, Arial, sans-serif" font-size="18">Forward knee travel can raise knee demand. Restricting it can shift more demand toward the hips and trunk.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="56" y="142" width="520" height="420" rx="26" fill="#ffffff"/>
+    <rect x="624" y="142" width="520" height="420" rx="26" fill="#ffffff"/>
+  </g>
+
+  <rect x="84" y="168" width="224" height="36" rx="18" fill="#dbeafe"/>
+  <text x="196" y="192" text-anchor="middle" fill="#1d4ed8" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Natural forward travel</text>
+  <text x="84" y="234" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">Knee moves past the toe</text>
+  <text x="84" y="264" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="16">More upright trunk, greater knee moment</text>
+
+  <g transform="translate(92 292)" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="38" y1="230" x2="406" y2="230" stroke="#cbd5e1" stroke-width="4"/>
+    <path d="M190 61L222 128L167 182" fill="none" stroke="#0f172a" stroke-width="16"/>
+    <path d="M222 128L298 178L352 228" fill="none" stroke="#2563eb" stroke-width="16"/>
+    <path d="M167 182L116 228" fill="none" stroke="#0f172a" stroke-width="16"/>
+    <circle cx="190" cy="41" r="20" fill="#f8fafc" stroke="#0f172a" stroke-width="7"/>
+    <circle cx="298" cy="178" r="11" fill="#ffffff" stroke="#2563eb" stroke-width="6"/>
+    <path d="M330 178C363 178 383 181 409 186" fill="none" stroke="#2563eb" stroke-width="4" marker-end="url(#arrowBlue)"/>
+    <line x1="329" y1="166" x2="329" y2="232" stroke="#94a3b8" stroke-width="3" stroke-dasharray="7 7"/>
+    <text x="382" y="158" text-anchor="middle" fill="#1d4ed8" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">forward travel</text>
+    <rect x="12" y="3" width="118" height="34" rx="17" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="71" y="25" text-anchor="middle" fill="#1d4ed8" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">knee demand</text>
+  </g>
+
+  <rect x="652" y="168" width="226" height="36" rx="18" fill="#fef3c7"/>
+  <text x="765" y="192" text-anchor="middle" fill="#b45309" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Deliberately restricted</text>
+  <text x="652" y="234" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">Knee held behind the toe</text>
+  <text x="652" y="264" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="16">More trunk lean, greater hip demand</text>
+
+  <g transform="translate(660 292)" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="38" y1="230" x2="406" y2="230" stroke="#cbd5e1" stroke-width="4"/>
+    <path d="M102 80L216 126L184 176" fill="none" stroke="#d97706" stroke-width="16"/>
+    <path d="M216 126L287 176L302 228" fill="none" stroke="#0f172a" stroke-width="16"/>
+    <path d="M184 176L130 228" fill="none" stroke="#0f172a" stroke-width="16"/>
+    <circle cx="83" cy="72" r="20" fill="#f8fafc" stroke="#d97706" stroke-width="7"/>
+    <circle cx="287" cy="176" r="11" fill="#ffffff" stroke="#0f172a" stroke-width="6"/>
+    <line x1="311" y1="160" x2="311" y2="232" stroke="#94a3b8" stroke-width="3" stroke-dasharray="7 7"/>
+    <path d="M181 94C143 76 117 69 81 64" fill="none" stroke="#d97706" stroke-width="4" marker-end="url(#arrowAmber)"/>
+    <text x="151" y="45" text-anchor="middle" fill="#b45309" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">trunk lean</text>
+    <rect x="13" y="3" width="129" height="34" rx="17" fill="#fffbeb" stroke="#fde68a"/>
+    <text x="77" y="25" text-anchor="middle" fill="#b45309" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">hip and trunk</text>
+  </g>
+
+  <rect x="170" y="590" width="860" height="55" rx="27.5" fill="url(#blue)"/>
+  <text x="600" y="624" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="750">Load moves. It does not disappear. Choose the version you can control and recover from.</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Banded terminal knee extension progression ladder</title>
+  <desc id="desc">Five ascending steps show progression from setup control to repetitions, resistance, stance challenge, and functional integration.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#eef2ff"/></linearGradient>
+    <linearGradient id="steps" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#0f766e"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity=".14"/></filter>
+  </defs>
+  <rect width="1200" height="675" rx="34" fill="url(#bg)"/>
+  <text x="66" y="74" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#0f172a">Progress the TKE one variable at a time</text>
+  <text x="66" y="111" font-family="Arial, sans-serif" font-size="18" fill="#475569">A stronger band is useful only when the same clean movement remains.</text>
+  <g filter="url(#shadow)">
+    <path d="M75 547H265V467H445V387H625V307H805V227H1125V589H75Z" fill="url(#steps)"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#fff">
+    <g transform="translate(95 482)"><circle cx="26" cy="26" r="24" fill="#fff" fill-opacity=".18"/><text x="26" y="34" text-anchor="middle" font-size="22" font-weight="700">1</text><text x="64" y="22" font-size="20" font-weight="700">CONTROL</text><text x="64" y="48" font-size="15">light band and support</text></g>
+    <g transform="translate(285 402)"><circle cx="26" cy="26" r="24" fill="#fff" fill-opacity=".18"/><text x="26" y="34" text-anchor="middle" font-size="22" font-weight="700">2</text><text x="64" y="22" font-size="20" font-weight="700">REPS</text><text x="64" y="48" font-size="15">build within the range</text></g>
+    <g transform="translate(465 322)"><circle cx="26" cy="26" r="24" fill="#fff" fill-opacity=".18"/><text x="26" y="34" text-anchor="middle" font-size="22" font-weight="700">3</text><text x="64" y="22" font-size="20" font-weight="700">TENSION</text><text x="64" y="48" font-size="15">small band increase</text></g>
+    <g transform="translate(645 242)"><circle cx="26" cy="26" r="24" fill="#fff" fill-opacity=".18"/><text x="26" y="34" text-anchor="middle" font-size="22" font-weight="700">4</text><text x="64" y="22" font-size="20" font-weight="700">STANCE</text><text x="64" y="48" font-size="15">less hand support</text></g>
+    <g transform="translate(825 162)"><circle cx="26" cy="26" r="24" fill="#fff" fill-opacity=".18"/><text x="26" y="34" text-anchor="middle" font-size="22" font-weight="700">5</text><text x="64" y="22" font-size="20" font-weight="700">INTEGRATE</text><text x="64" y="48" font-size="15">squat, step, run, or sport</text></g>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <rect x="75" y="610" width="1050" height="38" rx="19" fill="#fff"/>
+    <text x="600" y="635" text-anchor="middle" font-size="16" font-weight="700" fill="#334155">Move forward when form, later-day symptoms, and next-morning response remain stable.</text>
+  </g>
+</svg>

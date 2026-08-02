@@ -30,9 +30,14 @@ export const articleEditorialCrosslinks: Record<string, ReactNode> = {
     </p>
   ),
   "knee-pain-exercises-guide": (
-    <p>
-      People looking for a more unusual gait drill can also review the evidence for <Link to="/guides/backward-walking-knee-pain" className={linkClass}>backward walking for knee pain</Link>, including the balance precautions and short progression that should come before any treadmill challenge.
-    </p>
+    <>
+      <p>
+        People looking for a more unusual gait drill can also review the evidence for <Link to="/guides/backward-walking-knee-pain" className={linkClass}>backward walking for knee pain</Link>, including the balance precautions and short progression that should come before any treadmill challenge.
+      </p>
+      <p>
+        For a single exercise rather than a general routine, use the form and progression guides for <Link to="/guides/tibialis-raises-knee-strength" className={linkClass}>tibialis raises</Link>, <Link to="/guides/banded-tke-knee-exercise" className={linkClass}>banded terminal knee extensions</Link>, or the <Link to="/guides/step-down-exercise-knee-control" className={linkClass}>step-down exercise</Link>. Each guide separates setup, load, and the later symptom response instead of treating every painful knee the same way.
+      </p>
+    </>
   ),
   "best-low-impact-cardio-knee-pain": (
     <p>
@@ -60,9 +65,14 @@ export const articleEditorialCrosslinks: Record<string, ReactNode> = {
     </p>
   ),
   "knee-pain-going-down-stairs": (
-    <p>
-      Stair descent and downhill running both require controlled lowering, but running adds speed and repeated landing. The separate <Link to="/guides/downhill-running-knee-pain" className={linkClass}>downhill running knee pain guide</Link> explains braking load without turning this everyday stair page into a running plan.
-    </p>
+    <>
+      <p>
+        Stair descent and downhill running both require controlled lowering, but running adds speed and repeated landing. The separate <Link to="/guides/downhill-running-knee-pain" className={linkClass}>downhill running knee pain guide</Link> explains braking load without turning this everyday stair page into a running plan.
+      </p>
+      <p>
+        When the goal is to practice that lowering skill in a controlled gym setting, the <Link to="/guides/step-down-exercise-knee-control" className={linkClass}>lateral and forward step-down exercise guide</Link> shows how step height, support, range, tempo, and added load change the task. It is an exercise progression, not a diagnosis for pain on household stairs.
+      </p>
+    </>
   ),
   "knee-pain-during-yoga": (
     <p>
@@ -70,8 +80,18 @@ export const articleEditorialCrosslinks: Record<string, ReactNode> = {
     </p>
   ),
   "knee-pain-when-squatting": (
+    <>
+      <p>
+        Reformer footwork can still involve repeated loaded knee bend, even though the carriage supports the body differently from a free squat. Use the <Link to="/guides/reformer-pilates-knee-pain" className={linkClass}>reformer Pilates modification guide</Link> for spring, footbar, and range decisions.
+      </p>
+      <p>
+        Knee position is only one part of squat demand. The evidence guide to <Link to="/guides/are-knees-over-toes-bad" className={linkClass}>whether knees over toes are bad</Link> explains how depth, external load, speed, anatomy, and current capacity interact. For a band-supported isometric variation with a tendon-specific intent, see the <Link to="/guides/spanish-squat-patellar-tendon" className={linkClass}>Spanish squat setup and progression guide</Link>.
+      </p>
+    </>
+  ),
+  "backward-walking-knee-pain": (
     <p>
-      Reformer footwork can still involve repeated loaded knee bend, even though the carriage supports the body differently from a free squat. Use the <Link to="/guides/reformer-pilates-knee-pain" className={linkClass}>reformer Pilates modification guide</Link> for spring, footbar, and range decisions.
+      Backward walking is a gait and conditioning drill. If your goal is a smaller, stationary quadriceps exercise that focuses on the final part of straightening the knee, use the <Link to="/guides/banded-tke-knee-exercise" className={linkClass}>banded terminal knee extension guide</Link> for anchor height, band tension, form checks, and progression.
     </p>
   ),
 };
