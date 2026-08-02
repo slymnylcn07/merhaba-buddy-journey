@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/guide-thumbnails/wave-3-46-50/spanish-squat-patellar-tendon.webp";
-import bandSetup from "@/assets/article-diagrams/wave-3-46-50/spanish-squat-band-setup.svg";
-import loadingPath from "@/assets/article-diagrams/wave-3-46-50/spanish-squat-loading-path.svg";
+import setupPhotoAvif from "@/assets/article-photos/wave-3-46-50/spanish-squat-inline-setup.avif";
+import setupPhotoWebp from "@/assets/article-photos/wave-3-46-50/spanish-squat-inline-setup.webp";
+import progressionPhotoAvif from "@/assets/article-photos/wave-3-46-50/spanish-squat-inline-progression.avif";
+import progressionPhotoWebp from "@/assets/article-photos/wave-3-46-50/spanish-squat-inline-progression.webp";
 
 const linkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
 
@@ -133,12 +135,16 @@ export const spanishSquatPatellarTendon: ArticleExport = {
 
         <h2>Spanish Squat Band Setup</h2>
         <figure className="my-8">
-          <img
-            src={bandSetup}
-            alt="Spanish squat setup showing a secure knee-height anchor, broad band behind both knees, flat feet, upright torso, and hips sitting backward"
-            loading="lazy"
-          />
-          <figcaption>The band supports the shins from behind while the hips sit back and the feet stay grounded.</figcaption>
+          <picture>
+            <source srcSet={setupPhotoAvif} type="image/avif" />
+            <img
+              src={setupPhotoWebp}
+              alt="Spanish squat starting setup with the athlete facing a secure knee-height anchor and a broad band placed behind both knees"
+              loading="lazy"
+              className="h-auto w-full rounded-2xl border border-slate-200 object-cover shadow-sm"
+            />
+          </picture>
+          <figcaption>Face the anchor, keep the broad band behind both knees, and sit backward with both feet grounded.</figcaption>
         </figure>
         <p>
           Use a strong, broad resistance band or a strap specifically intended for this exercise. The anchor has to resist the combined band tension and body weight shift. A heavy rack post can be suitable in a gym. A loose door handle, light furniture, portable pole, or improvised hook is not a safe substitute. Inspect the band for cuts, thinning, or surface damage before every session.
@@ -168,12 +174,16 @@ export const spanishSquatPatellarTendon: ArticleExport = {
 
         <h2>How to Progress a Spanish Squat</h2>
         <figure className="my-8">
-          <img
-            src={loadingPath}
-            alt="Spanish squat loading pathway from shallow supported holds to longer holds, controlled repetitions, heavier strength work, and sport-specific tendon loading"
-            loading="lazy"
-          />
-          <figcaption>The Spanish squat is a bridge in a loading plan, not the final stage of tendon rehabilitation.</figcaption>
+          <picture>
+            <source srcSet={progressionPhotoAvif} type="image/avif" />
+            <img
+              src={progressionPhotoWebp}
+              alt="Athlete performing a Spanish squat with a light kettlebell after establishing secure bodyweight form"
+              loading="lazy"
+              className="h-auto w-full rounded-2xl border border-slate-200 object-cover shadow-sm"
+            />
+          </picture>
+          <figcaption>External weight is a later option only after the anchor is secure and bodyweight form is repeatable.</figcaption>
         </figure>
         <p>
           Progression can start by improving setup and reaching the same comfortable position on every set. Next, add a small amount of hold time, one additional set, or slightly more depth. Change only one of those variables. When isometric work is well tolerated, controlled repetitions introduce shortening and lengthening muscle actions. A slow lower, brief pause, and steady rise is more useful than bouncing against the band.

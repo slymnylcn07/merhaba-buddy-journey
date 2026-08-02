@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/guide-thumbnails/wave-3-46-50/step-down-exercise-knee-control.webp";
-import heightControlMap from "@/assets/article-diagrams/wave-3-46-50/step-down-height-control-map.svg";
+import lateralStepDownPhotoAvif from "@/assets/article-photos/wave-3-46-50/step-down-inline-lateral.avif";
+import lateralStepDownPhotoWebp from "@/assets/article-photos/wave-3-46-50/step-down-inline-lateral.webp";
 import progressionCheck from "@/assets/article-diagrams/wave-3-46-50/step-down-progression-check.svg";
 
 const linkClass = "font-medium text-primary underline underline-offset-4 hover:text-primary/80";
@@ -117,13 +118,17 @@ export const stepDownExerciseKneeControl: ArticleExport = {
 
         <h2>Choose the Variation Before You Judge the Form</h2>
         <figure className="my-8">
-          <img
-            src={heightControlMap}
-            alt="Diagram comparing lateral and forward step-down directions and showing height, reach, hand support, and tempo as load controls"
-            loading="lazy"
-          />
+          <picture>
+            <source srcSet={lateralStepDownPhotoAvif} type="image/avif" />
+            <img
+              src={lateralStepDownPhotoWebp}
+              alt="Athlete practicing a supported low lateral step-down with one foot planted on the step and the free heel reaching toward the floor beside it"
+              loading="lazy"
+              className="h-auto w-full rounded-2xl border border-slate-200 object-cover shadow-sm"
+            />
+          </picture>
           <figcaption>
-            Direction changes the task. Start with a low, supported version and treat step height as one load dial, not a badge of progress.
+            Shown: a low, supported lateral step-down. In the forward version, the free heel reaches in front of the platform instead of beside it.
           </figcaption>
         </figure>
         <h3>Lateral step-down</h3>
