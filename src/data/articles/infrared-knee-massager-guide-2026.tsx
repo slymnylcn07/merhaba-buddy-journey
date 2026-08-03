@@ -184,7 +184,7 @@ export const infraredKneeMassagerGuide2026: ArticleExport = {
               </tr>
             </thead>
             <tbody>
-              <tr className="bg-primary/5"><td className="p-4 border-b border-border font-semibold text-primary">FlexiKnee</td><td className="p-4 border-b border-border">✅ 850nm</td><td className="p-4 border-b border-border">✅ 3 levels</td><td className="p-4 border-b border-border">✅ 3 modes</td><td className="p-4 border-b border-border">✅</td><td className="p-4 border-b border-border">$$</td></tr>
+              <tr className="bg-primary/5"><td className="p-4 border-b border-border font-semibold text-primary">FlexiKnee</td><td className="p-4 border-b border-border">Integrated red light; wavelength not published</td><td className="p-4 border-b border-border">3 levels</td><td className="p-4 border-b border-border">3 modes</td><td className="p-4 border-b border-border">Cordless</td><td className="p-4 border-b border-border">$$</td></tr>
               <tr><td className="p-4 border-b border-border font-medium">Revix Infrared Wrap</td><td className="p-4 border-b border-border">✅ Basic</td><td className="p-4 border-b border-border">✅ 2 levels</td><td className="p-4 border-b border-border">❌</td><td className="p-4 border-b border-border">❌</td><td className="p-4 border-b border-border">$</td></tr>
               <tr><td className="p-4 border-b border-border font-medium">HeatPulse Pro</td><td className="p-4 border-b border-border">❌</td><td className="p-4 border-b border-border">✅ 3 levels</td><td className="p-4 border-b border-border">✅ 2 modes</td><td className="p-4 border-b border-border">✅</td><td className="p-4 border-b border-border">$$</td></tr>
               <tr><td className="p-4 border-b border-border font-medium">Comfier IR Knee</td><td className="p-4 border-b border-border">✅ Basic</td><td className="p-4 border-b border-border">✅ 2 levels</td><td className="p-4 border-b border-border">✅ 1 mode</td><td className="p-4 border-b border-border">❌</td><td className="p-4 border-b border-border">$</td></tr>
@@ -193,7 +193,7 @@ export const infraredKneeMassagerGuide2026: ArticleExport = {
           </table>
         </div>
         <p>
-          FlexiKnee stands out as the only device that combines true 850nm infrared therapy with adjustable heat and vibration massage in a cordless, knee-specific design. For a detailed head-to-head comparison, see our <Link to="/guides/flexiknee-vs-competitors-2026" className="text-primary hover:underline">FlexiKnee vs. competitors breakdown</Link>.
+          FlexiKnee combines integrated red light with adjustable warmth and three vibration modes in a cordless, knee-specific design. The current product page does not publish an exact light wavelength, so it should not be presented as an 850 nm device. For a current head-to-head comparison, see our <Link to="/guides/flexiknee-vs-competitors-2026" className="text-primary hover:underline">FlexiKnee vs Peka Flexi, HeatPulse, Nooro and other competitors</Link>.
         </p>
 
         <h2>How to Get the Most from Your Infrared Knee Massager</h2>
