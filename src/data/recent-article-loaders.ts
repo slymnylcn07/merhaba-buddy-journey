@@ -2,6 +2,26 @@ import type { ArticleData } from "./articles/types";
 import { applyArticleSourceStandards } from "./article-source-standards";
 
 const recentArticleLoaders: Record<string, () => Promise<ArticleData>> = {
+  "nordic-hamstring-curl-knee-health": () =>
+    import("./articles/nordic-hamstring-curl-knee-health").then(
+      (module) => module.nordicHamstringCurlKneeHealth.article,
+    ),
+  "cyclist-squat-knee-strength": () =>
+    import("./articles/cyclist-squat-knee-strength").then(
+      (module) => module.cyclistSquatKneeStrength.article,
+    ),
+  "knee-taping-stability-pfps": () =>
+    import("./articles/knee-taping-stability-pfps").then(
+      (module) => module.kneeTapingStabilityPfps.article,
+    ),
+  "tens-unit-knee-pain": () =>
+    import("./articles/tens-unit-knee-pain").then(
+      (module) => module.tensUnitKneePain.article,
+    ),
+  "cold-therapy-machine-knee": () =>
+    import("./articles/cold-therapy-machine-knee").then(
+      (module) => module.coldTherapyMachineKnee.article,
+    ),
   "are-knees-over-toes-bad": () =>
     import("./articles/are-knees-over-toes-bad").then(
       (module) => module.areKneesOverToesBad.article,

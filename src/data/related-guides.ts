@@ -7,6 +7,31 @@ const STOP_WORDS = new Set([
 ]);
 
 const PRIORITY_RELATED: Record<string, string[]> = {
+  "nordic-hamstring-curl-knee-health": [
+    "how-to-strengthen-knees",
+    "knee-pain-after-exercise",
+    "back-of-knee-pain-explained",
+  ],
+  "cyclist-squat-knee-strength": [
+    "are-knees-over-toes-bad",
+    "knee-pain-when-squatting",
+    "spanish-squat-patellar-tendon",
+  ],
+  "knee-taping-stability-pfps": [
+    "pain-behind-kneecap",
+    "knee-brace-vs-compression-sleeve",
+    "step-down-exercise-knee-control",
+  ],
+  "tens-unit-knee-pain": [
+    "knee-arthritis-pain-guide",
+    "do-knee-massagers-work",
+    "heat-vs-ice-for-knees",
+  ],
+  "cold-therapy-machine-knee": [
+    "heat-vs-ice-for-knees",
+    "knee-swelling-after-exercise",
+    "knee-pain-after-exercise",
+  ],
   "are-knees-over-toes-bad": [
     "knee-pain-when-squatting",
     "spanish-squat-patellar-tendon",

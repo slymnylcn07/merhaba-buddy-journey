@@ -1,4 +1,24 @@
 export const recentArticleCTAs: Record<string, { headline: string; text: string }> = {
+  "nordic-hamstring-curl-knee-health": {
+    headline: "Want a supported feel during controlled hamstring training?",
+    text: "The FlexiKnee Compression Support Sleeve adds breathable compression during measured strength sessions. It does not improve Nordic curl technique, prevent a hamstring strain, or make sharp knee pain safe to train through.",
+  },
+  "cyclist-squat-knee-strength": {
+    headline: "Want light support during heel-elevated squat practice?",
+    text: "The FlexiKnee Compression Support Sleeve adds breathable compression during controlled squat sessions. It does not change knee load, correct squat form, or make a painful depth appropriate.",
+  },
+  "knee-taping-stability-pfps": {
+    headline: "Looking for reusable support beyond a taping session?",
+    text: "The FlexiKnee Compression Support Sleeve offers breathable compression for a supported feel during daily movement. It does not reproduce a tailored taping technique, treat patellofemoral pain, or replace a brace prescribed for true instability.",
+  },
+  "tens-unit-knee-pain": {
+    headline: "Considering a separate comfort routine for the knee?",
+    text: "FlexiKnee combines adjustable warmth, red light, and gentle vibration for everyday comfort. It does not provide TENS, deliver electrical nerve stimulation, or replace assessment and treatment for persistent knee pain.",
+  },
+  "cold-therapy-machine-knee": {
+    headline: "Need warmth on days when cold therapy is not indicated?",
+    text: "FlexiKnee offers adjustable warmth, red light, and gentle vibration as a separate comfort routine. It is not a cold therapy machine and should not replace a surgeon-directed icing plan after injury or surgery.",
+  },
   "are-knees-over-toes-bad": {
     headline: "Want a supported feel during controlled squat practice?",
     text: "The FlexiKnee Compression Support Sleeve adds breathable compression during controlled strength sessions. It does not change squat mechanics, make a painful range safe, or replace gradual loading and assessment of persistent symptoms.",

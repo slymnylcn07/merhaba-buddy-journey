@@ -69,6 +69,8 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
 };
 
 const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
+  "nordic-hamstring-curl-knee-health": "sleeve",
+  "cyclist-squat-knee-strength": "sleeve",
   "tight-calves-knee-pain": "calf",
   "air-compression-leg-massagers-do-they-work": "calf",
   "knee-brace-vs-compression-sleeve": "sleeve",
@@ -93,6 +95,24 @@ const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
   "step-down-exercise-knee-control": "sleeve",
 };
 
+const SLUG_RECOMMENDATION_OVERRIDES: Record<string, ProductRec> = {
+  "knee-taping-stability-pfps": {
+    ...PRODUCT_RECS.sleeve,
+    benefit:
+      "Breathable compression for a generally supported feel during daily movement. A sleeve is different from rigid or kinesiology tape and does not reproduce a clinician-applied taping technique.",
+  },
+  "tens-unit-knee-pain": {
+    ...PRODUCT_RECS.main,
+    benefit:
+      "A separate warmth, red-light, and gentle-vibration option for a daily comfort routine. This product does not provide TENS or electrical stimulation.",
+  },
+  "cold-therapy-machine-knee": {
+    ...PRODUCT_RECS.main,
+    benefit:
+      "A separate warmth-based option for familiar stiffness and daily comfort. It is not a cold-therapy machine and should not replace a prescribed post-operative cooling plan.",
+  },
+};
+
 /** Sıra önemli: ilk eşleşen kural kazanır. */
 const RULES: { keywords: string[]; product: keyof typeof PRODUCT_RECS }[] = [
   {
@@ -114,6 +134,9 @@ const RULES: { keywords: string[]; product: keyof typeof PRODUCT_RECS }[] = [
 
 export function pickProductForSlug(slug: string | undefined): ProductRec {
   if (slug) {
+    const recommendationOverride = SLUG_RECOMMENDATION_OVERRIDES[slug];
+    if (recommendationOverride) return recommendationOverride;
+
     const exact = SLUG_OVERRIDES[slug];
     if (exact) return PRODUCT_RECS[exact];
 

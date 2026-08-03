@@ -14,6 +14,51 @@ export interface PublishedGuideData extends GuideData {
 
 export const recentGuidesData: PublishedGuideData[] = [
   {
+    slug: "nordic-hamstring-curl-knee-health",
+    title: "Nordic Hamstring Curls and Knee Health: Benefits, Form, and Progressions",
+    description:
+      "Learn Nordic hamstring curl benefits, muscles worked, knee-friendly setup, beginner progressions, common mistakes, and evidence-based limits.",
+    readTime: 18,
+    publishedDate: "2026-08-03",
+    lastModified: "2026-08-03",
+  },
+  {
+    slug: "cyclist-squat-knee-strength",
+    title: "Cyclist Squat for Knee Strength: Heel-Elevated Form and Progression",
+    description:
+      "Learn cyclist squat benefits, heel-elevated setup, muscles worked, knee loading, common mistakes, and a gradual bodyweight-to-loaded progression.",
+    readTime: 19,
+    publishedDate: "2026-08-03",
+    lastModified: "2026-08-03",
+  },
+  {
+    slug: "knee-taping-stability-pfps",
+    title: "Knee Taping for Stability and Patellofemoral Pain: KT Tape vs Rigid Tape",
+    description:
+      "Compare KT tape and rigid knee taping for patellofemoral pain, including realistic benefits, tailored application, skin safety, and limits.",
+    readTime: 18,
+    publishedDate: "2026-08-03",
+    lastModified: "2026-08-03",
+  },
+  {
+    slug: "tens-unit-knee-pain",
+    title: "TENS Unit for Knee Pain: Pad Placement, Settings, Safety, and Evidence",
+    description:
+      "Learn how a TENS unit for knee pain works, example pad placement, safe settings, contraindications, and what osteoarthritis evidence shows.",
+    readTime: 19,
+    publishedDate: "2026-08-03",
+    lastModified: "2026-08-03",
+  },
+  {
+    slug: "cold-therapy-machine-knee",
+    title: "Cold Therapy Machine for the Knee: Ice Machines Compared",
+    description:
+      "Compare knee ice machines, cold-compression units, iceless systems, and gel packs by evidence, safety, pad fit, timers, upkeep, and cost.",
+    readTime: 20,
+    publishedDate: "2026-08-03",
+    lastModified: "2026-08-03",
+  },
+  {
     slug: "are-knees-over-toes-bad",
     title: "Are Knees Over Toes Bad? What the Evidence and Load Actually Mean",
     description:
