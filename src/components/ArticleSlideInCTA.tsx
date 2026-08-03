@@ -32,6 +32,12 @@ const SUBSCRIBED_KEY = "flexiknee_newsletter_subscribed";
 function getContextualContent(slug: string): { hook: string; support: string } {
   const s = slug.toLowerCase();
 
+  if (s === "cold-therapy-machine-knee")
+    return {
+      hook: "Would a reusable cold wrap fit your routine better than a machine?",
+      support: "A freezer-cooled knee wrap offers a pump-free option for brief cold-comfort sessions when cold is appropriate, with regular skin checks.",
+    };
+
   if (s.includes("low-impact-cardio"))
     return {
       hook: "Trying to build cardio without overloading your knees?",
@@ -301,6 +307,10 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
 
   const isMain = rec.handle === PRODUCT_RECS.main.handle;
   const productShortName = rec.title.replace("FlexiKnee ", "");
+  const productCtaName =
+    rec.handle === PRODUCT_RECS.iceWrap.handle
+      ? "ice pack wrap"
+      : productShortName.split(" ").slice(-2).join(" ").toLowerCase();
   const productImage = liveImage || rec.fallbackImage;
 
   return (
@@ -403,7 +413,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
                   onClick={handleCTAClick}
                   className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-slate-950 px-5 py-3 text-xs font-bold text-white transition hover:bg-slate-800"
                 >
-                  See the {isMain ? "FlexiKnee" : productShortName.split(" ").slice(-2).join(" ").toLowerCase()}
+                  See the {isMain ? "FlexiKnee" : productCtaName}
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
                 <Link

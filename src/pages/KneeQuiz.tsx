@@ -16,6 +16,7 @@ import { Footer } from "@/components/Footer";
 import {
   PRIMARY_PRODUCT_HANDLE,
   PRIMARY_PRODUCT_PATH,
+  getProductPath,
 } from "@/lib/product-config";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getProductProfile, ProductProfile } from "@/data/product-profiles";

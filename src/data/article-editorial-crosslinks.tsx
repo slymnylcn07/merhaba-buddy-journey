@@ -20,9 +20,14 @@ export const articleEditorialCrosslinks: Record<string, ReactNode> = {
     </p>
   ),
   "knee-arthritis-pain-guide": (
-    <p>
-      Because “arthritis” can mean a mechanical whole-joint condition or an autoimmune inflammatory disease, the comparison of <Link to="/guides/knee-osteoarthritis-vs-rheumatoid-arthritis" className={linkClass}>knee osteoarthritis versus rheumatoid arthritis</Link> is the next useful step when prolonged morning stiffness, symmetrical swelling, hand or foot symptoms, or blood-test questions enter the picture.
-    </p>
+    <>
+      <p>
+        Because “arthritis” can mean a mechanical whole-joint condition or an autoimmune inflammatory disease, the comparison of <Link to="/guides/knee-osteoarthritis-vs-rheumatoid-arthritis" className={linkClass}>knee osteoarthritis versus rheumatoid arthritis</Link> is the next useful step when prolonged morning stiffness, symmetrical swelling, hand or foot symptoms, or blood-test questions enter the picture.
+      </p>
+      <p>
+        If you are considering electrical stimulation for symptom relief, the <Link to="/guides/tens-unit-knee-pain" className={linkClass}>TENS unit guide for knee pain</Link> explains pad placement, settings, safety exclusions, and the mixed evidence. It should be viewed as a possible short-term comfort tool, not a treatment that changes arthritis itself.
+      </p>
+    </>
   ),
   "knee-pain-after-exercise": (
     <p>
@@ -38,6 +43,11 @@ export const articleEditorialCrosslinks: Record<string, ReactNode> = {
         For a single exercise rather than a general routine, use the form and progression guides for <Link to="/guides/tibialis-raises-knee-strength" className={linkClass}>tibialis raises</Link>, <Link to="/guides/banded-tke-knee-exercise" className={linkClass}>banded terminal knee extensions</Link>, or the <Link to="/guides/step-down-exercise-knee-control" className={linkClass}>step-down exercise</Link>. Each guide separates setup, load, and the later symptom response instead of treating every painful knee the same way.
       </p>
     </>
+  ),
+  "how-to-strengthen-knees": (
+    <p>
+      For two technique-focused options, the <Link to="/guides/nordic-hamstring-curl-knee-health" className={linkClass}>Nordic hamstring curl guide</Link> explains assisted eccentric progressions and why hamstring injury-prevention evidence is not the same as proof of treating knee pain. The <Link to="/guides/cyclist-squat-knee-strength" className={linkClass}>heel-elevated cyclist squat guide</Link> shows how heel height, depth, support, and load change the exercise before weight is added.
+    </p>
   ),
   "best-low-impact-cardio-knee-pain": (
     <p>
@@ -85,13 +95,33 @@ export const articleEditorialCrosslinks: Record<string, ReactNode> = {
         Reformer footwork can still involve repeated loaded knee bend, even though the carriage supports the body differently from a free squat. Use the <Link to="/guides/reformer-pilates-knee-pain" className={linkClass}>reformer Pilates modification guide</Link> for spring, footbar, and range decisions.
       </p>
       <p>
-        Knee position is only one part of squat demand. The evidence guide to <Link to="/guides/are-knees-over-toes-bad" className={linkClass}>whether knees over toes are bad</Link> explains how depth, external load, speed, anatomy, and current capacity interact. For a band-supported isometric variation with a tendon-specific intent, see the <Link to="/guides/spanish-squat-patellar-tendon" className={linkClass}>Spanish squat setup and progression guide</Link>.
+        Knee position is only one part of squat demand. The evidence guide to <Link to="/guides/are-knees-over-toes-bad" className={linkClass}>whether knees over toes are bad</Link> explains how depth, external load, speed, anatomy, and current capacity interact. For a heel-elevated, upright variation, use the <Link to="/guides/cyclist-squat-knee-strength" className={linkClass}>cyclist squat setup and progression guide</Link>. For a band-supported isometric variation with a tendon-specific intent, see the <Link to="/guides/spanish-squat-patellar-tendon" className={linkClass}>Spanish squat setup and progression guide</Link>.
       </p>
     </>
   ),
   "backward-walking-knee-pain": (
     <p>
       Backward walking is a gait and conditioning drill. If your goal is a smaller, stationary quadriceps exercise that focuses on the final part of straightening the knee, use the <Link to="/guides/banded-tke-knee-exercise" className={linkClass}>banded terminal knee extension guide</Link> for anchor height, band tension, form checks, and progression.
+    </p>
+  ),
+  "pain-behind-kneecap": (
+    <p>
+      Taping can sometimes be used as a short-term adjunct while exercise tolerance is rebuilt. The <Link to="/guides/knee-taping-stability-pfps" className={linkClass}>knee taping guide for patellofemoral pain</Link> separates kinesiology tape from rigid techniques, shows practical skin precautions, and explains why tape does not diagnose the source of pain behind the kneecap.
+    </p>
+  ),
+  "knee-brace-vs-compression-sleeve": (
+    <p>
+      Tape is another category rather than a lighter version of a brace or sleeve. Compare elastic and rigid methods in the <Link to="/guides/knee-taping-stability-pfps" className={linkClass}>knee taping guide for stability and patellofemoral pain</Link>, including what each method can and cannot reasonably provide.
+    </p>
+  ),
+  "do-knee-massagers-work": (
+    <p>
+      A TENS unit is not the same technology as a heated or vibrating knee massager. If electrical stimulation is what you are evaluating, use the separate <Link to="/guides/tens-unit-knee-pain" className={linkClass}>TENS guide for pad placement, settings, evidence, and safety</Link> so the claims and precautions do not get mixed together.
+    </p>
+  ),
+  "heat-vs-ice-for-knees": (
+    <p>
+      If you are comparing circulating systems with reusable packs, the <Link to="/guides/cold-therapy-machine-knee" className={linkClass}>cold therapy machine guide for the knee</Link> explains the main device types, early post-operative evidence, skin-safety checks, and when a simple cold pack may be enough.
     </p>
   ),
 };

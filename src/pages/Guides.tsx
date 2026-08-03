@@ -173,6 +173,16 @@ import thumbWave349SpanishSquat from "@/assets/guide-thumbnails/wave-3-46-50/spa
 import thumbWave349SpanishSquatAvif from "@/assets/guide-thumbnails/wave-3-46-50/spanish-squat-patellar-tendon-thumb.avif";
 import thumbWave350StepDown from "@/assets/guide-thumbnails/wave-3-46-50/step-down-exercise-knee-control-thumb.webp";
 import thumbWave350StepDownAvif from "@/assets/guide-thumbnails/wave-3-46-50/step-down-exercise-knee-control-thumb.avif";
+import thumbWave351NordicHamstring from "@/assets/guide-thumbnails/wave-3-51-55/nordic-hamstring-curl-knee-health-thumb.webp";
+import thumbWave351NordicHamstringAvif from "@/assets/guide-thumbnails/wave-3-51-55/nordic-hamstring-curl-knee-health-thumb.avif";
+import thumbWave352CyclistSquat from "@/assets/guide-thumbnails/wave-3-51-55/cyclist-squat-knee-strength-thumb.webp";
+import thumbWave352CyclistSquatAvif from "@/assets/guide-thumbnails/wave-3-51-55/cyclist-squat-knee-strength-thumb.avif";
+import thumbWave353KneeTaping from "@/assets/guide-thumbnails/wave-3-51-55/knee-taping-stability-pfps-thumb.webp";
+import thumbWave353KneeTapingAvif from "@/assets/guide-thumbnails/wave-3-51-55/knee-taping-stability-pfps-thumb.avif";
+import thumbWave354TensUnit from "@/assets/guide-thumbnails/wave-3-51-55/tens-unit-knee-pain-thumb.webp";
+import thumbWave354TensUnitAvif from "@/assets/guide-thumbnails/wave-3-51-55/tens-unit-knee-pain-thumb.avif";
+import thumbWave355ColdTherapyMachine from "@/assets/guide-thumbnails/wave-3-51-55/cold-therapy-machine-knee-thumb.webp";
+import thumbWave355ColdTherapyMachineAvif from "@/assets/guide-thumbnails/wave-3-51-55/cold-therapy-machine-knee-thumb.avif";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "best-supplements-for-knee-pain": thumbSupplements,
@@ -300,6 +310,11 @@ const thumbnailMap: Record<string, string> = {
   "banded-tke-knee-exercise": thumbWave348BandedTke,
   "spanish-squat-patellar-tendon": thumbWave349SpanishSquat,
   "step-down-exercise-knee-control": thumbWave350StepDown,
+  "nordic-hamstring-curl-knee-health": thumbWave351NordicHamstring,
+  "cyclist-squat-knee-strength": thumbWave352CyclistSquat,
+  "knee-taping-stability-pfps": thumbWave353KneeTaping,
+  "tens-unit-knee-pain": thumbWave354TensUnit,
+  "cold-therapy-machine-knee": thumbWave355ColdTherapyMachine,
 };
 
 const thumbnailAvifMap: Record<string, string> = {
@@ -340,6 +355,11 @@ const thumbnailAvifMap: Record<string, string> = {
   "banded-tke-knee-exercise": thumbWave348BandedTkeAvif,
   "spanish-squat-patellar-tendon": thumbWave349SpanishSquatAvif,
   "step-down-exercise-knee-control": thumbWave350StepDownAvif,
+  "nordic-hamstring-curl-knee-health": thumbWave351NordicHamstringAvif,
+  "cyclist-squat-knee-strength": thumbWave352CyclistSquatAvif,
+  "knee-taping-stability-pfps": thumbWave353KneeTapingAvif,
+  "tens-unit-knee-pain": thumbWave354TensUnitAvif,
+  "cold-therapy-machine-knee": thumbWave355ColdTherapyMachineAvif,
 };
 
 const thumbnailPatternMap: { pattern: RegExp; image: string }[] = [
@@ -523,6 +543,8 @@ const activitySlugs = [
   "banded-tke-knee-exercise",
   "spanish-squat-patellar-tendon",
   "step-down-exercise-knee-control",
+  "nordic-hamstring-curl-knee-health",
+  "cyclist-squat-knee-strength",
 ];
 
 const lifeStageSlugs = [
@@ -559,6 +581,9 @@ const methodsSlugs = [
   "best-red-light-therapy-knee",
   "knee-brace-vs-compression-sleeve",
   "knee-compression-sleeve-sizing-guide",
+  "knee-taping-stability-pfps",
+  "tens-unit-knee-pain",
+  "cold-therapy-machine-knee",
 ];
 
 const supplementSlugs = [

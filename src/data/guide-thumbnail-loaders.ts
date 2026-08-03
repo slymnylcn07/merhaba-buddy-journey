@@ -1,6 +1,11 @@
 export type GuideThumbnailLoader = () => Promise<string>;
 
 const thumbnailLoaders: Record<string, GuideThumbnailLoader> = {
+  "nordic-hamstring-curl-knee-health": () => import("../assets/guide-thumbnails/wave-3-51-55/nordic-hamstring-curl-knee-health-thumb.webp").then((module) => module.default),
+  "cyclist-squat-knee-strength": () => import("../assets/guide-thumbnails/wave-3-51-55/cyclist-squat-knee-strength-thumb.webp").then((module) => module.default),
+  "knee-taping-stability-pfps": () => import("../assets/guide-thumbnails/wave-3-51-55/knee-taping-stability-pfps-thumb.webp").then((module) => module.default),
+  "tens-unit-knee-pain": () => import("../assets/guide-thumbnails/wave-3-51-55/tens-unit-knee-pain-thumb.webp").then((module) => module.default),
+  "cold-therapy-machine-knee": () => import("../assets/guide-thumbnails/wave-3-51-55/cold-therapy-machine-knee-thumb.webp").then((module) => module.default),
   "are-knees-over-toes-bad": () => import("../assets/guide-thumbnails/wave-3-46-50/are-knees-over-toes-bad-thumb.webp").then((module) => module.default),
   "tibialis-raises-knee-strength": () => import("../assets/guide-thumbnails/wave-3-46-50/tibialis-raises-knee-strength-thumb.webp").then((module) => module.default),
   "banded-tke-knee-exercise": () => import("../assets/guide-thumbnails/wave-3-46-50/banded-tke-knee-exercise-thumb.webp").then((module) => module.default),

@@ -58,9 +58,9 @@ const criticalRoutes: CriticalRoute[] = [
   {
     route: "/shop",
     requiredText: ["support@flexi-knee.com"],
-    title: "Knee Massagers, Sleeves & Recovery Products | FlexiKnee",
-    description: "Compare FlexiKnee knee massagers, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price.",
-    h1: "Knee Comfort Products for Heat, Compression & Recovery",
+    title: "Knee Massagers, Sleeves, Ice Wraps & Recovery | FlexiKnee",
+    description: "Compare FlexiKnee knee massagers, reusable ice pack wraps, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price.",
+    h1: "Knee Comfort Products for Heat, Cold, Compression & Recovery",
   },
   {
     route: "/guides",
