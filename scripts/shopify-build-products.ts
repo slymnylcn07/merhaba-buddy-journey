@@ -40,6 +40,7 @@ const FALLBACK_PRODUCT_HANDLES = [
   "flexiknee-calf-massager",
   "flexiknee-usb-heated-knee-wrap",
   "flexiknee-sport-orthopedic-insoles",
+  "flexiknee-reusable-knee-ice-pack-wrap",
 ];
 
 export async function getShopifyProductHandles(): Promise<string[]> {

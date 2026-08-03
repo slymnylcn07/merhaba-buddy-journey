@@ -1,4 +1,4 @@
-import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
+import { ICE_PACK_PRODUCT_PATH, PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
 import sleeveFallback from "@/assets/article-hero-knee-pain-long-walks.jpg";
 import calfFallback from "@/assets/article-delayed-soreness-recovery.jpg";
 import insolesFallback from "@/assets/article-hero-insoles-knee.svg";
@@ -59,6 +59,17 @@ export const productSystem = [
     href: "/product/flexiknee-usb-heated-knee-wrap",
     status: "Simple warmth",
     accent: "from-orange-50 via-white to-amber-50",
+  },
+  {
+    kind: "ice",
+    name: "FlexiKnee Reusable Knee Ice Pack Wrap",
+    label: "Reusable cold therapy",
+    description: "A flexible gel wrap for hands-free knee cooling after activity or while resting.",
+    price: "$22.99",
+    image: "/images/product-stories/reusable-knee-ice-pack-wrap-main.webp",
+    href: ICE_PACK_PRODUCT_PATH,
+    status: "New",
+    accent: "from-cyan-50 via-white to-blue-50",
   },
 ];
 

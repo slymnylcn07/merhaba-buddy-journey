@@ -23,6 +23,7 @@ import {
   Footprints,
   Activity,
   Scissors,
+  Snowflake,
 } from "lucide-react";
 
 export interface ProductBenefit {
@@ -105,6 +106,22 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
       "Ideal for desk sessions, pair it with a power bank for full mobility.",
     ],
     freeShipOnSingle: true,
+    duoDiscountPct: 15,
+  },
+  "cold-wrap": {
+    benefits: [
+      { icon: Snowflake, label: "Reusable cold-compress gel" },
+      { icon: Layers, label: "24 cm center pad" },
+      { icon: Move, label: "Adjustable wraparound fit" },
+      { icon: RefreshCw, label: "No pump or power needed" },
+    ],
+    howToUse: [
+      "Chill the wrap in the refrigerator for 1 hour or in the freezer for 30 minutes.",
+      "Use a thin fabric barrier when needed and center the 24 cm / 9.45 in pad over the intended area.",
+      "Fasten the wrap so it stays in place without creating pressure, tingling or restricted circulation.",
+      "Use only while awake, check the skin frequently and remove it if cold becomes painful or sensation changes.",
+    ],
+    freeShipOnSingle: false,
     duoDiscountPct: 15,
   },
   "compression-sleeve": {

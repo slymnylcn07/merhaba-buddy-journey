@@ -23,8 +23,8 @@ const collectionJsonLd = {
     {
       "@type": "CollectionPage",
       "@id": "https://flexi-knee.com/shop#collection",
-      name: "Knee Comfort Products for Heat, Compression & Recovery",
-      description: "Compare FlexiKnee knee massagers, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price.",
+      name: "Knee Comfort Products for Heat, Cold, Compression & Recovery",
+      description: "Compare FlexiKnee knee massagers, reusable ice pack wraps, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price.",
       url: "https://flexi-knee.com/shop",
       isPartOf: { "@id": "https://flexi-knee.com/#website" },
       provider: { "@id": "https://flexi-knee.com/#organization" },
@@ -97,21 +97,21 @@ export default function Shop() {
   return (
     <>
       <Helmet>
-        <title>Knee Massagers, Sleeves & Recovery Products | FlexiKnee</title>
+        <title>Knee Massagers, Sleeves, Ice Wraps & Recovery | FlexiKnee</title>
         <meta
           name="description"
-          content="Compare FlexiKnee knee massagers, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price."
+          content="Compare FlexiKnee knee massagers, reusable ice pack wraps, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price."
         />
         <link rel="canonical" href="https://flexi-knee.com/shop" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/shop" />
-        <meta property="og:title" content="Knee Massagers, Sleeves & Recovery Products | FlexiKnee" />
-        <meta property="og:description" content="Compare FlexiKnee knee massagers, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price." />
+        <meta property="og:title" content="Knee Massagers, Sleeves, Ice Wraps & Recovery | FlexiKnee" />
+        <meta property="og:description" content="Compare FlexiKnee knee massagers, reusable ice pack wraps, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Knee Massagers, Sleeves & Recovery Products | FlexiKnee" />
-        <meta name="twitter:description" content="Compare FlexiKnee knee massagers, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price." />
+        <meta name="twitter:title" content="Knee Massagers, Sleeves, Ice Wraps & Recovery | FlexiKnee" />
+        <meta name="twitter:description" content="Compare FlexiKnee knee massagers, reusable ice pack wraps, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price." />
         <meta name="twitter:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(collectionJsonLd)}</script>
         {products.length > 0 && <script type="application/ld+json">{JSON.stringify(itemListJsonLd)}</script>}
@@ -127,13 +127,13 @@ export default function Shop() {
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">The FlexiKnee system</p>
                   <h1 className="mt-3 max-w-4xl text-4xl font-semibold tracking-[-0.05em] text-slate-950 md:text-6xl">
-                    Knee Comfort Products for Heat, Compression & Recovery
+                    Knee Comfort Products for Heat, Cold, Compression & Recovery
                   </h1>
                   <h2 className="mt-4 text-xl font-semibold tracking-[-0.02em] text-slate-800 md:text-2xl">
                     One clear product for each part of your routine.
                   </h2>
                   <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
-                    Start with the premium Smart Heated Knee Massager, or choose a focused solution for compression, simple warmth, lower-leg recovery or foot support.
+                    Start with the premium Smart Heated Knee Massager, or choose a focused solution for reusable cold therapy, compression, simple warmth, lower-leg recovery or foot support.
                   </p>
                 </div>
                 <div className="grid grid-cols-3 gap-3 text-center">

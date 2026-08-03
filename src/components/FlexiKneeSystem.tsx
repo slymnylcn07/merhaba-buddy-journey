@@ -6,7 +6,7 @@ import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getProductPath } from "@/lib/product-config";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
 
-type ProductKind = "massager" | "sleeve" | "calf" | "insoles" | "wrap" | "other";
+type ProductKind = "massager" | "sleeve" | "calf" | "insoles" | "wrap" | "ice" | "other";
 
 type SystemCard = {
   key: string;
@@ -40,6 +40,7 @@ function formatMoney(amount?: string, currencyCode?: string) {
 function identifyProduct(product: ShopifyProduct): ProductKind {
   const text = `${product.node.title} ${product.node.handle}`.toLowerCase();
 
+  if (/ice-pack|cold-therapy|cold-compress|gel-knee-wrap/.test(text)) return "ice";
   if (/insole|orthopedic|orthotic|footbed|arch-support/.test(text)) return "insoles";
   if (/calf|lower-leg|leg-massager|air-compression/.test(text)) return "calf";
   if (/sleeve|compression-support|knee-support/.test(text)) return "sleeve";
@@ -84,6 +85,13 @@ const profileByKind: Record<ProductKind, Omit<SystemCard, "key" | "name" | "pric
     status: "Simple warmth",
     accent: "from-orange-50 via-white to-amber-50",
   },
+  ice: {
+    kind: "ice",
+    label: "Reusable cold therapy",
+    description: "A flexible gel wrap for hands-free knee cooling after activity or while resting.",
+    status: "New",
+    accent: "from-cyan-50 via-white to-blue-50",
+  },
   other: {
     kind: "other",
     label: "FlexiKnee system",
@@ -93,7 +101,7 @@ const profileByKind: Record<ProductKind, Omit<SystemCard, "key" | "name" | "pric
   },
 };
 
-const order: ProductKind[] = ["massager", "sleeve", "calf", "insoles", "wrap", "other"];
+const order: ProductKind[] = ["massager", "sleeve", "ice", "calf", "insoles", "wrap", "other"];
 
 function toLiveCard(product: ShopifyProduct): SystemCard {
   const kind = identifyProduct(product);
@@ -149,7 +157,7 @@ export const FlexiKneeSystem = () => {
       });
 
       const sorted = order.flatMap((kind) => (selected.has(kind) ? [selected.get(kind)!] : []));
-      return [...sorted, ...overflow].slice(0, 5);
+      return [...sorted, ...overflow].slice(0, 6);
     }
 
     return productSystem.map((item, index) => ({
@@ -168,7 +176,7 @@ export const FlexiKneeSystem = () => {
   }, [liveProducts]);
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((item) => (
         <Link
           key={item.key}

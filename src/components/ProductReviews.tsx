@@ -317,6 +317,66 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
       },
     ],
   },
+  "flexiknee-reusable-knee-ice-pack-wrap": {
+    highlights: ["Secure knee fit", "Easy cold routine", "Flexible wrap", "Practical straps"],
+    reviews: [
+      {
+        name: "R***a",
+        date: "07 Mar 2026",
+        details: "Color: 1PC Blue",
+        text: "It fits perfectly around the knee and does not slip.",
+      },
+      {
+        name: "M***r",
+        date: "24 Feb 2026",
+        details: "Color: 1PC",
+        text: "Very good for cooling the knee. It is a little smaller than I expected, but it does the job.",
+        rating: 4,
+      },
+      {
+        name: "N***R",
+        date: "21 Oct 2025",
+        details: "Color: 1PC",
+        text: "As described, very practical and easy to use. I like it.",
+      },
+      {
+        name: "L***z",
+        date: "14 Dec 2025",
+        details: "Color: 1PC",
+        text: "An excellent purchase and perfect for what I needed.",
+      },
+      {
+        name: "D***z",
+        date: "01 Apr 2026",
+        details: "Color: 1PC",
+        text: "It fits well and the material feels like very good quality.",
+      },
+      {
+        name: "C***x",
+        date: "11 Feb 2026",
+        details: "Color: 1PC",
+        text: "Excellent product. The material feels like excellent quality.",
+      },
+      {
+        name: "M***z",
+        date: "27 Apr 2026",
+        details: "Color: 1PC",
+        text: "Great and exactly as described.",
+      },
+      {
+        name: "G***a",
+        date: "27 Apr 2026",
+        details: "Color: 1PC",
+        text: "Perfectly suitable for use on the knee.",
+      },
+      {
+        name: "s***r",
+        date: "09 Apr 2026",
+        details: "Color: 1PC",
+        text: "It was helpful for a cold-compress routine after a meniscus irritation.",
+      },
+    ],
+  },
 };
 
 function Stars({ value, className = "" }: { value: number; className?: string }) {

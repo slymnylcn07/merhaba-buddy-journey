@@ -2,6 +2,8 @@ export const PRIMARY_PRODUCT_HANDLE =
   import.meta.env.VITE_PRIMARY_PRODUCT_HANDLE ||
   "knee-massager-smart-red-light-and-massage-therapy";
 
+export const ICE_PACK_PRODUCT_HANDLE = "flexiknee-reusable-knee-ice-pack-wrap";
+
 const SHOPIFY_HANDLE_ALIASES: Record<string, string> = {};
 
 const PUBLIC_HANDLE_ALIASES: Record<string, string> = {
@@ -35,3 +37,4 @@ export function getProductPath(handle: string): string {
 }
 
 export const PRIMARY_PRODUCT_PATH = getProductPath(PRIMARY_PRODUCT_HANDLE);
+export const ICE_PACK_PRODUCT_PATH = getProductPath(ICE_PACK_PRODUCT_HANDLE);

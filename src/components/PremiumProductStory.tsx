@@ -39,6 +39,11 @@ const themeMap: Record<StoryKey, { soft: string; glow: string; accent: string }>
     glow: "bg-orange-400/20",
     accent: "text-orange-300",
   },
+  "cold-wrap": {
+    soft: "from-cyan-50 via-white to-sky-50",
+    glow: "bg-cyan-400/20",
+    accent: "text-cyan-300",
+  },
   "calf-massager": {
     soft: "from-cyan-50 via-white to-blue-50",
     glow: "bg-cyan-400/20",

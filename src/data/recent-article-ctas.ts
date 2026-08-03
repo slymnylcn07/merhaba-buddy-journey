@@ -16,8 +16,8 @@ export const recentArticleCTAs: Record<string, { headline: string; text: string 
     text: "FlexiKnee combines adjustable warmth, red light, and gentle vibration for everyday comfort. It does not provide TENS, deliver electrical nerve stimulation, or replace assessment and treatment for persistent knee pain.",
   },
   "cold-therapy-machine-knee": {
-    headline: "Need warmth on days when cold therapy is not indicated?",
-    text: "FlexiKnee offers adjustable warmth, red light, and gentle vibration as a separate comfort routine. It is not a cold therapy machine and should not replace a surgeon-directed icing plan after injury or surgery.",
+    headline: "Would a simpler reusable cold wrap fit your routine?",
+    text: "The FlexiKnee Reusable Knee Ice Pack Wrap offers a freezer-cooled, pump-free option for brief cold-comfort sessions. It is not a circulating cold-therapy machine and should not replace post-operative instructions.",
   },
   "are-knees-over-toes-bad": {
     headline: "Want a supported feel during controlled squat practice?",

@@ -3,7 +3,7 @@
  *
  * Amaç: makale içi CTA'nın, okuyucunun o an okuduğu konuyla birebir ilgili
  * ürünü göstermesi. Eşleşme bulunamazsa her zaman ana ürüne (FlexiKnee
- * Smart Heated Knee Massager) düşer — yanlış ürün göstermek, ana ürünü
+ * Smart Heated Knee Massager) düşer; yanlış ürün göstermek, ana ürünü
  * göstermekten daha kötüdür, bu yüzden kurallar bilinçli olarak dar tutuldu.
  *
  * Yeni ürün eklerken: PRODUCT_RECS'e bir kayıt ekle + RULES'a keyword kuralı yaz.
@@ -66,6 +66,14 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     fallbackPrice: "$34.99",
     fallbackImage: "/images/product-stories/heated-wrap-closeup-fit.webp",
   },
+  iceWrap: {
+    handle: "flexiknee-reusable-knee-ice-pack-wrap",
+    title: "FlexiKnee Reusable Knee Ice Pack Wrap",
+    benefit:
+      "A reusable freezer-cooled knee wrap for a simpler cold-comfort routine without a reservoir, hose, or powered pump.",
+    fallbackPrice: "$22.99",
+    fallbackImage: "/images/product-stories/reusable-knee-ice-pack-wrap-main.webp",
+  },
 };
 
 const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
@@ -107,9 +115,9 @@ const SLUG_RECOMMENDATION_OVERRIDES: Record<string, ProductRec> = {
       "A separate warmth, red-light, and gentle-vibration option for a daily comfort routine. This product does not provide TENS or electrical stimulation.",
   },
   "cold-therapy-machine-knee": {
-    ...PRODUCT_RECS.main,
+    ...PRODUCT_RECS.iceWrap,
     benefit:
-      "A separate warmth-based option for familiar stiffness and daily comfort. It is not a cold-therapy machine and should not replace a prescribed post-operative cooling plan.",
+      "A reusable freezer-cooled knee wrap for a simpler cold-comfort routine without a reservoir, hose, or powered pump. It is not a circulating cold-therapy machine and should not replace post-operative instructions.",
   },
 };
 

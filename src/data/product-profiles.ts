@@ -17,7 +17,7 @@ export interface ProductVisual {
 }
 
 export interface ProductProfile {
-  key: "insoles" | "calf-massager" | "heated-wrap" | "compression-sleeve" | "generic";
+  key: "insoles" | "calf-massager" | "heated-wrap" | "compression-sleeve" | "cold-wrap" | "generic";
   seoTitle: string;
   seoDescription: string;
   h1: string;
@@ -395,6 +395,139 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
       portability: "USB powered",
     },
   },
+  "cold-wrap": {
+    key: "cold-wrap",
+    seoTitle: "Reusable Knee Ice Pack Wrap for Cold Therapy | FlexiKnee",
+    seoDescription: "Reusable adjustable knee ice pack wrap with a 24 cm gel pad for short cold-compress routines after activity. Review cooling, fit, care and safety guidance.",
+    h1: "FlexiKnee Reusable Knee Ice Pack Wrap",
+    badge: "Cold recovery",
+    eyebrow: "Reusable knee cold wrap",
+    bestFor: "Short cold-compress sessions after activity or when cooling is appropriate",
+    notIdealFor: "Reduced sensation, circulation concerns or a prescribed post-operative cooling protocol",
+    shopCategories: ["Cold Therapy", "Post-Activity Recovery"],
+    ctaLabel: "Explore the Knee Ice Pack Wrap",
+    cardCopy: "A reusable gel-pad wrap for simple, hands-free knee cooling without a pump or power cable.",
+    summary:
+      "A reusable cold-compress wrap designed to keep a flexible gel pad positioned around the knee during a short, awake cooling session. The adjustable wrap is a simpler alternative to a powered cold-therapy machine when circulating water and clinician-set compression are not required.",
+    highlights: [
+      "Reusable cold-compress gel pad",
+      "Adjustable wraparound fit",
+      "24 cm / 9.45 in center pad",
+      "No pump, tubing or electricity",
+    ],
+    benefitCards: [
+      {
+        title: "Cold that stays in position",
+        text: "The wrap holds the chilled center pad against the knee so both hands remain free during a short seated recovery routine.",
+      },
+      {
+        title: "A low-complexity option",
+        text: "There is no reservoir, pump, tubing or charging step. Chill the wrap, position it comfortably and monitor the skin throughout the session.",
+      },
+      {
+        title: "Reusable for repeat routines",
+        text: "After use, inspect and clean the wrap as directed, then return it to cold storage so it is ready for a later session.",
+      },
+    ],
+    steps: [
+      {
+        title: "Chill before use",
+        text: "Place the wrap in the refrigerator for 1 hour or the freezer for 30 minutes, following the supplied product instructions.",
+      },
+      {
+        title: "Protect and position",
+        text: "Use a thin fabric barrier when needed, center the 24 cm / 9.45 in pad over the intended area and fasten the wrap without restricting circulation.",
+      },
+      {
+        title: "Use a short, awake session",
+        text: "Check the skin frequently and remove the wrap immediately if cold becomes painful or causes burning, marked numbness or unusual color change.",
+      },
+    ],
+    care: [
+      "Follow the supplied cleaning instructions and allow the fabric to dry fully before cold storage.",
+      "Keep the gel pad away from sharp objects and stop using it if the surface splits, leaks or becomes damaged.",
+      "Store the wrap flat or loosely folded so the gel pad is not sharply creased or crushed.",
+    ],
+    safety: [
+      "Do not use directly over broken skin, an area with reduced sensation or a knee where circulation is impaired.",
+      "Do not sleep while wearing the wrap, overtighten it or use cold long enough to create painful numbness or skin discoloration.",
+      "Follow the treating team's protocol after surgery or a diagnosed injury. A reusable wrap does not replace prescribed circulating cold therapy or medical assessment.",
+    ],
+    faqs: [
+      {
+        question: "Is this the same as a cold therapy machine?",
+        answer: "No. This is a reusable gel-pad wrap. It does not circulate chilled water, provide powered compression or maintain a set temperature like a cold-therapy machine.",
+      },
+      {
+        question: "How should I cool the knee ice pack wrap?",
+        answer: "Place it in the refrigerator for 1 hour or in the freezer for 30 minutes. Follow the supplied instructions and do not heat, puncture or place the wrap in an appliance that is not listed for it.",
+      },
+      {
+        question: "Can I put the cold wrap directly on my skin?",
+        answer: "A thin fabric barrier is the safer starting point, especially when the wrap has come from the freezer. Check the skin frequently and stop if the cold becomes painful or sensation changes.",
+      },
+      {
+        question: "Can I wear the knee ice pack wrap while sleeping?",
+        answer: "No. Use it only while awake so you can monitor pressure, skin color, temperature and sensation throughout the session.",
+      },
+    ],
+    guides: [
+      {
+        title: "Cold Therapy Machine for the Knee",
+        href: "/guides/cold-therapy-machine-knee",
+        description: "Compare reusable ice wraps with circulating cold-therapy machines and understand when each format may fit.",
+      },
+      {
+        title: "Heat vs Ice for Knees",
+        href: "/guides/heat-vs-ice-for-knees",
+        description: "Choose cold or warmth according to the situation rather than using either one automatically.",
+      },
+      {
+        title: "Knee Swelling After Exercise",
+        href: "/guides/knee-swelling-after-exercise",
+        description: "Review load, swelling patterns and warning signs before relying on a recovery tool.",
+      },
+    ],
+    visuals: [
+      {
+        title: "A simple cold-compress routine at home",
+        text: "The wrap is designed for a short, seated cooling session without setting up a reservoir, pump or tubing.",
+        image: "/images/product-stories/ice-pack-wrap-home-routine.webp",
+        alt: "Adult using the FlexiKnee Reusable Knee Ice Pack Wrap during a seated recovery routine at home",
+      },
+      {
+        title: "Adjustable positioning around the knee",
+        text: "A close view helps shoppers understand how the wrap keeps the chilled center pad positioned while the fastening is adjusted for comfort.",
+        image: "/images/product-stories/ice-pack-wrap-closeup-fit.webp",
+        alt: "Close-up of the FlexiKnee Reusable Knee Ice Pack Wrap fastened comfortably around the knee",
+      },
+      {
+        title: "Prepare it before the routine",
+        text: "Chill the wrap in the refrigerator for 1 hour or the freezer for 30 minutes, then inspect it before placing it around the knee.",
+        image: "/images/product-stories/ice-pack-wrap-fridge-prep.webp",
+        alt: "FlexiKnee Reusable Knee Ice Pack Wrap being prepared for cold storage before use",
+      },
+      {
+        title: "A focused option after activity",
+        text: "The hands-free format can fit into a calm post-activity reset when cold is appropriate and warning signs do not require assessment.",
+        image: "/images/product-stories/ice-pack-wrap-post-activity.webp",
+        alt: "Adult wearing the FlexiKnee Reusable Knee Ice Pack Wrap while resting after activity",
+      },
+      {
+        title: "See the wrap from both sides",
+        text: "Front and skin-facing views show the gel-pad shape, open-kneecap design, fastening zones and full wraparound layout.",
+        image: "/images/product-stories/ice-pack-wrap-storage.webp",
+        alt: "Front and skin-facing views of the FlexiKnee Reusable Knee Ice Pack Wrap",
+      },
+    ],
+    comparison: {
+      use: "Targeted cold",
+      heat: "No",
+      massage: "No",
+      support: "Adjustable wrap",
+      portability: "Reusable, no power",
+    },
+  },
   "compression-sleeve": {
     key: "compression-sleeve",
     seoTitle: "Knee Compression Sleeve for Daily Support | FlexiKnee",
@@ -584,11 +717,12 @@ export function getProductProfile(productOrText: ShopifyProduct | string): Produ
   if (/insole|orthotic|orthopedic|footbed|arch support/.test(text)) return profiles.insoles;
   if (/calf|lower leg|leg massager|air compression/.test(text)) return profiles["calf-massager"];
   if (/heated|heating|warming|heat wrap|usb/.test(text)) return profiles["heated-wrap"];
+  if (/flexiknee-reusable-knee-ice-pack-wrap|knee ice pack|ice pack wrap|cold compress|cold therapy gel|reusable gel pad/.test(text)) return profiles["cold-wrap"];
   if (/compression|sleeve|knee brace|support sleeve/.test(text)) return profiles["compression-sleeve"];
 
   return genericProfile;
 }
 
 export function getAllProductProfiles(): ProductProfile[] {
-  return [profiles.insoles, profiles["compression-sleeve"], profiles["calf-massager"], profiles["heated-wrap"]];
+  return [profiles.insoles, profiles["compression-sleeve"], profiles["calf-massager"], profiles["heated-wrap"], profiles["cold-wrap"]];
 }
