@@ -187,10 +187,10 @@ export const guidesData: GuideData[] = [
   },
   {
     slug: "flexiknee-vs-competitors-2026",
-    title: "FlexiKnee vs Competitors: Best Knee Massager 2026",
-    description: "Compare FlexiKnee, Revix, HeatPulse, and Hydragun knee massagers side by side. Features, pricing, pros and cons for 2026.",
-    readTime: 11,
-    lastModified: "2026-02-24",
+    title: "Best Knee Massagers 2026: FlexiKnee vs 9 Competitors",
+    description: "Compare FlexiKnee with Peka Flexi, HeatPulse, Nooro, NeuraCare, HeatFlex and premium knee massagers by price, features, battery and warranty.",
+    readTime: 18,
+    lastModified: "2026-08-03",
   },
   {
     slug: "best-heated-knee-massager-arthritis",

@@ -191,6 +191,9 @@ export const cordlessHeatedKneeMassagers2026: ArticleExport = {
           <li>The return period is long enough to assess fit and routine compatibility.</li>
           <li>The claims focus on comfort and use, not guaranteed treatment or cure.</li>
         </ol>
+        <p>
+          For named products rather than a feature checklist, see our current <Link to="/guides/flexiknee-vs-competitors-2026" className="text-primary hover:underline">FlexiKnee, Peka Flexi, HeatPulse, Nooro and premium knee massager comparison</Link>.
+        </p>
 <h2>Safe Use: A Practical Routine</h2>
         <ol>
           <li>Inspect the wrap, connector, battery, and controls before use.</li>

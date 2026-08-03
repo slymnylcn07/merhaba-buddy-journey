@@ -84,7 +84,7 @@ export const smartKneeMassagersBreakdown: ArticleExport = {
            While the research landscape around red light therapy continues to evolve, the existing body of evidence is encouraging. Many peer-reviewed studies have explored the effects of specific light wavelengths on tissue comfort and recovery. For more on what the science says, see our <Link to="/guides/heat-vs-red-light-therapy" className="text-primary hover:underline">heat vs. red light therapy guide</Link>.
          </p>
          <p>
-           From a practical user perspective, many people report that devices combining red light with heat feel more effective than heat-only options. Whether this is due to the light wavelengths themselves, the psychological benefit of a more comprehensive approach, or both, the consistent user feedback suggests that the combination adds meaningful value. For a head-to-head comparison of top devices, see our <Link to="/guides/flexiknee-vs-competitors-2026" className="text-primary hover:underline">FlexiKnee vs. competitors breakdown</Link>.
+           Combining several modes can make one device more convenient than buying separate products, but a longer feature list does not prove a stronger medical effect. For current prices, batteries, warranties and buying terms, see our <Link to="/guides/flexiknee-vs-competitors-2026" className="text-primary hover:underline">FlexiKnee vs Peka Flexi, HeatPulse, Nooro and other competitors</Link>.
          </p>
 
         <h2>What Users Actually Report: Patterns From Hundreds of Reviews</h2>
