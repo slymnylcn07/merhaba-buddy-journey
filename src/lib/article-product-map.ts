@@ -88,6 +88,11 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
 };
 
 const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
+  "knee-sleeves-for-running": "sleeve",
+  "best-sandals-knee-pain": "sleeve",
+  "best-hiking-poles-bad-knees": "sleeve",
+  "diclofenac-gel-knee-pain": "insoles",
+  "capsaicin-cream-knee-pain": "insoles",
   "varicose-veins-knee-pain": "compressionSocks",
   "nordic-hamstring-curl-knee-health": "sleeve",
   "cyclist-squat-knee-strength": "sleeve",
@@ -116,6 +121,16 @@ const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
 };
 
 const SLUG_RECOMMENDATION_OVERRIDES: Record<string, ProductRec> = {
+  "diclofenac-gel-knee-pain": {
+    ...PRODUCT_RECS.insoles,
+    benefit:
+      "Structured arch support and cushioning inside compatible closed shoes, kept separate from the treated knee. Insoles do not replace diclofenac instructions or treat knee osteoarthritis.",
+  },
+  "capsaicin-cream-knee-pain": {
+    ...PRODUCT_RECS.insoles,
+    benefit:
+      "Structured arch support and cushioning inside compatible closed shoes, without covering or heating the treated knee. Insoles do not replace the capsaicin label or treat knee osteoarthritis.",
+  },
   "knee-taping-stability-pfps": {
     ...PRODUCT_RECS.sleeve,
     benefit:

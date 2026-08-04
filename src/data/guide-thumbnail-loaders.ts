@@ -1,6 +1,11 @@
 export type GuideThumbnailLoader = () => Promise<string>;
 
 const thumbnailLoaders: Record<string, GuideThumbnailLoader> = {
+  "knee-sleeves-for-running": () => import("../assets/guide-thumbnails/wave-3-56-60/knee-sleeves-for-running-thumb.webp").then((module) => module.default),
+  "best-sandals-knee-pain": () => import("../assets/guide-thumbnails/wave-3-56-60/best-sandals-knee-pain-thumb.webp").then((module) => module.default),
+  "best-hiking-poles-bad-knees": () => import("../assets/guide-thumbnails/wave-3-56-60/best-hiking-poles-bad-knees-thumb.webp").then((module) => module.default),
+  "diclofenac-gel-knee-pain": () => import("../assets/guide-thumbnails/wave-3-56-60/diclofenac-gel-knee-pain-thumb.webp").then((module) => module.default),
+  "capsaicin-cream-knee-pain": () => import("../assets/guide-thumbnails/wave-3-56-60/capsaicin-cream-knee-pain-thumb.webp").then((module) => module.default),
   "nordic-hamstring-curl-knee-health": () => import("../assets/guide-thumbnails/wave-3-51-55/nordic-hamstring-curl-knee-health-thumb.webp").then((module) => module.default),
   "cyclist-squat-knee-strength": () => import("../assets/guide-thumbnails/wave-3-51-55/cyclist-squat-knee-strength-thumb.webp").then((module) => module.default),
   "knee-taping-stability-pfps": () => import("../assets/guide-thumbnails/wave-3-51-55/knee-taping-stability-pfps-thumb.webp").then((module) => module.default),

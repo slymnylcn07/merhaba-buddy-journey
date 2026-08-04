@@ -1,4 +1,24 @@
 export const recentArticleCTAs: Record<string, { headline: string; text: string }> = {
+  "knee-sleeves-for-running": {
+    headline: "Want a breathable sleeve for a short running test?",
+    text: "The FlexiKnee Compression Support Sleeve can add light compression and a supported feel during a measured run. It does not correct running form, prevent injury, or make a painful or unstable knee safe to run on.",
+  },
+  "best-sandals-knee-pain": {
+    headline: "Want flexible knee support for your next walking test?",
+    text: "The FlexiKnee Compression Support Sleeve can add a supported feel during a short walk while you test footwear. It does not make an unsuitable sandal fit correctly or treat the cause of knee pain.",
+  },
+  "best-hiking-poles-bad-knees": {
+    headline: "Want a supported feel alongside careful pole technique?",
+    text: "The FlexiKnee Compression Support Sleeve offers breathable compression for walking and hiking. It does not correct trekking-pole setup, prevent a fall, or make an unsuitable trail safe.",
+  },
+  "diclofenac-gel-knee-pain": {
+    headline: "Keep footwear support separate from topical medicine",
+    text: "FlexiKnee Sport Orthopedic Insoles add structured support inside compatible closed shoes without covering or heating the treated knee. They do not replace diclofenac instructions, pharmacist advice, or an osteoarthritis care plan.",
+  },
+  "capsaicin-cream-knee-pain": {
+    headline: "Keep footwear support separate from capsaicin use",
+    text: "FlexiKnee Sport Orthopedic Insoles add structured support inside compatible closed shoes without covering or heating the treated knee. They do not replace the capsaicin label, pharmacist advice, or an osteoarthritis care plan.",
+  },
   "nordic-hamstring-curl-knee-health": {
     headline: "Want a supported feel during controlled hamstring training?",
     text: "The FlexiKnee Compression Support Sleeve adds breathable compression during measured strength sessions. It does not improve Nordic curl technique, prevent a hamstring strain, or make sharp knee pain safe to train through.",
