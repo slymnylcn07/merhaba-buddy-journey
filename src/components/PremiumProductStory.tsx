@@ -34,6 +34,11 @@ const themeMap: Record<StoryKey, { soft: string; glow: string; accent: string }>
     glow: "bg-indigo-400/20",
     accent: "text-indigo-300",
   },
+  "compression-socks": {
+    soft: "from-sky-50 via-white to-teal-50",
+    glow: "bg-teal-400/20",
+    accent: "text-teal-300",
+  },
   "heated-wrap": {
     soft: "from-orange-50 via-white to-amber-50",
     glow: "bg-orange-400/20",

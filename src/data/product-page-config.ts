@@ -24,6 +24,7 @@ import {
   Activity,
   Scissors,
   Snowflake,
+  Ruler,
 } from "lucide-react";
 
 export interface ProductBenefit {
@@ -120,6 +121,34 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
       "Use a thin fabric barrier when needed and center the 24 cm / 9.45 in pad over the intended area.",
       "Fasten the wrap so it stays in place without creating pressure, tingling or restricted circulation.",
       "Use only while awake, check the skin frequently and remove it if cold becomes painful or sensation changes.",
+    ],
+    freeShipOnSingle: false,
+    duoDiscountPct: 15,
+  },
+  "compression-socks": {
+    benefits: [
+      { icon: Layers, label: "Knee-high coverage" },
+      { icon: Move, label: "Stretch-knit support" },
+      { icon: Ruler, label: "Calf-first sizing" },
+      { icon: Plane, label: "Travel & work ready" },
+    ],
+    howToUse: [
+      "Measure the widest part of your calf and choose the matching size. Use US shoe size as a second check.",
+      "Roll the sock down toward the heel, slide your foot in and place the heel into the shaped heel pocket.",
+      "Unroll the fabric gradually up the calf and smooth wrinkles without pulling only from the top cuff.",
+      "Keep the cuff flat below the knee crease and remove the sock if it causes pain, numbness, discoloration or increased swelling.",
+    ],
+    specs: [
+      { label: "Coverage", value: "Knee-high, closed toe" },
+      { label: "Material", value: "Nylon" },
+      { label: "Construction", value: "Knit" },
+      { label: "Thickness", value: "Standard" },
+      { label: "Package", value: "One pair" },
+      { label: "Colors", value: "Neutral and patterned options" },
+      { label: "Sizing", value: "Unisex S/M, L/XL and XXL" },
+      { label: "Sock length", value: "34 cm, 37 cm or 41 cm by size" },
+      { label: "Fit method", value: "Calf circumference first, shoe size second" },
+      { label: "Pressure rating", value: "No published mmHg value" },
     ],
     freeShipOnSingle: false,
     duoDiscountPct: 15,

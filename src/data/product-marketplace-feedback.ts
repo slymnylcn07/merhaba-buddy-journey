@@ -1,4 +1,8 @@
-import { getPublicProductHandle, PRIMARY_PRODUCT_HANDLE } from "@/lib/product-config";
+import {
+  COMPRESSION_SOCKS_PRODUCT_HANDLE,
+  getPublicProductHandle,
+  PRIMARY_PRODUCT_HANDLE,
+} from "@/lib/product-config";
 
 export interface ProductMarketplaceFeedback {
   rating: number;
@@ -29,6 +33,10 @@ const feedbackByHandle: Record<string, ProductMarketplaceFeedback> = {
   "flexiknee-reusable-knee-ice-pack-wrap": {
     rating: 4.9,
     reviewCount: 224,
+  },
+  [COMPRESSION_SOCKS_PRODUCT_HANDLE]: {
+    rating: 4.7,
+    reviewCount: 231,
   },
 };
 

@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { Mail } from "lucide-react";
 import { DiscountCodeModal } from "@/components/DiscountCodeModal";
 import { NEWSLETTER_DISCOUNT_CODE } from "@/lib/newsletter-config";
-import { getProductPath } from "@/lib/product-config";
+import { getProductPath, getPublicProductHandle } from "@/lib/product-config";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
 
 // Urun gorselleri icin oturum ici tek istek (PremiumCTA ile ayni desen)
@@ -31,6 +31,12 @@ const SUBSCRIBED_KEY = "flexiknee_newsletter_subscribed";
 
 function getContextualContent(slug: string): { hook: string; support: string } {
   const s = slug.toLowerCase();
+
+  if (s === "varicose-veins-knee-pain")
+    return {
+      hook: "Would everyday compression fit your standing or travel routine?",
+      support: "If compression has been confirmed as appropriate for you, a correctly sized knee-high sock can provide a supported feel during long days on your feet.",
+    };
 
   if (s === "cold-therapy-machine-knee")
     return {
@@ -201,6 +207,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
 
   const { hook, support } = getContextualContent(slug);
   const [liveImage, setLiveImage] = useState<string | null>(null);
+  const [livePrice, setLivePrice] = useState<string | null>(null);
 
   useEffect(() => {
     if (sessionStorage.getItem(STORAGE_KEY)) setStage1Done(true);
@@ -238,12 +245,33 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   useEffect(() => {
     let active = true;
     setLiveImage(null);
+    setLivePrice(null);
     getSlideInProducts().then((list) => {
       if (!active) return;
       const match = list.find(
-        (p) => decodeURIComponent(p.node.handle) === decodeURIComponent(rec.handle)
+        (p) =>
+          getPublicProductHandle(decodeURIComponent(p.node.handle)) ===
+          getPublicProductHandle(decodeURIComponent(rec.handle))
       );
-      if (match) setLiveImage(match.node.images?.edges?.[0]?.node?.url || null);
+      if (match) {
+        setLiveImage(match.node.images?.edges?.[0]?.node?.url || null);
+        const amount = match.node.priceRange?.minVariantPrice?.amount;
+        const currencyCode = match.node.priceRange?.minVariantPrice?.currencyCode || "USD";
+        const numericAmount = Number(amount);
+        if (Number.isFinite(numericAmount)) {
+          try {
+            setLivePrice(
+              new Intl.NumberFormat("en", {
+                style: "currency",
+                currency: currencyCode,
+                minimumFractionDigits: 2,
+              }).format(numericAmount)
+            );
+          } catch {
+            setLivePrice(`${currencyCode} ${numericAmount.toFixed(2)}`);
+          }
+        }
+      }
     });
     return () => {
       active = false;
@@ -312,6 +340,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       ? "ice pack wrap"
       : productShortName.split(" ").slice(-2).join(" ").toLowerCase();
   const productImage = liveImage || rec.fallbackImage;
+  const productPrice = livePrice || rec.fallbackPrice;
 
   return (
     <>
@@ -403,7 +432,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
                   <p className="truncate text-xs font-semibold text-slate-800">{productShortName}</p>
                   <ProductMarketplaceRating handle={rec.handle} showCount className="mt-1" />
                 </div>
-                <span className="text-sm font-bold text-slate-950">{rec.fallbackPrice}</span>
+                <span className="text-sm font-bold text-slate-950">{productPrice}</span>
                 <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-semibold text-blue-700">30-day returns</span>
               </div>
 

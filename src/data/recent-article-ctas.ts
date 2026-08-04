@@ -108,8 +108,8 @@ export const recentArticleCTAs: Record<string, { headline: string; text: string 
     text: "Use turmeric only as an optional supplement trial. FlexiKnee provides adjustable warmth, red light, and gentle vibration in a separate wireless knee-comfort routine.",
   },
   "varicose-veins-knee-pain": {
-    headline: "Has a clinician ruled out a vascular cause for your knee symptoms?",
-    text: "FlexiKnee is designed for everyday knee comfort, not varicose veins, venous insufficiency, or blood clots. Use heat, massage, vibration, or compression near symptomatic veins only after a clinician confirms it is appropriate.",
+    headline: "Looking for everyday compression after checking it is appropriate?",
+    text: "FlexiKnee Everyday Compression Socks provide knee-high support for travel, standing, walking and sport. They do not diagnose or treat varicose veins or blood clots and do not replace prescribed medical compression.",
   },
   "knee-osteoarthritis-vs-rheumatoid-arthritis": {
     headline: "Support comfort without confusing it with disease treatment",

@@ -522,6 +522,11 @@
       "permanent": true
     },
     {
+      "source": "/product/varicose-veins-compression-socks-fit-for-golf-rugby-running-hiking-sports-for-anti-fatigue-driving-travel-flight-women-men-socks",
+      "destination": "/product/flexiknee-everyday-compression-socks",
+      "permanent": true
+    },
+    {
       "source": "/pages/privacy-policy",
       "destination": "/privacy-policy",
       "permanent": true

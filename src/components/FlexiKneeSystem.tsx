@@ -5,8 +5,9 @@ import { productSystem } from "@/data/product-system";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getProductPath } from "@/lib/product-config";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
+import { getProductProfile } from "@/data/product-profiles";
 
-type ProductKind = "massager" | "sleeve" | "calf" | "insoles" | "wrap" | "ice" | "other";
+type ProductKind = "massager" | "sleeve" | "socks" | "calf" | "insoles" | "wrap" | "ice" | "other";
 
 type SystemCard = {
   key: string;
@@ -41,6 +42,7 @@ function identifyProduct(product: ShopifyProduct): ProductKind {
   const text = `${product.node.title} ${product.node.handle}`.toLowerCase();
 
   if (/ice-pack|cold-therapy|cold-compress|gel-knee-wrap/.test(text)) return "ice";
+  if (/compression-socks|support-socks|knee-high-socks|varicose-veins-compression-socks/.test(text)) return "socks";
   if (/insole|orthopedic|orthotic|footbed|arch-support/.test(text)) return "insoles";
   if (/calf|lower-leg|leg-massager|air-compression/.test(text)) return "calf";
   if (/sleeve|compression-support|knee-support/.test(text)) return "sleeve";
@@ -85,6 +87,13 @@ const profileByKind: Record<ProductKind, Omit<SystemCard, "key" | "name" | "pric
     status: "Simple warmth",
     accent: "from-orange-50 via-white to-amber-50",
   },
+  socks: {
+    kind: "socks",
+    label: "Knee-high compression",
+    description: "Stretch-knit support for travel, work, standing and active days.",
+    status: "New",
+    accent: "from-sky-50 via-white to-teal-50",
+  },
   ice: {
     kind: "ice",
     label: "Reusable cold therapy",
@@ -101,7 +110,7 @@ const profileByKind: Record<ProductKind, Omit<SystemCard, "key" | "name" | "pric
   },
 };
 
-const order: ProductKind[] = ["massager", "sleeve", "ice", "calf", "insoles", "wrap", "other"];
+const order: ProductKind[] = ["massager", "sleeve", "socks", "ice", "calf", "insoles", "wrap", "other"];
 
 function toLiveCard(product: ShopifyProduct): SystemCard {
   const kind = identifyProduct(product);
@@ -112,7 +121,7 @@ function toLiveCard(product: ShopifyProduct): SystemCard {
   return {
     ...profile,
     key: product.node.id,
-    name: product.node.title,
+    name: kind === "massager" ? product.node.title : getProductProfile(product).h1,
     price: formatMoney(
       firstAvailablePrice?.amount || minPrice.amount,
       firstAvailablePrice?.currencyCode || minPrice.currencyCode,
@@ -157,7 +166,7 @@ export const FlexiKneeSystem = () => {
       });
 
       const sorted = order.flatMap((kind) => (selected.has(kind) ? [selected.get(kind)!] : []));
-      return [...sorted, ...overflow].slice(0, 6);
+      return [...sorted, ...overflow].slice(0, 7);
     }
 
     return productSystem.map((item, index) => ({
