@@ -1,4 +1,38 @@
 export const articleHowToSchemas: Record<string, { name: string; description: string; steps: { name: string; text: string }[] }> = {
+  "knee-sleeves-for-running": {
+    name: "How to Test a Knee Sleeve for Running",
+    description: "A short, practical fit and running test for a soft compression knee sleeve.",
+    steps: [
+      { name: "Measure using the brand chart", text: "Measure at the exact point requested by the manufacturer and use that brand's chart rather than guessing from a usual clothing size." },
+      { name: "Check the standing fit", text: "Center the sleeve as directed, smooth wrinkles, and confirm that it feels secure without pain, numbness, tingling, color change, or restricted knee bend." },
+      { name: "Walk and perform a few bends", text: "Walk for several minutes and complete a few comfortable knee bends to check whether the sleeve rolls, slips, bunches, or rubs." },
+      { name: "Use a short easy run", text: "Test the sleeve on a familiar flat route for 10 to 20 easy minutes, without adding new shoes, speed work, or hills at the same time." },
+      { name: "Review the later response", text: "Remove the sleeve, inspect the skin, and note symptoms later that day and the next morning before considering a longer run." },
+    ],
+  },
+  "best-sandals-knee-pain": {
+    name: "How to Test Walking Sandals for Knee Pain",
+    description: "A fit and walking test that checks security, comfort, traction, and the next-day response before a long outing.",
+    steps: [
+      { name: "Check length and width", text: "Make sure the toes and heel sit fully on the footbed without hanging over an edge or being forced inward by a narrow shape." },
+      { name: "Adjust every strap", text: "Set the forefoot, instep, and heel straps so the foot stays centered without pressure marks, pinching, or a need to grip with the toes." },
+      { name: "Walk indoors first", text: "Use the sandal on a clean indoor surface and check heel lift, side-to-side movement, rubbing, bending, and whether the outsole feels stable." },
+      { name: "Try a short flat walk", text: "If the indoor test is comfortable, use a short familiar route before increasing time, hills, pace, or carried load." },
+      { name: "Review the next morning", text: "Compare foot, ankle, knee, hip, and back symptoms with the usual pattern before deciding whether the sandal suits longer walking." },
+    ],
+  },
+  "best-hiking-poles-bad-knees": {
+    name: "How to Set Up Hiking Poles for a Descent",
+    description: "A field check for pole length, straps, locks, placement, and controlled downhill steps.",
+    steps: [
+      { name: "Set a flat-ground baseline", text: "Place each tip beside the foot and adjust the pole until the elbow is close to 90 degrees without shrugging the shoulder." },
+      { name: "Check both locks", text: "Tighten and load each adjustment point before leaving the trailhead. A pole that shortens unexpectedly can create a fall risk." },
+      { name: "Fit the wrist straps", text: "Bring the hand up through the strap, lower the palm over it, and hold the grip lightly so the strap shares load without trapping the hand." },
+      { name: "Fine-tune for the descent", text: "Lengthen adjustable poles slightly for a sustained descent when that keeps the body upright and the shoulders relaxed. Follow the manufacturer's adjustment limits." },
+      { name: "Plant close and step short", text: "Place the pole securely near the body before committing weight, then use a short controlled step instead of reaching far downhill or jumping between rocks." },
+      { name: "Stow poles when hands are needed", text: "Remove hands from straps or stow the poles on boulder fields, scrambles, and terrain where both hands may be needed to protect a fall." },
+    ],
+  },
   "flat-feet-overpronation-knee-pain": {
     name: "How to Check Your Arches and Reduce Knee Strain",
     description: "A step-by-step method to test your own arches, then work up the support ladder from footwear to clinical assessment.",

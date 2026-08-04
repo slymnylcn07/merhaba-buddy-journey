@@ -183,6 +183,16 @@ import thumbWave354TensUnit from "@/assets/guide-thumbnails/wave-3-51-55/tens-un
 import thumbWave354TensUnitAvif from "@/assets/guide-thumbnails/wave-3-51-55/tens-unit-knee-pain-thumb.avif";
 import thumbWave355ColdTherapyMachine from "@/assets/guide-thumbnails/wave-3-51-55/cold-therapy-machine-knee-thumb.webp";
 import thumbWave355ColdTherapyMachineAvif from "@/assets/guide-thumbnails/wave-3-51-55/cold-therapy-machine-knee-thumb.avif";
+import thumbWave356RunningSleeves from "@/assets/guide-thumbnails/wave-3-56-60/knee-sleeves-for-running-thumb.webp";
+import thumbWave356RunningSleevesAvif from "@/assets/guide-thumbnails/wave-3-56-60/knee-sleeves-for-running-thumb.avif";
+import thumbWave357Sandals from "@/assets/guide-thumbnails/wave-3-56-60/best-sandals-knee-pain-thumb.webp";
+import thumbWave357SandalsAvif from "@/assets/guide-thumbnails/wave-3-56-60/best-sandals-knee-pain-thumb.avif";
+import thumbWave358HikingPoles from "@/assets/guide-thumbnails/wave-3-56-60/best-hiking-poles-bad-knees-thumb.webp";
+import thumbWave358HikingPolesAvif from "@/assets/guide-thumbnails/wave-3-56-60/best-hiking-poles-bad-knees-thumb.avif";
+import thumbWave359DiclofenacGel from "@/assets/guide-thumbnails/wave-3-56-60/diclofenac-gel-knee-pain-thumb.webp";
+import thumbWave359DiclofenacGelAvif from "@/assets/guide-thumbnails/wave-3-56-60/diclofenac-gel-knee-pain-thumb.avif";
+import thumbWave360CapsaicinCream from "@/assets/guide-thumbnails/wave-3-56-60/capsaicin-cream-knee-pain-thumb.webp";
+import thumbWave360CapsaicinCreamAvif from "@/assets/guide-thumbnails/wave-3-56-60/capsaicin-cream-knee-pain-thumb.avif";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "best-supplements-for-knee-pain": thumbSupplements,
@@ -315,6 +325,11 @@ const thumbnailMap: Record<string, string> = {
   "knee-taping-stability-pfps": thumbWave353KneeTaping,
   "tens-unit-knee-pain": thumbWave354TensUnit,
   "cold-therapy-machine-knee": thumbWave355ColdTherapyMachine,
+  "knee-sleeves-for-running": thumbWave356RunningSleeves,
+  "best-sandals-knee-pain": thumbWave357Sandals,
+  "best-hiking-poles-bad-knees": thumbWave358HikingPoles,
+  "diclofenac-gel-knee-pain": thumbWave359DiclofenacGel,
+  "capsaicin-cream-knee-pain": thumbWave360CapsaicinCream,
 };
 
 const thumbnailAvifMap: Record<string, string> = {
@@ -360,6 +375,11 @@ const thumbnailAvifMap: Record<string, string> = {
   "knee-taping-stability-pfps": thumbWave353KneeTapingAvif,
   "tens-unit-knee-pain": thumbWave354TensUnitAvif,
   "cold-therapy-machine-knee": thumbWave355ColdTherapyMachineAvif,
+  "knee-sleeves-for-running": thumbWave356RunningSleevesAvif,
+  "best-sandals-knee-pain": thumbWave357SandalsAvif,
+  "best-hiking-poles-bad-knees": thumbWave358HikingPolesAvif,
+  "diclofenac-gel-knee-pain": thumbWave359DiclofenacGelAvif,
+  "capsaicin-cream-knee-pain": thumbWave360CapsaicinCreamAvif,
 };
 
 const thumbnailPatternMap: { pattern: RegExp; image: string }[] = [
@@ -545,6 +565,9 @@ const activitySlugs = [
   "step-down-exercise-knee-control",
   "nordic-hamstring-curl-knee-health",
   "cyclist-squat-knee-strength",
+  "knee-sleeves-for-running",
+  "best-sandals-knee-pain",
+  "best-hiking-poles-bad-knees",
 ];
 
 const lifeStageSlugs = [
@@ -584,6 +607,8 @@ const methodsSlugs = [
   "knee-taping-stability-pfps",
   "tens-unit-knee-pain",
   "cold-therapy-machine-knee",
+  "diclofenac-gel-knee-pain",
+  "capsaicin-cream-knee-pain",
 ];
 
 const supplementSlugs = [
@@ -608,6 +633,9 @@ const deviceSlugs = [
   "knee-brace-vs-compression-sleeve",
   "knee-compression-sleeve-sizing-guide",
   "best-insoles-for-knee-pain-2026",
+  "knee-sleeves-for-running",
+  "best-sandals-knee-pain",
+  "best-hiking-poles-bad-knees",
 ];
 
 type GuideCategoryKey =

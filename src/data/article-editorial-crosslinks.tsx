@@ -27,6 +27,9 @@ export const articleEditorialCrosslinks: Record<string, ReactNode> = {
       <p>
         If you are considering electrical stimulation for symptom relief, the <Link to="/guides/tens-unit-knee-pain" className={linkClass}>TENS unit guide for knee pain</Link> explains pad placement, settings, safety exclusions, and the mixed evidence. It should be viewed as a possible short-term comfort tool, not a treatment that changes arthritis itself.
       </p>
+      <p>
+        For topical medicines, compare the stronger guideline support and NSAID precautions in the <Link to="/guides/diclofenac-gel-knee-pain" className={linkClass}>diclofenac gel guide</Link> with the common burning sensation and less certain evidence in the <Link to="/guides/capsaicin-cream-knee-pain" className={linkClass}>capsaicin cream guide</Link>. Neither product repairs cartilage, and both require their own label and safety checks.
+      </p>
     </>
   ),
   "knee-pain-after-exercise": (
@@ -55,9 +58,14 @@ export const articleEditorialCrosslinks: Record<string, ReactNode> = {
     </p>
   ),
   "running-knee-pain-guide": (
-    <p>
-      When terrain is the trigger, the <Link to="/guides/downhill-running-knee-pain" className={linkClass}>downhill running knee pain guide</Link> separates grade, speed, cadence, stride, and braking load. If land running is temporarily too irritable, <Link to="/guides/aqua-jogging-knee-pain" className={linkClass}>aqua jogging and deep-water running</Link> can preserve an aerobic routine without pretending pool fitness proves land readiness.
-    </p>
+    <>
+      <p>
+        When terrain is the trigger, the <Link to="/guides/downhill-running-knee-pain" className={linkClass}>downhill running knee pain guide</Link> separates grade, speed, cadence, stride, and braking load. If land running is temporarily too irritable, <Link to="/guides/aqua-jogging-knee-pain" className={linkClass}>aqua jogging and deep-water running</Link> can preserve an aerobic routine without pretending pool fitness proves land readiness.
+      </p>
+      <p>
+        A soft support is an optional comfort tool rather than a fix for recurring symptoms. The <Link to="/guides/knee-sleeves-for-running" className={linkClass}>knee sleeves for running guide</Link> compares compression sleeves, patellar straps, and braces, then shows how to check fit during a short easy run before using one for distance.
+      </p>
+    </>
   ),
   "trail-running-knee-pain": (
     <p>
@@ -65,8 +73,23 @@ export const articleEditorialCrosslinks: Record<string, ReactNode> = {
     </p>
   ),
   "knee-pain-when-hiking": (
+    <>
+      <p>
+        If the climb itself is the main trigger, compare grade and duration in the <Link to="/guides/incline-walking-knee-pain" className={linkClass}>incline walking knee pain guide</Link>. If symptoms appear during the return down, the <Link to="/guides/downhill-running-knee-pain" className={linkClass}>downhill braking guide</Link> explains the related descent mechanics while keeping hiking and running progressions separate.
+      </p>
+      <p>
+        For gear selection and technique, use the focused guide to <Link to="/guides/best-hiking-poles-bad-knees" className={linkClass}>choosing and sizing hiking poles for bad knees</Link>. It explains grip, locks, shaft material, downhill setup, and why proper pole placement matters more than an anti-shock label.
+      </p>
+    </>
+  ),
+  "best-running-shoes-knee-pain": (
     <p>
-      If the climb itself is the main trigger, compare grade and duration in the <Link to="/guides/incline-walking-knee-pain" className={linkClass}>incline walking knee pain guide</Link>. If symptoms appear during the return down, the <Link to="/guides/downhill-running-knee-pain" className={linkClass}>downhill braking guide</Link> explains the related descent mechanics while keeping hiking and running progressions separate.
+      Warm-weather footwear needs a separate test because an open shoe changes heel security, toe gripping, and strap fit. The <Link to="/guides/best-sandals-knee-pain" className={linkClass}>sandals for knee pain guide</Link> compares supportive walking sandals, recovery slides, and flip-flops without claiming that one arch shape or cushioning level works for every knee.
+    </p>
+  ),
+  "home-remedies-knee-pain": (
+    <p>
+      If you are considering an over-the-counter topical product, read the medicine-specific guidance before combining it with heat, wraps, or another cream. Compare <Link to="/guides/diclofenac-gel-knee-pain" className={linkClass}>diclofenac gel for knee osteoarthritis</Link> with <Link to="/guides/capsaicin-cream-knee-pain" className={linkClass}>capsaicin cream and its expected burning sensation</Link>.
     </p>
   ),
   "knee-pain-climbing-stairs": (

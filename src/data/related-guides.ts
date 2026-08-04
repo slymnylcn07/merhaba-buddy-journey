@@ -7,6 +7,31 @@ const STOP_WORDS = new Set([
 ]);
 
 const PRIORITY_RELATED: Record<string, string[]> = {
+  "knee-sleeves-for-running": [
+    "running-knee-pain-guide",
+    "knee-compression-sleeve-sizing-guide",
+    "knee-brace-vs-compression-sleeve",
+  ],
+  "best-sandals-knee-pain": [
+    "best-running-shoes-knee-pain",
+    "knee-pain-after-long-walks",
+    "flat-feet-overpronation-knee-pain",
+  ],
+  "best-hiking-poles-bad-knees": [
+    "knee-pain-when-hiking",
+    "rucking-knee-pain",
+    "knee-pain-going-down-stairs",
+  ],
+  "diclofenac-gel-knee-pain": [
+    "capsaicin-cream-knee-pain",
+    "knee-arthritis-pain-guide",
+    "knee-osteoarthritis-vs-rheumatoid-arthritis",
+  ],
+  "capsaicin-cream-knee-pain": [
+    "diclofenac-gel-knee-pain",
+    "knee-arthritis-pain-guide",
+    "home-remedies-knee-pain",
+  ],
   "nordic-hamstring-curl-knee-health": [
     "how-to-strengthen-knees",
     "knee-pain-after-exercise",
@@ -128,13 +153,13 @@ const PRIORITY_RELATED: Record<string, string[]> = {
     "knee-pain-when-hiking",
   ],
   "running-knee-pain-guide": [
+    "knee-sleeves-for-running",
     "downhill-running-knee-pain",
-    "aqua-jogging-knee-pain",
     "trail-running-knee-pain",
   ],
   "knee-pain-when-hiking": [
+    "best-hiking-poles-bad-knees",
     "incline-walking-knee-pain",
-    "downhill-running-knee-pain",
     "trail-running-knee-pain",
   ],
   "best-low-impact-cardio-knee-pain": [

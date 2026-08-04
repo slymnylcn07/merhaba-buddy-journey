@@ -14,6 +14,51 @@ export interface PublishedGuideData extends GuideData {
 
 export const recentGuidesData: PublishedGuideData[] = [
   {
+    slug: "knee-sleeves-for-running",
+    title: "Knee Sleeves for Running: Fit, Compression, and When They Help",
+    description:
+      "Learn whether knee sleeves help runners, how compression should fit, when to wear one, and when recurring knee pain needs a better plan.",
+    readTime: 20,
+    publishedDate: "2026-08-04",
+    lastModified: "2026-08-04",
+  },
+  {
+    slug: "best-sandals-knee-pain",
+    title: "Best Sandals for Knee Pain: Support, Cushioning, and Fit",
+    description:
+      "Compare walking sandals for knee pain by heel security, arch shape, cushioning, flexibility, traction, and a practical fit test.",
+    readTime: 20,
+    publishedDate: "2026-08-04",
+    lastModified: "2026-08-04",
+  },
+  {
+    slug: "best-hiking-poles-bad-knees",
+    title: "Best Hiking Poles for Bad Knees: Length, Grip, and Downhill Use",
+    description:
+      "Choose hiking poles for bad knees by length, grip, lock, shaft, and terrain, then learn how to use trekking poles downhill safely.",
+    readTime: 20,
+    publishedDate: "2026-08-04",
+    lastModified: "2026-08-04",
+  },
+  {
+    slug: "diclofenac-gel-knee-pain",
+    title: "Diclofenac Gel for Knee Pain: Voltaren Use, Safety, and Evidence",
+    description:
+      "Learn when diclofenac gel may help knee osteoarthritis, how to follow a 1% gel label, what to avoid, side effects, and when to seek care.",
+    readTime: 21,
+    publishedDate: "2026-08-04",
+    lastModified: "2026-08-04",
+  },
+  {
+    slug: "capsaicin-cream-knee-pain",
+    title: "Capsaicin Cream for Knee Pain: How It Works and What to Expect",
+    description:
+      "Learn how capsaicin cream may help knee osteoarthritis, why it burns, how to use it safely, evidence limits, and when to stop.",
+    readTime: 20,
+    publishedDate: "2026-08-04",
+    lastModified: "2026-08-04",
+  },
+  {
     slug: "nordic-hamstring-curl-knee-health",
     title: "Nordic Hamstring Curls and Knee Health: Benefits, Form, and Progressions",
     description:

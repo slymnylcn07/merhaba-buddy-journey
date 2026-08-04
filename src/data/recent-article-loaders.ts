@@ -2,6 +2,26 @@ import type { ArticleData } from "./articles/types";
 import { applyArticleSourceStandards } from "./article-source-standards";
 
 const recentArticleLoaders: Record<string, () => Promise<ArticleData>> = {
+  "knee-sleeves-for-running": () =>
+    import("./articles/knee-sleeves-for-running").then(
+      (module) => module.kneeSleevesForRunning.article,
+    ),
+  "best-sandals-knee-pain": () =>
+    import("./articles/best-sandals-knee-pain").then(
+      (module) => module.bestSandalsKneePain.article,
+    ),
+  "best-hiking-poles-bad-knees": () =>
+    import("./articles/best-hiking-poles-bad-knees").then(
+      (module) => module.bestHikingPolesBadKnees.article,
+    ),
+  "diclofenac-gel-knee-pain": () =>
+    import("./articles/diclofenac-gel-knee-pain").then(
+      (module) => module.diclofenacGelKneePain.article,
+    ),
+  "capsaicin-cream-knee-pain": () =>
+    import("./articles/capsaicin-cream-knee-pain").then(
+      (module) => module.capsaicinCreamKneePain.article,
+    ),
   "nordic-hamstring-curl-knee-health": () =>
     import("./articles/nordic-hamstring-curl-knee-health").then(
       (module) => module.nordicHamstringCurlKneeHealth.article,
