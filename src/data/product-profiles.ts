@@ -17,7 +17,7 @@ export interface ProductVisual {
 }
 
 export interface ProductProfile {
-  key: "insoles" | "calf-massager" | "heated-wrap" | "compression-sleeve" | "cold-wrap" | "generic";
+  key: "insoles" | "calf-massager" | "heated-wrap" | "compression-sleeve" | "compression-socks" | "cold-wrap" | "generic";
   seoTitle: string;
   seoDescription: string;
   h1: string;
@@ -528,6 +528,148 @@ const profiles: Record<Exclude<ProductProfile["key"], "generic">, ProductProfile
       portability: "Reusable, no power",
     },
   },
+  "compression-socks": {
+    key: "compression-socks",
+    seoTitle: "Knee-High Compression Socks for Women & Men | FlexiKnee",
+    seoDescription: "Shop FlexiKnee knee-high compression socks for women and men. A snug nylon knit for flights, work, driving, walking, golf, hiking and active days.",
+    h1: "FlexiKnee Everyday Compression Socks",
+    badge: "New",
+    eyebrow: "Knee-high support for everyday routines",
+    bestFor: "Travel, work, standing, walking and active days",
+    notIdealFor: "Anyone who needs a prescribed pressure class or has unexplained one-sided swelling",
+    shopCategories: ["Compression", "Travel Recovery", "Walking & Foot Support"],
+    ctaLabel: "Explore the Compression Socks",
+    cardCopy: "Knee-high stretch-knit support for travel, work and active days.",
+    summary:
+      "Long flight, busy shift or active weekend? These closed-toe, knee-high socks wrap the foot and lower leg in a close, supportive stretch-knit fit for travel, desk work, standing, walking, driving, golf, running and hiking.",
+    highlights: [
+      "Knee-high, closed-toe coverage",
+      "Stretch-knit nylon construction",
+      "Unisex sizing from S/M to XXL",
+      "Neutral colors for work, travel and activity",
+    ],
+    benefitCards: [
+      {
+        title: "Support from foot to calf",
+        text: "The knee-high shape covers the foot, ankle and lower leg in one close-fitting layer, without the bulk of a separate calf device.",
+      },
+      {
+        title: "Made for long, varied days",
+        text: "The simple pull-on design works across flights, driving, desk time, standing shifts, walking and active weekend routines.",
+      },
+      {
+        title: "A fit you can check before ordering",
+        text: "Three unisex sizes combine calf circumference and US shoe-size guidance. Measure the widest part of the calf first, then use shoe size as a second check.",
+      },
+    ],
+    steps: [
+      {
+        title: "Measure the widest part of your calf",
+        text: "Compare calf circumference with the size chart first. Use the listed shoe-size range only as a second check.",
+      },
+      {
+        title: "Roll, place and pull",
+        text: "Turn the sock down toward the heel, slide the foot in, seat the heel, then unroll the fabric gradually up the calf.",
+      },
+      {
+        title: "Smooth the cuff below the knee",
+        text: "Remove wrinkles and keep the top band flat below the knee crease. The fit may feel snug, but it should not cause pain, numbness or color change.",
+      },
+    ],
+    care: [
+      "Wash gently in cool water and keep the fabric away from bleach or fabric softener.",
+      "Air-dry flat or hanging away from direct heat; do not iron the stretch knit.",
+      "Replace the socks when the cuff, heel or calf section no longer returns to its original shape.",
+    ],
+    safety: [
+      "No mmHg rating or medical compression class is published for this product. It is not presented as medical-grade compression.",
+      "Ask a clinician before use for a diagnosed vein condition, prescribed compression, significant arterial disease, reduced sensation, open wounds or persistent swelling.",
+      "Do not use a tight garment to self-treat possible DVT. New one-sided swelling, warmth, redness, chest pain or shortness of breath needs urgent assessment.",
+      "Remove the sock if pain, numbness, discoloration, skin irritation or swelling increases, or if the cuff rolls into a tight band.",
+    ],
+    faqs: [
+      {
+        question: "Are these compression socks for women and men?",
+        answer: "Yes. The product uses unisex S/M, L/XL and XXL sizing, with separate US shoe-size ranges for women and men. Calf circumference should guide the choice first.",
+      },
+      {
+        question: "Can I wear them on a long flight?",
+        answer: "They can provide a snug, supported feel during travel when compression is appropriate for you. They are not a guarantee against blood clots. Travelers with clot risk factors should ask a clinician what pressure level and fit are appropriate.",
+      },
+      {
+        question: "Are they useful when standing all day?",
+        answer: "They are designed for people who prefer close-fitting lower-leg support during work and long periods on their feet. Movement breaks, comfortable footwear and the correct size still matter.",
+      },
+      {
+        question: "Are these medical-grade or graduated compression socks?",
+        answer: "No medical-grade status, graduated-pressure test or mmHg value is published for this product. Do not substitute them for a prescribed compression garment.",
+      },
+      {
+        question: "Can I use them for varicose veins?",
+        answer: "Only after checking that consumer compression is appropriate for your situation. Diagnosed venous disease, swelling or a prescribed pressure class should be managed with clinician guidance.",
+      },
+      {
+        question: "How do I choose the right size?",
+        answer: "Measure the widest part of the calf and choose the band that contains that measurement. Then confirm that your US shoe size also falls within the listed range. Do not size down to create extra pressure.",
+      },
+    ],
+    guides: [
+      {
+        title: "Varicose Veins and Pain Behind the Knee",
+        href: "/guides/varicose-veins-knee-pain",
+        description: "Separate stable vein symptoms from joint pain and urgent blood-clot warning signs.",
+      },
+      {
+        title: "Knee Pain After Flights",
+        href: "/guides/knee-pain-after-flights",
+        description: "Plan movement breaks, sitting positions and a safer travel routine.",
+      },
+      {
+        title: "Knee Pain After Standing",
+        href: "/guides/knee-pain-after-standing",
+        description: "Understand prolonged-standing patterns and when swelling needs closer attention.",
+      },
+    ],
+    visuals: [
+      {
+        title: "Support that travels with you",
+        text: "A knee-high, pull-on design makes it easy to build lower-leg support into flights, driving days and other long seated routines.",
+        image: "/images/product-stories/compression-socks-travel.webp",
+        alt: "Traveler wearing navy FlexiKnee Everyday Compression Socks while seated with carry-on luggage",
+      },
+      {
+        title: "A discreet option for busy workdays",
+        text: "Neutral colors and a simple ribbed knit help the socks fit naturally into standing shifts, desk days and everyday clothing.",
+        image: "/images/product-stories/compression-socks-workday.webp",
+        alt: "Adult wearing black FlexiKnee Everyday Compression Socks during a standing workday",
+      },
+      {
+        title: "Ready for walking and active weekends",
+        text: "The closed-toe, knee-high format can be worn with compatible shoes for walking, hiking, golf and other active routines.",
+        image: "/images/product-stories/compression-socks-active.webp",
+        alt: "Active adult wearing FlexiKnee Everyday Compression Socks before a trail walk",
+      },
+      {
+        title: "See the knit, cuff and shaped fit",
+        text: "Close-up views make the broad top cuff, stretch-knit calf section, shaped heel and closed toe easier to evaluate before choosing a color and size.",
+        image: "/images/product-stories/compression-socks-knit.webp",
+        alt: "Close-up details of the cuff, ribbed nylon knit, shaped heel and closed toe",
+      },
+      {
+        title: "A straightforward everyday essential",
+        text: "Choose a neutral color, check the calf measurement and keep a pair ready for the routines where you prefer a closer, supported feel.",
+        image: "/images/product-stories/compression-socks-main.webp",
+        alt: "Pair of navy FlexiKnee Everyday Compression Socks on a clean premium background",
+      },
+    ],
+    comparison: {
+      use: "Travel, work & activity",
+      heat: "No",
+      massage: "No",
+      support: "Foot & calf",
+      portability: "Wearable",
+    },
+  },
   "compression-sleeve": {
     key: "compression-sleeve",
     seoTitle: "Knee Compression Sleeve for Daily Support | FlexiKnee",
@@ -714,6 +856,7 @@ export function getProductProfile(productOrText: ShopifyProduct | string): Produ
     : `${productOrText.node.title} ${productOrText.node.handle} ${(productOrText.node.tags || []).join(" ")}`;
   const text = value.toLowerCase();
 
+  if (/flexiknee-everyday-compression-socks|compression socks|support socks|knee-high socks|varicose veins compression socks/.test(text)) return profiles["compression-socks"];
   if (/insole|orthotic|orthopedic|footbed|arch support/.test(text)) return profiles.insoles;
   if (/calf|lower leg|leg massager|air compression/.test(text)) return profiles["calf-massager"];
   if (/heated|heating|warming|heat wrap|usb/.test(text)) return profiles["heated-wrap"];
@@ -724,5 +867,5 @@ export function getProductProfile(productOrText: ShopifyProduct | string): Produ
 }
 
 export function getAllProductProfiles(): ProductProfile[] {
-  return [profiles.insoles, profiles["compression-sleeve"], profiles["calf-massager"], profiles["heated-wrap"], profiles["cold-wrap"]];
+  return [profiles.insoles, profiles["compression-sleeve"], profiles["compression-socks"], profiles["calf-massager"], profiles["heated-wrap"], profiles["cold-wrap"]];
 }

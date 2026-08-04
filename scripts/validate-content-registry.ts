@@ -6,6 +6,7 @@ import { articleLoaderSlugs } from "../src/data/article-loaders";
 import { recentArticleLoaderSlugs } from "../src/data/recent-article-loaders";
 import { articleCTAs } from "../src/data/article-ctas";
 import { recentArticleCTAs } from "../src/data/recent-article-ctas";
+import { guideThumbnailSlugs } from "../src/data/guide-thumbnail-loaders";
 import { existsSync, readFileSync, readdirSync } from "fs";
 import { dirname, relative, resolve } from "path";
 import { fileURLToPath } from "url";
@@ -38,11 +39,14 @@ const staticGuidePathSet = new Set(
   staticPages.map((page) => page.path).filter((path) => path.startsWith("/guides/")),
 );
 const runtimeSlugs = new Set(allArticleLoaderSlugs);
+const thumbnailSlugs = new Set(guideThumbnailSlugs);
 const duplicates = [...new Set(slugs.filter((slug, index) => slugs.indexOf(slug) !== index))];
 const duplicateLoaders = allArticleLoaderSlugs.filter(
   (slug, index) => allArticleLoaderSlugs.indexOf(slug) !== index,
 );
 const missingArticleImplementations = slugs.filter((slug) => !runtimeSlugs.has(slug));
+const missingGuideThumbnails = slugs.filter((slug) => !thumbnailSlugs.has(slug));
+const unregisteredGuideThumbnails = guideThumbnailSlugs.filter((slug) => !slugSet.has(slug));
 const unregisteredRuntimeArticles = allArticleLoaderSlugs.filter((slug) => !slugSet.has(slug));
 const duplicateGuideTitles = allGuidesData
   .map((guide) => guide.title.trim().toLowerCase())
@@ -297,6 +301,8 @@ if (missingInternalGuideLinks.length) failures.push(`Internal links point to mis
 if (articleSourceViolations.length) failures.push(`Article source standards failed: ${articleSourceViolations.join("; ")}`);
 if (missingArticleImplementations.length) failures.push(`Guide cards without a runtime article loader: ${missingArticleImplementations.join(", ")}`);
 if (unregisteredRuntimeArticles.length) failures.push(`Runtime article loaders missing from guide registry: ${unregisteredRuntimeArticles.join(", ")}`);
+if (missingGuideThumbnails.length) failures.push(`Active guides missing Continue Reading thumbnails: ${missingGuideThumbnails.join(", ")}`);
+if (unregisteredGuideThumbnails.length) failures.push(`Continue Reading thumbnails missing from guide registry: ${unregisteredGuideThumbnails.join(", ")}`);
 if (missingArticleMetadata.length) failures.push(`Active guides missing article metadata: ${missingArticleMetadata.join(", ")}`);
 if (modifiedDateMismatches.length) failures.push(`Guide card/article modified-date mismatches: ${modifiedDateMismatches.join("; ")}`);
 if (publishedDateMismatches.length) failures.push(`Guide card/article publication-date mismatches: ${publishedDateMismatches.join("; ")}`);
@@ -309,6 +315,7 @@ if (failures.length) {
 
 console.log(
   `Content registry valid: ${slugs.length} active guides, ` +
-  `${runtimeSlugs.size} lazy article loaders, ${guideRedirects.length} guide redirects, ` +
+  `${runtimeSlugs.size} lazy article loaders, ${thumbnailSlugs.size} Continue Reading thumbnails, ` +
+  `${guideRedirects.length} guide redirects, ` +
   `${localRedirects.length} total local redirects.`,
 );

@@ -10,7 +10,10 @@
  * Handle'lar Shopify'daki gerçek URL tanıtıcılarıyla birebir aynı olmalı.
  */
 
-import { PRIMARY_PRODUCT_HANDLE } from "./product-config";
+import {
+  COMPRESSION_SOCKS_PRODUCT_HANDLE,
+  PRIMARY_PRODUCT_HANDLE,
+} from "./product-config";
 
 export interface ProductRec {
   /** Shopify ürün handle'ı (URL tanıtıcısı) */
@@ -74,9 +77,18 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     fallbackPrice: "$22.99",
     fallbackImage: "/images/product-stories/reusable-knee-ice-pack-wrap-main.webp",
   },
+  compressionSocks: {
+    handle: COMPRESSION_SOCKS_PRODUCT_HANDLE,
+    title: "FlexiKnee Everyday Compression Socks",
+    benefit:
+      "Knee-high stretch-knit support for travel, standing, walking and active days. Check that compression is appropriate for you if you have a diagnosed vascular or arterial condition.",
+    fallbackPrice: "View price",
+    fallbackImage: "/images/shopify-gallery/flexiknee-everyday-compression-socks-01-main.png",
+  },
 };
 
 const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
+  "varicose-veins-knee-pain": "compressionSocks",
   "nordic-hamstring-curl-knee-health": "sleeve",
   "cyclist-squat-knee-strength": "sleeve",
   "tight-calves-knee-pain": "calf",

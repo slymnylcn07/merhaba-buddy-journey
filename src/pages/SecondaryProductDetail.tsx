@@ -24,7 +24,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { getProductPageConfig } from "@/data/product-page-config";
 import { createStorefrontCheckout, getProductByHandle, ShopifyProduct } from "@/lib/shopify";
-import { getProductPath, resolveShopifyProductHandle } from "@/lib/product-config";
+import { getProductPath, getShopifyProductHandleCandidates } from "@/lib/product-config";
 import { useCartStore } from "@/stores/cartStore";
 import { getProductProfile } from "@/data/product-profiles";
 import { PremiumProductStory } from "@/components/PremiumProductStory";
@@ -49,7 +49,6 @@ function formatMoney(amount?: string, currencyCode?: string) {
 
 export default function SecondaryProductDetail() {
   const { handle = "" } = useParams();
-  const shopifyHandle = resolveShopifyProductHandle(handle);
   const [product, setProduct] = useState<ShopifyProduct | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
@@ -63,7 +62,16 @@ export default function SecondaryProductDetail() {
     setIsLoading(true);
     setProduct(null);
 
-    getProductByHandle(shopifyHandle)
+    const loadProduct = async () => {
+      let item: ShopifyProduct | null = null;
+      for (const candidate of getShopifyProductHandleCandidates(handle)) {
+        item = await getProductByHandle(candidate);
+        if (item) break;
+      }
+      return item;
+    };
+
+    loadProduct()
       .then(async (item) => {
         if (!active) return;
 
@@ -97,7 +105,7 @@ export default function SecondaryProductDetail() {
     return () => {
       active = false;
     };
-  }, [handle, shopifyHandle]);
+  }, [handle]);
 
   const node = product?.node;
   const profile = useMemo(() => getProductProfile(product || handle), [product, handle]);
@@ -111,7 +119,6 @@ export default function SecondaryProductDetail() {
     Number(selectedVariant.compareAtPrice.amount) > Number(selectedVariant.price.amount)
       ? selectedVariant.compareAtPrice
       : null;
-  const isPairable = profile.key === "compression-sleeve" || profile.key === "heated-wrap";
   const pageConfig = getProductPageConfig(profile.key);
   const unitPriceNum = price ? Number(price.amount) : 0;
   const canonical = `https://flexi-knee.com${getProductPath(handle)}`;
@@ -168,7 +175,7 @@ export default function SecondaryProductDetail() {
     }
 
     addItem(item);
-    toast.success(`${node?.title || "Product"} added to cart.`);
+    toast.success(`${profile.h1 || "Product"} added to cart.`);
   };
 
   const handleBuyNow = async () => {
@@ -311,7 +318,7 @@ export default function SecondaryProductDetail() {
                 {mainImage ? (
                   <img
                     src={mainImage.url}
-                    alt={mainImage.altText || node.title}
+                    alt={mainImage.altText || profile.h1}
                     className="max-h-[650px] w-full rounded-[1.5rem] object-contain"
                     fetchPriority="high"
                   />
@@ -332,7 +339,7 @@ export default function SecondaryProductDetail() {
                       }`}
                       aria-label={`View product image ${index + 1}`}
                     >
-                      <img src={image.url} alt={image.altText || node.title} className="h-full w-full rounded-xl object-cover" loading="lazy" />
+                      <img src={image.url} alt={image.altText || profile.h1} className="h-full w-full rounded-xl object-cover" loading="lazy" />
                     </button>
                   ))}
                 </div>
@@ -444,7 +451,7 @@ export default function SecondaryProductDetail() {
 
                 <TrustStrip />
 
-                <ProductInfoAccordion howToUse={pageConfig.howToUse} faqs={profile.faqs} />
+                <ProductInfoAccordion howToUse={pageConfig.howToUse} specs={pageConfig.specs} faqs={profile.faqs} />
               </div>
             </aside>
           </div>
@@ -500,16 +507,16 @@ export default function SecondaryProductDetail() {
         </section>
 
         <PremiumProductStory
-          productName={node.title}
+          productName={profile.h1}
           productKey={profile.key}
           eyebrow={profile.eyebrow}
-          headline={`See how ${node.title.replace("FlexiKnee ", "")} fits into real life.`}
+          headline={`See how ${profile.h1.replace("FlexiKnee ", "")} fits into real life.`}
           intro={profile.summary}
           visuals={profile.visuals}
           highlights={profile.highlights}
         />
 
-        <ProductReviewSummary handle={handle} productName={node.title} />
+        <ProductReviewSummary handle={handle} productName={profile.h1} />
 
         <section className="bg-white py-14 lg:py-20">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
@@ -597,7 +604,7 @@ export default function SecondaryProductDetail() {
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 p-3 shadow-[0_-15px_40px_-25px_rgba(15,23,42,0.45)] backdrop-blur lg:hidden">
         <div className="mx-auto flex max-w-xl items-center gap-3">
           <div className="min-w-0 flex-1">
-            <p className="truncate text-sm font-semibold text-slate-950">{node.title}</p>
+            <p className="truncate text-sm font-semibold text-slate-950">{profile.h1}</p>
             {price && (
               <p className="flex items-baseline gap-1.5 text-xs text-slate-500">
                 {compareAt && <s className="text-[11px] text-slate-400">{formatMoney(compareAt.amount, compareAt.currencyCode)}</s>}

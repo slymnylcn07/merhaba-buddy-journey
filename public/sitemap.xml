@@ -730,7 +730,7 @@
   </url>
   <url>
     <loc>https://flexi-knee.com/guides/varicose-veins-knee-pain</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -811,6 +811,11 @@
   </url>
   <url>
     <loc>https://flexi-knee.com/product/flexiknee-compression-support-sleeve</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://flexi-knee.com/product/flexiknee-everyday-compression-socks</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

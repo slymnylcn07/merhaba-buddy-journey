@@ -274,6 +274,16 @@ interface SizeChartData {
 }
 
 const SIZE_CHARTS: Record<string, SizeChartData> = {
+  "compression-socks": {
+    title: "Everyday compression socks size chart",
+    columns: ["Size", "Women US", "Men US", "Calf", "Length"],
+    rows: [
+      ["S/M", "5-8.5", "5-9", "9-13 in / 22.9-33 cm", "34 cm"],
+      ["L/XL", "8-12.5", "8-14", "13-16 in / 33-40 cm", "37 cm"],
+      ["XXL", "10+", "11+", "14-20 in / 35-50 cm", "41 cm"],
+    ],
+    note: "Measure the widest part of the calf and choose by calf circumference first. Use shoe size as a second check and do not size down for extra pressure. A 1-3 cm variation from manual measurement is normal.",
+  },
   "compression-sleeve": {
     title: "Knee sleeve size chart",
     measurementImage: sleeveMeasurementDiagram,

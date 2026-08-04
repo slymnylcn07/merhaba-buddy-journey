@@ -28,6 +28,8 @@ const SHOPIFY_TO_PUBLIC_PRODUCT_HANDLES: Record<string, string> = {
     "flexiknee-usb-heated-knee-wrap",
   "sport-orthopedic-insoles-for-feet-men-women-eva-breathable-shock-absorption-shoes-insole-for-running-basketball-sport-care-pads":
     "flexiknee-sport-orthopedic-insoles",
+  "varicose-veins-compression-socks-fit-for-golf-rugby-running-hiking-sports-for-anti-fatigue-driving-travel-flight-women-men-socks":
+    "flexiknee-everyday-compression-socks",
 };
 
 export function getPublicBuildProductHandle(handle: string): string {

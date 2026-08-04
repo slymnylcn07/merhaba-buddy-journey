@@ -263,7 +263,7 @@ export const recentGuidesData: PublishedGuideData[] = [
       "Compare varicose-vein aching, Baker's cyst, joint pain, superficial thrombosis and DVT, with treatment options and urgent warning signs.",
     readTime: 20,
     publishedDate: "2026-07-28",
-    lastModified: "2026-07-28",
+    lastModified: "2026-08-04",
   },
   {
     slug: "knee-osteoarthritis-vs-rheumatoid-arthritis",

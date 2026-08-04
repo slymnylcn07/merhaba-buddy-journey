@@ -2,7 +2,11 @@ import { useState } from "react";
 import { BadgeCheck, ChevronDown, ShieldCheck, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getProductMarketplaceFeedback } from "@/data/product-marketplace-feedback";
-import { getPublicProductHandle, PRIMARY_PRODUCT_HANDLE } from "@/lib/product-config";
+import {
+  COMPRESSION_SOCKS_PRODUCT_HANDLE,
+  getPublicProductHandle,
+  PRIMARY_PRODUCT_HANDLE,
+} from "@/lib/product-config";
 
 interface Review {
   name: string;
@@ -374,6 +378,65 @@ const productReviewsByHandle: Record<string, ProductReviewSet> = {
         date: "09 Apr 2026",
         details: "Color: 1PC",
         text: "It was helpful for a cold-compress routine after a meniscus irritation.",
+      },
+    ],
+  },
+  [COMPRESSION_SOCKS_PRODUCT_HANDLE]: {
+    highlights: ["Supportive fit", "Lightweight knit", "Good quality", "Long-day comfort"],
+    reviews: [
+      {
+        name: "S. M.",
+        date: "11 May 2026",
+        details: "Color: Brown, Size: XXL",
+        text: "The compression gives my legs a more energized feel. I am very pleased with the socks.",
+      },
+      {
+        name: "Buyer",
+        date: "06 Mar 2026",
+        details: "Color: Black, Size: S/M",
+        text: "The knit feels high quality and the socks look well made.",
+      },
+      {
+        name: "Buyer",
+        date: "29 Apr 2026",
+        details: "Color: Black, Size: L/XL",
+        text: "This is my second purchase. The compression feels supportive and my legs feel more rested by the end of the day.",
+      },
+      {
+        name: "L. D.",
+        date: "07 Feb 2026",
+        details: "Color: Black, Size: L/XL",
+        text: "I came back for a second pair because I liked the close, supportive feel of the first one.",
+      },
+      {
+        name: "Buyer",
+        date: "10 May 2026",
+        details: "Color: Black, Size: L/XL",
+        text: "They feel supportive when I have to stand for many hours. The order also arrived quickly.",
+      },
+      {
+        name: "Buyer",
+        date: "13 May 2026",
+        details: "Color: Beige, Size: S/M",
+        text: "I normally wear EU 38 and the S/M fits me well. The fabric feels light, comfortable and easy to wear.",
+      },
+      {
+        name: "A. X.",
+        date: "17 Jan 2026",
+        details: "Color: Black, Size: S/M",
+        text: "I was surprised by the quality. They feel very good and I would recommend them.",
+      },
+      {
+        name: "Buyer",
+        date: "27 Apr 2026",
+        details: "Color: Navy, Size: L/XL",
+        text: "I do not usually leave reviews, but these feel well made and supportive.",
+      },
+      {
+        name: "S. M.",
+        date: "11 May 2026",
+        details: "Color: Grey, Size: XXL",
+        text: "The grey pair has the same close compression and comfortable feel I wanted for long days.",
       },
     ],
   },

@@ -1,4 +1,8 @@
-import { ICE_PACK_PRODUCT_PATH, PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
+import {
+  COMPRESSION_SOCKS_PRODUCT_PATH,
+  ICE_PACK_PRODUCT_PATH,
+  PRIMARY_PRODUCT_PATH,
+} from "@/lib/product-config";
 import sleeveFallback from "@/assets/article-hero-knee-pain-long-walks.jpg";
 import calfFallback from "@/assets/article-delayed-soreness-recovery.jpg";
 import insolesFallback from "@/assets/article-hero-insoles-knee.svg";
@@ -26,6 +30,17 @@ export const productSystem = [
     href: "/product/flexiknee-compression-support-sleeve",
     status: "Daily support",
     accent: "from-slate-50 via-white to-indigo-50",
+  },
+  {
+    kind: "socks",
+    name: "FlexiKnee Everyday Compression Socks",
+    label: "Knee-high compression",
+    description: "Stretch-knit support for travel, work, standing and active days.",
+    price: "View price",
+    image: "/images/shopify-gallery/flexiknee-everyday-compression-socks-01-main.png",
+    href: COMPRESSION_SOCKS_PRODUCT_PATH,
+    status: "New",
+    accent: "from-sky-50 via-white to-teal-50",
   },
   {
     kind: "calf",

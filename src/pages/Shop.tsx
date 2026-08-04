@@ -24,7 +24,7 @@ const collectionJsonLd = {
       "@type": "CollectionPage",
       "@id": "https://flexi-knee.com/shop#collection",
       name: "Knee Comfort Products for Heat, Cold, Compression & Recovery",
-      description: "Compare FlexiKnee knee massagers, reusable ice pack wraps, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price.",
+      description: "Compare FlexiKnee knee massagers, reusable ice wraps, compression sleeves and socks, heated wraps, calf recovery devices and insoles by purpose and price.",
       url: "https://flexi-knee.com/shop",
       isPartOf: { "@id": "https://flexi-knee.com/#website" },
       provider: { "@id": "https://flexi-knee.com/#organization" },
@@ -66,7 +66,7 @@ export default function Shop() {
         const sorted = [...list].sort((a, b) => {
           if (a.node.handle === PRIMARY_PRODUCT_HANDLE) return -1;
           if (b.node.handle === PRIMARY_PRODUCT_HANDLE) return 1;
-          return a.node.title.localeCompare(b.node.title);
+          return getProductProfile(a).h1.localeCompare(getProductProfile(b).h1);
         });
         setProducts(sorted);
       })
@@ -100,18 +100,18 @@ export default function Shop() {
         <title>Knee Massagers, Sleeves, Ice Wraps & Recovery | FlexiKnee</title>
         <meta
           name="description"
-          content="Compare FlexiKnee knee massagers, reusable ice pack wraps, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price."
+          content="Compare FlexiKnee knee massagers, reusable ice wraps, compression sleeves and socks, heated wraps, calf recovery devices and insoles by purpose and price."
         />
         <link rel="canonical" href="https://flexi-knee.com/shop" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/shop" />
         <meta property="og:title" content="Knee Massagers, Sleeves, Ice Wraps & Recovery | FlexiKnee" />
-        <meta property="og:description" content="Compare FlexiKnee knee massagers, reusable ice pack wraps, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price." />
+        <meta property="og:description" content="Compare FlexiKnee knee massagers, reusable ice wraps, compression sleeves and socks, heated wraps, calf recovery devices and insoles by purpose and price." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Knee Massagers, Sleeves, Ice Wraps & Recovery | FlexiKnee" />
-        <meta name="twitter:description" content="Compare FlexiKnee knee massagers, reusable ice pack wraps, compression sleeves, heated wraps, calf recovery devices and insoles by purpose, features and price." />
+        <meta name="twitter:description" content="Compare FlexiKnee knee massagers, reusable ice wraps, compression sleeves and socks, heated wraps, calf recovery devices and insoles by purpose and price." />
         <meta name="twitter:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(collectionJsonLd)}</script>
         {products.length > 0 && <script type="application/ld+json">{JSON.stringify(itemListJsonLd)}</script>}
@@ -133,7 +133,7 @@ export default function Shop() {
                     One clear product for each part of your routine.
                   </h2>
                   <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
-                    Start with the premium Smart Heated Knee Massager, or choose a focused solution for reusable cold therapy, compression, simple warmth, lower-leg recovery or foot support.
+                    Start with the premium Smart Heated Knee Massager, or choose a focused solution for reusable cold therapy, knee or lower-leg compression, simple warmth, lower-leg recovery or foot support.
                   </p>
                 </div>
                 <div className="grid grid-cols-3 gap-3 text-center">
@@ -354,7 +354,7 @@ export default function Shop() {
                         return (
                           <tr key={product.node.id} className="border-b border-slate-100 last:border-b-0">
                             <td className="px-5 py-4">
-                              <Link to={getProductPath(product.node.handle)} className="font-semibold text-slate-950 hover:text-blue-600">{product.node.title}</Link>
+                              <Link to={getProductPath(product.node.handle)} className="font-semibold text-slate-950 hover:text-blue-600">{isPrimary ? product.node.title : profile.h1}</Link>
                             </td>
                             <td className="px-5 py-4 text-sm text-slate-600">{comparison.use}</td>
                             <td className="px-5 py-4 text-sm text-slate-600">{comparison.heat}</td>
