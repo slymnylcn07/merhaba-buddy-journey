@@ -84,7 +84,7 @@ export default function Contact() {
       <div className="min-h-screen bg-white text-slate-950">
         <Header />
 
-        <main>
+        <main data-clarity-mask="true">
           <section className="bg-white py-14 md:py-20">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Contact</p>
@@ -114,7 +114,7 @@ export default function Contact() {
                       </Link>
                     </div>
                   ) : (
-                    <form onSubmit={handleSubmit} className="grid gap-5">
+                    <form data-clarity-mask="true" onSubmit={handleSubmit} className="grid gap-5">
                       <div className="grid gap-5 sm:grid-cols-2">
                         <div>
                           <label htmlFor="c-name" className="mb-1.5 block text-sm font-medium text-slate-800">

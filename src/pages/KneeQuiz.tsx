@@ -4,6 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import { toast } from "sonner";
 import {
   ArrowRight,
+  BookOpenCheck,
+  CalendarDays,
   Check,
   CheckCircle2,
   Mail,
@@ -15,11 +17,11 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import {
   PRIMARY_PRODUCT_HANDLE,
-  PRIMARY_PRODUCT_PATH,
   getProductPath,
 } from "@/lib/product-config";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getProductProfile, ProductProfile } from "@/data/product-profiles";
+import { PRODUCT_RECS } from "@/lib/article-product-map";
 import { trackEvent } from "@/hooks/use-google-analytics";
 
 type OptionKey = string;
@@ -54,18 +56,28 @@ const QUESTIONS: QuizQuestion[] = [
     options: [
       { key: "stiff", label: "Stiffness or tightness" },
       { key: "ache", label: "A dull ache or post-activity soreness" },
+      { key: "swollen", label: "Warmth or swelling after activity" },
+      { key: "heavy", label: "Heaviness or tiredness in the lower leg" },
       { key: "sharp", label: "Sharp or sudden discomfort" },
       { key: "sounds", label: "Clicking, popping or crunching sounds" },
     ],
   },
   {
-    id: "tried",
-    question: "What have you already tried consistently?",
+    id: "support",
+    question: "Which kind of support would fit your routine best?",
     options: [
-      { key: "nothing", label: "Nothing consistent yet" },
-      { key: "heat_ice", label: "Heat packs or ice" },
-      { key: "exercise", label: "Stretching or strengthening exercises" },
-      { key: "devices", label: "Braces, sleeves or massage devices" },
+      {
+        key: "smart_home",
+        label: "A powered at-home heat and massage routine",
+      },
+      { key: "simple_warmth", label: "Simple, focused knee warmth" },
+      { key: "cold", label: "A reusable cold wrap after activity" },
+      {
+        key: "wearable",
+        label: "Wearable support while moving, working or travelling",
+      },
+      { key: "foot_support", label: "Support inside my shoes" },
+      { key: "unsure", label: "I am not sure yet; help me learn first" },
     ],
   },
   {
@@ -106,246 +118,525 @@ interface QuizResult {
   productReason: string;
   guides: GuideRec[];
   plan: PlanDay[];
+  planHeading: string;
+  planIntro: string;
 }
 
-const BASE_PLAN: PlanDay[] = [
-  {
-    day: "Day 1",
-    title: "Notice the pattern",
-    action:
-      "Write down when the discomfort starts, what happened beforehand and how long it lasts.",
-  },
-  {
-    day: "Day 2",
-    title: "Add easy movement",
-    action:
-      "Use a short, comfortable walk or gentle range-of-motion session rather than complete inactivity.",
-  },
-  {
-    day: "Day 3",
-    title: "Review footwear and setup",
-    action:
-      "Check shoe wear, desk position or the activity setup most connected to your result.",
-  },
-  {
-    day: "Day 4",
-    title: "Test one comfort tool",
-    action:
-      "Try one short warmth, compression or recovery session and note how it feels afterward.",
-  },
-  {
-    day: "Day 5",
-    title: "Reduce the biggest load spike",
-    action:
-      "Shorten, split or modify the activity that creates the clearest next-day response.",
-  },
-  {
-    day: "Day 6",
-    title: "Repeat what helped",
-    action:
-      "Repeat the easiest useful habit instead of adding several new things at once.",
-  },
-  {
-    day: "Day 7",
-    title: "Review and adjust",
-    action:
-      "Compare the week, keep the useful habit and seek professional advice for persistent warning signs.",
-  },
-];
+const PRODUCT_REC_KEY: Partial<
+  Record<Exclude<ProductKey, "generic">, keyof typeof PRODUCT_RECS>
+> = {
+  "smart-knee-massager": "main",
+  "calf-massager": "calf",
+  insoles: "insoles",
+  "compression-sleeve": "sleeve",
+  "heated-wrap": "wrap",
+  "cold-wrap": "iceWrap",
+  "compression-socks": "compressionSocks",
+};
 
-function buildRecommendations(answers: Record<string, OptionKey>): QuizResult {
-  const when = answers.when;
-  const feel = answers.feel;
-  const tried = answers.tried;
-  const goal = answers.goal;
+function addGuide(guides: GuideRec[], guide: GuideRec, sourceArticle?: string) {
+  if (
+    guide.slug !== sourceArticle &&
+    !guides.some((current) => current.slug === guide.slug)
+  ) {
+    guides.push(guide);
+  }
+}
+
+function buildGuides(
+  when: OptionKey,
+  feel: OptionKey,
+  support: OptionKey,
+  sourceArticle?: string,
+) {
   const guides: GuideRec[] = [];
 
-  if (when === "activity") {
-    guides.push(
-      {
-        slug: "knee-pain-after-exercise",
-        title: "Knee Pain After Exercise",
-        reason: "Explains the delayed post-workout pattern",
-      },
-      {
-        slug: "knee-recovery-exercises-after-workout",
-        title: "Knee Recovery Exercises After Workouts",
-        reason: "A practical recovery sequence",
-      },
-    );
-  } else if (when === "daily") {
-    guides.push(
-      {
-        slug: "knee-pain-going-down-stairs",
-        title: "Knee Pain Going Down Stairs",
-        reason: "Covers a demanding everyday movement",
-      },
-      {
-        slug: "daily-knee-care-routine",
-        title: "Daily Knee Care Routine",
-        reason: "Simple habits that are easier to repeat",
-      },
-    );
-  } else if (when === "rest") {
-    guides.push(
-      {
-        slug: "knee-pain-getting-up-after-sitting",
-        title: "Knee Pain When Getting Up After Sitting",
-        reason: "Matches the first-movement pattern",
-      },
-      {
-        slug: "morning-knee-stiffness-after-40",
-        title: "Morning Knee Stiffness",
-        reason: "Explains why knees can feel rusty after rest",
-      },
-    );
-  } else {
-    guides.push(
-      {
-        slug: "knee-pain-after-flights",
-        title: "Knee Pain After Flights",
-        reason: "Travel, sitting time and movement breaks",
-      },
-      {
-        slug: "knee-pain-after-car-rides",
-        title: "Knee Pain After Long Car Rides",
-        reason: "A better routine for long drives",
-      },
-    );
-  }
-
-  if (feel === "sharp") {
-    guides.push({
+  const feelGuides: Record<string, GuideRec> = {
+    sharp: {
       slug: "sharp-knee-pain-guide",
       title: "Sharp Knee Pain Guide",
-      reason: "Helps separate common patterns from warning signs",
-    });
-  } else if (feel === "sounds") {
-    guides.push({
+      reason: "Check warning signs before testing a comfort product",
+    },
+    sounds: {
       slug: "knee-clicking-when-walking",
       title: "Knee Clicking When Walking",
-      reason: "What joint sounds can and cannot tell you",
-    });
-  } else if (feel === "stiff") {
-    guides.push({
+      reason: "Separate painless sounds from sounds that need attention",
+    },
+    stiff: {
       slug: "knee-tightness-without-pain",
       title: "Knee Tightness Without Pain",
-      reason: "A closer look at stiffness and tightness",
-    });
-  } else {
-    guides.push({
+      reason: "A closer look at stiffness and first-movement patterns",
+    },
+    ache: {
       slug: "heat-vs-ice-for-knees",
       title: "Heat vs Ice for Knees",
-      reason: "Choose a comfort tool by situation",
-    });
-  }
+      reason: "Choose a comfort tool by timing and situation",
+    },
+    swollen: {
+      slug: "knee-swelling-after-exercise",
+      title: "Knee Swelling After Exercise",
+      reason: "Understand what swelling changes about the next step",
+    },
+    heavy: {
+      slug: "heavy-feeling-in-knees",
+      title: "Heavy-Feeling Knees",
+      reason: "Explore heaviness, stiffness and lower-leg context",
+    },
+  };
 
-  let resultKey = "daily-consistency";
-  let headline = "Your best starting point is a small routine you can repeat.";
-  let summary =
-    "Your answers point toward a consistent movement-and-comfort routine rather than an intense one-off session. Start with one practical adjustment, track the response and build from there.";
-  let productKey: ProductKey = "smart-knee-massager";
-  let productReason =
-    "The premium all-in-one option for a repeatable warmth and massage-style routine at home.";
+  if (feelGuides[feel]) addGuide(guides, feelGuides[feel], sourceArticle);
 
-  if (when === "travel") {
-    resultKey = "travel-lower-leg-recovery";
-    headline =
-      "Your routine should focus on movement breaks and lower-leg recovery.";
-    summary =
-      "Long sitting periods can leave the entire lower leg feeling heavy or stiff. Your plan prioritizes regular movement breaks, position changes and a simple recovery session after travel or desk time.";
-    productKey = "calf-massager";
-    productReason =
-      "A focused choice for calf and lower-leg recovery after travel, desk days or prolonged sitting.";
-  } else if (
-    when === "activity" &&
-    (goal === "active" || tried === "exercise")
-  ) {
-    resultKey = "active-foot-to-knee-support";
-    headline = "Your next improvement may begin below the knee.";
-    summary =
-      "Because your pattern is connected to active days, it is worth reviewing footwear, load progression and post-activity recovery together. Small changes at the foot can alter what reaches the knee over thousands of steps.";
-    productKey = "insoles";
-    productReason =
-      "Sport orthopedic insoles are the best product match for walking, training and foot-to-knee support.";
-  } else if (when === "daily" && goal !== "sleep") {
-    resultKey = "daily-movement-support";
-    headline = "Your routine needs support that moves with you.";
-    summary =
-      "Your answers point toward everyday movement rather than a single recovery window. Prioritize fit, gradual strength work and a support option that is easy to wear during normal activities.";
-    productKey = "compression-sleeve";
-    productReason =
-      "A lightweight compression sleeve fits walking, work and movement-focused routines without electronics.";
-  } else if (tried === "heat_ice" && goal === "relief") {
-    resultKey = "simple-warmth-routine";
-    headline =
-      "Keep the routine simple: controlled warmth and gentle movement.";
-    summary =
-      "You have already experimented with temperature-based comfort. The next step is making the routine more consistent, using comfortable heat settings and pairing warmth with easy movement rather than relying on heat alone.";
-    productKey = "heated-wrap";
-    productReason =
-      "A straightforward heated wrap is the focused option when basic warmth is the main feature you want.";
+  const whenGuides: Record<string, GuideRec> = {
+    activity: {
+      slug: "knee-pain-after-exercise",
+      title: "Knee Pain After Exercise",
+      reason: "Use timing and next-day response to adjust training load",
+    },
+    daily: {
+      slug: "knee-pain-going-down-stairs",
+      title: "Knee Pain Going Down Stairs",
+      reason: "Break down one of the most demanding daily movements",
+    },
+    rest: {
+      slug: "knee-pain-getting-up-after-sitting",
+      title: "Knee Pain When Getting Up After Sitting",
+      reason: "Match a first-movement or after-rest pattern",
+    },
+    travel: {
+      slug: "knee-pain-after-flights",
+      title: "Knee Pain After Flights",
+      reason: "Plan sitting time, movement breaks and travel recovery",
+    },
+  };
+  if (whenGuides[when]) addGuide(guides, whenGuides[when], sourceArticle);
+
+  const supportGuides: Record<string, GuideRec> = {
+    smart_home: {
+      slug: "do-knee-massagers-work",
+      title: "Do Knee Massagers Really Work?",
+      reason: "Know what heat and massage-style devices can and cannot do",
+    },
+    simple_warmth: {
+      slug: "heat-vs-ice-for-knees",
+      title: "Heat vs Ice for Knees",
+      reason: "Check when simple warmth fits the situation",
+    },
+    cold: {
+      slug: "cold-therapy-machine-knee",
+      title: "Cold Therapy for the Knee",
+      reason: "Compare a reusable gel wrap with powered ice machines",
+    },
+    wearable: {
+      slug:
+        when === "travel"
+          ? "varicose-veins-knee-pain"
+          : "knee-brace-vs-compression-sleeve",
+      title:
+        when === "travel"
+          ? "Varicose Veins and Knee Pain"
+          : "Knee Brace vs Compression Sleeve",
+      reason:
+        when === "travel"
+          ? "Review lower-leg symptoms before choosing compression"
+          : "Choose the right level of wearable knee support",
+    },
+    foot_support: {
+      slug: "best-insoles-for-knee-pain-2026",
+      title: "Best Insoles for Knee Pain",
+      reason: "Check shoe fit, cushioning and foot-to-knee load",
+    },
+    unsure: {
+      slug: "daily-knee-care-routine",
+      title: "Daily Knee Care Routine",
+      reason: "Begin with a simple routine before comparing products",
+    },
+  };
+  if (supportGuides[support])
+    addGuide(guides, supportGuides[support], sourceArticle);
+
+  const fallbacks: GuideRec[] = [
+    {
+      slug: "daily-knee-care-routine",
+      title: "Daily Knee Care Routine",
+      reason: "Turn useful observations into a repeatable routine",
+    },
+    {
+      slug: "knee-recovery-exercises-after-workout",
+      title: "Knee Recovery Exercises After Workouts",
+      reason: "A gentle sequence for active-day recovery",
+    },
+    {
+      slug: "morning-knee-stiffness-after-40",
+      title: "Morning Knee Stiffness",
+      reason: "Build a calmer first-movement routine",
+    },
+  ];
+  fallbacks.forEach((guide) => addGuide(guides, guide, sourceArticle));
+  return guides.slice(0, 3);
+}
+
+function chooseProduct(
+  when: OptionKey,
+  feel: OptionKey,
+  support: OptionKey,
+  goal: OptionKey,
+): ProductKey {
+  if (feel === "sharp" || goal === "understand") return "generic";
+  if (feel === "swollen" && support === "simple_warmth") return "generic";
+
+  if (support === "cold") return "cold-wrap";
+  if (support === "foot_support") return "insoles";
+  if (support === "simple_warmth") return "heated-wrap";
+  if (support === "wearable")
+    return when === "travel" || feel === "heavy"
+      ? "compression-socks"
+      : "compression-sleeve";
+  if (support === "smart_home")
+    return when === "travel" || feel === "heavy"
+      ? "calf-massager"
+      : "smart-knee-massager";
+
+  if (feel === "swollen") return "cold-wrap";
+  if (feel === "heavy" && when === "travel") return "compression-socks";
+  return "generic";
+}
+
+const PRODUCT_RESULTS: Record<
+  ProductKey,
+  Pick<QuizResult, "resultKey" | "headline" | "summary" | "productReason">
+> = {
+  "smart-knee-massager": {
+    resultKey: "evening-multimode-routine",
+    headline: "A controlled at-home knee routine fits your answers best.",
+    summary:
+      "Your preference is a repeatable session rather than something worn all day. Test warmth and massage-style vibration one feature at a time, then keep only the settings that feel comfortable.",
+    productReason:
+      "The Smart Heated Knee Massager combines cordless warmth, red light and massage-style vibration for a structured at-home routine.",
+  },
+  "heated-wrap": {
+    resultKey: "simple-warmth-routine",
+    headline: "A simple, focused warmth routine matches your preference.",
+    summary:
+      "You chose a low-complexity comfort tool. A short, awake warmth session paired with easy movement gives you a clearer routine than changing several things at once.",
+    productReason:
+      "The USB Heated Knee Wrap is the focused choice when adjustable warmth is the main feature you want.",
+  },
+  "cold-wrap": {
+    resultKey: "post-activity-cold-routine",
+    headline: "A short post-activity cold routine matches your answers.",
+    summary:
+      "Your answers favor a reusable cooling option after activity. Keep sessions brief, protect the skin and judge the routine by comfort and the next-day response.",
+    productReason:
+      "The Reusable Knee Ice Pack Wrap holds a flexible gel pad around the knee without a powered pump or reservoir.",
+  },
+  "compression-sleeve": {
+    resultKey: "daily-knee-support",
+    headline: "Wearable knee support fits your daily movement pattern.",
+    summary:
+      "Your answers favor something that moves with you. Fit and gradual wear time matter more than choosing the tightest possible compression.",
+    productReason:
+      "The Compression Support Sleeve is the knee-focused wearable option for walking, work and training routines.",
+  },
+  insoles: {
+    resultKey: "active-foot-to-knee-support",
+    headline: "Your support routine may begin inside your shoes.",
+    summary:
+      "Footwear, fit and load progression can change how an active day feels from the ground up. Introduce an insole gradually and compare it in the same pair of shoes.",
+    productReason:
+      "Sport Orthopedic Insoles are the direct match for shoe-based cushioning, arch guidance and foot-to-knee support.",
+  },
+  "compression-socks": {
+    resultKey: "travel-wearable-lower-leg-support",
+    headline: "Wearable lower-leg support best matches your routine.",
+    summary:
+      "Your answers connect support with travel, standing or lower-leg heaviness. Correct sizing and regular movement breaks remain central to the routine.",
+    productReason:
+      "Everyday Compression Socks are the wearable lower-leg option for travel, standing and long active days when compression is appropriate for you.",
+  },
+  "calf-massager": {
+    resultKey: "powered-lower-leg-recovery",
+    headline: "A seated lower-leg recovery session matches your answers.",
+    summary:
+      "Your pattern points beyond the knee to the calf and lower leg. Begin with the gentlest setting after a movement break and change only one feature at a time.",
+    productReason:
+      "The Rechargeable Calf Recovery Massager is the powered option for seated lower-leg compression and warmth routines.",
+  },
+  generic: {
+    resultKey: "general-consistency",
+    headline: "A guide-first routine is the clearest next step.",
+    summary:
+      "Your answers do not support forcing one product match. Use the plan to clarify timing, triggers and response, then compare only the product category that fits the pattern you observe.",
+    productReason:
+      "Start with your matched reading and observation plan. You can compare products later without guessing today.",
+  },
+};
+
+function buildPlan(
+  when: OptionKey,
+  feel: OptionKey,
+  productKey: ProductKey,
+  goal: OptionKey,
+) {
+  const feelDays: Record<string, Omit<PlanDay, "day">> = {
+    stiff: {
+      title: "Time the stiffness",
+      action:
+        "Note when stiffness begins and how many minutes of easy movement it takes to loosen.",
+    },
+    ache: {
+      title: "Track the delayed response",
+      action:
+        "Record the activity, when the ache appeared and whether it changed later that day or the next morning.",
+    },
+    swollen: {
+      title: "Check the swelling pattern",
+      action:
+        "Compare both knees after activity and note warmth, visible swelling and any loss of normal motion.",
+    },
+    heavy: {
+      title: "Map the heavy feeling",
+      action:
+        "Note whether heaviness stays at the knee or extends into the calf, ankle or foot, and what relieves it.",
+    },
+    sharp: {
+      title: "Stop repeating the trigger",
+      action:
+        "Write down the exact movement and location without repeatedly provoking a sharp response to test it.",
+    },
+    sounds: {
+      title: "Separate sound from symptoms",
+      action:
+        "Notice whether clicking is painless or comes with swelling, catching, giving way or loss of motion.",
+    },
+  };
+
+  const whenDays: Record<string, Omit<PlanDay, "day">> = {
+    activity: {
+      title: "Lower one training variable",
+      action:
+        "Reduce only duration, resistance, speed or range today, then compare the next-day response.",
+    },
+    daily: {
+      title: "Modify one daily task",
+      action:
+        "Choose the hardest stair, kneeling or walking moment and make one practical change to pace or support.",
+    },
+    rest: {
+      title: "Create a first-movement cue",
+      action:
+        "Before standing, use a brief comfortable bend-and-straighten sequence, then rise without rushing.",
+    },
+    travel: {
+      title: "Schedule movement breaks",
+      action:
+        "Use regular standing, walking or ankle-movement breaks instead of waiting for stiffness or heaviness to build.",
+    },
+  };
+
+  const productDays: Record<ProductKey, Omit<PlanDay, "day">> = {
+    "smart-knee-massager": {
+      title: "Test one powered feature",
+      action:
+        "Use a short, awake session on a comfortable setting. Try warmth or vibration first, not every feature at once.",
+    },
+    "heated-wrap": {
+      title: "Set a simple warmth window",
+      action:
+        "Use comfortable low warmth for a short, awake session and check the skin before, during and after.",
+    },
+    "cold-wrap": {
+      title: "Run a short cold trial",
+      action:
+        "Place fabric between skin and the chilled wrap, keep the session brief and stop if the skin becomes painful or numb.",
+    },
+    "compression-sleeve": {
+      title: "Check sleeve fit",
+      action:
+        "Test the correct size during one short activity. It should feel supportive without numbness, discoloration or rolling edges.",
+    },
+    insoles: {
+      title: "Start the insole break-in",
+      action:
+        "Try the insoles briefly in one roomy, familiar shoe and check heel position, toe space and pressure points.",
+    },
+    "compression-socks": {
+      title: "Check lower-leg fit",
+      action:
+        "Try the correct size for a short period and remove it for pain, numbness, discoloration or a rolled tight band.",
+    },
+    "calf-massager": {
+      title: "Begin with gentle compression",
+      action:
+        "After a short walk, test the lowest comfortable compression without heat and stop for pain, numbness or color change.",
+    },
+    generic: {
+      title: "Read before choosing a tool",
+      action:
+        "Open the first matched guide and compare its warning signs and routine advice with the notes from Days 1 and 2.",
+    },
+  };
+
+  const goalDays: Record<string, Omit<PlanDay, "day">> = {
+    relief: {
+      title: "Build a repeatable comfort window",
+      action:
+        "Choose one short time of day for the routine and rate comfort before and about an hour afterward.",
+    },
+    active: {
+      title: "Repeat an easy active dose",
+      action:
+        "Choose a movement you tolerate well and finish while it still feels controlled rather than testing the limit.",
+    },
+    sleep: {
+      title: "Create an evening sequence",
+      action:
+        "Pair a calm movement or comfort session with the same bedtime window and compare the following morning.",
+    },
+    understand: {
+      title: "Compare patterns, not guesses",
+      action:
+        "Use your notes and matched guides to identify timing, location and warning signs before considering a product.",
+    },
+  };
+
+  const followUpDays: Record<ProductKey, Omit<PlanDay, "day">> = {
+    "smart-knee-massager": {
+      title: "Keep only the useful setting",
+      action:
+        "Repeat the comfortable setting and leave out any feature that added no value or irritated the knee.",
+    },
+    "heated-wrap": {
+      title: "Pair warmth with easy movement",
+      action:
+        "After warmth, try a few comfortable movements and note whether the knee starts moving more easily.",
+    },
+    "cold-wrap": {
+      title: "Compare recovery days",
+      action:
+        "Compare a similar active day with your first cold trial, including skin response and how the knee feels the next morning.",
+    },
+    "compression-sleeve": {
+      title: "Extend wear gradually",
+      action:
+        "If the short trial was comfortable, add a little wear time during the same type of activity and recheck the skin.",
+    },
+    insoles: {
+      title: "Increase shoe time slowly",
+      action:
+        "Use the same shoes a little longer only if the first trial caused no rubbing, pressure or new foot discomfort.",
+    },
+    "compression-socks": {
+      title: "Pair support with movement",
+      action:
+        "Use the socks only if the fit felt comfortable and keep regular movement breaks in the routine.",
+    },
+    "calf-massager": {
+      title: "Change one setting",
+      action:
+        "If the first session felt comfortable, adjust either compression or warmth, not both, and compare the response.",
+    },
+    generic: {
+      title: "Test one routine change",
+      action:
+        "Choose one low-risk adjustment from your guides and keep every other part of the day as consistent as practical.",
+    },
+  };
+
+  const day6 =
+    when === "travel"
+      ? {
+          title: "Rehearse the next long-sitting day",
+          action:
+            "Plan your seat setup, movement-break timing and post-travel routine before the next drive, flight or desk block.",
+        }
+      : when === "activity"
+        ? {
+            title: "Repeat the adjusted session",
+            action:
+              "Repeat the lower-load version once, keeping surface, shoes and pace as similar as possible for a fair comparison.",
+          }
+        : when === "rest"
+          ? {
+              title: "Compare two rest periods",
+              action:
+                "Use the same first-movement routine after two sitting periods and compare how the first few steps feel.",
+            }
+          : {
+              title: "Use the routine in real life",
+              action:
+                "Repeat it during the daily task you identified, without adding a second new tool or exercise.",
+            };
+
+  return [
+    { day: "Day 1", ...feelDays[feel] },
+    { day: "Day 2", ...whenDays[when] },
+    { day: "Day 3", ...productDays[productKey] },
+    { day: "Day 4", ...goalDays[goal] },
+    { day: "Day 5", ...followUpDays[productKey] },
+    { day: "Day 6", ...day6 },
+    {
+      day: "Day 7",
+      title: productKey === "generic" ? "Choose the next step" : "Keep, change or stop",
+      action:
+        feel === "sharp" || feel === "swollen"
+          ? "Review the week. Arrange appropriate medical guidance if sharp pain, swelling, locking, giving way or reduced motion persists or worsens."
+          : "Review the week, keep the habit that helped and get medical guidance for persistent, worsening or function-limiting symptoms.",
+    },
+  ];
+}
+
+function buildRecommendations(
+  answers: Record<string, OptionKey>,
+  sourceArticle?: string,
+): QuizResult {
+  const when = answers.when;
+  const feel = answers.feel;
+  const support = answers.support;
+  const goal = answers.goal;
+  const productKey = chooseProduct(
+    when,
+    feel,
+    support,
+    goal,
+  );
+  const productResult = { ...PRODUCT_RESULTS[productKey] };
+
+  if (feel === "sharp") {
+    productResult.resultKey = "clarify-sharp-pattern";
+    productResult.headline = "Clarify the sharp pattern before choosing a product.";
+    productResult.summary =
+      "A sharp or sudden response should not be covered up with a guessed product match. Start with triggers and warning signs, avoid repeatedly testing the painful movement and arrange appropriate care if it persists or limits function.";
+    productResult.productReason =
+      "Your guide-first result is intentional. A product recommendation would be too speculative from this answer pattern.";
   } else if (goal === "understand") {
-    resultKey = "learn-before-buying";
-    headline =
-      "Your best first step is understanding the pattern, not buying immediately.";
-    summary =
-      "Start with the matched guides and the seven-day observation plan. A product can support a routine, but your answers suggest that clarity and pattern tracking should come first.";
-    productKey = "generic";
-    productReason =
-      "Review the guides first, then compare the full FlexiKnee system once the pattern is clearer.";
-  } else if (goal === "sleep" || when === "rest") {
-    resultKey = "evening-warmth-routine";
-    headline = "Your evening routine is the best place to begin.";
-    summary =
-      "Your answers point toward stiffness after rest or discomfort around the end of the day. Build a short evening routine around gentle movement, comfortable warmth and a consistent session length.";
-    productKey = "smart-knee-massager";
-    productReason =
-      "The Smart Heated Knee Massager offers the most complete at-home option for an evening knee routine.";
-  }
-
-  const plan = BASE_PLAN.map((item) => ({ ...item }));
-  if (resultKey === "travel-lower-leg-recovery") {
-    plan[2] = {
-      day: "Day 3",
-      title: "Plan movement breaks",
-      action:
-        "Set a reminder to stand, walk or move the ankles regularly during long sitting periods.",
-    };
-  } else if (resultKey === "active-foot-to-knee-support") {
-    plan[2] = {
-      day: "Day 3",
-      title: "Check shoes and insoles",
-      action:
-        "Inspect sole wear, toe space and whether the shoe still feels stable during walking or training.",
-    };
-  } else if (resultKey === "daily-movement-support") {
-    plan[3] = {
-      day: "Day 4",
-      title: "Test support during movement",
-      action:
-        "Use the correctly sized sleeve for a short daily activity and check comfort, skin and circulation afterward.",
-    };
-  } else if (
-    resultKey === "evening-warmth-routine" ||
-    resultKey === "simple-warmth-routine"
-  ) {
-    plan[3] = {
-      day: "Day 4",
-      title: "Build a timed warmth session",
-      action:
-        "Use a comfortable low setting for a short, awake session and check the skin regularly.",
-    };
+    productResult.resultKey = "learn-before-buying";
+    productResult.headline = "Understand the pattern before buying anything.";
+    productResult.summary =
+      "You asked for clarity first. Use the matched guides and seven-day observation plan to identify timing, triggers and response before comparing a support product.";
+    productResult.productReason =
+      "No product is being forced into this result. Your first next step is the matched reading and observation plan.";
+  } else if (feel === "swollen" && support === "simple_warmth") {
+    productResult.resultKey = "general-consistency";
+    productResult.headline = "Check the swelling pattern before using warmth.";
+    productResult.summary =
+      "Warmth is not the automatic match for a knee that feels warm or swollen after activity. Start with the swelling guide and observe motion, skin changes and the next-day response before choosing a comfort tool.";
+    productResult.productReason =
+      "This result stays guide-first because your symptom pattern and preferred tool do not form a confident match.";
   }
 
   return {
-    resultKey,
-    headline,
-    summary,
+    ...productResult,
     productKey,
-    productReason,
-    guides: guides.slice(0, 3),
-    plan,
+    guides: buildGuides(when, feel, support, sourceArticle),
+    plan: buildPlan(when, feel, productKey, goal),
+    planHeading:
+      productKey === "generic"
+        ? "Seven days to clarify your next step."
+        : "Seven days to test the match carefully.",
+    planIntro:
+      feel === "sharp" || feel === "swollen"
+        ? "Keep the week observational and comfortable. Do not use the plan to delay care for worsening or concerning symptoms."
+        : "Change one variable at a time so you can tell what actually helps your routine.",
   };
 }
 
@@ -396,24 +687,37 @@ export default function KneeQuiz() {
 
   const isDone = step >= QUESTIONS.length;
   const result = useMemo(
-    () => (isDone ? buildRecommendations(answers) : null),
-    [isDone, answers],
+    () =>
+      isDone
+        ? buildRecommendations(answers, sourceState.sourceArticle)
+        : null,
+    [isDone, answers, sourceState.sourceArticle],
   );
+  const displayProductKey: Exclude<ProductKey, "generic"> | null = result
+    ? result.productKey === "generic"
+      ? "smart-knee-massager"
+      : result.productKey
+    : null;
   const recommendedProduct = useMemo(
     () =>
-      result
+      displayProductKey
         ? products.find((product) =>
-            productMatchesKey(product, result.productKey),
+            productMatchesKey(product, displayProductKey),
           ) || null
         : null,
-    [products, result],
+    [displayProductKey, products],
   );
 
+  const fallbackProductRec = displayProductKey
+    ? PRODUCT_RECS[PRODUCT_REC_KEY[displayProductKey] || "main"]
+    : null;
   const productHref = recommendedProduct
     ? getProductPath(recommendedProduct.node.handle)
-    : result?.productKey === "smart-knee-massager"
-      ? PRIMARY_PRODUCT_PATH
-      : "/shop";
+    : fallbackProductRec
+      ? getProductPath(fallbackProductRec.handle)
+      : result?.guides[0]
+        ? `/guides/${result.guides[0].slug}`
+        : "/guides";
 
   const handleAnswer = (questionId: string, key: OptionKey) => {
     setAnswers((previous) => ({ ...previous, [questionId]: key }));
@@ -434,12 +738,6 @@ export default function KneeQuiz() {
       toast.error("Please enter a valid email address.");
       return;
     }
-    if (!consent) {
-      toast.error(
-        "Please confirm that you want to receive the routine by email.",
-      );
-      return;
-    }
     if (!result) return;
 
     setIsSending(true);
@@ -450,30 +748,42 @@ export default function KneeQuiz() {
         body: JSON.stringify({
           email,
           consent,
+          marketingConsent: consent,
+          emailRequested: true,
           source: sourceState.sourceArticle ? "article-quiz" : "knee-quiz",
           quiz: {
             resultKey: result.resultKey,
             productKey: result.productKey,
             sourceArticle: sourceState.sourceArticle || "direct",
+            answers: {
+              when: answers.when,
+              feel: answers.feel,
+              support: answers.support,
+              goal: answers.goal,
+            },
           },
         }),
       });
 
       const payload = await response.json().catch(() => ({}));
       if (!response.ok)
-        throw new Error(payload?.error || "Could not save your email.");
+        throw new Error(payload?.error || "Could not send your plan.");
+      if (payload?.emailSent !== true)
+        throw new Error(
+          "Your request was saved, but the email could not be sent yet. Please try again shortly.",
+        );
 
       setEmailSent(true);
       trackEvent("knee_quiz_email_captured", {
         category: "quiz",
         label: result.resultKey,
       });
-      toast.success("Your routine request is saved.");
+      toast.success("Your personalized 7-day plan is on its way.");
     } catch (error) {
       toast.error(
         error instanceof Error
           ? error.message
-          : "Could not save your email. Please try again.",
+          : "Could not send your plan. Please try again.",
       );
     } finally {
       setIsSending(false);
@@ -491,6 +801,13 @@ export default function KneeQuiz() {
   const progress = Math.min(100, Math.round((step / QUESTIONS.length) * 100));
   const recommendedImage = recommendedProduct?.node.images.edges[0]?.node;
   const recommendedPrice = recommendedProduct?.node.priceRange.minVariantPrice;
+  const productTitle =
+    recommendedProduct?.node.title || fallbackProductRec?.title || null;
+  const productImage = recommendedImage?.url || fallbackProductRec?.fallbackImage;
+  const productReason =
+    result?.productKey === "generic"
+      ? "Your guides and seven-day plan still come first. When you are ready to compare one FlexiKnee option, the Smart Heated Knee Massager is our most complete at-home routine with adjustable warmth, red light and massage-style vibration."
+      : result?.productReason;
 
   return (
     <>
@@ -515,13 +832,16 @@ export default function KneeQuiz() {
       <div className="min-h-screen bg-[radial-gradient(circle_at_85%_5%,rgba(56,189,248,0.16),transparent_25%),linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] text-slate-950">
         <Header />
 
-        <main>
-          <section className="py-12 md:py-18">
-            <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <main data-clarity-mask="true">
+          <section className="py-12 md:py-16">
+            <div
+              className={`mx-auto px-4 sm:px-6 lg:px-8 ${isDone ? "max-w-6xl" : "max-w-4xl"}`}
+            >
               {sourceState.sourceTitle && !isDone && (
                 <p className="mb-5 rounded-2xl border border-blue-100 bg-blue-50 px-4 py-3 text-sm text-blue-800">
                   You came from <strong>{sourceState.sourceTitle}</strong>. The
-                  quiz will use that as context for your saved routine.
+                  quiz will keep that guide in context and avoid repeating it
+                  in your reading list.
                 </p>
               )}
 
@@ -570,207 +890,223 @@ export default function KneeQuiz() {
                 </div>
               ) : (
                 result && (
-                  <div className="space-y-8">
-                    <section className="overflow-hidden rounded-[2.25rem] border border-blue-200 bg-[radial-gradient(circle_at_90%_0%,rgba(125,211,252,0.55),transparent_32%),linear-gradient(135deg,#eff6ff_0%,#eef2ff_55%,#ecfeff_100%)] p-7 shadow-[0_35px_110px_-70px_rgba(37,99,235,0.75)] md:p-10">
-                      <p className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">
-                        <CheckCircle2 className="h-5 w-5" /> Your result
-                      </p>
-                      <h1 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
-                        {result.headline}
-                      </h1>
-                      <p className="mt-5 max-w-3xl text-base leading-8 text-slate-700">
-                        {result.summary}
-                      </p>
-                    </section>
-
-                    <section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-                      <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
-                        <div className="flex min-h-64 items-center justify-center bg-slate-50 p-5">
-                          {recommendedImage ? (
-                            <img
-                              src={recommendedImage.url}
-                              alt={
-                                recommendedImage.altText ||
-                                recommendedProduct?.node.title
-                              }
-                              className="max-h-72 w-full object-contain"
-                            />
-                          ) : (
-                            <Sparkles className="h-16 w-16 text-blue-200" />
-                          )}
-                        </div>
-                        <div className="p-6">
-                          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">
-                            Matched product category
-                          </p>
-                          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
-                            {recommendedProduct?.node.title ||
-                              (result.productKey === "generic"
-                                ? "Explore after reading your guides"
-                                : "Your matched FlexiKnee product")}
-                          </h2>
-                          <p className="mt-3 text-sm leading-7 text-slate-600">
-                            {result.productReason}
-                          </p>
-                          {recommendedPrice && (
-                            <p className="mt-4 text-xl font-semibold text-slate-950">
-                              {formatMoney(
-                                recommendedPrice.amount,
-                                recommendedPrice.currencyCode,
-                              )}
-                            </p>
-                          )}
-                          <Link
-                            to={productHref}
-                            className="mt-6 inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
-                          >
-                            {result.productKey === "generic"
-                              ? "Compare all products"
-                              : "View matched product"}
-                            <ArrowRight className="h-4 w-4" />
-                          </Link>
-                        </div>
-                      </div>
-
-                      <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-                        <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-                          Start with these guides
-                        </h2>
-                        <div className="mt-5 grid gap-3">
-                          {result.guides.map((guide) => (
-                            <Link
-                              key={guide.slug}
-                              to={`/guides/${guide.slug}`}
-                              className="group flex items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50"
-                            >
-                              <span>
-                                <span className="block text-base font-semibold text-slate-950">
-                                  {guide.title}
-                                </span>
-                                <span className="mt-1 block text-sm text-slate-500">
-                                  {guide.reason}
-                                </span>
-                              </span>
-                              <ArrowRight className="h-5 w-5 shrink-0 text-blue-600 transition group-hover:translate-x-1" />
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    </section>
-
-                    <section className="rounded-[2rem] border border-slate-200 bg-slate-950 p-7 text-white shadow-lg md:p-9">
-                      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-300">
-                            Your seven-day starter plan
-                          </p>
-                          <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em]">
-                            One useful action each day.
-                          </h2>
-                        </div>
-                        <p className="max-w-md text-sm leading-6 text-slate-300">
-                          Keep it comfortable. Stop and seek appropriate care
-                          for significant swelling, instability, injury or
-                          worsening symptoms.
+                  <div className="space-y-5 md:space-y-6">
+                    <section className="overflow-hidden rounded-[2.25rem] border border-blue-200 bg-white shadow-[0_35px_110px_-70px_rgba(37,99,235,0.7)]">
+                      <div className="bg-[radial-gradient(circle_at_90%_0%,rgba(125,211,252,0.55),transparent_32%),linear-gradient(135deg,#eff6ff_0%,#eef2ff_55%,#ecfeff_100%)] p-6 sm:p-8 lg:p-10">
+                        <p className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">
+                          <CheckCircle2 className="h-5 w-5" /> Your result
+                        </p>
+                        <h1 className="mt-4 max-w-4xl text-3xl font-semibold tracking-[-0.045em] text-slate-950 md:text-5xl">
+                          {result.headline}
+                        </h1>
+                        <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">
+                          {result.summary}
                         </p>
                       </div>
-                      <div className="mt-8 grid gap-4 md:grid-cols-2">
-                        {result.plan.map((item) => (
-                          <div
-                            key={item.day}
-                            className="rounded-2xl border border-white/10 bg-white/5 p-5"
-                          >
-                            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-300">
-                              {item.day}
+
+                      <div className="border-t border-white/10 bg-[radial-gradient(circle_at_8%_0%,rgba(37,99,235,0.32),transparent_28%),linear-gradient(145deg,#0f172a,#020617)] p-6 text-white sm:p-8 lg:p-10">
+                        <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
+                          <div>
+                            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
+                              <CalendarDays className="h-4 w-4" /> Your seven-day starter plan
                             </p>
-                            <h3 className="mt-2 text-base font-semibold">
-                              {item.title}
-                            </h3>
-                            <p className="mt-2 text-sm leading-6 text-slate-300">
-                              {item.action}
-                            </p>
+                            <h2 className="mt-3 text-2xl font-semibold tracking-[-0.035em] sm:text-3xl">
+                              {result.planHeading}
+                            </h2>
                           </div>
-                        ))}
+                          <p className="max-w-xl text-sm leading-6 text-slate-300">
+                            {result.planIntro}
+                          </p>
+                        </div>
+
+                        <ol className="mt-6 grid gap-x-8 md:grid-flow-col md:grid-rows-4">
+                          {result.plan.map((item) => (
+                            <li
+                              key={item.day}
+                              className="grid grid-cols-[3.1rem_1fr] gap-3 border-t border-white/10 py-4"
+                            >
+                              <span className="pt-0.5 text-xs font-bold uppercase tracking-[0.12em] text-cyan-300">
+                                {item.day}
+                              </span>
+                              <span>
+                                <span className="block text-sm font-semibold text-white sm:text-base">
+                                  {item.title}
+                                </span>
+                                <span className="mt-1 block text-sm leading-6 text-slate-300">
+                                  {item.action}
+                                </span>
+                              </span>
+                            </li>
+                          ))}
+                        </ol>
                       </div>
                     </section>
 
-                    <section className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm md:p-9">
-                      {emailSent ? (
-                        <div className="flex gap-4">
-                          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-                            <Check className="h-5 w-5" />
-                          </span>
-                          <div>
-                            <h2 className="text-xl font-semibold text-slate-950">
-                              Your routine request is saved.
-                            </h2>
-                            <p className="mt-2 text-sm leading-7 text-slate-600">
-                              Your result and email preference have been saved.
-                              The matching seven-day routine can now be
-                              delivered through the FlexiKnee email workflow.
-                            </p>
+                    <section className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_-55px_rgba(15,23,42,0.65)]">
+                      <div className="p-6 sm:p-8">
+                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">
+                          Your matched next steps
+                        </p>
+                        <h2 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-slate-950">
+                          One routine, one product direction, three useful guides.
+                        </h2>
+                      </div>
+
+                      <div className="grid border-t border-slate-200 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+                        <div className="p-5 sm:p-7">
+                          <div className="grid overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+                            <div className="flex h-64 items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_50%_20%,#ffffff,#eef4ff)] p-1 sm:h-72 lg:h-80 lg:p-2">
+                              {productImage ? (
+                                <img
+                                  src={productImage}
+                                  alt={
+                                    recommendedImage?.altText ||
+                                    productTitle ||
+                                    "FlexiKnee matched support"
+                                  }
+                                  className="h-full w-full scale-110 object-contain"
+                                />
+                              ) : (
+                                <span className="flex h-20 w-20 items-center justify-center rounded-3xl bg-white text-blue-600 shadow-sm">
+                                  <BookOpenCheck className="h-9 w-9" />
+                                </span>
+                              )}
+                            </div>
+                            <div className="border-t border-slate-200 bg-white p-5 sm:p-6">
+                              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">
+                                {result.productKey === "generic"
+                                  ? "Featured FlexiKnee product"
+                                  : "Matched FlexiKnee product"}
+                              </p>
+                              <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl">
+                                {productTitle || "FlexiKnee Smart Heated Knee Massager"}
+                              </h3>
+                              <p className="mt-3 text-sm leading-7 text-slate-600">
+                                {productReason}
+                              </p>
+                              {recommendedPrice && (
+                                <p className="mt-3 text-lg font-semibold text-slate-950">
+                                  {formatMoney(
+                                    recommendedPrice.amount,
+                                    recommendedPrice.currencyCode,
+                                  )}
+                                </p>
+                              )}
+                              <Link
+                                to={productHref}
+                                className="mt-5 inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+                              >
+                                {result.productKey === "generic"
+                                  ? "Explore our main product"
+                                  : "View matched product"}
+                                <ArrowRight className="h-4 w-4" />
+                              </Link>
+                            </div>
                           </div>
                         </div>
-                      ) : (
-                        <>
-                          <div className="flex items-start gap-4">
-                            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
-                              <Mail className="h-5 w-5" />
+
+                        <div className="border-t border-slate-200 p-5 sm:p-7 lg:border-l lg:border-t-0">
+                          <div className="flex items-center gap-3">
+                            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
+                              <BookOpenCheck className="h-5 w-5" />
                             </span>
                             <div>
-                              <h2 className="text-xl font-semibold text-slate-950">
-                                Email me this result and starter plan
-                              </h2>
+                              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+                                Matched reading
+                              </p>
+                              <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+                                Start with these guides
+                              </h3>
+                            </div>
+                          </div>
+                          <div className="mt-5 divide-y divide-slate-200 rounded-2xl border border-slate-200">
+                            {result.guides.map((guide) => (
+                              <Link
+                                key={guide.slug}
+                                to={`/guides/${guide.slug}`}
+                                className="group flex items-center justify-between gap-4 px-4 py-4 transition first:rounded-t-2xl last:rounded-b-2xl hover:bg-blue-50/70 sm:px-5"
+                              >
+                                <span>
+                                  <span className="block text-sm font-semibold text-slate-950 sm:text-base">
+                                    {guide.title}
+                                  </span>
+                                  <span className="mt-1 block text-sm leading-6 text-slate-500">
+                                    {guide.reason}
+                                  </span>
+                                </span>
+                                <ArrowRight className="h-5 w-5 shrink-0 text-blue-600 transition group-hover:translate-x-1" />
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t border-slate-200 bg-[linear-gradient(120deg,#f8fafc,#eff6ff)] p-5 sm:p-7">
+                        {emailSent ? (
+                          <div className="flex gap-4">
+                            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                              <Check className="h-5 w-5" />
+                            </span>
+                            <div>
+                              <h3 className="text-lg font-semibold text-slate-950">
+                                Check your inbox.
+                              </h3>
                               <p className="mt-1 text-sm leading-6 text-slate-600">
-                                We?ll save this result and use it to send the
-                                version of the routine that matches your
-                                recommendation.
+                                We sent this result, your matched links and all seven days to {email}.
                               </p>
                             </div>
                           </div>
-                          <form onSubmit={handleEmail} className="mt-6">
-                            <div className="flex flex-col gap-3 sm:flex-row">
-                              <input
-                                type="email"
-                                value={email}
-                                onChange={(event) =>
-                                  setEmail(event.target.value)
-                                }
-                                placeholder="you@example.com"
-                                autoComplete="email"
-                                className="w-full rounded-full border border-slate-300 px-5 py-3 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
-                              />
-                              <button
-                                type="submit"
-                                disabled={isSending}
-                                className="shrink-0 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:opacity-60"
-                              >
-                                {isSending ? "Saving..." : "Send my routine"}
-                              </button>
-                            </div>
-                            <label className="mt-4 flex cursor-pointer items-start gap-3 rounded-2xl bg-slate-50 p-4 text-sm leading-6 text-slate-600">
-                              <input
-                                type="checkbox"
-                                checked={consent}
-                                onChange={(event) =>
-                                  setConsent(event.target.checked)
-                                }
-                                className="mt-1 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
-                              />
-                              <span>
-                                I agree to receive my quiz routine and
-                                occasional FlexiKnee emails. I can unsubscribe
-                                at any time.
+                        ) : (
+                          <div className="grid gap-5 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center">
+                            <div className="flex items-start gap-3">
+                              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+                                <Mail className="h-5 w-5" />
                               </span>
-                            </label>
-                            <p className="mt-3 flex items-center gap-2 text-xs text-slate-500">
-                              <ShieldCheck className="h-4 w-4" /> Your consent
-                              is stored securely, and you can unsubscribe at any
-                              time.
-                            </p>
-                          </form>
-                        </>
-                      )}
+                              <div>
+                                <h3 className="text-lg font-semibold text-slate-950">
+                                  Save your 7-day plan
+                                </h3>
+                                <p className="mt-1 text-sm leading-6 text-slate-600">
+                                  Send your personalized result and all seven days to your inbox so you can follow them without keeping the page open.
+                                </p>
+                              </div>
+                            </div>
+                            <form onSubmit={handleEmail}>
+                              <div className="flex flex-col gap-3 sm:flex-row">
+                                <input
+                                  type="email"
+                                  value={email}
+                                  onChange={(event) => setEmail(event.target.value)}
+                                  placeholder="you@example.com"
+                                  autoComplete="email"
+                                  className="min-w-0 flex-1 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                                />
+                                <button
+                                  type="submit"
+                                  disabled={isSending}
+                                  className="shrink-0 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:opacity-60"
+                                >
+                                  {isSending ? "Sending..." : "Email my plan"}
+                                </button>
+                              </div>
+                              <label className="mt-3 flex cursor-pointer items-start gap-2 text-xs leading-5 text-slate-600">
+                                <input
+                                  type="checkbox"
+                                  checked={consent}
+                                  onChange={(event) => setConsent(event.target.checked)}
+                                  className="mt-0.5 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                                />
+                                <span>
+                                  Also send occasional FlexiKnee guides and offers. Optional, unsubscribe any time.
+                                </span>
+                              </label>
+                              <p className="mt-2 flex items-center gap-2 text-xs text-slate-500">
+                                <ShieldCheck className="h-4 w-4" /> The requested plan email does not require marketing signup.
+                              </p>
+                            </form>
+                          </div>
+                        )}
+                      </div>
                     </section>
 
                     <button

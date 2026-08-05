@@ -18,6 +18,7 @@ import { ArticleTableOfContents } from "@/components/ArticleTableOfContents";
 import { ArticleImageLightbox } from "@/components/ArticleImageLightbox";
 import ArticleFaqAccordion from "@/components/ArticleFaqAccordion";
 import { ArticleQuizCard } from "@/components/ArticleQuizCard";
+import { ArticleNewsletterCard } from "@/components/ArticleNewsletterCard";
 import { ArticleSlideInCTA } from "@/components/ArticleSlideInCTA";
 import PremiumCTA from "@/components/PremiumCTA";
 import { LazyRelatedGuideCard } from "@/components/LazyRelatedGuideCard";
@@ -31,6 +32,7 @@ import { loadRecentArticleBySlug } from "@/data/recent-article-loaders";
 import { articleEditorialCrosslinks } from "@/data/article-editorial-crosslinks";
 import { getRelatedGuides } from "@/data/related-guides";
 import { recordGuideView } from "@/lib/guide-popularity";
+import { markPageReady } from "@/lib/page-ready";
 import type { ArticleData } from "@/data/articles/types";
 
 const allArticleCTAs = { ...articleCTAs, ...recentArticleCTAs };
@@ -128,16 +130,17 @@ const GuideArticle = () => {
   useEffect(() => {
     if (loadState === "ready" && article) {
       void recordGuideView(article.slug);
+      markPageReady({
+        path: `/guides/${article.slug}`,
+        title: article.metaTitle,
+        canonicalUrl: `https://flexi-knee.com/guides/${article.slug}`,
+      });
     }
   }, [article, loadState]);
 
   if (loadState === "loading") {
     return (
       <>
-        <Helmet>
-          <title>Loading Guide | FlexiKnee</title>
-          <meta name="robots" content="noindex" />
-        </Helmet>
         <Header />
         <main className="min-h-screen bg-white">
           <div className="mx-auto max-w-3xl px-4 py-24" aria-live="polite">
@@ -491,6 +494,8 @@ const GuideArticle = () => {
                     </p>
                   </section>
                 )}
+
+                <ArticleNewsletterCard articleSlug={article.slug} />
               </article>
             </div>
           </div>

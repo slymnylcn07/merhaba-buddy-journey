@@ -9,6 +9,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { useShopifyPageView } from "./hooks/use-shopify-analytics";
 import { useGoogleAnalytics } from "./hooks/use-google-analytics";
 import { useMetaTracking } from "./hooks/use-meta-tracking";
+import { useMicrosoftClarity } from "./hooks/use-microsoft-clarity";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
@@ -43,6 +44,7 @@ const FullAnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
   useShopifyPageView();
   useGoogleAnalytics();
   useMetaTracking();
+  useMicrosoftClarity();
   return <>{children}</>;
 };
 
