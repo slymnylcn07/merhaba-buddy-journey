@@ -31,6 +31,7 @@ import { PremiumProductStory } from "@/components/PremiumProductStory";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
 import { ProductReviewSummary } from "@/components/ProductReviews";
 import { buildMerchantOffer } from "@/lib/merchant-schema";
+import { isFreeShippingEligible } from "@/lib/shipping-policy";
 
 function formatMoney(amount?: string, currencyCode?: string) {
   const value = Number(amount || 0);
@@ -121,6 +122,22 @@ export default function SecondaryProductDetail() {
       : null;
   const pageConfig = getProductPageConfig(profile.key);
   const unitPriceNum = price ? Number(price.amount) : 0;
+  const selectedOfferTotal =
+    quantity === 2
+      ? unitPriceNum * 2 * (1 - pageConfig.duoDiscountPct / 100)
+      : unitPriceNum;
+  const selectedOfferHasFreeShipping = isFreeShippingEligible(
+    selectedOfferTotal,
+    price?.currencyCode,
+  );
+  const selectedOfferDisplay = price
+    ? formatMoney(String(selectedOfferTotal), price.currencyCode)
+    : null;
+  const selectedOfferCompareAt = price && quantity === 2
+    ? formatMoney(String(unitPriceNum * 2), price.currencyCode)
+    : compareAt
+      ? formatMoney(compareAt.amount, compareAt.currencyCode)
+      : null;
   const canonical = `https://flexi-knee.com${getProductPath(handle)}`;
 
   useEffect(() => {
@@ -417,7 +434,6 @@ export default function SecondaryProductDetail() {
                   unitPrice={unitPriceNum}
                   unitCompareAt={compareAt ? Number(compareAt.amount) : null}
                   currencyCode={price?.currencyCode}
-                  freeShipOnSingle={pageConfig.freeShipOnSingle}
                   duoDiscountPct={pageConfig.duoDiscountPct}
                   formatMoney={formatMoney}
                 />
@@ -445,7 +461,11 @@ export default function SecondaryProductDetail() {
                   </button>
                 </div>
 
-                <DeliveryEstimate className="mt-4" freeShipping={pageConfig.freeShipOnSingle || quantity === 2} />
+                <DeliveryEstimate
+                  className="mt-4"
+                  currencyCode={price?.currencyCode}
+                  freeShipping={selectedOfferHasFreeShipping}
+                />
 
                 <PaymentOptionsRow />
 
@@ -605,10 +625,10 @@ export default function SecondaryProductDetail() {
         <div className="mx-auto flex max-w-xl items-center gap-3">
           <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-semibold text-slate-950">{profile.h1}</p>
-            {price && (
+            {selectedOfferDisplay && (
               <p className="flex items-baseline gap-1.5 text-xs text-slate-500">
-                {compareAt && <s className="text-[11px] text-slate-400">{formatMoney(compareAt.amount, compareAt.currencyCode)}</s>}
-                <span className="font-semibold text-slate-900">{formatMoney(price.amount, price.currencyCode)}</span>
+                {selectedOfferCompareAt && <s className="text-[11px] text-slate-400">{selectedOfferCompareAt}</s>}
+                <span className="font-semibold text-slate-900">{selectedOfferDisplay}</span>
               </p>
             )}
           </div>

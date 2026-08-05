@@ -42,7 +42,7 @@ export const Header = () => {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-80 bg-white">
+            <SheetContent side="left" className="w-80 overflow-y-auto bg-white">
               <Link to="/" onClick={() => setMenuOpen(false)} className="mt-2 inline-flex items-baseline gap-1 text-xl font-semibold tracking-tight text-slate-950">
                 FlexiKnee
               </Link>
@@ -71,6 +71,10 @@ export const Header = () => {
                 <Link to={PRIMARY_PRODUCT_PATH} onClick={() => setMenuOpen(false)} className="mt-4 rounded-full bg-blue-600 px-5 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-blue-600/20">
                   Shop FlexiKnee
                 </Link>
+                <div className="mt-4 flex items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+                  <span className="text-sm font-medium text-slate-700">Country &amp; currency</span>
+                  <MarketSelector compact />
+                </div>
               </nav>
             </SheetContent>
           </Sheet>

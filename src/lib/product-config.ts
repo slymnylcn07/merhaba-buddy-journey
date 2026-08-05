@@ -38,10 +38,13 @@ export function resolveShopifyProductHandle(handle: string): string {
 export function getShopifyProductHandleCandidates(handle: string): string[] {
   const publicHandle = getPublicProductHandle(handle);
   const legacyShopifyHandle = SHOPIFY_HANDLE_ALIASES[publicHandle];
+  const reverseAliases = Object.entries(PUBLIC_HANDLE_ALIASES)
+    .filter(([, publicAlias]) => publicAlias === publicHandle)
+    .map(([shopifyHandle]) => shopifyHandle);
 
   return [
     ...new Set(
-      [publicHandle, legacyShopifyHandle].filter(
+      [publicHandle, legacyShopifyHandle, ...reverseAliases].filter(
         (candidate): candidate is string => Boolean(candidate),
       ),
     ),

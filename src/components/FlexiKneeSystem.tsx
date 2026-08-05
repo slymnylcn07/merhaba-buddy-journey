@@ -6,6 +6,11 @@ import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getProductPath } from "@/lib/product-config";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
 import { getProductProfile } from "@/data/product-profiles";
+import {
+  formatMarketMoney,
+  getSafeUsdFallbackPrice,
+  hasProductPriceRange,
+} from "@/lib/shipping-policy";
 
 type ProductKind = "massager" | "sleeve" | "socks" | "calf" | "insoles" | "wrap" | "ice" | "other";
 
@@ -22,21 +27,6 @@ type SystemCard = {
   kind: ProductKind;
   isLive: boolean;
 };
-
-function formatMoney(amount?: string, currencyCode?: string) {
-  const value = Number(amount || 0);
-  const currency = currencyCode || "USD";
-
-  try {
-    return new Intl.NumberFormat("en", {
-      style: "currency",
-      currency,
-      maximumFractionDigits: value % 1 === 0 ? 0 : 2,
-    }).format(value);
-  } catch {
-    return `${currency} ${value.toFixed(2)}`;
-  }
-}
 
 function identifyProduct(product: ShopifyProduct): ProductKind {
   const text = `${product.node.title} ${product.node.handle}`.toLowerCase();
@@ -116,16 +106,13 @@ function toLiveCard(product: ShopifyProduct): SystemCard {
   const kind = identifyProduct(product);
   const profile = profileByKind[kind];
   const minPrice = product.node.priceRange.minVariantPrice;
-  const firstAvailablePrice = product.node.variants.edges.find((edge) => edge.node.availableForSale)?.node.price;
+  const prefix = hasProductPriceRange(product.node.priceRange) ? "From " : "";
 
   return {
     ...profile,
     key: product.node.id,
     name: kind === "massager" ? product.node.title : getProductProfile(product).h1,
-    price: formatMoney(
-      firstAvailablePrice?.amount || minPrice.amount,
-      firstAvailablePrice?.currencyCode || minPrice.currencyCode,
-    ),
+    price: `${prefix}${formatMarketMoney(minPrice.amount, minPrice.currencyCode)}`,
     image: product.node.images.edges[0]?.node.url || "",
     href: getProductPath(product.node.handle),
     isLive: true,
@@ -174,7 +161,7 @@ export const FlexiKneeSystem = () => {
       name: item.name,
       label: item.label,
       description: item.description,
-      price: item.price,
+      price: getSafeUsdFallbackPrice(item.price),
       image: item.image,
       href: item.href,
       status: item.status,

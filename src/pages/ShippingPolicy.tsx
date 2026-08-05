@@ -4,8 +4,25 @@ import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { SUPPORT_EMAIL } from "@/lib/support-config";
-import { DELIVERY_ESTIMATES, FREE_SHIPPING_THRESHOLD, SUPPORT_RESPONSE_TIME } from "@/lib/policy-config";
+import { DELIVERY_ESTIMATES, SUPPORT_RESPONSE_TIME } from "@/lib/policy-config";
 import { SHIPPING_SERVICE_ID } from "@/lib/merchant-schema";
+import { getDeliveryWindow, HANDLING_WINDOW } from "@/lib/delivery-estimates";
+import {
+  formatFreeShippingThreshold,
+  formatMarketMoney,
+  formatPolicyStandardShippingRate,
+  formatStandardShippingRate,
+  getShippingPolicy,
+  MARKET_SHIPPING_POLICIES,
+} from "@/lib/shipping-policy";
+
+const BUSINESS_DAYS = [
+  "https://schema.org/Monday",
+  "https://schema.org/Tuesday",
+  "https://schema.org/Wednesday",
+  "https://schema.org/Thursday",
+  "https://schema.org/Friday",
+];
 
 const shippingPolicyJsonLd = {
   "@context": "https://schema.org",
@@ -17,47 +34,79 @@ const shippingPolicyJsonLd = {
     "@type": "ShippingService",
     "@id": SHIPPING_SERVICE_ID,
     name: "FlexiKnee standard shipping",
-    description: "Tracked standard shipping with free delivery on eligible orders over $24.99.",
+    description: "Tracked standard shipping with free delivery at the eligible order threshold for each supported market.",
     fulfillmentType: "https://schema.org/FulfillmentTypeDelivery",
     handlingTime: {
       "@type": "ServicePeriod",
+      businessDays: BUSINESS_DAYS,
       duration: {
         "@type": "QuantitativeValue",
-        minValue: 0,
-        maxValue: 1,
+        minValue: HANDLING_WINDOW.min,
+        maxValue: HANDLING_WINDOW.max,
         unitCode: "DAY",
       },
     },
-    shippingConditions: {
-      "@type": "ShippingConditions",
-      shippingDestination: {
-        "@type": "DefinedRegion",
-        addressCountry: "US",
-      },
-      orderValue: {
-        "@type": "MonetaryAmount",
-        minValue: 25,
-        currency: "USD",
-      },
-      shippingRate: {
-        "@type": "MonetaryAmount",
-        value: 0,
-        currency: "USD",
-      },
-      transitTime: {
-        "@type": "ServicePeriod",
-        duration: {
-          "@type": "QuantitativeValue",
-          minValue: 6,
-          maxValue: 7,
-          unitCode: "DAY",
+    shippingConditions: Object.values(MARKET_SHIPPING_POLICIES).flatMap((policy) => {
+      const deliveryWindow = getDeliveryWindow(policy.shippingDestinations[0]);
+      const sharedCondition = {
+        "@type": "ShippingConditions",
+        shippingDestination: policy.shippingDestinations.map((country) => ({
+          "@type": "DefinedRegion",
+          addressCountry: country,
+        })),
+        transitTime: {
+          "@type": "ServicePeriod",
+          businessDays: BUSINESS_DAYS,
+          duration: {
+            "@type": "QuantitativeValue",
+            minValue: deliveryWindow.min,
+            maxValue: deliveryWindow.max,
+            unitCode: "DAY",
+          },
         },
-      },
-    },
+      };
+
+      const paidCondition = {
+          ...sharedCondition,
+          orderValue: {
+            "@type": "MonetaryAmount",
+            maxValue: Number((policy.freeShippingThreshold - 0.01).toFixed(2)),
+            currency: policy.currencyCode,
+          },
+          shippingRate: {
+            "@type": "MonetaryAmount",
+            value: policy.standardShippingRate,
+            currency: policy.currencyCode,
+          },
+        };
+      const freeCondition = {
+          ...sharedCondition,
+          orderValue: {
+            "@type": "MonetaryAmount",
+            minValue: policy.freeShippingThreshold,
+            currency: policy.currencyCode,
+          },
+          shippingRate: {
+            "@type": "MonetaryAmount",
+            value: 0,
+            currency: policy.currencyCode,
+          },
+        };
+
+      // Europe's paid rate is converted by Shopify from the store currency,
+      // so only the fixed free-shipping condition is safe to publish in schema.
+      return policy.standardShippingRateIsApproximate
+        ? [freeCondition]
+        : [paidCondition, freeCondition];
+    }),
   },
 };
 
 export default function ShippingPolicy() {
+  const selectedShippingPolicy = getShippingPolicy();
+  const selectedThreshold = formatFreeShippingThreshold();
+  const selectedStandardRate = formatStandardShippingRate();
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -135,8 +184,32 @@ export default function ShippingPolicy() {
           <section className="mb-8">
             <h2 className="mb-4 text-2xl font-semibold">Shipping Fees</h2>
             <p className="text-muted-foreground">
-              Standard shipping is free on orders over ${FREE_SHIPPING_THRESHOLD}. Any shipping charge that applies to a smaller order, upgraded service or destination will be shown before payment at checkout. We do not add a separate handling fee.
+              Standard shipping is {selectedStandardRate} below {selectedThreshold} and free from {selectedThreshold} for the selected {selectedShippingPolicy.currencyCode} market. Any upgraded service or destination-specific charge will be shown before payment at checkout. We do not add a separate handling fee.
             </p>
+            <div className="mt-5 overflow-x-auto">
+              <table className="w-full border-collapse border border-border text-sm">
+                <thead>
+                  <tr className="bg-muted/50">
+                    <th className="border border-border p-3 text-left font-semibold">Market</th>
+                    <th className="border border-border p-3 text-left font-semibold">Standard shipping</th>
+                    <th className="border border-border p-3 text-left font-semibold">Free shipping from</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {Object.values(MARKET_SHIPPING_POLICIES).map((policy) => (
+                    <tr key={policy.country}>
+                      <td className="border border-border p-3 text-muted-foreground">{policy.marketLabel}</td>
+                      <td className="border border-border p-3 text-muted-foreground">
+                        {formatPolicyStandardShippingRate(policy)}
+                      </td>
+                      <td className="border border-border p-3 text-muted-foreground">
+                        {formatMarketMoney(policy.freeShippingThreshold, policy.currencyCode)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </section>
 
           <section className="mb-8">

@@ -6,7 +6,13 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import type { ProductBenefit } from "@/data/product-page-config";
-import { DELIVERY_ESTIMATES, FREE_SHIPPING_THRESHOLD, RETURN_WINDOW_DAYS } from "@/lib/policy-config";
+import { DELIVERY_ESTIMATES, RETURN_WINDOW_DAYS } from "@/lib/policy-config";
+import {
+  formatFreeShippingThreshold,
+  formatStandardShippingRate,
+  getFreeShippingThresholdLabel,
+  getShippingBadgeLabel,
+} from "@/lib/shipping-policy";
 import sleeveMeasurementDiagram from "@/assets/fig-sleeve-measure.svg";
 
 export { PaymentLogosRow, PaymentOptionsRow } from "@/components/PaymentLogos";
@@ -42,7 +48,6 @@ interface OfferSelectorProps {
   /** Tek adet üstü çizili fiyat (Shopify compare-at; yoksa null) */
   unitCompareAt: number | null;
   currencyCode?: string;
-  freeShipOnSingle: boolean;
   duoDiscountPct: number;
   formatMoney: (amount: string, currencyCode?: string) => string;
 }
@@ -59,7 +64,6 @@ export const OfferSelector = ({
   unitPrice,
   unitCompareAt,
   currencyCode,
-  freeShipOnSingle,
   duoDiscountPct,
   formatMoney,
 }: OfferSelectorProps) => {
@@ -80,7 +84,7 @@ export const OfferSelector = ({
       value: 1,
       title: "Buy 1",
       badges: [] as string[],
-      corner: freeShipOnSingle ? "Free Shipping" : null,
+      corner: getShippingBadgeLabel(unitPrice, currencyCode),
       price: unitPrice,
       strike: unitCompareAt && unitCompareAt > unitPrice ? unitCompareAt : null,
     },
@@ -88,7 +92,7 @@ export const OfferSelector = ({
       value: 2,
       title: "Buy 2",
       badges: [`Get Extra ${duoDiscountPct}%`],
-      corner: "Free Shipping",
+      corner: getShippingBadgeLabel(duoDiscounted, currencyCode),
       price: duoDiscounted,
       strike: duoFull,
       note: "Discount applied automatically at checkout",
@@ -162,7 +166,7 @@ export const OfferSelector = ({
 export const TrustStrip = () => (
   <div className="mt-5 grid grid-cols-3 divide-x divide-slate-200 rounded-2xl border border-slate-200 bg-slate-50">
     {[
-      { icon: Truck, top: "FREE SHIPPING", bottom: `On orders over $${FREE_SHIPPING_THRESHOLD}` },
+      { icon: Truck, top: "FREE SHIPPING", bottom: `From ${formatFreeShippingThreshold()}` },
       { icon: RotateCcw, top: "30-DAY RETURNS", bottom: "From delivery" },
       { icon: Lock, top: "SECURE CHECKOUT", bottom: "SSL encrypted" },
     ].map(({ icon: Icon, top, bottom }) => (
@@ -241,7 +245,7 @@ export const ProductInfoAccordion = ({ howToUse, faqs, specs }: ProductInfoAccor
       </AccordionTrigger>
       <AccordionContent className="text-sm text-slate-600">
         <p>
-          {`Free shipping on orders over $${FREE_SHIPPING_THRESHOLD}. Delivery typically takes ${DELIVERY_ESTIMATES.primary} to the US, UK, Europe, Australia and New Zealand, ${DELIVERY_ESTIMATES.canada} to Canada, and ${DELIVERY_ESTIMATES.singapore} to Singapore; other regions take ${DELIVERY_ESTIMATES.other}. Eligible orders are covered by our ${RETURN_WINDOW_DAYS}-day return policy, counted from the day your order is delivered.`}
+          {`${getFreeShippingThresholdLabel()}; standard shipping below that threshold is ${formatStandardShippingRate()}. Delivery typically takes ${DELIVERY_ESTIMATES.primary} to the US, UK, Europe, Australia and New Zealand, ${DELIVERY_ESTIMATES.canada} to Canada, and ${DELIVERY_ESTIMATES.singapore} to Singapore; other regions take ${DELIVERY_ESTIMATES.other}. Eligible orders are covered by our ${RETURN_WINDOW_DAYS}-day return policy, counted from the day your order is delivered.`}
         </p>
       </AccordionContent>
     </AccordionItem>

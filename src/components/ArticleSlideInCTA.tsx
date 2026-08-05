@@ -6,6 +6,11 @@ import { pickProductForSlug, PRODUCT_RECS } from "@/lib/article-product-map";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getProductPath, getPublicProductHandle } from "@/lib/product-config";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
+import {
+  formatMarketMoney,
+  getSafeUsdFallbackPrice,
+  hasProductPriceRange,
+} from "@/lib/shipping-policy";
 
 // Urun gorselleri icin oturum ici tek istek (PremiumCTA ile ayni desen)
 let slideInProductsPromise: Promise<ShopifyProduct[]> | null = null;
@@ -514,17 +519,8 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
         const currencyCode = match.node.priceRange?.minVariantPrice?.currencyCode || "USD";
         const numericAmount = Number(amount);
         if (Number.isFinite(numericAmount)) {
-          try {
-            setLivePrice(
-              new Intl.NumberFormat("en", {
-                style: "currency",
-                currency: currencyCode,
-                minimumFractionDigits: 2,
-              }).format(numericAmount)
-            );
-          } catch {
-            setLivePrice(`${currencyCode} ${numericAmount.toFixed(2)}`);
-          }
+          const prefix = hasProductPriceRange(match.node.priceRange) ? "From " : "";
+          setLivePrice(`${prefix}${formatMarketMoney(numericAmount, currencyCode)}`);
         }
       }
     });
@@ -627,7 +623,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       ? "ice pack wrap"
       : productShortName.split(" ").slice(-2).join(" ").toLowerCase();
   const productImage = liveImage || rec.fallbackImage;
-  const productPrice = livePrice || rec.fallbackPrice;
+  const productPrice = livePrice || getSafeUsdFallbackPrice(rec.fallbackPrice);
   const activeQuizContent = crossArticleQuiz
     ? {
         hook: "Still comparing what fits your knee?",

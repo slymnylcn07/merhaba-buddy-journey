@@ -1,3 +1,5 @@
+import { EUROPE_SHIPPING_COUNTRIES } from "@/lib/shipping-policy";
+
 /**
  * Ulkeye gore tahmini teslimat suresi (is gunu) + saat dilimi.
  * Sureler degisirse SADECE burayi guncelleyin.
@@ -7,6 +9,8 @@ export interface DeliveryWindow {
   min: number;
   max: number;
 }
+
+export const HANDLING_WINDOW: DeliveryWindow = { min: 0, max: 1 };
 
 const D_5_6: DeliveryWindow = { min: 5, max: 6 };
 const D_6_7: DeliveryWindow = { min: 6, max: 7 };
@@ -20,32 +24,11 @@ const COUNTRY_WINDOWS: Record<string, DeliveryWindow> = {
   AU: D_6_7,
   NZ: D_6_7,
   SG: D_5_6,
-  // Avrupa ulkeleri (ayri ayri, hepsi 6-7 is gunu)
-  DE: D_6_7,
-  FR: D_6_7,
-  ES: D_6_7,
-  IT: D_6_7,
-  NL: D_6_7,
-  BE: D_6_7,
-  IE: D_6_7,
-  AT: D_6_7,
-  SE: D_6_7,
-  DK: D_6_7,
-  FI: D_6_7,
-  PT: D_6_7,
-  PL: D_6_7,
-  CZ: D_6_7,
-  GR: D_6_7,
-  HU: D_6_7,
-  RO: D_6_7,
-  LU: D_6_7,
-  SI: D_6_7,
-  SK: D_6_7,
-  HR: D_6_7,
-  EE: D_6_7,
-  LV: D_6_7,
-  LT: D_6_7,
 };
+
+EUROPE_SHIPPING_COUNTRIES.forEach((country) => {
+  COUNTRY_WINDOWS[country] = D_6_7;
+});
 
 /** Geri sayim icin ulke -> temsilci saat dilimi */
 const COUNTRY_TIMEZONES: Record<string, string> = {
@@ -71,8 +54,11 @@ const COUNTRY_TIMEZONES: Record<string, string> = {
   PL: "Europe/Warsaw",
   CZ: "Europe/Prague",
   GR: "Europe/Athens",
-  HU: "Europe/Budapest",
-  RO: "Europe/Bucharest",
+  CH: "Europe/Zurich",
+  HR: "Europe/Zagreb",
+  RS: "Europe/Belgrade",
+  SK: "Europe/Bratislava",
+  SI: "Europe/Ljubljana",
 };
 
 export function getDeliveryWindow(countryCode: string | null): DeliveryWindow {
