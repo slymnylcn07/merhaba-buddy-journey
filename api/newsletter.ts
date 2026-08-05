@@ -1083,6 +1083,12 @@ export default async function handler(req: ApiRequest, res: ApiResponse): Promis
 const WELCOME_DISCOUNT_CODE = 'GUIDE10';
 const SUPPORT_EMAIL = 'support@flexi-knee.com';
 const SITE_ORIGIN = 'https://flexi-knee.com';
+const FEATURED_FALLBACK_PRODUCT: QuizProduct = {
+  key: 'smart-knee-massager',
+  title: 'FlexiKnee Smart Heated Knee Massager',
+  path: '/product/knee-massager-smart-red-light-and-massage-therapy',
+  cta: 'Explore the FlexiKnee',
+};
 
 function escapeHtml(value: string): string {
   return value
@@ -1101,9 +1107,10 @@ function quizResultText(
   const planText = plan
     .map((item) => `Day ${item.day}: ${item.title}\n${item.action}`)
     .join('\n\n');
+  const displayedProduct = template.product || FEATURED_FALLBACK_PRODUCT;
   const productText = template.product
-    ? `\n\nYOUR MATCHED PRODUCT CATEGORY\n${template.product.title}\n${template.product.cta}: ${SITE_ORIGIN}${template.product.path}`
-    : '\n\nGUIDES FIRST\nYour answers suggest learning and pattern tracking before choosing a product.';
+    ? `\n\nYOUR MATCHED PRODUCT CATEGORY\n${displayedProduct.title}\n${displayedProduct.cta}: ${SITE_ORIGIN}${displayedProduct.path}`
+    : `\n\nFEATURED FLEXIKNEE PRODUCT\nYour guides and seven-day plan still come first. When you are ready to compare one FlexiKnee option, explore our main at-home product.\n${displayedProduct.title}\n${displayedProduct.cta}: ${SITE_ORIGIN}${displayedProduct.path}`;
   const guideText = template.guides
     .map((guide) => `${guide.title}: ${SITE_ORIGIN}/guides/${guide.slug}`)
     .join('\n');
@@ -1139,19 +1146,22 @@ function quizResultHtml(
     )
     .join('');
 
+  const displayedProduct = template.product || FEATURED_FALLBACK_PRODUCT;
   const productHtml = template.product
     ? `
       <div style="margin:26px 0 0;padding:22px;border:1px solid #bfdbfe;border-radius:18px;background:#eff6ff;">
         <p style="font-size:11px;font-weight:800;letter-spacing:1.4px;color:#2563eb;margin:0 0 8px;">YOUR MATCHED PRODUCT CATEGORY</p>
-        <h2 style="font-size:19px;line-height:25px;color:#0f172a;margin:0 0 10px;">${escapeHtml(template.product.title)}</h2>
+        <h2 style="font-size:19px;line-height:25px;color:#0f172a;margin:0 0 10px;">${escapeHtml(displayedProduct.title)}</h2>
         <p style="font-size:13px;line-height:20px;color:#475569;margin:0 0 16px;">Use the product as one part of the plan and follow its fit, skin-safety, and session instructions.</p>
-        <a href="${SITE_ORIGIN}${template.product.path}" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;font-size:13px;font-weight:800;padding:12px 20px;border-radius:999px;">${escapeHtml(template.product.cta)}</a>
+        <a href="${SITE_ORIGIN}${displayedProduct.path}" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;font-size:13px;font-weight:800;padding:12px 20px;border-radius:999px;">${escapeHtml(displayedProduct.cta)}</a>
       </div>
     `
     : `
-      <div style="margin:26px 0 0;padding:22px;border:1px solid #cbd5e1;border-radius:18px;background:#f8fafc;">
-        <p style="font-size:11px;font-weight:800;letter-spacing:1.4px;color:#475569;margin:0 0 8px;">GUIDES FIRST</p>
-        <p style="font-size:14px;line-height:21px;color:#334155;margin:0;">Your answers suggest learning and pattern tracking before choosing a product.</p>
+      <div style="margin:26px 0 0;padding:22px;border:1px solid #bfdbfe;border-radius:18px;background:#eff6ff;">
+        <p style="font-size:11px;font-weight:800;letter-spacing:1.4px;color:#2563eb;margin:0 0 8px;">FEATURED FLEXIKNEE PRODUCT</p>
+        <h2 style="font-size:19px;line-height:25px;color:#0f172a;margin:0 0 10px;">${escapeHtml(displayedProduct.title)}</h2>
+        <p style="font-size:13px;line-height:20px;color:#475569;margin:0 0 16px;">Your guides and seven-day plan still come first. When you are ready to compare one FlexiKnee option, this is our most complete at-home product.</p>
+        <a href="${SITE_ORIGIN}${displayedProduct.path}" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;font-size:13px;font-weight:800;padding:12px 20px;border-radius:999px;">${escapeHtml(displayedProduct.cta)}</a>
       </div>
     `;
 

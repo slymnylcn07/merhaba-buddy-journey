@@ -693,20 +693,23 @@ export default function KneeQuiz() {
         : null,
     [isDone, answers, sourceState.sourceArticle],
   );
+  const displayProductKey: Exclude<ProductKey, "generic"> | null = result
+    ? result.productKey === "generic"
+      ? "smart-knee-massager"
+      : result.productKey
+    : null;
   const recommendedProduct = useMemo(
     () =>
-      result
+      displayProductKey
         ? products.find((product) =>
-            productMatchesKey(product, result.productKey),
+            productMatchesKey(product, displayProductKey),
           ) || null
         : null,
-    [products, result],
+    [displayProductKey, products],
   );
 
-  const fallbackProductRec = result?.productKey
-    ? result.productKey === "generic"
-      ? null
-      : PRODUCT_RECS[PRODUCT_REC_KEY[result.productKey] || "main"]
+  const fallbackProductRec = displayProductKey
+    ? PRODUCT_RECS[PRODUCT_REC_KEY[displayProductKey] || "main"]
     : null;
   const productHref = recommendedProduct
     ? getProductPath(recommendedProduct.node.handle)
@@ -801,6 +804,10 @@ export default function KneeQuiz() {
   const productTitle =
     recommendedProduct?.node.title || fallbackProductRec?.title || null;
   const productImage = recommendedImage?.url || fallbackProductRec?.fallbackImage;
+  const productReason =
+    result?.productKey === "generic"
+      ? "Your guides and seven-day plan still come first. When you are ready to compare one FlexiKnee option, the Smart Heated Knee Massager is our most complete at-home routine with adjustable warmth, red light and massage-style vibration."
+      : result?.productReason;
 
   return (
     <>
@@ -968,18 +975,16 @@ export default function KneeQuiz() {
                             <div className="border-t border-slate-200 bg-white p-5 sm:p-6">
                               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">
                                 {result.productKey === "generic"
-                                  ? "Guide-first result"
+                                  ? "Featured FlexiKnee product"
                                   : "Matched FlexiKnee product"}
                               </p>
                               <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl">
-                                {result.productKey === "generic"
-                                  ? "No product match is being forced"
-                                  : productTitle || "Your matched FlexiKnee product"}
+                                {productTitle || "FlexiKnee Smart Heated Knee Massager"}
                               </h3>
                               <p className="mt-3 text-sm leading-7 text-slate-600">
-                                {result.productReason}
+                                {productReason}
                               </p>
-                              {recommendedPrice && result.productKey !== "generic" && (
+                              {recommendedPrice && (
                                 <p className="mt-3 text-lg font-semibold text-slate-950">
                                   {formatMoney(
                                     recommendedPrice.amount,
@@ -992,7 +997,7 @@ export default function KneeQuiz() {
                                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
                               >
                                 {result.productKey === "generic"
-                                  ? "Open my first guide"
+                                  ? "Explore our main product"
                                   : "View matched product"}
                                 <ArrowRight className="h-4 w-4" />
                               </Link>
