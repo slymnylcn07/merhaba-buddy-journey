@@ -420,7 +420,7 @@ export default function Index() {
                     </p>
                   </div>
 
-                  <form onSubmit={handleSubscribe} className="rounded-[1.7rem] border border-slate-200 bg-white p-3 shadow-xl shadow-slate-200/60">
+                  <form data-clarity-mask="true" onSubmit={handleSubscribe} className="rounded-[1.7rem] border border-slate-200 bg-white p-3 shadow-xl shadow-slate-200/60">
                     <div className="flex flex-col gap-3 sm:flex-row">
                       <input
                         value={newsletterEmail}

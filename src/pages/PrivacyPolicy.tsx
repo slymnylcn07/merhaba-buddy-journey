@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
         
         <div className="prose prose-slate max-w-none">
           <p className="text-muted-foreground mb-6">
-            Last updated: July 19, 2026
+            Last updated: August 5, 2026
           </p>
 
           <p className="text-muted-foreground mb-6">
@@ -114,10 +114,13 @@ export default function PrivacyPolicy() {
               We use limited browser storage that is necessary for core website functions, such as remembering your privacy choice and supporting cart or checkout features. These essential technologies may remain active because the Services cannot operate reliably without them.
             </p>
             <p className="text-muted-foreground mb-4">
-              Optional analytics, advertising, performance measurement, and customer-chat technologies are not loaded until you select <strong>Accept optional cookies</strong> in our cookie banner. Depending on the features available on the page, these optional services may include Google Analytics, Meta Pixel, Shopify analytics or Shopify Inbox, Vercel Analytics, and Vercel Speed Insights. If you select <strong>Reject non-essential</strong>, we do not intentionally load those optional technologies.
+              We use analytics, advertising, and performance-measurement technologies to understand visits, improve page experience, and measure the path from guides to products. Depending on the features available on a page, these services may include Google Analytics, Meta Pixel, Shopify analytics or Shopify Inbox, Vercel Analytics, Vercel Speed Insights, and Microsoft Clarity.
             </p>
             <p className="text-muted-foreground mb-4">
-              You can change your selection at any time by choosing <strong>Cookie Settings</strong> in the website footer. Rejecting or withdrawing consent will stop future optional tracking on this website and will attempt to remove known analytics and advertising cookies stored by the services listed above. Your browser, device, or the service provider may retain limited technical records that we cannot directly delete.
+              Microsoft Clarity helps us understand aggregated clicks, scrolling, page use, and session replays so we can identify usability problems. A replay is a reconstruction of website interactions, not a recording from your camera or microphone. We explicitly mask knee-quiz areas, email fields, contact and return forms, order-tracking inputs, and administrative areas. Microsoft may retain replay and aggregated interaction data according to its own retention terms.
+            </p>
+            <p className="text-muted-foreground mb-4">
+              Where consent controls or legal consent signals apply, we use them to communicate the permitted analytics-storage status to participating services. You can also restrict or delete cookies through your browser settings. Your browser, device, or a service provider may retain limited technical records that we cannot directly delete.
             </p>
             <p className="text-muted-foreground">
               Some commerce functions are provided by Shopify. When you choose to open cart, checkout, payment, order, or account features, Shopify may use technologies necessary to provide and secure those services under its own privacy terms.

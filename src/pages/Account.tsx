@@ -164,7 +164,7 @@ const Account = () => {
       
       <Header />
 
-      <main className="flex-1 container mx-auto px-4 py-12">
+      <main data-clarity-mask="true" className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           {/* Welcome Section */}
           <div className="text-center mb-10">
@@ -287,7 +287,7 @@ const Account = () => {
                     </Button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form data-clarity-mask="true" onSubmit={handleSubmit} className="space-y-6">
                     {/* Honeypot field */}
                     <input
                       type="text"

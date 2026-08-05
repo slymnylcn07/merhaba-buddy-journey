@@ -1,13 +1,9 @@
-import { useState, useEffect, useCallback } from "react";
-import { X, ArrowRight, Sparkles } from "lucide-react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { X, ArrowRight, CheckCircle2, Clock3, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { trackEvent } from "@/hooks/use-google-analytics";
 import { pickProductForSlug, PRODUCT_RECS } from "@/lib/article-product-map";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
-import { toast } from "sonner";
-import { Mail } from "lucide-react";
-import { DiscountCodeModal } from "@/components/DiscountCodeModal";
-import { NEWSLETTER_DISCOUNT_CODE } from "@/lib/newsletter-config";
 import { getProductPath, getPublicProductHandle } from "@/lib/product-config";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
 
@@ -27,7 +23,106 @@ interface ArticleSlideInCTAProps {
 
 const STORAGE_KEY = "flexiknee_article_cta_session";
 const STAGE2_KEY = "flexiknee_article_cta_stage2_session";
-const SUBSCRIBED_KEY = "flexiknee_newsletter_subscribed";
+const CTA_VERSION = "article-slide-in-v2";
+const MOBILE_PRODUCT_SCROLL = 55;
+const DESKTOP_PRODUCT_SCROLL = 50;
+const QUIZ_SCROLL = 82;
+const QUIZ_DELAY_AFTER_DISMISS_MS = 25_000;
+const QUIZ_EXTRA_SCROLL = 20;
+
+interface ProductPopupSession {
+  slug: string;
+  outcome: "dismissed" | "product" | "quiz";
+  dismissedAt?: number;
+  dismissedScroll?: number;
+}
+
+function getScrollPercent() {
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  if (scrollHeight <= 0) return 0;
+  return Math.min(100, Math.max(0, (window.scrollY / scrollHeight) * 100));
+}
+
+function getDeviceType() {
+  return window.matchMedia("(max-width: 767px)").matches ? "mobile" : "desktop";
+}
+
+function readProductPopupSession(): ProductPopupSession | null {
+  const rawValue = window.sessionStorage.getItem(STORAGE_KEY);
+  if (!rawValue || rawValue === "true") return null;
+  try {
+    return JSON.parse(rawValue) as ProductPopupSession;
+  } catch {
+    return null;
+  }
+}
+
+function getQuizPopupContent(slug: string): { hook: string; support: string } {
+  const value = slug.toLowerCase();
+
+  if (
+    value.includes("running") ||
+    value.includes("exercise") ||
+    value.includes("workout") ||
+    value.includes("squat") ||
+    value.includes("pilates")
+  ) {
+    return {
+      hook: "Turn what you noticed during activity into a practical next step.",
+      support: "Answer four quick questions to match your pattern with useful guides, a product category and a seven-day starter plan.",
+    };
+  }
+
+  if (value.includes("stairs") || value.includes("walk") || value.includes("standing")) {
+    return {
+      hook: "Which everyday movements affect your knee most?",
+      support: "The free quiz turns your walking, stair and daily-movement pattern into a clearer place to begin.",
+    };
+  }
+
+  if (
+    value.includes("night") ||
+    value.includes("sleep") ||
+    value.includes("morning") ||
+    value.includes("sitting") ||
+    value.includes("stiff")
+  ) {
+    return {
+      hook: "Build a routine around when your knee bothers you.",
+      support: "Four quick questions can match your timing and stiffness pattern with a practical seven-day starting routine.",
+    };
+  }
+
+  if (
+    value.includes("heat") ||
+    value.includes("ice") ||
+    value.includes("therapy") ||
+    value.includes("massager") ||
+    value.includes("brace")
+  ) {
+    return {
+      hook: "Which comfort approach fits your current pattern?",
+      support: "Compare a matched product category and useful guides before deciding what belongs in your routine.",
+    };
+  }
+
+  if (
+    value.includes("click") ||
+    value.includes("sharp") ||
+    value.includes("swelling") ||
+    value.includes("burning")
+  ) {
+    return {
+      hook: "Your knee pattern is more than one symptom.",
+      support: "Use four quick questions to organize what you noticed and get a more relevant set of guides and next steps.",
+    };
+  }
+
+  return {
+    hook: "Turn this guide into a routine that fits you.",
+    support: "Get a matched product category, three useful guides and a practical seven-day starter plan in four questions.",
+  };
+}
 
 function getContextualContent(slug: string): { hook: string; support: string } {
   const s = slug.toLowerCase();
@@ -196,51 +291,170 @@ function getContextualContent(slug: string): { hook: string; support: string } {
 
 export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   const [isVisible, setIsVisible] = useState(false);
-  // stage 1: urun karti (%40) - stage 2: bulten + %10 kod (%68, yalnizca 1. asama kapatildiysa)
   const [stage, setStage] = useState<1 | 2>(1);
   const [stage1Done, setStage1Done] = useState(false);
   const [stage2Done, setStage2Done] = useState(false);
-  const [email, setEmail] = useState("");
-  const [isSending, setIsSending] = useState(false);
-  const [subscribed, setSubscribed] = useState(false);
-  const [showCodeModal, setShowCodeModal] = useState(false);
+  const [stage1DismissedAt, setStage1DismissedAt] = useState<number | null>(null);
+  const [stage1DismissedScroll, setStage1DismissedScroll] = useState<number | null>(null);
+  const [quizDelayReady, setQuizDelayReady] = useState(false);
+  const [storageReady, setStorageReady] = useState(false);
+  const stage1ImpressionSent = useRef(false);
+  const stage2ImpressionSent = useRef(false);
+  const pageStartedAt = useRef(Date.now());
 
   const { hook, support } = getContextualContent(slug);
+  const quizContent = getQuizPopupContent(slug);
+  const rec = pickProductForSlug(slug);
   const [liveImage, setLiveImage] = useState<string | null>(null);
   const [livePrice, setLivePrice] = useState<string | null>(null);
 
   useEffect(() => {
-    if (sessionStorage.getItem(STORAGE_KEY)) setStage1Done(true);
-    if (
-      sessionStorage.getItem(STAGE2_KEY) ||
-      localStorage.getItem(SUBSCRIBED_KEY)
-    )
+    setStorageReady(false);
+    pageStartedAt.current = Date.now();
+    stage1ImpressionSent.current = false;
+    stage2ImpressionSent.current = false;
+    setIsVisible(false);
+    setStage(1);
+    setQuizDelayReady(false);
+
+    const rawSession = window.sessionStorage.getItem(STORAGE_KEY);
+    const savedSession = readProductPopupSession();
+    const quizPopupSeen = window.sessionStorage.getItem(STAGE2_KEY) === "true";
+
+    if (rawSession === "true") {
+      setStage1Done(true);
       setStage2Done(true);
-  }, []);
-
-  const handleScroll = useCallback(() => {
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = (window.scrollY / scrollHeight) * 100;
-
-    if (!stage1Done && scrollPercent >= 40) {
-      setStage(1);
-      setIsVisible(true);
+      setStage1DismissedAt(null);
+      setStage1DismissedScroll(null);
+      setStorageReady(true);
       return;
     }
-    // 1. asama kapatildiysa, %68'de bulten asamasi (oturumda bir kez)
-    if (stage1Done && !stage2Done && !isVisible && scrollPercent >= 68) {
-      setStage(2);
-      setIsVisible(true);
+
+    if (!savedSession) {
+      setStage1Done(false);
+      setStage2Done(quizPopupSeen);
+      setStage1DismissedAt(null);
+      setStage1DismissedScroll(null);
+      setStorageReady(true);
+      return;
     }
-  }, [stage1Done, stage2Done, isVisible]);
+
+    if (savedSession.slug !== slug || savedSession.outcome !== "dismissed") {
+      setStage1Done(true);
+      setStage2Done(true);
+      setStage1DismissedAt(null);
+      setStage1DismissedScroll(null);
+      setStorageReady(true);
+      return;
+    }
+
+    setStage1Done(true);
+    setStage2Done(quizPopupSeen);
+    setStage1DismissedAt(savedSession.dismissedAt || Date.now());
+    setStage1DismissedScroll(savedSession.dismissedScroll ?? 0);
+    setStorageReady(true);
+  }, [slug]);
 
   useEffect(() => {
+    if (!stage1DismissedAt || stage2Done) return;
+    const remaining = Math.max(
+      0,
+      QUIZ_DELAY_AFTER_DISMISS_MS - (Date.now() - stage1DismissedAt),
+    );
+    const timer = window.setTimeout(() => setQuizDelayReady(true), remaining);
+    return () => window.clearTimeout(timer);
+  }, [stage1DismissedAt, stage2Done]);
+
+  const getEventContext = useCallback(
+    (scrollPercent: number) => ({
+      slug,
+      device_type: getDeviceType(),
+      scroll_percent: Math.round(scrollPercent),
+      seconds_on_page: Math.max(
+        0,
+        Math.round((Date.now() - pageStartedAt.current) / 1000),
+      ),
+      product_handle: rec.handle,
+      cta_version: CTA_VERSION,
+    }),
+    [rec.handle, slug],
+  );
+
+  const handleScroll = useCallback(() => {
+    if (!storageReady) return;
+    const scrollPercent = getScrollPercent();
+    const productThreshold =
+      getDeviceType() === "mobile" ? MOBILE_PRODUCT_SCROLL : DESKTOP_PRODUCT_SCROLL;
+
+    if (
+      !stage1Done &&
+      !stage1ImpressionSent.current &&
+      scrollPercent >= productThreshold
+    ) {
+      stage1ImpressionSent.current = true;
+      setStage(1);
+      setIsVisible(true);
+      const eventContext = getEventContext(scrollPercent);
+      trackEvent("article_cta_impression", {
+        ...eventContext,
+        stage: "product",
+      });
+      trackEvent("view_promotion", {
+        promotion_id: `article-product-${slug}`,
+        promotion_name: "Article product slide-in",
+        creative_slot: "article_slide_in",
+        items: [{ item_id: rec.handle, item_name: rec.title }],
+      });
+      return;
+    }
+
+    const enoughScrollAfterDismiss =
+      stage1DismissedScroll !== null &&
+      scrollPercent >= stage1DismissedScroll + QUIZ_EXTRA_SCROLL;
+
+    if (
+      stage1Done &&
+      stage1DismissedAt !== null &&
+      !stage2Done &&
+      !stage2ImpressionSent.current &&
+      !isVisible &&
+      quizDelayReady &&
+      scrollPercent >= QUIZ_SCROLL &&
+      enoughScrollAfterDismiss
+    ) {
+      stage2ImpressionSent.current = true;
+      setStage(2);
+      setIsVisible(true);
+      trackEvent("article_quiz_popup_impression", {
+        ...getEventContext(scrollPercent),
+        stage: "quiz",
+      });
+    }
+  }, [
+    getEventContext,
+    isVisible,
+    quizDelayReady,
+    rec.handle,
+    rec.title,
+    slug,
+    stage1DismissedAt,
+    stage1DismissedScroll,
+    stage1Done,
+    stage2Done,
+    storageReady,
+  ]);
+
+  useEffect(() => {
+    if (!storageReady) return;
     if (stage1Done && stage2Done) return;
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll, stage1Done, stage2Done]);
-
-  const rec = pickProductForSlug(slug);
+    window.addEventListener("resize", handleScroll, { passive: true });
+    handleScroll();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [handleScroll, stage1Done, stage2Done, storageReady]);
 
   useEffect(() => {
     let active = true;
@@ -279,56 +493,75 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   }, [rec.handle]);
 
   const handleDismiss = () => {
+    const scrollPercent = getScrollPercent();
     setIsVisible(false);
     if (stage === 1) {
+      const dismissedAt = Date.now();
       setStage1Done(true);
-      sessionStorage.setItem(STORAGE_KEY, "true");
-      trackEvent("article_cta_dismissed", { slug });
+      setStage1DismissedAt(dismissedAt);
+      setStage1DismissedScroll(scrollPercent);
+      window.sessionStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify({
+          slug,
+          outcome: "dismissed",
+          dismissedAt,
+          dismissedScroll: scrollPercent,
+        } satisfies ProductPopupSession),
+      );
+      trackEvent("article_cta_dismissed", {
+        ...getEventContext(scrollPercent),
+        stage: "product",
+      });
     } else {
       setStage2Done(true);
-      sessionStorage.setItem(STAGE2_KEY, "true");
-      trackEvent("article_cta_stage2_dismissed", { slug });
+      window.sessionStorage.setItem(STAGE2_KEY, "true");
+      trackEvent("article_quiz_popup_dismissed", {
+        ...getEventContext(scrollPercent),
+        stage: "quiz",
+      });
     }
   };
 
   const handleCTAClick = () => {
-    trackEvent("article_cta_clicked", { slug });
+    const scrollPercent = getScrollPercent();
+    trackEvent("article_cta_clicked", {
+      ...getEventContext(scrollPercent),
+      stage: "product",
+    });
+    trackEvent("select_promotion", {
+      promotion_id: `article-product-${slug}`,
+      promotion_name: "Article product slide-in",
+      creative_slot: "article_slide_in",
+      items: [{ item_id: rec.handle, item_name: rec.title }],
+    });
     setStage1Done(true);
     setStage2Done(true);
-    sessionStorage.setItem(STORAGE_KEY, "true");
-    sessionStorage.setItem(STAGE2_KEY, "true");
+    window.sessionStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({ slug, outcome: "product" } satisfies ProductPopupSession),
+    );
+    window.sessionStorage.setItem(STAGE2_KEY, "true");
   };
 
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if (!emailOk) {
-      toast.error("Please enter a valid email address");
-      return;
-    }
-    setIsSending(true);
-    try {
-      const resp = await fetch("/api/newsletter", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          consent: true,
-          source: "article-slide-in",
-        }),
-      });
-      const payload = await resp.json().catch(() => ({}));
-      if (!resp.ok) throw new Error(payload?.error || "Could not sign you up right now.");
-      setSubscribed(true);
-      setIsVisible(false);
-      setShowCodeModal(true);
-      localStorage.setItem(SUBSCRIBED_KEY, "true");
-      trackEvent("article_cta_newsletter_signup", { slug });
-    } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Could not sign you up right now. Please try again.");
-    } finally {
-      setIsSending(false);
-    }
+  const handleQuizClick = (placement: "product_popup" | "quiz_popup") => {
+    const scrollPercent = getScrollPercent();
+    trackEvent(
+      placement === "product_popup"
+        ? "article_cta_quiz_clicked"
+        : "article_quiz_popup_clicked",
+      {
+        ...getEventContext(scrollPercent),
+        stage: placement === "product_popup" ? "product" : "quiz",
+      },
+    );
+    setStage1Done(true);
+    setStage2Done(true);
+    window.sessionStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({ slug, outcome: "quiz" } satisfies ProductPopupSession),
+    );
+    window.sessionStorage.setItem(STAGE2_KEY, "true");
   };
 
   if (stage1Done && stage2Done && !isVisible) return null;
@@ -343,21 +576,21 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   const productPrice = livePrice || rec.fallbackPrice;
 
   return (
-    <>
-      <DiscountCodeModal open={showCodeModal} onOpenChange={setShowCodeModal} />
-      <div
-        className={`fixed z-40 transition-all duration-500 ease-out
-          bottom-0 left-0 right-0
-          md:bottom-6 md:left-auto md:right-6 md:w-[400px]
-          ${isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"}
-        `}
-      >
+    <div
+      role="dialog"
+      aria-label={stage === 1 ? "FlexiKnee product suggestion" : "Knee quiz suggestion"}
+      className={`fixed z-40 transition-all duration-500 ease-out
+        bottom-0 left-0 right-0
+        md:bottom-6 md:left-auto md:right-6 md:w-[420px]
+        ${isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"}
+      `}
+    >
         <div className="relative overflow-hidden border border-slate-200 bg-white px-5 pb-5 pt-4 shadow-[0_-10px_40px_rgba(15,23,42,0.16)] md:rounded-3xl md:shadow-[0_24px_70px_-20px_rgba(15,23,42,0.35)]">
           <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-emerald-400" />
 
           <button
             onClick={handleDismiss}
-            className="absolute right-3 top-3 rounded-full p-1.5 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
+            className="absolute right-2.5 top-2.5 inline-flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
             aria-label="Close"
           >
             <X className="h-4 w-4" />
@@ -365,42 +598,37 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
 
           {stage === 2 ? (
             <div className="pr-7">
-              {subscribed ? null : (
-                <div>
-                  <div className="flex items-start gap-3">
-                    <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-blue-50">
-                      <Mail className="h-5 w-5 text-blue-600" />
-                    </span>
-                    <div className="min-w-0">
-                      <p className="text-sm font-bold leading-snug text-slate-950">
-                        Enjoying this guide? Get the next one first.
-                      </p>
-                      <p className="mt-1 text-xs leading-relaxed text-slate-500">
-                        Join the FlexiKnee list: new guides in your inbox, plus an extra 10% off any device.
-                      </p>
-                    </div>
-                  </div>
-                  <form onSubmit={handleNewsletterSubmit} className="mt-3 flex gap-2">
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="you@example.com"
-                      className="min-w-0 flex-1 rounded-full border border-slate-300 px-4 py-2.5 text-xs outline-none transition focus:border-blue-500"
-                    />
-                    <button
-                      type="submit"
-                      disabled={isSending}
-                      className="whitespace-nowrap rounded-full bg-blue-600 px-4 py-2.5 text-xs font-bold text-white transition hover:bg-blue-700 disabled:opacity-60"
-                    >
-                      {isSending ? "..." : "Get 10% off"}
-                    </button>
-                  </form>
-                  <p className="mt-2 text-[10px] leading-4 text-slate-400">
-                    Use code <strong>{NEWSLETTER_DISCOUNT_CODE}</strong> after signup. Unsubscribe any time.
-                  </p>
-                </div>
-              )}
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-blue-700">
+                <Sparkles className="h-3.5 w-3.5" /> Free 60-second quiz
+              </div>
+              <p className="mt-3 text-base font-bold leading-snug text-slate-950">
+                {quizContent.hook}
+              </p>
+              <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
+                {quizContent.support}
+              </p>
+
+              <div className="mt-3 flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-semibold text-slate-600">
+                  <Clock3 className="h-3.5 w-3.5 text-blue-600" /> 4 questions
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-semibold text-slate-600">
+                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" /> Instant result
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-semibold text-slate-600">
+                  Email optional
+                </span>
+              </div>
+
+              <Link
+                to="/knee-quiz"
+                state={{ sourceArticle: slug, sourceTitle: title }}
+                onClick={() => handleQuizClick("quiz_popup")}
+                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-blue-700"
+              >
+                Build my 7-day plan
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           ) : (
             <>
@@ -436,27 +664,27 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
                 <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-semibold text-blue-700">30-day returns</span>
               </div>
 
-              <div className="mt-3.5 flex items-center gap-3">
+              <div className="mt-3.5 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
                 <Link
                   to={getProductPath(rec.handle)}
                   onClick={handleCTAClick}
-                  className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-slate-950 px-5 py-3 text-xs font-bold text-white transition hover:bg-slate-800"
+                  className="inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-full bg-slate-950 px-4 py-3 text-xs font-bold text-white transition hover:bg-slate-800"
                 >
                   See the {isMain ? "FlexiKnee" : productCtaName}
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
                 <Link
                   to="/knee-quiz"
-                  onClick={() => trackEvent("article_cta_quiz_clicked", { slug })}
-                  className="whitespace-nowrap text-xs font-semibold text-blue-600 hover:underline"
+                  state={{ sourceArticle: slug, sourceTitle: title }}
+                  onClick={() => handleQuizClick("product_popup")}
+                  className="inline-flex min-h-11 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-blue-200 bg-blue-50 px-3.5 py-3 text-xs font-bold text-blue-700 transition hover:border-blue-300 hover:bg-blue-100"
                 >
-                  60-sec quiz
+                  <Sparkles className="h-3.5 w-3.5" /> Knee quiz
                 </Link>
               </div>
             </>
           )}
         </div>
-      </div>
-    </>
+    </div>
   );
 };

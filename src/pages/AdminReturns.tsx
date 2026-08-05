@@ -181,7 +181,7 @@ const AdminReturns = () => {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8">
+      <main data-clarity-mask="true" className="container mx-auto px-4 py-8">
         {/* Stats */}
         <div className="grid gap-4 md:grid-cols-4 mb-8">
           <Card>

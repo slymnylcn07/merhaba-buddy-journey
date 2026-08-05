@@ -515,7 +515,7 @@ export default function KneeQuiz() {
       <div className="min-h-screen bg-[radial-gradient(circle_at_85%_5%,rgba(56,189,248,0.16),transparent_25%),linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] text-slate-950">
         <Header />
 
-        <main>
+        <main data-clarity-mask="true">
           <section className="py-12 md:py-18">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
               {sourceState.sourceTitle && !isDone && (

@@ -62,7 +62,7 @@ const TrackOrder = () => {
                 Enter the tracking number from your shipping confirmation email. You can also look up your order with your order number and email on the tracking page.
               </p>
 
-              <form onSubmit={handleSubmit} className="mt-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+              <form data-clarity-mask="true" onSubmit={handleSubmit} className="mt-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
                 <label htmlFor="tracking-input" className="mb-2 block text-sm font-medium text-slate-800">
                   Tracking number
                 </label>

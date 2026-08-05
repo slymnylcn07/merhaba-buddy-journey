@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { hasAnalyticsConsent, useAnalyticsConsent } from "@/lib/cookie-consent";
+import {
+  getReadyPage,
+  isGuideArticlePath,
+  PAGE_READY_EVENT,
+  type PageReadyDetail,
+} from "@/lib/page-ready";
 
 declare global {
   interface Window {
@@ -42,16 +48,32 @@ export const useGoogleAnalytics = () => {
       ad_personalization: "granted",
     });
 
-    // Helmet/page components may update the document title during the same render.
-    // Queue the SPA page_view after that update, while gtag.js can still buffer it.
-    const timer = window.setTimeout(() => {
+    const sendPageView = (pageTitle: string) => {
       window.gtag("event", "page_view", {
         send_to: GA_MEASUREMENT_ID,
         page_path: location.pathname + location.search,
         page_location: window.location.href,
-        page_title: document.title,
+        page_title: pageTitle,
       });
-    }, 0);
+    };
+
+    if (isGuideArticlePath(location.pathname)) {
+      const readyPage = getReadyPage(location.pathname);
+      if (readyPage) {
+        sendPageView(readyPage.title);
+        return;
+      }
+
+      const handlePageReady = (event: Event) => {
+        const detail = (event as CustomEvent<PageReadyDetail>).detail;
+        if (detail.path === location.pathname) sendPageView(detail.title);
+      };
+      window.addEventListener(PAGE_READY_EVENT, handlePageReady);
+      return () => window.removeEventListener(PAGE_READY_EVENT, handlePageReady);
+    }
+
+    // Allow Helmet on regular lazy routes to settle before reading the title.
+    const timer = window.setTimeout(() => sendPageView(document.title), 50);
 
     return () => window.clearTimeout(timer);
   }, [analyticsAllowed, location.pathname, location.search]);
