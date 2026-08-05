@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { X, ArrowRight, CheckCircle2, Clock3, ListChecks, Sparkles } from "lucide-react";
+import { X, ArrowRight, CheckCircle2, Clock3, ListChecks, Sparkles, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 import { trackEvent } from "@/hooks/use-google-analytics";
 import { pickProductForSlug, PRODUCT_RECS } from "@/lib/article-product-map";
@@ -749,7 +749,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
                   className="group inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-blue-300 bg-gradient-to-r from-blue-50 via-white to-cyan-50 px-3 py-2 text-blue-900 shadow-[0_10px_24px_-18px_rgba(37,99,235,0.9)] transition hover:-translate-y-0.5 hover:border-blue-500 hover:shadow-[0_14px_28px_-16px_rgba(37,99,235,0.75)]"
                 >
                   <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 text-base font-black leading-none text-white shadow-sm transition group-hover:from-blue-700 group-hover:to-cyan-600">
-                    ?
+                    <Target className="h-[18px] w-[18px]" strokeWidth={2.5} aria-hidden="true" />
                   </span>
                   <span className="text-left leading-tight">
                     <span className="block text-xs font-extrabold text-slate-950">
