@@ -646,7 +646,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
         ${isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"}
       `}
     >
-        <div className="relative overflow-hidden border border-slate-200 bg-white px-5 pb-5 pt-4 shadow-[0_-10px_40px_rgba(15,23,42,0.16)] md:rounded-3xl md:shadow-[0_24px_70px_-20px_rgba(15,23,42,0.35)]">
+        <div className="relative overflow-hidden border border-slate-200 bg-white px-4 pb-3 pt-3 shadow-[0_-10px_40px_rgba(15,23,42,0.16)] md:rounded-3xl md:px-5 md:pb-5 md:pt-4 md:shadow-[0_24px_70px_-20px_rgba(15,23,42,0.35)]">
           <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-emerald-400" />
 
           <button
@@ -658,30 +658,32 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
           </button>
 
           {stage === 2 ? (
-            <div className="pr-7">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-blue-700">
-                <ListChecks className="h-3.5 w-3.5" /> Free 60-second knee quiz
+            <div className="md:pr-7">
+              <div className="pr-7 md:pr-0">
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.14em] text-blue-700 md:px-2.5 md:py-1 md:text-[10px]">
+                  <ListChecks className="h-3.5 w-3.5" /> Free 60-second knee quiz
+                </div>
+                <p className="mt-2 text-[15px] font-bold leading-5 text-slate-950 md:mt-3 md:text-base md:leading-snug">
+                  {activeQuizContent.hook}
+                </p>
+                <p className="mt-1 line-clamp-2 text-[11px] leading-[1.45] text-slate-500 [@media(max-width:767px)_and_(max-height:740px)]:line-clamp-1 md:mt-1.5 md:line-clamp-none md:text-xs md:leading-relaxed">
+                  {activeQuizContent.support}
+                </p>
               </div>
-              <p className="mt-3 text-base font-bold leading-snug text-slate-950">
-                {activeQuizContent.hook}
-              </p>
-              <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
-                {activeQuizContent.support}
-              </p>
 
-              <div className="mt-3 rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 to-emerald-50/70 p-3">
-                <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">
+              <div className="mt-2 rounded-xl border border-blue-100 bg-gradient-to-br from-blue-50 to-emerald-50/70 p-2.5 md:mt-3 md:rounded-2xl md:p-3">
+                <p className="text-[9px] font-bold uppercase tracking-[0.14em] text-slate-500 md:text-[10px]">
                   Your free result includes
                 </p>
-                <div className="mt-2 grid grid-cols-3 gap-1.5 text-[10px] font-semibold leading-tight text-slate-700">
-                  <span className="flex items-center gap-1">
-                    <Clock3 className="h-3.5 w-3.5 shrink-0 text-blue-600" /> 4 quick answers
+                <div className="mt-1.5 grid grid-cols-[minmax(0,0.95fr)_minmax(0,1.2fr)_minmax(0,0.8fr)] gap-1 text-[9px] font-semibold leading-tight text-slate-700 min-[390px]:text-[10px] md:mt-2 md:grid-cols-3 md:gap-1.5 md:text-[10px]">
+                  <span className="flex items-center gap-1 whitespace-nowrap">
+                    <Clock3 className="h-3 w-3 shrink-0 text-blue-600 md:h-3.5 md:w-3.5" /> 4 quick answers
                   </span>
-                  <span className="flex items-center gap-1">
-                    <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-600" /> 3 matched guides
+                  <span className="flex items-center gap-1 whitespace-nowrap">
+                    <CheckCircle2 className="h-3 w-3 shrink-0 text-emerald-600 md:h-3.5 md:w-3.5" /> 3 matched guides
                   </span>
-                  <span className="flex items-center gap-1">
-                    <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-600" /> 7-day plan
+                  <span className="flex items-center gap-1 whitespace-nowrap">
+                    <CheckCircle2 className="h-3 w-3 shrink-0 text-emerald-600 md:h-3.5 md:w-3.5" /> 7-day plan
                   </span>
                 </div>
               </div>
@@ -690,18 +692,18 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
                 to="/knee-quiz"
                 state={{ sourceArticle: slug, sourceTitle: title }}
                 onClick={() => handleQuizClick("quiz_popup")}
-                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-blue-700"
+                className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-blue-700 md:mt-4 md:px-5 md:py-3"
               >
                 Get my free 7-day plan
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <p className="mt-2 text-center text-[10px] font-medium text-slate-500">
+              <p className="mt-1.5 text-center text-[9px] font-medium text-slate-500 md:mt-2 md:text-[10px]">
                 See your result instantly. Email is optional.
               </p>
             </div>
           ) : (
             <>
-              <div className="flex items-start gap-3 pr-7">
+              <div className="flex items-start gap-2.5 pr-7 md:gap-3">
                 {productImage ? (
                   <img
                     src={productImage}
@@ -711,20 +713,20 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
                       const fallbackUrl = new URL(rec.fallbackImage, window.location.origin).href;
                       if (image.src !== fallbackUrl) image.src = rec.fallbackImage;
                     }}
-                    className="h-14 w-14 flex-shrink-0 rounded-2xl border border-slate-100 bg-slate-50 object-cover"
+                    className="h-12 w-12 flex-shrink-0 rounded-xl border border-slate-100 bg-slate-50 object-cover md:h-14 md:w-14 md:rounded-2xl"
                   />
                 ) : (
-                  <span className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-blue-50">
+                  <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-blue-50 md:h-14 md:w-14 md:rounded-2xl">
                     <Sparkles className="h-6 w-6 text-blue-600" />
                   </span>
                 )}
                 <div className="min-w-0">
-                  <p className="text-sm font-bold leading-snug text-slate-950">{hook}</p>
-                  <p className="mt-1 text-xs leading-relaxed text-slate-500">{support}</p>
+                  <p className="text-[13px] font-bold leading-[1.3] text-slate-950 md:text-sm md:leading-snug">{hook}</p>
+                  <p className="mt-1 line-clamp-2 text-[11px] leading-[1.45] text-slate-500 [@media(max-width:767px)_and_(max-height:740px)]:line-clamp-1 md:line-clamp-none md:text-xs md:leading-relaxed">{support}</p>
                 </div>
               </div>
 
-              <div className="mt-3 flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-2xl bg-slate-50 px-3.5 py-2.5">
+              <div className="mt-2.5 flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-xl bg-slate-50 px-3 py-2 md:mt-3 md:rounded-2xl md:px-3.5 md:py-2.5">
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-xs font-semibold text-slate-800">{productShortName}</p>
                   <ProductMarketplaceRating handle={rec.handle} showCount className="mt-1" />
@@ -733,7 +735,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
                 <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-semibold text-blue-700">30-day returns</span>
               </div>
 
-              <div className="mt-3.5 grid grid-cols-1 items-center gap-2 min-[380px]:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
+              <div className="mt-2.5 grid grid-cols-1 items-center gap-2 min-[380px]:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:mt-3.5">
                 <Link
                   to={getProductPath(rec.handle)}
                   onClick={handleCTAClick}
@@ -746,9 +748,9 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
                   to="/knee-quiz"
                   state={{ sourceArticle: slug, sourceTitle: title }}
                   onClick={() => handleQuizClick("product_popup")}
-                  className="group inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-blue-300 bg-gradient-to-r from-blue-50 via-white to-cyan-50 px-3 py-2 text-blue-900 shadow-[0_10px_24px_-18px_rgba(37,99,235,0.9)] transition hover:-translate-y-0.5 hover:border-blue-500 hover:shadow-[0_14px_28px_-16px_rgba(37,99,235,0.75)]"
+                  className="group inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-blue-300 bg-gradient-to-r from-blue-50 via-white to-cyan-50 px-3 py-1.5 text-blue-900 shadow-[0_10px_24px_-18px_rgba(37,99,235,0.9)] transition hover:-translate-y-0.5 hover:border-blue-500 hover:shadow-[0_14px_28px_-16px_rgba(37,99,235,0.75)] md:py-2"
                 >
-                  <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 text-base font-black leading-none text-white shadow-sm transition group-hover:from-blue-700 group-hover:to-cyan-600">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 text-base font-black leading-none text-white shadow-sm transition group-hover:from-blue-700 group-hover:to-cyan-600 md:h-8 md:w-8">
                     <Target className="h-[18px] w-[18px]" strokeWidth={2.5} aria-hidden="true" />
                   </span>
                   <span className="text-left leading-tight">
