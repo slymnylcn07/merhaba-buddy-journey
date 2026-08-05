@@ -31,7 +31,7 @@ export function ProductMarketplaceRating({
 
   const content = (
     <>
-      <Star className={`${iconSize} fill-amber-400 text-amber-400`} aria-hidden="true" />
+      <Star className={`${iconSize} shrink-0 fill-amber-400 text-amber-400`} aria-hidden="true" />
       <span className={`${textSize} ${textColor}`}>
         {feedback.rating.toFixed(1)}/5
         {showCount ? ` · ${feedback.reviewCount.toLocaleString("en-US")} reviews` : ""}
@@ -47,7 +47,7 @@ export function ProductMarketplaceRating({
           event.preventDefault();
           document.getElementById("product-reviews")?.scrollIntoView({ behavior: "smooth" });
         }}
-        className={`inline-flex items-center ${gap} underline-offset-2 hover:underline ${className}`}
+        className={`inline-flex shrink-0 items-center whitespace-nowrap ${gap} underline-offset-2 hover:underline ${className}`}
         aria-label={`${label}. Jump to buyer reviews on this page.`}
       >
         {content}
@@ -56,7 +56,7 @@ export function ProductMarketplaceRating({
   }
 
   return (
-    <span className={`inline-flex items-center ${gap} ${className}`} aria-label={label}>
+    <span className={`inline-flex shrink-0 items-center whitespace-nowrap ${gap} ${className}`} aria-label={label}>
       {content}
     </span>
   );

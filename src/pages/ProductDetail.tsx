@@ -388,10 +388,10 @@ export default function ProductDetail() {
                 />
 
                 <div className="mt-5 grid gap-3">
-                  <Button onClick={handleAddToCart} disabled={!variant || isLoading} className="h-13 rounded-full bg-blue-600 text-base font-semibold text-white hover:bg-blue-700">
+                  <Button onClick={handleAddToCart} disabled={!variant || isLoading} className="h-12 rounded-full bg-blue-600 text-base font-semibold text-white hover:bg-blue-700">
                     Add to Cart - {bundleQty === 2 ? formatMoney(String(basePrice * 2 * (1 - pageConfig.duoDiscountPct / 100)), currency) : displayPrice}
                   </Button>
-                  <Button onClick={handleBuyNow} disabled={!variant || isLoading || isBuying} variant="outline" className="h-13 rounded-full border-slate-300 text-base font-semibold text-slate-950 hover:bg-slate-950 hover:text-white">
+                  <Button onClick={handleBuyNow} disabled={!variant || isLoading || isBuying} variant="outline" className="h-12 rounded-full border-slate-300 text-base font-semibold text-slate-950 hover:bg-slate-950 hover:text-white">
                     {isBuying ? "Opening checkout..." : "Buy Now"}
                   </Button>
                 </div>

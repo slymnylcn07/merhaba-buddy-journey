@@ -95,20 +95,22 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
   return (
     <div
       data-cta="product-card"
-      className="my-10 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md [&_p]:!my-0 [&_p]:!leading-normal [&_img]:!my-0 [&_img]:!w-24 [&_img]:sm:!w-28 [&_img]:!h-24 [&_img]:sm:!h-28 [&_img]:!max-h-28 [&_img]:!rounded-xl [&_img]:!border-0 [&_img]:!shadow-none [&_img]:!object-cover [&_a]:!no-underline"
+      className="my-10 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:p-5 [&_p]:!my-0 [&_p]:!leading-normal [&_a]:!no-underline"
     >
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-        <img
-          src={imageSrc}
-          alt={rec.title}
-          loading="lazy"
-          onError={(event) => {
-            const image = event.currentTarget;
-            const fallbackUrl = new URL(rec.fallbackImage, window.location.origin).href;
-            if (image.src !== fallbackUrl) image.src = rec.fallbackImage;
-          }}
-          className="h-24 w-24 flex-shrink-0 rounded-xl bg-slate-50 object-cover sm:h-28 sm:w-28"
-        />
+      <div className="flex flex-col gap-4 md:flex-row md:items-center">
+        <div className="flex h-40 w-full flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 via-white to-blue-50/70 md:h-28 md:w-28 md:rounded-xl">
+          <img
+            src={imageSrc}
+            alt={rec.title}
+            loading="lazy"
+            onError={(event) => {
+              const image = event.currentTarget;
+              const fallbackUrl = new URL(rec.fallbackImage, window.location.origin).href;
+              if (image.src !== fallbackUrl) image.src = rec.fallbackImage;
+            }}
+            className="!my-0 !h-36 !w-36 !max-h-none !rounded-none !border-0 !bg-transparent !object-contain !shadow-none md:!h-28 md:!w-28"
+          />
+        </div>
         <div className="min-w-0 flex-1">
           <p className="!text-xs !font-medium uppercase tracking-wide !text-slate-400">
             Recommended for this guide
@@ -117,22 +119,26 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
             {rec.title}
           </p>
           <p className="!mt-1.5 !text-sm !leading-relaxed !text-slate-600">{rec.benefit}</p>
-          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5">
-            {price && (
-              <span className="text-base font-semibold text-slate-950">{price}</span>
-            )}
-            <ProductMarketplaceRating handle={rec.handle} showCount />
-            <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
-              {shippingLabel}
-            </span>
-            <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
-              30-day returns from delivery
-            </span>
+          <div className="mt-3 flex flex-col gap-2 md:flex-row md:flex-wrap md:items-center md:gap-x-3 md:gap-y-1.5">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+              {price && (
+                <span className="text-base font-semibold text-slate-950">{price}</span>
+              )}
+              <ProductMarketplaceRating handle={rec.handle} showCount />
+            </div>
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
+                {shippingLabel}
+              </span>
+              <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
+                30-day returns from delivery
+              </span>
+            </div>
           </div>
         </div>
         <Link
           to={getProductPath(rec.handle)}
-          className="inline-flex flex-shrink-0 items-center justify-center gap-1.5 self-start rounded-full bg-slate-950 px-5 py-2.5 text-sm font-medium !text-white !no-underline transition hover:bg-slate-800 sm:self-center"
+          className="inline-flex min-h-11 w-full flex-shrink-0 items-center justify-center gap-1.5 rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold !text-white !no-underline transition hover:bg-slate-800 md:w-auto md:self-center"
         >
           View product
           <ArrowRight className="h-4 w-4" />

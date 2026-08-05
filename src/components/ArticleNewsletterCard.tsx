@@ -158,8 +158,8 @@ export function ArticleNewsletterCard({ articleSlug }: ArticleNewsletterCardProp
       ) : (
         <div className="grid gap-5 lg:grid-cols-[1fr_minmax(21rem,0.88fr)] lg:items-center">
           <div>
-            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-blue-700">
-              <Mail className="h-4 w-4" /> Useful guides, not inbox clutter
+            <p className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-blue-700">
+              <Mail className="h-4 w-4 shrink-0" /> Useful guides, not inbox clutter
             </p>
             <h2 className="mt-3 !mb-0 !border-0 !pb-0 text-xl font-semibold tracking-[-0.025em] text-slate-950 sm:text-2xl">
               Get more {focus} guidance and 10% off your first order.
