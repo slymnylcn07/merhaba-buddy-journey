@@ -1037,7 +1037,7 @@ const Guides = () => {
                 <div className="absolute inset-x-16 bottom-8 h-28 rounded-full bg-blue-500/30 blur-3xl" />
 
                 <div className="relative rounded-[2.4rem] border border-white/10 bg-white/10 p-3 shadow-[0_45px_120px_-70px_rgba(37,99,235,0.75)] backdrop-blur-xl sm:p-4">
-                  <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 p-7 shadow-2xl ring-1 ring-white/10 sm:p-9">
+                  <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 p-5 shadow-2xl ring-1 ring-white/10 sm:p-9">
                     {/* dekoratif isik halkalari */}
                     <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-blue-500/20 blur-3xl" />
                     <div className="pointer-events-none absolute -bottom-20 -left-10 h-48 w-48 rounded-full bg-emerald-400/10 blur-3xl" />
@@ -1073,7 +1073,7 @@ const Guides = () => {
 
                       <Link
                         to="/knee-quiz"
-                        className="group mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-blue-950/40 transition hover:bg-blue-50"
+                        className="group mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-white px-4 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-blue-950/40 transition hover:bg-blue-50 sm:w-auto sm:px-7"
                       >
                         Take the knee quiz
                         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -1510,7 +1510,7 @@ export const GuideCategoryPage = ({ categoryKey }: { categoryKey: GuideCategoryK
             </p>
             <Link
               to="/knee-quiz"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+              className="mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 sm:w-auto"
             >
               Take the knee quiz
               <ArrowRight className="h-4 w-4" />
