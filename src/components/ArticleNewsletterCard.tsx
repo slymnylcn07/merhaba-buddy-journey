@@ -156,7 +156,7 @@ export function ArticleNewsletterCard({ articleSlug }: ArticleNewsletterCardProp
           </div>
         </div>
       ) : (
-        <div className="grid gap-5 lg:grid-cols-[1fr_minmax(18rem,0.82fr)] lg:items-center">
+        <div className="grid gap-5 lg:grid-cols-[1fr_minmax(21rem,0.88fr)] lg:items-center">
           <div>
             <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-blue-700">
               <Mail className="h-4 w-4" /> Useful guides, not inbox clutter
@@ -174,7 +174,7 @@ export function ArticleNewsletterCard({ articleSlug }: ArticleNewsletterCardProp
             data-clarity-mask="true"
             className="rounded-2xl border border-white/80 bg-white/85 p-3 shadow-sm"
           >
-            <div className="flex flex-col gap-2 sm:flex-row lg:flex-col xl:flex-row">
+            <div className="grid gap-2">
               <input
                 type="email"
                 value={email}
@@ -182,12 +182,12 @@ export function ArticleNewsletterCard({ articleSlug }: ArticleNewsletterCardProp
                 placeholder="you@example.com"
                 autoComplete="email"
                 aria-label="Email address"
-                className="min-w-0 flex-1 rounded-full border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                className="w-full min-w-0 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
               />
               <button
                 type="submit"
                 disabled={isSending}
-                className="shrink-0 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:opacity-60"
+                className="w-full rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:opacity-60"
               >
                 {isSending ? "Joining..." : "Send useful guides"}
               </button>

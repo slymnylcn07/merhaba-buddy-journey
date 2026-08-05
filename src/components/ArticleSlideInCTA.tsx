@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { X, ArrowRight, CheckCircle2, Clock3, Sparkles } from "lucide-react";
+import { X, ArrowRight, CheckCircle2, Clock3, ListChecks, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { trackEvent } from "@/hooks/use-google-analytics";
 import { pickProductForSlug, PRODUCT_RECS } from "@/lib/article-product-map";
@@ -23,12 +23,14 @@ interface ArticleSlideInCTAProps {
 
 const STORAGE_KEY = "flexiknee_article_cta_session";
 const STAGE2_KEY = "flexiknee_article_cta_stage2_session";
-const CTA_VERSION = "article-slide-in-v2";
+const CROSS_ARTICLE_KEY = "flexiknee_article_cta_cross_article_session";
+const CTA_VERSION = "article-slide-in-v3";
 const MOBILE_PRODUCT_SCROLL = 55;
 const DESKTOP_PRODUCT_SCROLL = 50;
-const QUIZ_SCROLL = 82;
-const QUIZ_DELAY_AFTER_DISMISS_MS = 25_000;
-const QUIZ_EXTRA_SCROLL = 20;
+const QUIZ_SCROLL = 78;
+const QUIZ_DELAY_AFTER_DISMISS_MS = 20_000;
+const QUIZ_MIN_GAP_AFTER_DISMISS_MS = 1_500;
+const CROSS_ARTICLE_QUIZ_SCROLL = 50;
 
 interface ProductPopupSession {
   slug: string;
@@ -68,15 +70,15 @@ function getQuizPopupContent(slug: string): { hook: string; support: string } {
     value.includes("pilates")
   ) {
     return {
-      hook: "Turn what you noticed during activity into a practical next step.",
-      support: "Answer four quick questions to match your pattern with useful guides, a product category and a seven-day starter plan.",
+      hook: "Get a knee plan built around the movement that bothers you.",
+      support: "Connect your training triggers with matched guides and a practical seven-day starting routine.",
     };
   }
 
   if (value.includes("stairs") || value.includes("walk") || value.includes("standing")) {
     return {
-      hook: "Which everyday movements affect your knee most?",
-      support: "The free quiz turns your walking, stair and daily-movement pattern into a clearer place to begin.",
+      hook: "Turn your walking or stair pattern into a clearer knee plan.",
+      support: "Use what you notice during daily movement to find a more relevant place to begin.",
     };
   }
 
@@ -88,8 +90,8 @@ function getQuizPopupContent(slug: string): { hook: string; support: string } {
     value.includes("stiff")
   ) {
     return {
-      hook: "Build a routine around when your knee bothers you.",
-      support: "Four quick questions can match your timing and stiffness pattern with a practical seven-day starting routine.",
+      hook: "Get a routine built around when stiffness shows up.",
+      support: "Match the timing of your symptoms with useful guides and a seven-day comfort routine.",
     };
   }
 
@@ -101,8 +103,8 @@ function getQuizPopupContent(slug: string): { hook: string; support: string } {
     value.includes("brace")
   ) {
     return {
-      hook: "Which comfort approach fits your current pattern?",
-      support: "Compare a matched product category and useful guides before deciding what belongs in your routine.",
+      hook: "Compare comfort options for the knee pattern you actually have.",
+      support: "See a matched product category and useful guides before deciding what fits your routine.",
     };
   }
 
@@ -113,14 +115,14 @@ function getQuizPopupContent(slug: string): { hook: string; support: string } {
     value.includes("burning")
   ) {
     return {
-      hook: "Your knee pattern is more than one symptom.",
-      support: "Use four quick questions to organize what you noticed and get a more relevant set of guides and next steps.",
+      hook: "Turn the symptoms you noticed into clearer next steps.",
+      support: "Organize the details of your pattern and get a more relevant set of guides and starting points.",
     };
   }
 
   return {
-    hook: "Turn this guide into a routine that fits you.",
-    support: "Get a matched product category, three useful guides and a practical seven-day starter plan in four questions.",
+    hook: "Get a practical knee plan built around your answers.",
+    support: "Move from general reading to a matched starting point in four quick questions.",
   };
 }
 
@@ -295,7 +297,8 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   const [stage1Done, setStage1Done] = useState(false);
   const [stage2Done, setStage2Done] = useState(false);
   const [stage1DismissedAt, setStage1DismissedAt] = useState<number | null>(null);
-  const [stage1DismissedScroll, setStage1DismissedScroll] = useState<number | null>(null);
+  const [crossArticleQuiz, setCrossArticleQuiz] = useState(false);
+  const [quizScrollGapReady, setQuizScrollGapReady] = useState(false);
   const [quizDelayReady, setQuizDelayReady] = useState(false);
   const [storageReady, setStorageReady] = useState(false);
   const stage1ImpressionSent = useRef(false);
@@ -315,17 +318,20 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
     stage2ImpressionSent.current = false;
     setIsVisible(false);
     setStage(1);
+    setCrossArticleQuiz(false);
+    setQuizScrollGapReady(false);
     setQuizDelayReady(false);
 
     const rawSession = window.sessionStorage.getItem(STORAGE_KEY);
     const savedSession = readProductPopupSession();
     const quizPopupSeen = window.sessionStorage.getItem(STAGE2_KEY) === "true";
+    const crossArticleQuizSeen =
+      window.sessionStorage.getItem(CROSS_ARTICLE_KEY) === "true";
 
     if (rawSession === "true") {
       setStage1Done(true);
       setStage2Done(true);
       setStage1DismissedAt(null);
-      setStage1DismissedScroll(null);
       setStorageReady(true);
       return;
     }
@@ -334,16 +340,25 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       setStage1Done(false);
       setStage2Done(quizPopupSeen);
       setStage1DismissedAt(null);
-      setStage1DismissedScroll(null);
       setStorageReady(true);
       return;
     }
 
-    if (savedSession.slug !== slug || savedSession.outcome !== "dismissed") {
+    if (savedSession.slug !== slug) {
+      const canShowCrossArticleQuiz =
+        savedSession.outcome === "dismissed" && !crossArticleQuizSeen;
+      setStage1Done(true);
+      setStage2Done(!canShowCrossArticleQuiz);
+      setStage1DismissedAt(null);
+      setCrossArticleQuiz(canShowCrossArticleQuiz);
+      setStorageReady(true);
+      return;
+    }
+
+    if (savedSession.outcome !== "dismissed") {
       setStage1Done(true);
       setStage2Done(true);
       setStage1DismissedAt(null);
-      setStage1DismissedScroll(null);
       setStorageReady(true);
       return;
     }
@@ -351,19 +366,33 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
     setStage1Done(true);
     setStage2Done(quizPopupSeen);
     setStage1DismissedAt(savedSession.dismissedAt || Date.now());
-    setStage1DismissedScroll(savedSession.dismissedScroll ?? 0);
     setStorageReady(true);
   }, [slug]);
 
   useEffect(() => {
-    if (!stage1DismissedAt || stage2Done) return;
-    const remaining = Math.max(
+    if (crossArticleQuiz || !stage1DismissedAt || stage2Done) return;
+    const elapsed = Date.now() - stage1DismissedAt;
+    const remainingForScroll = Math.max(
       0,
-      QUIZ_DELAY_AFTER_DISMISS_MS - (Date.now() - stage1DismissedAt),
+      QUIZ_MIN_GAP_AFTER_DISMISS_MS - elapsed,
     );
-    const timer = window.setTimeout(() => setQuizDelayReady(true), remaining);
-    return () => window.clearTimeout(timer);
-  }, [stage1DismissedAt, stage2Done]);
+    const remainingForTimer = Math.max(
+      0,
+      QUIZ_DELAY_AFTER_DISMISS_MS - elapsed,
+    );
+    const scrollTimer = window.setTimeout(
+      () => setQuizScrollGapReady(true),
+      remainingForScroll,
+    );
+    const delayTimer = window.setTimeout(
+      () => setQuizDelayReady(true),
+      remainingForTimer,
+    );
+    return () => {
+      window.clearTimeout(scrollTimer);
+      window.clearTimeout(delayTimer);
+    };
+  }, [crossArticleQuiz, stage1DismissedAt, stage2Done]);
 
   const getEventContext = useCallback(
     (scrollPercent: number) => ({
@@ -381,7 +410,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   );
 
   const handleScroll = useCallback(() => {
-    if (!storageReady) return;
+    if (!storageReady || document.visibilityState !== "visible") return;
     const scrollPercent = getScrollPercent();
     const productThreshold =
       getDeviceType() === "mobile" ? MOBILE_PRODUCT_SCROLL : DESKTOP_PRODUCT_SCROLL;
@@ -408,37 +437,47 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       return;
     }
 
-    const enoughScrollAfterDismiss =
-      stage1DismissedScroll !== null &&
-      scrollPercent >= stage1DismissedScroll + QUIZ_EXTRA_SCROLL;
+    const sameArticleQuizReady =
+      !crossArticleQuiz &&
+      stage1DismissedAt !== null &&
+      ((quizScrollGapReady && scrollPercent >= QUIZ_SCROLL) || quizDelayReady);
+    const crossArticleQuizReady =
+      crossArticleQuiz && scrollPercent >= CROSS_ARTICLE_QUIZ_SCROLL;
 
     if (
       stage1Done &&
-      stage1DismissedAt !== null &&
       !stage2Done &&
       !stage2ImpressionSent.current &&
       !isVisible &&
-      quizDelayReady &&
-      scrollPercent >= QUIZ_SCROLL &&
-      enoughScrollAfterDismiss
+      (sameArticleQuizReady || crossArticleQuizReady)
     ) {
       stage2ImpressionSent.current = true;
       setStage(2);
       setIsVisible(true);
+      if (crossArticleQuiz) {
+        window.sessionStorage.setItem(CROSS_ARTICLE_KEY, "true");
+      }
       trackEvent("article_quiz_popup_impression", {
         ...getEventContext(scrollPercent),
         stage: "quiz",
+        opportunity: crossArticleQuiz ? "cross_article" : "same_article",
+        quiz_trigger: crossArticleQuiz
+          ? "cross_article_scroll"
+          : scrollPercent >= QUIZ_SCROLL
+            ? "same_article_scroll"
+            : "dismiss_timer",
       });
     }
   }, [
     getEventContext,
+    crossArticleQuiz,
     isVisible,
     quizDelayReady,
+    quizScrollGapReady,
     rec.handle,
     rec.title,
     slug,
     stage1DismissedAt,
-    stage1DismissedScroll,
     stage1Done,
     stage2Done,
     storageReady,
@@ -449,10 +488,12 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
     if (stage1Done && stage2Done) return;
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleScroll, { passive: true });
+    document.addEventListener("visibilitychange", handleScroll);
     handleScroll();
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
+      document.removeEventListener("visibilitychange", handleScroll);
     };
   }, [handleScroll, stage1Done, stage2Done, storageReady]);
 
@@ -499,7 +540,8 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       const dismissedAt = Date.now();
       setStage1Done(true);
       setStage1DismissedAt(dismissedAt);
-      setStage1DismissedScroll(scrollPercent);
+      setQuizScrollGapReady(false);
+      setQuizDelayReady(false);
       window.sessionStorage.setItem(
         STORAGE_KEY,
         JSON.stringify({
@@ -516,9 +558,13 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
     } else {
       setStage2Done(true);
       window.sessionStorage.setItem(STAGE2_KEY, "true");
+      if (crossArticleQuiz) {
+        window.sessionStorage.setItem(CROSS_ARTICLE_KEY, "true");
+      }
       trackEvent("article_quiz_popup_dismissed", {
         ...getEventContext(scrollPercent),
         stage: "quiz",
+        opportunity: crossArticleQuiz ? "cross_article" : "same_article",
       });
     }
   };
@@ -542,6 +588,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       JSON.stringify({ slug, outcome: "product" } satisfies ProductPopupSession),
     );
     window.sessionStorage.setItem(STAGE2_KEY, "true");
+    window.sessionStorage.setItem(CROSS_ARTICLE_KEY, "true");
   };
 
   const handleQuizClick = (placement: "product_popup" | "quiz_popup") => {
@@ -553,6 +600,12 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       {
         ...getEventContext(scrollPercent),
         stage: placement === "product_popup" ? "product" : "quiz",
+        opportunity:
+          placement === "quiz_popup"
+            ? crossArticleQuiz
+              ? "cross_article"
+              : "same_article"
+            : "product_popup",
       },
     );
     setStage1Done(true);
@@ -562,6 +615,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       JSON.stringify({ slug, outcome: "quiz" } satisfies ProductPopupSession),
     );
     window.sessionStorage.setItem(STAGE2_KEY, "true");
+    window.sessionStorage.setItem(CROSS_ARTICLE_KEY, "true");
   };
 
   if (stage1Done && stage2Done && !isVisible) return null;
@@ -574,6 +628,13 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       : productShortName.split(" ").slice(-2).join(" ").toLowerCase();
   const productImage = liveImage || rec.fallbackImage;
   const productPrice = livePrice || rec.fallbackPrice;
+  const activeQuizContent = crossArticleQuiz
+    ? {
+        hook: "Still comparing what fits your knee?",
+        support:
+          "You have explored more than one guide. Four quick answers can narrow the options and give you a more useful next step.",
+      }
+    : quizContent;
 
   return (
     <div
@@ -599,25 +660,30 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
           {stage === 2 ? (
             <div className="pr-7">
               <div className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-blue-700">
-                <Sparkles className="h-3.5 w-3.5" /> Free 60-second quiz
+                <ListChecks className="h-3.5 w-3.5" /> Free 60-second knee quiz
               </div>
               <p className="mt-3 text-base font-bold leading-snug text-slate-950">
-                {quizContent.hook}
+                {activeQuizContent.hook}
               </p>
               <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
-                {quizContent.support}
+                {activeQuizContent.support}
               </p>
 
-              <div className="mt-3 flex flex-wrap gap-2">
-                <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-semibold text-slate-600">
-                  <Clock3 className="h-3.5 w-3.5 text-blue-600" /> 4 questions
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-semibold text-slate-600">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" /> Instant result
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-semibold text-slate-600">
-                  Email optional
-                </span>
+              <div className="mt-3 rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 to-emerald-50/70 p-3">
+                <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">
+                  Your free result includes
+                </p>
+                <div className="mt-2 grid grid-cols-3 gap-1.5 text-[10px] font-semibold leading-tight text-slate-700">
+                  <span className="flex items-center gap-1">
+                    <Clock3 className="h-3.5 w-3.5 shrink-0 text-blue-600" /> 4 quick answers
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-600" /> 3 matched guides
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-600" /> 7-day plan
+                  </span>
+                </div>
               </div>
 
               <Link
@@ -626,9 +692,12 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
                 onClick={() => handleQuizClick("quiz_popup")}
                 className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-blue-700"
               >
-                Build my 7-day plan
+                Get my free 7-day plan
                 <ArrowRight className="h-4 w-4" />
               </Link>
+              <p className="mt-2 text-center text-[10px] font-medium text-slate-500">
+                See your result instantly. Email is optional.
+              </p>
             </div>
           ) : (
             <>
@@ -677,9 +746,17 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
                   to="/knee-quiz"
                   state={{ sourceArticle: slug, sourceTitle: title }}
                   onClick={() => handleQuizClick("product_popup")}
-                  className="inline-flex min-h-11 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-blue-200 bg-blue-50 px-3.5 py-3 text-xs font-bold text-blue-700 transition hover:border-blue-300 hover:bg-blue-100"
+                  className="group inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-blue-300 bg-gradient-to-r from-blue-50 to-cyan-50 px-3 py-2 text-blue-800 shadow-[0_10px_24px_-18px_rgba(37,99,235,0.9)] transition hover:-translate-y-0.5 hover:border-blue-400 hover:shadow-[0_14px_28px_-16px_rgba(37,99,235,0.75)]"
                 >
-                  <Sparkles className="h-3.5 w-3.5" /> Knee quiz
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-white shadow-sm transition group-hover:bg-blue-700">
+                    <ListChecks className="h-4 w-4" />
+                  </span>
+                  <span className="text-left leading-none">
+                    <span className="block text-[9px] font-extrabold uppercase tracking-[0.14em] text-blue-500">
+                      Free
+                    </span>
+                    <span className="mt-0.5 block text-xs font-bold">60-sec quiz</span>
+                  </span>
                 </Link>
               </div>
             </>
