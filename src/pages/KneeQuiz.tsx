@@ -947,8 +947,8 @@ export default function KneeQuiz() {
 
                       <div className="grid border-t border-slate-200 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
                         <div className="p-5 sm:p-7">
-                          <div className="grid overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 sm:grid-cols-[minmax(135px,0.62fr)_minmax(0,1.38fr)] lg:grid-cols-[minmax(145px,0.68fr)_minmax(0,1.32fr)]">
-                            <div className="flex h-44 items-center justify-center bg-[radial-gradient(circle_at_50%_20%,#ffffff,#eef4ff)] p-4 sm:h-full sm:min-h-64">
+                          <div className="grid overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+                            <div className="flex h-64 items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_50%_20%,#ffffff,#eef4ff)] p-1 sm:h-72 lg:h-80 lg:p-2">
                               {productImage ? (
                                 <img
                                   src={productImage}
@@ -957,7 +957,7 @@ export default function KneeQuiz() {
                                     productTitle ||
                                     "FlexiKnee matched support"
                                   }
-                                  className="h-full w-full object-contain"
+                                  className="h-full w-full scale-110 object-contain"
                                 />
                               ) : (
                                 <span className="flex h-20 w-20 items-center justify-center rounded-3xl bg-white text-blue-600 shadow-sm">
@@ -965,7 +965,7 @@ export default function KneeQuiz() {
                                 </span>
                               )}
                             </div>
-                            <div className="border-t border-slate-200 bg-white p-5 sm:border-l sm:border-t-0 sm:p-6">
+                            <div className="border-t border-slate-200 bg-white p-5 sm:p-6">
                               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-600">
                                 {result.productKey === "generic"
                                   ? "Guide-first result"

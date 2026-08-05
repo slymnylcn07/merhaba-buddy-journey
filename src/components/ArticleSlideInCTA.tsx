@@ -748,15 +748,15 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
                   onClick={() => handleQuizClick("product_popup")}
                   className="group inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-blue-300 bg-gradient-to-r from-blue-50 via-white to-cyan-50 px-3 py-2 text-blue-900 shadow-[0_10px_24px_-18px_rgba(37,99,235,0.9)] transition hover:-translate-y-0.5 hover:border-blue-500 hover:shadow-[0_14px_28px_-16px_rgba(37,99,235,0.75)]"
                 >
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-white shadow-sm transition group-hover:bg-blue-700">
-                    <Sparkles className="h-4 w-4" />
+                  <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 text-base font-black leading-none text-white shadow-sm transition group-hover:from-blue-700 group-hover:to-cyan-600">
+                    ?
                   </span>
                   <span className="text-left leading-tight">
                     <span className="block text-xs font-extrabold text-slate-950">
                       Knee Quiz
                     </span>
                     <span className="block text-[10px] font-semibold uppercase tracking-[0.08em] text-blue-600">
-                      Free · 60 sec
+                      Free / 60 sec
                     </span>
                   </span>
                 </Link>
