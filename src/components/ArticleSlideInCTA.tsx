@@ -733,7 +733,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
                 <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-semibold text-blue-700">30-day returns</span>
               </div>
 
-              <div className="mt-3.5 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
+              <div className="mt-3.5 grid grid-cols-1 items-center gap-2 min-[380px]:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
                 <Link
                   to={getProductPath(rec.handle)}
                   onClick={handleCTAClick}
@@ -746,16 +746,18 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
                   to="/knee-quiz"
                   state={{ sourceArticle: slug, sourceTitle: title }}
                   onClick={() => handleQuizClick("product_popup")}
-                  className="group inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-blue-300 bg-gradient-to-r from-blue-50 to-cyan-50 px-3 py-2 text-blue-800 shadow-[0_10px_24px_-18px_rgba(37,99,235,0.9)] transition hover:-translate-y-0.5 hover:border-blue-400 hover:shadow-[0_14px_28px_-16px_rgba(37,99,235,0.75)]"
+                  className="group inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-blue-300 bg-gradient-to-r from-blue-50 via-white to-cyan-50 px-3 py-2 text-blue-900 shadow-[0_10px_24px_-18px_rgba(37,99,235,0.9)] transition hover:-translate-y-0.5 hover:border-blue-500 hover:shadow-[0_14px_28px_-16px_rgba(37,99,235,0.75)]"
                 >
                   <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-white shadow-sm transition group-hover:bg-blue-700">
-                    <ListChecks className="h-4 w-4" />
+                    <Sparkles className="h-4 w-4" />
                   </span>
-                  <span className="text-left leading-none">
-                    <span className="block text-[9px] font-extrabold uppercase tracking-[0.14em] text-blue-500">
-                      Free
+                  <span className="text-left leading-tight">
+                    <span className="block text-xs font-extrabold text-slate-950">
+                      Knee Quiz
                     </span>
-                    <span className="mt-0.5 block text-xs font-bold">60-sec quiz</span>
+                    <span className="block text-[10px] font-semibold uppercase tracking-[0.08em] text-blue-600">
+                      Free · 60 sec
+                    </span>
                   </span>
                 </Link>
               </div>
