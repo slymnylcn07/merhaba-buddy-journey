@@ -94,10 +94,3 @@ export const featurePillars = [
   { title: "Wraparound Support", text: "A secure fit that keeps the device comfortably positioned.", icon: "↻" },
   { title: "Smart Control", text: "Clear touch controls with quick, intuitive settings.", icon: "◌" },
 ];
-
-export const trustBadges = [
-  "Free shipping over $24.99",
-  "30-day returns from delivery",
-  "Secure checkout",
-  "Support team",
-];

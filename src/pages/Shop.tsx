@@ -16,6 +16,7 @@ import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getProductPath, PRIMARY_PRODUCT_HANDLE } from "@/lib/product-config";
 import { getProductProfile } from "@/data/product-profiles";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
+import { getFreeShippingThresholdLabel, hasProductPriceRange } from "@/lib/shipping-policy";
 
 const collectionJsonLd = {
   "@context": "https://schema.org",
@@ -139,7 +140,9 @@ export default function Shop() {
                 <div className="grid grid-cols-3 gap-3 text-center">
                   <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm backdrop-blur">
                     <Truck className="mx-auto h-5 w-5 text-blue-600" />
-                    <p className="mt-2 text-xs font-semibold text-slate-800">Free shipping over $24.99</p>
+                    <p className="mt-2 text-xs font-semibold text-slate-800">
+                      {getFreeShippingThresholdLabel()}
+                    </p>
                   </div>
                   <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm backdrop-blur">
                     <ShieldCheck className="mx-auto h-5 w-5 text-blue-600" />
@@ -219,7 +222,10 @@ export default function Shop() {
                               <Link to={getProductPath(node.handle)} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-blue-50">
                                 Explore the main FlexiKnee <ArrowRight className="h-4 w-4" />
                               </Link>
-                              <p className="text-lg font-semibold text-white">From {formatMoney(price.amount, price.currencyCode)}</p>
+                              <p className="text-lg font-semibold text-white">
+                                {hasProductPriceRange(node.priceRange) ? "From " : ""}
+                                {formatMoney(price.amount, price.currencyCode)}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -270,7 +276,9 @@ export default function Shop() {
                               </div>
                               <div className="mt-auto flex items-end justify-between gap-4 pt-6">
                                 <div>
-                                  <p className="text-xs text-slate-500">From</p>
+                                  {hasProductPriceRange(node.priceRange) && (
+                                    <p className="text-xs text-slate-500">From</p>
+                                  )}
                                   <p className="text-xl font-semibold text-slate-950">{formatMoney(price.amount, price.currencyCode)}</p>
                                 </div>
                                 <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600">

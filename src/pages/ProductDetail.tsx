@@ -29,6 +29,7 @@ import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { PremiumProductStory } from "@/components/PremiumProductStory";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
 import { buildMerchantOffer } from "@/lib/merchant-schema";
+import { isFreeShippingEligible } from "@/lib/shipping-policy";
 import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
 import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.webp";
@@ -162,13 +163,22 @@ export default function ProductDetail() {
   const currency = variant?.price.currencyCode || product?.node.priceRange.minVariantPrice.currencyCode || "GBP";
   const basePrice = Number(variantPrice || 0);
   const pageConfig = getProductPageConfig("main");
-  const displayPrice = formatMoney(String(basePrice * bundleQty), currency);
+  const selectedOfferTotal =
+    bundleQty === 2
+      ? basePrice * 2 * (1 - pageConfig.duoDiscountPct / 100)
+      : basePrice;
+  const selectedOfferHasFreeShipping = isFreeShippingEligible(
+    selectedOfferTotal,
+    currency,
+  );
+  const displayPrice = formatMoney(String(selectedOfferTotal), currency);
   const compareAtAmount = variant?.compareAtPrice?.amount
     ? Number(variant.compareAtPrice.amount)
     : null;
-  const compareAtDisplay =
-    compareAtAmount && compareAtAmount > basePrice
-      ? formatMoney(String(compareAtAmount * bundleQty), currency)
+  const compareAtDisplay = bundleQty === 2
+    ? formatMoney(String(basePrice * 2), currency)
+    : compareAtAmount && compareAtAmount > basePrice
+      ? formatMoney(String(compareAtAmount), currency)
       : null;
   const productTitle = "FlexiKnee Smart Heated Knee Massager";
   const publicHandle = handle || PRIMARY_PRODUCT_HANDLE;
@@ -382,7 +392,6 @@ export default function ProductDetail() {
                   unitPrice={basePrice}
                   unitCompareAt={compareAtAmount}
                   currencyCode={currency}
-                  freeShipOnSingle={pageConfig.freeShipOnSingle}
                   duoDiscountPct={pageConfig.duoDiscountPct}
                   formatMoney={formatMoney}
                 />
@@ -396,7 +405,11 @@ export default function ProductDetail() {
                   </Button>
                 </div>
 
-                <DeliveryEstimate className="mt-4" freeShipping={pageConfig.freeShipOnSingle || bundleQty === 2} />
+                <DeliveryEstimate
+                  className="mt-4"
+                  currencyCode={currency}
+                  freeShipping={selectedOfferHasFreeShipping}
+                />
 
                 <PaymentOptionsRow />
 
@@ -544,18 +557,18 @@ export default function ProductDetail() {
       </main>
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/95 p-3 shadow-[0_-18px_60px_-35px_rgba(15,23,42,0.65)] backdrop-blur lg:hidden">
-        <div className="mx-auto flex max-w-xl items-center gap-3">
+        <div className="mx-auto flex max-w-xl items-center gap-2 min-[390px]:gap-3">
           <div className="min-w-0 flex-1">
             <p className="truncate text-xs font-medium text-slate-500">FlexiKnee Massager</p>
             <p className="flex items-baseline gap-1.5 text-base font-semibold text-slate-950">
-              {compareAtDisplay && <s className="text-xs font-normal text-slate-400">{compareAtDisplay}</s>}
+              {compareAtDisplay && <s className="hidden text-xs font-normal text-slate-400 min-[420px]:inline">{compareAtDisplay}</s>}
               {displayPrice}
             </p>
           </div>
-          <Button onClick={handleAddToCart} disabled={!variant || isLoading} className="h-11 rounded-full bg-blue-600 px-5 text-sm font-semibold text-white">
+          <Button onClick={handleAddToCart} disabled={!variant || isLoading} className="h-11 rounded-full bg-blue-600 px-4 text-sm font-semibold text-white min-[390px]:px-5">
             Add
           </Button>
-          <Button onClick={handleBuyNow} disabled={!variant || isLoading || isBuying} className="h-11 rounded-full bg-slate-950 px-5 text-sm font-semibold text-white">
+          <Button onClick={handleBuyNow} disabled={!variant || isLoading || isBuying} className="h-11 rounded-full bg-slate-950 px-4 text-sm font-semibold text-white min-[390px]:px-5">
             Buy
           </Button>
         </div>

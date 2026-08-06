@@ -23,6 +23,7 @@ import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getProductProfile, ProductProfile } from "@/data/product-profiles";
 import { PRODUCT_RECS } from "@/lib/article-product-map";
 import { trackEvent } from "@/hooks/use-google-analytics";
+import { hasProductPriceRange } from "@/lib/shipping-policy";
 
 type OptionKey = string;
 type ProductKey = ProductProfile["key"] | "smart-knee-massager";
@@ -801,6 +802,9 @@ export default function KneeQuiz() {
   const progress = Math.min(100, Math.round((step / QUESTIONS.length) * 100));
   const recommendedImage = recommendedProduct?.node.images.edges[0]?.node;
   const recommendedPrice = recommendedProduct?.node.priceRange.minVariantPrice;
+  const recommendedHasPriceRange = recommendedProduct
+    ? hasProductPriceRange(recommendedProduct.node.priceRange)
+    : false;
   const productTitle =
     recommendedProduct?.node.title || fallbackProductRec?.title || null;
   const productImage = recommendedImage?.url || fallbackProductRec?.fallbackImage;
@@ -986,6 +990,7 @@ export default function KneeQuiz() {
                               </p>
                               {recommendedPrice && (
                                 <p className="mt-3 text-lg font-semibold text-slate-950">
+                                  {recommendedHasPriceRange ? "From " : ""}
                                   {formatMoney(
                                     recommendedPrice.amount,
                                     recommendedPrice.currencyCode,

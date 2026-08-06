@@ -36,8 +36,6 @@ export interface ProductPageConfig {
   /** Yıldızların yanında gösterilecek gerçek yorum sayısı (null = gizli) */
   benefits: ProductBenefit[];
   howToUse: string[];
-  /** Tek adet fiyatı 24.99$ ve üzeriyse Buy 1 satırına FREE SHIPPING rozeti */
-  freeShipOnSingle: boolean;
   /** Buy 2 satırındaki ekstra indirim yüzdesi */
   duoDiscountPct: number;
   /** Dogrulanmis teknik ozellikler (yalnizca ana cihaz). */
@@ -74,7 +72,6 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
       { label: "Fit", value: "Wraparound straps, either knee" },
       { label: "In the box", value: "Device, USB cable, user manual" },
     ],
-    freeShipOnSingle: true,
     duoDiscountPct: 15,
   },
   "calf-massager": {
@@ -90,7 +87,6 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
       "Run a 15-minute session after flights, long drives, or active days.",
       "Use on each leg as needed, the battery covers multiple sessions per charge.",
     ],
-    freeShipOnSingle: true,
     duoDiscountPct: 15,
   },
   "heated-wrap": {
@@ -106,7 +102,6 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
       "Select your heat level and warm up for 15–20 minutes.",
       "Ideal for desk sessions, pair it with a power bank for full mobility.",
     ],
-    freeShipOnSingle: true,
     duoDiscountPct: 15,
   },
   "cold-wrap": {
@@ -122,7 +117,6 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
       "Fasten the wrap so it stays in place without creating pressure, tingling or restricted circulation.",
       "Use only while awake, check the skin frequently and remove it if cold becomes painful or sensation changes.",
     ],
-    freeShipOnSingle: false,
     duoDiscountPct: 15,
   },
   "compression-socks": {
@@ -150,7 +144,6 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
       { label: "Fit method", value: "Calf circumference first, shoe size second" },
       { label: "Pressure rating", value: "No published mmHg value" },
     ],
-    freeShipOnSingle: false,
     duoDiscountPct: 15,
   },
   "compression-sleeve": {
@@ -166,7 +159,6 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
       "Wear it during walks, workouts, or long days on your feet.",
       "Hand wash and air dry to keep the compression fit season after season.",
     ],
-    freeShipOnSingle: false,
     duoDiscountPct: 15,
   },
   insoles: {
@@ -182,7 +174,6 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
       "Allow 1–2 days of normal wear as your feet adapt to the new support.",
       "Replace every 6–12 months depending on daily activity.",
     ],
-    freeShipOnSingle: false,
     duoDiscountPct: 15,
   },
   generic: {
@@ -197,7 +188,6 @@ export const PRODUCT_PAGE_CONFIG: Record<string, ProductPageConfig> = {
       "Start with short sessions and adjust to what feels comfortable.",
       "Build it into a consistent daily routine for best results.",
     ],
-    freeShipOnSingle: true,
     duoDiscountPct: 15,
   },
 };

@@ -3,9 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { pickProductForSlug, ProductRec } from "@/lib/article-product-map";
-import { FREE_SHIPPING_THRESHOLD } from "@/lib/policy-config";
 import { getProductPath, getPublicProductHandle } from "@/lib/product-config";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
+import {
+  formatMarketMoney,
+  getSafeUsdFallbackPrice,
+  getShippingBadgeLabel,
+  hasProductPriceRange,
+} from "@/lib/shipping-policy";
 
 /**
  * Makale içi ürün kartı (eski yeşil banner'ın yerini alır).
@@ -32,14 +37,6 @@ function getCachedProducts() {
   return productsPromise;
 }
 
-function formatPrice(amount?: string, currencyCode?: string) {
-  if (!amount) return null;
-  const value = Number(amount);
-  if (Number.isNaN(value)) return null;
-  const symbol = currencyCode === "USD" || !currencyCode ? "$" : `${currencyCode} `;
-  return `${symbol}${value.toFixed(2)}`;
-}
-
 const PremiumCTA = (_props: PremiumCTAProps) => {
   const location = useLocation();
   const slug = location.pathname.startsWith("/guides/")
@@ -49,14 +46,16 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
   const rec: ProductRec = pickProductForSlug(slug);
 
   const [liveImage, setLiveImage] = useState<string | null>(null);
-  const [livePrice, setLivePrice] = useState<string | null>(null);
-  const [livePriceAmount, setLivePriceAmount] = useState<number | null>(null);
+  const [livePrice, setLivePrice] = useState<{
+    label: string;
+    amount: number;
+    currencyCode: string;
+  } | null>(null);
 
   useEffect(() => {
     let active = true;
     setLiveImage(null);
     setLivePrice(null);
-    setLivePriceAmount(null);
 
     getCachedProducts().then((list) => {
       if (!active) return;
@@ -68,14 +67,16 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
       if (match) {
         setLiveImage(match.node.images?.edges?.[0]?.node?.url || null);
         const amount = match.node.priceRange?.minVariantPrice?.amount;
-        setLivePrice(
-          formatPrice(
-            amount,
-            match.node.priceRange?.minVariantPrice?.currencyCode
-          )
-        );
+        const currencyCode = match.node.priceRange?.minVariantPrice?.currencyCode;
         const numericAmount = Number(amount);
-        setLivePriceAmount(Number.isFinite(numericAmount) ? numericAmount : null);
+        if (Number.isFinite(numericAmount) && currencyCode) {
+          const prefix = hasProductPriceRange(match.node.priceRange) ? "From " : "";
+          setLivePrice({
+            label: `${prefix}${formatMarketMoney(numericAmount, currencyCode)}`,
+            amount: numericAmount,
+            currencyCode,
+          });
+        }
       }
     });
     return () => {
@@ -84,13 +85,12 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
   }, [rec.handle]);
 
   const imageSrc = liveImage || rec.fallbackImage;
-  const price = livePrice || rec.fallbackPrice;
-  const fallbackPriceAmount = Number(rec.fallbackPrice.replace(/[^0-9.]/g, ""));
-  const currentPriceAmount = livePriceAmount ?? fallbackPriceAmount;
-  const shippingLabel =
-    Number.isFinite(currentPriceAmount) && currentPriceAmount > FREE_SHIPPING_THRESHOLD
-      ? "Free Shipping"
-      : `Free shipping $${FREE_SHIPPING_THRESHOLD}+`;
+  const safeFallbackPrice = getSafeUsdFallbackPrice(rec.fallbackPrice);
+  const price = livePrice?.label || safeFallbackPrice;
+  const shippingLabel = getShippingBadgeLabel(
+    livePrice?.amount,
+    livePrice?.currencyCode,
+  );
 
   return (
     <div

@@ -22,16 +22,31 @@ import {
 import { useCartStore } from "@/stores/cartStore";
 import { PaymentLogosRow } from "@/components/product-page-blocks";
 import { DeliveryEstimate } from "@/components/DeliveryEstimate";
-import { getProducts, ShopifyProduct } from "@/lib/shopify";
+import { getProductByHandle, ShopifyProduct } from "@/lib/shopify";
 import { PRODUCT_RECS } from "@/lib/article-product-map";
+import { getShopifyProductHandleCandidates } from "@/lib/product-config";
+import {
+  formatStandardShippingRate,
+  getShippingPolicy,
+  isFreeShippingEligible,
+} from "@/lib/shipping-policy";
 
-// Sepet onerisi icin urunleri oturumda bir kez cek
-let cartProductsPromise: Promise<ShopifyProduct[]> | null = null;
-function getCartSuggestionProducts() {
-  if (!cartProductsPromise) {
-    cartProductsPromise = getProducts(20).catch(() => []);
-  }
-  return cartProductsPromise;
+// Cross-sell needs every size/color variant, so fetch only the matched product
+// by handle instead of downloading a large variant list for every product.
+const cartSuggestionPromises = new Map<string, Promise<ShopifyProduct | null>>();
+function getCartSuggestionProduct(handle: string) {
+  const cached = cartSuggestionPromises.get(handle);
+  if (cached) return cached;
+
+  const request = (async () => {
+    for (const candidate of getShopifyProductHandleCandidates(handle)) {
+      const product = await getProductByHandle(candidate).catch(() => null);
+      if (product) return product;
+    }
+    return null;
+  })();
+  cartSuggestionPromises.set(handle, request);
+  return request;
 }
 
 const MAIN_HANDLE = PRODUCT_RECS.main.handle;
@@ -98,6 +113,22 @@ export const CartDrawer = () => {
   const bundlePct = cartQty >= 3 ? 20 : cartQty === 2 ? 15 : 0;
   const bundleDiscount = (subtotal * bundlePct) / 100;
   const totalAfterDiscount = subtotal - bundleDiscount;
+  const hasFreeShipping = isFreeShippingEligible(totalAfterDiscount, cartCurrency);
+  const shippingPolicy = getShippingPolicy();
+  const shippingCurrencyMatches = cartCurrency === shippingPolicy.currencyCode;
+  const shippingAmount = hasFreeShipping
+    ? 0
+    : shippingCurrencyMatches
+      ? shippingPolicy.standardShippingRate
+      : null;
+  const estimatedTotal = shippingAmount === null ? null : totalAfterDiscount + shippingAmount;
+  const shippingDisplay = hasFreeShipping
+    ? "Free"
+    : shippingCurrencyMatches
+      ? formatStandardShippingRate()
+      : "Calculated at checkout";
+  const estimatedTotalPrefix =
+    !hasFreeShipping && shippingPolicy.standardShippingRateIsApproximate ? "about " : "";
 
   // ---- Cross-sell: sepettekine gore eslesen urun oner ----
   const [suggestion, setSuggestion] = useState<ShopifyProduct | null>(null);
@@ -117,11 +148,8 @@ export const CartDrawer = () => {
       return;
     }
     let active = true;
-    getCartSuggestionProducts().then((list) => {
+    getCartSuggestionProduct(targetHandle).then((match) => {
       if (!active) return;
-      const match = list.find(
-        (p) => decodeURIComponent(p.node.handle) === decodeURIComponent(targetHandle)
-      );
       setSuggestion(match || null);
     });
     return () => {
@@ -415,7 +443,8 @@ export const CartDrawer = () => {
 
                 <DeliveryEstimate
                   compact
-                  freeShipping={cartQty >= 2 || subtotal >= 24.99}
+                  currencyCode={cartCurrency}
+                  freeShipping={hasFreeShipping}
                   className="mt-3"
                 />
               </div>
@@ -431,13 +460,25 @@ export const CartDrawer = () => {
                         <span className="text-sm font-bold text-emerald-700">-{formatDisplayPrice(bundleDiscount)}</span>
                       </div>
                     )}
-                                        <div className="flex items-center justify-between">
-                      <span className="text-base font-semibold text-slate-950">Total</span>
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="text-sm font-medium text-slate-600">Subtotal</span>
                       <span className="flex items-baseline gap-2.5">
                         {bundlePct > 0 && (
                           <s className="text-sm font-medium text-slate-400">{formatDisplayPrice(subtotal)}</s>
                         )}
-                        <span className="text-[1.85rem] font-bold leading-none text-slate-950">{formatDisplayPrice(totalAfterDiscount)}</span>
+                        <span className="text-base font-semibold text-slate-950">{formatDisplayPrice(totalAfterDiscount)}</span>
+                      </span>
+                    </div>
+                    <div className="mt-2 flex items-center justify-between gap-3 text-sm">
+                      <span className="font-medium text-slate-600">Standard shipping</span>
+                      <span className="font-semibold text-slate-950">{shippingDisplay}</span>
+                    </div>
+                    <div className="mt-3 flex items-center justify-between gap-3 border-t border-slate-200 pt-3">
+                      <span className="text-base font-semibold text-slate-950">Estimated total</span>
+                      <span className="text-[1.65rem] font-bold leading-none text-slate-950">
+                        {estimatedTotal === null
+                          ? "At checkout"
+                          : `${estimatedTotalPrefix}${formatDisplayPrice(estimatedTotal)}`}
                       </span>
                     </div>
                   </div>

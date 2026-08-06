@@ -19,6 +19,10 @@ export interface ShopifyProduct {
         amount: string;
         currencyCode: string;
       };
+      maxVariantPrice: {
+        amount: string;
+        currencyCode: string;
+      };
     };
     images: {
       edges: Array<{
@@ -124,6 +128,10 @@ const STOREFRONT_QUERY = `
               amount
               currencyCode
             }
+            maxVariantPrice {
+              amount
+              currencyCode
+            }
           }
           images(first: 10) {
             edges {
@@ -182,6 +190,10 @@ const PRODUCT_BY_HANDLE_QUERY = `
       tags
       priceRange {
         minVariantPrice {
+          amount
+          currencyCode
+        }
+        maxVariantPrice {
           amount
           currencyCode
         }
