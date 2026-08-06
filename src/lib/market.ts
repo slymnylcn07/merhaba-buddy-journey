@@ -46,6 +46,7 @@ export const SUPPORTED_MARKETS: Market[] = [
 ];
 
 const STORAGE_KEY = "fk_market_country";
+const SOURCE_KEY = "fk_market_source";
 const CART_PERSIST_KEY = "shopify-cart";
 const DEFAULT_COUNTRY = "US";
 
@@ -54,6 +55,20 @@ export function hasStoredMarket(): boolean {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     return Boolean(stored && SUPPORTED_MARKETS.some((market) => market.country === stored));
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * A manually selected market remains persistent. Geo-detected and legacy
+ * values are rechecked on each full page load so VPN or location changes do
+ * not leave the visitor stuck in an old market.
+ */
+export function shouldRefreshMarketFromGeo(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    return localStorage.getItem(SOURCE_KEY) !== "manual";
   } catch {
     return false;
   }
@@ -85,6 +100,7 @@ export function setMarketCountry(country: string): void {
   if (!SUPPORTED_MARKETS.some((m) => m.country === country)) return;
   try {
     localStorage.setItem(STORAGE_KEY, country);
+    localStorage.setItem(SOURCE_KEY, "manual");
     // Para birimi değişti: eski para birimli kalemler kalmasın
     localStorage.removeItem(CART_PERSIST_KEY);
   } catch {
@@ -94,15 +110,26 @@ export function setMarketCountry(country: string): void {
 }
 
 /**
- * İlk ziyarette IP ülkesine göre pazarı otomatik seç (bir kez).
- * Kullanıcı elle seçim yaptıysa asla üzerine yazmaz.
+ * IP ülkesine göre otomatik pazarı seç veya daha önce otomatik bulunan pazarı
+ * yeniden doğrula. Kullanıcı elle seçim yaptıysa asla üzerine yazmaz.
  */
 export async function initMarketFromGeo(): Promise<void> {
   if (typeof window === "undefined") return;
+  let storedCountry: string | null = null;
+
   try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored && SUPPORTED_MARKETS.some((market) => market.country === stored)) return;
-    if (stored) localStorage.removeItem(STORAGE_KEY);
+    storedCountry = localStorage.getItem(STORAGE_KEY);
+    const source = localStorage.getItem(SOURCE_KEY);
+    const isValid = Boolean(
+      storedCountry && SUPPORTED_MARKETS.some((market) => market.country === storedCountry),
+    );
+
+    if (isValid && source === "manual") return;
+    if (!isValid) {
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(SOURCE_KEY);
+      storedCountry = null;
+    }
   } catch {
     return;
   }
@@ -111,19 +138,27 @@ export async function initMarketFromGeo(): Promise<void> {
   const timeoutId = window.setTimeout(() => controller.abort(), 1500);
 
   try {
-    const response = await fetch("/api/geo", { signal: controller.signal });
-    const data = response.ok ? await response.json() : { country: null };
+    const response = await fetch(`/api/geo?t=${Date.now()}`, {
+      cache: "no-store",
+      signal: controller.signal,
+    });
+    if (!response.ok) return;
+
+    const data = await response.json();
     const detected = String(data.country || "").toUpperCase();
+    if (!detected) return;
+
     const supported = SUPPORTED_MARKETS.some((market) => market.country === detected);
     const target = supported ? detected : DEFAULT_COUNTRY;
-    localStorage.setItem(STORAGE_KEY, target);
-    localStorage.removeItem(CART_PERSIST_KEY);
 
-    if (target !== DEFAULT_COUNTRY) {
-      window.location.reload();
+    localStorage.setItem(STORAGE_KEY, target);
+    localStorage.setItem(SOURCE_KEY, "geo");
+
+    if (storedCountry && storedCountry !== target) {
+      localStorage.removeItem(CART_PERSIST_KEY);
     }
   } catch {
-    /* geo unavailable: continue with the neutral US fallback */
+    /* geo unavailable: keep the previous market or use the neutral US fallback */
   } finally {
     window.clearTimeout(timeoutId);
   }
