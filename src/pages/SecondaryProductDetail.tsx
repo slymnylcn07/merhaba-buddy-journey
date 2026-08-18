@@ -24,9 +24,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { getProductPageConfig } from "@/data/product-page-config";
 import { createStorefrontCheckout, getProductByHandle, ShopifyProduct } from "@/lib/shopify";
-import { trackProductView } from "@/lib/shopify-analytics";
+import {
+  settleShopifyAnalyticsBeforeNavigation,
+  trackAddToCart as trackShopifyAddToCart,
+  trackProductView,
+} from "@/lib/shopify-analytics";
 import { getProductPath, getShopifyProductHandleCandidates } from "@/lib/product-config";
-import { useCartStore } from "@/stores/cartStore";
+import { toShopifyAddToCartData, useCartStore } from "@/stores/cartStore";
 import { getProductProfile } from "@/data/product-profiles";
 import { PremiumProductStory } from "@/components/PremiumProductStory";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
@@ -225,8 +229,13 @@ export default function SecondaryProductDetail() {
 
     setIsBuying(true);
     try {
-      const checkoutUrl = await createStorefrontCheckout([item]);
-      window.location.href = checkoutUrl;
+      const checkout = await createStorefrontCheckout([item]);
+      await settleShopifyAnalyticsBeforeNavigation(
+        trackShopifyAddToCart(
+          toShopifyAddToCartData(checkout.cartId, item),
+        ),
+      );
+      window.location.href = checkout.checkoutUrl;
     } catch {
       toast.error("Checkout could not be created. Please try again.");
     } finally {

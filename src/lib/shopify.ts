@@ -1,5 +1,12 @@
+import {
+  getTrackingValues,
+  SHOPIFY_STOREFRONT_ID_HEADER,
+  SHOPIFY_UNIQUE_TOKEN_HEADER,
+  SHOPIFY_VISIT_TOKEN_HEADER,
+} from '@shopify/hydrogen-react';
 import { getMarketCountry } from "@/lib/market";
 import {
+  SHOPIFY_ANALYTICS_STOREFRONT_ID,
   SHOPIFY_STOREFRONT_URL,
   SHOPIFY_STOREFRONT_TOKEN,
   isShopifyConfigured,
@@ -99,18 +106,52 @@ function normalizeStorefrontPayload<T>(value: T): T {
   return value;
 }
 
-interface CheckoutLineItem {
+export interface CheckoutLineItem {
   variantId: string;
   quantity: number;
 }
 
-interface CartCreateData {
-  cartCreate: {
-    cart: {
-      checkoutUrl: string;
-    } | null;
-    userErrors: Array<{ message: string }>;
+interface StorefrontCartGraphql {
+  id: string;
+  checkoutUrl: string;
+  lines: {
+    edges: Array<{
+      node: {
+        id: string;
+        quantity: number;
+        merchandise: {
+          id: string;
+        };
+      };
+    }>;
   };
+}
+
+interface CartMutationPayload {
+  cart: StorefrontCartGraphql | null;
+  userErrors: Array<{ message: string }>;
+}
+
+interface CartCreateData {
+  cartCreate: CartMutationPayload;
+}
+
+interface CartLinesAddData {
+  cartLinesAdd: CartMutationPayload;
+}
+
+interface CartLinesUpdateData {
+  cartLinesUpdate: CartMutationPayload;
+}
+
+interface CartLinesRemoveData {
+  cartLinesRemove: CartMutationPayload;
+}
+
+export interface StorefrontCheckout {
+  cartId: string;
+  checkoutUrl: string;
+  lineIdsByVariantId: Record<string, string>;
 }
 
 interface ShopifyAnalyticsContextData {
@@ -128,6 +169,29 @@ const SHOPIFY_ANALYTICS_CONTEXT_QUERY = `
 `;
 
 let analyticsContextPromise: Promise<{ shopId: string }> | null = null;
+
+function isUsableTrackingToken(value?: string): value is string {
+  return Boolean(value && !value.startsWith('00000000-'));
+}
+
+function getStorefrontTrackingHeaders(): Record<string, string> {
+  if (typeof window === 'undefined') return {};
+
+  const { uniqueToken, visitToken } = getTrackingValues();
+  const headers: Record<string, string> = {};
+
+  if (isUsableTrackingToken(uniqueToken)) {
+    headers[SHOPIFY_UNIQUE_TOKEN_HEADER] = uniqueToken;
+  }
+  if (isUsableTrackingToken(visitToken)) {
+    headers[SHOPIFY_VISIT_TOKEN_HEADER] = visitToken;
+  }
+  if (SHOPIFY_ANALYTICS_STOREFRONT_ID) {
+    headers[SHOPIFY_STOREFRONT_ID_HEADER] = SHOPIFY_ANALYTICS_STOREFRONT_ID;
+  }
+
+  return headers;
+}
 
 const STOREFRONT_QUERY = `
   query GetProducts($first: Int!, $country: CountryCode!) @inContext(country: $country) {
@@ -261,41 +325,71 @@ const PRODUCT_BY_HANDLE_QUERY = `
   }
 `;
 
+const STOREFRONT_CART_FIELDS = `
+  id
+  checkoutUrl
+  lines(first: 100) {
+    edges {
+      node {
+        id
+        quantity
+        merchandise {
+          ... on ProductVariant {
+            id
+          }
+        }
+      }
+    }
+  }
+`;
+
 const CART_CREATE_MUTATION = `
   mutation cartCreate($input: CartInput!, $country: CountryCode!) @inContext(country: $country) {
     cartCreate(input: $input) {
       cart {
-        id
-        checkoutUrl
-        totalQuantity
-        cost {
-          totalAmount {
-            amount
-            currencyCode
-          }
-        }
-        lines(first: 100) {
-          edges {
-            node {
-              id
-              quantity
-              merchandise {
-                ... on ProductVariant {
-                  id
-                  title
-                  price {
-                    amount
-                    currencyCode
-                  }
-                  product {
-                    title
-                    handle
-                  }
-                }
-              }
-            }
-          }
-        }
+        ${STOREFRONT_CART_FIELDS}
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+const CART_LINES_ADD_MUTATION = `
+  mutation cartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!, $country: CountryCode!) @inContext(country: $country) {
+    cartLinesAdd(cartId: $cartId, lines: $lines) {
+      cart {
+        ${STOREFRONT_CART_FIELDS}
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+const CART_LINES_UPDATE_MUTATION = `
+  mutation cartLinesUpdate($cartId: ID!, $lines: [CartLineUpdateInput!]!, $country: CountryCode!) @inContext(country: $country) {
+    cartLinesUpdate(cartId: $cartId, lines: $lines) {
+      cart {
+        ${STOREFRONT_CART_FIELDS}
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+const CART_LINES_REMOVE_MUTATION = `
+  mutation cartLinesRemove($cartId: ID!, $lineIds: [ID!]!, $country: CountryCode!) @inContext(country: $country) {
+    cartLinesRemove(cartId: $cartId, lineIds: $lineIds) {
+      cart {
+        ${STOREFRONT_CART_FIELDS}
       }
       userErrors {
         field
@@ -319,7 +413,8 @@ export async function storefrontApiRequest<T>(
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-Shopify-Storefront-Access-Token': SHOPIFY_STOREFRONT_TOKEN
+      'X-Shopify-Storefront-Access-Token': SHOPIFY_STOREFRONT_TOKEN,
+      ...getStorefrontTrackingHeaders(),
     },
     body: JSON.stringify({ query, variables }),
   });
@@ -378,7 +473,39 @@ export function getShopifyAnalyticsContext(): Promise<{ shopId: string }> {
   return analyticsContextPromise;
 }
 
-export async function createStorefrontCheckout(items: CheckoutLineItem[]): Promise<string> {
+function toStorefrontCheckout(
+  payload: CartMutationPayload,
+  operation: string,
+): StorefrontCheckout {
+  if (payload.userErrors.length > 0) {
+    throw new Error(
+      `${operation} failed: ${payload.userErrors
+        .map((error) => error.message)
+        .join(', ')}`,
+    );
+  }
+
+  const cart = payload.cart;
+  if (!cart?.id || !cart.checkoutUrl) {
+    throw new Error(`${operation} did not return a cart ID and checkout URL`);
+  }
+
+  const lineIdsByVariantId = Object.fromEntries(
+    cart.lines.edges
+      .filter(({ node }) => Boolean(node.merchandise?.id && node.id))
+      .map(({ node }) => [node.merchandise.id, node.id]),
+  );
+
+  return {
+    cartId: cart.id,
+    checkoutUrl: cart.checkoutUrl,
+    lineIdsByVariantId,
+  };
+}
+
+export async function createStorefrontCheckout(
+  items: CheckoutLineItem[],
+): Promise<StorefrontCheckout> {
   try {
     const lines = items.map((item) => ({
       quantity: item.quantity,
@@ -391,27 +518,67 @@ export async function createStorefrontCheckout(items: CheckoutLineItem[]): Promi
       country,
     });
 
-    if (cartData.data.cartCreate.userErrors.length > 0) {
-      const errorMessage = `Cart creation failed: ${cartData.data.cartCreate.userErrors
-        .map((error) => error.message)
-        .join(', ')}`;
-      throw new Error(errorMessage);
-    }
-
-    const cart = cartData.data.cartCreate.cart;
-
-    if (!cart?.checkoutUrl) {
-      throw new Error('No checkout URL returned from Shopify');
-    }
-
     // Keep Shopify's returned checkout URL untouched. The Storefront API token
     // attributes the order to the Headless storefront that created the cart.
-    return cart.checkoutUrl;
+    return toStorefrontCheckout(cartData.data.cartCreate, 'Cart creation');
   } catch (error) {
     if (import.meta.env.DEV) {
       console.error('Error creating storefront checkout:', error);
     }
     throw error;
   }
+}
+
+export async function addStorefrontCartLines(
+  cartId: string,
+  items: CheckoutLineItem[],
+): Promise<StorefrontCheckout> {
+  const country = getMarketCountry();
+  const response = await storefrontApiRequest<CartLinesAddData>(
+    CART_LINES_ADD_MUTATION,
+    {
+      cartId,
+      country,
+      lines: items.map((item) => ({
+        quantity: item.quantity,
+        merchandiseId: item.variantId,
+      })),
+    },
+  );
+
+  return toStorefrontCheckout(response.data.cartLinesAdd, 'Adding cart lines');
+}
+
+export async function updateStorefrontCartLine(
+  cartId: string,
+  lineId: string,
+  quantity: number,
+): Promise<StorefrontCheckout> {
+  const response = await storefrontApiRequest<CartLinesUpdateData>(
+    CART_LINES_UPDATE_MUTATION,
+    {
+      cartId,
+      country: getMarketCountry(),
+      lines: [{ id: lineId, quantity }],
+    },
+  );
+
+  return toStorefrontCheckout(response.data.cartLinesUpdate, 'Updating cart line');
+}
+
+export async function removeStorefrontCartLine(
+  cartId: string,
+  lineId: string,
+): Promise<StorefrontCheckout> {
+  const response = await storefrontApiRequest<CartLinesRemoveData>(
+    CART_LINES_REMOVE_MUTATION,
+    {
+      cartId,
+      country: getMarketCountry(),
+      lineIds: [lineId],
+    },
+  );
+
+  return toStorefrontCheckout(response.data.cartLinesRemove, 'Removing cart line');
 }
 

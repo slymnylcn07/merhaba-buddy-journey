@@ -4,8 +4,8 @@ import { useLocation } from 'react-router-dom';
 import { setShopifyAnalyticsReady, trackPageView } from '@/lib/shopify-analytics';
 import { useAnalyticsConsent } from '@/lib/cookie-consent';
 import {
+  SHOPIFY_ANALYTICS_STOREFRONT_TOKEN,
   SHOPIFY_STORE_DOMAIN,
-  SHOPIFY_STOREFRONT_TOKEN,
   isShopifyConfigured,
 } from '@/lib/shopify-config';
 import {
@@ -87,7 +87,7 @@ export function useShopifyAnalytics() {
   const configured = isShopifyConfigured();
   const cookiesReady = useShopifyCookies({
     hasUserConsent: analyticsAllowed,
-    storefrontAccessToken: SHOPIFY_STOREFRONT_TOKEN,
+    storefrontAccessToken: SHOPIFY_ANALYTICS_STOREFRONT_TOKEN,
     checkoutDomain: SHOPIFY_STORE_DOMAIN ? `https://${SHOPIFY_STORE_DOMAIN}` : undefined,
     fetchTrackingValues: configured && analyticsAllowed,
     ignoreDeprecatedCookies: true,
