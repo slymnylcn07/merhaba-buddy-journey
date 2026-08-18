@@ -14,6 +14,10 @@
   ],
   "rewrites": [
     {
+      "source": "/api/unstable/graphql.json",
+      "destination": "https://flexi-knee-store.myshopify.com/api/unstable/graphql.json"
+    },
+    {
       "source": "/apps/parcelpanel",
       "destination": "https://flexi-knee-store.myshopify.com/apps/parcelpanel"
     },

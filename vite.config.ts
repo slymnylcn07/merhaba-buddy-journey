@@ -29,6 +29,12 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    proxy: {
+      "/api/unstable/graphql.json": {
+        target: "https://flexi-knee-store.myshopify.com",
+        changeOrigin: true,
+      },
+    },
   },
   plugins: [
     react(),

@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { ShopifyProduct, createStorefrontCheckout } from '@/lib/shopify';
-import { trackAddToCart as trackShopifyAddToCart, trackCheckoutStarted, trackCartView } from '@/lib/shopify-analytics';
 import { trackAddToCart as trackGA4AddToCart, trackBeginCheckout as trackGA4BeginCheckout } from '@/hooks/use-google-analytics';
 import { trackAddToCart as trackMetaAddToCart, trackInitiateCheckout as trackMetaInitiateCheckout } from '@/hooks/use-meta-tracking';
 
@@ -82,18 +81,6 @@ export const useCartStore = create<CartStore>()(
         // Sepete ekleme başarılıysa çekmeceyi otomatik aç
         set({ isDrawerOpen: true });
 
-        // Track add to cart event for Shopify Analytics
-        trackShopifyAddToCart({
-          productId: item.product.node.id,
-          productTitle: item.product.node.title,
-          productHandle: item.product.node.handle,
-          variantId: item.variantId,
-          variantTitle: item.variantTitle,
-          price: item.price.amount,
-          currency: item.price.currencyCode,
-          quantity: item.quantity,
-        });
-
         // Track add to cart event for GA4
         trackGA4AddToCart({
           id: item.product.node.id,
@@ -152,26 +139,10 @@ export const useCartStore = create<CartStore>()(
           return;
         }
 
-        // Track checkout started event for Shopify Analytics
         const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
         const totalAmount = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
         const currency = items[0]?.price.currencyCode || 'GBP';
         
-        // Track checkout started for Shopify Analytics
-        trackCheckoutStarted({
-          totalQuantity,
-          totalAmount: totalAmount.toFixed(2),
-          currency,
-          lines: items.map(item => ({
-            variantId: item.variantId,
-            productId: item.product.node.id,
-            productTitle: item.product.node.title,
-            variantTitle: item.variantTitle,
-            quantity: item.quantity,
-            price: item.price.amount,
-          })),
-        });
-
         // Track begin_checkout for GA4
         trackGA4BeginCheckout(items.map(item => ({
           id: item.product.node.id,

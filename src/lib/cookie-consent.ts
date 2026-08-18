@@ -23,7 +23,7 @@ export function hasAnalyticsConsent(): boolean {
 
 function updateGoogleConsent(granted: boolean) {
   if (typeof window === "undefined") return;
-  const consentWindow = window as GoogleConsentWindow;
+  const consentWindow = window as unknown as GoogleConsentWindow;
   consentWindow[`ga-disable-${GA_MEASUREMENT_ID}`] = !granted;
   if (typeof consentWindow.gtag === "function") {
     consentWindow.gtag("consent", "update", {

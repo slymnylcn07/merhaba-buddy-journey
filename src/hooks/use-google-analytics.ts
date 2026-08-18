@@ -34,12 +34,12 @@ export const useGoogleAnalytics = () => {
 
   useEffect(() => {
     if (!analyticsAllowed) {
-      (window as GoogleAnalyticsWindow)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+      (window as unknown as GoogleAnalyticsWindow)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
       return;
     }
 
     ensureGoogleTagQueue();
-    (window as GoogleAnalyticsWindow)[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
+    (window as unknown as GoogleAnalyticsWindow)[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
 
     window.gtag("consent", "update", {
       analytics_storage: "granted",

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "sonner";
@@ -30,6 +30,7 @@ import { PremiumProductStory } from "@/components/PremiumProductStory";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
 import { buildMerchantOffer } from "@/lib/merchant-schema";
 import { isFreeShippingEligible } from "@/lib/shipping-policy";
+import { trackProductView } from "@/lib/shopify-analytics";
 import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
 import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.webp";
@@ -119,6 +120,7 @@ export default function ProductDetail() {
   const [bundleQty, setBundleQty] = useState<1 | 2>(1);
   const [isLoading, setIsLoading] = useState(true);
   const [isBuying, setIsBuying] = useState(false);
+  const trackedProductId = useRef("");
   const addItem = useCartStore((state) => state.addItem);
 
   useEffect(() => {
@@ -194,6 +196,25 @@ export default function ProductDetail() {
   useEffect(() => {
     setSelectedImage(0);
   }, [handle, shopifyImages.length]);
+
+  useEffect(() => {
+    if (!product || !variant || trackedProductId.current === product.node.id) return;
+    trackedProductId.current = product.node.id;
+
+    trackProductView({
+      productId: product.node.id,
+      productTitle: product.node.title,
+      productHandle: product.node.handle,
+      productPrice: variant.price.amount,
+      productCurrency: variant.price.currencyCode,
+      productVariantId: variant.id,
+      productVariantTitle: variant.title,
+      productImageUrl: product.node.images.edges[0]?.node.url,
+      productVendor: product.node.vendor,
+      productType: product.node.productType,
+      productSku: variant.sku || undefined,
+    });
+  }, [product, variant]);
 
   const productJsonLd = useMemo(() => ({
     "@context": "https://schema.org",
