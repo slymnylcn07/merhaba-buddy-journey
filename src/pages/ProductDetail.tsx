@@ -22,8 +22,12 @@ import { VideoReviews } from "@/components/VideoReviews";
 import { ProductReviews } from "@/components/ProductReviews";
 import { KnowBeforeYouBuy } from "@/components/KnowBeforeYouBuy";
 import { getProductByHandle, ShopifyProduct, createStorefrontCheckout } from "@/lib/shopify";
+import {
+  settleShopifyAnalyticsBeforeNavigation,
+  trackAddToCart as trackShopifyAddToCart,
+} from "@/lib/shopify-analytics";
 import { PRIMARY_PRODUCT_HANDLE } from "@/lib/product-config";
-import { useCartStore } from "@/stores/cartStore";
+import { toShopifyAddToCartData, useCartStore } from "@/stores/cartStore";
 import { featurePillars } from "@/data/product-system";
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { PremiumProductStory } from "@/components/PremiumProductStory";
@@ -320,8 +324,13 @@ export default function ProductDetail() {
     setIsBuying(true);
 
     try {
-      const checkoutUrl = await createStorefrontCheckout([item]);
-      window.location.href = checkoutUrl;
+      const checkout = await createStorefrontCheckout([item]);
+      await settleShopifyAnalyticsBeforeNavigation(
+        trackShopifyAddToCart(
+          toShopifyAddToCartData(checkout.cartId, item),
+        ),
+      );
+      window.location.href = checkout.checkoutUrl;
     } catch {
       toast.error("Checkout could not be created. Please try again.");
     } finally {

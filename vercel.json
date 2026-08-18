@@ -15,7 +15,7 @@
   "rewrites": [
     {
       "source": "/api/unstable/graphql.json",
-      "destination": "https://flexi-knee-store.myshopify.com/api/unstable/graphql.json"
+      "destination": "/api/shopify-tracking"
     },
     {
       "source": "/apps/parcelpanel",

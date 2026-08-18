@@ -12,7 +12,8 @@ import { hasAnalyticsConsent } from "./cookie-consent";
 import { getCurrentMarket } from "./market";
 import { getShopifyAnalyticsContext } from "./shopify";
 import {
-  SHOPIFY_STOREFRONT_ID,
+  SHOPIFY_ANALYTICS_SALES_CHANNEL,
+  SHOPIFY_ANALYTICS_STOREFRONT_ID,
   isShopifyConfigured,
 } from "./shopify-config";
 
@@ -23,6 +24,10 @@ type ShopifyBasePayload = Omit<
 
 let trackingReady = false;
 let readyResolvers: Array<() => void> = [];
+
+function isUsableTrackingToken(value?: string): value is string {
+  return Boolean(value && !value.startsWith("00000000-"));
+}
 
 export function setShopifyAnalyticsReady(ready: boolean): void {
   trackingReady = ready;
@@ -74,7 +79,12 @@ async function getBasePayload(): Promise<ShopifyBasePayload | null> {
   if (!hasAnalyticsConsent()) return null;
 
   const browser = getClientBrowserParameters();
-  if (!browser.uniqueToken || !browser.visitToken) return null;
+  if (
+    !isUsableTrackingToken(browser.uniqueToken) ||
+    !isUsableTrackingToken(browser.visitToken)
+  ) {
+    return null;
+  }
 
   const { shopId } = await getShopifyAnalyticsContext();
   const market = getCurrentMarket();
@@ -88,8 +98,13 @@ async function getBasePayload(): Promise<ShopifyBasePayload | null> {
     analyticsAllowed: true,
     marketingAllowed: false,
     saleOfDataAllowed: false,
-    shopifySalesChannel: ShopifySalesChannel.headless,
-    ...(SHOPIFY_STOREFRONT_ID ? { storefrontId: SHOPIFY_STOREFRONT_ID } : {}),
+    shopifySalesChannel:
+      SHOPIFY_ANALYTICS_SALES_CHANNEL === "hydrogen"
+        ? ShopifySalesChannel.hydrogen
+        : ShopifySalesChannel.headless,
+    ...(SHOPIFY_ANALYTICS_STOREFRONT_ID
+      ? { storefrontId: SHOPIFY_ANALYTICS_STOREFRONT_ID }
+      : {}),
   };
 }
 
@@ -184,30 +199,41 @@ export interface AddToCartData extends ProductViewData {
   quantity: number;
 }
 
-export function trackAddToCart(item: AddToCartData): void {
-  void (async () => {
-    try {
-      const base = await getBasePayload();
-      if (!base) return;
+export async function trackAddToCart(item: AddToCartData): Promise<void> {
+  try {
+    const base = await getBasePayload();
+    if (!base) return;
 
-      const payload: ShopifyAddToCartPayload = {
-        ...base,
-        cartId: item.cartId,
-        currency: item.productCurrency as ShopifyAddToCartPayload["currency"],
-        products: [toAnalyticsProduct(item, item.quantity)],
-        totalValue: (Number(item.productPrice) || 0) * item.quantity,
-      };
+    const payload: ShopifyAddToCartPayload = {
+      ...base,
+      cartId: item.cartId,
+      currency: item.productCurrency as ShopifyAddToCartPayload["currency"],
+      products: [toAnalyticsProduct(item, item.quantity)],
+      totalValue: (Number(item.productPrice) || 0) * item.quantity,
+    };
 
-      await sendShopifyAnalytics({
-        eventName: AnalyticsEventName.ADD_TO_CART,
-        payload,
-      });
-    } catch (error) {
-      if (import.meta.env.DEV) {
-        console.warn("[Shopify Analytics] Add to cart event could not be sent", error);
-      }
+    await sendShopifyAnalytics({
+      eventName: AnalyticsEventName.ADD_TO_CART,
+      payload,
+    });
+  } catch (error) {
+    if (import.meta.env.DEV) {
+      console.warn("[Shopify Analytics] Add to cart event could not be sent", error);
     }
-  })();
+  }
+}
+
+export async function settleShopifyAnalyticsBeforeNavigation(
+  analyticsRequest: Promise<void>,
+  timeoutMs = 800,
+): Promise<void> {
+  let timeoutId: ReturnType<typeof setTimeout> | undefined;
+  const timeout = new Promise<void>((resolve) => {
+    timeoutId = setTimeout(resolve, timeoutMs);
+  });
+
+  await Promise.race([analyticsRequest, timeout]);
+  if (timeoutId) clearTimeout(timeoutId);
 }
 
 export function trackSearch(searchQuery: string): void {
