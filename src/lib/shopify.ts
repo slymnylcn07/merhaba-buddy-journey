@@ -1,6 +1,5 @@
 import { getMarketCountry } from "@/lib/market";
 import {
-  SHOPIFY_STORE_DOMAIN as SHOPIFY_STORE_PERMANENT_DOMAIN,
   SHOPIFY_STOREFRONT_URL,
   SHOPIFY_STOREFRONT_TOKEN,
   isShopifyConfigured,
@@ -10,6 +9,8 @@ export interface ShopifyProduct {
   node: {
     id: string;
     title: string;
+    vendor?: string;
+    productType?: string;
     description: string;
     descriptionHtml?: string;
     handle: string;
@@ -112,6 +113,22 @@ interface CartCreateData {
   };
 }
 
+interface ShopifyAnalyticsContextData {
+  shop: {
+    id: string;
+  };
+}
+
+const SHOPIFY_ANALYTICS_CONTEXT_QUERY = `
+  query ShopifyAnalyticsContext {
+    shop {
+      id
+    }
+  }
+`;
+
+let analyticsContextPromise: Promise<{ shopId: string }> | null = null;
+
 const STOREFRONT_QUERY = `
   query GetProducts($first: Int!, $country: CountryCode!) @inContext(country: $country) {
     products(first: $first) {
@@ -119,6 +136,8 @@ const STOREFRONT_QUERY = `
         node {
           id
           title
+          vendor
+          productType
           description
           descriptionHtml
           handle
@@ -184,6 +203,8 @@ const PRODUCT_BY_HANDLE_QUERY = `
     product(handle: $handle) {
       id
       title
+      vendor
+      productType
       description
       descriptionHtml
       handle
@@ -342,6 +363,21 @@ export async function getProductByHandle(handle: string): Promise<ShopifyProduct
   return node ? { node } : null;
 }
 
+export function getShopifyAnalyticsContext(): Promise<{ shopId: string }> {
+  if (!analyticsContextPromise) {
+    analyticsContextPromise = storefrontApiRequest<ShopifyAnalyticsContextData>(
+      SHOPIFY_ANALYTICS_CONTEXT_QUERY,
+    )
+      .then((response) => ({ shopId: response.data.shop.id }))
+      .catch((error) => {
+        analyticsContextPromise = null;
+        throw error;
+      });
+  }
+
+  return analyticsContextPromise;
+}
+
 export async function createStorefrontCheckout(items: CheckoutLineItem[]): Promise<string> {
   try {
     const lines = items.map((item) => ({
@@ -368,17 +404,9 @@ export async function createStorefrontCheckout(items: CheckoutLineItem[]): Promi
       throw new Error('No checkout URL returned from Shopify');
     }
 
-    // Always use the permanent myshopify.com domain for checkout.
-    let checkoutUrl = cart.checkoutUrl.replace(
-      /https:\/\/[^/]+/,
-      `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}`
-    );
-
-    const url = new URL(checkoutUrl);
-    url.searchParams.set('channel', 'online_store');
-    checkoutUrl = url.toString();
-
-    return checkoutUrl;
+    // Keep Shopify's returned checkout URL untouched. The Storefront API token
+    // attributes the order to the Headless storefront that created the cart.
+    return cart.checkoutUrl;
   } catch (error) {
     if (import.meta.env.DEV) {
       console.error('Error creating storefront checkout:', error);

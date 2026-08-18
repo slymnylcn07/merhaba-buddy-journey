@@ -15,6 +15,11 @@ const forbidden = [
   { label: "removed homepage brand-source block", value: "Official FlexiKnee brand source" },
   { label: "developer-facing homepage copy", value: "Active product pricing can update dynamically" },
   { label: "developer-facing video copy", value: "Short vertical videos show the device" },
+  { label: "deprecated Shopify unique visitor cookie", value: "_shopify_y" },
+  { label: "deprecated Shopify session cookie", value: "_shopify_s" },
+  { label: "unsupported Shopify analytics schema", value: "custom_storefront_customer_tracking/1.0" },
+  { label: "manual Shopify monorail endpoint", value: "monorail-edge.shopifysvc.com/v1/produce" },
+  { label: "forced Online Store checkout attribution", value: "channel=online_store" },
 ];
 
 const mojibakePatterns = [

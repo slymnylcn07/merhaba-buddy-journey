@@ -4,6 +4,7 @@
  * Mağaza değiştiğinde KODA DOKUNMAYIN, sadece ortam değişkenlerini güncelleyin:
  *   VITE_SHOPIFY_STORE_DOMAIN     → yeni-magazaniz.myshopify.com (kalıcı domain)
  *   VITE_SHOPIFY_STOREFRONT_TOKEN → Storefront API "Genel Erişim Belirteci"
+ *   VITE_SHOPIFY_STOREFRONT_ID    → Headless kanalındaki Storefront ID (opsiyonel)
  *   VITE_SHOPIFY_API_VERSION      → örn. 2025-07 (opsiyonel)
  *
  * Vercel'de: Project → Settings → Environment Variables altına ekleyin,
@@ -19,6 +20,9 @@ export const SHOPIFY_STORE_DOMAIN =
 
 export const SHOPIFY_STOREFRONT_TOKEN =
   import.meta.env.VITE_SHOPIFY_STOREFRONT_TOKEN || '';
+
+export const SHOPIFY_STOREFRONT_ID =
+  import.meta.env.VITE_SHOPIFY_STOREFRONT_ID || '';
 
 export const SHOPIFY_API_VERSION =
   import.meta.env.VITE_SHOPIFY_API_VERSION || '2025-07';

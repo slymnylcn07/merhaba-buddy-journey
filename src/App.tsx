@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
-import { useShopifyPageView } from "./hooks/use-shopify-analytics";
+import { useShopifyAnalytics } from "./hooks/use-shopify-analytics";
 import { useGoogleAnalytics } from "./hooks/use-google-analytics";
 import { useMetaTracking } from "./hooks/use-meta-tracking";
 import { useMicrosoftClarity } from "./hooks/use-microsoft-clarity";
@@ -41,7 +41,7 @@ const PageLoader = () => (
 );
 
 const FullAnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
-  useShopifyPageView();
+  useShopifyAnalytics();
   useGoogleAnalytics();
   useMetaTracking();
   useMicrosoftClarity();

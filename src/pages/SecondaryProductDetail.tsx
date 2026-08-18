@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "sonner";
@@ -24,6 +24,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { getProductPageConfig } from "@/data/product-page-config";
 import { createStorefrontCheckout, getProductByHandle, ShopifyProduct } from "@/lib/shopify";
+import { trackProductView } from "@/lib/shopify-analytics";
 import { getProductPath, getShopifyProductHandleCandidates } from "@/lib/product-config";
 import { useCartStore } from "@/stores/cartStore";
 import { getProductProfile } from "@/data/product-profiles";
@@ -56,6 +57,7 @@ export default function SecondaryProductDetail() {
   const [selectedVariantId, setSelectedVariantId] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [isBuying, setIsBuying] = useState(false);
+  const trackedProductId = useRef("");
   const addItem = useCartStore((state) => state.addItem);
 
   useEffect(() => {
@@ -143,6 +145,25 @@ export default function SecondaryProductDetail() {
   useEffect(() => {
     setSelectedImage(0);
   }, [handle]);
+
+  useEffect(() => {
+    if (!node || !selectedVariant || trackedProductId.current === node.id) return;
+    trackedProductId.current = node.id;
+
+    trackProductView({
+      productId: node.id,
+      productTitle: node.title,
+      productHandle: node.handle,
+      productPrice: selectedVariant.price.amount,
+      productCurrency: selectedVariant.price.currencyCode,
+      productVariantId: selectedVariant.id,
+      productVariantTitle: selectedVariant.title,
+      productImageUrl: images[0]?.url,
+      productVendor: node.vendor,
+      productType: node.productType,
+      productSku: selectedVariant.sku || undefined,
+    });
+  }, [images, node, selectedVariant]);
 
   const selectOption = (name: string, value: string) => {
     const currentSelections = Object.fromEntries(
