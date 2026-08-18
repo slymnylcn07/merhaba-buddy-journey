@@ -27,6 +27,15 @@ export const SHOPIFY_ANALYTICS_STOREFRONT_TOKEN =
   import.meta.env.VITE_SHOPIFY_ANALYTICS_STOREFRONT_TOKEN ||
   SHOPIFY_STOREFRONT_TOKEN;
 
+/**
+ * Keep every Storefront API request on the same sales channel as analytics.
+ * Shopify Live View requires the token managed by the Hydrogen sales channel.
+ * The original Headless token remains a fallback for environments that have
+ * not received the Hydrogen variables yet.
+ */
+export const SHOPIFY_API_STOREFRONT_TOKEN =
+  SHOPIFY_ANALYTICS_STOREFRONT_TOKEN;
+
 export const SHOPIFY_ANALYTICS_STOREFRONT_ID =
   import.meta.env.VITE_SHOPIFY_ANALYTICS_STOREFRONT_ID || '';
 
@@ -52,7 +61,7 @@ export const SHOPIFY_CUSTOMER_ACCOUNT_URL =
 export const SHOPIFY_STOREFRONT_URL = `https://${SHOPIFY_STORE_DOMAIN}/api/${SHOPIFY_API_VERSION}/graphql.json`;
 
 export const isShopifyConfigured = (): boolean =>
-  Boolean(SHOPIFY_STORE_DOMAIN && SHOPIFY_STOREFRONT_TOKEN);
+  Boolean(SHOPIFY_STORE_DOMAIN && SHOPIFY_API_STOREFRONT_TOKEN);
 
 if (import.meta.env.DEV && !isShopifyConfigured()) {
   console.warn(
