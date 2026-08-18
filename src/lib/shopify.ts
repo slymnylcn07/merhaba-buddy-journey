@@ -7,8 +7,8 @@ import {
 import { getMarketCountry } from "@/lib/market";
 import {
   SHOPIFY_ANALYTICS_STOREFRONT_ID,
+  SHOPIFY_API_STOREFRONT_TOKEN,
   SHOPIFY_STOREFRONT_URL,
-  SHOPIFY_STOREFRONT_TOKEN,
   isShopifyConfigured,
 } from './shopify-config';
 
@@ -413,7 +413,7 @@ export async function storefrontApiRequest<T>(
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-Shopify-Storefront-Access-Token': SHOPIFY_STOREFRONT_TOKEN,
+      'X-Shopify-Storefront-Access-Token': SHOPIFY_API_STOREFRONT_TOKEN,
       ...getStorefrontTrackingHeaders(),
     },
     body: JSON.stringify({ query, variables }),
