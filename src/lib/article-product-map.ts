@@ -35,7 +35,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     benefit:
       "Adjustable warmth, red light, and gentle vibration in one wireless wrap for a complete 15-minute daily knee routine.",
     fallbackPrice: "$79.99",
-    fallbackImage: "/images/shopify-gallery/flexiknee-product-main.webp",
+    fallbackImage: "/images/shopify-gallery/flexiknee-gallery-01-main.webp",
   },
   calf: {
     handle: "flexiknee-calf-massager",
@@ -100,6 +100,8 @@ const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
   "air-compression-leg-massagers-do-they-work": "calf",
   "knee-brace-vs-compression-sleeve": "sleeve",
   "knee-compression-sleeve-sizing-guide": "sleeve",
+  "flat-feet-overpronation-knee-pain": "insoles",
+  "how-to-sleep-with-knee-pain": "wrap",
   "best-insoles-for-knee-pain-2026": "insoles",
   "pickleball-knee-recovery-routine": "sleeve",
   "hyrox-knee-pain": "sleeve",

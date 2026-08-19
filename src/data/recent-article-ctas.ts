@@ -1,7 +1,7 @@
 export const recentArticleCTAs: Record<string, { headline: string; text: string }> = {
   "knee-sleeves-for-running": {
-    headline: "Want a breathable sleeve for a short running test?",
-    text: "The FlexiKnee Compression Support Sleeve can add light compression and a supported feel during a measured run. It does not correct running form, prevent injury, or make a painful or unstable knee safe to run on.",
+    headline: "Add breathable knee support to your next measured run",
+    text: "A flexible compression layer for short running tests, without rigid straps or hardware.",
   },
   "best-sandals-knee-pain": {
     headline: "Want flexible knee support for your next walking test?",
@@ -36,8 +36,8 @@ export const recentArticleCTAs: Record<string, { headline: string; text: string 
     text: "FlexiKnee combines adjustable warmth, red light, and gentle vibration for everyday comfort. It does not provide TENS, deliver electrical nerve stimulation, or replace assessment and treatment for persistent knee pain.",
   },
   "cold-therapy-machine-knee": {
-    headline: "Would a simpler reusable cold wrap fit your routine?",
-    text: "The FlexiKnee Reusable Knee Ice Pack Wrap offers a freezer-cooled, pump-free option for brief cold-comfort sessions. It is not a circulating cold-therapy machine and should not replace post-operative instructions.",
+    headline: "Use a reusable cold wrap instead of a full ice machine",
+    text: "The short cold-compress routine from this guide, without a reservoir, hose, or powered pump.",
   },
   "are-knees-over-toes-bad": {
     headline: "Want a supported feel during controlled squat practice?",
@@ -80,20 +80,20 @@ export const recentArticleCTAs: Record<string, { headline: string; text: string 
     text: "FlexiKnee Sport Orthopedic Insoles can add structured arch support and cushioning inside compatible running or trail shoes. They do not correct braking technique, replace descent conditioning, or make a swollen or unstable knee safe to run on.",
   },
   "hyrox-knee-pain": {
-    headline: "Want a simple comfort routine after HYROX training?",
-    text: "When there is no new injury, swelling, unusual heat, or instability, FlexiKnee can add adjustable warmth and optional vibration after training. It does not correct race preparation, replace rehabilitation, or make an injured knee safe to race.",
+    headline: "Add flexible knee support to HYROX training days",
+    text: "A breathable compression layer for runs, lunges and sled work, without rigid hardware.",
   },
   "rucking-knee-pain": {
-    headline: "Looking for comfort after a loaded walking day?",
-    text: "When warning signs and swelling are absent, FlexiKnee can add adjustable warmth and optional vibration after a ruck. It does not offset an overly heavy pack, poor fit, unsuitable footwear, or a training load your knee cannot yet recover from.",
+    headline: "Build ground-up support into loaded walking days",
+    text: "Structured support inside compatible rucking shoes, without adding another knee-worn layer.",
   },
   "padel-knee-pain": {
-    headline: "Building a calmer routine after court time?",
-    text: "When the knee is not newly injured, swollen, hot, locked, or unstable, FlexiKnee can add adjustable warmth and optional vibration after play. It does not replace court-specific strength, load progression, or assessment after a twist.",
+    headline: "Add flexible support to quick padel court changes",
+    text: "A breathable compression layer for turning and stopping, without rigid straps or hardware.",
   },
   "trail-running-knee-pain": {
-    headline: "Want a short comfort routine after the trail?",
-    text: "When swelling and warning signs are absent, FlexiKnee can add adjustable warmth and optional vibration after a run. It does not replace descent training, sensible elevation progress, footwear decisions, or assessment after a fall.",
+    headline: "Add ground-up support to uneven trail miles",
+    text: "Structured support inside compatible trail shoes, without adding another knee-worn layer.",
   },
   "knee-xray-vs-mri-vs-ultrasound": {
     headline: "Has the knee been assessed and cleared for a comfort routine?",
@@ -128,8 +128,8 @@ export const recentArticleCTAs: Record<string, { headline: string; text: string 
     text: "Use turmeric only as an optional supplement trial. FlexiKnee provides adjustable warmth, red light, and gentle vibration in a separate wireless knee-comfort routine.",
   },
   "varicose-veins-knee-pain": {
-    headline: "Looking for everyday compression after checking it is appropriate?",
-    text: "FlexiKnee Everyday Compression Socks provide knee-high support for travel, standing, walking and sport. They do not diagnose or treat varicose veins or blood clots and do not replace prescribed medical compression.",
+    headline: "Add knee-high support to travel and standing days",
+    text: "The everyday compression routine from this guide, in a lightweight stretch-knit sock.",
   },
   "knee-osteoarthritis-vs-rheumatoid-arthritis": {
     headline: "Support comfort without confusing it with disease treatment",
@@ -156,16 +156,16 @@ export const recentArticleCTAs: Record<string, { headline: string; text: string 
     text: "Use foam rolling as one part of recovery, then add a short comfort routine that supports the outer knee after walking or training.",
   },
   "how-to-sleep-with-knee-pain": {
-    headline: "Building a more comfortable evening routine?",
-    text: "FlexiKnee offers adjustable warmth, red light, and gentle vibration for a short wind-down session before bed.",
+    headline: "Bring targeted warmth into your routine before bed",
+    text: "A quiet 15-minute warm-up from this guide, without setting up a separate heating pad.",
   },
   "air-compression-leg-massagers-do-they-work": {
     headline: "Considering air compression for tired lower legs?",
     text: "The FlexiKnee Rechargeable Calf Recovery Massager combines adjustable air compression and warmth for short seated recovery sessions.",
   },
   "knee-compression-sleeve-sizing-guide": {
-    headline: "Ready to choose a correctly sized support sleeve?",
-    text: "The FlexiKnee Compression Support Sleeve is designed for flexible everyday support during walking, work, and training.",
+    headline: "Turn your knee measurement into a better sleeve fit",
+    text: "Breathable compression knit and a clear size chart put the measuring steps from this guide into practice.",
   },
   "tight-calves-knee-pain": {
     headline: "Want support after calf-heavy days?",
