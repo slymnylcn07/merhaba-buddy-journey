@@ -35,7 +35,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     benefit:
       "Adjustable warmth, red light, and gentle vibration in one wireless wrap for a complete 15-minute daily knee routine.",
     fallbackPrice: "$79.99",
-    fallbackImage: "/images/shopify-gallery/flexiknee-gallery-01-main.webp",
+    fallbackImage: "/images/shopify-gallery/flexiknee-product-main.webp",
   },
   calf: {
     handle: "flexiknee-calf-massager",

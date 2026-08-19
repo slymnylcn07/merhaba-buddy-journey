@@ -332,7 +332,6 @@ export const flexikneeVsCompetitors2026: ArticleExport = {
 
         <ArticleMidProductCTA
           articleSlug="flexiknee-vs-competitors-2026"
-          articleTitle="Best Knee Massagers 2026: FlexiKnee vs 9 Competitors"
         />
 
         <h2>FlexiKnee vs Peka Flexi Knee Massager</h2>

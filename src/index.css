@@ -152,6 +152,18 @@ All colors MUST be HSL.
   left: 0 !important;
 }
 
+@media (max-width: 859px) {
+  #tidio-chat-iframe,
+  #tidio-chat {
+    z-index: 20 !important;
+  }
+
+  .premium-article-cta {
+    position: relative;
+    z-index: 30;
+  }
+}
+
 
 /* FlexiKnee responsive guardrails */
 html,

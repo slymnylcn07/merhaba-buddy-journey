@@ -25,6 +25,8 @@ import PremiumCTA from "@/components/PremiumCTA";
 import { LazyRelatedGuideCard } from "@/components/LazyRelatedGuideCard";
 import { guidesData } from "@/data/guides";
 import { recentGuidesData } from "@/data/recent-guides-data";
+import { articleCTAs } from "@/data/article-ctas";
+import { recentArticleCTAs } from "@/data/recent-article-ctas";
 import { articleHowToSchemas } from "@/data/article-howto-schemas";
 import { loadArticleBySlug } from "@/data/article-loaders";
 import { loadRecentArticleBySlug } from "@/data/recent-article-loaders";
@@ -35,6 +37,7 @@ import { markPageReady } from "@/lib/page-ready";
 import type { ArticleData } from "@/data/articles/types";
 
 const allGuidesData = [...guidesData, ...recentGuidesData];
+const allArticleCTAs = { ...articleCTAs, ...recentArticleCTAs };
 
 function containsQuickAnswerLabel(node: ReactNode): boolean {
   if (typeof node === "string") return node.trim().toLowerCase() === "quick answer";
@@ -231,12 +234,14 @@ const GuideArticle = () => {
   const relatedGuides = getRelatedGuides(article.slug, allGuidesData, 3);
   const standardizedArticleContent = removeLegacyQuickAnswer(article.content);
   const hasVisibleFaq = containsVisibleFaq(article.content);
+  const ctaCopy = allArticleCTAs[article.slug];
   const articleContentWithMidCTA = insertMidArticleProductCTA(
     standardizedArticleContent,
     <ArticleMidProductCTA
       key={`mid-product-${article.slug}`}
       articleSlug={article.slug}
-      articleTitle={article.title}
+      headline={ctaCopy?.headline}
+      text={ctaCopy?.text}
     />,
   );
 
@@ -508,7 +513,8 @@ const GuideArticle = () => {
                 <div data-article-end-block="cta">
                   <PremiumCTA
                     articleSlug={article.slug}
-                    articleTitle={article.title}
+                    headline={ctaCopy?.headline}
+                    text={ctaCopy?.text}
                     placement="article_end"
                   />
                 </div>

@@ -2,17 +2,20 @@ import PremiumCTA from "@/components/PremiumCTA";
 
 interface ArticleMidProductCTAProps {
   articleSlug?: string;
-  articleTitle?: string;
+  headline?: string;
+  text?: string;
 }
 
 const ArticleMidProductCTA = ({
   articleSlug,
-  articleTitle,
+  headline,
+  text,
 }: ArticleMidProductCTAProps) => (
   <aside aria-label="Recommended FlexiKnee product" data-article-mid-cta>
     <PremiumCTA
       articleSlug={articleSlug}
-      articleTitle={articleTitle}
+      headline={headline}
+      text={text}
       placement="mid_article"
     />
   </aside>
