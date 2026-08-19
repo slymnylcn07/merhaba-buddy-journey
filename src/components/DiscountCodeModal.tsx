@@ -62,7 +62,7 @@ export const DiscountCodeModal = ({ open, onOpenChange }: DiscountCodeModalProps
               <Copy className="h-5 w-5 text-blue-400 transition group-hover:text-blue-600" />
             )}
           </button>
-          <p className="mt-2 text-xs text-slate-400">Tap to copy · applied at checkout</p>
+          <p className="mt-2 text-xs text-slate-400">Tap to copy, then add it in your cart or at checkout.</p>
 
           <Link
             to="/shop"

@@ -1,10 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { trackEvent } from "@/hooks/use-google-analytics";
+import { trackClarityEvent } from "@/hooks/use-microsoft-clarity";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { pickProductForSlug, ProductRec } from "@/lib/article-product-map";
-import { getProductPath, getPublicProductHandle } from "@/lib/product-config";
+import { getPublicProductHandle } from "@/lib/product-config";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
+import { NEWSLETTER_DISCOUNT_CODE, NEWSLETTER_DISCOUNT_PCT } from "@/lib/newsletter-config";
+import {
+  buildGuideOfferProductPath,
+  markGuideOfferSource,
+} from "@/lib/guide-offer";
+import { articleCTAs } from "@/data/article-ctas";
+import { recentArticleCTAs } from "@/data/recent-article-ctas";
 import {
   formatMarketMoney,
   getSafeUsdFallbackPrice,
@@ -19,13 +28,16 @@ import {
  *   (eşleşme yoksa ana ürün).
  * - Fiyat ve görseli Shopify'dan canlı çeker; API'ye ulaşamazsa
  *   yedek fiyat + ürünün yerel/public görseliyle çalışmaya devam eder.
- * - headline/text prop'ları geriye dönük uyumluluk için korunur;
- *   yeni tasarımda per-ürün metin kullanıldığından görmezden gelinir.
+ * - Rehbere özel headline/text metinlerini gösterir.
+ * - Kartın gösterimini ve ürün tıklamasını yerleşim bilgisiyle ölçer.
+ * - Ürün bağlantısını makale kaynaklı GUIDE10 teklifiyle işaretler.
  */
 
 interface PremiumCTAProps {
   headline?: string;
   text?: string;
+  articleSlug?: string;
+  placement?: "mid_article" | "article_end";
 }
 
 // Tüm kartlar tek listeden beslensin diye modül seviyesinde önbellek
@@ -37,13 +49,23 @@ function getCachedProducts() {
   return productsPromise;
 }
 
-const PremiumCTA = (_props: PremiumCTAProps) => {
+const PremiumCTA = ({
+  headline,
+  text,
+  articleSlug,
+  placement = "article_end",
+}: PremiumCTAProps) => {
   const location = useLocation();
-  const slug = location.pathname.startsWith("/guides/")
+  const slug = articleSlug || (location.pathname.startsWith("/guides/")
     ? location.pathname.replace("/guides/", "")
-    : undefined;
+    : undefined);
 
   const rec: ProductRec = pickProductForSlug(slug);
+  const mappedCopy = slug ? articleCTAs[slug] || recentArticleCTAs[slug] : undefined;
+  const displayHeadline = headline || mappedCopy?.headline || rec.title;
+  const displayText = text || mappedCopy?.text || rec.benefit;
+  const cardRef = useRef<HTMLDivElement>(null);
+  const impressionSent = useRef(false);
 
   const [liveImage, setLiveImage] = useState<string | null>(null);
   const [livePrice, setLivePrice] = useState<{
@@ -91,10 +113,77 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
     livePrice?.amount,
     livePrice?.currencyCode,
   );
+  const offerProductPath = buildGuideOfferProductPath(
+    rec.handle,
+    slug || "unknown",
+    placement,
+  );
+
+  useEffect(() => {
+    const element = cardRef.current;
+    if (!element || impressionSent.current) return;
+
+    const sendImpression = () => {
+      if (impressionSent.current) return;
+      impressionSent.current = true;
+      trackClarityEvent("guide_product_card_view");
+      trackEvent("product_card_impression", {
+        slug: slug || "unknown",
+        placement,
+        product_handle: rec.handle,
+        offer_code: NEWSLETTER_DISCOUNT_CODE,
+        cta_version: "guide-product-card-v2",
+      });
+      trackEvent("view_promotion", {
+        promotion_id: `guide10-${placement}-${slug || "unknown"}`,
+        promotion_name: "Guide reader offer",
+        creative_slot: placement,
+        items: [{ item_id: rec.handle, item_name: rec.title }],
+      });
+    };
+
+    if (!("IntersectionObserver" in window)) {
+      sendImpression();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          sendImpression();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.35 },
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [placement, rec.handle, rec.title, slug]);
+
+  const handleProductClick = () => {
+    markGuideOfferSource(slug || "unknown", placement);
+    trackClarityEvent("guide_product_card_click");
+    trackEvent("product_card_click", {
+      slug: slug || "unknown",
+      placement,
+      product_handle: rec.handle,
+      offer_code: NEWSLETTER_DISCOUNT_CODE,
+      cta_version: "guide-product-card-v2",
+    });
+    trackEvent("select_promotion", {
+      promotion_id: `guide10-${placement}-${slug || "unknown"}`,
+      promotion_name: "Guide reader offer",
+      creative_slot: placement,
+      items: [{ item_id: rec.handle, item_name: rec.title }],
+    });
+  };
 
   return (
     <div
+      ref={cardRef}
       data-cta="product-card"
+      data-cta-placement={placement}
+      data-offer-code={NEWSLETTER_DISCOUNT_CODE}
       className="my-10 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:p-5 [&_p]:!my-0 [&_p]:!leading-normal [&_a]:!no-underline"
     >
       <div className="flex flex-col gap-4 md:flex-row md:items-center">
@@ -113,12 +202,15 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
         </div>
         <div className="min-w-0 flex-1">
           <p className="!text-xs !font-medium uppercase tracking-wide !text-slate-400">
-            Recommended for this guide
+            Recommended for this guide · {NEWSLETTER_DISCOUNT_PCT}% reader offer
           </p>
           <p className="!mt-1 !text-base !font-semibold !leading-snug !text-slate-950">
-            {rec.title}
+            {displayHeadline}
           </p>
-          <p className="!mt-1.5 !text-sm !leading-relaxed !text-slate-600">{rec.benefit}</p>
+          <p className="!mt-1.5 !text-sm !leading-relaxed !text-slate-600">
+            {displayText}
+          </p>
+          <p className="!mt-2 !text-xs !font-semibold !text-slate-800">{rec.title}</p>
           <div className="mt-3 flex flex-col gap-2 md:flex-row md:flex-wrap md:items-center md:gap-x-3 md:gap-y-1.5">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
               {price && (
@@ -133,14 +225,18 @@ const PremiumCTA = (_props: PremiumCTAProps) => {
               <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
                 30-day returns from delivery
               </span>
+              <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700">
+                {NEWSLETTER_DISCOUNT_CODE} · {NEWSLETTER_DISCOUNT_PCT}% off
+              </span>
             </div>
           </div>
         </div>
         <Link
-          to={getProductPath(rec.handle)}
+          to={offerProductPath}
+          onClick={handleProductClick}
           className="inline-flex min-h-11 w-full flex-shrink-0 items-center justify-center gap-1.5 rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold !text-white !no-underline transition hover:bg-slate-800 md:w-auto md:self-center"
         >
-          View product
+          View product with {NEWSLETTER_DISCOUNT_PCT}% off
           <ArrowRight className="h-4 w-4" />
         </Link>
       </div>

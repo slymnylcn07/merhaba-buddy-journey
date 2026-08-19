@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { useAnalyticsConsent } from "@/lib/cookie-consent";
+import { hasAnalyticsConsent, useAnalyticsConsent } from "@/lib/cookie-consent";
 
 const CLARITY_PROJECT_ID = "xxkhvbvu3p";
 const CLARITY_SCRIPT_ID = "flexiknee-microsoft-clarity";
@@ -39,6 +39,15 @@ function ensureClarityQueue() {
   };
   window.clarity = clarity;
   return clarity;
+}
+
+export function trackClarityEvent(eventName: string) {
+  if (
+    typeof window === "undefined" ||
+    !isProductionHost() ||
+    !hasAnalyticsConsent()
+  ) return;
+  ensureClarityQueue()("event", eventName);
 }
 
 function injectClarityScript() {

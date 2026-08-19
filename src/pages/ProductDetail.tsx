@@ -32,6 +32,7 @@ import { featurePillars } from "@/data/product-system";
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { PremiumProductStory } from "@/components/PremiumProductStory";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
+import { DirectProductDiscountPopup } from "@/components/DirectProductDiscountPopup";
 import { buildMerchantOffer } from "@/lib/merchant-schema";
 import { isFreeShippingEligible } from "@/lib/shipping-policy";
 import { trackProductView } from "@/lib/shopify-analytics";
@@ -324,7 +325,10 @@ export default function ProductDetail() {
     setIsBuying(true);
 
     try {
-      const checkout = await createStorefrontCheckout([item]);
+      const checkout = await createStorefrontCheckout(
+        [item],
+        useCartStore.getState().requestedDiscountCodes,
+      );
       await settleShopifyAnalyticsBeforeNavigation(
         trackShopifyAddToCart(
           toShopifyAddToCartData(checkout.cartId, item),
@@ -397,7 +401,10 @@ export default function ProductDetail() {
               </div>
             </div>
 
-            <aside className="min-w-0 xl:sticky xl:top-24 xl:self-start">
+            <aside
+              data-product-purchase-panel
+              className="min-w-0 xl:sticky xl:top-24 xl:self-start"
+            >
               <div className="rounded-[1.8rem] border border-slate-200 bg-white p-5 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.7)] sm:p-6 lg:rounded-[2rem] lg:p-8">
                 <h1 className="text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">{productTitle}</h1>
                 <button
@@ -603,6 +610,13 @@ export default function ProductDetail() {
           </Button>
         </div>
       </div>
+
+      <DirectProductDiscountPopup
+        productHandle={publicHandle}
+        productName={productTitle}
+        productImage={gallery[0]?.src}
+        priceLabel={displayPrice}
+      />
 
       <Footer />
     </div>

@@ -35,6 +35,7 @@ import { getProductProfile } from "@/data/product-profiles";
 import { PremiumProductStory } from "@/components/PremiumProductStory";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
 import { ProductReviewSummary } from "@/components/ProductReviews";
+import { DirectProductDiscountPopup } from "@/components/DirectProductDiscountPopup";
 import { buildMerchantOffer } from "@/lib/merchant-schema";
 import { isFreeShippingEligible } from "@/lib/shipping-policy";
 
@@ -229,7 +230,10 @@ export default function SecondaryProductDetail() {
 
     setIsBuying(true);
     try {
-      const checkout = await createStorefrontCheckout([item]);
+      const checkout = await createStorefrontCheckout(
+        [item],
+        useCartStore.getState().requestedDiscountCodes,
+      );
       await settleShopifyAnalyticsBeforeNavigation(
         trackShopifyAddToCart(
           toShopifyAddToCartData(checkout.cartId, item),
@@ -393,7 +397,10 @@ export default function SecondaryProductDetail() {
               )}
             </div>
 
-            <aside className="min-w-0 xl:sticky xl:top-24 xl:self-start">
+            <aside
+              data-product-purchase-panel
+              className="min-w-0 xl:sticky xl:top-24 xl:self-start"
+            >
               <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.75)] lg:p-8">
                 <h1 className="text-3xl font-semibold tracking-[-0.045em] text-slate-950 sm:text-4xl">{profile.h1}</h1>
                 <ProductMarketplaceRating handle={handle} showCount linkToReviews prominent className="mt-3" />
@@ -667,6 +674,13 @@ export default function SecondaryProductDetail() {
           </button>
         </div>
       </div>
+
+      <DirectProductDiscountPopup
+        productHandle={handle}
+        productName={profile.h1}
+        productImage={images[0]?.url}
+        priceLabel={selectedOfferDisplay || undefined}
+      />
 
       <Footer />
     </div>

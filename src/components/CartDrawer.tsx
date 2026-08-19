@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -18,7 +18,12 @@ import {
   Lock,
   Loader2,
   Truck,
-  RotateCcw, Sparkles, ShieldCheck } from "lucide-react";
+  RotateCcw,
+  Sparkles,
+  ShieldCheck,
+  TicketPercent,
+  X,
+} from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { PaymentLogosRow } from "@/components/product-page-blocks";
 import { DeliveryEstimate } from "@/components/DeliveryEstimate";
@@ -30,6 +35,8 @@ import {
   getShippingPolicy,
   isFreeShippingEligible,
 } from "@/lib/shipping-policy";
+import { trackEvent } from "@/hooks/use-google-analytics";
+import { trackClarityEvent } from "@/hooks/use-microsoft-clarity";
 
 // Cross-sell needs every size/color variant, so fetch only the matched product
 // by handle instead of downloading a large variant list for every product.
@@ -61,7 +68,17 @@ export const CartDrawer = () => {
     updateQuantity,
     removeItem,
     createCheckout,
+    cartCost,
+    discountCodes,
+    discountApplications,
+    requestedDiscountCodes,
+    discountError,
+    applyDiscountCode,
+    removeDiscountCode,
   } = useCartStore();
+
+  const [promoCode, setPromoCode] = useState("");
+  const [promoBusy, setPromoBusy] = useState(false);
 
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -86,26 +103,32 @@ export const CartDrawer = () => {
     [items],
   );
 
-  // Shopify'daki otomatik indirimlerin aynasi:
-  // 2 adet -> siparise %15, 3+ adet -> %20 (checkout'ta otomatik uygulanir)
   const cartQty = items.reduce((sum, item) => sum + item.quantity, 0);
-  const bundlePct = cartQty >= 3 ? 20 : cartQty === 2 ? 15 : 0;
-  const bundleDiscount = (subtotal * bundlePct) / 100;
-  const totalAfterDiscount = subtotal - bundleDiscount;
-  const hasFreeShipping = isFreeShippingEligible(totalAfterDiscount, cartCurrency);
+  const remoteTotal = Number(cartCost?.totalAmount.amount);
+  const hasRemotePricing = Boolean(
+    cartCost && Number.isFinite(remoteTotal),
+  );
+  const pricingCurrency = cartCost?.totalAmount.currencyCode || cartCurrency;
+  const totalAfterDiscount = hasRemotePricing ? remoteTotal : subtotal;
+  const hasFreeShipping = isFreeShippingEligible(totalAfterDiscount, pricingCurrency);
   const shippingPolicy = getShippingPolicy();
-  const shippingCurrencyMatches = cartCurrency === shippingPolicy.currencyCode;
+  const shippingCurrencyMatches = pricingCurrency === shippingPolicy.currencyCode;
   const shippingAmount = hasFreeShipping
     ? 0
     : shippingCurrencyMatches
       ? shippingPolicy.standardShippingRate
       : null;
-  const estimatedTotal = shippingAmount === null ? null : totalAfterDiscount + shippingAmount;
-  const shippingDisplay = hasFreeShipping
-    ? "Free"
-    : shippingCurrencyMatches
-      ? formatStandardShippingRate()
-      : "Calculated at checkout";
+  const estimatedTotal =
+    !hasRemotePricing || shippingAmount === null
+      ? null
+      : totalAfterDiscount + shippingAmount;
+  const shippingDisplay = !hasRemotePricing
+    ? "Checking..."
+    : hasFreeShipping
+      ? "Free"
+      : shippingCurrencyMatches
+        ? formatStandardShippingRate()
+        : "Calculated at checkout";
   const estimatedTotalPrefix =
     !hasFreeShipping && shippingPolicy.standardShippingRateIsApproximate ? "about " : "";
 
@@ -201,6 +224,84 @@ export const CartDrawer = () => {
 
   const suggestionIsMain =
     suggestion && decodeURIComponent(suggestion.node.handle) === decodeURIComponent(MAIN_HANDLE);
+
+  const visibleDiscountCodes = useMemo(() => {
+    const byCode = new Map<string, { code: string; applicable: boolean; pending: boolean }>();
+
+    requestedDiscountCodes.forEach((code) => {
+      const normalized = code.trim().toUpperCase();
+      if (normalized) byCode.set(normalized, { code: normalized, applicable: false, pending: true });
+    });
+
+    discountCodes.forEach((entry) => {
+      const normalized = entry.code.trim().toUpperCase();
+      if (!normalized) return;
+      byCode.set(normalized, {
+        code: normalized,
+        applicable: entry.applicable,
+        pending: false,
+      });
+    });
+
+    return Array.from(byCode.values());
+  }, [discountCodes, requestedDiscountCodes]);
+
+  const handleApplyPromoCode = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const code = promoCode.trim().toUpperCase();
+
+    if (!code) {
+      toast.error("Enter a promo code first.");
+      return;
+    }
+
+    setPromoBusy(true);
+    try {
+      const result = await applyDiscountCode(code);
+      trackEvent("cart_promo_code_submitted", {
+        promo_code: code,
+        promo_status: result.applied ? "applied" : result.pending ? "pending" : "rejected",
+      });
+      trackClarityEvent(
+        result.applied
+          ? "cart_promo_applied"
+          : result.pending
+            ? "cart_promo_pending"
+            : "cart_promo_rejected",
+      );
+
+      if (result.applied) {
+        setPromoCode("");
+        toast.success(`${code} applied`, {
+          description: "Shopify confirmed the discount for this cart.",
+        });
+      } else if (result.pending) {
+        setPromoCode("");
+        toast.success(`${code} saved`, {
+          description: "The code will be confirmed as soon as the cart finishes syncing.",
+        });
+      } else {
+        toast.error("Promo code not applied", {
+          description: result.message || "This code is not available for the current cart.",
+        });
+      }
+    } finally {
+      setPromoBusy(false);
+    }
+  };
+
+  const handleRemovePromoCode = async (code: string) => {
+    setPromoBusy(true);
+    try {
+      await removeDiscountCode(code);
+      trackEvent("cart_promo_code_removed", { promo_code: code });
+      trackClarityEvent("cart_promo_removed");
+    } catch {
+      toast.error("Promo code could not be removed. Please try again.");
+    } finally {
+      setPromoBusy(false);
+    }
+  };
 
   const handleCheckout = async () => {
     if (items.length === 0) {
@@ -422,30 +523,120 @@ export const CartDrawer = () => {
 
                 <DeliveryEstimate
                   compact
-                  currencyCode={cartCurrency}
+                  currencyCode={pricingCurrency}
                   freeShipping={hasFreeShipping}
                   className="mt-3"
                 />
+
+                <div className="mt-3 rounded-[1.35rem] border border-slate-200 bg-white p-4 shadow-sm">
+                  <div className="flex items-start gap-3">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
+                      <TicketPercent className="h-4 w-4" />
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-950">Have a promo code?</p>
+                      <p className="mt-0.5 text-xs leading-5 text-slate-500">
+                        Add it here. Shopify will confirm eligibility and compatible offers before checkout.
+                      </p>
+                    </div>
+                  </div>
+
+                  <form onSubmit={handleApplyPromoCode} className="mt-3 flex gap-2">
+                    <label className="sr-only" htmlFor="cart-promo-code">Promo code</label>
+                    <input
+                      id="cart-promo-code"
+                      value={promoCode}
+                      onChange={(event) => setPromoCode(event.target.value)}
+                      placeholder="Enter promo code"
+                      autoComplete="off"
+                      className="h-11 min-w-0 flex-1 rounded-xl border border-slate-200 bg-slate-50 px-3.5 text-sm font-semibold uppercase tracking-[0.08em] text-slate-950 outline-none transition placeholder:normal-case placeholder:tracking-normal placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                    />
+                    <Button
+                      type="submit"
+                      disabled={promoBusy || !promoCode.trim()}
+                      className="h-11 rounded-xl bg-blue-600 px-4 font-semibold text-white hover:bg-blue-700"
+                    >
+                      {promoBusy ? <Loader2 className="h-4 w-4 animate-spin" /> : "Apply"}
+                    </Button>
+                  </form>
+
+                  {visibleDiscountCodes.length > 0 && (
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {visibleDiscountCodes.map((entry) => (
+                        <span
+                          key={entry.code}
+                          className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold ${
+                            entry.applicable
+                              ? "bg-emerald-50 text-emerald-700"
+                              : entry.pending
+                                ? "bg-blue-50 text-blue-700"
+                                : "bg-amber-50 text-amber-700"
+                          }`}
+                        >
+                          {entry.code}
+                          <span className="font-medium opacity-75">
+                            {entry.applicable ? "Applied" : entry.pending ? "Checking" : "Not available"}
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => void handleRemovePromoCode(entry.code)}
+                            disabled={promoBusy}
+                            className="ml-0.5 rounded-full p-0.5 transition hover:bg-black/5 disabled:opacity-50"
+                            aria-label={`Remove promo code ${entry.code}`}
+                          >
+                            <X className="h-3.5 w-3.5" />
+                          </button>
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {discountError && (
+                    <p className="mt-2 text-xs leading-5 text-amber-700">{discountError}</p>
+                  )}
+                </div>
               </div>
 
               <div className="flex-shrink-0 border-t border-slate-200 bg-[#F7F8FC] pt-2">
                 <div className="space-y-2.5 px-1">
                   <div className="rounded-[1.35rem] border border-slate-200 bg-white px-4 py-3 shadow-sm">
-                    {bundlePct > 0 && (
-                      <div className="mb-2 flex items-center justify-between rounded-2xl bg-emerald-50 px-4 py-2.5">
+                    {discountApplications.map((discount, index) => (
+                      <div
+                        key={`${discount.type}-${discount.label}-${index}`}
+                        className="mb-2 flex items-center justify-between gap-3 rounded-2xl bg-emerald-50 px-4 py-2.5"
+                      >
                         <span className="text-xs font-semibold text-emerald-700">
-                          Bundle discount ({bundlePct}%) · applied automatically at checkout
+                          {discount.label}
+                          <span className="ml-1 font-medium opacity-75">
+                            {discount.type === "automatic" ? "Automatically applied" : "Applied"}
+                          </span>
                         </span>
-                        <span className="text-sm font-bold text-emerald-700">-{formatDisplayPrice(bundleDiscount)}</span>
+                        <span className="shrink-0 text-sm font-bold text-emerald-700">
+                          -{formatDisplayPrice(
+                            Number(discount.discountedAmount.amount),
+                            discount.discountedAmount.currencyCode,
+                          )}
+                        </span>
+                      </div>
+                    ))}
+
+                    {!hasRemotePricing && cartQty >= 2 && (
+                      <div className="mb-2 rounded-2xl bg-blue-50 px-4 py-2.5 text-xs font-semibold leading-5 text-blue-700">
+                        Shopify is checking your automatic bundle savings.
                       </div>
                     )}
                     <div className="flex items-center justify-between gap-3">
-                      <span className="text-sm font-medium text-slate-600">Subtotal</span>
-                      <span className="flex items-baseline gap-2.5">
-                        {bundlePct > 0 && (
-                          <s className="text-sm font-medium text-slate-400">{formatDisplayPrice(subtotal)}</s>
-                        )}
-                        <span className="text-base font-semibold text-slate-950">{formatDisplayPrice(totalAfterDiscount)}</span>
+                      <span className="text-sm font-medium text-slate-600">Items subtotal</span>
+                      <span className="text-base font-semibold text-slate-950">
+                        {formatDisplayPrice(subtotal, cartCurrency)}
+                      </span>
+                    </div>
+                    <div className="mt-2 flex items-center justify-between gap-3">
+                      <span className="text-sm font-medium text-slate-600">Cart total after discounts</span>
+                      <span className="text-base font-semibold text-slate-950">
+                        {hasRemotePricing
+                          ? formatDisplayPrice(totalAfterDiscount, pricingCurrency)
+                          : "Syncing..."}
                       </span>
                     </div>
                     <div className="mt-2 flex items-center justify-between gap-3 text-sm">
@@ -457,7 +648,7 @@ export const CartDrawer = () => {
                       <span className="text-[1.65rem] font-bold leading-none text-slate-950">
                         {estimatedTotal === null
                           ? "At checkout"
-                          : `${estimatedTotalPrefix}${formatDisplayPrice(estimatedTotal)}`}
+                          : `${estimatedTotalPrefix}${formatDisplayPrice(estimatedTotal, pricingCurrency)}`}
                       </span>
                     </div>
                   </div>
