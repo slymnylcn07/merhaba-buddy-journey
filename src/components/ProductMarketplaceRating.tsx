@@ -8,6 +8,7 @@ interface ProductMarketplaceRatingProps {
   showCount?: boolean;
   linkToReviews?: boolean;
   prominent?: boolean;
+  marketplaceLabel?: boolean;
 }
 
 export function ProductMarketplaceRating({
@@ -17,12 +18,14 @@ export function ProductMarketplaceRating({
   showCount = false,
   linkToReviews = false,
   prominent = false,
+  marketplaceLabel = false,
 }: ProductMarketplaceRatingProps) {
   const feedback = getProductMarketplaceFeedback(handle);
   if (!feedback) return null;
 
+  const reviewLabel = marketplaceLabel ? "marketplace reviews" : "reviews";
   const label = `${feedback.rating.toFixed(1)} out of 5${
-    showCount ? `, ${feedback.reviewCount.toLocaleString("en-US")} reviews` : ""
+    showCount ? `, ${feedback.reviewCount.toLocaleString("en-US")} ${reviewLabel}` : ""
   }`;
   const textColor = inverse ? "text-slate-200" : "text-slate-600";
   const iconSize = prominent ? "h-4 w-4" : "h-3.5 w-3.5";
@@ -34,7 +37,7 @@ export function ProductMarketplaceRating({
       <Star className={`${iconSize} shrink-0 fill-amber-400 text-amber-400`} aria-hidden="true" />
       <span className={`${textSize} ${textColor}`}>
         {feedback.rating.toFixed(1)}/5
-        {showCount ? ` · ${feedback.reviewCount.toLocaleString("en-US")} reviews` : ""}
+        {showCount ? ` · ${feedback.reviewCount.toLocaleString("en-US")} ${reviewLabel}` : ""}
       </span>
     </>
   );

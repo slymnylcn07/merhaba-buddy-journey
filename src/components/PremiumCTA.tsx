@@ -411,7 +411,7 @@ const PremiumCTA = ({
       </div>
 
       <div className={`grid grid-cols-1 ${isMidArticle ? "min-[860px]:grid-cols-[38%_62%]" : "min-[860px]:grid-cols-[40%_60%]"}`}>
-        <div className={`relative overflow-hidden bg-slate-100 min-[860px]:h-auto min-[860px]:aspect-auto min-[860px]:self-stretch ${isMidArticle ? "h-28" : "aspect-video"}`}>
+        <div className={`relative overflow-hidden bg-slate-100 min-[860px]:h-auto min-[860px]:aspect-auto min-[860px]:self-stretch ${isMidArticle ? "aspect-[16/7]" : "aspect-video"}`}>
           <img
             src={presentation.lifestyleImage}
             alt={`${rec.title} in use during a comfort routine`}

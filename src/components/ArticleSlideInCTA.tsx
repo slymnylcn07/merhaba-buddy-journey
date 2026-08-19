@@ -13,6 +13,7 @@ import {
 } from "@/lib/guide-offer";
 import { NEWSLETTER_DISCOUNT_CODE, NEWSLETTER_DISCOUNT_PCT } from "@/lib/newsletter-config";
 import {
+  formatFreeShippingThreshold,
   formatMarketMoney,
   getSafeUsdFallbackPrice,
   hasProductPriceRange,
@@ -33,7 +34,7 @@ interface ArticleSlideInCTAProps {
 }
 
 const STORAGE_KEY_PREFIX = "flexiknee_article_product_cta_v4:";
-const CTA_VERSION = "article-slide-in-v4";
+const CTA_VERSION = "article-slide-in-v5";
 const MOBILE_PRODUCT_SCROLL = 30;
 const DESKTOP_PRODUCT_SCROLL = 25;
 
@@ -243,7 +244,12 @@ export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProp
   const { hook, support } = getContextualContent(slug);
   const rec = pickProductForSlug(slug);
   const [liveImage, setLiveImage] = useState<string | null>(null);
-  const [livePrice, setLivePrice] = useState<string | null>(null);
+  const [livePrice, setLivePrice] = useState<{
+    label: string;
+    amount: number;
+    currencyCode: string;
+    isRange: boolean;
+  } | null>(null);
 
   useEffect(() => {
     setStorageReady(false);
@@ -334,8 +340,14 @@ export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProp
         const currencyCode = match.node.priceRange?.minVariantPrice?.currencyCode || "USD";
         const numericAmount = Number(amount);
         if (Number.isFinite(numericAmount)) {
-          const prefix = hasProductPriceRange(match.node.priceRange) ? "From " : "";
-          setLivePrice(`${prefix}${formatMarketMoney(numericAmount, currencyCode)}`);
+          const isRange = hasProductPriceRange(match.node.priceRange);
+          const prefix = isRange ? "From " : "";
+          setLivePrice({
+            label: `${prefix}${formatMarketMoney(numericAmount, currencyCode)}`,
+            amount: numericAmount,
+            currencyCode,
+            isRange,
+          });
         }
       }
     });
@@ -396,7 +408,34 @@ export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProp
       ? "ice pack wrap"
       : productShortName.split(" ").slice(-2).join(" ").toLowerCase();
   const productImage = liveImage || rec.fallbackImage;
-  const productPrice = livePrice || getSafeUsdFallbackPrice(rec.fallbackPrice);
+  const safeFallbackPrice = getSafeUsdFallbackPrice(rec.fallbackPrice);
+  const fallbackUsdMatch = /^\$(\d+(?:\.\d{1,2})?)$/.exec(safeFallbackPrice);
+  const fallbackUsdAmount = fallbackUsdMatch ? Number(fallbackUsdMatch[1]) : null;
+  const regularAmount = livePrice?.amount ?? fallbackUsdAmount;
+  const currencyCode = livePrice?.currencyCode || (fallbackUsdAmount !== null ? "USD" : null);
+  const pricePrefix = livePrice?.isRange ? "From " : "";
+  const discountedAmount =
+    regularAmount !== null && Number.isFinite(regularAmount)
+      ? regularAmount * (1 - NEWSLETTER_DISCOUNT_PCT / 100)
+      : null;
+  const savingsAmount =
+    regularAmount !== null && Number.isFinite(regularAmount)
+      ? regularAmount * (NEWSLETTER_DISCOUNT_PCT / 100)
+      : null;
+  const normalizedSavingsAmount =
+    savingsAmount !== null && Math.abs(savingsAmount - Math.round(savingsAmount)) < 0.01
+      ? Math.round(savingsAmount)
+      : savingsAmount;
+  const guidePrice =
+    discountedAmount !== null && currencyCode
+      ? `${pricePrefix}${formatMarketMoney(discountedAmount, currencyCode)}`
+      : null;
+  const crossedPrice = livePrice?.label || (guidePrice ? safeFallbackPrice : null);
+  const savingsLabel =
+    normalizedSavingsAmount !== null && currencyCode
+      ? `${formatMarketMoney(normalizedSavingsAmount, currencyCode)} saved`
+      : `${NEWSLETTER_DISCOUNT_PCT}% saved`;
+  const productPrice = guidePrice || safeFallbackPrice;
   const offerProductPath = buildGuideOfferProductPath(rec.handle, slug, "slide_in");
 
   return (
@@ -410,7 +449,7 @@ export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProp
       `}
     >
         <div className="relative overflow-hidden border border-slate-200 bg-white px-4 pb-3 pt-3 shadow-[0_-10px_40px_rgba(15,23,42,0.16)] md:rounded-3xl md:px-5 md:pb-5 md:pt-4 md:shadow-[0_24px_70px_-20px_rgba(15,23,42,0.35)]">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-emerald-400" />
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-slate-950" />
 
           <button
             onClick={handleDismiss}
@@ -438,7 +477,7 @@ export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProp
                   </span>
                 )}
                 <div className="min-w-0">
-                  <span className="mb-1 inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.1em] text-emerald-700">
+                  <span className="mb-1 inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.1em] text-blue-700">
                     <Tag className="h-3 w-3" /> Guide reader offer
                   </span>
                   <p className="text-[13px] font-bold leading-[1.3] text-slate-950 md:text-sm md:leading-snug">{hook}</p>
@@ -446,30 +485,44 @@ export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProp
                 </div>
               </div>
 
-              <div className="mt-2.5 flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-xl bg-slate-50 px-3 py-2 md:mt-3 md:rounded-2xl md:px-3.5 md:py-2.5">
+              <div className="mt-2.5 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 md:mt-3 md:rounded-2xl md:px-3.5 md:py-3">
+                <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                  <span className="text-xl font-bold tracking-[-0.025em] text-slate-950">{productPrice}</span>
+                  {crossedPrice && (
+                    <span className="text-xs font-medium text-slate-400 line-through">{crossedPrice}</span>
+                  )}
+                  <span className="ml-auto rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-semibold text-blue-700">
+                    {savingsLabel}
+                  </span>
+                </div>
+                <p className="mt-1 text-[10px] leading-4 text-slate-500">
+                  {NEWSLETTER_DISCOUNT_CODE} applied automatically in cart
+                </p>
+                <div className="mt-2 flex flex-wrap items-center gap-x-2.5 gap-y-1 border-t border-slate-200 pt-2">
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-xs font-semibold text-slate-800">{productShortName}</p>
-                  <ProductMarketplaceRating handle={rec.handle} showCount className="mt-1" />
+                  <ProductMarketplaceRating
+                    handle={rec.handle}
+                    showCount
+                    marketplaceLabel
+                    className="mt-1"
+                  />
                 </div>
-                <span className="text-sm font-bold text-slate-950">{productPrice}</span>
-                <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-semibold text-blue-700">30-day returns</span>
+                </div>
               </div>
 
-              <div className="mt-2.5 rounded-xl border border-emerald-200 bg-emerald-50/80 px-3 py-2 text-center md:mt-3">
-                <p className="text-xs font-semibold text-emerald-800">
-                  Use {NEWSLETTER_DISCOUNT_CODE} for {NEWSLETTER_DISCOUNT_PCT}% off your order
-                </p>
-              </div>
-
-              <div className="mt-2.5 md:mt-3.5">
+              <div className="mt-2.5 md:mt-3">
                 <Link
                   to={offerProductPath}
                   onClick={handleCTAClick}
-                  className="inline-flex min-h-11 w-full min-w-0 items-center justify-center gap-1.5 rounded-full bg-slate-950 px-4 py-3 text-sm font-bold text-white transition hover:bg-slate-800"
+                  className="inline-flex min-h-11 w-full min-w-0 items-center justify-center gap-1.5 rounded-xl bg-blue-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-blue-700"
                 >
-                  See the {isMain ? "FlexiKnee" : productCtaName} and save {NEWSLETTER_DISCOUNT_PCT}%
+                  Explore {isMain ? "FlexiKnee" : productCtaName}{guidePrice ? ` — ${guidePrice}` : ""}
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
+                <p className="mt-2 text-center text-[10px] leading-4 text-slate-500">
+                  30-day returns · Free shipping over {formatFreeShippingThreshold()}
+                </p>
               </div>
         </div>
     </div>
