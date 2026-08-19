@@ -485,7 +485,7 @@ const PremiumCTA = ({
             className={`${isMidArticle ? "mt-2.5 min-h-11 py-2.5" : "mt-3 min-h-12 py-3"} flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 text-center text-base font-bold leading-5 !text-white !no-underline transition-colors hover:bg-blue-700 hover:!text-white hover:!no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2`}
           >
             <span>
-              Explore {presentation.shortName}{guidePrice ? ` — ${guidePrice}` : ""}
+              See how it works
             </span>
             <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
           </Link>
@@ -498,11 +498,11 @@ const PremiumCTA = ({
               {feedback && (
                 <p
                   className="!m-0 flex items-center justify-center gap-1 !text-[11px] font-medium !leading-4"
-                  aria-label={`${feedback.rating.toFixed(1)} out of 5, ${feedback.reviewCount.toLocaleString("en-US")} marketplace reviews`}
+                  aria-label={`${feedback.rating.toFixed(1)} out of 5, ${feedback.reviewCount.toLocaleString("en-US")} customer reviews`}
                 >
                   <Star className="h-3 w-3 fill-amber-400 text-amber-400" aria-hidden="true" />
                   <span>
-                    {feedback.rating.toFixed(1)}/5 · {feedback.reviewCount.toLocaleString("en-US")} marketplace reviews
+                    {feedback.rating.toFixed(1)}/5 · {feedback.reviewCount.toLocaleString("en-US")} customer reviews
                   </span>
                 </p>
               )}
@@ -516,11 +516,11 @@ const PremiumCTA = ({
               {feedback && (
                 <p
                   className="!mb-0 !mt-3 flex items-center justify-center gap-1.5 !text-[12px] font-medium !leading-4 text-slate-500"
-                  aria-label={`${feedback.rating.toFixed(1)} out of 5, ${feedback.reviewCount.toLocaleString("en-US")} marketplace reviews`}
+                  aria-label={`${feedback.rating.toFixed(1)} out of 5, ${feedback.reviewCount.toLocaleString("en-US")} customer reviews`}
                 >
                   <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" aria-hidden="true" />
                   <span>
-                    {feedback.rating.toFixed(1)}/5 · {feedback.reviewCount.toLocaleString("en-US")} marketplace reviews
+                    {feedback.rating.toFixed(1)}/5 · {feedback.reviewCount.toLocaleString("en-US")} customer reviews
                   </span>
                 </p>
               )}

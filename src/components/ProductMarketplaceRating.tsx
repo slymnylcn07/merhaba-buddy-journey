@@ -8,7 +8,7 @@ interface ProductMarketplaceRatingProps {
   showCount?: boolean;
   linkToReviews?: boolean;
   prominent?: boolean;
-  marketplaceLabel?: boolean;
+  customerLabel?: boolean;
 }
 
 export function ProductMarketplaceRating({
@@ -18,12 +18,12 @@ export function ProductMarketplaceRating({
   showCount = false,
   linkToReviews = false,
   prominent = false,
-  marketplaceLabel = false,
+  customerLabel = false,
 }: ProductMarketplaceRatingProps) {
   const feedback = getProductMarketplaceFeedback(handle);
   if (!feedback) return null;
 
-  const reviewLabel = marketplaceLabel ? "marketplace reviews" : "reviews";
+  const reviewLabel = customerLabel ? "customer reviews" : "reviews";
   const label = `${feedback.rating.toFixed(1)} out of 5${
     showCount ? `, ${feedback.reviewCount.toLocaleString("en-US")} ${reviewLabel}` : ""
   }`;

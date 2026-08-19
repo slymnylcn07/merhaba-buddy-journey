@@ -401,12 +401,7 @@ export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProp
 
   if (isDone && !isVisible) return null;
 
-  const isMain = rec.handle === PRODUCT_RECS.main.handle;
   const productShortName = rec.title.replace("FlexiKnee ", "");
-  const productCtaName =
-    rec.handle === PRODUCT_RECS.iceWrap.handle
-      ? "ice pack wrap"
-      : productShortName.split(" ").slice(-2).join(" ").toLowerCase();
   const productImage = liveImage || rec.fallbackImage;
   const safeFallbackPrice = getSafeUsdFallbackPrice(rec.fallbackPrice);
   const fallbackUsdMatch = /^\$(\d+(?:\.\d{1,2})?)$/.exec(safeFallbackPrice);
@@ -504,7 +499,7 @@ export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProp
                   <ProductMarketplaceRating
                     handle={rec.handle}
                     showCount
-                    marketplaceLabel
+                    customerLabel
                     className="mt-1"
                   />
                 </div>
@@ -517,7 +512,7 @@ export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProp
                   onClick={handleCTAClick}
                   className="inline-flex min-h-11 w-full min-w-0 items-center justify-center gap-1.5 rounded-xl bg-blue-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-blue-700"
                 >
-                  Explore {isMain ? "FlexiKnee" : productCtaName}{guidePrice ? ` — ${guidePrice}` : ""}
+                  See how it works
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
                 <p className="mt-2 text-center text-[10px] leading-4 text-slate-500">
