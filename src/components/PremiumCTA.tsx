@@ -178,16 +178,22 @@ const PremiumCTA = ({
     });
   };
 
+  const isMidArticle = placement === "mid_article";
+
   return (
     <div
       ref={cardRef}
       data-cta="product-card"
       data-cta-placement={placement}
       data-offer-code={NEWSLETTER_DISCOUNT_CODE}
-      className="my-10 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:p-5 [&_p]:!my-0 [&_p]:!leading-normal [&_a]:!no-underline"
+      className={`${isMidArticle ? "my-7 p-3 sm:p-3.5" : "my-8 p-3.5 sm:p-4"} rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md [&_p]:!my-0 [&_p]:!leading-normal [&_a]:!no-underline`}
     >
-      <div className="flex flex-col gap-4 md:flex-row md:items-center">
-        <div className="flex h-40 w-full flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 via-white to-blue-50/70 md:h-28 md:w-28 md:rounded-xl">
+      <div
+        className={`grid grid-cols-[88px_minmax(0,1fr)] items-center ${isMidArticle ? "gap-2.5 sm:grid-cols-[96px_minmax(0,1fr)] sm:gap-3 md:grid-cols-[96px_minmax(0,1fr)_auto]" : "gap-3 sm:grid-cols-[100px_minmax(0,1fr)] md:grid-cols-[104px_minmax(0,1fr)_auto] md:gap-4"}`}
+      >
+        <div
+          className={`flex flex-shrink-0 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-slate-50 via-white to-blue-50/70 ${isMidArticle ? "h-[88px] w-[88px] sm:h-24 sm:w-24" : "h-24 w-24 sm:h-[100px] sm:w-[100px] md:h-[104px] md:w-[104px]"}`}
+        >
           <img
             src={imageSrc}
             alt={rec.title}
@@ -197,47 +203,51 @@ const PremiumCTA = ({
               const fallbackUrl = new URL(rec.fallbackImage, window.location.origin).href;
               if (image.src !== fallbackUrl) image.src = rec.fallbackImage;
             }}
-            className="!my-0 !h-36 !w-36 !max-h-none !rounded-none !border-0 !bg-transparent !object-contain !shadow-none md:!h-28 md:!w-28"
+            className={`!my-0 !max-h-none !rounded-none !border-0 !bg-transparent !object-contain !shadow-none ${isMidArticle ? "!h-[82px] !w-[82px] sm:!h-[90px] sm:!w-[90px]" : "!h-[90px] !w-[90px] sm:!h-24 sm:!w-24 md:!h-[100px] md:!w-[100px]"}`}
           />
         </div>
         <div className="min-w-0 flex-1">
-          <p className="!text-xs !font-medium uppercase tracking-wide !text-slate-400">
-            Recommended for this guide · {NEWSLETTER_DISCOUNT_PCT}% reader offer
+          <p className="!text-[9px] !font-bold uppercase tracking-[0.12em] !text-emerald-700 sm:!text-[10px]">
+            Recommended for this guide
           </p>
-          <p className="!mt-1 !text-base !font-semibold !leading-snug !text-slate-950">
+          <p className={`!mt-1 line-clamp-2 !font-semibold !leading-snug !text-slate-950 ${isMidArticle ? "!text-sm sm:!text-[15px]" : "!text-[15px] sm:!text-base"}`}>
             {displayHeadline}
           </p>
-          <p className="!mt-1.5 !text-sm !leading-relaxed !text-slate-600">
+          <p className={`!mt-1 line-clamp-2 !text-slate-600 ${isMidArticle ? "!text-[11px] !leading-[1.45] sm:!text-xs" : "!text-xs !leading-[1.5] sm:!text-[13px]"}`}>
             {displayText}
           </p>
-          <p className="!mt-2 !text-xs !font-semibold !text-slate-800">{rec.title}</p>
-          <div className="mt-3 flex flex-col gap-2 md:flex-row md:flex-wrap md:items-center md:gap-x-3 md:gap-y-1.5">
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+          <p className="!mt-1.5 line-clamp-1 !text-[11px] !font-semibold !text-slate-800 sm:!text-xs">
+            {rec.title}
+          </p>
+          <div className={`${isMidArticle ? "mt-1.5" : "mt-2"} flex flex-wrap items-center gap-x-2 gap-y-1`}>
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
               {price && (
-                <span className="text-base font-semibold text-slate-950">{price}</span>
+                <span className={`${isMidArticle ? "text-sm" : "text-[15px]"} font-semibold text-slate-950`}>{price}</span>
               )}
               <ProductMarketplaceRating handle={rec.handle} showCount />
             </div>
-            <div className="flex flex-wrap items-center gap-1.5">
-              <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
+            <div className="flex flex-wrap items-center gap-1">
+              <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-semibold text-blue-700">
                 {shippingLabel}
               </span>
-              <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
-                30-day returns from delivery
-              </span>
-              <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700">
-                {NEWSLETTER_DISCOUNT_CODE} · {NEWSLETTER_DISCOUNT_PCT}% off
+              <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
+                {NEWSLETTER_DISCOUNT_CODE} · {NEWSLETTER_DISCOUNT_PCT}% off in cart
               </span>
             </div>
           </div>
+          {!isMidArticle && (
+            <p className="!mt-1 !text-[10px] !font-medium !text-slate-400">
+              30-day returns from delivery · Secure Shopify checkout
+            </p>
+          )}
         </div>
         <Link
           to={offerProductPath}
           onClick={handleProductClick}
-          className="inline-flex min-h-11 w-full flex-shrink-0 items-center justify-center gap-1.5 rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold !text-white !no-underline transition hover:bg-slate-800 md:w-auto md:self-center"
+          className={`col-span-2 mt-0.5 inline-flex min-h-11 w-full flex-shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-full bg-slate-950 px-4 py-2 text-xs font-semibold !text-white !no-underline transition hover:bg-slate-800 md:col-span-1 md:mt-0 md:w-auto md:self-center ${isMidArticle ? "md:px-4" : "md:px-5 md:text-sm"}`}
         >
-          View product with {NEWSLETTER_DISCOUNT_PCT}% off
-          <ArrowRight className="h-4 w-4" />
+          View with {NEWSLETTER_DISCOUNT_PCT}% off
+          <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
     </div>
