@@ -94,10 +94,13 @@ export const CartDrawer = () => {
   );
 
   const cartQty = items.reduce((sum, item) => sum + item.quantity, 0);
+  const remoteSubtotal = Number(cartCost?.subtotalAmount.amount);
   const remoteTotal = Number(cartCost?.totalAmount.amount);
   const hasRemotePricing = Boolean(
     cartCost && Number.isFinite(remoteTotal),
   );
+  const displayedSubtotal = cartCost && Number.isFinite(remoteSubtotal) ? remoteSubtotal : subtotal;
+  const subtotalCurrency = cartCost?.subtotalAmount.currencyCode || cartCurrency;
   const pricingCurrency = cartCost?.totalAmount.currencyCode || cartCurrency;
   const totalAfterDiscount = hasRemotePricing ? remoteTotal : subtotal;
 
@@ -193,25 +196,77 @@ export const CartDrawer = () => {
 
   const suggestionBundlePct = cartQty + 1 >= 3 ? 20 : 15;
 
-  const visibleDiscountCodes = useMemo(() => {
-    const byCode = new Map<string, { code: string; applicable: boolean; pending: boolean }>();
+  const aggregatedDiscounts = useMemo(() => {
+    type DiscountSummaryRow = {
+      key: string;
+      type: "automatic" | "code" | "custom" | "unknown";
+      label: string;
+      amount: number;
+      currencyCode: string;
+      hasAllocation: boolean;
+      removableCode?: string;
+    };
 
-    requestedDiscountCodes.forEach((code) => {
-      const normalized = code.trim().toUpperCase();
-      if (normalized) byCode.set(normalized, { code: normalized, applicable: false, pending: true });
-    });
+    const rows = new Map<string, DiscountSummaryRow>();
 
-    discountCodes.forEach((entry) => {
-      const normalized = entry.code.trim().toUpperCase();
-      if (!normalized) return;
-      byCode.set(normalized, {
-        code: normalized,
-        applicable: entry.applicable,
-        pending: false,
+    discountApplications.forEach((discount) => {
+      const label = discount.label.trim().replace(/\s+/g, " ") || "Discount";
+      const normalizedLabel = label.toLocaleLowerCase("en-US");
+      const key = `${discount.type}:${normalizedLabel}`;
+      const amount = Number(discount.discountedAmount.amount);
+      const safeAmount = Number.isFinite(amount) ? amount : 0;
+      const existing = rows.get(key);
+
+      if (existing) {
+        existing.amount += safeAmount;
+        return;
+      }
+
+      rows.set(key, {
+        key,
+        type: discount.type,
+        label,
+        amount: safeAmount,
+        currencyCode: discount.discountedAmount.currencyCode,
+        hasAllocation: true,
       });
     });
 
-    return Array.from(byCode.values());
+    discountCodes
+      .filter((entry) => entry.applicable)
+      .forEach((entry) => {
+        const code = entry.code.trim().toUpperCase();
+        if (!code) return;
+
+        const key = `code:${code.toLocaleLowerCase("en-US")}`;
+        const existing = rows.get(key);
+        if (existing) {
+          existing.removableCode = code;
+          return;
+        }
+
+        rows.set(key, {
+          key,
+          type: "code",
+          label: code,
+          amount: 0,
+          currencyCode: pricingCurrency,
+          hasAllocation: false,
+          removableCode: code,
+        });
+      });
+
+    return Array.from(rows.values());
+  }, [discountApplications, discountCodes, pricingCurrency]);
+
+  const pendingDiscountCodes = useMemo(() => {
+    const reportedCodes = new Set(
+      discountCodes.map((entry) => entry.code.trim().toUpperCase()).filter(Boolean),
+    );
+
+    return Array.from(
+      new Set(requestedDiscountCodes.map((code) => code.trim().toUpperCase()).filter(Boolean)),
+    ).filter((code) => !reportedCodes.has(code));
   }, [discountCodes, requestedDiscountCodes]);
 
   const handleApplyPromoCode = async (event: FormEvent<HTMLFormElement>) => {
@@ -487,98 +542,82 @@ export const CartDrawer = () => {
                     </div>
                   )}
                 </div>
-
-                <div className="mt-2 rounded-2xl border border-slate-200 bg-white p-2.5 shadow-sm">
-                  <form onSubmit={handleApplyPromoCode} className="flex gap-2">
-                    <label className="sr-only" htmlFor="cart-promo-code">Promo code</label>
-                    <input
-                      id="cart-promo-code"
-                      value={promoCode}
-                      onChange={(event) => setPromoCode(event.target.value)}
-                      placeholder="Enter promo code"
-                      autoComplete="off"
-                      className="h-11 min-w-0 flex-1 rounded-xl border border-slate-200 bg-slate-50 px-3 text-xs font-semibold uppercase tracking-[0.08em] text-slate-950 outline-none transition placeholder:normal-case placeholder:tracking-normal placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
-                    />
-                    <Button
-                      type="submit"
-                      disabled={promoBusy || !promoCode.trim()}
-                      className="h-11 rounded-xl bg-blue-600 px-4 text-xs font-semibold text-white hover:bg-blue-700"
-                    >
-                      {promoBusy ? <Loader2 className="h-4 w-4 animate-spin" /> : "Apply"}
-                    </Button>
-                  </form>
-
-                  {visibleDiscountCodes.length > 0 && (
-                    <div className="mt-2 flex flex-wrap gap-1.5">
-                      {visibleDiscountCodes.map((entry) => (
-                        <span
-                          key={entry.code}
-                          className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold ${
-                            entry.applicable
-                              ? "bg-emerald-50 text-emerald-700"
-                              : entry.pending
-                                ? "bg-blue-50 text-blue-700"
-                                : "bg-amber-50 text-amber-700"
-                          }`}
-                        >
-                          {entry.code}
-                          <span className="font-medium opacity-75">
-                            {entry.applicable ? "Applied" : entry.pending ? "Checking" : "Not available"}
-                          </span>
-                          <button
-                            type="button"
-                            onClick={() => void handleRemovePromoCode(entry.code)}
-                            disabled={promoBusy}
-                            className="ml-0.5 inline-flex h-8 w-8 items-center justify-center rounded-full transition hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current disabled:opacity-50"
-                            aria-label={`Remove promo code ${entry.code}`}
-                          >
-                            <X className="h-3 w-3" />
-                          </button>
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  {discountError && (
-                    <p className="mt-1.5 text-[10px] leading-4 text-amber-700">{discountError}</p>
-                  )}
-                </div>
               </div>
 
               <div className="flex-shrink-0 border-t border-slate-200 bg-[#F7F8FC] pt-1.5">
                 <div className="space-y-1.5 px-0.5">
                   <div className="rounded-2xl border border-slate-200 bg-white px-3 py-2.5 shadow-sm">
-                    {discountApplications.map((discount, index) => (
-                      <div
-                        key={`${discount.type}-${discount.label}-${index}`}
-                        className="mb-1.5 flex items-center justify-between gap-2 rounded-lg bg-emerald-50 px-2.5 py-1.5"
+                    <form onSubmit={handleApplyPromoCode} className="flex gap-2">
+                      <label className="sr-only" htmlFor="cart-promo-code">Promo code</label>
+                      <input
+                        id="cart-promo-code"
+                        value={promoCode}
+                        onChange={(event) => setPromoCode(event.target.value)}
+                        placeholder="Enter promo code"
+                        autoComplete="off"
+                        className="h-10 min-w-0 flex-1 rounded-xl border border-slate-200 bg-slate-50 px-3 text-xs font-semibold uppercase tracking-[0.08em] text-slate-950 outline-none transition placeholder:normal-case placeholder:tracking-normal placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                      />
+                      <Button
+                        type="submit"
+                        disabled={promoBusy || !promoCode.trim()}
+                        className="h-10 rounded-xl bg-blue-600 px-4 text-xs font-semibold text-white hover:bg-blue-700"
                       >
-                        <span className="min-w-0 truncate text-[10px] font-semibold text-emerald-700">
-                          {discount.label}
-                          <span className="ml-1 font-medium opacity-75">
-                            {discount.type === "automatic" ? "Automatically applied" : "Applied"}
-                          </span>
-                        </span>
-                        <span className="shrink-0 tabular-nums text-xs font-bold text-emerald-700">
-                          -{formatDisplayPrice(
-                            Number(discount.discountedAmount.amount),
-                            discount.discountedAmount.currencyCode,
-                          )}
-                        </span>
-                      </div>
-                    ))}
+                        {promoBusy ? <Loader2 className="h-4 w-4 animate-spin" /> : "Apply"}
+                      </Button>
+                    </form>
 
-                    {!hasRemotePricing && cartQty >= 2 && (
-                      <div className="mb-1.5 rounded-lg bg-blue-50 px-2.5 py-1.5 text-[10px] font-semibold leading-4 text-blue-700">
-                        Shopify is checking your automatic bundle savings.
+                    {(pendingDiscountCodes.length > 0 || discountError || (!hasRemotePricing && cartQty >= 2)) && (
+                      <div className="mt-1.5 space-y-0.5 text-[10px] leading-4">
+                        {pendingDiscountCodes.length > 0 && (
+                          <p className="font-medium text-blue-700">
+                            Checking {pendingDiscountCodes.join(", ")}...
+                          </p>
+                        )}
+                        {discountError && <p className="text-amber-700">{discountError}</p>}
+                        {!hasRemotePricing && cartQty >= 2 && (
+                          <p className="font-medium text-blue-700">Updating automatic bundle savings...</p>
+                        )}
                       </div>
                     )}
-                    <div className="flex items-center justify-between gap-3">
+
+                    <div className="mt-2 flex items-center justify-between gap-3 border-t border-slate-200 pt-2">
                       <span className="text-xs font-medium text-slate-600">Subtotal</span>
                       <span className="shrink-0 tabular-nums text-sm font-semibold text-slate-950">
-                        {formatDisplayPrice(subtotal, cartCurrency)}
+                        {formatDisplayPrice(displayedSubtotal, subtotalCurrency)}
                       </span>
                     </div>
+
+                    {aggregatedDiscounts.map((discount) => (
+                      <div
+                        key={discount.key}
+                        className="mt-1.5 flex items-center justify-between gap-2 rounded-lg bg-emerald-50 px-2.5 py-1"
+                      >
+                        <span className="flex min-w-0 items-center gap-1 text-[10px] font-semibold text-emerald-700">
+                          <span className="min-w-0 truncate">
+                            {discount.label}
+                            <span className="ml-1 font-medium opacity-75">
+                              {discount.type === "automatic" ? "Automatically applied" : "Applied"}
+                            </span>
+                          </span>
+                          {discount.removableCode && (
+                            <button
+                              type="button"
+                              onClick={() => void handleRemovePromoCode(discount.removableCode!)}
+                              disabled={promoBusy}
+                              className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition hover:bg-emerald-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 disabled:opacity-50"
+                              aria-label={`Remove promo code ${discount.removableCode}`}
+                            >
+                              <X className="h-3.5 w-3.5" />
+                            </button>
+                          )}
+                        </span>
+                        {discount.hasAllocation && (
+                          <span className="shrink-0 tabular-nums text-xs font-bold text-emerald-700">
+                            -{formatDisplayPrice(discount.amount, discount.currencyCode)}
+                          </span>
+                        )}
+                      </div>
+                    ))}
                     <div className="mt-1.5 flex items-center justify-between gap-3 border-t border-slate-200 pt-1.5">
                       <span className="text-sm font-semibold text-slate-950">Total</span>
                       <span className="shrink-0 tabular-nums text-xl font-bold leading-none text-slate-950">

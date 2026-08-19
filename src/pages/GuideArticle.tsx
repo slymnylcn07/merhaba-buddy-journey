@@ -25,8 +25,6 @@ import PremiumCTA from "@/components/PremiumCTA";
 import { LazyRelatedGuideCard } from "@/components/LazyRelatedGuideCard";
 import { guidesData } from "@/data/guides";
 import { recentGuidesData } from "@/data/recent-guides-data";
-import { articleCTAs } from "@/data/article-ctas";
-import { recentArticleCTAs } from "@/data/recent-article-ctas";
 import { articleHowToSchemas } from "@/data/article-howto-schemas";
 import { loadArticleBySlug } from "@/data/article-loaders";
 import { loadRecentArticleBySlug } from "@/data/recent-article-loaders";
@@ -36,7 +34,6 @@ import { recordGuideView } from "@/lib/guide-popularity";
 import { markPageReady } from "@/lib/page-ready";
 import type { ArticleData } from "@/data/articles/types";
 
-const allArticleCTAs = { ...articleCTAs, ...recentArticleCTAs };
 const allGuidesData = [...guidesData, ...recentGuidesData];
 
 function containsQuickAnswerLabel(node: ReactNode): boolean {
@@ -234,18 +231,14 @@ const GuideArticle = () => {
   const relatedGuides = getRelatedGuides(article.slug, allGuidesData, 3);
   const standardizedArticleContent = removeLegacyQuickAnswer(article.content);
   const hasVisibleFaq = containsVisibleFaq(article.content);
-  const ctaCopy = allArticleCTAs[article.slug];
-  const articleContentWithMidCTA = ctaCopy
-    ? insertMidArticleProductCTA(
-        standardizedArticleContent,
-        <ArticleMidProductCTA
-          key={`mid-product-${article.slug}`}
-          articleSlug={article.slug}
-          headline={ctaCopy.headline}
-          text={ctaCopy.text}
-        />,
-      )
-    : standardizedArticleContent;
+  const articleContentWithMidCTA = insertMidArticleProductCTA(
+    standardizedArticleContent,
+    <ArticleMidProductCTA
+      key={`mid-product-${article.slug}`}
+      articleSlug={article.slug}
+      articleTitle={article.title}
+    />,
+  );
 
   const getISODate = (dateString: string) => {
     const date = new Date(dateString);
@@ -512,16 +505,13 @@ const GuideArticle = () => {
                 <ArticleImageLightbox articleSlug={article.slug} />
 
                 {/* Required article-end order: product CTA -> knee quiz -> sources. */}
-                {allArticleCTAs[slug] && (
-                  <div data-article-end-block="cta">
-                    <PremiumCTA
-                      articleSlug={article.slug}
-                      headline={allArticleCTAs[slug].headline}
-                      text={allArticleCTAs[slug].text}
-                      placement="article_end"
-                    />
-                  </div>
-                )}
+                <div data-article-end-block="cta">
+                  <PremiumCTA
+                    articleSlug={article.slug}
+                    articleTitle={article.title}
+                    placement="article_end"
+                  />
+                </div>
 
                 <div data-article-end-block="knee-quiz">
                   <ArticleQuizCard articleSlug={article.slug} articleTitle={article.title} />
