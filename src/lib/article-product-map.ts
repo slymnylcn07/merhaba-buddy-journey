@@ -100,6 +100,8 @@ const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
   "air-compression-leg-massagers-do-they-work": "calf",
   "knee-brace-vs-compression-sleeve": "sleeve",
   "knee-compression-sleeve-sizing-guide": "sleeve",
+  "flat-feet-overpronation-knee-pain": "insoles",
+  "how-to-sleep-with-knee-pain": "wrap",
   "best-insoles-for-knee-pain-2026": "insoles",
   "pickleball-knee-recovery-routine": "sleeve",
   "hyrox-knee-pain": "sleeve",

@@ -1,12 +1,19 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { X, ArrowRight, CheckCircle2, Clock3, ListChecks, Sparkles, Target } from "lucide-react";
+import { X, ArrowRight, Sparkles, Tag } from "lucide-react";
 import { Link } from "react-router-dom";
 import { trackEvent } from "@/hooks/use-google-analytics";
+import { trackClarityEvent } from "@/hooks/use-microsoft-clarity";
 import { pickProductForSlug, PRODUCT_RECS } from "@/lib/article-product-map";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
-import { getProductPath, getPublicProductHandle } from "@/lib/product-config";
+import { getPublicProductHandle } from "@/lib/product-config";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
 import {
+  buildGuideOfferProductPath,
+  markGuideOfferSource,
+} from "@/lib/guide-offer";
+import { NEWSLETTER_DISCOUNT_CODE, NEWSLETTER_DISCOUNT_PCT } from "@/lib/newsletter-config";
+import {
+  formatFreeShippingThreshold,
   formatMarketMoney,
   getSafeUsdFallbackPrice,
   hasProductPriceRange,
@@ -26,20 +33,14 @@ interface ArticleSlideInCTAProps {
   title: string;
 }
 
-const STORAGE_KEY = "flexiknee_article_cta_session";
-const STAGE2_KEY = "flexiknee_article_cta_stage2_session";
-const CROSS_ARTICLE_KEY = "flexiknee_article_cta_cross_article_session";
-const CTA_VERSION = "article-slide-in-v3";
-const MOBILE_PRODUCT_SCROLL = 55;
-const DESKTOP_PRODUCT_SCROLL = 50;
-const QUIZ_SCROLL = 78;
-const QUIZ_DELAY_AFTER_DISMISS_MS = 20_000;
-const QUIZ_MIN_GAP_AFTER_DISMISS_MS = 1_500;
-const CROSS_ARTICLE_QUIZ_SCROLL = 50;
+const STORAGE_KEY_PREFIX = "flexiknee_article_product_cta_v4:";
+const CTA_VERSION = "article-slide-in-v5";
+const MOBILE_PRODUCT_SCROLL = 30;
+const DESKTOP_PRODUCT_SCROLL = 25;
 
 interface ProductPopupSession {
   slug: string;
-  outcome: "dismissed" | "product" | "quiz";
+  outcome: "dismissed" | "product";
   dismissedAt?: number;
   dismissedScroll?: number;
 }
@@ -54,81 +55,18 @@ function getDeviceType() {
   return window.matchMedia("(max-width: 767px)").matches ? "mobile" : "desktop";
 }
 
-function readProductPopupSession(): ProductPopupSession | null {
-  const rawValue = window.sessionStorage.getItem(STORAGE_KEY);
-  if (!rawValue || rawValue === "true") return null;
+function getStorageKey(slug: string) {
+  return `${STORAGE_KEY_PREFIX}${slug}`;
+}
+
+function readProductPopupSession(slug: string): ProductPopupSession | null {
+  const rawValue = window.sessionStorage.getItem(getStorageKey(slug));
+  if (!rawValue) return null;
   try {
     return JSON.parse(rawValue) as ProductPopupSession;
   } catch {
     return null;
   }
-}
-
-function getQuizPopupContent(slug: string): { hook: string; support: string } {
-  const value = slug.toLowerCase();
-
-  if (
-    value.includes("running") ||
-    value.includes("exercise") ||
-    value.includes("workout") ||
-    value.includes("squat") ||
-    value.includes("pilates")
-  ) {
-    return {
-      hook: "Get a knee plan built around the movement that bothers you.",
-      support: "Connect your training triggers with matched guides and a practical seven-day starting routine.",
-    };
-  }
-
-  if (value.includes("stairs") || value.includes("walk") || value.includes("standing")) {
-    return {
-      hook: "Turn your walking or stair pattern into a clearer knee plan.",
-      support: "Use what you notice during daily movement to find a more relevant place to begin.",
-    };
-  }
-
-  if (
-    value.includes("night") ||
-    value.includes("sleep") ||
-    value.includes("morning") ||
-    value.includes("sitting") ||
-    value.includes("stiff")
-  ) {
-    return {
-      hook: "Get a routine built around when stiffness shows up.",
-      support: "Match the timing of your symptoms with useful guides and a seven-day comfort routine.",
-    };
-  }
-
-  if (
-    value.includes("heat") ||
-    value.includes("ice") ||
-    value.includes("therapy") ||
-    value.includes("massager") ||
-    value.includes("brace")
-  ) {
-    return {
-      hook: "Compare comfort options for the knee pattern you actually have.",
-      support: "See a matched product category and useful guides before deciding what fits your routine.",
-    };
-  }
-
-  if (
-    value.includes("click") ||
-    value.includes("sharp") ||
-    value.includes("swelling") ||
-    value.includes("burning")
-  ) {
-    return {
-      hook: "Turn the symptoms you noticed into clearer next steps.",
-      support: "Organize the details of your pattern and get a more relevant set of guides and starting points.",
-    };
-  }
-
-  return {
-    hook: "Get a practical knee plan built around your answers.",
-    support: "Move from general reading to a matched starting point in four quick questions.",
-  };
 }
 
 function getContextualContent(slug: string): { hook: string; support: string } {
@@ -296,108 +234,31 @@ function getContextualContent(slug: string): { hook: string; support: string } {
   };
 }
 
-export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
+export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProps) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [stage, setStage] = useState<1 | 2>(1);
-  const [stage1Done, setStage1Done] = useState(false);
-  const [stage2Done, setStage2Done] = useState(false);
-  const [stage1DismissedAt, setStage1DismissedAt] = useState<number | null>(null);
-  const [crossArticleQuiz, setCrossArticleQuiz] = useState(false);
-  const [quizScrollGapReady, setQuizScrollGapReady] = useState(false);
-  const [quizDelayReady, setQuizDelayReady] = useState(false);
+  const [isDone, setIsDone] = useState(false);
   const [storageReady, setStorageReady] = useState(false);
-  const stage1ImpressionSent = useRef(false);
-  const stage2ImpressionSent = useRef(false);
+  const impressionSent = useRef(false);
   const pageStartedAt = useRef(Date.now());
 
   const { hook, support } = getContextualContent(slug);
-  const quizContent = getQuizPopupContent(slug);
   const rec = pickProductForSlug(slug);
   const [liveImage, setLiveImage] = useState<string | null>(null);
-  const [livePrice, setLivePrice] = useState<string | null>(null);
+  const [livePrice, setLivePrice] = useState<{
+    label: string;
+    amount: number;
+    currencyCode: string;
+    isRange: boolean;
+  } | null>(null);
 
   useEffect(() => {
     setStorageReady(false);
     pageStartedAt.current = Date.now();
-    stage1ImpressionSent.current = false;
-    stage2ImpressionSent.current = false;
+    impressionSent.current = false;
     setIsVisible(false);
-    setStage(1);
-    setCrossArticleQuiz(false);
-    setQuizScrollGapReady(false);
-    setQuizDelayReady(false);
-
-    const rawSession = window.sessionStorage.getItem(STORAGE_KEY);
-    const savedSession = readProductPopupSession();
-    const quizPopupSeen = window.sessionStorage.getItem(STAGE2_KEY) === "true";
-    const crossArticleQuizSeen =
-      window.sessionStorage.getItem(CROSS_ARTICLE_KEY) === "true";
-
-    if (rawSession === "true") {
-      setStage1Done(true);
-      setStage2Done(true);
-      setStage1DismissedAt(null);
-      setStorageReady(true);
-      return;
-    }
-
-    if (!savedSession) {
-      setStage1Done(false);
-      setStage2Done(quizPopupSeen);
-      setStage1DismissedAt(null);
-      setStorageReady(true);
-      return;
-    }
-
-    if (savedSession.slug !== slug) {
-      const canShowCrossArticleQuiz =
-        savedSession.outcome === "dismissed" && !crossArticleQuizSeen;
-      setStage1Done(true);
-      setStage2Done(!canShowCrossArticleQuiz);
-      setStage1DismissedAt(null);
-      setCrossArticleQuiz(canShowCrossArticleQuiz);
-      setStorageReady(true);
-      return;
-    }
-
-    if (savedSession.outcome !== "dismissed") {
-      setStage1Done(true);
-      setStage2Done(true);
-      setStage1DismissedAt(null);
-      setStorageReady(true);
-      return;
-    }
-
-    setStage1Done(true);
-    setStage2Done(quizPopupSeen);
-    setStage1DismissedAt(savedSession.dismissedAt || Date.now());
+    setIsDone(Boolean(readProductPopupSession(slug)));
     setStorageReady(true);
   }, [slug]);
-
-  useEffect(() => {
-    if (crossArticleQuiz || !stage1DismissedAt || stage2Done) return;
-    const elapsed = Date.now() - stage1DismissedAt;
-    const remainingForScroll = Math.max(
-      0,
-      QUIZ_MIN_GAP_AFTER_DISMISS_MS - elapsed,
-    );
-    const remainingForTimer = Math.max(
-      0,
-      QUIZ_DELAY_AFTER_DISMISS_MS - elapsed,
-    );
-    const scrollTimer = window.setTimeout(
-      () => setQuizScrollGapReady(true),
-      remainingForScroll,
-    );
-    const delayTimer = window.setTimeout(
-      () => setQuizDelayReady(true),
-      remainingForTimer,
-    );
-    return () => {
-      window.clearTimeout(scrollTimer);
-      window.clearTimeout(delayTimer);
-    };
-  }, [crossArticleQuiz, stage1DismissedAt, stage2Done]);
 
   const getEventContext = useCallback(
     (scrollPercent: number) => ({
@@ -421,13 +282,13 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       getDeviceType() === "mobile" ? MOBILE_PRODUCT_SCROLL : DESKTOP_PRODUCT_SCROLL;
 
     if (
-      !stage1Done &&
-      !stage1ImpressionSent.current &&
+      !isDone &&
+      !impressionSent.current &&
       scrollPercent >= productThreshold
     ) {
-      stage1ImpressionSent.current = true;
-      setStage(1);
+      impressionSent.current = true;
       setIsVisible(true);
+      trackClarityEvent("guide_product_popup_view");
       const eventContext = getEventContext(scrollPercent);
       trackEvent("article_cta_impression", {
         ...eventContext,
@@ -439,58 +300,18 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
         creative_slot: "article_slide_in",
         items: [{ item_id: rec.handle, item_name: rec.title }],
       });
-      return;
-    }
-
-    const sameArticleQuizReady =
-      !crossArticleQuiz &&
-      stage1DismissedAt !== null &&
-      ((quizScrollGapReady && scrollPercent >= QUIZ_SCROLL) || quizDelayReady);
-    const crossArticleQuizReady =
-      crossArticleQuiz && scrollPercent >= CROSS_ARTICLE_QUIZ_SCROLL;
-
-    if (
-      stage1Done &&
-      !stage2Done &&
-      !stage2ImpressionSent.current &&
-      !isVisible &&
-      (sameArticleQuizReady || crossArticleQuizReady)
-    ) {
-      stage2ImpressionSent.current = true;
-      setStage(2);
-      setIsVisible(true);
-      if (crossArticleQuiz) {
-        window.sessionStorage.setItem(CROSS_ARTICLE_KEY, "true");
-      }
-      trackEvent("article_quiz_popup_impression", {
-        ...getEventContext(scrollPercent),
-        stage: "quiz",
-        opportunity: crossArticleQuiz ? "cross_article" : "same_article",
-        quiz_trigger: crossArticleQuiz
-          ? "cross_article_scroll"
-          : scrollPercent >= QUIZ_SCROLL
-            ? "same_article_scroll"
-            : "dismiss_timer",
-      });
     }
   }, [
     getEventContext,
-    crossArticleQuiz,
-    isVisible,
-    quizDelayReady,
-    quizScrollGapReady,
+    isDone,
     rec.handle,
     rec.title,
     slug,
-    stage1DismissedAt,
-    stage1Done,
-    stage2Done,
     storageReady,
   ]);
 
   useEffect(() => {
-    if (!storageReady) return;
-    if (stage1Done && stage2Done) return;
+    if (!storageReady || isDone) return;
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleScroll, { passive: true });
     document.addEventListener("visibilitychange", handleScroll);
@@ -500,7 +321,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       window.removeEventListener("resize", handleScroll);
       document.removeEventListener("visibilitychange", handleScroll);
     };
-  }, [handleScroll, stage1Done, stage2Done, storageReady]);
+  }, [handleScroll, isDone, storageReady]);
 
   useEffect(() => {
     let active = true;
@@ -519,8 +340,14 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
         const currencyCode = match.node.priceRange?.minVariantPrice?.currencyCode || "USD";
         const numericAmount = Number(amount);
         if (Number.isFinite(numericAmount)) {
-          const prefix = hasProductPriceRange(match.node.priceRange) ? "From " : "";
-          setLivePrice(`${prefix}${formatMarketMoney(numericAmount, currencyCode)}`);
+          const isRange = hasProductPriceRange(match.node.priceRange);
+          const prefix = isRange ? "From " : "";
+          setLivePrice({
+            label: `${prefix}${formatMarketMoney(numericAmount, currencyCode)}`,
+            amount: numericAmount,
+            currencyCode,
+            isRange,
+          });
         }
       }
     });
@@ -532,44 +359,32 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
   const handleDismiss = () => {
     const scrollPercent = getScrollPercent();
     setIsVisible(false);
-    if (stage === 1) {
-      const dismissedAt = Date.now();
-      setStage1Done(true);
-      setStage1DismissedAt(dismissedAt);
-      setQuizScrollGapReady(false);
-      setQuizDelayReady(false);
-      window.sessionStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify({
-          slug,
-          outcome: "dismissed",
-          dismissedAt,
-          dismissedScroll: scrollPercent,
-        } satisfies ProductPopupSession),
-      );
-      trackEvent("article_cta_dismissed", {
-        ...getEventContext(scrollPercent),
-        stage: "product",
-      });
-    } else {
-      setStage2Done(true);
-      window.sessionStorage.setItem(STAGE2_KEY, "true");
-      if (crossArticleQuiz) {
-        window.sessionStorage.setItem(CROSS_ARTICLE_KEY, "true");
-      }
-      trackEvent("article_quiz_popup_dismissed", {
-        ...getEventContext(scrollPercent),
-        stage: "quiz",
-        opportunity: crossArticleQuiz ? "cross_article" : "same_article",
-      });
-    }
+    setIsDone(true);
+    trackClarityEvent("guide_product_popup_dismiss");
+    window.sessionStorage.setItem(
+      getStorageKey(slug),
+      JSON.stringify({
+        slug,
+        outcome: "dismissed",
+        dismissedAt: Date.now(),
+        dismissedScroll: scrollPercent,
+      } satisfies ProductPopupSession),
+    );
+    trackEvent("article_cta_dismissed", {
+      ...getEventContext(scrollPercent),
+      stage: "product",
+      offer_code: NEWSLETTER_DISCOUNT_CODE,
+    });
   };
 
   const handleCTAClick = () => {
     const scrollPercent = getScrollPercent();
+    markGuideOfferSource(slug, "slide_in");
+    trackClarityEvent("guide_product_popup_click");
     trackEvent("article_cta_clicked", {
       ...getEventContext(scrollPercent),
       stage: "product",
+      offer_code: NEWSLETTER_DISCOUNT_CODE,
     });
     trackEvent("select_promotion", {
       promotion_id: `article-product-${slug}`,
@@ -577,65 +392,51 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       creative_slot: "article_slide_in",
       items: [{ item_id: rec.handle, item_name: rec.title }],
     });
-    setStage1Done(true);
-    setStage2Done(true);
+    setIsDone(true);
     window.sessionStorage.setItem(
-      STORAGE_KEY,
+      getStorageKey(slug),
       JSON.stringify({ slug, outcome: "product" } satisfies ProductPopupSession),
     );
-    window.sessionStorage.setItem(STAGE2_KEY, "true");
-    window.sessionStorage.setItem(CROSS_ARTICLE_KEY, "true");
   };
 
-  const handleQuizClick = (placement: "product_popup" | "quiz_popup") => {
-    const scrollPercent = getScrollPercent();
-    trackEvent(
-      placement === "product_popup"
-        ? "article_cta_quiz_clicked"
-        : "article_quiz_popup_clicked",
-      {
-        ...getEventContext(scrollPercent),
-        stage: placement === "product_popup" ? "product" : "quiz",
-        opportunity:
-          placement === "quiz_popup"
-            ? crossArticleQuiz
-              ? "cross_article"
-              : "same_article"
-            : "product_popup",
-      },
-    );
-    setStage1Done(true);
-    setStage2Done(true);
-    window.sessionStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify({ slug, outcome: "quiz" } satisfies ProductPopupSession),
-    );
-    window.sessionStorage.setItem(STAGE2_KEY, "true");
-    window.sessionStorage.setItem(CROSS_ARTICLE_KEY, "true");
-  };
+  if (isDone && !isVisible) return null;
 
-  if (stage1Done && stage2Done && !isVisible) return null;
-
-  const isMain = rec.handle === PRODUCT_RECS.main.handle;
   const productShortName = rec.title.replace("FlexiKnee ", "");
-  const productCtaName =
-    rec.handle === PRODUCT_RECS.iceWrap.handle
-      ? "ice pack wrap"
-      : productShortName.split(" ").slice(-2).join(" ").toLowerCase();
   const productImage = liveImage || rec.fallbackImage;
-  const productPrice = livePrice || getSafeUsdFallbackPrice(rec.fallbackPrice);
-  const activeQuizContent = crossArticleQuiz
-    ? {
-        hook: "Still comparing what fits your knee?",
-        support:
-          "You have explored more than one guide. Four quick answers can narrow the options and give you a more useful next step.",
-      }
-    : quizContent;
+  const safeFallbackPrice = getSafeUsdFallbackPrice(rec.fallbackPrice);
+  const fallbackUsdMatch = /^\$(\d+(?:\.\d{1,2})?)$/.exec(safeFallbackPrice);
+  const fallbackUsdAmount = fallbackUsdMatch ? Number(fallbackUsdMatch[1]) : null;
+  const regularAmount = livePrice?.amount ?? fallbackUsdAmount;
+  const currencyCode = livePrice?.currencyCode || (fallbackUsdAmount !== null ? "USD" : null);
+  const pricePrefix = livePrice?.isRange ? "From " : "";
+  const discountedAmount =
+    regularAmount !== null && Number.isFinite(regularAmount)
+      ? regularAmount * (1 - NEWSLETTER_DISCOUNT_PCT / 100)
+      : null;
+  const savingsAmount =
+    regularAmount !== null && Number.isFinite(regularAmount)
+      ? regularAmount * (NEWSLETTER_DISCOUNT_PCT / 100)
+      : null;
+  const normalizedSavingsAmount =
+    savingsAmount !== null && Math.abs(savingsAmount - Math.round(savingsAmount)) < 0.01
+      ? Math.round(savingsAmount)
+      : savingsAmount;
+  const guidePrice =
+    discountedAmount !== null && currencyCode
+      ? `${pricePrefix}${formatMarketMoney(discountedAmount, currencyCode)}`
+      : null;
+  const crossedPrice = livePrice?.label || (guidePrice ? safeFallbackPrice : null);
+  const savingsLabel =
+    normalizedSavingsAmount !== null && currencyCode
+      ? `${formatMarketMoney(normalizedSavingsAmount, currencyCode)} saved`
+      : `${NEWSLETTER_DISCOUNT_PCT}% saved`;
+  const productPrice = guidePrice || safeFallbackPrice;
+  const offerProductPath = buildGuideOfferProductPath(rec.handle, slug, "slide_in");
 
   return (
     <div
       role="dialog"
-      aria-label={stage === 1 ? "FlexiKnee product suggestion" : "Knee quiz suggestion"}
+      aria-label="FlexiKnee product suggestion"
       className={`fixed z-40 transition-all duration-500 ease-out
         bottom-0 left-0 right-0
         md:bottom-6 md:left-auto md:right-6 md:w-[420px]
@@ -643,7 +444,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
       `}
     >
         <div className="relative overflow-hidden border border-slate-200 bg-white px-4 pb-3 pt-3 shadow-[0_-10px_40px_rgba(15,23,42,0.16)] md:rounded-3xl md:px-5 md:pb-5 md:pt-4 md:shadow-[0_24px_70px_-20px_rgba(15,23,42,0.35)]">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-emerald-400" />
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-slate-950" />
 
           <button
             onClick={handleDismiss}
@@ -653,53 +454,7 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
             <X className="h-4 w-4" />
           </button>
 
-          {stage === 2 ? (
-            <div className="md:pr-7">
-              <div className="pr-7 md:pr-0">
-                <div className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.14em] text-blue-700 md:px-2.5 md:py-1 md:text-[10px]">
-                  <ListChecks className="h-3.5 w-3.5" /> Free 60-second knee quiz
-                </div>
-                <p className="mt-2 text-[15px] font-bold leading-5 text-slate-950 md:mt-3 md:text-base md:leading-snug">
-                  {activeQuizContent.hook}
-                </p>
-                <p className="mt-1 line-clamp-2 text-[11px] leading-[1.45] text-slate-500 [@media(max-width:767px)_and_(max-height:740px)]:line-clamp-1 md:mt-1.5 md:line-clamp-none md:text-xs md:leading-relaxed">
-                  {activeQuizContent.support}
-                </p>
-              </div>
-
-              <div className="mt-2 rounded-xl border border-blue-100 bg-gradient-to-br from-blue-50 to-emerald-50/70 p-2.5 md:mt-3 md:rounded-2xl md:p-3">
-                <p className="text-[9px] font-bold uppercase tracking-[0.14em] text-slate-500 md:text-[10px]">
-                  Your free result includes
-                </p>
-                <div className="mt-1.5 grid grid-cols-[minmax(0,0.95fr)_minmax(0,1.2fr)_minmax(0,0.8fr)] gap-1 text-[9px] font-semibold leading-tight text-slate-700 min-[390px]:text-[10px] md:mt-2 md:grid-cols-3 md:gap-1.5 md:text-[10px]">
-                  <span className="flex items-center gap-1 whitespace-nowrap">
-                    <Clock3 className="h-3 w-3 shrink-0 text-blue-600 md:h-3.5 md:w-3.5" /> 4 quick answers
-                  </span>
-                  <span className="flex items-center gap-1 whitespace-nowrap">
-                    <CheckCircle2 className="h-3 w-3 shrink-0 text-emerald-600 md:h-3.5 md:w-3.5" /> 3 matched guides
-                  </span>
-                  <span className="flex items-center gap-1 whitespace-nowrap">
-                    <CheckCircle2 className="h-3 w-3 shrink-0 text-emerald-600 md:h-3.5 md:w-3.5" /> 7-day plan
-                  </span>
-                </div>
-              </div>
-
-              <Link
-                to="/knee-quiz"
-                state={{ sourceArticle: slug, sourceTitle: title }}
-                onClick={() => handleQuizClick("quiz_popup")}
-                className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-blue-700 md:mt-4 md:px-5 md:py-3"
-              >
-                Get my free 7-day plan
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <p className="mt-1.5 text-center text-[9px] font-medium text-slate-500 md:mt-2 md:text-[10px]">
-                See your result instantly. Email is optional.
-              </p>
-            </div>
-          ) : (
-            <>
-              <div className="flex items-start gap-2.5 pr-7 md:gap-3">
+          <div className="flex items-start gap-2.5 pr-7 md:gap-3">
                 {productImage ? (
                   <img
                     src={productImage}
@@ -709,58 +464,61 @@ export const ArticleSlideInCTA = ({ slug, title }: ArticleSlideInCTAProps) => {
                       const fallbackUrl = new URL(rec.fallbackImage, window.location.origin).href;
                       if (image.src !== fallbackUrl) image.src = rec.fallbackImage;
                     }}
-                    className="h-12 w-12 flex-shrink-0 rounded-xl border border-slate-100 bg-slate-50 object-cover md:h-14 md:w-14 md:rounded-2xl"
+                    className="h-16 w-16 flex-shrink-0 rounded-xl border border-slate-100 bg-slate-50 object-contain p-1 md:h-20 md:w-20 md:rounded-2xl"
                   />
                 ) : (
-                  <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-blue-50 md:h-14 md:w-14 md:rounded-2xl">
+                  <span className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl bg-blue-50 md:h-20 md:w-20 md:rounded-2xl">
                     <Sparkles className="h-6 w-6 text-blue-600" />
                   </span>
                 )}
                 <div className="min-w-0">
+                  <span className="mb-1 inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.1em] text-blue-700">
+                    <Tag className="h-3 w-3" /> Guide reader offer
+                  </span>
                   <p className="text-[13px] font-bold leading-[1.3] text-slate-950 md:text-sm md:leading-snug">{hook}</p>
                   <p className="mt-1 line-clamp-2 text-[11px] leading-[1.45] text-slate-500 [@media(max-width:767px)_and_(max-height:740px)]:line-clamp-1 md:line-clamp-none md:text-xs md:leading-relaxed">{support}</p>
                 </div>
               </div>
 
-              <div className="mt-2.5 flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-xl bg-slate-50 px-3 py-2 md:mt-3 md:rounded-2xl md:px-3.5 md:py-2.5">
+              <div className="mt-2.5 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 md:mt-3 md:rounded-2xl md:px-3.5 md:py-3">
+                <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                  <span className="text-xl font-bold tracking-[-0.025em] text-slate-950">{productPrice}</span>
+                  {crossedPrice && (
+                    <span className="text-xs font-medium text-slate-400 line-through">{crossedPrice}</span>
+                  )}
+                  <span className="ml-auto rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-semibold text-blue-700">
+                    {savingsLabel}
+                  </span>
+                </div>
+                <p className="mt-1 text-[10px] leading-4 text-slate-500">
+                  {NEWSLETTER_DISCOUNT_CODE} applied automatically in cart
+                </p>
+                <div className="mt-2 flex flex-wrap items-center gap-x-2.5 gap-y-1 border-t border-slate-200 pt-2">
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-xs font-semibold text-slate-800">{productShortName}</p>
-                  <ProductMarketplaceRating handle={rec.handle} showCount className="mt-1" />
+                  <ProductMarketplaceRating
+                    handle={rec.handle}
+                    showCount
+                    customerLabel
+                    className="mt-1"
+                  />
                 </div>
-                <span className="text-sm font-bold text-slate-950">{productPrice}</span>
-                <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-semibold text-blue-700">30-day returns</span>
+                </div>
               </div>
 
-              <div className="mt-2.5 grid grid-cols-1 items-center gap-2 min-[380px]:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:mt-3.5">
+              <div className="mt-2.5 md:mt-3">
                 <Link
-                  to={getProductPath(rec.handle)}
+                  to={offerProductPath}
                   onClick={handleCTAClick}
-                  className="inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-full bg-slate-950 px-4 py-3 text-xs font-bold text-white transition hover:bg-slate-800"
+                  className="inline-flex min-h-11 w-full min-w-0 items-center justify-center gap-1.5 rounded-xl bg-blue-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-blue-700"
                 >
-                  See the {isMain ? "FlexiKnee" : productCtaName}
+                  See how it works
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
-                <Link
-                  to="/knee-quiz"
-                  state={{ sourceArticle: slug, sourceTitle: title }}
-                  onClick={() => handleQuizClick("product_popup")}
-                  className="group inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-blue-300 bg-gradient-to-r from-blue-50 via-white to-cyan-50 px-3 py-1.5 text-blue-900 shadow-[0_10px_24px_-18px_rgba(37,99,235,0.9)] transition hover:-translate-y-0.5 hover:border-blue-500 hover:shadow-[0_14px_28px_-16px_rgba(37,99,235,0.75)] md:py-2"
-                >
-                  <span className="flex h-7 w-7 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 text-base font-black leading-none text-white shadow-sm transition group-hover:from-blue-700 group-hover:to-cyan-600 md:h-8 md:w-8">
-                    <Target className="h-[18px] w-[18px]" strokeWidth={2.5} aria-hidden="true" />
-                  </span>
-                  <span className="text-left leading-tight">
-                    <span className="block text-xs font-extrabold text-slate-950">
-                      Knee Quiz
-                    </span>
-                    <span className="block text-[10px] font-semibold uppercase tracking-[0.08em] text-blue-600">
-                      Free / 60 sec
-                    </span>
-                  </span>
-                </Link>
+                <p className="mt-2 text-center text-[10px] leading-4 text-slate-500">
+                  30-day returns · Free shipping over {formatFreeShippingThreshold()}
+                </p>
               </div>
-            </>
-          )}
         </div>
     </div>
   );

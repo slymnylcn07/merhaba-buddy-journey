@@ -31,6 +31,13 @@
 - Do not use em dashes in article copy. Rewrite the sentence with a period, comma, colon, or parentheses.
 - Avoid unsupported medical claims, invented precision, guarantees, and diagnosis language.
 
+## CTA visual consistency
+
+- Mobile in-article product CTA images must use a real product-in-use lifestyle crop tall enough for the recommended product to be recognizable at first glance. Do not reduce the image to a shallow banner or use a floating catalog thumbnail when an approved lifestyle asset exists.
+- Keep the routine label inside the image and tune `object-position` per product and breakpoint so the product is not cut off or pressed against an edge.
+- The in-article CTA and article popup must present the same product, GUIDE10 price, crossed-out regular price, returns language, and primary blue action style. Never show a full-price popup beside a discounted in-article card.
+- Keep the middle CTA compact and the article-end CTA detailed. Marketplace rating and applicable warranty or return terms must remain visible in both versions.
+
 ## Required validation
 
 Run the checks that are relevant to the change, and run the full production build before publishing:

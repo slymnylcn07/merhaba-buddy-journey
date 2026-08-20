@@ -330,7 +330,9 @@ export const flexikneeVsCompetitors2026: ArticleExport = {
           </figcaption>
         </figure>
 
-        <ArticleMidProductCTA />
+        <ArticleMidProductCTA
+          articleSlug="flexiknee-vs-competitors-2026"
+        />
 
         <h2>FlexiKnee vs Peka Flexi Knee Massager</h2>
         <p>

@@ -20,6 +20,7 @@ import ArticleFaqAccordion from "@/components/ArticleFaqAccordion";
 import { ArticleQuizCard } from "@/components/ArticleQuizCard";
 import { ArticleNewsletterCard } from "@/components/ArticleNewsletterCard";
 import { ArticleSlideInCTA } from "@/components/ArticleSlideInCTA";
+import ArticleMidProductCTA from "@/components/ArticleMidProductCTA";
 import PremiumCTA from "@/components/PremiumCTA";
 import { LazyRelatedGuideCard } from "@/components/LazyRelatedGuideCard";
 import { guidesData } from "@/data/guides";
@@ -35,8 +36,8 @@ import { recordGuideView } from "@/lib/guide-popularity";
 import { markPageReady } from "@/lib/page-ready";
 import type { ArticleData } from "@/data/articles/types";
 
-const allArticleCTAs = { ...articleCTAs, ...recentArticleCTAs };
 const allGuidesData = [...guidesData, ...recentGuidesData];
+const allArticleCTAs = { ...articleCTAs, ...recentArticleCTAs };
 
 function containsQuickAnswerLabel(node: ReactNode): boolean {
   if (typeof node === "string") return node.trim().toLowerCase() === "quick answer";
@@ -75,6 +76,58 @@ function containsVisibleFaq(node: ReactNode): boolean {
 
   if (node.type === ArticleFaqAccordion) return true;
   return Children.toArray(node.props.children).some(containsVisibleFaq);
+}
+
+function containsManualProductCTA(node: ReactNode): boolean {
+  if (typeof node === "number" || node == null || typeof node === "boolean") return false;
+  if (Array.isArray(node)) return node.some(containsManualProductCTA);
+  if (!isValidElement<{ children?: ReactNode }>(node)) return false;
+
+  if (node.type === ArticleMidProductCTA || node.type === PremiumCTA) return true;
+  return Children.toArray(node.props.children).some(containsManualProductCTA);
+}
+
+function countH2Headings(node: ReactNode): number {
+  if (typeof node === "number" || node == null || typeof node === "boolean") return 0;
+  if (Array.isArray(node)) return node.reduce((total, child) => total + countH2Headings(child), 0);
+  if (!isValidElement<{ children?: ReactNode }>(node)) return 0;
+
+  if (node.type === "h2") return 1;
+  return Children.toArray(node.props.children).reduce(
+    (total, child) => total + countH2Headings(child),
+    0,
+  );
+}
+
+/**
+ * Rehber metnini tek tek değiştirmeden ikinci H2 bölümünün sonuna ürün kartı ekler.
+ * Üçüncü H2 bir <section> içinde başlıyorsa kart o bölümün önüne yerleşir.
+ * Eski bir manuel orta CTA varsa ikinci bir kart oluşturmaz.
+ */
+function insertMidArticleProductCTA(content: ReactNode, cta: ReactNode): ReactNode {
+  if (containsManualProductCTA(content)) return content;
+
+  const isFragment = isValidElement<{ children?: ReactNode }>(content) && content.type === Fragment;
+  const children = Children.toArray(isFragment ? content.props.children : content);
+  let headingsSeen = 0;
+  let insertionIndex = -1;
+
+  children.forEach((child, index) => {
+    if (insertionIndex >= 0) return;
+    const headingsInChild = countH2Headings(child);
+    if (headingsSeen >= 2 && headingsInChild > 0) {
+      insertionIndex = index;
+      return;
+    }
+    headingsSeen += headingsInChild;
+  });
+
+  if (headingsSeen < 2 && insertionIndex < 0) return content;
+  if (insertionIndex < 0) insertionIndex = children.length;
+
+  const nextChildren = [...children];
+  nextChildren.splice(insertionIndex, 0, cta);
+  return <>{nextChildren}</>;
 }
 
 const GuideArticle = () => {
@@ -181,6 +234,16 @@ const GuideArticle = () => {
   const relatedGuides = getRelatedGuides(article.slug, allGuidesData, 3);
   const standardizedArticleContent = removeLegacyQuickAnswer(article.content);
   const hasVisibleFaq = containsVisibleFaq(article.content);
+  const ctaCopy = allArticleCTAs[article.slug];
+  const articleContentWithMidCTA = insertMidArticleProductCTA(
+    standardizedArticleContent,
+    <ArticleMidProductCTA
+      key={`mid-product-${article.slug}`}
+      articleSlug={article.slug}
+      headline={ctaCopy?.headline}
+      text={ctaCopy?.text}
+    />,
+  );
 
   const getISODate = (dateString: string) => {
     const date = new Date(dateString);
@@ -433,7 +496,7 @@ const GuideArticle = () => {
                   [&_li]:mb-2 [&_li]:text-base [&_li]:leading-7 [&_li]:text-slate-600
                   [&_img]:my-8 [&_img]:w-full [&_img]:rounded-[1.5rem] [&_img]:border [&_img]:border-slate-200 [&_img]:bg-white [&_img]:object-contain [&_img]:shadow-sm [&_img]:transition [&_img]:hover:shadow-md [&_img:focus]:outline-none [&_img:focus]:ring-2 [&_img:focus]:ring-blue-500
                 ">
-                  {standardizedArticleContent}
+                  {articleContentWithMidCTA}
                   {articleEditorialCrosslinks[article.slug]}
                   {article.faqs && article.faqs.length > 0 && !hasVisibleFaq && (
                     <ArticleFaqAccordion
@@ -447,14 +510,14 @@ const GuideArticle = () => {
                 <ArticleImageLightbox articleSlug={article.slug} />
 
                 {/* Required article-end order: product CTA -> knee quiz -> sources. */}
-                {allArticleCTAs[slug] && (
-                  <div data-article-end-block="cta">
-                    <PremiumCTA
-                      headline={allArticleCTAs[slug].headline}
-                      text={allArticleCTAs[slug].text}
-                    />
-                  </div>
-                )}
+                <div data-article-end-block="cta">
+                  <PremiumCTA
+                    articleSlug={article.slug}
+                    headline={ctaCopy?.headline}
+                    text={ctaCopy?.text}
+                    placement="article_end"
+                  />
+                </div>
 
                 <div data-article-end-block="knee-quiz">
                   <ArticleQuizCard articleSlug={article.slug} articleTitle={article.title} />

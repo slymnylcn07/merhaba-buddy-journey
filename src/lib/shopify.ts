@@ -114,6 +114,14 @@ export interface CheckoutLineItem {
 interface StorefrontCartGraphql {
   id: string;
   checkoutUrl: string;
+  cost: StorefrontCartCost;
+  discountCodes: StorefrontDiscountCode[];
+  discountAllocations: Array<{
+    __typename?: string;
+    code?: string;
+    title?: string;
+    discountedAmount: StorefrontMoney;
+  }>;
   lines: {
     edges: Array<{
       node: {
@@ -148,10 +156,38 @@ interface CartLinesRemoveData {
   cartLinesRemove: CartMutationPayload;
 }
 
+interface CartDiscountCodesUpdateData {
+  cartDiscountCodesUpdate: CartMutationPayload;
+}
+
+export interface StorefrontMoney {
+  amount: string;
+  currencyCode: string;
+}
+
+export interface StorefrontCartCost {
+  subtotalAmount: StorefrontMoney;
+  totalAmount: StorefrontMoney;
+}
+
+export interface StorefrontDiscountCode {
+  code: string;
+  applicable: boolean;
+}
+
+export interface StorefrontDiscountApplication {
+  type: 'automatic' | 'code' | 'custom' | 'unknown';
+  label: string;
+  discountedAmount: StorefrontMoney;
+}
+
 export interface StorefrontCheckout {
   cartId: string;
   checkoutUrl: string;
   lineIdsByVariantId: Record<string, string>;
+  cost: StorefrontCartCost;
+  discountCodes: StorefrontDiscountCode[];
+  discountApplications: StorefrontDiscountApplication[];
 }
 
 interface ShopifyAnalyticsContextData {
@@ -328,6 +364,36 @@ const PRODUCT_BY_HANDLE_QUERY = `
 const STOREFRONT_CART_FIELDS = `
   id
   checkoutUrl
+  cost {
+    subtotalAmount {
+      amount
+      currencyCode
+    }
+    totalAmount {
+      amount
+      currencyCode
+    }
+  }
+  discountCodes {
+    code
+    applicable
+  }
+  discountAllocations {
+    __typename
+    discountedAmount {
+      amount
+      currencyCode
+    }
+    ... on CartAutomaticDiscountAllocation {
+      title
+    }
+    ... on CartCodeDiscountAllocation {
+      code
+    }
+    ... on CartCustomDiscountAllocation {
+      title
+    }
+  }
   lines(first: 100) {
     edges {
       node {
@@ -388,6 +454,20 @@ const CART_LINES_UPDATE_MUTATION = `
 const CART_LINES_REMOVE_MUTATION = `
   mutation cartLinesRemove($cartId: ID!, $lineIds: [ID!]!, $country: CountryCode!) @inContext(country: $country) {
     cartLinesRemove(cartId: $cartId, lineIds: $lineIds) {
+      cart {
+        ${STOREFRONT_CART_FIELDS}
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+const CART_DISCOUNT_CODES_UPDATE_MUTATION = `
+  mutation cartDiscountCodesUpdate($cartId: ID!, $discountCodes: [String!]!, $country: CountryCode!) @inContext(country: $country) {
+    cartDiscountCodesUpdate(cartId: $cartId, discountCodes: $discountCodes) {
       cart {
         ${STOREFRONT_CART_FIELDS}
       }
@@ -496,15 +576,40 @@ function toStorefrontCheckout(
       .map(({ node }) => [node.merchandise.id, node.id]),
   );
 
+  const discountApplications: StorefrontDiscountApplication[] =
+    cart.discountAllocations.map((allocation) => {
+      const type =
+        allocation.__typename === 'CartAutomaticDiscountAllocation'
+          ? 'automatic'
+          : allocation.__typename === 'CartCodeDiscountAllocation'
+            ? 'code'
+            : allocation.__typename === 'CartCustomDiscountAllocation'
+              ? 'custom'
+              : 'unknown';
+
+      return {
+        type,
+        label:
+          allocation.code ||
+          allocation.title ||
+          (type === 'automatic' ? 'Automatic discount' : 'Discount'),
+        discountedAmount: allocation.discountedAmount,
+      };
+    });
+
   return {
     cartId: cart.id,
     checkoutUrl: cart.checkoutUrl,
     lineIdsByVariantId,
+    cost: cart.cost,
+    discountCodes: cart.discountCodes,
+    discountApplications,
   };
 }
 
 export async function createStorefrontCheckout(
   items: CheckoutLineItem[],
+  discountCodes: string[] = [],
 ): Promise<StorefrontCheckout> {
   try {
     const lines = items.map((item) => ({
@@ -514,7 +619,11 @@ export async function createStorefrontCheckout(
 
     const country = getMarketCountry();
     const cartData = await storefrontApiRequest<CartCreateData>(CART_CREATE_MUTATION, {
-      input: { lines, buyerIdentity: { countryCode: country } },
+      input: {
+        lines,
+        buyerIdentity: { countryCode: country },
+        ...(discountCodes.length > 0 ? { discountCodes } : {}),
+      },
       country,
     });
 
@@ -580,5 +689,24 @@ export async function removeStorefrontCartLine(
   );
 
   return toStorefrontCheckout(response.data.cartLinesRemove, 'Removing cart line');
+}
+
+export async function updateStorefrontCartDiscountCodes(
+  cartId: string,
+  discountCodes: string[],
+): Promise<StorefrontCheckout> {
+  const response = await storefrontApiRequest<CartDiscountCodesUpdateData>(
+    CART_DISCOUNT_CODES_UPDATE_MUTATION,
+    {
+      cartId,
+      country: getMarketCountry(),
+      discountCodes,
+    },
+  );
+
+  return toStorefrontCheckout(
+    response.data.cartDiscountCodesUpdate,
+    'Updating discount codes',
+  );
 }
 
