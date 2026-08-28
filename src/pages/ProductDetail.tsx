@@ -35,7 +35,13 @@ import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating"
 import { DirectProductDiscountPopup } from "@/components/DirectProductDiscountPopup";
 import { buildMerchantOffer } from "@/lib/merchant-schema";
 import { isFreeShippingEligible } from "@/lib/shipping-policy";
-import { trackProductView } from "@/lib/shopify-analytics";
+import { trackProductView as trackShopifyProductView } from "@/lib/shopify-analytics";
+import {
+  trackAddToCart as trackGA4AddToCart,
+  trackBeginCheckout as trackGA4BeginCheckout,
+  trackViewItem as trackGA4ViewItem,
+} from "@/hooks/use-google-analytics";
+import { getGuideOfferSource, GUIDE_OFFER_CODE } from "@/lib/guide-offer";
 import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
 import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.webp";
@@ -206,7 +212,7 @@ export default function ProductDetail() {
     if (!product || !variant || trackedProductId.current === product.node.id) return;
     trackedProductId.current = product.node.id;
 
-    trackProductView({
+    trackShopifyProductView({
       productId: product.node.id,
       productTitle: product.node.title,
       productHandle: product.node.handle,
@@ -219,7 +225,18 @@ export default function ProductDetail() {
       productType: product.node.productType,
       productSku: variant.sku || undefined,
     });
-  }, [product, variant]);
+    trackGA4ViewItem({
+      id: product.node.id,
+      name: productTitle,
+      price: variant.price.amount,
+      currency: variant.price.currencyCode,
+      handle: publicHandle,
+      variantId: variant.id,
+    }, {
+      placement: "product_page",
+      ctaVariant: "product_detail",
+    });
+  }, [product, productTitle, publicHandle, variant]);
 
   const productJsonLd = useMemo(() => ({
     "@context": "https://schema.org",
@@ -329,6 +346,23 @@ export default function ProductDetail() {
         [item],
         useCartStore.getState().requestedDiscountCodes,
       );
+      const guideSource = getGuideOfferSource();
+      const gaItem = {
+        id: item.product.node.id,
+        name: item.product.node.title,
+        price: item.price.amount,
+        currency: item.price.currencyCode,
+        quantity: item.quantity,
+        handle: publicHandle,
+      };
+      const gaContext = {
+        contentSlug: guideSource?.guide,
+        placement: "buy_now",
+        ctaVariant: guideSource ? "guide10" : "direct_buy_now",
+        offerCode: guideSource ? GUIDE_OFFER_CODE : undefined,
+      };
+      trackGA4AddToCart(gaItem, gaContext);
+      trackGA4BeginCheckout([gaItem], gaContext);
       await settleShopifyAnalyticsBeforeNavigation(
         trackShopifyAddToCart(
           toShopifyAddToCartData(checkout.cartId, item),

@@ -79,9 +79,10 @@ export function ArticleNewsletterCard({ articleSlug }: ArticleNewsletterCardProp
         if (!entry.isIntersecting || impressionSent.current) return;
         impressionSent.current = true;
         trackEvent("article_newsletter_impression", {
-          slug: articleSlug,
+          content_slug: articleSlug,
           placement: "after_sources",
-          cta_version: CTA_VERSION,
+          cta_variant: CTA_VERSION,
+          interaction_type: "impression",
         });
         observer.disconnect();
       },
@@ -118,9 +119,10 @@ export function ArticleNewsletterCard({ articleSlug }: ArticleNewsletterCardProp
       window.localStorage.setItem(SUBSCRIBED_KEY, "true");
       setSubscribed(true);
       trackEvent("article_newsletter_signup", {
-        slug: articleSlug,
+        content_slug: articleSlug,
         placement: "after_sources",
-        cta_version: CTA_VERSION,
+        cta_variant: CTA_VERSION,
+        interaction_type: "submit",
       });
     } catch (error) {
       toast.error(

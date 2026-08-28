@@ -5,13 +5,6 @@
   "framework": "vite",
   "trailingSlash": false,
   "cleanUrls": false,
-  "redirects": [
-    {
-      "source": "/foundation",
-      "destination": "/why-flexiknee",
-      "permanent": false
-    }
-  ],
   "rewrites": [
     {
       "source": "/api/unstable/graphql.json",
@@ -300,6 +293,16 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/product",
+      "destination": "/shop",
+      "permanent": true
+    },
+    {
+      "source": "/foundation",
+      "destination": "/why-flexiknee",
+      "permanent": true
+    },
     {
       "source": "/editorial-policy",
       "destination": "/editorial-team",

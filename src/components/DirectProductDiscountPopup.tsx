@@ -82,8 +82,10 @@ export function DirectProductDiscountPopup({
       trackEvent("guide_offer_prepared", {
         product_handle: productHandle,
         offer_code: GUIDE_OFFER_CODE,
-        source_guide: capturedSource?.guide || "session",
+        content_slug: capturedSource?.guide || "session",
         placement: capturedSource?.placement || "continued_session",
+        cta_variant: "guide10-product-page",
+        interaction_type: "prepare",
         offer_status: result.applied
           ? "applied"
           : result.pending
@@ -118,6 +120,9 @@ export function DirectProductDiscountPopup({
       trackEvent("direct_product_offer_impression", {
         product_handle: productHandle,
         offer_code: GUIDE_OFFER_CODE,
+        placement: "product_page_modal",
+        cta_variant: "direct-guide10-v1",
+        interaction_type: "impression",
         delay_seconds: DIRECT_OFFER_DELAY_MS / 1000,
       });
       trackClarityEvent("direct_product_offer_impression");
@@ -132,6 +137,9 @@ export function DirectProductDiscountPopup({
       trackEvent("direct_product_offer_dismissed", {
         product_handle: productHandle,
         offer_code: GUIDE_OFFER_CODE,
+        placement: "product_page_modal",
+        cta_variant: "direct-guide10-v1",
+        interaction_type: "dismiss",
       });
       trackClarityEvent("direct_product_offer_dismissed");
     }
@@ -144,6 +152,9 @@ export function DirectProductDiscountPopup({
       trackEvent("direct_product_offer_code_copied", {
         product_handle: productHandle,
         offer_code: GUIDE_OFFER_CODE,
+        placement: "product_page_modal",
+        cta_variant: "direct-guide10-v1",
+        interaction_type: "copy",
       });
       window.setTimeout(() => setCopied(false), 2_000);
     } catch {
@@ -166,6 +177,9 @@ export function DirectProductDiscountPopup({
       trackEvent("direct_product_offer_claimed", {
         product_handle: productHandle,
         offer_code: GUIDE_OFFER_CODE,
+        placement: "product_page_modal",
+        cta_variant: "direct-guide10-v1",
+        interaction_type: "claim",
         offer_status: status,
         cart_has_items: items.length > 0,
       });

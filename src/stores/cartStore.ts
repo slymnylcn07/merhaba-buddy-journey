@@ -19,6 +19,8 @@ import {
 } from '@/lib/shopify-analytics';
 import { trackAddToCart as trackGA4AddToCart, trackBeginCheckout as trackGA4BeginCheckout } from '@/hooks/use-google-analytics';
 import { trackAddToCart as trackMetaAddToCart, trackInitiateCheckout as trackMetaInitiateCheckout } from '@/hooks/use-meta-tracking';
+import { getGuideOfferSource, GUIDE_OFFER_CODE } from '@/lib/guide-offer';
+import { getPublicProductHandle } from '@/lib/product-config';
 
 export interface CartItem {
   product: ShopifyProduct;
@@ -259,24 +261,6 @@ export const useCartStore = create<CartStore>()(
         // Sepete ekleme başarılıysa çekmeceyi otomatik aç
         set({ items: nextItems, isDrawerOpen: true });
 
-        // Track add to cart event for GA4
-        trackGA4AddToCart({
-          id: item.product.node.id,
-          name: item.product.node.title,
-          price: item.price.amount,
-          currency: item.price.currencyCode,
-          quantity: item.quantity,
-        });
-
-        // Track add to cart event for Meta Pixel / CAPI
-        trackMetaAddToCart({
-          id: item.product.node.id,
-          name: item.product.node.title,
-          price: parseFloat(item.price.amount),
-          currency: item.price.currencyCode,
-          quantity: item.quantity,
-        });
-
         void enqueueStorefrontCartOperation(
           (loading) => set({ isLoading: loading }),
           async () => {
@@ -306,6 +290,27 @@ export const useCartStore = create<CartStore>()(
 
             if (operationEpoch !== cartOperationEpoch) return;
             set(getStorefrontCartState(checkout));
+            const guideSource = getGuideOfferSource();
+            trackGA4AddToCart({
+              id: item.product.node.id,
+              name: item.product.node.title,
+              price: item.price.amount,
+              currency: item.price.currencyCode,
+              quantity: item.quantity,
+              handle: getPublicProductHandle(item.product.node.handle),
+            }, {
+              contentSlug: guideSource?.guide,
+              placement: guideSource?.placement || 'product_page',
+              ctaVariant: guideSource ? 'guide10' : 'standard_product',
+              offerCode: guideSource ? GUIDE_OFFER_CODE : undefined,
+            });
+            trackMetaAddToCart({
+              id: item.product.node.id,
+              name: item.product.node.title,
+              price: parseFloat(item.price.amount),
+              currency: item.price.currencyCode,
+              quantity: item.quantity,
+            });
             await settleShopifyAnalyticsBeforeNavigation(
               trackShopifyAddToCart(
                 toShopifyAddToCartData(checkout.cartId, item),
@@ -705,23 +710,6 @@ export const useCartStore = create<CartStore>()(
         const totalAmount = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
         const currency = items[0]?.price.currencyCode || 'GBP';
         
-        // Track begin_checkout for GA4
-        trackGA4BeginCheckout(items.map(item => ({
-          id: item.product.node.id,
-          name: item.product.node.title,
-          price: item.price.amount,
-          currency: item.price.currencyCode,
-          quantity: item.quantity,
-        })));
-
-        // Track InitiateCheckout for Meta Pixel / CAPI
-        trackMetaInitiateCheckout({
-          contentIds: items.map(item => item.product.node.id),
-          value: totalAmount,
-          currency,
-          numItems: totalQuantity,
-        });
-
         setLoading(true);
         try {
           const state = get();
@@ -751,6 +739,26 @@ export const useCartStore = create<CartStore>()(
           }
 
           set(getStorefrontCartState(checkout));
+          const guideSource = getGuideOfferSource();
+          trackGA4BeginCheckout(items.map(item => ({
+            id: item.product.node.id,
+            name: item.product.node.title,
+            price: item.price.amount,
+            currency: item.price.currencyCode,
+            quantity: item.quantity,
+            handle: getPublicProductHandle(item.product.node.handle),
+          })), {
+            contentSlug: guideSource?.guide,
+            placement: 'cart_drawer',
+            ctaVariant: guideSource ? 'guide10' : 'standard_checkout',
+            offerCode: guideSource ? GUIDE_OFFER_CODE : undefined,
+          });
+          trackMetaInitiateCheckout({
+            contentIds: items.map(item => item.product.node.id),
+            value: totalAmount,
+            currency,
+            numItems: totalQuantity,
+          });
           if (createdFreshCart) {
             const fallbackTracking = Promise.allSettled(
               items.map((item) =>

@@ -33,7 +33,13 @@ export function ArticleQuizCard({ articleSlug, articleTitle }: ArticleQuizCardPr
         <Link
           to="/knee-quiz"
           state={{ sourceArticle: articleSlug, sourceTitle: articleTitle }}
-          onClick={() => trackEvent("article_quiz_cta_clicked", { category: "quiz", label: articleSlug })}
+          onClick={() => trackEvent("article_quiz_cta_clicked", {
+            category: "quiz",
+            content_slug: articleSlug,
+            placement: "inline_quiz_card",
+            cta_variant: "knee-quiz-v2",
+            interaction_type: "click",
+          })}
           className="inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-700 md:w-auto"
         >
           Find my routine

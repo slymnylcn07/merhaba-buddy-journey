@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useLocation } from "react-router-dom";
 import { toast } from "sonner";
@@ -675,6 +675,7 @@ export default function KneeQuiz() {
   const [emailSent, setEmailSent] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
+  const trackedResult = useRef("");
 
   useEffect(() => {
     let active = true;
@@ -699,6 +700,20 @@ export default function KneeQuiz() {
       ? "smart-knee-massager"
       : result.productKey
     : null;
+
+  useEffect(() => {
+    if (!result || trackedResult.current === result.resultKey) return;
+    trackedResult.current = result.resultKey;
+    trackEvent("knee_quiz_completed", {
+      category: "quiz",
+      content_slug: sourceState.sourceArticle,
+      placement: sourceState.sourceArticle ? "article_quiz" : "quiz_page",
+      cta_variant: "knee-quiz-v2",
+      interaction_type: "complete",
+      result_type: result.resultKey,
+      product_handle: displayProductKey || "guide-first",
+    });
+  }, [displayProductKey, result, sourceState.sourceArticle]);
   const recommendedProduct = useMemo(
     () =>
       displayProductKey
@@ -724,12 +739,6 @@ export default function KneeQuiz() {
     setAnswers((previous) => ({ ...previous, [questionId]: key }));
     const next = step + 1;
     setStep(next);
-    if (next >= QUESTIONS.length) {
-      trackEvent("knee_quiz_completed", {
-        category: "quiz",
-        label: sourceState.sourceArticle || "direct",
-      });
-    }
   };
 
   const handleEmail = async (event: React.FormEvent) => {
@@ -777,7 +786,12 @@ export default function KneeQuiz() {
       setEmailSent(true);
       trackEvent("knee_quiz_email_captured", {
         category: "quiz",
-        label: result.resultKey,
+        content_slug: sourceState.sourceArticle,
+        placement: "quiz_result",
+        cta_variant: "knee-quiz-v2",
+        interaction_type: "email_submit",
+        result_type: result.resultKey,
+        product_handle: displayProductKey || "guide-first",
       });
       toast.success("Your personalized 7-day plan is on its way.");
     } catch (error) {

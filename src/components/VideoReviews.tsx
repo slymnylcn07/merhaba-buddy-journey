@@ -114,7 +114,7 @@ const VideoCard = ({ video }: { video: (typeof videoReviews)[number] }) => {
           >
             <img
               src={video.poster}
-              alt=""
+              alt={`FlexiKnee ${video.title.toLowerCase()} video preview`}
               className="h-full w-full object-cover"
               loading="lazy"
               decoding="async"

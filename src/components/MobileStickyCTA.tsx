@@ -46,12 +46,20 @@ export const MobileStickyCTA = ({
   }, [ctaSectionRef]);
 
   const handleAddToCartClick = async () => {
-    trackEvent("sticky_add_to_cart_click");
+    trackEvent("sticky_add_to_cart_click", {
+      placement: "mobile_sticky_bar",
+      cta_variant: "sticky-commerce-v1",
+      interaction_type: "add_to_cart_click",
+    });
     await onAddToCart();
   };
 
   const handleBuyNowClick = async () => {
-    trackEvent("sticky_buy_now_click");
+    trackEvent("sticky_buy_now_click", {
+      placement: "mobile_sticky_bar",
+      cta_variant: "sticky-commerce-v1",
+      interaction_type: "buy_now_click",
+    });
     await onBuyNow();
   };
 

@@ -27,8 +27,14 @@ import { createStorefrontCheckout, getProductByHandle, ShopifyProduct } from "@/
 import {
   settleShopifyAnalyticsBeforeNavigation,
   trackAddToCart as trackShopifyAddToCart,
-  trackProductView,
+  trackProductView as trackShopifyProductView,
 } from "@/lib/shopify-analytics";
+import {
+  trackAddToCart as trackGA4AddToCart,
+  trackBeginCheckout as trackGA4BeginCheckout,
+  trackViewItem as trackGA4ViewItem,
+} from "@/hooks/use-google-analytics";
+import { getGuideOfferSource, GUIDE_OFFER_CODE } from "@/lib/guide-offer";
 import { getProductPath, getShopifyProductHandleCandidates } from "@/lib/product-config";
 import { toShopifyAddToCartData, useCartStore } from "@/stores/cartStore";
 import { getProductProfile } from "@/data/product-profiles";
@@ -155,7 +161,7 @@ export default function SecondaryProductDetail() {
     if (!node || !selectedVariant || trackedProductId.current === node.id) return;
     trackedProductId.current = node.id;
 
-    trackProductView({
+    trackShopifyProductView({
       productId: node.id,
       productTitle: node.title,
       productHandle: node.handle,
@@ -168,7 +174,18 @@ export default function SecondaryProductDetail() {
       productType: node.productType,
       productSku: selectedVariant.sku || undefined,
     });
-  }, [images, node, selectedVariant]);
+    trackGA4ViewItem({
+      id: node.id,
+      name: profile.h1,
+      price: selectedVariant.price.amount,
+      currency: selectedVariant.price.currencyCode,
+      handle,
+      variantId: selectedVariant.id,
+    }, {
+      placement: "product_page",
+      ctaVariant: "product_detail",
+    });
+  }, [handle, images, node, profile.h1, selectedVariant]);
 
   const selectOption = (name: string, value: string) => {
     const currentSelections = Object.fromEntries(
@@ -234,6 +251,23 @@ export default function SecondaryProductDetail() {
         [item],
         useCartStore.getState().requestedDiscountCodes,
       );
+      const guideSource = getGuideOfferSource();
+      const gaItem = {
+        id: item.product.node.id,
+        name: item.product.node.title,
+        price: item.price.amount,
+        currency: item.price.currencyCode,
+        quantity: item.quantity,
+        handle,
+      };
+      const gaContext = {
+        contentSlug: guideSource?.guide,
+        placement: "buy_now",
+        ctaVariant: guideSource ? "guide10" : "direct_buy_now",
+        offerCode: guideSource ? GUIDE_OFFER_CODE : undefined,
+      };
+      trackGA4AddToCart(gaItem, gaContext);
+      trackGA4BeginCheckout([gaItem], gaContext);
       await settleShopifyAnalyticsBeforeNavigation(
         trackShopifyAddToCart(
           toShopifyAddToCartData(checkout.cartId, item),
