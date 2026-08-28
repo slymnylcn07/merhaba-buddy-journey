@@ -2,15 +2,15 @@
 // Usage:
 //   INDEXNOW_URLS="https://flexi-knee.com/page-1,https://flexi-knee.com/page-2" npm run indexnow
 //
-// This is intentionally NOT part of `npm run build`. Only URLs with meaningful
-// content, price, availability, redirect, or deletion changes should be submitted.
+// This script deliberately uses only Node.js built-ins so the lightweight
+// IndexNow workflow never needs to install the storefront dependency tree.
 
 const SITE_URL = "https://flexi-knee.com";
 const HOST = "flexi-knee.com";
 const KEY = "c77348b155df436aaa656811648e86d9";
 const KEY_LOCATION = `${SITE_URL}/${KEY}.txt`;
 
-function getRequestedUrls(): string[] {
+function getRequestedUrls() {
   const raw = process.env.INDEXNOW_URLS?.trim();
 
   if (!raw) {
@@ -64,4 +64,4 @@ async function submitToIndexNow() {
   }
 }
 
-submitToIndexNow();
+await submitToIndexNow();

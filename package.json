@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "validate:source": "tsx scripts/validate-source.ts",
     "validate:build": "tsx scripts/validate-build.ts",
-    "indexnow": "tsx scripts/submit-indexnow.ts",
+    "indexnow": "node scripts/submit-indexnow.mjs",
     "validate:content": "tsx scripts/validate-content-registry.ts",
     "validate:assets": "node scripts/validate-performance-assets.mjs"
   },
