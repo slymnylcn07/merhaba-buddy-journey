@@ -282,7 +282,10 @@ export const CartDrawer = () => {
     try {
       const result = await applyDiscountCode(code);
       trackEvent("cart_promo_code_submitted", {
-        promo_code: code,
+        offer_code: code,
+        placement: "cart_drawer",
+        cta_variant: "promo-code-form-v1",
+        interaction_type: "submit",
         promo_status: result.applied ? "applied" : result.pending ? "pending" : "rejected",
       });
       trackClarityEvent(
@@ -317,7 +320,12 @@ export const CartDrawer = () => {
     setPromoBusy(true);
     try {
       await removeDiscountCode(code);
-      trackEvent("cart_promo_code_removed", { promo_code: code });
+      trackEvent("cart_promo_code_removed", {
+        offer_code: code,
+        placement: "cart_drawer",
+        cta_variant: "promo-code-form-v1",
+        interaction_type: "remove",
+      });
       trackClarityEvent("cart_promo_removed");
     } catch {
       toast.error("Promo code could not be removed. Please try again.");

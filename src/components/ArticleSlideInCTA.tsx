@@ -290,14 +290,17 @@ export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProp
       setIsVisible(true);
       trackClarityEvent("guide_product_popup_view");
       const eventContext = getEventContext(scrollPercent);
-      trackEvent("article_cta_impression", {
-        ...eventContext,
-        stage: "product",
-      });
       trackEvent("view_promotion", {
         promotion_id: `article-product-${slug}`,
         promotion_name: "Article product slide-in",
+        ...eventContext,
+        content_slug: slug,
         creative_slot: "article_slide_in",
+        placement: "slide_in",
+        cta_variant: CTA_VERSION,
+        product_handle: rec.handle,
+        offer_code: NEWSLETTER_DISCOUNT_CODE,
+        interaction_type: "impression",
         items: [{ item_id: rec.handle, item_name: rec.title }],
       });
     }
@@ -372,6 +375,11 @@ export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProp
     );
     trackEvent("article_cta_dismissed", {
       ...getEventContext(scrollPercent),
+      content_slug: slug,
+      placement: "slide_in",
+      cta_variant: CTA_VERSION,
+      product_handle: rec.handle,
+      interaction_type: "dismiss",
       stage: "product",
       offer_code: NEWSLETTER_DISCOUNT_CODE,
     });
@@ -381,15 +389,17 @@ export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProp
     const scrollPercent = getScrollPercent();
     markGuideOfferSource(slug, "slide_in");
     trackClarityEvent("guide_product_popup_click");
-    trackEvent("article_cta_clicked", {
-      ...getEventContext(scrollPercent),
-      stage: "product",
-      offer_code: NEWSLETTER_DISCOUNT_CODE,
-    });
     trackEvent("select_promotion", {
       promotion_id: `article-product-${slug}`,
       promotion_name: "Article product slide-in",
+      ...getEventContext(scrollPercent),
+      content_slug: slug,
       creative_slot: "article_slide_in",
+      placement: "slide_in",
+      cta_variant: CTA_VERSION,
+      product_handle: rec.handle,
+      offer_code: NEWSLETTER_DISCOUNT_CODE,
+      interaction_type: "click",
       items: [{ item_id: rec.handle, item_name: rec.title }],
     });
     setIsDone(true);

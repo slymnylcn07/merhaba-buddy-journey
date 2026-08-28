@@ -334,18 +334,16 @@ const PremiumCTA = ({
       if (impressionSent.current) return;
       impressionSent.current = true;
       trackClarityEvent("guide_product_card_view");
-      trackEvent("article_product_cta_impression", { label: slug || "unknown" });
-      trackEvent("product_card_impression", {
-        slug: slug || "unknown",
-        placement,
-        product_handle: rec.handle,
-        offer_code: NEWSLETTER_DISCOUNT_CODE,
-        cta_version: "guide-product-card-v3",
-      });
       trackEvent("view_promotion", {
         promotion_id: `guide10-${placement}-${slug || "unknown"}`,
         promotion_name: "Guide reader offer",
+        content_slug: slug || "unknown",
         creative_slot: placement,
+        placement,
+        cta_variant: "guide-product-card-v3",
+        product_handle: rec.handle,
+        offer_code: NEWSLETTER_DISCOUNT_CODE,
+        interaction_type: "impression",
         items: [{ item_id: rec.handle, item_name: rec.title }],
       });
     };
@@ -370,18 +368,16 @@ const PremiumCTA = ({
   const handleProductClick = () => {
     markGuideOfferSource(slug || "unknown", placement);
     trackClarityEvent("guide_product_card_click");
-    trackEvent("article_product_cta_clicked", { label: slug || "unknown" });
-    trackEvent("product_card_click", {
-      slug: slug || "unknown",
-      placement,
-      product_handle: rec.handle,
-      offer_code: NEWSLETTER_DISCOUNT_CODE,
-      cta_version: "guide-product-card-v3",
-    });
     trackEvent("select_promotion", {
       promotion_id: `guide10-${placement}-${slug || "unknown"}`,
       promotion_name: "Guide reader offer",
+      content_slug: slug || "unknown",
       creative_slot: placement,
+      placement,
+      cta_variant: "guide-product-card-v3",
+      product_handle: rec.handle,
+      offer_code: NEWSLETTER_DISCOUNT_CODE,
+      interaction_type: "click",
       items: [{ item_id: rec.handle, item_name: rec.title }],
     });
   };

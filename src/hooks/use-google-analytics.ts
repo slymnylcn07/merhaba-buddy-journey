@@ -19,6 +19,41 @@ const GA_MEASUREMENT_ID = "G-5QC0R5G1JG";
 type GoogleAnalyticsWindow = Window &
   Record<`ga-disable-${string}`, boolean | undefined>;
 
+interface AnalyticsEventContext {
+  contentSlug?: string;
+  placement?: string;
+  ctaVariant?: string;
+  productHandle?: string;
+  offerCode?: string;
+  interactionType?: string;
+  resultType?: string;
+}
+
+function getDeviceGroup() {
+  if (typeof window === "undefined") return "unknown";
+  if (window.matchMedia("(max-width: 767px)").matches) return "mobile";
+  if (window.matchMedia("(max-width: 1023px)").matches) return "tablet";
+  return "desktop";
+}
+
+function getContentSlug() {
+  if (typeof window === "undefined") return undefined;
+  return /^\/guides\/([^/?#]+)/.exec(window.location.pathname)?.[1];
+}
+
+function normalizeEventContext(context?: AnalyticsEventContext) {
+  return {
+    content_slug: context?.contentSlug || getContentSlug(),
+    placement: context?.placement,
+    cta_variant: context?.ctaVariant,
+    product_handle: context?.productHandle,
+    offer_code: context?.offerCode,
+    interaction_type: context?.interactionType,
+    result_type: context?.resultType,
+    device_group: getDeviceGroup(),
+  };
+}
+
 function ensureGoogleTagQueue() {
   window.dataLayer = window.dataLayer || [];
   window.gtag =
@@ -88,6 +123,7 @@ export const trackEvent = (
   ensureGoogleTagQueue();
   window.gtag("event", eventName, {
     send_to: GA_MEASUREMENT_ID,
+    ...normalizeEventContext(),
     ...eventParams,
   });
 };
@@ -99,8 +135,14 @@ export const trackAddToCart = (product: {
   price: string;
   currency: string;
   quantity: number;
-}) => {
+  handle?: string;
+}, context?: AnalyticsEventContext) => {
   trackEvent("add_to_cart", {
+    ...normalizeEventContext({
+      ...context,
+      productHandle: context?.productHandle || product.handle,
+      interactionType: context?.interactionType || "add_to_cart",
+    }),
     currency: product.currency,
     value: parseFloat(product.price) * product.quantity,
     items: [
@@ -119,14 +161,22 @@ export const trackViewItem = (product: {
   name: string;
   price: string;
   currency: string;
-}) => {
+  handle?: string;
+  variantId?: string;
+}, context?: AnalyticsEventContext) => {
   trackEvent("view_item", {
+    ...normalizeEventContext({
+      ...context,
+      productHandle: context?.productHandle || product.handle,
+      interactionType: context?.interactionType || "view",
+    }),
     currency: product.currency,
     value: parseFloat(product.price),
     items: [
       {
         item_id: product.id,
         item_name: product.name,
+        item_variant: product.variantId,
         price: parseFloat(product.price),
       },
     ],
@@ -139,13 +189,21 @@ export const trackBeginCheckout = (items: Array<{
   price: string;
   currency: string;
   quantity: number;
-}>) => {
+  handle?: string;
+}>, context?: AnalyticsEventContext) => {
   const totalValue = items.reduce(
     (sum, item) => sum + parseFloat(item.price) * item.quantity,
     0
   );
 
   trackEvent("begin_checkout", {
+    ...normalizeEventContext({
+      ...context,
+      productHandle:
+        context?.productHandle ||
+        (items.length === 1 ? items[0]?.handle : "multiple-products"),
+      interactionType: context?.interactionType || "begin_checkout",
+    }),
     currency: items[0]?.currency || "GBP",
     value: totalValue,
     items: items.map((item) => ({

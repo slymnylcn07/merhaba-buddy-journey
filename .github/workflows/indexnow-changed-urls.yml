@@ -1,0 +1,61 @@
+name: IndexNow Changed URLs
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-production
+  cancel-in-progress: true
+
+jobs:
+  submit-changed-urls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Find changed public URLs
+        id: changed
+        env:
+          INDEXNOW_BEFORE_SHA: ${{ github.event.before }}
+          INDEXNOW_HEAD_SHA: ${{ github.sha }}
+        run: echo "urls=$(node scripts/changed-indexnow-urls.mjs)" >> "$GITHUB_OUTPUT"
+
+      - name: Wait for the matching production deployment
+        if: steps.changed.outputs.urls != ''
+        shell: bash
+        run: |
+          for attempt in {1..30}; do
+            live_build=$(curl -fsSL --retry 2 https://flexi-knee.com/ | sed -n 's/.*<meta name="flexiknee-build" content="\([^"]*\)".*/\1/p' | head -n 1)
+            if [ "$live_build" = "$GITHUB_SHA" ]; then
+              echo "Production deployment matches $GITHUB_SHA"
+              exit 0
+            fi
+            sleep 20
+          done
+          echo "Production did not reach the expected build within 10 minutes."
+          exit 1
+
+      - name: Submit changed URLs to IndexNow
+        if: steps.changed.outputs.urls != ''
+        env:
+          INDEXNOW_URLS: ${{ steps.changed.outputs.urls }}
+        run: npm run indexnow
