@@ -1,6 +1,7 @@
 export type GuideThumbnailLoader = () => Promise<string>;
 
 const thumbnailLoaders: Record<string, GuideThumbnailLoader> = {
+  "can-running-shoes-cause-knee-pain": () => import("../assets/guide-thumbnails/wave-3-66-70/can-running-shoes-cause-knee-pain-thumb.webp").then((module) => module.default),
   "knee-injury-symptom-chart": () => import("../assets/guide-thumbnails/wave-3-61-65/knee-injury-symptom-chart-thumb.jpg").then((module) => module.default),
   "meniscus-knee-pain-location-chart": () => import("../assets/guide-thumbnails/wave-3-61-65/meniscus-knee-pain-location-chart-thumb.jpg").then((module) => module.default),
   "hip-to-knee-pain-location-chart": () => import("../assets/guide-thumbnails/wave-3-61-65/hip-to-knee-pain-location-chart-thumb.jpg").then((module) => module.default),

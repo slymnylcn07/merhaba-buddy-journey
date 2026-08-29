@@ -198,6 +198,8 @@ import thumbWave362MeniscusLocationChart from "@/assets/guide-thumbnails/wave-3-
 import thumbWave363HipToKneeLocationChart from "@/assets/guide-thumbnails/wave-3-61-65/hip-to-knee-pain-location-chart-thumb.jpg";
 import thumbWave364SeatedKneeExercises from "@/assets/guide-thumbnails/wave-3-61-65/seated-knee-exercises-limited-mobility-thumb.jpg";
 import thumbWave365PatellarTendonStrap from "@/assets/guide-thumbnails/wave-3-61-65/patellar-tendon-strap-knee-pain-thumb.jpg";
+import thumbWave366RunningShoesCause from "@/assets/guide-thumbnails/wave-3-66-70/can-running-shoes-cause-knee-pain-thumb.webp";
+import thumbWave366RunningShoesCauseAvif from "@/assets/guide-thumbnails/wave-3-66-70/can-running-shoes-cause-knee-pain-thumb.avif";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "best-supplements-for-knee-pain": thumbSupplements,
@@ -340,6 +342,7 @@ const thumbnailMap: Record<string, string> = {
   "hip-to-knee-pain-location-chart": thumbWave363HipToKneeLocationChart,
   "seated-knee-exercises-limited-mobility": thumbWave364SeatedKneeExercises,
   "patellar-tendon-strap-knee-pain": thumbWave365PatellarTendonStrap,
+  "can-running-shoes-cause-knee-pain": thumbWave366RunningShoesCause,
 };
 
 const thumbnailAvifMap: Record<string, string> = {
@@ -390,6 +393,7 @@ const thumbnailAvifMap: Record<string, string> = {
   "best-hiking-poles-bad-knees": thumbWave358HikingPolesAvif,
   "diclofenac-gel-knee-pain": thumbWave359DiclofenacGelAvif,
   "capsaicin-cream-knee-pain": thumbWave360CapsaicinCreamAvif,
+  "can-running-shoes-cause-knee-pain": thumbWave366RunningShoesCauseAvif,
 };
 
 const thumbnailPatternMap: { pattern: RegExp; image: string }[] = [
@@ -541,6 +545,7 @@ const activitySlugs = [
   "knee-swelling-after-exercise",
   "knee-recovery-exercises-after-workout",
   "best-running-shoes-knee-pain",
+  "can-running-shoes-cause-knee-pain",
   "best-insoles-for-knee-pain-2026",
   "flat-feet-overpronation-knee-pain",
   "tight-calves-knee-pain",

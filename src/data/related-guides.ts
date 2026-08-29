@@ -7,6 +7,16 @@ const STOP_WORDS = new Set([
 ]);
 
 const PRIORITY_RELATED: Record<string, string[]> = {
+  "can-running-shoes-cause-knee-pain": [
+    "best-running-shoes-knee-pain",
+    "running-knee-pain-guide",
+    "flat-feet-overpronation-knee-pain",
+  ],
+  "best-running-shoes-knee-pain": [
+    "can-running-shoes-cause-knee-pain",
+    "best-insoles-for-knee-pain-2026",
+    "running-knee-pain-guide",
+  ],
   "knee-sleeves-for-running": [
     "running-knee-pain-guide",
     "knee-compression-sleeve-sizing-guide",

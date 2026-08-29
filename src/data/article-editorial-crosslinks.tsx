@@ -83,9 +83,14 @@ export const articleEditorialCrosslinks: Record<string, ReactNode> = {
     </>
   ),
   "best-running-shoes-knee-pain": (
-    <p>
-      Warm-weather footwear needs a separate test because an open shoe changes heel security, toe gripping, and strap fit. The <Link to="/guides/best-sandals-knee-pain" className={linkClass}>sandals for knee pain guide</Link> compares supportive walking sandals, recovery slides, and flip-flops without claiming that one arch shape or cushioning level works for every knee.
-    </p>
+    <>
+      <p>
+        If knee pain began after a shoe change, pause the shopping process and use the <Link to="/guides/can-running-shoes-cause-knee-pain" className={linkClass}>running-shoe cause test</Link>. It compares fit, heel drop, cushioning, stability, wear, and training load so a new pair is chosen for the feature that actually failed.
+      </p>
+      <p>
+        Warm-weather footwear needs a separate test because an open shoe changes heel security, toe gripping, and strap fit. The <Link to="/guides/best-sandals-knee-pain" className={linkClass}>sandals for knee pain guide</Link> compares supportive walking sandals, recovery slides, and flip-flops without claiming that one arch shape or cushioning level works for every knee.
+      </p>
+    </>
   ),
   "home-remedies-knee-pain": (
     <p>
