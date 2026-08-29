@@ -94,12 +94,12 @@ export const kneePainAtNightAfter40: ArticleExport = {
       "Compare osteoarthritis, menopause, daily load and sleep-position patterns behind knee pain at night after 40, plus warning signs and what to track.",
     heroImage,
     publishedDate: "March 3, 2026",
-    lastUpdated: "July 29, 2026",
+    lastUpdated: "August 29, 2026",
     nextSlug: "why-do-my-knees-hurt-when-sleeping",
     nextTitle: "Why Knees Hurt When Sleeping",
     faqs: nightPainAfter40Faqs,
     seoTags:
-      "knee pain at night after 40, knee pain at night after 50, menopause knee pain at night, perimenopause knee pain, osteoarthritis knee pain at night, aging knees hurt at night, night knee stiffness over 40, morning stiffness after 40, knee pain waking me up after 40, knee pain in middle aged women, joint pain menopause sleep, knee osteoarthritis sleep",
+      "knee pain at night after 40, knee pain at night after 50, aching knees at night after 40, sore knees at night, menopause knee pain at night, perimenopause knee pain, osteoarthritis knee pain at night, aging knees hurt at night, night knee stiffness over 40, morning stiffness after 40, knee pain waking me up after 40, knee pain in middle aged women, joint pain menopause sleep, knee osteoarthritis sleep",
     sources: [
       {
         title: "Symptoms of menopause and perimenopause",
@@ -134,6 +134,12 @@ export const kneePainAtNightAfter40: ArticleExport = {
     ],
     content: (
       <>
+        <InfoBox title="Quick Answer">
+          <p>
+            <strong>Knee pain at night after 40 should be separated into four patterns: osteoarthritis-type symptoms, perimenopause or menopause context, daily-load or previous-injury effects, and sleep-position pressure.</strong> Aching or sore knees at night do not prove arthritis, and age is a risk factor rather than a diagnosis. Track the day's activity, swelling, night waking, morning-stiffness duration, and other joint or menopause symptoms. Seek help sooner for a hot red swollen knee, true locking, inability to bear weight, or new calf swelling.
+          </p>
+        </InfoBox>
+
         <h2>How This Guide Differs From General Night Knee Pain</h2>
         <p>
           The main guide to{" "}

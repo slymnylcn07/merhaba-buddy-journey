@@ -254,7 +254,7 @@ export const recentGuidesData: PublishedGuideData[] = [
       "How compression at the fibular head can cause outer-shin numbness, top-of-foot tingling, weakness, foot slap, and foot drop.",
     readTime: 19,
     publishedDate: "2026-07-30",
-    lastModified: "2026-07-30",
+    lastModified: "2026-08-29",
   },
   {
     slug: "saphenous-nerve-knee-pain",

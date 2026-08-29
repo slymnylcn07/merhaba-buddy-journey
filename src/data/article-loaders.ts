@@ -7,7 +7,7 @@ export const articleLoaders: Record<string, ArticleLoader> = {
   "why-knee-pain-doesnt-go-away": () => import("./articles/legacy-inline-articles").then((module) => module.legacyInlineArticles["why-knee-pain-doesnt-go-away"]),
   "heat-vs-red-light-therapy": () => import("./articles/legacy-inline-articles").then((module) => module.legacyInlineArticles["heat-vs-red-light-therapy"]),
   "who-benefits-from-knee-therapy-devices": () => import("./articles/legacy-inline-articles").then((module) => module.legacyInlineArticles["who-benefits-from-knee-therapy-devices"]),
-  "back-of-knee-pain-explained": () => import("./articles/legacy-inline-articles").then((module) => module.legacyInlineArticles["back-of-knee-pain-explained"]),
+  "back-of-knee-pain-explained": () => import("./articles/back-of-knee-pain-explained").then((module) => module.backOfKneePainExplained.article),
   "side-knee-pain-comfort-guide": () => import("./articles/legacy-inline-articles").then((module) => module.legacyInlineArticles["side-knee-pain-comfort-guide"]),
   "running-knee-pain-guide": () => import("./articles/legacy-inline-articles").then((module) => module.legacyInlineArticles["running-knee-pain-guide"]),
   "knee-arthritis-pain-guide": () => import("./articles/legacy-inline-articles").then((module) => module.legacyInlineArticles["knee-arthritis-pain-guide"]),
