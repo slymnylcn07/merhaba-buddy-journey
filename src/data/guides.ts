@@ -110,7 +110,7 @@ export const guidesData: GuideData[] = [
   {
     slug: "do-knee-massagers-work",
     title: "Do Knee Massagers Really Work, and Are They Worth It?",
-    description: "Compare heated, vibration, and red-light knee massagers, realistic benefits, safety limits, and how to decide whether a device is worth buying.",
+    description: "Do heated knee massagers really work, and are they worth it? Compare warmth, vibration and red light, realistic benefits, safety limits and value.",
     readTime: 10,
     lastModified: "2026-07-29",
   },
@@ -266,7 +266,7 @@ export const guidesData: GuideData[] = [
   {
     slug: "it-band-pain-location-diagram",
     title: "IT Band Pain Location: Visual Guide to Outer Knee",
-    description: "Visual guide to IT band pain location with diagrams. See where IT band discomfort is commonly felt, outer knee zones, and how it differs from other side knee sensations.",
+    description: "Use an IT band pain location diagram and chart to compare outer knee, lateral thigh and hip zones, plus other causes of pain on the outside of the knee.",
     readTime: 7,
     lastModified: "2026-07-19",
   },

@@ -7,6 +7,8 @@ import {
   PAGE_READY_EVENT,
   type PageReadyDetail,
 } from "@/lib/page-ready";
+import { getMarketCountry } from "@/lib/market";
+import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
 
 declare global {
   interface Window {
@@ -41,7 +43,52 @@ function getContentSlug() {
   return /^\/guides\/([^/?#]+)/.exec(window.location.pathname)?.[1];
 }
 
+function getLandingPageType(pathname: string) {
+  if (pathname === "/") return "homepage";
+  if (pathname === "/shop") return "shop";
+  if (pathname === "/guides") return "guide_library";
+  if (/^\/guides\/[^/]+\/?$/.test(pathname)) return "guide_article";
+  if (/^\/product\/[^/]+\/?$/.test(pathname)) return "product_detail";
+  if (pathname === "/knee-quiz") return "knee_quiz";
+  return "other";
+}
+
+function getReferrerHost() {
+  if (typeof document === "undefined" || !document.referrer) return "direct";
+  try {
+    return new URL(document.referrer).hostname || "direct";
+  } catch {
+    return "unknown";
+  }
+}
+
+function getTrafficSegment(pathname: string) {
+  const isProductPage = /^\/product\/[^/]+\/?$/.test(pathname);
+  if (!isProductPage) return "standard";
+
+  const country = getMarketCountry();
+  const device = getDeviceGroup();
+  if (country === "SG" && device === "desktop") return "singapore_desktop_product";
+  if (device === "desktop") return "desktop_product_other_market";
+  return "product_other_device";
+}
+
+function getProductHandle(pathname: string) {
+  return /^\/product\/([^/?#]+)/.exec(pathname)?.[1];
+}
+
+function getAnalyticsPageContext(pathname: string) {
+  return {
+    market_country: getMarketCountry(),
+    traffic_segment: getTrafficSegment(pathname),
+    landing_page_type: getLandingPageType(pathname),
+    referrer_host: getReferrerHost(),
+    device_group: getDeviceGroup(),
+  };
+}
+
 function normalizeEventContext(context?: AnalyticsEventContext) {
+  const pathname = typeof window === "undefined" ? "/" : window.location.pathname;
   return {
     content_slug: context?.contentSlug || getContentSlug(),
     placement: context?.placement,
@@ -50,7 +97,7 @@ function normalizeEventContext(context?: AnalyticsEventContext) {
     offer_code: context?.offerCode,
     interaction_type: context?.interactionType,
     result_type: context?.resultType,
-    device_group: getDeviceGroup(),
+    ...getAnalyticsPageContext(pathname),
   };
 }
 
@@ -84,12 +131,30 @@ export const useGoogleAnalytics = () => {
     });
 
     const sendPageView = (pageTitle: string) => {
+      const pageContext = getAnalyticsPageContext(location.pathname);
+      window.gtag("set", "user_properties", {
+        market_country: pageContext.market_country,
+        traffic_segment: pageContext.traffic_segment,
+        device_group: pageContext.device_group,
+      });
+
       window.gtag("event", "page_view", {
         send_to: GA_MEASUREMENT_ID,
         page_path: location.pathname + location.search,
         page_location: window.location.href,
         page_title: pageTitle,
+        ...pageContext,
       });
+
+      if (/^\/product\/[^/]+\/?$/.test(location.pathname)) {
+        window.gtag("event", "product_page_segment_view", {
+          send_to: GA_MEASUREMENT_ID,
+          ...pageContext,
+          product_handle: getProductHandle(location.pathname),
+          interaction_type: "view",
+          primary_product: location.pathname === PRIMARY_PRODUCT_PATH,
+        });
+      }
     };
 
     if (isGuideArticlePath(location.pathname)) {

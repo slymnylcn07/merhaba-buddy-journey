@@ -294,6 +294,11 @@
   ],
   "redirects": [
     {
+      "source": "/guides/index.html",
+      "destination": "/guides",
+      "permanent": true
+    },
+    {
       "source": "/product",
       "destination": "/shop",
       "permanent": true

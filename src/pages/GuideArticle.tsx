@@ -19,6 +19,7 @@ import { ArticleImageLightbox } from "@/components/ArticleImageLightbox";
 import ArticleFaqAccordion from "@/components/ArticleFaqAccordion";
 import { ArticleQuizCard } from "@/components/ArticleQuizCard";
 import { ArticleNewsletterCard } from "@/components/ArticleNewsletterCard";
+import { ArticleSearchNextStep } from "@/components/ArticleSearchNextStep";
 import { ArticleSlideInCTA } from "@/components/ArticleSlideInCTA";
 import ArticleMidProductCTA from "@/components/ArticleMidProductCTA";
 import PremiumCTA from "@/components/PremiumCTA";
@@ -483,6 +484,8 @@ const GuideArticle = () => {
                     {article.quickAnswer || article.intro}
                   </p>
                 </div>
+
+                <ArticleSearchNextStep articleSlug={article.slug} />
 
                 <hr className="my-6 border-t border-border/30" />
 

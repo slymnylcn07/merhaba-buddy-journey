@@ -20,7 +20,7 @@ export const itBandPainLocationDiagram = {
     subtitle: "See exactly where IT band discomfort is commonly felt",
     intro: "If you've ever wondered exactly where IT band discomfort shows up, this visual guide is for you. Using simple diagrams, we'll walk through the IT band's path from hip to knee, highlight the most common discomfort zones, and help you distinguish IT band sensations from other types of side knee discomfort. Whether you're searching for an it band pain location diagram or trying to understand iliotibial band syndrome knee pain, this guide is especially useful for runners and active individuals who want to understand their body better.",
     metaTitle: "IT Band Pain Location Diagram: Visual Guide to Outer Knee Discomfort",
-    metaDescription: "Visual guide to IT band pain location with diagrams. See where IT band discomfort is commonly felt, outer knee zones, and how it differs from other side knee sensations.",
+    metaDescription: "Use an IT band pain location diagram and chart to compare outer knee, lateral thigh and hip zones, plus other causes of pain on the outside of the knee.",
     heroImage: heroImage,
     publishedDate: "February 25, 2026",
     lastUpdated: "July 19, 2026",

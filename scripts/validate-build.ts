@@ -51,8 +51,8 @@ const criticalRoutes: CriticalRoute[] = [
   {
     route: "/",
     requiredText: ["Smart Heated Knee Massager for Everyday Knee Comfort", "support@flexi-knee.com"],
-    title: "Heated Knee Massager & Knee Comfort Guides | FlexiKnee",
-    description: "Shop the FlexiKnee heated knee massager and explore practical guides for knee stiffness, stairs, exercise recovery, heat, ice and daily comfort.",
+    title: "FlexiKnee Official | Heated Knee Massager & Comfort Guides",
+    description: "Visit the official FlexiKnee store for our heated knee massager, product details, returns, and practical guides for stiffness, stairs, workouts, heat and ice.",
     h1: "Smart Heated Knee Massager for Everyday Knee Comfort",
   },
   {
