@@ -105,6 +105,7 @@ const App = () => {
                   <Route path="/guides/daily-knee-comfort-routine" element={<Navigate to="/guides/daily-knee-care-routine" replace />} />
                   <Route path="/guides/heat-or-ice-knee-pain-situations" element={<Navigate to="/guides/heat-vs-ice-for-knees" replace />} />
                   <Route path="/guides/heat-or-ice-knee-pain-science" element={<Navigate to="/guides/heat-vs-ice-for-knees" replace />} />
+                  <Route path="/guides/index.html" element={<Navigate to="/guides" replace />} />
                   <Route path="/guides" element={<Guides />} />
                   <Route path="/guides/symptoms" element={<GuideCategoryPage categoryKey="symptoms" />} />
                   <Route path="/guides/activities" element={<GuideCategoryPage categoryKey="activities" />} />

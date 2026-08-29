@@ -161,22 +161,22 @@ export default function Index() {
   return (
     <>
       <Helmet>
-        <title>Heated Knee Massager & Knee Comfort Guides | FlexiKnee</title>
+        <title>FlexiKnee Official | Heated Knee Massager & Comfort Guides</title>
         <meta
           name="description"
-          content="Shop the FlexiKnee heated knee massager and explore practical guides for knee stiffness, stairs, exercise recovery, heat, ice and daily comfort."
+          content="Visit the official FlexiKnee store for our heated knee massager, product details, returns, and practical guides for stiffness, stairs, workouts, heat and ice."
         />
         <link rel="canonical" href="https://flexi-knee.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://flexi-knee.com/" />
-        <meta property="og:title" content="Heated Knee Massager & Knee Comfort Guides | FlexiKnee" />
-        <meta property="og:description" content="Shop the FlexiKnee heated knee massager and explore practical guides for knee stiffness, stairs, exercise recovery, heat, ice and daily comfort." />
+        <meta property="og:title" content="FlexiKnee Official | Heated Knee Massager & Comfort Guides" />
+        <meta property="og:description" content="Visit the official FlexiKnee store for our heated knee massager, product details, returns, and practical guides for stiffness, stairs, workouts, heat and ice." />
         <meta property="og:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <meta property="og:site_name" content="FlexiKnee" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@flexikneeofficial" />
-        <meta name="twitter:title" content="Heated Knee Massager & Knee Comfort Guides | FlexiKnee" />
-        <meta name="twitter:description" content="Shop the FlexiKnee heated knee massager and explore practical guides for knee stiffness, stairs, exercise recovery, heat, ice and daily comfort." />
+        <meta name="twitter:title" content="FlexiKnee Official | Heated Knee Massager & Comfort Guides" />
+        <meta name="twitter:description" content="Visit the official FlexiKnee store for our heated knee massager, product details, returns, and practical guides for stiffness, stairs, workouts, heat and ice." />
         <meta name="twitter:image" content="https://flexi-knee.com/images/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(homePageJsonLd)}</script>
       </Helmet>

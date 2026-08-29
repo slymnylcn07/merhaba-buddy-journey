@@ -3,12 +3,36 @@ import { Helmet } from "react-helmet";
 import { Link, useLocation } from "react-router-dom";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { trackEvent } from "@/hooks/use-google-analytics";
 
 const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
     console.warn("404 route rendered in the client:", location.pathname);
+
+    let referrerType = "direct";
+    let referrerPath = "";
+    if (document.referrer) {
+      try {
+        const referrer = new URL(document.referrer);
+        if (referrer.origin === window.location.origin) {
+          referrerType = "internal";
+          referrerPath = referrer.pathname;
+        } else {
+          referrerType = "external";
+        }
+      } catch {
+        referrerType = "unknown";
+      }
+    }
+
+    trackEvent("site_404_view", {
+      missing_path: location.pathname,
+      referrer_type: referrerType,
+      referrer_path: referrerPath || undefined,
+      interaction_type: "not_found",
+    });
   }, [location.pathname]);
 
   return (
