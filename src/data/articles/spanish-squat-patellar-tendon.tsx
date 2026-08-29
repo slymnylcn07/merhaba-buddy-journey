@@ -116,6 +116,9 @@ export const spanishSquatPatellarTendon: ArticleExport = {
           Patellar tendinopathy commonly produces localized load-related pain near the lower edge of the kneecap or along the tendon between the kneecap and upper shin. Jumping, landing, accelerating, and repeated knee-extensor work may provoke it. Tenderness at one point can support the history, but location alone does not confirm the diagnosis. Imaging findings may also exist in people without symptoms.
         </p>
         <p>
+          If you are deciding whether to use a narrow band during activity, the <Link to="/guides/patellar-tendon-strap-knee-pain" className={linkClass}>patellar tendon strap guide</Link> covers placement, fit, short-term evidence, and the difference between a strap, sleeve, and structured brace.
+        </p>
+        <p>
           Diffuse pain around or behind the kneecap, discomfort after prolonged sitting, and pain across stairs may fit a patellofemoral pattern. Pain directly over the hard tibial bump, a swollen bursa, a recent direct impact, or joint-line locking raises other questions. Use the <Link to="/guides/pain-behind-kneecap" className={linkClass}>pain behind the kneecap guide</Link> and the <Link to="/guides/knee-pain-locations-visual-guide" className={linkClass}>knee pain location map</Link> to describe the pattern, then seek assessment when it persists or limits activity.
         </p>
         <p>

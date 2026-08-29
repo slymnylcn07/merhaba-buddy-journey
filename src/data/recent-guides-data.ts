@@ -14,6 +14,51 @@ export interface PublishedGuideData extends GuideData {
 
 export const recentGuidesData: PublishedGuideData[] = [
   {
+    slug: "knee-injury-symptom-chart",
+    title: "Knee Injury Symptom Chart: Ligament, Meniscus, Tendon, and Bone Patterns",
+    description:
+      "Compare knee injury symptoms by event, pain location, swelling, movement loss and stability across ligament, meniscus, tendon and bone patterns.",
+    readTime: 20,
+    publishedDate: "2026-08-29",
+    lastModified: "2026-08-29",
+  },
+  {
+    slug: "meniscus-knee-pain-location-chart",
+    title: "Meniscus Knee Pain Location Chart: Inner, Outer, and Joint-Line Pain",
+    description:
+      "Map medial and lateral meniscus pain, joint-line clues, twisting and deep-bend triggers, common mimics and signs that need assessment.",
+    readTime: 20,
+    publishedDate: "2026-08-29",
+    lastModified: "2026-08-29",
+  },
+  {
+    slug: "hip-to-knee-pain-location-chart",
+    title: "Hip-to-Knee Pain Location Chart: Referred Pain Patterns Explained",
+    description:
+      "Compare hip, knee, nerve and lower-back clues when pain travels from the hip or thigh toward the knee, including urgent warning signs.",
+    readTime: 19,
+    publishedDate: "2026-08-29",
+    lastModified: "2026-08-29",
+  },
+  {
+    slug: "seated-knee-exercises-limited-mobility",
+    title: "Seated Knee Exercises for Limited Mobility: A Chair Routine",
+    description:
+      "Follow a stable-chair routine with ankle pumps, heel slides, marching, knee extensions, safe setup and a measured progression.",
+    readTime: 20,
+    publishedDate: "2026-08-29",
+    lastModified: "2026-08-29",
+  },
+  {
+    slug: "patellar-tendon-strap-knee-pain",
+    title: "Patellar Tendon Strap for Knee Pain: Placement, Fit, and When It Helps",
+    description:
+      "Learn where a patellar strap sits, how tight it should feel, what the evidence says, who may benefit and when a strap is the wrong tool.",
+    readTime: 21,
+    publishedDate: "2026-08-29",
+    lastModified: "2026-08-29",
+  },
+  {
     slug: "knee-sleeves-for-running",
     title: "Knee Sleeves for Running: Fit, Compression, and When They Help",
     description:

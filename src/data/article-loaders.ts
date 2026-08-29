@@ -4,6 +4,11 @@ import { applyArticleSourceStandards } from "./article-source-standards";
 export type ArticleLoader = () => Promise<ArticleData | undefined>;
 
 export const articleLoaders: Record<string, ArticleLoader> = {
+  "knee-injury-symptom-chart": () => import("./articles/knee-injury-symptom-chart").then((module) => module.kneeInjurySymptomChart.article),
+  "meniscus-knee-pain-location-chart": () => import("./articles/meniscus-knee-pain-location-chart").then((module) => module.meniscusKneePainLocationChart.article),
+  "hip-to-knee-pain-location-chart": () => import("./articles/hip-to-knee-pain-location-chart").then((module) => module.hipToKneePainLocationChart.article),
+  "seated-knee-exercises-limited-mobility": () => import("./articles/seated-knee-exercises-limited-mobility").then((module) => module.seatedKneeExercisesLimitedMobility.article),
+  "patellar-tendon-strap-knee-pain": () => import("./articles/patellar-tendon-strap-knee-pain").then((module) => module.patellarTendonStrapKneePain.article),
   "why-knee-pain-doesnt-go-away": () => import("./articles/legacy-inline-articles").then((module) => module.legacyInlineArticles["why-knee-pain-doesnt-go-away"]),
   "heat-vs-red-light-therapy": () => import("./articles/legacy-inline-articles").then((module) => module.legacyInlineArticles["heat-vs-red-light-therapy"]),
   "who-benefits-from-knee-therapy-devices": () => import("./articles/legacy-inline-articles").then((module) => module.legacyInlineArticles["who-benefits-from-knee-therapy-devices"]),

@@ -2287,6 +2287,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
         <p>
           This guide offers general, educational information about knee injuries without providing medical advice or treatment recommendations. If you're experiencing significant <strong>knee pain</strong> or believe you may have a <strong>knee injury</strong>, consulting with a healthcare professional is the appropriate first step. For a broader overview of what leads to knee discomfort in general, our guide on <Link to="/guides/what-causes-knee-pain-guide" className="text-primary hover:underline">what causes knee pain</Link> provides helpful context.
         </p>
+        <p>
+          If a specific twist, collision, fall, or landing started the problem, the <Link to="/guides/knee-injury-symptom-chart" className="text-primary hover:underline">knee injury symptom chart</Link> compares ligament, meniscus, tendon, and bone clues by mechanism, swelling, location, and function.
+        </p>
 
         {sectionDivider}
 
@@ -5170,6 +5173,9 @@ export const legacyInlineArticles: Record<string, ArticleData> = {
 
         <p>
           Understanding this connection isn't about diagnosing anything specific. Rather, it's about recognizing that the lower body works as a coordinated system, and that daily habits, movement patterns, and lifestyle factors can influence how multiple areas feel at once.
+        </p>
+        <p>
+          When the main question is whether pain felt at the knee may be referred from the groin, hip, thigh, or lower back, use the focused <Link to="/guides/hip-to-knee-pain-location-chart" className="text-primary hover:underline">hip-to-knee pain location chart</Link> alongside this broader movement guide.
         </p>
 
         <InfoBox title="About This Guide">

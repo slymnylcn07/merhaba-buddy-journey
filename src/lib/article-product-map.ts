@@ -88,6 +88,11 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
 };
 
 const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
+  "knee-injury-symptom-chart": "sleeve",
+  "meniscus-knee-pain-location-chart": "sleeve",
+  "hip-to-knee-pain-location-chart": "insoles",
+  "seated-knee-exercises-limited-mobility": "main",
+  "patellar-tendon-strap-knee-pain": "sleeve",
   "knee-sleeves-for-running": "sleeve",
   "best-sandals-knee-pain": "sleeve",
   "best-hiking-poles-bad-knees": "sleeve",
