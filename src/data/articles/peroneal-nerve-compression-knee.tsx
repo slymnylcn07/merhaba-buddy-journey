@@ -19,11 +19,11 @@ export const peronealNerveCompressionKnee: ArticleExport = {
       "Peroneal nerve compression near the fibular head can cause outer-leg numbness, top-of-foot tingling and foot drop. Learn causes, tests and treatment.",
     heroImage,
     publishedDate: "July 30, 2026",
-    lastUpdated: "July 30, 2026",
+    lastUpdated: "August 29, 2026",
     nextSlug: "saphenous-nerve-knee-pain",
     nextTitle: "Saphenous Nerve Knee Pain",
     seoTags:
-      "peroneal nerve compression knee, common fibular nerve entrapment, peroneal nerve pain knee, numbness outer knee, fibular head nerve pain, foot drop peroneal nerve, top of foot numbness, peroneal neuropathy symptoms",
+      "peroneal nerve compression knee, common fibular nerve entrapment, peroneal nerve palsy, peroneal nerve pain knee, outer knee numbness tingling, fibular head nerve pain, foot drop peroneal nerve, top of foot numbness, peroneal neuropathy symptoms, sciatic nerve vs peroneal nerve, l5 radiculopathy vs peroneal neuropathy",
     faqs: [
       {
         question: "Where is the peroneal nerve compressed near the knee?",
@@ -62,6 +62,9 @@ export const peronealNerveCompressionKnee: ArticleExport = {
 
         <p>
           The terms <strong>peroneal nerve</strong> and <strong>fibular nerve</strong> refer to the same nerve. Many current anatomy sources prefer "fibular," while patients and clinicians still commonly use "peroneal." The common nerve divides below the knee into superficial and deep branches, which is why the precise mix of numbness and weakness helps localize the problem.
+        </p>
+        <p>
+          <strong>Peroneal nerve palsy</strong> is a broader clinical term for loss of nerve function, particularly weakness, and does not name the cause. Compression at the fibular head is one possible cause; trauma, a cyst, surgery, a more proximal sciatic lesion, and other neuropathies can produce a similar deficit. New foot drop therefore needs localization rather than being labeled a simple pressure episode at home.
         </p>
         <p>
           Outer-knee pain alone is not enough to diagnose nerve compression. The iliotibial band, biceps femoris tendon, lateral meniscus, proximal tibiofibular joint, and lateral collateral ligament all occupy the same region. The guide to <Link to="/guides/side-knee-pain-comfort-guide" className={linkClass}>inner and outer knee pain</Link> compares these mechanical patterns.
@@ -142,6 +145,16 @@ export const peronealNerveCompressionKnee: ArticleExport = {
         <p>
           A general <Link to="/guides/knee-numbness-guide" className={linkClass}>knee numbness map</Link> is useful when the altered sensation sits around the kneecap rather than the outer shin and foot.
         </p>
+        <div className="my-8 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+          <table className="w-full min-w-[840px] border-collapse text-left text-sm">
+            <thead className="bg-slate-950 text-white"><tr><th className="px-5 py-4">Possible level</th><th className="px-5 py-4">Clues that may fit</th><th className="px-5 py-4">Why examination still matters</th></tr></thead>
+            <tbody className="divide-y divide-slate-200">
+              <tr><td className="px-5 py-4 font-semibold">Fibular head compression</td><td className="px-5 py-4">Outer-knee pressure history, outer-shin or top-of-foot sensory change, ankle and toe-lifting weakness</td><td className="px-5 py-4">A local mass, trauma, or branch-level injury can alter the pattern</td></tr>
+              <tr><td className="px-5 py-4 font-semibold">L5 nerve root</td><td className="px-5 py-4">Back or buttock symptoms, weakness beyond the peroneal distribution, inversion involvement</td><td className="px-5 py-4">Back pain can be absent and findings can overlap</td></tr>
+              <tr><td className="px-5 py-4 font-semibold">Sciatic nerve</td><td className="px-5 py-4">Wider sensory or motor involvement that includes tibial as well as peroneal territories</td><td className="px-5 py-4">The site and cause may be in the pelvis, thigh, or elsewhere</td></tr>
+            </tbody>
+          </table>
+        </div>
         <h3>Why foot inversion is an important examination clue</h3>
         <p>
           The muscles that turn the sole inward are mainly supplied by the tibial nerve but receive much of their command from the L5 nerve root. If ankle lifting is weak while inversion remains relatively strong, a common peroneal lesion becomes more plausible. If inversion is also weak, a problem higher in the pathway, such as L5 radiculopathy or sciatic neuropathy, deserves more attention. This is a clue, not a home diagnostic test.

@@ -57,16 +57,16 @@ export const burningKneesAfterExercise: ArticleExport = {
   cta: "burning-knees-after-exercise",
   article: {
     slug: "burning-knees-after-exercise",
-    title: "Burning Knees After Exercise: Causes by Activity & Timing",
-    subtitle: "How activity type and during-versus-after timing narrow the pattern",
+    title: "Burning Knees After Exercise: Activity, Location & Timing",
+    subtitle: "How the exercise, exact burning zone, and during-versus-after timing narrow the pattern",
     intro:
       "Burning knees after exercise are different from a general post-workout ache. The useful clues are whether the sensation began during the activity or after it, which exercise produced it, where the burning is located, and whether the knee is swollen, red, objectively hot, unstable, numb, or losing motion. This guide is limited to running, strength training, walking, hiking, cycling, tai chi, and other physical activity so it does not compete with the broader guide to knee pain after exercise or the general guide to burning knee sensations.",
-    metaTitle: "Burning Knees After Exercise: Causes by Activity",
+    metaTitle: "Burning Knees After Exercise: Location & Timing",
     metaDescription:
       "Why do knees burn after exercise, running or leg day? Compare during-vs-after timing, activity triggers, next-workout changes and warning signs.",
     heroImage,
     publishedDate: "March 19, 2026",
-    lastUpdated: "July 29, 2026",
+    lastUpdated: "August 29, 2026",
     nextSlug: "knee-pain-after-exercise",
     nextTitle: "Knee Pain After Exercise or a Workout (But Not During)",
     seoTags:
@@ -114,6 +114,11 @@ export const burningKneesAfterExercise: ArticleExport = {
 
         <p>
           This page is only for burning linked to physical activity. For a burning sensation that occurs while sitting, at rest, after an injury, or in a specific location without an exercise trigger, use the <Link to="/guides/burning-sensation-in-knee">burning knee pain by location guide</Link>. For a dull ache, soreness, stiffness, or pain behind the knee after a workout without a burning quality, the correct hub is <Link to="/guides/knee-pain-after-exercise">knee pain after exercise</Link>.
+        </p>
+
+        <h2>First Check: Burning Sensation or a Knee That Is Hot to Touch?</h2>
+        <p>
+          When someone says a knee feels burning after exercise, they may mean an internal burning sensation, sensitive skin, or a joint that is physically warmer than the other side. These are not interchangeable. Compare both knees with the back of your hand and look for redness, swelling, a rash, or broken skin. A sensory burning feeling without visible change can still matter, especially when it follows a narrow path or includes tingling. A newly hot, red, swollen knee needs medical advice rather than another workout or a heat treatment.
         </p>
 
         <figure className="my-8">
@@ -199,6 +204,41 @@ export const burningKneesAfterExercise: ArticleExport = {
             When symptoms appear late in a session, fatigue and total exposure are often more useful clues than the exercise name alone.
           </figcaption>
         </figure>
+
+        <h2>Use Location, Activity, and Timing Together</h2>
+        <div className="my-6 overflow-x-auto rounded-xl border border-slate-200">
+          <table className="w-full min-w-[760px] border-collapse text-left text-sm">
+            <thead className="bg-slate-100">
+              <tr>
+                <th className="p-4">Pattern</th>
+                <th className="p-4">Useful questions</th>
+                <th className="p-4">Focused next guide</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200">
+              <tr>
+                <td className="p-4 font-semibold">Front of knee during repeated bending</td>
+                <td className="p-4">Does it appear with squats, stairs, running, or each pedal stroke?</td>
+                <td className="p-4"><Link to="/guides/pain-behind-kneecap">Kneecap pain patterns</Link></td>
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold">Outer knee during running or hiking</td>
+                <td className="p-4">Did hills, distance, surface, or weekly volume change?</td>
+                <td className="p-4"><Link to="/guides/it-band-pain-location-diagram">IT band pain location guide</Link></td>
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold">A narrow burning line with tingling</td>
+                <td className="p-4">Is there numbness, skin sensitivity, weakness, or spread below the knee?</td>
+                <td className="p-4"><Link to="/guides/knee-numbness-guide">Knee numbness guide</Link></td>
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold">Burning only later or next morning</td>
+                <td className="p-4">Which distance, sets, hills, or session duration changed?</td>
+                <td className="p-4"><Link to="/guides/knee-pain-after-exercise">Post-exercise pain hub</Link></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <h3>Nerve Sensitivity Added a Burning or Tingling Quality</h3>
         <p>

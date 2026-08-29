@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, TipsList } from "@/components/ArticleCharts";
+import { InfoBox } from "@/components/ArticleCharts";
 import type { ArticleExport } from "./types";
 
 import heroImage from "@/assets/article-hero-knee-pain-hiking.jpg";
@@ -10,329 +10,85 @@ import imgInclineDownhill from "@/assets/article-hiking-incline-vs-downhill.jpg"
 import imgProperPosture from "@/assets/article-hiking-proper-posture.jpg";
 
 const faqs = [
-  {
-    question: "Why do my knees hurt when hiking?",
-    answer: "Hiking places unique stress on the knee joint because of uneven terrain, elevation changes, and repetitive impact. Downhill sections are particularly demanding because the knee absorbs braking forces with every step. Weak quadriceps, poor footwear, and heavy backpacks can amplify this stress significantly.",
-  },
-  {
-    question: "Is knee pain after hiking normal?",
-    answer: "Mild knee soreness after a long or challenging hike is relatively common, especially if you are not conditioned for that distance or terrain type. However, persistent, sharp, or worsening knee pain after hiking is not typical and may indicate overuse, poor alignment, or the need for better conditioning and footwear.",
-  },
-  {
-    question: "Why does downhill hiking hurt the knees?",
-    answer: "Downhill hiking forces your quadriceps to work eccentrically, meaning they lengthen while controlling your descent. This creates significant braking force that transfers directly through the knee joint. The patellofemoral joint (where the kneecap meets the thigh bone) absorbs much of this load, which can cause front-of-knee discomfort.",
-  },
-  {
-    question: "How can I prevent knee pain when hiking?",
-    answer: "Use trekking poles to redistribute load away from your knees. Take shorter steps on descents to reduce impact. Strengthen your quadriceps and glutes before hiking season. Wear supportive hiking boots with good cushioning. Warm up before starting the trail and increase your hiking distance gradually over time.",
-  },
-  {
-    question: "Do trekking poles help knee pain?",
-    answer: "Yes. Research suggests that trekking poles can reduce the load on the knee joint by up to 25% during descent. They help redistribute your body weight across four contact points instead of two, reducing the braking force that your knees must absorb on downhill sections.",
-  },
-  {
-    question: "What muscles support the knee when hiking?",
-    answer: "The quadriceps (front of thigh) are the primary muscles that control knee movement during hiking, especially on descents. The glutes (hip muscles) help stabilize the pelvis and prevent the knee from collapsing inward. The hamstrings and calf muscles also contribute to overall lower limb stability on trails.",
-  },
-  {
-    question: "How can beginners avoid knee pain on trails?",
-    answer: "Start with shorter, flatter trails and gradually increase distance and elevation over several weeks. Invest in proper hiking footwear with ankle support and cushioning. Consider using trekking poles from the start. Focus on building quad and glute strength before attempting longer or steeper hikes.",
-  },
-  {
-    question: "What exercises help reduce hiking knee pain?",
-    answer: "Wall sits, step-downs, squats, and lunges all strengthen the quadriceps and glutes that support the knee during hiking. Calf raises improve ankle stability on uneven terrain. Hip bridges and lateral band walks strengthen the hip stabilizers that prevent inward knee collapse on trails.",
-  },
+  { question: "Why do my knees hurt when hiking?", answer: "Hiking combines uneven footing, repeated climbs and descents, longer duration, and sometimes a backpack. Front-of-knee pain often becomes clearer on descents, while uphill pain may be linked to greater knee bend and force. Location and whether pain occurs uphill, downhill, or only after the hike are more useful than the word hiking alone." },
+  { question: "Why does my knee hurt more hiking downhill?", answer: "The lead leg repeatedly brakes the body during a descent while the quadriceps work to control knee bend. Steeper terrain, long strides, fatigue, and pack weight can increase that demand. Shorter controlled steps and a less demanding route are useful first adjustments." },
+  { question: "Why does my knee hurt hiking uphill?", answer: "Uphill steps require repeated knee and hip extension, often from a deeper bend. Large step-ups, steep grades, fatigue, and a rapid increase in elevation gain can expose a front-of-knee, tendon, or muscle-capacity pattern." },
+  { question: "Do hiking poles reduce knee pain?", answer: "Small laboratory studies suggest poles can change lower-limb loading during downhill walking, but the effect varies with technique, terrain, speed, and pack weight. Poles can also improve balance and confidence. They are a tool, not proof that a painful knee is safe to keep loading." },
+  { question: "Can a meniscus tear cause pain when hiking?", answer: "A meniscus problem is one possible cause, but pain on a trail does not diagnose a tear. A twist, joint-line pain, recurrent swelling, catching, or true locking deserves assessment. Many hiking-related aches arise without a meniscus injury." },
+  { question: "What helps knee pain after hiking?", answer: "End the demanding exposure, check for swelling and loss of motion, and use comfortable walking or rest according to the response. Reduce the next route's distance, descent, pack weight, or pace. Persistent next-day pain, recurrent swelling, or worsening function needs assessment." },
+  { question: "How heavy should my hiking backpack be if my knees hurt?", answer: "There is no universal safe percentage. Start with the equipment genuinely required for safety, remove unnecessary weight, and test distance and elevation with a lighter load. Technical terrain, experience, conditioning, and the individual knee matter as much as body-weight percentage." },
 ];
 
 const kneePainHiking: ArticleExport = {
   cta: "hiking-knee-support",
   article: {
     slug: "knee-pain-when-hiking",
-    title: "Knee Pain When Hiking: Trail Impact, Inclines & Prevention",
-    subtitle: "Understanding knee discomfort on trails and slopes",
-    intro: "Hiking is one of the most rewarding outdoor activities, but it can also be one of the most demanding on your knees. Even people who walk comfortably on flat surfaces sometimes experience unexpected knee discomfort on trails. This guide explores why hiking places unique stress on the knee joint, how terrain and elevation changes affect knee comfort, and what practical adjustments can help you enjoy the trail with less discomfort.",
-    metaTitle: "Knee Pain When Hiking: Causes & Prevention Tips",
-    metaDescription: "Discover why knee pain happens when hiking, especially downhill. Learn about trail impact, incline stress, trekking pole benefits, and practical prevention strategies.",
-    heroImage: heroImage,
+    title: "Knee Pain When Hiking: Uphill, Downhill & After Hiking",
+    subtitle: "Use terrain, timing, location, pack weight, and pole use to identify the trail exposure that needs changing",
+    intro: "Knee pain when hiking becomes much easier to understand once the trail is divided into uphill, downhill, uneven-ground, and after-hike patterns. The climb asks the legs to produce force, the descent asks them to brake repeatedly, and a pack adds load to every step. This guide stays focused on walking trails, not trail running or weighted rucking, so each adjustment matches the activity that actually caused the problem.",
+    metaTitle: "Knee Pain When Hiking: Uphill, Downhill & After",
+    metaDescription: "Compare knee pain uphill, downhill and after hiking. Learn how trail grade, pack weight, trekking poles, step length and warning signs change the plan.",
+    heroImage,
     publishedDate: "March 8, 2026",
-    nextSlug: "knee-tightness-without-pain",
-    nextTitle: "Knee Tightness Without Pain",
-    seoTags: "knee pain when hiking,hiking knee pain,downhill hiking knee pain,knee pain after hiking,trail knee stress,hiking knee joint support,trekking pole knee comfort,steep incline knee pressure,hiking knee prevention,knee support hiking trails,knee discomfort downhill,hiking knee conditioning",
+    lastUpdated: "August 29, 2026",
+    nextSlug: "best-hiking-poles-bad-knees",
+    nextTitle: "Best Hiking Poles for Bad Knees",
+    seoTags: "knee pain when hiking,knee pain after hiking,downhill hiking knee pain,knee pain hiking uphill,hiking knee pain relief,hiking poles knee pain,meniscus pain hiking,backpack weight knee pain,hiking with bad knees,front knee pain hiking,trail knee pain walking",
     faqs,
+    sources: [
+      { title: "Use of hiking sticks on mountain walks", publisher: "Sports Medicine", url: "https://pubmed.ncbi.nlm.nih.gov/10622357/" },
+      { title: "Lower-limb biomechanics during downhill walking with trekking poles and backpack loads", publisher: "Medicine & Science in Sports & Exercise", url: "https://pubmed.ncbi.nlm.nih.gov/17218900/" },
+      { title: "Patellofemoral Pain Syndrome", publisher: "OrthoInfo, American Academy of Orthopaedic Surgeons", url: "https://orthoinfo.aaos.org/en/diseases--conditions/patellofemoral-pain-syndrome/" },
+      { title: "Knee pain", publisher: "NHS", url: "https://www.nhs.uk/symptoms/knee-pain/" },
+    ],
     content: (
       <>
+        <InfoBox title="Quick Answer"><p><strong>Knee pain hiking downhill usually reflects repeated braking demand, while uphill pain is more closely tied to force production and deeper step height.</strong> Pain that appears only after hiking may reflect the total distance, elevation, terrain, or pack load. Shorten downhill steps, reduce one route variable at a time, and consider poles for balance and load sharing. Stop for swelling, locking, giving way, inability to bear weight, or pain after a twist or fall.</p></InfoBox>
 
-        <p>
-          If you have ever finished a trail hike with aching knees, you are not alone. Knee pain when hiking is one of the most commonly reported discomforts among both casual and experienced hikers. While flat-surface walking rarely creates the same level of knee stress, the combination of uneven terrain, steep inclines, and prolonged descents can significantly increase the load on your knee joints.
-        </p>
+        <p>This guide covers hiking at a walking pace. Use <Link to="/guides/trail-running-knee-pain">trail running knee pain</Link> when running speed and descent technique are central, <Link to="/guides/rucking-knee-pain">rucking knee pain</Link> when progressive pack load is the training goal, and <Link to="/guides/best-hiking-poles-bad-knees">the hiking-pole buyer guide</Link> when pole length, grip, and product choice are the main questions.</p>
 
-        <p>
-          Understanding why hiking creates this unique stress, and what you can do about it, is the first step toward enjoying trails with greater comfort and confidence.
-        </p>
+        <h2>Start With the Part of the Hike That Hurts</h2>
+        <div className="my-6 overflow-x-auto rounded-xl border border-slate-200"><table className="w-full min-w-[800px] border-collapse text-left text-sm"><thead className="bg-slate-100"><tr><th className="p-4">Trail pattern</th><th className="p-4">Common exposure</th><th className="p-4">First variable to reduce</th></tr></thead><tbody className="divide-y divide-slate-200"><tr><td className="p-4 font-semibold">Pain hiking uphill</td><td className="p-4">Large step height, steep grade, forceful push, fatigue</td><td className="p-4">Step height or total elevation gain</td></tr><tr><td className="p-4 font-semibold">Pain hiking downhill</td><td className="p-4">Braking, long stride, front-of-knee load, pack momentum</td><td className="p-4">Descent grade, stride length, or pack weight</td></tr><tr><td className="p-4 font-semibold">Pain on uneven ground</td><td className="p-4">Rotation, side-to-side corrections, slips, limited ankle motion</td><td className="p-4">Technical terrain or pace</td></tr><tr><td className="p-4 font-semibold">Pain only after hiking</td><td className="p-4">Total distance, cumulative descent, duration, insufficient recovery</td><td className="p-4">One workload measure on the next route</td></tr></tbody></table></div>
 
-        {/* Section 1 */}
-        <h2>Why Hiking Places Unique Stress on the Knee Joint</h2>
+        <figure className="my-8"><img src={imgInclineDownhill} alt="Comparison of uphill and downhill knee demands during hiking" className="w-full rounded-xl" loading="lazy" /><figcaption className="mt-3 text-center text-sm text-muted-foreground">Uphill and downhill can irritate the same knee for different mechanical reasons.</figcaption></figure>
 
-        <p>
-          Walking on a flat, even surface distributes force through the knee in a predictable pattern. Hiking changes this equation in several important ways. The uneven surfaces found on most trails require constant micro-adjustments in foot placement, knee angle, and body position. Each of these adjustments adds variable stress to the joint that flat walking simply does not produce.
-        </p>
+        <h2>Why Downhill Hiking Is a Common Trigger</h2>
+        <p>During a descent, the lead leg lands in front of the body and the quadriceps control how quickly the knee bends. This eccentric work acts like a brake. A steeper grade, longer stride, faster pace, fatigue, and backpack momentum can make each braking step more demanding. Front-of-knee symptoms may overlap with a patellofemoral pattern, especially when stairs also hurt.</p>
+        <figure className="my-8"><img src={imgDownhillLoad} alt="Hiker descending with force arrows showing braking demand at the knee" className="w-full rounded-xl" loading="lazy" /><figcaption className="mt-3 text-center text-sm text-muted-foreground">Shorter steps usually reduce the distance the lead leg reaches ahead of the body.</figcaption></figure>
+        <p>Use <Link to="/guides/knee-pain-going-down-stairs">knee pain going downstairs</Link> for the daily stair pattern. It shares some mechanics with descent, but it does not include loose terrain, long duration, poles, or a pack.</p>
 
-        <p>
-          Backpack weight is another significant factor. Carrying even a moderate pack (10 to 15 pounds) increases the compressive load on the knee with every step. On a downhill section, this added weight amplifies the braking force that the knee must absorb repeatedly over hundreds or thousands of steps.
-        </p>
+        <h2>Why Uphill Hiking Can Hurt Differently</h2>
+        <p>Climbing asks the quadriceps and glutes to raise the body against gravity. High rocks and steep steps create deeper knee bends and greater force demands. A person may tolerate a gradual slope but react to repeated high step-ups, or may hurt only when fatigue changes how the hip and knee share the work.</p>
+        <p>Reduce step height before removing all hills. Use switchbacks when the trail permits, slow the pace, and compare a lower-elevation route. Pain at the patellar tendon, joint line, or back of the knee should be recorded separately because each location changes the questions to ask.</p>
 
-        <figure className="my-8">
-          <img
-            src={imgDownhillLoad}
-            alt="Illustration showing force arrows through the knee joint during downhill hiking"
-            className="w-full h-auto rounded-xl shadow-sm"
-            loading="lazy"
-          />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Downhill hiking creates braking forces that travel directly through the knee joint
-          </figcaption>
-        </figure>
+        <h2>Location Changes the Hiking-Pain Question</h2>
+        <ul><li><strong>Front or behind the kneecap:</strong> compare descents, stairs, deep steps, and prolonged bending.</li><li><strong>Inner or outer joint line:</strong> note a twist, uneven landing, swelling, catching, or true locking.</li><li><strong>Outer knee after distance:</strong> compare trail camber, downhill volume, hip fatigue, and the <Link to="/guides/it-band-pain-location-diagram">IT band pain location pattern</Link>.</li><li><strong>Back of knee:</strong> distinguish muscle pulling from fullness, swelling, or calf symptoms using the <Link to="/guides/back-of-knee-pain-explained">back-of-knee guide</Link>.</li></ul>
+        <figure className="my-8"><img src={imgKneePressure} alt="Kneecap and front-of-knee load during a hiking descent" className="w-full rounded-xl" loading="lazy" /><figcaption className="mt-3 text-center text-sm text-muted-foreground">Pain location narrows the pattern but cannot diagnose a tissue on its own.</figcaption></figure>
 
-        <p>
-          Climbing also stresses the knee, though differently. Ascending requires repeated deep knee flexion as you push your body weight upward. The quadriceps muscles must generate significant force to extend the knee against gravity, and the patella tracks under increased compression with each step uphill.
-        </p>
+        <h2>Does Hiking Pain Mean a Meniscus Tear?</h2>
+        <p>Searches connecting hiking pain with a meniscus tear are rising, but most trail pain cannot be diagnosed from the activity name. A forceful twist, joint-line pain, recurrent swelling, catching, or true locking raises a different concern from a diffuse ache that appears late in a long descent. Stop forcing the knee if it locks or loses motion and arrange an assessment.</p>
 
-        <InfoBox title="Trail vs. Flat Surface Impact">
-          <p>On flat ground, your knee absorbs roughly 2 to 3 times your body weight with each step. On a moderate downhill trail, this can increase to 5 to 8 times body weight. The steeper the descent, the greater the force your knee must manage, which is why long downhill sections are the most common trigger for hiking knee pain.</p>
-        </InfoBox>
+        <h2>Pack Weight: Reduce Load Without Using a False Universal Limit</h2>
+        <p>A heavier pack adds demand to climbs, descents, and balance corrections. There is no single body-weight percentage that guarantees knee safety because terrain, trip length, water needs, experience, conditioning, and equipment all matter. Keep the safety equipment the route requires, remove avoidable weight, and compare the same type of route with a lighter pack.</p>
+        <p>If carrying weight is the workout itself, use the rucking guide rather than applying hiking advice to a progressive weighted program.</p>
 
-        {/* Section 2 */}
-        <h2>Common Causes of Knee Pain When Hiking</h2>
+        <h2>Do Trekking Poles Help Bad Knees?</h2>
+        <p>Small biomechanics studies have reported changes in lower-limb forces or moments when poles are used during downhill walking. These studies involved small groups and controlled conditions, so a percentage reduction should not be promised to every hiker. In practice, poles may help by adding contact points, improving balance, and allowing some force to pass through the upper body when technique and pole length are appropriate.</p>
+        <figure className="my-8"><img src={imgTrekkingPoles} alt="Hiker using two trekking poles during a controlled descent" className="w-full rounded-xl" loading="lazy" /><figcaption className="mt-3 text-center text-sm text-muted-foreground">Plant poles before or alongside the descending step instead of trailing them behind the body.</figcaption></figure>
 
-        <p>
-          Knee pain during hiking rarely comes from a single cause. Most often, it results from a combination of factors that interact with each other on the trail. Understanding these factors can help you identify which ones apply to your situation.
-        </p>
+        <h2>Trail Adjustments to Test One at a Time</h2>
+        <ol><li><strong>Shorten downhill steps.</strong> Keep the landing closer to the body and control speed.</li><li><strong>Lower route difficulty.</strong> Reduce descent grade, elevation gain, or technical terrain.</li><li><strong>Lighten the pack.</strong> Remove nonessential items without compromising safety.</li><li><strong>Use poles deliberately.</strong> Practice on easy terrain before relying on them on a steep descent.</li><li><strong>Build specific capacity.</strong> Step-downs, calf raises, hip strength, and controlled step-ups can prepare the demands gradually.</li><li><strong>Check footwear function.</strong> Prioritize fit and reliable traction; cushioning or ankle height alone cannot prevent knee pain.</li></ol>
+        <figure className="my-8"><img src={imgProperPosture} alt="Hiker using a stable stance and controlled knee position on a trail" className="w-full rounded-xl" loading="lazy" /><figcaption className="mt-3 text-center text-sm text-muted-foreground">Stable does not mean rigid. Allow the hip, knee, and ankle to share the terrain adjustment.</figcaption></figure>
 
-        <h3>Downhill Impact Stress</h3>
-        <p>
-          The most common cause of hiking knee pain is the repetitive impact of descending trails. With each downhill step, your front leg must absorb the combined force of your body weight, your pack, and the momentum of moving downhill. This force concentrates on the front of the knee, particularly the area behind the kneecap.
-        </p>
+        <h2>What to Do When Pain Appears After Hiking</h2>
+        <p>Record the route distance, total descent, steepest section, pack, footwear, point at which pain began, and next-morning response. Avoid testing the same demanding route while the knee is still more painful or swollen. Comfortable everyday movement is reasonable when it does not worsen symptoms, but persistent pain should not be hidden with a device so the same load can be repeated.</p>
+        <p>For a general delayed exercise response that is not trail-specific, continue with <Link to="/guides/knee-pain-after-exercise">knee pain after exercise</Link>. That page owns the broader workout cluster.</p>
 
-        <h3>Weak Quadriceps or Glutes</h3>
-        <p>
-          Your quadriceps are the primary muscles that control your knee during descent. When they fatigue, the joint absorbs more of the impact directly. Weak glutes allow the pelvis to drop and the knee to collapse inward, creating uneven pressure distribution across the joint surface.
-        </p>
+        <h2>When to Stop the Hike or Get Medical Help</h2>
+        <p>Turn back or use the safest available exit when the knee gives way, locks, rapidly swells, cannot bear weight, or follows a significant twist or fall. Seek urgent guidance for a hot red swollen knee with fever, a deformed knee, or new calf swelling with chest pain or breathing difficulty. Arrange an assessment when pain keeps returning on easier routes, swelling recurs, or normal walking remains limited.</p>
 
-        <h3>Poor Footwear Support</h3>
-        <p>
-          Hiking in shoes without adequate cushioning, ankle support, or tread can increase the amount of impact energy that reaches the knee. Worn-out soles reduce shock absorption, while poor tread increases the risk of slipping and the compensatory muscle tension that follows.
-        </p>
-
-        <h3>Overuse During Long Hikes</h3>
-        <p>
-          Extending your hiking distance or elevation beyond what your body is currently conditioned for is a common trigger. The cumulative effect of thousands of repetitive steps adds up, and the muscles that protect the knee eventually fatigue, leaving the joint structures to absorb more stress.
-        </p>
-
-        <h3>Limited Hip or Ankle Mobility</h3>
-        <p>
-          Restricted mobility in the hip or ankle forces the knee to compensate by absorbing forces it was not designed to handle. Tight hip flexors can alter your gait pattern on inclines, while limited ankle dorsiflexion changes how your foot lands on uneven surfaces. For more on this connection, see our guide on <Link to="/guides/knee-discomfort-lower-back-hips" className="text-primary hover:underline">how hips and lower back affect knee comfort</Link>.
-        </p>
-{/* Section 3 */}
-        <h2>Why Downhill Hiking Causes the Most Knee Discomfort</h2>
-
-        <p>
-          If there is one section of a hike that triggers knee discomfort more than any other, it is the descent. Understanding why downhill hiking is so demanding on the knees can help you prepare for and manage this specific challenge.
-        </p>
-
-        <h3>Eccentric Muscle Loading</h3>
-        <p>
-          When you walk downhill, your quadriceps must lengthen while simultaneously generating force to control your descent. This type of muscle action is called eccentric loading, and it places significantly more stress on both the muscle fibers and the tendons that cross the knee joint compared to the concentric (shortening) action used during climbing.
-        </p>
-
-        <figure className="my-8">
-          <img
-            src={imgKneePressure}
-            alt="Anatomical illustration showing patellofemoral pressure during knee flexion"
-            className="w-full h-auto rounded-xl shadow-sm"
-            loading="lazy"
-          />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            The patellofemoral joint absorbs significant compressive force during downhill descent
-          </figcaption>
-        </figure>
-
-        <h3>Braking Force Through the Knee</h3>
-        <p>
-          Every downhill step requires your leg to act as a brake. Your foot hits the ground ahead of your center of mass, and the knee must absorb the deceleration force. On steep trails, this braking force increases dramatically, and the front of the knee (particularly the patellofemoral joint) bears the heaviest load.
-        </p>
-
-        <h3>Patellofemoral Joint Pressure</h3>
-        <p>
-          The patella (kneecap) sits in a groove on the front of the femur and acts as a lever for the quadriceps. During downhill walking, the angle of knee flexion increases, which pushes the patella deeper into its groove under greater compressive force. This is why front-of-knee pain is the most common complaint among hikers. If you also experience discomfort on stairs, our guide on <Link to="/guides/knee-pain-going-down-stairs" className="text-primary hover:underline">knee pain going down stairs</Link> covers similar biomechanics.
-        </p>
-
-        {/* Section 4 */}
-        <h2>Trail Factors That Increase Knee Stress</h2>
-
-        <p>
-          Not all trails are equal when it comes to knee impact. Several terrain and environmental factors can amplify the stress on your knee joints during a hike.
-        </p>
-
-        <h3>Steep Inclines and Declines</h3>
-        <p>
-          The steeper the trail, the greater the force on your knees. Both climbing and descending become more demanding as gradient increases, but the effect is particularly pronounced on downhill sections where braking forces multiply with steepness.
-        </p>
-
-        <figure className="my-8">
-          <img
-            src={imgInclineDownhill}
-            alt="Comparison illustration of incline versus downhill knee stress during hiking"
-            className="w-full h-auto rounded-xl shadow-sm"
-            loading="lazy"
-          />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Comparing the different types of knee stress during incline versus downhill hiking
-          </figcaption>
-        </figure>
-
-        <h3>Rocky or Uneven Surfaces</h3>
-        <p>
-          Uneven terrain forces your knee to absorb impact at varying angles rather than the consistent angle of flat walking. This creates unpredictable loading patterns that can stress different areas of the joint with each step. Rocky trails also require more lateral stability, engaging muscles that may fatigue more quickly.
-        </p>
-
-        <h3>Long Downhill Sections</h3>
-        <p>
-          Extended descents are particularly challenging because the cumulative effect of thousands of eccentric steps adds up. Even if each individual step feels manageable, the total volume of impact over a 2 to 3 mile descent can overwhelm the knee's capacity to absorb force comfortably.
-        </p>
-
-        <h3>Carrying Heavy Backpacks</h3>
-        <p>
-          Every pound in your pack increases the force on your knees with each step. A 20-pound backpack may seem modest, but over thousands of steps on a downhill section, the cumulative added load on the knee joint is substantial. Lighter packing can meaningfully reduce knee stress on longer hikes.
-        </p>
-        <p>
-          When added weight is the main training goal, the <Link to="/guides/rucking-knee-pain" className="text-primary hover:underline">rucking with bad knees guide</Link> separates backpack weight, fit, pace, and hills. If the problem appears while running rather than walking, the <Link to="/guides/trail-running-knee-pain" className="text-primary hover:underline">trail running knee pain guide</Link> focuses on descents, terrain, and return-to-run load.
-        </p>
-
-        <TipsList tips={[
-          "Choose trails with moderate elevation gain when building conditioning",
-          "Plan routes where the steepest sections are on the ascent rather than descent",
-          "Break long downhill sections into shorter segments with rest stops",
-          "Keep backpack weight under 20% of your body weight when possible",
-          "Avoid hiking on consecutive days when knee soreness is present",
-        ]} />
-
-        {/* Section 5 */}
-        <h2>Adjustments and Techniques That Reduce Knee Strain on Trails</h2>
-
-        <h3>Use Trekking Poles</h3>
-        <p>
-          Trekking poles are one of the most effective tools for reducing knee stress during hiking. By transferring a portion of your body weight to your arms and upper body, poles can reduce the load on your knees by up to 25% during descent. They also improve balance on uneven terrain, reducing the compensatory muscle tension that contributes to knee fatigue.
-        </p>
-
-        <figure className="my-8">
-          <img
-            src={imgTrekkingPoles}
-            alt="Illustration showing how trekking poles distribute body weight during hiking"
-            className="w-full h-auto rounded-xl shadow-sm"
-            loading="lazy"
-          />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Trekking poles redistribute body weight across four contact points, reducing knee load
-          </figcaption>
-        </figure>
-
-        <h3>Take Shorter Steps on Descents</h3>
-        <p>
-          Long strides on downhill sections increase the angle of knee flexion at each footfall, amplifying the braking force. Shorter, more controlled steps keep the knee closer to a neutral angle and reduce the impact energy that the joint must absorb. This simple adjustment can make a noticeable difference on steep trails.
-        </p>
-
-        <h3>Strengthen Your Quadriceps and Glutes</h3>
-        <p>
-          Strong quadriceps control eccentric loading more effectively, reducing the impact that reaches the joint structures. Strong glutes stabilize the pelvis and prevent the knee from collapsing inward during each step. Exercises like wall sits, step-downs, squats, and hip bridges are particularly effective for hikers. For a complete exercise plan, see our <Link to="/guides/knee-pain-exercises-guide" className="text-primary hover:underline">knee exercises guide</Link>.
-        </p>
-
-        <h3>Choose Proper Hiking Footwear</h3>
-        <p>
-          Hiking boots with adequate cushioning, ankle support, and aggressive tread can absorb a significant portion of trail impact before it reaches the knee. Replace worn footwear regularly, as compressed midsoles lose their shock-absorbing capacity over time. If you are interested in how footwear choices affect knee comfort broadly, our guide on <Link to="/guides/knee-pain-after-long-walks" className="text-primary hover:underline">knee pain after long walks</Link> covers related strategies.
-        </p>
-
-        <h3>Pacing Strategies for Long Hikes</h3>
-        <p>
-          Starting too fast or pushing through fatigue increases the risk of knee discomfort on longer trails. Build in regular rest breaks, especially before long descent sections. Pace yourself to maintain a sustainable effort level throughout the hike rather than sprinting and resting in cycles.
-        </p>
-
-        {/* Section 6 */}
-        <h2>Why Beginners and Occasional Hikers Experience Knee Pain More Often</h2>
-
-        <p>
-          If you are new to hiking or only hit the trails a few times a year, your knees are more likely to feel the effects. There are several reasons for this pattern.
-        </p>
-
-        <h3>Muscle Fatigue</h3>
-        <p>
-          The muscles that support the knee during hiking (particularly the quadriceps) fatigue more quickly in unconditioned hikers. As these muscles tire, they lose their ability to control the joint effectively, and more of the impact force transfers directly to the cartilage, meniscus, and ligaments.
-        </p>
-
-        <h3>Lack of Trail Conditioning</h3>
-        <p>
-          Hiking on uneven terrain requires a different set of stabilizing muscle activations compared to walking on flat surfaces. Without regular trail exposure, these stabilizing muscles are underdeveloped, leaving the knee joint less protected against the variable forces of trail hiking.
-        </p>
-
-        <figure className="my-8">
-          <img
-            src={imgProperPosture}
-            alt="Illustration showing proper hiking posture with correct knee alignment"
-            className="w-full h-auto rounded-xl shadow-sm"
-            loading="lazy"
-          />
-          <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            Maintaining proper posture and knee alignment reduces joint stress on trails
-          </figcaption>
-        </figure>
-
-        <h3>Sudden Increase in Hiking Distance</h3>
-        <p>
-          Jumping from occasional short walks to a full-day mountain hike dramatically increases the total load on your knees. The joint structures need time to adapt to new demands. Building distance and elevation gain gradually over several weeks gives your cartilage, tendons, and muscles time to strengthen for trail demands. For more on sudden onset knee issues, our <Link to="/guides/sudden-knee-pain-guide" className="text-primary hover:underline">sudden knee pain guide</Link> offers additional context.
-        </p>
-
-        <InfoBox title="The 10% Rule for Hikers">
-          <p>A commonly recommended approach is to increase your weekly hiking distance by no more than 10% at a time. This gradual progression allows your joints, muscles, and connective tissue to adapt to increasing demands without overwhelming the knee's capacity to handle the load.</p>
-        </InfoBox>
-
-        {/* Section 7 */}
-        <h2>Daily Habits That Support Knee Comfort for Hikers</h2>
-
-        <p>
-          Knee comfort during hiking does not start and end on the trail. What you do in the days and weeks between hikes plays a significant role in how your knees feel when you hit the next trail.
-        </p>
-
-        <h3>Proper Warm-Up Before Hiking</h3>
-        <p>
-          Spending 5 to 10 minutes warming up before starting the trail prepares your muscles, tendons, and joint fluid for the demands ahead. Gentle walking, leg swings, and bodyweight squats increase blood flow to the muscles around the knee and improve the lubrication within the joint.
-        </p>
-
-        <h3>Mobility Training</h3>
-        <p>
-          Regular hip and ankle mobility work improves the range of motion available at these joints, reducing the compensatory stress on the knee during hiking. Tight hips and stiff ankles are two of the most common contributors to hiking knee pain because they force the knee to absorb forces that should be distributed across the entire lower limb. Our guide on <Link to="/guides/knee-pain-climbing-stairs" className="text-primary hover:underline">knee pain climbing stairs</Link> covers related lower body mechanics.
-        </p>
-
-        <h3>Strengthening Exercises</h3>
-        <p>
-          Consistent lower body strengthening between hikes builds the muscular endurance and joint stability that protect the knee on trails. Focus on exercises that mimic hiking movements: step-ups, single-leg squats, calf raises, and hip-strengthening exercises. Even two to three sessions per week can make a meaningful difference in trail performance and knee comfort.
-        </p>
-
-        <h3>Recovery Routines After Hiking</h3>
-        <p>
-          Post-hike recovery is just as important as preparation. Gentle stretching, foam rolling, and warmth application after a hike can help reduce muscle tension and support comfortable recovery. Elevating your legs and applying soothing warmth to the knee area can help your joints transition back to normal loading patterns. If you experience lingering soreness after activity, our <Link to="/guides/knee-pain-after-exercise" className="text-primary hover:underline">knee pain after exercise guide</Link> covers recovery strategies in detail.
-        </p>
-
-        <TipsList tips={[
-          "Warm up for 5 to 10 minutes before starting any trail",
-          "Include hip and ankle mobility work in your weekly routine",
-          "Strengthen quads, glutes, and calves at least twice per week",
-          "Apply warmth to your knees after long or demanding hikes",
-          "Rest adequately between hikes to allow joint recovery",
-          "Track your weekly mileage and increase gradually",
-        ]} />
-
-        <p>
-          Knee pain during hiking is common, but it does not have to be inevitable. By understanding the specific demands that trails place on your knee joints and taking practical steps to prepare, protect, and recover, you can enjoy hiking with greater comfort and confidence. The key is consistency: building strength gradually, using the right gear, and listening to your body on every trail. If knee stiffness is a broader concern in your daily life, our guide on <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee stiffness after resting</Link> may also be helpful.
-        </p>
+        <h2>The Bottom Line</h2>
+        <p>Knee pain when hiking is not one exposure. Uphill force, downhill braking, uneven terrain, total duration, and pack weight can each dominate. Find the section of the route that reproduces the problem, change one variable, and use poles as a load-management tool rather than a guarantee. This keeps the hiking page distinct from trail running, rucking, and shopping-focused pole content.</p>
       </>
     ),
   },

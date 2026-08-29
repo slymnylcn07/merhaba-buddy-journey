@@ -22,7 +22,7 @@ export const kneeTightnessWithoutPain: ArticleExport = {
       "Why does a knee feel tight without pain? Compare front, back, inner and outer tightness, bending limits, swelling, mobility checks, and warning signs.",
     heroImage,
     publishedDate: "March 8, 2026",
-    lastUpdated: "July 28, 2026",
+    lastUpdated: "August 29, 2026",
     nextSlug: "knee-pain-getting-up-after-sitting",
     nextTitle: "Knee Pain and Stiffness After Sitting",
     seoTags:
@@ -215,6 +215,27 @@ export const kneeTightnessWithoutPain: ArticleExport = {
         <p>
           Tightness behind the knee may come from the hamstrings or upper calf, but joint swelling and a Baker&apos;s cyst can create a similar sense of fullness. Avoid aggressive massage over an unexplained lump. For pain-focused posterior symptoms, use our <Link to="/guides/back-of-knee-pain-explained">back-of-knee pain guide</Link>.
         </p>
+
+        <h3>Popliteus, Hamstring, or Calf Tightness?</h3>
+        <p>
+          Search interest for the popliteus muscle has risen alongside knee-tightness queries, but a tight feeling cannot identify that small muscle by itself. The popliteus sits deep behind the knee and helps control rotation as the knee begins to bend. Hamstring tension is more often felt as a longer pull into the back of the thigh, while upper-calf tension may become clearer with ankle movement or pushing off during walking. Fullness, a lump, or a visibly swollen back of the knee points away from a simple flexibility label and should be assessed.
+        </p>
+        <div className="my-6 overflow-x-auto rounded-xl border border-slate-200">
+          <table className="w-full min-w-[680px] border-collapse text-left text-sm">
+            <thead className="bg-slate-100">
+              <tr>
+                <th className="p-4">Where the pull is felt</th>
+                <th className="p-4">What may change it</th>
+                <th className="p-4">What this cannot prove</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200">
+              <tr><td className="p-4 font-semibold">Deep behind the knee</td><td className="p-4">Rotation, first part of bending, uneven ground</td><td className="p-4">A popliteus injury or diagnosis</td></tr>
+              <tr><td className="p-4 font-semibold">Into the back of the thigh</td><td className="p-4">Hip position and knee straightening</td><td className="p-4">That the hamstrings simply need harder stretching</td></tr>
+              <tr><td className="p-4 font-semibold">Into the upper calf</td><td className="p-4">Ankle motion and pushing off</td><td className="p-4">That calf tightness is harmless when swelling is present</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <h3>Inner or Outer Side</h3>
         <p>
