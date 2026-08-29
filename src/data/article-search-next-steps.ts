@@ -9,6 +9,11 @@ export interface ArticleSearchNextStep {
  * These are intentionally informational and live directly after the quick answer.
  */
 export const articleSearchNextSteps: Record<string, ArticleSearchNextStep> = {
+  "can-running-shoes-cause-knee-pain": {
+    href: "/guides/best-running-shoes-knee-pain",
+    headline: "Choose the next shoe by the feature that failed",
+    text: "Compare fit, cushioning, stability, and surface after the current pair has passed or failed a controlled test.",
+  },
   "knee-pain-after-flights": {
     href: "/guides/knee-pain-getting-up-after-sitting",
     headline: "Compare the first steps after prolonged sitting",

@@ -88,6 +88,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
 };
 
 const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
+  "can-running-shoes-cause-knee-pain": "insoles",
   "knee-injury-symptom-chart": "sleeve",
   "meniscus-knee-pain-location-chart": "sleeve",
   "hip-to-knee-pain-location-chart": "insoles",

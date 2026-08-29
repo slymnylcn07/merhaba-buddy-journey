@@ -14,6 +14,15 @@ export interface PublishedGuideData extends GuideData {
 
 export const recentGuidesData: PublishedGuideData[] = [
   {
+    slug: "can-running-shoes-cause-knee-pain",
+    title: "Can Running Shoes Cause Knee Pain? Fit, Drop, Stability, and Training Load",
+    description:
+      "Test whether new or worn running shoes are contributing to knee pain by comparing fit, heel drop, cushioning, stability, wear, and training load.",
+    readTime: 22,
+    publishedDate: "2026-08-29",
+    lastModified: "2026-08-29",
+  },
+  {
     slug: "knee-injury-symptom-chart",
     title: "Knee Injury Symptom Chart: Ligament, Meniscus, Tendon, and Bone Patterns",
     description:

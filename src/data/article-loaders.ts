@@ -4,6 +4,7 @@ import { applyArticleSourceStandards } from "./article-source-standards";
 export type ArticleLoader = () => Promise<ArticleData | undefined>;
 
 export const articleLoaders: Record<string, ArticleLoader> = {
+  "can-running-shoes-cause-knee-pain": () => import("./articles/can-running-shoes-cause-knee-pain").then((module) => module.canRunningShoesCauseKneePain.article),
   "knee-injury-symptom-chart": () => import("./articles/knee-injury-symptom-chart").then((module) => module.kneeInjurySymptomChart.article),
   "meniscus-knee-pain-location-chart": () => import("./articles/meniscus-knee-pain-location-chart").then((module) => module.meniscusKneePainLocationChart.article),
   "hip-to-knee-pain-location-chart": () => import("./articles/hip-to-knee-pain-location-chart").then((module) => module.hipToKneePainLocationChart.article),

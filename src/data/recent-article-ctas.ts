@@ -1,4 +1,8 @@
 export const recentArticleCTAs: Record<string, { headline: string; text: string }> = {
+  "can-running-shoes-cause-knee-pain": {
+    headline: "Test ground-up support without changing the whole shoe again",
+    text: "Structured cushioning and arch support fit inside compatible running shoes when an insole is the single variable you want to compare.",
+  },
   "knee-injury-symptom-chart": {
     headline: "Add flexible support after the pattern is clear",
     text: "Breathable compression gives ordinary walking and daily movement a supported feel while you follow the recovery plan chosen for your knee.",
