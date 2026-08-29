@@ -381,7 +381,7 @@ export const guidesData: GuideData[] = [
     title: "Knee Clicking When Walking or Bending: Why It Happens & What It Means",
     description: "Compare knee clicking during walking, bending, squatting, and stairs, including painless sounds and symptoms that need attention.",
     readTime: 14,
-    lastModified: "2026-07-29",
+    lastModified: "2026-08-29",
   },
   {
     slug: "cold-weather-knee-pain",

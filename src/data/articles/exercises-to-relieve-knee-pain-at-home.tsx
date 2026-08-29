@@ -136,6 +136,9 @@ export const exercisesToRelieveKneePainAtHome: ArticleExport = {
         <p>
           <strong>What it does:</strong> Strengthens the quadriceps through a controlled range of motion, improving the knee's ability to support everyday movements like standing up from a seated position.
         </p>
+        <p>
+          If standing or walking is currently limited, use the <Link to="/guides/seated-knee-exercises-limited-mobility">full seated knee exercise routine</Link> for a stable-chair setup, smaller starting doses, and a step-by-step progression that remains entirely chair based.
+        </p>
 
         <h3>3. Hamstring Stretch</h3>
         <p>

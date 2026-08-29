@@ -193,6 +193,11 @@ import thumbWave359DiclofenacGel from "@/assets/guide-thumbnails/wave-3-56-60/di
 import thumbWave359DiclofenacGelAvif from "@/assets/guide-thumbnails/wave-3-56-60/diclofenac-gel-knee-pain-thumb.avif";
 import thumbWave360CapsaicinCream from "@/assets/guide-thumbnails/wave-3-56-60/capsaicin-cream-knee-pain-thumb.webp";
 import thumbWave360CapsaicinCreamAvif from "@/assets/guide-thumbnails/wave-3-56-60/capsaicin-cream-knee-pain-thumb.avif";
+import thumbWave361KneeInjuryChart from "@/assets/guide-thumbnails/wave-3-61-65/knee-injury-symptom-chart-thumb.jpg";
+import thumbWave362MeniscusLocationChart from "@/assets/guide-thumbnails/wave-3-61-65/meniscus-knee-pain-location-chart-thumb.jpg";
+import thumbWave363HipToKneeLocationChart from "@/assets/guide-thumbnails/wave-3-61-65/hip-to-knee-pain-location-chart-thumb.jpg";
+import thumbWave364SeatedKneeExercises from "@/assets/guide-thumbnails/wave-3-61-65/seated-knee-exercises-limited-mobility-thumb.jpg";
+import thumbWave365PatellarTendonStrap from "@/assets/guide-thumbnails/wave-3-61-65/patellar-tendon-strap-knee-pain-thumb.jpg";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
   "best-supplements-for-knee-pain": thumbSupplements,
@@ -330,6 +335,11 @@ const thumbnailMap: Record<string, string> = {
   "best-hiking-poles-bad-knees": thumbWave358HikingPoles,
   "diclofenac-gel-knee-pain": thumbWave359DiclofenacGel,
   "capsaicin-cream-knee-pain": thumbWave360CapsaicinCream,
+  "knee-injury-symptom-chart": thumbWave361KneeInjuryChart,
+  "meniscus-knee-pain-location-chart": thumbWave362MeniscusLocationChart,
+  "hip-to-knee-pain-location-chart": thumbWave363HipToKneeLocationChart,
+  "seated-knee-exercises-limited-mobility": thumbWave364SeatedKneeExercises,
+  "patellar-tendon-strap-knee-pain": thumbWave365PatellarTendonStrap,
 };
 
 const thumbnailAvifMap: Record<string, string> = {

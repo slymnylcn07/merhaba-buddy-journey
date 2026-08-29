@@ -402,6 +402,9 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
           <li><strong>Function:</strong> Can you walk, bend, straighten, and use stairs normally?</li>
           <li><strong>Associated signs:</strong> Is there swelling, warmth, redness, locking, catching, or giving way?</li>
         </ol>
+        <p>
+          For a narrow joint-line pattern, compare the <Link to="/guides/meniscus-knee-pain-location-chart" className="text-primary underline hover:opacity-80">medial and lateral meniscus location chart</Link>. When discomfort seems to travel from the groin, hip, thigh, or lower back toward the knee, use the <Link to="/guides/hip-to-knee-pain-location-chart" className="text-primary underline hover:opacity-80">hip-to-knee referred pain chart</Link>. Both add movement clues that this general map deliberately keeps broad.
+        </p>
 
         <VisualFigure
           src={diagramAnatomyBonesLigaments}

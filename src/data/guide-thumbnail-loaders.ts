@@ -1,6 +1,11 @@
 export type GuideThumbnailLoader = () => Promise<string>;
 
 const thumbnailLoaders: Record<string, GuideThumbnailLoader> = {
+  "knee-injury-symptom-chart": () => import("../assets/guide-thumbnails/wave-3-61-65/knee-injury-symptom-chart-thumb.jpg").then((module) => module.default),
+  "meniscus-knee-pain-location-chart": () => import("../assets/guide-thumbnails/wave-3-61-65/meniscus-knee-pain-location-chart-thumb.jpg").then((module) => module.default),
+  "hip-to-knee-pain-location-chart": () => import("../assets/guide-thumbnails/wave-3-61-65/hip-to-knee-pain-location-chart-thumb.jpg").then((module) => module.default),
+  "seated-knee-exercises-limited-mobility": () => import("../assets/guide-thumbnails/wave-3-61-65/seated-knee-exercises-limited-mobility-thumb.jpg").then((module) => module.default),
+  "patellar-tendon-strap-knee-pain": () => import("../assets/guide-thumbnails/wave-3-61-65/patellar-tendon-strap-knee-pain-thumb.jpg").then((module) => module.default),
   "knee-sleeves-for-running": () => import("../assets/guide-thumbnails/wave-3-56-60/knee-sleeves-for-running-thumb.webp").then((module) => module.default),
   "best-sandals-knee-pain": () => import("../assets/guide-thumbnails/wave-3-56-60/best-sandals-knee-pain-thumb.webp").then((module) => module.default),
   "best-hiking-poles-bad-knees": () => import("../assets/guide-thumbnails/wave-3-56-60/best-hiking-poles-bad-knees-thumb.webp").then((module) => module.default),

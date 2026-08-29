@@ -1,4 +1,24 @@
 export const recentArticleCTAs: Record<string, { headline: string; text: string }> = {
+  "knee-injury-symptom-chart": {
+    headline: "Add flexible support after the pattern is clear",
+    text: "Breathable compression gives ordinary walking and daily movement a supported feel while you follow the recovery plan chosen for your knee.",
+  },
+  "meniscus-knee-pain-location-chart": {
+    headline: "Add flexible support to ordinary movement",
+    text: "Breathable compression provides a supported feel for measured walking after the joint-line pattern and next step are clear.",
+  },
+  "hip-to-knee-pain-location-chart": {
+    headline: "Build ground-up support into walking days",
+    text: "Structured cushioning and arch support sit inside compatible shoes while you work through the hip-to-knee movement clues in this guide.",
+  },
+  "seated-knee-exercises-limited-mobility": {
+    headline: "Warm up before this seated mobility routine",
+    text: "Adjustable warmth and gentle vibration fit into a short pre-movement routine before controlled chair exercises.",
+  },
+  "patellar-tendon-strap-knee-pain": {
+    headline: "Add broad compression beyond a narrow tendon strap",
+    text: "A breathable knee sleeve provides a supported feel during ordinary walking and training when focused strap pressure is not the goal.",
+  },
   "knee-sleeves-for-running": {
     headline: "Add breathable knee support to your next measured run",
     text: "A flexible compression layer for short running tests, without rigid straps or hardware.",

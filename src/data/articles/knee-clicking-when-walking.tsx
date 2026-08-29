@@ -15,7 +15,7 @@ export const kneeClickingWhenWalking = {
     metaDescription: "Why does a knee click when walking, bending or squatting? Compare painless sounds with clicking plus pain, swelling, locking or instability.",
     heroImage: heroImage,
     publishedDate: "March 3, 2026",
-    lastUpdated: "July 29, 2026",
+    lastUpdated: "August 29, 2026",
     nextSlug: "why-do-my-knees-crack-or-pop",
     nextTitle: "Why Do My Knees Crack or Pop?",
     content: (
@@ -105,9 +105,9 @@ export const kneeClickingWhenWalking = {
         </p>
 
         {/* ── Section 3: Clicking When Bending or Squatting ── */}
-        <h2>Knee Clicking When Squatting</h2>
+        <h2>Knee Clicking When Squatting: With Pain vs Without Pain</h2>
         <p>
-          Squatting takes the knee through a deeper loaded range than ordinary walking. That can make an existing click or crackle easier to hear. The important distinction is whether the squat remains controlled and comfortable or produces pain, swelling, catching, or a feeling that the knee may give way.
+          Squatting takes the knee through a deeper loaded range than ordinary walking, so a click that is barely noticeable during a step may become obvious near the bottom of a squat. The sound alone is a weak clue. The more useful question is whether the knee clicks <strong>without pain</strong> or whether the click arrives with pain, swelling, catching, locking, or instability.
         </p>
 
         <figure className="my-8">
@@ -122,8 +122,56 @@ export const kneeClickingWhenWalking = {
           </figcaption>
         </figure>
 
+        <h3>Clicking Without Pain</h3>
         <p>
-          Common reasons for clicking during deep bends:
+          A painless click, pop, or crackle that occurs at a repeatable depth and does not change strength, control, or next-day comfort is often part of normal joint movement. Gas cavitation, a tendon changing position, and contact between the kneecap and its groove can all become easier to hear as the knee bends. Sound does not automatically mean cartilage is being damaged.
+        </p>
+        <p>
+          Watch the whole response rather than trying to silence the knee. If you can squat through a comfortable range, rise without hesitation, and continue ordinary activity without swelling, a painless sound usually needs observation rather than treatment. A slower warm-up or slightly different stance may change the sound, but it is not necessary to chase a silent squat.
+        </p>
+
+        <h3>Clicking With Pain</h3>
+        <p>
+          Pain changes the interpretation because it adds information about location, phase, and load tolerance. Pain around or behind the kneecap during the descent or rise can fit a patellofemoral pattern. A sharp joint-line catch during twisting or deep flexion can point toward a different structure, including the meniscus. The <Link to="/guides/meniscus-knee-pain-location-chart" className="text-primary hover:underline">meniscus pain location chart</Link> explains medial and lateral joint-line clues without treating a click as a diagnosis. A click followed by swelling, loss of motion, or giving way after an injury deserves assessment rather than a technique experiment.
+        </p>
+        <p>
+          The click still cannot diagnose the cause. Describe whether pain is at the front, inner side, outer side, back, or tendon below the kneecap; whether it occurs going down, at the bottom, or rising; and whether symptoms persist later that day. Our <Link to="/guides/knee-pain-when-squatting" className="text-primary hover:underline">knee pain when squatting guide</Link> uses those details to separate load, depth, mobility, and warning-sign patterns.
+        </p>
+
+        <div className="my-8 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <table className="w-full min-w-[760px] border-collapse text-left text-sm">
+            <thead className="bg-slate-950 text-white">
+              <tr>
+                <th className="px-5 py-4 font-semibold">Squat pattern</th>
+                <th className="px-5 py-4 font-semibold">What matters most</th>
+                <th className="px-5 py-4 font-semibold">Reasonable next step</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200">
+              <tr><td className="px-5 py-4 font-semibold">Painless, repeatable click</td><td className="px-5 py-4">No swelling, catching, weakness, or loss of range</td><td className="px-5 py-4">Continue a comfortable, controlled range</td></tr>
+              <tr><td className="px-5 py-4 font-semibold">Front knee pain and crackle</td><td className="px-5 py-4">Depth, load, stairs, sitting, and kneecap-area symptoms</td><td className="px-5 py-4">Reduce the provoking dose and assess the pattern</td></tr>
+              <tr><td className="px-5 py-4 font-semibold">Sharp joint-line catch</td><td className="px-5 py-4">Twisting, true locking, swelling, or blocked movement</td><td className="px-5 py-4">Stop forcing depth and arrange assessment</td></tr>
+              <tr><td className="px-5 py-4 font-semibold">Pop after injury</td><td className="px-5 py-4">Rapid swelling, giving way, inability to bear weight</td><td className="px-5 py-4">Seek prompt medical guidance</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Why Squat Depth and Phase Matter</h3>
+        <p>
+          A click early in the descent is not the same pattern as a painful catch only at the deepest point. Deeper flexion changes kneecap contact and compresses the back of the joint more than a shallow bend. Rising adds quadriceps demand. Record the phase instead of repeating a painful squat to make the noise happen.
+        </p>
+        <ul>
+          <li><strong>During descent:</strong> Check whether speed, control, or front knee load changes the symptom.</li>
+          <li><strong>At the bottom:</strong> Note whether deep flexion creates pressure, a joint-line catch, or a blocked feeling.</li>
+          <li><strong>During ascent:</strong> Note whether the click comes with front knee pain, weakness, or a shift to one side.</li>
+          <li><strong>After the set:</strong> Check for swelling, lingering pain, or a worse response the next morning.</li>
+        </ul>
+        <p>
+          Knees moving beyond the toes can be normal when ankle motion, balance, and load are appropriate. The <Link to="/guides/are-knees-over-toes-bad" className="text-primary hover:underline">knees-over-toes guide</Link> explains why that visible position is not a diagnosis or an automatic reason for clicking.
+        </p>
+
+        <p>
+          Common mechanical contributors during deep bends include:
         </p>
         <ul>
           <li><strong>Patellofemoral contact:</strong> As the knee bends past 90 degrees, the kneecap presses harder against the femur. Slight irregularities in the cartilage surface can create grinding or clicking sensations.</li>
@@ -131,7 +179,7 @@ export const kneeClickingWhenWalking = {
           <li><strong>Tight or weak muscles:</strong> Weak quadriceps or tight hamstrings can affect how smoothly the kneecap moves, increasing clicking during squats.</li>
         </ul>
         <p>
-          If you experience clicking every time you squat but feel no pain, stiffness, or limitation, it may be a normal mechanical event. However, a painful sharp catch or brief locking feeling deserves closer attention. Use our <Link to="/guides/sharp-knee-pain-guide" className="text-primary hover:underline">sharp and stabbing knee pain guide</Link> to record the pattern and check warning signs rather than assuming the sound identifies one cause.
+          If you experience clicking every time you squat but feel no pain, stiffness, or limitation, it may be a normal mechanical event. A painful sharp catch, true locking, new swelling, or a sense that the knee may buckle deserves closer attention. Use our <Link to="/guides/sharp-knee-pain-guide" className="text-primary hover:underline">sharp and stabbing knee pain guide</Link> to record the pattern and check warning signs rather than assuming the sound identifies one cause.
         </p>
         <p>
           People who notice stiffness along with clicking after sitting may find our guide on <Link to="/guides/knee-pain-getting-up-after-sitting" className="text-primary hover:underline">knee pain when getting up after sitting</Link> helpful.
@@ -506,7 +554,19 @@ export const kneeClickingWhenWalking = {
       },
       {
         question: "Why does my knee click when I squat?",
-        answer: "Squatting bends the knee deeply under load, which presses the kneecap firmly into its groove and can make normal clicking or grinding sounds more noticeable, especially near the bottom of the movement. On its own, painless clicking when you squat is usually harmless and often relates to kneecap tracking or tendons gliding over bone. Squat within a comfortable range, keep the movement slow and controlled, and pay closer attention if the clicking comes with pain, catching, swelling, or a feeling that the knee gives way.",
+        answer: "Squatting bends the knee deeply under load, which changes kneecap contact and can make gas release or tendon movement easier to hear. A painless, repeatable click without swelling, catching, instability, or lost motion is commonly a mechanical sound. Pain, true locking, rapid swelling, or giving way makes the pattern more important.",
+      },
+      {
+        question: "Why does my knee click when squatting but not hurt?",
+        answer: "A painless click can come from gas cavitation, a tendon shifting position, or the kneecap moving through its groove as joint pressure changes. If squat control, range, daily function, and next-day comfort remain normal, the sound alone usually does not indicate damage or require treatment.",
+      },
+      {
+        question: "Why does my knee click and hurt when I squat?",
+        answer: "The cause cannot be identified from the click alone. Front knee pain may fit a patellofemoral load pattern, focal tendon pain below the kneecap may fit a patellar tendon pattern, and a sharp joint-line catch can suggest a different structure. Note pain location, squat phase, swelling, locking, and injury history, then seek assessment if symptoms persist or function changes.",
+      },
+      {
+        question: "Does squat depth make knee clicking worse?",
+        answer: "It can make a click or crackle more noticeable because deeper bending changes kneecap contact and loads the joint differently. Depth is not automatically harmful, but do not force through a painful catch, blocked feeling, swelling, or instability. Use the deepest range that remains controlled and tolerable.",
       },
       {
         question: "Is knee clicking when bending down something to worry about?",
