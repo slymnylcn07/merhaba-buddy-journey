@@ -7,6 +7,81 @@ const STOP_WORDS = new Set([
 ]);
 
 const PRIORITY_RELATED: Record<string, string[]> = {
+  "walking-pad-knee-pain": [
+    "incline-walking-knee-pain",
+    "knee-pain-after-long-walks",
+    "can-insoles-cause-knee-pain",
+  ],
+  "can-insoles-cause-knee-pain": [
+    "best-insoles-for-knee-pain-2026",
+    "can-running-shoes-cause-knee-pain",
+    "flat-feet-overpronation-knee-pain",
+  ],
+  "leg-extension-knee-pain": [
+    "knee-ache-after-leg-workouts",
+    "banded-tke-knee-exercise",
+    "spanish-squat-patellar-tendon",
+  ],
+  "work-boots-knee-pain": [
+    "knee-pain-after-standing",
+    "can-insoles-cause-knee-pain",
+    "best-insoles-for-knee-pain-2026",
+  ],
+  "rowing-machine-knee-pain": [
+    "best-low-impact-cardio-knee-pain",
+    "elliptical-knee-pain",
+    "knee-pain-after-exercise",
+  ],
+  "elliptical-knee-pain": [
+    "best-low-impact-cardio-knee-pain",
+    "pedal-exerciser-knee-pain",
+    "rowing-machine-knee-pain",
+  ],
+  "pedal-exerciser-knee-pain": [
+    "seated-knee-exercises-limited-mobility",
+    "cycling-knee-pain-bike-fit",
+    "elliptical-knee-pain",
+  ],
+  "compression-socks-vs-knee-sleeves": [
+    "knee-brace-vs-compression-sleeve",
+    "knee-compression-sleeve-sizing-guide",
+    "varicose-veins-knee-pain",
+  ],
+  "best-slippers-knee-pain": [
+    "best-sandals-knee-pain",
+    "knee-pain-getting-up-after-sitting",
+    "can-insoles-cause-knee-pain",
+  ],
+  "breaststroke-knee-pain": [
+    "aqua-jogging-knee-pain",
+    "best-low-impact-cardio-knee-pain",
+    "side-knee-pain-comfort-guide",
+  ],
+  "golf-knee-pain": [
+    "knee-pain-after-long-walks",
+    "meniscus-knee-pain-location-chart",
+    "knee-sleeves-for-running",
+  ],
+  "hypermobile-knees": [
+    "knee-weakness-without-pain",
+    "how-to-strengthen-knees",
+    "knee-brace-vs-compression-sleeve",
+  ],
+  "hoffa-fat-pad-impingement": [
+    "pain-behind-kneecap",
+    "plica-syndrome-knee-pain",
+    "knee-xray-vs-mri-vs-ultrasound",
+  ],
+  "knee-locking-vs-catching": [
+    "knee-clicking-when-walking",
+    "meniscus-knee-pain-location-chart",
+    "knee-injury-symptom-chart",
+  ],
+  "knee-pain-after-ankle-sprain": [
+    "knee-injury-symptom-chart",
+    "peroneal-nerve-compression-knee",
+    "tight-calves-knee-pain",
+  ],
   "can-running-shoes-cause-knee-pain": [
     "best-running-shoes-knee-pain",
     "running-knee-pain-guide",

@@ -1,6 +1,21 @@
 export type GuideThumbnailLoader = () => Promise<string>;
 
 const thumbnailLoaders: Record<string, GuideThumbnailLoader> = {
+  "walking-pad-knee-pain": () => import("../assets/guide-thumbnails/next-15/walking-pad-knee-pain-thumb.webp").then((module) => module.default),
+  "can-insoles-cause-knee-pain": () => import("../assets/guide-thumbnails/next-15/can-insoles-cause-knee-pain-thumb.webp").then((module) => module.default),
+  "leg-extension-knee-pain": () => import("../assets/guide-thumbnails/next-15/leg-extension-knee-pain-thumb.webp").then((module) => module.default),
+  "work-boots-knee-pain": () => import("../assets/guide-thumbnails/next-15/work-boots-knee-pain-thumb.webp").then((module) => module.default),
+  "rowing-machine-knee-pain": () => import("../assets/guide-thumbnails/next-15/rowing-machine-knee-pain-thumb.webp").then((module) => module.default),
+  "elliptical-knee-pain": () => import("../assets/guide-thumbnails/next-15/elliptical-knee-pain-thumb.webp").then((module) => module.default),
+  "pedal-exerciser-knee-pain": () => import("../assets/guide-thumbnails/next-15/pedal-exerciser-knee-pain-thumb.webp").then((module) => module.default),
+  "compression-socks-vs-knee-sleeves": () => import("../assets/guide-thumbnails/next-15/compression-socks-vs-knee-sleeves-thumb.webp").then((module) => module.default),
+  "best-slippers-knee-pain": () => import("../assets/guide-thumbnails/next-15/best-slippers-knee-pain-thumb.webp").then((module) => module.default),
+  "breaststroke-knee-pain": () => import("../assets/guide-thumbnails/next-15/breaststroke-knee-pain-thumb.webp").then((module) => module.default),
+  "golf-knee-pain": () => import("../assets/guide-thumbnails/next-15/golf-knee-pain-thumb.webp").then((module) => module.default),
+  "hypermobile-knees": () => import("../assets/guide-thumbnails/next-15/hypermobile-knees-thumb.webp").then((module) => module.default),
+  "hoffa-fat-pad-impingement": () => import("../assets/guide-thumbnails/next-15/hoffa-fat-pad-impingement-thumb.webp").then((module) => module.default),
+  "knee-locking-vs-catching": () => import("../assets/guide-thumbnails/next-15/knee-locking-vs-catching-thumb.webp").then((module) => module.default),
+  "knee-pain-after-ankle-sprain": () => import("../assets/guide-thumbnails/next-15/knee-pain-after-ankle-sprain-thumb.webp").then((module) => module.default),
   "can-running-shoes-cause-knee-pain": () => import("../assets/guide-thumbnails/wave-3-66-70/can-running-shoes-cause-knee-pain-thumb.webp").then((module) => module.default),
   "knee-injury-symptom-chart": () => import("../assets/guide-thumbnails/wave-3-61-65/knee-injury-symptom-chart-thumb.jpg").then((module) => module.default),
   "meniscus-knee-pain-location-chart": () => import("../assets/guide-thumbnails/wave-3-61-65/meniscus-knee-pain-location-chart-thumb.jpg").then((module) => module.default),
