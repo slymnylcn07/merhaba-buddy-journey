@@ -62,7 +62,71 @@ export const next15ArticleCTAs: Record<string, { headline: string; text: string 
   },
 };
 
+export const further15ArticleCTAs: Record<string, { headline: string; text: string }> = {
+  "massage-gun-knee-pain": {
+    "headline": "Compare hands-free comfort for your home routine",
+    "text": "Adjustable warmth and gentle vibration offer a separate wearable option when heat suits your knee-care plan."
+  },
+  "knee-pads-for-kneeling": {
+    "headline": "Keep everyday support separate from kneeling protection",
+    "text": "A flexible sleeve adds a supported feel for walking between tasks, alongside suitable kneeling protection."
+  },
+  "recumbent-vs-upright-bike-knees": {
+    "headline": "Keep knee support flexible while you pedal",
+    "text": "Breathable compression fits alongside a comfortable seat position and measured cycling routine."
+  },
+  "walking-cane-knee-pain": {
+    "headline": "Add a soft layer alongside your fitted walking aid",
+    "text": "Flexible compression offers a supported feel during ordinary walking with your assessed mobility setup."
+  },
+  "tai-chi-knee-osteoarthritis": {
+    "headline": "Keep support flexible through gentle tai chi practice",
+    "text": "A breathable sleeve fits alongside the higher stances and controlled movements in your adapted routine."
+  },
+  "deadlift-knee-pain": {
+    "headline": "Add flexible support to your adjusted lifting routine",
+    "text": "A soft compression layer offers a supported feel alongside the load and range changes in your training plan."
+  },
+  "knee-pain-after-skiing": {
+    "headline": "Keep optional cold comfort simple after skiing",
+    "text": "Compare a reusable cold wrap when your assessed post-ski care plan includes cold comfort."
+  },
+  "badminton-knee-pain": {
+    "headline": "Add flexible support to controlled court practice",
+    "text": "Breathable compression fits alongside your adjusted lunges, landings and measured return to badminton."
+  },
+  "getting-up-from-floor-bad-knees": {
+    "headline": "Compare a soft layer for everyday movement",
+    "text": "Flexible compression fits alongside your assessed transfer plan and appropriate stable support."
+  },
+  "thirty-second-chair-stand-test": {
+    "headline": "Keep everyday knee support simple between assessments",
+    "text": "A breathable sleeve offers a supported feel for ordinary movement alongside your individualized exercise plan."
+  },
+  "pes-anserine-bursitis": {
+    "headline": "Compare cold comfort for your assessed inner-knee plan",
+    "text": "A reusable cold wrap offers an optional comfort step when your clinician recommends cold for this pattern."
+  },
+  "gout-vs-pseudogout-knee": {
+    "headline": "Keep clinician-approved cold comfort within reach",
+    "text": "A reusable cold wrap is an optional addition when your diagnosed flare plan includes cold application."
+  },
+  "hyperextended-knee-injury": {
+    "headline": "Add cold comfort only within your assessed injury plan",
+    "text": "Compare a reusable cold wrap when your treating clinician has included it in your recovery instructions."
+  },
+  "leg-length-discrepancy-knee-pain": {
+    "headline": "Keep optional knee support separate from shoe correction",
+    "text": "A flexible sleeve offers a supported feel during ordinary movement alongside your professionally assessed footwear plan."
+  },
+  "knee-aspiration-guide": {
+    "headline": "Compare cold comfort after your aftercare check",
+    "text": "Use a reusable cold wrap only when your procedure team confirms it fits your specific aftercare instructions."
+  }
+};
+
 export const recentArticleCTAs: Record<string, { headline: string; text: string }> = {
+  ...further15ArticleCTAs,
   ...next15ArticleCTAs,
   "can-running-shoes-cause-knee-pain": {
     headline: "Test ground-up support without changing the whole shoe again",

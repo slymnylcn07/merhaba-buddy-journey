@@ -257,6 +257,7 @@ export const cyclingKneePainBikeFit: ArticleExport = {
           <Link to="/guides/knee-arthritis-pain-guide">knee arthritis guide</Link> explains.
         </p>
 
+        <p>Choosing a stationary-bike format is a separate decision from adjusting an existing bicycle. Compare seat access, back support, and pedal reach in the <Link to="/guides/recumbent-vs-upright-bike-knees">recumbent versus upright exercise bike guide</Link>.</p>
         <h2>The Bottom Line</h2>
         <p>
           Cycling deserves its reputation as a knee friendly sport, and the answer to knee pain from riding is almost never to stop riding. It is to stop repeating the same slightly wrong movement five thousand times an hour.

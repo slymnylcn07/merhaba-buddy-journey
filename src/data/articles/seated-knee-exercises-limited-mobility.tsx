@@ -288,6 +288,7 @@ export const seatedKneeExercisesLimitedMobility: ArticleExport = {
           </p>
         </div>
 
+        <p>For a formal performance measure rather than a workout, read the <Link to="/guides/thirty-second-chair-stand-test">30-second chair stand test guide</Link>. If the goal is getting off the floor, use the <Link to="/guides/getting-up-from-floor-bad-knees">supported floor-transfer guide</Link>, which covers a different task and support needs. For other adapted options, explore <Link to="/guides/tai-chi-knee-osteoarthritis">tai chi with knee osteoarthritis</Link> and <Link to="/guides/walking-cane-knee-pain">properly fitted cane support for walking</Link>.</p>
         <h2>The Bottom Line</h2>
         <p>
           Seated knee exercises can provide a practical entry point when standing or walking is limited. Use a stable chair, begin with ankle pumps, heel and toe raises, marching, heel slides, controlled knee extensions, and a gentle inner-thigh squeeze. Build control before range, range before repetitions, and repetitions before resistance. The goal is not to complete a generic list. It is to create a safe starting dose that supports the next function you need, with individual guidance when injury, surgery, weakness, balance, or medical conditions change the plan.

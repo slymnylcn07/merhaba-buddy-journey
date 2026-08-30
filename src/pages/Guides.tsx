@@ -216,7 +216,37 @@ import thumbNext15KneeLockingVsCatching from "@/assets/guide-thumbnails/next-15/
 import thumbNext15KneePainAfterAnkleSprain from "@/assets/guide-thumbnails/next-15/knee-pain-after-ankle-sprain-thumb.webp";
 import thumbWave366RunningShoesCauseAvif from "@/assets/guide-thumbnails/wave-3-66-70/can-running-shoes-cause-knee-pain-thumb.avif";
 // Map slugs to thumbnails
+import thumbFurthermassageGunKneePain from "@/assets/guide-thumbnails/further-15/massage-gun-knee-pain-thumb.webp";
+import thumbFurtherkneePadsForKneeling from "@/assets/guide-thumbnails/further-15/knee-pads-for-kneeling-thumb.webp";
+import thumbFurtherrecumbentVsUprightBikeKnees from "@/assets/guide-thumbnails/further-15/recumbent-vs-upright-bike-knees-thumb.webp";
+import thumbFurtherwalkingCaneKneePain from "@/assets/guide-thumbnails/further-15/walking-cane-knee-pain-thumb.webp";
+import thumbFurthertaiChiKneeOsteoarthritis from "@/assets/guide-thumbnails/further-15/tai-chi-knee-osteoarthritis-thumb.webp";
+import thumbFurtherdeadliftKneePain from "@/assets/guide-thumbnails/further-15/deadlift-knee-pain-thumb.webp";
+import thumbFurtherkneePainAfterSkiing from "@/assets/guide-thumbnails/further-15/knee-pain-after-skiing-thumb.webp";
+import thumbFurtherbadmintonKneePain from "@/assets/guide-thumbnails/further-15/badminton-knee-pain-thumb.webp";
+import thumbFurthergettingUpFromFloorBadKnees from "@/assets/guide-thumbnails/further-15/getting-up-from-floor-bad-knees-thumb.webp";
+import thumbFurtherthirtySecondChairStandTest from "@/assets/guide-thumbnails/further-15/thirty-second-chair-stand-test-thumb.webp";
+import thumbFurtherpesAnserineBursitis from "@/assets/guide-thumbnails/further-15/pes-anserine-bursitis-thumb.webp";
+import thumbFurthergoutVsPseudogoutKnee from "@/assets/guide-thumbnails/further-15/gout-vs-pseudogout-knee-thumb.webp";
+import thumbFurtherhyperextendedKneeInjury from "@/assets/guide-thumbnails/further-15/hyperextended-knee-injury-thumb.webp";
+import thumbFurtherlegLengthDiscrepancyKneePain from "@/assets/guide-thumbnails/further-15/leg-length-discrepancy-knee-pain-thumb.webp";
+import thumbFurtherkneeAspirationGuide from "@/assets/guide-thumbnails/further-15/knee-aspiration-guide-thumb.webp";
 const thumbnailMap: Record<string, string> = {
+  "massage-gun-knee-pain": thumbFurthermassageGunKneePain,
+  "knee-pads-for-kneeling": thumbFurtherkneePadsForKneeling,
+  "recumbent-vs-upright-bike-knees": thumbFurtherrecumbentVsUprightBikeKnees,
+  "walking-cane-knee-pain": thumbFurtherwalkingCaneKneePain,
+  "tai-chi-knee-osteoarthritis": thumbFurthertaiChiKneeOsteoarthritis,
+  "deadlift-knee-pain": thumbFurtherdeadliftKneePain,
+  "knee-pain-after-skiing": thumbFurtherkneePainAfterSkiing,
+  "badminton-knee-pain": thumbFurtherbadmintonKneePain,
+  "getting-up-from-floor-bad-knees": thumbFurthergettingUpFromFloorBadKnees,
+  "thirty-second-chair-stand-test": thumbFurtherthirtySecondChairStandTest,
+  "pes-anserine-bursitis": thumbFurtherpesAnserineBursitis,
+  "gout-vs-pseudogout-knee": thumbFurthergoutVsPseudogoutKnee,
+  "hyperextended-knee-injury": thumbFurtherhyperextendedKneeInjury,
+  "leg-length-discrepancy-knee-pain": thumbFurtherlegLengthDiscrepancyKneePain,
+  "knee-aspiration-guide": thumbFurtherkneeAspirationGuide,
   "best-supplements-for-knee-pain": thumbSupplements,
   "best-low-impact-cardio-knee-pain": thumbLowImpactCardio,
   "backward-walking-knee-pain": thumbBackwardWalking,
@@ -522,6 +552,11 @@ const selectPopularSlugs = (
 };
 
 const locationSlugs = [
+  "pes-anserine-bursitis",
+  "gout-vs-pseudogout-knee",
+  "hyperextended-knee-injury",
+  "leg-length-discrepancy-knee-pain",
+  "knee-aspiration-guide",
   "hypermobile-knees",
   "hoffa-fat-pad-impingement",
   "knee-locking-vs-catching",
@@ -558,6 +593,13 @@ const locationSlugs = [
 ];
 
 const activitySlugs = [
+  "recumbent-vs-upright-bike-knees",
+  "tai-chi-knee-osteoarthritis",
+  "deadlift-knee-pain",
+  "knee-pain-after-skiing",
+  "badminton-knee-pain",
+  "getting-up-from-floor-bad-knees",
+  "thirty-second-chair-stand-test",
   "walking-pad-knee-pain",
   "can-insoles-cause-knee-pain",
   "leg-extension-knee-pain",
@@ -629,6 +671,10 @@ const activitySlugs = [
 ];
 
 const lifeStageSlugs = [
+  "walking-cane-knee-pain",
+  "tai-chi-knee-osteoarthritis",
+  "getting-up-from-floor-bad-knees",
+  "thirty-second-chair-stand-test",
   "knee-pain-after-40",
   "menopause-knee-pain",
   "knee-pain-at-night-after-40",
@@ -643,6 +689,11 @@ const lifeStageSlugs = [
 ];
 
 const methodsSlugs = [
+  "massage-gun-knee-pain",
+  "walking-cane-knee-pain",
+  "tai-chi-knee-osteoarthritis",
+  "getting-up-from-floor-bad-knees",
+  "thirty-second-chair-stand-test",
   "pedal-exerciser-knee-pain",
   "hypermobile-knees",
   "compression-socks-vs-knee-sleeves",
@@ -680,6 +731,10 @@ const supplementSlugs = [
 ];
 
 const deviceSlugs = [
+  "massage-gun-knee-pain",
+  "knee-pads-for-kneeling",
+  "recumbent-vs-upright-bike-knees",
+  "walking-cane-knee-pain",
   "compression-socks-vs-knee-sleeves",
   "best-slippers-knee-pain",
   "can-insoles-cause-knee-pain",

@@ -88,6 +88,21 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
 };
 
 const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
+  "massage-gun-knee-pain": "main",
+  "knee-pads-for-kneeling": "sleeve",
+  "recumbent-vs-upright-bike-knees": "sleeve",
+  "walking-cane-knee-pain": "sleeve",
+  "tai-chi-knee-osteoarthritis": "sleeve",
+  "deadlift-knee-pain": "sleeve",
+  "knee-pain-after-skiing": "iceWrap",
+  "badminton-knee-pain": "sleeve",
+  "getting-up-from-floor-bad-knees": "sleeve",
+  "thirty-second-chair-stand-test": "sleeve",
+  "pes-anserine-bursitis": "iceWrap",
+  "gout-vs-pseudogout-knee": "iceWrap",
+  "hyperextended-knee-injury": "iceWrap",
+  "leg-length-discrepancy-knee-pain": "sleeve",
+  "knee-aspiration-guide": "iceWrap",
   "walking-pad-knee-pain": "insoles",
   "can-insoles-cause-knee-pain": "insoles",
   "leg-extension-knee-pain": "sleeve",

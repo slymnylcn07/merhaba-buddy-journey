@@ -4,6 +4,21 @@ import { applyArticleSourceStandards } from "./article-source-standards";
 export type ArticleLoader = () => Promise<ArticleData | undefined>;
 
 export const articleLoaders: Record<string, ArticleLoader> = {
+  "massage-gun-knee-pain": () => import("./articles/massage-gun-knee-pain").then((module) => module.massageGunKneePain.article),
+  "knee-pads-for-kneeling": () => import("./articles/knee-pads-for-kneeling").then((module) => module.kneePadsForKneeling.article),
+  "recumbent-vs-upright-bike-knees": () => import("./articles/recumbent-vs-upright-bike-knees").then((module) => module.recumbentVsUprightBikeKnees.article),
+  "walking-cane-knee-pain": () => import("./articles/walking-cane-knee-pain").then((module) => module.walkingCaneKneePain.article),
+  "tai-chi-knee-osteoarthritis": () => import("./articles/tai-chi-knee-osteoarthritis").then((module) => module.taiChiKneeOsteoarthritis.article),
+  "deadlift-knee-pain": () => import("./articles/deadlift-knee-pain").then((module) => module.deadliftKneePain.article),
+  "knee-pain-after-skiing": () => import("./articles/knee-pain-after-skiing").then((module) => module.kneePainAfterSkiing.article),
+  "badminton-knee-pain": () => import("./articles/badminton-knee-pain").then((module) => module.badmintonKneePain.article),
+  "getting-up-from-floor-bad-knees": () => import("./articles/getting-up-from-floor-bad-knees").then((module) => module.gettingUpFromFloorBadKnees.article),
+  "thirty-second-chair-stand-test": () => import("./articles/thirty-second-chair-stand-test").then((module) => module.thirtySecondChairStandTest.article),
+  "pes-anserine-bursitis": () => import("./articles/pes-anserine-bursitis").then((module) => module.pesAnserineBursitis.article),
+  "gout-vs-pseudogout-knee": () => import("./articles/gout-vs-pseudogout-knee").then((module) => module.goutVsPseudogoutKnee.article),
+  "hyperextended-knee-injury": () => import("./articles/hyperextended-knee-injury").then((module) => module.hyperextendedKneeInjury.article),
+  "leg-length-discrepancy-knee-pain": () => import("./articles/leg-length-discrepancy-knee-pain").then((module) => module.legLengthDiscrepancyKneePain.article),
+  "knee-aspiration-guide": () => import("./articles/knee-aspiration-guide").then((module) => module.kneeAspirationGuide.article),
   "walking-pad-knee-pain": () => import("./articles/walking-pad-knee-pain").then((module) => module.walkingPadKneePain.article),
   "can-insoles-cause-knee-pain": () => import("./articles/can-insoles-cause-knee-pain").then((module) => module.canInsolesCauseKneePain.article),
   "leg-extension-knee-pain": () => import("./articles/leg-extension-knee-pain").then((module) => module.legExtensionKneePain.article),

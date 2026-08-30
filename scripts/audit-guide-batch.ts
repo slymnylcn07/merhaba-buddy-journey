@@ -72,7 +72,7 @@ try {
     check(article.metaDescription.length >= 120 && article.metaDescription.length <= 165,
       `meta description is ${article.metaDescription.length} characters`);
     const assets = [...imagePaths, article.heroImage,
-      `/src/assets/guide-thumbnails/next-15/${slug}-thumb.webp`];
+      article.heroImage.replace(/-hero\.webp(?:\?.*)?$/, "-thumb.webp")];
     for (const asset of assets) {
       const diskPath = resolve(process.cwd(), asset.replace(/^\//, "").split("?")[0]);
       check(existsSync(diskPath), `missing asset ${asset}`);
