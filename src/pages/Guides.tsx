@@ -199,6 +199,21 @@ import thumbWave363HipToKneeLocationChart from "@/assets/guide-thumbnails/wave-3
 import thumbWave364SeatedKneeExercises from "@/assets/guide-thumbnails/wave-3-61-65/seated-knee-exercises-limited-mobility-thumb.jpg";
 import thumbWave365PatellarTendonStrap from "@/assets/guide-thumbnails/wave-3-61-65/patellar-tendon-strap-knee-pain-thumb.jpg";
 import thumbWave366RunningShoesCause from "@/assets/guide-thumbnails/wave-3-66-70/can-running-shoes-cause-knee-pain-thumb.webp";
+import thumbNext15WalkingPadKneePain from "@/assets/guide-thumbnails/next-15/walking-pad-knee-pain-thumb.webp";
+import thumbNext15CanInsolesCauseKneePain from "@/assets/guide-thumbnails/next-15/can-insoles-cause-knee-pain-thumb.webp";
+import thumbNext15LegExtensionKneePain from "@/assets/guide-thumbnails/next-15/leg-extension-knee-pain-thumb.webp";
+import thumbNext15WorkBootsKneePain from "@/assets/guide-thumbnails/next-15/work-boots-knee-pain-thumb.webp";
+import thumbNext15RowingMachineKneePain from "@/assets/guide-thumbnails/next-15/rowing-machine-knee-pain-thumb.webp";
+import thumbNext15EllipticalKneePain from "@/assets/guide-thumbnails/next-15/elliptical-knee-pain-thumb.webp";
+import thumbNext15PedalExerciserKneePain from "@/assets/guide-thumbnails/next-15/pedal-exerciser-knee-pain-thumb.webp";
+import thumbNext15CompressionSocksVsKneeSleeves from "@/assets/guide-thumbnails/next-15/compression-socks-vs-knee-sleeves-thumb.webp";
+import thumbNext15BestSlippersKneePain from "@/assets/guide-thumbnails/next-15/best-slippers-knee-pain-thumb.webp";
+import thumbNext15BreaststrokeKneePain from "@/assets/guide-thumbnails/next-15/breaststroke-knee-pain-thumb.webp";
+import thumbNext15GolfKneePain from "@/assets/guide-thumbnails/next-15/golf-knee-pain-thumb.webp";
+import thumbNext15HypermobileKnees from "@/assets/guide-thumbnails/next-15/hypermobile-knees-thumb.webp";
+import thumbNext15HoffaFatPadImpingement from "@/assets/guide-thumbnails/next-15/hoffa-fat-pad-impingement-thumb.webp";
+import thumbNext15KneeLockingVsCatching from "@/assets/guide-thumbnails/next-15/knee-locking-vs-catching-thumb.webp";
+import thumbNext15KneePainAfterAnkleSprain from "@/assets/guide-thumbnails/next-15/knee-pain-after-ankle-sprain-thumb.webp";
 import thumbWave366RunningShoesCauseAvif from "@/assets/guide-thumbnails/wave-3-66-70/can-running-shoes-cause-knee-pain-thumb.avif";
 // Map slugs to thumbnails
 const thumbnailMap: Record<string, string> = {
@@ -343,6 +358,21 @@ const thumbnailMap: Record<string, string> = {
   "seated-knee-exercises-limited-mobility": thumbWave364SeatedKneeExercises,
   "patellar-tendon-strap-knee-pain": thumbWave365PatellarTendonStrap,
   "can-running-shoes-cause-knee-pain": thumbWave366RunningShoesCause,
+  "walking-pad-knee-pain": thumbNext15WalkingPadKneePain,
+  "can-insoles-cause-knee-pain": thumbNext15CanInsolesCauseKneePain,
+  "leg-extension-knee-pain": thumbNext15LegExtensionKneePain,
+  "work-boots-knee-pain": thumbNext15WorkBootsKneePain,
+  "rowing-machine-knee-pain": thumbNext15RowingMachineKneePain,
+  "elliptical-knee-pain": thumbNext15EllipticalKneePain,
+  "pedal-exerciser-knee-pain": thumbNext15PedalExerciserKneePain,
+  "compression-socks-vs-knee-sleeves": thumbNext15CompressionSocksVsKneeSleeves,
+  "best-slippers-knee-pain": thumbNext15BestSlippersKneePain,
+  "breaststroke-knee-pain": thumbNext15BreaststrokeKneePain,
+  "golf-knee-pain": thumbNext15GolfKneePain,
+  "hypermobile-knees": thumbNext15HypermobileKnees,
+  "hoffa-fat-pad-impingement": thumbNext15HoffaFatPadImpingement,
+  "knee-locking-vs-catching": thumbNext15KneeLockingVsCatching,
+  "knee-pain-after-ankle-sprain": thumbNext15KneePainAfterAnkleSprain,
 };
 
 const thumbnailAvifMap: Record<string, string> = {
@@ -492,6 +522,10 @@ const selectPopularSlugs = (
 };
 
 const locationSlugs = [
+  "hypermobile-knees",
+  "hoffa-fat-pad-impingement",
+  "knee-locking-vs-catching",
+  "knee-pain-after-ankle-sprain",
   "knee-pain-locations-visual-guide",
   "what-causes-knee-pain-guide",
   "sharp-knee-pain-guide",
@@ -524,6 +558,15 @@ const locationSlugs = [
 ];
 
 const activitySlugs = [
+  "walking-pad-knee-pain",
+  "can-insoles-cause-knee-pain",
+  "leg-extension-knee-pain",
+  "work-boots-knee-pain",
+  "rowing-machine-knee-pain",
+  "elliptical-knee-pain",
+  "pedal-exerciser-knee-pain",
+  "breaststroke-knee-pain",
+  "golf-knee-pain",
   "knee-pain-after-exercise",
   "knee-pain-going-down-stairs",
   "running-knee-pain-guide",
@@ -600,6 +643,9 @@ const lifeStageSlugs = [
 ];
 
 const methodsSlugs = [
+  "pedal-exerciser-knee-pain",
+  "hypermobile-knees",
+  "compression-socks-vs-knee-sleeves",
   "heat-vs-ice-for-knees",
   "daily-knee-care-routine",
   "home-remedies-knee-pain",
@@ -634,6 +680,11 @@ const supplementSlugs = [
 ];
 
 const deviceSlugs = [
+  "compression-socks-vs-knee-sleeves",
+  "best-slippers-knee-pain",
+  "can-insoles-cause-knee-pain",
+  "work-boots-knee-pain",
+  "pedal-exerciser-knee-pain",
   "do-knee-massagers-work",
   "smart-heated-knee-braces-2026",
   "infrared-knee-massager-guide-2026",

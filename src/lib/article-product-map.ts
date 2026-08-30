@@ -88,6 +88,21 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
 };
 
 const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
+  "walking-pad-knee-pain": "insoles",
+  "can-insoles-cause-knee-pain": "insoles",
+  "leg-extension-knee-pain": "sleeve",
+  "work-boots-knee-pain": "insoles",
+  "rowing-machine-knee-pain": "sleeve",
+  "elliptical-knee-pain": "sleeve",
+  "pedal-exerciser-knee-pain": "sleeve",
+  "compression-socks-vs-knee-sleeves": "compressionSocks",
+  "best-slippers-knee-pain": "sleeve",
+  "breaststroke-knee-pain": "iceWrap",
+  "golf-knee-pain": "sleeve",
+  "hypermobile-knees": "sleeve",
+  "hoffa-fat-pad-impingement": "iceWrap",
+  "knee-locking-vs-catching": "sleeve",
+  "knee-pain-after-ankle-sprain": "sleeve",
   "can-running-shoes-cause-knee-pain": "insoles",
   "knee-injury-symptom-chart": "sleeve",
   "meniscus-knee-pain-location-chart": "sleeve",

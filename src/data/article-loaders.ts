@@ -4,6 +4,21 @@ import { applyArticleSourceStandards } from "./article-source-standards";
 export type ArticleLoader = () => Promise<ArticleData | undefined>;
 
 export const articleLoaders: Record<string, ArticleLoader> = {
+  "walking-pad-knee-pain": () => import("./articles/walking-pad-knee-pain").then((module) => module.walkingPadKneePain.article),
+  "can-insoles-cause-knee-pain": () => import("./articles/can-insoles-cause-knee-pain").then((module) => module.canInsolesCauseKneePain.article),
+  "leg-extension-knee-pain": () => import("./articles/leg-extension-knee-pain").then((module) => module.legExtensionKneePain.article),
+  "work-boots-knee-pain": () => import("./articles/work-boots-knee-pain").then((module) => module.workBootsKneePain.article),
+  "rowing-machine-knee-pain": () => import("./articles/rowing-machine-knee-pain").then((module) => module.rowingMachineKneePain.article),
+  "elliptical-knee-pain": () => import("./articles/elliptical-knee-pain").then((module) => module.ellipticalKneePain.article),
+  "pedal-exerciser-knee-pain": () => import("./articles/pedal-exerciser-knee-pain").then((module) => module.pedalExerciserKneePain.article),
+  "compression-socks-vs-knee-sleeves": () => import("./articles/compression-socks-vs-knee-sleeves").then((module) => module.compressionSocksVsKneeSleeves.article),
+  "best-slippers-knee-pain": () => import("./articles/best-slippers-knee-pain").then((module) => module.bestSlippersKneePain.article),
+  "breaststroke-knee-pain": () => import("./articles/breaststroke-knee-pain").then((module) => module.breaststrokeKneePain.article),
+  "golf-knee-pain": () => import("./articles/golf-knee-pain").then((module) => module.golfKneePain.article),
+  "hypermobile-knees": () => import("./articles/hypermobile-knees").then((module) => module.hypermobileKnees.article),
+  "hoffa-fat-pad-impingement": () => import("./articles/hoffa-fat-pad-impingement").then((module) => module.hoffaFatPadImpingement.article),
+  "knee-locking-vs-catching": () => import("./articles/knee-locking-vs-catching").then((module) => module.kneeLockingVsCatching.article),
+  "knee-pain-after-ankle-sprain": () => import("./articles/knee-pain-after-ankle-sprain").then((module) => module.kneePainAfterAnkleSprain.article),
   "can-running-shoes-cause-knee-pain": () => import("./articles/can-running-shoes-cause-knee-pain").then((module) => module.canRunningShoesCauseKneePain.article),
   "knee-injury-symptom-chart": () => import("./articles/knee-injury-symptom-chart").then((module) => module.kneeInjurySymptomChart.article),
   "meniscus-knee-pain-location-chart": () => import("./articles/meniscus-knee-pain-location-chart").then((module) => module.meniscusKneePainLocationChart.article),

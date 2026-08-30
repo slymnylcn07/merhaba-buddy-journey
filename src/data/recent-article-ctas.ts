@@ -1,4 +1,69 @@
+// Exact copy keeps the new guide cards and popups aligned with the same product.
+export const next15ArticleCTAs: Record<string, { headline: string; text: string }> = {
+  "walking-pad-knee-pain": {
+    headline: "Check shoe support for your walking-pad routine",
+    text: "Structured insoles fit compatible closed shoes during a measured desk-walking trial.",
+  },
+  "can-insoles-cause-knee-pain": {
+    headline: "Compare the fit before changing insoles again",
+    text: "Review the profile and shoe space against the fit checks in this guide.",
+  },
+  "leg-extension-knee-pain": {
+    headline: "Add a flexible layer to controlled gym sessions",
+    text: "A breathable sleeve provides a supported feel alongside your adjusted machine setup.",
+  },
+  "work-boots-knee-pain": {
+    headline: "Match insole support to your working-day footwear",
+    text: "Check boot-maker or workplace PPE approval first, then compare shoe volume and insole fit.",
+  },
+  "rowing-machine-knee-pain": {
+    headline: "Add flexible support to comfortable rowing sessions",
+    text: "A breathable sleeve provides a supported feel alongside your adjusted stroke and machine setup.",
+  },
+  "elliptical-knee-pain": {
+    headline: "Add flexible support to a measured elliptical session",
+    text: "Breathable compression provides a supported feel while you test a comfortable stride.",
+  },
+  "pedal-exerciser-knee-pain": {
+    headline: "Keep support flexible during gentle seated pedaling",
+    text: "A soft sleeve offers a supported feel alongside a stable chair and comfortable pedal setup.",
+  },
+  "compression-socks-vs-knee-sleeves": {
+    headline: "Choose lower-leg coverage for everyday routines",
+    text: "Knee-high stretch-knit socks cover the foot and calf rather than the knee joint.",
+  },
+  "best-slippers-knee-pain": {
+    headline: "Pair secure house shoes with flexible knee support",
+    text: "A breathable sleeve adds a supported feel during ordinary indoor movement.",
+  },
+  "breaststroke-knee-pain": {
+    headline: "Keep optional cold comfort simple after swimming",
+    text: "A reusable cold wrap is easy to prepare for an appropriate post-swim comfort routine.",
+  },
+  "golf-knee-pain": {
+    headline: "Add flexible support to your next measured round",
+    text: "Breathable compression fits alongside your adjusted swing and course-walking plan.",
+  },
+  "hypermobile-knees": {
+    headline: "Compare a flexible layer for everyday knee comfort",
+    text: "A soft sleeve offers a supported feel alongside the control work in your movement plan.",
+  },
+  "hoffa-fat-pad-impingement": {
+    headline: "Compare a simple cold-comfort option",
+    text: "A reusable cold wrap offers an optional comfort step alongside your assessed knee-care plan.",
+  },
+  "knee-locking-vs-catching": {
+    headline: "Compare everyday support after your knee is assessed",
+    text: "Review flexible sleeve fit for ordinary activity once your clinician has clarified the next step.",
+  },
+  "knee-pain-after-ankle-sprain": {
+    headline: "Review knee support after the injury check",
+    text: "A flexible sleeve is an optional comfort layer alongside an individually assessed recovery plan.",
+  },
+};
+
 export const recentArticleCTAs: Record<string, { headline: string; text: string }> = {
+  ...next15ArticleCTAs,
   "can-running-shoes-cause-knee-pain": {
     headline: "Test ground-up support without changing the whole shoe again",
     text: "Structured cushioning and arch support fit inside compatible running shoes when an insole is the single variable you want to compare.",

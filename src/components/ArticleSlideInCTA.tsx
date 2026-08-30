@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { trackEvent } from "@/hooks/use-google-analytics";
 import { trackClarityEvent } from "@/hooks/use-microsoft-clarity";
 import { pickProductForSlug, PRODUCT_RECS } from "@/lib/article-product-map";
+import { next15ArticleCTAs } from "@/data/recent-article-ctas";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getPublicProductHandle } from "@/lib/product-config";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
@@ -70,6 +71,9 @@ function readProductPopupSession(slug: string): ProductPopupSession | null {
 }
 
 function getContextualContent(slug: string): { hook: string; support: string } {
+  const exactCopy = next15ArticleCTAs[slug];
+  if (exactCopy) return { hook: exactCopy.headline, support: exactCopy.text };
+
   const s = slug.toLowerCase();
 
   if (s === "varicose-veins-knee-pain")
