@@ -247,6 +247,7 @@ export const nordicHamstringCurlKneeHealth: ArticleExport = {
           </p>
         </div>
 
+        <p>If the painful exercise is a hip hinge rather than a Nordic curl, compare the starting range and workload in the <Link to="/guides/deadlift-knee-pain">conventional, sumo, and Romanian deadlift knee pain guide</Link>. These lifts require their own setup review.</p>
         <h2>The Bottom Line</h2>
         <p>
           Nordic hamstring curls are a demanding eccentric knee-flexor exercise with consistent evidence for improving hamstring strength. Their effect on actual hamstring injury rates is promising but methodologically contested, so it should not be reduced to a guaranteed percentage. Those findings do not make the exercise a knee-pain cure or complete injury-prevention plan. Use a secure anchor, generous padding, meaningful assistance, and a dose you can recover from. Control is the progression; reaching the floor is optional.

@@ -265,6 +265,7 @@ export const kneeInjurySymptomChart: ArticleExport = {
           </p>
         </div>
 
+        <p>A backward-bending event has its own assessment questions in the <Link to="/guides/hyperextended-knee-injury">hyperextended knee injury guide</Link>. When the event happened on a ski slope, the <Link to="/guides/knee-pain-after-skiing">post-skiing knee pain guide</Link> adds equipment, terrain, and return-to-slope considerations.</p>
         <h2>The Bottom Line</h2>
         <p>
           A knee injury symptom chart should improve the description of an injury, not name it. Mechanism, swelling timing, pain location, stability, range, extensor function, and weight bearing are the useful layers. ACL, PCL, collateral-ligament, meniscus, tendon, and bone injuries share many symptoms and can occur together. Use the chart to prepare for the right level of assessment, then let examination and selective imaging establish what is actually injured.

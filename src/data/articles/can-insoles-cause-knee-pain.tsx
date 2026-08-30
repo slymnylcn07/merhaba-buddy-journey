@@ -160,6 +160,7 @@ export const canInsolesCauseKneePain: ArticleExport = {
         <h2>When to Get Medical Help</h2>
         <div className="my-8 rounded-3xl border border-amber-200 bg-amber-50 px-6 py-5 text-slate-800"><p>Seek prompt care for major swelling, inability to bear weight, locking, significant injury, or a hot red knee with fever. Stop the device and seek advice for numbness, skin injury, or worsening joint pain. People with diabetes, reduced sensation, circulation problems, or prescribed offloading should contact their clinical team early rather than relying on a home wearing-in test.</p></div>
 
+        <p>A proposed height correction is different from ordinary arch support. Before adding material under one foot, read the <Link to="/guides/leg-length-discrepancy-knee-pain">leg-length assessment and shoe-lift guide</Link> and clarify the measurement with the prescribing professional.</p>
         <h2>The bottom line</h2>
         <p>A useful insole should fit the shoe, fit its purpose, and remain compatible with comfortable movement. Check volume and placement first, follow the supplied introduction plan, and take repeatable knee pain seriously. If the problem persists, the right next step is a review of the device and the knee together, not a promise to wear it longer until it works.</p>
 

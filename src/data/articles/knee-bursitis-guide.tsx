@@ -288,6 +288,8 @@ export const kneeBursitisGuide: ArticleExport = {
           <li><Link to="/guides/knee-pain-locations-visual-guide" className="text-primary hover:underline">Knee Pain Locations Visual Guide</Link></li>
           <li><Link to="/guides/sudden-knee-pain-guide" className="text-primary hover:underline">Sudden Knee Pain Guide</Link></li>
           <li><Link to="/guides/plica-syndrome-knee-pain" className="text-primary hover:underline">Plica Syndrome Knee Pain</Link></li>
+          <li><Link to="/guides/pes-anserine-bursitis" className="text-primary hover:underline">Pes Anserine Bursitis: Pain Below the Inner Knee</Link></li>
+          <li><Link to="/guides/knee-pads-for-kneeling" className="text-primary hover:underline">Knee Pads and Task Changes for Kneeling</Link></li>
         </ul>
 
         <div className="mt-10 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground">

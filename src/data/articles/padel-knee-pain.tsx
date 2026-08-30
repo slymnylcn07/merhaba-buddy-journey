@@ -318,6 +318,7 @@ export const padelKneePain: ArticleExport = {
           </p>
         </div>
 
+        <p>If you also play badminton, its net lunges, overhead jumps, and recovery steps need a separate progression. The <Link to="/guides/badminton-knee-pain">badminton knee pain guide</Link> addresses those movement-specific demands.</p>
         <h2>The Bottom Line</h2>
         <p>
           Padel knee pain is best understood as a movement and workload problem until an examination shows a specific diagnosis. Braking, turning, low lunges, and landings each ask something different from the knee. Map the symptom to the movement, check what changed in recent weeks, and take swelling or instability seriously.

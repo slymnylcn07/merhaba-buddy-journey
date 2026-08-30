@@ -135,6 +135,7 @@ export const suddenKneePainGuide: ArticleExport = {
           <p>The speed at which knee pain develops often provides important clues about the underlying mechanism. Sudden pain frequently suggests a mechanical event (catch, pinch, slip) within the joint, while gradual pain typically points to cumulative tissue stress or inflammatory processes. Knowing which type you're experiencing helps you respond appropriately.</p>
         </InfoBox>
 
+        <p>For a hot swollen knee, the <Link to="/guides/gout-vs-pseudogout-knee">gout versus pseudogout comparison</Link> explains crystal-related possibilities and why infection must still be considered. If fluid testing is recommended, the <Link to="/guides/knee-aspiration-guide">knee aspiration guide</Link> explains preparation and aftercare questions.</p>
         <h2>Possible Causes Without an Obvious Injury</h2>
         <p>
           No remembered injury does not mean nothing important happened. A small twist may go unnoticed, and some inflammatory or medical conditions begin abruptly. The groups below explain why an examination and the associated signs matter more than matching one sentence to your pain.

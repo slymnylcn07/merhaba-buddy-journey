@@ -1,6 +1,21 @@
 export type GuideThumbnailLoader = () => Promise<string>;
 
 const thumbnailLoaders: Record<string, GuideThumbnailLoader> = {
+  "massage-gun-knee-pain": () => import("../assets/guide-thumbnails/further-15/massage-gun-knee-pain-thumb.webp").then((module) => module.default),
+  "knee-pads-for-kneeling": () => import("../assets/guide-thumbnails/further-15/knee-pads-for-kneeling-thumb.webp").then((module) => module.default),
+  "recumbent-vs-upright-bike-knees": () => import("../assets/guide-thumbnails/further-15/recumbent-vs-upright-bike-knees-thumb.webp").then((module) => module.default),
+  "walking-cane-knee-pain": () => import("../assets/guide-thumbnails/further-15/walking-cane-knee-pain-thumb.webp").then((module) => module.default),
+  "tai-chi-knee-osteoarthritis": () => import("../assets/guide-thumbnails/further-15/tai-chi-knee-osteoarthritis-thumb.webp").then((module) => module.default),
+  "deadlift-knee-pain": () => import("../assets/guide-thumbnails/further-15/deadlift-knee-pain-thumb.webp").then((module) => module.default),
+  "knee-pain-after-skiing": () => import("../assets/guide-thumbnails/further-15/knee-pain-after-skiing-thumb.webp").then((module) => module.default),
+  "badminton-knee-pain": () => import("../assets/guide-thumbnails/further-15/badminton-knee-pain-thumb.webp").then((module) => module.default),
+  "getting-up-from-floor-bad-knees": () => import("../assets/guide-thumbnails/further-15/getting-up-from-floor-bad-knees-thumb.webp").then((module) => module.default),
+  "thirty-second-chair-stand-test": () => import("../assets/guide-thumbnails/further-15/thirty-second-chair-stand-test-thumb.webp").then((module) => module.default),
+  "pes-anserine-bursitis": () => import("../assets/guide-thumbnails/further-15/pes-anserine-bursitis-thumb.webp").then((module) => module.default),
+  "gout-vs-pseudogout-knee": () => import("../assets/guide-thumbnails/further-15/gout-vs-pseudogout-knee-thumb.webp").then((module) => module.default),
+  "hyperextended-knee-injury": () => import("../assets/guide-thumbnails/further-15/hyperextended-knee-injury-thumb.webp").then((module) => module.default),
+  "leg-length-discrepancy-knee-pain": () => import("../assets/guide-thumbnails/further-15/leg-length-discrepancy-knee-pain-thumb.webp").then((module) => module.default),
+  "knee-aspiration-guide": () => import("../assets/guide-thumbnails/further-15/knee-aspiration-guide-thumb.webp").then((module) => module.default),
   "walking-pad-knee-pain": () => import("../assets/guide-thumbnails/next-15/walking-pad-knee-pain-thumb.webp").then((module) => module.default),
   "can-insoles-cause-knee-pain": () => import("../assets/guide-thumbnails/next-15/can-insoles-cause-knee-pain-thumb.webp").then((module) => module.default),
   "leg-extension-knee-pain": () => import("../assets/guide-thumbnails/next-15/leg-extension-knee-pain-thumb.webp").then((module) => module.default),

@@ -263,6 +263,7 @@ export const doKneeMassagersWork: ArticleExport = {
           </p>
         </InfoBox>
 
+        <p>Handheld percussion is a different tool from a wearable knee massager. The <Link to="/guides/massage-gun-knee-pain">massage gun guide</Link> explains muscle-area use, places to avoid, and why evidence from a short muscle study does not establish treatment for a knee joint.</p>
         <h2>Bottom Line</h2>
         <p>
           Knee massagers may work for temporary comfort, particularly when controlled warmth or vibration is a sensation you find useful. Heated, vibrating, and red-light models should still be judged by their actual specifications, fit, safety instructions, and return policy.
