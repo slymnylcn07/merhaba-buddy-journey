@@ -783,6 +783,24 @@ export const useCartStore = create<CartStore>()(
     {
       name: 'shopify-cart',
       storage: createJSONStorage(() => localStorage),
+      version: 1,
+      migrate: (persistedState, version) => {
+        const state = persistedState as Partial<CartStore>;
+
+        if (version < 1) {
+          return {
+            ...state,
+            cartId: null,
+            checkoutUrl: null,
+            cartLineIds: {},
+            cartCost: null,
+            discountCodes: [],
+            discountApplications: [],
+          };
+        }
+
+        return state;
+      },
       partialize: (state) => ({
         items: state.items,
         cartId: state.cartId,

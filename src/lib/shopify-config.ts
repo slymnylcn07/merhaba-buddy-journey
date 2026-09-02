@@ -28,13 +28,13 @@ export const SHOPIFY_ANALYTICS_STOREFRONT_TOKEN =
   SHOPIFY_STOREFRONT_TOKEN;
 
 /**
- * Keep every Storefront API request on the same sales channel as analytics.
- * Shopify Live View requires the token managed by the Hydrogen sales channel.
- * The original Headless token remains a fallback for environments that have
- * not received the Hydrogen variables yet.
+ * Commerce requests must use the Headless storefront token. Analytics keeps
+ * its separate Hydrogen token and storefront ID below, but using that token
+ * for cart creation makes Shopify checkout return shoppers to the undeployed
+ * Oxygen storefront instead of the public Vercel storefront.
  */
 export const SHOPIFY_API_STOREFRONT_TOKEN =
-  SHOPIFY_ANALYTICS_STOREFRONT_TOKEN;
+  SHOPIFY_STOREFRONT_TOKEN;
 
 export const SHOPIFY_ANALYTICS_STOREFRONT_ID =
   import.meta.env.VITE_SHOPIFY_ANALYTICS_STOREFRONT_ID || '';
