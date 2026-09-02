@@ -3,6 +3,15 @@ import App from "./App.tsx";
 import "./index.css";
 import { hasStoredMarket, initMarketFromGeo, shouldRefreshMarketFromGeo } from "./lib/market";
 
+// Clarity rebuilds recordings from the captured DOM instead of video. Keep the
+// production stylesheet URL available to its replay renderer without changing
+// the masking rules for customer or form content.
+document
+  .querySelectorAll<HTMLLinkElement>('link[rel="stylesheet"][href]')
+  .forEach((stylesheet) => {
+    stylesheet.setAttribute("data-clarity-unmask", "true");
+  });
+
 const redirectParam = new URLSearchParams(window.location.search).get("spa_redirect");
 if (redirectParam && redirectParam.startsWith("/")) {
   window.history.replaceState(null, "", redirectParam);
