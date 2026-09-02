@@ -1,12 +1,10 @@
 import {
   getTrackingValues,
-  SHOPIFY_STOREFRONT_ID_HEADER,
   SHOPIFY_UNIQUE_TOKEN_HEADER,
   SHOPIFY_VISIT_TOKEN_HEADER,
 } from '@shopify/hydrogen-react';
 import { getMarketCountry } from "@/lib/market";
 import {
-  SHOPIFY_ANALYTICS_STOREFRONT_ID,
   SHOPIFY_API_STOREFRONT_TOKEN,
   SHOPIFY_STOREFRONT_URL,
   isShopifyConfigured,
@@ -210,7 +208,7 @@ function isUsableTrackingToken(value?: string): value is string {
   return Boolean(value && !value.startsWith('00000000-'));
 }
 
-function getStorefrontTrackingHeaders(): Record<string, string> {
+function getCommerceTrackingHeaders(): Record<string, string> {
   if (typeof window === 'undefined') return {};
 
   const { uniqueToken, visitToken } = getTrackingValues();
@@ -222,10 +220,6 @@ function getStorefrontTrackingHeaders(): Record<string, string> {
   if (isUsableTrackingToken(visitToken)) {
     headers[SHOPIFY_VISIT_TOKEN_HEADER] = visitToken;
   }
-  if (SHOPIFY_ANALYTICS_STOREFRONT_ID) {
-    headers[SHOPIFY_STOREFRONT_ID_HEADER] = SHOPIFY_ANALYTICS_STOREFRONT_ID;
-  }
-
   return headers;
 }
 
@@ -494,7 +488,7 @@ export async function storefrontApiRequest<T>(
     headers: {
       'Content-Type': 'application/json',
       'X-Shopify-Storefront-Access-Token': SHOPIFY_API_STOREFRONT_TOKEN,
-      ...getStorefrontTrackingHeaders(),
+      ...getCommerceTrackingHeaders(),
     },
     body: JSON.stringify({ query, variables }),
   });

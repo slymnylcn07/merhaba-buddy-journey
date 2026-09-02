@@ -27,6 +27,14 @@
       "destination": "/index.html"
     },
     {
+      "source": "/cart",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/products/:path*",
+      "destination": "/index.html"
+    },
+    {
       "source": "/admin",
       "destination": "/index.html"
     },
@@ -36,6 +44,19 @@
     }
   ],
   "headers": [
+    {
+      "source": "/cart",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
     {
       "source": "/",
       "headers": [

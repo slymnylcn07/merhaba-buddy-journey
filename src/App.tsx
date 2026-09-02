@@ -1,9 +1,9 @@
-import { useState, lazy, Suspense } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useNavigate, useParams } from "react-router-dom";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
 import { useShopifyAnalytics } from "./hooks/use-shopify-analytics";
@@ -12,6 +12,8 @@ import { useMetaTracking } from "./hooks/use-meta-tracking";
 import { useMicrosoftClarity } from "./hooks/use-microsoft-clarity";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { useCartStore } from "./stores/cartStore";
+import { getPublicProductHandle } from "./lib/product-config";
 
 const ProductRoute = lazy(() => import("./pages/ProductRoute"));
 const TrackOrder = lazy(() => import("./pages/TrackOrder"));
@@ -40,6 +42,28 @@ const PageLoader = () => (
   </div>
 );
 
+const CartReturn = () => {
+  const navigate = useNavigate();
+  const setDrawerOpen = useCartStore((state) => state.setDrawerOpen);
+
+  useEffect(() => {
+    setDrawerOpen(true);
+    navigate("/shop", { replace: true });
+  }, [navigate, setDrawerOpen]);
+
+  return <PageLoader />;
+};
+
+const ShopifyProductReturn = () => {
+  const { handle = "" } = useParams();
+  return (
+    <Navigate
+      to={`/product/${getPublicProductHandle(decodeURIComponent(handle))}`}
+      replace
+    />
+  );
+};
+
 const FullAnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
   useShopifyAnalytics();
   useGoogleAnalytics();
@@ -65,7 +89,9 @@ const App = () => {
               <Suspense fallback={<PageLoader />}>
                 <Routes>
                   <Route path="/" element={<Index />} />
+                  <Route path="/cart" element={<CartReturn />} />
                   <Route path="/product/:handle" element={<ProductRoute />} />
+                  <Route path="/products/:handle" element={<ShopifyProductReturn />} />
                   <Route path="/track-order" element={<TrackOrder />} />
                   <Route path="/account" element={<Account />} />
                   <Route path="/terms-of-service" element={<TermsOfService />} />
