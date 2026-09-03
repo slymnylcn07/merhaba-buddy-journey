@@ -581,12 +581,30 @@ export function getProductProfile(productOrText: ShopifyProduct | string): Produ
     : `${productOrText.node.title} ${productOrText.node.handle} ${(productOrText.node.tags || []).join(" ")}`;
   const text = value.toLowerCase();
 
+  const productTitle = typeof productOrText === "string"
+    ? productOrText
+        .split("-")
+        .filter(Boolean)
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ")
+    : productOrText.node.title.trim();
+
+  const dynamicGenericProfile = (): ProductProfile => ({
+    ...genericProfile,
+    seoTitle: `${productTitle} | FlexiKnee`,
+    seoDescription: `Explore ${productTitle}, including available options, fit, everyday use, care guidance and secure checkout from FlexiKnee.`,
+    h1: productTitle,
+    ctaLabel: `View ${productTitle}`,
+    cardCopy: `Review ${productTitle} options, use guidance and current availability.`,
+  });
+
   if (/insole|orthotic|orthopedic|footbed|arch support/.test(text)) return profiles.insoles;
   if (/calf|lower leg|leg massager|air compression/.test(text)) return profiles["calf-massager"];
   if (/heated|heating|warming|heat wrap|usb/.test(text)) return profiles["heated-wrap"];
+  if (/compression socks?|support socks?|stockings?|varicose/.test(text)) return dynamicGenericProfile();
   if (/compression|sleeve|knee brace|support sleeve/.test(text)) return profiles["compression-sleeve"];
 
-  return genericProfile;
+  return dynamicGenericProfile();
 }
 
 export function getAllProductProfiles(): ProductProfile[] {
