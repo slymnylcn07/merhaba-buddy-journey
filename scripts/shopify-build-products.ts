@@ -21,7 +21,6 @@ function loadLocalEnv(): void {
 }
 
 const SHOPIFY_TO_PUBLIC_PRODUCT_HANDLES: Record<string, string> = {
-  "flexiknee™-compression-support-sleeve": "flexiknee-compression-support-sleeve",
   "360-electric-calf-massager-rechargeable-3-modes-air-compression-leg-massager-hot-compress-leg-massage-blood-circulation":
     "flexiknee-calf-massager",
   "electric-knee-heating-pad-a-usb-powered-warming-knee-strap-suitable-for-joints-with-adjustable-heating-band-ideal-for-daily":
