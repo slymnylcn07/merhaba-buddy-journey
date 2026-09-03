@@ -20,9 +20,7 @@ function loadLocalEnv(): void {
   }
 }
 
-const SHOPIFY_TO_PUBLIC_PRODUCT_HANDLES: Record<string, string> = {
-  "flexiknee™-compression-support-sleeve": "flexiknee-compression-support-sleeve",
-};
+const SHOPIFY_TO_PUBLIC_PRODUCT_HANDLES: Record<string, string> = {};
 
 export function getPublicBuildProductHandle(handle: string): string {
   return SHOPIFY_TO_PUBLIC_PRODUCT_HANDLES[handle] || handle;

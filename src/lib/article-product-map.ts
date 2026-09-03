@@ -53,7 +53,7 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
     fallbackImage: "/images/product-stories/insoles-closeup-fit.webp",
   },
   sleeve: {
-    handle: "flexiknee™-compression-support-sleeve",
+    handle: "flexiknee-compression-support-sleeve",
     title: "FlexiKnee Compression Support Sleeve",
     benefit:
       "Breathable compression for a supported, stable feel during walking, work, and training.",
