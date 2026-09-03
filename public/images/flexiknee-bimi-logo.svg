@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     baseProfile="tiny-ps"
+     version="1.2"
+     width="256"
+     height="256"
+     viewBox="0 0 256 256">
+  <title>FlexiKnee</title>
+  <desc>Official FlexiKnee brand mark</desc>
+  <rect width="256" height="256" rx="48" fill="#2563EB"/>
+  <path d="M74 52h118v36h-78v36h64v36h-64v68H74V52z" fill="#FFFFFF"/>
+</svg>
