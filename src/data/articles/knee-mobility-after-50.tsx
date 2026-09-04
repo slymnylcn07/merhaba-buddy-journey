@@ -1,6 +1,6 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import { InfoBox, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCallouts";
 import heroImage from "@/assets/article-hero-knee-mobility-after-50.jpg";
 import sectionJointChanges from "@/assets/package-4/age-knee-comfort-factors.svg";
 import sectionWarningSigns from "@/assets/article-section-mobility-warning-signs.jpg";

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox } from "@/components/ArticleCharts";
+import { InfoBox } from "@/components/ArticleCallouts";
 
 import heroImage from "@/assets/article-hero-knee-recovery-exercises.jpg";
 import quadStretchImg from "@/assets/article-knee-recovery-quad-stretch.jpg";

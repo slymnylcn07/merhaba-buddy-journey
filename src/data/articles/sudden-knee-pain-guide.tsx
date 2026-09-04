@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArticleExport } from "./types";
-import { InfoBox, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCallouts";
 
 import heroImage from "@/assets/article-hero-sudden-knee-pain.jpg";
 import sectionPainZones from "@/assets/fig-sudden-pain-zones-v2.svg";

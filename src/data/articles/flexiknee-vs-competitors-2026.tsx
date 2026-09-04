@@ -1,4 +1,4 @@
-import { InfoBox, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCallouts";
 import ArticleMidProductCTA from "@/components/ArticleMidProductCTA";
 import { Link } from "react-router-dom";
 import type { ArticleExport } from "./types";

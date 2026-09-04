@@ -4,7 +4,7 @@ import heroImage from "@/assets/article-hero-knee-pain-after-40.jpg";
 import diagramAgingComparison from "@/assets/diagram-knee-aging-comparison.jpg";
 import sectionMorningStiffness from "@/assets/article-section-morning-stiffness-40s.jpg";
 import sectionDailyComfort from "@/assets/article-section-daily-comfort-routine-40s.jpg";
-import { InfoBox, TipsList, RelatedGuideCard } from "@/components/ArticleCharts";
+import { InfoBox, TipsList, RelatedGuideCard } from "@/components/ArticleCallouts";
 
 export const kneePainAfter40: ArticleExport = {
   cta: "",

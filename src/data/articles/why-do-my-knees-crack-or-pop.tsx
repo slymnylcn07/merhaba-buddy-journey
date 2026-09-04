@@ -1,6 +1,6 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import { TipsList, InfoBox } from "@/components/ArticleCharts";
+import { TipsList, InfoBox } from "@/components/ArticleCallouts";
 import { KneeCrackingCausesChart, KneeSoundTypesChart } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-cracking-crepitus.jpg";
 import sectionSquatForm from "@/assets/article-section-knee-squat-form.jpg";

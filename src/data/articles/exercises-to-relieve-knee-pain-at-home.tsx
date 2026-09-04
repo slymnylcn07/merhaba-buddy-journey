@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArticleExport } from "./types";
-import { InfoBox } from "@/components/ArticleCharts";
+import { InfoBox } from "@/components/ArticleCallouts";
 
 import heroImage from "@/assets/article-hero-knee-exercises-home.jpg";
 import imgStraightLegRaise from "@/assets/article-straight-leg-raise-exercise.jpg";

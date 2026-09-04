@@ -1,5 +1,4 @@
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
-export { RelatedGuideCard } from "@/components/RelatedGuideCard";
 
 // Chart color palette
 const COLORS = ['#ef4444', '#f97316', '#22c55e', '#3b82f6', '#8b5cf6'];
@@ -255,38 +254,6 @@ export const RoutineAdherenceChart = () => {
         </ResponsiveContainer>
       </div>
       <p className="text-xs text-muted-foreground text-center mt-2">Initial enthusiasm often dips before habits become automatic</p>
-    </div>
-  );
-};
-
-// Info boxes for additional content
-export const InfoBox = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <div className="bg-primary/5 rounded-xl p-6 my-8 border-l-4 border-primary">
-    <h3 className="text-lg font-semibold text-foreground mb-3">{title}</h3>
-    <div className="text-muted-foreground font-light leading-relaxed text-sm">
-      {children}
-    </div>
-  </div>
-);
-
-
-export const TipsList = ({ tips, title, items }: { tips?: string[]; title?: string; items?: string[] }) => {
-  const listItems = items || tips || [];
-  const displayTitle = title || "Quick Tips";
-  
-  return (
-    <div className="bg-muted/20 rounded-xl p-6 my-8 border border-border/30">
-      <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-        <span className="text-primary">✓</span> {displayTitle}
-      </h3>
-      <ul className="space-y-2">
-        {listItems.map((tip, index) => (
-          <li key={index} className="flex items-start gap-3 text-muted-foreground text-sm">
-            <span className="text-primary mt-1">•</span>
-            <span>{tip}</span>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };

@@ -24,9 +24,11 @@ import {
   KneePainBelowKneecapChart,
   KneeInjuryTypeFrequencyChart,
   KneeInjuryRecoveryTimelineChart,
+} from "@/components/ArticleCharts";
+import {
   InfoBox,
   TipsList,
-} from "@/components/ArticleCharts";
+} from "@/components/ArticleCallouts";
 
 import heroKneePain from "@/assets/article-hero-knee-pain.jpg";
 import heroHeatTherapy from "@/assets/article-hero-heat-therapy.jpg";

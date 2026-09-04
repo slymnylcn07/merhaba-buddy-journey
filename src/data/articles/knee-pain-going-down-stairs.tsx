@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox } from "@/components/ArticleCharts";
+import { InfoBox } from "@/components/ArticleCallouts";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/article-hero-knee-pain-going-down-stairs.jpg";
 import stairDescentImage from "@/assets/article-stair-descent-control-v1.svg";

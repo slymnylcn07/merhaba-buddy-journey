@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCallouts";
 import type { ArticleExport } from "./types";
 // nextSlug/nextTitle updated to chain to pain-behind-kneecap
 

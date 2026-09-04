@@ -1,6 +1,6 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import { InfoBox, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCallouts";
 import heroImage from "@/assets/article-hero-knee-pain-long-walks.jpg";
 import sectionBiomechanics from "@/assets/article-section-walking-biomechanics-age.jpg";
 import sectionMuscleFatigue from "@/assets/article-section-muscle-fatigue-joint-pressure.jpg";
