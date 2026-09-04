@@ -8,6 +8,7 @@
     "build": "npm run validate:source && npm run validate:content && npm run validate:assets && vite build && tsx scripts/generate-sitemap.ts && tsx scripts/prerender.ts && npm run validate:build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
+    "typecheck": "tsc -b --pretty false",
     "preview": "vite preview",
     "validate:source": "tsx scripts/validate-source.ts",
     "validate:build": "tsx scripts/validate-build.ts",
