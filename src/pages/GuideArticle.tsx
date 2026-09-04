@@ -94,7 +94,7 @@ function countH2Headings(node: ReactNode): number {
   if (!isValidElement<{ children?: ReactNode }>(node)) return 0;
 
   if (node.type === "h2") return 1;
-  return Children.toArray(node.props.children).reduce(
+  return Children.toArray(node.props.children).reduce<number>(
     (total, child) => total + countH2Headings(child),
     0,
   );
@@ -126,7 +126,7 @@ function insertMidArticleProductCTA(content: ReactNode, cta: ReactNode): ReactNo
   if (headingsSeen < 2 && insertionIndex < 0) return content;
   if (insertionIndex < 0) insertionIndex = children.length;
 
-  const nextChildren = [...children];
+  const nextChildren: ReactNode[] = [...children];
   nextChildren.splice(insertionIndex, 0, cta);
   return <>{nextChildren}</>;
 }
