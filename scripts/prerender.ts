@@ -116,7 +116,9 @@ async function configurePage(page: Page): Promise<string[]> {
   });
 
   page.on("pageerror", (error) => {
-    browserErrors.push(`pageerror: ${error.message}`);
+    browserErrors.push(
+      `pageerror: ${error instanceof Error ? error.message : String(error)}`,
+    );
   });
 
   page.on("console", (message) => {
@@ -213,7 +215,7 @@ async function collectDiagnostics(page: Page): Promise<string> {
 async function renderRoute(
   browser: Browser,
   routeRecord: SeoRouteRecord,
-): Promise<{ ok: true } | { ok: false; message: string }> {
+): Promise<{ ok: true; message?: undefined } | { ok: false; message: string }> {
   let finalMessage = "Unknown prerender error";
 
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {

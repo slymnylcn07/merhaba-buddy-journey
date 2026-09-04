@@ -1,6 +1,6 @@
 import { ArticleExport } from "./types";
 import { Link } from "react-router-dom";
-import { TipsList, InfoBox } from "@/components/ArticleCharts";
+import { TipsList, InfoBox } from "@/components/ArticleCallouts";
 import { SittingKneePainCausesChart, SittingPositionImpactChart } from "@/components/ArticleCharts";
 import heroImage from "@/assets/article-hero-knee-pain-sitting-cross-legged.jpg";
 import sectionBackKneeSitting from "@/assets/article-section-back-knee-sitting.jpg";

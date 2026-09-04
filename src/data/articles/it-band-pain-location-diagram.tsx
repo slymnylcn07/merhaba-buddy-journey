@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox } from "@/components/ArticleCharts";
+import { InfoBox } from "@/components/ArticleCallouts";
 import heroImage from "@/assets/article-hero-it-band-diagram.jpg";
 import itBandSyndromeContext from "@/assets/article-hero-it-band-syndrome.jpg";
 import diagramFullPath from "@/assets/fig-itband-path-v2.svg";

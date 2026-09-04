@@ -46,13 +46,8 @@ function addAll(paths) {
 function mapFile(file) {
   const normalized = file.replaceAll("\\", "/");
   const articleMatch = /^src\/data\/articles\/([^/]+)\.tsx$/.exec(normalized);
-  if (articleMatch && articleMatch[1] !== "legacy-inline-articles") {
+  if (articleMatch) {
     add(`/guides/${articleMatch[1]}`);
-    return;
-  }
-
-  if (normalized === "src/data/articles/legacy-inline-articles.tsx") {
-    addAll(guidePaths);
     return;
   }
 
@@ -76,6 +71,8 @@ function mapFile(file) {
     "src/data/recent-guides-data.ts",
     "src/data/guide-date-overrides.ts",
     "src/data/article-source-standards.ts",
+    "src/components/ArticleCallouts.tsx",
+    "src/components/ArticleCharts.tsx",
     "src/components/ArticleNewsletterCard.tsx",
     "src/components/ArticleQuizCard.tsx",
     "src/components/ArticleSlideInCTA.tsx",

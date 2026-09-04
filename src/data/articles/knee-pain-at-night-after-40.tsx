@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import ArticleFaqAccordion from "@/components/ArticleFaqAccordion";
-import { InfoBox, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCallouts";
 import heroImage from "@/assets/article-hero-night-knee-pain-40.jpg";
 import sectionNightStiffnessCycle from "@/assets/package-4/evening-morning-comfort-cycle.svg";
 import sectionSleepingPositionsImpact from "@/assets/article-section-sleeping-positions-impact.jpg";

@@ -4,7 +4,7 @@ import heroImage from "@/assets/article-hero-joint-aging-changes.jpg";
 import sectionProtectionHabits from "@/assets/article-section-joint-protection-habits.jpg";
 import sectionMorningStiffness from "@/assets/article-section-morning-stiffness-40s.jpg";
 import diagramAgingComparison from "@/assets/diagram-knee-aging-comparison.jpg";
-import { InfoBox, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCallouts";
 
 export const whyKneePainGetsWorseWithAge: ArticleExport = {
   cta: "",

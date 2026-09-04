@@ -1,7 +1,7 @@
 import {
   InfoBox,
   TipsList,
-} from "@/components/ArticleCharts";
+} from "@/components/ArticleCallouts";
 import { Link } from "react-router-dom";
 import type { ArticleExport } from "./types";
 

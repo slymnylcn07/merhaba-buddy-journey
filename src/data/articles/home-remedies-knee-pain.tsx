@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArticleExport } from "./types";
-import { InfoBox } from "@/components/ArticleCharts";
+import { InfoBox } from "@/components/ArticleCallouts";
 
 import heroImage from "@/assets/article-hero-home-remedies-knee-pain.jpg";
 import imgKneeAnatomy from "@/assets/article-home-remedies-knee-anatomy.jpg";

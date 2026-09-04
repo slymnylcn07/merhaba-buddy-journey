@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { InfoBox, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCallouts";
 
 import heroImage from "@/assets/hero-knee-clicking-v2.svg";
 import sectionBendingSquatting from "@/assets/article-section-bending-squatting-motion.jpg";

@@ -1,7 +1,7 @@
 import {
   InfoBox,
   TipsList,
-} from "@/components/ArticleCharts";
+} from "@/components/ArticleCallouts";
 import { Link } from "react-router-dom";
 import type { ArticleExport } from "./types";
 import { MAIN_PRODUCT_RATING, MAIN_PRODUCT_REVIEW_COUNT } from "@/lib/main-product-rating";

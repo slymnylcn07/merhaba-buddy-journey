@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArticleExport } from "./types";
-import { InfoBox, TipsList } from "@/components/ArticleCharts";
+import { InfoBox, TipsList } from "@/components/ArticleCallouts";
 
 import heroImage from "@/assets/thumb-cold-weather-knees.svg";
 import sectionBarometricPressure from "@/assets/fig-cold-barometric-v1.svg";
