@@ -46,13 +46,8 @@ function addAll(paths) {
 function mapFile(file) {
   const normalized = file.replaceAll("\\", "/");
   const articleMatch = /^src\/data\/articles\/([^/]+)\.tsx$/.exec(normalized);
-  if (articleMatch && articleMatch[1] !== "legacy-inline-articles") {
+  if (articleMatch) {
     add(`/guides/${articleMatch[1]}`);
-    return;
-  }
-
-  if (normalized === "src/data/articles/legacy-inline-articles.tsx") {
-    addAll(guidePaths);
     return;
   }
 
