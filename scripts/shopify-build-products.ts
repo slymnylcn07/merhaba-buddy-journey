@@ -38,6 +38,7 @@ export function getPublicBuildProductHandle(handle: string): string {
 const FALLBACK_PRODUCT_HANDLES = [
   "knee-massager-smart-red-light-and-massage-therapy",
   "flexiknee-compression-support-sleeve",
+  "flexiknee-everyday-compression-socks",
   "flexiknee-calf-massager",
   "flexiknee-usb-heated-knee-wrap",
   "flexiknee-sport-orthopedic-insoles",
