@@ -71,6 +71,8 @@ function mapFile(file) {
     "src/data/recent-guides-data.ts",
     "src/data/guide-date-overrides.ts",
     "src/data/article-source-standards.ts",
+    "src/components/ArticleCallouts.tsx",
+    "src/components/ArticleCharts.tsx",
     "src/components/ArticleNewsletterCard.tsx",
     "src/components/ArticleQuizCard.tsx",
     "src/components/ArticleSlideInCTA.tsx",
