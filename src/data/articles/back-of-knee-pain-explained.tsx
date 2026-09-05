@@ -51,7 +51,7 @@ export const backOfKneePainExplained: ArticleExport = {
         <p>This anatomy explains why a location map can guide questions but cannot diagnose a structure. A long pulling sensation into the thigh differs from a soft central lump, a joint-line catch, or calf swelling with skin change.</p>
 
         <h2>Pain When Straightening the Leg</h2>
-        <p>Google Trends shows strong growth in searches for pain behind the knee when bending and straightening. Extension lengthens the hamstrings and calf across the back of the knee while changing pressure in the joint. A muscle or tendon pattern may feel like a long pull and change with hip or ankle position. A cyst or joint-effusion pattern may feel full or blocked. A true inability to straighten should not be pushed through.</p>
+        <p>Pain behind the knee can feel different when bending and straightening. Extension lengthens the hamstrings and calf across the back of the knee while changing pressure in the joint. A muscle or tendon pattern may feel like a long pull and change with hip or ankle position. A cyst or joint-effusion pattern may feel full or blocked. A true inability to straighten should not be pushed through.</p>
         <figure className="my-8"><img src={sectionLegStraight} alt="Person checking comfortable knee straightening without forcing the range" className="w-full rounded-xl" loading="lazy" /><figcaption className="mt-3 text-center text-sm text-muted-foreground">Compare the usual range with the other side, but do not force a swollen or locked knee.</figcaption></figure>
 
         <h2>Pain Behind the Knee When Bending</h2>

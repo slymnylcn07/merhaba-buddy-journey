@@ -79,7 +79,7 @@ const kneePainDuringYoga: ArticleExport = {
         <figure className="my-8"><img src={imgCorrectIncorrect} alt="Comparison of a supported yoga knee position and a forced painful position" className="w-full rounded-xl" loading="lazy" /><figcaption className="mt-3 text-center text-sm text-muted-foreground">The correct version is the one that meets the pose goal without pain or forced rotation.</figcaption></figure>
 
         <h2>Back-of-Knee Pain During Yoga</h2>
-        <p>Google Trends shows growing interest in back-of-knee pain alongside yoga searches. In a straight-leg forward fold, the sensation may come from the hamstring or calf, but sharp pain, nerve-like symptoms, or a blocked knee should not be treated as a deeper-stretch problem. In child's pose or another deep bend, a cyst or joint fullness may be compressed. A visible lump, calf swelling, or persistent loss of motion deserves assessment.</p>
+        <p>Back-of-knee pain during yoga depends partly on the position. In a straight-leg forward fold, the sensation may come from the hamstring or calf, but sharp pain, nerve-like symptoms, or a blocked knee should not be treated as a deeper-stretch problem. In child's pose or another deep bend, a cyst or joint fullness may be compressed. A visible lump, calf swelling, or persistent loss of motion deserves assessment.</p>
 
         <h2>Knee Pain After Yoga vs During a Pose</h2>
         <p>Pain during one pose provides a specific range, pressure, or alignment clue. Pain that appears later may reflect total time, repeated kneeling, an unfamiliar sequence, or a session that exceeded current capacity. Record the exact poses and the following-morning response. Reduce one variable in the next session rather than changing the entire practice.</p>

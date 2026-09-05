@@ -73,7 +73,7 @@ export const itBandPainLocationDiagram = {
             decoding="async"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            The retired IT-band overview visual is reused here to connect the outer-thigh path with the lateral knee symptom zone.
+            The IT band runs along the outer thigh toward the outside of the knee.
           </figcaption>
         </figure>
 

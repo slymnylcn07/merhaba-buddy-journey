@@ -74,7 +74,7 @@ export const bestRunningShoesKneePain: ArticleExport = {
             decoding="async"
           />
           <figcaption className="text-sm text-muted-foreground mt-3 text-center">
-            The retired footwear-discomfort visual is reused in the active guide because it directly supports the fit and wear-check section.
+            Check shoe fit and wear patterns alongside how your knees feel during a run.
           </figcaption>
         </figure>
 
@@ -301,6 +301,11 @@ export const bestRunningShoesKneePain: ArticleExport = {
         </p>
 
         <h2>What Actually Matters More Than Brand</h2>
+        <p>
+          For footwear worn around the house between runs, our{" "}
+          <Link to="/guides/best-slippers-knee-pain" className="text-primary hover:underline">slippers and house-shoe guide</Link>{" "}
+          compares indoor fit, grip, cushioning, and heel security.
+        </p>
         <p>
           While brands provide useful starting points, several factors matter more than the logo on your shoe when it comes to <strong>running shoes knee comfort</strong>:
         </p>

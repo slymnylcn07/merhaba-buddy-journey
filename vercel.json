@@ -536,6 +536,11 @@
       "permanent": true
     },
     {
+      "source": "/product/flexiknee-smart-heated-knee-massager",
+      "destination": "/product/knee-massager-smart-red-light-and-massage-therapy",
+      "permanent": true
+    },
+    {
       "source": "/product/multifunctional-smart-cordless-knee-massager-vibration-knee-relaxing-massage-machine-joint-knee-device-gifts-for-grandma-grandpa",
       "destination": "/product/knee-massager-smart-red-light-and-massage-therapy",
       "permanent": true

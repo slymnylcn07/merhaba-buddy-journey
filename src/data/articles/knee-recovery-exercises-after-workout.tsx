@@ -177,6 +177,9 @@ const articleContent = (
     <p>
       After squats, lunges, leg press, or Bulgarian split squats, reduce the bridge and straight-leg raise repetitions if the quadriceps are heavily fatigued. The purpose is to restore easy movement, not to create another training stimulus. For exercise-specific causes and technique factors, see <Link to="/guides/knee-ache-after-leg-workouts" className="text-primary hover:underline">knee ache after leg workouts</Link>.
     </p>
+    <p>
+      For a separate strength-training session, our <Link to="/guides/nordic-hamstring-curl-knee-health" className="text-primary hover:underline">Nordic hamstring curl guide</Link> covers assistance, knee padding, and exercise demands. Nordic curls are demanding strength work, not an addition to this gentle cooldown.
+    </p>
 
     <h2>Should You Use Heat, Cold, or Compression?</h2>
     <p>

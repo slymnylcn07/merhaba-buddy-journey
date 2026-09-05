@@ -61,7 +61,7 @@ export const saphenousNerveKneePain: ArticleExport = {
         </div>
 
         <p>
-          Google Trends search language favors "saphenous nerve pain" over more technical phrases such as "saphenous neuralgia." People also search for the nerve's distribution because location is one of the best clues. That makes a map useful, but a map is not a diagnosis. Small sensory branches vary, and tendon, bursa, meniscus, arthritis, and lumbar nerve problems can overlap the same inner-knee territory.
+          "Saphenous neuralgia" is a technical term for saphenous nerve pain. A map of the nerve's distribution can help describe where symptoms occur, but a map is not a diagnosis. Small sensory branches vary, and tendon, bursa, meniscus, arthritis, and lumbar nerve problems can overlap the same inner-knee territory.
         </p>
 
         <h2>Where the Saphenous Nerve Travels</h2>

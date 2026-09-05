@@ -164,8 +164,8 @@ function extractGuideContent(html: string): string {
 }
 
 function words(value: string): string[] {
-  return (value.toLowerCase().match(/[a-z0-9]+(?:'[a-z0-9]+)?/g) || [])
-    .filter((word) => word.length > 1);
+  const tokens: string[] = value.toLowerCase().match(/[a-z0-9]+(?:'[a-z0-9]+)?/g) || [];
+  return tokens.filter((word) => word.length > 1);
 }
 
 function createShingles(tokens: string[], width = 7): Set<string> {

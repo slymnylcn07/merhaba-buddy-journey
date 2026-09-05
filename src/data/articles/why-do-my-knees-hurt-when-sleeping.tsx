@@ -359,6 +359,11 @@ export const whyDoMyKneesHurtWhenSleeping: ArticleExport = {
           knee in a deep bend and create a different problem.
         </p>
 
+        <p>
+          For a closer look at side- and back-sleeping setups, see our{" "}
+          <Link to="/guides/how-to-sleep-with-knee-pain">sleeping positions and pillow placement guide</Link>.
+        </p>
+
         <h2>A Safe Nighttime Knee Comfort Routine</h2>
         <ol>
           <li>

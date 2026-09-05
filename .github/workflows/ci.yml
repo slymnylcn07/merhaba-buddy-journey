@@ -51,5 +51,8 @@ jobs:
       - name: Test metadata guardrails
         run: npm run test:metadata
 
+      - name: Test article quick answers
+        run: npm run test:quick-answer
+
       - name: Validate performance assets
         run: npm run validate:assets

@@ -59,7 +59,7 @@ export const osteochondralLesionKnee: ArticleExport = {
         </div>
 
         <p>
-          Google Trends shows that people use both technical and everyday language. "Osteochondral lesion knee" and "osteochondral defect knee" are specific searches, while "knee cartilage injury" has broader interest. This article connects those terms without implying that every cartilage injury reaches the underlying bone or that every MRI defect causes pain.
+          "Osteochondral lesion" and "osteochondral defect" describe a more specific finding than the broader term "knee cartilage injury." Not every cartilage injury reaches the underlying bone, and not every MRI defect causes pain.
         </p>
 
         <h2>What Does Osteochondral Mean?</h2>

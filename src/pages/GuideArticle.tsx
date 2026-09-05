@@ -1,7 +1,6 @@
 import {
   Children,
   Fragment,
-  cloneElement,
   isValidElement,
   useEffect,
   useState,
@@ -35,6 +34,7 @@ import { articleEditorialCrosslinks } from "@/data/article-editorial-crosslinks"
 import { getRelatedGuides } from "@/data/related-guides";
 import { recordGuideView } from "@/lib/guide-popularity";
 import { markPageReady } from "@/lib/page-ready";
+import { resolveArticleQuickAnswer } from "@/lib/article-quick-answer";
 import type { ArticleData } from "@/data/articles/types";
 import {
   MEDICAL_REVIEW_DATE,
@@ -43,33 +43,6 @@ import {
 
 const allGuidesData = [...guidesData, ...recentGuidesData];
 const allArticleCTAs = { ...articleCTAs, ...recentArticleCTAs };
-
-function containsQuickAnswerLabel(node: ReactNode): boolean {
-  if (typeof node === "string") return node.trim().toLowerCase() === "quick answer";
-  if (typeof node === "number" || node == null || typeof node === "boolean") return false;
-  if (Array.isArray(node)) return node.some(containsQuickAnswerLabel);
-  if (!isValidElement<{ title?: ReactNode; children?: ReactNode }>(node)) return false;
-
-  if (containsQuickAnswerLabel(node.props.title)) return true;
-  return Children.toArray(node.props.children).some(containsQuickAnswerLabel);
-}
-
-function removeLegacyQuickAnswer(content: ReactNode): ReactNode {
-  if (!isValidElement<{ children?: ReactNode }>(content) || content.type !== Fragment) {
-    return content;
-  }
-
-  let removed = false;
-  const children = Children.map(content.props.children, (child) => {
-    if (!removed && containsQuickAnswerLabel(child)) {
-      removed = true;
-      return null;
-    }
-    return child;
-  });
-
-  return cloneElement(content, undefined, children);
-}
 
 function containsVisibleFaq(node: ReactNode): boolean {
   if (typeof node === "string") {
@@ -237,11 +210,11 @@ const GuideArticle = () => {
 
   const readingTime = allGuidesData.find((guide) => guide.slug === article.slug)?.readTime ?? 8;
   const relatedGuides = getRelatedGuides(article.slug, allGuidesData, 3);
-  const standardizedArticleContent = removeLegacyQuickAnswer(article.content);
+  const quickAnswer = resolveArticleQuickAnswer(article.content, article.quickAnswer, article.intro);
   const hasVisibleFaq = containsVisibleFaq(article.content);
   const ctaCopy = allArticleCTAs[article.slug];
   const articleContentWithMidCTA = insertMidArticleProductCTA(
-    standardizedArticleContent,
+    quickAnswer.content,
     <ArticleMidProductCTA
       key={`mid-product-${article.slug}`}
       articleSlug={article.slug}
@@ -469,7 +442,7 @@ const GuideArticle = () => {
                   </p>
                 )}
 
-                {article.quickAnswer && (
+                {quickAnswer.showIntro && (
                   <p className="mb-6 text-lg font-normal leading-8 text-slate-700">
                     {article.intro}
                   </p>
@@ -486,9 +459,9 @@ const GuideArticle = () => {
                   <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
                     Quick Answer
                   </p>
-                  <p className="mb-0 text-lg font-normal leading-8 text-slate-700">
-                    {article.quickAnswer || article.intro}
-                  </p>
+                  <div className="text-lg font-normal leading-8 text-slate-700 [&_p]:mb-3 [&_p:last-child]:mb-0 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_a]:text-blue-700 [&_a]:underline">
+                    {typeof quickAnswer.answer === "string" ? <p>{quickAnswer.answer}</p> : quickAnswer.answer}
+                  </div>
                 </div>
 
                 <ArticleSearchNextStep articleSlug={article.slug} />

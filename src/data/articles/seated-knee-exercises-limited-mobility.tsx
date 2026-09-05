@@ -95,7 +95,7 @@ export const seatedKneeExercisesLimitedMobility: ArticleExport = {
     content: (
       <>
         <p>
-          Google Trends shows that the wider phrase <strong>chair exercises for seniors</strong> has established demand, while related searches for <strong>heel slides</strong> and <strong>seated leg extension</strong> have risen. This guide uses those familiar movements but keeps the promise narrow: a knee-focused chair routine for someone who needs a stable, lower-demand starting position.
+          Familiar <strong>chair exercises for seniors</strong>, such as <strong>heel slides</strong> and <strong>seated leg extension</strong>, can be adapted into a knee-focused routine. The starting point here is a stable chair and a lower-demand position, with movements chosen for the person's abilities.
         </p>
         <p>
           It does not duplicate our general <Link to="/guides/exercises-to-relieve-knee-pain-at-home" className={linkClass}>home knee exercise guide</Link>, which includes floor and standing work. It also does not replace a post-operative protocol. If a surgeon or physiotherapist gave range, weight-bearing, or repetition limits, those instructions take priority.

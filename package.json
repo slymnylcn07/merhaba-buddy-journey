@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "typecheck": "tsc -b --pretty false",
     "test:metadata": "tsx --test scripts/seo-metadata.test.ts",
+    "test:quick-answer": "tsx --test scripts/article-quick-answer.test.ts",
     "preview": "vite preview",
     "validate:source": "tsx scripts/validate-source.ts",
     "validate:build": "tsx scripts/validate-build.ts",
