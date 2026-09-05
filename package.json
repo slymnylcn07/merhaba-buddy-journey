@@ -9,6 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "typecheck": "tsc -b --pretty false",
+    "test:metadata": "tsx --test scripts/seo-metadata.test.ts",
     "preview": "vite preview",
     "validate:source": "tsx scripts/validate-source.ts",
     "validate:build": "tsx scripts/validate-build.ts",

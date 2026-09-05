@@ -48,5 +48,8 @@ jobs:
       - name: Validate content registry
         run: npm run validate:content
 
+      - name: Test metadata guardrails
+        run: npm run test:metadata
+
       - name: Validate performance assets
         run: npm run validate:assets
