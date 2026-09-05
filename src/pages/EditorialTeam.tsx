@@ -7,30 +7,35 @@ import { SUPPORT_EMAIL } from "@/lib/support-config";
 const teamProfiles = [
   {
     name: "Ethan Walker",
+    slug: "ethan-walker",
     role: "Research & Sources Editor",
     image: "/images/editorial-team/ethan-walker.jpg",
     text: "Organizes source reviews and checks that factual statements are matched with relevant, trustworthy references.",
   },
   {
     name: "Marcus Bennett",
+    slug: "marcus-bennett",
     role: "Movement Content Editor",
     image: "/images/editorial-team/marcus-bennett.jpg",
     text: "Shapes practical movement and daily-routine sections so they remain clear, balanced, and easy to follow.",
   },
   {
     name: "Daniel Reyes",
+    slug: "daniel-reyes",
     role: "Visual Content Editor",
     image: "/images/editorial-team/daniel-reyes.jpg",
     text: "Plans diagrams, comparison visuals, tables, and page structure to make longer guides easier to understand.",
   },
   {
     name: "Oliver Grant",
+    slug: "oliver-grant",
     role: "Product Content Reviewer",
     image: "/images/editorial-team/oliver-grant.jpg",
     text: "Reviews product-related sections for clarity, limitations, accurate feature descriptions, and commercial disclosure.",
   },
   {
     name: "Maya Collins",
+    slug: "maya-collins",
     role: "Copy & Clarity Editor",
     image: "/images/editorial-team/maya-collins.jpg",
     text: "Edits language for readability, removes unnecessary claims, and keeps the tone useful rather than promotional.",
@@ -62,6 +67,24 @@ const principles = [
 
 const EditorialTeam = () => {
   const canonicalUrl = "https://flexi-knee.com/editorial-team";
+  // Each editor is emitted as a Person entity with a stable @id, so an article
+  // byline can point at the individual rather than only at the organisation.
+  // Add `sameAs` entries here once an editor has a verifiable public profile.
+  const personSchemas = teamProfiles.map((member) => ({
+    "@type": "Person",
+    "@id": `${canonicalUrl}#${member.slug}`,
+    name: member.name,
+    jobTitle: member.role,
+    description: member.text,
+    image: `https://flexi-knee.com${member.image}`,
+    url: `${canonicalUrl}#${member.slug}`,
+    worksFor: {
+      "@type": "Organization",
+      name: "FlexiKnee",
+      url: "https://flexi-knee.com",
+    },
+  }));
+
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
@@ -72,7 +95,9 @@ const EditorialTeam = () => {
       "@type": "Organization",
       name: "FlexiKnee",
       url: "https://flexi-knee.com",
+      employee: personSchemas,
     },
+    mainEntity: personSchemas,
   };
 
   return (
@@ -121,7 +146,11 @@ const EditorialTeam = () => {
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {teamProfiles.map((member) => (
-              <article key={member.name} className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm">
+              <article
+                key={member.name}
+                id={member.slug}
+                className="scroll-mt-24 rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm"
+              >
                 <img
                   src={member.image}
                   alt={`Profile image of ${member.name}, ${member.role}`}
