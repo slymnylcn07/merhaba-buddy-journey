@@ -36,6 +36,10 @@ import { getRelatedGuides } from "@/data/related-guides";
 import { recordGuideView } from "@/lib/guide-popularity";
 import { markPageReady } from "@/lib/page-ready";
 import type { ArticleData } from "@/data/articles/types";
+import {
+  MEDICAL_REVIEW_DATE,
+  buildReviewerPersonSchema,
+} from "@/data/medical-reviewer";
 
 const allGuidesData = [...guidesData, ...recentGuidesData];
 const allArticleCTAs = { ...articleCTAs, ...recentArticleCTAs };
@@ -303,6 +307,8 @@ const GuideArticle = () => {
         "height": 160
       }
     },
+    "reviewedBy": buildReviewerPersonSchema(),
+    "lastReviewed": MEDICAL_REVIEW_DATE,
     "inLanguage": "en",
     "articleSection": "Guides",
     "keywords": article.seoTags || getKeywords(article.title),

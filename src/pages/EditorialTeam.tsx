@@ -3,37 +3,56 @@ import { BookOpenCheck, CheckCircle2, RefreshCw, Scale, ShieldCheck } from "luci
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SUPPORT_EMAIL } from "@/lib/support-config";
+import {
+  MEDICAL_REVIEWER,
+  MEDICAL_REVIEW_DATE,
+  buildReviewerPersonSchema,
+  formatReviewDate,
+} from "@/data/medical-reviewer";
 
 const teamProfiles = [
   {
     name: "Ethan Walker",
+    slug: "ethan-walker",
     role: "Research & Sources Editor",
     image: "/images/editorial-team/ethan-walker.jpg",
     text: "Organizes source reviews and checks that factual statements are matched with relevant, trustworthy references.",
   },
   {
     name: "Marcus Bennett",
+    slug: "marcus-bennett",
     role: "Movement Content Editor",
     image: "/images/editorial-team/marcus-bennett.jpg",
     text: "Shapes practical movement and daily-routine sections so they remain clear, balanced, and easy to follow.",
   },
   {
     name: "Daniel Reyes",
+    slug: "daniel-reyes",
     role: "Visual Content Editor",
     image: "/images/editorial-team/daniel-reyes.jpg",
     text: "Plans diagrams, comparison visuals, tables, and page structure to make longer guides easier to understand.",
   },
   {
     name: "Oliver Grant",
+    slug: "oliver-grant",
     role: "Product Content Reviewer",
     image: "/images/editorial-team/oliver-grant.jpg",
     text: "Reviews product-related sections for clarity, limitations, accurate feature descriptions, and commercial disclosure.",
   },
   {
     name: "Maya Collins",
+    slug: "maya-collins",
     role: "Copy & Clarity Editor",
     image: "/images/editorial-team/maya-collins.jpg",
     text: "Edits language for readability, removes unnecessary claims, and keeps the tone useful rather than promotional.",
+  },
+  {
+    name: MEDICAL_REVIEWER.name,
+    slug: MEDICAL_REVIEWER.slug,
+    role: MEDICAL_REVIEWER.role,
+    image: MEDICAL_REVIEWER.image,
+    text: MEDICAL_REVIEWER.bio,
+    credential: MEDICAL_REVIEWER.credential,
   },
 ];
 
@@ -62,6 +81,36 @@ const principles = [
 
 const EditorialTeam = () => {
   const canonicalUrl = "https://flexi-knee.com/editorial-team";
+  // Each editor is emitted as a Person entity with a stable @id, so an article
+  // byline can point at the individual rather than only at the organisation.
+  // Add `sameAs` entries here once an editor has a verifiable public profile.
+  const personSchemas = teamProfiles.map((member) =>
+    member.slug === MEDICAL_REVIEWER.slug
+      ? // The clinical reviewer carries credentials, so he gets the richer node.
+        {
+          ...buildReviewerPersonSchema(),
+          worksFor: {
+            "@type": "Organization",
+            name: "FlexiKnee",
+            url: "https://flexi-knee.com",
+          },
+        }
+      : {
+          "@type": "Person",
+          "@id": `${canonicalUrl}#${member.slug}`,
+          name: member.name,
+          jobTitle: member.role,
+          description: member.text,
+          ...(member.image ? { image: `https://flexi-knee.com${member.image}` } : {}),
+          url: `${canonicalUrl}#${member.slug}`,
+          worksFor: {
+            "@type": "Organization",
+            name: "FlexiKnee",
+            url: "https://flexi-knee.com",
+          },
+        },
+  );
+
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
@@ -72,7 +121,9 @@ const EditorialTeam = () => {
       "@type": "Organization",
       name: "FlexiKnee",
       url: "https://flexi-knee.com",
+      employee: personSchemas,
     },
+    mainEntity: personSchemas,
   };
 
   return (
@@ -121,16 +172,37 @@ const EditorialTeam = () => {
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {teamProfiles.map((member) => (
-              <article key={member.name} className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-                <img
-                  src={member.image}
-                  alt={`Profile image of ${member.name}, ${member.role}`}
-                  width={800}
-                  height={800}
-                  loading="lazy"
-                  className="mx-auto h-32 w-32 rounded-full border border-slate-200 bg-slate-100 object-cover shadow-sm"
-                />
-                <h3 className="mt-5 text-xl font-semibold text-slate-950">{member.name}</h3>
+              <article
+                key={member.name}
+                id={member.slug}
+                className="scroll-mt-24 rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm"
+              >
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={`Profile image of ${member.name}, ${member.role}`}
+                    width={800}
+                    height={800}
+                    loading="lazy"
+                    className="mx-auto h-32 w-32 rounded-full border border-slate-200 bg-slate-100 object-cover shadow-sm"
+                  />
+                ) : (
+                  <div
+                    aria-hidden="true"
+                    className="mx-auto flex h-32 w-32 items-center justify-center rounded-full border border-slate-200 bg-slate-100 text-3xl font-semibold text-slate-500 shadow-sm"
+                  >
+                    {member.name
+                      .split(" ")
+                      .map((part) => part[0])
+                      .join("")}
+                  </div>
+                )}
+                <h3 className="mt-5 text-xl font-semibold text-slate-950">
+                  {member.name}
+                  {"credential" in member && member.credential ? (
+                    <span className="text-slate-500">, {member.credential}</span>
+                  ) : null}
+                </h3>
                 <p className="mt-1 text-sm font-semibold text-blue-700">{member.role}</p>
                 <p className="mt-4 text-sm leading-7 text-slate-600">{member.text}</p>
               </article>
@@ -153,14 +225,14 @@ const EditorialTeam = () => {
             <section>
               <h2 className="text-2xl font-semibold text-slate-950">Who is listed as the author?</h2>
               <p className="mt-3 leading-8 text-slate-600">
-                Guides are published under <strong className="text-slate-950">FlexiKnee Editorial Team</strong>, the editorial organization responsible for researching, editing, and maintaining the content. Software tools are not presented as the author because they do not accept editorial responsibility.
+                Guides are published under <strong className="text-slate-950">FlexiKnee Editorial Team</strong>, the editorial organization responsible for researching, editing, and maintaining the content. Software tools are not presented as the author because they do not accept editorial responsibility. Clinical review is credited separately to a named physical therapist, so readers can tell editorial work apart from clinical review.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-slate-950">Medical scope and limitations</h2>
               <p className="mt-3 leading-8 text-slate-600">
-                FlexiKnee content is general education, not diagnosis, treatment, or individualized medical advice. Unless a guide explicitly identifies a qualified medical reviewer, it should not be described as medically reviewed. Severe, sudden, unexplained, or worsening symptoms should be assessed by an appropriate healthcare professional.
+                FlexiKnee content is general education, not diagnosis, treatment, or individualized medical advice. Guides are reviewed for clinical accuracy by <strong className="text-slate-950">{MEDICAL_REVIEWER.name}, {MEDICAL_REVIEWER.credential}</strong>, and each guide shows the date of its most recent review. The current review pass was completed on <time dateTime={MEDICAL_REVIEW_DATE}>{formatReviewDate(MEDICAL_REVIEW_DATE)}</time>. A review confirms that the general information is accurate and responsibly framed. It is not an assessment of your situation, and it does not create a clinician-patient relationship. Severe, sudden, unexplained, or worsening symptoms should be assessed by an appropriate healthcare professional.
               </p>
             </section>
 
