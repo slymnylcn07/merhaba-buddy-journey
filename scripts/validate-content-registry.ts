@@ -10,6 +10,7 @@ import { guideThumbnailSlugs } from "../src/data/guide-thumbnail-loaders";
 import { existsSync, readFileSync, readdirSync } from "fs";
 import { dirname, relative, resolve } from "path";
 import { fileURLToPath } from "url";
+import { validateSeoMetadata } from "./seo-metadata";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const VERCEL_PATH = resolve(ROOT, "vercel.json");
@@ -198,6 +199,19 @@ for (const guide of allGuidesData) {
 }
 
 const failures: string[] = [];
+// Only active guides participate: retired implementations are not SEO pages.
+const seoMetadata = validateSeoMetadata(slugs.map((slug) => ({
+  slug,
+  metaTitle: articleMetadata.get(slug)?.metaTitle,
+  metaDescription: articleMetadata.get(slug)?.metaDescription,
+})));
+failures.push(...seoMetadata.failures);
+if (seoMetadata.warnings.length) {
+  console.warn(
+    "SEO metadata review warnings (advisory; copy is never auto-truncated):\n- " +
+    seoMetadata.warnings.join("\n- "),
+  );
+}
 let redirectRules: RedirectRule[] = [];
 
 if (!existsSync(VERCEL_PATH)) {
