@@ -145,9 +145,9 @@ const STOP_WORDS = new Set([
 ]);
 
 function meaningfulTokens(value: string): Set<string> {
+  const tokens: string[] = value.toLowerCase().match(/[a-z0-9]+/g) || [];
   return new Set(
-    (value.toLowerCase().match(/[a-z0-9]+/g) || [])
-      .filter((token) => token.length > 2 && !STOP_WORDS.has(token)),
+    tokens.filter((token) => token.length > 2 && !STOP_WORDS.has(token)),
   );
 }
 

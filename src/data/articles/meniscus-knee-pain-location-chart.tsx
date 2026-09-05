@@ -95,7 +95,7 @@ export const meniscusKneePainLocationChart: ArticleExport = {
     content: (
       <>
         <p>
-          Google Trends shows much stronger and more stable interest for <strong>meniscus tear symptoms</strong> than for the narrower chart phrase. The best page should therefore answer both needs: show exactly where medial and lateral joint-line symptoms are felt, then explain which accompanying symptoms make that map more or less meaningful.
+          To understand <strong>meniscus tear symptoms</strong>, consider both where medial and lateral joint-line pain is felt and which other symptoms accompany it. Location alone is less informative than the full pattern of pain, swelling, movement, and injury history.
         </p>
         <p>
           This guide stays deliberately narrow. The main <Link to="/guides/knee-pain-locations-visual-guide" className={linkClass}>knee pain location chart</Link> compares every knee region. The <Link to="/guides/knee-injury-symptom-chart" className={linkClass}>knee injury symptom chart</Link> compares ligament, meniscus, tendon, and bone patterns after trauma. Here, the focus is only the meniscus and the structures most commonly confused with it.

@@ -393,6 +393,11 @@ export const kneePainAtNightAfter40: ArticleExport = {
           caption="Use the smallest support that improves comfort without forcing the knee into a painful angle."
         />
 
+        <p>
+          Our <Link to="/guides/how-to-sleep-with-knee-pain">guide to sleeping with knee pain</Link>{" "}
+          compares pillow placement and everyday sleep setups in more detail.
+        </p>
+
         <TipsList
           tips={[
             "Place a pillow between the knees when side sleeping if knee-to-knee pressure is uncomfortable",

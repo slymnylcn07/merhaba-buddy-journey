@@ -100,7 +100,7 @@ export const patellarTendonStrapKneePain: ArticleExport = {
     content: (
       <>
         <p>
-          Search language around this product is surprisingly inconsistent. People use <strong>patellar tendon strap</strong>, <strong>patellar band</strong>, <strong>patella strap</strong>, <strong>knee band</strong>, and <strong>jumper&apos;s knee strap</strong> for the same narrow piece of equipment. Google Trends also links the topic with knee support and Osgood-Schlatter searches. Those connections make placement and diagnosis boundaries more important, not less.
+          A <strong>patellar tendon strap</strong> may also be called a <strong>patellar band</strong>, <strong>patella strap</strong>, <strong>knee band</strong>, or <strong>jumper&apos;s knee strap</strong>. These names usually describe the same narrow piece of equipment. Its placement and intended use differ from a full knee sleeve or hinged brace.
         </p>
         <p>
           This guide is about the equipment decision. It does not repeat the loading instructions in our <Link to="/guides/spanish-squat-patellar-tendon" className={linkClass}>Spanish squat guide for patellar tendon pain</Link>, and it does not treat a narrow band as a substitute for the broader comparison in our <Link to="/guides/knee-brace-vs-compression-sleeve" className={linkClass}>knee brace versus compression sleeve guide</Link>.
@@ -191,7 +191,7 @@ export const patellarTendonStrapKneePain: ArticleExport = {
 
         <h2>Patellar Strap and Osgood-Schlatter Disease</h2>
         <p>
-          Google Trends connects patellar strap searches with Osgood-Schlatter disease, especially among parents of active adolescents. Osgood-Schlatter symptoms are usually centered on the tibial tubercle, the bony bump below the knee where the tendon attaches, during a period of growth. That is not identical to adult patellar tendinopathy at the lower edge of the kneecap.
+          Osgood-Schlatter symptoms are usually centered on the tibial tubercle, the bony bump below the knee where the tendon attaches, during a period of growth. That is not identical to adult patellar tendinopathy at the lower edge of the kneecap.
         </p>
         <p>
           Some clinicians may include an infrapatellar strap in an adolescent&apos;s activity plan, but the decision should not come from an adult product page. Growth, training schedule, limping, sport participation, tenderness, and other possible diagnoses matter. Persistent pain, swelling, a major change in activity, or pain at rest deserves age-appropriate assessment.

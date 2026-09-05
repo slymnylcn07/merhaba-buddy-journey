@@ -61,7 +61,7 @@ export const kneeNumbnessGuide: ArticleExport = {
         </div>
 
         <p>
-          Google Trends data shows that people most often search the plain phrase "numbness in knee," followed by location questions such as "numbness below knee" and "numbness above knee." This guide is organized around those real descriptions. It does not try to turn a skin map into a diagnosis. Nerve territories overlap, and individual anatomy is not identical.
+          Notice whether numbness is centered on the knee, below it, or above it, and whether the area changes over time. A skin map can help describe the pattern, but it cannot establish a diagnosis. Nerve territories overlap, and individual anatomy is not identical.
         </p>
 
         <h2>First, Map the Numbness</h2>

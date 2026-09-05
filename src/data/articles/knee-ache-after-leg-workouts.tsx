@@ -177,6 +177,9 @@ const articleContent = (
     </figure>
 
     <h2>Normal Leg-Day Soreness vs a Warning Sign</h2>
+    <p>
+      If your leg session includes kneeling hamstring work, the <Link to="/guides/nordic-hamstring-curl-knee-health" className="text-primary hover:underline">Nordic hamstring curl technique and knee-pressure guide</Link> explains how setup and assistance affect that particular exercise.
+    </p>
     <div className="grid gap-4 md:grid-cols-2 my-6">
       <div className="rounded-xl border p-5">
         <h3 className="mt-0">More Consistent With Training Soreness</h3>

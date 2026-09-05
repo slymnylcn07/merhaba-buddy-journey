@@ -95,7 +95,7 @@ export const hipToKneePainLocationChart: ArticleExport = {
     content: (
       <>
         <p>
-          Google Trends shows sustained and recently stronger US interest for <strong>hip pain to knee</strong>. That broad wording captures several different intentions: pain referred from the hip joint, outer-hip pain that extends down the thigh, nerve symptoms traveling through the leg, and knee pain that changes how the hip moves. Treating all four as one hip-to-knee chain would be misleading.
+          <strong>Pain from the hip to the knee</strong> can describe several different patterns: pain referred from the hip joint, outer-hip pain that extends down the thigh, nerve symptoms traveling through the leg, and knee pain that changes how the hip moves. Treating all four as one hip-to-knee chain would be misleading.
         </p>
         <p>
           This guide is a location and referral map. It differs from our broader <Link to="/guides/knee-discomfort-lower-back-hips" className={linkClass}>lower-back, hip, and knee connection guide</Link>, which discusses daily movement and whole-body load. Here the central question is narrower: when pain is felt at the knee, what clues suggest the hip joint, lateral hip, lumbar spine, nerve, thigh tissue, or knee itself should be examined?
