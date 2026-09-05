@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
-import { CalendarDays, Clock3 } from "lucide-react";
+import { CalendarDays, Clock3, Stethoscope } from "lucide-react";
+import {
+  MEDICAL_REVIEWER,
+  MEDICAL_REVIEW_DATE,
+  formatReviewDate,
+} from "@/data/medical-reviewer";
 
 interface ArticleHeaderMetaProps {
   dateIso: string;
@@ -40,5 +45,22 @@ export const ArticleHeaderMeta = ({
         <CalendarDays className={iconClassName} aria-hidden="true" />
         {dateLabel}
       </time>
+
+      <span
+        data-article-medical-review
+        className="inline-flex basis-full items-center gap-1.5 sm:basis-auto"
+      >
+        <Stethoscope className={iconClassName} aria-hidden="true" />
+        Medically reviewed by{" "}
+        <Link
+          to={`/editorial-team#${MEDICAL_REVIEWER.slug}`}
+          className="font-semibold text-blue-600 transition-colors hover:text-blue-700 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+        >
+          {MEDICAL_REVIEWER.name}, {MEDICAL_REVIEWER.credential}
+        </Link>{" "}
+        <time dateTime={MEDICAL_REVIEW_DATE}>
+          &middot; {formatReviewDate(MEDICAL_REVIEW_DATE)}
+        </time>
+      </span>
     </div>
 );
