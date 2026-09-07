@@ -10,6 +10,12 @@ export const heatRedLightTherapyBenefits2026: ArticleExport = {
     title: "Benefits of Heat + Red Light Therapy for Knee Pain: Updated 2026 Research Summary",
     subtitle: "What the latest studies say about combining heat and red light for knees",
     intro: "Heat therapy and red light therapy have each been studied independently for years. But it's the combination of both that's generating the most interest among researchers and knee comfort seekers in 2026. This updated guide summarizes the latest evidence on how heat and red light therapy work together to support knee comfort.",
+    quickAnswer:
+      "Heat and red light are studied separately and work in different ways. Heat raises local tissue " +
+      "temperature and makes a stiff knee easier to move. Red light therapy, or photobiomodulation, is " +
+      "studied for its effect on cells rather than for warmth. Devices combining both aim to deliver them " +
+      "in one session of roughly 15 to 20 minutes. Evidence for the combination is thinner than for either " +
+      "on its own, so treat it as comfort support rather than a proven treatment.",
     metaTitle: "Heat + Red Light Therapy for Knee Pain: 2026 Research & Benefits",
     metaDescription: "Updated 2026 research summary on heat and red light therapy benefits for knee pain. Learn how combining both therapies supports daily knee comfort and recovery.",
     heroImage: heroImage,
