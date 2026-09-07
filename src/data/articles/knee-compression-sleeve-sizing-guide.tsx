@@ -12,6 +12,12 @@ export const kneeSleeveSizingGuide: ArticleExport = {
     title: "Knee Compression Sleeve Sizing Guide: Measure Right, Choose Right",
     subtitle: "How to measure your knee for a compression sleeve, read any size chart, and know when the fit is actually correct",
     intro: "A compression sleeve only works at the right tightness, and the right tightness only happens at the right size. This guide shows you exactly where to measure, how to read size charts, what to do between sizes, and the four-point check that confirms your sleeve fits the way it should.",
+    quickAnswer:
+      "To size a knee compression sleeve, measure your thigh 15 cm above the centre of the kneecap and your " +
+      "calf 15 cm below, then match those numbers to the maker's size chart rather than to your usual " +
+      "clothing size. Charts differ between brands, so check each one separately. A correct sleeve feels " +
+      "firm, even and forgettable. If it slides down, leaves deep marks, or causes numbness, tingling or " +
+      "colour change, the size or compression level is wrong.",
     metaTitle: "Knee Compression Sleeve Size Guide: Measure & Fit",
     metaDescription: "Measure your knee for a compression sleeve, compare size charts, choose between sizes, and check the fit before walking or exercise.",
     heroImage: heroImage,

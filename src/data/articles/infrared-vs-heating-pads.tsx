@@ -14,6 +14,12 @@ export const infraredVsHeatingPads: ArticleExport = {
     title: "Infrared Knee Massagers: Are They Really Better Than Heating Pads?",
     subtitle: "Comparing two popular approaches to daily knee comfort",
     intro: "Heating pads have been a household staple for decades, but infrared knee massagers are quickly gaining attention. This guide compares both approaches so you can decide which one fits your daily comfort routine best.",
+    quickAnswer:
+      "The practical difference is depth and coverage. A heating pad warms the skin and the tissue just " +
+      "beneath it, while infrared warmth reaches further into the tissue around the joint, and knee " +
+      "specific infrared devices wrap the joint so the warmth stays where you want it. For general warmth " +
+      "on a stiff knee a heating pad is often enough and costs far less. Infrared is worth considering when " +
+      "you want targeted, hands free warmth as part of a repeated routine.",
     metaTitle: "Infrared Knee Massagers vs Heating Pads: Which Is Better?",
     metaDescription: "Compare infrared knee massagers and heating pads by warmth, comfort features, fit and everyday use to choose an option for your routine.",
     heroImage: heroImage,
