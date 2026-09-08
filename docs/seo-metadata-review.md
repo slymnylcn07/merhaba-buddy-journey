@@ -36,3 +36,30 @@ Check Bing page/query performance separately; site-wide Bing totals cannot
 establish which of these pages improved. Use GA4 for on-site behavior, not as a
 substitute for search impression/CTR data. Avoid another simultaneous rewrite
 of these four pages during the observation period.
+
+## September 8, 2026: three-guide snippet experiment
+
+| Guide | Change | Rationale |
+| --- | --- | --- |
+| knee-pain-locations-visual-guide | Title only | Name the front, inner, outer and back regions while retaining the location-chart intent. Keep the already descriptive meta description. |
+| knee-weakness-without-pain | Title only | Lead with "Weak Knees Without Pain" while retaining causes and practical next steps. Keep the existing meta description. |
+| osteochondral-lesion-knee | Title and description | Explain the scan-report term in plain language. The description still covers symptoms, MRI findings, treatment and recovery. |
+
+Only these four metadata values change. H1s, bodies, Quick Answers, guide cards,
+slugs, canonical URLs, dates, images, sources, CTAs and analytics are unchanged.
+The clicking guide and the other five proposed candidates remain untouched.
+
+The supplied September 7 Bing page export reports 8,869 impressions/127 clicks,
+1,377/28 and 1,053/12 respectively. The CSV does not contain a date range, so
+these are export-period figures, not monthly forecasts. The separate keyword
+export does not establish query-to-page attribution. Do not assume a 4% CTR
+target will be achieved or infer a causal gain from aggregate position alone.
+
+Production release date: pending approval and deployment. Do not use the PR
+creation or merge timestamp as a substitute for a verified production release.
+Record the actual release date, make an initial review after 2-3 weeks, and
+compare equivalent 28-day windows when sufficient data is available. Compare
+Google and Bing separately by page/query and available device/country filters.
+Keep these pages' content stable during observation and account for changes in
+position, impressions and query mix. Unchanged pages can provide context but
+are not a randomized control group.
