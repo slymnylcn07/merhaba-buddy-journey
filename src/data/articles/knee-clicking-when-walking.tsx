@@ -14,7 +14,7 @@ export const kneeClickingWhenWalking = {
     subtitle: "Separate clicking during walking, bending, straightening, squatting, and stairs by the symptoms that accompany it",
     intro: "A knee may click when walking, bending, straightening, squatting, or using stairs for several reasons, and the sound alone cannot identify one cause. This guide separates each movement pattern, explains why pain and swelling matter more than the noise, and shows when clicking deserves an assessment.",
     metaTitle: "Knee Clicking When Walking, Bending or Squatting: Why?",
-    metaDescription: "Compare knee clicking during walking, bending or squatting, with or without pain. Learn which accompanying symptoms need assessment.",
+    metaDescription: "Knee clicking when walking, bending, squatting, straightening or using stairs? Compare painless sounds with pain, swelling or locking and when to seek help.",
     heroImage: heroImage,
     publishedDate: "March 3, 2026",
     lastUpdated: "August 29, 2026",
