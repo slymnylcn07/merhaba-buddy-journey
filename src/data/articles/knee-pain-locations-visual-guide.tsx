@@ -256,7 +256,7 @@ export const kneePainLocationsVisualGuide: ArticleExport = {
       "Compare front, inner, outer, back, kneecap, tendon, and joint-line patterns without using location alone as a diagnosis",
     intro:
       "Use this knee pain location chart to identify the area you want to describe: front, inner, outer, back, above or below the kneecap, or along the joint line. The interactive knee pain map and labeled diagrams below help you compare zones, record useful pattern clues, and recognize when a location needs professional assessment.",
-    metaTitle: "Knee Pain Location Chart & Diagram | FlexiKnee",
+    metaTitle: "Knee Pain Location Chart: Front, Inner, Outer and Back",
     metaDescription:
       "Use this visual knee pain location chart to compare front, inner, outer, back, kneecap and joint-line pain, plus warning signs and next steps.",
     heroImage,

@@ -14,9 +14,9 @@ export const osteochondralLesionKnee: ArticleExport = {
     subtitle: "Symptoms, MRI findings, lesion stability, osteochondritis dissecans, treatment options, and recovery",
     intro:
       "A knee can keep swelling after a twist even when the major ligaments look intact. It may ache deeply with impact, catch during motion, or feel unreliable without a dramatic injury story. One possible explanation is an osteochondral lesion, an area where the smooth joint cartilage and the supporting bone beneath it are both affected. The term covers several causes and severities, so the useful questions are where the lesion sits, how large and stable it is, whether a fragment is loose, and whether it actually matches the symptoms.",
-    metaTitle: "Osteochondral Lesion of the Knee: Symptoms & Treatment",
+    metaTitle: "Osteochondral Lesion of the Knee: What It Means",
     metaDescription:
-      "Understand knee osteochondral lesions and defects, cartilage and bone injury, MRI stability, osteochondritis dissecans, treatment, surgery, and recovery.",
+      "See what an osteochondral lesion of the knee means, how symptoms relate to MRI findings, and which factors guide treatment and recovery.",
     heroImage,
     publishedDate: "July 30, 2026",
     lastUpdated: "July 30, 2026",

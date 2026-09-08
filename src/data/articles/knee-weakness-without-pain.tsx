@@ -51,7 +51,7 @@ export const kneeWeaknessWithoutPain: ArticleExport = {
     title: "Knees Feel Weak Without Pain: Causes and What to Do",
     subtitle: "Separate temporary fatigue from buckling, balance, and nerve-related warning signs",
     intro: "A knee can feel weak even when it does not hurt. You might notice it on stairs, during a longer walk, or in the first few steps after getting out of a chair. Sometimes the feeling is temporary fatigue or reduced conditioning. Sometimes people use the word weak to describe true buckling, poor balance, numbness, or a loss of control. Those are not interchangeable, so this guide begins by helping you identify which pattern you actually have.",
-    metaTitle: "Knees Feel Weak Without Pain: Causes & What to Do",
+    metaTitle: "Weak Knees Without Pain: Causes and What to Do",
     metaDescription: "Why do knees feel weak without pain? Compare fatigue, instability, buckling, balance, and nerve symptoms, plus when weakness needs assessment.",
     heroImage: heroImage,
     publishedDate: "March 8, 2026",
