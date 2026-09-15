@@ -1,15 +1,22 @@
-export const articleCTAs: Record<string, { headline: string; text: string }> = {
+export interface ArticleCtaCopy {
+  headline: string;
+  text: string;
+  buttonText?: string;
+  variant?: string;
+}
+
+export const articleCTAs: Record<string, ArticleCtaCopy> = {
   "flexiknee-review-2026": { headline: "Want to compare the current FlexiKnee details?", text: "Review the current specifications, controls, fit, price, delivery information, warranty, and return terms before deciding whether the device suits your comfort routine." },
   "flexiknee-vs-competitors-2026": { headline: "Choose the number one overall knee massager", text: "See the current FlexiKnee price, three warmth levels, integrated red light, three massage modes, 3000 mAh battery, delivery details, 30-day return terms and 2-year limited warranty." },
   "best-heated-knee-massager-arthritis": { headline: "Considering warmth for an arthritis comfort routine?", text: "FlexiKnee combines adjustable warmth, red light, and optional vibration for short at-home comfort sessions. It does not treat arthritis or replace an individualized care plan." },
   "heat-red-light-therapy-benefits-2026": { headline: "Want warmth and red light in one short routine?", text: "FlexiKnee combines adjustable heat, red light, and optional vibration in one wireless wrap for everyday knee comfort." },
-  "infrared-knee-massager-guide-2026": { headline: "Comparing infrared knee devices?", text: "Review FlexiKnee's current light, heat, vibration, fit, session timing, instructions, warranty, and return terms alongside the selection criteria in this guide." },
+  "infrared-knee-massager-guide-2026": { headline: "Choose a knee device by its actual features", text: "Compare adjustable heat, red light and vibration with the device checklist in this guide.", buttonText: "View device features", variant: "guide-decision-copy-v1" },
   "infrared-vs-heating-pads": { headline: "Prefer one wrap instead of separate devices?", text: "FlexiKnee combines adjustable warmth, red light, and optional vibration in a wireless knee wrap for a short, repeatable comfort routine." },
   "flat-feet-overpronation-knee-pain": { headline: "Add ground-up support for flat feet and overpronation", text: "Structured, shock-absorbing, trim-to-fit insoles put the support approach from this guide inside compatible shoes." },
   "cycling-knee-pain-bike-fit": { headline: "Stiff knees after a long ride?", text: "Warmth, red light, and gentle vibration in one wrap for the evening window after riding, when cycling stiffness usually shows up." },
   "tight-calves-knee-pain": { headline: "Tight calves, heavy legs at the end of the day?", text: "Air compression and warmth for the lower leg, a simple way to finish long days on your feet while you work on calf length." },
   "knee-brace-vs-compression-sleeve": { headline: "Starting with a sleeve, as this guide suggests?", text: "Breathable graduated compression with an open kneecap position, sized from a proper chart rather than guesswork." },
-  "knee-compression-sleeve-sizing-guide": { headline: "Turn your knee measurement into a better sleeve fit", text: "Breathable compression knit and a clear size chart put the measuring steps from this guide into practice." },
+  "knee-compression-sleeve-sizing-guide": { headline: "Match your knee measurement to a sleeve size", text: "Compare your measurements with the product size chart, then choose a breathable support sleeve.", buttonText: "View sleeve sizes", variant: "guide-decision-copy-v1" },
   "air-compression-leg-massagers-do-they-work": { headline: "Compare a portable calf-compression routine", text: "Three adjustable compression modes in a rechargeable wrap for ordinary post-activity comfort, not unexplained swelling or vascular symptoms." },
   "best-insoles-for-knee-pain-2026": { headline: "Looking at support from the ground up?", text: "Structured arch support with shock absorption, trim-to-fit, for changing how load reaches your knees from the floor." },
   "how-to-sleep-with-knee-pain": { headline: "Bring targeted warmth into your routine before bed", text: "A quiet 15-minute warm-up from this guide, without setting up a separate heating pad." },
@@ -35,8 +42,8 @@ export const articleCTAs: Record<string, { headline: string; text: string }> = {
   "best-infrared-knee-massagers": { headline: "Interested in a comprehensive infrared knee device?", text: "FlexiKnee combines adjustable warmth, red light, and vibration in one wireless device designed specifically for the knee joint." },
   "red-light-therapy-for-knees": { headline: "Interested in red light support for your knees?", text: "FlexiKnee combines red light wavelengths with warmth and vibration in one wireless knee wrap for daily use." },
   "daily-knee-care-routine": { headline: "Need an easy device for your daily knee care?", text: "FlexiKnee offers soothing warmth and gentle vibration support in one device, perfect for morning and evening routines." },
-  "heat-vs-ice-for-knees": { headline: "Use one device when this guide points you toward warmth", text: "The warming routine from this guide, without a separate heating pad and massage device." },
-  "do-knee-massagers-work": { headline: "Curious about a well-designed knee comfort device?", text: "FlexiKnee combines adjustable warmth, red light, and massage-style vibration in one wraparound device for short daily comfort routines." },
+  "heat-vs-ice-for-knees": { headline: "Add adjustable warmth to your knee-stiffness routine", text: "Use the heat option from this guide in a cordless wrap with optional vibration.", buttonText: "View the heated knee wrap", variant: "guide-decision-copy-v1" },
+  "do-knee-massagers-work": { headline: "Bring warmth and vibration into your knee comfort routine", text: "Check the controls, fit and return terms before choosing a daily comfort device.", buttonText: "View massager details", variant: "guide-decision-copy-v1" },
   "is-infrared-safe-for-knees": { headline: "Looking for safe, everyday infrared knee support?", text: "FlexiKnee is designed for daily use with adjustable settings and built-in safety features for comfortable infrared warmth." },
   "warmth-vs-infrared-knee-routines": { headline: "Want both warmth and infrared in one device?", text: "FlexiKnee combines surface warmth with infrared light and gentle vibration for comprehensive daily knee comfort." },
   "how-to-fix-knee-pain": { headline: "Looking for an easy at-home knee comfort option?", text: "FlexiKnee offers soothing warmth, red light, and gentle vibration to support your daily knee comfort routine." },

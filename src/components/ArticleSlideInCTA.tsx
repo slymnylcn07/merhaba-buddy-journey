@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { X, ArrowRight, Sparkles, Tag } from "lucide-react";
 import { Link } from "react-router-dom";
+import { estimatePercentagePrice } from "@/lib/offer-pricing";
 import { trackEvent } from "@/hooks/use-google-analytics";
 import { trackClarityEvent } from "@/hooks/use-microsoft-clarity";
 import { pickProductForSlug, PRODUCT_RECS } from "@/lib/article-product-map";
@@ -423,14 +424,11 @@ export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProp
   const regularAmount = livePrice?.amount ?? fallbackUsdAmount;
   const currencyCode = livePrice?.currencyCode || (fallbackUsdAmount !== null ? "USD" : null);
   const pricePrefix = livePrice?.isRange ? "From " : "";
-  const discountedAmount =
-    regularAmount !== null && Number.isFinite(regularAmount)
-      ? regularAmount * (1 - NEWSLETTER_DISCOUNT_PCT / 100)
-      : null;
-  const savingsAmount =
-    regularAmount !== null && Number.isFinite(regularAmount)
-      ? regularAmount * (NEWSLETTER_DISCOUNT_PCT / 100)
-      : null;
+  const estimate = regularAmount !== null && Number.isFinite(regularAmount) && currencyCode
+    ? estimatePercentagePrice(regularAmount, NEWSLETTER_DISCOUNT_PCT, currencyCode)
+    : null;
+  const discountedAmount = estimate?.total ?? null;
+  const savingsAmount = estimate?.savings ?? null;
   const normalizedSavingsAmount =
     savingsAmount !== null && Math.abs(savingsAmount - Math.round(savingsAmount)) < 0.01
       ? Math.round(savingsAmount)
@@ -505,7 +503,7 @@ export const ArticleSlideInCTA = ({ slug, title: _title }: ArticleSlideInCTAProp
                   </span>
                 </div>
                 <p className="mt-1 text-[10px] leading-4 text-slate-500">
-                  {NEWSLETTER_DISCOUNT_CODE} applied automatically in cart
+                  Estimated with {NEWSLETTER_DISCOUNT_CODE}. Confirmed in cart.
                 </p>
                 <div className="mt-2 flex flex-wrap items-center gap-x-2.5 gap-y-1 border-t border-slate-200 pt-2">
                 <div className="min-w-0 flex-1">

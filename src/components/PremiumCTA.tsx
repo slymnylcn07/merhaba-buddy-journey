@@ -7,7 +7,8 @@ import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { pickProductForSlug, ProductRec, PRODUCT_RECS } from "@/lib/article-product-map";
 import { getPublicProductHandle } from "@/lib/product-config";
 import { getProductMarketplaceFeedback } from "@/data/product-marketplace-feedback";
-import { articleCTAs } from "@/data/article-ctas";
+import { articleCTAs, type ArticleCtaCopy } from "@/data/article-ctas";
+import { estimatePercentagePrice } from "@/lib/offer-pricing";
 import { recentArticleCTAs } from "@/data/recent-article-ctas";
 import { NEWSLETTER_DISCOUNT_CODE, NEWSLETTER_DISCOUNT_PCT } from "@/lib/newsletter-config";
 import {
@@ -239,7 +240,8 @@ const PremiumCTA = ({
   const slug = articleSlug || (location.pathname.startsWith("/guides/")
     ? location.pathname.replace("/guides/", "")
     : undefined);
-  const mappedCopy = slug ? articleCTAs[slug] || recentArticleCTAs[slug] : undefined;
+  const mappedCopy: ArticleCtaCopy | undefined = slug ? articleCTAs[slug] || recentArticleCTAs[slug] : undefined;
+  const ctaVariant = mappedCopy?.variant || "guide-product-card-v3";
 
   const rec: ProductRec = pickProductForSlug(slug);
   const presentation =
@@ -299,14 +301,11 @@ const PremiumCTA = ({
   const currencyCode = livePrice?.currencyCode || (fallbackUsdAmount !== null ? "USD" : null);
   const isRange = livePrice?.isRange || false;
   const pricePrefix = isRange ? "From " : "";
-  const discountedAmount =
-    regularAmount !== null && Number.isFinite(regularAmount)
-      ? regularAmount * (1 - NEWSLETTER_DISCOUNT_PCT / 100)
-      : null;
-  const savingsAmount =
-    regularAmount !== null && Number.isFinite(regularAmount)
-      ? regularAmount * (NEWSLETTER_DISCOUNT_PCT / 100)
-      : null;
+  const estimate = regularAmount !== null && Number.isFinite(regularAmount) && currencyCode
+    ? estimatePercentagePrice(regularAmount, NEWSLETTER_DISCOUNT_PCT, currencyCode)
+    : null;
+  const discountedAmount = estimate?.total ?? null;
+  const savingsAmount = estimate?.savings ?? null;
   const normalizedSavingsAmount =
     savingsAmount !== null && Math.abs(savingsAmount - Math.round(savingsAmount)) < 0.01
       ? Math.round(savingsAmount)
@@ -328,7 +327,8 @@ const PremiumCTA = ({
 
   useEffect(() => {
     const element = cardRef.current;
-    if (!element || impressionSent.current) return;
+    if (!element) return;
+    impressionSent.current = false;
 
     const sendImpression = () => {
       if (impressionSent.current) return;
@@ -340,7 +340,7 @@ const PremiumCTA = ({
         content_slug: slug || "unknown",
         creative_slot: placement,
         placement,
-        cta_variant: "guide-product-card-v3",
+        cta_variant: ctaVariant,
         product_handle: rec.handle,
         offer_code: NEWSLETTER_DISCOUNT_CODE,
         interaction_type: "impression",
@@ -363,7 +363,7 @@ const PremiumCTA = ({
     );
     observer.observe(element);
     return () => observer.disconnect();
-  }, [placement, rec.handle, rec.title, slug]);
+  }, [ctaVariant, placement, rec.handle, rec.title, slug]);
 
   const handleProductClick = () => {
     markGuideOfferSource(slug || "unknown", placement);
@@ -374,7 +374,7 @@ const PremiumCTA = ({
       content_slug: slug || "unknown",
       creative_slot: placement,
       placement,
-      cta_variant: "guide-product-card-v3",
+      cta_variant: ctaVariant,
       product_handle: rec.handle,
       offer_code: NEWSLETTER_DISCOUNT_CODE,
       interaction_type: "click",
@@ -397,6 +397,7 @@ const PremiumCTA = ({
       ref={cardRef}
       data-cta="product-card"
       data-cta-placement={placement}
+      data-cta-variant={ctaVariant}
       data-offer-code={NEWSLETTER_DISCOUNT_CODE}
       className={`premium-article-cta not-prose mx-auto w-full max-w-[720px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_45px_-34px_rgba(15,23,42,0.45)] ${isMidArticle ? "my-7" : "my-10"}`}
     >
@@ -471,7 +472,7 @@ const PremiumCTA = ({
               </span>
             </div>
             <p className="!mb-0 !mt-1 !text-[11px] !leading-4 text-slate-500">
-              {NEWSLETTER_DISCOUNT_CODE} applied automatically in cart
+              Estimated with {NEWSLETTER_DISCOUNT_CODE}. Confirmed in cart.
             </p>
           </div>
 
@@ -481,7 +482,7 @@ const PremiumCTA = ({
             className={`${isMidArticle ? "mt-2.5 min-h-11 py-2.5" : "mt-3 min-h-12 py-3"} flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 text-center text-base font-bold leading-5 !text-white !no-underline transition-colors hover:bg-blue-700 hover:!text-white hover:!no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2`}
           >
             <span>
-              See how it works
+              {mappedCopy?.buttonText || "See how it works"}
             </span>
             <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
           </Link>

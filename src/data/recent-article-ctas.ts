@@ -1,3 +1,5 @@
+import { articleCTAs } from "./article-ctas";
+
 // Exact copy keeps the new guide cards and popups aligned with the same product.
 export const next15ArticleCTAs: Record<string, { headline: string; text: string }> = {
   "walking-pad-knee-pain": {
@@ -316,10 +318,8 @@ export const recentArticleCTAs: Record<string, { headline: string; text: string 
     headline: "Considering air compression for tired lower legs?",
     text: "The FlexiKnee Rechargeable Calf Recovery Massager combines adjustable air compression and warmth for short seated recovery sessions.",
   },
-  "knee-compression-sleeve-sizing-guide": {
-    headline: "Turn your knee measurement into a better sleeve fit",
-    text: "Breathable compression knit and a clear size chart put the measuring steps from this guide into practice.",
-  },
+  // GuideArticle merges this map last; reuse the canonical campaign copy.
+  "knee-compression-sleeve-sizing-guide": articleCTAs["knee-compression-sleeve-sizing-guide"],
   "tight-calves-knee-pain": {
     headline: "Want support after calf-heavy days?",
     text: "The FlexiKnee Rechargeable Calf Recovery Massager adds air compression and warmth after walking, travel, desk days, or training.",
