@@ -10,6 +10,8 @@ import { getProductMarketplaceFeedback } from "@/data/product-marketplace-feedba
 import { articleCTAs, type ArticleCtaCopy } from "@/data/article-ctas";
 import { estimatePercentagePrice } from "@/lib/offer-pricing";
 import { recentArticleCTAs } from "@/data/recent-article-ctas";
+import { getArticleProductDemo } from "@/data/article-product-demos";
+import { ArticleProductDemo } from "@/components/ArticleProductDemo";
 import { NEWSLETTER_DISCOUNT_CODE, NEWSLETTER_DISCOUNT_PCT } from "@/lib/newsletter-config";
 import {
   buildGuideOfferProductPath,
@@ -241,9 +243,9 @@ const PremiumCTA = ({
     ? location.pathname.replace("/guides/", "")
     : undefined);
   const mappedCopy: ArticleCtaCopy | undefined = slug ? articleCTAs[slug] || recentArticleCTAs[slug] : undefined;
-  const ctaVariant = mappedCopy?.variant || "guide-product-card-v3";
-
   const rec: ProductRec = pickProductForSlug(slug);
+  const demo = getArticleProductDemo(slug, placement, rec.handle);
+  const ctaVariant = demo?.variant || mappedCopy?.variant || "guide-product-card-v3";
   const presentation =
     CTA_PRODUCT_PRESENTATIONS[rec.handle] || CTA_PRODUCT_PRESENTATIONS[PRODUCT_RECS.main.handle];
   const displayHeadline = getDisplayHeadline(headline || mappedCopy?.headline, presentation);
@@ -388,8 +390,8 @@ const PremiumCTA = ({
   const shippingCopy = `Free shipping over ${formatFreeShippingThreshold()}`;
   const isMidArticle = placement === "mid_article";
   const objectPositionStyle = {
-    "--cta-object-mobile": presentation.mobileObjectPosition,
-    "--cta-object-desktop": presentation.desktopObjectPosition,
+    "--cta-object-mobile": demo?.mobileObjectPosition || presentation.mobileObjectPosition,
+    "--cta-object-desktop": demo?.desktopObjectPosition || presentation.desktopObjectPosition,
   } as CSSProperties;
 
   return (
@@ -408,11 +410,12 @@ const PremiumCTA = ({
       </div>
 
       <div className={`grid grid-cols-1 ${isMidArticle ? "min-[860px]:grid-cols-[38%_62%]" : "min-[860px]:grid-cols-[40%_60%]"}`}>
-        <div className={`relative overflow-hidden bg-slate-100 min-[860px]:h-auto min-[860px]:aspect-auto min-[860px]:self-stretch ${isMidArticle ? "aspect-[16/7]" : "aspect-video"}`}>
+        <div className={`relative overflow-hidden bg-slate-100 min-[860px]:h-auto min-[860px]:aspect-auto min-[860px]:self-stretch ${demo ? "aspect-[5/4]" : isMidArticle ? "aspect-[16/7]" : "aspect-video"}`}>
           <img
-            src={presentation.lifestyleImage}
-            alt={`${rec.title} in use during a comfort routine`}
+            src={demo?.poster || presentation.lifestyleImage}
+            alt={demo ? "Knee massager secured around a knee, showing the wrap and top control panel" : `${rec.title} in use during a comfort routine`}
             loading="lazy"
+            data-article-image-zoom={demo ? "false" : undefined}
             onError={(event) => {
               const image = event.currentTarget;
               const liveUrl = liveImage ? new URL(liveImage, window.location.origin).href : null;
@@ -426,9 +429,22 @@ const PremiumCTA = ({
             className="!absolute !inset-0 !m-0 !h-full !w-full !max-w-none !rounded-none !border-0 bg-transparent !object-cover !shadow-none [object-position:var(--cta-object-mobile)] min-[860px]:[object-position:var(--cta-object-desktop)]"
             style={objectPositionStyle}
           />
-          <span className="absolute bottom-3 left-3 rounded-full bg-slate-950/85 px-2.5 py-1 text-[10px] font-medium text-white shadow-sm backdrop-blur-sm">
-            {presentation.routineLabel}
-          </span>
+          {demo && slug ? (
+            <ArticleProductDemo
+              slug={slug}
+              productHandle={rec.handle}
+              placement={placement}
+              ctaVariant={ctaVariant}
+              src={demo.src}
+              poster={demo.poster}
+              title={demo.title}
+              triggerLabel={demo.triggerLabel}
+            />
+          ) : (
+            <span className="absolute bottom-3 left-3 rounded-full bg-slate-950/85 px-2.5 py-1 text-[10px] font-medium text-white shadow-sm backdrop-blur-sm">
+              {presentation.routineLabel}
+            </span>
+          )}
         </div>
 
         <div className={`min-w-0 ${isMidArticle ? "p-3.5 sm:p-5" : "p-5 sm:p-6"}`}>

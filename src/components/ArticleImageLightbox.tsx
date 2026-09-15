@@ -30,6 +30,8 @@ export function ArticleImageLightbox({
     const cleanups: Array<() => void> = [];
 
     const enhanceImage = (image: HTMLImageElement) => {
+      // A product-video cover already has its own accessible playback trigger.
+      if (image.dataset.articleImageZoom === "false") return;
       if (image.dataset.articleImageEnhanced === "true") return;
       image.dataset.articleImageEnhanced = "true";
       image.loading = "lazy";
