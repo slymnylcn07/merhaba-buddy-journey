@@ -10,7 +10,7 @@
 ## Creative and interaction
 
 - The user-supplied `ssstik.io_@deezshops_1763308503836.mp4` is byte-identical to the existing `/videos/customer-review-1.mp4`. Reuse it; do not upload a duplicate or add a TikTok embed.
-- Source: 18.203 seconds, 576 x 1024, 2,396,894 bytes. SHA-256: `404714c7a46cafc6838b6c1f8e2bcb425e8656b825beddd830d9aafb8a905ccef`.
+- Source: 18.203 seconds, 576 x 1024, 2,396,894 bytes. The matching SHA-256 hashes were verified against the user-supplied file before reuse.
 - Poster: an actual frame extracted at 16.5 seconds, saved to `/images/product-stories/massager-video-demo-poster-v1.webp` (35,274 bytes). No AI-created product, claim, testimonial or before/after imagery was added.
 - Mobile uses a taller 5:4 image window; desktop keeps the existing two-column 720 px card. Object positioning keeps the controls, shell and knee visible.
 - The whole photo is a single accessible video trigger. Its quiet white pill reads **Watch it in use · 18 sec**. The blue product link remains the primary shopping action.
