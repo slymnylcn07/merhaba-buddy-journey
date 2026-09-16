@@ -29,6 +29,8 @@ export interface ArticleData {
   seoTags?: string;
   lastUpdated?: string;
   sources?: ArticleSource[];
+  /** Suppress inherited review claims until this new article is actually reviewed. */
+  medicalReviewPending?: boolean;
 }
 
 export interface ArticleExport {

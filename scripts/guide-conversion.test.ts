@@ -23,6 +23,8 @@ const videoTargets = [
   "burning-sensation-in-knee",
   "heat-vs-ice-for-knees",
   "knee-pain-locations-visual-guide",
+  "return-to-basketball-knee-pain",
+  "basketball-after-40-knee-recovery",
 ];
 const source = (path: string) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
 
@@ -130,7 +132,7 @@ test("promotion impressions and clicks carry the same test version and placement
   assert.match(code, /mappedCopy\?\.variant \|\| "guide-product-card-v3"/);
 });
 
-test("product video is limited to both primary-product cards in the six agreed guides", () => {
+test("product video is limited to both primary-product cards in the eight agreed guides", () => {
   const slugs = new Set([
     ...Object.keys(articleCTAs),
     ...Object.keys(recentArticleCTAs),
@@ -154,7 +156,7 @@ test("product video is limited to both primary-product cards in the six agreed g
       }
     }
   }
-  assert.equal(enabledCards, 12, "Six guides must each have a middle and end demo card");
+  assert.equal(enabledCards, videoTargets.length * 2, "Each opted-in guide must have a middle and end demo card");
   const card = source("src/components/PremiumCTA.tsx");
   assert.match(card, /getArticleProductDemo\(slug, placement, rec\.handle\)/);
   assert.match(card, /demo\?\.variant \|\| mappedCopy\?\.variant/);

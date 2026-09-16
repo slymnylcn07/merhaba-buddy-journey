@@ -1,5 +1,13 @@
 import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { Helmet } from "react-helmet";
+import basketballThumb0 from "@/assets/guide-thumbnails/basketball/knee-pain-after-basketball-thumb.webp";
+import basketballThumb1 from "@/assets/guide-thumbnails/basketball/jumpers-knee-basketball-thumb.webp";
+import basketballThumb2 from "@/assets/guide-thumbnails/basketball/knee-sleeves-for-basketball-thumb.webp";
+import basketballThumb3 from "@/assets/guide-thumbnails/basketball/basketball-shoes-knee-pain-thumb.webp";
+import basketballThumb4 from "@/assets/guide-thumbnails/basketball/basketball-warm-up-knees-thumb.webp";
+import basketballThumb5 from "@/assets/guide-thumbnails/basketball/knee-pain-landing-basketball-thumb.webp";
+import basketballThumb6 from "@/assets/guide-thumbnails/basketball/return-to-basketball-knee-pain-thumb.webp";
+import basketballThumb7 from "@/assets/guide-thumbnails/basketball/basketball-after-40-knee-recovery-thumb.webp";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
@@ -232,6 +240,14 @@ import thumbFurtherhyperextendedKneeInjury from "@/assets/guide-thumbnails/furth
 import thumbFurtherlegLengthDiscrepancyKneePain from "@/assets/guide-thumbnails/further-15/leg-length-discrepancy-knee-pain-thumb.webp";
 import thumbFurtherkneeAspirationGuide from "@/assets/guide-thumbnails/further-15/knee-aspiration-guide-thumb.webp";
 const thumbnailMap: Record<string, string> = {
+  "knee-pain-after-basketball": basketballThumb0,
+  "jumpers-knee-basketball": basketballThumb1,
+  "knee-sleeves-for-basketball": basketballThumb2,
+  "basketball-shoes-knee-pain": basketballThumb3,
+  "basketball-warm-up-knees": basketballThumb4,
+  "knee-pain-landing-basketball": basketballThumb5,
+  "return-to-basketball-knee-pain": basketballThumb6,
+  "basketball-after-40-knee-recovery": basketballThumb7,
   "massage-gun-knee-pain": thumbFurthermassageGunKneePain,
   "knee-pads-for-kneeling": thumbFurtherkneePadsForKneeling,
   "recumbent-vs-upright-bike-knees": thumbFurtherrecumbentVsUprightBikeKnees,
@@ -593,6 +609,14 @@ const locationSlugs = [
 ];
 
 const activitySlugs = [
+  "knee-pain-after-basketball",
+  "jumpers-knee-basketball",
+  "knee-sleeves-for-basketball",
+  "basketball-shoes-knee-pain",
+  "basketball-warm-up-knees",
+  "knee-pain-landing-basketball",
+  "return-to-basketball-knee-pain",
+  "basketball-after-40-knee-recovery",
   "recumbent-vs-upright-bike-knees",
   "tai-chi-knee-osteoarthritis",
   "deadlift-knee-pain",

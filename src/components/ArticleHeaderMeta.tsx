@@ -10,6 +10,7 @@ interface ArticleHeaderMetaProps {
   dateIso: string;
   dateLabel: string;
   readingTime: number;
+  showMedicalReview?: boolean;
 }
 
 const iconClassName = "h-4 w-4 shrink-0";
@@ -18,6 +19,7 @@ export const ArticleHeaderMeta = ({
   dateIso,
   dateLabel,
   readingTime,
+  showMedicalReview = true,
 }: ArticleHeaderMetaProps) => (
     <div
       data-article-header-meta
@@ -46,7 +48,7 @@ export const ArticleHeaderMeta = ({
         {dateLabel}
       </time>
 
-      <span
+      {showMedicalReview && <span
         data-article-medical-review
         className="inline-flex basis-full items-center gap-1.5 sm:basis-auto"
       >
@@ -61,6 +63,6 @@ export const ArticleHeaderMeta = ({
         <time dateTime={MEDICAL_REVIEW_DATE}>
           &middot; {formatReviewDate(MEDICAL_REVIEW_DATE)}
         </time>
-      </span>
+      </span>}
     </div>
 );

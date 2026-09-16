@@ -9,6 +9,9 @@ const linkClass = "font-medium text-primary underline underline-offset-4 hover:t
  * new writer from forgetting the reverse internal-link requirement.
  */
 export const articleEditorialCrosslinks: Record<string, ReactNode> = {
+  "patellar-tendon-strap-knee-pain": <p>For repeated jumping and court-specific load decisions, read <Link to="/guides/jumpers-knee-basketball" className={linkClass}>jumper's knee in basketball</Link>. It keeps strap comfort separate from progressive tendon rehabilitation and readiness to play.</p>,
+  "knee-compression-sleeve-sizing-guide": <p>Basketball adds repeated bending, lateral movement and possible floor contact. The <Link to="/guides/knee-sleeves-for-basketball" className={linkClass}>basketball sleeve comparison</Link> separates plain compression from padded knee protection and explains an on-court fit check.</p>,
+  "spanish-squat-patellar-tendon": <p>If your goal is returning to rebounds and repeated jumps, see <Link to="/guides/jumpers-knee-basketball" className={linkClass}>basketball-specific tendon load management</Link> and the <Link to="/guides/return-to-basketball-knee-pain" className={linkClass}>court return progression</Link>. One exercise does not cover every sporting demand.</p>,
   "best-supplements-for-knee-pain": (
     <p>
       Readers comparing the most searched newer options can now go deeper with our evidence reviews of <Link to="/guides/collagen-peptides-knee-pain" className={linkClass}>collagen peptides and type II collagen for knee pain</Link> and <Link to="/guides/turmeric-curcumin-knee-pain" className={linkClass}>turmeric and curcumin for knee osteoarthritis</Link>, including the doses, product forms, trial timelines, and safety questions that broad supplement lists cannot cover.
@@ -33,9 +36,12 @@ export const articleEditorialCrosslinks: Record<string, ReactNode> = {
     </>
   ),
   "knee-pain-after-exercise": (
+    <>
     <p>
       When repeated impact is the main trigger, replacing one weekly workout with a carefully dosed option from our comparison of <Link to="/guides/best-low-impact-cardio-knee-pain" className={linkClass}>walking, cycling, and swimming for knee pain</Link> can preserve aerobic training while you rebuild tolerance.
     </p>
+    <p>For court-specific symptoms, start with <Link to="/guides/knee-pain-after-basketball" className={linkClass}>knee pain after basketball</Link>. It separates a sudden landing incident from repeated-jump discomfort and the next-day response to a harder game.</p>
+    </>
   ),
   "knee-pain-exercises-guide": (
     <>
@@ -89,6 +95,7 @@ export const articleEditorialCrosslinks: Record<string, ReactNode> = {
   ),
   "best-running-shoes-knee-pain": (
     <>
+      <p>Basketball adds lateral containment, abrupt stopping and court traction to the footwear decision. Use the separate <Link to="/guides/basketball-shoes-knee-pain" className={linkClass}>basketball shoe fit and cushioning guide</Link> rather than transferring a running recommendation directly to the court.</p>
       <p>
         If knee pain began after a shoe change, pause the shopping process and use the <Link to="/guides/can-running-shoes-cause-knee-pain" className={linkClass}>running-shoe cause test</Link>. It compares fit, heel drop, cushioning, stability, wear, and training load so a new pair is chosen for the feature that actually failed.
       </p>

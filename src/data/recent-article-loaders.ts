@@ -2,6 +2,14 @@ import type { ArticleData } from "./articles/types";
 import { applyArticleSourceStandards } from "./article-source-standards";
 
 const recentArticleLoaders: Record<string, () => Promise<ArticleData>> = {
+  "knee-pain-after-basketball": () => import("./articles/knee-pain-after-basketball").then(module => module.kneePainAfterBasketball.article),
+  "jumpers-knee-basketball": () => import("./articles/jumpers-knee-basketball").then(module => module.jumpersKneeBasketball.article),
+  "knee-sleeves-for-basketball": () => import("./articles/knee-sleeves-for-basketball").then(module => module.kneeSleevesForBasketball.article),
+  "basketball-shoes-knee-pain": () => import("./articles/basketball-shoes-knee-pain").then(module => module.basketballShoesKneePain.article),
+  "basketball-warm-up-knees": () => import("./articles/basketball-warm-up-knees").then(module => module.basketballWarmUpKnees.article),
+  "knee-pain-landing-basketball": () => import("./articles/knee-pain-landing-basketball").then(module => module.kneePainLandingBasketball.article),
+  "return-to-basketball-knee-pain": () => import("./articles/return-to-basketball-knee-pain").then(module => module.returnToBasketballKneePain.article),
+  "basketball-after-40-knee-recovery": () => import("./articles/basketball-after-40-knee-recovery").then(module => module.basketballAfter40KneeRecovery.article),
   "knee-sleeves-for-running": () =>
     import("./articles/knee-sleeves-for-running").then(
       (module) => module.kneeSleevesForRunning.article,

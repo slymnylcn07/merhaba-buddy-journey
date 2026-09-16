@@ -280,8 +280,10 @@ const GuideArticle = () => {
         "height": 160
       }
     },
-    "reviewedBy": buildReviewerPersonSchema(),
-    "lastReviewed": MEDICAL_REVIEW_DATE,
+    ...(!article.medicalReviewPending ? {
+      "reviewedBy": buildReviewerPersonSchema(),
+      "lastReviewed": MEDICAL_REVIEW_DATE,
+    } : {}),
     "inLanguage": "en",
     "articleSection": "Guides",
     "keywords": article.seoTags || getKeywords(article.title),
@@ -426,6 +428,7 @@ const GuideArticle = () => {
                 dateIso={getISODate(article.publishedDate)}
                 dateLabel={articleDateLabel}
                 readingTime={readingTime}
+                showMedicalReview={!article.medicalReviewPending}
               />
             </div>
           </div>
