@@ -1,6 +1,16 @@
 import { PRIMARY_PRODUCT_HANDLE } from "../lib/product-config";
 
-// A deliberately single-guide, mid-card pilot. Do not enable videos globally.
+// Explicit editorial opt-in only. Both placements use the same click-to-play
+// demo, but a future product remapping must never inherit the wrong video.
+const MASSAGER_DEMO_GUIDES = new Set([
+  "do-knee-massagers-work",
+  "sudden-knee-pain-guide",
+  "sharp-knee-pain-guide",
+  "burning-sensation-in-knee",
+  "heat-vs-ice-for-knees",
+  "knee-pain-locations-visual-guide",
+]);
+
 const MASSAGER_DEMO = {
   src: "/videos/customer-review-1.mp4",
   poster: "/images/product-stories/massager-video-demo-poster-v1.webp",
@@ -16,8 +26,8 @@ export function getArticleProductDemo(
   placement: "mid_article" | "article_end",
   productHandle: string,
 ) {
-  return slug === "do-knee-massagers-work" &&
-    placement === "mid_article" &&
+  return Boolean(slug && MASSAGER_DEMO_GUIDES.has(slug)) &&
+    (placement === "mid_article" || placement === "article_end") &&
     productHandle === PRIMARY_PRODUCT_HANDLE
     ? MASSAGER_DEMO
     : undefined;

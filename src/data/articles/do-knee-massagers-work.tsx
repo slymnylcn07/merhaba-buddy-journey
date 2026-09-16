@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { InfoBox } from "@/components/ArticleCallouts";
 import type { ArticleExport } from "./types";
-import heroImage from "@/assets/article-hero-do-massagers-work.jpg";
+import heroImage from "@/assets/article-hero-do-massagers-work-v2.webp";
 import redLightTherapyImg from "@/assets/article-red-light-knee-therapy.jpg";
 import heatVsRedlightImg from "@/assets/article-heat-vs-redlight-knee.jpg";
 import flexikneeDeviceImg from "@/assets/article-flexiknee-device-illustration.jpg";

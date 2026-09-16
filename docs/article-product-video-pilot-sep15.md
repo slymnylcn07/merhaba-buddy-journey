@@ -1,5 +1,9 @@
 # One-guide product-video prototype
 
+Historical scope of the September 15 prototype. The user-approved September 16
+expansion to six guides and both card placements is documented in
+`guide-media-rollout-sep16.md`; the single-guide limits below describe the original commit only.
+
 ## Scope
 
 - Only the middle product card on `/guides/do-knee-massagers-work` is enabled.

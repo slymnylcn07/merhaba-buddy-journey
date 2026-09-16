@@ -16,6 +16,14 @@ const targets = [
   "heat-vs-ice-for-knees",
   "knee-compression-sleeve-sizing-guide",
 ];
+const videoTargets = [
+  "do-knee-massagers-work",
+  "sudden-knee-pain-guide",
+  "sharp-knee-pain-guide",
+  "burning-sensation-in-knee",
+  "heat-vs-ice-for-knees",
+  "knee-pain-locations-visual-guide",
+];
 const source = (path: string) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
 
 // Use the existing Vite/tsx bundler in memory so these tests exercise the real
@@ -122,26 +130,31 @@ test("promotion impressions and clicks carry the same test version and placement
   assert.match(code, /mappedCopy\?\.variant \|\| "guide-product-card-v3"/);
 });
 
-test("product video is limited to the one agreed guide's middle primary-product card", () => {
+test("product video is limited to both primary-product cards in the six agreed guides", () => {
   const slugs = new Set([
     ...Object.keys(articleCTAs),
     ...Object.keys(recentArticleCTAs),
     ...targets,
+    ...videoTargets,
     undefined,
     "",
     "unrelated-new-guide",
   ]);
+  let enabledCards = 0;
   for (const slug of slugs) {
     for (const placement of ["mid_article", "article_end"] as const) {
       for (const handle of [primaryHandle, "flexiknee-compression-support-sleeve", "other-product"]) {
         const demo = getArticleProductDemo(slug, placement, handle);
-        const expected = slug === "do-knee-massagers-work" &&
-          placement === "mid_article" && handle === primaryHandle;
+        const expected = Boolean(slug && videoTargets.includes(slug)) && handle === primaryHandle;
         assert.equal(Boolean(demo), expected, `${slug} / ${placement} / ${handle}`);
-        if (demo) assert.equal(demo.variant, "guide-product-demo-v1");
+        if (demo) {
+          enabledCards++;
+          assert.equal(demo.variant, "guide-product-demo-v1");
+        }
       }
     }
   }
+  assert.equal(enabledCards, 12, "Six guides must each have a middle and end demo card");
   const card = source("src/components/PremiumCTA.tsx");
   assert.match(card, /getArticleProductDemo\(slug, placement, rec\.handle\)/);
   assert.match(card, /demo\?\.variant \|\| mappedCopy\?\.variant/);
@@ -154,7 +167,7 @@ test("product video is limited to the one agreed guide's middle primary-product 
   );
 });
 
-test("the pilot reuses the approved clip and a small local WebP poster", () => {
+test("the scoped rollout reuses the approved clip and a small local WebP poster", () => {
   const demo = getArticleProductDemo("do-knee-massagers-work", "mid_article", primaryHandle);
   assert.ok(demo);
   assert.equal(demo.src, "/videos/customer-review-1.mp4");
@@ -206,6 +219,43 @@ test("video playback stays click-gated and releases playback when closed", () =>
   assert.match(code, /\[&>button\]:w-11/);
   assert.match(code, /<DialogTitle\b/);
   assert.match(code, /<DialogDescription\b/);
+});
+
+test("both demo placements can coexist without mounting any video or duplicating dialog IDs", () => {
+  const { ArticleProductDemo } = loadBrowserModule<typeof import("../src/components/ArticleProductDemo")>(
+    "src/components/ArticleProductDemo.tsx",
+  );
+  for (const slug of videoTargets) {
+    const markup = renderToStaticMarkup(createElement("main", null,
+      ...(["mid_article", "article_end"] as const).map((placement) => {
+        const demo = getArticleProductDemo(slug, placement, primaryHandle);
+        assert.ok(demo);
+        return createElement(ArticleProductDemo, {
+          key: placement,
+          slug,
+          productHandle: primaryHandle,
+          placement,
+          ctaVariant: demo.variant,
+          src: demo.src,
+          poster: demo.poster,
+          title: demo.title,
+          triggerLabel: demo.triggerLabel,
+        });
+      }),
+    ));
+    assert.equal((markup.match(/data-article-product-demo="trigger"/g) || []).length, 2, slug);
+    const controls = [...markup.matchAll(/aria-controls="([^"]+)"/g)].map((match) => match[1]);
+    assert.equal(new Set(controls).size, 2, `Each ${slug} placement needs its own dialog ID`);
+    assert.doesNotMatch(markup, /<(?:video|source|iframe)\b|customer-review-1\.mp4/);
+  }
+});
+
+test("the massager guide uses the optimized local WebP hero", () => {
+  assert.match(source("src/data/articles/do-knee-massagers-work.tsx"), /article-hero-do-massagers-work-v2\.webp/);
+  const hero = readFileSync(new URL("../src/assets/article-hero-do-massagers-work-v2.webp", import.meta.url));
+  assert.ok(hero.length > 0 && hero.length < 180_000, "Hero must remain under 180 KB");
+  assert.equal(hero.subarray(0, 4).toString("ascii"), "RIFF");
+  assert.equal(hero.subarray(8, 12).toString("ascii"), "WEBP");
 });
 
 test("video metrics count actual playback and unique watched ranges, not skipped playhead positions", () => {
