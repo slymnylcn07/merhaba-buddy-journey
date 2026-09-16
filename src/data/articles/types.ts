@@ -20,6 +20,7 @@ export interface ArticleData {
   metaTitle: string;
   metaDescription: string;
   heroImage: string;
+  heroObjectPosition?: string;
   publishedDate: string;
   content: ReactNode;
   nextSlug?: string;

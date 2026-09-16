@@ -252,6 +252,8 @@ test("both demo placements can coexist without mounting any video or duplicating
 
 test("the massager guide uses the optimized local WebP hero", () => {
   assert.match(source("src/data/articles/do-knee-massagers-work.tsx"), /article-hero-do-massagers-work-v2\.webp/);
+  assert.match(source("src/data/articles/do-knee-massagers-work.tsx"), /heroObjectPosition: "center 28%"/);
+  assert.match(source("src/pages/GuideArticle.tsx"), /backgroundPosition: article\.heroObjectPosition \|\| "center"/);
   const hero = readFileSync(new URL("../src/assets/article-hero-do-massagers-work-v2.webp", import.meta.url));
   assert.ok(hero.length > 0 && hero.length < 180_000, "Hero must remain under 180 KB");
   assert.equal(hero.subarray(0, 4).toString("ascii"), "RIFF");

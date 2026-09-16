@@ -41,6 +41,9 @@ Only `do-knee-massagers-work` imports the new local optimized raster hero:
 image consumers follow that import; other hero imports and guide thumbnails are
 untouched. The former JPEG remains available; no shared asset was deleted.
 The final optimized image is 1600 x 900, 104,954 bytes (approximately 105 KB).
+This guide opts into `heroObjectPosition: "center 28%"` so the control panel stays
+visible on shorter desktop windows. Other guides retain the existing centered
+crop by default; hero heights and overlays are unchanged.
 
 Tool: built-in imagegen. References: actual product frames from the approved
 video, including the frontal shell/controls and knee fastening. This is an
