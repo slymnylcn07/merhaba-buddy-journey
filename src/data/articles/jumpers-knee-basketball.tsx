@@ -15,7 +15,8 @@ export const jumpersKneeBasketball: ArticleExport = { cta: "", article: {
   seoTags: "jumpers knee basketball, patellar tendonitis basketball, pain below kneecap basketball, how to heal jumpers knee, patellar tendinopathy return to basketball",
   publishedDate: "September 16, 2026", lastUpdated: "September 16, 2026", heroImage,
   nextSlug: "return-to-basketball-knee-pain", nextTitle: "Returning to Basketball After Knee Pain",
-  medicalReviewPending: true,
+  medicalReviewPending: false,
+  medicalReviewDate: "2026-09-16",
   faqs: [
     { question: "Is jumper's knee the same as patellar tendonitis?", answer: "People often use the terms interchangeably. Patellar tendinopathy is commonly used for persistent load-related patellar tendon pain; it does not assume that inflammation alone explains the problem. An examination is needed to distinguish it from other causes of front-of-knee pain." },
     { question: "Can I play basketball with jumper's knee?", answer: "The answer depends on diagnosis, symptoms, function and your rehabilitation plan. Some players use modified practice under professional guidance. Repeatedly playing through worsening pain, swelling or altered movement is not a safe default." },

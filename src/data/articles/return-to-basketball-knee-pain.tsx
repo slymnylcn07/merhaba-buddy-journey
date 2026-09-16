@@ -14,7 +14,8 @@ export const returnToBasketballKneePain: ArticleExport = { cta: "", article: {
   seoTags: "return to basketball after knee pain, basketball return to play knee, returning to basketball after knee injury, knee pain basketball progression",
   publishedDate: "September 16, 2026", lastUpdated: "September 16, 2026", heroImage,
   nextSlug: "basketball-after-40-knee-recovery", nextTitle: "Basketball After 40: Knee Load and Recovery",
-  medicalReviewPending: true,
+  medicalReviewPending: false,
+  medicalReviewDate: "2026-09-16",
   faqs: [
     { question: "When can I return to basketball after knee pain?", answer: "There is no universal date. The cause, symptoms, strength, movement control, response to basketball tasks and any clinical restrictions determine progression. A new injury or surgery requires the relevant clinician-led rehabilitation and clearance." },
     { question: "Is pain-free walking enough to play basketball?", answer: "No. Walking is a useful earlier milestone, but basketball includes repeated landings, braking, direction changes, contact and fatigue. Those demands need to be reintroduced appropriately." },

@@ -16,7 +16,8 @@ export const kneePainAfterBasketball: ArticleExport = { cta: "", article: {
   seoTags: "knee pain after basketball, knees hurt after basketball, knee pain playing basketball, basketball knee recovery, knee swelling after basketball",
   publishedDate: "September 16, 2026", lastUpdated: "September 16, 2026",
   heroImage, nextSlug: "jumpers-knee-basketball", nextTitle: "Jumper's Knee in Basketball",
-  medicalReviewPending: true,
+  medicalReviewPending: false,
+  medicalReviewDate: "2026-09-16",
   faqs: [
     { question: "Why do my knees hurt after basketball but not during the game?", answer: "Symptoms can become more noticeable after repeated loading or when you cool down. Feeling comfortable during play does not prove that the session was tolerated. Compare later symptoms, swelling and next-morning function, and seek assessment if the pattern persists." },
     { question: "Is knee pain the next day just normal soreness?", answer: "Muscle soreness can follow unfamiliar activity, but pain around a joint, swelling, locking or a changed walking pattern should not automatically be called normal soreness. Location, severity and the effect on daily activity matter." },

@@ -44,7 +44,8 @@ for (const slug of slugs) {
       assert.ok(statSync(file).size < 180_000, `Unoptimized image ${match[1]}`);
     }
     assert.doesNotMatch(body, /<PremiumCTA|<svg\b/);
-    assert.match(body, /medicalReviewPending: true/);
+    assert.match(body, /medicalReviewPending: false/);
+    assert.match(body, /medicalReviewDate: "2026-09-16"/);
     assert.match(body, /<ArticleTable caption=/);
     assert.doesNotMatch(body, /<table\b|<div className="overflow-x-auto"><table>/);
     assert.doesNotMatch(body, /<th>/);
@@ -63,6 +64,19 @@ for (const slug of slugs) {
     assert.equal(demos.includes(`"${slug}"`), slug === "return-to-basketball-knee-pain" || slug === "basketball-after-40-knee-recovery");
   });
 }
+
+test("confirmed review uses article-specific dates without advancing other guide reviews", () => {
+  const header = source("src/components/ArticleHeaderMeta.tsx");
+  const page = source("src/pages/GuideArticle.tsx");
+  assert.match(header, /medicalReviewDate = MEDICAL_REVIEW_DATE/);
+  assert.match(header, /dateTime=\{medicalReviewDate\}/);
+  assert.match(header, /formatReviewDate\(medicalReviewDate\)/);
+  assert.match(header, /showMedicalReview &&/);
+  assert.match(page, /"lastReviewed": article.medicalReviewDate \?\? MEDICAL_REVIEW_DATE/);
+  assert.match(page, /medicalReviewDate=\{article.medicalReviewDate\}/);
+  assert.match(page, /showMedicalReview=\{!article.medicalReviewPending\}/);
+  assert.match(source("src/data/medical-reviewer.ts"), /MEDICAL_REVIEW_DATE = "2026-09-05"/);
+});
 
 test("eight-model shoe comparison explains its score and cites each manufacturer", () => {
   const body = source("src/data/articles/basketball-shoes-knee-pain.tsx");

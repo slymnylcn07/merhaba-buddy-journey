@@ -14,7 +14,8 @@ export const basketballShoesKneePain: ArticleExport = { cta: "", article: {
   seoTags: "basketball shoes for knee pain, best basketball shoes for bad knees, basketball shoe cushioning knee pain, basketball shoes lateral support",
   publishedDate: "September 16, 2026", lastUpdated: "September 16, 2026", heroImage,
   nextSlug: "knee-sleeves-for-basketball", nextTitle: "Knee Sleeves for Basketball",
-  medicalReviewPending: true,
+  medicalReviewPending: false,
+  medicalReviewDate: "2026-09-16",
   faqs: [
     { question: "What are the best basketball shoes for bad knees?", answer: "There is no universal best pair for every knee condition. Compare fit, comfortable cushioning, lateral containment and traction for your court, then consider your diagnosis and playing load. Brand rankings alone cannot establish what will suit your knee." },
     { question: "Can basketball shoes cause knee pain?", answer: "Footwear can change comfort and movement, but pain after a shoe change does not prove the shoe is the only cause. Review practice load, court surface, fit and the timing of symptoms. Persistent or concerning symptoms need assessment." },

@@ -282,7 +282,7 @@ const GuideArticle = () => {
     },
     ...(!article.medicalReviewPending ? {
       "reviewedBy": buildReviewerPersonSchema(),
-      "lastReviewed": MEDICAL_REVIEW_DATE,
+      "lastReviewed": article.medicalReviewDate ?? MEDICAL_REVIEW_DATE,
     } : {}),
     "inLanguage": "en",
     "articleSection": "Guides",
@@ -429,6 +429,7 @@ const GuideArticle = () => {
                 dateLabel={articleDateLabel}
                 readingTime={readingTime}
                 showMedicalReview={!article.medicalReviewPending}
+                medicalReviewDate={article.medicalReviewDate}
               />
             </div>
           </div>

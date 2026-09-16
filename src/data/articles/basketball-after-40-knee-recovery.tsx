@@ -14,7 +14,8 @@ export const basketballAfter40KneeRecovery: ArticleExport = { cta: "", article: 
   seoTags: "basketball after 40, basketball knee recovery, knee pain basketball over 40, recovery between basketball games, playing basketball in your 40s",
   publishedDate: "September 16, 2026", lastUpdated: "September 16, 2026", heroImage,
   nextSlug: "knee-pain-after-basketball", nextTitle: "Knee Pain After Basketball",
-  medicalReviewPending: true,
+  medicalReviewPending: false,
+  medicalReviewDate: "2026-09-16",
   faqs: [
     { question: "Is basketball bad for your knees after 40?", answer: "Age alone does not answer that question. Current health, prior injury, symptoms, conditioning and the amount and type of play matter. Persistent pain or swelling should be assessed rather than assumed to be an unavoidable part of getting older." },
     { question: "How many times a week should I play basketball after 40?", answer: "There is no universal safe frequency. Start from what you currently tolerate and consider intensity, minutes, other training and recovery. A shorter controlled session and a long competitive run are not equivalent simply because each counts as one visit." },

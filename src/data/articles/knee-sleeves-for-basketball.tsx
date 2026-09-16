@@ -14,7 +14,8 @@ export const kneeSleevesForBasketball: ArticleExport = { cta: "", article: {
   seoTags: "knee sleeves for basketball, basketball knee pads, basketball leg sleeves, knee pad sleeves for basketball, best knee sleeves for basketball",
   publishedDate: "September 16, 2026", lastUpdated: "September 16, 2026", heroImage,
   nextSlug: "basketball-warm-up-knees", nextTitle: "Basketball Warm-Up for Knees",
-  medicalReviewPending: true,
+  medicalReviewPending: false,
+  medicalReviewDate: "2026-09-16",
   faqs: [
     { question: "Are knee sleeves good for basketball?", answer: "They can be useful when a player wants comfortable compression, warmth or coverage and the garment does not restrict movement. They are optional equipment, not a guarantee against injury or a replacement for assessment of knee pain." },
     { question: "Are basketball knee pads the same as compression sleeves?", answer: "No. A padded product has material intended to cushion contact with the floor or another player. A plain compression sleeve does not provide equivalent impact padding, even when its knit looks thick." },

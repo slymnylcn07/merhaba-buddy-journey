@@ -14,7 +14,8 @@ export const kneePainLandingBasketball: ArticleExport = { cta: "", article: {
   seoTags: "knee pain landing from jump, basketball landing knee pain, knee hurts when landing basketball, knee pain after rebound, one leg landing knee pain",
   publishedDate: "September 16, 2026", lastUpdated: "September 16, 2026", heroImage,
   nextSlug: "return-to-basketball-knee-pain", nextTitle: "Returning to Basketball After Knee Pain",
-  medicalReviewPending: true,
+  medicalReviewPending: false,
+  medicalReviewDate: "2026-09-16",
   faqs: [
     { question: "Why does my knee hurt when I land from a jump?", answer: "Landing loads the knee and surrounding tissues, so several conditions can produce pain during that task. The timing, location, presence of an incident, swelling and changes in function help guide assessment. The movement alone does not identify the injured structure." },
     { question: "Does a pop during a basketball landing mean an ACL tear?", answer: "A pop is not a diagnosis, but a painful pop with rapid swelling, instability or difficulty continuing warrants prompt assessment. Do not repeat jumps or twisting tests to determine the answer yourself." },

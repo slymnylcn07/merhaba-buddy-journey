@@ -1,5 +1,9 @@
 # Basketball guide cluster: September 16, 2026
 
+## Confirmed medical review
+
+On September 16, 2026, the owner confirmed that all eight basketball guides had been reviewed and requested the existing Suleyman Yalcin, PT attribution. These eight articles now explicitly clear medicalReviewPending and record medicalReviewDate: 2026-09-16. The existing profile and credential text are reused without adding biographical claims. Both the visible byline and JSON-LD use this article-specific date. The inherited September 5 review date remains unchanged for other guides. The pending-review notes below describe the original pre-confirmation state.
+
 ## Expanded comparison follow-up
 
 - Expanded the shoe comparison from four to eight distinct brand/model options, adding ANTA KAI 2 TEAM, PUMA All-Pro NITRO 2, Li-Ning / Way of Wade All City 13 and ASICS GELHOOP V17. Official product pages checked September 16, 2026; references stored in article.sources.

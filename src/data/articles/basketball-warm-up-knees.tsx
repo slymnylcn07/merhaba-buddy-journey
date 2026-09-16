@@ -14,7 +14,8 @@ export const basketballWarmUpKnees: ArticleExport = { cta: "", article: {
   seoTags: "basketball knee warm up, knee warm up before basketball, basketball warm up for knees, basketball landing warm up, basketball dynamic warm up",
   publishedDate: "September 16, 2026", lastUpdated: "September 16, 2026", heroImage,
   nextSlug: "knee-pain-landing-basketball", nextTitle: "Knee Pain When Landing in Basketball",
-  medicalReviewPending: true,
+  medicalReviewPending: false,
+  medicalReviewDate: "2026-09-16",
   faqs: [
     { question: "How should I warm up my knees before basketball?", answer: "Begin with easy whole-body movement, add comfortable lower-body control, then gradually rehearse the stopping, landing and lateral tasks you already tolerate. Finish with basketball skills at increasing intensity rather than going directly from sitting to hard play." },
     { question: "Is shooting around enough of a basketball warm-up?", answer: "Easy shooting can be part of it, but standing jump shots do not cover every demand of defense, braking and direction changes. Include progressive movement preparation, not only shots at the basket." },
