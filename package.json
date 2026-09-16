@@ -12,6 +12,7 @@
     "test:metadata": "tsx --test scripts/seo-metadata.test.ts",
     "test:quick-answer": "tsx --test scripts/article-quick-answer.test.ts",
     "test:guide-conversion": "tsx --test scripts/guide-conversion.test.ts",
+    "test:basketball": "tsx --test scripts/basketball-guides.test.ts",
     "preview": "vite preview",
     "validate:source": "tsx scripts/validate-source.ts",
     "validate:build": "tsx scripts/validate-build.ts",

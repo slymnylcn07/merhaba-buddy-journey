@@ -57,5 +57,8 @@ jobs:
       - name: Test guide conversion guardrails
         run: npm run test:guide-conversion
 
+      - name: Test basketball guide integrity
+        run: npm run test:basketball
+
       - name: Validate performance assets
         run: npm run validate:assets

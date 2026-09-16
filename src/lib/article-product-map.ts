@@ -88,6 +88,14 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
 };
 
 const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
+  "knee-pain-after-basketball": "iceWrap",
+  "jumpers-knee-basketball": "sleeve",
+  "knee-sleeves-for-basketball": "sleeve",
+  "basketball-shoes-knee-pain": "insoles",
+  "basketball-warm-up-knees": "sleeve",
+  "knee-pain-landing-basketball": "iceWrap",
+  "return-to-basketball-knee-pain": "main",
+  "basketball-after-40-knee-recovery": "main",
   "massage-gun-knee-pain": "main",
   "knee-pads-for-kneeling": "sleeve",
   "recumbent-vs-upright-bike-knees": "sleeve",
@@ -159,6 +167,14 @@ const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
 };
 
 const SLUG_RECOMMENDATION_OVERRIDES: Record<string, ProductRec> = {
+  "knee-pain-after-basketball": { ...PRODUCT_RECS.iceWrap, benefit: "A reusable wrap for the short cold-comfort sessions discussed in this basketball guide." },
+  "jumpers-knee-basketball": { ...PRODUCT_RECS.sleeve, benefit: "A breathable sleeve for optional snug coverage alongside your agreed basketball plan." },
+  "knee-sleeves-for-basketball": { ...PRODUCT_RECS.sleeve, benefit: "Compare this plain compression sleeve with the measurement and fit checks in the guide." },
+  "basketball-shoes-knee-pain": { ...PRODUCT_RECS.insoles, benefit: "Check insole dimensions and shoe space before adding optional arch support." },
+  "basketball-warm-up-knees": { ...PRODUCT_RECS.sleeve, benefit: "Optional breathable coverage that you can check during familiar court movements." },
+  "knee-pain-landing-basketball": { ...PRODUCT_RECS.iceWrap, benefit: "See the reusable wrap's fit and use instructions for an appropriate off-court comfort routine." },
+  "return-to-basketball-knee-pain": { ...PRODUCT_RECS.main, benefit: "See how adjustable warmth fits an optional comfort routine between suitable sessions." },
+  "basketball-after-40-knee-recovery": { ...PRODUCT_RECS.main, benefit: "Explore adjustable warmth and optional vibration for an appropriate evening comfort routine." },
   "diclofenac-gel-knee-pain": {
     ...PRODUCT_RECS.insoles,
     benefit:

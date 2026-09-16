@@ -1,6 +1,14 @@
 export type GuideThumbnailLoader = () => Promise<string>;
 
 const thumbnailLoaders: Record<string, GuideThumbnailLoader> = {
+  "knee-pain-after-basketball": () => import("../assets/guide-thumbnails/basketball/knee-pain-after-basketball-thumb.webp").then(module => module.default),
+  "jumpers-knee-basketball": () => import("../assets/guide-thumbnails/basketball/jumpers-knee-basketball-thumb.webp").then(module => module.default),
+  "knee-sleeves-for-basketball": () => import("../assets/guide-thumbnails/basketball/knee-sleeves-for-basketball-thumb.webp").then(module => module.default),
+  "basketball-shoes-knee-pain": () => import("../assets/guide-thumbnails/basketball/basketball-shoes-knee-pain-thumb.webp").then(module => module.default),
+  "basketball-warm-up-knees": () => import("../assets/guide-thumbnails/basketball/basketball-warm-up-knees-thumb.webp").then(module => module.default),
+  "knee-pain-landing-basketball": () => import("../assets/guide-thumbnails/basketball/knee-pain-landing-basketball-thumb.webp").then(module => module.default),
+  "return-to-basketball-knee-pain": () => import("../assets/guide-thumbnails/basketball/return-to-basketball-knee-pain-thumb.webp").then(module => module.default),
+  "basketball-after-40-knee-recovery": () => import("../assets/guide-thumbnails/basketball/basketball-after-40-knee-recovery-thumb.webp").then(module => module.default),
   "massage-gun-knee-pain": () => import("../assets/guide-thumbnails/further-15/massage-gun-knee-pain-thumb.webp").then((module) => module.default),
   "knee-pads-for-kneeling": () => import("../assets/guide-thumbnails/further-15/knee-pads-for-kneeling-thumb.webp").then((module) => module.default),
   "recumbent-vs-upright-bike-knees": () => import("../assets/guide-thumbnails/further-15/recumbent-vs-upright-bike-knees-thumb.webp").then((module) => module.default),

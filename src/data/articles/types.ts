@@ -29,6 +29,10 @@ export interface ArticleData {
   seoTags?: string;
   lastUpdated?: string;
   sources?: ArticleSource[];
+  /** Suppress inherited review claims until this new article is actually reviewed. */
+  medicalReviewPending?: boolean;
+  /** ISO date of this article's confirmed clinical review, not its publication date. */
+  medicalReviewDate?: string;
 }
 
 export interface ArticleExport {
