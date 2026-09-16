@@ -14,6 +14,8 @@ import {
   getShippingBadgeLabel,
 } from "@/lib/shipping-policy";
 import sleeveMeasurementDiagram from "@/assets/fig-sleeve-measure.svg";
+import { estimateProductOffer } from "@/lib/offer-pricing";
+import { NEWSLETTER_DISCOUNT_CODE, NEWSLETTER_DISCOUNT_PCT } from "@/lib/newsletter-config";
 
 export { PaymentLogosRow, PaymentOptionsRow } from "@/components/PaymentLogos";
 
@@ -49,6 +51,7 @@ interface OfferSelectorProps {
   unitCompareAt: number | null;
   currencyCode?: string;
   duoDiscountPct: number;
+  guideOfferReady?: boolean;
   formatMoney: (amount: string, currencyCode?: string) => string;
 }
 
@@ -65,11 +68,13 @@ export const OfferSelector = ({
   unitCompareAt,
   currencyCode,
   duoDiscountPct,
+  guideOfferReady = false,
   formatMoney,
 }: OfferSelectorProps) => {
   const fm = (n: number) => formatMoney(String(n), currencyCode);
   const duoFull = unitPrice * 2;
-  const duoDiscounted = duoFull * (1 - duoDiscountPct / 100);
+  const single = estimateProductOffer(unitPrice, 1, currencyCode || "USD", guideOfferReady, duoDiscountPct);
+  const duo = estimateProductOffer(unitPrice, 2, currencyCode || "USD", guideOfferReady, duoDiscountPct);
 
   const rows: Array<{
     value: 1 | 2;
@@ -83,19 +88,22 @@ export const OfferSelector = ({
     {
       value: 1,
       title: "Buy 1",
-      badges: [] as string[],
-      corner: getShippingBadgeLabel(unitPrice, currencyCode),
-      price: unitPrice,
-      strike: unitCompareAt && unitCompareAt > unitPrice ? unitCompareAt : null,
+      badges: guideOfferReady ? [`${NEWSLETTER_DISCOUNT_CODE} · ${NEWSLETTER_DISCOUNT_PCT}% off`] : [],
+      corner: getShippingBadgeLabel(single.total, currencyCode),
+      price: single.total,
+      strike: guideOfferReady ? unitPrice : unitCompareAt && unitCompareAt > unitPrice ? unitCompareAt : null,
+      note: guideOfferReady ? `Estimated with ${NEWSLETTER_DISCOUNT_CODE}. Confirmed in cart.` : undefined,
     },
     {
       value: 2,
       title: "Buy 2",
       badges: [`Get Extra ${duoDiscountPct}%`],
-      corner: getShippingBadgeLabel(duoDiscounted, currencyCode),
-      price: duoDiscounted,
+      corner: getShippingBadgeLabel(duo.total, currencyCode),
+      price: duo.total,
       strike: duoFull,
-      note: "Discount applied automatically at checkout",
+      note: guideOfferReady
+        ? "Estimated quantity offer, not stacked with GUIDE10. Confirmed in cart."
+        : "Estimated automatic discount. Confirmed in cart.",
     },
   ];
 
@@ -155,6 +163,11 @@ export const OfferSelector = ({
           </button>
         );
       })}
+      {(guideOfferReady || qty === 2) && (
+        <p className="text-[11px] leading-4 text-slate-500 sm:hidden">
+          Estimated offer. Confirmed in cart.
+        </p>
+      )}
     </div>
   );
 };

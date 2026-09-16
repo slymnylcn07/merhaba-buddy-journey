@@ -54,5 +54,8 @@ jobs:
       - name: Test article quick answers
         run: npm run test:quick-answer
 
+      - name: Test guide conversion guardrails
+        run: npm run test:guide-conversion
+
       - name: Validate performance assets
         run: npm run validate:assets

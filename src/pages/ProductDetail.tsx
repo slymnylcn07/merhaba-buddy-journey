@@ -42,6 +42,8 @@ import {
   trackViewItem as trackGA4ViewItem,
 } from "@/hooks/use-google-analytics";
 import { getGuideOfferSource, GUIDE_OFFER_CODE } from "@/lib/guide-offer";
+import { useGuideOfferReady } from "@/hooks/use-guide-offer-ready";
+import { estimateProductOffer } from "@/lib/offer-pricing";
 import thumbMassagerExpectations from "@/assets/guide-thumb-massager-expectations.jpg";
 import thumbDailyRoutineNew from "@/assets/guide-thumb-daily-routine-new.jpg";
 import thumbHeatVsIce from "@/assets/guide-thumb-heat-vs-ice.webp";
@@ -133,6 +135,7 @@ export default function ProductDetail() {
   const [isBuying, setIsBuying] = useState(false);
   const trackedProductId = useRef("");
   const addItem = useCartStore((state) => state.addItem);
+  const guideOfferReady = useGuideOfferReady();
 
   useEffect(() => {
     let active = true;
@@ -144,19 +147,8 @@ export default function ProductDetail() {
     const requestedHandle = handle || PRIMARY_PRODUCT_HANDLE;
 
     getProductByHandle(requestedHandle)
-      .then(async (item) => {
-        if (!active) return;
-
-        const firstImageUrl = item?.node.images.edges[0]?.node.url;
-        if (firstImageUrl) {
-          await new Promise<void>((resolve) => {
-            const image = new Image();
-            image.onload = () => resolve();
-            image.onerror = () => resolve();
-            image.src = firstImageUrl;
-          });
-        }
-
+      .then((item) => {
+        // Product data and purchase controls must not wait for the image CDN.
         if (active) setProduct(item);
       })
       .catch(() => {
@@ -176,10 +168,8 @@ export default function ProductDetail() {
   const currency = variant?.price.currencyCode || product?.node.priceRange.minVariantPrice.currencyCode || "GBP";
   const basePrice = Number(variantPrice || 0);
   const pageConfig = getProductPageConfig("main");
-  const selectedOfferTotal =
-    bundleQty === 2
-      ? basePrice * 2 * (1 - pageConfig.duoDiscountPct / 100)
-      : basePrice;
+  const selectedOffer = estimateProductOffer(basePrice, bundleQty, currency, guideOfferReady, pageConfig.duoDiscountPct);
+  const selectedOfferTotal = selectedOffer.total;
   const selectedOfferHasFreeShipping = isFreeShippingEligible(
     selectedOfferTotal,
     currency,
@@ -190,6 +180,8 @@ export default function ProductDetail() {
     : null;
   const compareAtDisplay = bundleQty === 2
     ? formatMoney(String(basePrice * 2), currency)
+    : guideOfferReady
+      ? formatMoney(String(basePrice), currency)
     : compareAtAmount && compareAtAmount > basePrice
       ? formatMoney(String(compareAtAmount), currency)
       : null;
@@ -464,12 +456,13 @@ export default function ProductDetail() {
                   unitCompareAt={compareAtAmount}
                   currencyCode={currency}
                   duoDiscountPct={pageConfig.duoDiscountPct}
+                  guideOfferReady={guideOfferReady}
                   formatMoney={formatMoney}
                 />
 
                 <div className="mt-5 grid gap-3">
                   <Button onClick={handleAddToCart} disabled={!variant || isLoading} className="h-12 rounded-full bg-blue-600 text-base font-semibold text-white hover:bg-blue-700">
-                    Add to Cart - {bundleQty === 2 ? formatMoney(String(basePrice * 2 * (1 - pageConfig.duoDiscountPct / 100)), currency) : displayPrice}
+                    Add to Cart - {displayPrice}
                   </Button>
                   <Button onClick={handleBuyNow} disabled={!variant || isLoading || isBuying} variant="outline" className="h-12 rounded-full border-slate-300 text-base font-semibold text-slate-950 hover:bg-slate-950 hover:text-white">
                     {isBuying ? "Opening checkout..." : "Buy Now"}
@@ -630,7 +623,7 @@ export default function ProductDetail() {
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/95 p-3 shadow-[0_-18px_60px_-35px_rgba(15,23,42,0.65)] backdrop-blur lg:hidden">
         <div className="mx-auto flex max-w-xl items-center gap-2 min-[390px]:gap-3">
           <div className="min-w-0 flex-1">
-            <p className="truncate text-xs font-medium text-slate-500">FlexiKnee Massager</p>
+            <p className="truncate text-xs font-medium text-slate-500">{guideOfferReady ? selectedOffer.usesGuideOffer ? "GUIDE10 estimate" : "Quantity offer estimate" : "FlexiKnee Massager"}</p>
             <p className="flex items-baseline gap-1.5 text-base font-semibold text-slate-950">
               {compareAtDisplay && <s className="hidden text-xs font-normal text-slate-400 min-[420px]:inline">{compareAtDisplay}</s>}
               {displayPrice}

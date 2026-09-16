@@ -7,8 +7,11 @@ import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { pickProductForSlug, ProductRec, PRODUCT_RECS } from "@/lib/article-product-map";
 import { getPublicProductHandle } from "@/lib/product-config";
 import { getProductMarketplaceFeedback } from "@/data/product-marketplace-feedback";
-import { articleCTAs } from "@/data/article-ctas";
+import { articleCTAs, type ArticleCtaCopy } from "@/data/article-ctas";
+import { estimatePercentagePrice } from "@/lib/offer-pricing";
 import { recentArticleCTAs } from "@/data/recent-article-ctas";
+import { getArticleProductDemo } from "@/data/article-product-demos";
+import { ArticleProductDemo } from "@/components/ArticleProductDemo";
 import { NEWSLETTER_DISCOUNT_CODE, NEWSLETTER_DISCOUNT_PCT } from "@/lib/newsletter-config";
 import {
   buildGuideOfferProductPath,
@@ -239,9 +242,10 @@ const PremiumCTA = ({
   const slug = articleSlug || (location.pathname.startsWith("/guides/")
     ? location.pathname.replace("/guides/", "")
     : undefined);
-  const mappedCopy = slug ? articleCTAs[slug] || recentArticleCTAs[slug] : undefined;
-
+  const mappedCopy: ArticleCtaCopy | undefined = slug ? articleCTAs[slug] || recentArticleCTAs[slug] : undefined;
   const rec: ProductRec = pickProductForSlug(slug);
+  const demo = getArticleProductDemo(slug, placement, rec.handle);
+  const ctaVariant = demo?.variant || mappedCopy?.variant || "guide-product-card-v3";
   const presentation =
     CTA_PRODUCT_PRESENTATIONS[rec.handle] || CTA_PRODUCT_PRESENTATIONS[PRODUCT_RECS.main.handle];
   const displayHeadline = getDisplayHeadline(headline || mappedCopy?.headline, presentation);
@@ -299,14 +303,11 @@ const PremiumCTA = ({
   const currencyCode = livePrice?.currencyCode || (fallbackUsdAmount !== null ? "USD" : null);
   const isRange = livePrice?.isRange || false;
   const pricePrefix = isRange ? "From " : "";
-  const discountedAmount =
-    regularAmount !== null && Number.isFinite(regularAmount)
-      ? regularAmount * (1 - NEWSLETTER_DISCOUNT_PCT / 100)
-      : null;
-  const savingsAmount =
-    regularAmount !== null && Number.isFinite(regularAmount)
-      ? regularAmount * (NEWSLETTER_DISCOUNT_PCT / 100)
-      : null;
+  const estimate = regularAmount !== null && Number.isFinite(regularAmount) && currencyCode
+    ? estimatePercentagePrice(regularAmount, NEWSLETTER_DISCOUNT_PCT, currencyCode)
+    : null;
+  const discountedAmount = estimate?.total ?? null;
+  const savingsAmount = estimate?.savings ?? null;
   const normalizedSavingsAmount =
     savingsAmount !== null && Math.abs(savingsAmount - Math.round(savingsAmount)) < 0.01
       ? Math.round(savingsAmount)
@@ -328,7 +329,8 @@ const PremiumCTA = ({
 
   useEffect(() => {
     const element = cardRef.current;
-    if (!element || impressionSent.current) return;
+    if (!element) return;
+    impressionSent.current = false;
 
     const sendImpression = () => {
       if (impressionSent.current) return;
@@ -340,7 +342,7 @@ const PremiumCTA = ({
         content_slug: slug || "unknown",
         creative_slot: placement,
         placement,
-        cta_variant: "guide-product-card-v3",
+        cta_variant: ctaVariant,
         product_handle: rec.handle,
         offer_code: NEWSLETTER_DISCOUNT_CODE,
         interaction_type: "impression",
@@ -363,7 +365,7 @@ const PremiumCTA = ({
     );
     observer.observe(element);
     return () => observer.disconnect();
-  }, [placement, rec.handle, rec.title, slug]);
+  }, [ctaVariant, placement, rec.handle, rec.title, slug]);
 
   const handleProductClick = () => {
     markGuideOfferSource(slug || "unknown", placement);
@@ -374,7 +376,7 @@ const PremiumCTA = ({
       content_slug: slug || "unknown",
       creative_slot: placement,
       placement,
-      cta_variant: "guide-product-card-v3",
+      cta_variant: ctaVariant,
       product_handle: rec.handle,
       offer_code: NEWSLETTER_DISCOUNT_CODE,
       interaction_type: "click",
@@ -388,8 +390,8 @@ const PremiumCTA = ({
   const shippingCopy = `Free shipping over ${formatFreeShippingThreshold()}`;
   const isMidArticle = placement === "mid_article";
   const objectPositionStyle = {
-    "--cta-object-mobile": presentation.mobileObjectPosition,
-    "--cta-object-desktop": presentation.desktopObjectPosition,
+    "--cta-object-mobile": demo?.mobileObjectPosition || presentation.mobileObjectPosition,
+    "--cta-object-desktop": demo?.desktopObjectPosition || presentation.desktopObjectPosition,
   } as CSSProperties;
 
   return (
@@ -397,6 +399,7 @@ const PremiumCTA = ({
       ref={cardRef}
       data-cta="product-card"
       data-cta-placement={placement}
+      data-cta-variant={ctaVariant}
       data-offer-code={NEWSLETTER_DISCOUNT_CODE}
       className={`premium-article-cta not-prose mx-auto w-full max-w-[720px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_45px_-34px_rgba(15,23,42,0.45)] ${isMidArticle ? "my-7" : "my-10"}`}
     >
@@ -407,11 +410,12 @@ const PremiumCTA = ({
       </div>
 
       <div className={`grid grid-cols-1 ${isMidArticle ? "min-[860px]:grid-cols-[38%_62%]" : "min-[860px]:grid-cols-[40%_60%]"}`}>
-        <div className={`relative overflow-hidden bg-slate-100 min-[860px]:h-auto min-[860px]:aspect-auto min-[860px]:self-stretch ${isMidArticle ? "aspect-[16/7]" : "aspect-video"}`}>
+        <div className={`relative overflow-hidden bg-slate-100 min-[860px]:h-auto min-[860px]:aspect-auto min-[860px]:self-stretch ${demo ? "aspect-[5/4]" : isMidArticle ? "aspect-[16/7]" : "aspect-video"}`}>
           <img
-            src={presentation.lifestyleImage}
-            alt={`${rec.title} in use during a comfort routine`}
+            src={demo?.poster || presentation.lifestyleImage}
+            alt={demo ? "Knee massager secured around a knee, showing the wrap and top control panel" : `${rec.title} in use during a comfort routine`}
             loading="lazy"
+            data-article-image-zoom={demo ? "false" : undefined}
             onError={(event) => {
               const image = event.currentTarget;
               const liveUrl = liveImage ? new URL(liveImage, window.location.origin).href : null;
@@ -425,9 +429,22 @@ const PremiumCTA = ({
             className="!absolute !inset-0 !m-0 !h-full !w-full !max-w-none !rounded-none !border-0 bg-transparent !object-cover !shadow-none [object-position:var(--cta-object-mobile)] min-[860px]:[object-position:var(--cta-object-desktop)]"
             style={objectPositionStyle}
           />
-          <span className="absolute bottom-3 left-3 rounded-full bg-slate-950/85 px-2.5 py-1 text-[10px] font-medium text-white shadow-sm backdrop-blur-sm">
-            {presentation.routineLabel}
-          </span>
+          {demo && slug ? (
+            <ArticleProductDemo
+              slug={slug}
+              productHandle={rec.handle}
+              placement={placement}
+              ctaVariant={ctaVariant}
+              src={demo.src}
+              poster={demo.poster}
+              title={demo.title}
+              triggerLabel={demo.triggerLabel}
+            />
+          ) : (
+            <span className="absolute bottom-3 left-3 rounded-full bg-slate-950/85 px-2.5 py-1 text-[10px] font-medium text-white shadow-sm backdrop-blur-sm">
+              {presentation.routineLabel}
+            </span>
+          )}
         </div>
 
         <div className={`min-w-0 ${isMidArticle ? "p-3.5 sm:p-5" : "p-5 sm:p-6"}`}>
@@ -471,7 +488,7 @@ const PremiumCTA = ({
               </span>
             </div>
             <p className="!mb-0 !mt-1 !text-[11px] !leading-4 text-slate-500">
-              {NEWSLETTER_DISCOUNT_CODE} applied automatically in cart
+              Estimated with {NEWSLETTER_DISCOUNT_CODE}. Confirmed in cart.
             </p>
           </div>
 
@@ -481,7 +498,7 @@ const PremiumCTA = ({
             className={`${isMidArticle ? "mt-2.5 min-h-11 py-2.5" : "mt-3 min-h-12 py-3"} flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 text-center text-base font-bold leading-5 !text-white !no-underline transition-colors hover:bg-blue-700 hover:!text-white hover:!no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2`}
           >
             <span>
-              See how it works
+              {mappedCopy?.buttonText || "See how it works"}
             </span>
             <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
           </Link>

@@ -75,8 +75,10 @@ export function DirectProductDiscountPopup({
     if (!cameFromGuide) return;
     setGuideSourceActive(true);
 
-    if (guideOfferPrepared.current || offerIsReady) return;
+    if (guideOfferPrepared.current) return;
     guideOfferPrepared.current = true;
+    // Do not re-add a code the customer subsequently removes from their cart.
+    if (offerIsReady) return;
 
     void applyDiscountCode(GUIDE_OFFER_CODE).then((result) => {
       trackEvent("guide_offer_prepared", {

@@ -35,6 +35,8 @@ import {
   trackViewItem as trackGA4ViewItem,
 } from "@/hooks/use-google-analytics";
 import { getGuideOfferSource, GUIDE_OFFER_CODE } from "@/lib/guide-offer";
+import { useGuideOfferReady } from "@/hooks/use-guide-offer-ready";
+import { estimateProductOffer } from "@/lib/offer-pricing";
 import { getProductPath, getShopifyProductHandleCandidates } from "@/lib/product-config";
 import { toShopifyAddToCartData, useCartStore } from "@/stores/cartStore";
 import { getProductProfile } from "@/data/product-profiles";
@@ -70,6 +72,7 @@ export default function SecondaryProductDetail() {
   const [isBuying, setIsBuying] = useState(false);
   const trackedProductId = useRef("");
   const addItem = useCartStore((state) => state.addItem);
+  const guideOfferReady = useGuideOfferReady();
 
   useEffect(() => {
     let active = true;
@@ -86,19 +89,8 @@ export default function SecondaryProductDetail() {
     };
 
     loadProduct()
-      .then(async (item) => {
-        if (!active) return;
-
-        const firstImageUrl = item?.node.images.edges[0]?.node.url;
-        if (firstImageUrl) {
-          await new Promise<void>((resolve) => {
-            const image = new Image();
-            image.onload = () => resolve();
-            image.onerror = () => resolve();
-            image.src = firstImageUrl;
-          });
-        }
-
+      .then((item) => {
+        // Load gallery images independently of product data and variant controls.
         if (!active) return;
         setProduct(item);
         const firstAvailable = item?.node.variants.edges.find((edge) => edge.node.availableForSale)?.node;
@@ -135,10 +127,8 @@ export default function SecondaryProductDetail() {
       : null;
   const pageConfig = getProductPageConfig(profile.key);
   const unitPriceNum = price ? Number(price.amount) : 0;
-  const selectedOfferTotal =
-    quantity === 2
-      ? unitPriceNum * 2 * (1 - pageConfig.duoDiscountPct / 100)
-      : unitPriceNum;
+  const selectedOffer = estimateProductOffer(unitPriceNum, quantity as 1 | 2, price?.currencyCode || "USD", guideOfferReady, pageConfig.duoDiscountPct);
+  const selectedOfferTotal = selectedOffer.total;
   const selectedOfferHasFreeShipping = isFreeShippingEligible(
     selectedOfferTotal,
     price?.currencyCode,
@@ -148,6 +138,8 @@ export default function SecondaryProductDetail() {
     : null;
   const selectedOfferCompareAt = price && quantity === 2
     ? formatMoney(String(unitPriceNum * 2), price.currencyCode)
+    : price && guideOfferReady
+      ? formatMoney(price.amount, price.currencyCode)
     : compareAt
       ? formatMoney(compareAt.amount, compareAt.currencyCode)
       : null;
@@ -506,6 +498,7 @@ export default function SecondaryProductDetail() {
                   unitCompareAt={compareAt ? Number(compareAt.amount) : null}
                   currencyCode={price?.currencyCode}
                   duoDiscountPct={pageConfig.duoDiscountPct}
+                  guideOfferReady={guideOfferReady}
                   formatMoney={formatMoney}
                 />
 
@@ -518,7 +511,7 @@ export default function SecondaryProductDetail() {
                   >
                     <ShoppingBag className="h-4 w-4" />
                     {selectedVariant?.availableForSale
-                      ? `Add to cart - ${formatMoney(String(quantity === 2 ? unitPriceNum * 2 * (1 - pageConfig.duoDiscountPct / 100) : unitPriceNum), price?.currencyCode)}`
+                      ? `Add to cart - ${selectedOfferDisplay}`
                       : "Currently unavailable"}
                   </button>
                   <button
@@ -695,7 +688,7 @@ export default function SecondaryProductDetail() {
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 p-3 shadow-[0_-15px_40px_-25px_rgba(15,23,42,0.45)] backdrop-blur lg:hidden">
         <div className="mx-auto flex max-w-xl items-center gap-3">
           <div className="min-w-0 flex-1">
-            <p className="truncate text-sm font-semibold text-slate-950">{profile.h1}</p>
+            <p className="truncate text-sm font-semibold text-slate-950">{guideOfferReady ? selectedOffer.usesGuideOffer ? "GUIDE10 estimate" : "Quantity offer estimate" : profile.h1}</p>
             {selectedOfferDisplay && (
               <p className="flex items-baseline gap-1.5 text-xs text-slate-500">
                 {selectedOfferCompareAt && <s className="text-[11px] text-slate-400">{selectedOfferCompareAt}</s>}

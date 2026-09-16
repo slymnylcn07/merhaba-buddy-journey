@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { InfoBox } from "@/components/ArticleCallouts";
 import type { ArticleExport } from "./types";
-import heroImage from "@/assets/article-hero-do-massagers-work.jpg";
+import heroImage from "@/assets/article-hero-do-massagers-work-v2.webp";
 import redLightTherapyImg from "@/assets/article-red-light-knee-therapy.jpg";
 import heatVsRedlightImg from "@/assets/article-heat-vs-redlight-knee.jpg";
 import flexikneeDeviceImg from "@/assets/article-flexiknee-device-illustration.jpg";
@@ -16,7 +16,8 @@ export const doKneeMassagersWork: ArticleExport = {
     intro: "Knee massagers may provide temporary warmth or a relaxing massage-style sensation, but devices differ widely and they do not diagnose or fix the cause of knee pain. This guide explains what heated knee massagers may reasonably offer, what current research cannot prove about a consumer product, and how to decide whether one is worth buying.",
     metaTitle: "Do Knee Massagers Really Work? Benefits, Safety & Value",
     metaDescription: "Do heated knee massagers really work, and are they worth it? Compare warmth, vibration and red light, realistic benefits, safety limits and value.",
-    heroImage,
+  heroImage,
+  heroObjectPosition: "center 28%",
     publishedDate: "February 24, 2026",
     lastUpdated: "July 29, 2026",
     nextSlug: "smart-heated-knee-braces-2026",
