@@ -33,6 +33,10 @@ export const basketballShoesKneePain: ArticleExport = { cta: "", article: {
     { title: "Anthony Edwards 2: cushioning and support specifications", publisher: "adidas News", url: "https://news.adidas.com/basketball/adidas-basketball-and-anthony-edwards-unveil-the-anthony-edwards-2/s/4e0450e1-5935-45c4-a02b-e410074bafe3" },
     { title: "TWO WXY v5: cushioning and fit specifications", publisher: "New Balance Newsroom", url: "https://newbalance.newsmarket.com/latest-news/new-balance-unveils-the-two-wxy-v5/s/59eff8c2-5275-4c7d-9e43-8c057ef25f04" },
     { title: "Curry 12: cushioning, plate and upper specifications", publisher: "Under Armour Newsroom", url: "https://about.underarmour.com/en/stories/2024/08/the-future-just-got-better---the-curry-12-has-arrived-.html" },
+    { title: "All-Pro NITRO 2: dual-layer cushioning, lacing and fit", publisher: "PUMA", url: "https://us.puma.com/us/en/pd/all-pro-nitro-2-mens-basketball-shoes/312307" },
+    { title: "KAI 2 TEAM: outdoor outsole, cushioning and support specifications", publisher: "ANTA", url: "https://anta.com/blogs/product-information/join-the-team-anta-kai-2-team-are-now-available" },
+    { title: "Wade All City 13 Year of the Snake: cushioning, Euro Plate, outsole and sizing", publisher: "Li-Ning / Way of Wade", url: "https://wayofwade.com/en-au/products/wade-all-city-13-year-of-the-snake" },
+    { title: "GELHOOP V17: cushioning, outsole and standard-width specifications", publisher: "ASICS", url: "https://www.asics.com/sg/en-sg/gelhoop-v17/p/1063A096-400.html" },
   ],
   content: <>
     <h2>Begin with your knee pattern, not a shoe ranking</h2>
@@ -50,18 +54,87 @@ export const basketballShoesKneePain: ArticleExport = { cta: "", article: {
     </tbody></ArticleTable>
     <p>Think of these as a connected system. Excellent cushioning does not fix toes jammed against the front. A wide platform is not useful if your foot swims inside the upper. Strong grip is not permission to ignore a dusty or wet court. Comparing one dramatic specification while overlooking the rest is an easy way to buy a shoe that looks ideal on paper and disappoints in practice.</p>
     <h2>Brand and model comparison: strengths, trade-offs and scores</h2>
-    <p>These four models give you concrete designs to compare, not a claim that one entire brand is good and another is bad. We checked the manufacturers' model descriptions on September 16, 2026. We have not worn or laboratory-tested these shoes. Prices, local sizes and stock change, so none is presented as the cheapest or newest option. The reference photographs elsewhere in this guide are illustrative, not photographs of these four models.</p>
-    <p><strong>How the score works:</strong> this is a documented-feature score out of five, not a comfort, traction-performance or knee-pain relief rating. Give one point for each clearly described item in the linked manufacturer reference: a named cushioning platform; full-length, dual or specifically zoned cushioning; a plate or shank; a specific containment or heel-hold feature; and an outsole traction design. An unconfirmed item earns no point, but that does not prove the feature is absent. More documented features do not automatically make a shoe better for your knee.</p>
-    <ArticleTable caption="Four basketball shoe models: documented features, strengths and checks">
-      <thead><tr><th scope="col">Model and feature score</th><th scope="col">Standout design</th><th scope="col">Trade-off or buying check</th></tr></thead>
+    <p>Compare eight models across Nike, Curry, ANTA, adidas, Li-Ning/Way of Wade, New Balance, PUMA and ASICS. These are specific designs, not a claim that one entire brand is good and another is bad. We checked the manufacturers' model descriptions on September 16, 2026. We have not worn or laboratory-tested these shoes. Prices, sizes and regional availability change, so none is presented as the cheapest or newest option. The guide photographs are illustrative, not photographs of the compared models.</p>
+    <p><strong>How the score works:</strong> this is a documented-feature score out of five, not a comfort, traction-performance or knee-pain relief rating. Give one point for each clearly described item in the cited manufacturer reference: <strong>C</strong>, a named cushioning platform; <strong>Z</strong>, full-length, dual or specifically zoned cushioning; <strong>P</strong>, a plate or shank; <strong>H</strong>, a specific containment or heel-hold feature; and <strong>T</strong>, an outsole traction design. A generic rubber-material listing does not establish a traction design, and breathable mesh alone does not establish heel hold. Unconfirmed items earn no point, but that does not prove the features are absent.</p>
+    <p>The final column shows the total and the criteria that earned it. Rows run from highest to lowest score, with equal scores tied rather than assigned an invented winner. A lower score is not evidence of worse cushioning or grip. This measures what the reference documents, not laboratory quality; more elaborate marketing can therefore score higher. Use the individual columns and your fitting trial to make the buying decision.</p>
+    <ArticleTable caption="Eight basketball shoe models: cushioning, support, grip, fit and feature scores" wide>
+      <thead><tr><th scope="col">Brand / model</th><th scope="col">Cushioning setup</th><th scope="col">Plate and lateral support</th><th scope="col">Outsole and court check</th><th scope="col">Upper and fit check</th><th scope="col">Reason to compare / limitation</th><th scope="col">Feature score</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Nike LeBron XXIII<br /><span className="article-score">5 / 5</span></th><td>Full-length ZoomX drop-in cushioning, carbon-fiber shank, Crown containment and multidirectional traction.</td><td>The drop-in midsole is part of the design. Do not assume a generic insert is an equivalent replacement.</td></tr>
-        <tr><th scope="row">adidas Anthony Edwards 2<br /><span className="article-score">4 / 5</span></th><td>LIGHTBOOST/Lightstrike rim-and-core cushioning, propulsion plate and containment fangs.</td><td>The cited launch reference lacks outsole-pattern detail. Check your exact outsole and court rather than assuming superior grip.</td></tr>
-        <tr><th scope="row">New Balance TWO WXY v5<br /><span className="article-score">3 / 5</span></th><td>FuelCell plus Fresh Foam X at heel and forefoot; heel-hold collar.</td><td>Plate and traction details are unspecified in this reference. A lower score is not evidence of worse cushioning or grip.</td></tr>
-        <tr><th scope="row">Curry 12<br /><span className="article-score">5 / 5</span></th><td>Dual UA Flow cushioning, Flow outsole, Pebax plates, zonal mesh and TPU heel counter.</td><td>Manufacturer grip claims do not establish performance on your dusty or outdoor court. Confirm surface suitability.</td></tr>
+        <tr>
+          <th scope="row">Nike LeBron XXIII</th>
+          <td>Full-length ZoomX drop-in midsole. The cushioning unit sits directly under the foot.</td>
+          <td>Carbon-fiber shank and Crown Containment System.</td>
+          <td>Multidirectional tread. The release does not establish outdoor wear life or dusty-floor performance.</td>
+          <td>Engineered upper and soft lining. Check heel security with your normal socks.</td>
+          <td><strong>Compare for:</strong> a full-length drop-in design with separate torsional support. <strong>Check:</strong> do not replace the structural drop-in with a generic insole.</td>
+          <td><span className="article-score">5 / 5</span><small className="article-score__basis">C · Z · P · H · T</small></td>
+        </tr>
+        <tr>
+          <th scope="row">Curry 12</th>
+          <td>Dual UA Flow midsole with two cushioning components.</td>
+          <td>Pebax midfoot and segmented forefoot plates; lateral TPU insert and TPU heel counter.</td>
+          <td>Flow outsole. No comparable dust or outdoor-durability test is supplied in the release.</td>
+          <td>Zonal mesh and articulated lace eyelets. Check pressure across the instep and heel hold.</td>
+          <td><strong>Compare for:</strong> Flow cushioning with a segmented forefoot plate. <strong>Check:</strong> grip claims do not establish performance on your particular court.</td>
+          <td><span className="article-score">5 / 5</span><small className="article-score__basis">C · Z · P · H · T</small></td>
+        </tr>
+        <tr>
+          <th scope="row">ANTA KAI 2 TEAM</th>
+          <td>Full-length A-FLASHEDGE cushioning.</td>
+          <td>Large nylon midfoot plate and reinforced KAI's Shield TPU sidewalls.</td>
+          <td>Cement Killer PRO outsole, explicitly positioned for outdoor courts.</td>
+          <td>Sidewall containment is specified; a width recommendation is not. Measure both feet before ordering.</td>
+          <td><strong>Compare for:</strong> an explicitly outdoor-focused option. <strong>Check:</strong> TEAM is a separate model; do not transfer KAI 2 or SPEED specifications to it.</td>
+          <td><span className="article-score">5 / 5</span><small className="article-score__basis">C · Z · P · H · T</small></td>
+        </tr>
+        <tr>
+          <th scope="row">adidas Anthony Edwards 2</th>
+          <td>LIGHTBOOST and Lightstrike in a rim-and-core construction.</td>
+          <td>Propulsion plate plus articulated containment fangs.</td>
+          <td>Outsole pattern is not detailed in the cited release. Confirm the exact outsole and intended surface.</td>
+          <td>Containment is described, but width is not. Check side pressure during controlled lateral steps.</td>
+          <td><strong>Compare for:</strong> combined foam, plate and containment construction. <strong>Check:</strong> do not infer superior grip from support specifications.</td>
+          <td><span className="article-score">4 / 5</span><small className="article-score__basis">C · Z · P · H</small></td>
+        </tr>
+        <tr>
+          <th scope="row">Li-Ning / Way of Wade All City 13</th>
+          <td>Full-length BOOM midsole.</td>
+          <td>TPU Euro Plate under the midsole. A separate heel-hold system is not specified in this reference.</td>
+          <td>Rubber forefoot and GCU rearfoot. The manufacturer describes indoor and outdoor use.</td>
+          <td>VAJRA SKIN upper; regular fit. This listing suggests half a size up for wide feet, subject to a fitting check.</td>
+          <td><strong>Compare for:</strong> mixed-court use with a hybrid outsole. <strong>Check:</strong> this is All City 13, not Encore; confirm sizing and returns for your region.</td>
+          <td><span className="article-score">4 / 5</span><small className="article-score__basis">C · Z · P · T</small></td>
+        </tr>
+        <tr>
+          <th scope="row">New Balance TWO WXY v5</th>
+          <td>FuelCell combined with Fresh Foam X at the heel and ball of the foot.</td>
+          <td>Heel-supporting collar. A plate or shank is not specified in the cited release.</td>
+          <td>Tread design and outdoor suitability are not detailed in this reference.</td>
+          <td>Engineered mesh and cushioning around the toe box. Collar height is not proof of knee protection.</td>
+          <td><strong>Compare for:</strong> zoned cushioning and a heel-hold collar. <strong>Check:</strong> missing specification detail is not a measured performance weakness.</td>
+          <td><span className="article-score">3 / 5</span><small className="article-score__basis">C · Z · H</small></td>
+        </tr>
+        <tr>
+          <th scope="row">PUMA All-Pro NITRO 2</th>
+          <td>NITRO SQD: softer inner foam and firmer outer foam.</td>
+          <td>PWR Print upper and forefoot cord lockdown extending toward the midsole. No plate is specified.</td>
+          <td>Rubber outsole is listed, but the page does not detail its traction pattern or outdoor wear life.</td>
+          <td>Regular fit. Check the forefoot cord tension without overtightening to force a secure fit.</td>
+          <td><strong>Compare for:</strong> layered foam and a targeted lacing system. <strong>Check:</strong> regular fit does not guarantee enough width for your foot.</td>
+          <td><span className="article-score">3 / 5</span><small className="article-score__basis">C · Z · H</small></td>
+        </tr>
+        <tr>
+          <th scope="row">ASICS GELHOOP V17</th>
+          <td>FLYTEFOAM midsole. This reference does not identify a full-length, dual or zoned cushioning layout.</td>
+          <td>No specific plate or heel-lock system is described on this regional product page.</td>
+          <td>NC Rubber with outsole grooves. Surface-specific durability is not documented here.</td>
+          <td>Breathable, no-sew mesh. The cited Singapore version is standard D width; verify local sizing and availability.</td>
+          <td><strong>Compare for:</strong> a mesh-upper alternative with named foam and rubber. <strong>Check:</strong> sparse specifications explain the score, not poor shoe quality.</td>
+          <td><span className="article-score">2 / 5</span><small className="article-score__basis">C · T</small></td>
+        </tr>
       </tbody>
     </ArticleTable>
-    <p><strong>What we would shortlist:</strong> for a full-length drop-in cushioning design, start the comparison with LeBron XXIII. For an explicitly described plate-and-containment combination, compare Anthony Edwards 2. TWO WXY v5 is a useful zoned-cushioning alternative; Curry 12 offers a different Flow-based platform. Those are design-based starting points, not hands-on winners. A pair that crowds your toes, lets your heel slip or feels unpredictable is a poor choice for you even if it scores five out of five here.</p>
+    <p><strong>How to narrow the list:</strong> for outdoor sessions, ANTA KAI 2 TEAM and Wade All City 13 have explicit outdoor-use descriptions. For cushioning construction, compare LeBron's drop-in, Curry's dual Flow, PUMA's soft-core/firm-outer setup and New Balance's zoned foam. These are design-based starting points, not hands-on winners. A pair that crowds your toes, lets your heel slip or feels unpredictable is a poor choice for you even if it scores five out of five here.</p>
     <p>The score deliberately excludes injury-prevention claims, customer stars, price and celebrity endorsement. We have no head-to-head clinical evidence that these models reduce knee pain better than one another. Compare the exact version and fit, not just the logo. Manufacturer references appear in Sources and Further Reading below, separately from the independent medical and biomechanics evidence.</p>
     <h2>Cushioning: comfortable impact is not a cure</h2>
     <p>Basketball footwear research examines how construction changes movement and loading. A systematic review considered features including cushioning, midsole hardness, collar height, traction, stiffness and mass. Its biomechanical findings are useful for understanding design trade-offs, but they do not identify a single shoe that treats all knee conditions. Short laboratory tasks are also different from months of recreational play with changing symptoms.</p>

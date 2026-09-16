@@ -64,17 +64,37 @@ for (const slug of slugs) {
   });
 }
 
-test("shoe comparison explains its score and cites all four manufacturers", () => {
+test("eight-model shoe comparison explains its score and cites each manufacturer", () => {
   const body = source("src/data/articles/basketball-shoes-knee-pain.tsx");
-  for (const name of ["Nike LeBron XXIII", "adidas Anthony Edwards 2", "New Balance TWO WXY v5", "Curry 12"]) {
+  for (const name of ["Nike LeBron XXIII", "adidas Anthony Edwards 2", "New Balance TWO WXY v5", "Curry 12", "ANTA KAI 2 TEAM", "PUMA All-Pro NITRO 2", "Li-Ning / Way of Wade All City 13", "ASICS GELHOOP V17"]) {
     assert.ok(body.includes(name));
   }
   assert.match(body, /documented-feature score out of five/);
   assert.match(body, /We have not worn or laboratory-tested these shoes/);
   assert.match(body, /not evidence of worse cushioning or grip/);
-  for (const publisher of ["Nike Newsroom", "adidas News", "New Balance Newsroom", "Under Armour Newsroom"]) {
+  for (const publisher of ["Nike Newsroom", "adidas News", "New Balance Newsroom", "Under Armour Newsroom", "ANTA", "PUMA", "Li-Ning / Way of Wade", "ASICS"]) {
     assert.ok(body.includes(publisher));
   }
+  const comparison = body.match(/<ArticleTable caption="Eight basketball shoe models:[\s\S]+?<\/ArticleTable>/)?.[0];
+  assert.ok(comparison);
+  assert.match(comparison, /wide>/);
+  const headers = [...comparison.matchAll(/<th scope="col">([^<]+)<\/th>/g)].map(match => match[1]);
+  assert.equal(headers.length, 7);
+  assert.equal(headers.at(-1), "Feature score");
+  const rows = [...comparison.matchAll(/<tr>\s*<th scope="row">([\s\S]+?)<\/tr>/g)].map(match => match[0]);
+  assert.equal(rows.length, 8);
+  const scores = rows.map(row => {
+    assert.equal((row.match(/<td>/g) ?? []).length, 6);
+    assert.match(row, /<td><span className="article-score">\d \/ 5<\/span><small className="article-score__basis">[^<]+<\/small><\/td>\s*<\/tr>$/);
+    const score = Number(row.match(/article-score">(\d) \/ 5/)?.[1]);
+    const basis = row.match(/article-score__basis">([^<]+)</)?.[1].split(" · ") ?? [];
+    assert.equal(basis.length, score);
+    assert.equal(new Set(basis).size, score);
+    assert.ok(basis.every(item => ["C", "Z", "P", "H", "T"].includes(item)));
+    return score;
+  });
+  assert.deepEqual(scores, [...scores].sort((a, b) => b - a));
+  assert.match(body, /equal scores tied/);
   const table = source("src/components/ArticleTable.tsx");
   assert.match(table, /role="region"/);
   assert.match(table, /tabIndex=\{0\}/);

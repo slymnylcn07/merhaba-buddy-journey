@@ -1,5 +1,14 @@
 # Basketball guide cluster: September 16, 2026
 
+## Expanded comparison follow-up
+
+- Expanded the shoe comparison from four to eight distinct brand/model options, adding ANTA KAI 2 TEAM, PUMA All-Pro NITRO 2, Li-Ning / Way of Wade All City 13 and ASICS GELHOOP V17. Official product pages checked September 16, 2026; references stored in article.sources.
+- Seven columns: model, cushioning, plate/lateral support, outsole/court, upper/fit, reason to compare/limitation, final feature score. Scores sorted descending with ties preserved. Each score shows its contributing criteria (C/Z/P/H/T), not a fabricated performance or medical rating.
+- Unspecified details are explicitly unconfirmed, not claimed absent. ASICS reference is regional, Wade is the base All City 13 (not Encore), and ANTA TEAM is distinguished from other KAI 2 variants. No current prices, weight measurements, durability estimates or clinical winners are invented.
+- Wide-table styling keeps model labels visible while scrolling; all standard three-column tables retain their existing sizing. Tests lock eight rows, seven columns, final-column scores, descending order and criterion totals.
+- Chrome QA at 390 x 844 confirmed eight rows, seven headers, no page-wide overflow and access to the final score column. The model label stays at the scroll-region edge (16.8px) after a 953.6px horizontal scroll. The wide table has a bounded scroll area and sticky headers; viewport override was reset afterward. The article now has 3,210 body words, excluding metadata and FAQs.
+- Existing images, metadata, CTAs and other articles are unchanged by this follow-up.
+
 ## Follow-up: visible table styling and shoe models
 
 All 11 existing tables in the eight new guides now use a scoped ArticleTable component with navy headers, cell borders, striped rows, padding, captions and a keyboard-focusable horizontal scroll region. The new shoe comparison adds a twelfth table. Existing cart/product tables and other guide styles are untouched.
