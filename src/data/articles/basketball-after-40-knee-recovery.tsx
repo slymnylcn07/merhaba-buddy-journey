@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ArticleTable } from "@/components/ArticleTable";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/guide-thumbnails/basketball/basketball-after-40-knee-recovery-hero.webp";
 import photo1 from "@/assets/article-photos/basketball/older-strength.webp";
@@ -37,12 +38,12 @@ export const basketballAfter40KneeRecovery: ArticleExport = { cta: "", article: 
     <p>One weekly visit can mean a short shooting session or several hard pickup games with almost no breaks. Both appear as basketball on a calendar, but they are not the same exposure. Include warm-up jumps, chasing rebounds, extra games and conditioning when reviewing the week. The knee experiences the whole session, not just the minutes you intended to play.</p>
     <p>Also include activity outside basketball. A demanding lower-body workout, a long workday on your feet and a weekend hike may all sit beside the game you blame for soreness. This does not mean every activity must be restricted. It means the plan should reflect the combined demands rather than pretending the court session occurs in isolation from the rest of your life.</p>
     <h2>Build a weekly picture before changing everything</h2>
-    <div className="overflow-x-auto"><table><thead><tr><th>Question</th><th>Useful detail to record</th><th>Possible planning response</th></tr></thead><tbody>
+    <ArticleTable caption="Build a weekly picture before changing everything"><thead><tr><th scope="col">Question</th><th scope="col">Useful detail to record</th><th scope="col">Possible planning response</th></tr></thead><tbody>
       <tr><td>What was the court session?</td><td>Skills, half court, full court, minutes and breaks</td><td>Adjust the actual demand rather than only the visit count</td></tr>
       <tr><td>What else loaded the legs?</td><td>Strength work, running, hiking or physical work</td><td>Avoid accidentally stacking the hardest tasks</td></tr>
       <tr><td>How did the knee respond?</td><td>Symptoms, swelling and ordinary function later</td><td>Repeat a tolerated level or review a worsening pattern</td></tr>
       <tr><td>What affected recovery?</td><td>Sleep, travel, illness and schedule pressure</td><td>Choose a realistic session rather than forcing the old plan</td></tr>
-    </tbody></table></div>
+    </tbody></ArticleTable>
     <p>Keep the notes simple enough to maintain. A few lines after a session can reveal that difficulty follows back-to-back hard days, not every basketball game. Conversely, symptoms that persist even during a lighter week deserve assessment rather than endless schedule tweaking. The purpose of tracking is to improve decisions, not to create a score that tells you to ignore what the knee is doing.</p>
     <h2>Use minutes, intensity and format as separate levers</h2>
     <p>If you want to play more sustainably, you do not always have to choose between a full session and nothing. A shorter run, longer breaks or a skills-focused visit can change the exposure. Discuss these options with your clinician when managing a diagnosed problem. Do not assume a shorter session is appropriate if the individual movements themselves are currently restricted.</p>
@@ -66,12 +67,12 @@ export const basketballAfter40KneeRecovery: ArticleExport = { cta: "", article: 
     <h2>A practical weekly planning example</h2>
     <p>Imagine a recreational player who wants one demanding game and another lighter basketball visit. A sensible discussion might place suitable strength and other activity around those sessions, with room to observe the response before the next hard exposure. This is a planning example, not a fixed seven-day medical program. The actual spacing depends on the person's health, schedule, symptoms and current training.</p>
     <p>If work suddenly adds a physically demanding day or sleep is unusually poor, the lighter visit may remain light or be changed. If the knee responds well over time, the player can discuss gradual progression rather than jumping directly to the old college workload. The key is that the schedule responds to evidence from the week instead of treating every calendar entry as a command.</p>
-    <div className="overflow-x-auto"><table><thead><tr><th>Situation</th><th>More useful decision</th><th>Less useful assumption</th></tr></thead><tbody>
+    <ArticleTable caption="A practical weekly planning example"><thead><tr><th scope="col">Situation</th><th scope="col">More useful decision</th><th scope="col">Less useful assumption</th></tr></thead><tbody>
       <tr><td>Extra hard game added unexpectedly</td><td>Review the next demanding leg session</td><td>Recovery plans can erase any extra workload</td></tr>
       <tr><td>Returning after several inactive months</td><td>Rebuild from current capacity</td><td>Past skill means current tissue tolerance is unchanged</td></tr>
       <tr><td>Repeated next-day swelling</td><td>Seek assessment and review exposure</td><td>Swelling is simply normal after forty</td></tr>
       <tr><td>Comfortable, repeatable weeks</td><td>Consider measured progression if desired</td><td>Increase every training variable at once</td></tr>
-    </tbody></table></div>
+    </tbody></ArticleTable>
     <h2>Old injuries and diagnosed arthritis need individual context</h2>
     <p>A previous operation or arthritis diagnosis does not produce one universal basketball answer. The relevant details include current symptoms, function, treatment history and the type of play you want. Discuss impact and pivoting demands with the clinician who knows the condition. Do not use another player's success story as proof that your knee should follow the same route or timeline.</p>
     <p>Equally, avoid treating an old scan as the only explanation for every new symptom. A new injury, a change in workload or another problem may require a fresh assessment. The useful question is what the knee can appropriately do now and what needs changing. That gives you a practical plan rather than a permanent identity as someone with bad knees.</p>

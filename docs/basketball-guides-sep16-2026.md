@@ -1,5 +1,15 @@
 # Basketball guide cluster: September 16, 2026
 
+## Follow-up: visible table styling and shoe models
+
+All 11 existing tables in the eight new guides now use a scoped ArticleTable component with navy headers, cell borders, striped rows, padding, captions and a keyboard-focusable horizontal scroll region. The new shoe comparison adds a twelfth table. Existing cart/product tables and other guide styles are untouched.
+
+The shoes guide now compares Nike LeBron XXIII, adidas Anthony Edwards 2, New Balance TWO WXY v5 and Curry 12. Manufacturer references were checked September 16. The numbers are explicitly documented-feature coverage (5/5, 4/5, 3/5, 5/5), not hands-on performance or medical benefit ratings. Five equal binary checks: named cushioning, full-length/dual/zoned cushioning, plate/shank, specific containment/heel hold, and traction design. Unspecified details earn no point without being treated as absent or inferior. Each row includes a buying caveat; no fabricated customer reviews, current price winner or injury-prevention claim.
+
+References were added to article.sources. Nike documents ZoomX, the Crown system, carbon-fiber shank and multidirectional traction; adidas describes rim/core LIGHTBOOST and Lightstrike, a propulsion plate and fangs; New Balance describes FuelCell/Fresh Foam X zoning and heel hold; Under Armour describes dual Flow, Pebax plates, upper/heel support and Flow outsole. The illustrative article photos are explicitly not labeled as these models.
+
+Follow-up Chrome QA at 390x844: all 12 tables have styled headers and contained horizontal scrolling, no page overflow; arrow-key scrolling moved the focused comparison region. Desktop three-column comparison fits the article column. Images, FAQs, 16 product CTAs and pending medical-review status are preserved. The shoes body is now 2,628 words; moving captions into component props changes the body-only test counts slightly but all eight still exceed 2,000.
+
 ## Scope and editorial boundaries
 
 Eight English guides, each above 2,000 body words excluding metadata, FAQs, navigation and product cards. Six FAQs and three original raster body photographs per guide. The existing template supplies Quick Answer, middle/end product cards, Knee Quiz, citations, newsletter and related reading.

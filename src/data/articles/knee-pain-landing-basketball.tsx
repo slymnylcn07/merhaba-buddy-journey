@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ArticleTable } from "@/components/ArticleTable";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/guide-thumbnails/basketball/knee-pain-landing-basketball-hero.webp";
 import photo1 from "@/assets/article-photos/basketball/landing-coach.webp";
@@ -37,13 +38,13 @@ export const kneePainLandingBasketball: ArticleExport = { cta: "", article: {
     <p>End the activity after a concerning painful incident rather than taking another possession to test it. Seek prompt assessment for a painful pop with rapid swelling, a knee that gives way or locks, inability to bear weight, or inability to straighten the leg normally. A visibly deformed knee or a cold, numb foot after injury needs emergency care. Severe symptoms should not wait for an equipment order or a scheduled workout.</p>
     <p>Fever with a hot, red, swollen knee is another reason for urgent medical advice, even if basketball happened earlier that day. Do not explain every symptom by the game simply because it was the latest activity. If you are unsure how urgent the situation is, contact a local urgent-care service and describe the symptoms and incident. Avoid repeatedly manipulating the knee to reproduce a sound or movement.</p>
     <h2>A landing-pattern table, not a self-diagnosis chart</h2>
-    <div className="overflow-x-auto"><table><thead><tr><th>What you notice</th><th>Useful context</th><th>Next step</th></tr></thead><tbody>
+    <ArticleTable caption="A landing-pattern table, not a self-diagnosis chart"><thead><tr><th scope="col">What you notice</th><th scope="col">Useful context</th><th scope="col">Next step</th></tr></thead><tbody>
       <tr><td>Sudden pain during one landing</td><td>Twist, contact, pop, swelling and ability to continue</td><td>Stop and assess the injury rather than retrying the jump</td></tr>
       <tr><td>Repeated pain below the kneecap</td><td>Jump volume, takeoff pain and later response</td><td>Discuss a tendon-related assessment and load plan</td></tr>
       <tr><td>Ache around or behind the kneecap</td><td>Squatting, stairs and prolonged bending symptoms</td><td>Assess the broader front-of-knee pattern</td></tr>
       <tr><td>Joint-line pain with catching</td><td>Twisting incident, swelling and loss of movement</td><td>Seek assessment; location alone does not identify a tear</td></tr>
       <tr><td>Discomfort only after many repetitions</td><td>Fatigue, session changes and next-day function</td><td>Reduce the provoking exposure and review the pattern</td></tr>
-    </tbody></table></div>
+    </tbody></ArticleTable>
     <p>This table organizes information rather than assigning a diagnosis. Several conditions overlap in location and timing, and a person can have more than one contributing factor. Use the <Link to="/guides/knee-injury-symptom-chart">knee injury symptom chart</Link> for a broader overview, but let an examination determine which structures and functions need attention when symptoms are persistent or concerning.</p>
     <h2>Why location matters, but does not settle the answer</h2>
     <p>Pain just below the kneecap during repeated jumping often leads people to search for jumper's knee. That can be a useful topic to discuss, but it is not interchangeable with every front-of-knee problem. A sudden loss of the ability to straighten the knee after an incident is especially different from a gradual history of load-related discomfort and needs prompt evaluation.</p>

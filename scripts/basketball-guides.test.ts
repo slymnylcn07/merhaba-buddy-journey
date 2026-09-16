@@ -45,6 +45,9 @@ for (const slug of slugs) {
     }
     assert.doesNotMatch(body, /<PremiumCTA|<svg\b/);
     assert.match(body, /medicalReviewPending: true/);
+    assert.match(body, /<ArticleTable caption=/);
+    assert.doesNotMatch(body, /<table\b|<div className="overflow-x-auto"><table>/);
+    assert.doesNotMatch(body, /<th>/);
     for (const field of ["metaTitle", "metaDescription", "quickAnswer"] as const) {
       const value = body.match(new RegExp(`${field}: "([^"]+)"`))?.[1];
       assert.ok(value, `Missing ${field}`);
@@ -60,3 +63,23 @@ for (const slug of slugs) {
     assert.equal(demos.includes(`"${slug}"`), slug === "return-to-basketball-knee-pain" || slug === "basketball-after-40-knee-recovery");
   });
 }
+
+test("shoe comparison explains its score and cites all four manufacturers", () => {
+  const body = source("src/data/articles/basketball-shoes-knee-pain.tsx");
+  for (const name of ["Nike LeBron XXIII", "adidas Anthony Edwards 2", "New Balance TWO WXY v5", "Curry 12"]) {
+    assert.ok(body.includes(name));
+  }
+  assert.match(body, /documented-feature score out of five/);
+  assert.match(body, /We have not worn or laboratory-tested these shoes/);
+  assert.match(body, /not evidence of worse cushioning or grip/);
+  for (const publisher of ["Nike Newsroom", "adidas News", "New Balance Newsroom", "Under Armour Newsroom"]) {
+    assert.ok(body.includes(publisher));
+  }
+  const table = source("src/components/ArticleTable.tsx");
+  assert.match(table, /role="region"/);
+  assert.match(table, /tabIndex=\{0\}/);
+  assert.match(table, /<caption/);
+  const css = source("src/components/ArticleTable.css");
+  assert.match(css, /overflow-x: auto/);
+  assert.match(css, /border-bottom: 1px solid/);
+});

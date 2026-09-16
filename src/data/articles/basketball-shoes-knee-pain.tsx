@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ArticleTable } from "@/components/ArticleTable";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/guide-thumbnails/basketball/basketball-shoes-knee-pain-hero.webp";
 import photo1 from "@/assets/article-photos/basketball/shoe-fit.webp";
@@ -28,6 +29,10 @@ export const basketballShoesKneePain: ArticleExport = { cta: "", article: {
     { title: "Influence of basketball shoe mass, outsole traction, and forefoot bending stiffness on three athletic movements", publisher: "Sports Biomechanics via PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/26517604/" },
     { title: "Basketball Injury Prevention", publisher: "AAOS OrthoInfo", url: "https://www.orthoinfo.org/staying-healthy/basketball-injury-prevention/" },
     { title: "Knee pain", publisher: "NHS", url: "https://www.nhs.uk/symptoms/knee-pain/" },
+    { title: "LeBron XXIII: cushioning, containment and traction specifications", publisher: "Nike Newsroom", url: "https://about.nike.com/en/newsroom/releases/lebron-23-official-images" },
+    { title: "Anthony Edwards 2: cushioning and support specifications", publisher: "adidas News", url: "https://news.adidas.com/basketball/adidas-basketball-and-anthony-edwards-unveil-the-anthony-edwards-2/s/4e0450e1-5935-45c4-a02b-e410074bafe3" },
+    { title: "TWO WXY v5: cushioning and fit specifications", publisher: "New Balance Newsroom", url: "https://newbalance.newsmarket.com/latest-news/new-balance-unveils-the-two-wxy-v5/s/59eff8c2-5275-4c7d-9e43-8c057ef25f04" },
+    { title: "Curry 12: cushioning, plate and upper specifications", publisher: "Under Armour Newsroom", url: "https://about.underarmour.com/en/stories/2024/08/the-future-just-got-better---the-curry-12-has-arrived-.html" },
   ],
   content: <>
     <h2>Begin with your knee pattern, not a shoe ranking</h2>
@@ -37,13 +42,27 @@ export const basketballShoesKneePain: ArticleExport = { cta: "", article: {
     <p>A basketball shoe has to cope with a player accelerating, braking, moving sideways and landing near other people. Its fit needs to remain secure through those changes. Comfortable straight-line jogging does not show whether the foot will slide across the footbed during a defensive shuffle or whether the heel will lift when changing direction. That is why court-specific testing matters.</p>
     <p>Our <Link to="/guides/best-running-shoes-knee-pain">running shoe guide</Link> covers a different activity. Do not transfer a running recommendation directly to basketball simply because both involve impact. The useful comparison here is between court shoes that fit your foot and playing environment. A shoe designed around basketball demands still needs to be comfortable for you; a category label is not a personal fit guarantee.</p>
     <h2>The four features to compare together</h2>
-    <div className="overflow-x-auto"><table><thead><tr><th>Feature</th><th>Practical question</th><th>Misleading shortcut</th></tr></thead><tbody>
+    <ArticleTable caption="The four features to compare together"><thead><tr><th scope="col">Feature</th><th scope="col">Practical question</th><th scope="col">Misleading shortcut</th></tr></thead><tbody>
       <tr><td>Fit and heel security</td><td>Does the foot stay comfortably positioned when braking?</td><td>Choosing only by your usual size number</td></tr>
       <tr><td>Cushioning</td><td>Does the platform feel comfortable and predictable?</td><td>Assuming the softest foam prevents knee pain</td></tr>
       <tr><td>Lateral containment</td><td>Does the upper hold the foot during controlled side steps?</td><td>Judging support only by collar height</td></tr>
       <tr><td>Court traction</td><td>Does the outsole work on the surface you actually use?</td><td>Equating a loud squeak with proven safety</td></tr>
-    </tbody></table></div>
+    </tbody></ArticleTable>
     <p>Think of these as a connected system. Excellent cushioning does not fix toes jammed against the front. A wide platform is not useful if your foot swims inside the upper. Strong grip is not permission to ignore a dusty or wet court. Comparing one dramatic specification while overlooking the rest is an easy way to buy a shoe that looks ideal on paper and disappoints in practice.</p>
+    <h2>Brand and model comparison: strengths, trade-offs and scores</h2>
+    <p>These four models give you concrete designs to compare, not a claim that one entire brand is good and another is bad. We checked the manufacturers' model descriptions on September 16, 2026. We have not worn or laboratory-tested these shoes. Prices, local sizes and stock change, so none is presented as the cheapest or newest option. The reference photographs elsewhere in this guide are illustrative, not photographs of these four models.</p>
+    <p><strong>How the score works:</strong> this is a documented-feature score out of five, not a comfort, traction-performance or knee-pain relief rating. Give one point for each clearly described item in the linked manufacturer reference: a named cushioning platform; full-length, dual or specifically zoned cushioning; a plate or shank; a specific containment or heel-hold feature; and an outsole traction design. An unconfirmed item earns no point, but that does not prove the feature is absent. More documented features do not automatically make a shoe better for your knee.</p>
+    <ArticleTable caption="Four basketball shoe models: documented features, strengths and checks">
+      <thead><tr><th scope="col">Model and feature score</th><th scope="col">Standout design</th><th scope="col">Trade-off or buying check</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Nike LeBron XXIII<br /><span className="article-score">5 / 5</span></th><td>Full-length ZoomX drop-in cushioning, carbon-fiber shank, Crown containment and multidirectional traction.</td><td>The drop-in midsole is part of the design. Do not assume a generic insert is an equivalent replacement.</td></tr>
+        <tr><th scope="row">adidas Anthony Edwards 2<br /><span className="article-score">4 / 5</span></th><td>LIGHTBOOST/Lightstrike rim-and-core cushioning, propulsion plate and containment fangs.</td><td>The cited launch reference lacks outsole-pattern detail. Check your exact outsole and court rather than assuming superior grip.</td></tr>
+        <tr><th scope="row">New Balance TWO WXY v5<br /><span className="article-score">3 / 5</span></th><td>FuelCell plus Fresh Foam X at heel and forefoot; heel-hold collar.</td><td>Plate and traction details are unspecified in this reference. A lower score is not evidence of worse cushioning or grip.</td></tr>
+        <tr><th scope="row">Curry 12<br /><span className="article-score">5 / 5</span></th><td>Dual UA Flow cushioning, Flow outsole, Pebax plates, zonal mesh and TPU heel counter.</td><td>Manufacturer grip claims do not establish performance on your dusty or outdoor court. Confirm surface suitability.</td></tr>
+      </tbody>
+    </ArticleTable>
+    <p><strong>What we would shortlist:</strong> for a full-length drop-in cushioning design, start the comparison with LeBron XXIII. For an explicitly described plate-and-containment combination, compare Anthony Edwards 2. TWO WXY v5 is a useful zoned-cushioning alternative; Curry 12 offers a different Flow-based platform. Those are design-based starting points, not hands-on winners. A pair that crowds your toes, lets your heel slip or feels unpredictable is a poor choice for you even if it scores five out of five here.</p>
+    <p>The score deliberately excludes injury-prevention claims, customer stars, price and celebrity endorsement. We have no head-to-head clinical evidence that these models reduce knee pain better than one another. Compare the exact version and fit, not just the logo. Manufacturer references appear in Sources and Further Reading below, separately from the independent medical and biomechanics evidence.</p>
     <h2>Cushioning: comfortable impact is not a cure</h2>
     <p>Basketball footwear research examines how construction changes movement and loading. A systematic review considered features including cushioning, midsole hardness, collar height, traction, stiffness and mass. Its biomechanical findings are useful for understanding design trade-offs, but they do not identify a single shoe that treats all knee conditions. Short laboratory tasks are also different from months of recreational play with changing symptoms.</p>
     <p>When trying a pair, notice whether the cushioning feels predictable rather than only soft. Ask yourself whether you can settle over the shoe without constantly shifting to find a stable position. Someone who enjoys a plush walking sensation may prefer a different balance for quick court movements. Neither preference automatically means one person's knees are being better protected than another's.</p>

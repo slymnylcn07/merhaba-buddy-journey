@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ArticleTable } from "@/components/ArticleTable";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/guide-thumbnails/basketball/knee-sleeves-for-basketball-hero.webp";
 import photo1 from "@/assets/article-photos/basketball/sleeve-equipment.webp";
@@ -33,13 +34,13 @@ export const kneeSleevesForBasketball: ArticleExport = { cta: "", article: {
     <p>Start with a sentence that describes your actual need: I want a light garment that stays comfortable during shooting; I keep knocking my knee against the floor; or my clinician has prescribed a particular support after injury. Those are three separate shopping decisions. A product marketed with all three promises still needs to demonstrate that its construction matches each job.</p>
     <p>For an uninjured recreational player, preference and fit may be the main considerations. For someone with persistent pain, the equipment decision follows the assessment. A sleeve should not become a way to hide a limp, keep playing through a new swollen knee, or avoid asking why a previously comfortable movement now hurts. Our <Link to="/guides/knee-pain-after-basketball">guide to knee pain after basketball</Link> separates those symptom patterns.</p>
     <h2>Compression sleeve, padded knee pad or long leg sleeve?</h2>
-    <div className="overflow-x-auto"><table><thead><tr><th>Equipment</th><th>Primary purpose</th><th>What not to assume</th></tr></thead><tbody>
+    <ArticleTable caption="Compression sleeve, padded knee pad or long leg sleeve?"><thead><tr><th scope="col">Equipment</th><th scope="col">Primary purpose</th><th scope="col">What not to assume</th></tr></thead><tbody>
       <tr><td>Plain compression knee sleeve</td><td>Snug coverage around the knee</td><td>It is not necessarily padded or mechanically stabilizing</td></tr>
       <tr><td>Padded basketball knee sleeve</td><td>Coverage plus padding over a contact area</td><td>Padding does not prevent twisting injuries inside the joint</td></tr>
       <tr><td>Long basketball leg sleeve</td><td>Coverage extending onto the thigh or calf</td><td>Length alone says nothing about compression strength or protection</td></tr>
       <tr><td>Patellar tendon strap</td><td>Localized pressure below the kneecap</td><td>It is not a tendon rehabilitation program</td></tr>
       <tr><td>Prescribed supportive brace</td><td>A particular support role selected for an injury</td><td>A fabric sleeve is not an interchangeable replacement</td></tr>
-    </tbody></table></div>
+    </tbody></ArticleTable>
     <p>Online descriptions often use sleeve and pad interchangeably. Look at the actual knee panel. A raised protective layer is different from a printed hexagonal pattern or a textured knit. Also check where that panel sits with the knee bent. Padding below or beside the area that meets the floor will not serve the same purpose as a correctly positioned pad.</p>
     <p>Long leg sleeves introduce another fit question: both ends must stay comfortable while the knee moves. A garment can fit around the knee but squeeze the upper thigh, wrinkle at the ankle, or slide because its proportions do not match your leg. The shortest or longest option is not inherently better. Choose the coverage you need rather than collecting extra fabric.</p>
     <figure><img src={photo1} alt="Plain compression sleeve, padded knee sleeve and narrow tendon strap shown side by side on a basketball bench" width={1672} height={941} loading="lazy" decoding="async" /><figcaption>Compare construction, not just the word sleeve: compression, padding and a tendon strap serve different purposes.</figcaption></figure>
@@ -62,13 +63,13 @@ export const kneeSleevesForBasketball: ArticleExport = { cta: "", article: {
     <p>Keep the rest of the practice reasonably familiar. Trying new shoes, a new sleeve and a much harder workout together makes it difficult to identify which change caused discomfort. Record the garment, size, activity and any skin or fit issue afterwards. You do not need a complicated spreadsheet; a few specific notes are more useful than deciding only that it felt good or bad.</p>
     <figure><img src={photo3} alt="Basketball player wearing a knee sleeve while practicing a controlled defensive stance on an indoor court" width={1672} height={941} loading="lazy" decoding="async" /><figcaption>A useful sleeve stays comfortable during the movements you already tolerate, without becoming a distraction.</figcaption></figure>
     <h2>Common on-court problems and sensible adjustments</h2>
-    <div className="overflow-x-auto"><table><thead><tr><th>Problem</th><th>Check first</th><th>Avoid</th></tr></thead><tbody>
+    <ArticleTable caption="Common on-court problems and sensible adjustments"><thead><tr><th scope="col">Problem</th><th scope="col">Check first</th><th scope="col">Avoid</th></tr></thead><tbody>
       <tr><td>Sleeve keeps sliding</td><td>Correct size, orientation, fabric condition and dry starting skin</td><td>Adding improvised tight tape around the leg</td></tr>
       <tr><td>Bunching behind the knee</td><td>Length, folds and whether the cut suits your leg</td><td>Playing through rubbing or pressure</td></tr>
       <tr><td>Pad moves off the kneecap</td><td>Panel position while bending, not only while standing</td><td>Assuming thicker padding fixes poor placement</td></tr>
       <tr><td>Skin irritation after games</td><td>Seams, cleanliness, drying and material sensitivity</td><td>Repeatedly covering irritated or broken skin</td></tr>
       <tr><td>Knee still hurts with the sleeve</td><td>Symptoms, load and need for clinical assessment</td><td>Buying progressively tighter sleeves as treatment</td></tr>
-    </tbody></table></div>
+    </tbody></ArticleTable>
     <p>Some fit problems are about shape rather than size. A different cut may work better than repeatedly moving one size up and down within the same model. If a garment is comfortable when straight but uncomfortable in every defensive stance, that is relevant feedback. Basketball includes deep and repeated changes of position; a product cannot earn a good fit rating from standing still alone.</p>
     <h2>One sleeve, two sleeves or a tendon strap?</h2>
     <p>There is no universal rule that basketball players should wear matching sleeves on both knees. An asymmetrical preference does not need correcting for appearance. However, if one knee newly needs support because it hurts, consider the reason rather than simply copying the other side's equipment. The useful question is whether you are addressing comfort or trying to manage an unexplained symptom.</p>

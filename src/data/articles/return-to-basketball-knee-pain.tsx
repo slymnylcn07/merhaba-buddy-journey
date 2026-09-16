@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ArticleTable } from "@/components/ArticleTable";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/guide-thumbnails/basketball/return-to-basketball-knee-pain-hero.webp";
 import photo1 from "@/assets/article-photos/basketball/return-dribble.webp";
@@ -37,14 +38,14 @@ export const returnToBasketballKneePain: ArticleExport = { cta: "", article: {
     <p>A gradual load-related ache, a meniscus injury, a ligament reconstruction and a recent fracture require different plans. This article explains a general progression framework; it is not a post-operative protocol or a substitute for medical clearance. If a clinician has limited weight bearing, knee bending, running, jumping or contact, those restrictions remain in place even when another task feels comfortable.</p>
     <p>New swelling, instability, locking or difficulty with ordinary walking should be assessed before experimenting with a court progression. If you have not established the cause of persistent symptoms, begin there. Our <Link to="/guides/knee-pain-after-basketball">basketball knee pain guide</Link> helps organize the history. The purpose of a return plan is to build from an understood starting point, not to discover the diagnosis by seeing which drill hurts.</p>
     <h2>A court progression is based on criteria, not fixed days</h2>
-    <div className="overflow-x-auto"><table><thead><tr><th>Stage</th><th>Basketball example</th><th>What needs consideration</th></tr></thead><tbody>
+    <ArticleTable caption="A court progression is based on criteria, not fixed days"><thead><tr><th scope="col">Stage</th><th scope="col">Basketball example</th><th scope="col">What needs consideration</th></tr></thead><tbody>
       <tr><td>Foundation</td><td>Everyday function and prescribed rehabilitation</td><td>Symptoms, movement, strength and clinical restrictions</td></tr>
       <tr><td>Individual skills</td><td>Suitable stationary ball handling and easy shooting</td><td>Actual knee demand, including hidden jumps and pivots</td></tr>
       <tr><td>Planned movement</td><td>Controlled running, stopping and changes of direction</td><td>Task quality and later response</td></tr>
       <tr><td>Jump and react</td><td>Appropriate landing progressions and reactive drills</td><td>Readiness for speed, repetition and uncertainty</td></tr>
       <tr><td>Team participation</td><td>Agreed practice blocks with clear limits</td><td>Contact, fatigue, confidence and communication</td></tr>
       <tr><td>Competition</td><td>Managed game exposure</td><td>Ability to repeat the demands, not just pass once</td></tr>
-    </tbody></table></div>
+    </tbody></ArticleTable>
     <p>The table is a discussion aid, not a universal order that overrides your rehabilitation plan. Some elements overlap, and a clinician may delay or modify a task. Avoid adding a precise number of days to each row simply to make the plan look definite. A clear criterion and a review point are more meaningful than an attractive calendar that the knee cannot follow.</p>
     <h2>Stage one: establish a reliable everyday baseline</h2>
     <p>Before adding basketball demands, understand what the knee tolerates in ordinary life and prescribed exercise. Can you move as expected for your stage of recovery without new compensations? Is swelling stable or changing? Are you completing the agreed strength and movement work? These questions belong with the professional supervising rehabilitation, particularly after a significant injury or operation.</p>

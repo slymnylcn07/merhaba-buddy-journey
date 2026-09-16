@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ArticleTable } from "@/components/ArticleTable";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/guide-thumbnails/basketball/knee-pain-after-basketball-hero.webp";
 import photo1 from "@/assets/article-photos/basketball/symptom-notes.webp";
@@ -41,12 +42,12 @@ export const kneePainAfterBasketball: ArticleExport = { cta: "", article: {
     <p>A hot, red knee with fever or feeling unwell also needs urgent medical attention. New calf swelling, warmth, or tenderness is not a routine basketball recovery issue; seek urgent advice, and emergency help if it accompanies chest pain or breathlessness. These symptoms should not be covered up with a tight sleeve or treated by experimenting with a massage device.</p>
     <p>Less dramatic symptoms still deserve attention when they recur. Repeated giving way, true locking, persistent swelling, or pain that changes your walking can interfere with both basketball and daily life. A sports clinician can examine movement, strength, joint function, and the injury history. Online pain descriptions cannot replace that assessment.</p>
     <h2>Use timing to organize the possibilities</h2>
-    <div className="overflow-x-auto"><table><caption>Timing is a clue, not a diagnosis</caption><thead><tr><th scope="col">Pattern</th><th scope="col">Useful question</th><th scope="col">Next step</th></tr></thead><tbody>
+    <ArticleTable caption="Timing is a clue, not a diagnosis"><thead><tr><th scope="col">Pattern</th><th scope="col">Useful question</th><th scope="col">Next step</th></tr></thead><tbody>
       <tr><td>One painful landing or twist</td><td>Was there a pop, swelling, instability, or loss of movement?</td><td>Stop and assess injury warning signs.</td></tr>
       <tr><td>Ache building through games</td><td>Did minutes, jumps, speed, or fatigue increase?</td><td>Reduce the provoking exposure and review the response.</td></tr>
       <tr><td>Pain after sitting down</td><td>Does normal walking or getting up now hurt?</td><td>Record function, not only pain at rest.</td></tr>
       <tr><td>Next-morning symptoms</td><td>Is the knee swollen or more limited than before the game?</td><td>Do not progress the next session automatically.</td></tr>
-    </tbody></table></div>
+    </tbody></ArticleTable>
     <p>Pain that improves as you warm up can be misleading. It may be tempting to interpret the improvement as proof that more basketball is helpful, but the later response matters too. Conversely, an unfamiliar muscle ache does not automatically mean that you damaged the knee. The aim is to gather enough information to choose an appropriate activity level, not to label every sensation an injury.</p>
     <figure><img src={photo1} alt="Recreational basketball player recording the next-morning response after a game" loading="lazy" decoding="async" width="1672" height="941" /><figcaption>Record the next-morning response alongside what happened on court.</figcaption></figure>
     <h2>Where it hurts: front, below, inside, or behind the knee</h2>
@@ -72,12 +73,12 @@ export const kneePainAfterBasketball: ArticleExport = { cta: "", article: {
     <p>Avoid changing shoes, adding an insole, tightening a sleeve, and doubling warm-up exercises all at once. If comfort changes, you will not know which adjustment mattered. Make one sensible change, document it, and review its effect on the activity that was actually difficult. Persistent symptoms still need a clinical explanation even if one shoe feels better than another.</p>
     <h2>A simple post-game record that helps you make decisions</h2>
     <p>You do not need a complicated tracking app. Note the date, the type of session, approximate active playing time, and whether it included repeated high jumps or hard cuts. Then record the location of symptoms, any swelling, and one ordinary task such as walking upstairs. Use the same task next time so comparisons mean something.</p>
-    <div className="overflow-x-auto"><table><caption>Example record, not a rehabilitation prescription</caption><thead><tr><th scope="col">When</th><th scope="col">What to note</th><th scope="col">Why it helps</th></tr></thead><tbody>
+    <ArticleTable caption="Example record, not a rehabilitation prescription"><thead><tr><th scope="col">When</th><th scope="col">What to note</th><th scope="col">Why it helps</th></tr></thead><tbody>
       <tr><td>Before play</td><td>Baseline comfort, swelling, and daily function</td><td>Separates a pre-existing problem from a new response.</td></tr>
       <tr><td>During play</td><td>First provoking movement and any change in technique</td><td>Identifies a task to modify.</td></tr>
       <tr><td>Later that evening</td><td>Walking, stiffness, and visible swelling</td><td>Captures symptoms that were less obvious on court.</td></tr>
       <tr><td>Next morning</td><td>The same daily task and the overall trend</td><td>Informs whether to repeat, reduce, or seek advice.</td></tr>
-    </tbody></table></div>
+    </tbody></ArticleTable>
     <p>Bring the record to an appointment if symptoms continue. It gives the clinician a more concrete story than saying basketball always hurts. Include previous knee injuries and any recent changes in work, travel, sleep, or training. Those details can influence your capacity to manage the same court routine even when you have not deliberately changed your game.</p>
     <h2>Returning to a game is different from feeling better at home</h2>
     <p>Comfortable walking is encouraging, but basketball adds braking, turning, repeated landings, reaction to opponents, and fatigue. A knee can tolerate one level without being ready for the next. Return should reflect the condition being treated and your playing goal, especially after a diagnosed injury or a procedure.</p>

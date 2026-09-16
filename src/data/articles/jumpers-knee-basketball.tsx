@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ArticleTable } from "@/components/ArticleTable";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/guide-thumbnails/basketball/jumpers-knee-basketball-hero.webp";
 import photo1 from "@/assets/article-photos/basketball/tendon-assessment.webp";
@@ -50,12 +51,12 @@ export const jumpersKneeBasketball: ArticleExport = { cta: "", article: {
     <h2>Reduce the provoking demand without losing the whole routine</h2>
     <p>Depending on your assessment, modified participation may preserve useful skills while reducing the tasks that consistently aggravate symptoms. A player might work on passing, stationary ball handling, or another agreed activity rather than complete repeated jump drills. The alternatives should be selected for actual tolerability, not because they sound low impact in theory.</p>
     <p>Discuss the plan with the coach before practice. Specify which drill is modified, what replaces it, and what should happen if symptoms change. Without this conversation, a player can begin with a sensible plan and gradually get pulled into full scrimmaging. Clear boundaries make modification a training decision rather than an argument during competition.</p>
-    <div className="overflow-x-auto"><table><caption>Examples to discuss with a clinician and coach</caption><thead><tr><th scope="col">Exposure</th><th scope="col">Possible adjustment</th><th scope="col">What to review</th></tr></thead><tbody>
+    <ArticleTable caption="Examples to discuss with a clinician and coach"><thead><tr><th scope="col">Exposure</th><th scope="col">Possible adjustment</th><th scope="col">What to review</th></tr></thead><tbody>
       <tr><td>Repeated maximal rebounds</td><td>Reduce or temporarily replace the jump drill</td><td>Symptoms during practice and the following morning</td></tr>
       <tr><td>Long live scrimmages</td><td>Agree shorter, defined participation blocks</td><td>Movement quality and ability to stop as planned</td></tr>
       <tr><td>Extra plyometrics after training</td><td>Coordinate them with the rehabilitation session</td><td>Total knee-loading exposure across the week</td></tr>
       <tr><td>Unplanned pickup games</td><td>Choose predictable practice while rebuilding capacity</td><td>Whether the agreed level is repeatable</td></tr>
-    </tbody></table></div>
+    </tbody></ArticleTable>
     <h2>What progressive tendon loading means</h2>
     <p>Progressive loading is not simply doing more repetitions every day. It means selecting an appropriate exercise demand and advancing it according to the person's response and goals. A clinician may use different contraction types, ranges, resistance levels, and eventually faster tasks. The order and dosage should reflect the assessed condition rather than a universal internet schedule.</p>
     <p>A randomized trial compared progressive tendon-loading exercise therapy with eccentric exercise therapy in people with patellar tendinopathy. The progressive program produced better improvement in the study's tendon-related symptom and function score at twenty-four weeks. This supports a structured approach; it does not prove that one isolated exercise, a product, or an unsupervised routine will reproduce the same result for every basketball player.</p>

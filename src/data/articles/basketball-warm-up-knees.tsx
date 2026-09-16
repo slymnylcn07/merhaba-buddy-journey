@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ArticleTable } from "@/components/ArticleTable";
 import type { ArticleExport } from "./types";
 import heroImage from "@/assets/guide-thumbnails/basketball/basketball-warm-up-knees-hero.webp";
 import photo1 from "@/assets/article-photos/basketball/warm-up-march.webp";
@@ -40,13 +41,13 @@ export const basketballWarmUpKnees: ArticleExport = { cta: "", article: {
     <p>Choose a clear area that does not cut across another group's active drill. Check for moisture, loose balls and bags near your path. Lace your shoes and arrange any permitted support so that it does not require repeated adjustment. If you are returning from an injury, the restrictions and preparation agreed with your clinician take priority over any general sequence here.</p>
     <p>Ask whether today's knee feels similar to the knee you used in your last tolerated session. New swelling, locking, giving way or pain that changes walking is not simply stiffness to work through. Stop and seek appropriate advice. Our <Link to="/guides/knee-pain-after-basketball">basketball knee pain guide</Link> covers symptom patterns, while this article focuses on preparation for a knee that is suitable for the planned activity.</p>
     <h2>A progressive basketball knee warm-up at a glance</h2>
-    <div className="overflow-x-auto"><table><thead><tr><th>Stage</th><th>Example options</th><th>What you are checking</th></tr></thead><tbody>
+    <ArticleTable caption="A progressive basketball knee warm-up at a glance"><thead><tr><th scope="col">Stage</th><th scope="col">Example options</th><th scope="col">What you are checking</th></tr></thead><tbody>
       <tr><td>Easy movement</td><td>Walk, march, then an easy jog if already tolerated</td><td>Comfortable rhythm without limping</td></tr>
       <tr><td>Controlled lower-body movement</td><td>Comfortable squats, calf raises and small step patterns</td><td>Smooth movement rather than maximal depth</td></tr>
       <tr><td>Balance and positioning</td><td>Brief supported balance and controlled weight shifts</td><td>Control without rushing or forcing symmetry</td></tr>
       <tr><td>Landing and braking</td><td>Low-demand landing rehearsal and gradual stops</td><td>Ability to settle and slow down comfortably</td></tr>
       <tr><td>Lateral and basketball skills</td><td>Easy shuffles, planned direction changes and ball work</td><td>Readiness for the specific session ahead</td></tr>
-    </tbody></table></div>
+    </tbody></ArticleTable>
     <p>Move through these stages according to comfort and familiarity, not pressure to finish a checklist. A player who has not been cleared for jumping should not add hops because they appear later in a warm-up. A healthy regular player may progress more quickly than someone returning after a break. The order is a way to organize demand, not permission to skip the boundaries of your current ability.</p>
     <h2>Stage one: start with movement you can control easily</h2>
     <p>Begin with walking around the court or marching in place when space is limited. Let the arms move naturally and keep the steps comfortable. If easy jogging is already part of your tolerated activity, build toward it gradually. There is no need to start with high knees performed as fast as possible, especially when you have just arrived after sitting for a long time.</p>
