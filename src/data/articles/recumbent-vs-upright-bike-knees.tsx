@@ -116,6 +116,7 @@ export const recumbentVsUprightBikeKnees: ArticleExport = {
       <h2>When to Get Medical Help</h2>
       <div className="my-8 rounded-3xl border border-amber-200 bg-amber-50 px-6 py-5"><p>Stop riding for sharp persistent pain, locking, giving way, or new swelling. A hot red knee with fever, major injury, or inability to bear weight needs urgent advice. Seek a review if easy pedaling remains painful despite reasonable fit changes, and follow your treating team's postoperative plan.</p></div>
 
+      <p>Equipment choice is separate from an activity plan. See <Link to="/guides/cycling-knee-osteoarthritis" className={linkClass}>cycling with knee osteoarthritis</Link> for duration and resistance decisions, or <Link to="/guides/cycling-after-knee-replacement" className={linkClass}>cycling after knee replacement</Link> for a care-team-led transition.</p>
       <h2>The better bike is the one you can fit and use comfortably</h2>
       <p>Choose the recumbent format when its support and access genuinely help you; choose an upright model when its fit and familiar position work better. In either case, start with a controlled pedal circle and manageable dose. A real trial with your own body is more informative than declaring one category universally knee friendly.</p>
     </>),

@@ -1,6 +1,15 @@
 export type GuideThumbnailLoader = () => Promise<string>;
 
 const thumbnailLoaders: Record<string, GuideThumbnailLoader> = {
+  "post-ride-knee-recovery": () => import("../assets/guide-thumbnails/cycling/post-ride-knee-recovery-thumb.webp").then(module => module.default),
+  "indoor-cycling-knee-pain": () => import("../assets/guide-thumbnails/cycling/indoor-cycling-knee-pain-thumb.webp").then(module => module.default),
+  "shorter-cranks-knee-pain": () => import("../assets/guide-thumbnails/cycling/shorter-cranks-knee-pain-thumb.webp").then(module => module.default),
+  "cycling-knee-osteoarthritis": () => import("../assets/guide-thumbnails/cycling/cycling-knee-osteoarthritis-thumb.webp").then(module => module.default),
+  "cycling-cleats-knee-pain": () => import("../assets/guide-thumbnails/cycling/cycling-cleats-knee-pain-thumb.webp").then(module => module.default),
+  "strength-training-cyclists-knees": () => import("../assets/guide-thumbnails/cycling/strength-training-cyclists-knees-thumb.webp").then(module => module.default),
+  "knee-sleeves-for-cycling": () => import("../assets/guide-thumbnails/cycling/knee-sleeves-for-cycling-thumb.webp").then(module => module.default),
+  "e-bikes-bad-knees": () => import("../assets/guide-thumbnails/cycling/e-bikes-bad-knees-thumb.webp").then(module => module.default),
+  "cycling-after-knee-replacement": () => import("../assets/guide-thumbnails/cycling/cycling-after-knee-replacement-thumb.webp").then(module => module.default),
   "knee-pain-after-basketball": () => import("../assets/guide-thumbnails/basketball/knee-pain-after-basketball-thumb.webp").then(module => module.default),
   "jumpers-knee-basketball": () => import("../assets/guide-thumbnails/basketball/jumpers-knee-basketball-thumb.webp").then(module => module.default),
   "knee-sleeves-for-basketball": () => import("../assets/guide-thumbnails/basketball/knee-sleeves-for-basketball-thumb.webp").then(module => module.default),

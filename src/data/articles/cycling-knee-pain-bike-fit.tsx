@@ -258,6 +258,10 @@ export const cyclingKneePainBikeFit: ArticleExport = {
         </p>
 
         <p>Choosing a stationary-bike format is a separate decision from adjusting an existing bicycle. Compare seat access, back support, and pedal reach in the <Link to="/guides/recumbent-vs-upright-bike-knees">recumbent versus upright exercise bike guide</Link>.</p>
+        <h2>Explore the specific cycling question behind your next decision</h2>
+        <p>For the hours after riding, use the <Link to="/guides/post-ride-knee-recovery">post-ride recovery guide</Link>. For studio sessions, see <Link to="/guides/indoor-cycling-knee-pain">indoor cycling class load</Link>. Plan complementary exercise with the <Link to="/guides/strength-training-cyclists-knees">off-bike strength routine</Link>.</p>
+        <p>Equipment decisions have separate trade-offs. Compare <Link to="/guides/shorter-cranks-knee-pain">shorter crank lengths</Link>, <Link to="/guides/cycling-cleats-knee-pain">cleat float and compatibility</Link>, <Link to="/guides/knee-sleeves-for-cycling">sleeves versus warmers</Link>, and <Link to="/guides/e-bikes-bad-knees">electric assistance and easy mounting</Link> without assuming any one purchase diagnoses or treats knee pain.</p>
+        <p>Diagnosed conditions need a different activity discussion. Read <Link to="/guides/cycling-knee-osteoarthritis">cycling with knee osteoarthritis</Link> for load planning, or <Link to="/guides/cycling-after-knee-replacement">cycling after knee replacement</Link> for questions to discuss with your surgical and rehabilitation team.</p>
         <h2>The Bottom Line</h2>
         <p>
           Cycling deserves its reputation as a knee friendly sport, and the answer to knee pain from riding is almost never to stop riding. It is to stop repeating the same slightly wrong movement five thousand times an hour.

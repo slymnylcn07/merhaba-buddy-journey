@@ -2,6 +2,15 @@ import type { ArticleData } from "./articles/types";
 import { applyArticleSourceStandards } from "./article-source-standards";
 
 const recentArticleLoaders: Record<string, () => Promise<ArticleData>> = {
+  "post-ride-knee-recovery": () => import("./articles/post-ride-knee-recovery").then(module => module.postRideKneeRecovery.article),
+  "indoor-cycling-knee-pain": () => import("./articles/indoor-cycling-knee-pain").then(module => module.indoorCyclingKneePain.article),
+  "shorter-cranks-knee-pain": () => import("./articles/shorter-cranks-knee-pain").then(module => module.shorterCranksKneePain.article),
+  "cycling-knee-osteoarthritis": () => import("./articles/cycling-knee-osteoarthritis").then(module => module.cyclingKneeOsteoarthritis.article),
+  "cycling-cleats-knee-pain": () => import("./articles/cycling-cleats-knee-pain").then(module => module.cyclingCleatsKneePain.article),
+  "strength-training-cyclists-knees": () => import("./articles/strength-training-cyclists-knees").then(module => module.strengthTrainingCyclistsKnees.article),
+  "knee-sleeves-for-cycling": () => import("./articles/knee-sleeves-for-cycling").then(module => module.kneeSleevesForCycling.article),
+  "e-bikes-bad-knees": () => import("./articles/e-bikes-bad-knees").then(module => module.eBikesBadKnees.article),
+  "cycling-after-knee-replacement": () => import("./articles/cycling-after-knee-replacement").then(module => module.cyclingAfterKneeReplacement.article),
   "knee-pain-after-basketball": () => import("./articles/knee-pain-after-basketball").then(module => module.kneePainAfterBasketball.article),
   "jumpers-knee-basketball": () => import("./articles/jumpers-knee-basketball").then(module => module.jumpersKneeBasketball.article),
   "knee-sleeves-for-basketball": () => import("./articles/knee-sleeves-for-basketball").then(module => module.kneeSleevesForBasketball.article),

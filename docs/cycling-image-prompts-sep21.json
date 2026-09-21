@@ -1,0 +1,186 @@
+{
+  "mode": "Built-in image_gen",
+  "common": "Photorealistic editorial illustration, wide 16:9 landscape, natural light, plausible anatomy and mechanically accurate bicycle geometry. No branding, watermark, marketing claims or embedded text. Illustrative people, not actual customers. No generated FlexiKnee device.",
+  "assets": [
+    {
+      "slug": "post-ride-knee-recovery",
+      "role": "hero",
+      "scene": "middle-aged recreational male cyclist resting on a bench beside his road bicycle, full head and knees visible, calm park scene"
+    },
+    {
+      "slug": "post-ride-knee-recovery",
+      "role": "1",
+      "scene": "adult female cyclist at home after a ride, seated normally on sofa in casual clothes, bicycle helmet and water on side table, both knees visible, no treatment device"
+    },
+    {
+      "slug": "post-ride-knee-recovery",
+      "role": "2",
+      "scene": "close editorial tabletop photograph of cycling gloves, water bottle, balanced ordinary meal and an open blank notebook, bike blurred in background"
+    },
+    {
+      "slug": "post-ride-knee-recovery",
+      "role": "3",
+      "scene": "adult recreational cyclist walking beside road bicycle on a flat quiet path the next morning, relaxed natural gait, helmet on"
+    },
+    {
+      "slug": "indoor-cycling-knee-pain",
+      "role": "hero",
+      "scene": "adult woman seated upright on an unbranded stationary spin bike in a bright home exercise room, side profile showing complete bike and natural leg alignment, hands on handlebars"
+    },
+    {
+      "slug": "indoor-cycling-knee-pain",
+      "role": "1",
+      "scene": "close side view of a stationary exercise bike resistance knob and flywheel, adult hand resting lightly by knob, no readable screen"
+    },
+    {
+      "slug": "indoor-cycling-knee-pain",
+      "role": "2",
+      "scene": "adult male indoor cyclist on stationary spin bike in comfortable seated riding posture, shoes resting on pedals, both knees visible, unbranded gym"
+    },
+    {
+      "slug": "indoor-cycling-knee-pain",
+      "role": "3",
+      "scene": "woman recording her indoor cycling session in an unmarked notebook beside stationary bike, sitting on a separate chair, natural home light"
+    },
+    {
+      "slug": "shorter-cranks-knee-pain",
+      "role": "hero",
+      "scene": "professional bicycle mechanic examining the crank area of an unbranded road bike secured in a repair stand, close documentary view, credible drivetrain geometry"
+    },
+    {
+      "slug": "shorter-cranks-knee-pain",
+      "role": "1",
+      "scene": "two clean unbranded black bicycle crank arms of subtly different lengths lying parallel on a neutral workshop table, no engraved numbers, no pedals attached"
+    },
+    {
+      "slug": "shorter-cranks-knee-pain",
+      "role": "2",
+      "scene": "close side-on bicycle crank arm with a plain ruler aligned between crank spindle center and pedal spindle center, no readable numbers or labels, realistic workshop photography"
+    },
+    {
+      "slug": "shorter-cranks-knee-pain",
+      "role": "3",
+      "scene": "adult cyclist on road bike in an indoor bike fitting studio, fitter standing beside observing the rider's leg position without touching, full side view"
+    },
+    {
+      "slug": "cycling-knee-osteoarthritis",
+      "role": "hero",
+      "scene": "older woman with silver hair calmly riding a stationary upright exercise bicycle in a bright living room, comfortable upright posture, full body and feet visible"
+    },
+    {
+      "slug": "cycling-knee-osteoarthritis",
+      "role": "1",
+      "scene": "older man consulting a physical therapist beside stationary exercise bike, ordinary sports clothes, no medical machinery, both looking at the bike setup"
+    },
+    {
+      "slug": "cycling-knee-osteoarthritis",
+      "role": "2",
+      "scene": "older recreational woman wearing helmet sitting astride a low-step bicycle with both feet safely on the ground on a flat park path, calm setting"
+    },
+    {
+      "slug": "cycling-knee-osteoarthritis",
+      "role": "3",
+      "scene": "older adult at kitchen table writing a simple activity diary in blank notebook after exercise, stationary bike in background, no text readable"
+    },
+    {
+      "slug": "cycling-cleats-knee-pain",
+      "role": "hero",
+      "scene": "close editorial product photograph of an unbranded road cycling shoe turned sole upward next to an unbranded bicycle pedal on a workshop bench, clearly visible triangular three-bolt plastic cleat"
+    },
+    {
+      "slug": "cycling-cleats-knee-pain",
+      "role": "1",
+      "scene": "two unbranded cycling shoe soles side by side: left recessed small metal two-bolt mountain bike cleat, right projecting triangular plastic three-bolt road cleat, technically credible shapes, no logos"
+    },
+    {
+      "slug": "cycling-cleats-knee-pain",
+      "role": "2",
+      "scene": "professional bike fitter inspecting cycling shoe cleat at workbench with a torque tool nearby, adult hands, no readable torque numbers, realistic lighting"
+    },
+    {
+      "slug": "cycling-cleats-knee-pain",
+      "role": "3",
+      "scene": "recreational cyclist practicing stationary clip-out in a bike shop while holding a solid support rail, one shoe on floor and other resting on pedal, helmet on, no motion"
+    },
+    {
+      "slug": "strength-training-cyclists-knees",
+      "role": "hero",
+      "scene": "adult recreational cyclist performing a controlled chair sit-to-stand in a simple home gym, arms forward, feet flat and knees naturally aligned, road bicycle in background, full body"
+    },
+    {
+      "slug": "strength-training-cyclists-knees",
+      "role": "1",
+      "scene": "adult woman practicing a shallow supported split squat beside a sturdy rail with both feet on floor, upright torso, comfortable small range, full body visible"
+    },
+    {
+      "slug": "strength-training-cyclists-knees",
+      "role": "2",
+      "scene": "adult man demonstrating a hip hinge with dowel along back in a gym, soft knees, feet flat, neutral spine, side profile and full body, no weights"
+    },
+    {
+      "slug": "strength-training-cyclists-knees",
+      "role": "3",
+      "scene": "adult cyclist performing a controlled double-leg calf raise holding a sturdy countertop, full body from side, both feet aligned, casual training clothes"
+    },
+    {
+      "slug": "knee-sleeves-for-cycling",
+      "role": "hero",
+      "scene": "adult recreational cyclist seated on a bench checking a plain black knee compression sleeve above cycling shoes, bicycle nearby, natural fabric with no logos, full knee and calf visible"
+    },
+    {
+      "slug": "knee-sleeves-for-cycling",
+      "role": "1",
+      "scene": "three distinct unbranded garments laid separately on neutral tabletop: short plain compression knee sleeve, long thermal cycling leg warmer, hinged knee brace, no text"
+    },
+    {
+      "slug": "knee-sleeves-for-cycling",
+      "role": "2",
+      "scene": "adult hands holding a soft measuring tape around thigh above the knee while seated, tape level and snug not constricting, no readable numerical measurements"
+    },
+    {
+      "slug": "knee-sleeves-for-cycling",
+      "role": "3",
+      "scene": "close side view of adult on stationary bike wearing a plain black knee sleeve, knee comfortably bent with smooth fabric behind knee, no redness or swelling, natural home light"
+    },
+    {
+      "slug": "e-bikes-bad-knees",
+      "role": "hero",
+      "scene": "older adult recreational cyclist wearing a helmet standing beside a realistic unbranded low-step electric bicycle on a flat separated park path, battery integrated in downtube, full bicycle visible"
+    },
+    {
+      "slug": "e-bikes-bad-knees",
+      "role": "1",
+      "scene": "close editorial view of hand resting on an unbranded electric bicycle handlebar control with simple plus and minus buttons, brake lever visible, no readable display"
+    },
+    {
+      "slug": "e-bikes-bad-knees",
+      "role": "2",
+      "scene": "adult woman wearing helmet preparing to step through the low frame of an electric bicycle while it is stationary and held securely, both feet on ground, flat quiet paved area"
+    },
+    {
+      "slug": "e-bikes-bad-knees",
+      "role": "3",
+      "scene": "two helmeted older recreational riders stopped beside their electric bicycles at the start of a flat quiet paved route, discussing the route, no traffic"
+    },
+    {
+      "slug": "cycling-after-knee-replacement",
+      "role": "hero",
+      "scene": "older adult in ordinary gym shorts talking with a physical therapist beside a stable stationary exercise bike in a rehabilitation room, both knees visible, no scar closeup, calm consultation not treatment promise"
+    },
+    {
+      "slug": "cycling-after-knee-replacement",
+      "role": "1",
+      "scene": "physical therapist adjusting the seat of an unoccupied stationary rehabilitation exercise bicycle, hands on seat adjustment, patient standing safely nearby with support"
+    },
+    {
+      "slug": "cycling-after-knee-replacement",
+      "role": "2",
+      "scene": "older adult in athletic clothes seated on an upright stationary bike with therapist supervising from side, comfortable easy posture and naturally bent knee, no forced range, feet on pedals"
+    },
+    {
+      "slug": "cycling-after-knee-replacement",
+      "role": "3",
+      "scene": "older adult wearing helmet practicing walking beside a low-step bicycle with companion on flat empty paved courtyard, both feet on ground, preparation for return to outdoor riding"
+    }
+  ]
+}

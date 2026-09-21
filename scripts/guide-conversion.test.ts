@@ -17,6 +17,11 @@ const targets = [
   "knee-compression-sleeve-sizing-guide",
 ];
 const videoTargets = [
+  "post-ride-knee-recovery",
+  "indoor-cycling-knee-pain",
+  "cycling-knee-osteoarthritis",
+  "strength-training-cyclists-knees",
+  "e-bikes-bad-knees",
   "do-knee-massagers-work",
   "sudden-knee-pain-guide",
   "sharp-knee-pain-guide",
@@ -132,7 +137,7 @@ test("promotion impressions and clicks carry the same test version and placement
   assert.match(code, /mappedCopy\?\.variant \|\| "guide-product-card-v3"/);
 });
 
-test("product video is limited to both primary-product cards in the eight agreed guides", () => {
+test("product video is limited to both primary-product cards in explicitly opted-in guides", () => {
   const slugs = new Set([
     ...Object.keys(articleCTAs),
     ...Object.keys(recentArticleCTAs),

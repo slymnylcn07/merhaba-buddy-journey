@@ -6,6 +6,7 @@ import { trackEvent } from "@/hooks/use-google-analytics";
 import { trackClarityEvent } from "@/hooks/use-microsoft-clarity";
 import { pickProductForSlug, PRODUCT_RECS } from "@/lib/article-product-map";
 import { next15ArticleCTAs, further15ArticleCTAs } from "@/data/recent-article-ctas";
+import { articleCTAs } from "@/data/article-ctas";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getPublicProductHandle } from "@/lib/product-config";
 import { ProductMarketplaceRating } from "@/components/ProductMarketplaceRating";
@@ -72,6 +73,10 @@ function readProductPopupSession(slug: string): ProductPopupSession | null {
 }
 
 function getContextualContent(slug: string): { hook: string; support: string } {
+  const cyclingCopy = articleCTAs[slug];
+  if (cyclingCopy?.variant === "cycling-guide-v1") {
+    return { hook: cyclingCopy.headline, support: cyclingCopy.text };
+  }
   const exactCopy = further15ArticleCTAs[slug] ?? next15ArticleCTAs[slug];
   if (exactCopy) return { hook: exactCopy.headline, support: exactCopy.text };
 
