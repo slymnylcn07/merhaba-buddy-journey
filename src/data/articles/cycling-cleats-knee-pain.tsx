@@ -12,7 +12,8 @@ export const cyclingCleatsKneePain: ArticleExport = { cta: "", article: {
   metaTitle: "Cycling Cleats & Knee Pain: Float, Angle and Fit",
   metaDescription: "Understand cycling cleat float, foot angle and release tension. Check SPD and SPD-SL compatibility, replacement setup and when knee pain needs assessment.",
   seoTags: "cycling cleat knee pain, cleat float knee pain, SPD SL knee pain, cycling foot angle, cleat position knee pain",
-  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, medicalReviewPending: true,
+  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, medicalReviewPending: false,
+  medicalReviewDate: "2026-09-22",
   nextSlug: "shorter-cranks-knee-pain", nextTitle: "Shorter Cranks and Knee Pain",
   faqs: [
     { question: "Can cycling cleats cause knee pain?", answer: "An unsuitable or changed shoe-pedal setup may contribute to discomfort, but pain also has other possible causes. Check the whole riding position and workload rather than diagnosing the knee from cleat angle alone." },

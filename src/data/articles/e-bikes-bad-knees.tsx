@@ -12,7 +12,8 @@ export const eBikesBadKnees: ArticleExport = { cta: "", article: {
   metaTitle: "E-Bikes for Bad Knees: Assist, Gears and Easy Mounting",
   metaDescription: "Considering an e-bike for sensitive knees? Compare pedal assist, easy mounting, weight, gears and test-ride checks before choosing a bike or a longer route.",
   seoTags: "e bike for bad knees, electric bike knee arthritis, pedal assist knee pain, step through e bike knees, ebike cycling knee pain",
-  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: true,
+  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: false,
+  medicalReviewDate: "2026-09-22",
   nextSlug: "cycling-knee-osteoarthritis", nextTitle: "Cycling With Knee Osteoarthritis",
   faqs: [
     { question: "Are e-bikes good for bad knees?", answer: "Assistance may make an appropriate ride more manageable, but bad knees is not a diagnosis. The benefit depends on your condition, the bike, your skills and the route. An e-bike does not replace medical advice." },

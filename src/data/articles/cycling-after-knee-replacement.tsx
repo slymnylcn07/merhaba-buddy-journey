@@ -12,7 +12,8 @@ export const cyclingAfterKneeReplacement: ArticleExport = { cta: "", article: {
   metaTitle: "Cycling After Knee Replacement: Indoor to Outdoor",
   metaDescription: "Understand cycling after knee replacement: stationary-bike setup, progression questions, outdoor readiness and warning signs. Follow your surgical team's plan.",
   seoTags: "cycling after knee replacement, exercise bike after knee replacement, stationary bike knee replacement, outdoor cycling after TKR",
-  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: true,
+  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: false,
+  medicalReviewDate: "2026-09-22",
   nextSlug: "recumbent-vs-upright-bike-knees", nextTitle: "Recumbent vs Upright Bikes for Knees",
   faqs: [
     { question: "When can I cycle after knee replacement?", answer: "Your surgical and rehabilitation team must decide. The timing depends on your operation, recovery, movement, symptoms and the type of cycling. A calendar date alone is not clearance." },

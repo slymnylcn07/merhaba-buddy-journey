@@ -12,7 +12,8 @@ export const strengthTrainingCyclistsKnees: ArticleExport = { cta: "", article: 
   metaTitle: "Strength Training for Cyclists With Sensitive Knees",
   metaDescription: "Build an off-bike strength routine around manageable squat, hinge, calf and trunk work. Fit exercises around cycling without stacking every hard leg session.",
   seoTags: "strength training for cyclists, knee strengthening exercises for cyclists, off bike strength routine, cycling strength training knee pain",
-  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: true,
+  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: false,
+  medicalReviewDate: "2026-09-22",
   nextSlug: "post-ride-knee-recovery", nextTitle: "Post-Ride Knee Recovery",
   faqs: [
     { question: "Does cycling replace strength training?", answer: "Cycling and resistance exercise have different demands. A broader activity plan may include both, with exercise selection and workload matched to your health and goals." },

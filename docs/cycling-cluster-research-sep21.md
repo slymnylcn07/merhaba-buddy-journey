@@ -45,7 +45,7 @@ The existing cycling pillar receives contextual links to all nine. Cyclist squat
 - Shimano SPD-SL float specifications are tied to exact SM-SH models. New SPD-SLR is explicitly treated as a distinct documented family; color alone is not a compatibility rule.
 - No fixed postoperative week, forced pedal revolution or self-issued outdoor clearance.
 - No claim that warmth/vibration heals tissue, regrows cartilage or accelerates cycling performance recovery.
-- All nine set medicalReviewPending: true. Earlier approval of basketball articles is not reused. No fabricated reviewer/date appears in the visible header or review schema.
+- All nine were initially marked medicalReviewPending: true. On September 22, 2026, the owner explicitly confirmed review of all nine and requested the existing Suleyman Yalcin, PT attribution. They now set medicalReviewPending: false and medicalReviewDate: "2026-09-22", enabling the shared visible byline and reviewedBy/lastReviewed schema. Earlier basketball approval was not reused. Article text and publication/modified dates are unchanged by this review-only update.
 - Illustrative examples are hypothetical, not testimonials or patient cases.
 
 ## Media
@@ -66,5 +66,5 @@ Two template-managed product CTAs per page, compact middle and detailed end. Exi
 - No new autoplay, forced modal or discount stacking logic.
 
 ## Quality gates
-npm run test:cycling checks body-only word counts, 3 body images, WebP sizes, metadata limits, sources, FAQs, pending review, registry/loaders/thumbnails, explicit product mappings and both video placements. It runs in PR CI.
+npm run test:cycling checks body-only word counts, 3 body images, WebP sizes, metadata limits, sources, FAQs, confirmed medical review and its date, registry/loaders/thumbnails, explicit product mappings and both video placements. It runs in PR CI.
 Final validation and browser observations are recorded in the PR description.

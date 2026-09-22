@@ -12,7 +12,8 @@ export const shorterCranksKneePain: ArticleExport = { cta: "", article: {
   metaTitle: "Shorter Cranks & Knee Pain: Fit, Length and Trade-Offs",
   metaDescription: "Compare shorter cranks for knee comfort: measuring length, 165 versus 170 mm, fit changes, compatibility and what biomechanical research can actually tell you.",
   seoTags: "shorter cranks knee pain, crank length knee pain, 165 vs 170 crank length, crank arm length, how to measure crank length",
-  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: true,
+  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: false,
+  medicalReviewDate: "2026-09-22",
   nextSlug: "cycling-cleats-knee-pain", nextTitle: "Cycling Cleats and Knee Pain",
   faqs: [
     { question: "Do shorter cranks help knee pain?", answer: "They can alter joint movement and may suit some riders, but a mechanical change is not a guaranteed treatment. The cause of symptoms, complete fit and training load need consideration." },

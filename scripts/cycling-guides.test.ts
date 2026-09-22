@@ -56,8 +56,8 @@ for (const slug of slugs) {
     }
     assert.doesNotMatch(body, /<PremiumCTA|<svg\b|<table\b|<th>/);
     assert.match(body, /<ArticleTable caption=/);
-    assert.match(body, /medicalReviewPending: true/);
-    assert.doesNotMatch(body, /medicalReviewDate:/);
+    assert.match(body, /medicalReviewPending: false/);
+    assert.match(body, /medicalReviewDate: "2026-09-22"/);
     for (const [field, max] of [["metaTitle", 60], ["metaDescription", 160]] as const) {
       const value = body.match(new RegExp(`${field}: "([^"]+)"`))?.[1];
       assert.ok(value && value.length <= max, `${field} missing or too long`);

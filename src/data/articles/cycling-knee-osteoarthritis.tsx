@@ -12,7 +12,8 @@ export const cyclingKneeOsteoarthritis: ArticleExport = { cta: "", article: {
   metaTitle: "Cycling With Knee Osteoarthritis: Load & Flare-Ups",
   metaDescription: "Plan cycling with knee osteoarthritis: choose manageable duration and resistance, compare indoor and outdoor riding, and respond to flare-ups safely.",
   seoTags: "cycling with knee arthritis, cycling knee osteoarthritis, stationary bike knee arthritis, cycling arthritis flare up, cycling resistance osteoarthritis",
-  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: true,
+  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: false,
+  medicalReviewDate: "2026-09-22",
   nextSlug: "e-bikes-bad-knees", nextTitle: "E-Bikes for Bad Knees",
   faqs: [
     { question: "Is cycling good for knee osteoarthritis?", answer: "It can be a useful low-impact form of aerobic exercise when matched to your health, movement and symptoms. It is not a cure, and the appropriate amount differs between people." },

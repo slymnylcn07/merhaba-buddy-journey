@@ -12,7 +12,8 @@ export const indoorCyclingKneePain: ArticleExport = { cta: "", article: {
   metaTitle: "Indoor Cycling Knee Pain: Peloton & Spin Class Load",
   metaDescription: "Review Peloton and spin-bike knee pain through resistance, standing climbs, class stacking and setup. Learn what to change and when to seek assessment.",
   seoTags: "peloton knee pain, spin bike knee pain, knee pain after spinning, indoor cycling knee pain, peloton inside knee pain",
-  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: true,
+  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: false,
+  medicalReviewDate: "2026-09-22",
   nextSlug: "post-ride-knee-recovery", nextTitle: "Post-Ride Knee Recovery",
   faqs: [
     { question: "Why do my knees hurt after Peloton?", answer: "Possible contributors include a rapid increase in riding, high-resistance work, class duration, unfamiliar standing efforts and equipment setup. A symptom location does not identify one definitive cause, and persistent symptoms need assessment." },

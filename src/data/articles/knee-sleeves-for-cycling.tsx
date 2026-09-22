@@ -12,7 +12,8 @@ export const kneeSleevesForCycling: ArticleExport = { cta: "", article: {
   metaTitle: "Knee Sleeves for Cycling: Compression vs Warmers",
   metaDescription: "Compare cycling knee sleeves, warmers and braces. Check bent-knee fit, slipping, seams, sizing and when optional compression is not the right solution.",
   seoTags: "knee sleeves for cycling, cycling knee support, knee warmers vs knee sleeves, compression sleeve cycling, knee brace cycling",
-  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: true,
+  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: false,
+  medicalReviewDate: "2026-09-22",
   nextSlug: "cycling-knee-pain-bike-fit", nextTitle: "Cycling Knee Pain and Bike Fit",
   faqs: [
     { question: "Do knee sleeves help with cycling?", answer: "Some riders like the feeling of snug coverage, but a sleeve does not establish the cause of pain or guarantee injury prevention. Its fit and purpose matter more than a broad support claim." },

@@ -14,7 +14,8 @@ export const postRideKneeRecovery: ArticleExport = { cta: "", article: {
   metaTitle: "Post-Ride Knee Recovery: Soreness, Stiffness & Next Ride",
   metaDescription: "Plan knee recovery after cycling: distinguish soreness from joint symptoms, review evening comfort and use next-day function to guide your next ride.",
   seoTags: "cycling recovery, post ride knee recovery, knee stiffness after cycling, sore knees after cycling, post ride recovery",
-  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: true,
+  publishedDate: "September 21, 2026", lastUpdated: "September 21, 2026", heroImage, heroObjectPosition: "center top", medicalReviewPending: false,
+  medicalReviewDate: "2026-09-22",
   nextSlug: "indoor-cycling-knee-pain", nextTitle: "Indoor Cycling Knee Pain",
   faqs: [
     { question: "Is knee soreness after cycling normal?", answer: "General muscle tiredness can follow an unfamiliar session, but focal joint pain, swelling, a limp or loss of motion should not automatically be called normal soreness. Timing alone cannot identify the cause." },
