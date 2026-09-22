@@ -63,5 +63,8 @@ jobs:
       - name: Test cycling guide integrity
         run: npm run test:cycling
 
+      - name: Test order attribution and checkout tracking
+        run: npm run test:order-attribution
+
       - name: Validate performance assets
         run: npm run validate:assets

@@ -22,6 +22,7 @@ import { VideoReviews } from "@/components/VideoReviews";
 import { ProductReviews } from "@/components/ProductReviews";
 import { KnowBeforeYouBuy } from "@/components/KnowBeforeYouBuy";
 import { getProductByHandle, ShopifyProduct, createStorefrontCheckout } from "@/lib/shopify";
+import { navigateToCheckout } from "@/lib/checkout-navigation";
 import {
   settleShopifyAnalyticsBeforeNavigation,
   trackAddToCart as trackShopifyAddToCart,
@@ -354,13 +355,13 @@ export default function ProductDetail() {
         offerCode: guideSource ? GUIDE_OFFER_CODE : undefined,
       };
       trackGA4AddToCart(gaItem, gaContext);
-      trackGA4BeginCheckout([gaItem], gaContext);
+      await trackGA4BeginCheckout([gaItem], gaContext);
       await settleShopifyAnalyticsBeforeNavigation(
         trackShopifyAddToCart(
           toShopifyAddToCartData(checkout.cartId, item),
         ),
       );
-      window.location.href = checkout.checkoutUrl;
+      navigateToCheckout(checkout.checkoutUrl);
     } catch {
       toast.error("Checkout could not be created. Please try again.");
     } finally {

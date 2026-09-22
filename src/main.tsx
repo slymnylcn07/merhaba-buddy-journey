@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { hasStoredMarket, initMarketFromGeo, shouldRefreshMarketFromGeo } from "./lib/market";
+import { captureOrderAttribution } from "./lib/order-attribution";
 
 // Clarity rebuilds recordings from the captured DOM instead of video. Keep the
 // production stylesheet URL available to its replay renderer without changing
@@ -18,6 +19,8 @@ if (redirectParam && redirectParam.startsWith("/")) {
 }
 
 const root = createRoot(document.getElementById("root")!);
+// Capture the entry before React redirects or the shopper changes SPA routes.
+captureOrderAttribution();
 
 async function bootstrapApp() {
   const needsGeoResolution = !hasStoredMarket() || shouldRefreshMarketFromGeo();

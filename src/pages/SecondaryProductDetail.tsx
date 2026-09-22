@@ -24,6 +24,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { FlexiKneeSystem } from "@/components/FlexiKneeSystem";
 import { getProductPageConfig } from "@/data/product-page-config";
 import { createStorefrontCheckout, getProductByHandle, ShopifyProduct } from "@/lib/shopify";
+import { navigateToCheckout } from "@/lib/checkout-navigation";
 import {
   settleShopifyAnalyticsBeforeNavigation,
   trackAddToCart as trackShopifyAddToCart,
@@ -259,13 +260,13 @@ export default function SecondaryProductDetail() {
         offerCode: guideSource ? GUIDE_OFFER_CODE : undefined,
       };
       trackGA4AddToCart(gaItem, gaContext);
-      trackGA4BeginCheckout([gaItem], gaContext);
+      await trackGA4BeginCheckout([gaItem], gaContext);
       await settleShopifyAnalyticsBeforeNavigation(
         trackShopifyAddToCart(
           toShopifyAddToCartData(checkout.cartId, item),
         ),
       );
-      window.location.href = checkout.checkoutUrl;
+      navigateToCheckout(checkout.checkoutUrl);
     } catch {
       toast.error("Checkout could not be created. Please try again.");
     } finally {
