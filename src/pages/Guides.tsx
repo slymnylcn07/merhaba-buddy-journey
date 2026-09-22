@@ -1,5 +1,14 @@
 import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { Helmet } from "react-helmet";
+import cyclingThumb0 from "@/assets/guide-thumbnails/cycling/post-ride-knee-recovery-thumb.webp";
+import cyclingThumb1 from "@/assets/guide-thumbnails/cycling/indoor-cycling-knee-pain-thumb.webp";
+import cyclingThumb2 from "@/assets/guide-thumbnails/cycling/shorter-cranks-knee-pain-thumb.webp";
+import cyclingThumb3 from "@/assets/guide-thumbnails/cycling/cycling-knee-osteoarthritis-thumb.webp";
+import cyclingThumb4 from "@/assets/guide-thumbnails/cycling/cycling-cleats-knee-pain-thumb.webp";
+import cyclingThumb5 from "@/assets/guide-thumbnails/cycling/strength-training-cyclists-knees-thumb.webp";
+import cyclingThumb6 from "@/assets/guide-thumbnails/cycling/knee-sleeves-for-cycling-thumb.webp";
+import cyclingThumb7 from "@/assets/guide-thumbnails/cycling/e-bikes-bad-knees-thumb.webp";
+import cyclingThumb8 from "@/assets/guide-thumbnails/cycling/cycling-after-knee-replacement-thumb.webp";
 import basketballThumb0 from "@/assets/guide-thumbnails/basketball/knee-pain-after-basketball-thumb.webp";
 import basketballThumb1 from "@/assets/guide-thumbnails/basketball/jumpers-knee-basketball-thumb.webp";
 import basketballThumb2 from "@/assets/guide-thumbnails/basketball/knee-sleeves-for-basketball-thumb.webp";
@@ -240,6 +249,15 @@ import thumbFurtherhyperextendedKneeInjury from "@/assets/guide-thumbnails/furth
 import thumbFurtherlegLengthDiscrepancyKneePain from "@/assets/guide-thumbnails/further-15/leg-length-discrepancy-knee-pain-thumb.webp";
 import thumbFurtherkneeAspirationGuide from "@/assets/guide-thumbnails/further-15/knee-aspiration-guide-thumb.webp";
 const thumbnailMap: Record<string, string> = {
+  "post-ride-knee-recovery": cyclingThumb0,
+  "indoor-cycling-knee-pain": cyclingThumb1,
+  "shorter-cranks-knee-pain": cyclingThumb2,
+  "cycling-knee-osteoarthritis": cyclingThumb3,
+  "cycling-cleats-knee-pain": cyclingThumb4,
+  "strength-training-cyclists-knees": cyclingThumb5,
+  "knee-sleeves-for-cycling": cyclingThumb6,
+  "e-bikes-bad-knees": cyclingThumb7,
+  "cycling-after-knee-replacement": cyclingThumb8,
   "knee-pain-after-basketball": basketballThumb0,
   "jumpers-knee-basketball": basketballThumb1,
   "knee-sleeves-for-basketball": basketballThumb2,
@@ -609,6 +627,15 @@ const locationSlugs = [
 ];
 
 const activitySlugs = [
+  "post-ride-knee-recovery",
+  "indoor-cycling-knee-pain",
+  "shorter-cranks-knee-pain",
+  "cycling-knee-osteoarthritis",
+  "cycling-cleats-knee-pain",
+  "strength-training-cyclists-knees",
+  "knee-sleeves-for-cycling",
+  "e-bikes-bad-knees",
+  "cycling-after-knee-replacement",
   "knee-pain-after-basketball",
   "jumpers-knee-basketball",
   "knee-sleeves-for-basketball",

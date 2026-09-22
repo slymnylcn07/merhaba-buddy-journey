@@ -257,6 +257,7 @@ export const cyclistSquatKneeStrength: ArticleExport = {
           </p>
         </div>
 
+        <p>To place this exercise within a riding week rather than treating it as a complete program, use the <Link to="/guides/strength-training-cyclists-knees" className={linkClass}>off-bike strength routine for cyclists</Link>.</p>
         <h2>The Bottom Line</h2>
         <p>
           A cyclist squat is a heel-elevated, relatively narrow squat that can create a useful quadriceps-focused challenge. The wedge changes the task; it does not fix ankle mobility or guarantee comfort. Start with a stable low elevation, bodyweight, and controlled depth. Add one variable at a time and judge the same-day and next-morning response. The best repetition is not the deepest or most knee-forward one. It is the version you can control, recover from, and progress for a clear reason.

@@ -60,5 +60,8 @@ jobs:
       - name: Test basketball guide integrity
         run: npm run test:basketball
 
+      - name: Test cycling guide integrity
+        run: npm run test:cycling
+
       - name: Validate performance assets
         run: npm run validate:assets

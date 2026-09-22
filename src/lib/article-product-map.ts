@@ -88,6 +88,15 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
 };
 
 const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
+  "post-ride-knee-recovery": "main",
+  "indoor-cycling-knee-pain": "main",
+  "shorter-cranks-knee-pain": "sleeve",
+  "cycling-knee-osteoarthritis": "main",
+  "cycling-cleats-knee-pain": "sleeve",
+  "strength-training-cyclists-knees": "main",
+  "knee-sleeves-for-cycling": "sleeve",
+  "e-bikes-bad-knees": "main",
+  "cycling-after-knee-replacement": "iceWrap",
   "knee-pain-after-basketball": "iceWrap",
   "jumpers-knee-basketball": "sleeve",
   "knee-sleeves-for-basketball": "sleeve",
@@ -167,6 +176,15 @@ const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
 };
 
 const SLUG_RECOMMENDATION_OVERRIDES: Record<string, ProductRec> = {
+  "post-ride-knee-recovery": { ...PRODUCT_RECS.main, benefit: "See adjustable warmth and optional vibration for an appropriate off-bike comfort session." },
+  "indoor-cycling-knee-pain": { ...PRODUCT_RECS.main, benefit: "Explore a short at-home warmth routine between suitable indoor rides." },
+  "shorter-cranks-knee-pain": { ...PRODUCT_RECS.sleeve, benefit: "Check a breathable sleeve's fit without confusing coverage with a crank or bike-fit correction." },
+  "cycling-knee-osteoarthritis": { ...PRODUCT_RECS.main, benefit: "See the device controls for optional comfort alongside your individualized activity plan." },
+  "cycling-cleats-knee-pain": { ...PRODUCT_RECS.sleeve, benefit: "Compare sleeve sizing and bent-knee comfort while keeping shoe and pedal decisions separate." },
+  "strength-training-cyclists-knees": { ...PRODUCT_RECS.main, benefit: "Explore adjustable warmth for optional evening comfort, separate from your training progression." },
+  "knee-sleeves-for-cycling": { ...PRODUCT_RECS.sleeve, benefit: "Check this plain sleeve's measurements, fabric and fit against the cycling checklist." },
+  "e-bikes-bad-knees": { ...PRODUCT_RECS.main, benefit: "See how a cordless warmth session can fit an appropriate routine after a manageable ride." },
+  "cycling-after-knee-replacement": { ...PRODUCT_RECS.iceWrap, benefit: "Check fit and instructions only if your surgical team has approved this type of cold wrap." },
   "knee-pain-after-basketball": { ...PRODUCT_RECS.iceWrap, benefit: "A reusable wrap for the short cold-comfort sessions discussed in this basketball guide." },
   "jumpers-knee-basketball": { ...PRODUCT_RECS.sleeve, benefit: "A breathable sleeve for optional snug coverage alongside your agreed basketball plan." },
   "knee-sleeves-for-basketball": { ...PRODUCT_RECS.sleeve, benefit: "Compare this plain compression sleeve with the measurement and fit checks in the guide." },

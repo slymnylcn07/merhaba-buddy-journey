@@ -3,6 +3,11 @@ import { PRIMARY_PRODUCT_HANDLE } from "../lib/product-config";
 // Explicit editorial opt-in only. Both placements use the same click-to-play
 // demo, but a future product remapping must never inherit the wrong video.
 const MASSAGER_DEMO_GUIDES = new Set([
+  "post-ride-knee-recovery",
+  "indoor-cycling-knee-pain",
+  "cycling-knee-osteoarthritis",
+  "strength-training-cyclists-knees",
+  "e-bikes-bad-knees",
   "return-to-basketball-knee-pain",
   "basketball-after-40-knee-recovery",
   "do-knee-massagers-work",
