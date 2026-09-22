@@ -9,6 +9,8 @@ import {
 } from "@/lib/page-ready";
 import { getMarketCountry } from "@/lib/market";
 import { PRIMARY_PRODUCT_PATH } from "@/lib/product-config";
+import { captureOrderAttribution } from "@/lib/order-attribution";
+import { waitForAnalyticsDispatch } from "@/lib/checkout-navigation";
 
 declare global {
   interface Window {
@@ -78,11 +80,12 @@ function getProductHandle(pathname: string) {
 }
 
 function getAnalyticsPageContext(pathname: string) {
+  const attribution = captureOrderAttribution();
   return {
     market_country: getMarketCountry(),
     traffic_segment: getTrafficSegment(pathname),
-    landing_page_type: getLandingPageType(pathname),
-    referrer_host: getReferrerHost(),
+    landing_page_type: getLandingPageType(attribution?.landing || pathname),
+    referrer_host: attribution?.referrerHost || getReferrerHost(),
     device_group: getDeviceGroup(),
   };
 }
@@ -255,13 +258,16 @@ export const trackBeginCheckout = (items: Array<{
   currency: string;
   quantity: number;
   handle?: string;
-}>, context?: AnalyticsEventContext) => {
+}>, context?: AnalyticsEventContext): Promise<void> => {
+  if (!hasAnalyticsConsent()) return Promise.resolve();
   const totalValue = items.reduce(
     (sum, item) => sum + parseFloat(item.price) * item.quantity,
     0
   );
 
-  trackEvent("begin_checkout", {
+  return waitForAnalyticsDispatch((done) => trackEvent("begin_checkout", {
+    event_callback: done,
+    event_timeout: 500,
     ...normalizeEventContext({
       ...context,
       productHandle:
@@ -277,34 +283,9 @@ export const trackBeginCheckout = (items: Array<{
       price: parseFloat(item.price),
       quantity: item.quantity,
     })),
-  });
+  }));
 };
 
-// Track purchase event (called after successful checkout)
-export const trackPurchase = (transaction: {
-  transactionId: string;
-  value: number;
-  currency: string;
-  tax?: number;
-  shipping?: number;
-  items: Array<{
-    id: string;
-    name: string;
-    price: string;
-    quantity: number;
-  }>;
-}) => {
-  trackEvent("purchase", {
-    transaction_id: transaction.transactionId,
-    value: transaction.value,
-    currency: transaction.currency,
-    tax: transaction.tax || 0,
-    shipping: transaction.shipping || 0,
-    items: transaction.items.map((item) => ({
-      item_id: item.id,
-      item_name: item.name,
-      price: parseFloat(item.price),
-      quantity: item.quantity,
-    })),
-  });
-};
+// purchase is owned by Shopify's Google & YouTube checkout integration.
+// The storefront never knows that payment succeeded. Do not send purchase
+// from Buy Now, begin_checkout, or a return URL (duplicate/false revenue).

@@ -4,6 +4,7 @@ import {
   SHOPIFY_VISIT_TOKEN_HEADER,
 } from '@shopify/hydrogen-react';
 import { getMarketCountry } from "@/lib/market";
+import { getOrderAttributionAttributes, mergeOrderAttributionAttributes, type CartAttribute } from "./order-attribution";
 import {
   SHOPIFY_API_STOREFRONT_TOKEN,
   SHOPIFY_STOREFRONT_URL,
@@ -111,6 +112,7 @@ export interface CheckoutLineItem {
 
 interface StorefrontCartGraphql {
   id: string;
+  attributes: CartAttribute[];
   checkoutUrl: string;
   cost: StorefrontCartCost;
   discountCodes: StorefrontDiscountCode[];
@@ -181,6 +183,7 @@ export interface StorefrontDiscountApplication {
 
 export interface StorefrontCheckout {
   cartId: string;
+  attributes: CartAttribute[];
   checkoutUrl: string;
   lineIdsByVariantId: Record<string, string>;
   cost: StorefrontCartCost;
@@ -357,6 +360,7 @@ const PRODUCT_BY_HANDLE_QUERY = `
 
 const STOREFRONT_CART_FIELDS = `
   id
+  attributes { key value }
   checkoutUrl
   cost {
     subtotalAmount {
@@ -473,9 +477,19 @@ const CART_DISCOUNT_CODES_UPDATE_MUTATION = `
   }
 `;
 
+const CART_ATTRIBUTES_UPDATE_MUTATION = `
+  mutation cartAttributesUpdate($cartId: ID!, $attributes: [AttributeInput!]!, $country: CountryCode!) @inContext(country: $country) {
+    cartAttributesUpdate(cartId: $cartId, attributes: $attributes) {
+      cart { ${STOREFRONT_CART_FIELDS} }
+      userErrors { field message }
+    }
+  }
+`;
+
 export async function storefrontApiRequest<T>(
   query: string,
-  variables: Record<string, unknown> = {}
+  variables: Record<string, unknown> = {},
+  signal?: AbortSignal,
 ): Promise<StorefrontResponse<T>> {
   if (!isShopifyConfigured()) {
     throw new Error(
@@ -485,6 +499,7 @@ export async function storefrontApiRequest<T>(
 
   const response = await fetch(SHOPIFY_STOREFRONT_URL, {
     method: 'POST',
+    signal,
     headers: {
       'Content-Type': 'application/json',
       'X-Shopify-Storefront-Access-Token': SHOPIFY_API_STOREFRONT_TOKEN,
@@ -593,6 +608,7 @@ function toStorefrontCheckout(
 
   return {
     cartId: cart.id,
+    attributes: cart.attributes || [],
     checkoutUrl: cart.checkoutUrl,
     lineIdsByVariantId,
     cost: cart.cost,
@@ -615,6 +631,7 @@ export async function createStorefrontCheckout(
     const cartData = await storefrontApiRequest<CartCreateData>(CART_CREATE_MUTATION, {
       input: {
         lines,
+        attributes: getOrderAttributionAttributes(),
         buyerIdentity: { countryCode: country },
         ...(discountCodes.length > 0 ? { discountCodes } : {}),
       },
@@ -630,6 +647,29 @@ export async function createStorefrontCheckout(
     }
     throw error;
   }
+}
+
+/** Refresh an existing cart's source just before checkout, preserving unrelated attributes.
+ * Attribution failure must not recreate the cart, lose discounts, or block payment.
+ */
+export async function syncStorefrontCartAttribution(checkout: StorefrontCheckout): Promise<StorefrontCheckout> {
+  const current = getOrderAttributionAttributes();
+  if (current.every(({ key, value }) => checkout.attributes.some((item) => item.key === key && item.value === value))) {
+    return checkout;
+  }
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 2500);
+  try {
+    const response = await storefrontApiRequest<{ cartAttributesUpdate: CartMutationPayload }>(
+      CART_ATTRIBUTES_UPDATE_MUTATION,
+      { cartId: checkout.cartId, country: getMarketCountry(), attributes: mergeOrderAttributionAttributes(checkout.attributes, current) },
+      controller.signal,
+    );
+    return toStorefrontCheckout(response.data.cartAttributesUpdate, 'Updating cart attribution');
+  } catch {
+    console.warn('[Shopify Cart] Source details could not be refreshed; checkout remains available.');
+    return checkout;
+  } finally { clearTimeout(timer); }
 }
 
 export async function addStorefrontCartLines(

@@ -1,5 +1,6 @@
 import { NEWSLETTER_DISCOUNT_CODE } from "@/lib/newsletter-config";
 import { getProductPath } from "@/lib/product-config";
+import { captureOrderAttribution } from "./order-attribution";
 
 export const GUIDE_OFFER_CODE = NEWSLETTER_DISCOUNT_CODE;
 
@@ -42,25 +43,25 @@ export function markGuideOfferSource(
 ) {
   if (!canUseBrowserStorage()) return;
 
+  captureOrderAttribution({ guide, placement });
+
   const source: GuideOfferSource = {
     guide,
     placement,
     capturedAt: Date.now(),
   };
 
-  window.sessionStorage.setItem(
-    GUIDE_SOURCE_SESSION_KEY,
-    JSON.stringify(source),
-  );
+  try {
+    window.sessionStorage.setItem(GUIDE_SOURCE_SESSION_KEY, JSON.stringify(source));
+  } catch { /* A blocked store must not prevent navigation to the product. */ }
 }
 
 export function getGuideOfferSource(): GuideOfferSource | null {
   if (!canUseBrowserStorage()) return null;
 
-  const value = window.sessionStorage.getItem(GUIDE_SOURCE_SESSION_KEY);
-  if (!value) return null;
-
   try {
+    const value = window.sessionStorage.getItem(GUIDE_SOURCE_SESSION_KEY);
+    if (!value) return null;
     const parsed = JSON.parse(value) as GuideOfferSource;
     if (
       !parsed.guide ||

@@ -4,6 +4,7 @@ import {
   ShopifyProduct,
   addStorefrontCartLines,
   createStorefrontCheckout,
+  syncStorefrontCartAttribution,
   removeStorefrontCartLine,
   updateStorefrontCartDiscountCodes,
   updateStorefrontCartLine,
@@ -738,9 +739,10 @@ export const useCartStore = create<CartStore>()(
             createdFreshCart = true;
           }
 
+          checkout = await syncStorefrontCartAttribution(checkout);
           set(getStorefrontCartState(checkout));
           const guideSource = getGuideOfferSource();
-          trackGA4BeginCheckout(items.map(item => ({
+          await trackGA4BeginCheckout(items.map(item => ({
             id: item.product.node.id,
             name: item.product.node.title,
             price: item.price.amount,

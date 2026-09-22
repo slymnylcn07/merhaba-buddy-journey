@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { toast } from "sonner";
+import { navigateToCheckout } from "@/lib/checkout-navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -357,7 +358,7 @@ export const CartDrawer = () => {
       }
 
       setIsOpen(false);
-      window.location.href = checkoutUrl;
+      navigateToCheckout(checkoutUrl);
     } catch (error) {
       toast.error("Checkout error", {
         description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
