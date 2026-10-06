@@ -14,7 +14,7 @@ export const kneeBracesForSkiing: ArticleExport = { cta: "", article: {
   metaTitle: "Knee Braces for Skiing: Sleeves, Hinges & Fit",
   metaDescription: "Compare ski knee sleeves and functional braces, understand the evidence limits, and check clothing, boot clearance and fit before heading to the slopes.",
   seoTags: "knee braces for skiing, ski knee brace, compression sleeve skiing, hinged knee brace skiing, ACL brace skiing",
-  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: true, heroImage,
+  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: false, medicalReviewDate: "2026-10-06", heroImage,
   nextSlug: "knee-pain-after-skiing", nextTitle: "Knee Pain After Skiing",
   faqs: [
     { question: "Will a knee brace prevent a skiing injury?", answer: "No brace guarantees prevention. Research in selected injured or reconstructed knees cannot establish protection for every recreational skier. Technique, conditions, fatigue, equipment and individual readiness remain important." },

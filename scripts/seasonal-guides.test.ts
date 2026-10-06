@@ -30,7 +30,11 @@ const slugs = [
   "turkey-trot-run-walk-preparation",
   "turkey-trot-warm-up"
 ];
-const videoSlugs = new Set(["gifts-for-parents-with-knee-pain"]);
+const videoSlugs = new Set([
+  "gifts-for-parents-with-knee-pain",
+  "turkey-trot-guide-sensitive-knees",
+  "turkey-trot-run-walk-preparation",
+]);
 const activeSlugs = new Set([...guidesData, ...recentGuidesData].map(guide => guide.slug));
 const source = (name: string) => readFileSync(new URL(`../${name}`, import.meta.url), "utf8");
 for (const slug of slugs) {
@@ -57,8 +61,8 @@ for (const slug of slugs) {
     }
     assert.doesNotMatch(body, /<PremiumCTA|<svg\b|<table\b|<th>/);
     assert.match(body, /<ArticleTable caption=/);
-    assert.match(body, /medicalReviewPending: true/);
-    assert.doesNotMatch(body, /medicalReviewDate:/);
+    assert.match(body, /medicalReviewPending: false/);
+    assert.match(body, /medicalReviewDate: "2026-10-06"/);
     for (const [field, max] of [["metaTitle", 60], ["metaDescription", 160]] as const) {
       const value = body.match(new RegExp(`${field}: "([^"]+)"`))?.[1];
       assert.ok(value && value.length <= max, `${field} missing or too long`);
@@ -82,6 +86,10 @@ for (const slug of slugs) {
     assert.ok(articleCTAs[slug].headline.length <= 62);
     assert.ok(articleCTAs[slug].text.length <= 108);
     assert.equal((source("src/lib/article-product-map.ts").match(new RegExp(`"${slug}":`, "g")) ?? []).length, 2);
+    if (videoSlugs.has(slug)) {
+      assert.ok(source("src/lib/article-product-map.ts").includes(`"${slug}": "main"`));
+      assert.ok(source("src/lib/article-product-map.ts").includes(`"${slug}": { ...PRODUCT_RECS.main,`));
+    }
     for (const placement of ["mid_article", "article_end"] as const) {
       assert.equal(Boolean(getArticleProductDemo(slug, placement, PRIMARY_PRODUCT_HANDLE)), videoSlugs.has(slug));
       assert.equal(getArticleProductDemo(slug, placement, "different-product"), undefined);
@@ -91,6 +99,17 @@ for (const slug of slugs) {
 
 test("seasonal popups preserve the scoped card copy", () => {
   assert.match(source("src/components/ArticleSlideInCTA.tsx"), /cyclingCopy\?\.variant === "seasonal-guide-v1"/);
+});
+
+test("confirmed seasonal review reaches the visible byline and article schema", () => {
+  const header = source("src/components/ArticleHeaderMeta.tsx");
+  const page = source("src/pages/GuideArticle.tsx");
+  assert.match(header, /MEDICAL_REVIEWER\.name/);
+  assert.match(header, /dateTime=\{medicalReviewDate\}/);
+  assert.match(page, /showMedicalReview=\{!article.medicalReviewPending\}/);
+  assert.match(page, /medicalReviewDate=\{article.medicalReviewDate\}/);
+  assert.match(page, /"lastReviewed": article.medicalReviewDate \?\? MEDICAL_REVIEW_DATE/);
+  assert.equal(videoSlugs.size, 3);
 });
 test("acute post-event pages do not promote heated devices", () => {
   for (const slug of ["knee-pain-after-marathon", "knee-pain-after-turkey-trot"]) {

@@ -14,7 +14,7 @@ export const indoorVsOutdoorSlippersWinter: ArticleExport = { cta: "", article: 
   metaTitle: "Indoor vs Outdoor Slippers in Winter: Grip & Fit",
   metaDescription: "Can winter slippers go outside? Compare soles, moisture, lining and secure fit, and plan a dry indoor-outdoor change without assuming rubber means ice-safe.",
   seoTags: "indoor vs outdoor slippers, winter slippers outdoor sole, can you wear slippers outside, indoor outdoor slippers winter, slippers grip wet pavement",
-  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: true, heroImage,
+  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: false, medicalReviewDate: "2026-10-06", heroImage,
   nextSlug: "best-slippers-knee-pain", nextTitle: "Best Slippers for Knee Pain",
   faqs: [
     { question: "Can indoor-outdoor slippers be worn on snow or ice?", answer: "Do not assume so. The label may describe occasional dry outdoor use rather than winter traction or weather protection. Check the maker's intended conditions and choose suitable outdoor footwear for the actual surface." },

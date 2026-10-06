@@ -7,8 +7,8 @@ Eight new English guides, kept separate from the existing running, skiing, slipp
 | Guide slug | Body words | Distinct search intent | CTA product |
 | --- | ---: | --- | --- |
 | knee-pain-after-marathon | 2,019 | Marathon-specific next-day recovery, stairs and warning signs | Cold wrap |
-| turkey-trot-guide-sensitive-knees | 2,047 | Choosing an event, registration, accessibility and planning | Compression sleeve |
-| turkey-trot-run-walk-preparation | 2,090 | Preparation over the weeks before a Thanksgiving 5K | Compression sleeve |
+| turkey-trot-guide-sensitive-knees | 2,047 | Choosing an event, registration, accessibility and planning | Main massager with optional video |
+| turkey-trot-run-walk-preparation | 2,090 | Preparation over the weeks before a Thanksgiving 5K | Main massager with optional video |
 | turkey-trot-warm-up | 2,070 | Race-morning preparation and start-line waiting | Compression sleeve |
 | knee-pain-after-turkey-trot | 2,064 | Symptoms after an unfamiliar annual 5K, distinct from marathon load | Cold wrap |
 | indoor-vs-outdoor-slippers-winter | 2,070 | Indoor/outdoor surfaces, secure fit and winter weather, not another product ranking | Compression sleeve |
@@ -21,10 +21,10 @@ Counts exclude FAQs, metadata and automatic CTA copy. Every page has an explicit
 
 - Registered all eight pages in article loaders, guide cards, thumbnail loaders, category lists, CTA copy and product selection.
 - Both middle and final CTAs use the same product selection; seasonal popups reuse the scoped article copy.
-- Main-product video enabled at both placements for the gift guide. Other recommended products retain their normal cards.
+- Main-product video enabled at both placements for the gift guide, Turkey Trot overview and run-walk preparation guide. Other recommended products retain their normal cards.
 - Acute post-event pages do not promote heated devices. A fabric sleeve is not presented as a functional ski brace or a solution to slippery footwear.
 - Existing automatic article order remains CTA, Knee Quiz, then references.
-- All eight new pages have medicalReviewPending set to true. No completed clinical review or reviewer approval was invented.
+- The user confirmed clinical review of all eight pages on 6 October 2026. Each page now has medicalReviewPending set to false and its own medicalReviewDate of 2026-10-06. The existing Suleyman Yalcin, PT reviewer identity is reused; no other article's review date changed.
 - Source references cover NHS, AAOS, HSS, AHA, Arthritis Foundation, official YMCA race information and relevant clinical evidence. The ski guide distinguishes a selected observational skier cohort from broader ACL bracing guidance.
 
 ## Research
@@ -41,4 +41,8 @@ The separate [50-topic opportunity report](seasonal-content-opportunities-oct06.
 - All eight pages checked at mobile and desktop widths: no page-wide horizontal overflow, three body illustrations and two product CTAs per page.
 - Gift-guide video opened and played successfully in the optional dialog. Article content remains readable without playing it.
 
-Delivery is a draft PR for preview and review, not a production publish.
+## Follow-up after PR 60 was merged
+
+The user merged the original batch to main and confirmed their medical review. This follow-up starts from that merged main, rather than updating the closed PR or reverting the live batch. Main-product coverage increases from one to three articles. Both additional placements describe optional at-home comfort, not race equipment, injury treatment, or permission to increase training. Marathon and post-Turkey-Trot symptom pages retain the cold wrap; warm-up, ski brace and slipper pages retain their existing product selection.
+
+The follow-up is delivered as a separate draft PR. No automatic merge, production deployment or rollback is performed.
