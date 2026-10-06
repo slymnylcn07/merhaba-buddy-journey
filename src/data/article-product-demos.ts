@@ -4,6 +4,8 @@ import { PRIMARY_PRODUCT_HANDLE } from "../lib/product-config";
 // demo, but a future product remapping must never inherit the wrong video.
 const MASSAGER_DEMO_GUIDES = new Set([
   "gifts-for-parents-with-knee-pain",
+  "turkey-trot-guide-sensitive-knees",
+  "turkey-trot-run-walk-preparation",
   "post-ride-knee-recovery",
   "indoor-cycling-knee-pain",
   "cycling-knee-osteoarthritis",

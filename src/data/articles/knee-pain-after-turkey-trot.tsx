@@ -14,7 +14,7 @@ export const kneePainAfterTurkeyTrot: ArticleExport = { cta: "", article: {
   metaTitle: "Knee Pain After a Turkey Trot: Soreness & Warning Signs",
   metaDescription: "Knees hurt after a Thanksgiving 5K? Review unfamiliar effort, next-day soreness, swelling and holiday activity, with clear reasons to seek medical advice.",
   seoTags: "knee pain after turkey trot, sore knees after 5k, thanksgiving run knee pain, knee pain day after 5k, turkey trot recovery",
-  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: true, heroImage,
+  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: false, medicalReviewDate: "2026-10-06", heroImage,
   nextSlug: "turkey-trot-run-walk-preparation", nextTitle: "Turkey Trot Run-Walk Preparation",
   faqs: [
     { question: "Can a short Turkey Trot cause significant soreness?", answer: "An unfamiliar effort can feel demanding even when the distance is short compared with other races. Speed, hills, walking to the start and your recent activity all matter. The event distance alone cannot tell you whether knee symptoms are harmless." },

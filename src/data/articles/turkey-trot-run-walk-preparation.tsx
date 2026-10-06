@@ -14,7 +14,7 @@ export const turkeyTrotRunWalkPreparation: ArticleExport = { cta: "", article: {
   metaTitle: "Turkey Trot Run-Walk Preparation for Sensitive Knees",
   metaDescription: "Build toward a Thanksgiving 5K with sensible run-walk preparation, rest days and symptom checks. Avoid catch-up training and choose a realistic event goal.",
   seoTags: "turkey trot training, turkey trot run walk plan, beginner thanksgiving 5k, turkey trot preparation knee pain, walk run 5k preparation",
-  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: true, heroImage,
+  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: false, medicalReviewDate: "2026-10-06", heroImage,
   nextSlug: "turkey-trot-warm-up", nextTitle: "Turkey Trot Warm-Up",
   faqs: [
     { question: "Can I prepare for a Turkey Trot in a few weeks?", answer: "It depends on your current activity and chosen event. A few weeks may allow a regular walker to prepare familiar logistics, but it does not guarantee that a new runner can safely build to running a 5K. Adjust the goal rather than compressing a longer plan." },

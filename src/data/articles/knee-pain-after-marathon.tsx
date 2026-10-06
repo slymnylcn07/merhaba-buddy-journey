@@ -14,7 +14,7 @@ export const kneePainAfterMarathon: ArticleExport = { cta: "", article: {
   metaTitle: "Knee Pain After a Marathon: Soreness, Stairs & Recovery",
   metaDescription: "Knees hurt after a marathon? Separate muscle soreness from joint symptoms, manage stairs and travel, and plan a sensible return without rushing recovery.",
   seoTags: "knee pain after marathon, knees hurt after marathon, knee pain day after marathon, stairs after marathon, post marathon knee recovery",
-  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: true, heroImage,
+  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: false, medicalReviewDate: "2026-10-06", heroImage,
   nextSlug: "knee-pain-after-exercise", nextTitle: "Knee Pain After Exercise",
   faqs: [
     { question: "Is knee pain the day after a marathon just muscle soreness?", answer: "Not necessarily. Broad thigh soreness can follow unfamiliar loading, but a focal painful knee, swelling, locking or changed walking should not automatically be called muscle soreness. Timing alone does not identify the cause." },

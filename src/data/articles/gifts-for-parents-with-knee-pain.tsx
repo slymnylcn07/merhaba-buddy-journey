@@ -14,7 +14,7 @@ export const giftsForParentsWithKneePain: ArticleExport = { cta: "", article: {
   metaTitle: "Gifts for Parents With Knee Pain: Practical Comfort Ideas",
   metaDescription: "Choose thoughtful knee-comfort gifts for parents: compare easy-use devices, footwear choices, practical help and return checks without treatment promises.",
   seoTags: "gifts for parents with knee pain, gifts for mom with knee pain, gifts for dad with knee pain, practical gifts for older parents, knee comfort gifts",
-  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: true, heroImage,
+  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: false, medicalReviewDate: "2026-10-06", heroImage,
   nextSlug: "do-knee-massagers-work", nextTitle: "Do Knee Massagers Work?",
   faqs: [
     { question: "What is a thoughtful gift for a parent with knee pain?", answer: "Start with something the parent wants and can use easily. Practical help, a flexible outing, a footwear-shopping contribution or a suitable comfort product may be useful. Avoid presenting any gift as a cure or a substitute for assessment." },

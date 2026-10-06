@@ -14,7 +14,7 @@ export const turkeyTrotWarmUp: ArticleExport = { cta: "", article: {
   metaTitle: "Turkey Trot Warm-Up for Walkers and Runners",
   metaDescription: "Plan a simple Turkey Trot warm-up: easy walking, familiar movements, cold-weather waiting and a controlled start, without exhausting your knees before the 5K.",
   seoTags: "turkey trot warm up, thanksgiving 5k warm up, warm up before 5k walk, cold weather race warm up, knee friendly race warm up",
-  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: true, heroImage,
+  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: false, medicalReviewDate: "2026-10-06", heroImage,
   nextSlug: "knee-pain-after-turkey-trot", nextTitle: "Knee Pain After a Turkey Trot",
   faqs: [
     { question: "How long should a Turkey Trot warm-up take?", answer: "General guidance often uses about five to ten minutes of gradual activity, but your needs, weather and clinical plan may differ. Treat that as a broad starting framework, not a countdown that guarantees readiness." },

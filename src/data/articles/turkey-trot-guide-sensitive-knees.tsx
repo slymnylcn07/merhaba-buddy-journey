@@ -14,7 +14,7 @@ export const turkeyTrotGuideSensitiveKnees: ArticleExport = { cta: "", article: 
   metaTitle: "Turkey Trot Guide: A First Event With Sensitive Knees",
   metaDescription: "Choose a knee-conscious first Turkey Trot: compare walking rules, distances, surfaces and logistics, then find preparation, warm-up and recovery guides.",
   seoTags: "turkey trot guide beginners, can you walk a turkey trot, turkey trot with knee pain, first turkey trot, thanksgiving 5k walk",
-  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: true, heroImage,
+  publishedDate: "October 6, 2026", lastUpdated: "October 6, 2026", medicalReviewPending: false, medicalReviewDate: "2026-10-06", heroImage,
   nextSlug: "turkey-trot-run-walk-preparation", nextTitle: "Turkey Trot Run-Walk Preparation",
   faqs: [
     { question: "What is a Turkey Trot?", answer: "It is a running or walking event held around Thanksgiving. Distances, competitive elements and participation rules differ between organizers; the name does not guarantee a 5K or a particular course." },
