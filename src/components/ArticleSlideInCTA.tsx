@@ -74,6 +74,9 @@ function readProductPopupSession(slug: string): ProductPopupSession | null {
 
 function getContextualContent(slug: string): { hook: string; support: string } {
   const cyclingCopy = articleCTAs[slug];
+  if (cyclingCopy?.variant === "seasonal-guide-v1") {
+    return { hook: cyclingCopy.headline, support: cyclingCopy.text };
+  }
   if (cyclingCopy?.variant === "cycling-guide-v1") {
     return { hook: cyclingCopy.headline, support: cyclingCopy.text };
   }

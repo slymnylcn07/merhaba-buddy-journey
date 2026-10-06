@@ -2,6 +2,14 @@ import type { ArticleData } from "./articles/types";
 import { applyArticleSourceStandards } from "./article-source-standards";
 
 const recentArticleLoaders: Record<string, () => Promise<ArticleData>> = {
+  "gifts-for-parents-with-knee-pain": () => import("./articles/gifts-for-parents-with-knee-pain").then(module => module.giftsForParentsWithKneePain.article),
+  "indoor-vs-outdoor-slippers-winter": () => import("./articles/indoor-vs-outdoor-slippers-winter").then(module => module.indoorVsOutdoorSlippersWinter.article),
+  "knee-braces-for-skiing": () => import("./articles/knee-braces-for-skiing").then(module => module.kneeBracesForSkiing.article),
+  "knee-pain-after-marathon": () => import("./articles/knee-pain-after-marathon").then(module => module.kneePainAfterMarathon.article),
+  "knee-pain-after-turkey-trot": () => import("./articles/knee-pain-after-turkey-trot").then(module => module.kneePainAfterTurkeyTrot.article),
+  "turkey-trot-guide-sensitive-knees": () => import("./articles/turkey-trot-guide-sensitive-knees").then(module => module.turkeyTrotGuideSensitiveKnees.article),
+  "turkey-trot-run-walk-preparation": () => import("./articles/turkey-trot-run-walk-preparation").then(module => module.turkeyTrotRunWalkPreparation.article),
+  "turkey-trot-warm-up": () => import("./articles/turkey-trot-warm-up").then(module => module.turkeyTrotWarmUp.article),
   "post-ride-knee-recovery": () => import("./articles/post-ride-knee-recovery").then(module => module.postRideKneeRecovery.article),
   "indoor-cycling-knee-pain": () => import("./articles/indoor-cycling-knee-pain").then(module => module.indoorCyclingKneePain.article),
   "shorter-cranks-knee-pain": () => import("./articles/shorter-cranks-knee-pain").then(module => module.shorterCranksKneePain.article),
