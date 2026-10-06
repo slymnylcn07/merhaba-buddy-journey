@@ -1,6 +1,14 @@
 import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { Helmet } from "react-helmet";
 import cyclingThumb0 from "@/assets/guide-thumbnails/cycling/post-ride-knee-recovery-thumb.webp";
+import seasonalThumb0 from "@/assets/guide-thumbnails/seasonal-2026/gifts-for-parents-with-knee-pain-thumb.webp";
+import seasonalThumb1 from "@/assets/guide-thumbnails/seasonal-2026/indoor-vs-outdoor-slippers-winter-thumb.webp";
+import seasonalThumb2 from "@/assets/guide-thumbnails/seasonal-2026/knee-braces-for-skiing-thumb.webp";
+import seasonalThumb3 from "@/assets/guide-thumbnails/seasonal-2026/knee-pain-after-marathon-thumb.webp";
+import seasonalThumb4 from "@/assets/guide-thumbnails/seasonal-2026/knee-pain-after-turkey-trot-thumb.webp";
+import seasonalThumb5 from "@/assets/guide-thumbnails/seasonal-2026/turkey-trot-guide-sensitive-knees-thumb.webp";
+import seasonalThumb6 from "@/assets/guide-thumbnails/seasonal-2026/turkey-trot-run-walk-preparation-thumb.webp";
+import seasonalThumb7 from "@/assets/guide-thumbnails/seasonal-2026/turkey-trot-warm-up-thumb.webp";
 import cyclingThumb1 from "@/assets/guide-thumbnails/cycling/indoor-cycling-knee-pain-thumb.webp";
 import cyclingThumb2 from "@/assets/guide-thumbnails/cycling/shorter-cranks-knee-pain-thumb.webp";
 import cyclingThumb3 from "@/assets/guide-thumbnails/cycling/cycling-knee-osteoarthritis-thumb.webp";
@@ -250,6 +258,14 @@ import thumbFurtherlegLengthDiscrepancyKneePain from "@/assets/guide-thumbnails/
 import thumbFurtherkneeAspirationGuide from "@/assets/guide-thumbnails/further-15/knee-aspiration-guide-thumb.webp";
 const thumbnailMap: Record<string, string> = {
   "post-ride-knee-recovery": cyclingThumb0,
+  "gifts-for-parents-with-knee-pain": seasonalThumb0,
+  "indoor-vs-outdoor-slippers-winter": seasonalThumb1,
+  "knee-braces-for-skiing": seasonalThumb2,
+  "knee-pain-after-marathon": seasonalThumb3,
+  "knee-pain-after-turkey-trot": seasonalThumb4,
+  "turkey-trot-guide-sensitive-knees": seasonalThumb5,
+  "turkey-trot-run-walk-preparation": seasonalThumb6,
+  "turkey-trot-warm-up": seasonalThumb7,
   "indoor-cycling-knee-pain": cyclingThumb1,
   "shorter-cranks-knee-pain": cyclingThumb2,
   "cycling-knee-osteoarthritis": cyclingThumb3,
@@ -627,6 +643,12 @@ const locationSlugs = [
 ];
 
 const activitySlugs = [
+  "knee-pain-after-marathon",
+  "turkey-trot-guide-sensitive-knees",
+  "turkey-trot-run-walk-preparation",
+  "turkey-trot-warm-up",
+  "knee-pain-after-turkey-trot",
+  "knee-braces-for-skiing",
   "post-ride-knee-recovery",
   "indoor-cycling-knee-pain",
   "shorter-cranks-knee-pain",
@@ -722,6 +744,7 @@ const activitySlugs = [
 ];
 
 const lifeStageSlugs = [
+  "gifts-for-parents-with-knee-pain",
   "walking-cane-knee-pain",
   "tai-chi-knee-osteoarthritis",
   "getting-up-from-floor-bad-knees",
@@ -782,6 +805,9 @@ const supplementSlugs = [
 ];
 
 const deviceSlugs = [
+  "indoor-vs-outdoor-slippers-winter",
+  "knee-braces-for-skiing",
+  "gifts-for-parents-with-knee-pain",
   "massage-gun-knee-pain",
   "knee-pads-for-kneeling",
   "recumbent-vs-upright-bike-knees",

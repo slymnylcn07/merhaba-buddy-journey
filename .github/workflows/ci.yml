@@ -63,6 +63,9 @@ jobs:
       - name: Test cycling guide integrity
         run: npm run test:cycling
 
+      - name: Test seasonal guide integrity
+        run: npm run test:seasonal
+
       - name: Test order attribution and checkout tracking
         run: npm run test:order-attribution
 

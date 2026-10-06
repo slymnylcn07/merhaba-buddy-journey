@@ -1,6 +1,14 @@
 export type GuideThumbnailLoader = () => Promise<string>;
 
 const thumbnailLoaders: Record<string, GuideThumbnailLoader> = {
+  "gifts-for-parents-with-knee-pain": () => import("../assets/guide-thumbnails/seasonal-2026/gifts-for-parents-with-knee-pain-thumb.webp").then(module => module.default),
+  "indoor-vs-outdoor-slippers-winter": () => import("../assets/guide-thumbnails/seasonal-2026/indoor-vs-outdoor-slippers-winter-thumb.webp").then(module => module.default),
+  "knee-braces-for-skiing": () => import("../assets/guide-thumbnails/seasonal-2026/knee-braces-for-skiing-thumb.webp").then(module => module.default),
+  "knee-pain-after-marathon": () => import("../assets/guide-thumbnails/seasonal-2026/knee-pain-after-marathon-thumb.webp").then(module => module.default),
+  "knee-pain-after-turkey-trot": () => import("../assets/guide-thumbnails/seasonal-2026/knee-pain-after-turkey-trot-thumb.webp").then(module => module.default),
+  "turkey-trot-guide-sensitive-knees": () => import("../assets/guide-thumbnails/seasonal-2026/turkey-trot-guide-sensitive-knees-thumb.webp").then(module => module.default),
+  "turkey-trot-run-walk-preparation": () => import("../assets/guide-thumbnails/seasonal-2026/turkey-trot-run-walk-preparation-thumb.webp").then(module => module.default),
+  "turkey-trot-warm-up": () => import("../assets/guide-thumbnails/seasonal-2026/turkey-trot-warm-up-thumb.webp").then(module => module.default),
   "post-ride-knee-recovery": () => import("../assets/guide-thumbnails/cycling/post-ride-knee-recovery-thumb.webp").then(module => module.default),
   "indoor-cycling-knee-pain": () => import("../assets/guide-thumbnails/cycling/indoor-cycling-knee-pain-thumb.webp").then(module => module.default),
   "shorter-cranks-knee-pain": () => import("../assets/guide-thumbnails/cycling/shorter-cranks-knee-pain-thumb.webp").then(module => module.default),

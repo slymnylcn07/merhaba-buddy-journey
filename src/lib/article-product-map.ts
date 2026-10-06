@@ -88,6 +88,14 @@ export const PRODUCT_RECS: Record<string, ProductRec> = {
 };
 
 const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
+  "gifts-for-parents-with-knee-pain": "main",
+  "indoor-vs-outdoor-slippers-winter": "sleeve",
+  "knee-braces-for-skiing": "sleeve",
+  "knee-pain-after-marathon": "iceWrap",
+  "knee-pain-after-turkey-trot": "iceWrap",
+  "turkey-trot-guide-sensitive-knees": "sleeve",
+  "turkey-trot-run-walk-preparation": "sleeve",
+  "turkey-trot-warm-up": "sleeve",
   "post-ride-knee-recovery": "main",
   "indoor-cycling-knee-pain": "main",
   "shorter-cranks-knee-pain": "sleeve",
@@ -176,6 +184,14 @@ const SLUG_OVERRIDES: Record<string, keyof typeof PRODUCT_RECS> = {
 };
 
 const SLUG_RECOMMENDATION_OVERRIDES: Record<string, ProductRec> = {
+  "gifts-for-parents-with-knee-pain": { ...PRODUCT_RECS.main, benefit: "Watch the controls and fit before choosing an optional warmth-and-vibration gift." },
+  "indoor-vs-outdoor-slippers-winter": { ...PRODUCT_RECS.sleeve, benefit: "Compare optional sleeve sizing without confusing compression with better shoe grip." },
+  "knee-braces-for-skiing": { ...PRODUCT_RECS.sleeve, benefit: "Review plain fabric coverage and fit. This sleeve is not a functional ski brace." },
+  "knee-pain-after-marathon": { ...PRODUCT_RECS.iceWrap, benefit: "Review the reusable wrap's fit and instructions, separate from your return-to-running plan." },
+  "knee-pain-after-turkey-trot": { ...PRODUCT_RECS.iceWrap, benefit: "Check a reusable wrap for an appropriate cold session, not a way to ignore new injury symptoms." },
+  "turkey-trot-guide-sensitive-knees": { ...PRODUCT_RECS.sleeve, benefit: "Compare sleeve measurements and comfortable fit before deciding what belongs in your event kit." },
+  "turkey-trot-run-walk-preparation": { ...PRODUCT_RECS.sleeve, benefit: "Check sleeve fit on a manageable outing, not for the first time at your Thanksgiving 5K." },
+  "turkey-trot-warm-up": { ...PRODUCT_RECS.sleeve, benefit: "Compare optional fabric coverage that feels comfortable during familiar warm-up movements." },
   "post-ride-knee-recovery": { ...PRODUCT_RECS.main, benefit: "See adjustable warmth and optional vibration for an appropriate off-bike comfort session." },
   "indoor-cycling-knee-pain": { ...PRODUCT_RECS.main, benefit: "Explore a short at-home warmth routine between suitable indoor rides." },
   "shorter-cranks-knee-pain": { ...PRODUCT_RECS.sleeve, benefit: "Check a breathable sleeve's fit without confusing coverage with a crank or bike-fit correction." },
