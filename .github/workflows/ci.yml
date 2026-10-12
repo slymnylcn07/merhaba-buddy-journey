@@ -69,5 +69,8 @@ jobs:
       - name: Test order attribution and checkout tracking
         run: npm run test:order-attribution
 
+      - name: Test Merchant product landing parameters
+        run: npm run test:product-landing
+
       - name: Validate performance assets
         run: npm run validate:assets

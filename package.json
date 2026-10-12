@@ -16,6 +16,7 @@
     "test:cycling": "tsx --test scripts/cycling-guides.test.ts",
     "test:seasonal": "tsx --test scripts/seasonal-guides.test.ts",
     "test:order-attribution": "tsx --test scripts/order-attribution.test.ts",
+    "test:product-landing": "tsx --test scripts/product-landing.test.ts",
     "preview": "vite preview",
     "validate:source": "tsx scripts/validate-source.ts",
     "validate:build": "tsx scripts/validate-build.ts",

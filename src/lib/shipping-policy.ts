@@ -58,8 +58,7 @@ export const MARKET_SHIPPING_POLICIES: Record<string, MarketShippingPolicy> = {
     marketLabel: "Europe",
     currencyCode: "EUR",
     freeShippingThreshold: 23.99,
-    standardShippingRate: 2.8,
-    standardShippingRateIsApproximate: true,
+    standardShippingRate: 2.67,
     shippingDestinations: [...EUROPE_SHIPPING_COUNTRIES],
   },
   NZ: {

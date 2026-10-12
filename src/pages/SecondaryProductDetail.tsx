@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
+import { selectLandingVariant } from "@/lib/product-landing";
 import { toast } from "sonner";
 import {
   ArrowRight,
@@ -65,6 +66,7 @@ function formatMoney(amount?: string, currencyCode?: string) {
 
 export default function SecondaryProductDetail() {
   const { handle = "" } = useParams();
+  const { search } = useLocation();
   const [product, setProduct] = useState<ShopifyProduct | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
@@ -94,8 +96,7 @@ export default function SecondaryProductDetail() {
         // Load gallery images independently of product data and variant controls.
         if (!active) return;
         setProduct(item);
-        const firstAvailable = item?.node.variants.edges.find((edge) => edge.node.availableForSale)?.node;
-        const firstVariant = firstAvailable || item?.node.variants.edges[0]?.node;
+        const firstVariant = selectLandingVariant(item?.node.variants.edges.map((edge) => edge.node) || [], search);
         setSelectedVariantId(firstVariant?.id || "");
         const initialImageIndex = item?.node.images.edges.findIndex(
           (edge) => edge.node.url === firstVariant?.image?.url,
@@ -112,7 +113,7 @@ export default function SecondaryProductDetail() {
     return () => {
       active = false;
     };
-  }, [handle]);
+  }, [handle, search]);
 
   const node = product?.node;
   const profile = useMemo(() => getProductProfile(product || handle), [product, handle]);
