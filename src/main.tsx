@@ -1,7 +1,6 @@
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
 import "./index.css";
-import { hasStoredMarket, initMarketFromGeo, shouldRefreshMarketFromGeo } from "./lib/market";
+import { hasStoredMarket, initMarketFromGeo, initMarketFromUrl, shouldRefreshMarketFromGeo } from "./lib/market";
 import { captureOrderAttribution } from "./lib/order-attribution";
 
 // Clarity rebuilds recordings from the captured DOM instead of video. Keep the
@@ -23,12 +22,8 @@ const root = createRoot(document.getElementById("root")!);
 captureOrderAttribution();
 
 async function bootstrapApp() {
-  const needsGeoResolution = !hasStoredMarket() || shouldRefreshMarketFromGeo();
-
-  if (!needsGeoResolution) {
-    root.render(<App />);
-    return;
-  }
+  const hasLandingMarket = initMarketFromUrl();
+  const needsGeoResolution = !hasLandingMarket && (!hasStoredMarket() || shouldRefreshMarketFromGeo());
 
   root.render(
     <div className="flex min-h-screen items-center justify-center bg-white px-6 text-center" role="status">
@@ -39,7 +34,9 @@ async function bootstrapApp() {
     </div>,
   );
 
-  await initMarketFromGeo();
+  if (needsGeoResolution) await initMarketFromGeo();
+  // Import after market resolution to avoid hydrating a cart in the old currency.
+  const { default: App } = await import("./App.tsx");
   root.render(<App />);
 }
 

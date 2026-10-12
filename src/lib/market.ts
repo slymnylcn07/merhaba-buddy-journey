@@ -49,6 +49,35 @@ const STORAGE_KEY = "fk_market_country";
 const SOURCE_KEY = "fk_market_source";
 const CART_PERSIST_KEY = "shopify-cart";
 const DEFAULT_COUNTRY = "US";
+let landingCountry: string | null = null;
+
+export function getMarketFromSearch(search: string): Market | undefined {
+  const params = new URLSearchParams(search);
+  const country = params.get("country")?.trim().toUpperCase();
+  // Country selects the Shopify Market and therefore its actual currency.
+  // Never convert prices locally or let an inconsistent currency override it.
+  if (country) return getMarketByCountry(country);
+  const currency = params.get("currency")?.trim().toUpperCase();
+  return currency ? SUPPORTED_MARKETS.find((market) => market.currency === currency) : undefined;
+}
+
+/** Run before importing App, so persisted cart state hydrates in the right market. */
+export function initMarketFromUrl(): boolean {
+  if (typeof window === "undefined") return false;
+  const market = getMarketFromSearch(window.location.search);
+  if (!market) return false;
+  const previousCountry = getMarketCountry();
+  landingCountry = market.country;
+  try {
+    const keepManualChoice = previousCountry === market.country && localStorage.getItem(SOURCE_KEY) === "manual";
+    if (previousCountry !== market.country) localStorage.removeItem(CART_PERSIST_KEY);
+    localStorage.setItem(STORAGE_KEY, market.country);
+    localStorage.setItem(SOURCE_KEY, keepManualChoice ? "manual" : "url");
+  } catch {
+    // The in-memory market still works when browser storage is unavailable.
+  }
+  return true;
+}
 
 export function hasStoredMarket(): boolean {
   if (typeof window === "undefined") return false;
@@ -67,6 +96,7 @@ export function hasStoredMarket(): boolean {
  */
 export function shouldRefreshMarketFromGeo(): boolean {
   if (typeof window === "undefined") return false;
+  if (landingCountry) return false;
   try {
     return localStorage.getItem(SOURCE_KEY) !== "manual";
   } catch {
@@ -76,6 +106,7 @@ export function shouldRefreshMarketFromGeo(): boolean {
 
 export function getMarketCountry(): string {
   if (typeof window === "undefined") return DEFAULT_COUNTRY;
+  if (landingCountry) return landingCountry;
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored && SUPPORTED_MARKETS.some((m) => m.country === stored)) {
@@ -106,7 +137,11 @@ export function setMarketCountry(country: string): void {
   } catch {
     /* yoksay */
   }
-  window.location.reload();
+  // A manual selection must replace an incoming feed country, not reload it.
+  const url = new URL(window.location.href);
+  url.searchParams.set("country", country);
+  url.searchParams.set("currency", getMarketByCountry(country)!.currency);
+  window.location.assign(url.toString());
 }
 
 /**
@@ -115,6 +150,7 @@ export function setMarketCountry(country: string): void {
  */
 export async function initMarketFromGeo(): Promise<void> {
   if (typeof window === "undefined") return;
+  if (landingCountry) return;
   let storedCountry: string | null = null;
 
   try {

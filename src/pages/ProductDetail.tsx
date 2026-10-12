@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
+import { selectLandingVariant } from "@/lib/product-landing";
 import { toast } from "sonner";
 import {
   ArrowRight,
@@ -129,6 +130,7 @@ function formatMoney(amount?: string, currencyCode?: string) {
 
 export default function ProductDetail() {
   const { handle } = useParams();
+  const { search } = useLocation();
   const [product, setProduct] = useState<ShopifyProduct | null>(null);
   const [selectedImage, setSelectedImage] = useState(0);
   const [bundleQty, setBundleQty] = useState<1 | 2>(1);
@@ -164,7 +166,7 @@ export default function ProductDetail() {
     };
   }, [handle]);
 
-  const variant = product?.node.variants.edges[0]?.node;
+  const variant = selectLandingVariant(product?.node.variants.edges.map((edge) => edge.node) || [], search);
   const variantPrice = variant?.price.amount || product?.node.priceRange.minVariantPrice.amount || "59.99";
   const currency = variant?.price.currencyCode || product?.node.priceRange.minVariantPrice.currencyCode || "GBP";
   const basePrice = Number(variantPrice || 0);

@@ -3,7 +3,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate, useNavigate, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useNavigate, useParams, useLocation } from "react-router-dom";
+import { productLandingPath } from "./lib/product-landing";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
 import { useShopifyAnalytics } from "./hooks/use-shopify-analytics";
@@ -56,9 +57,10 @@ const CartReturn = () => {
 
 const ShopifyProductReturn = () => {
   const { handle = "" } = useParams();
+  const { search, hash } = useLocation();
   return (
     <Navigate
-      to={`/product/${getPublicProductHandle(decodeURIComponent(handle))}`}
+      to={productLandingPath(`/product/${getPublicProductHandle(handle)}`, search, hash)}
       replace
     />
   );
