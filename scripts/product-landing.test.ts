@@ -3,6 +3,19 @@ import test from "node:test";
 import { readFileSync } from "node:fs";
 import { getMarketFromSearch, getMarketCountry, initMarketFromUrl, initMarketFromGeo, setMarketCountry } from "../src/lib/market";
 import { getLandingVariantId, selectLandingVariant, productLandingPath } from "../src/lib/product-landing";
+import { EUROPE_SHIPPING_COUNTRIES, getShippingPolicy, isFreeShippingEligible, formatStandardShippingRate } from "../src/lib/shipping-policy";
+
+test("European shipping matches the approved fixed EUR rate and threshold without a gap", () => {
+  for (const country of EUROPE_SHIPPING_COUNTRIES) {
+    assert.equal(getShippingPolicy(country).standardShippingRate, 2.67);
+    assert.equal(formatStandardShippingRate(country), "€2.67");
+    assert.equal(isFreeShippingEligible(23.98, "EUR", country), false);
+    assert.equal(isFreeShippingEligible(23.99, "EUR", country), true);
+    assert.equal(isFreeShippingEligible(24.99, "USD", country), false);
+  }
+  assert.equal(getShippingPolicy("US").standardShippingRate, 2.99);
+  assert.equal(getShippingPolicy("GB").freeShippingThreshold, 19.99);
+});
 
 test("country selects the exact market, ahead of currency, storage and geo", () => {
   for (const [country, currency] of [["AT", "EUR"], ["HR", "EUR"], ["GB", "GBP"], ["CA", "CAD"], ["US", "USD"]]) {
