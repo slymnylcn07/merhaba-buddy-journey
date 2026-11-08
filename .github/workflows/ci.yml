@@ -48,6 +48,12 @@ jobs:
       - name: Validate content registry
         run: npm run validate:content
 
+      - name: Validate automation source inventory
+        run: npm run validate:automation-context
+
+      - name: Test automation context validation
+        run: npm run test:automation-context
+
       - name: Test metadata guardrails
         run: npm run test:metadata
 
