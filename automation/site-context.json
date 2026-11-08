@@ -1,0 +1,1762 @@
+{
+  "schema_version": 1,
+  "repository": "slymnylcn07/merhaba-buddy-journey",
+  "site_origin": "https://flexi-knee.com",
+  "scope": "github_source_inventory_not_a_live_site_audit",
+  "source_fingerprint": "62d54b1b3a3c6d515d90fffcc0809f6276873decb685ba9fad34fd245d7ccfb1",
+  "source_hashes": {
+    "AGENTS.md": "5ee9d334e7aacf8be02601e89aaf169a5c8eca1a5feff04d9eadb16117016e06",
+    "src/data/guides.ts": "8ebf3cb736497216eab46360bd9fe1ea9024fee6c4d721b32665783b3b054a82",
+    "src/data/recent-guides-data.ts": "a7cceb212d5fa913e6621a0b40be9c5037f5babadd7b39bd5114e5920b8626bb",
+    "src/data/article-loaders.ts": "dffc11d1f3172fdcdd23a783f6d275f214495d07a7e75dbdf0274a4a9e478afb",
+    "src/data/recent-article-loaders.ts": "ff7623483bb66651d5c10d6354fc5564085a67445b4c2ddf30ed84ae25fbef7b",
+    "src/data/guide-date-overrides.ts": "4d88c5f3dc8c212d0bb2fcd36c0f2c450bdf6189828bdd7279ef4bfecbe82c46",
+    "src/data/guide-publication-dates.ts": "ade687d51ab08d1c78b81734e2f6a5cd39966711ce5e927f2732e281ecdff64a",
+    "src/data/product-profiles.ts": "c69a85e596d391d297dcd1b2f1a5fa691900961d7cacf443438caae472cffeef",
+    "src/lib/product-config.ts": "f3a78dcda67183cb4c350350944e74afec1b6d861f5dfd7cd0cc87af7e926264",
+    "src/pages/ProductDetail.tsx": "985b28ab8ccb41b996e4159dc07af2437fd67680a0733a47f55f948105b3108b",
+    "src/pages/SecondaryProductDetail.tsx": "262ff9a11cf940c485f8017f30a402c5b21fe883eeaff98d1bacda6696c7bb61"
+  },
+  "source_blobs": {
+    "AGENTS.md": "3898a4ec29b8088bc2d051b5f80584e5370b8908",
+    "src/data/guides.ts": "214ec7af7d8e43fe2d42427a854fb58aabccfd43",
+    "src/data/recent-guides-data.ts": "71cc118e904ca5853e151200282b20d38ab01410",
+    "src/data/article-loaders.ts": "d4e03a945a5d1b424ca4e2370a01c8b25d0a7db5",
+    "src/data/recent-article-loaders.ts": "00b518b785a8f976d2499ede4c64c8d577d3adc2",
+    "src/data/guide-date-overrides.ts": "0c4da3b3ed1e5b33a47c999eb50c3c51068b7c16",
+    "src/data/guide-publication-dates.ts": "cc7aa2d976a460ca487906c12dfbe6a68c8f81f2",
+    "src/data/product-profiles.ts": "e105d8945dce79e343fe76c7ec9ff3a08a4b57a4",
+    "src/lib/product-config.ts": "ef9338993740d2b4e421e4e80150810fb8de3665",
+    "src/pages/ProductDetail.tsx": "29147dd366fc6da849adaeff6aad57e91096fee8",
+    "src/pages/SecondaryProductDetail.tsx": "071cbd3a2fd2a90b664369f4683f25dd178a11b6"
+  },
+  "guide_count": 190,
+  "loader_count": 190,
+  "guides": [
+    {
+      "slug": "air-compression-leg-massagers-do-they-work",
+      "title": "Do Air Compression Leg Massagers Work? Evidence & Safety",
+      "description": "Compare compression boots, calf wraps, soreness, performance, swelling, heat, pressure settings, and contraindications without recovery hype.",
+      "url": "https://flexi-knee.com/guides/air-compression-leg-massagers-do-they-work",
+      "read_time_minutes": 13,
+      "published_date": null,
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "aqua-jogging-knee-pain",
+      "title": "Aqua Jogging for Knee Pain: A Pool Workout Without Impact",
+      "description": "Set up deep-water pool running with a flotation belt, form cues, a beginner workout, progression, and return-to-land checks.",
+      "url": "https://flexi-knee.com/guides/aqua-jogging-knee-pain",
+      "read_time_minutes": 17,
+      "published_date": "2026-08-01",
+      "last_modified": "2026-08-01"
+    },
+    {
+      "slug": "are-knees-over-toes-bad",
+      "title": "Are Knees Over Toes Bad? What the Evidence and Load Actually Mean",
+      "description": "Learn what knees over toes means in squats and lunges, how depth and load change knee demand, and how to progress the position without treating it as a pass-or-fail rule.",
+      "url": "https://flexi-knee.com/guides/are-knees-over-toes-bad",
+      "read_time_minutes": 18,
+      "published_date": "2026-08-02",
+      "last_modified": "2026-08-02"
+    },
+    {
+      "slug": "back-of-knee-pain-explained",
+      "title": "Back of Knee Pain: Bending, Straightening & Exercise Causes",
+      "description": "Compare pain behind the knee when bending, straightening, after sitting, or after exercise, including Baker's cyst and urgent calf warning signs.",
+      "url": "https://flexi-knee.com/guides/back-of-knee-pain-explained",
+      "read_time_minutes": 13,
+      "published_date": "2025-12-16",
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "backward-walking-knee-pain",
+      "title": "Backward Walking for Knee Pain: What the Evidence Says",
+      "description": "What trials actually show about retro walking, how it changes knee mechanics, who may benefit, and how to start without creating a fall risk.",
+      "url": "https://flexi-knee.com/guides/backward-walking-knee-pain",
+      "read_time_minutes": 17,
+      "published_date": "2026-07-27",
+      "last_modified": "2026-07-27"
+    },
+    {
+      "slug": "badminton-knee-pain",
+      "title": "Badminton Knee Pain: Lunges, Jump Landings, and Court Movement",
+      "description": "Review badminton knee pain during lunges, jump landings and recovery steps. Learn practical workload changes, evidence limits and warning signs to check.",
+      "url": "https://flexi-knee.com/guides/badminton-knee-pain",
+      "read_time_minutes": 12,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "banded-tke-knee-exercise",
+      "title": "Banded TKE for Knee Strength: Setup, Form, and Progression",
+      "description": "Set up terminal knee extension with a resistance band, find a controlled quadriceps squeeze, troubleshoot form, and progress the drill one variable at a time.",
+      "url": "https://flexi-knee.com/guides/banded-tke-knee-exercise",
+      "read_time_minutes": 17,
+      "published_date": "2026-08-02",
+      "last_modified": "2026-08-02"
+    },
+    {
+      "slug": "basketball-after-40-knee-recovery",
+      "title": "Basketball After 40: Managing Knee Load and Recovery Between Games",
+      "description": "Keep basketball manageable after 40 with a practical plan for court minutes, strength, recovery and knee symptoms. Learn what to change between demanding games.",
+      "url": "https://flexi-knee.com/guides/basketball-after-40-knee-recovery",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-16",
+      "last_modified": "2026-09-16"
+    },
+    {
+      "slug": "basketball-shoes-knee-pain",
+      "title": "Basketball Shoes for Knee Pain: Cushioning, Stability, and Court Grip",
+      "description": "Compare basketball shoes for knee pain by cushioning, lateral stability, court grip and fit. Learn how to test shoes and assess optional insoles.",
+      "url": "https://flexi-knee.com/guides/basketball-shoes-knee-pain",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-16",
+      "last_modified": "2026-09-16"
+    },
+    {
+      "slug": "basketball-warm-up-knees",
+      "title": "Basketball Warm-Up for Knees: Prepare for Jumping and Cutting",
+      "description": "Build a basketball warm-up for knees with easy movement, landing, braking and lateral steps. Follow a practical sequence with ways to adapt it.",
+      "url": "https://flexi-knee.com/guides/basketball-warm-up-knees",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-16",
+      "last_modified": "2026-09-16"
+    },
+    {
+      "slug": "below-knee-discomfort-teens-adults",
+      "title": "Below-Knee Discomfort in Teens & Active Adults",
+      "description": "Understand why below-knee discomfort is common in active teens and adults, and discover supportive daily habits for comfort.",
+      "url": "https://flexi-knee.com/guides/below-knee-discomfort-teens-adults",
+      "read_time_minutes": 10,
+      "published_date": null,
+      "last_modified": "2026-01-20"
+    },
+    {
+      "slug": "best-heated-knee-massager-arthritis",
+      "title": "Best Heated Knee Massager for Arthritis (2026)",
+      "description": "Discover the best heated knee massagers for arthritis comfort in 2026. Learn why FlexiKnee ranks #1 with heat, red light, and vibration therapy combined.",
+      "url": "https://flexi-knee.com/guides/best-heated-knee-massager-arthritis",
+      "read_time_minutes": 13,
+      "published_date": null,
+      "last_modified": "2026-02-24"
+    },
+    {
+      "slug": "best-hiking-poles-bad-knees",
+      "title": "Best Hiking Poles for Bad Knees: Length, Grip, and Downhill Use",
+      "description": "Choose hiking poles for bad knees by length, grip, lock, shaft, and terrain, then learn how to use trekking poles downhill safely.",
+      "url": "https://flexi-knee.com/guides/best-hiking-poles-bad-knees",
+      "read_time_minutes": 20,
+      "published_date": "2026-08-04",
+      "last_modified": "2026-08-04"
+    },
+    {
+      "slug": "best-infrared-knee-massagers",
+      "title": "Best Infrared Knee Massagers: 2026 Buying Guide",
+      "description": "Explore what infrared knee massagers offer, key features to consider, and how they can support your daily knee comfort routine.",
+      "url": "https://flexi-knee.com/guides/best-infrared-knee-massagers",
+      "read_time_minutes": 10,
+      "published_date": null,
+      "last_modified": "2026-01-19"
+    },
+    {
+      "slug": "best-insoles-for-knee-pain-2026",
+      "title": "Best Insoles for Knee Pain 2026: How Foot Support Changes Your Knees",
+      "description": "The foot-to-knee connection explained: which insole types help arch collapse, overpronation, and impact-related knee discomfort.",
+      "url": "https://flexi-knee.com/guides/best-insoles-for-knee-pain-2026",
+      "read_time_minutes": 16,
+      "published_date": "2026-07-10",
+      "last_modified": "2026-07-10"
+    },
+    {
+      "slug": "best-low-impact-cardio-knee-pain",
+      "title": "Best Low-Impact Cardio for Knee Pain: Walking vs. Cycling vs. Swimming",
+      "description": "Compare walking, cycling, and swimming by knee load, access, setup, symptom pattern, and next-day response, with a four-week starter plan.",
+      "url": "https://flexi-knee.com/guides/best-low-impact-cardio-knee-pain",
+      "read_time_minutes": 17,
+      "published_date": "2026-07-27",
+      "last_modified": "2026-07-27"
+    },
+    {
+      "slug": "best-red-light-therapy-knee",
+      "title": "Best Red Light Therapy for Knee Pain (2026 Guide)",
+      "description": "Discover the best red light therapy for knee pain. Learn how it works, benefits for arthritis and joint pain, device types, and realistic expectations.",
+      "url": "https://flexi-knee.com/guides/best-red-light-therapy-knee",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-02-28"
+    },
+    {
+      "slug": "best-running-shoes-knee-pain",
+      "title": "Best Running Shoes for Bad Knees & Knee Pain",
+      "description": "Compare running shoes for bad knees by fit, cushioning, stability, and surface, plus what footwear can and cannot change.",
+      "url": "https://flexi-knee.com/guides/best-running-shoes-knee-pain",
+      "read_time_minutes": 11,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "best-sandals-knee-pain",
+      "title": "Best Sandals for Knee Pain: Support, Cushioning, and Fit",
+      "description": "Compare walking sandals for knee pain by heel security, arch shape, cushioning, flexibility, traction, and a practical fit test.",
+      "url": "https://flexi-knee.com/guides/best-sandals-knee-pain",
+      "read_time_minutes": 20,
+      "published_date": "2026-08-04",
+      "last_modified": "2026-08-04"
+    },
+    {
+      "slug": "best-slippers-knee-pain",
+      "title": "Best Slippers for Knee Pain: How to Choose Secure House Shoes",
+      "description": "Choose slippers for knee comfort by checking heel security, fit, grip, and cushioning. Compare house-shoe styles with a practical indoor fit checklist.",
+      "url": "https://flexi-knee.com/guides/best-slippers-knee-pain",
+      "read_time_minutes": 14,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "best-supplements-for-knee-pain",
+      "title": "Best Supplements for Knee Pain: Evidence, Safety & Comparisons",
+      "description": "Compare glucosamine, turmeric, collagen, omega-3, vitamin D, and magnesium by evidence limits, safety checks, and knee condition.",
+      "url": "https://flexi-knee.com/guides/best-supplements-for-knee-pain",
+      "read_time_minutes": 13,
+      "published_date": null,
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "breaststroke-knee-pain",
+      "title": "Breaststroke Knee Pain: Whip Kick, Inner-Knee Symptoms, and Technique",
+      "description": "Learn why breaststroke may hurt the inner knee. Review whip-kick technique, kick sets, turns, training changes, alternative strokes, and warning signs.",
+      "url": "https://flexi-knee.com/guides/breaststroke-knee-pain",
+      "read_time_minutes": 14,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "burning-knees-after-exercise",
+      "title": "Burning Knees After Exercise: Activity, Location & Timing",
+      "description": "Why do knees burn after exercise, running, lifting, walking, cycling, or tai chi? Compare during-vs-after timing, activity triggers, and warning signs.",
+      "url": "https://flexi-knee.com/guides/burning-knees-after-exercise",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "burning-sensation-in-knee",
+      "title": "Burning Knee Pain: Causes by Location and When to Worry",
+      "description": "Compare burning knee pain at the kneecap, inner or outer side, and back of the knee, including nerve-type symptoms, triggers, and warning signs.",
+      "url": "https://flexi-knee.com/guides/burning-sensation-in-knee",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-07-31"
+    },
+    {
+      "slug": "can-insoles-cause-knee-pain",
+      "title": "Can Insoles Cause Knee Pain? Fit, Break-In, and Orthotic Troubleshooting",
+      "description": "New knee pain after insoles? Check shoe volume, arch pressure, insert placement and break-in response, plus when to stop and contact your podiatrist.",
+      "url": "https://flexi-knee.com/guides/can-insoles-cause-knee-pain",
+      "read_time_minutes": 13,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "can-running-shoes-cause-knee-pain",
+      "title": "Can Running Shoes Cause Knee Pain? Fit, Drop, Stability, and Training Load",
+      "description": "Test whether new or worn running shoes are contributing to knee pain by comparing fit, heel drop, cushioning, stability, wear, and training load.",
+      "url": "https://flexi-knee.com/guides/can-running-shoes-cause-knee-pain",
+      "read_time_minutes": 22,
+      "published_date": "2026-08-29",
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "capsaicin-cream-knee-pain",
+      "title": "Capsaicin Cream for Knee Pain: How It Works and What to Expect",
+      "description": "Learn how capsaicin cream may help knee osteoarthritis, why it burns, how to use it safely, evidence limits, and when to stop.",
+      "url": "https://flexi-knee.com/guides/capsaicin-cream-knee-pain",
+      "read_time_minutes": 20,
+      "published_date": "2026-08-04",
+      "last_modified": "2026-08-04"
+    },
+    {
+      "slug": "cold-therapy-machine-knee",
+      "title": "Cold Therapy Machine for the Knee: Ice Machines Compared",
+      "description": "Compare knee ice machines, cold-compression units, iceless systems, and gel packs by evidence, safety, pad fit, timers, upkeep, and cost.",
+      "url": "https://flexi-knee.com/guides/cold-therapy-machine-knee",
+      "read_time_minutes": 20,
+      "published_date": "2026-08-03",
+      "last_modified": "2026-08-03"
+    },
+    {
+      "slug": "cold-weather-knee-pain",
+      "title": "Knees Hurt in Cold Weather? Causes Explained",
+      "description": "Why do knees hurt in cold weather? Learn how temperature drops, barometric pressure, and humidity cause knee stiffness and discover warmth-based comfort strategies.",
+      "url": "https://flexi-knee.com/guides/cold-weather-knee-pain",
+      "read_time_minutes": 15,
+      "published_date": null,
+      "last_modified": "2026-07-16"
+    },
+    {
+      "slug": "collagen-peptides-knee-pain",
+      "title": "Collagen for Knee Pain: Do Collagen Peptides Actually Work?",
+      "description": "Compare hydrolyzed collagen peptides, marine collagen and undenatured type II collagen, including trial doses, evidence, safety, and product quality.",
+      "url": "https://flexi-knee.com/guides/collagen-peptides-knee-pain",
+      "read_time_minutes": 19,
+      "published_date": "2026-07-28",
+      "last_modified": "2026-07-28"
+    },
+    {
+      "slug": "compression-socks-vs-knee-sleeves",
+      "title": "Compression Socks vs Knee Sleeves: Coverage, Purpose, and Fit",
+      "description": "Compare compression socks and knee sleeves by coverage, purpose, fit, travel use, and safety. Learn why neither can substitute for prescribed medical hosiery.",
+      "url": "https://flexi-knee.com/guides/compression-socks-vs-knee-sleeves",
+      "read_time_minutes": 14,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "cordless-rechargeable-heated-knee-massagers-2026",
+      "title": "Cordless & Rechargeable Heated Knee Massagers: 2026 Buyer's Guide",
+      "description": "Real battery life, heat levels, red light, and the features that matter when choosing a wireless heated knee massager in 2026.",
+      "url": "https://flexi-knee.com/guides/cordless-rechargeable-heated-knee-massagers-2026",
+      "read_time_minutes": 16,
+      "published_date": "2026-07-10",
+      "last_modified": "2026-07-13"
+    },
+    {
+      "slug": "cycling-after-knee-replacement",
+      "title": "Cycling After Knee Replacement: Stationary Bike to Outdoor Riding",
+      "description": "Understand cycling after knee replacement: stationary-bike setup, progression questions, outdoor readiness and warning signs. Follow your surgical team's plan.",
+      "url": "https://flexi-knee.com/guides/cycling-after-knee-replacement",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-21",
+      "last_modified": "2026-09-21"
+    },
+    {
+      "slug": "cycling-cleats-knee-pain",
+      "title": "Cycling Cleats and Knee Pain: Float, Foot Angle, and Pedal Compatibility",
+      "description": "Understand cycling cleat float, foot angle and release tension. Check SPD and SPD-SL compatibility, replacement setup and when knee pain needs assessment.",
+      "url": "https://flexi-knee.com/guides/cycling-cleats-knee-pain",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-21",
+      "last_modified": "2026-09-21"
+    },
+    {
+      "slug": "cycling-knee-osteoarthritis",
+      "title": "Cycling With Knee Osteoarthritis: Ride Duration, Resistance, and Flare-Ups",
+      "description": "Plan cycling with knee osteoarthritis: choose manageable duration and resistance, compare indoor and outdoor riding, and respond to flare-ups safely.",
+      "url": "https://flexi-knee.com/guides/cycling-knee-osteoarthritis",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-21",
+      "last_modified": "2026-09-21"
+    },
+    {
+      "slug": "cycling-knee-pain-bike-fit",
+      "title": "Cycling Knee Pain: Location, Bike Fit, and What to Adjust",
+      "description": "Use knee-pain location to identify likely cycling setup problems, then adjust saddle height, saddle position, cleats, cadence, and training load.",
+      "url": "https://flexi-knee.com/guides/cycling-knee-pain-bike-fit",
+      "read_time_minutes": 15,
+      "published_date": "2026-07-27",
+      "last_modified": "2026-07-27"
+    },
+    {
+      "slug": "cyclist-squat-knee-strength",
+      "title": "Cyclist Squat for Knee Strength: Heel-Elevated Form and Progression",
+      "description": "Learn cyclist squat benefits, heel-elevated setup, muscles worked, knee loading, common mistakes, and a gradual bodyweight-to-loaded progression.",
+      "url": "https://flexi-knee.com/guides/cyclist-squat-knee-strength",
+      "read_time_minutes": 19,
+      "published_date": "2026-08-03",
+      "last_modified": "2026-08-03"
+    },
+    {
+      "slug": "daily-knee-care-routine",
+      "title": "Daily Knee Care Routine: Simple Habits for Comfort",
+      "description": "Build a sustainable daily knee care routine with simple morning and evening habits that support long-term comfort.",
+      "url": "https://flexi-knee.com/guides/daily-knee-care-routine",
+      "read_time_minutes": 9,
+      "published_date": null,
+      "last_modified": "2026-01-19"
+    },
+    {
+      "slug": "deadlift-knee-pain",
+      "title": "Knee Pain During Deadlifts: Conventional, Sumo, and Romanian Variations",
+      "description": "Troubleshoot knee pain during conventional, sumo and Romanian deadlifts. Compare setup, range, load and fatigue without assuming one variation fixes every knee.",
+      "url": "https://flexi-knee.com/guides/deadlift-knee-pain",
+      "read_time_minutes": 11,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "diclofenac-gel-knee-pain",
+      "title": "Diclofenac Gel for Knee Pain: Voltaren Use, Safety, and Evidence",
+      "description": "Learn when diclofenac gel may help knee osteoarthritis, how to follow a 1% gel label, what to avoid, side effects, and when to seek care.",
+      "url": "https://flexi-knee.com/guides/diclofenac-gel-knee-pain",
+      "read_time_minutes": 21,
+      "published_date": "2026-08-04",
+      "last_modified": "2026-08-04"
+    },
+    {
+      "slug": "do-knee-massagers-work",
+      "title": "Do Knee Massagers Really Work, and Are They Worth It?",
+      "description": "Do heated knee massagers really work, and are they worth it? Compare warmth, vibration and red light, realistic benefits, safety limits and value.",
+      "url": "https://flexi-knee.com/guides/do-knee-massagers-work",
+      "read_time_minutes": 10,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "downhill-running-knee-pain",
+      "title": "Downhill Running Knee Pain: Braking Load, Form, and Recovery",
+      "description": "Understand how grade, speed, braking, cadence, stride, and descent exposure shape knee pain and a gradual return to downhill running.",
+      "url": "https://flexi-knee.com/guides/downhill-running-knee-pain",
+      "read_time_minutes": 18,
+      "published_date": "2026-08-01",
+      "last_modified": "2026-08-01"
+    },
+    {
+      "slug": "e-bikes-bad-knees",
+      "title": "E-Bikes for Bad Knees: Pedal Assist, Gearing, and Easy Mounting",
+      "description": "Considering an e-bike for sensitive knees? Compare pedal assist, easy mounting, weight, gears and test-ride checks before choosing a bike or a longer route.",
+      "url": "https://flexi-knee.com/guides/e-bikes-bad-knees",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-21",
+      "last_modified": "2026-09-21"
+    },
+    {
+      "slug": "elliptical-knee-pain",
+      "title": "Elliptical Knee Pain: Stride, Resistance, Incline, and Setup",
+      "description": "Find out why an elliptical may hurt your knees. Check stride length, incline, resistance, foot position, and next-day symptoms before your next session.",
+      "url": "https://flexi-knee.com/guides/elliptical-knee-pain",
+      "read_time_minutes": 14,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "exercises-to-relieve-knee-pain-at-home",
+      "title": "Exercises to Relieve Knee Pain at Home",
+      "description": "Simple step by step knee exercises you can do at home to support knee comfort, strengthen surrounding muscles, and improve joint mobility for everyday movement.",
+      "url": "https://flexi-knee.com/guides/exercises-to-relieve-knee-pain-at-home",
+      "read_time_minutes": 16,
+      "published_date": null,
+      "last_modified": "2026-03-11"
+    },
+    {
+      "slug": "flat-feet-overpronation-knee-pain",
+      "title": "Can Flat Feet Cause Knee Pain? Overpronation and the Foot to Knee Chain",
+      "description": "Learn how flat feet and overpronation can change the foot-to-knee chain, how to check your arches, and what footwear, insoles, and strengthening may help.",
+      "url": "https://flexi-knee.com/guides/flat-feet-overpronation-knee-pain",
+      "read_time_minutes": 15,
+      "published_date": "2026-07-27",
+      "last_modified": "2026-07-27"
+    },
+    {
+      "slug": "flexiknee-review-2026",
+      "title": "FlexiKnee Review 2026: Full Breakdown & Pros/Cons",
+      "description": "Honest FlexiKnee review for 2026. Full breakdown of features, pros, cons, and who benefits most from this smart heated knee massager with red light therapy.",
+      "url": "https://flexi-knee.com/guides/flexiknee-review-2026",
+      "read_time_minutes": 12,
+      "published_date": null,
+      "last_modified": "2026-07-14"
+    },
+    {
+      "slug": "flexiknee-vs-competitors-2026",
+      "title": "Best Knee Massagers 2026: FlexiKnee vs 9 Competitors",
+      "description": "Compare FlexiKnee with Peka Flexi, HeatPulse, Nooro, NeuraCare, HeatFlex and premium knee massagers by price, features, battery and warranty.",
+      "url": "https://flexi-knee.com/guides/flexiknee-vs-competitors-2026",
+      "read_time_minutes": 18,
+      "published_date": null,
+      "last_modified": "2026-08-03"
+    },
+    {
+      "slug": "front-knee-tightness-after-activity",
+      "title": "Front Knee Tightness After Activity: Why It Happens",
+      "description": "Understand why front or top knee tightness occurs after activity and discover daily habits that support comfort.",
+      "url": "https://flexi-knee.com/guides/front-knee-tightness-after-activity",
+      "read_time_minutes": 10,
+      "published_date": null,
+      "last_modified": "2026-01-20"
+    },
+    {
+      "slug": "getting-up-from-floor-bad-knees",
+      "title": "How to Get Up From the Floor With Bad Knees: Supported Options",
+      "description": "Plan a safer floor-to-standing transfer with painful knees. Learn when to call for help, how stable support matters, and what to ask about kneeling alternatives.",
+      "url": "https://flexi-knee.com/guides/getting-up-from-floor-bad-knees",
+      "read_time_minutes": 12,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "gifts-for-parents-with-knee-pain",
+      "title": "Practical Gifts for Parents With Knee Pain: Comfort, Easy Use, and Thoughtful Choices",
+      "description": "Choose thoughtful knee-comfort gifts for parents: compare easy-use devices, footwear choices, practical help and return checks without treatment promises.",
+      "url": "https://flexi-knee.com/guides/gifts-for-parents-with-knee-pain",
+      "read_time_minutes": 12,
+      "published_date": "2026-10-06",
+      "last_modified": "2026-10-06"
+    },
+    {
+      "slug": "glucosamine-chondroitin-knee-pain",
+      "title": "Glucosamine & Chondroitin for Knee Pain: Do They Work?",
+      "description": "A balanced guide to forms, evidence, doses, safety, interactions, product quality, and how to run a time-limited supplement trial.",
+      "url": "https://flexi-knee.com/guides/glucosamine-chondroitin-knee-pain",
+      "read_time_minutes": 15,
+      "published_date": "2026-07-18",
+      "last_modified": "2026-07-18"
+    },
+    {
+      "slug": "golf-knee-pain",
+      "title": "Golf Knee Pain: Lead Knee, Trail Knee, and Walking the Course",
+      "description": "Knee pain during golf? Compare lead and trail knee symptoms, swing demands and course walking, with practical load changes and signs to get assessed.",
+      "url": "https://flexi-knee.com/guides/golf-knee-pain",
+      "read_time_minutes": 14,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "gout-vs-pseudogout-knee",
+      "title": "Gout vs Pseudogout in the Knee: Symptoms, Crystals, and Diagnosis",
+      "description": "Compare knee gout and pseudogout: crystal types, symptom overlap, blood tests, joint aspiration and why infection must be considered in a hot swollen knee.",
+      "url": "https://flexi-knee.com/guides/gout-vs-pseudogout-knee",
+      "read_time_minutes": 11,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "heat-red-light-therapy-benefits-2026",
+      "title": "Heat + Red Light for Knee Pain: 2026 Research Summary",
+      "description": "Updated 2026 research summary on heat and red light therapy benefits for knee pain. Learn how combining both therapies supports daily knee comfort and recovery.",
+      "url": "https://flexi-knee.com/guides/heat-red-light-therapy-benefits-2026",
+      "read_time_minutes": 12,
+      "published_date": null,
+      "last_modified": "2026-02-24"
+    },
+    {
+      "slug": "heat-vs-ice-for-knees",
+      "title": "Heat or Ice for Knee Pain: A Practical Decision Guide",
+      "description": "Compare cold for recent swelling with gentle heat for stiffness, including post-exercise examples, timing, skin safety, and warning signs.",
+      "url": "https://flexi-knee.com/guides/heat-vs-ice-for-knees",
+      "read_time_minutes": 18,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "heat-vs-red-light-therapy",
+      "title": "Heat vs. Red Light Therapy: What Helps Knee Comfort?",
+      "description": "Understand how heat and red light therapy work and how they can support everyday knee comfort.",
+      "url": "https://flexi-knee.com/guides/heat-vs-red-light-therapy",
+      "read_time_minutes": 6,
+      "published_date": null,
+      "last_modified": "2025-03-08"
+    },
+    {
+      "slug": "heavy-feeling-in-knees",
+      "title": "Why Do My Knees Feel Heavy, Stiff, or Full?",
+      "description": "Compare fatigue, start-up stiffness, fullness, swelling, and weakness when your knees feel heavy, plus urgent one-sided warning signs.",
+      "url": "https://flexi-knee.com/guides/heavy-feeling-in-knees",
+      "read_time_minutes": 16,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "hip-to-knee-pain-location-chart",
+      "title": "Hip-to-Knee Pain Location Chart: Referred Pain Patterns Explained",
+      "description": "Compare hip, knee, nerve and lower-back clues when pain travels from the hip or thigh toward the knee, including urgent warning signs.",
+      "url": "https://flexi-knee.com/guides/hip-to-knee-pain-location-chart",
+      "read_time_minutes": 19,
+      "published_date": "2026-08-29",
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "hoffa-fat-pad-impingement",
+      "title": "Hoffa Fat Pad Impingement: Symptoms, MRI Findings, and Next Steps",
+      "description": "Learn where Hoffa's fat pad sits, how irritation can overlap other knee pain, why MRI edema is not a diagnosis, and which changes and warning signs matter.",
+      "url": "https://flexi-knee.com/guides/hoffa-fat-pad-impingement",
+      "read_time_minutes": 14,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "home-remedies-knee-pain",
+      "title": "Home Remedies for Knee Pain: Comfort at Home",
+      "description": "Discover simple home remedies for knee pain. Learn daily habits, warm and cold approaches, gentle movement, and natural methods to support knee comfort at home.",
+      "url": "https://flexi-knee.com/guides/home-remedies-knee-pain",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-03-30"
+    },
+    {
+      "slug": "how-to-fix-knee-pain",
+      "title": "How to Fix Knee Pain: Daily Habits That Actually Help",
+      "description": "Understand what 'fixing' knee pain really means and discover supportive daily habits that help with everyday knee comfort.",
+      "url": "https://flexi-knee.com/guides/how-to-fix-knee-pain",
+      "read_time_minutes": 11,
+      "published_date": null,
+      "last_modified": "2026-07-19"
+    },
+    {
+      "slug": "how-to-sleep-with-knee-pain",
+      "title": "How to Sleep With Knee Pain: Best Positions and Pillow Placement",
+      "description": "The best sleeping positions for aching knees, exact pillow placement for side and back sleepers, and an evening routine that calms knees before bed.",
+      "url": "https://flexi-knee.com/guides/how-to-sleep-with-knee-pain",
+      "read_time_minutes": 12,
+      "published_date": null,
+      "last_modified": "2026-07-12"
+    },
+    {
+      "slug": "how-to-strengthen-knees",
+      "title": "How to Strengthen Knees for Daily Support & Stability",
+      "description": "Learn everyday habits, gentle movements, and lifestyle factors that support stronger knees and improved daily knee comfort.",
+      "url": "https://flexi-knee.com/guides/how-to-strengthen-knees",
+      "read_time_minutes": 10,
+      "published_date": null,
+      "last_modified": "2025-12-21"
+    },
+    {
+      "slug": "hyperextended-knee-injury",
+      "title": "Hyperextended Knee Injury: Symptoms, Assessment, and Recovery Questions",
+      "description": "Learn what a new hyperextended knee injury can involve, which symptoms need urgent assessment, how imaging is chosen and why recovery timelines vary.",
+      "url": "https://flexi-knee.com/guides/hyperextended-knee-injury",
+      "read_time_minutes": 11,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "hypermobile-knees",
+      "title": "Hypermobile Knees: Comfortable Control Without Constant Bracing",
+      "description": "Understand hypermobile knees, extra extension and painful instability. Learn sensible neutral-position cues, pacing and how tailored rehab differs from stretching.",
+      "url": "https://flexi-knee.com/guides/hypermobile-knees",
+      "read_time_minutes": 14,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "hyrox-knee-pain",
+      "title": "HYROX Knee Pain: Running, Lunges, Sleds, and Wall Balls",
+      "description": "Map HYROX knee pain to running, sled work, lunges, wall balls, fatigue, training load, shoes, and a staged return to race-specific work.",
+      "url": "https://flexi-knee.com/guides/hyrox-knee-pain",
+      "read_time_minutes": 20,
+      "published_date": "2026-07-31",
+      "last_modified": "2026-07-31"
+    },
+    {
+      "slug": "incline-walking-knee-pain",
+      "title": "Incline Walking With Knee Pain: When Hills Help or Hurt",
+      "description": "Learn how treadmill grade, pace, duration, hills, downhill exposure, and the 12-3-30 workout can change knee demand.",
+      "url": "https://flexi-knee.com/guides/incline-walking-knee-pain",
+      "read_time_minutes": 18,
+      "published_date": "2026-08-01",
+      "last_modified": "2026-08-01"
+    },
+    {
+      "slug": "indoor-cycling-knee-pain",
+      "title": "Indoor Cycling Knee Pain: Peloton Resistance, Standing Climbs, and Class Load",
+      "description": "Review Peloton and spin-bike knee pain through resistance, standing climbs, class stacking and setup. Learn what to change and when to seek assessment.",
+      "url": "https://flexi-knee.com/guides/indoor-cycling-knee-pain",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-21",
+      "last_modified": "2026-09-21"
+    },
+    {
+      "slug": "indoor-vs-outdoor-slippers-winter",
+      "title": "Indoor vs Outdoor Slippers in Winter: Grip, Warmth, and Secure Fit",
+      "description": "Can winter slippers go outside? Compare soles, moisture, lining and secure fit, and plan a dry indoor-outdoor change without assuming rubber means ice-safe.",
+      "url": "https://flexi-knee.com/guides/indoor-vs-outdoor-slippers-winter",
+      "read_time_minutes": 12,
+      "published_date": "2026-10-06",
+      "last_modified": "2026-10-06"
+    },
+    {
+      "slug": "infrared-knee-massager-guide-2026",
+      "title": "Infrared Knee Massager Guide 2026: How They Work",
+      "description": "Complete 2026 guide to infrared knee massagers. Learn how infrared therapy works for knees, what to expect, key features to look for, and the best devices available.",
+      "url": "https://flexi-knee.com/guides/infrared-knee-massager-guide-2026",
+      "read_time_minutes": 13,
+      "published_date": null,
+      "last_modified": "2026-02-24"
+    },
+    {
+      "slug": "infrared-vs-heating-pads",
+      "title": "Infrared Knee Massagers vs Heating Pads Compared",
+      "description": "Compare infrared knee massagers and heating pads for daily knee comfort. Learn which approach offers better warmth delivery, convenience, and value.",
+      "url": "https://flexi-knee.com/guides/infrared-vs-heating-pads",
+      "read_time_minutes": 10,
+      "published_date": null,
+      "last_modified": "2026-02-24"
+    },
+    {
+      "slug": "intermittent-knee-pain-guide",
+      "title": "Intermittent Knee Pain: Why It Comes and Goes",
+      "description": "Learn why knee pain may come and go, how to track recurring episodes, what patterns matter and when intermittent knee pain needs assessment.",
+      "url": "https://flexi-knee.com/guides/intermittent-knee-pain-guide",
+      "read_time_minutes": 13,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "is-infrared-safe-for-knees",
+      "title": "Is Infrared Safe for Knees? Common Questions (2026)",
+      "description": "A calm, informative guide addressing common questions about infrared technology and how it is used for knee comfort in daily routines.",
+      "url": "https://flexi-knee.com/guides/is-infrared-safe-for-knees",
+      "read_time_minutes": 11,
+      "published_date": null,
+      "last_modified": "2026-01-19"
+    },
+    {
+      "slug": "it-band-foam-rolling-step-by-step",
+      "title": "IT Band Foam Rolling: Step-by-Step Guide With Diagrams",
+      "description": "Exactly where to foam roll a tight IT band, where to avoid, how long each zone takes, and the five mistakes that make outer knee pain worse.",
+      "url": "https://flexi-knee.com/guides/it-band-foam-rolling-step-by-step",
+      "read_time_minutes": 12,
+      "published_date": null,
+      "last_modified": "2026-07-12"
+    },
+    {
+      "slug": "it-band-pain-location-diagram",
+      "title": "IT Band Pain Location: Visual Guide to Outer Knee",
+      "description": "Use an IT band pain location diagram and chart to compare outer knee, lateral thigh and hip zones, plus other causes of pain on the outside of the knee.",
+      "url": "https://flexi-knee.com/guides/it-band-pain-location-diagram",
+      "read_time_minutes": 7,
+      "published_date": null,
+      "last_modified": "2026-07-19"
+    },
+    {
+      "slug": "jumpers-knee-basketball",
+      "title": "Jumper's Knee in Basketball: Pain Below the Kneecap and Return to Play",
+      "description": "Understand jumper's knee in basketball, pain below the kneecap, tendon-loading rehab, strap limitations and a measured return to jumping and court play.",
+      "url": "https://flexi-knee.com/guides/jumpers-knee-basketball",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-16",
+      "last_modified": "2026-09-16"
+    },
+    {
+      "slug": "knee-ache-after-leg-workouts",
+      "title": "Knee Pain After Leg Day: Squats, Lunges & Leg Press",
+      "description": "Why do knees hurt after leg day? Compare squats, lunges, Bulgarian split squats, leg press, inner-knee pain, stiffness, popping, and next-session adjustments.",
+      "url": "https://flexi-knee.com/guides/knee-ache-after-leg-workouts",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "knee-arthritis-pain-guide",
+      "title": "Knee Arthritis: Joint Pain & Daily Support Options",
+      "description": "Comprehensive guide to knee arthritis including arthritis knee pain management, knee pain exercises, knee support options, and when to consider knee replacement.",
+      "url": "https://flexi-knee.com/guides/knee-arthritis-pain-guide",
+      "read_time_minutes": 13,
+      "published_date": null,
+      "last_modified": "2025-12-20"
+    },
+    {
+      "slug": "knee-aspiration-guide",
+      "title": "Knee Aspiration: What to Expect Before and After Fluid Drainage",
+      "description": "Prepare for knee aspiration: why fluid is removed, what to tell the clinical team, discomfort, test results, aftercare and when swelling needs urgent review.",
+      "url": "https://flexi-knee.com/guides/knee-aspiration-guide",
+      "read_time_minutes": 12,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "knee-brace-vs-compression-sleeve",
+      "title": "Knee Brace vs Compression Sleeve: Which Support Do You Actually Need?",
+      "description": "Compare compression sleeves, straps, wraparound supports, and hinged braces to choose the right knee support for comfort, swelling, sport, or instability.",
+      "url": "https://flexi-knee.com/guides/knee-brace-vs-compression-sleeve",
+      "read_time_minutes": 14,
+      "published_date": "2026-07-27",
+      "last_modified": "2026-07-27"
+    },
+    {
+      "slug": "knee-braces-for-skiing",
+      "title": "Knee Braces for Skiing: Compression Sleeves, Hinged Support, and Fit",
+      "description": "Compare ski knee sleeves and functional braces, understand the evidence limits, and check clothing, boot clearance and fit before heading to the slopes.",
+      "url": "https://flexi-knee.com/guides/knee-braces-for-skiing",
+      "read_time_minutes": 12,
+      "published_date": "2026-10-06",
+      "last_modified": "2026-10-06"
+    },
+    {
+      "slug": "knee-bursitis-guide",
+      "title": "Knee Bursitis: Causes, Symptoms & Comfort",
+      "description": "Learn what knee bursitis is, common causes of bursa irritation, typical symptoms, and 40+ everyday strategies to support knee comfort and mobility.",
+      "url": "https://flexi-knee.com/guides/knee-bursitis-guide",
+      "read_time_minutes": 16,
+      "published_date": null,
+      "last_modified": "2026-03-08"
+    },
+    {
+      "slug": "knee-clicking-when-walking",
+      "title": "Knee Clicking When Walking or Bending: Why It Happens & What It Means",
+      "description": "Compare knee clicking while walking, bending, straightening, squatting, and using stairs, including painless sounds and warning patterns.",
+      "url": "https://flexi-knee.com/guides/knee-clicking-when-walking",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "knee-compression-sleeve-sizing-guide",
+      "title": "Knee Compression Sleeve Sizing Guide: Measure Right, Choose Right",
+      "description": "How to measure your knee for a compression sleeve, read any size chart, handle in-between sizes, and confirm the fit with a four-point check.",
+      "url": "https://flexi-knee.com/guides/knee-compression-sleeve-sizing-guide",
+      "read_time_minutes": 12,
+      "published_date": null,
+      "last_modified": "2026-07-12"
+    },
+    {
+      "slug": "knee-discomfort-lower-back-hips",
+      "title": "Knee Pain & Lower Back/Hip Connection Explained",
+      "description": "Explore why knee discomfort can feel connected to lower body tension and discover daily movement patterns that support comfort.",
+      "url": "https://flexi-knee.com/guides/knee-discomfort-lower-back-hips",
+      "read_time_minutes": 10,
+      "published_date": null,
+      "last_modified": "2026-01-20"
+    },
+    {
+      "slug": "knee-injury-symptom-chart",
+      "title": "Knee Injury Symptom Chart: Ligament, Meniscus, Tendon, and Bone Patterns",
+      "description": "Compare knee injury symptoms by event, pain location, swelling, movement loss and stability across ligament, meniscus, tendon and bone patterns.",
+      "url": "https://flexi-knee.com/guides/knee-injury-symptom-chart",
+      "read_time_minutes": 20,
+      "published_date": "2026-08-29",
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "knee-locking-vs-catching",
+      "title": "Knee Locking vs Catching: Movement Blocks, Clicks, and Urgent Signs",
+      "description": "Is your knee clicking, catching or truly locked? Learn the practical differences, what to report, why symptoms do not prove a meniscus tear, and when to get help.",
+      "url": "https://flexi-knee.com/guides/knee-locking-vs-catching",
+      "read_time_minutes": 14,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "knee-mobility-after-50",
+      "title": "Knee Mobility After 50: Daily Movement & Comfort Routine",
+      "description": "How to maintain knee mobility after 50 with daily movement routines, gentle stretches, and low-impact exercises for flexible, comfortable knees.",
+      "url": "https://flexi-knee.com/guides/knee-mobility-after-50",
+      "read_time_minutes": 16,
+      "published_date": null,
+      "last_modified": "2026-03-02"
+    },
+    {
+      "slug": "knee-numbness-guide",
+      "title": "Knee Numbness: Around the Kneecap, Outer Knee, and Below the Knee",
+      "description": "A location-first guide to knee numbness from local pressure, surgery, peroneal and saphenous nerves, sciatica, neuropathy, and urgent warning signs.",
+      "url": "https://flexi-knee.com/guides/knee-numbness-guide",
+      "read_time_minutes": 18,
+      "published_date": "2026-07-30",
+      "last_modified": "2026-07-30"
+    },
+    {
+      "slug": "knee-osteoarthritis-vs-rheumatoid-arthritis",
+      "title": "Knee Osteoarthritis vs Rheumatoid Arthritis: Key Differences",
+      "description": "Compare symptoms, morning stiffness, swelling, blood tests, imaging, stages and treatment differences between knee OA and rheumatoid arthritis.",
+      "url": "https://flexi-knee.com/guides/knee-osteoarthritis-vs-rheumatoid-arthritis",
+      "read_time_minutes": 21,
+      "published_date": "2026-07-28",
+      "last_modified": "2026-07-28"
+    },
+    {
+      "slug": "knee-pads-for-kneeling",
+      "title": "Knee Pads for Kneeling: Gardening, Work, and Everyday Tasks",
+      "description": "Choose knee pads for gardening and floor work. Compare foam, gel, hard shells, straps and kneeling mats, with fit checks and ways to reduce kneeling time.",
+      "url": "https://flexi-knee.com/guides/knee-pads-for-kneeling",
+      "read_time_minutes": 12,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "knee-pain-after-40",
+      "title": "Knee Pain After 40 & 50: Why It Happens & Daily Tips",
+      "description": "Why does knee pain increase after 40 and 50? Learn about age-related joint changes, morning stiffness patterns, and daily habits that support lasting knee comfort.",
+      "url": "https://flexi-knee.com/guides/knee-pain-after-40",
+      "read_time_minutes": 15,
+      "published_date": null,
+      "last_modified": "2026-03-01"
+    },
+    {
+      "slug": "knee-pain-after-ankle-sprain",
+      "title": "Knee Pain After an Ankle Sprain: Injury or Changed Walking?",
+      "description": "Learn why a knee may hurt after an ankle sprain, how timing changes the concern, when upper-fibula pain needs assessment, and how to review walking safely.",
+      "url": "https://flexi-knee.com/guides/knee-pain-after-ankle-sprain",
+      "read_time_minutes": 14,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "knee-pain-after-basketball",
+      "title": "Knee Pain After Basketball: Causes, Recovery, and Warning Signs",
+      "description": "Knees hurt after basketball? Compare pain during play, after games and the next morning, with workload adjustments, recovery options and warning signs.",
+      "url": "https://flexi-knee.com/guides/knee-pain-after-basketball",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-16",
+      "last_modified": "2026-09-16"
+    },
+    {
+      "slug": "knee-pain-after-car-rides",
+      "title": "Knee Pain When Driving or After Long Car Rides",
+      "description": "Separate right-knee pedal pain from bent-knee stiffness after a car ride using seat setup, symptom location, and travel warning signs.",
+      "url": "https://flexi-knee.com/guides/knee-pain-after-car-rides",
+      "read_time_minutes": 12,
+      "published_date": null,
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "knee-pain-after-exercise",
+      "title": "Knee Pain After Exercise or a Workout (But Not During)",
+      "description": "Why do knees hurt after exercise but not during? Compare delayed soreness, pain after workouts, the 24-hour response, practical adjustments, and warning signs.",
+      "url": "https://flexi-knee.com/guides/knee-pain-after-exercise",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "knee-pain-after-flights",
+      "title": "Knee Pain After Flying: Why Knees Hurt After a Long Flight",
+      "description": "Learn why knees may hurt after flying, what prolonged sitting changes, practical travel tips, and one-sided warning signs.",
+      "url": "https://flexi-knee.com/guides/knee-pain-after-flights",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "knee-pain-after-long-walks",
+      "title": "Why Knees Hurt After Long Walks Over 40: Causes & Relief",
+      "description": "Why do knees hurt after long walks? Learn walking biomechanics changes after 40, inner vs outer knee pain, and daily at-home relief strategies.",
+      "url": "https://flexi-knee.com/guides/knee-pain-after-long-walks",
+      "read_time_minutes": 15,
+      "published_date": null,
+      "last_modified": "2026-03-02"
+    },
+    {
+      "slug": "knee-pain-after-marathon",
+      "title": "Knee Pain After a Marathon: Next-Day Soreness, Stairs, and Recovery",
+      "description": "Knees hurt after a marathon? Separate muscle soreness from joint symptoms, manage stairs and travel, and plan a sensible return without rushing recovery.",
+      "url": "https://flexi-knee.com/guides/knee-pain-after-marathon",
+      "read_time_minutes": 12,
+      "published_date": "2026-10-06",
+      "last_modified": "2026-10-06"
+    },
+    {
+      "slug": "knee-pain-after-sitting-cross-legged",
+      "title": "Knee Pain After Sitting Cross-Legged: Causes & Tips",
+      "description": "Learn why knee pain after sitting cross-legged happens. Explore causes of back of knee pain, knee stiffness after sitting, and practical daily comfort tips.",
+      "url": "https://flexi-knee.com/guides/knee-pain-after-sitting-cross-legged",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-02-25"
+    },
+    {
+      "slug": "knee-pain-after-skiing",
+      "title": "Knee Pain After Skiing: Turns, Fatigue, and Injury Warning Signs",
+      "description": "Understand knee pain after skiing, from an unfamiliar ski-day workload to twisting injuries. Review warning signs, equipment checks and return-to-slope decisions.",
+      "url": "https://flexi-knee.com/guides/knee-pain-after-skiing",
+      "read_time_minutes": 11,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "knee-pain-after-standing",
+      "title": "Knee Pain After Standing for a Long Time: Causes and What Helps",
+      "description": "Why do knees hurt after prolonged standing or standing all day? Compare work, floor, footwear, location, relief, and warning-sign patterns.",
+      "url": "https://flexi-knee.com/guides/knee-pain-after-standing",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "knee-pain-after-turkey-trot",
+      "title": "Knee Pain After a Turkey Trot: Post-5K Soreness and Warning Signs",
+      "description": "Knees hurt after a Thanksgiving 5K? Review unfamiliar effort, next-day soreness, swelling and holiday activity, with clear reasons to seek medical advice.",
+      "url": "https://flexi-knee.com/guides/knee-pain-after-turkey-trot",
+      "read_time_minutes": 12,
+      "published_date": "2026-10-06",
+      "last_modified": "2026-10-06"
+    },
+    {
+      "slug": "knee-pain-at-night-after-40",
+      "title": "Knee Pain at Night After 40: OA & Menopause",
+      "description": "Compare osteoarthritis, menopause, daily load, and sleep-position patterns behind knee pain at night after 40, plus warning signs and what to track.",
+      "url": "https://flexi-knee.com/guides/knee-pain-at-night-after-40",
+      "read_time_minutes": 15,
+      "published_date": null,
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "knee-pain-climbing-stairs",
+      "title": "Knee Pain When Climbing Stairs: Causes by Location & What Helps",
+      "description": "Learn why knees hurt going upstairs, how pain location and step phase change the pattern, practical stair adjustments, and warning signs.",
+      "url": "https://flexi-knee.com/guides/knee-pain-climbing-stairs",
+      "read_time_minutes": 15,
+      "published_date": null,
+      "last_modified": "2026-07-28"
+    },
+    {
+      "slug": "knee-pain-during-yoga",
+      "title": "Knee Pain During Yoga: Lotus, Pigeon & Child's Pose",
+      "description": "Modify lotus, pigeon, child's pose, hero pose, kneeling, and standing yoga while recognizing back-of-knee symptoms and warning signs.",
+      "url": "https://flexi-knee.com/guides/knee-pain-during-yoga",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "knee-pain-exercises-guide",
+      "title": "Knee Pain Exercises: Strength, Mobility & Comfort",
+      "description": "Best knee pain exercises for strength, mobility, and daily comfort. Straight leg raises, quad strengthening, ankle mobility, and a senior-friendly routine.",
+      "url": "https://flexi-knee.com/guides/knee-pain-exercises-guide",
+      "read_time_minutes": 15,
+      "published_date": null,
+      "last_modified": "2026-02-28"
+    },
+    {
+      "slug": "knee-pain-getting-up-after-sitting",
+      "title": "Knee Pain and Stiffness After Sitting: Why Standing Up Hurts",
+      "description": "Learn why knees feel stiff after sitting, why standing up or the first few steps can hurt, and which chair, movement, and warning signs matter.",
+      "url": "https://flexi-knee.com/guides/knee-pain-getting-up-after-sitting",
+      "read_time_minutes": 18,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "knee-pain-going-down-stairs",
+      "title": "Knee Pain Going Down Stairs: Causes and What Helps",
+      "description": "Learn why walking downstairs may hurt more than going up, common causes, practical descent adjustments, and how to rebuild stair capacity.",
+      "url": "https://flexi-knee.com/guides/knee-pain-going-down-stairs",
+      "read_time_minutes": 13,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "knee-pain-landing-basketball",
+      "title": "Knee Pain When Landing in Basketball: What the Pattern Can Tell You",
+      "description": "Separate sudden landing injuries from repeated jump-related knee pain in basketball. Learn what to note, when to stop and how to discuss a safe return.",
+      "url": "https://flexi-knee.com/guides/knee-pain-landing-basketball",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-16",
+      "last_modified": "2026-09-16"
+    },
+    {
+      "slug": "knee-pain-locations-visual-guide",
+      "title": "Knee Pain Location Chart: A Visual Map of Where Your Knee Hurts",
+      "description": "Use an interactive knee pain map and labeled diagrams to compare front, inner, outer, back, kneecap, tendon, and joint-line locations.",
+      "url": "https://flexi-knee.com/guides/knee-pain-locations-visual-guide",
+      "read_time_minutes": 18,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "knee-pain-when-hiking",
+      "title": "Knee Pain When Hiking: Uphill, Downhill & After Hiking",
+      "description": "Compare uphill, downhill, uneven-ground, and after-hike knee pain using terrain, pack weight, poles, location, and workload clues.",
+      "url": "https://flexi-knee.com/guides/knee-pain-when-hiking",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "knee-pain-when-kneeling",
+      "title": "Knee Pain When Kneeling: Sharp, Front and Back Pain",
+      "description": "Learn why a knee may hurt when kneeling, including sharp pain, pressure at the kneecap, pain behind the knee, bursitis clues, and practical cushioning tips.",
+      "url": "https://flexi-knee.com/guides/knee-pain-when-kneeling",
+      "read_time_minutes": 15,
+      "published_date": null,
+      "last_modified": "2026-07-31"
+    },
+    {
+      "slug": "knee-pain-when-squatting",
+      "title": "Knee Pain When Squatting: Location, Depth, Load & Warning Signs",
+      "description": "Compare pain during descent, at the bottom, while rising, or after squats, then test depth, load, volume, stance, and support safely.",
+      "url": "https://flexi-knee.com/guides/knee-pain-when-squatting",
+      "read_time_minutes": 17,
+      "published_date": null,
+      "last_modified": "2026-07-28"
+    },
+    {
+      "slug": "knee-recovery-exercises-after-workout",
+      "title": "5 Post-Workout Knee Recovery Exercises: 10-Minute Routine",
+      "description": "Follow a practical 10-minute post-workout knee recovery routine with easy movement, targeted stretches, gentle strengthening, and clear safety limits.",
+      "url": "https://flexi-knee.com/guides/knee-recovery-exercises-after-workout",
+      "read_time_minutes": 16,
+      "published_date": null,
+      "last_modified": "2026-07-28"
+    },
+    {
+      "slug": "knee-sleeves-for-basketball",
+      "title": "Knee Sleeves for Basketball: Compression, Padding, and Fit",
+      "description": "Compare basketball knee sleeves, padded knee pads and leg sleeves. Learn how to measure, check court fit and avoid mistaking compression for injury protection.",
+      "url": "https://flexi-knee.com/guides/knee-sleeves-for-basketball",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-16",
+      "last_modified": "2026-09-16"
+    },
+    {
+      "slug": "knee-sleeves-for-cycling",
+      "title": "Knee Sleeves for Cycling: Compression Sleeves, Warmers, or Braces?",
+      "description": "Compare cycling knee sleeves, warmers and braces. Check bent-knee fit, slipping, seams, sizing and when optional compression is not the right solution.",
+      "url": "https://flexi-knee.com/guides/knee-sleeves-for-cycling",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-21",
+      "last_modified": "2026-09-21"
+    },
+    {
+      "slug": "knee-sleeves-for-running",
+      "title": "Knee Sleeves for Running: Fit, Compression, and When They Help",
+      "description": "Learn whether knee sleeves help runners, how compression should fit, when to wear one, and when recurring knee pain needs a better plan.",
+      "url": "https://flexi-knee.com/guides/knee-sleeves-for-running",
+      "read_time_minutes": 20,
+      "published_date": "2026-08-04",
+      "last_modified": "2026-08-04"
+    },
+    {
+      "slug": "knee-swelling-after-exercise",
+      "title": "Knee Swelling After Exercise or Running: Causes & Warning Signs",
+      "description": "Why does a knee swell after exercise or running? Compare persistent swelling, painless puffiness, swelling behind the knee, fluid-like fullness, and warning signs.",
+      "url": "https://flexi-knee.com/guides/knee-swelling-after-exercise",
+      "read_time_minutes": 15,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "knee-taping-stability-pfps",
+      "title": "Knee Taping for Stability and Patellofemoral Pain: KT Tape vs Rigid Tape",
+      "description": "Compare KT tape and rigid knee taping for patellofemoral pain, including realistic benefits, tailored application, skin safety, and limits.",
+      "url": "https://flexi-knee.com/guides/knee-taping-stability-pfps",
+      "read_time_minutes": 18,
+      "published_date": "2026-08-03",
+      "last_modified": "2026-08-03"
+    },
+    {
+      "slug": "knee-tightness-without-pain",
+      "title": "Knee Tightness Without Pain: Causes, Locations & Warning Signs",
+      "description": "Compare front, back, inner, and outer knee tightness without pain, including bending restrictions, swelling, safe mobility checks, and warning signs.",
+      "url": "https://flexi-knee.com/guides/knee-tightness-without-pain",
+      "read_time_minutes": 16,
+      "published_date": null,
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "knee-warmth-daily-comfort",
+      "title": "Knee Warmth for Daily Relief: When Heat Helps",
+      "description": "Learn when warmth helps with daily knee comfort and when other approaches may be more appropriate. Practical heat therapy guide.",
+      "url": "https://flexi-knee.com/guides/knee-warmth-daily-comfort",
+      "read_time_minutes": 10,
+      "published_date": null,
+      "last_modified": "2026-02-25"
+    },
+    {
+      "slug": "knee-weakness-without-pain",
+      "title": "Knees Feel Weak Without Pain: Causes and What to Do",
+      "description": "Learn why knees may feel weak without pain when walking, climbing stairs, or standing up, and when buckling, numbness, or instability needs assessment.",
+      "url": "https://flexi-knee.com/guides/knee-weakness-without-pain",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-07-31"
+    },
+    {
+      "slug": "knee-xray-vs-mri-vs-ultrasound",
+      "title": "Knee X-Ray vs MRI vs Ultrasound: What Each Test Can Show",
+      "description": "Compare what knee X-rays, MRI, and ultrasound can show, what each may miss, when contrast is used, and why the examination still matters.",
+      "url": "https://flexi-knee.com/guides/knee-xray-vs-mri-vs-ultrasound",
+      "read_time_minutes": 24,
+      "published_date": "2026-07-31",
+      "last_modified": "2026-07-31"
+    },
+    {
+      "slug": "leg-extension-knee-pain",
+      "title": "Leg Extension Knee Pain: Seat Setup, Shin Pad, Range, and Load",
+      "description": "Learn how seat alignment, shin-pad placement, resistance and range affect leg-extension knee pain, with a controlled troubleshooting plan and warning signs.",
+      "url": "https://flexi-knee.com/guides/leg-extension-knee-pain",
+      "read_time_minutes": 13,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "leg-length-discrepancy-knee-pain",
+      "title": "Leg Length Discrepancy and Knee Pain: Assessment and Shoe-Lift Questions",
+      "description": "Explore structural versus functional leg length discrepancy, its possible link with knee pain, professional measurement and questions before trying a shoe lift.",
+      "url": "https://flexi-knee.com/guides/leg-length-discrepancy-knee-pain",
+      "read_time_minutes": 11,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "massage-gun-knee-pain",
+      "title": "Massage Gun for Knee Pain: Where to Use It and What to Avoid",
+      "description": "Considering a massage gun for knee pain? Learn about thigh-muscle use, areas to avoid, evidence limits, attachments, and when symptoms need assessment.",
+      "url": "https://flexi-knee.com/guides/massage-gun-knee-pain",
+      "read_time_minutes": 12,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "meniscus-knee-pain-location-chart",
+      "title": "Meniscus Knee Pain Location Chart: Inner, Outer, and Joint-Line Pain",
+      "description": "Map medial and lateral meniscus pain, joint-line clues, twisting and deep-bend triggers, common mimics and signs that need assessment.",
+      "url": "https://flexi-knee.com/guides/meniscus-knee-pain-location-chart",
+      "read_time_minutes": 20,
+      "published_date": "2026-08-29",
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "menopause-knee-pain",
+      "title": "Menopause and Knee Pain: The Hormone Connection",
+      "description": "Learn how hormones, sleep, muscle, activity, body composition, osteoarthritis, and midlife health can overlap with knee symptoms.",
+      "url": "https://flexi-knee.com/guides/menopause-knee-pain",
+      "read_time_minutes": 14,
+      "published_date": "2026-07-18",
+      "last_modified": "2026-07-18"
+    },
+    {
+      "slug": "morning-knee-stiffness-after-40",
+      "title": "Morning Knee Stiffness After 40: Causes & Relief",
+      "description": "Why do knees feel stiff every morning after 40? Learn the causes of morning knee stiffness, what happens during sleep, and simple daily habits for relief.",
+      "url": "https://flexi-knee.com/guides/morning-knee-stiffness-after-40",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-03-01"
+    },
+    {
+      "slug": "nordic-hamstring-curl-knee-health",
+      "title": "Nordic Hamstring Curls and Knee Health: Benefits, Form, and Progressions",
+      "description": "Learn Nordic hamstring curl benefits, muscles worked, knee-friendly setup, beginner progressions, common mistakes, and evidence-based limits.",
+      "url": "https://flexi-knee.com/guides/nordic-hamstring-curl-knee-health",
+      "read_time_minutes": 18,
+      "published_date": "2026-08-03",
+      "last_modified": "2026-08-03"
+    },
+    {
+      "slug": "osgood-schlatter-adults",
+      "title": "Osgood-Schlatter in Adults: Why the Bump Below the Knee Can Still Hurt",
+      "description": "Why an old Osgood-Schlatter bump can hurt in adulthood, including tibial tubercle pressure, residual ossicles, imaging, treatment, and surgery.",
+      "url": "https://flexi-knee.com/guides/osgood-schlatter-adults",
+      "read_time_minutes": 19,
+      "published_date": "2026-07-30",
+      "last_modified": "2026-07-30"
+    },
+    {
+      "slug": "osteochondral-lesion-knee",
+      "title": "Osteochondral Lesions of the Knee: Cartilage and Bone Injury",
+      "description": "Understand osteochondral lesions and defects, cartilage and bone injury, MRI stability, osteochondritis dissecans, treatment, surgery, and recovery.",
+      "url": "https://flexi-knee.com/guides/osteochondral-lesion-knee",
+      "read_time_minutes": 18,
+      "published_date": "2026-07-30",
+      "last_modified": "2026-07-30"
+    },
+    {
+      "slug": "padel-knee-pain",
+      "title": "Padel Knee Pain: Turning, Stopping, and Court-Sport Recovery",
+      "description": "Understand knee pain after padel through braking, pivots, low lunges, court load, footwear, warning signs, and a gradual return to play.",
+      "url": "https://flexi-knee.com/guides/padel-knee-pain",
+      "read_time_minutes": 19,
+      "published_date": "2026-07-31",
+      "last_modified": "2026-07-31"
+    },
+    {
+      "slug": "pain-behind-kneecap",
+      "title": "Pain Behind the Kneecap: PFPS, Causes & What Helps",
+      "description": "Understand pain behind the kneecap, PFPS and runner's knee, common triggers, other possible causes, evidence-based care, and warning signs.",
+      "url": "https://flexi-knee.com/guides/pain-behind-kneecap",
+      "read_time_minutes": 18,
+      "published_date": null,
+      "last_modified": "2026-07-28"
+    },
+    {
+      "slug": "patellar-tendon-strap-knee-pain",
+      "title": "Patellar Tendon Strap for Knee Pain: Placement, Fit, and When It Helps",
+      "description": "Learn where a patellar strap sits, how tight it should feel, what the evidence says, who may benefit and when a strap is the wrong tool.",
+      "url": "https://flexi-knee.com/guides/patellar-tendon-strap-knee-pain",
+      "read_time_minutes": 21,
+      "published_date": "2026-08-29",
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "pedal-exerciser-knee-pain",
+      "title": "Pedal Exerciser for Knee Pain: Chair Height, Distance, and Safe Setup",
+      "description": "Set up a mini pedal exerciser for knee comfort. Check chair height, pedal distance, desk clearance, resistance, and slipping before adding exercise time.",
+      "url": "https://flexi-knee.com/guides/pedal-exerciser-knee-pain",
+      "read_time_minutes": 14,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "peroneal-nerve-compression-knee",
+      "title": "Peroneal Nerve Compression Near the Knee: Numbness, Pain, and Foot Drop",
+      "description": "How compression at the fibular head can cause outer-shin numbness, top-of-foot tingling, weakness, foot slap, and foot drop.",
+      "url": "https://flexi-knee.com/guides/peroneal-nerve-compression-knee",
+      "read_time_minutes": 19,
+      "published_date": "2026-07-30",
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "pes-anserine-bursitis",
+      "title": "Pes Anserine Bursitis: Pain Below the Inner Knee Explained",
+      "description": "Understand pes anserine bursitis below the inner knee: location, symptom overlap, assessment, activity changes, exercise questions and treatment evidence.",
+      "url": "https://flexi-knee.com/guides/pes-anserine-bursitis",
+      "read_time_minutes": 11,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "pickleball-knee-recovery-routine",
+      "title": "Pickleball Knees: A Recovery Routine That Gets You Back on Court",
+      "description": "A court-specific plan for cool-down, mobility, strength, workload, return to play, and warning signs after pickleball.",
+      "url": "https://flexi-knee.com/guides/pickleball-knee-recovery-routine",
+      "read_time_minutes": 15,
+      "published_date": "2026-07-18",
+      "last_modified": "2026-07-18"
+    },
+    {
+      "slug": "plica-syndrome-knee-pain",
+      "title": "Plica Syndrome Knee Pain: Home Management",
+      "description": "Learn what plica syndrome is and why knee plica irritation occurs. Discover common causes, everyday triggers, and simple strategies to support knee comfort.",
+      "url": "https://flexi-knee.com/guides/plica-syndrome-knee-pain",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-03-08"
+    },
+    {
+      "slug": "post-ride-knee-recovery",
+      "title": "Post-Ride Knee Recovery: Soreness, Stiffness, and Your Next Ride",
+      "description": "Plan knee recovery after cycling: distinguish soreness from joint symptoms, review evening comfort and use next-day function to guide your next ride.",
+      "url": "https://flexi-knee.com/guides/post-ride-knee-recovery",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-21",
+      "last_modified": "2026-09-21"
+    },
+    {
+      "slug": "recumbent-vs-upright-bike-knees",
+      "title": "Recumbent vs Upright Exercise Bike for Bad Knees: Which Setup Fits You?",
+      "description": "Compare recumbent and upright exercise bikes for knee comfort. Check seat support, pedal reach, step-through access, resistance and a practical trial ride.",
+      "url": "https://flexi-knee.com/guides/recumbent-vs-upright-bike-knees",
+      "read_time_minutes": 12,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "red-light-therapy-dose-knees",
+      "title": "Red Light for Knees: How Long, How Often?",
+      "description": "Understand session time, frequency, irradiance, dose, device differences, safety, and why minutes alone do not define a protocol.",
+      "url": "https://flexi-knee.com/guides/red-light-therapy-dose-knees",
+      "read_time_minutes": 16,
+      "published_date": "2026-07-18",
+      "last_modified": "2026-07-18"
+    },
+    {
+      "slug": "red-light-therapy-for-knees",
+      "title": "Red Light Therapy for Knees: What Studies Say (2026)",
+      "description": "A balanced look at what research suggests about red light therapy for knee comfort and how it fits into daily routines.",
+      "url": "https://flexi-knee.com/guides/red-light-therapy-for-knees",
+      "read_time_minutes": 11,
+      "published_date": null,
+      "last_modified": "2026-01-19"
+    },
+    {
+      "slug": "reformer-pilates-knee-pain",
+      "title": "Reformer Pilates With Knee Pain: Springs, Footbar, and Modifications",
+      "description": "Adjust reformer springs, footbar position, range, kneeling, lunges, and class communication without relying on one universal setting.",
+      "url": "https://flexi-knee.com/guides/reformer-pilates-knee-pain",
+      "read_time_minutes": 17,
+      "published_date": "2026-08-01",
+      "last_modified": "2026-08-01"
+    },
+    {
+      "slug": "return-to-basketball-knee-pain",
+      "title": "Returning to Basketball After Knee Pain: A Step-by-Step Court Progression",
+      "description": "Plan your return to basketball after knee pain through drills, landing, cutting and team play. Learn what to monitor and why readiness matters.",
+      "url": "https://flexi-knee.com/guides/return-to-basketball-knee-pain",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-16",
+      "last_modified": "2026-09-16"
+    },
+    {
+      "slug": "rowing-machine-knee-pain",
+      "title": "Rowing Machine Knee Pain: Catch Depth, Footplates, and a Smoother Stroke",
+      "description": "Troubleshoot rowing-machine knee pain with catch-depth, footplate, strap and stroke checks. Learn how damper, effort and session length differ.",
+      "url": "https://flexi-knee.com/guides/rowing-machine-knee-pain",
+      "read_time_minutes": 13,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "rucking-knee-pain",
+      "title": "Rucking With Bad Knees: Backpack Weight, Hills, and Footwear",
+      "description": "Learn how backpack weight, pace, hills, terrain, pack fit, footwear, and recovery affect knee comfort during loaded walking.",
+      "url": "https://flexi-knee.com/guides/rucking-knee-pain",
+      "read_time_minutes": 21,
+      "published_date": "2026-07-31",
+      "last_modified": "2026-07-31"
+    },
+    {
+      "slug": "runners-knee-pain-location",
+      "title": "Runner's Knee Pain Location: Causes & Patterns",
+      "description": "Explore where runners commonly feel knee discomfort: front, inner, outer, and back of knee. Learn what each location means and everyday comfort approaches.",
+      "url": "https://flexi-knee.com/guides/runners-knee-pain-location",
+      "read_time_minutes": 12,
+      "published_date": null,
+      "last_modified": "2026-02-25"
+    },
+    {
+      "slug": "running-knee-pain-guide",
+      "title": "Running Knee Pain: Injuries, Triggers & What Helps",
+      "description": "Learn about running knee pain including patellar tendinitis, meniscus tear, ACL injury, and effective strategies for pain when bending knee.",
+      "url": "https://flexi-knee.com/guides/running-knee-pain-guide",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-03-18"
+    },
+    {
+      "slug": "saphenous-nerve-knee-pain",
+      "title": "Saphenous Nerve Knee Pain: Inner-Knee Burning, Numbness, and Entrapment",
+      "description": "Map saphenous nerve distribution, inner-knee burning, infrapatellar numbness, surgical scar pain, diagnosis, and treatment options.",
+      "url": "https://flexi-knee.com/guides/saphenous-nerve-knee-pain",
+      "read_time_minutes": 17,
+      "published_date": "2026-07-30",
+      "last_modified": "2026-07-30"
+    },
+    {
+      "slug": "seated-knee-exercises-limited-mobility",
+      "title": "Seated Knee Exercises for Limited Mobility: A Chair Routine",
+      "description": "Follow a stable-chair routine with ankle pumps, heel slides, marching, knee extensions, safe setup and a measured progression.",
+      "url": "https://flexi-knee.com/guides/seated-knee-exercises-limited-mobility",
+      "read_time_minutes": 20,
+      "published_date": "2026-08-29",
+      "last_modified": "2026-08-29"
+    },
+    {
+      "slug": "sharp-knee-pain-guide",
+      "title": "Sharp or Stabbing Knee Pain: Causes & Warning Signs",
+      "description": "Compare sharp, stabbing and shooting knee pain by location and trigger. Learn what to track, what may help and which warning signs need medical care.",
+      "url": "https://flexi-knee.com/guides/sharp-knee-pain-guide",
+      "read_time_minutes": 16,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "shorter-cranks-knee-pain",
+      "title": "Shorter Cranks and Knee Pain: What Changes and What Doesn't",
+      "description": "Compare shorter cranks for knee comfort: measuring length, 165 versus 170 mm, fit changes, compatibility and what biomechanical research can actually tell you.",
+      "url": "https://flexi-knee.com/guides/shorter-cranks-knee-pain",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-21",
+      "last_modified": "2026-09-21"
+    },
+    {
+      "slug": "side-knee-pain-comfort-guide",
+      "title": "Side Knee Pain: Inner vs Outer Causes and What Helps",
+      "description": "Compare outer and inner side knee pain by exact location, activity trigger, swelling, tenderness, and warning signs, including common lateral knee pain patterns.",
+      "url": "https://flexi-knee.com/guides/side-knee-pain-comfort-guide",
+      "read_time_minutes": 10,
+      "published_date": "2025-12-17",
+      "last_modified": "2026-07-31"
+    },
+    {
+      "slug": "smart-heated-knee-braces-2026",
+      "title": "Best Smart Heated Knee Braces in 2026: 5 Cordless Picks",
+      "description": "Compare five smart heated knee braces by programmable controls, rechargeable power, fit, heat, portability, and safety.",
+      "url": "https://flexi-knee.com/guides/smart-heated-knee-braces-2026",
+      "read_time_minutes": 13,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "smart-knee-massagers-breakdown",
+      "title": "Smart Knee Massagers: Do They Work? (Breakdown)",
+      "description": "A non-medical breakdown of smart knee massager features, user experiences, and realistic expectations for 2026.",
+      "url": "https://flexi-knee.com/guides/smart-knee-massagers-breakdown",
+      "read_time_minutes": 11,
+      "published_date": null,
+      "last_modified": "2026-02-25"
+    },
+    {
+      "slug": "spanish-squat-patellar-tendon",
+      "title": "Spanish Squat for Patellar Tendon Pain: How and When to Use It",
+      "description": "Learn Spanish squat band setup, upright form, isometric holds, symptom monitoring, and where the exercise may fit within progressive patellar tendon loading.",
+      "url": "https://flexi-knee.com/guides/spanish-squat-patellar-tendon",
+      "read_time_minutes": 18,
+      "published_date": "2026-08-02",
+      "last_modified": "2026-08-02"
+    },
+    {
+      "slug": "stairmaster-vs-incline-treadmill-knees",
+      "title": "StairMaster vs Incline Treadmill for Bad Knees",
+      "description": "Compare knee bend, workout control, Zone 2 cardio, calorie estimates, technique, and a practical first test on both machines.",
+      "url": "https://flexi-knee.com/guides/stairmaster-vs-incline-treadmill-knees",
+      "read_time_minutes": 18,
+      "published_date": "2026-08-01",
+      "last_modified": "2026-08-01"
+    },
+    {
+      "slug": "step-down-exercise-knee-control",
+      "title": "Step-Down Exercise for Knee Control: Form and Progression",
+      "description": "Build single-leg knee control with forward and lateral step-downs, a low heel tap, practical alignment cues, and gradual height, repetition, and load progressions.",
+      "url": "https://flexi-knee.com/guides/step-down-exercise-knee-control",
+      "read_time_minutes": 18,
+      "published_date": "2026-08-02",
+      "last_modified": "2026-08-02"
+    },
+    {
+      "slug": "strength-training-cyclists-knees",
+      "title": "Strength Training for Cyclists With Sensitive Knees: An Off-Bike Routine",
+      "description": "Build an off-bike strength routine around manageable squat, hinge, calf and trunk work. Fit exercises around cycling without stacking every hard leg session.",
+      "url": "https://flexi-knee.com/guides/strength-training-cyclists-knees",
+      "read_time_minutes": 12,
+      "published_date": "2026-09-21",
+      "last_modified": "2026-09-21"
+    },
+    {
+      "slug": "sudden-knee-pain-guide",
+      "title": "Sudden Knee Pain: Causes, Warning Signs, and What to Do",
+      "description": "Compare sudden knee pain patterns with or without injury, learn safe first steps, and recognize swelling, locking, fever, and other urgent warning signs.",
+      "url": "https://flexi-knee.com/guides/sudden-knee-pain-guide",
+      "read_time_minutes": 16,
+      "published_date": null,
+      "last_modified": "2026-07-13"
+    },
+    {
+      "slug": "tai-chi-knee-osteoarthritis",
+      "title": "Tai Chi for Knee Osteoarthritis: Beginner Movements, Modifications, and Evidence",
+      "description": "Explore tai chi for knee osteoarthritis: trial evidence, beginner weight shifts, higher stances, chair support, video choices and ways to adapt practice.",
+      "url": "https://flexi-knee.com/guides/tai-chi-knee-osteoarthritis",
+      "read_time_minutes": 12,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "tens-unit-knee-pain",
+      "title": "TENS Unit for Knee Pain: Pad Placement, Settings, Safety, and Evidence",
+      "description": "Learn how a TENS unit for knee pain works, example pad placement, safe settings, contraindications, and what osteoarthritis evidence shows.",
+      "url": "https://flexi-knee.com/guides/tens-unit-knee-pain",
+      "read_time_minutes": 19,
+      "published_date": "2026-08-03",
+      "last_modified": "2026-08-03"
+    },
+    {
+      "slug": "thirty-second-chair-stand-test",
+      "title": "30-Second Chair Stand Test: What Your Result Can and Cannot Tell You",
+      "description": "Understand the 30-second chair stand test, CDC reference cutoffs, chair setup, arm-use rules and why knee pain or a changed protocol affects interpretation.",
+      "url": "https://flexi-knee.com/guides/thirty-second-chair-stand-test",
+      "read_time_minutes": 12,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "tibialis-raises-knee-strength",
+      "title": "Tibialis Raises for Knee Strength: Benefits and Technique",
+      "description": "Use wall tibialis raises with clear setup, form, range, and progression while understanding what stronger ankle dorsiflexors can and cannot do for knee comfort.",
+      "url": "https://flexi-knee.com/guides/tibialis-raises-knee-strength",
+      "read_time_minutes": 17,
+      "published_date": "2026-08-02",
+      "last_modified": "2026-08-02"
+    },
+    {
+      "slug": "tight-calves-knee-pain",
+      "title": "Can Tight Calves Cause Knee Pain? The Calf, Ankle and Knee Connection",
+      "description": "Learn how calf tightness can affect the back of the knee and ankle motion, plus a practical stretching and strengthening routine and warning signs.",
+      "url": "https://flexi-knee.com/guides/tight-calves-knee-pain",
+      "read_time_minutes": 14,
+      "published_date": "2026-07-27",
+      "last_modified": "2026-07-27"
+    },
+    {
+      "slug": "top-of-knee-pain-patterns",
+      "title": "Top of Knee Pain: Daily Patterns & What It Means",
+      "description": "Understand common daily patterns linked to top of knee discomfort and discover supportive habits for everyday comfort.",
+      "url": "https://flexi-knee.com/guides/top-of-knee-pain-patterns",
+      "read_time_minutes": 10,
+      "published_date": null,
+      "last_modified": "2026-01-19"
+    },
+    {
+      "slug": "trail-running-knee-pain",
+      "title": "Trail Running Knee Pain: Terrain, Footing, and Route Load",
+      "description": "How technical terrain, footing, elevation, route design, and fatigue shape knee symptoms and a gradual return to trail running.",
+      "url": "https://flexi-knee.com/guides/trail-running-knee-pain",
+      "read_time_minutes": 19,
+      "published_date": "2026-07-31",
+      "last_modified": "2026-08-01"
+    },
+    {
+      "slug": "turkey-trot-guide-sensitive-knees",
+      "title": "Turkey Trot Guide for Beginners With Sensitive Knees: Choosing and Preparing for Your First Event",
+      "description": "Choose a knee-conscious first Turkey Trot: compare walking rules, distances, surfaces and logistics, then find preparation, warm-up and recovery guides.",
+      "url": "https://flexi-knee.com/guides/turkey-trot-guide-sensitive-knees",
+      "read_time_minutes": 12,
+      "published_date": "2026-10-06",
+      "last_modified": "2026-10-06"
+    },
+    {
+      "slug": "turkey-trot-run-walk-preparation",
+      "title": "Turkey Trot Run-Walk Preparation: Building Toward a 5K With Sensitive Knees",
+      "description": "Build toward a Thanksgiving 5K with sensible run-walk preparation, rest days and symptom checks. Avoid catch-up training and choose a realistic event goal.",
+      "url": "https://flexi-knee.com/guides/turkey-trot-run-walk-preparation",
+      "read_time_minutes": 12,
+      "published_date": "2026-10-06",
+      "last_modified": "2026-10-06"
+    },
+    {
+      "slug": "turkey-trot-warm-up",
+      "title": "Turkey Trot Warm-Up: A Race-Morning Routine for Walkers and Runners",
+      "description": "Plan a simple Turkey Trot warm-up: easy walking, familiar movements, cold-weather waiting and a controlled start, without exhausting your knees before the 5K.",
+      "url": "https://flexi-knee.com/guides/turkey-trot-warm-up",
+      "read_time_minutes": 12,
+      "published_date": "2026-10-06",
+      "last_modified": "2026-10-06"
+    },
+    {
+      "slug": "turmeric-curcumin-knee-pain",
+      "title": "Turmeric for Knee Pain: Curcumin Evidence, Dose, and Safety",
+      "description": "Turmeric powder, standardized curcumin and enhanced-absorption formulas compared by evidence, dose, interactions, safety, and product quality.",
+      "url": "https://flexi-knee.com/guides/turmeric-curcumin-knee-pain",
+      "read_time_minutes": 19,
+      "published_date": "2026-07-28",
+      "last_modified": "2026-07-28"
+    },
+    {
+      "slug": "understanding-knee-injuries",
+      "title": "Knee Injuries: Common Types, Symptoms & Recovery",
+      "description": "An educational overview of common knee injuries, typical symptoms, and general recovery considerations to help you understand knee joint health.",
+      "url": "https://flexi-knee.com/guides/understanding-knee-injuries",
+      "read_time_minutes": 11,
+      "published_date": null,
+      "last_modified": "2026-04-02"
+    },
+    {
+      "slug": "varicose-veins-knee-pain",
+      "title": "Can Varicose Veins Cause Knee Pain? Behind-Knee Warning Signs",
+      "description": "Compare varicose-vein aching, Baker's cyst, joint pain, superficial thrombosis and DVT, with treatment options and urgent warning signs.",
+      "url": "https://flexi-knee.com/guides/varicose-veins-knee-pain",
+      "read_time_minutes": 20,
+      "published_date": "2026-07-28",
+      "last_modified": "2026-08-04"
+    },
+    {
+      "slug": "walking-cane-knee-pain",
+      "title": "Walking Cane for Knee Pain: Which Hand, Correct Height, and Stairs",
+      "description": "Learn which hand holds a cane for knee pain, how height and grip affect comfort, and how to approach stairs, uneven ground and choosing enough support.",
+      "url": "https://flexi-knee.com/guides/walking-cane-knee-pain",
+      "read_time_minutes": 12,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "walking-pad-knee-pain",
+      "title": "Walking Pad Knee Pain: Desk Setup, Stride, and Workday Dose",
+      "description": "Troubleshoot knee pain on an under-desk walking pad. Check desk height, belt space, stride, shoes and workday walking time before adding more steps.",
+      "url": "https://flexi-knee.com/guides/walking-pad-knee-pain",
+      "read_time_minutes": 14,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    },
+    {
+      "slug": "warm-feeling-in-knee",
+      "title": "Warm Feeling in the Knee: Causes & Comfort",
+      "description": "Learn why your knee feels warm, common causes of knee warmth including circulation and activity, and simple everyday strategies to support comfortable knee joints.",
+      "url": "https://flexi-knee.com/guides/warm-feeling-in-knee",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-03-08"
+    },
+    {
+      "slug": "warmth-vs-infrared-knee-routines",
+      "title": "Warmth vs Infrared: Daily Knee Routine Differences",
+      "description": "Explore how warmth and infrared technology are used differently in daily knee comfort routines and when people choose one over the other.",
+      "url": "https://flexi-knee.com/guides/warmth-vs-infrared-knee-routines",
+      "read_time_minutes": 10,
+      "published_date": null,
+      "last_modified": "2026-01-19"
+    },
+    {
+      "slug": "weight-affects-knee-pain",
+      "title": "How Your Weight Affects Knee Pain: What to Know",
+      "description": "Discover how your weight affects knee pain, joint pressure during daily activities, and simple habits that may support better knee comfort over time.",
+      "url": "https://flexi-knee.com/guides/weight-affects-knee-pain",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-03-30"
+    },
+    {
+      "slug": "what-causes-knee-pain-guide",
+      "title": "What Causes Knee Pain? Reasons, Patterns & Tips",
+      "description": "What causes knee pain? Learn common causes by location, sudden knee pain without injury, knee pain in females, and daily relief tips for lasting comfort.",
+      "url": "https://flexi-knee.com/guides/what-causes-knee-pain-guide",
+      "read_time_minutes": 16,
+      "published_date": null,
+      "last_modified": "2026-07-19"
+    },
+    {
+      "slug": "who-benefits-from-knee-therapy-devices",
+      "title": "Who Benefits Most From At-Home Knee Therapy Devices?",
+      "description": "Learn who these devices are designed for and what to realistically expect from at-home support.",
+      "url": "https://flexi-knee.com/guides/who-benefits-from-knee-therapy-devices",
+      "read_time_minutes": 4,
+      "published_date": null,
+      "last_modified": "2025-05-22"
+    },
+    {
+      "slug": "why-do-my-knees-crack-or-pop",
+      "title": "Why Do My Knees Crack or Pop? Causes and Warning Signs",
+      "description": "Learn why knees crack, pop, or grind when bending, squatting, and standing up, plus how painless crepitus differs from sounds that need assessment.",
+      "url": "https://flexi-knee.com/guides/why-do-my-knees-crack-or-pop",
+      "read_time_minutes": 14,
+      "published_date": null,
+      "last_modified": "2026-07-31"
+    },
+    {
+      "slug": "why-do-my-knees-hurt-when-sleeping",
+      "title": "Why Do My Knees Hurt at Night or When Sleeping?",
+      "description": "Learn why knees may ache, throb, or feel stiff at night, how sleep position affects symptoms, what to track, and which warning signs need medical care.",
+      "url": "https://flexi-knee.com/guides/why-do-my-knees-hurt-when-sleeping",
+      "read_time_minutes": 16,
+      "published_date": null,
+      "last_modified": "2026-07-29"
+    },
+    {
+      "slug": "why-knee-pain-doesnt-go-away",
+      "title": "Why Knee Pain Often Doesn't Go Away on Its Own",
+      "description": "A simple explanation of why knee discomfort can feel persistent and what helps support daily comfort.",
+      "url": "https://flexi-knee.com/guides/why-knee-pain-doesnt-go-away",
+      "read_time_minutes": 5,
+      "published_date": null,
+      "last_modified": "2025-01-15"
+    },
+    {
+      "slug": "why-knee-pain-gets-worse-with-age",
+      "title": "Why Knee Pain Gets Worse With Age: Explained",
+      "description": "Understand why knee pain gets worse with age. Learn about cartilage thinning, fluid loss, muscle changes, and daily habits that protect aging knees.",
+      "url": "https://flexi-knee.com/guides/why-knee-pain-gets-worse-with-age",
+      "read_time_minutes": 16,
+      "published_date": null,
+      "last_modified": "2026-03-01"
+    },
+    {
+      "slug": "women-men-knee-comfort-patterns",
+      "title": "Knee Comfort: How Women & Men Experience It Differently",
+      "description": "Explore common daily patterns and lifestyle habits that influence knee comfort differently for women and men.",
+      "url": "https://flexi-knee.com/guides/women-men-knee-comfort-patterns",
+      "read_time_minutes": 11,
+      "published_date": null,
+      "last_modified": "2026-01-19"
+    },
+    {
+      "slug": "work-boots-knee-pain",
+      "title": "Work Boots and Knee Pain: Protective Fit, Concrete Floors, and Long Shifts",
+      "description": "Troubleshoot knee pain in work boots while keeping required PPE. Check toe room, insoles, worn soles, concrete-floor standing and long-shift workload.",
+      "url": "https://flexi-knee.com/guides/work-boots-knee-pain",
+      "read_time_minutes": 13,
+      "published_date": "2026-08-30",
+      "last_modified": "2026-08-30"
+    }
+  ],
+  "product_sources": {
+    "prices_variants_inventory": "Shopify API; connect separately",
+    "public_handle_aliases": "src/lib/product-config.ts",
+    "primary_product_seo": "src/pages/ProductDetail.tsx",
+    "secondary_product_seo": "src/data/product-profiles.ts",
+    "secondary_product_renderer": "src/pages/SecondaryProductDetail.tsx",
+    "shopify_empty_seo_does_not_prove_live_seo_is_missing": true,
+    "shopify_empty_alt_does_not_prove_live_alt_is_missing": true
+  },
+  "limitations": [
+    "Titles, summaries and registered dates support duplicate screening, not a full-text semantic audit.",
+    "This inventory does not establish what commit is deployed to Vercel or what search engines see.",
+    "Unknown original publication dates remain null; last_modified is not a substitute.",
+    "Product facts, image content, analytics and medical claims require their own evidence."
+  ]
+}

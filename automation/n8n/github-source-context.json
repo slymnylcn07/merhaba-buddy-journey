@@ -1,0 +1,197 @@
+{
+  "name": "FlexiKnee - 06 GitHub Source Context",
+  "nodes": [
+    {
+      "id": "manual",
+      "name": "When clicking Execute workflow",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "config",
+      "name": "Repository Config",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ref",
+              "name": "repository_ref",
+              "value": "main",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "resolve",
+      "name": "GitHub - Resolve Ref",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        0
+      ],
+      "parameters": {
+        "url": "=https://api.github.com/repos/slymnylcn07/merhaba-buddy-journey/commits/{{ encodeURIComponent($json.repository_ref) }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 20000
+        }
+      }
+    },
+    {
+      "id": "inventory",
+      "name": "GitHub - Read Source Inventory",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        0
+      ],
+      "parameters": {
+        "url": "=https://raw.githubusercontent.com/slymnylcn07/merhaba-buddy-journey/{{ $json.sha }}/automation/site-context.json",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 20000
+        }
+      }
+    },
+    {
+      "id": "tree",
+      "name": "GitHub - Read Source Tree",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        960,
+        0
+      ],
+      "parameters": {
+        "url": "=https://api.github.com/repos/slymnylcn07/merhaba-buddy-journey/git/trees/{{ $('GitHub - Resolve Ref').first().json.sha }}?recursive=1",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 20000
+        }
+      }
+    },
+    {
+      "id": "validate",
+      "name": "Validate Source Context",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1200,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const validate = function validateSourceContext(context,tree,commitSha,repositoryRef){const repository=\"slymnylcn07/merhaba-buddy-journey\";const requiredSources=[\"AGENTS.md\",\"src/data/guides.ts\",\"src/data/recent-guides-data.ts\",\"src/data/article-loaders.ts\",\"src/data/recent-article-loaders.ts\",\"src/data/guide-date-overrides.ts\",\"src/data/guide-publication-dates.ts\",\"src/data/product-profiles.ts\",\"src/lib/product-config.ts\",\"src/pages/ProductDetail.tsx\",\"src/pages/SecondaryProductDetail.tsx\"];if(context?.schema_version!==1||context.repository!==repository||context.site_origin!==\"https://flexi-knee.com\"){throw new Error(\"Unexpected repository, origin or automation schema.\")}if(context.scope!==\"github_source_inventory_not_a_live_site_audit\"||!/^[a-f0-9]{40}$/.test(commitSha)){throw new Error(\"Invalid source scope or commit.\")}if(tree?.truncated!==false||!Array.isArray(tree.tree))throw new Error(\"GitHub returned an incomplete source tree.\");const blobs=new Map(tree.tree.filter(entry=>entry.type===\"blob\").map(entry=>[entry.path,entry.sha]));for(const path of requiredSources){if(!/^[a-f0-9]{40}$/.test(context.source_blobs?.[path]||\"\")||blobs.get(path)!==context.source_blobs[path]){throw new Error(`Source inventory is stale or incomplete: ${path}. Regenerate it in the PR.`)}}if(!Array.isArray(context.guides)||context.guides.length===0||context.guide_count!==context.guides.length||context.loader_count!==context.guide_count){throw new Error(\"Guide registry counts are invalid.\")}const seen=new Set;const titles=new Map;for(const guide of context.guides){if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(guide.slug)||seen.has(guide.slug)||typeof guide.title!==\"string\"||!guide.title.trim()||typeof guide.description!==\"string\"||guide.url!==`${context.site_origin}/guides/${guide.slug}`){throw new Error(\"Guide metadata contains a duplicate slug or invalid title, summary or URL.\")}if([guide.published_date,guide.last_modified].some(date=>date!==null&&(typeof date!==\"string\"||!/^\\d{4}-\\d{2}-\\d{2}$/.test(date)))){throw new Error(`Invalid registered date: ${guide.slug}.`)}seen.add(guide.slug);const key=guide.title.normalize(\"NFKC\").toLowerCase().replace(/\\s+/g,\" \").trim();titles.set(key,[...titles.get(key)||[],guide.slug])}return{repository,source_ref:repositoryRef,source_commit_sha:commitSha,source_fingerprint:context.source_fingerprint,source_files_verified:requiredSources.length,source_snapshot_verified:true,production_deployment_verified:false,fetched_at:new Date().toISOString(),guide_count:context.guide_count,loader_count:context.loader_count,duplicate_title_candidates:[...titles.values()].filter(slugs=>slugs.length>1),guides:context.guides,product_sources:context.product_sources,limitations:context.limitations}};\nreturn [{ json: validate(\n  $('GitHub - Read Source Inventory').first().json,\n  $input.first().json,\n  $('GitHub - Resolve Ref').first().json.sha,\n  $('Repository Config').first().json.repository_ref\n) }];"
+      }
+    },
+    {
+      "id": "note",
+      "name": "Read-only source inventory",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        240,
+        240
+      ],
+      "parameters": {
+        "width": 770,
+        "height": 220,
+        "content": "## FlexiKnee GitHub source connection\nManual, read-only workflow. No GitHub token or LLM call.\n\nRepository Config defaults to main. During PR testing, explicitly select the draft branch. The output records the exact commit and never claims production deployment was verified.\n\nThe source blob hashes must match the same commit. Regenerate the inventory after changing the registered source files. Do not treat empty Shopify SEO/alt fields as proof of missing live metadata.\n\nAnonymous GitHub API limits apply. This workflow is not scheduled."
+      }
+    }
+  ],
+  "connections": {
+    "When clicking Execute workflow": {
+      "main": [
+        [
+          {
+            "node": "Repository Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Repository Config": {
+      "main": [
+        [
+          {
+            "node": "GitHub - Resolve Ref",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub - Resolve Ref": {
+      "main": [
+        [
+          {
+            "node": "GitHub - Read Source Inventory",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub - Read Source Inventory": {
+      "main": [
+        [
+          {
+            "node": "GitHub - Read Source Tree",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub - Read Source Tree": {
+      "main": [
+        [
+          {
+            "node": "Validate Source Context",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "pinData": {},
+  "tags": [],
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Istanbul",
+    "saveDataSuccessExecution": "none",
+    "saveDataErrorExecution": "none",
+    "saveManualExecutions": false
+  }
+}
