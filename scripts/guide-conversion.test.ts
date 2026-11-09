@@ -17,6 +17,10 @@ const targets = [
   "knee-compression-sleeve-sizing-guide",
 ];
 const videoTargets = [
+  // Also explicitly approved in seasonal-guides.test.ts.
+  "gifts-for-parents-with-knee-pain",
+  "turkey-trot-guide-sensitive-knees",
+  "turkey-trot-run-walk-preparation",
   "post-ride-knee-recovery",
   "indoor-cycling-knee-pain",
   "cycling-knee-osteoarthritis",
