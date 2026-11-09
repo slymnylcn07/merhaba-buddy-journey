@@ -20,6 +20,8 @@ export interface ArticleData {
   metaTitle: string;
   metaDescription: string;
   heroImage: string;
+  /** Visible-scene description for editorial hero imagery. */
+  heroAlt?: string;
   heroObjectPosition?: string;
   publishedDate: string;
   content: ReactNode;
@@ -39,3 +41,4 @@ export interface ArticleExport {
   article: ArticleData;
   cta: string;
 }
+
