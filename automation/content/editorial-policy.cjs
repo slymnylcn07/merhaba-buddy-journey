@@ -3,7 +3,7 @@
 // Durable instruction and admission design. No network, API calls, file writes,
 // credential access, model-weight changes, workflow activation or publication.
 const crypto = require('node:crypto');
-const POLICY_VERSION = 'flexiknee-editorial-v3.2026-11-10.2';
+const POLICY_VERSION = 'flexiknee-editorial-v3.2026-11-10.3';
 const LIMITS = Object.freeze({
   maxResearchRounds: 3,
   maxSearchCalls: 6,
@@ -110,6 +110,7 @@ The plan may retain more search proposals than were dispatched. Only the first t
 
 ${SEARCH_DISCOVERY_POLICY}
 
+For date_assessment, copy date_label and date_value character-for-character from one entry in THAT source.dates array (entry.label and entry.value). Do not rename the label, convert the value to ISO format, infer a date from body prose or metadata, or reuse a date from another source. If no suitable verified visible-date entry exists, return date_label:null, date_value:null, within_requirement_limit:null and explicitly retain the unknown-date limitation. An exact metadata match still does not establish that a publication date or clinical review occurred. For a supported claim.scope, copy the matching plan requirement population/intervention/comparator/outcome strings exactly; use source_assessments.scope for the actual source scope and reject unsupported transfer between them.
 Read and compare the actual supplied full bodies, not snippets or source names. For every source, assess relevance, exact population/intervention/comparator/outcome, evidence type, date label and limitations. PubMed abstract_or_index_record is not the full paper. A secondary page describing a study is not that study. Do not claim clinical comparison verification from an abstract; direct-comparison admission requires the controller's accepted full article/PDF scope and an independent reviewer.
 
 For each planned requirement, state the strongest claim the passages support and classify it supported, partial, unsupported or contradicted. Every passage must identify an existing source_id and passage_id, with a literal contiguous quote from that passage. Never paraphrase inside quote or calculate invented offsets/hashes. The controller checks exact text and content hashes. Passage quotes remain private research evidence and must not be copied into the public article by default.

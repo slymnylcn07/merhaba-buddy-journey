@@ -23,7 +23,7 @@
     "indexnow": "node scripts/submit-indexnow.mjs",
     "validate:content": "tsx scripts/validate-content-registry.ts",
     "validate:assets": "node scripts/validate-performance-assets.mjs",
-    "test:content-pipeline": "node --test automation/content/contract.test.cjs automation/content/editorial-policy.test.cjs"
+    "test:content-pipeline": "node --test automation/content/contract.test.cjs automation/content/editorial-policy.test.cjs automation/content/research-recovery.test.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
