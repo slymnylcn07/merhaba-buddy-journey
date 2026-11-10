@@ -403,6 +403,8 @@ const GuideArticle = () => {
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-slate-950/55 via-slate-950/25 to-white" />
           <div
             className="h-[34vh] bg-cover bg-center bg-no-repeat md:h-[44vh]"
+            role={article.heroAlt ? "img" : undefined}
+            aria-label={article.heroAlt}
             style={{
               backgroundImage: `url(${article.heroImage})`,
               backgroundPosition: article.heroObjectPosition || "center",
@@ -621,3 +623,4 @@ const GuideArticle = () => {
 };
 
 export default GuideArticle;
+

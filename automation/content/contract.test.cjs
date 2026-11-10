@@ -1,0 +1,151 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');
+const core=require('./content-core.cjs');const {draftFiles}=require('./export-draft.cjs');
+const {makePassedResearch}=require('./research-v3.fixtures.cjs');
+const {hash}=require('./research-v3-contracts.cjs');
+const files=Object.fromEntries(['guides','recent-guides-data','recent-article-loaders','recent-article-ctas','guide-thumbnail-loaders'].map(p=>['src/data/'+p+'.ts',fs.readFileSync(path.join(__dirname,'../../src/data/'+p+'.ts'),'utf8')]));
+const guides=core.inventory([files['src/data/guides.ts'],files['src/data/recent-guides-data.ts']]);
+const sourceUrls=['https://www.nhs.uk/symptoms/knee-pain/','https://orthoinfo.aaos.org/en/staying-healthy/exercise/'];
+const research=makePassedResearch({now:new Date().toISOString(),sourceUrls});
+const [S1,S2]=research.sources.map(s=>s.id);
+const raw={schema_version:1,slug:'synthetic-content-pipeline-contract-fixture',title:'Synthetic content pipeline contract fixture',metaTitle:'Synthetic editorial pipeline contract example',metaDescription:'This synthetic test checks the article drafting contract and cannot be treated as real editorial content or a published health guide.',intro:'A synthetic introduction used solely to check the article contract. It is not intended for publication and contains no clinical advice.',quickAnswer:'This synthetic fixture validates the structure of a draft package. It does not represent a researched or published guide.',novelty_tr:'Bu yalnızca test verisidir. Gerçek makale üretimi veya konu araştırması olarak kabul edilemez.',sections:Array.from({length:3},(_,i)=>({heading:'Synthetic section number '+i,paragraphs:['Synthetic contract prose, used only for a structural test. No health claim is supplied. '.repeat(9)],source_ids:[S1,S2]})),faqs:[],internalLinks:[{slug:guides[0].slug,label:guides[0].title}],imagePrompt:'Synthetic editorial test image brief for a photograph of adults in a park. No text, logo, medical devices or health claims.',imageAlt:'Two adults walking along a level park path.',cta:{headline:'Inspect the optional product information',text:'This is synthetic product copy for a structural contract test. It makes no treatment or health outcome claim.'}};
+const article=core.validateArticle(raw,research,guides);
+const bytes=Buffer.alloc(120);bytes.write('RIFF',0);bytes.write('WEBP',8);
+const pkg={schema_version:1,status:'ready_for_draft_export',export_policy:'draft_pr_only_no_merge',manager_decision_key:'fixture-decision',result_key:'fixture-result',article,article_fingerprint:core.fingerprint(JSON.stringify(article)),research,research_snapshot_sha256:research.research_audit.snapshot_sha256,image:{base64:bytes.toString('base64'),mime_type:'image/webp',alt_text:raw.imageAlt,visual_review:{approved:true,violations:[]}}};
+test('all 190 current guide records, including quoted-key recent entries, are screened',()=>{assert.ok(guides.length>=190);assert.ok(guides.some(g=>g.slug==='gifts-for-parents-with-knee-pain'));});
+test('existing search intent is rejected before paid research',()=>{assert.equal(core.topicCandidate([{query:'knee mobility after 50',impressions:100}],null,guides,[]),null);});
+test('source URL filter rejects lookalike domains, HTTP and internal URLs',()=>{for(const u of ['http://www.nhs.uk/knee','https://nhs.uk.evil.com/knee','https://localhost/knee','https://nhs.uk@evil.com/knee'])assert.equal(core.validSourceUrl(u),false);});
+test('source snippets do not satisfy full source content',()=>{assert.equal(core.sourcePacket({results:[{url:research.sources[0].url,content:'small snippet'}]},{topic:'test'},new Date().toISOString()).status,'insufficient_sources');});
+test('unknown source IDs, duplicates, stale evidence and invented review claims fail',()=>{assert.throws(()=>core.validateArticle({...raw,slug:guides[0].slug},research,guides));const bad=structuredClone(raw);bad.sections[0].source_ids=['S99'];assert.throws(()=>core.validateArticle(bad,research,guides));assert.throws(()=>core.validateArticle(raw,{...research,created_at:'2020-01-01'},guides));assert.throws(()=>core.validateArticle({...raw,intro:raw.intro+' Clinically proven.'},research,guides));});
+test('draft exporter refuses changed content or rejected image',()=>{assert.throws(()=>draftFiles({...pkg,article:{...article,title:'Changed after approval'}},files,'2026-11-09'));assert.throws(()=>draftFiles({...pkg,image:{...pkg.image,visual_review:{approved:false,violations:['bad']}}},files,'2026-11-09'));});
+test('export adds one guide and preserves every original registration',()=>{const out=draftFiles(pkg,files,'2026-11-09');assert.equal(core.inventory([files['src/data/guides.ts'],out['src/data/recent-guides-data.ts']]).length,guides.length+1);for(const g of guides)assert.ok((files['src/data/guides.ts']+out['src/data/recent-guides-data.ts']).includes('"'+g.slug+'"'));assert.equal(Object.keys(out).length,7);const a=out['src/data/articles/'+article.slug+'.tsx'];assert.match(a,/medicalReviewPending: true/);assert.match(a,/sources:/);assert.ok(!a.includes('PremiumCTA'));assert.match(a,/heroAlt:/);assert.ok(!JSON.stringify(out['automation/content/review-manifests/'+article.slug+'.json']).includes('Synthetic test evidence'));});
+test('export appends inline citations to each final section paragraph and keeps full references in the bibliography',()=>{
+ const r=makePassedResearch({now:new Date().toISOString(),sourceUrls:[...sourceUrls,'https://www.nhs.uk/conditions/tendonitis/','https://www.nhs.uk/conditions/arthritis/'],sourceBodies:['PRIVATE_SOURCE_BODY_DO_NOT_EXPORT '.repeat(40)],sourceTitles:['Source title with "quotes" & 2 < 3'],critiqueModify:c=>{c.claims[0].passages=c.claims[0].passages.slice(0,3);}});
+ const [first,second,third]=r.sources.map(s=>s.id);
+ const a=structuredClone(raw);
+ a.sections[0].paragraphs.push('This additional synthetic final paragraph checks citation placement. It does not add a clinical claim or represent real editorial content.');
+ a.sections[0].source_ids=[first];a.sections[1].source_ids=[second];a.sections[2].source_ids=[first,second,first];
+ a.faqs=[{question:'What does this synthetic FAQ demonstrate?',answer:'This synthetic FAQ verifies that its own reference remains in the final bibliography, without being attached to unrelated sections.',source_ids:[third]}];
+ const approved=core.validateArticle(a,r,guides);
+ const out=draftFiles({...pkg,research:r,research_snapshot_sha256:r.research_audit.snapshot_sha256,private_metrics:{private_metric_marker:12345},article:approved,article_fingerprint:core.fingerprint(JSON.stringify(approved))},files,'2026-11-09');
+ const text=out['src/data/articles/'+approved.slug+'.tsx'];
+ const sections=[...text.matchAll(/<section>\n([\s\S]*?)\n<\/section>/g)].map(m=>m[1]);
+ const urls=section=>[...section.matchAll(/href=\{("(?:\\.|[^"\\])*")\}/g)].map(m=>JSON.parse(m[1]));
+ assert.equal(sections.length,3);
+ assert.deepEqual(urls(sections[0]),[r.sources[0].url]);
+ assert.deepEqual(urls(sections[1]),[r.sources[1].url]);
+ assert.deepEqual(urls(sections[2]),[r.sources[0].url,r.sources[1].url]);
+ for(let index=0;index<sections.length;index++){
+  const paragraphs=[...sections[index].matchAll(/<p>([\s\S]*?)<\/p>/g)].map(m=>m[1]);
+  assert.equal(paragraphs.length,a.sections[index].paragraphs.length,'No separate source paragraph or box');
+  for(const paragraph of paragraphs.slice(0,-1))assert.deepEqual(urls(paragraph),[]);
+  assert.deepEqual(urls(paragraphs.at(-1)),urls(sections[index]));
+ }
+ assert.ok(sections[0].includes(JSON.stringify(r.sources[0].publisher+': '+r.sources[0].title)));
+ assert.ok(sections[0].includes('aria-label={'+JSON.stringify('Source 1: '+r.sources[0].publisher+': '+r.sources[0].title)+'}'));
+ assert.match(sections[0],/>\[1\]<\/a>/);
+ assert.match(sections[1],/>\[2\]<\/a>/);
+ assert.match(sections[2],/>\[1\]<\/a>[\s\S]*>\[2\]<\/a>/);
+ assert.match(sections[0],/target="_blank" rel="noreferrer noopener"/);
+ const manifest=JSON.parse(out['automation/content/review-manifests/'+approved.slug+'.json']);
+ assert.equal(manifest.research_policy_version,3);
+ assert.deepEqual(manifest.sources.map(s=>s.url),r.sources.slice(0,3).map(s=>s.url));
+ const publicText=Object.values(out).filter(v=>typeof v==='string').join('\n');
+ for(const privateValue of ['PRIVATE_SOURCE_BODY_DO_NOT_EXPORT','private_metric_marker','fixture-decision','fixture-result','"source_ids"','research_audit','claim_map','synthetic-request-',r.research_audit.snapshot_sha256,first,second,third,r.sources[3].url])assert.ok(!publicText.includes(privateValue),'Private or unrelated data leaked: '+privateValue);
+ const ts=require('typescript');
+ const compiled=ts.transpileModule(text,{compilerOptions:{jsx:ts.JsxEmit.ReactJSX,module:ts.ModuleKind.CommonJS},fileName:approved.slug+'.tsx',reportDiagnostics:true});
+ assert.deepEqual((compiled.diagnostics||[]).filter(d=>d.category===ts.DiagnosticCategory.Error),[]);
+});
+test('export refuses unsafe section citation URLs',()=>{
+ for(const url of ['javascript:alert(1)','http://www.nhs.uk/knee','https://user:password@www.nhs.uk/knee']){
+  const r=structuredClone(research);r.sources[0].url=url;
+  assert.throws(()=>draftFiles({...pkg,research:r},files,'2026-11-09'),/Missing, expired or incomplete research/);
+ }
+});
+test('publication evidence and reporting lag gate measurement',()=>{assert.equal(core.measurementPlan({state:'draft_only'}).state,'await_verified_publication');const now=Date.now(),p={state:'verified_live',slug:'example',production_url:'https://flexi-knee.com/guides/example',canonical:'https://flexi-knee.com/guides/example',commit_sha:'a'.repeat(40),http_status:200,verified_at:new Date().toISOString(),published_at:new Date(now-18*86400000).toISOString()};assert.equal(core.measurementPlan(p,now).state,'ready');assert.equal(core.measurementPlan({...p,published_at:new Date(now-10*86400000).toISOString()},now).state,'await_data');});
+
+const isoAgo=ms=>new Date(Date.now()-ms).toISOString();
+const day=86400000;
+function rejectResearch(mutate){
+ const invalid=structuredClone(research);mutate(invalid);
+ assert.throws(()=>core.validateArticle(raw,invalid,guides),/Missing, expired or incomplete research/);
+ assert.throws(()=>draftFiles({...pkg,research:invalid},files,'2026-11-09'),/Missing, expired or incomplete research/);
+}
+function cachedResearch(){
+ return {...structuredClone(research),provider:'source_bank_cache',topic:'Why do knees click when bending?',expires_at:isoAgo(-day),sources:research.sources.map(s=>({...s,retrieved_at:isoAgo(4*day),expires_at:isoAgo(-day),review_state:'scope_screen_passed_pending_independent_review'}))};
+}
+test('writer and exporter both require a passed current preflight and complete bodies',()=>{
+ for(const mutate of [r=>delete r.source_preflight,r=>r.source_preflight.passed=false,r=>r.source_preflight.version=1,r=>r.status='insufficient_sources',r=>r.sources[0].content_truncated=true,r=>delete r.sources[0].content_truncated,r=>r.sources[0].content='snippet'])rejectResearch(mutate);
+});
+test('writer and exporter require original passed v3 audit, full evidence and verified claim map',()=>{
+ for(const mutate of [r=>delete r.research_audit,r=>r.research_audit.version=2,r=>r.research_audit.status='failed',r=>r.research_audit.passed=false,r=>delete r.research_audit.plan,r=>delete r.research_audit.final_critique,r=>r.research_audit.claim_map=[],r=>delete r.sources[0].content_sha256,r=>r.sources[0].full_content=false])rejectResearch(mutate);
+});
+test('approved research snapshot binds source bodies, citation URLs, labels, passages and scope',()=>{
+ for(const mutate of [r=>r.sources[0].content+=' changed',r=>r.sources[0].url='https://www.nhs.uk/conditions/unrelated/',r=>r.sources[0].title='Unreviewed source label',r=>r.sources[0].publisher='Unreviewed publisher',r=>r.sources[0].content_scope='full_text_article_page',r=>r.sources[0].passages[0].text+=' changed',r=>r.research_audit.snapshot_sha256='0'.repeat(64)])rejectResearch(mutate);
+});
+// Test-only rebinding demonstrates that a self-consistent checksum is not a
+// substitute for the independent review, provenance and source/claim contracts.
+function rebindSyntheticSnapshot(r){const bound=structuredClone(r);delete bound.research_audit.snapshot_sha256;r.research_audit.snapshot_sha256=hash(bound);}
+test('rebinding a failed or fabricated review cannot manufacture v3 approval',()=>{
+ const mutations=[
+  r=>r.research_audit.claim_map=[],
+  r=>r.research_audit.independent_review.review.decision='reject',
+  r=>r.research_audit.independent_review.review.claim_reviews[0].entailment=false,
+  r=>r.research_audit.independent_review.review.source_reviews[0].full_content_verified=false,
+  r=>r.research_audit.independent_review.provenance.provider='deepseek',
+  r=>r.research_audit.provenance.find(call=>call.kind==='independent_review').provenance.model='deepseek-chat',
+  r=>r.research_audit.verification_attempts=[],
+  r=>r.research_audit.ledger[0].event_hash='0'.repeat(64),
+  r=>r.sources[0].content_sha256='0'.repeat(64),
+  r=>r.research_audit.budgets.used.searches=6,
+ ];
+ for(const mutate of mutations)rejectResearch(r=>{mutate(r);rebindSyntheticSnapshot(r);});
+});
+test('export package is bound to the exact research snapshot approved with its article',()=>{
+ for(const snapshot of [undefined,'','0'.repeat(64)])assert.throws(()=>draftFiles({...pkg,research_snapshot_sha256:snapshot},files,'2026-11-09'),/Research changed since review/);
+ const separatelyValid=makePassedResearch({now:new Date().toISOString(),sourceUrls,main_sha:'b'.repeat(40)});
+ assert.doesNotThrow(()=>core.validateArticle(raw,separatelyValid,guides));
+ assert.throws(()=>draftFiles({...pkg,research:separatelyValid},files,'2026-11-09'),/Research changed since review/);
+});
+test('sources retained only for audit cannot authorize section or FAQ citations',()=>{
+ const r=makePassedResearch({now:new Date().toISOString(),sourceUrls:[...sourceUrls,'https://www.nhs.uk/conditions/tendonitis/'],critiqueModify:c=>{c.claims[0].passages=c.claims[0].passages.slice(0,2);}});
+ assert.equal(r.sources.length,3,'Retain full private audit context');
+ assert.doesNotThrow(()=>core.validateArticle(raw,r,guides));
+ const section=structuredClone(raw);section.sections[0].source_ids=[r.sources[2].id];
+ assert.throws(()=>core.validateArticle(section,r,guides),/Invalid sourced section/);
+ const faq=structuredClone(raw);faq.faqs=[{question:'Can an audit-only source support this FAQ?',answer:'This synthetic answer must be rejected because its source is not part of an approved claim mapping.',source_ids:[r.sources[2].id]}];
+ assert.throws(()=>core.validateArticle(faq,r,guides),/Invalid sourced FAQ/);
+});
+test('writer and exporter reject invalid, stale or future packet and source timestamps',()=>{
+ for(const mutate of [r=>r.created_at='bad date',r=>r.created_at=isoAgo(4*day),r=>r.created_at=isoAgo(-10*60000),r=>r.sources[0].retrieved_at='bad date',r=>r.sources[0].retrieved_at=isoAgo(4*day),r=>r.sources[0].retrieved_at=isoAgo(-10*60000)])rejectResearch(mutate);
+});
+test('explicit packet and source expiry is enforced even for direct-provider research',()=>{
+ for(const mutate of [r=>r.expires_at=isoAgo(1000),r=>r.expires_at='bad date',r=>r.sources[0].expires_at=isoAgo(1000),r=>r.sources[0].expires_at='bad date'])rejectResearch(mutate);
+});
+test('duplicate source identities and malformed source packets cannot authorize a draft',()=>{
+ for(const mutate of [r=>r.sources[1].id=r.sources[0].id,r=>r.sources[1].url=r.sources[0].url,r=>r.sources[0]=null,r=>r.sources=[],r=>delete r.sources])rejectResearch(mutate);
+});
+test('a legacy cache wrapper cannot substitute for genuine current v3 research admission',()=>{
+ const cached=cachedResearch();
+ assert.throws(()=>core.validateArticle(raw,cached,guides),/Missing, expired or incomplete research/);
+ assert.throws(()=>draftFiles({...pkg,research:cached},files,'2026-11-09'),/Missing, expired or incomplete research/);
+});
+test('a fresh cache wrapper never revives expired sources or broadens their clinical scope',()=>{
+ for(const mutate of [r=>r.expires_at=isoAgo(1000),r=>r.sources[0].expires_at=isoAgo(1000),r=>delete r.sources[0].expires_at,r=>r.sources[0].expires_at=isoAgo(-4*day),r=>r.sources[0].review_state='unreviewed',r=>r.topic='Knee clicking after knee replacement surgery']){
+  const cached=cachedResearch();mutate(cached);
+  assert.throws(()=>core.validateArticle(raw,cached,guides),/Missing, expired or incomplete research/);
+  assert.throws(()=>draftFiles({...pkg,research:cached},files,'2026-11-09'),/Missing, expired or incomplete research/);
+ }
+});
+test('source packet helper rejects over-limit and provider-truncated bodies without clipping',()=>{
+ for(const content of [research.sources[0].content,'X'.repeat(14001)]){
+  const results=research.sources.map(s=>({...s,content,content_truncated:content.length<=14000}));
+  const packet=core.sourcePacket({results},{topic:'Synthetic fixture'},new Date().toISOString());
+  assert.equal(packet.status,'insufficient_sources');assert.deepEqual(packet.sources,[]);
+ }
+ const truncated=core.sourcePacket({results:research.sources.map(s=>({...s,truncated:true}))},{topic:'Synthetic fixture'},new Date().toISOString());
+ assert.equal(truncated.status,'insufficient_sources');assert.deepEqual(truncated.sources,[]);
+ const packet=core.sourcePacket({results:research.sources},{topic:'Synthetic fixture'},new Date().toISOString());
+ assert.equal(packet.sources[0].content,research.sources[0].content);assert.equal(packet.sources[0].content_truncated,false);
+ assert.throws(()=>core.validateArticle(raw,packet,guides),/Missing, expired or incomplete research/);
+});
+

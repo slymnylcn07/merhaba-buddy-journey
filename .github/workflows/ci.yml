@@ -48,6 +48,9 @@ jobs:
       - name: Validate content registry
         run: npm run validate:content
 
+      - name: Test editorial pipeline contracts
+        run: npm run test:content-pipeline
+
       - name: Test metadata guardrails
         run: npm run test:metadata
 
@@ -74,3 +77,4 @@ jobs:
 
       - name: Validate performance assets
         run: npm run validate:assets
+
