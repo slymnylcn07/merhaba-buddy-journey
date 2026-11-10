@@ -1,4 +1,5 @@
 /* Pure, deterministic contracts shared by n8n and the draft exporter. */
+const {researchFresh}=require('./research-guards.cjs');
 const stop = new Set('the a an and or for with from into that this what when why how your you are does after before about guide knee knees pain'.split(' '));
 function tokens(s) { return [...new Set((String(s).toLowerCase().match(/[a-z0-9]+/g)||[]).map(x=>x.length>4&&x.endsWith('s')&&!x.endsWith('ss')?x.slice(0,-1):x))].filter(x=>x.length>2&&!stop.has(x)); }
 function overlap(a,b) { const x=tokens(a), y=new Set(tokens(b)); return x.length&&y.size?x.filter(v=>y.has(v)).length/Math.min(x.length,y.size):0; }
@@ -16,7 +17,7 @@ function topicCandidate(queries,trends,guides,history) {
 }
 function validSourceUrl(s) {return /^https:\/\/(?:[a-z0-9-]+\.)*(?:nhs\.uk|niams\.nih\.gov|nia\.nih\.gov|cdc\.gov)\/[a-z0-9/_?=&.%+-]*$/i.test(s)||/^https:\/\/orthoinfo\.aaos\.org\/[a-z0-9/_?=&.%+-]*$/i.test(s);}
 function sourcePacket(response,brief,now) {
- const seen=new Set();const sources=(response.results||[]).filter(x=>{if(!validSourceUrl(x.url)||seen.has(x.url)||typeof x.content!=='string'||x.content.length<800)return false;seen.add(x.url);return true;}).slice(0,4).map((x,i)=>({id:'S'+(i+1),url:x.url,title:String(x.title||'').slice(0,240),publisher:x.url.split('/')[2],publication_date:x.date||null,retrieved_at:now,content:x.content.slice(0,14000),content_truncated:x.content.length>14000}));
+ const seen=new Set();const sources=(response.results||[]).filter(x=>{if(!validSourceUrl(x.url)||seen.has(x.url)||typeof x.content!=='string'||x.content.length<800||x.content.length>14000||x.truncated===true||(x.content_truncated!==undefined&&x.content_truncated!==false))return false;seen.add(x.url);return true;}).slice(0,4).map((x,i)=>({id:'S'+(i+1),url:x.url,title:String(x.title||'').slice(0,240),publisher:x.url.split('/')[2],publication_date:x.date||null,retrieved_at:now,content:x.content,content_truncated:false}));
  return {...brief,created_at:now,provider:'deepseek_search',api_requests:1,request_billed:!response.error&&Array.isArray(response.results)?true:null,token_usage_not_applicable:true,sources,status:sources.length>=2?'sources_available':'insufficient_sources',medical_claims_verified:false,error:response.error?String(response.error.message||response.error).slice(0,500):null};
 }
 function validateArticle(a,research,guides,now=Date.now()) {
@@ -24,7 +25,7 @@ function validateArticle(a,research,guides,now=Date.now()) {
  if(!a||a.schema_version!==1||!str(a.slug,8,100)||!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(a.slug))throw Error('Invalid article slug');
  if(guides.some(g=>g.slug===a.slug||g.title.toLowerCase()===String(a.title).toLowerCase()))throw Error('Existing slug or title');
  for(const [key,min,max] of [['title',20,120],['metaTitle',15,70],['metaDescription',60,180],['intro',80,1800],['quickAnswer',60,900],['imagePrompt',80,1200],['imageAlt',15,180],['novelty_tr',40,1200]])if(!str(a[key],min,max))throw Error('Invalid '+key);
- if(!research||research.sources.length<2||!Number.isFinite(Date.parse(research.created_at))||now-Date.parse(research.created_at)>7*86400000)throw Error('Missing or stale research');
+ if(!researchFresh(research,now))throw Error('Missing, expired or incomplete research');
  if(!Array.isArray(a.sections)||a.sections.length<3||a.sections.length>8)throw Error('Expected 3 to 8 sections');
  const refs=new Set(research.sources.map(s=>s.id));const used=new Set();let chars=0;
  for(const s of a.sections){if(!str(s.heading,8,160)||!Array.isArray(s.paragraphs)||s.paragraphs.length<1||s.paragraphs.length>4||!Array.isArray(s.source_ids)||!s.source_ids.length||s.source_ids.some(id=>!refs.has(id)))throw Error('Invalid sourced section');for(const p of s.paragraphs){if(!str(p,60,1600))throw Error('Invalid paragraph');chars+=p.length;}for(const id of s.source_ids)used.add(id);}
@@ -42,3 +43,4 @@ function measurementPlan(publication,now=Date.now()) {
  const iso=d=>new Date(d).toISOString().slice(0,10);return {state:'ready',page:publication.production_url,start_date:iso(start),end_date:iso(start+13*86400000),baseline_start:iso(start-14*86400000),baseline_end:iso(start-86400000),scope:'first_14_complete_days_plus_3_day_reporting_lag',causation_claim_allowed:false};
 }
 module.exports={tokens,overlap,fingerprint,parse,inventory,topicCandidate,validSourceUrl,sourcePacket,validateArticle,measurementPlan};
+

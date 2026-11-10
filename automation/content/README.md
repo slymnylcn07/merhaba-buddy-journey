@@ -32,6 +32,14 @@ The adapter refuses an existing slug or asset. It updates the recent guide regis
 
 The review manifest contains only source links, artifact fingerprints and required checks. Full source extracts, Search Console metrics, n8n table IDs, credentials and operational logs must not be committed to this public repository.
 
+## Research validity at export
+
+Every article validation and draft export rechecks the research packet at the current time. Packets must be no older than three days, have a passed version 2 source preflight and contain at least two distinct source IDs and URLs with complete source bodies of at least 800 characters. Each source must explicitly report `content_truncated: false` and have a valid retrieval time. Future timestamps beyond five minutes, stale direct-research sources, and expired packet or source deadlines block export.
+
+The curated source-bank cache is restricted to ordinary adult knee-noise questions. Cache sources also require their scope-screen review state, explicit unexpired deadlines and a maximum seven-day retrieval-to-expiry window. A fresh packet timestamp cannot refresh an expired underlying source. Passing these checks establishes structural validity and freshness, not clinical correctness or permission to publish.
+
+The legacy `sourcePacket` helper rejects provider-marked truncation and bodies above its 14,000-character limit instead of silently clipping them. It does not perform a relevance review or grant a passed source preflight; a helper result alone cannot authorize article generation or export. Full source text and research packets remain private.
+
 The byte fingerprint is an internal change detector, not an authentication signature. The oversight task must verify the original n8n decision and result before calling the exporter. The exporter also checks current registry collisions; it cannot prove that the original manager approval is authentic on its own.
 
 ## Publication record
@@ -43,3 +51,4 @@ The measurement workflow derives its first post-publication and baseline periods
 ## Current rollout boundary
 
 The infrastructure can be reviewed independently of generated articles. A successful contract test is not evidence that an actual article, image, Vercel preview, production publication or later performance measurement has completed. Those require their own receipts. No synthetic test fixture is intended for the public guide registry.
+

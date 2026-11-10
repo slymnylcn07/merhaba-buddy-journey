@@ -2,9 +2,11 @@ const fs=require('node:fs');
 const path=require('node:path');
 const crypto=require('node:crypto');
 const {validateArticle,inventory,fingerprint}=require('./content-core.cjs');
+const {researchFresh}=require('./research-guards.cjs');
 const q=JSON.stringify;
 function insertOnce(text,anchor,addition){if(text.split(anchor).length!==2)throw Error('Registry anchor changed; manual review required: '+anchor);return text.replace(anchor,anchor+'\n'+addition);}
 function draftFiles(pkg,currentFiles,date){
+ if(!researchFresh(pkg?.research))throw Error('Missing, expired or incomplete research');
  if(pkg?.schema_version!==1||pkg.status!=='ready_for_draft_export'||pkg.export_policy!=='draft_pr_only_no_merge'||!pkg.manager_decision_key||!pkg.result_key)throw Error('Draft is not manager accepted');
  if(!pkg.image?.visual_review?.approved||pkg.image.visual_review.violations?.length)throw Error('Independent image QA missing');
  if(!pkg.image.base64||pkg.image.base64.length>600000||pkg.image.mime_type!=='image/webp')throw Error('Invalid image payload');
@@ -39,3 +41,4 @@ if(require.main===module){
  const changed=draftFiles(pkg,files,draftDate);for(const [p,content]of Object.entries(changed)){const target=path.resolve(repoDir,p);if(!target.startsWith(path.resolve(repoDir)+path.sep))throw Error('Unsafe output path');fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,content);}console.log(JSON.stringify({state:'draft_only',changed_files:Object.keys(changed),note:'Run repository checks and inspect the full diff before opening a draft PR. Never publish automatically.'},null,2));
 }
 module.exports={draftFiles,insertOnce};
+
