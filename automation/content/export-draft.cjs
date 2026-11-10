@@ -19,7 +19,19 @@ function draftFiles(pkg,currentFiles,date){
  const image=Buffer.from(pkg.image.base64,'base64');if(image.toString('ascii',0,4)!=='RIFF'||image.toString('ascii',8,12)!=='WEBP'||image.length<100)throw Error('Not an actual WebP file');
  const imageSha=crypto.createHash('sha256').update(image).digest('hex');
  const prop=(k,v)=>'    '+k+': '+q(v)+',';
- const body=a.sections.map(s=>'<section>\n<h2>{'+q(s.heading)+'}</h2>\n'+s.paragraphs.map(p=>'<p>{'+q(p)+'}</p>').join('\n')+'\n</section>').join('\n');
+ const sourceById=new Map(pkg.research.sources.map(source=>[source.id,source]));
+ const sourceNumberByUrl=new Map(a.sources.map((source,index)=>[source.url,index+1]));
+ const sectionCitations=section=>{
+  const cited=[...new Set(section.source_ids)].map(id=>sourceById.get(id));
+  const links=cited.map(source=>{
+   const url=new URL(source.url);
+   if(url.protocol!=='https:'||url.username||url.password)throw Error('Unsafe citation source URL');
+   const number=sourceNumberByUrl.get(source.url),label=source.publisher+': '+source.title;
+   return '<a className="align-super text-xs font-medium text-primary underline underline-offset-4 hover:text-primary/80" href={'+q(source.url)+'} aria-label={'+q('Source '+number+': '+label)+'} title={'+q(label)+'} target="_blank" rel="noreferrer noopener">['+number+']</a>';
+  });
+  return '{" "}'+links.join('{" "}');
+ };
+ const body=a.sections.map(s=>'<section>\n<h2>{'+q(s.heading)+'}</h2>\n'+s.paragraphs.map((p,index)=>'<p>{'+q(p)+'}'+(index===s.paragraphs.length-1?sectionCitations(s):'')+'</p>').join('\n')+'\n</section>').join('\n');
  const links='<h2>Related guides</h2>\n<ul>\n'+a.internalLinks.map(l=>'<li><Link to={'+q('/guides/'+l.slug)+'}>{'+q(l.label)+'}</Link></li>').join('\n')+'\n</ul>';
  const article='import type { ArticleExport } from "./types";\nimport { Link } from "react-router-dom";\n\nexport const editorialArticle: ArticleExport = {\n  cta: "",\n  article: {\n'+[
  prop('slug',a.slug),prop('title',a.title),prop('intro',a.intro),prop('quickAnswer',a.quickAnswer),prop('metaTitle',a.metaTitle),prop('metaDescription',a.metaDescription),prop('heroImage','/images/editorial/'+a.slug+'-hero.webp'),prop('heroAlt',pkg.image.alt_text),prop('publishedDate',date),prop('lastUpdated',date),prop('medicalReviewPending',true),prop('sources',a.sources),prop('faqs',a.faqs.map(({question,answer})=>({question,answer}))),
