@@ -89,7 +89,9 @@ function validatePlan(raw, state) {
   list(p.evidence_requirements,1,10).forEach(r=>{shape(r,['id','subquestion_ids','claim_goal','population','intervention','comparator','outcome','study_requirement','max_source_age_days','mandatory']);id(r.id);list(r.subquestion_ids,1,8).forEach(id);unique(r.subquestion_ids);ok(r.subquestion_ids.every(x=>p.subquestions.some(q=>q.id===x)),'UNKNOWN_SUBQUESTION');str(r.claim_goal,5,1500);str(r.population,1,500);str(r.intervention,1,500);str(r.comparator,0,500);str(r.outcome,1,500);ok(['descriptive','direct_comparison','safety'].includes(r.study_requirement),'INVALID_STUDY_REQUIREMENT');if(r.study_requirement==='direct_comparison')str(r.comparator,1,500);if(r.max_source_age_days!==null)integer(r.max_source_age_days,1,36500);bool(r.mandatory);});
   unique(p.evidence_requirements,r=>r.id);ok(p.evidence_requirements.some(r=>r.mandatory&&r.study_requirement!=='direct_comparison'),'MANDATORY_NONCOMPARATIVE_REQUIREMENT_REQUIRED');
   shape(p.editorial_scope,['article_purpose','prohibited_claims']);str(p.editorial_scope.article_purpose,10,1500);texts(p.editorial_scope.prohibited_claims,1,20);
-  list(p.search_queries,1,state.limits.queries_per_round).forEach(q=>query(q,{...state,plan:p}));unique(p.search_queries,q=>q.id);unique(p.search_queries,q=>q.query.toLowerCase());return p;
+  // The immutable plan may describe the entire authorized search allowance.
+  // Only its first bounded batch is scheduled; later entries remain suggestions.
+  list(p.search_queries,1,state.limits.searches).forEach(q=>query(q,{...state,plan:p}));unique(p.search_queries,q=>q.id);unique(p.search_queries,q=>q.query.toLowerCase());return p;
 }
 function reserveCall(state,request) {
   shape(request,['id','kind','now'],['query_id']);active(state,request.now);ok(!state.pending,'PENDING_CALL_MUST_BE_SETTLED');id(request.id);ok(!state.calls.some(c=>c.id===request.id),'CALL_ALREADY_RESERVED');
@@ -103,7 +105,7 @@ function reserveCall(state,request) {
   return event(s,'call_reserved',request.now,{...s.pending,counters:s.counters});
 }
 function settle(state,kind,p) {ok(state.pending?.kind===kind,'NO_MATCHING_PENDING_CALL');provenance(p,kind,state.pending.id,state);ok(p.http_status===200,'NON_SUCCESS_RESPONSE_USE_RECORD_FAILURE');const s=clone(state);s.calls.find(c=>c.id===s.pending.id).provenance=clone(p);s.calls.find(c=>c.id===s.pending.id).status='completed';s.pending=null;s.updated_at=p.at;return s;}
-function recordPlan(state,raw,p) {const plan=validatePlan(raw,state),s=settle(state,'planner',p);s.plan=plan;s.phase='ready_for_round';s.next_queries=plan.search_queries;return event(s,'plan_recorded',p.at,{plan_hash:hash(plan),provenance:p});}
+function recordPlan(state,raw,p) {const plan=validatePlan(raw,state),s=settle(state,'planner',p);s.plan=plan;s.phase='ready_for_round';s.next_queries=clone(plan.search_queries.slice(0,s.limits.queries_per_round));return event(s,'plan_recorded',p.at,{plan_hash:hash(plan),initial_query_ids:s.next_queries.map(q=>q.id),provenance:p});}
 function finish(s,status,reason,at) {s.status=status;s.phase='terminal';s.terminal_reason=reason;s.updated_at=at;return event(s,'research_terminal',at,{status,reason});}
 function beginRound(state,now) {
   active(state,now);ok(!state.pending&&state.phase==='ready_for_round','ROUND_NOT_READY');const s=clone(state);
@@ -131,13 +133,14 @@ function normalizeSearchResponse(queryId,response) {
 }
 function getVerificationCandidates(state) {
   const round=state.rounds.at(-1);if(!round)return [];
-  const seen=new Set(),candidates=[];
-  for(const item of round.searches.flatMap(s=>s.results)){
-    const url=publicUrl(item.url);if(seen.has(url)||state.sources.some(s=>[s.original_url,s.url,s.final_url].includes(url)))continue;seen.add(url);
-    try{publisherId(url);}catch{continue;}
-    candidates.push({id:'S'+hash(url).slice(0,12),url});
-  }
-  return candidates.slice(0,state.limits.fetches_per_round).filter(c=>!state.verification_attempts.some(a=>a.original_url===c.url));
+  const remaining=state.limits.fetches_per_round-state.verification_attempts.filter(a=>a.round===round.round).length;if(remaining<=0)return [];
+  const seen=new Set([...state.verification_attempts.map(a=>a.original_url),...state.sources.flatMap(s=>[s.original_url,s.url,s.final_url])]),candidates=[];
+  // Round-robin each search's ranked discoveries so the first query cannot
+  // monopolize the verification budget or starve an independent publisher.
+  const depth=Math.max(0,...round.searches.map(s=>s.results.length));
+  for(let i=0;i<depth;i++)for(const search of round.searches){const item=search.results[i];if(!item)continue;const url=publicUrl(item.url);if(seen.has(url))continue;seen.add(url);
+    try{publisherId(url);}catch{continue;}candidates.push({id:'S'+hash(url).slice(0,12),url});if(candidates.length===remaining)return candidates;
+  }return candidates;
 }
 function makePassages(source) {
   const text=source.content,spans=[];let start=0;

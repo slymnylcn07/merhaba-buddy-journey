@@ -61,7 +61,7 @@ test('export v3 names the integrated validator without granting legacy approval'
  assert.equal(policy.EXPORT_ADMISSION_V3_DESIGN.status,'integrated_shared_research_v3_admission');assert.equal(policy.EXPORT_ADMISSION_V3_DESIGN.validator,'automation/content/research-v3-contracts.cjs#validateFinalPacket');assert.equal(policy.EXPORT_ADMISSION_V3_DESIGN.version,3);assert.equal(policy.EXPORT_ADMISSION_V3_DESIGN.requiredPassed,true);assert.equal(policy.EXPORT_ADMISSION_V3_DESIGN.additionalToExistingChecks,true);
 });
 test('research prompts carry the same controller-only discovery registry and version',()=>{
- assert.equal(policy.POLICY_VERSION,'flexiknee-editorial-v3.2026-11-10.1');
+ assert.equal(policy.POLICY_VERSION,'flexiknee-editorial-v3.2026-11-10.2');
  for(const prompt of [policy.PLANNER_PROMPT,policy.CRITIC_PROMPT,policy.RESEARCH_AUDIT_PROMPT]){
   assert.ok(prompt.includes(JSON.stringify(policy.APPROVED_DISCOVERY_SCOPE)));
   assert.ok(prompt.includes('approved_discovery_scope'));assert.ok(prompt.includes('EXACTLY ONE site:'));
@@ -85,4 +85,13 @@ test('controller discovery scope can narrow but never expand the actual registry
  assert.equal(policy.discoveryQueryCheck('site:cdc.gov knee pain warning signs',narrow).ok,false);
  assert.equal(policy.discoveryQueryCheck('site:unregistered.example knee pain',narrow).ok,false);
  assert.equal(policy.discoveryQueryCheck('site:pubmed.ncbi.nlm.nih.gov knee supports').publisherGroup,policy.discoveryQueryCheck('site:pmc.ncbi.nlm.nih.gov knee supports').publisherGroup);
+});
+test('planner proposals are distinct from the first batch and later critic-authorized work',()=>{
+ assert.match(policy.PLANNER_PROMPT,/full ordered proposal list, not the next dispatch batch/);
+ assert.match(policy.PLANNER_PROMPT,/remaining total search-call budget, capped at SIX/);
+ assert.match(policy.PLANNER_PROMPT,/dispatches ONLY the first TWO/);
+ assert.match(policy.PLANNER_PROMPT,/no automatic follow-on queue/);
+ assert.match(policy.CRITIC_PROMPT,/explicitly choose at most TWO queries/);
+ assert.match(policy.CRITIC_PROMPT,/gaps\[\]\.next_query_ids/);
+ assert.match(policy.CRITIC_PROMPT,/Never treat a dormant proposal as an executed search/);
 });
