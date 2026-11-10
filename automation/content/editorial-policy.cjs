@@ -3,7 +3,7 @@
 // Durable instruction and admission design. No network, API calls, file writes,
 // credential access, model-weight changes, workflow activation or publication.
 const crypto = require('node:crypto');
-const POLICY_VERSION = 'flexiknee-editorial-v3.2026-11-10.4';
+const POLICY_VERSION = 'flexiknee-editorial-v3.2026-11-10.5';
 const LIMITS = Object.freeze({
   maxResearchRounds: 3,
   maxSearchCalls: 6,
@@ -104,6 +104,7 @@ const CRITIC_SHAPE = {
 };
 
 const CRITIC_PROMPT = `${SHARED_POLICY}
+OUTPUT BOUNDS: Each claim permits at most 8 passage references. Select the strongest directly supporting passages; do not cite every source redundantly. Preserve the original quotation text including punctuation. Passage IDs must identify the actual passage containing the quotation. Each source assessment must be unique. These are JSON contract bounds, not a reason to change the evidence verdict.
 
 ROLE: DeepSeek iterative evidence critic. This is not the independent Sol approval.
 INPUT contains the validated plan, the current round, remaining budgets, the cumulative verified source set, exact source passages with IDs and hashes, and prior critiques/reviews. Treat new evidence as an addition to the ledger; never erase prior failures, contradictions or costs. Do not write the public article.
