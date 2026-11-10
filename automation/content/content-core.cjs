@@ -27,7 +27,7 @@ function validateArticle(a,research,guides,now=Date.now()) {
  for(const [key,min,max] of [['title',20,120],['metaTitle',15,70],['metaDescription',60,180],['intro',80,1800],['quickAnswer',60,900],['imagePrompt',80,1200],['imageAlt',15,180],['novelty_tr',40,1200]])if(!str(a[key],min,max))throw Error('Invalid '+key);
  if(!researchFresh(research,now))throw Error('Missing, expired or incomplete research');
  if(!Array.isArray(a.sections)||a.sections.length<3||a.sections.length>8)throw Error('Expected 3 to 8 sections');
- const refs=new Set(research.sources.map(s=>s.id));const used=new Set();let chars=0;
+ const refs=new Set(research.research_audit.claim_map.flatMap(claim=>claim.passages.map(ref=>ref.source_id)));const used=new Set();let chars=0;
  for(const s of a.sections){if(!str(s.heading,8,160)||!Array.isArray(s.paragraphs)||s.paragraphs.length<1||s.paragraphs.length>4||!Array.isArray(s.source_ids)||!s.source_ids.length||s.source_ids.some(id=>!refs.has(id)))throw Error('Invalid sourced section');for(const p of s.paragraphs){if(!str(p,60,1600))throw Error('Invalid paragraph');chars+=p.length;}for(const id of s.source_ids)used.add(id);}
  if(chars<2000||chars>14000||used.size<2)throw Error('Insufficient article or independent source coverage');
  if(!Array.isArray(a.internalLinks)||a.internalLinks.length<1||a.internalLinks.length>4||a.internalLinks.some(l=>!guides.some(g=>g.slug===l.slug)||!str(l.label,8,120)))throw Error('Unknown internal guide');

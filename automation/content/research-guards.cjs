@@ -1,4 +1,5 @@
 // Shared deterministic guards. No network, model call, retry or budget mutation.
+const {validateFinalPacket}=require('./research-v3-contracts.cjs');
 function ordinaryKneeNoiseTopic(topic) {
  const q=String(topic||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').replace(/\s+/g,' ').trim();
  if(!/\bknees?\b/.test(q)||!/\b(crepitus|click(?:ing|y|s)?|crack(?:ing|s)?|pop(?:ping|s)?|grind(?:ing|s)?|nois(?:e|es|y))\b/.test(q))return false;
@@ -11,6 +12,7 @@ function researchFresh(research,now=Date.now()) {
  const time=new Date(now).getTime(),created=Date.parse(research?.created_at);
  if(!Number.isFinite(time)||!Number.isFinite(created)||created>time+300000||time-created>3*86400000)return false;
  if(research.status!=='sources_available'||research.source_preflight?.version!==2||research.source_preflight?.passed!==true||!Array.isArray(research.sources)||research.sources.length<2)return false;
+ try{validateFinalPacket(research,new Date(time).toISOString());}catch{return false;}
  const cached=research.provider==='source_bank_cache';
  if(cached&&!ordinaryKneeNoiseTopic(research.topic))return false;
  if(cached||research.expires_at!=null){const end=Date.parse(research.expires_at);if(!Number.isFinite(end)||time>=end)return false;}
