@@ -61,7 +61,7 @@ test('export v3 names the integrated validator without granting legacy approval'
  assert.equal(policy.EXPORT_ADMISSION_V3_DESIGN.status,'integrated_shared_research_v3_admission');assert.equal(policy.EXPORT_ADMISSION_V3_DESIGN.validator,'automation/content/research-v3-contracts.cjs#validateFinalPacket');assert.equal(policy.EXPORT_ADMISSION_V3_DESIGN.version,3);assert.equal(policy.EXPORT_ADMISSION_V3_DESIGN.requiredPassed,true);assert.equal(policy.EXPORT_ADMISSION_V3_DESIGN.additionalToExistingChecks,true);
 });
 test('research prompts carry the same controller-only discovery registry and version',()=>{
- assert.equal(policy.POLICY_VERSION,'flexiknee-editorial-v3.2026-11-10.3');
+ assert.equal(policy.POLICY_VERSION,'flexiknee-editorial-v3.2026-11-10.4');
  for(const prompt of [policy.PLANNER_PROMPT,policy.CRITIC_PROMPT,policy.RESEARCH_AUDIT_PROMPT]){
   assert.ok(prompt.includes(JSON.stringify(policy.APPROVED_DISCOVERY_SCOPE)));
   assert.ok(prompt.includes('approved_discovery_scope'));assert.ok(prompt.includes('EXACTLY ONE site:'));

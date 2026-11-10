@@ -3,7 +3,7 @@
 // Durable instruction and admission design. No network, API calls, file writes,
 // credential access, model-weight changes, workflow activation or publication.
 const crypto = require('node:crypto');
-const POLICY_VERSION = 'flexiknee-editorial-v3.2026-11-10.3';
+const POLICY_VERSION = 'flexiknee-editorial-v3.2026-11-10.4';
 const LIMITS = Object.freeze({
   maxResearchRounds: 3,
   maxSearchCalls: 6,
@@ -72,6 +72,7 @@ const PLAN_SHAPE = {
 };
 
 const PLANNER_PROMPT = `${SHARED_POLICY}
+RESEARCH SCOPE DISCIPLINE: Define only the core question actually asked. Use at most three mandatory evidence requirements for a focused practical question. Each requirement must express one answerable claim, not a conjunction of speculative subtopics. Never require unsupported extras such as a universal schedule, a full clinical escalation algorithm, or every possible adverse event unless the topic specifically asks for them. Treat those as limitations rather than expand the task. Use supplied source leads as discovery leads only and re-fetch them. Do not reject useful device-specific guidance merely because it is not universal; preserve its exact device scope.
 
 ROLE: DeepSeek research planner, before retrieval or writing.
 INPUT contains the topic, audience and locale if known, verified search signals, current guide inventory, any supplied nearest-guide full bodies, and remaining budgets. Search signals show observed demand, not a proven growth opportunity. Read the supplied guides before proposing a new intent. If full bodies are missing, mark intent duplication as unresolved through the plan's scope and requirements; do not pretend title matching is a semantic review.
